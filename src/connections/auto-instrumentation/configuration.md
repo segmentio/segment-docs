@@ -1,9 +1,9 @@
 ---
-title: Signals Implementation Guide
+title: Generate Events from Signals
 hidden: true
 ---
 
-This guide is a reference to configuring and using signals in the Signals SDK with Auto-Instrumentation. On this page, you'll find details on:
+This guide is a reference to configuring, generating, and using signals in the Signals SDK with Auto-Instrumentation. On this page, you'll find details on:
 
 - Setting up and managing signal types in the Signals SDK
 - Creating custom rules to capture and translate signals into actionable analytics events

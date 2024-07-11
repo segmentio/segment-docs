@@ -108,12 +108,12 @@ Configure how and when events are produced with each audience run. Select the en
 
 Event Selection                 |Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
 --------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Profile enters audience         | Send a Track event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
-Profile exits audience          | Send a Track event when a profile no longer matches the audience condition.                                                                    | Send an email to credit card owners to confirm that their credit cards have been paid in full.<br> Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
-Entity enters audience          | Send a Track event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event.         | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br> Notify a traveler when a flight associated with their profile is delayed.<br> Notify a customer when a product associated with their profile's wishlist is back in stock.
-Entity exits audience           | Send a Track event when an entity condition associated with a profile no longer matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event| Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br> Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
-Profile enters or exits audience| Send an Identify event when a profile's audience membership changes.   | Update a user profile in a destination with the most recent audience membership.     
-                                                              
+Profile enters audience         | Send an event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
+Profile exits audience          | Send an event when a profile no longer matches the audience condition.                                                                    | Send an email to credit card owners to confirm that their credit cards have been paid in full.<br> Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
+Entity enters audience          | Send an event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the event.         | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br> Notify a traveler when a flight associated with their profile is delayed.<br> Notify a customer when a product associated with their profile's wishlist is back in stock.
+Entity exits audience           | Send an event when an entity condition associated with a profile no longer matches the audience condition. You must select the entity that triggers Segment to send the event| Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br> Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
+Profile enters or exits audience| Send an event when a profile's audience membership changes.   | Update a user profile in a destination with the most recent audience membership.     
+
 ### Step 2d: Configure the event
 
 After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
@@ -146,7 +146,7 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 ### Step 3a: Configure your multi-channel marketing campaign 
 
-If you're using a multi-channel marketing tool, set up your email campaign before contiuing to Step 4. 
+If you're using a multi-channel marketing tool, set up your email campaign before continuing. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
 
 ## Step 4: Enable your Linked Audience
 
@@ -155,4 +155,22 @@ After building your Linked Audience, choose **Save and Enable**. You'll be redir
 To enable your audience:
 Select the **Enabled** toggle, then select **Enable audience**.
 
+### Compute Now
+
 You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience and sends events downstream.
+
+### Set a run schedule
+
+Use the Audience Overview page to view the audience profile count, current run schedule, run status, and upcoming run time.
+
+Determine when an audience should run and send data to enabled destinations with a run schedule:
+
+- **Manual**: Trigger audience runs manually by clicking **Run Now** on the Audience Overview page.
+- **Interval**: Trigger audience runs based on a predefined set of time intervals. Supported intervals are: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, or 1 day. If you select this option, Segment runs your audience after you enable the audience.
+- **Day and time**: Trigger audience runs at specific times on selected days of the week. If you select this option, Segment runs your audience at the first selected date and time.
+
+You can maintain your run schedule at any time from the audience's **Settings** tab.
+
+You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
+
+There may be up to a 5 minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8:00 AM, it can compute as late as Monday at 8:05 AM. This is to help Segment better manage system load.

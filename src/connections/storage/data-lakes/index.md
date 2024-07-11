@@ -4,8 +4,8 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 plan: data-lakes
 ---
 
-> warning "Segment Data Lakes (Azure) deletion policies"
-> Data deletion is not supported by Segment Data Lakes (Azure), as customers retain data in systems that they manage.
+> warning "Segment Data Lakes deletion policies"
+> Segment Data Lakes (AWS) and Segment Data Lakes (Azure) do not support Segment's [user deletion and suppression](/docs/privacy/user-deletion-and-suppression/) capabilities, as you retain your data in systems that you manage.
 
 A **data lake** is a centralized cloud storage location that holds structured and unstructured data.
 
