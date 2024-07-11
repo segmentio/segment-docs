@@ -6,16 +6,16 @@ beta: true
 
 [Convertly](https://www.tryconvertly.com){:target="\_blank”} lets you run AI on your product analytics. Create and generate charts and analyze data in minutes.
 
-This destination is maintained by Convertly. For any issues with the destination, contact the [Convertly support team](support@tryconvertly.com).
+This destination is maintained by Convertly. For any issues with the destination, contact the [Convertly support team](mailto:support@tryconvertly.com).
 
 ## Getting started
 
 1. From the Destination catalog page in the Segment app, search for Convertly.
-2. Select and click Add Destination.
+2. Select and click **Add Destination**.
 3. Select an existing Source to connect to.
-4. In Convertly, navigate to your [API Keys](https://www.app.tryconvertly.com/account/apikeys){:target="\_blank"} page in the Convertly app.
+4. In Convertly, navigate to your [API Keys](https://www.app.tryconvertly.com/account/apikeys){:target="\_blank"} page.
 5. Copy your API key.
-6. Enter the API key in the destination settings in Segment.
+6. Return to Segment and enter the API key in the destination settings for your Convertly destination.
 
 ## Supported methods
 
