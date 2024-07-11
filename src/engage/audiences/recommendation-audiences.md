@@ -10,7 +10,7 @@ You can use Recommendation Audiences to power the following common marketing cam
 - **Upselling**: Identify an audience of users who regularly interact with your free service and send them a promotion for your premium service. 
 - **Ranking**: Identify an audience of users who frequently interact with one category of your website and send them a promotion that contains only items from this category. 
 - **Moving excess inventory**: Identify an audience of users who are in the top 5% of purchasers for a specific brand you sell and send them a coupon for the excess inventory you have of that brand. 
-- **Next best action**: Identify an audience of users who frequently read articles in your website's "sports" category and recommend those users your latest sports article. 
+- **Next best action**: Identify an audience of users who frequently read articles in your website's "Sports" category and recommend those users your latest sports article. 
 - **Increasing average order value (AOV)**: Identify an audience of users who frequently interact with the "For Kids" section of your website and send them a back to school promotion in August, with free shipping after a set price threshold. 
 
 ## Create a Recommendation Audience
@@ -37,7 +37,7 @@ To create a Recommendation Audience:
 1. Open your Engage space and click **+ New audience**. 
 2. Select **Recommendation Audience** and click **Next**. 
 3. Select a property and value that you'd like to build your audience around (for example, if the property was "Company", you could select a value of "Twilio"). For values that haven't updated yet, enter an exact value into the **Enter value** field. If you're missing a property, return to your [Recommendation catalog](#set-up-your-recommendation-catalog) and update your mapping to include the property. 
-4. Set an maximum audience size by selecting one of the pre-populated options, or move the slider to create a custom audience. Segment recommends audiences that contain less than the top 20% of your audience because as the size of your audience increases, the propensity to purchase typically decreases. See [Best practices](#best-practices) for more information.
+4. Set a maximum audience size by selecting one of the pre-populated options, or move the slider to create a custom audience. Segment recommends audiences that contain less than the top 20% of your audience because as the size of your audience increases, the propensity to purchase typically decreases. See [Best practices](#best-practices) for more information.
 5. When you've filled out all fields, click **Next** to continue. 
 6. On the Select Destinations page, select any destinations you'd like to sync your audience to and click **Next**.
 7. Enter a name for your destination, update any optional fields, and click **Create Audience** to create your audience. 
@@ -47,6 +47,6 @@ To create a Recommendation Audience:
 
 ## Best practices
 
-- When mapping events to the model column during the set up process for your [Recommendation catalog](#set-up-your-recommendation-catalog), select the event property that matches the model column. For example, if you are mapping to model column ‘Brand’, select the property that refers to ‘Brand’ for each of the selected interaction events.
+- When mapping events to the model column during the setup process for your [Recommendation catalog](#set-up-your-recommendation-catalog), select the event property that matches the model column. For example, if you are mapping to model column ‘Brand’, select the property that refers to ‘Brand’ for each of the selected interaction events.
 - Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others. As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
-- As the size of your audience increases, the propensity to purchase typically decreases. For example, an audience of 100k people that represents the top 5% of your customers might be more likely to purchase your product, but you might see a greater number of total sales if you expanded the audience to a million people that represent the top 50% of your customer base. 
+- As the size of your audience increases, the propensity to purchase typically decreases. For example, an audience of a hundred thousand people that represents the top 5% of your customers might be more likely to purchase your product, but you might see a greater number of total sales if you expanded the audience to a million people that represent the top 50% of your customer base. 
