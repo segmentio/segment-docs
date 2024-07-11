@@ -37,7 +37,7 @@ Your app ID and API key can be found in the **API Keys** section of your account
 
 The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to add additional Algolia-related data like index name and query ID.
 
-To access your query ID, make sure `clickAnalytics` is enabled in your searches. If you're using Insights.js, this will look like:
+To access your query ID, make sure `clickAnalytics` is enabled in your searches. If you're using our JavaScript search API client, this will look like:
 
 ```js
 index.search('query', {
