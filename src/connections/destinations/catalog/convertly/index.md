@@ -45,7 +45,7 @@ Identify calls are used in Convertly to recognize users with a unique ID. This a
 
 ### Track
 
-Send Track calls to ADD WHAT Track CALLS ARE USED FOR HERE. For example:
+Send Track calls to Convertly, for example:
 
 ```js
 analytics.track("Login Button Clicked");
