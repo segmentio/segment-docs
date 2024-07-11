@@ -26,9 +26,10 @@ Convertly supports the following methods, as specified in the [Segment Spec](/do
 Send Page calls to ADD WHAT PAGE CALLS ARE USED FOR HERE. For example:
 
 ```js
-analytics.page()
-Segment sends Page calls to Convertly as a pageview.
+analytics.page();
 ```
+
+Segment sends Page calls to Convertly as a pageview.
 
 ### Identify
 
