@@ -5,18 +5,7 @@ hidden: true
 
 Use Cases help you onboard quickly and efficiently to Segment by guiding you through specific steps tailored to your business needs.
 
-## What's a use case?
-
-Use Cases provide a structured approach to configuring Segment. Think of Use Cases as pre-built setup guides tailored to common business goals. 
-
-When you select a use case, you'll get a customized checklist of steps to follow. These steps take the guesswork out of configuration, ensuring that you set up Segment correctly and align Segment features to your business objectives.
-
-Use Cases help you get up and running with Segment. Here's why you should start your Segment journey with a use case:
-
-- **Guided setup**: Follow clear, concise steps.
-- **Time-saving**: Build your Segment instance through a streamlined process.
-- **Proven practices**: Follow Segment best practices from the get-go.
-- **Reduced errors**: Minimize mistakes with our guided process.
+This page walks you through the steps to set up a use case in your Segment instance.
 
 > info "Permissions"
 > To implement a use case, you'll need to be a workspace owner for your Segment account.
