@@ -1,26 +1,30 @@
 ---
-title: Choose a Use Case
+title: Choosing a Use Case
 hidden: true
 ---
 
 Segment built Use Cases to streamline the process of implementing Segment for specific business objectives. 
 
-This guide will help you navigate through the available use cases and select the one that best aligns with your business goals. Choosing the right use case will ensure that you're tracking the most relevant data and utilizing Segment's features effectively to drive your business forward.
+This guide will help you navigate through the available use cases and select the one that best aligns with your business goals. 
 
 ## Understanding business goals and use cases
 
-Segment has 25 use cases, organizes into four main business goals:
-
+Segment has 25 use cases, organized into four main business goals:
+<br>
+<br>
 - Optimize advertising
 - Personalize first conversion
 - Boost retention, upsell, and cross-sell 
 - Personalize communications and product experiences
 
-Each goal represents a key area where businesses typically try to use customer data for improved performance and growth. The sections that follow explore each goal in detail, along with its associated use cases.
+These goals represent key ways businesses often use customer data for improved performance and growth. The sections that follow explore each goal in detail, along with its use cases.
+
+> info ""
+> Looking for a technical breakdown of each use case? View the [Use Cases Reference](/docs/getting-started/use-cases/reference/).
 
 ## Optimize advertising
 
-The **Optimize advertising** goal focuses on improving the efficiency and effectiveness of your advertising efforts. By leveraging customer data, you can create more targeted campaigns, reduce wasted ad spend, and increase your return on investment (ROI).
+The **Optimize advertising** business goal focuses on improving the efficiency and effectiveness of your advertising efforts. By using your customer data effectively, you can create more targeted campaigns, reduce wasted ad spend, and increase your return on investment (ROI).
 
 Use cases in this category include:
 
