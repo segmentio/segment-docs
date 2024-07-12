@@ -47,24 +47,24 @@ Use cases in this category include:
 
 ## Personalize first conversion
 
-The "Personalize First Conversion" goal is centered around optimizing the initial interactions a potential customer has with your brand. By personalizing these early touchpoints, you can increase the likelihood of converting prospects into customers.
-
-Use cases in this category include:
-
-| Use Case                             | Description                                                                                                                                                                                                                                        |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Accelerate app install               | Focus on optimizing the user journey to encourage app installation. It involves analyzing user behavior and creating personalized prompts or incentives to drive app installs.                                                                     |
-| Accelerate onboarding                | Create a personalized onboarding experience once a user has signed up or installed your app. By analyzing user data, you can tailor the onboarding process to individual needs and preferences, increasing the likelihood of long-term engagement. |
-| Accelerate signup                    | Optimize the signup process, reducing friction and personalizing the experience to encourage more users to complete registration.                                                                                                                  |
-| Acquire paid subscriptions           | For businesses with a freemium model, focus on identifying the most effective strategies to convert free users to paid subscribers.                                                                                                                |
-| Convert trials to paid subscriptions | Tailored for businesses offering free trials. This use case helps you identify the best times and methods to encourage trial users to convert to paid subscriptions.                                                                               |
-| Mitigate cart abandonment            | Create personalized experiences to reduce cart abandonment rates and encourage purchase completion.                                                                                                                                                |
+The **Personalize First Conversion** goal focuses on optimizing the initial interactions a potential customer has with your brand. By personalizing these early touchpoints, you can increase the likelihood of converting prospects into customers.
 
 Key considerations for this goal:
 - Are you looking to increase app installations or user sign-ups?
 - Do you want to improve your onboarding process?
 - Are you trying to convert free users to paid subscribers?
 - Do you need to reduce cart abandonment rates?
+
+Use cases in this category include:
+
+| Use Case                             | Description                                                                                                                                                                                                                                        |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accelerate app install               | Focus on optimizing the user journey to encourage app installation. This use case involves analyzing user behavior and creating personalized prompts or incentives to drive app installs.                                                                     |
+| Accelerate onboarding                | Create a personalized onboarding experience once a user has signed up or installed your app. With this use case, you can tailor the onboarding process to individual needs and preferences, increasing the likelihood of long-term engagement. |
+| Accelerate signup                    | Optimize the signup process, reducing friction and personalizing the experience to encourage more users to complete registration.                                                                                                                  |
+| Acquire paid subscriptions           | Focus on identifying the most effective strategies to convert free users to paid subscribers.                                                                                                                |
+| Convert trials to paid subscriptions | Tailored for businesses offering free trials. This use case helps you identify the best times and methods to encourage trial users to convert to paid subscriptions.                                                                               |
+| Mitigate cart abandonment            | Create personalized experiences to reduce cart abandonment rates and encourage purchase completion.                                                                                                                                                |
 
 ## Boost Retention, Upsell, and Cross-sell
 
