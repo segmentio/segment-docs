@@ -31,7 +31,7 @@ This section provides a detailed, step-by-step guide to setting up the **Persona
 ### Step 2: Pick your business goal and select a use case
 
 > info "Choosing a use case"
-> Segment lets you implement one use case. If you're not sure which use case to choose, 
+> Segment lets you implement one use case. If you're not sure which use case to choose, view [Choosing a use Case](/docs/getting-started/use-cases/guide).
 
 1. In the **What is your business goal?** screen, select **Personalize communications and product experiences**, then click **Next**.
 2. Segment moves you to the **Which use case would you like to set up?** screen. Choose **Personalize winback**, then click **Next**.
