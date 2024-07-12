@@ -11,6 +11,9 @@ Because Segment generates a unique source for every destination connected to a S
 
 The Debugger provides you with the payload information you need to troubleshoot potential formatting issues and ensure Segment sends events as your destinations expect.
 
+> warning "Modifying or disabling these system-generated sources could result in unforeseen issues and data loss."
+> Turning off these sources might impede profile updates, while removing them could compromise the stability of the Engage space, potentially making it irrecoverable. To ensure the system's integrity, Segment highly recommends leaving these sources enabled.
+
 ## Working with the Debugger
 
 Navigate to the Debugger tab on the Unify settings page of the space you want to debug. Select the source you want to inspect in the Debugger.
