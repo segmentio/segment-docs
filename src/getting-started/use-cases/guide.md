@@ -19,7 +19,7 @@ Segment has 25 use cases, organized into 4 main business goals:
 These goals represent key ways businesses often use customer data for improved performance and growth. 
 
 > info ""
-> Looking for technical breakdown of each use case? View the [Use Cases Reference](/docs/getting-started/use-cases/reference/).
+> Looking for a technical breakdown of each use case? View the [Use Cases Reference](/docs/getting-started/use-cases/reference/).
 
 ## Selecting your use case
 
@@ -81,10 +81,10 @@ Use cases in this category include:
 
 ## Boost retention, upsell, and cross-sell
 
-The **Boost Retention, Upsell, and Cross-sell** business goal focuses on maximizing the value of your existing customer base. By analyzing customer behavior and preferences, you can create targeted strategies to encourage repeat purchases, introduce customers to higher-value products or services, and increase overall customer lifetime value.
+The **Boost retention, upsell, and cross-sell** business goal focuses on maximizing the value of your existing customer base. By analyzing customer behavior and preferences, you can create targeted strategies to encourage repeat purchases, introduce customers to higher-value products or services, and increase overall customer lifetime value.
 
 Key considerations for this goal:
-- Do you want to find more customers who share traits with your most valuable existing customerss?
+- Do you want to find more customers who share traits with your most valuable existing customers?
 - Are you looking to increase the frequency of purchases from existing customers?
 - Do you need to prevent churn among your high-value customers?
 - Do you need to personalize your upsell or cross-sell efforts?
@@ -103,7 +103,7 @@ Use cases in this category include:
 
 ## Personalize communications and product experiences
 
-The **Personalize communications and product experiences** goal focuses on creating tailored experiences for your customers across all touchpoints. With this business goal, you can create more relevant and engaging communications and product experiences, leading to increased satisfaction and loyalty.
+The **Personalize communications and product experiences** business goal focuses on creating tailored experiences for your customers across all touchpoints. With this business goal, you can create more relevant and engaging communications and product experiences, leading to increased satisfaction and loyalty.
 
 Key considerations for this goal:
 - Do you want to personalize your onboarding process?
