@@ -26,6 +26,13 @@ These goals represent key ways businesses often use customer data for improved p
 
 The **Optimize advertising** business goal focuses on improving the efficiency and effectiveness of your advertising efforts. By using your customer data effectively, you can create more targeted campaigns, reduce wasted ad spend, and increase your return on investment (ROI).
 
+Key considerations for this goal:
+- Are you looking to expand your customer base with similar high-value customers?
+- Do you need to drive app installations?
+- Are you trying to increase sign-ups or prevent cart abandonment?
+- Do you want to retain high-value customers or optimize your ad spend?
+
+
 Use cases in this category include:
 
 | Use Case                         | Description                                                                                                                                                                                                                                            |
@@ -37,12 +44,6 @@ Use cases in this category include:
 | Mitigate high value churn        | Focus on identifying high-value customers who are at risk of churning and create targeted campaigns to retain them.                                                                                                                                    |
 | Suppress based on time           | Optimize your ad spend by suppressing ads to users who have recently converted or interacted with your brand, preventing unnecessary ad exposure.                                                                                                      |
 | Suppress with purchase           | Focus on suppressing ads to users who have recently made a purchase.                                                                                                                                                                                   |
-
-Key considerations for this goal:
-- Are you looking to expand your customer base with similar high-value customers?
-- Do you need to drive app installations?
-- Are you trying to increase sign-ups or prevent cart abandonment?
-- Do you want to retain high-value customers or optimize your ad spend?
 
 ## Personalize first conversion
 
