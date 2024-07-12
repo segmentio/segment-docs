@@ -9,18 +9,31 @@ This guide will help you navigate through the available use cases and select the
 
 ## Understanding business goals and use cases
 
-Segment has 25 use cases, organized into four main business goals:
-<br>
-<br>
+Segment has 25 use cases, organized into 4 main business goals:
+
 - Optimize advertising
 - Personalize first conversion
 - Boost retention, upsell, and cross-sell 
 - Personalize communications and product experiences
 
-These goals represent key ways businesses often use customer data for improved performance and growth. The sections that follow explore each goal in detail, along with its use cases.
+These goals represent key ways businesses often use customer data for improved performance and growth. 
 
 > info ""
 > Looking for a technical breakdown of each use case? View the [Use Cases Reference](/docs/getting-started/use-cases/reference/).
+
+## Selecting your Use Case
+
+Follow these steps to identify which use case to implement:
+
+1. Identify your primary business challenge or goal from the four business goals.
+2. Review the use cases associated with that goal, considering how each aligns with your specific needs.
+3. Evaluate your current data collection capabilities and the resources you have available.
+4. Consider your long-term business strategy and how different use cases might support your future goals.
+5. If you're unsure, start with a use case that addresses your most pressing current need. 
+
+The use case you select will guide your Segment setup, including the events you'll track and the integrations you'll implement. However, Segment's flexibility allows you to adapt and expand your strategy over time as your business needs evolve.
+
+The sections that follow explore each business goal in detail, along with its use cases.
 
 ## Optimize advertising
 
@@ -68,7 +81,13 @@ Use cases in this category include:
 
 ## Boost Retention, Upsell, and Cross-sell
 
-This goal focuses on maximizing the value of your existing customer base. By analyzing customer behavior and preferences, you can create targeted strategies to encourage repeat purchases, introduce customers to higher-value products or services, and increase overall customer lifetime value.
+The **Boost Retention, Upsell, and Cross-sell** business goal focuses on maximizing the value of your existing customer base. By analyzing customer behavior and preferences, you can create targeted strategies to encourage repeat purchases, introduce customers to higher-value products or services, and increase overall customer lifetime value.
+
+Key considerations for this goal:
+- Do you want to find more customers who share traits with your most valuable existing customerss?
+- Are you looking to increase the frequency of purchases from existing customers?
+- Do you need to prevent churn among your high-value customers?
+- Are you interested in personalizing your upsell or cross-sell efforts?
 
 Use cases in this category include:
 
@@ -76,20 +95,21 @@ Use cases in this category include:
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Build high value lookalikes | Identify characteristics of your most valuable customers to inform retention and upsell strategies.                                                       |
 | Increase repeat purchases   | Analyze customer purchase history and behavior to create personalized recommendations and incentives that encourage repeat purchases.                     |
-| Mitigate high value churn   | Identify high-value customers at risk of churning and develop targeted retention campaigns.                                                               |
+| Mitigate high value churn   | Focus on identifying high-value customers who are at risk of churning and create targeted campaigns to retain them.                                       |
 | Nurture with content        | Focus on creating and delivering personalized content to keep customers engaged with your brand between purchases, ultimately driving long-term loyalty.  |
 | Personalize upsell content  | Analyze customer behavior and purchase history to create targeted upsell recommendations, increasing the average order value and customer lifetime value. |
-| Personalize winback         | Focus on re-engaging customers who have become inactive, using personalized messaging and offers based on their past behavior and preferences.            |
+| Personalize winback         | Focus on re-engaging inactive customers, using personalized messaging and offers based on their past behavior and preferences.                            |
 
-Key considerations for this goal:
-- Do you want to find more customers similar to your best ones?
-- Are you looking to increase the frequency of purchases from existing customers?
-- Do you need to prevent churn among your high-value customers?
-- Are you interested in personalizing your upsell or cross-sell efforts?
 
 ## Personalize communications and product experiences
 
 This goal is about creating tailored experiences for your customers across all touchpoints. By using customer data, you can create more relevant and engaging communications and product experiences, leading to increased satisfaction and loyalty.
+
+Key considerations for this goal:
+- Do you want to improve your onboarding process with personalization?
+- Are you looking to increase customer engagement and repeat purchases?
+- Do you need to create targeted content for different user segments?
+- Are you trying to re-engage inactive customers?
 
 Use cases in this category include:
 
@@ -101,24 +121,6 @@ Use cases in this category include:
 | Nurture with content       | Deliver personalized content experiences based on individual user interests and behaviors, keeping customers engaged with your brand.                |
 | Personalize upsell content | Focus on personalizing the entire product experience to facilitate upsells.                                                                          |
 | Personalize winback        | Create personalized re-engagement campaigns for inactive users, tailoring the messaging and offers based on their past interactions with your brand. |
-
-Key considerations for this goal:
-- Do you want to improve your onboarding process with personalization?
-- Are you looking to increase customer engagement and repeat purchases?
-- Do you need to create targeted content for different user segments?
-- Are you trying to re-engage inactive customers?
-
-## Selecting your Use Case
-
-When choosing a use case, consider the following steps:
-
-1. Identify your primary business challenge or goal from the four main categories discussed above.
-2. Review the use cases associated with that goal, considering how each aligns with your specific needs.
-3. Evaluate your current data collection capabilities and the resources you have available for implementation.
-4. Consider your long-term business strategy and how different use cases might support your future goals.
-5. If you're unsure, start with a use case that addresses your most pressing current need. You can always expand to additional use cases as you grow more comfortable with Segment.
-
-The use case you select will guide your Segment setup, including the events you'll track and the integrations you'll implement. However, Segment's flexibility allows you to adapt and expand your strategy over time as your business needs evolve.
 
 ## Next steps
 
