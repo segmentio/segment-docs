@@ -19,9 +19,9 @@ Segment has 25 use cases, organized into 4 main business goals:
 These goals represent key ways businesses often use customer data for improved performance and growth. 
 
 > info ""
-> Looking for a technical breakdown of each use case? View the [Use Cases Reference](/docs/getting-started/use-cases/reference/).
+> Looking for technical breakdown of each use case? View the [Use Cases Reference](/docs/getting-started/use-cases/reference/).
 
-## Selecting your Use Case
+## Selecting your use case
 
 Follow these steps to identify which use case to implement:
 
@@ -48,19 +48,19 @@ Key considerations for this goal:
 
 Use cases in this category include:
 
-| Use Case                         | Description                                                                                                                                                                                                                                            |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Build high-value lookalikes      | Identify and target potential customers who share characteristics with your most valuable existing customers. By analyzing the behaviors and attributes of your high-value customers, you can create lookalike audiences for more effective targeting. |
-| Build lookalikes for app install | Find potential users who are likely to install your app. This is particularly useful for mobile app businesses looking to grow their user base efficiently.                                                                                            |
-| Increase signups with lookalikes | Target potential users who are likely to sign up for your service, based on the characteristics of your existing signed-up users.                                                                                                                      |
-| Mitigate cart abandonment        | Identify users who have abandoned their carts and create targeted campaigns to encourage these users to complete their purchases.                                                                                                                      |
-| Mitigate high value churn        | Focus on identifying high-value customers who are at risk of churning and create targeted campaigns to retain them.                                                                                                                                    |
-| Suppress based on time           | Optimize your ad spend by suppressing ads to users who have recently converted or interacted with your brand, preventing unnecessary ad exposure.                                                                                                      |
-| Suppress with purchase           | Focus on suppressing ads to users who have recently made a purchase.                                                                                                                                                                                   |
+| Use Case                         | Description                                                                                                                                                 |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build high-value lookalikes      | Identify and target potential customers who share characteristics with your most valuable existing customers.                                               |
+| Build lookalikes for app install | Find potential users who are likely to install your app. This is particularly useful for mobile app businesses looking to grow their user base efficiently. |
+| Increase signups with lookalikes | Target potential users who are likely to sign up for your service, based on the characteristics of your existing registered users.                          |
+| Mitigate cart abandonment        | Identify users who have abandoned their carts and create targeted campaigns to encourage these users to complete their purchases.                           |
+| Mitigate high value churn        | Focus on identifying high-value customers who are at risk of churning and create targeted campaigns to retain them.                                         |
+| Suppress based on time           | Optimize your ad spend by suppressing ads to users who have recently converted or interacted with your brand, preventing unnecessary ad exposure.           |
+| Suppress with purchase           | Focus on suppressing ads to users who have recently made a purchase.                                                                                        |
 
 ## Personalize first conversion
 
-The **Personalize First Conversion** goal focuses on optimizing the initial interactions a potential customer has with your brand. By personalizing these early touchpoints, you can increase the likelihood of converting prospects into customers.
+The **Personalize first conversion** goal focuses on optimizing the initial interactions a potential customer has with your brand. By personalizing these early touchpoints, you can increase the likelihood of converting prospects into customers.
 
 Key considerations for this goal:
 - Are you looking to increase app installations or user sign-ups?
@@ -70,16 +70,16 @@ Key considerations for this goal:
 
 Use cases in this category include:
 
-| Use Case                             | Description                                                                                                                                                                                                                                        |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Accelerate app install               | Focus on optimizing the user journey to encourage app installation. This use case involves analyzing user behavior and creating personalized prompts or incentives to drive app installs.                                                                     |
-| Accelerate onboarding                | Create a personalized onboarding experience once a user has signed up or installed your app. With this use case, you can tailor the onboarding process to individual needs and preferences, increasing the likelihood of long-term engagement. |
-| Accelerate signup                    | Optimize the signup process, reducing friction and personalizing the experience to encourage more users to complete registration.                                                                                                                  |
-| Acquire paid subscriptions           | Focus on identifying the most effective strategies to convert free users to paid subscribers.                                                                                                                |
-| Convert trials to paid subscriptions | Tailored for businesses offering free trials. This use case helps you identify the best times and methods to encourage trial users to convert to paid subscriptions.                                                                               |
-| Mitigate cart abandonment            | Create personalized experiences to reduce cart abandonment rates and encourage purchase completion.                                                                                                                                                |
+| Use Case                             | Description                                                                                                                                                          |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accelerate app install               | Focus on optimizing the user journey to encourage app installation.                                                                                                  |
+| Accelerate onboarding                | Create a personalized onboarding experience once a user has signed up or installed your app.                                                                         |
+| Accelerate signup                    | Optimize the signup process, reducing friction and personalizing the experience to encourage more users to complete registration.                                    |
+| Acquire paid subscriptions           | Focus on identifying the most effective strategies to convert free users to paid subscribers.                                                                        |
+| Convert trials to paid subscriptions | Tailored for businesses offering free trials. This use case helps you identify the best times and methods to encourage trial users to convert to paid subscriptions. |
+| Mitigate cart abandonment            | Identify users who have abandoned their carts and create targeted campaigns to encourage these users to complete their purchases.                                    |
 
-## Boost Retention, Upsell, and Cross-sell
+## Boost retention, upsell, and cross-sell
 
 The **Boost Retention, Upsell, and Cross-sell** business goal focuses on maximizing the value of your existing customer base. By analyzing customer behavior and preferences, you can create targeted strategies to encourage repeat purchases, introduce customers to higher-value products or services, and increase overall customer lifetime value.
 
@@ -87,7 +87,7 @@ Key considerations for this goal:
 - Do you want to find more customers who share traits with your most valuable existing customerss?
 - Are you looking to increase the frequency of purchases from existing customers?
 - Do you need to prevent churn among your high-value customers?
-- Are you interested in personalizing your upsell or cross-sell efforts?
+- Do you need to personalize your upsell or cross-sell efforts?
 
 Use cases in this category include:
 
@@ -103,11 +103,11 @@ Use cases in this category include:
 
 ## Personalize communications and product experiences
 
-This goal is about creating tailored experiences for your customers across all touchpoints. By using customer data, you can create more relevant and engaging communications and product experiences, leading to increased satisfaction and loyalty.
+The **Personalize communications and product experiences** goal focuses on creating tailored experiences for your customers across all touchpoints. With this business goal, you can create more relevant and engaging communications and product experiences, leading to increased satisfaction and loyalty.
 
 Key considerations for this goal:
-- Do you want to improve your onboarding process with personalization?
-- Are you looking to increase customer engagement and repeat purchases?
+- Do you want to personalize your onboarding process?
+- Do youw want to increase customer engagement and repeat purchases?
 - Do you need to create targeted content for different user segments?
 - Are you trying to re-engage inactive customers?
 
@@ -115,18 +115,13 @@ Use cases in this category include:
 
 | Use Case                   | Description                                                                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Accelerate onboarding      | Create a personalized onboarding experience that extends beyond the initial signup, helping to drive long-term engagement.                           |
+| Accelerate onboarding      | Create a personalized onboarding experience that extends beyond initial signup, helping to drive long-term engagement.                               |
 | Increase repeat purchases  | Focus on personalizing the overall customer experience to drive repeat purchases.                                                                    |
-| Mitigate high value churn  | Create personalized experiences and communications to retain high-value customers who may be at risk of churning.                                    |
+| Mitigate high value churn  | Create personalized experiences and communications to retain high-value customers at risk of churning.                                               |
 | Nurture with content       | Deliver personalized content experiences based on individual user interests and behaviors, keeping customers engaged with your brand.                |
 | Personalize upsell content | Focus on personalizing the entire product experience to facilitate upsells.                                                                          |
 | Personalize winback        | Create personalized re-engagement campaigns for inactive users, tailoring the messaging and offers based on their past interactions with your brand. |
 
 ## Next steps
 
-Once you've selected a use case:
-
-1. Review the specific setup guide for your chosen use case, which will provide detailed instructions on implementation.
-2. Begin setting up the recommended sources and destinations for your use case.
-3. Implement the tracking plan based on the events and properties suggested for your use case.
-4. Regularly review your data and adjust your strategy as needed to ensure you're getting the most value from Segment.
+Once you've selected a use case, follow the [Use Cases setup guide](/docs/getting-started/use-cases/setup/#use-case-setup-overview), which explains how to set up a use case.
