@@ -33,7 +33,7 @@ This table shows the event and properties Segment recommends you track for the B
 <br />
 <br />
 
-| Event          | Properties                                                                                               |
+| Event           | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -56,10 +56,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events                | Properties                                                                                               |
-| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| Events                | Properties                                                                                                 |
+| --------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Application Installed | `screen_id`, `screen_type`, `screen_title`, `version`, `build`, `from_background`, `referring_application` |
-| Install Attributed    |                                                                                                          |
+| Install Attributed    |                                                                                                            |
 | Application Opened    | `screen_id`, `screen_type`, `screen_title`, `version`, `build`, `from_background`, `referring_application` |
 
 <br />
@@ -81,10 +81,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events      | Properties                     |
-| ----------- | ------------------------------ |
+| Events      | Properties                            |
+| ----------- | ------------------------------------- |
 | Signed Up   | `first_name`, `last_name`, `username` |
-| Page Viewed | `page_category`, `page_name`   |
+| Page Viewed | `page_category`, `page_name`          |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Increase signups with lookalikes use case:
@@ -128,7 +128,7 @@ This table shows the event and properties Segment recommends you track for the M
 <br />
 <br />
 
-| Event          | Properties                                                                                               |
+| Event           | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -150,7 +150,7 @@ This table shows the event and properties Segment recommends you track for the S
 <br />
 <br />
 
-| Event          | Properties                                                                                               |
+| Event           | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -202,10 +202,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events          | Properties                     |
-| --------------- | ------------------------------ |
-| Page Scrolled   | `pct_scrolled`, `page_category` |
-| Page Viewed     | `page_category`, `page_name`    |
+| Events        | Properties                      |
+| ------------- | ------------------------------- |
+| Page Scrolled | `pct_scrolled`, `page_category` |
+| Page Viewed   | `page_category`, `page_name`    |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Accelerate app install use case:
@@ -226,11 +226,11 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events                   | Properties                                           |
-| ------------------------ | ---------------------------------------------------- |
-| Onboarding Step Completed| `step_name`, `step_number`, `total_steps`, `pct_completed`, `flow_name`, `screen_id`, `screen_type` |
-| Onboarding Completed     | `checkout_id`, `order_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation` |
-| Signed In                | `first_name`, `last_name`, `username`, `email`       |
+| Events                    | Properties                                                                                          |
+| ------------------------- | --------------------------------------------------------------------------------------------------- |
+| Onboarding Step Completed | `step_name`, `step_number`, `total_steps`, `pct_completed`, `flow_name`, `screen_id`, `screen_type` |
+| Onboarding Completed      | `checkout_id`, `order_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`                     |
+| Signed In                 | `first_name`, `last_name`, `username`, `email`                                                      |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Accelerate onboarding use case:
@@ -253,23 +253,23 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events          | Properties                     |
-| --------------- | ------------------------------ |
-| Page Viewed     | `page_category`, `page_name`   |
-| Page Scrolled   | `pct_scrolled`, `page_category` |
-| Signed Up       | `first_name`, `last_name`, `username` |
+| Events        | Properties                            |
+| ------------- | ------------------------------------- |
+| Page Viewed   | `page_category`, `page_name`          |
+| Page Scrolled | `pct_scrolled`, `page_category`       |
+| Signed Up     | `first_name`, `last_name`, `username` |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Accelerate signup use case:
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Advertising         |
-| Mobile          | Reverse ETL         |
-| Reverse ETL     | Analytics           |
-| Advertising     | Personalization     |
+| Sources     | Destinations    |
+| ----------- | --------------- |
+| Website     | Advertising     |
+| Mobile      | Reverse ETL     |
+| Reverse ETL | Analytics       |
+| Advertising | Personalization |
 
 {% endfaqitem %}
 {% faqitem Acquire paid subscriptions %}
@@ -278,23 +278,23 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events           | Properties       |
-| ---------------- | ---------------- |
-| Trial Started    | `category`       |
-| Subscription Stared |                  |
+| Events              | Properties |
+| ------------------- | ---------- |
+| Trial Started       | `category` |
+| Subscription Stared |            |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Acquire paid subscriptions use case:
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Advertising         |
-| Mobile          | Reverse ETL         |
-| Reverse ETL     | Analytics           |
-| Advertising     | SMS & Push Notifications |
-|                 | Email Marketing     |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Advertising              |
+| Mobile      | Reverse ETL              |
+| Reverse ETL | Analytics                |
+| Advertising | SMS & Push Notifications |
+|             | Email Marketing          |
 
 {% endfaqitem %}
 {% faqitem Convert trials to paid subscriptions %}
@@ -303,23 +303,23 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events           | Properties       |
-| ---------------- | ---------------- |
-| Subscription Stared |                  |
-| Trial Started    | `category`       |
+| Events              | Properties |
+| ------------------- | ---------- |
+| Subscription Stared |            |
+| Trial Started       | `category` |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Convert trials to paid subscriptions use case:
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Advertising         |
-| Mobile          | Reverse ETL         |
-| Reverse ETL     | Analytics           |
-| Advertising     | SMS & Push Notifications |
-|                 | Email Marketing     |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Advertising              |
+| Mobile      | Reverse ETL              |
+| Reverse ETL | Analytics                |
+| Advertising | SMS & Push Notifications |
+|             | Email Marketing          |
 
 {% endfaqitem %}
 {% faqitem Mitigate cart abandonment %}
@@ -394,14 +394,14 @@ And this table shows the source and destination types that Segment recommends yo
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Personalization     |
-| Reverse ETL     | Analytics           |
-|                 | Email Marketing     |
-|                 | SMS & Push Notifications |
-| Advertising     |                     |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Personalization          |
+| Reverse ETL | Analytics                |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
+| Advertising |                          |
 
 {% endfaqitem %}
 {% faqitem Mitigate high value churn %}
@@ -419,13 +419,13 @@ And this table shows the source and destination types that Segment recommends yo
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Analytics           |
-| Reverse ETL     | Advertising         |
-|                 | SMS & Push Notifications |
-|                 | Email Marketing     |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Analytics                |
+| Reverse ETL | Advertising              |
+|             | SMS & Push Notifications |
+|             | Email Marketing          |
 
 {% endfaqitem %}
 {% faqitem Nurture with content %}
@@ -434,23 +434,23 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events          | Properties                     |
-| --------------- | ------------------------------ |
-| Page Viewed     | `page_category`, `page_name`   |
-| Screen Viewed   | `screen_id`, `screen_type`, `screen_title` |
-| Page Scrolled   | `pct_scrolled`, `page_category` |
+| Events        | Properties                                 |
+| ------------- | ------------------------------------------ |
+| Page Viewed   | `page_category`, `page_name`               |
+| Screen Viewed | `screen_id`, `screen_type`, `screen_title` |
+| Page Scrolled | `pct_scrolled`, `page_category`            |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Nurture with content use case:
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Analytics           |
-| Reverse ETL     | Email Marketing     |
-|                 | SMS & Push Notifications |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Analytics                |
+| Reverse ETL | Email Marketing          |
+|             | SMS & Push Notifications |
 
 {% endfaqitem %}
 {% faqitem Personalize upsell content %}
@@ -459,23 +459,23 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events                  | Properties                                               |
-| ----------------------- | -------------------------------------------------------- |
-| Product Added to Cart   | `product_id`, `product_name`, `product_brand`, `product_price`, `product_category` |
-| Order Completed         | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+| Events                | Properties                                                                                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| Product Added to Cart | `product_id`, `product_name`, `product_brand`, `product_price`, `product_category`                       |
+| Order Completed       | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Personalize upsell content use case:
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Personalization     |
-| Reverse ETL     | Analytics           |
-|                 | Email Marketing     |
-|                 | SMS & Push Notifications |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Personalization          |
+| Reverse ETL | Analytics                |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
 
 {% endfaqitem %}
 {% faqitem Personalize winback %}
@@ -495,13 +495,13 @@ And this table shows the source and destination types that Segment recommends yo
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Personalization     |
-| Reverse ETL     | Analytics           |
-|                 | Email Marketing     |
-|                 | SMS & Push Notifications |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Personalization          |
+| Reverse ETL | Analytics                |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
 
 {% endfaqitem %}
 
@@ -518,11 +518,11 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events                   | Properties                                           |
-| ------------------------ | ---------------------------------------------------- |
-| Onboarding Step Completed| `step_name`, `step_number`, `total_steps`, `pct_completed`, `flow_name`, `screen_id`, `screen_type` |
-| Onboarding Completed     | `checkout_id`, `order_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation` |
-| Signed In                | `first_name`, `last_name`, `username`, `email`       |
+| Events                    | Properties                                                                                          |
+| ------------------------- | --------------------------------------------------------------------------------------------------- |
+| Onboarding Step Completed | `step_name`, `step_number`, `total_steps`, `pct_completed`, `flow_name`, `screen_id`, `screen_type` |
+| Onboarding Completed      | `checkout_id`, `order_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`                     |
+| Signed In                 | `first_name`, `last_name`, `username`, `email`                                                      |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Accelerate onboarding use case:
@@ -552,13 +552,13 @@ And this table shows the source and destination types that Segment recommends yo
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Personalization     |
-| Reverse ETL     | Analytics           |
-|                 | Email Marketing     |
-|                 | SMS & Push Notifications |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Personalization          |
+| Reverse ETL | Analytics                |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
 
 {% endfaqitem %}
 {% faqitem Mitigate high value churn %}
@@ -576,12 +576,12 @@ And this table shows the source and destination types that Segment recommends yo
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Analytics           |
-| Reverse ETL     | SMS & Push Notifications |
-|                 | Email Marketing     |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Analytics                |
+| Reverse ETL | SMS & Push Notifications |
+|             | Email Marketing          |
 
 {% endfaqitem %}
 {% faqitem Nurture with content %}
@@ -590,11 +590,11 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events          | Properties                     |
-| --------------- | ------------------------------ |
-| Page Viewed     | `page_category`, `page_name`   |
-| Screen Viewed   | `screen_id`, `screen_type`, `screen_title` |
-| Page Scrolled   | `pct_scrolled`, `page_category` |
+| Events        | Properties                                 |
+| ------------- | ------------------------------------------ |
+| Page Viewed   | `page_category`, `page_name`               |
+| Screen Viewed | `screen_id`, `screen_type`, `screen_title` |
+| Page Scrolled | `pct_scrolled`, `page_category`            |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Nurture with content use case:
@@ -615,23 +615,23 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events                  | Properties                                               |
-| ----------------------- | -------------------------------------------------------- |
-| Product Added to Cart   | `product_id`, `product_name`, `product_brand`, `product_price`, `product_category` |
-| Order Completed         | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+| Events                | Properties                                                                                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| Product Added to Cart | `product_id`, `product_name`, `product_brand`, `product_price`, `product_category`                       |
+| Order Completed       | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Personalize upsell content use case:
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Personalization     |
-| Reverse ETL     | Analytics           |
-|                 | Email Marketing     |
-|                 | SMS & Push Notifications |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Personalization          |
+| Reverse ETL | Analytics                |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
 
 {% endfaqitem %}
 {% faqitem Personalize winback %}
@@ -651,13 +651,13 @@ And this table shows the source and destination types that Segment recommends yo
 <br />
 <br />
 
-| Sources         | Destinations        |
-|-----------------|---------------------|
-| Website         | Reverse ETL         |
-| Mobile          | Personalization     |
-| Reverse ETL     | Analytics           |
-|                 | Email Marketing     |
-|                 | SMS & Push Notifications |
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Reverse ETL              |
+| Mobile      | Personalization          |
+| Reverse ETL | Analytics                |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
 
 {% endfaqitem %}
 {% endfaq %}
