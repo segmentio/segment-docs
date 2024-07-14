@@ -3,34 +3,70 @@ title: Use Cases Overview
 hidden: true
 ---
 
-## What's a use case?
+Use Cases are pre-built Segment setup guides tailored to common business goals. 
 
-Use Cases in Segment are pre-built setup guides tailored to common business goals. 
+Use Cases eliminate guesswork with a structured approach to onboarding, helping you configure Segment correctly and align its features to your business objectives.
 
-When you select a use case, you'll get a customized checklist of steps to follow. These steps eliminate guesswork, provide a structured approach to configuring Segment, and ensure that you set up Segment correctly and align Segment's features to your business objectives.
 
-## Benefits of Use Cases
+## Onboard to Segment with Use Cases
 
-Use Cases help you get up and running with Segment. Here's why you should start your Segment journey with a use case:
+{% include components/reference-button.html
+  href="/getting-started/use-cases/setup/"
+  variant="related"
+  icon="projects.svg"
+  title="Choosing a Use Case"
+  description="Not sure where to start? Read through Segment's Choosing a Use Case guide, which breaks down the available business goals and their associated use cases."
+%}
 
-- **Guided setup**: Follow clear, concise steps.
-- **Time-saving**: Build your Segment instance through a streamlined process.
-- **Proven practices**: Follow Segment best practices from the get-go.
-- **Reduced errors**: Minimize mistakes with our guided process.
+{% include components/reference-button.html
+  href="/getting-started/use-cases/setup/"
+  variant="related"
+  icon="getting-started.svg"
+  title="Step-by-step Use Cases setup guide"
+  description="Follow the steps in the Use Cases setup guide to get up and running with Segment."
+%}
 
-## Available Business Goals
+{% include components/reference-button.html
+  href="/getting-started/use-cases/reference/"
+  variant="related"
+  icon="glossary.svg"
+  title="Use Cases Reference"
+  description="Looking for something more technical? View the Use Cases Reference, which lists the tracking events, connections, and destinations Segment recommends for each use case."
+%}
 
-Segment offers 25 Use Cases across 4 main business goals:
 
-1. **Optimize advertising**: Improve ad targeting and efficiency.
-2. **Personalize first conversion**: Enhance early customer interactions.
-3. **Boost retention, upsell, and cross-sell**: Maximize value from existing customers.
-4. **Personalize communications and product experiences**: Create tailored customer journeys.
+## Take the next step
 
-## Get started
+Explore the following core Segment features, all of which power Use Cases.
 
-Check out the following documentation to get started with Use Cases:
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="connections.svg"
+    title="Connections"
+    description="Collect event data from your mobile apps, websites, and servers."
+  %}
 
-- [Choosing a Use Case](/docs/getting-started/use-cases/guide): A guide to select the best use case for your business needs.
-- [Use Cases Setup](/docs/getting-started/use-cases/setup): Step-by-step instructions to implementing your chosen use case.
-- [Use Cases Reference](/docs/getting-started/use-cases/reference): A technical breakdown of the use cases and their recommended events, sources, and destinations.
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="symbols/arrow-right.svg"
+    title="Destinations"
+    description="Forward your data to the business tools and apps your business uses."
+  %}
+</div>
+
+<div class="double">
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="unified-profiles.svg"
+    title="Unify"
+    description="Track user interactions, resolve their identities, and explore profiles."
+  %}
+
+  {% include components/reference-button.html
+    href="https://segment.com"
+    icon="engage.svg"
+    title="Engage"
+    description="Build, enrich, and activate audiences with Segment's personalization platform."
+  %}
+</div>
