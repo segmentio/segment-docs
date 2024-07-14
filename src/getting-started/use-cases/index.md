@@ -63,7 +63,7 @@ Explore the following core Segment features, all of which power Use Cases.
     variant="related"
     icon="unified-profiles.svg"
     title="Unify"
-    description="Track user interactions, resolve their identities, and explore profiles."
+    description="Track user interactions, resolve their identities, and explore Profiles."
   %}
 
   {% include components/reference-button.html
