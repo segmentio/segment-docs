@@ -11,7 +11,7 @@ Use Cases eliminate guesswork with a structured approach to onboarding, helping 
 ## Onboard to Segment with Use Cases
 
 {% include components/reference-button.html
-  href="/getting-started/use-cases/setup/"
+  href="/getting-started/use-cases/setup"
   variant="related"
   icon="projects.svg"
   title="Choosing a Use Case"
@@ -19,7 +19,7 @@ Use Cases eliminate guesswork with a structured approach to onboarding, helping 
 %}
 
 {% include components/reference-button.html
-  href="/getting-started/use-cases/setup/"
+  href="/getting-started/use-cases/setup"
   variant="related"
   icon="getting-started.svg"
   title="Step-by-step Use Cases setup guide"
@@ -27,7 +27,7 @@ Use Cases eliminate guesswork with a structured approach to onboarding, helping 
 %}
 
 {% include components/reference-button.html
-  href="/getting-started/use-cases/reference/"
+  href="/getting-started/use-cases/reference"
   variant="related"
   icon="glossary.svg"
   title="Use Cases Reference"
@@ -41,14 +41,16 @@ Explore the following core Segment features, all of which power Use Cases.
 
 <div class="double">
   {% include components/reference-button.html
-    href="https://segment.com"
+    href="/connections/"
+    variant="related"
     icon="connections.svg"
     title="Connections"
     description="Collect event data from your mobile apps, websites, and servers."
   %}
 
   {% include components/reference-button.html
-    href="https://segment.com"
+    href="/connections/destinations"
+    variant="related"
     icon="symbols/arrow-right.svg"
     title="Destinations"
     description="Forward your data to the business tools and apps your business uses."
@@ -57,14 +59,16 @@ Explore the following core Segment features, all of which power Use Cases.
 
 <div class="double">
   {% include components/reference-button.html
-    href="https://segment.com"
+    href="/unify"
+    variant="related"
     icon="unified-profiles.svg"
     title="Unify"
     description="Track user interactions, resolve their identities, and explore profiles."
   %}
 
   {% include components/reference-button.html
-    href="https://segment.com"
+    href="/unify"
+    variant="related"
     icon="engage.svg"
     title="Engage"
     description="Build, enrich, and activate audiences with Segment's personalization platform."
