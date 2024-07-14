@@ -77,7 +77,7 @@ You're now ready to connect sources to your dev environment.
 6. Test your connection, and troubleshoot it, if necessary. Click **Done**.
 7. (Optional:) Click **Connect More** and repeat steps 2 through 6 to add more sources.
 
-## Step 5: Connect dev destinations 
+### Step 5: Connect dev destinations 
 
 With sources connected, you can now connect destinations to your dev environment.
 
@@ -89,7 +89,7 @@ With sources connected, you can now connect destinations to your dev environment
 5. Carry out the destination-specific steps, then click **Done**.
 7. (Optional:) Click **Connect More** and repeat steps 2 through 6 to add more destinations.
 
-## Step 6: Publish your setup to a prod environment
+### Step 6: Publish your setup to a prod environment
 
 Until this point, you've set up event tracking and connected sources and destinations to a development environment. 
 
@@ -105,7 +105,22 @@ After you've confirmed that data is flowing from your sources into your destinat
 8. Choose a source to connect to the destination, then click **Next**.
 9. Name your destination, then click **Create Destination**.
 
-Your data is now in production, and you've successfully configured Segment to achieve your business goals.
+> success ""
+> Your data is now in production, and you've successfully configured Segment to achieve your business goals.
+
+
+<!-- everything below is optional > 
+
+After you've 
+
+
+
+
+
+-->
+
+
+
 
 ## Next steps
 
