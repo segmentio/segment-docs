@@ -18,6 +18,17 @@ sections:
     title: Sending Data to Destinations
   - path: /getting-started/06-testing-debugging
     title: Testing and Debugging
+  - section_title: Use Cases
+    slug: /getting-started/use-cases/
+    section: 
+    - path: /getting-started/use-cases/
+      title: Overview
+    - path: /getting-started/use-cases/guide
+      title: Choosing a Use Case
+    - path: /getting-started/use-cases/setup
+      title: Use Cases Setup
+    - path: /getting-started/reference
+      title: Use Cases Reference
   - path: /getting-started/whats-next
     title: What's Next
 
