@@ -30,7 +30,7 @@ Before you can configure consent in Segment, take the following steps:
 3. Confirm that you have completed the required prerequisites, and click **Next**.
 4. On the Create consent categories page, add the following information to the category form:
   - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
-  - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive.
+  - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive and cannot start with a number.
   - **Mapped destinations**: Select one or more of your destinations to map to this category. Category mappings apply to all instances of a destination. 
 5. After you've finished setting up your category or categories, click **Save**.
 
@@ -48,6 +48,8 @@ Segment provides a OneTrust wrapper for the following sources:
 - **Kotlin**: Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
 - **Swift**: Please follow the instructions from the README in the [@segment-integrations/analytics-swift-consent](https://github.com/segment-integrations/analytics-swift-consent#segment-consent-management){:target="_blank"} repository.
 <!---- **React Native**: Please follow the instructions from the README in the [](){:target="_blank"} repository.--->
+
+Ketch provides an integration for their Consent & Preference Management product. For more information, see the Ketch [Segment Tag Management Automation](https://docs.ketch.com/ketch/docs/segment-tag-management-automation){:target="_blank"} documentation.  
 
 If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation. To get started building your own wrapper, follow the instructions in the [@segment/analytics-consent-tools](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} repository. 
 

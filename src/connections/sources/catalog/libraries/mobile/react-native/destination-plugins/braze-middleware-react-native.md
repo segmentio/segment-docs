@@ -7,7 +7,7 @@ strat: react-native
 
 Braze’s middleware plugin code is open source and available on GitHub. You can view it [here](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze-middleware){:target="_blank"}.
 
-The Braze middleware plugin is a `BeforePlugin` used to debounce `identify` events for [Braze](https://www.braze.com). This Plugin should be used with a [Cloud Mode](https://segment.com/docs/connections/destinations/#connection-modes) connection to Braze. To connect to Braze with a Device Mode connection use the [Braze Destination Plugin](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze) instead. It is not possible to use both plugins in one `Analytics React Native` instance. 
+The Braze middleware plugin is a `BeforePlugin` used to debounce `identify` events for [Braze](https://www.braze.com). This Plugin should be used with a [Cloud Mode](/docs/connections/destinations/#connection-modes) connection to Braze. To connect to Braze with a Device Mode connection use the [Braze Destination Plugin](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze) instead. It is not possible to use both plugins in one `Analytics React Native` instance. 
 
 ## Installation
 
@@ -31,7 +31,7 @@ In your code where you initialize the analytics client call the `.add(plugin)` m
 ```ts
 import { createClient } from '@segment/analytics-react-native';
 
-import { BrazePlugin } from '@segment/analytics-react-native-plugin-braze-middleware';
+import { BrazeMiddlewarePlugin } from '@segment/analytics-react-native-plugin-braze-middleware';
 
 const segmentClient = createClient({
   writeKey: 'SEGMENT_KEY'
