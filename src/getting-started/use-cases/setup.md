@@ -55,7 +55,7 @@ On the **Set up checklist** page, you'll see the full checklist for the use case
 2. Segment shows you the recommended events and properties typically tracked for your use case. 
 3. Set up event tracking based on the events and properties Segment shows.
 
-For the Personalize winback tracking plan, this table shows Segment's recommended events and properties:
+This table shows Segment's recommended events and properties for the Personaliz winback use case:
 
 | Events          | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
@@ -100,27 +100,53 @@ After you've confirmed that data is flowing from your sources into your destinat
 3. Segment shows you the sources you previously connected in your dev environment. Click the source you want to connect to prod, then click **Continue**.
 4. Carry out any additional steps in the Add a Source page, click **Create Source**, then click **Next**. Segment returns you to the Prod environment tab.
 5.  Publish the events set up in your dev environment sources to production. Check the debugger to verify that data is flowing into Segment correctly, then click **Mark as complete**.
-6. On the **Connect 1 prod destinattion** bullet, click **Connect**. 
+6. On the **Connect 1 prod destination** bullet, click **Connect**. 
 7. Segment shows you the destinations you previously connected in your dev environment. Click the source you want to connect to prod, then click **Continue**.
 8. Choose a source to connect to the destination, then click **Next**.
 9. Name your destination, then click **Create Destination**.
 
 > success ""
-> Your data is now in production, and you've successfully configured Segment to achieve your business goals.
+> Your data is now in production, and you've successfully configured Segment.
 
+## Activate your data with Unify and Engage
 
-<!-- everything below is optional > 
+Now that you've successfullyy set up Connections and Destinations, you can build upon your Segment implementation with Unify and Engage. 
 
-After you've 
+> info "Accessing Unify and Engage"
+> Unify and Engage may not yet be enabled for your account. To add Engage to your Segment workspace, click **Request a demo** in the Unify and Engage tabs on the Guided Setup screen.
 
+### Step 1: Set up identifiers with Unify
 
+1. In the Guided Setup page, click the **Build profiles from your data** tab.
+2. Click **Add default identifiers**. Segment displays the **Select Identifiers** popup.
+3. Select as many of the recommended identifiers that best fit your use case; Segment recommends selecting all identifiers. Click **Save**. 
+4. On the Guided Setup page, click **Mark complete**.
 
+Your identifiers are now set up in your dev space, though it could take a few minutes for Segment to create profiles from your selected identifiers.
 
+For more information, see the [Unify documentation](/docs/unify/).
 
--->
+### Step 2: Create audiences with Engage
 
+1. Click the **Engage customers with your data tab**, then click **Create audience**. Segment takes you to the New Audience Builder.
+2. On the **Select Audience Type** page, select either Users or Accounts, then click **Next**.
+3. Configure, preview, and create your audience. Segment returns you to the Guided Setup page.
 
+Segment then begins sending your new audience(s) to the destinations in your dev environment. Verify in those destinations that the audiences are coming through as intended, then click **Mark complete**.
 
+For more information, see the [Engage documentation](/docs/engage/).
+
+### Step 3: Republish to a prod environment
+
+At this point, you'll have already published your initial setup to a prod environment. Next, you'll publish your Unify and Engage setup to the same prod environment.
+
+1. Return to the Prod environment tab.
+2. In the Build profiles from your data tab, click **Import rules**.
+3. Review the rules that Segment will import, then click **Import**.
+4. In the Engage customers with your data tab, click **Create audience**
+5. Configure, preview, and create your audience. Segment returns you to the Guided Setup page.
+
+Segment then begins sending your new audience(s) to the destinations in your dev environment. Verify in those destinations that the audiences are coming through as intended, then click **Mark complete**.
 
 ## Next steps
 
