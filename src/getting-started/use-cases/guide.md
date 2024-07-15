@@ -124,4 +124,4 @@ Use cases in this category include:
 
 ## Next steps
 
-Once you've selected a use case, follow the [Use Cases setup guide](/docs/getting-started/use-cases/setup/#use-case-setup-overview), which explains how to set up a use case.
+Once you've selected a use case, follow the [Use Cases Setup Guide](/docs/getting-started/use-cases/setup), which explains how to set up a use case.
