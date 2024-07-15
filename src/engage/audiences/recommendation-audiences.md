@@ -24,7 +24,7 @@ To create your Recommendation Catalog:
 3. Select up to 10 product-related events you'd like Segment to use as a basis for recommendations. *Segment recommends selecting 3-7 different events that represent user interaction. For example: Product Added to Cart, Product Searched, or Product Viewed*. 
 4. Select a product ID for each product-related event you previously selected. 
 5. Click **Next**. 
-6. Map event properties to the suggested model columns. <br> _(Optional)_: To add an additional column to your model, click **+ Add column** on the Map properties page. 
+6. Map event properties to the suggested model columns. Segment recommends mapping all properties of a product hierarchy to allow for increased granularity when building your Recommendation Audience. <br> _(Optional)_: To add an additional column to your model, click **+ Add column** on the Map properties page. 
 7. When you've completed your mappings, click **Save**. 
 
 > warning ""
