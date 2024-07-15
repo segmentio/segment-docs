@@ -22,8 +22,8 @@ Use Cases eliminate guesswork with a structured approach to onboarding, helping 
   href="/getting-started/use-cases/setup"
   variant="related"
   icon="getting-started.svg"
-  title="Step-by-step Use Cases setup guide"
-  description="Follow the steps in the Use Cases setup guide to get up and running with Segment."
+  title="Step-by-Step Use Cases Setup Guide"
+  description="Follow the steps in the Use Cases Setup guide to get up and running with Segment."
 %}
 
 {% include components/reference-button.html

@@ -21,7 +21,7 @@ From a high level, setting Segment up with a use case takes place in four stages
 
 ## Example setup: Personalize winback
 
-This section provides a detailed, step-by-step guide to setting up the **Personalize Winback** use case from the **Personalize communications and product experiences** business goal in your Segment account.
+This section provides a detailed, step-by-step guide to setting up the **Personalize Winback** use case from the **Personalize communications and product experiences** business goal in your Segment account. All use cases follow this same setup flow.
 
 ### Step 1: Navigate to Use Cases
 
@@ -31,7 +31,7 @@ This section provides a detailed, step-by-step guide to setting up the **Persona
 ### Step 2: Pick your business goal and select a use case
 
 > info "Choosing a use case"
-> Segment lets you implement one use case. If you're not sure which use case to choose, view [Choosing a use Case](/docs/getting-started/use-cases/guide).
+> Segment lets you implement one use case. If you're not sure which use case to choose, view [Choosing a Use Case](/docs/getting-started/use-cases/guide).
 
 1. In the **What is your business goal?** screen, select **Personalize communications and product experiences**, then click **Next**.
 2. Segment moves you to the **Which use case would you like to set up?** screen. Choose **Personalize winback**, then click **Next**.
@@ -49,7 +49,7 @@ Segment strongly recommends beginning your setup in the dev environment. This al
 > warning "Changing your use case"
 > Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
 
-On the **Set up checklist** page, you'll see the full checklist for the use case you've chosen. This checklist applies to all use cases, though the suggested events, sources, and destinations differ between use cases.
+On the **Setup checklist** page, you'll see the full checklist for the use case you've chosen. This checklist applies to all use cases, though the suggested events, sources, and destinations differ between use cases.
 
 1. In the **Review suggested events** list item, click **Review**. 
 2. Segment shows you the recommended events and properties typically tracked for your use case. 
@@ -63,18 +63,18 @@ This table shows Segment's recommended events and properties for the Personaliz 
 | Page Scrolled   | `pct_scrolled`, `page_category`                                                                          |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
-You'll want to make sure that you're tracking these events to get the most of the Personalize winback campaign. For more information on event tracking, see [Data Collection Best Practices][/docs/protocols/tracking-plan/best-practices/].
+Make sure that you're tracking these events to get the most of the Personalize winback campaign. For more information on event tracking, see [Data Collection Best Practices](/docs/protocols/tracking-plan/best-practices/).
 
 ### Step 4: Connect dev sources 
 
 You're now ready to connect sources to your dev environment. 
 
-1. Under the **Connect dev sources** step, Segment shows you the recommended sources you should connect. For Personalized winback, these include Website, Mobile, and Reverse ETL.
+1. In the **Connect dev sources** step, Segment shows you the recommended sources you should connect. For Personalized winback, these include Website, Mobile, and Reverse ETL.
 2. Review the recommended sources, then click **Connect**.
 3. Segment takes you to the **Add a source** setup. Choose the source(s) you want to add, then click **Next**.
 4. Name your source, then click **Create source**. 
 5. Carry out the source-specific steps, then click **Next**.
-6. Test your connection, and troubleshoot it, if necessary. Click **Done**.
+6. Test your connection and troubleshoot it, if necessary. Click **Done**.
 7. (Optional:) Click **Connect More** and repeat steps 2 through 6 to add more sources.
 
 > info "Adding a warehouse as a souce"
@@ -102,7 +102,7 @@ Until this point, you've set up event tracking and connected sources and destina
 After you've confirmed that data is flowing from your sources into your destinations as expected, you're ready to publish your setup to a production environment.
 
 1. On the Setup checklist page, click the **Prod environment** tab.
-2. On the **Connect 1 prod source** bullet, click **Connect**. 
+2. On the **Connect 1 prod source** radio button, click **Connect**. 
 3. Segment shows you the sources you previously connected in your dev environment. Click the source you want to connect to prod, then click **Continue**.
 4. Carry out any additional steps in the Add a Source page, click **Create Source**, then click **Next**. Segment returns you to the Prod environment tab.
 5.  Publish the events set up in your dev environment sources to production. Check the debugger to verify that data is flowing into Segment correctly, then click **Mark as complete**.
@@ -116,14 +116,14 @@ After you've confirmed that data is flowing from your sources into your destinat
 
 ## Activate your data with Unify and Engage
 
-Now that you've successfullyy set up Connections and Destinations, you can build upon your Segment implementation with Unify and Engage. 
+Now that you've successfully set up Connections and Destinations, you can build upon your Segment implementation with Unify and Engage. 
 
 > info "Accessing Unify and Engage"
-> Unify and Engage may not yet be enabled for your account. To add Engage to your Segment workspace, click **Request a demo** in the Unify and Engage tabs on the Guided Setup screen.
+> Unify and Engage may not yet be enabled for your account. To add Engage to your Segment workspace, click **Request a demo** in the Unify and Engage tabs on the Guided Setup page.
 
 ### Step 1: Set up identifiers with Unify
 
-1. In the Guided Setup page, click the **Build profiles from your data** tab.
+1. In the Guided Setup page, click **Build profiles from your data**.
 2. Click **Add default identifiers**. Segment displays the **Select Identifiers** popup.
 3. Select as many of the recommended identifiers that best fit your use case; Segment recommends selecting all identifiers. Click **Save**. 
 4. On the Guided Setup page, click **Mark complete**.
@@ -136,23 +136,23 @@ For more information, see the [Unify documentation](/docs/unify/).
 
 1. Click the **Engage customers with your data tab**, then click **Create audience**. Segment takes you to the New Audience Builder.
 2. On the **Select Audience Type** page, select either Users or Accounts, then click **Next**.
-3. Configure, preview, and create your audience. Segment returns you to the Guided Setup page.
+3. Configure, preview, and create your audience. 
 
 Segment then begins sending your new audience(s) to the destinations in your dev environment. Verify in those destinations that the audiences are coming through as intended, then click **Mark complete**.
 
-For more information, see the [Engage documentation](/docs/engage/).
+For more information on Audiences, see the [Engage documentation](/docs/engage/).
 
 ### Step 3: Republish to a prod environment
 
 At this point, you'll have already published your initial setup to a prod environment. Next, you'll publish your Unify and Engage setup to the same prod environment.
 
 1. Return to the Prod environment tab.
-2. In the Build profiles from your data tab, click **Import rules**.
+2. In the **Build profiles from your data** tab, click **Import rules**.
 3. Review the rules that Segment will import, then click **Import**.
-4. In the Engage customers with your data tab, click **Create audience**
+4. In the **Engage customers with your data** tab, click **Create audience**
 5. Configure, preview, and create your audience. Segment returns you to the Guided Setup page.
 
-Segment then begins sending your new audience(s) to the destinations in your dev environment. Verify in those destinations that the audiences are coming through as intended, then click **Mark complete**.
+Segment then begins sending your new audience(s) to the destinations in your dev environment. Verify in those destinations that your audiences are coming through as intended, then click **Mark complete**.
 
 ## Next steps
 

@@ -42,7 +42,7 @@ The **Optimize advertising** business goal focuses on improving the efficiency a
 Key considerations for this goal:
 - Are you looking to expand your customer base with similar high-value customers?
 - Do you need to drive app installations?
-- Are you trying to increase sign-ups or prevent cart abandonment?
+- Are you trying to increase signups or prevent cart abandonment?
 - Do you want to retain high-value customers or optimize your ad spend?
 
 
