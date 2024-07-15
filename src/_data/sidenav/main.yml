@@ -27,7 +27,7 @@ sections:
       title: Choosing a Use Case
     - path: /getting-started/use-cases/setup
       title: Use Cases Setup
-    - path: /getting-started/reference
+    - path: /getting-started/use-cases/reference
       title: Use Cases Reference
   - path: /getting-started/whats-next
     title: What's Next
