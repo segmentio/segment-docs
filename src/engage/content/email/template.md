@@ -9,12 +9,12 @@ plan: engage-premier
 >
 >Preferred ISV Partners:
 >
->[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience) <br>
->[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization) <br>
->[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns) <br>
->[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience) <br>
->[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships) <br>
->[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/) <br>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
 
 Use Twilio Engage to build personalized email templates to store and use throughout marketing campaigns.  
 
