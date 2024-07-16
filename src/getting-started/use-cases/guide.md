@@ -9,7 +9,7 @@ This guide will help you navigate through the available use cases and select the
 
 ## Understanding business goals and use cases
 
-Segment has 25 use cases, organized into 4 main business goals:
+Segment supports 25 use cases, organized into 4 main business goals:
 
 - Optimize advertising
 - Personalize first conversion
