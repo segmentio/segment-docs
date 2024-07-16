@@ -105,7 +105,7 @@ After you've confirmed that data is flowing from your sources into your destinat
 2. On the **Connect 1 prod source** radio button, click **Connect**. 
 3. Segment shows you the sources you previously connected in your dev environment. Click the source you want to connect to prod, then click **Continue**.
 4. Carry out any additional steps in the Add a Source page, click **Create Source**, then click **Next**. Segment returns you to the Prod environment tab.
-5.  Publish the events set up in your dev environment sources to production. Check the debugger to verify that data is flowing into Segment correctly, then click **Mark as complete**.
+5. Publish the events set up in your dev environment sources to production. Check the debugger to verify that data is flowing into Segment correctly, then click **Mark as complete**.
 6. On the **Connect 1 prod destination** bullet, click **Connect**. 
 7. Segment shows you the destinations you previously connected in your dev environment. Click the source you want to connect to prod, then click **Continue**.
 8. Choose a source to connect to the destination, then click **Next**.
