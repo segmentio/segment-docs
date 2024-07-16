@@ -29,7 +29,7 @@ Before you can configure consent in Segment, take the following steps:
 2. On the Consent management page, click **Create categories**.
 3. Confirm that you have completed the required prerequisites, and click **Next**.
 4. On the Create consent categories page, add the following information to the category form:
-  - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
+  - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that have fewer than 35 characters.
   - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive and cannot start with a number.
   - **Mapped destinations**: Select one or more of your destinations to map to this category. Category mappings apply to all instances of a destination. 
 5. After you've finished setting up your category or categories, click **Save**.
