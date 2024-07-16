@@ -87,7 +87,7 @@ You're now ready to connect sources to your dev environment.
 
 With sources connected, you can now connect destinations to your dev environment.
 
-1. Under the **Connect dev destinations** step, Segment shows you the recommended sources you should connect. For Personalized winback, these include Reverse ETL, Personaliztion, and Analytics.
+1. Under the **Connect dev destinations** step, Segment shows you the recommended sources you should connect. For Personalize winback, these include Reverse ETL, Personalization, and Analytics.
 2. Review the recommended destinations, then click **Connect**.
 3. Segment takes you to the **Choose a Destination** setup. Choose the destination(s) you want to add, then click **Next**.
 4. Name your destination, then click **Create Destination**.
