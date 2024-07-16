@@ -51,7 +51,7 @@ Use cases in this category include:
 | Use Case                         | Description                                                                                                                                                 |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Build high-value lookalikes      | Identify and target potential customers who share characteristics with your most valuable existing customers.                                               |
-| Build lookalikes for app install | Find potential users who are likely to install your app. This is particularly useful for mobile app businesses looking to grow their user base efficiently. |
+| Build lookalikes for app install | Find potential users who are likely to install your app. This is particularly useful for mobile app businesses looking to efficiently grow their user base. |
 | Increase signups with lookalikes | Target potential users who are likely to sign up for your service, based on the characteristics of your existing registered users.                          |
 | Mitigate cart abandonment        | Identify users who have abandoned their carts and create targeted campaigns to encourage these users to complete their purchases.                           |
 | Mitigate high value churn        | Focus on identifying high-value customers who are at risk of churning and create targeted campaigns to retain them.                                         |
