@@ -77,7 +77,7 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Increase signups with lookalikes %}
 
-This table shows the events and properties Segment recommends you track for the Increase signups with lookalikes use case, which helps you build lookalikes from signups via specific channels.:
+This table shows the events and properties Segment recommends you track for the Increase signups with lookalikes use case, which helps you build lookalikes from signups through specific channels.:
 <br />
 <br />
 
