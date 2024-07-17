@@ -78,7 +78,7 @@ You're now ready to connect sources to your dev environment.
 7. (Optional:) Click **Connect More** and repeat steps 2 through 6 to add more sources.
 
 > info "Adding a warehouse as a souce"
-> If you connect a warehouse as a source, Segment automatically creates a Profiles destination that shows up in the **Connect your data** tab. Segment requires this destination to create profiles from your warehouse. 
+> If you connect a warehouse as a source, Segment automatically creates a Profiles destination that shows up in the **Connect your data** tab. Do not delete this destination, as Segment requires this destination to create profiles from your warehouse. 
 
 > info "Cloud object sources"
 > If you connect a cloud object source, you'll need to create a warehouse to sync profiles into Segment. For more information, see [Cloud Sources](/docs/connections/sources/about-cloud-sources/).
