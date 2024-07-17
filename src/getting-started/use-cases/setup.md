@@ -55,7 +55,7 @@ On the **Setup checklist** page, you'll see the full checklist for the use case 
 2. Segment shows you the recommended events and properties typically tracked for your use case. 
 3. Set up event tracking based on the events and properties Segment shows.
 
-This table shows Segment's recommended events and properties for the Personaliz winback use case:
+This table shows Segment's recommended events and properties for the Personalize winback use case:
 
 | Events          | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
