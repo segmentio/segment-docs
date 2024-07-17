@@ -6,7 +6,7 @@ title: Taboola Actions Destination
 
 [Taboola](https://developers.taboola.com/backstage-api/reference/create-a-first-party-audience/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} integration allows you to connect and target your Segment audiences with Taboola.
 
-This destination is maintained by Taboola. For any issues with the destination, [contact their Support team](mailto:support@taboola.com).
+This destination is maintained by Taboola. For any issues with the destination, contact their Support team or your account manager.
 
 ## Getting started
 
@@ -40,7 +40,8 @@ The **Taboola (Actions)** Destination is now connected to your Engage Space. The
 12. On the **Sync Audience** page, click the **Save** button. You'll be taken back to the **Matching mappings** tab. Enable the Mapping using the toggle.   
 ![Enabled mapping](images/enabled_mapping.png)
 
-The Audience will start to sync to Taboola shortly. 
+The Audience will start to sync to Taboola shortly.
+It takes another 2-5 days for the segment to scale up and become available for targeting/suppression in Taboola Ads.
 
 > info ""
 > To view the audience on the Taboola platform, navigate to the [Tbaoola Ads audience page](https://ads.taboola.com/audiences), select "Custom Audience" and search for the audience you have just connected.
