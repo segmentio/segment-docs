@@ -33,7 +33,7 @@ Follow these steps to identify which use case to implement:
 
 The use case you select will guide your Segment setup, including the events you'll track and the integrations you'll implement. However, Segment's flexibility allows you to adapt and expand your strategy over time as your business needs evolve.
 
-The sections that follow explore each business goal in detail, along with its use cases.
+The following sections explore each business goal and associated use cases in detail. 
 
 ## Optimize advertising
 
