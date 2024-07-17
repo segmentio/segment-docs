@@ -74,8 +74,8 @@ The Audience will start to sync to Taboola shortly.
 
 ## Supported identifiers
 
-The **Taboola (Actions)** destination supports syncing Audiences to Taboola using either the `userId` and/or the `Mobile Device ID`.
-`userId` will be automatically included if present. Additional configuration steps are required in order to sync `Mobile Device ID` values. To sync `Mobile Device ID` values ensure the following configuration:  
+The **Taboola (Actions)** destination supports syncing Audiences to Taboola using either the `email` and/or the `Mobile Device ID`.
+`email` will be automatically included if present. Additional configuration steps are required in order to sync `Mobile Device ID` values. To sync `Mobile Device ID` values ensure the following configuration:  
 
 1. Your Engage Space's Identify Resolution rules will need to be configured for `android.id` and `ios.id` identifiers. This can be configured by navigating to `Unify` >> `Unify Settings`. 
 ![Enage ID Resolution Settings with android.id and ios.id configured](images/engage_id_resolution_settings.png)
