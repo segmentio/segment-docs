@@ -107,7 +107,7 @@ This table shows the events and properties Segment recommends you track for the 
 
 | Events          | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
-| Checkout Started| `num_items`, `order_id`, `coupon`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `discount`      |
+| Checkout Started | `num_items`, `order_id`, `coupon`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `discount`      |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
 <br />
