@@ -8,7 +8,7 @@ Use Cases help you onboard quickly and efficiently to Segment by guiding you thr
 This page walks you through the steps to set up a use case in your Segment instance.
 
 > info "Permissions"
-> To implement a use case, you'll need to be a workspace owner for your Segment account.
+> To implement a use case, you'll need to be a Workspace Owner for your Segment account. See the [Roles](/docs/segment-app/iam/roles/) documentation for more information. 
 
 ## Use case setup overview
 
