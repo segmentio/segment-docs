@@ -11,7 +11,7 @@ Use Cases eliminate guesswork with a structured approach to onboarding, helping 
 ## Onboard to Segment with Use Cases
 
 {% include components/reference-button.html
-  href="/getting-started/use-cases/setup"
+  href="/getting-started/use-cases/guide"
   variant="related"
   icon="projects.svg"
   title="Choosing a Use Case"
