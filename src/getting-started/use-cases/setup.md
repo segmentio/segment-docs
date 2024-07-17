@@ -14,7 +14,7 @@ This page walks you through the steps to set up a use case in your Segment insta
 
 From a high level, setting Segment up with a use case takes place in four stages:
 
-1. **Pick your business goal**. What do you want to achieve?  Choose from goals like optimizing advertising, personalizing first conversions, and increasing customer retention.
+1. **Pick your business goal**. What do you want to achieve?  Choose from 4 common business goals like optimizing advertising, personalizing first conversions, boosting retention, and increasing customer retention. 
 2. **Select a use case**. After you pick your business goal, Segment shows you several potential use cases from which to choose. 
 3. **Follow the in-app guide**. With your use case chosen, Segment shows you an interactive checklist of events to track, as well as sources and destinations that Segment recommends you connect. You'll carry these steps out in a sandboxed development environment.
 4. **Test and launch your setup**. Push your connections to a production environment and verify that events flow as expected through the debugger. After you're done, your Segment instance is up and running.
