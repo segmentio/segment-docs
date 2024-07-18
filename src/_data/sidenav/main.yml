@@ -150,7 +150,7 @@ sections:
       title: Cloud Sources
     - path: /connections/sources/debugger
       title: Source Debugger
-    - path: /connections/sources/custom-domains
+    - path: /connections/sources/custom-domain
       title: Custom Domains
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
