@@ -7,6 +7,9 @@ The Segment HTTP Tracking API lets you record analytics data from any website or
 
 Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
 
+> info "HTTP API sources in EU workspaces should use the `events.eu1.segmentapis.com` endpoint"
+> If you are located in the EU and use the `https://api.segment.io/v1/` endpoint, you might not see any errors, but your events will not appear in the Segment app. For more information about regional support, see the [Source Regional support](/docs/guides/regional-segment/#source-regional-support) documentation. 
+
 ## Headers
 
 ### Authentication
