@@ -151,7 +151,7 @@ sections:
     - path: /connections/sources/debugger
       title: Source Debugger
     - path: /connections/sources/custom-domains
-      title: Set Up a Custom Domain Proxy in Segment
+      title: Custom Domains
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema
