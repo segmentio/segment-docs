@@ -69,24 +69,86 @@ As you're building your Linked Audience, you can choose from the following profi
 | part of an [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are part of an existing audience. |
 | not part of an [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing |
 | that performed [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.|
-| that did not performed [event](/docs/glossary/#event)         | Creates a condition that filters profiles that do not have a specific event in their event history. You can also filter on event property values.|
+| that did not performed [event](/docs/glossary/#event)         | Creates a condition that filters profiles that do not have a specific event in the event history. You can also filter on event property values.|
 
 **Note:** you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth. 
 
 ### Linked Audience advanced profiles conditions 
 
-|Advanced Conditions                 |Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|Overview Page                         |View relevant compute information on the Overview Page (profiles in audience, run schedule, latest run status, next compute).
-|Edit / Delete Audience                | - Users can delete their rETL audience from the Overview page. Users can edit and save their previously created rETL audience on the Builder tab of the Overview page. If you edit an audience with configured activation events, you may need to disable or delete impacted events in order for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|Operator Selection                    |Users can create audience definitions using either AND or OR operators across all condition levels. Users can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups. Example:                                                                                                                                                                                                                                                                                                                                                                                      |
-|Event Conditions                      | - at least \> supports 1 or greater,  exactly > supports 0 or greater, at most > supports 0 or greater,  does not support funnel audiences, unlike classic audiences, Users can’t select enrich their event payloads with event properties.
-|Entity Conditions                     | - at least \> only supports 1 or greater, exactly > supports 0 or greater, at most > supports 0 or greater, when filtering by 0, you can’t filter on by entity properties or on additional nested entities.
-|Negative Audiences                    | Negation of an entire entity group condition will not support activation and enrichment on the entities within that condition group. When a condition such as “Select all users associated with an entity with exactly 0 instances” is used:  We will not allow any entity property filters to be applied to this condition group. We will not allow any more nested entities to be specified in this condition group                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|Entity Explorer                       | - If users have defined entity conditions in their audience definition, then they will see a “Matched Entities” tab in the audience preview in the creation flow that will help them understand what entities qualified that user to be a part of the audience when they preview the audience. This contextual information should appear when a user clicks into the user profile generated from the audience preview when configuring audiences. The contextual information a user sees in the Preview UI encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. We’re truncating the data that is being returned to us from Compute - 10 entities at each level, 6 levels of depth. By default, users will  be opted-in and will see entity preview values through a flag (for Hybrid Spaces). If the customer wants to opt out of this functionality, then they will need to request the flag to be turned off.
-|Dynamic References                    |Event Conditions - For event property values, users can either enter a Constant or dynamically reference a profile trait from the Segment profile. - When filtering on event properties, users can dynamically reference the value of another profile trait, or enter a constant value. Entity Conditions - When filtering on entity properties, users can dynamically reference the value of another entity column (from the same branch at the same level or above it) or profile trait, or enter a constant value.                                                                                                      |
-|Limits                                | Auto-populate Dropdown Entity Property Values - You can select property values from a drop-down so they don’t need to type in the exact value they want to filter their condition on.  - By default, users will  be opted-in and will see entity preview values through a flag (for Hybrid Spaces). If the customer wants to opt out of this functionality, then they will need to request the flag to be turned off.                                                                                                        |
-|Duplicate Conditions & Clone Audiences| - Users can duplicate their conditions in the audience builder in the same condition group. - Users can clone a rETL audience to the same Space from the List and Overview pages.  - Cloning a linked audience will create a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned. |
+The Audience builder returns the portion of values from the data warehouse or incoming data stream that are the most commonly used, including some entity and event properties. However, if you don’t see the value you’re looking for, you can manually enter it.
+
+Segment sources profile trait and event keys surfaced in the linked audience builder from the data warehouse and not from the Segment profile. This means that the data you want to reference has to be synced to  the data warehouse through Profiles Sync before you can reference it in the linked audience builder, even if it already exists on the Segment profile.
+
+#### Overview
+
+You can view relevant audience information on the Overview page (Profiles in Audience, Run Schedule, Latest run, Next compute).
+
+#### Edit/Delete Audience
+
+You can delete your Linked Audience from the Overview page. 
+You can edit and save your previously created rETL audience on the Builder tab of the Overview page.
+
+If you edit an audience with configured activation events, you may need to disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
+
+#### Operator Selection
+
+You can create audience definitions using either `AND` or `OR` operators across all condition levels. You can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups.
+
+**Example:**
+
+![An example of the operator selection filled out.](docs/engage/images/operator_selection.png)
+
+#### Event Conditions
+
+- *at least*: supports 1 or greater.
+- *exactly*: supports 0 or greater.
+- *at most*: supports 0 or greater.
+- does not support funnel audiences, unlike classic audiences.
+- can’t select enrich event payloads with event properties.
+
+#### Entity Conditions
+
+- *at least*: only supports 1 or greater
+- *exactly*: supports 0 or greater
+- *at most*: supports 0 or greater
+    - When filtering by 0, you can’t filter by entity properties or by additional nested entities.
+
+#### Negative Audiences
+
+Negation of an entire entity group condition will not support activation and enrichment on the entities within that condition group. When a condition such as “Select all users associated with an entity with exactly 0 instances” is used:
+
+- Segment won't allow any entity property filters to be applied to this condition group. 
+- Segment won't allow any more nested entities to be specified in this condition group.
+
+#### Entity Explorer
+
+If you have defined entity conditions in your audience definition, then you see a “Matched Entities” tab in the audience preview that helps define what entities qualified that user to be a part of the audience.
+
+This information appears when you click the user profile generated from the audience preview. The information encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. The data being returned is truncated - 10 entities at each level, 6 levels of depth. By default, you are opted-in to see entity preview values.
+
+![A screenshot of the Entity Eplorer.](docs/engage/images/entity_explorer.png)
+
+#### Dynamic References
+
+**Event Conditions**
+
+For event property values, you can either enter a Constant or dynamically reference a profile trait from the Segment profile.
+When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value.
+
+**Entity Conditions**
+
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same branch at the same level or above it) or profile trait, or enter a constant value.
+
+#### Limits
+
+**Auto-populate Dropdown Entity Property Values**
+
+You can select property values from a drop-down. By default, you are opted-in to see entity preview values.
+
+#### Duplicate Conditions & Clone Audiences
+
+You can duplicate your conditions in the audience builder in the same condition group.
+You can clone a rETL audience to the same Space from the List and Overview pages. Cloning a linked audience will create a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
 
 ## Step 2: Activate your Linked Audience
 
