@@ -96,7 +96,7 @@ You can create audience definitions using either `AND` or `OR` operators across 
 
 **Example:**
 
-![An example of the operator selection filled out.](docs/engage/images/operator_selection.png)
+![An example of the operator selection filled out.](/docs/engage/images/operator_selection.png)
 
 #### Event Conditions
 
@@ -126,7 +126,7 @@ If you have defined entity conditions in your audience definition, then you see 
 
 This information appears when you click the user profile generated from the audience preview. The information encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. The data being returned is truncated - 10 entities at each level, 6 levels of depth. By default, you are opted-in to see entity preview values.
 
-![A screenshot of the Entity Eplorer.](docs/engage/images/entity_explorer.png)
+![A screenshot of the Entity Eplorer.](/docs/engage/images/entity_explorer.png)
 
 #### Dynamic References
 
