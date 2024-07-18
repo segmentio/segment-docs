@@ -108,9 +108,9 @@ You can create audience definitions using either `AND` or `OR` operators across 
 
 #### Entity Conditions
 
-- *at least*: only supports 1 or greater
-- *exactly*: supports 0 or greater
-- *at most*: supports 0 or greater
+- *at least*: only supports 1 or greater.
+- *exactly*: supports 0 or greater.
+- *at most*: supports 0 or greater.
     - When filtering by 0, you can’t filter by entity properties or by additional nested entities.
 
 #### Negative Audiences
