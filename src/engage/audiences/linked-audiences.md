@@ -128,11 +128,11 @@ This information appears when you click the user profile generated from the audi
 
 ![A screenshot of the Entity Eplorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic References
+#### Dynamic references
 
 **Event Conditions**
 
-For event property values, you can either enter a Constant or dynamically reference a profile trait from the Segment profile.
+For event property values, you can either enter a constant or dynamically reference a profile trait from the Segment profile.
 When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value.
 
 **Entity Conditions**
@@ -145,7 +145,7 @@ When filtering on entity properties, you can dynamically reference the value of 
 
 You can select property values from a drop-down. By default, you are opted-in to see entity preview values.
 
-#### Duplicate Conditions & Clone Audiences
+#### Duplicate conditions and clone audiences
 
 You can duplicate your conditions in the audience builder in the same condition group.
 You can clone a rETL audience to the same Space from the List and Overview pages. Cloning a linked audience will create a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
