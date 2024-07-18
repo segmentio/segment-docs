@@ -10,7 +10,7 @@ Once the Segment library is integrated with your product, toggle Planhat on in y
 
 The Segment Planhat destination is 100% handled through our servers, so you don't need to bundle their iOS or Android SDKs. Your Segment SDK will be enough.
 
-Planhat supports the `identify`, `page`, and `track` methods at the moment.
+Planhat supports the `identify`, `page`, `track`, and `group` methods at the moment.
 
 - - -
 
