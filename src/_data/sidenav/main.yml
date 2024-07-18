@@ -152,6 +152,8 @@ sections:
       title: Source Debugger
     - path: /connections/sources/custom-domain
       title: Custom Domains
+    - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+      title: Custom Proxy
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema

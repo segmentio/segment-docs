@@ -4,7 +4,9 @@ plan: custom-domain
 hidden: true
 ---
 
-Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS to track event requests through your domain (for example, cdp.mydomain.com), instead of tracking events through Segment's default domain (segment.com). Tracking events through your domain lets you reclaim some of the first-party data lost to end user ad-blockers and browser privacy controls that block Segment's default domain. With more complete first-party data comes a more complete view of your customer's behaviors, and can lead to more robust profiles, more accurate attribution, and, ultimately, greater ROAS. 
+Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS to track event requests through your domain (for example, cdp.mydomain.com), instead of tracking events through Segment's default domain (segment.com). Tracking events through your domain lets you reclaim some of the first-party data lost to end user ad-blockers and browser privacy controls that block Segment's default domain. With complete first-party data comes a more complete view of your customer's behaviors, and can lead to more robust profiles, more accurate attribution, and, ultimately, greater ROAS. 
+
+![A graphic that shows how Internet traffic moves back and forth from your domain, to your custom domain, then to Segment's CDN and Ingest APIs.](images/custom-domain.png)
 
 > success ""
 > Segment recommends configuring Custom Domain alongside [Consent Management](/docs/privacy/consent-management/) to ensure you are respectful of your end users' consent preferences.
@@ -65,7 +67,7 @@ To configure Custom Domain:
 ## FAQ
 
 ### What sources can I use with Custom Domain?
-Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive data collection from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
+Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
 Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for you to copy-paste into the header of your website. For non-JavaScript sources, you can use the sub-domain as an endpoint when using the Tracking API.
 
