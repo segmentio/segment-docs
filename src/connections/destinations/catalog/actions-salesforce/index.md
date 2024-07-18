@@ -156,10 +156,15 @@ Please note this is only a concern when using the `create` operation. You can us
 ### How does Salesforce Bulk API work?
 When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 1000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
 
+> info ""
+> To monitor Bulk API uploads in Salesforce, search for 'Bulk Data Load Jobs' in the Quick Find box, then select **Bulk Data Load Jobs**. This will redirect you to the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page (Environment > Jobs > Bulk Data Load Jobs), where you can view the progress of current jobs, along with success and error messages for recent Bulk V2 operations.
+
 For bulk `update`, if a record in a batch is missing a Bulk Update Record ID, Segment will still send it to Salesforce. Salesforce will reject the individual record because it will be unable to find a record to update. Other records in the batch that are valid will still be processed. Please note that Segment's Event Delivery tab will show the entire batch as successful as Segment cannot currently break down Event Delivery stats into individual failed/passed events.
 
 ### Which fields are supposed to map to Salesforce’s required fields for "Bulk Update Record ID" and "Bulk Upsert External ID"?
 
 For "Bulk Update Record ID", see [Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000385008&type=1){:target="_blank"}.
-For "Bulk Upsert External ID", see[Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000383278&type=1){:target="_blank"}.
+For "Bulk Upsert External ID", see [Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000383278&type=1){:target="_blank"}.
 
+> warning ""
+> The field mapped to Bulk Upsert External Id should **not** be included in the Other Fields mapping. Including it as a custom field will cause an error in Salesforce. Although the Bulk API may return successful responses, the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page in Salesforce will display error messages for failed operations.
