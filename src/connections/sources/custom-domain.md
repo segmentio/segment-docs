@@ -85,3 +85,8 @@ Segment does not recommended that you change the subdomain after the initial set
 Segment hosts and manages SSL Certificate on the Custom Domain. At this time, Segment does not support importing a certificate you may already have, as Segment must request a SSL certificate on your behalf using AWS Certificate Manager (ACM) when initially setting up your Custom Domain. 
 
 Segment also uses AWS Certificate Manager (ACM) to manage and renew certificates.
+
+### Can you rename `window.analytics` with Custom Domain?
+Yes, Custom Domain allows Segment to rename `window.analytics` to a unique name to avoid being blocked by certain ad blocking software. 
+
+Customers who have access to the Custom Domain feature can rename analytics to `<workspaceid>/<sourceid>.js` by choosing an Alias for analytics.js within the source settings that will be available after the workspace is enabled for Custom Domain: 
