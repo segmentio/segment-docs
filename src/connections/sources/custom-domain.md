@@ -4,7 +4,7 @@ plan: custom-domain
 hidden: true
 ---
 
-Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS to track event requests through your domain (for example, cdp.mydomain.com), instead of tracking events through Segment's default domain (segment.com). Tracking events through your domain lets you reclaim some of the first-party data lost to end user ad-blockers and browser privacy controls that block Segment's default domain. With complete first-party data comes a more complete view of your customer's behaviors, and can lead to more robust profiles, more accurate attribution, and, ultimately, greater ROAS. 
+Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS to track event requests through your domain (for example, `cdp.mydomain.com`), instead of tracking events through Segment's default domain (`segment.com`). Tracking events through your domain lets you reclaim some of the first-party data lost to end user ad-blockers and browser privacy controls that block Segment's default domain. With complete first-party data comes a more complete view of your customer's behaviors, and can lead to more robust profiles, more accurate attribution, and, ultimately, greater ROAS. 
 
 ![A graphic that shows how Internet traffic moves back and forth from your domain, to your custom domain, then to Segment's CDN and Ingest APIs.](images/custom-domain.png)
 
@@ -62,7 +62,7 @@ To configure Custom Domain:
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN. 
-6. Update your Javascript snippet to reference the new subdomains or use the new Tracking API custom domain as your endpoint for server library sources. 
+6. Update your JavaScript snippet to reference the new subdomains or use the new Tracking API custom domain as your endpoint for server library sources. 
 
 ## FAQ
 
@@ -89,4 +89,4 @@ Segment also uses AWS Certificate Manager (ACM) to manage and renew certificates
 ### Can you rename `window.analytics` with Custom Domain?
 Yes, Custom Domain allows Segment to rename `window.analytics` to a unique name to avoid being blocked by certain ad blocking software. 
 
-Customers who have access to the Custom Domain feature can rename analytics to `<workspaceid>/<sourceid>.js` by choosing an Alias for analytics.js within the source settings that will be available after the workspace is enabled for Custom Domain: 
+Customers who have access to the Custom Domain feature can rename analytics to `<workspaceid>/<sourceid>.js` by choosing an Alias for Analytics.js within the source settings that will be available after the workspace is enabled for Custom Domain: 
