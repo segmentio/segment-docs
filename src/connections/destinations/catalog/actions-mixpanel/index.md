@@ -137,6 +137,10 @@ To send Track events with a custom Group Key, include the key as a property of T
 ```js
 analytics.track('Example Event', { custom_group_key : 'group1' });
 ```
+### Group properties are not attributed to Mixpanel Groups
+
+If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `Group` events have the field for **Group ID** mapped to a valid value and the field for **Group Key** is left blank or without value. By default, the field **Group ID** is map to the event variable `groupId` and leaving the field for **Group Key** as blank will use $group_id as the group key. 
+
 ### Failed events due to timestamp
 
 If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
