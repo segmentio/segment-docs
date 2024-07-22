@@ -5,8 +5,8 @@ plan: unify
 hidden: true
 ---
 
-> info "Linked Profiles is in public beta"
-> Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Linked Audiences is in public beta"
+> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 On this page, you'll learn how to connect your Databricks data warehouse to the Segment Data Graph. 
 
