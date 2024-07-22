@@ -60,4 +60,3 @@ The **Taboola (Actions)** destination supports syncing Audiences to Taboola usin
 ![Device ID config for android.id and ios.id identifiers](images/device_id_identifier_config.png)
 
 {% include components/actions-fields.html %}
-   
