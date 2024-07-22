@@ -12,7 +12,7 @@ const {
 
 require('dotenv').config();
 
-const PAPI_URL = "https://api.segmentapis.build";
+const PAPI_URL = "https://api.segmentapis.com";
 
   // Function to remove hidden fields from action
 const removeHiddenFields=function (actions) {
