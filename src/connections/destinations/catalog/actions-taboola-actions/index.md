@@ -1,5 +1,7 @@
 ---
-title: Taboola Actions Destination
+title: Taboola (Actions) Destination
+id: 66684ba89c0523461d8bb7f3
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -57,4 +59,5 @@ The **Taboola (Actions)** destination supports syncing Audiences to Taboola usin
 2. Ensure that both the `android.id` and `ios.id` identifiers are configured exactly as per the image below. This configuration step takes place when the Destination is being connected to an Audience. 
 ![Device ID config for android.id and ios.id identifiers](images/device_id_identifier_config.png)
 
+{% include components/actions-fields.html %}
    
