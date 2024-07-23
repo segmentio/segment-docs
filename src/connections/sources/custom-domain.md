@@ -1,5 +1,5 @@
 ---
-title: Custom Domain
+title: Segment-Managed Custom Domain
 plan: custom-domain
 hidden: true
 ---
@@ -11,11 +11,7 @@ Custom Domain is a fully-managed service that enables you to configure a first-p
 > success ""
 > Segment recommends configuring Custom Domain alongside [Consent Management](/docs/privacy/consent-management/) to ensure you are respectful of your end users' consent preferences.
 
-## Compare Segment's domain delegation solutions
-
-Segment has two domain delegation solutions: 
-- **Custom Domain**: Uses a DNS subdomain that you delegate to Segment 
-- **[Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/)**: Uses a Canonical Name (CNAME) to map an alias name to a true or 'canonical' domain name. The CNAME record allows you to alias one domain name to another. You create a CNAME record to alias a subdomain that points to the Segment domain.
+{% include content/domain-delegation-solutions.md %}
 
 ### How DNS subdomain delegation works
 DNS subdomain delegation is a process where the control of a specific subdomain is assigned to another DNS server, allowing that server to manage the DNS records for the subdomain. This delegation is useful for distributing the management of DNS records and enables specialized handling of subdomain traffic.
