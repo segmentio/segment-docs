@@ -37,7 +37,7 @@ The following Databricks integrations support PrivateLink:
 Before you can configure AWS PrivateLink for RDS Postgres, complete the following prerequisites in your Databricks workspace:
 - **Set up a Network Load Balancer (NLB) to route traffic to your Postgres database**: Segment recommends creating a NLB that has target group IP address synchronization, using a solution like AWS Lambda. 
 - **Configure your NLB with one of the following settings**: 
-  - Disable the **Enforce inbound rules on PrivateLink traffic** setting (Preferably)
+  - Preferably, disable the **Enforce inbound rules on PrivateLink traffic** setting
   - Alternatively, add an inbound rule that allows traffic belonging to Segment's PrivateLink/Edge CIDR: `10.0.0.0/8`
 
 ### Configure PrivateLink for RDS Postgres
@@ -45,7 +45,7 @@ Before you can configure AWS PrivateLink for RDS Postgres, complete the followin
 2. Reach out to your Customer Success Manager (CSM) for more details about Segment's AWS principal.
 3. Add the Segment AWS principal as an “Allowed Principal” to consume the Network Load Balancer VPC endpoint service you created in step 1.
 4. Reach out to your CSM and provide them with the Service name for the service that you created above. Segment's engineering team provisions a VPC endpoint for the service in the Segment Edge VPC. 
-5. After creating the VPC, Segment provides you with private DNS so you can update the **Host** in your Segment app settings or create a new Postgres integration. <br> The following RDS Postgres integrations support PrivateLink: 
+5. After creating the VPC endpoint, Segment provides you with private DNS so you can update the **Host** in your Segment app settings or create a new Postgres integration. <br> The following RDS Postgres integrations support PrivateLink: 
   - [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
   - [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
 
@@ -59,7 +59,7 @@ Before you can configure AWS PrivateLink for RDS Postgres, complete the followin
 ### Configure PrivateLink for Redshift
 Implement Segment's PrivateLink integration by taking the following steps:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
-2. After you receive the Edge account and VPC, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html){:target="_blank”}.
+2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html){:target="_blank”}.
 3. Reach back out to your CSM and provide them with the Cluster identifier for your cluster and your AWS account ID. 
 4. Segment creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
 5. After Segment provides you with the URL, use it to update or create new Redshift integrations. The following integrations support PrivateLink: 
