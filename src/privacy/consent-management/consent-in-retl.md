@@ -69,7 +69,7 @@ To identify consent when building your model:
 11. Select **Add consent mapping** to identify columns for all of your consent categories. 
 12. When you're satisfied with your consent mappings, click **Save**. 
 
-### Update your Reverse ETL mode to include consent
+### Update your Reverse ETL model to include consent
 To update an existing Reverse ETL model to include consent enforcement:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the source and the model you want to edit.
