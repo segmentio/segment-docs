@@ -82,40 +82,38 @@ You can only create nested entity conditions up to **six** levels in depth. For 
 
 As you're building your Linked Audience, you can choose from the following profiles conditions:
 
+
 | Profiles Conditions     | Description                           |
+
 |---------------------------|---------------------------------------|
-| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. 
-<ul>
 
-<li><em>at least</em>: supports 1 or greater
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.
 
-<li><em>exactly:</em> supports 0 or greater*
-
-<li><em>at most:</em> supports 0 or greater*
-</li>
-</ul>
-<p>
-* When filtering by 0, you can’t filter on by entity properties or on additional nested entities. 
-</p>
-| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). 
-| with [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles with a specific trait. |
-| without [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles without a specific trait. |
-| part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are part of an existing audience. |
-| not part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing audience. |
-| with [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values. 
-
-<p>
 The event condition type supports these configurations:
-</p>
-<ul>
 
-<li><em>at least</em>: supports 1 or greater
+* _at least_: supports 1 or greater
+* _exactly:_ supports 0 or greater*
+* _at most:_ supports 0 or greater*
 
-<li><em>exactly:</em> supports 0 or greater
+* When filtering by 0, you can’t filter on by entity properties or on additional nested entities. 
 
-<li><em>at most:</em> supports 0 or greater
-</li>
-</ul>
+| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+
+| with [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles with a specific trait. |
+
+| without [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles without a specific trait. |
+
+| part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are part of an existing audience. |
+
+| not part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing audience. |
+
+| with [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.
+
+The event condition type supports these configurations:
+
+* _at least_: supports 1 or greater
+* _exactly:_ supports 0 or greater
+* _at most:_ supports 0 or greater
 
 | without [event](/docs/glossary/#event)         | Creates a condition that filters profiles that do not have a specific event in their event history. You can also filter on event property values.|
 
