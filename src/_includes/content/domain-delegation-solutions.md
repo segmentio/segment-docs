@@ -1,6 +1,6 @@
 ## Segment's domain delegation solutions
 
-Segment offers two domain delegation solutions: [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy) and [Custom Domain](/docs/connections/sources/custom-domain). If you use Custom Domain, you can choose to use either DNS delegation or a Cannonical Name (CNAME). Segment recommends using Custom Domain with DNS delegation, as Segment manages the SSL certificates for your subdomain, which leads to continuous security monitoring of your subdomain, easy setup, and no long-term maintenance. 
+Segment offers two domain delegation solutions: [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy) and [Custom Domain](/docs/connections/sources/custom-domain). If you use Custom Domain, you can choose to use either DNS delegation or a Cannonical Name (CNAME). Segment recommends using Custom Domain with DNS delegation, which leads to easy setup, maintenance, and monitoring. 
 
 | Service | How it works | Infrastructure management | Availability |
 | ------- | ------------ | ------------------------- | ------------ | 

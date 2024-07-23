@@ -21,6 +21,8 @@ When a user tries to access the alias domain, the DNS resolver looks up the CNAM
 
 CNAME records provide flexibility and centralized management, making it easier to handle domain redirections and subdomain configurations. 
 
+Implementing a Custom Domain using CNAME delegation requires you to add a CNAME and record for two domains that Segment generates on your behalf: one for the Segment CDN and a second for the Tracking API. You must add a CNAME and DNS record for both domains. 
+
 ## Supported sources
 
 Custom Domain supports the following sources: 
@@ -37,7 +39,7 @@ Custom Domain supports the following sources:
 ## Getting started
 
 > info "Custom Domain is only available to Business Tier customers"
-> Customers not on the Business Tier but who have interest in Custom Domain should [contact Segment's sales team](https://segment.com/demo/){:target="_blank”} for assistance with upgrading to a Business Tier plan. Segment also offers an alternative DNS record service, [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/), which uses a Canonical Name (CNAME) and only works with Analytics.js sources.
+> Customers not on the Business Tier but who have interest in Custom Domain should [contact Segment's sales team](https://segment.com/demo/){:target="_blank”} for assistance with upgrading to a Business Tier plan. Segment also offers an alternative DNS record service, [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/).
 
 To configure Custom Domain:
 1. Select the subdomain you'd like Segment to use for event request tracking (for example, `cdp.domain.com`).
