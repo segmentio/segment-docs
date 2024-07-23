@@ -56,39 +56,58 @@ To build a Linked Audience:
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
-### Linked Audience profiles conditions 
+### Maintaining Linked Audiences 
+
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. It will not be running against your data warehouse and no events are being sent to destinations. 
+
+On the Overview page, can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
+
+If you edit an audience with configured activation events, should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
+
+You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+
+### Linked Audience conditions 
+
+The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse (through Profiles Sync) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile but hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
+
+If you don’t see the value you’re looking for, you can manually enter it into the input field. Segment displays 
+the first 100 unique string entity property values from the data warehouse
+If you want to opt out of displaying entity property values from the data warehouse, please contact Support.
+the top 65 event property and context key values
+the top 65 profile trait key values
+
+The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down so that you don’t need to type in the exact value that you want to filter on.
+
+You can only create nested entity conditions up to **six** levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
 
 As you're building your Linked Audience, you can choose from the following profiles conditions:
 
 | Profiles Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full nested entity relationship and filter your audience on entity column values. 
-| not associated with an entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). 
-| with [profile trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles with a specific trait. |
-| without [profile trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles without a specific trait. |
-| part of an [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are part of an existing audience. |
-| not part of an [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing |
-| that performed [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.|
-| that did not performed [event](/docs/glossary/#event)         | Creates a condition that filters profiles that do not have a specific event in the event history. You can also filter on event property values.|
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. 
 
-**Note:** you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth. 
+The event condition type supports these configurations:
+at least: supports 1 or greater
+exactly: supports 0 or greater*
+at most: supports 0 or greater*
 
-### Linked Audience advanced profiles conditions 
+* When filtering by 0, you can’t filter on by entity properties or on additional nested entities. 
 
-The Audience builder returns the portion of values from the data warehouse or incoming data stream that are the most commonly used, including some entity and event properties. However, if you don’t see the value you’re looking for, you can manually enter it.
+| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+| with [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles with a specific trait. |
+| without [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles without a specific trait. |
+| part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are part of an existing audience. |
+| not part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing audience. |
+| with [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.
 
-Segment sources profile trait and event keys surfaced in the linked audience builder from the data warehouse and not from the Segment profile. This means that the data you want to reference has to be synced to  the data warehouse through Profiles Sync before you can reference it in the linked audience builder, even if it already exists on the Segment profile.
+The event condition type supports these configurations:
+at least: supports 1 or greater
+exactly: supports 0 or greater
+at most: supports 0 or greater
 
-#### Overview
+| without [event](/docs/glossary/#event)         | Creates a condition that filters profiles that do not have a specific event in their event history. You can also filter on event property values.|
 
-You can view relevant audience information on the Overview page (Profiles in Audience, Run Schedule, Latest run, Next compute).
-
-#### Edit/Delete Audience
-
-You can delete your Linked Audience from the Overview page. 
-You can edit and save your previously created rETL audience on the Builder tab of the Overview page.
-
-If you edit an audience with configured activation events, you may need to disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
+You can also duplicate your conditions in the audience builder into the same condition group.
 
 #### Operator Selection
 
@@ -98,57 +117,29 @@ You can create audience definitions using either `AND` or `OR` operators across 
 
 ![An example of the operator selection filled out.](/docs/engage/images/operator_selection.png)
 
-#### Event Conditions
-
-- *at least*: supports 1 or greater.
-- *exactly*: supports 0 or greater.
-- *at most*: supports 0 or greater.
-- does not support funnel audiences, unlike classic audiences.
-- can’t select enrich event payloads with event properties.
-
-#### Entity Conditions
-
-- *at least*: only supports 1 or greater.
-- *exactly*: supports 0 or greater.
-- *at most*: supports 0 or greater.
-    - When filtering by 0, you can’t filter by entity properties or by additional nested entities.
-
-#### Negative Audiences
-
-Negation of an entire entity group condition will not support activation and enrichment on the entities within that condition group. When a condition such as “Select all users associated with an entity with exactly 0 instances” is used:
-
-- Segment won't allow any entity property filters to be applied to this condition group. 
-- Segment won't allow any more nested entities to be specified in this condition group.
-
 #### Entity Explorer
 
-If you have defined entity conditions in your audience definition, then you see a “Matched Entities” tab in the audience preview that helps define what entities qualified that user to be a part of the audience.
+If you have defined entity conditions in your audience definition, then you will see a “Matched Entities” tab in the audience preview that helps define what entities qualified that user to be a part of the audience.
 
-This information appears when you click the user profile generated from the audience preview. The information encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. The data being returned is truncated - 10 entities at each level, 6 levels of depth. By default, you are opted-in to see entity preview values.
+This information appears when you click the user profile generated from the audience preview. The contextual information  encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, we include the entity ID.The data being returned is truncated - 10 entities at each level, 6 levels of depth. If you want to opt out of this functionality, contact Support.
+
 
 ![A screenshot of the Entity Eplorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic references
+#### Dynamic References
 
 **Event Conditions**
 
-For event property values, you can either enter a constant or dynamically reference a profile trait from the Segment profile.
-When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value.
+When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value. These operators support dynamic references:
+equals, not equals, less than, greater than, less than or equal, greater than or equal, contains, does not contain, starts with, ends with.
 
 **Entity Conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same branch at the same level or above it) or profile trait, or enter a constant value.
-
-#### Limits
-
-**Auto-populate Dropdown Entity Property Values**
-
-You can select property values from a drop-down. By default, you are opted-in to see entity preview values.
-
-#### Duplicate conditions and clone audiences
-
-You can duplicate your conditions in the audience builder in the same condition group.
-You can clone a rETL audience to the same Space from the List and Overview pages. Cloning a linked audience will create a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same branch at the same level or above it),profile trait, or enter a constant value.
+You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
+NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
+STRING data type: equals, not equals, contains, does not contain, starts with, ends with
+TIMESTAMP data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
 
 ## Step 2: Activate your Linked Audience
 
