@@ -21,12 +21,6 @@ When a user tries to access the alias domain, the DNS resolver looks up the CNAM
 
 CNAME records provide flexibility and centralized management, making it easier to handle domain redirections and subdomain configurations. 
 
-### Benefits of Custom Domain over Custom Proxy
-- **Automatic SSL management**: Segment manages the SSL certificates for your subdomain, ensuring secure communication.
-- **Continuous monitoring**: Segment has security monitors in place, ensuring a quick responses to any issues.
-- **Easy setup**: Segment handles all DNS changes, so you have to complete minimal additional work.
-- **No maintenance**: Segment handles all ongoing infrastructure management.
-
 ## Supported sources
 
 Custom Domain supports the following sources: 
