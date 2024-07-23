@@ -19,7 +19,7 @@ Before you can configure AWS PrivateLink for Databricks, complete the following 
 - Databricks account must be on the [Enterprise pricing tier](https://www.databricks.com/product/pricing/platform-addons){:target="_blank”} and use the [E2 version](https://docs.databricks.com/en/archive/aws/end-of-life-legacy-workspaces.html#e2-architecture){:target="_blank”} of the platform. 
 - Databricks workspace must use a [Customer-managed VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} and [Secure cluster connectivity](https://docs.databricks.com/en/security/network/classic/secure-cluster-connectivity.html){:target="_blank”}.
   - Configure your [VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} with DNS hostnames and DNS resolution
-  - Configure a [security group](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html#security-groups){:target="_blank”} with bidirectional access to 0.0.0/0 and ports 443, 3306, 6666, 2443, and 8443-8451. 
+  - Configure a [security group](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html#security-groups){:target="_blank”} with bidirectional access to 0.0.0.0/0 and ports 443, 3306, 6666, 2443, and 8443-8451. 
 
 ### Configure PrivateLink for Databricks
 To configure PrivateLink for Databricks:
@@ -37,8 +37,8 @@ The following Databricks integrations support PrivateLink:
 Before you can configure AWS PrivateLink for RDS Postgres, complete the following prerequisites in your Databricks workspace:
 - **Set up a Network Load Balancer (NLB) to route traffic to your Postgres database**: Segment recommends creating a NLB that has target group IP address synchronization, using a solution like AWS Lambda. 
 - **Configure your NLB with one of the following settings**: 
-  - Disable the **Enforce inbound rules on PrivateLink traffic** setting
-  - Add an inbound rule that allows traffic belonging from Segment's `us-east-1` PrivateLink/Edge CIDR: `10.248.64.0/18`
+  - Disable the **Enforce inbound rules on PrivateLink traffic** setting (Preferably)
+  - Alternatively, add an inbound rule that allows traffic belonging to Segment's PrivateLink/Edge CIDR: `10.0.0.0/8`
 
 ### Configure PrivateLink for RDS Postgres
 1. Create a Network Load Balancer VPC endpoint service using the instructions in the [Create a service powered by AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html){:target="_blank”} documentation. 
