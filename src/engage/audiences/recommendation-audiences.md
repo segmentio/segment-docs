@@ -2,7 +2,7 @@
 title: Recommendation Audiences
 plan: engage-foundations
 ---
-Recommendation Audiences lets you select a parameter and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Recommendation Audiences for user-based commerce, media, and content affinity use cases. 
+Recommendation Audiences lets you select an item in your catalog and then build an audience of the people that are most likely to engage with it. You can optimize the personalized recommendations built by Recommendation Audiences for user-based commerce, media, and content affinity use cases. 
 
 You can use Recommendation Audiences to power the following common marketing campaigns: 
 
@@ -16,7 +16,7 @@ You can use Recommendation Audiences to power the following common marketing cam
 ## Create a Recommendation Audience
 
 ### Set up your Recommendation Catalog
-A Recommendation Catalog identifies the product events you'd like to generate recommendations from and maps those events against your existing data set.
+A Recommendation Catalog lets you link products from your external catalog to your Segment events. Segment infers catalog items from the Segment events that you select when setting up your Recommendation Catalog.
 
 To create your Recommendation Catalog:
 1. Open your Engage space and navigate to **Engage** > **Engage Settings** > **Recommendation catalog**. 
@@ -31,7 +31,7 @@ To create your Recommendation Catalog:
 > Segment can take several hours to create your Recommendation Catalog. 
 
 ### Create your Recommendation Audience
-Once you've created your Recommendation Catalog, you can build a Recommendation Audience. A Recommendation Audience lets you select a parameter and then build an audience of the people that are most likely to engage with that parameter. 
+Once you've created your Recommendation Catalog, you can build a Recommendation Audience. A Recommendation Audience lets you select an item from your catalog and then use machine learning to build an audience of the people that are most likely to engage with that item. 
 
 To create a Recommendation Audience: 
 1. Open your Engage space and click **+ New audience**. 
@@ -48,5 +48,4 @@ To create a Recommendation Audience:
 ## Best practices
 
 - When mapping events to the model column during the setup process for your [Recommendation catalog](#set-up-your-recommendation-catalog), select the event property that matches the model column. For example, if you are mapping to model column ‘Brand’, select the property that refers to ‘Brand’ for each of the selected interaction events.
-- Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others. As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
 - As the size of your audience increases, the propensity to purchase typically decreases. For example, an audience of a hundred thousand people that represents the top 5% of your customers might be more likely to purchase your product, but you might see a greater number of total sales if you expanded the audience to a million people that represent the top 50% of your customer base. 
