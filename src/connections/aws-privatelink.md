@@ -36,6 +36,7 @@ The following Databricks integrations support PrivateLink:
 ### Prerequisites
 Before you can configure AWS PrivateLink for RDS Postgres, complete the following prerequisites in your Databricks workspace:
 - **Set up a Network Load Balancer (NLB) to route traffic to your Postgres database**: Segment recommends creating a NLB that has target group IP address synchronization, using a solution like AWS Lambda. 
+If any updates are made to the AZs enabled for the NLB, please let the CSM know so that we can make corresponding updates to the VPC endpoint.
 - **Configure your NLB with one of the following settings**: 
   - Preferably, disable the **Enforce inbound rules on PrivateLink traffic** setting
   - Alternatively, add an inbound rule that allows traffic belonging to Segment's PrivateLink/Edge CIDR: `10.0.0.0/8`
