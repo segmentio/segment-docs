@@ -8,9 +8,4 @@ Segment offers two domain delegation solutions: [Custom Proxy](/docs/connections
 | Custom Domain with CNAME | This approach uses a Cannonical Name (CNAME) to map an alias name on your domain name to Analytics.js. It is not limited to Analytics.js and is also compatible with server libraries. | Customers are responsible for maintaining CNAME. <br><br> Possibility of data loss due to browser ad-blocking capabilities. | Business Tier |  
 | Custom Proxy | This approach uses a proxy or wrapper where all data is first collected by a proxy on your domain and then forwarded to Segment. | Customers are responsible for maintaining their own proxy infrastructure. <br><br> Possibility of data loss is there is an issue with proxy and forwarding. | Available to all Segment users. | 
 
-
 <sup>*</sup>_If it's not possible for you to delegate subdomains to Segment, you can use a CNAME instead. Segment encourages users to delegate a DNS subdomain rather than use use CNAME aliasing due to the evolving privacy standards in browsers, but CNAME aliasing remains an option for users not interested in using nameservers._
-
-_Implementing a Custom Domain using CNAME delegation requires you to add a CNAME and record for two domains that Segment generates on your behalf: one for the Segment CDN and a second for the Tracking API. You must add a CNAME and DNS record for both domains._ 
-
-_Customers using CNAME for Custom Domain must generate their own certificates and manage certificate renewals._
