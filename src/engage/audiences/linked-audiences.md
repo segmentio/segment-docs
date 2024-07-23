@@ -85,25 +85,37 @@ As you're building your Linked Audience, you can choose from the following profi
 | Profiles Conditions     | Description                           |
 |---------------------------|---------------------------------------|
 | with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. 
+<ul>
 
-The event condition type supports these configurations:
-at least: supports 1 or greater
-exactly: supports 0 or greater*
-at most: supports 0 or greater*
+<li><em>at least</em>: supports 1 or greater
 
+<li><em>exactly:</em> supports 0 or greater*
+
+<li><em>at most:</em> supports 0 or greater*
+</li>
+</ul>
+<p>
 * When filtering by 0, you can’t filter on by entity properties or on additional nested entities. 
-
+</p>
 | without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). 
 | with [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles with a specific trait. |
 | without [ trait](/docs/unify/#enrich-profiles-with-traits)     | Creates a condition that filters profiles without a specific trait. |
 | part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are part of an existing audience. |
 | not part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing audience. |
-| with [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.
+| with [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values. 
 
+<p>
 The event condition type supports these configurations:
-at least: supports 1 or greater
-exactly: supports 0 or greater
-at most: supports 0 or greater
+</p>
+<ul>
+
+<li><em>at least</em>: supports 1 or greater
+
+<li><em>exactly:</em> supports 0 or greater
+
+<li><em>at most:</em> supports 0 or greater
+</li>
+</ul>
 
 | without [event](/docs/glossary/#event)         | Creates a condition that filters profiles that do not have a specific event in their event history. You can also filter on event property values.|
 
