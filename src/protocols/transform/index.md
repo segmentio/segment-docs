@@ -28,7 +28,7 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
 - **Transformation order:** Segment processes source-scoped transformations before the events reach destination filters. Segment processes destination-scoped transformations after the events pass through destination filters.
 - **Multiple instances of the same destination:** If multiple instances of a destination are connected to a single source, then the same transformation applies across every instance.
-- **Scope of Transformations:** Transformations can be applied to event names, properties, and traits. However, it's important to note that transformations cannot be applied to top-level attributes such as userId.
+- **Transformation scope:** Transformations can be applied to event names, properties, and traits. However, it's important to note that transformations cannot be applied to top-level attributes like userId.
 
 
 ## View all Transformations
