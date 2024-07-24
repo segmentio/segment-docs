@@ -4,7 +4,7 @@ redirect_from: '/connections/sources/custom-domains/'
 strat: ajs
 ---
 
-Custom proxies allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
+Custom proxies allow you to proxy Analytics.js and all tracking event requests through your own domain.
 
 You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination.
 
