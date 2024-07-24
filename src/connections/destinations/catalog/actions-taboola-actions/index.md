@@ -8,7 +8,7 @@ beta: true
 
 [Taboola](https://developers.taboola.com/backstage-api/reference/create-a-first-party-audience/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} integration allows you to connect and target your Segment audiences with Taboola.
 
-This destination is maintained by Taboola. For any issues with the destination, contact their Support team or your account manager.
+This destination is maintained by Taboola. For any issues with the destination, contact their [Support team](mailto:support@taboola.com) or your account manager.
 
 ## Getting started
 
