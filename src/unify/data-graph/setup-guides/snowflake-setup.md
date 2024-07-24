@@ -1,4 +1,4 @@
----
+ ---
 title: Snowflake Setup
 plan: unify
 beta: true
@@ -10,7 +10,7 @@ hidden: true
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
-Log in to Snowflake with admin privileges to provide Segment Data Graph with the necessary permissions below.
+Log in to Snowflake with admin privileges to provide Segment Data Graph with the necessary permissions below. 
 
 > info ""
 > Both Linked Events and Data Graph support Snowflake. 
