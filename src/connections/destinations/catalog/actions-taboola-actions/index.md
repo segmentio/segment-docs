@@ -17,8 +17,8 @@ This destination is maintained by Taboola. For any issues with the destination, 
 Before connecting the **Taboola (Actions)** destination you'll need the following:
 1. Your Taboola **Client ID** and **Client Secret** - provided by your Taboola account manager.
 2. **Account ID**: retrieve using one of these options:
-   * [Taboola Ads](https://ads.taboola.com) - Use the account's alphanumeric name without spaces and in lowercase. For example, 'My Account - Name' would become 'myaccountname'
-   * [API](https://developers.taboola.com/backstage-api/reference/get-account-details) - Retrieve Account Details using the Get Account Details API.
+   * [Taboola Ads](https://ads.taboola.com){:target="_blank"} - Use the account's alphanumeric name without spaces and in lowercase. For example, 'My Account - Name' would become 'myaccountname'
+   * [API](https://developers.taboola.com/backstage-api/reference/get-account-details){:target="_blank"} - Retrieve Account Details using the Get Account Details API.
 
 ### Create and Connect the Taboola Destination
 
@@ -46,15 +46,15 @@ The Audience will start to sync to Taboola shortly.
 It takes another 2-5 days for the segment to scale up and become available for targeting/suppression in Taboola Ads.
 
 > info ""
-> To view the audience on the Taboola platform, navigate to the [Taboola Ads audience page](https://ads.taboola.com/audiences), select "Custom Audience" and search for the audience you have just connected.
+> To view the audience on the Taboola platform, navigate to the [Taboola Ads audience page](https://ads.taboola.com/audiences){:target="_blank"}, select "Custom Audience" and search for the audience you have just connected.
 
 ## Supported identifiers
 
 The **Taboola (Actions)** destination supports syncing Audiences to Taboola using either the `email` and/or the `Mobile Device ID`.
-`email` will be automatically included if present. Additional configuration steps are required in order to sync `Mobile Device ID` values. To sync `Mobile Device ID` values ensure the following configuration:  
+`email` will be automatically included if present. Additional configuration steps are required in order to sync `Mobile Device ID` values. To sync `Mobile Device ID` values ensure the following is configured:  
 
-1. Your Engage Space's identity resolution rules will need to be configured for `android.id` and `ios.id` identifiers. This can be configured by navigating to `Unify` >> `Unify Settings`. 
-![Enage ID Resolution Settings with android.id and ios.id configured](images/engage_id_resolution_settings.png)
+1. Configure your Engage Space's identity resolution rules for `android.id` and `ios.id` identifiers by navigating to `Unify` >> `Unify Settings`.
+   ![Enage ID Resolution Settings with android.id and ios.id configured](images/engage_id_resolution_settings.png)
  
 2. Ensure that both the `android.id` and `ios.id` identifiers are configured exactly as per the image below. This configuration step takes place when the Destination is being connected to an Audience. 
 ![Device ID config for android.id and ios.id identifiers](images/device_id_identifier_config.png)
