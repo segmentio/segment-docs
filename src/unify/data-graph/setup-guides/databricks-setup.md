@@ -136,7 +136,7 @@ Segment requires the following settings to connect to your Databricks warehouse.
 - **Service principal client ID**: The client ID used to access to your Databricks warehouse
 - **OAuth secret**: The OAuth secret used to connect to your Databricks warehouse
 
-After identifying the following settings, continue setting up the Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/linked-profiles/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
+After identifying the following settings, continue setting up the Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/data-graph/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
 
 ## Additional set up for warehouse permissions
 
