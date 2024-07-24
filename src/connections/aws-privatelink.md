@@ -38,8 +38,8 @@ Before you can configure AWS PrivateLink for RDS Postgres, complete the followin
 - **Set up a Network Load Balancer (NLB) to route traffic to your Postgres database**: Segment recommends creating a NLB that has target group IP address synchronization, using a solution like AWS Lambda. 
 If any updates are made to the Availability Zones (AZs) enabled for your NLB, please let your CSM know so that Segment can update the AZs of your VPC endpoint.
 - **Configure your NLB with one of the following settings**: 
-  - Preferably, disable the **Enforce inbound rules on PrivateLink traffic** setting
-  - Alternatively, add an inbound rule that allows traffic belonging to Segment's PrivateLink/Edge CIDR: `10.0.0.0/8`
+  - Disable the **Enforce inbound rules on PrivateLink traffic** setting
+  - If you must enforce inbound rules on PrivateLink traffic, add an inbound rule that allows traffic belonging to Segment's PrivateLink/Edge CIDR: `10.0.0.0/8`
 
 ### Configure PrivateLink for RDS Postgres
 1. Create a Network Load Balancer VPC endpoint service using the instructions in the [Create a service powered by AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html){:target="_blank”} documentation. 
