@@ -372,3 +372,7 @@ In case of consecutive failures, Segment sends notifications for every sync fail
 
 #### Can I have multiple queries in the Query Builder?
 No. In Reverse ETL, Segment executes queries in a [common table expression](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#with_clause){:target="_blank”}, which can only bind the results from **one single** subquery. If there are multiple semicolons `;` in the query, they'll be treated as several subqueries (even if the second part is only an inline comment) and cause syntax errors.
+
+#### In Reverse ETL connections, are events that Fail to be sent to the connected Destination Retried?
+
+Currently, Reverse ETL does not include an automatic retry mechanism for events that encounter failures during their attempt to be sent to a destination.
