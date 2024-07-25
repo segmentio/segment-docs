@@ -14,7 +14,7 @@ This destination is maintained by Segment. For any issues with the destination, 
 
 ## Getting started
 
-### Add the destination to your **Engage Space**. 
+### Add the destination to your Engage Space. 
 
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Amazon Ads DSP and AMC".
 2. Select Amazon Ads DSP and AMC and click **Add Destination**.
@@ -43,7 +43,7 @@ This destination is maintained by Segment. For any issues with the destination, 
 2. Click **Add mapping**.
 3. Configure the mapping fields.
 4. Save and enable the mapping.
-5. Complete! When the audience is computed in Segment, you will see the audience created and records delivered to Amazon.
+5. When Segment computes the audience, you can see the created audience and records delivered to Amazon.
 
 {% include components/actions-fields.html %}
 
