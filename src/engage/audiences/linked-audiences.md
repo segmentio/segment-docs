@@ -58,7 +58,7 @@ Optionally, select a folder to add this audience.
 
 ### Maintaining Linked Audiences 
 
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. It will not be running against your data warehouse and no events are being sent to destinations. On the Overview page, can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. It will not be running against your data warehouse and no events are being sent to destinations. On the Overview page, you can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
 
 If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
 
@@ -70,7 +70,7 @@ After creating your Linked Audience, you are brought to the Overview page with t
 
 The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse (through Profiles Sync) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile but hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
-If you don’t see the value you’re looking for, you can manually enter it into the input field. Segment displays 
+If you don’t see the value you’re looking for, you can manually enter it into the input field. Segment displays:
 
 * the first 100 unique string entity property values from the data warehouse
     * If you want to opt out of displaying entity property values from the data warehouse, please contact Support.
