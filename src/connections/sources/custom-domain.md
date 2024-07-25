@@ -4,7 +4,7 @@ plan: custom-domain
 hidden: true
 ---
 
-Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS.  You can then track event requests through your own domain (for example, cdp.mydomain.com), instead of the default (segment.com). Tracking events through your own domain allows for more secure and complete first-party data collection by reclaiming first-party data lost to browser controls. With a more complete view of your customer behaviors, you can build more robust profiles for greater attribution and ROAS.  
+Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS.  You can then track event requests through your own domain (for example, `cdp.mydomain.com`), instead of the default (`segment.com`). Tracking events through your own domain allows for more secure and complete first-party data collection by reclaiming first-party data lost to browser controls. With a more complete view of your customer behaviors, you can build more robust profiles for greater attribution and ROAS.  
 
 
 ![A graphic that shows how Internet traffic moves back and forth from your domain, to your custom domain, then to Segment's CDN and Ingest APIs.](images/custom-domain.png)

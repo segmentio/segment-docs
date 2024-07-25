@@ -6,7 +6,7 @@ strat: ajs
 
 Custom proxies allow you to proxy Analytics.js and all tracking event requests through your own domain.
 
-You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination.
+You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires that the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination.
 
 > info "Business Tier customers can also use Custom Domain"
 > Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS to track event requests through your domain instead of tracking events through Segment's default domain. For more information, see the [Custom Domain](/docs/connections/sources/custom-domain) documentation. 
