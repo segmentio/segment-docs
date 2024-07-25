@@ -58,13 +58,13 @@ Optionally, select a folder to add this audience.
 
 ### Maintaining Linked Audiences 
 
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. It will not be running against your data warehouse and no events are being sent to destinations. 
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. It will not be running against your data warehouse and no events are being sent to destinations. On the Overview page, can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
 
-On the Overview page, can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
-
-If you edit an audience with configured activation events, should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
+If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
 
 You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+
+After creating your Linked Audience, you are brought to the Overview page with the Linked Audience in a disabled state. The audience will not be running against your data warehouse and no events are being sent to destinations. As next steps, add a destination and an activation event to the audience.
 
 ### Linked Audience conditions 
 
@@ -143,8 +143,7 @@ You can create audience definitions using either `AND` or `OR` operators across 
 
 If you have defined entity conditions in your audience definition, then you will see a “Matched Entities” tab in the audience preview that helps define what entities qualified that user to be a part of the audience.
 
-This information appears when you click the user profile generated from the audience preview. The contextual information  encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, we include the entity ID.The data being returned is truncated - 10 entities at each level, 6 levels of depth. If you want to opt out of this functionality, contact Support.
-
+This information appears when you click the user profile generated from the audience preview. The contextual information  encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, Segment includes the entity ID.The data being returned is truncated - 10 entities at each level, 6 levels of depth. If you want to opt out of this functionality, contact Support.
 
 ![A screenshot of the Entity Eplorer.](/docs/engage/images/entity_explorer.png)
 
@@ -228,15 +227,13 @@ These fields are pre-filled with properties that will work by default.
 
 ## Step 3: Send a test event to your destination
 
-Send a test event to ensure that everything is connected properly and your destination receives the event. 
-
-Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**.  
+Send a test event to ensure that everything is connected properly and your destination receives the event. Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**. 
 
 The Event content drop-down shows you a preview of what the data sent to your destination might look like. 
 
 ### Step 3a: Configure your multi-channel marketing campaign 
 
-If you're using a multi-channel marketing tool, set up your email campaign before continuing. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
+If you're using a multi-channel marketing tool, set up your email campaign before enabling your Linked Audience. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
 
 ## Step 4: Enable your Linked Audience
 
