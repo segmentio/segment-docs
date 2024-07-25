@@ -16,7 +16,6 @@ This destination is maintained by Segment. For any issues with the destination, 
 
 ### Add the destination to your **Engage Space**. 
 
-
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Amazon Ads DSP and AMC".
 2. Select Amazon Ads DSP and AMC and click **Add Destination**.
 3. Select the **Engage Space** you'd like to add the destination to.
@@ -37,8 +36,6 @@ This destination is maintained by Segment. For any issues with the destination, 
   - **Description**: The audience description. Must be an alphanumeric, non-null string between 0 to 1000 characters in length.
   - **External Audience ID**: The user-defined audience identifier. This should be a unique, user-defined audience identifier (For example., "audience-id-for-device").
   - **TTL**: Time-to-live, in seconds. The amount of time the record is associated with the audience. Values allowed are 0 .. 34300800 (For example, 2592000 for 30 days, 34300800 for 397 days). 
-
-{% include components/actions-fields.html %}
 
 ### Configure your mappings
 
