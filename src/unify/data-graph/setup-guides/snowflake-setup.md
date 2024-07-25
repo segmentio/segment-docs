@@ -1,4 +1,4 @@
- ---
+---
 title: Snowflake Setup
 plan: unify
 beta: true
