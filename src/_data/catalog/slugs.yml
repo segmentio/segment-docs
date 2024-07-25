@@ -225,4 +225,6 @@ destinations:
     override: "actions-xtremepush"
   - original: "metricstory"
     override: "convertly"
+  - original: "amazon-ads-dsp-and-amc"
+    override: "actions-amazon-amc"
 
