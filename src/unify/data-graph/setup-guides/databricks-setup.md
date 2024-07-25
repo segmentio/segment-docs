@@ -5,8 +5,8 @@ plan: unify
 hidden: true
 ---
 
-> info "Linked Profiles is in public beta"
-> Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Linked Audiences is in public beta"
+> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 On this page, you'll learn how to connect your Databricks data warehouse to the Segment Data Graph. 
 
@@ -136,7 +136,7 @@ Segment requires the following settings to connect to your Databricks warehouse.
 - **Service principal client ID**: The client ID used to access to your Databricks warehouse
 - **OAuth secret**: The OAuth secret used to connect to your Databricks warehouse
 
-After identifying the following settings, continue setting up the Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/linked-profiles/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
+After identifying the following settings, continue setting up the Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/data-graph/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
 
 ## Additional set up for warehouse permissions
 

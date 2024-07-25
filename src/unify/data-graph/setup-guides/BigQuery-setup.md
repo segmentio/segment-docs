@@ -5,8 +5,8 @@ plan: unify
 hidden: true
 ---
 
-> info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+> info "Linked Audiences is in public beta"
+> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 > info ""
 > At this time, you can only use BigQuery with Linked Events. 
@@ -53,6 +53,3 @@ These can be scoped to projects or [datasets](https://cloud.google.com/bigquery/
 
 > info ""
 > To create Linked Events on your listed tables, Segment needs `bigquery.tables.get` and `bigquery.tables.getData` at dataset level. However, you can still scope `bigquery.tables.get` and `bigquery.tables.getData` to specific tables. See BigQuery's [docs](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_table_or_view){:target="_blank"} for more info.
-
-
-

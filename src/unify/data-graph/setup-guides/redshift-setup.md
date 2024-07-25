@@ -5,8 +5,8 @@ plan: unify
 hidden: true
 ---
 
-> info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+> info "Linked Audiences is in public beta"
+> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 > info ""
 > At this time, you can only use Redshift with Linked Events.
