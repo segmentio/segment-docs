@@ -133,6 +133,9 @@ To add your first destination:
 6. Enter the required information on the **Settings** tab of the destination.
 7. Navigate to the destination settings tab and enable the destination. If the destination is disabled, then Segment won't be able to start a sync.
 
+> info "Segment does not count Reverse ETL records filtered by Consent Management toward your Reverse ETL limits"
+> Records filtered out by Consent Management are not counted as part of your Reverse ETL limits. For more information about Reverse ETL limits, see the [Reverse ETL Limits](/docs/connections/reverse-etl/#limits) documentation.
+
 ## Validate your consent mapping
 
 You can validate that you successfully created your consent mapping in Segment Connections or supported Reverse ETL Actions destinations using the following methods. 

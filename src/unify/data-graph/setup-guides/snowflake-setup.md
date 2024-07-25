@@ -5,15 +5,15 @@ beta: true
 hidden: true
 ---
 
-> info "Linked Profiles is in public beta"
-> Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Linked Audiences is in public beta"
+> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
-Log in to Snowflake with admin privileges to provide Segment Linked Profiles with the necessary permissions below.
+Log in to Snowflake with admin privileges to provide Segment Data Graph with the necessary permissions below. 
 
 > info ""
-> Both Linked Events and Linked Profiles support Snowflake. 
+> Both Linked Events and Data Graph support Snowflake. 
  
 ## Required connection settings within Segment
 
@@ -29,15 +29,15 @@ Segment requires the following settings to connect to your Snowflake warehouse.
 
 ## Set up Snowflake credentials
 
-Segment recommends setting up a new Snowflake user and only giving this user permissions to access the required databases and schemas for Segment Linked Profiles.
+Segment recommends setting up a new Snowflake user and only giving this user permissions to access the required databases and schemas.
 
 ### Create Segment user and internal database 
 
 Use the following steps to set up your Snowflake credentials:
 
-- Create a new role and user for Segment Linked Profiles. 
+- Create a new role and user for Segment Data Graph. 
 - Grant the Segment user access to the warehouse of your choice. If you'd like to create a new warehouse, uncomment the SQL below.
-- Create a new database for Segment Linked Profiles. Segment only requires write access to this one database to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. Segment recommends creating an empty database for this purpose using the script below. This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
+- Create a new database for Segment Data Graph. Segment only requires write access to this one database to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. Segment recommends creating an empty database for this purpose using the script below. This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
 
 ```
 -- ********** SET UP THE FOLLOWING WAREHOUSE PERMISSIONS **********
@@ -63,16 +63,16 @@ SET segment_connection_db = 'SEGMENT_LINKED_PROFILES_DB';
 -- Use admin role for setting grants
 USE ROLE ACCOUNTADMIN;
 
--- Create a role for Segment Linked Profiles
+-- Create a role for Segment Data Graph
 CREATE ROLE IF NOT EXISTS identifier($segment_connection_role)
-COMMENT = 'Used for Segment Linked Profiles';
+COMMENT = 'Used for Segment Data Graph';
 
--- Create a user for Segment Linked Profiles
+-- Create a user for Segment Data Graph
 CREATE USER IF NOT EXISTS identifier($segment_connection_username)
 MUST_CHANGE_PASSWORD = FALSE
 DEFAULT_ROLE = $segment_connection_role
 PASSWORD=$segment_connection_password
-COMMENT='Segment Linked Profiles User'
+COMMENT='Segment Data Graph User'
 TIMEZONE='UTC';
 
 -- Grant permission to the role to use the warehouse
@@ -91,9 +91,9 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 ### Grant access to other databases 
 
-Next, give the Segment user **read-only** access to all the other databases you want to use for Linked Profiles. You must grant access to the Profiles Sync database.
+Next, give the Segment user **read-only** access to all the other databases you want to use for Data Graph. You must grant access to the Profiles Sync database.
 
-Run the SQL query below for **each** database you want to use for Linked Profiles:
+Run the SQL query below for **each** database you want to use for Data Graph:
 
 ```
 

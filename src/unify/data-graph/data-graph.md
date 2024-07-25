@@ -8,14 +8,11 @@ hidden: true
 > info "Segment's Data Graph is in public beta"
 > Data Graph is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
-With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
+With Linked Audiences, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
-Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
+Segment's Data Graph powers [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
 To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
-
-> info ""
-> Linked Profiles follows zero-copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
 
 > warning ""
 > Don't send any personal health information with the Data Graph.
@@ -29,16 +26,16 @@ To use the Data Graph, you'll need the following:
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
 
 > info ""
-> Profiles Sync is not required for Linked Events
+> Profiles Sync is not required for Linked Events.
 
 ## Step 1: Set up required permissions in your data warehouse
 
 To get started, set up the required permissions in your data warehouse using the instructions below: 
 
-- [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
-- [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
+- [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
+- [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
 
-Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
+Linked Audiences uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
 
 To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database/project in your warehouse this data lives in. 
 
@@ -100,7 +97,7 @@ An entity is a stateful representation of a business object. The entity correspo
 | `name`        | A unique label that displays throughout your Segment space.                           |
 | `table_ref`   | Defines the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
 | `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
-| (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
+| (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/).                         |
 
 Example:
 
@@ -348,4 +345,4 @@ Editing the Data Graph may lead to errors with data consumers. If there’s a br
 
 ## Next steps 
 
-After you've set up your Data Graph, get started with [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
+After you've set up your Data Graph, get started with [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).

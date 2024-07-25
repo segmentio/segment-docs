@@ -150,8 +150,10 @@ sections:
       title: Cloud Sources
     - path: /connections/sources/debugger
       title: Source Debugger
-    - path: /connections/sources/custom-domains
-      title: Set Up a Custom Domain Proxy in Segment
+    - path: /connections/sources/custom-domain
+      title: Segment-Managed Custom Domain
+    - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+      title: Self-Managed Custom Proxy
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema
