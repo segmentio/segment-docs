@@ -26,7 +26,7 @@ Before you begin setting up your Linked Audience, ensure you have:
 - [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
 - Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/linked-profiles/data-graph/).
-- Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
+- Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
 ## Setting up Linked Audiences
 
@@ -49,8 +49,8 @@ To build a Linked Audience:
 2. Select **+ New audience > Audience**.
 3. On the **Select Audience Type** screen, select **Linked audience**, then click **Next**.
 **Note:** If you cannot select **Linked audience**, ensure you’ve [set up your Data Graph](/docs/unify/linked-profiles/data-graph/) in Unify.
-4. Select the [profiles conditions](#Linked-Audience-profiles-conditions) on which to build your audience.
-5. Click **Preview** to view your audience selection and see a count of audience members who meet the criteria.
+4. Select the [conditions](#Linked-Audience-conditions) on which to build your audience.
+5. Click **Preview** to view your audience selection and see a count and list of audience members who meet the criteria.
 6. When your audience is complete and accurate, click **Next**.
 7. Enter an audience name and description to identify this configuration.
 Optionally, select a folder to add this audience.
@@ -58,30 +58,26 @@ Optionally, select a folder to add this audience.
 
 ### Maintaining Linked Audiences 
 
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. It will not be running against your data warehouse and no events are being sent to destinations. On the Overview page, you can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. On the Overview page, you can view relevant audience information, such as Profiles in Audience, Run Schedule, Latest run, Next compute. You can edit or delete your Linked Audience. 
 
-If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited and removed from the audience definition.
+If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
 
 You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
 
-After creating your Linked Audience, you are brought to the Overview page with the Linked Audience in a disabled state. The audience will not be running against your data warehouse and no events are being sent to destinations. As next steps, add a destination and an activation event to the audience.
-
 ### Linked Audience conditions 
 
-The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse (through Profiles Sync) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile but hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
+The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
-If you don’t see the value you’re looking for, you can manually enter it into the input field. Segment displays:
+The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down so that you don’t need to type in the exact value that you want to filter on.If you don’t see the value you’re looking for, you can manually enter it into the input field. Segment displays 
 
-* the first 100 unique string entity property values from the data warehouse
-    * If you want to opt out of displaying entity property values from the data warehouse, please contact Support.
-* the top 65 event property and context key values
-* the top 65 profile trait key values
-
-The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down so that you don’t need to type in the exact value that you want to filter on.
+* the first 100 unique string entity property values from the data warehouse.
+    * If you want to opt out of displaying entity property values from the data warehouse, contact Segment Support.
+* the top 65 event property and context key values.
+* the top 65 profile trait key values.
 
 You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
 
-As you're building your Linked Audience, you can choose from the following profiles conditions:
+As you're building your Linked Audience, you can choose from the following conditions:
 
 #### with entity
 
@@ -141,11 +137,11 @@ You can create audience definitions using either `AND` or `OR` operators across 
 
 #### Entity Explorer
 
-If you have defined entity conditions in your audience definition, then you will see a “Matched Entities” tab in the audience preview that helps define what entities qualified that user to be a part of the audience.
+If you have defined entity conditions in your audience definition, you will see a “Matched Entities” tab in the audience preview to help you understand what entities qualified a user to be a part of an audience.
 
-This information appears when you click the user profile generated from the audience preview. The contextual information  encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, Segment includes the entity ID.The data being returned is truncated - 10 entities at each level, 6 levels of depth. If you want to opt out of this functionality, contact Support.
+This information appears when you click the user profile generated from the audience preview. The contextual information encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, Segment includes the entity ID.The data being returned is truncated - 10 entities at each level, 6 levels of depth. If you want to opt out of this functionality, contact Segment Support.
 
-![A screenshot of the Entity Eplorer.](/docs/engage/images/entity_explorer.png)
+![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
 #### Dynamic References
 
@@ -156,7 +152,7 @@ equals, not equals, less than, greater than, less than or equal, greater than or
 
 **Entity Conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same branch at the same level or above it),profile trait, or enter a constant value.
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.
 You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
 NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
 STRING data type: equals, not equals, contains, does not contain, starts with, ends with
@@ -227,13 +223,15 @@ These fields are pre-filled with properties that will work by default.
 
 ## Step 3: Send a test event to your destination
 
-Send a test event to ensure that everything is connected properly and your destination receives the event. Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**. 
+Send a test event to ensure that everything is connected properly and your destination receives the event. 
+
+Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**.  
 
 The Event content drop-down shows you a preview of what the data sent to your destination might look like. 
 
 ### Step 3a: Configure your multi-channel marketing campaign 
 
-If you're using a multi-channel marketing tool, set up your email campaign before enabling your Linked Audience. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
+If you're using a multi-channel marketing tool, set up your email campaign before continuing. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
 
 ## Step 4: Enable your Linked Audience
 
