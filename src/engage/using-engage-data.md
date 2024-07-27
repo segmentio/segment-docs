@@ -291,8 +291,8 @@ Connect any Cloud-mode destination that supports Identify or Track calls to Enga
 
 - [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)
 - [Google Ads Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
-- [Google Display & Video 360](/docs/connections/destinations/catalog/personas-display-video-360/)
+- [Display and Video 360 (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/)
 - [Snapchat Audiences](/docs/connections/destinations/catalog/snapchat-audiences/)
 - [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
-- [Marketo Static Lists](/docs/connections/destinations/catalog/marketo-static-lists/)
+- [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
