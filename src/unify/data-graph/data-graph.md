@@ -5,12 +5,16 @@ beta: true
 hidden: true
 ---
 
-> info "Segment's Data Graph is in public beta"
-> Data Graph is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+You can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
-With Linked Audiences, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
+Using the Data Graph, data teams can reflect their business in their data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile 
 
-Segment's Data Graph powers [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
+> warning ""
+> Data Graph currently only supports workspaces in the United States.
+
+Using Data Graph, you only need to define the relationships between data sets one time to make data accessible to marketers and business stakeholders to build targeted and personalized customer engagements. The Data Graph powers:
+[Linked Audiences](/docs/engage/audiences/linked-audiences/): enables marketers to build targeting logic based on data points available in the data graph in a self-service way. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
+[Linked Events](/docs/unify/data-graph/linked-events/) enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you wish to use, and then use setup the enrichment in Destinations or Functions. 
 
 To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
@@ -30,7 +34,7 @@ To use the Data Graph, you'll need the following:
 
 ## Step 1: Set up required permissions in your data warehouse
 
-To get started, set up the required permissions in your data warehouse using the instructions below: 
+To get started, connect your data warehouse and set up the required permissions: 
 
 - [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
 - [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
