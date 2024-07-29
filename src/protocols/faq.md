@@ -162,6 +162,40 @@ Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [
 
 Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
+### I've blocked events in my Schema Configuration why are they not showing up as blocked in my Source Schema?
+Within your [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) you'll notice there are two columns next to the Event Name titled Allowed and Blocked. If you've selected Omit Properties under Unplanned Properties/Traits then the Source Schema will only show a property as block if it is present when the whole event is blocked. This setting will only be enforced if the property is an unplanned name but not an unplanned value.
+
+In order to show a blocked value for an property/trait within your Source Schema, you'll need to trigger a violaiton which can only be done using JSON Schema. Once you enforce your Schema Configuration to Omit Properties this will show as blocked. 
+
+See an example payload below: 
+
+```
+"protocols": {
+      "omitted": [
+        "newProperty"
+      ],
+      "omitted_on_violation": [
+        "integer",
+        "string"
+      ],
+      "sourceId": "1234",
+      "violations": [
+        {
+          "type": "Invalid Type",
+          "field": "properties.integer",
+          "description": "Invalid type. Expected: integer, given: number"
+        },
+        {
+          "type": "Invalid Type",
+          "field": "properties.string",
+          "description": "Invalid type. Expected: string, given: integer"
+        }
+      ]
+```
+<img width="1073" alt="Screenshot 2024-07-19 at 2 16 04 PM" src="https://github.com/user-attachments/assets/b51534f6-c2db-4aeb-adf9-aa22b1b9f0bb">
+
+
+
 ## Protocols Transformations
 
 ### Do transformations work with Segment replays?
