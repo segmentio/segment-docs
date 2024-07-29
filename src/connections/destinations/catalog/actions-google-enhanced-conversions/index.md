@@ -148,3 +148,7 @@ To resolve this, ensure that the ConversionActionType value in Google Ads is cor
 ### `The required field was not present., at conversions[0].gclid` Error
 
 Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.
+
+### What type of Import should be selected when creating a Conversion in Google Ads?
+
+When setting up conversions **in Google**, for the purpose of uploading data via Segment, choose 'Manual Import using API or Uploads' as the import type. This selection enables the integration of server-side conversions with the Google Ads API, facilitating the upload of offline conversions and adjustments directly from Segment.
