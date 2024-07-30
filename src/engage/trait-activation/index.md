@@ -7,26 +7,27 @@ redirect_from:
 - 'engage/trait-activation/trait-activation-setup'
 ---
 
-Use Trait Activation to configure sync payloads that you send from Engage Audiences and Journeys to a Destination. Map traits from user profiles to Destinations, configure identifiers to sync, and choose a sync strategy that fits your use cases. 
+Use Trait Activation to configure sync payloads that you send from Engage Audiences and Journeys to a Destination or Destination Function. Map traits from user profiles to Destinations, configure identifiers to sync, and choose a sync strategy that fits your use cases. 
 
-Trait Activation includes both [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/). With Trait Enrichment, use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations. Use ID Sync to select identifiers and a sync strategy for each identifier when syncing Engage Audiences to Destinations.
+Trait Activation includes both [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/). With Trait Enrichment, use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations or destination functions. Use ID Sync to select identifiers and a sync strategy for each identifier when syncing Engage Audiences to Destinations.
 
 
 ## Trait Activation setup
 
-To get started with Trait Activation, you'll need to set up the destination that you'll use with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
+To get started with Trait Activation, you'll need to set up the destination or destination function that you'll use with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
 
 
-### Set up your destination
+### Set up your destination or destination function
 
-Select your destination, view its Segment documentation, then follow the corresponding required setup steps. 
+Select your destination or destination function, view its Segment documentation, then follow the corresponding required setup steps. 
 
 
 |-----------------------|---------------|
 |Destination            |  Type         |  
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | List |
 | [Google Ads Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/#overview) | List | 
-| Trait Activation also supports all cloud-mode [Destination Actions](/docs/connections/destinations/actions/#available-actions-based-destinations). |         | 
+| [Destination Actions](/docs/connections/destinations/actions/#available-actions-based-destinations). | Actions      |
+| [Destination Functions](/docs/connections/functions/destination-functions/#create-a-destination-function) | Function |
 
 ### Resyncs 
 
@@ -53,7 +54,7 @@ Trait Enrichment and ID Sync can help you:
 
 To learn more about Trait Activation, visit the following docs:
 
-- Learn more about how to access Segment profile traits when you sync Audiences and Journeys to Destinations with  [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/).
+- Learn more about how to access Segment profile traits when you sync Audiences and Journeys to Destinations or Destination Functions with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/).
 - Learn how to sync select identifiers and create a sync strategy with [ID Sync](/docs/engage/trait-activation/id-sync/).
 
 
