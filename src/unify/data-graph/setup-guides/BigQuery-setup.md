@@ -3,6 +3,8 @@ title: BigQuery Setup
 beta: true
 plan: unify
 hidden: true
+redirect_from:
+  - '/unify/linked-profiles/setup-guides/BigQuery-setup'
 ---
 
 > info "Linked Audiences is in public beta"

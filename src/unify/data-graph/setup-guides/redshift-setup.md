@@ -3,6 +3,8 @@ title: Redshift Setup
 beta: true
 plan: unify
 hidden: true
+redirect_from:
+  - '/unify/linked-profiles/setup-guides/redshift-setup'
 ---
 
 > info "Linked Audiences is in public beta"
