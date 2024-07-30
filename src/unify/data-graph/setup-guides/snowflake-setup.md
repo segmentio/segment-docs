@@ -21,7 +21,7 @@ Log in to Snowflake with admin privileges to provide Segment Data Graph with the
 
 Segment requires the following settings to connect to your Snowflake warehouse.
 
-<img src="/docs/unify/images/snowflake-setup.png" alt="Connect Snowflake to the Data Graph" width="5888"/>
+<img src="/docs/unify/images/snowflake-setup.png" alt="Connect Snowflake to Data Graph" width="5888"/>
 
 - **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
 - **Database Name**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
