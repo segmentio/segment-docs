@@ -39,7 +39,7 @@ The first step is to create a new Segment role and grant it the appropriate perm
 
 - Create a new role and user for Segment Data Graph. This new role will have access to only the datasets you want to access from the Segment Data Graph.
 - Grant the Segment user access to the warehouse of your choice. If you'd like to create a new warehouse, uncomment the SQL below.
-- Create a new database for Segment Data Graph. Segment only requires write access to this one database to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. Segment recommends creating an empty database for this purpose using the script below. This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
+- Create a new database for Segment Data Graph. **Segment only requires write access to this one database to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed**. Segment recommends creating an empty database for this purpose using the script below. This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
 
 **Note** - the variables specified at the top of the code block with the `SET` command are placeholders and should be updated.
 
