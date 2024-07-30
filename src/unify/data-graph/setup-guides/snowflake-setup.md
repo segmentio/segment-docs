@@ -33,13 +33,15 @@ Segment requires the following settings to connect to your Snowflake warehouse.
 
 Segment recommends setting up a new Snowflake user and only giving this user permissions to access the required databases and schemas.
 
-### Create Segment user and internal database 
+### Step 1: Create Segment user and internal database 
 
-Use the following steps to set up your Snowflake credentials:
+The first step is to create a new Segment role and grant it the appropriate permissions. Run the SQL code block below in your SQL worksheet in Snowflake. It executes the following commands:
 
-- Create a new role and user for Segment Data Graph. 
+- Create a new role and user for Segment Data Graph. This new role will have access to only the datasets you want to access from the Segment Data Graph.
 - Grant the Segment user access to the warehouse of your choice. If you'd like to create a new warehouse, uncomment the SQL below.
 - Create a new database for Segment Data Graph. Segment only requires write access to this one database to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. Segment recommends creating an empty database for this purpose using the script below. This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
+
+**Note** - the variables specified at the top of the code block with the `SET` command are placeholders and should be updated.
 
 ```
 -- ********** SET UP THE FOLLOWING WAREHOUSE PERMISSIONS **********
@@ -91,11 +93,11 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 ```
 
-### Grant access to other databases 
+### Step 2: Grant read-only access to other databases 
 
-Next, give the Segment user **read-only** access to all the other databases you want to use for Data Graph. You must grant access to the Profiles Sync database.
+Next, give the Segment user **read-only** access to all the other databases you want to use for Data Graph including the **Profiles Sync database**
 
-Run the SQL query below for **each** database you want to use for Data Graph:
+Run the SQL query below for **each** database you want to use for Data Graph. **You may have to re-run this multiple times for each database you want to give access to**.
 
 ```
 
@@ -117,7 +119,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($linked_read_on
 
 ```
 
-### (Optional) Restrict Snowflake schema access
+### (Optional) Step 3: Restrict Snowflake schema access
 
 If you want to restrict access to specific [Snowflake schemas and tables](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank”}, run the following commands: 
 
@@ -143,7 +145,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN SCHEMA identifier($linked_read_only
 
 ```
 
-### (If applicable) Update user acccess for Segment Reverse ETL schema 
+### (If applicable) Step 4: Update user acccess for Segment Reverse ETL schema 
 
 > warning ""
 > This is only applicable if you choose to use an existing database as the Segment connection database that has also been used for Segment Reverse ETL.
@@ -157,7 +159,7 @@ Add the Snowflake table permissions by running the following commands:
 ```
 -- If you want to use an existing database that already has Segment Reverse ETL schemas, you’ll need to run some additional steps below to grant the role access to the existing schemas.
 
-SET retl_schema = concat($segment_internal_database,'.__segment_reverse_etl');
+SET retl_schema = concat($segment_connection_db,'.__segment_reverse_etl');
 
 GRANT USAGE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
 
@@ -167,7 +169,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA identifier($retl_schem
 
 ```
 
-### Confirm permissions 
+### Step 5: Confirm permissions 
 
 To verify you have set up the right permissions for a specific table, log in with the username and password you created for `SEGMENT_CONNECTION_USERNAME` and run the following command to verify the role you created has the correct permissions. If this command succeeds, you should be able to view the respective table.
 
@@ -179,6 +181,6 @@ set table_name = 'YOUR_DB.SCHEMA.TABLE';
 USE ROLE identifier($segment_connection_role);
 USE DATABASE identifier($linked_read_only_database) ;
 SHOW SCHEMAS;
-SELECT * FROM identifier($table) LIMIT 10;
+SELECT * FROM identifier($table_name) LIMIT 10;
 
 ```
