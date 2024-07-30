@@ -7,6 +7,9 @@ id: 60ad61f9ff47a16b8fb7b5d9
 versions:
   - name: "Google Analytics 4 Web"
     link: '/docs/connections/destinations/catalog/actions-google-analytics-4-web/'
+redirect_from:
+  - '/connections/destinations/catalog/google-analytics'
+  - '/connections/destinations/catalog/google-universal-analytics'
 ---
 
 {% include content/plan-grid.md name="actions" %}
