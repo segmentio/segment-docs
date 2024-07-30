@@ -233,7 +233,7 @@ Once Segment generates the CSV, you can download the file directly. You'll recei
 Note the following limits for the CSV downloader:
 - You can't download more than one CSV for the same audience at the same time.
 - You can only generate one CSV every five minutes.
-- Each CSV represents a snapshot at a given point in time that references the data from the audience's most recent computational run. This applies to both Realtime and Batch audiences, as the CSV is not updated in realtime. To locate the snapshot's given point of time, click on the Download CSV button, and the pop-up modal will contain an information icon ℹ️, which when hovered over will reveal the snapshot's details.
+- Each CSV represents a snapshot at a given point in time that references the data from the audience's most recent computational run. This applies to both real time and batch audiences, as the CSV is not updated in real time. To locate the snapshot's given point of time, click on the Download CSV button, and the popup modal will contain an information icon ℹ️, which when hovered over will reveal the snapshot's details.
   - ![CSV Snapshot details](https://github.com/user-attachments/assets/b7af772a-2ba7-4411-ba95-a913992f10ae)
 
 
