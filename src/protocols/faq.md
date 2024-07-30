@@ -106,7 +106,7 @@ When you initially create your Tracking Plan, you can import events into it from
 
 ### Can I recover a Tracking Plan that was deleted?
 
-At this time it is not possible to recover a deleted Tracking Plan. Please delete with caution. 
+You cannot recover a deleted Tracking Plan and Segment cannot recover it on your behalf. Please delete Tracking Plans with caution.
 
 
 ## Protocols Validation
