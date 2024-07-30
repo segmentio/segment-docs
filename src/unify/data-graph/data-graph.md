@@ -7,7 +7,7 @@ hidden: true
 
 You can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
-Using the Data Graph, you can reflect your business in your data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile 
+Using the Data Graph, you can reflect your business in your data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile. 
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
@@ -64,8 +64,8 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 
 To leverage the Data Graph auto-complete feature, begin typing or use the following keyboard shortcuts to autocomplete the profile_folder and table_ref properties.
 
-- Mac CtrlSpace
-- Windows AltEsc
+- Mac: CtrlSpace
+- Windows: AltEsc
 
 ### Define entities
 
