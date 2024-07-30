@@ -227,4 +227,6 @@ destinations:
     override: "convertly"
   - original: "amazon-ads-dsp-and-amc"
     override: "actions-amazon-amc"
+  - original: "display-and-video-360-actions"
+    override: "actions-display-video-360"
 

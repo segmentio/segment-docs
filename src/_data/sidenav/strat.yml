@@ -73,8 +73,8 @@ sections:
     title: Google Cloud Pub/Sub destination
   - path: /connections/destinations/catalog/adwords-remarketing-lists
     title: Google Ads Remarketing Lists destination (Personas)
-  - path: /connections/destinations/catalog/personas-display-video-360
-    title: Google Display & Video 360 destination (Personas)
+  - path: /connections/destinations/catalog/actions-display-video-360
+    title: Display and Video 360 (Actions) Destination
 
 
 - slug: salesforce
@@ -181,7 +181,7 @@ sections:
 - slug: kotlin-android
   section_title: Analytics-Kotlin Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/kotlin-android 
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android
     title: Overview
   # - path: /connections/sources/catalog/libraries/server/kotlin
   #   title: Analytics-Kotlin (Server)
@@ -214,9 +214,9 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/apple/migration
     title: Migration Guide
   - path: /connections/sources/catalog/libraries/mobile/apple/swift-plugin-architecture
-    title: Plugin Architecture    
+    title: Plugin Architecture
   - path: /connections/sources/catalog/libraries/mobile/apple/live-plugins
-    title: Live Plugins   
+    title: Live Plugins
   - path: /connections/sources/catalog/libraries/mobile/apple/destination-plugins
     title: Device Mode Destinations
   - path: /connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations
@@ -242,7 +242,7 @@ sections:
 
 - slug: csharp
   section_title: Analytics-CSharp Documentation
-  section: 
+  section:
   - path: /connections/sources/catalog/libraries/server/csharp/
     title: Analytics-CSharp
   - path: /connections/sources/catalog/libraries/server/csharp/migration-guide/

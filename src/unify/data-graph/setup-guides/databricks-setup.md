@@ -3,6 +3,8 @@ title: Databricks Setup
 beta: true
 plan: unify
 hidden: true
+redirect_from:
+  - '/unify/linked-profiles/setup-guides/databricks-setup'
 ---
 
 > info "Linked Audiences is in public beta"
