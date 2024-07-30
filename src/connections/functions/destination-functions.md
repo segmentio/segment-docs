@@ -442,4 +442,4 @@ Incorporating console.log() statements in your Destination Function code aids in
 
 ##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
 
-The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
+The test function interface has a 4KB console logging limit. Outputs larger than this limit are not visible in the user interface.
