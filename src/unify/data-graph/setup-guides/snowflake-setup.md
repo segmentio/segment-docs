@@ -3,6 +3,8 @@ title: Snowflake Setup
 plan: unify
 beta: true
 hidden: true
+redirect_from:
+  - '/unify/linked-profiles/setup-guides/snowflake-setup'
 ---
 
 > info "Linked Audiences is in public beta"

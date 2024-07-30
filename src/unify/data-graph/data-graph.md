@@ -3,6 +3,8 @@ title: Data Graph
 plan: unify
 beta: true
 hidden: true
+redirect_from:
+  - '/unify/linked-profiles/data-graph'
 ---
 
 You can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
