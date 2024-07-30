@@ -4,6 +4,8 @@ strat: google
 hide-settings: true
 id: 65302a3acb309a8a3d5593f2
 engage: true
+redirect_from:
+  - '/connections/destinations/catalog/personas-display-video-360/'
 ---
 
 > info ""

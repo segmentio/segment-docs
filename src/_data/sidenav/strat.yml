@@ -73,6 +73,8 @@ sections:
     title: Google Cloud Pub/Sub destination
   - path: /connections/destinations/catalog/adwords-remarketing-lists
     title: Google Ads Remarketing Lists destination (Personas)
+  - path: /connections/destinations/catalog/actions-display-video-360
+    title: Display and Video 360 (Actions) Destination
 
 
 - slug: salesforce
