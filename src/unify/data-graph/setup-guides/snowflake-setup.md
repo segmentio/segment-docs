@@ -24,7 +24,7 @@ Segment requires the following settings to connect to your Snowflake warehouse.
 <img src="/docs/unify/images/snowflake-setup.png" alt="Connect Snowflake to Data Graph" width="5888"/>
 
 - **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
-- **Database Name**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
+- **Database**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
 - **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
 - **Authentication**: There are 2 supported authentication methods:
