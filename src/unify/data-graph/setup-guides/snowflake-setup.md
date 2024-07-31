@@ -27,7 +27,9 @@ Segment requires the following settings to connect to your Snowflake warehouse.
 - **Database Name**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
 - **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
-- **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
+- **Authentication**: There are 2 supported authentication methods:
+  1. **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the Snowflake docs. Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created.
+  2. **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
 
 ## Set up Snowflake credentials
 
@@ -95,7 +97,7 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 ### Step 2: Grant read-only access to other databases 
 
-Next, give the Segment user **read-only** access to all the other databases you want to use for Data Graph including the **Profiles Sync database**
+Next, give the Segment role **read-only** access to all the other databases you want to use for Data Graph including the **Profiles Sync database**
 
 Run the SQL query below for **each** database you want to use for Data Graph. **You may have to re-run this multiple times for each database you want to give access to**.
 
