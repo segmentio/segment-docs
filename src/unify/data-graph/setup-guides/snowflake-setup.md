@@ -28,7 +28,7 @@ Segment requires the following settings to connect to your Snowflake warehouse.
 - **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
 - **Authentication**: There are 2 supported authentication methods:
-  1. **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the Snowflake docs. Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created.
+  1. **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth). Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created.
   2. **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
 
 ## Set up Snowflake credentials
