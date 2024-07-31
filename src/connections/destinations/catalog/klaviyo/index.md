@@ -55,6 +55,9 @@ To enable your new Klaviyo (Actions) destination:
 
 Segment will disable all instances of the classic Klaviyo destination in July 2024. 
 
+> info ""
+> The Insert Function connected to the Klaviyo (Legacy) destination will not be updated to the Klaviyo (Actions) destination as part of this migration. Before enabling the migrated Actions destination, we may need to manually connect the Insert Function.
+
 ### Engage-specific migration information
 
 While using the Klaviyo Classic destination, you could only **add** users to a Klaviyo platform or list. The Klaviyo (Actions) destination has two Destination Actions, [Add Profile to List (Engage)](/docs/connections/destinations/catalog/actions-klaviyo/#add-profile-to-list-engage) and [Remove Profile from List (Engage)](/docs/connections/destinations/catalog/actions-klaviyo/#remove-profile-from-list-engage), which allow you to add **and** remove users from the Klaviyo platform and from lists.
