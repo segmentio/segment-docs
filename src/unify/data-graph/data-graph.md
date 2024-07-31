@@ -9,7 +9,7 @@ redirect_from:
 
 You can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
-Using the Data Graph, you can reflect your business in your data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile. 
+Using the Data Graph, you can reflect your business in your data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile.
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
@@ -75,7 +75,7 @@ Use the parameters, definitions, and examples below to help you define entities.
 
 #### Entity
 
-The first step in creating a Data Graph is to define your Entities. An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse. 
+The first step in creating a Data Graph is to define your Entities. An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse.
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
