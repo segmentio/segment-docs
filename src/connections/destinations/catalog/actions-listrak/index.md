@@ -23,31 +23,31 @@ To add the Listrak Actions destination:
 8. Click **Save Changes**.
 9. Follow the steps in the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or follow the steps below to Sync an Engage Audience.
 
-## Syncing an Engage Audience to Listrak
+## Syncing an Engage audience to Listrak
 
 To sync an Engage audience with Listrak (Actions), first ensure that the Engage audience only includes profiles with email addresses subscribed to the Listrak list.
 
-For example, when building the audience, ensure each profile includes a Custom Trait like `listrak_list_12345`, where `12345` is the List ID.
+For example, when you build the audience, ensure each profile includes a Custom Trait like `listrak_list_12345`, where `12345` is the List ID.
 
-### Listrak Configuration
+### Listrak configuration
 
 1. In Listrak, navigate to **Contacts > Profile Fields** and click **Create Field Group**.
-2. Enter a name for the Profile Field Group (e.g., `Engage Audiences`) and click **Save**.
+2. Enter a name for the Profile Field Group (like `Engage Audiences`) and click **Save**.
 3. Enter a name for the audience in the **Field Name** field.
 4. Select **Check Box** for the **Data Type**.
 5. Click **Update**.
-6. Go to **Help & Support > API ID Information** and note the List ID and Profile Field ID values. You will use these in your Segment destination.
+6. Go to **Help & Support > API ID Information** and note the List ID and Profile Field ID values. You'll use these in your Segment destination.
 
-### Segment Configuration
+### Segment configuration
 
 In Segment, open the Listrak destination you created. Navigate to the **Mappings** tab, click **New Mapping**, and select **Update Email Contact Profile Fields**.
 
-> info "There are two approaches for configuring the "Update Email Contact Profile Fields" mapping:"
-> 
-> 1. **Separate Mappings:** Create individual mappings for "Audience Entered" and "Audience Exited" events. Set the profile field to "on" for "Audience Entered" and "off" for "Audience Exited."
-> 2. **Single Mapping:** Use one mapping with the special value "useAudienceKey" for the profile field. This will dynamically use "on" and "off" in the request made to Listrak based on the audience_key boolean value - "true" ("Audience Entered") activates the field, and "false" ("Audience Exited") deactivates it.
+You can configure the "Update Email Contact Profile Fields" mapping in two ways:
 
-### Recommended Approach: Single Mapping for Both Events
+1. **Separate Mappings:** Create individual mappings for "Audience Entered" and "Audience Exited" events. Set the profile field to "on" for "Audience Entered" and "off" for "Audience Exited."
+2. **Single Mapping:** Use one mapping with the special value `useAudienceKey` for the profile field. This will dynamically use "on" and "off" in the request made to Listrak based on the `audience_key` boolean value - `true` ("Audience Entered") activates the field, and `false` ("Audience Exited") deactivates it.
+
+### Recommended approach: single mapping for both events
 
 1. To use a single mapping for "Audience Entered" and "Audience Exited" events, under **Select events to map and send**, configure a condition to include events from the desired audience only. 
 - Set **Event Context** `personas.computation_key` to `my_audience` (where `my_audience` is the Audience Key from the Audience settings page).
@@ -63,7 +63,7 @@ In Segment, open the Listrak destination you created. Navigate to the **Mappings
 
 4. Click **Save** to save the mapping.
 
-### Alternative Approach: Separate Mappings for Each Event
+### Alternative approach: separate mappings for each event
 
 1. Under **Select events to map and send**, select **Track** for the **Event Type**.
 2. Click **Add Condition** and add: **Event Name** is `Audience Entered`.
@@ -77,7 +77,7 @@ In Segment, open the Listrak destination you created. Navigate to the **Mappings
    ![Mapping Subscription](images/mappings2.png)
 
 6. Click **Save** to save the mapping.
-7. Repeat the above steps, substituting `Audience Entered` for `Audience Exited` and `on` for `off`.
+7. Repeat the previous steps, substituting `Audience Entered` for `Audience Exited` and `on` for `off`.
 
 ## Using Segment audience data in Listrak
 
