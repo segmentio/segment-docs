@@ -176,7 +176,7 @@ analytics.trackForm(form, event, [properties])
 
 Field | | Type | Description
 ----- | | ---- | -----------
-`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
+`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._ It is advised to wait until the DOM is loaded before passing the form element.
 `event` | | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.
 `properties` | optional | Object or Function | A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.
 
