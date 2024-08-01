@@ -145,7 +145,7 @@ Use the following relationship, parameters, and examples to help you relate enti
 A profile can be related to an entity in two ways:
 
 **1. With an `external_id`**: Define the external ID that will be used to join the profile with your entity.
-- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
+- `type`: Identify the external ID type (`email`, `phone`, `user_id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
 - `join_key`: This is the column on the entity table that you are matching to the external identifier.   
 
 Example: 
