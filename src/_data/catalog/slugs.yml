@@ -229,6 +229,8 @@ destinations:
     override: "actions-amazon-amc"
   - original: "display-and-video-360-actions"
     override: "actions-display-video-360"
+  - original: "usermaven-actions"
+    override: "actions-usermaven"
   - original: "survicate-actions"
     override: "actions-survicate"
 
