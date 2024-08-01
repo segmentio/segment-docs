@@ -17,17 +17,17 @@ Use the following steps to set up ID Sync with Audiences or Journeys.
 To set up ID Sync with [Audiences](/docs/engage/audiences/):
 
 1. Navigate to **Engage** > **Audiences**.
-2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination or destination function.
+2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
 - If you don't see any destinations to add, you'll need to [add the destination](/docs/connections/destinations/add-destination/#adding-a-destination) or [destination function](docs/connections/functions/destination-functions/#create-a-destination-function) to your Engage space first.
-- For existing audiences, you'll find your connected destination or destination function on the Audience Overview page.
+- For existing audiences, you'll find your connected destination on the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. To use ID Sync, select [**Customized Setup**](#customized-setup). 
 
 ### Set up ID Sync with Journeys
 
 You can configure ID Sync with Journeys as you're creating or editing your journey in the [builder](/docs/engage/journeys/build-journey/).
 
-1. From a journey step, select the destination or destination function you're going to use with ID Sync. 
-2. On the Connection Settings tab, select **Customized Setup** and use the corresponding [steps below](#customized-setup) to customize which identifiers you want to map downstream to your destination or destination function. 
+1. From a journey step, select the destination you're going to use with ID Sync. 
+2. On the Connection Settings tab, select **Customized Setup** and use the corresponding [steps below](#customized-setup) to customize which identifiers you want to map downstream to your destination. 
 
 ### Default setup 
 
@@ -37,14 +37,14 @@ You can customize additional event settings at any time.
 
 ### Customized setup 
 
-With Customized setup, you can choose which identifiers you want to map downstream to your destination or destination function.
+With Customized setup, you can choose which identifiers you want to map downstream to your destination.
 
 1. Using **Customized Setup**, click **+ Add Identifier** and add the identifiers:
 - **Segment**: Choose your identifiers from Segment.
-- **Destination**: Choose which identifiers you want to map to from your destination or destination function. If the destination or destination function doesn't contain the property, then outgoing events may not be delivered.
+- **Destination**: Choose which identifiers you want to map to from your destination. If the destination doesn't contain the property, then outgoing events may not be delivered.
 - *Facebook Custom Audiences* and *Google Ads Remarketing Lists* display a dropdown for you to choose available identifiers. 
 2. Add an ID strategy. 
-- This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination or destination function.
+- This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your audience or journey.
  
 ## Limits and best practices
@@ -66,7 +66,7 @@ With Customized setup, you can choose which identifiers you want to map downstre
 
 #### How do syncs differ between audiences with ID Sync and audiences without ID Sync? 
 
-Audiences without ID Sync aren't allowed to select any strategy, and by default will send all values of an identifier to the destination or destination function. Also, audiences without ID Sync don't send any custom identifiers that are present in your space. 
+Audiences without ID Sync aren't allowed to select any strategy, and by default will send all values of an identifier to the destination. Also, audiences without ID Sync don't send any custom identifiers that are present in your space. 
 
 #### Can I edit config once the audience has synced? 
-Yes, you can edit configuration in the Destination **Settings** tab at any time. However, changes will only take place in subsequent audience syncs, or in new audiences connected to the destination or destination function.
+Yes, you can edit configuration in the Destination **Settings** tab at any time. However, changes will only take place in subsequent audience syncs, or in new audiences connected to the destination.

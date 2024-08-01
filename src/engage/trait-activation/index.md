@@ -14,12 +14,12 @@ Trait Activation includes both [Trait Enrichment](/docs/engage/trait-activation/
 
 ## Trait Activation setup
 
-To get started with Trait Activation, you'll need to set up the destination or destination function that you'll use with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
+To get started with Trait Activation, you'll need to set up the destination that you'll use with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
 
 
-### Set up your destination or destination function
+### Set up your destination
 
-Select your destination or destination function, view its Segment documentation, then follow the corresponding required setup steps. 
+Select your destination, view its Segment documentation, then follow the corresponding required setup steps. 
 
 
 |-----------------------|---------------|
