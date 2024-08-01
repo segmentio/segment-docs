@@ -23,4 +23,4 @@ This destination is maintained by <Angler AI>. For any issues with the destinati
 
 ### Event Mappings
 
-A default list of event mappings will be applied when the destination is added to your workspace. The mapping may need to modified depending on the event schema in your Segment workspace. Please refer the [Angler AI Documentation](https://docs.getangler.ai/docs/using-gtm-to-setup-events?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} for details about the events that can be sent to Angler AI.
+A default list of event mappings will be applied when the destination is added to your workspace. The mappings may need to be modified depending on the event schema in your Segment workspace. Please refer the [Angler AI Documentation](https://docs.getangler.ai/docs/using-gtm-to-setup-events?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} for details about the events that can be sent to Angler AI.
