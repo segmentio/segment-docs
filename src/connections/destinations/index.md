@@ -214,7 +214,7 @@ IP Allowlisting uses a NAT gateway to route traffic from Segment's servers to yo
 IP Allowlisting is available for customers on Business Tier plans.
 
 ### Supported destinations
-Segment supports IP Allowlisting in all Classic and Actions destinations except for the following:
+Segment supports IP Allowlisting in [all destinations](/docs/connections/destinations/catalog/) except for the following:
 - [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
 - [TradeDesk](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
