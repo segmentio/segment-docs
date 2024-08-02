@@ -3,7 +3,12 @@ title: Audit Trail
 plan: audit-trail
 ---
 
+> info ""
+> Segment provides a 90-day in-app Audit Trail for Business Tier accounts. For any requests exceeding the 90-day timeframe, please contact [Segment Support](https://segment.com/help/contact/) for assistance.
+
 The Audit Trail allows you to view user and system activity, filter activity for specific actions or actors, and export your data to an event streams source or CSV file. 
+
+## Permissions
 
 > info "Viewing the Audit Trail requires Workspace Owner permissions"
 > You must have the Workspace Owner role to view the Audit Trail page. For more information about roles and permissions within Segment, see the [Roles documentation](/docs/segment-app/iam/roles/). 
