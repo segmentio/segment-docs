@@ -6,7 +6,7 @@ id: 668d1cb2a1dcc5ad33228d92
 
 {% include content/plan-grid.md name="actions" %}
 
-[Angler AI](https://getangler.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps direct to consumer brands radically improve prospecting and customer lifetime value using the power of AI. Gain a full view of your customer base, deploy custom audiences with precision and measure the true ROI of your campaigns.
+[Angler AI](https://getangler.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps direct-to-consumer brands radically improve prospecting and customer lifetime value using the power of AI. Gain a full view of your customer base, deploy custom audiences with precision, and measure the true ROI of your campaigns.
 
 This destination is maintained by <Angler AI>. For any issues with the destination, [contact their Support team](mailto:support@getangler.ai).
 
