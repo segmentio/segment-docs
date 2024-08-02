@@ -13,6 +13,8 @@ Use Destination Insert Functions to enrich, transform, or filter your data befor
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
+> info "Destination Insert Functions are not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Create destination insert functions
 

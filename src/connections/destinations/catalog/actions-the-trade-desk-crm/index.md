@@ -14,6 +14,9 @@ This integration lets users link Engage audiences to The Trade Desk and transmit
 
 The Trade Desk destination can only be connected to Twilio Engage sources.
 
+> info "The Trade Desk CRM is not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
+
 ## Getting started
 
 ### Obtaining credentials from The Trade Desk
