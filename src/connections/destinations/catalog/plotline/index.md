@@ -1,5 +1,7 @@
 ---
 title: Plotline Destination
+id: 669f7b835aae8164929d000e
+beta: true
 ---
 
 [Plotline](https://www.plotline.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a mobile adoption platform that helps product and marketing teams launch experiences like Stories, Videos, Animations, Streaks, Floating buttons and more inside the app - without taking engineering effort.
