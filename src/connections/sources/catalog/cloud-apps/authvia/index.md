@@ -16,7 +16,7 @@ This source is maintained by <Authvia>. For any issues with the source, [contact
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. Go to [www.authvia.com/segment](https://www.authvia.com/segment) and enter your Authvia Client ID and Secret, along with your Write Key. You will also pick your region and choose which events you would like to subscribe to. If you do not have an Authvia Client ID and Secret, request access here [(https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31)](https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31
+6. Go to [https://www.authvia.com/forms/setup-twilio-segment-and-authvia/](https://www.authvia.com/forms/setup-twilio-segment-and-authvia/) and enter your Authvia Client ID and Secret, along with your Write Key. You will also pick your region and choose which events you would like to subscribe to. If you do not have an Authvia Client ID and Secret, request access here [(https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31)](https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31
 
 ## Stream
 
