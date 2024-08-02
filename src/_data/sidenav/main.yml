@@ -150,8 +150,10 @@ sections:
       title: Cloud Sources
     - path: /connections/sources/debugger
       title: Source Debugger
-    - path: /connections/sources/custom-domains
-      title: Set Up a Custom Domain Proxy in Segment
+    - path: /connections/sources/custom-domain
+      title: Segment-Managed Custom Domain
+    - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+      title: Self-Managed Custom Proxy
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema
@@ -216,6 +218,10 @@ sections:
       title: Destination Functions
     - path: /connections/functions/insert-functions
       title: Destination Insert Functions
+    - path: /connections/functions/copilot
+      title: Functions Copilot
+    - path: /connections/functions/functions-copilot-nutrition-facts
+      title: Functions Copilot Nutrition Facts Label
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -290,6 +296,10 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
+  - path: /connections/oauth
+    title: OAuth 2.0
+  - path: /connections/aws-privatelink
+    title: AWS PrivateLink Integration
 - section_title: Unify
   section:
   - path: /unify
@@ -405,6 +415,10 @@ sections:
       title: Generative Audiences
     - path: '/engage/audiences/generative-audiences-nutrition-facts'
       title: Generative Audiences Nutrition Facts Label
+    - path: '/engage/audiences/recommendation-audiences'
+      title: Recommendation Audiences
+    - path: '/engage/audiences/recommendation-audiences-nutrition-label'
+      title: Recommendation Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
     - path: '/engage/audiences/send-audience-data'
@@ -521,9 +535,11 @@ sections:
       title: Consent in Segment Connections
     - path: /privacy/consent-management/configure-consent-management
       title: Configure Consent Management
-    - path: /privacy/consent-management/consent-in-unify/
+    - path: /privacy/consent-management/consent-in-unify
       title: Consent in Unify
-    - path: /privacy/consent-management/consent-faq/
+    - path: /privacy/consent-management/consent-in-retl
+      title: Consent in Reverse ETL
+    - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
   - path: /privacy/account-deletion
     title: Account & Data Deletion

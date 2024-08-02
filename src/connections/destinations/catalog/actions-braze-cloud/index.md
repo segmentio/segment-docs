@@ -20,8 +20,9 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Braze" in the Catalog, select **Braze Cloud Mode (Actions)**, and choose which of your sources to connect the destination to.
-3. Add the following Connection Settings:
+2. Search for "Braze" in the Catalog, select **Braze**, and choose which of your sources to connect the destination to.
+3. Select "Actions" under the Destination framework options.
+4. Add the following Connection Settings:
    - **API Key**: Created under Developer Console in the Braze Dashboard.
    - **App ID**: The app identifier used to reference specific Apps in requests made to the Braze API. Created under Developer Console in the Braze Dashboard.
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.

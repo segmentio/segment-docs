@@ -18,6 +18,9 @@ At a high level, when you set up Snowflake for Reverse ETL, the configured user/
 ## Set up guide
 Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with an encrypted key pair.
 
+> info ""
+> Segment has a Terraform provider, powered by the Public API, that you can use to create a Snowflake Reverse ETL source. See the [segment_source (Resource)](https://registry.terraform.io/providers/segmentio/segment/latest/docs/resources/source){:target="_blank”} documentation for more information.
+
 1. Log in to your Snowflake account.
 2. Navigate to *Worksheets*.
 3. Enter and run the code below to create a database.

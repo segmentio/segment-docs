@@ -207,3 +207,7 @@ Yes. In the Set Configuration Mapping, click Show All Fields and scroll to Send 
 ### Differences between the Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
 Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two depends on your specific use case, technical expertise, and the platforms from which you want to track data.
+
+### User-provided data collection
+
+Google has introduced a beta feature for collecting data provided by users, [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}. Note that this feature is currently not supported by Segment, and, acknowledging this feature policy in your Google Analytics 4 Account has irreversible effects.

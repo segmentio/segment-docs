@@ -56,4 +56,6 @@ To make changes to a successful delivery rate alert, select the icon in the Acti
 To delete a successful delivery rate alert, select the icon in the Actions column for the alert and click **Delete**. 
 
 > info "Deleting alerts created by other users requires Workspace Owner permissions"
-> All users can delete successful delivery alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users. 
+> All users can delete successful delivery alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users.
+
+Segment generates delivery alerts for failed deliveries and successful deliveries, which are the last two stages of the delivery pipeline. As a result, alerts are based on Segment's attempts to send qualified events to your destination, excluding those filtered out by business rules (like protocols, destination filters, or mappings).
