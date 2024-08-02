@@ -214,7 +214,7 @@ IP Allowlisting uses a NAT gateway to route traffic from Segment's servers to yo
 IP Allowlisting is available for customers on Business Tier plans.
 
 > info ""
-> Segment might add additional IP addresses ranges. Before adding additional ranges, Segment will send an email to all Workspace Owners notifying them of the update. 
+> Segment might add additional IP address ranges. Before adding additional ranges, Segment will send an email to all Workspace Owners notifying them of the update. 
 
 ### Supported destinations
 Segment supports IP Allowlisting in all Classic and Actions destinations except for the following:
