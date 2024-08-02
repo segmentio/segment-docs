@@ -2,7 +2,7 @@
 title: Plotline Destination
 ---
 
-[Plotline](https://www.plotline.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a mobile adoption platform that helps product and marketing teams launch experiences like Stories, Videos, Animations, Streaks, Floating buttons and more inside the app - without taking engineering effort.
+[Plotline](https://www.plotline.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a mobile adoption platform that helps product and marketing teams launch experiences like Stories, Videos, Animations, Streaks, Floating buttons and more inside the app - without taking engineering effort.
 
 This destination is maintained by Plotline. For any issues with the destination, contact Plotline's support team at support@plotline.so.
 
