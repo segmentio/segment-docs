@@ -8,7 +8,7 @@ id: 668d1cb2a1dcc5ad33228d92
 
 [Angler AI](https://getangler.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps direct-to-consumer brands radically improve prospecting and customer lifetime value using the power of AI. Gain a full view of your customer base, deploy custom audiences with precision, and measure the true ROI of your campaigns.
 
-This destination is maintained by <Angler AI>. For any issues with the destination, [contact the Angler AI Support team](mailto:support@getangler.ai).
+This destination is maintained by Angler AI. For any issues with the destination, [contact the Angler AI Support team](mailto:support@getangler.ai).
 
 
 ## Getting started
@@ -16,7 +16,7 @@ This destination is maintained by <Angler AI>. For any issues with the destinati
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Angler AI".
 2. Select Angler AI and click **Add Destination**.
 3. Select an existing Source to connect to Angler AI (Actions).
-4. Go to the [Angler AI dashboard](https://getangler.ai){:target="_blank"}, find and copy the **Workspace ID** and **Access Token**. This information can also be provided by the Angler AI account manager.
+4. Go to the [Angler AI dashboard](https://getangler.ai){:target="_blank"}, find and copy the **Workspace ID** and **Access Token**. This information can also be provided by your Angler AI account manager.
 5. Return to the Segment app and enter the **Workspace ID** and **Access Token** in your Angler AI destination's settings page.
 
 
