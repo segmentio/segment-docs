@@ -309,3 +309,5 @@ destinations:
     override: "actions-chartmogul"
   - original: "taboola-actions"
     override: "actions-taboola-actions"
+  - original: "userguiding"
+    override: "user_guiding"
