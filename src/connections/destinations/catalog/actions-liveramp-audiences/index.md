@@ -12,6 +12,9 @@ The LiveRamp Audiences destination allows users to connect their Engage Audience
 
 The LiveRamp Audiences destination can be connected to **Twilio Engage sources only**. 
 
+> info "LiveRamp Audiences is not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
+
 ## Getting started
 
 ### Set up your file drop
