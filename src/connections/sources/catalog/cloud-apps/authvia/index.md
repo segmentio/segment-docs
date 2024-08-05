@@ -6,7 +6,7 @@ beta: true
 
 TXT2PAY from [Authvia](https://www.authvia.com/){:target="_blank”} is the easiest way to engage your customers for bills, invoices, donations, disbursement and any other payment use cases you may have. Get paid faster without having to worry about PCI compliance.
 
-This source is maintained by <Authvia>. For any issues with the source, [contact their Support team](mailto:support@authvia.com).
+This source is maintained by Authvia. For any issues with the source, [contact the Authvia Support team](mailto:support@authvia.com).
 
 ## Getting started
 
