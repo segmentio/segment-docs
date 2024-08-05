@@ -171,18 +171,18 @@ Example:
 ```python
 data_graph { 
  #define entities
-entity "account-entity" {
-     name = "account"
-     table_ref = "PRODUCTION.CUST.ACCOUNT"
-     primary_key = "id"
-     enrichment_enabled = true
-}
+     entity "account-entity" {
+          name = "account"
+     å     table_ref = "PRODUCTION.CUST.ACCOUNT"
+          primary_key = "id"
+          enrichment_enabled = true
+     }
 
-  entity "cart-entity" {
-        name = "cart"
-        table_ref = "PRODUCTION.CUST.CART"
-        primary_key = "id"
-   }
+     entity "cart-entity" {
+          name = "cart"
+          table_ref = "PRODUCTION.CUST.CART"
+          primary_key = "id"
+     }
 
   #define profile
      profile {
@@ -210,12 +210,12 @@ Example:
 
 data_graph { 
      #define entities
-
-   #define profile
+     #define profile
+     
      profile {
-         
-         profile_folder = "PRODUCTION.segment"
-         type = segment:materialized
+          
+          profile_folder = "PRODUCTION.segment"
+          type = segment:materialized
 
           #Option 2: relate account to profile with a trait`
           relationship: "user-accounts" {
@@ -246,8 +246,7 @@ Example:
 data_graph { 
      #define entities
 
- #define entities
-entity "account-entity" {
+     entity "account-entity" {
      name = "account"
      table_ref = "PRODUCTION.CUST.ACCOUNT"
      primary_key = "id"
@@ -260,7 +259,8 @@ entity "account-entity" {
           primary_key = "id"
      }
      
- #define profile
+     #define profile
+
      profile {
          profile_folder = "PRODUCTION.segment"
          type = segment:materialized
@@ -310,6 +310,7 @@ Example:
 
 data_graph { 
      #define entities
+
      profile {
           #define profile
                ...
@@ -356,25 +357,25 @@ data_graph {
                     join_key = "email_id"
                }
                
-               #relate carts to account
-               relationship "user-carts" { 
-                    name = "Shopping Carts"
-                    related_entity = "cart-entity"
-                    join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
+          #relate carts to account
+          relationship "user-carts" { 
+               name = "Shopping Carts"
+               related_entity = "cart-entity"
+               join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
 
-                    #relate carts to products with a junction table
-                    relationship "products" { 
-                         name = "Purchased Products"
-                         related_entity = "product-entity"
-                         junction_table {
-				          primary_key = "id"
-                              table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
-                              left_join_on = "CART.ID = CART_ID"
-                              #schema.table is implied within the cart_id key
-                              right_join_on = "PRODUCT_ID = PRODUCT.SKU"
-                         }
+               #relate carts to products with a junction table
+               relationship "products" { 
+                    name = "Purchased Products"
+                    related_entity = "product-entity"
+                    junction_table {
+                         primary_key = "id"
+                         table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
+                         left_join_on = "CART.ID = CART_ID"
+                         #schema.table is implied within the cart_id key
+                         right_join_on = "PRODUCT_ID = PRODUCT.SKU"
                     }
                }
+          }
           }
      }
 
