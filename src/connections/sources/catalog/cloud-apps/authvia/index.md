@@ -32,8 +32,8 @@ The table below lists events that Authvia sends to Segment. These events appear 
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | Actions Created          | An action was created for a customer to complete. An Action could be a payment, signature, data collection and more.                  |
 | Actions Updated          | A customer completed the action. An Action could be a payment, signature, data collection and more.                                   |
-| Customer Created         | A new customer was created in Authvia                                                                                                 |
-| Customer Updated         | An existing customer was updated                                                                                                      |
-| Customer Deleted         | An existing Customer was Deleted from Authvia                                                                                         |
-| Business Process Created | A new Business Process (Conversation) was created for a customer                                                                      |
+| Customer Created         | A new customer was created in Authvia.                                                                                                 |
+| Customer Updated         | An existing customer was updated.                                                                                                      |
+| Customer Deleted         | An existing Customer was Deleted from Authvia.                                                                                         |
+| Business Process Created | A new Business Process (Conversation) was created for a customer.                                                                      |
 | Business Process Updated | A customer has completed some, or all Actions in a business process. Alternatively, the Business Process was cancelled or it expired. |
