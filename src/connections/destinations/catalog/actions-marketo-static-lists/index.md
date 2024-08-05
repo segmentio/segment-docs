@@ -96,4 +96,7 @@ Check that you followed all of the set up steps. Wait six or more hours after se
 #### Audience size is smaller than expected
 Only users in the audience who also have an email address are uploaded to the list. You may need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
 
-If a user has multiple email addresses, each address appears once in the Marketo list. 
+If a user has multiple email addresses, each address appears once in the Marketo list.
+
+#### Duplicate Marketo List Name Error
+When cloning a Journey, creating a new Journey version, or cloning an Audience, you might face an error from Marketo stating that an existing list of the same name already exists. This occurs because the Journey step name or Audience name will be used as the Marketo list name. To resolve this, ensure you use a unique name for the Journey step or Audience, allowing for the creation of a new list without conflicts.
