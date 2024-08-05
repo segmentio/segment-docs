@@ -129,6 +129,26 @@ To create a mapping:
 
 To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
 
+#### Simplified Mappings
+
+Some destinations offer a simplified mapping experience, where you directly configure the sync behavior for your destination rather than mapping fields from your warehouse to your destination. 
+
+The following destinations support Simplified Mappings: 
+- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
+
+To create a Simplified Mapping: 
+1. Navigate to the overview page for the destination attached to your Reverse ETL source and click **Add Mapping**.
+2. Select the Reverse ETL model you would like to power your mapping and click **Next**. 
+3. Define the behavior each sync should have. For example, select the records you would like to sync, the way you would like to Segment to update data in your destination, and how Segment should respond when you delete a record in your warehouse.
+4. Select a "key", or the unique value Segment should use to match records between your warehouse and your destination.
+    - _(Optional)_: Select one or more columns to sync to your downstream destination. This is not required, but can help you control the granularity of data that flows to your downstream destination. 
+    - _(Optional)_: Send a test event downstream to verify that your records sync as expected. 
+7. When you're satisfied with your mappings, click **Next**. 
+8. On the Settings page, enter a name for your destination and set a sync schedule. 
+9. Click **Save and enable** to create your mapping. 
+
+For more information about Simplified Mappings, see the [Simplified Mappings]() documentation. 
+
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/connections/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
