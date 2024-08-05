@@ -10,15 +10,13 @@ This source is maintained by Authvia. For any issues with the source, [contact t
 
 ## Getting started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/authvia/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page,](https://app.segment.com/authvia/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Authvia" in the Sources Catalog, select Authvia, and click **Add Source**.
 3. On the next screen, give the Source a name configure any other settings.
-
-   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-
+   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Authvia_Prod, Authvia_Staging, Authvia_Dev).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. Go to [https://www.authvia.com/forms/setup-twilio-segment-and-authvia/](https://www.authvia.com/forms/setup-twilio-segment-and-authvia/) and enter your Authvia Client ID and Secret, along with your Write Key. You will also pick your region and choose which events you would like to subscribe to. If you do not have an Authvia Client ID and Secret, request access here [(https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31)](https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31
+6. Go to [Connect your Segment account](https://www.authvia.com/forms/setup-twilio-segment-and-authvia/){:target="_blank”} and enter your Authvia Client ID, Secret, and Segment Write Key. You will also pick your region and choose which events you would like to subscribe to. If you do not have an Authvia Client ID and Secret, request access from [the Authvia Technical Support team](https://authvia.atlassian.net/servicedesk/customer/portal/1/group/1/create/31){:target="_blank”}.
 
 ## Stream
 
