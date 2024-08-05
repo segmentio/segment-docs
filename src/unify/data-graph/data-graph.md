@@ -91,19 +91,19 @@ Example:
 # Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
 
 data_graph { 
-# Entities are nested under the data_graph
-entity "account-entity" {
-     name = "account"
-     table_ref = "PRODUCTION.CUST.ACCOUNT"
-     primary_key = "id"
-     enrichment_enabled = true
-}
-
-       entity "cart-entity" {
-            name = "cart"
-            table_ref = "PRODUCTION.CUST.CART"
-            primary_key = "id"
-       }
+  # Entities are nested under the data_graph
+  entity "account-entity" {
+       name = "account"
+       table_ref = "PRODUCTION.CUST.ACCOUNT"
+       primary_key = "id"
+       enrichment_enabled = true
+  }
+  
+  entity "cart-entity" {
+      name = "cart"
+      table_ref = "PRODUCTION.CUST.CART"
+      primary_key = "id"
+  }
 }
 ```
 
