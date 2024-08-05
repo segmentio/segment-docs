@@ -20,7 +20,7 @@ This source is maintained by Authvia. For any issues with the source, [contact t
 
 ## Stream
 
-Authvia uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Authvia uses the Authvia stream source component to send Segment event data. It uses a server-side Track or Identify method to send data to Segment. These events are then available in any destination that accepts server-side events and available in a schema in your data warehouse that you can query using SQL.
 
 The default behavior is for Authvia to pass the customer reference associated with the payer as the userId.
 
