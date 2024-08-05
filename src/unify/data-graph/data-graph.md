@@ -173,7 +173,7 @@ data_graph {
  #define entities
      entity "account-entity" {
           name = "account"
-     å     table_ref = "PRODUCTION.CUST.ACCOUNT"
+          table_ref = "PRODUCTION.CUST.ACCOUNT"
           primary_key = "id"
           enrichment_enabled = true
      }
