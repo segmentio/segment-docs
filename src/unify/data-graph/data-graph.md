@@ -7,23 +7,15 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-<!-- New stuff here -->
-
-You can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/overview/). Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
-
-Using the Data Graph, you can reflect your business in your data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile.
+The Data Graph is a semantic layer unifying all of your customer datasets. With the Data Graph, you can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. The Data Graph allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
-
-Using Data Graph, you only need to define the relationships between data sets one time to make data accessible to marketers and business stakeholders to build targeted and personalized customer engagements. 
 
 The Data Graph powers:
 
 - [Linked Audiences](/docs/engage/audiences/linked-audiences/): enables marketers to build targeting logic based on data points available in the data graph in a self-service way. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
 - [Linked Events](/docs/unify/data-graph/linked-events/): enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
-
-To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
 > warning ""
 > Don't send any personal health information with the Data Graph.
@@ -33,43 +25,31 @@ To help you get started with the Data Graph, [view this short setup demo](https:
 To use the Data Graph, you'll need the following:
 
 - A supported data warehouse.
-- (If setting up Linked Audiences) [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
+- If using Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. Profiles Sync is not required for Linked Events.
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
 
-> info ""
-> Profiles Sync is not required for Linked Events.
+## Step 1: Set up Data Graph permissions in your data warehouse
 
-## Step 1: Set up required permissions in your data warehouse
-
-To get started, set up the required permissions: 
+While Linked Audiences uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse, additional permissions are still required for Linked Audiences and Linked Events. To get started, set up the required permissions: 
 
 - [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
 - [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
 
-Linked Audiences uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
-
-To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database/project in your warehouse this data lives in. 
+To track what data has been sent to Segment on previous syncs, Segment stores diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
 ## Step 2: Connect your warehouse to the Data Graph
 
 To connect your warehouse to the Data Graph:
 
-1. Navigate to **Unify > Data Graph**.
-This should be a Unify space with Profiles Sync already set up.
+1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
 2. Click **Connect warehouse**.
 3. Select your warehouse type.
-**Note:** Linked Audiences only supports Snowflake.
 4. Enter your warehouse credentials. 
 5. Test your connection, then click **Save**.
 
 ## Step 3: Build your Data Graph
 
-The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 6 layers of depth, including the Profile entity. Warehouse schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in the warehouse.
-
-To leverage the Data Graph auto-complete feature, begin typing or use the following keyboard shortcuts to autocomplete the profile_folder and table_ref properties.
-
-- Mac: Ctrl + Space
-- Windows: Alt + Esc
+The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec below to build your Data Graph. The Data Graph currently supports 6 layers of depth, including the Profile entity. 
 
 ### Define entities
 
@@ -165,7 +145,7 @@ Next, relate Profiles to Entities to model relationships between your Profiles a
 A profile can be related to an entity in two ways:
 
 **1. With an `external_id`**: Define the external ID that will be used to join the profile with your entity.
-- `type`: Identify the external ID type (`email`, `phone`, `user_id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
+- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
 - `join_key`: This is the column on the entity table that you are matching to the external identifier.   
 
 Example: 
