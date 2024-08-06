@@ -154,7 +154,7 @@ When using the `create` operation, it's possible for duplicate records to be cre
 Please note this is only a concern when using the `create` operation. You can use the `upsert` operation instead to avoid duplicates if `upsert` meets your needs.
 
 ### How does Salesforce Bulk API work?
-When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 1000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
+When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 5000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
 
 > info ""
 > To monitor Bulk API uploads in Salesforce, search for 'Bulk Data Load Jobs' in the Quick Find box, then select **Bulk Data Load Jobs**. This will redirect you to the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page (Environment > Jobs > Bulk Data Load Jobs), where you can view the progress of current jobs, along with success and error messages for recent Bulk V2 operations.
