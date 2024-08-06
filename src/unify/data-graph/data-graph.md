@@ -123,25 +123,25 @@ Example:
 ```python
 
 data_graph {
-entity "account-entity" {
-     name = "account"
-     table_ref = "PRODUCTION.CUST.ACCOUNT"
-     primary_key = "id"
-     enrichment_enabled = true
-}
-
-entity "cart-entity" {
-      name = "cart"
-      table_ref = "PRODUCTION.CUST.CART"
-      primary_key = "id"
- }
-
-# Define a profile entity
-profile {
-     profile_folder = "PRODUCTION.segment"
-     type = segment:materialized
-    
-}
+  entity "account-entity" {
+       name = "account"
+       table_ref = "PRODUCTION.CUST.ACCOUNT"
+       primary_key = "id"
+       enrichment_enabled = true
+  }
+  
+  entity "cart-entity" {
+        name = "cart"
+        table_ref = "PRODUCTION.CUST.CART"
+        primary_key = "id"
+   }
+  
+  # Define a profile entity
+  profile {
+       profile_folder = "PRODUCTION.segment"
+       type = segment:materialized
+      
+  }
 }
 
 
@@ -170,7 +170,7 @@ Example:
 
 ```python
 data_graph { 
- #define entities
+     #define entities
      entity "account-entity" {
           name = "account"
           table_ref = "PRODUCTION.CUST.ACCOUNT"
@@ -184,7 +184,7 @@ data_graph {
           primary_key = "id"
      }
 
-  #define profile
+     #define profile
      profile {
          profile_folder = "PRODUCTION.segment"
          type = segment:materialized
@@ -210,10 +210,10 @@ Example:
 
 data_graph { 
      #define entities
+     ....
+
      #define profile
-     
      profile {
-          
           profile_folder = "PRODUCTION.segment"
           type = segment:materialized
 
@@ -245,22 +245,20 @@ Example:
 ```py
 data_graph { 
      #define entities
-
      entity "account-entity" {
-     name = "account"
-     table_ref = "PRODUCTION.CUST.ACCOUNT"
-     primary_key = "id"
-     enrichment_enabled = true
-}
+          name = "account"
+          table_ref = "PRODUCTION.CUST.ACCOUNT"
+          primary_key = "id"
+          enrichment_enabled = true
+     }
 
      entity "cart-entity" {
           name = "cart"
           table_ref = "PRODUCTION.CUST.CART"
           primary_key = "id"
      }
-     
-     #define profile
 
+     #define profile
      profile {
          profile_folder = "PRODUCTION.segment"
          type = segment:materialized
