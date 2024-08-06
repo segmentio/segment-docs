@@ -2,14 +2,18 @@
 title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
+redirect_from:
+  - '/connections/destinations/catalog/vendor-braze/'
+id: 60fb01aec459242d3b6f20c1
+versions:
+  - name: 'Braze Cloud Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/braze-cloud-mode-actions'
+  - name: 'Braze (Classic)'
+    link: '/docs/connections/destinations/catalog/braze'
 ---
 {% include content/plan-grid.md name="actions" %}
 
 [Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
 ## Benefits of Braze Web Mode (Actions) vs Braze Classic
 
@@ -20,12 +24,14 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Braze" in the Catalog, select **Braze**, and choose which of your sources to connect the destination to.
-  - Note that if you do not select a Javascript source, you will not see the option to select the Device mode version of the destination.
-3. Select "Actions" and "Device mode" under the Destination framework and Connection mode options.
-4. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
+2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
+3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
-{% include components/actions-fields.html name="braze-web" connection="true" %}
+> info ""
+> If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
+
+
+{% include components/actions-fields.html settings="true"%}
 
 ## Other features
 
@@ -159,11 +165,7 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 - Braze Web Mode (Actions) supports the Braze [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) supports server and mobile sources, but to use mobile sources in device-mode, use the Braze Classic destination.
 
 
-{% include components/actions-fields.html %}
-
-
 ## Migration from Braze Classic
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
-
