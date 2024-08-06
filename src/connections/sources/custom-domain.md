@@ -83,3 +83,7 @@ Segment also uses AWS Certificate Manager (ACM) to manage and renew certificates
 Yes, Custom Domain allows Segment to rename `window.analytics` to a unique name to avoid being blocked by some ad blocking software. 
 
 Customers who have access to the Custom Domain feature can rename analytics to `<workspaceid>/<sourceid>.js` by choosing an Alias for Analytics.js within the source settings that are available after the workspace is enabled for Custom Domain. 
+
+### What happens to the Analytics.js cookies already set on the user's browser prior to Custom Domain implementation?
+Analytics.js cookies will not be lost in the transition to Custom Domain. Once users revisit your website, the previous Analytics.js cookies will continue to be fetched and added to events if available.
+
