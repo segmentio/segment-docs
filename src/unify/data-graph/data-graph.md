@@ -23,8 +23,6 @@ The Data Graph powers:
 
 To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
-> warning ""
-> Don't send any personal health information with the Data Graph.
 
 ## Prerequisites
 
