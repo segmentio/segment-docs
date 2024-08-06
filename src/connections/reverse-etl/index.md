@@ -354,7 +354,7 @@ Column JSON size | The maximum size of any single column value. | 128 KiB
 
 ## FAQs
 
-#### What warehouses data sources does Segment support?
+#### What warehouse data sources does Segment support?
 Segment supports the following sources: 
 * [Azure](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup/)
 * [BigQuery](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
