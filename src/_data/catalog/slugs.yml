@@ -311,3 +311,5 @@ destinations:
     override: "actions-taboola-actions"
   - original: "userguiding"
     override: "user_guiding"
+  - original: "angler-ai"
+    override: "actions-angler-ai"
