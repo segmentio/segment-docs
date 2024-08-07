@@ -18,7 +18,7 @@ Deliver effective Facebook Ads campaigns by defining and syncing [custom audienc
 
 This destination sends audiences, or lists of users, from your data warehouse to Facebook Custom Audiences using Reverse ETL. Syncs can add or remove users from your Facebook Custom Audiences as records are created, updated, or deleted in your warehouse. 
 
-> info "This destination only supports **Reverse ETL sources**
+> info "This destination only supports **Reverse ETL sources**"
 > This destination only supports [Reverse ETL sources](/docs/connections/reverse-etl/#what-warehouse-data-sources-does-segment-support). To connect Facebook Custom Audiences to Twilio Engage, use the [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) destination. 
 
 ## Getting started
