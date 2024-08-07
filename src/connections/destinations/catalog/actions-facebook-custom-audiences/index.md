@@ -6,6 +6,8 @@ strat: facebook
 hide_action:
   - id: 3JEx23g4qgFzSECyYopNA4
     name: "Add"
+  - id: 99Dj24PD8pAweMvTnM8vD8
+    name: "Sync Reverse ETL"
   - id: eG6ydbfKbfJvQZ8gQpgakz
     name: "Sync Engage"
   - id: p74MiTEFmUUeoC7SKcT7Ri
