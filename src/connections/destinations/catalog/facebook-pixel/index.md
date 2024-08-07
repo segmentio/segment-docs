@@ -241,7 +241,7 @@ Facebook Pixel events typically don't display in real-time within the Facebook A
 
 ### Blocklisting nested properties 
 
-Segment does not handle nested properties that need to be blocklisted, including the standard PII properties. If you have standard PII properties or other properties you would like to blocklist, you can use [destination filters](https://segment.com/docs/connections/destinations/destination-filters/) to drop those properties before they are sent downstream. 
+Segment does not handle nested properties that need to be blocklisted, including the standard PII properties. If you have properties you would like to blocklist, you can use [destination filters](/docs/connections/destinations/destination-filters/) to drop those properties before they are sent downstream. 
 
 
 {% include content/client-side-script-unverified.md %}
