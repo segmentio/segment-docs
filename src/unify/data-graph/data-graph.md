@@ -1,4 +1,4 @@
-[---
+---
 title: Data Graph
 plan: unify
 beta: true
@@ -7,415 +7,379 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-You can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/overview/). Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
-
-Using the Data Graph, you can reflect your business in your data model. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products), and tie rich entity context back to the profile.
+The Data Graph is a semantic layer unifying all your customer datasets. With the Data Graph, you can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. Once the defined, the Data Graph allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
 
-Using Data Graph, you only need to define the relationships between data sets one time to make data accessible to marketers and business stakeholders to build targeted and personalized customer engagements. 
-
 The Data Graph powers:
 
-- [Linked Audiences](/docs/engage/audiences/linked-audiences/): enables marketers to build targeting logic based on data points available in the data graph in a self-service way. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
-- [Linked Events](/docs/unify/data-graph/linked-events/): enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
-
-To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
+- [Linked Audiences](/docs/engage/audiences/linked-audiences/): Enables marketers to self-serve and build targeting logic based on any data sets available in the Data Graph. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
+- [Linked Events](/docs/unify/data-graph/linked-events/): Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
 
 
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
 
-- A supported data warehouse.
-- (If setting up Linked Audiences) [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
-- Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
+- A supported data warehouse
+- If using Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. Note: Profiles Sync is not required for Linked Events
+- Workspace Owner or Unify Read-only/Admin and Entities Admin permissions
 
-> info ""
-> Profiles Sync is not required for Linked Events.
+## Step 1: Set up Data Graph permissions in your data warehouse
 
-## Step 1: Set up required permissions in your data warehouse
-
-To get started, set up the required permissions: 
+While Linked Audiences uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse, additional permissions are still required for Linked Audiences and Linked Events. To get started, set up the required permissions: 
 
 - [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
 - [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
 
-Linked Audiences uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
-
-To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database/project in your warehouse this data lives in. 
+To track what data has been sent to Segment on previous syncs, Segment stores diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
 ## Step 2: Connect your warehouse to the Data Graph
 
 To connect your warehouse to the Data Graph:
 
-1. Navigate to **Unify > Data Graph**.
-This should be a Unify space with Profiles Sync already set up.
+1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
 2. Click **Connect warehouse**.
 3. Select your warehouse type.
-**Note:** Linked Audiences only supports Snowflake.
 4. Enter your warehouse credentials. 
 5. Test your connection, then click **Save**.
 
 ## Step 3: Build your Data Graph
 
-The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 6 layers of depth, including the Profile entity. Warehouse schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in the warehouse.
+The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec and key features below to build your Data Graph:
+- Leverage the **Warehouse access** tab to view the warehouse tables you've granted Segment access to for the Data Graph
+- Beging typing to autopopulate the configuration spec within the editor, as well as to autocomplete your warehouse schema
+- Validate your Data Graph using preview
+- In app error messages to debug Data Graph issues
 
-To leverage the Data Graph auto-complete feature, begin typing or use the following keyboard shortcuts to autocomplete the profile_folder and table_ref properties.
+### Data Graph structure
+- Define your entities. This corresponds to tables in your warehouse.
+- Define the profile. This maps to the Segment Profiles tables synced via Profiles Sync.
+- Define the relationship type.
+  - The Data Graph supports three relationship types: 1) profile:entity 2) 1:many, and 3) many:many
+  - The Data Graph currently supports 6 layers of depth, including the profile. There are no limits on the breadth of your Data Graph.
+  - Relationships are nested under the profile.
 
-- Mac: Ctrl + Space
-- Windows: Alt + Esc
+**Example:**
+```python
 
-### Define entities
+data_graph {
+  ...
+  profile { 
+    relationship "a"{
+      ...
+      relationship "b" {
+        ...
+        relationship "c"{
+          ...
+        }
+      }
+    }
+    relationship "d" {
+    }
+  }  
+}
 
-Use the parameters, definitions, and examples below to help you define entities.
+```
 
-#### Entity
-
-The first step in creating a Data Graph is to define your Entities. An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse.
+### a) Define entities
+The first step in creating a Data Graph is to define your entities. An entity corresponds to a table in the warehouse.
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
-| `name`        | A unique label that displays throughout your Segment space.                           |
-| `table_ref`   | Defines the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
-| `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
-| (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/).                         |
+| `entity`      | An immutable slug for the entity, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g `account-entity` or `account_entity`)    |
+| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                           |
+| `table_ref`   | Defines the fully qualified table reference: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views |
+| `primary_key` | The unique identifier for the given table. Must be a column with unique values per row |
+| (Optional) `enrichment_enabled = true`      | Add this if you plan to reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/) use cases                         |
 
-Example:
+**Example:**
 
 ```python
-# Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
-
-data_graph { 
-  # Entities are nested under the data_graph
+data_graph {
   entity "account-entity" {
-       name = "account"
-       table_ref = "PRODUCTION.CUST.ACCOUNT"
-       primary_key = "id"
-       enrichment_enabled = true
+    name = "account"
+    table_ref = "PRODUCTION.CUST.ACCOUNT"
+    primary_key = "ID"
   }
   
   entity "cart-entity" {
-      name = "cart"
-      table_ref = "PRODUCTION.CUST.CART"
-      primary_key = "id"
+    name = "cart"
+    table_ref = "PRODUCTION.CUST.CART"
+    primary_key = "ID"
+    enrichment_enabled = true
   }
 }
 ```
 
-#### Profile 
+### b) Define the profile
+> info ""
+> Segments recommends that you select materialized views under the Profiles Sync Selective Sync settings to optimize warehouse compute costs.
 
-Next, we define a Profile block, a special class of Entity that represents Segment Profiles. There can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models, such as profile traits. 
-
-The parameters are:
+Next, define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `profile_folder`      | This is the fully qualified path of the folder or schema location for the profile tables.     |
-| `type`     | Identifies the materialization methods of the profile tables (segment:unmaterialized, segment:materialized) as defined in your Profiles Sync configuration. E.g. utilize segment:materialized if you are synching Profiles Materialized Tables. Note: Leveraging materialized profile tables optimizes warehouse compute costs. |
+| `profile_folder`      | Define the fully qualified path of the folder or schema location for the profile tables     |
+| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration (`segment:unmaterialized`, `segment:materialized`)|
 
-Example:
+**Example:**
 
 ```python
 
 data_graph {
-  entity "account-entity" {
-       name = "account"
-       table_ref = "PRODUCTION.CUST.ACCOUNT"
-       primary_key = "id"
-       enrichment_enabled = true
-  }
-  
-  entity "cart-entity" {
-        name = "cart"
-        table_ref = "PRODUCTION.CUST.CART"
-        primary_key = "id"
-   }
-  
-  # Define a profile entity
+  # Define your entities
+  ...
+
+  # Define the profile entity
   profile {
-       profile_folder = "PRODUCTION.segment"
-       type = segment:materialized
-      
+    profile_folder = "PRODUCTION.SEGMENT"
+    type = "segment:materialized"
   }
 }
 
-
 ```
 
-### Relate entities
+### c) Define relationships
 
-Next, relate Profiles to Entities to model relationships between your Profiles and business datasets. Use the following relationship, parameters, and examples to help you relate entities.
+Now define your relationships across your entities. The Data Graph supports three types of relationships:
+- Define relationship between the profile and an entity. This is the first level of relationships
+- Define 1:many relationships
+- Define many:many relationships 
 
-#### Relate Entity to Profile
+All relationship types require you to define the `relationship` slug,`name`, and `related_entity`. Each type of relationship has unique `join_on` conditions. 
+
+#### Relationship #1: Relating an entity and the profile
+This is the first level of relationships and a unique type of relationship between an entity and the Segment profile entity.  
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
-| `name`        | A unique label that displays throughout your Segment space.                          |
-| `related_entity`   | References your already defined entity. |
+| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)  |
+| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                          |
+| `related_entity`   | References your already defined entity |
 
+Reference your entity table and depending on your table columns, choose to join on one of the following: 
+**Option 1:** Use the `external_id` block to join the profile entity with `user_id`, `email`, or `phone` as the identifier on the entity table
+- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping` table  
+- `join_key`: This is the column on the entity table that you are matching to the external identifier   
+**Option 2:** Use the `traits` block to join with a profile trait on the entity table
+- `name`: The trait name that corresponds to a column name in your Profiles Sync `profile_traits_updates` table
+- `join_key`: This is the column on the entity table that you are matching to the trait
 
-A profile can be related to an entity in two ways:
-
-**1. With an `external_id`**: Define the external ID that will be used to join the profile with your entity.
-- `type`: Identify the external ID type (`email`, `phone`, `user_id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
-- `join_key`: This is the column on the entity table that you are matching to the external identifier.   
-
-Example: 
-
+**Example:**
 ```python
 data_graph { 
-     #define entities
-     entity "account-entity" {
-          name = "account"
-          table_ref = "PRODUCTION.CUST.ACCOUNT"
-          primary_key = "id"
-          enrichment_enabled = true
-     }
+  entity "account-entity" {
+    name = "account"
+    table_ref = "PRODUCTION.CUST.ACCOUNT"
+    primary_key = "ID"
+  }
 
-     entity "cart-entity" {
-          name = "cart"
-          table_ref = "PRODUCTION.CUST.CART"
-          primary_key = "id"
-     }
+  # Define additional entities...
 
-     #define profile
-     profile {
-         profile_folder = "PRODUCTION.segment"
-         type = segment:materialized
+  profile {
+    profile_folder = "PRODUCTION.SEGMENT"
+    type = "segment:materialized"
 
-          #Option 1: Relate account to profile with an external ID
-          relationship "user-accounts" {
-               name = "Premium Accounts"
-               related_entity = "account-entity"
-               external_id {
-                    type = "email"
-                    join_key = "email_id"
-               }
-          }
+    # Relationships are nested
+    relationship "user-accounts" {
+      name = "Premium Accounts"
+      related_entity = "account-entity"
+
+      # Option 1: Relate account to profile with an external ID
+      external_id {
+        type = "email"
+        join_key = "EMAIL_ID"
+      }
+
+      # Option 2: Relate account to profile with a trait
+      trait {
+        name = "cust_id"
+        join_key = "ID"
+      }
     }
-}
-```
-**2. With a `trait`**: Define a profile trait that will be used to join the profile with your entity.
-- `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
-- `join_key`: This is the column on the entity table that you are matching to the trait.
-      
-Example: 
-```python
-
-data_graph { 
-     #define entities
-     ....
-
-     #define profile
-     profile {
-          profile_folder = "PRODUCTION.segment"
-          type = segment:materialized
-
-          #Option 2: relate account to profile with a trait`
-          relationship: "user-accounts" {
-               name = "Premium Accounts"
-               related_entity = "account-entity"
-               trait {
-                    name = "cust_id"
-                    join_key = "id"
-               }
-          }
-     }
+  }
 }
 ```
 
-#### Relate between entities
+#### Relationship #2: Relating a 1:many relationship
 Finally, define relationships between Entities nested within the Profiles block.
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
-| `name`        | A unique label that displays throughout your Segment space.                          |
-| `related_entity`   | References your already defined entity. |
-| `join_on`         |    Defines relationships between two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that the entity slug is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
+| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)    |
+| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                        |
+| `related_entity`   | References your already defined entity |
+| `join_on`         |    Defines relationships between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
 
-Example:
+**Example:**
 
-```py
+```python
 data_graph { 
-     #define entities
-     entity "account-entity" {
-          name = "account"
-          table_ref = "PRODUCTION.CUST.ACCOUNT"
-          primary_key = "id"
-          enrichment_enabled = true
-     }
+  entity "cart-entity" {
+    name = "cart"
+    table_ref = "PRODUCTION.CUST.CART"
+    primary_key = "ID"
+  }
 
-     entity "cart-entity" {
-          name = "cart"
-          table_ref = "PRODUCTION.CUST.CART"
-          primary_key = "id"
-     }
+ # Define additional entities...
 
-     #define profile
-     profile {
-         profile_folder = "PRODUCTION.segment"
-         type = segment:materialized
-               
-          relationship "user-accounts" {
-               name = "Premium Accounts"
-               related_entity = "account-entity"
-               external_id {
-                    type = "email"
-                    join_key = "email_id"
-               }
+  profile {
+    profile_folder = "PRODUCTION.SEGMENT"
+    type = "segment:materialized"
 
-               #relate account to Carts
-               relationship "Carts" { 
-                    name = "Shopping Carts"
-                    related_entity = "carts-entity"
-                    join_on = "account-entity.id = carts-entity.account_id"
-               }
-          }
+    # Relationships are nested                      
+    relationship "user-accounts" {
+      ...
 
-          }
-     }         
+      # Define 1:many relationship by joining on right and left entity tables
+      relationship "user-carts" {
+        name = "Shopping Carts"
+        related_entity = "carts-entity"
+        join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
+      }
+    }
+  }
 }
-
 ```
 
-#### Relating entities with a junction table
-
-If you're relating entities with a junction table:
+#### Relationship #3: Relating many:many relationship
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `junction_table`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
-| `table_ref`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
-| `primary_key`    | The unique identifier on the join table, and should be a column with unique values per row. |
-| `left_join_on`   | Defines the relationship between the two entity tables: `[left entity slug].[column name] = [junction table column name]`. |
-| `right_join_on`  | Defines the relationship between the two entity tables: `[junction table column name] = [right entity slug].[column name]`. |
+| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)    |
+| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                        |
+| `related_entity`   | References your already defined entity |
 
-**Note:** `schema.table` is implied within the junction table column name and doesn't need to be provided.
-
+To define a many:many relationship, you'll need to join on the `junction_table`:
 > warning ""
-> Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name.
+> Attributes from a junction table are not referenceable via the Linked Audience Builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
 
-Example:
+| Parameters     | Definition                                                           |
+| `table_ref`      | Defines the fully qualified table reference to the join table.: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views  |
+| `primary_key`    | The unique identifier for the given table. Must be a column with unique values per row |
+| `left_join_on`   | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. `[schema].[table]` is implied within the junction table column name, so you do not need to define it again |
+| `right_join_on`  | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`.`[schema].[table]` is implied within the junction table column name, so you do not need to define it again |
 
-```py
+**Example:**
+
+```python
 
 data_graph { 
-     #define entities
+  # Define entities
 
-     profile {
-          #define profile
-               ...
-               #relate products to carts with a junction table
-               relationship "products" {
-                    name = "Purchased Products"
-                    related_entity = "product-entity"
-                    junction_table {
-                         primary_key = "id"
-                         table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
-                         left_join_on = "CART.ID = CART_ID"
-                         #schema.table is implied within the cart_id key
-                         right_join_on = "PRODUCT_ID = PRODUCT.SKU"
-                    }
+  profile {
+    # Define profile
 
-               }
+    # Relationships are nested           
+    relationship "user-accounts" {
+      ...
+
+      relationship "user-carts" {
+        ...
+
+        # Define many:many relationship by joining entity tables with junction table
+        relationship "products" {
+          name = "Purchased Products"
+          related_entity = "product-entity"
+          junction_table {
+            table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
+            primary_key = "ID"
+            left_join_on = "CART.ID = CART_ID"
+            right_join_on = "PRODUCT_ID = PRODUCT.SKU"
           }
-     }         
-
+        }
+      }
+    }
+  }
+}
+         
 ```
 ## Step 4: Validate your Data Graph
+You can validate your Data Graph using the preview, then click Save. After you've set up your Data Graph, your partner teams can start leveraging these datasets with with [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
-Validate your Data Graph using the config builder and preview, then click **Save**.
-
-## Data Graph example 
+## Data Graph Example 
 
 <img src="/docs/unify/images/data-graph-example.png" alt="An example of a Data Graph" width="5888"/>
 
-```py
+```python
 data_graph {
-     version =  "v1.0.0"
+  version =  "v1.0.0"
 
-#define a profile entity
-     profile {
-          profile_folder = "PRODUCTION.segment"
-          type = "segment: materialized"
+  # Define entities
+  entity "account-entity" {
+    name = "account"
+    table_ref = "PRODUCTION.CUST.ACCOUNT"
+    primary_key = "ID"
+  }
 
-          #relate accounts to profiles with an external ID
-          relationship "user-accounts" {
-               name = "Premium Accounts"
-               related_entity = "account-entity"
-               external_id {
-                    type = "email"
-                    join_key = "email_id"
-               }
-               
-          #relate carts to account
-          relationship "user-carts" { 
-               name = "Shopping Carts"
-               related_entity = "cart-entity"
-               join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
+  entity "product-entity" {
+    name = "product"
+    table_ref = "PRODUCTION.PROD.PRODUCT_SKUS"
+    primary_key = "SKU"
+  }
 
-               #relate carts to products with a junction table
-               relationship "products" { 
-                    name = "Purchased Products"
-                    related_entity = "product-entity"
-                    junction_table {
-                         primary_key = "id"
-                         table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
-                         left_join_on = "CART.ID = CART_ID"
-                         #schema.table is implied within the cart_id key
-                         right_join_on = "PRODUCT_ID = PRODUCT.SKU"
-                    }
-               }
-          }
-          }
-     }
+  entity "cart-entity" {
+    name = "cart"
+    table_ref = "PRODUCTION.CUST.CART"
+    primary_key = "ID"
+    enrichment_enabled = true
+  }
 
-     #define account, product, and cart entities
-     entity "account-entity" {
-          name = "account"
-          table_ref = "PRODUCTION.CUST.ACCOUNT"
-          primary_key = "id"
-          enrichment_enabled = true
-     }
+  # Define the profile entity
+  profile {
+    profile_folder = "PRODUCTION.SEGMENT"
+    type = "segment: materialized"
 
-     entity "product-entity" {
-          name = "product"
-          table_ref = "PRODUCTION.PROD.PRODUCT_SKUS"
-          primary_key = "sku"
-          enrichment_enabled = true
-     }
+    # Relate entity table to the profile by joining with an external ID block
+    relationship "user-accounts" {
+      name = "Premium Accounts"
+      related_entity = "account-entity"
+      external_id {
+        type = "email"
+        join_key = "EMAIL_ID"
+      }
 
-     entity "cart-entity" {
-          name = "cart"
-          table_ref = "PRODUCTION.CUST.CART"
-          primary_key = "id"
-     }
+      # Define 1:many relationship by joining left and right entity tables
+      relationship "user-carts" {
+        name = "Shopping Carts"
+        related_entity = "cart-entity"
+        join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
+  
+        # Define many:many relationship by joining left and right entity tables with a junction table
+        relationship "products" { 
+          name = "Purchased Products"
+          related_entity = "product-entity"
+          junction_table {
+            primary_key = "ID"
+            table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
+            left_join_on = "CART.ID = CART_ID"
+            right_join_on = "PRODUCT_ID = PRODUCT.SKU"
+          }      
+        }
+      }
+    }
+  }
 }
 
 ```
-## Edit your Data Graph
+## Edit & manage your Data Graph
 
 To edit your Data Graph:
 
 1. Navigate to **Unify > Data Graph**.
 2. Select the **Builder** tab, and click **Edit Data Graph**.
 
-A data consumer refers to a Segment feature referencing entities and relationships from the Data Graph.
+### View Data Graph data consumers
+A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audiences) referencing datasetes, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
+- Under **Unify > Data Graph**, click the **Data consumers** tab
+- Click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
 
-## Breaking changes 
+### Edits that may cause breaking and potential breaking changes
+Upon saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
+- **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship `slug` are immutable and treated as a delete if you make changes. You can modify the `label`. 
+-**Potential breaking change**: Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
 
-A breaking change occurs when deleting an entity or relationship that is being referenced by a data consumer. Note that an entity or relationship slug is immutable and treated as a delete if you make changes. Data consumers affected by breaking changes will fail on the next run. 
-
-### Potential breaking change 
-
-Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work. 
-
-## Next steps 
-
-After you've set up your Data Graph, get started with [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
-
+### Warehouse breaking changes
+Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph and/or data consumers, such as when the table being referenced gets deleted from your warehouse, the primary key column no longer exists, etc. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
