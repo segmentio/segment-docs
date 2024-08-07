@@ -4,15 +4,26 @@ strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 60ae8b97dcb6cc52d5d0d5ab
+hide_action:
+  - id: 3daKK91WWi3VqaWhjQGJpY
+    name: "Customer Match User List"
+  - id: 7vmdP8TJSYA31eRZZoDqN7
+    name: "Click Conversion"
+  - id: ndcXYK6HoSX6ydB8JdMgaT
+    name: "Call Conversion"
+  - id: mFUPoRTLRXhZ3sGbM8H3Qo
+    name: "Conversion Adjustment"
+  - id: oWa5UioHjz5caK7t7tc57f
+    name: 'Upload Enhanced Conversion (Legacy)'
 ---
 
-The Google Ads Conversions destination enables you to upload offline conversions and conversion adjustments to Google Ads in a privacy safe way. With this server-side destination, you can upload conversions to the [Google Ads API](https://developers.google.com/google-ads/api/docs/conversions/overview){:target="_blank"} and tie them to a user's online click or phone call. In addition, you can improve the accuracy of your conversion measurement by sending conversion enhancements, restatements, and retractions. 
+The Google Ads Conversions destination enables you to upload offline conversions and conversion adjustments to Google Ads in a privacy safe way. With this server-side destination, you can upload conversions to the [Google Ads API](https://developers.google.com/google-ads/api/docs/conversions/overview){:target="_blank"} and tie them to a user's online click or phone call. In addition, you can improve the accuracy of your conversion measurement by sending conversion enhancements, restatements, and retractions.
 
 > warning "Upload Enhanced Conversion (Legacy) Actions will be deprecated after June 30th, 2024"
 > Segment will begin migrating all enabled Upload Enhanced Conversion (Legacy) mappings to the updated Upload Conversion Adjustment mappings on June 7th, 2024. **After Segment migrates your mappings, you must take action to prevent data loss**. For more information, see the [Automatic migration from Upload Enhanced Conversion (Legacy) Action](#automatic-migration-from-upload-enhanced-conversion-legacy-action) documentation.
 
 > info "Consent mode"
-> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up. 
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up.
 
 ## Getting started
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
