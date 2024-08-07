@@ -1,6 +1,5 @@
 ---
 title: 'Gtag Destination'
-beta: true
 hidden: true
 strat: google
 ---

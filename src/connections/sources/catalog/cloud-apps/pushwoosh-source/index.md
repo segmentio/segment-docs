@@ -1,7 +1,6 @@
 ---
 title: Pushwoosh Source
 id: MW9K4HgBZz
-beta: true
 ---
 
 [Pushwoosh] (https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a comprehensive mobile engagement platform, offering advanced push notifications, and in-app messaging to enhance customer interactions and retention.

@@ -1,6 +1,5 @@
 ---
 title: Leanplum Source
-beta: true
 source-type: event
 id: NRgENc89eR
 ---

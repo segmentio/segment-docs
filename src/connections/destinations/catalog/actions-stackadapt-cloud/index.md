@@ -2,7 +2,6 @@
 title: StackAdapt Destination
 hide-boilerplate: true
 hide-dossier: true
-beta: true
 id: 61d8859be4f795335d5c677c
 hidden: true
 redirect_from: '/connections/destinations/catalog/actions-stackadapt/'

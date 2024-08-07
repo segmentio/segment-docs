@@ -2,7 +2,6 @@
 title: Facebook Lead Ads Source
 rewrite: true
 strat: facebook
-beta: true
 id: ODf0vA6dcH
 ---
 {% include content/source-region-unsupported.md %}
