@@ -51,16 +51,17 @@ After you've connected your Facebook Custom Audiences destination to Segment, se
   Select or create an audience in Facebook to sync your data with. Click the **Select or create audience in Facebook** button to save the audience ID to your mapping. 
   </li>
   <li value="8" markdown=1>
-  Map your model columns to the appropriate Facebook Custom Audience parameters. For more context about data formatting, see the [Sync audience](#sync-audience) and [Data processing](#data-processing) documentation.
-  <ul>
-    <li> Map External ID to a unique user identifier from your system (like User ID, CRM ID, or anonymous ID.) Segment recommends using the External ID column as your primary key when setting up your Reverse ETL model so you can more easily remove users from your custom audience. External ID is the only field Segment requires you to map. </li>
-    <li> Segment recommends mapping as many parameters as you have available in your source model so that you can increase your match rates. </li>
+  Map your model columns to the appropriate Facebook Custom Audience parameters. For more context about data formatting, see the [Sync audience](#sync-audience) and [Data processing](#data-processing) documentation. 
+  <ul> 
+    <li> Map External ID to a unique user identifier from your system (like User ID, CRM ID, or anonymous ID.) Segment recommends using the External ID column as your primary key when setting up your Reverse ETL model so you can more easily remove users from your custom audience. External ID is the only field Segment requires you to map. </li> 
+    <li> Segment recommends mapping as many parameters as you have available in your source model so that you can increase your match rates. </li> 
   </ul>
   </li>
   <li value ="9" markdown=1>
-  Send a test record. If successful, you should see a 200 response in Segment and one added record to your custom audience. To verify that the record was successfully added to your custom audience, open Facebook Ads Manager and navigate to **Audiences > {Audience Name} > History**.</li>
+  Send a test record. If successful, you should see a 200 response in Segment and one added record to your custom audience. To verify that the record was successfully added to your custom audience, open Facebook Ads Manager and navigate to **Audiences > {Audience Name} > History**.
+  </li>
   <li value="10" markdown=1>
-  Click **Save Mapping** and enable the mapping.
+  Click **Save Mapping** and enable the mapping. 
   </li>
 </ol>
 
