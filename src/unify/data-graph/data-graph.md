@@ -7,15 +7,15 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-The Data Graph is a semantic layer unifying all of your customer datasets. With the Data Graph, you can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. The Data Graph allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
+The Data Graph is a semantic layer unifying all your customer datasets. With the Data Graph, you can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. Once the defined, the Data Graph allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
 
 The Data Graph powers:
 
-- [Linked Audiences](/docs/engage/audiences/linked-audiences/): enables marketers to build targeting logic based on data points available in the data graph in a self-service way. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
-- [Linked Events](/docs/unify/data-graph/linked-events/): enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
+- [Linked Audiences](/docs/engage/audiences/linked-audiences/): Enables marketers to build targeting logic based on data points available in the data graph in a self-service way. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
+- [Linked Events](/docs/unify/data-graph/linked-events/): Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
 
 > warning ""
 > Don't send any personal health information with the Data Graph.
@@ -25,7 +25,7 @@ The Data Graph powers:
 To use the Data Graph, you'll need the following:
 
 - A supported data warehouse.
-- If using Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. Profiles Sync is not required for Linked Events.
+- If using Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. Note: Profiles Sync is not required for Linked Events.
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
 
 ## Step 1: Set up Data Graph permissions in your data warehouse
@@ -49,170 +49,163 @@ To connect your warehouse to the Data Graph:
 
 ## Step 3: Build your Data Graph
 
-The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec below to build your Data Graph. The Data Graph currently supports 6 layers of depth, including the Profile entity. 
+The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec below to build your Data Graph.
 
-### Define entities
-
-Use the parameters, definitions, and examples below to help you define entities.
-
-#### Entity
-
-The first step in creating a Data Graph is to define your Entities. An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse.
-
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
-| `name`        | A unique label that displays throughout your Segment space.                           |
-| `table_ref`   | Defines the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
-| `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
-| (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/).                         |
-
-Example:
-
-```python
-# Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
-
-data_graph { 
-  # Entities are nested under the data_graph
-  entity "account-entity" {
-       name = "account"
-       table_ref = "PRODUCTION.CUST.ACCOUNT"
-       primary_key = "id"
-       enrichment_enabled = true
-  }
-  
-  entity "cart-entity" {
-      name = "cart"
-      table_ref = "PRODUCTION.CUST.CART"
-      primary_key = "id"
-  }
-}
-```
-
-#### Profile 
-
-Next, we define a Profile block, a special class of Entity that represents Segment Profiles. There can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models, such as profile traits. 
-
-The parameters are:
-
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `profile_folder`      | This is the fully qualified path of the folder or schema location for the profile tables.     |
-| `type`     | Identifies the materialization methods of the profile tables (segment:unmaterialized, segment:materialized) as defined in your Profiles Sync configuration. E.g. utilize segment:materialized if you are synching Profiles Materialized Tables. Note: Leveraging materialized profile tables optimizes warehouse compute costs. |
+### Data Graph structure
+- Define your entities. This corresponds to tables in your warehouse.
+- Define your profile. This maps to the Segment Profiles tables synced via Profiles Sync.
+- Define the relationship type.
+  - The Data Graph currently supports 6 layers of depth, including the profile. There are no limits on the breadth of your Data Graph.
+  - Relationships are nested under the profile.
 
 Example:
 
 ```python
 
 data_graph {
-  entity "account-entity" {
-       name = "account"
-       table_ref = "PRODUCTION.CUST.ACCOUNT"
-       primary_key = "id"
-       enrichment_enabled = true
-  }
-  
-  entity "cart-entity" {
-        name = "cart"
-        table_ref = "PRODUCTION.CUST.CART"
-        primary_key = "id"
-   }
-  
-  # Define a profile entity
+  ...
   profile {
-       profile_folder = "PRODUCTION.segment"
-       type = segment:materialized
-      
-  }
+    relationship "A"{
+      ...
+      relationship "B" {
+        ...
+        relationship "C"{
+          ...
+        }
+      }
+    }
+  }  
 }
-
 
 ```
 
-### Relate entities
+### a) Define entities
+> info ""
+> Leverage the "Warehouse access" tab to view the warehouse tables you've granted Segment access to for the Data Graph.
 
-Next, relate Profiles to Entities to model relationships between your Profiles and business datasets. Use the following relationship, parameters, and examples to help you relate entities.
-
-#### Relate Entity to Profile
+The first step in creating a Data Graph is to define your entities. An entity corresponds to a table in the warehouse.
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
-| `name`        | A unique label that displays throughout your Segment space.                          |
-| `related_entity`   | References your already defined entity. |
+| `entity`      | An immutable slug for the entity, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g `account-entity` or `account_entity`)    |
+| `name`        | A label that displays throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                           |
+| `table_ref`   | Defines the fully qualified table reference: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views or materialized views |
+| `primary_key` | The unique identifier for the given table. Must be a column with unique values per row |
+| (Optional) `enrichment_enabled = true`      | Add this if you plan to reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/) use cases                         |
 
-
-A profile can be related to an entity in two ways:
-
-**1. With an `external_id`**: Define the external ID that will be used to join the profile with your entity.
-- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
-- `join_key`: This is the column on the entity table that you are matching to the external identifier.   
-
-Example: 
+**Example:**
 
 ```python
+data_graph {
+  entity "account-entity" {
+    name = "account"
+    table_ref = "PRODUCTION.CUST.ACCOUNT"
+    primary_key = "id"
+  }
+  
+  entity "cart-entity" {
+    name = "cart"
+    table_ref = "PRODUCTION.CUST.CART"
+    primary_key = "id"
+    enrichment_enabled = true
+  }
+}
+```
+
+### b) Define the profile
+> info ""
+> Segments recommends that you select materialized views under the Profiles Sync Selective Sync settings to optimize warehouse compute costs.
+
+Next, define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
+
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `profile_folder`      | Define the fully qualified path of the folder or schema location for the profile tables     |
+| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration (`segment:unmaterialized`, `segment:materialized`)|
+
+**Example:**
+
+```python
+
+data_graph {
+  # Define your entities
+  entity "account-entity" {
+    name = "account"
+    table_ref = "PRODUCTION.CUST.ACCOUNT"
+    primary_key = "id"
+  }
+  
+  ...
+  
+  # Define the profile entity
+  profile {
+    profile_folder = "PRODUCTION.SEGMENT"
+    type = "segment:materialized"
+  }
+}
+
+```
+
+### c) Define relationships
+
+Now define your relationships across your entities. The Data Graph supports three types of relationships:
+- Define relationship between an entity and the profile. This is the first level of relationships
+- Define 1:many relationships
+- Define many:many relationships 
+
+All relationship types require you to define the `relationship`,`name`, and `related_entity`. Each type of relationship has specific `join_on` conditions. 
+
+#### Define relationship between an entity and the profile
+This is the first level of relationships and a unique type of relationship between an entity and the Segment profile entity.  
+
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)  |
+| `name`        | A label that displays throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                          |
+| `related_entity`   | References your already defined entity |
+
+Reference your entity table and depending on your table columns, choose to join on one of the following: 
+**Option 1:** Use the `external_id` block to join the profile entity with `user_id`, `email`, or `phone` as the identifier on the entity table
+- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping` table  
+- `join_key`: This is the column on the entity table that you are matching to the external identifier   
+**Option 2:** Use the `traits` block to join with a profile trait on the entity table
+- `name`: The trait name that corresponds to a column name in your Profiles Sync `profile_traits_updates` table
+- `join_key`: This is the column on the entity table that you are matching to the trait
+
+**Example:**
+```python
 data_graph { 
-     #define entities
-     entity "account-entity" {
-          name = "account"
-          table_ref = "PRODUCTION.CUST.ACCOUNT"
-          primary_key = "id"
-          enrichment_enabled = true
-     }
+  entity "account-entity" {
+    name = "account"
+    table_ref = "PRODUCTION.CUST.ACCOUNT"
+    primary_key = "id"
+  }
 
-     entity "cart-entity" {
-          name = "cart"
-          table_ref = "PRODUCTION.CUST.CART"
-          primary_key = "id"
-     }
+  profile {
+    profile_folder = "PRODUCTION.SEGMENT"
+    type = segment:materialized
 
-     #define profile
-     profile {
-         profile_folder = "PRODUCTION.segment"
-         type = segment:materialized
+    relationship "user-accounts" {
+      name = "Premium Accounts"
+      related_entity = "account-entity"
 
-          #Option 1: Relate account to profile with an external ID
-          relationship "user-accounts" {
-               name = "Premium Accounts"
-               related_entity = "account-entity"
-               external_id {
-                    type = "email"
-                    join_key = "email_id"
-               }
-          }
+      # Option 1: Relate account to profile with an external ID
+      external_id {
+        type = "email"
+        join_key = "email_id"
+      }
+
+      # Option 2: Relate account to profile with a trait
+      trait {
+        name = "cust_id"
+        join_key = "id"
+      }
     }
-}
-```
-**2. With a `trait`**: Define a profile trait that will be used to join the profile with your entity.
-- `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
-- `join_key`: This is the column on the entity table that you are matching to the trait.
-      
-Example: 
-```python
-
-data_graph { 
-     #define entities
-     ....
-
-     #define profile
-     profile {
-          profile_folder = "PRODUCTION.segment"
-          type = segment:materialized
-
-          #Option 2: relate account to profile with a trait`
-          relationship: "user-accounts" {
-               name = "Premium Accounts"
-               related_entity = "account-entity"
-               trait {
-                    name = "cust_id"
-                    join_key = "id"
-               }
-          }
-     }
+  }
 }
 ```
 
-#### Relate between entities
+#### Define 1:many relationship
 Finally, define relationships between Entities nested within the Profiles block.
 
 | Parameters     | Definition                                                           |
@@ -231,13 +224,13 @@ data_graph {
           name = "account"
           table_ref = "PRODUCTION.CUST.ACCOUNT"
           primary_key = "id"
-          enrichment_enabled = true
      }
 
      entity "cart-entity" {
           name = "cart"
           table_ref = "PRODUCTION.CUST.CART"
           primary_key = "id"
+        enrichment_enabled = true
      }
 
      #define profile
@@ -267,7 +260,7 @@ data_graph {
 
 ```
 
-#### Relating entities with a junction table
+#### Define many:many relationship
 
 If you're relating entities with a junction table:
 
@@ -364,20 +357,19 @@ data_graph {
           name = "account"
           table_ref = "PRODUCTION.CUST.ACCOUNT"
           primary_key = "id"
-          enrichment_enabled = true
      }
 
      entity "product-entity" {
           name = "product"
           table_ref = "PRODUCTION.PROD.PRODUCT_SKUS"
           primary_key = "sku"
-          enrichment_enabled = true
      }
 
      entity "cart-entity" {
           name = "cart"
           table_ref = "PRODUCTION.CUST.CART"
           primary_key = "id"
+          enrichment_enabled = true
      }
 }
 
