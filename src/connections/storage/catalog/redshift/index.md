@@ -17,6 +17,8 @@ Complete the following steps to provision your Redshift cluster, and connect Seg
 3. [Create a database user](#create-a-database-user)
 4. [Connect Redshift to Segment](#connect-redshift-to-segment)
 
+{% include content/storage-do-include.md %}
+
 ## Choose the best instance for your needs
 
 While the number of events (database records) are important, the storage capacity usage of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. To avoid storing unnecessary data, start with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before you install Segment libraries to ensure that only the necessary events are passed to Segment.

@@ -90,3 +90,4 @@ Segment uses the service principal to access your Databricks workspace and assoc
 
 Once connected, you'll see a confirmation screen with next steps and more info on using your warehouse.
 
+{% include content/storage-do-include.md %}

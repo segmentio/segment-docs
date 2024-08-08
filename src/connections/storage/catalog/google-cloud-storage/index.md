@@ -4,8 +4,6 @@ integration-type: destination
 redirect_from: '/connections/destinations/catalog/google-cloud-storage/'
 ---
 
-
-
 The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment receives into your GCS bucket. The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
 
 > warning ""
@@ -19,7 +17,6 @@ The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment
 
 1. Create a Service Account to allow Segment to copy files into the bucket
 2. Create a bucket in your preferred region.
-
 
 ## Set up Service Account to give Segment access to upload to your Bucket
 

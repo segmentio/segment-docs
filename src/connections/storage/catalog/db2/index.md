@@ -11,7 +11,7 @@ all of your event and Cloud Source data in a warehouse built by IBM. This
 guide will walk through what you need to know to get up and running with Db2
 Warehouse and Segment.
 
-> note " "
+> info " "
 > This document refers specifically to [IBM Db2 Warehouse on Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud){:target="_blank"}, [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2){:target="_blank"}, and the [IBM Integrated Analytics System](https://www.ibm.com/products/integrated-analytics-system){:target="_blank"}. For questions related to any of these products, see the [IBM Cloud Docs](https://cloud.ibm.com/docs){:target="_blank"}.
 
 ## Getting Started
@@ -20,6 +20,8 @@ To get started, you'll need to:
 1. [Create a Db2 user for Segment](#create-a-user-for-segment).
 2. [Grant the user sufficient permissions](#grant-the-segment-user-permissions).
 3. [Create the the IBM Db2 Destination in the Segment app](#create-segment-db2-destination).
+
+{% include content/storage-do-include.md %}
 
 ### Create a User for Segment
 
