@@ -326,13 +326,25 @@ data_graph {
       primary_key = "ID"
       enrichment_enabled = true
     }
+
+    entity "household-entity" {
+      name = "household"
+      table_ref = "PRODUCTION.CUST.HOUSEHOLD"
+      primary_key = "HOUSEHOLD_ID"
+    }
+
+    entity "subscription-entity" {
+      name = "subscription"
+      table_ref = "PRODUCTION.CUST.SUBSCRIPTION"
+      primary_key = "SUB_ID"
+    }
   
     # Define the profile entity
     profile {
       profile_folder = "PRODUCTION.SEGMENT"
       type = "segment: materialized"
   
-      # Relate entity table to the profile by joining with an external ID block
+      # First branch - relate accounts table to the profile by joining with an external ID block
       relationship "user-accounts" {
         name = "Premium Accounts"
         related_entity = "account-entity"
@@ -341,13 +353,13 @@ data_graph {
           join_key = "EMAIL_ID"
         }
   
-        # Define 1:many relationship by joining left and right entity tables
+        # Define 1:many relationship between accounts and carts
         relationship "user-carts" {
           name = "Shopping Carts"
           related_entity = "cart-entity"
           join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
     
-          # Define many:many relationship by joining left and right entity tables with a junction table
+          # Define many:many relationship between carts and products
           relationship "products" { 
             name = "Purchased Products"
             related_entity = "product-entity"
@@ -360,6 +372,21 @@ data_graph {
           }
         }
       }
+
+      # Second branch - relate households table to the profile by joining with an external ID block
+      relationship "user-households" {
+        name = "Households"
+        related_entity = "household-entity"
+        external_id {
+          type = "email"
+          join_key = "EMAIL_ID"
+        }
+  
+        # Define 1:many relationship between households and subscriptions
+        relationship "user-subscriptions" {
+          name = "Subscriptions"
+          related_entity = "subscription-entity"
+          join_on = "HOUSEHOLD.SUB_ID = SUBSCRIPTION.HOUSEHOLD_ID"
     }
 }
 
