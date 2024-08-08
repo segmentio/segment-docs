@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Function Destination
 hide-cmodes: true
-beta: true
 strat: google
 id: 5cbe24b1d07261000146ab55
 ---

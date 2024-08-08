@@ -1,6 +1,5 @@
 ---
 rewrite: true
-beta: true
 title: Zapier Destination
 id: 57c4996480412f644ff29f78
 ---

@@ -1,6 +1,5 @@
 ---
 title: Infinario Destination
-beta: true
 ---
 ## Getting Started
 

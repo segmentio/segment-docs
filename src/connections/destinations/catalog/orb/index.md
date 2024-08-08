@@ -1,7 +1,6 @@
 ---
 title: Orb Destination
 id: 625ed45387dd6603f5380424
-beta: true
 ---
 [Orb](https://www.withorb.com/){:target="_blank"} provides scalable, reliable, and flexible billing infrastructure for usage based revenue models at companies of all sizes.
 

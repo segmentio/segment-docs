@@ -1,7 +1,6 @@
 ---
 title: Movable Ink (Actions) Destination
 id: 6537b55db9e94b2e110c9cf9
-beta: true
 ---
 
 [Movable Ink](https://movableink.com/){:target="_blank"} lets email marketers deliver jaw-dropping customer experiences. Movable Ink's cloud-based software activates any data to generate intelligent content at the moment of open.

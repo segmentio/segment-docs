@@ -1,7 +1,6 @@
 ---
 title: Optimizely Full Stack Destination
 hide-personas-partial: true
-beta: true
 redirect_from: '/connections/destinations/catalog/optimizelyx/'
 id: 59d3b44b8f1480000104be6b
 ---

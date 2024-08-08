@@ -1,7 +1,6 @@
 ---
 title: 'Alloy Flow Source'
 id: DY0B0Q2Gce
-beta: true
 ---
 
 [Alloy](https://runalloy.com/flow/){:target="_blank"} is a specialized no-code automation platform, built with e-commerce businesses in mind. It seamlessly integrates various applications, paving the way for a streamlined shopping experience and efficient operational workflows.

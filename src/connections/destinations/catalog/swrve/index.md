@@ -1,5 +1,4 @@
 ---
-beta: true
 title: Swrve Destination
 id: 59c467ba9e26eb0001380743
 ---

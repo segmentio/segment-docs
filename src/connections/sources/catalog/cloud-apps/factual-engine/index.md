@@ -1,6 +1,5 @@
 ---
 title: Factual Engine Mobile SDK Source
-beta: true
 source-type: event
 id: n8YgCndi75
 ---

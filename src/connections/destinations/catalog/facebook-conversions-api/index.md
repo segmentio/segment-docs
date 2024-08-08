@@ -1,7 +1,6 @@
 ---
 title: 'Facebook Conversions API Destination'
 hidden: true
-beta: true
 id: 5c7f23427d1806000175952a
 ---
 <!-- LR: 2/16/2021: Redirects to /docs/connections/destinations/catalog/facebook-pixel-server-side

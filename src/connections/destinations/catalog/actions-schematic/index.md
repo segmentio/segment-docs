@@ -1,6 +1,5 @@
 ---
 title: Schematic (Actions) Destination
-beta: true
 id: 65b8e9eca1b5903a031c6378
 ---
 

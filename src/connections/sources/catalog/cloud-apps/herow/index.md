@@ -1,6 +1,5 @@
 ---
 title: Herow
-beta: true
 id: xJSb170s6B
 ---
 {% include content/source-region-unsupported.md %}

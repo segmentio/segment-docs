@@ -1,7 +1,6 @@
 ---
 title: 'Paytronix Source'
 id: Zd5BXedXsa
-beta: true
 ---
 
 [Paytronix](https://support-paytronix.force.com/help/s/article/000001348){:target="_blank”} is the leading provider of Digital Customer Engagement Solutions for restaurants, convenience stores, and retailers who seek to develop lasting relationships with their guests. For over 20 years, Paytronix has grown its Guest Engagement Platform to seamlessly incorporate individual components of digital customer engagement into a single, robust platform.

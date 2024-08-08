@@ -1,7 +1,6 @@
 ---
 title: SaaSquatch v2 Destination
 id: 62439b17f9f8c788769e83f6
-beta: true
 ---
 
 [SaaSquatch](https://saasquatch.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a loyalty, referral and rewards platform that helps companies reward their brand advocates, build loyal communities, and accelerate revenue growth.

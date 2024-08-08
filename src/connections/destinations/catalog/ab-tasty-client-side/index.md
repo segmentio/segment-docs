@@ -2,7 +2,6 @@
 rewrite: true
 title: AB Tasty Destination
 id: 6214f1347a49cda426260372
-beta: true
 ---
 
 # AB Tasty Destination

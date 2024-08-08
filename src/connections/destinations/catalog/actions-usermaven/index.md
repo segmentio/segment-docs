@@ -1,7 +1,6 @@
 ---
 title: Usermaven (Actions) Destination
 id: 643fdf094cfdbcf1bcccbc42
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

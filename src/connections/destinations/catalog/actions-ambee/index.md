@@ -1,7 +1,6 @@
 ---
 title: "Ambee (Actions) Destination"
 hidden: true
-beta: true
 id: 647f2f7ce3b561ab931c2b77
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Cubitic Destination
-beta: true
 ---
 
 This destination is maintained by Cubitic.

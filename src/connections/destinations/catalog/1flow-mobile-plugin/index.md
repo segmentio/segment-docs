@@ -1,7 +1,6 @@
 ---
 title: 1Flow Mobile Plugin Destination
 id: 64dd07c1fed86b6866cd93f5
-beta: true
 ---
 
 [1Flow](https://1flow.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.

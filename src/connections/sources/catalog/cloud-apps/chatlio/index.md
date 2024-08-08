@@ -1,6 +1,5 @@
 ---
 title: Chatlio Source
-beta: true
 id: W3065KyMWF
 ---
 {% include content/source-region-unsupported.md %}

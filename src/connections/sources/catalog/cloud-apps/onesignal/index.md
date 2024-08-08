@@ -1,7 +1,6 @@
 ---
 title: OneSignal Source
 id: o9OyD6xsVJ
-beta: true
 ---
 
 [OneSignal](https://onesignal.com){:target="_blank"} is designed to help you send notifications and seamlessly manage your user communication across every channel, including mobile push notifications, web push notifications, in-app messaging, bulk SMS, and email. The OneSignal platform is quick to set up and makes it easy to customize and automate your messaging strategy without doing any development work.

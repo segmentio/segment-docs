@@ -1,7 +1,6 @@
 ---
 title: Upollo Destination
 id: 62fc4ed94dd68d0d189dc9b2
-beta: true
 ---
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} gives unique and actionable insights that lead to conversion, retention, and expansion.

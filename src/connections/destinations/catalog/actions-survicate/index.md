@@ -1,7 +1,6 @@
 ---
 title: Survicate (Actions) Destination
 id: 65a6ac19ea6d3ced628be00b
-beta: true
 ---
 [Survicate](https://survicate.com/integrations/segment-survey/?utm_source=segment&utm_medium=referral){:target="_blank”} is a complete toolkit for customer feedback. 
 

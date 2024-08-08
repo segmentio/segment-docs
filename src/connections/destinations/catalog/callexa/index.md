@@ -1,6 +1,5 @@
 ---
 title: Callexa Destination
-beta: true
 ---
 
 > This destination is maintained by Wigzo.

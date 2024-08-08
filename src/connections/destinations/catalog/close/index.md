@@ -1,7 +1,6 @@
 ---
 title: 'Close Destination'
 id: 61f8296b7d15c30a3bbe2b76
-beta: true
 hide-boilerplate: true
 hide-dossier: true
 redirect_from:

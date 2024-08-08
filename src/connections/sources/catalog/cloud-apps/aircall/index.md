@@ -1,6 +1,5 @@
 ---
 title: Aircall Source
-beta: true
 id: p1Kv6YKjE3
 ---
 {% include content/source-region-unsupported.md %}

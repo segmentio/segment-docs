@@ -1,6 +1,5 @@
 ---
 title: Freshchat Source
-beta: true
 id: tCkZda6aKQ
 ---
 

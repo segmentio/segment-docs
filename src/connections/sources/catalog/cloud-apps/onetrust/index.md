@@ -1,7 +1,6 @@
 ---
 title: OneTrust Source
 id: QhEUZnE5uF
-beta: true
 ---
 
 OneTrust makes it easy for you to capture, centralize, govern, and sync consented first party data while keeping trust & transparency at the forefront of all consumer interactions. The OneTrust Integration provides data to Segment’s CDP and allows you to view & activate consented data in the appropriate way. 

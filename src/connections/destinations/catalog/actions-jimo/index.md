@@ -1,7 +1,6 @@
 ---
 title: Jimo (Actions) Destination
 id: 652d4cf5e00c0147e6eaf5e7
-beta: true
 ---
 {% include content/plan-grid.md name="actions" %}
 

@@ -1,7 +1,6 @@
 ---
 title: Screeb Web (Actions) Destination
 id: 64820d8030d09e775fbac372
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

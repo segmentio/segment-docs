@@ -1,7 +1,6 @@
 ---
 title: Kana Destination
 id: 62d130412ffed8c0b170560f
-beta: true
 ---
 
 [Kana](https://www.usekana.com/?utm_source=segment&utm_medium=docs){:target="_blank"} provides pricing infrastructure for internet businesses. This destination allows for a low-code integration of Kana, using Segment events to record the usage of your features in order to measure entitlement, gain insights and ensure customers are charged correctly.

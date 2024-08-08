@@ -1,6 +1,5 @@
 ---
 title: Intellimize Destination
-beta: true
 hidden: true
 ---
 

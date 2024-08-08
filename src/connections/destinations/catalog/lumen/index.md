@@ -1,7 +1,6 @@
 ---
 title: Lumen Destination
 id: 6241edffa0c775e9f59b7cab
-beta: true
 ---
 
 [Lumen](https://uselumen.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps companies engage the right customers with ease via data-driven messaging through push notifications, SMS, and emails to meet business and marketing objectives.

@@ -1,6 +1,5 @@
 ---
 title: Xtremepush (Actions) Destination
-beta: true
 id: 661e9787658d112ba31b59a7
 versions:
   - name: Xtremepush Destination
