@@ -1,7 +1,6 @@
 ---
 title: Avo Destination
 id: 65c2465d0d7d550aa8e7e5c6
-redirect_from: "/connections/destinations/catalog/actions-avo/"
 ---
 
 **Avo lets you find, fix, and prevent data quality issues upstream.** World class data and product teams at companies like Fender, IKEA, and Wolt use Avo to guarantee event data quality upstream, so they can focus on building great user experiences. With Avo you get reliable data with less effort, by moving from reactive damage control to proactive data management and addressing your data quality issues at the source, where the data is created.
