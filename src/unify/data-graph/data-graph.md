@@ -7,9 +7,9 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-The Data Graph is a semantic layer unifying all your customer datasets. You can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. Once defined, it allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
-- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets mapped to the Data Graph. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
-- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
+The Data Graph is a semantic layer unifying all your customer datasets, enabling you to define relationships between any entity data set in the warehouse (i.e. accounts, subscriptions, households, products, etc) with the Segment Profiles you send with Profiles Sync. Once defined, the Data Graph allows you to make this rich relational data accessible to marketers and business stakeholders to empower them to create targeted and personalized customer engagements.
+- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets defined in the Data Graph unlocking a world of new hyper-personalized campaigns.
+- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Available for Destinations Actions and Functions.
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
@@ -27,9 +27,12 @@ To use the Data Graph, you'll need the following:
 > Data Graph, Reverse ETL, Profiles Sync require different warehouse permissions.
 
 To get started with the Data Graph, set up the required permissions in your warehouse: 
-
-- [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
-- [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
+| Warehouse     | Linked Audiences     | Linked Events                                                           |
+| ----------- | --------------------------------------- | ------------------------------ |
+| [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)      |:white_check_mark: | :white_check_mark: |
+| [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/)   | :white_check_mark: | :white_check_mark: | 
+| [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)  | :x:| :white_check_mark: |
+| [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/)  | :x:| :white_check_mark: |
 
 To track what data has been sent to Segment on previous syncs, Segment leverages Reverse ETL infrastructure to store diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
@@ -38,7 +41,7 @@ To track what data has been sent to Segment on previous syncs, Segment leverages
 To connect your warehouse to the Data Graph:
 
 1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
-2. Click **Connect warehouse**.
+2. Click **Add warehouse**.
 3. Select your warehouse type.
 4. Enter your warehouse credentials. 
 5. Test your connection, then click **Save**.
@@ -51,9 +54,9 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 - Validate your Data Graph using the **Preview** tab
 
 ### Data Graph structure
-- Define your entities. This corresponds to tables in your warehouse.
+- Define your entities. Each entity corresponds to a table in your warehouse.
 - Define the profile. This maps to the Segment Profiles tables synced via Profiles Sync.
-- Define the relationship type.
+- Define the relationship.
   - The Data Graph supports three relationship types: 1) profile:entity 2) 1:many, and 3) many:many.
   - It currently supports 6 layers of depth, including the profile. There are no limits on the breadth of your Data Graph.
   - Relationships are nested under the profile.
@@ -140,7 +143,7 @@ data_graph {
 
 ### c) Define relationships
 
-Now define your relationships across your entities. The Data Graph supports three types of relationships:
+Now define your relationships between your entities. The Data Graph supports three types of relationships:
 - Profile-to-entity relationship. This is the first level of relationships
 - 1:many relationship
 - Many:many relationship
@@ -398,19 +401,19 @@ data_graph {
 To edit your Data Graph:
 
 1. Navigate to **Unify > Data Graph**.
-2. Select the **Builder** tab, and click **Edit Data Graph**.
+2. Select the **Overview** tab, and click **Edit Data Graph**.
 
 ### View Data Graph data consumers
 
 A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audiences) referencing datasetes, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
 - Under **Unify > Data Graph**, click the **Data consumers** tab
-- Click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
+- Under **Unify > Data Graph > Overview** or the **Data Graph editor > Preview**, click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
 
 ### Understand changes that may cause breaking and potential breaking changes
 
 Upon saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
 - **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship `slug` are immutable and treated as a delete if you make changes. You can modify the `label`.
-- **Potential breaking change**: Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
+- **Potential breaking change**: Some changes such as updating the entity 'table_ref' or 'primary_key', may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
 
 ### Detect warehouse breaking changes
 
