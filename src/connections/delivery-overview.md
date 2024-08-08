@@ -10,6 +10,7 @@ Delivery Overview is a visual observability tool designed to help Segment users 
 > Delivery Overview is generally available for streaming connections (cloud-streaming sources and cloud-streaming destinations) and in public beta for storage destinations. Some metrics specific to storage destinations, like selective syncs, failed row counts, and total rows seen, are not yet available. 
 > All users of Delivery Overview have access to the Event Delivery tab, and can configure delivery alerts for their destinations.
 
+
 ## Key features
 
 Delivery Overview has three core features:
