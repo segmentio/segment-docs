@@ -18,9 +18,6 @@ The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment
 1. Create a Service Account to allow Segment to copy files into the bucket
 2. Create a bucket in your preferred region.
 
-{% include content/storage-do-include.md %}
-
-
 ## Set up Service Account to give Segment access to upload to your Bucket
 
 1. Go to http://cloud.google.com/iam

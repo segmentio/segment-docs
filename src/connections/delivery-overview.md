@@ -57,6 +57,8 @@ The pipeline view for storage destination includes the following steps:
 - **Failed to sync**: Syncs that either failed to sync or were partially successful. Selecting this step takes you to a table of all syncs with one or more failed collections. Select a sync from the table to view the discard reason, any collections that failed, the status, and the number of rows that synced for each collection.
 - **Successfully synced**: Events that were successfully synced with your storage destination.
 
+<!-- last bullet incorrect, Jeremy/Eric to provide copy--->
+
 The following image shows a storage destination with 23 partially successful syncs: 
 
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
