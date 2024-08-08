@@ -11,9 +11,6 @@ The Data Graph is a semantic layer unifying all your customer datasets, enabling
 - **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets defined in the Data Graph unlocking a world of new hyper-personalized campaigns.
 - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Available for Destinations Actions and Functions.
 
-> info ""
-> Data Graph currently only supports workspaces in the United States.
-
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
@@ -31,10 +28,13 @@ To get started with the Data Graph, set up the required permissions in your ware
 | ----------- | --------------------------------------- | ------------------------------ |
 | [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)      |:white_check_mark: | :white_check_mark: |
 | [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/)   | :white_check_mark: | :white_check_mark: | 
-| [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)  | :x:| :white_check_mark: |
-| [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/)  | :x:| :white_check_mark: |
+| [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)  | 📆 Coming soon| :white_check_mark: |
+| [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/)  | 📆 Coming soon| :white_check_mark: |
 
-To track what data has been sent to Segment on previous syncs, Segment leverages Reverse ETL infrastructure to store diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
+> info ""
+> Data Graph currently only supports workspaces in the United States.
+
+To track what data has been sent to Segment on previous syncs, Segment leverages [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
 ## Step 2: Connect your warehouse to the Data Graph
 
@@ -77,6 +77,7 @@ data_graph {
         }
       }
       relationship "d" {
+        ...
       }
     }  
 }
@@ -88,11 +89,11 @@ The first step in creating a Data Graph is to define your entities. An entity co
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `entity`      | An immutable slug for the entity, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g `account-entity` or `account_entity`)    |
-| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                           |
-| `table_ref`   | Defines the fully qualified table reference: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views |
-| `primary_key` | The unique identifier for the given table. Must be a column with unique values per row |
-| (Optional) `enrichment_enabled = true`      | Add this if you plan to reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/) use cases                         |
+| `entity`      | An immutable slug for the entity, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g `account-entity` or `account_entity`).    |
+| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time.                           |
+| `table_ref`   | Defines the fully qualified table reference: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views. |
+| `primary_key` | The unique identifier for the given table. Must be a column with unique values per row. |
+| (If applicable) `enrichment_enabled = true`      | Add this if you plan to reference the entity table for [Linked Events](/docs/unify/data-graph/linked-events/) use cases.                         |
 
 **Example:**
 
@@ -121,8 +122,8 @@ Next, define the profile. This is a special class of entity that represents Segm
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `profile_folder`      | Define the fully qualified path of the folder or schema location for the profile tables     |
-| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration (`segment:unmaterialized`, `segment:materialized`)|
+| `profile_folder`      | Define the fully qualified path of the folder or schema location for the profile tables.     |
+| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration: `segment:unmaterialized` or `segment:materialized`.|
 
 **Example:**
 
@@ -144,13 +145,13 @@ data_graph {
 ### c) Define relationships
 
 Now define your relationships between your entities. The Data Graph supports three types of relationships:
-- Profile-to-entity relationship. This is the first level of relationships
+- Profile:entity relationship. This is the first level of relationships
 - 1:many relationship
 - Many:many relationship
 
-All relationship types require you to define the relationship slug, label, and related entity. Each type of relationship has unique join on conditions. 
+All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions. 
 
-#### Define profile-to-entity relationship
+#### Define profile:entity relationship
 This is the first level of relationships and a unique type of relationship between Segment profile entity and a related entity.  
 
 | Parameters     | Definition                                                           |
@@ -159,15 +160,19 @@ This is the first level of relationships and a unique type of relationship betwe
 | `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                          |
 | `related_entity`   | References your already defined entity |
 
-To define a profile-to-entity relationship, choose to join on one of the following:
+To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following: 
 
-**Option 1 (Most common):** Use the `external_id` block to join the profile entity with `user_id`, `email`, or `phone` as the identifier on the entity table
-- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping` table  
-- `join_key`: This is the column on the entity table that you are matching to the external identifier   
+**Option 1 (Most common):** Use the `external_id` block to join the profile entity with an entity table using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are  `user_id`, `email`, or `phone` depending on the column in the entity table that you want to join with.
+- `type`: Represents the [external ID type](/docs/unify/identity-resolution/externalids/#default-externalids) (`email`, `phone`, `user_id`) in your id-res settings. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
+  - [Materialized](/docs/unify/profiles-sync/tables/#the-user_identifiers-table) (Recommended): This corresponds to the `type` column in your Profiles Sync `user_identifiers` table.
+  - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-external_id_mapping_updates-table): This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping_updates` table. 
+- `join_key`: This is the column on the entity table that you are matching to the external identifier.
 
-**Option 2:** Use the `traits` block to join with a profile trait on the entity table
-- `name`: The trait name that corresponds to a column name in your Profiles Sync `profile_traits_updates` table
-- `join_key`: This is the column on the entity table that you are matching to the trait
+**Option 2:** Use the `traits` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits). 
+- `name`: Represents a trait name in your Unify profiles. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
+  - [Materialized](/docs/unify/profiles-sync/tables/#the-profile_traits-table) (Recommended): The trait name corresponds to a unique value of the `name` column in your Profiles Sync `user_traits` table. 
+  - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-profile_traits_updates-table): This corresponds to a column in the Profile Sync `profile_trait_updates` table.
+- `join_key`: This is the column on the entity table that you are matching to the trait.
 
 **Example:**
 ```python
