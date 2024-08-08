@@ -1,16 +1,16 @@
 types:
   - display_name: Community
     slug: community
-    support-note: "To focus our resources effectively, we've established a Tiering definition for our catalog of libraries. These tiers Flagship, Maintenance, and Community inform the expected support, enhancements, and maintenance for these libraries going forward. The criteria for each tier are the overall usage of the library by customers and whether there is a newer version of the library.
+    support-note: "Segment has defined three tiers for libraries: Flagship, Maintenance, and Community. These tiers indicate the level of support, enhancements, and maintenance each library will receive. The criteria for assigning a library to a tier include its overall usage by customers and the availability of newer versions.
     
     Segment doesn't manage or update community libraries. These libraries are available on GitHub under the MIT License for the open-source community to fork or contribute."
   - display_name: Maintenance
     slug: maintenance
-    support-note: "To focus our resources effectively, we've established a Tiering definition for our catalog of libraries. These tiers Flagship, Maintenance, and Community inform the expected support, enhancements, and maintenance for these libraries going forward. The criteria for each tier are the overall usage of the library by customers and whether there is a newer version of the library.
+    support-note: "Segment has defined three tiers for libraries: Flagship, Maintenance, and Community. These tiers indicate the level of support, enhancements, and maintenance each library will receive. The criteria for assigning a library to a tier include its overall usage by customers and the availability of newer versions.
     
     Maintenance libraries send data as intended but receive no new feature support and only critical maintenance updates from Segment. When possible, Segment recommends using a Flagship version of these libraries."
   - display_name: Flagship
     slug: flagship
-    support-note: "To focus our resources effectively, we've established a Tiering definition for our catalog of libraries. These tiers Flagship, Maintenance, and Community inform the expected support, enhancements, and maintenance for these libraries going forward. The criteria for each tier are the overall usage of the library by customers and whether there is a newer version of the library.
+    support-note: "Segment has defined three tiers for libraries: Flagship, Maintenance, and Community. These tiers indicate the level of support, enhancements, and maintenance each library will receive. The criteria for assigning a library to a tier include its overall usage by customers and the availability of newer versions.
     
     Flagship libraries offer the most up-to-date functionality on Segment’s most popular platforms. Segment actively maintains flagship libraries, which benefit from new feature releases and ongoing development and support."
