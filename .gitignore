@@ -23,3 +23,11 @@ yarn-error.log
 # Beta lists
 beta-destinations.csv
 beta-sources.csv
+
+# Ignore specific files
+Gemfile.lock
+src/_data/catalog/destination_categories.yml
+src/_data/catalog/destinations.yml
+src/_data/catalog/destinations_private.yml
+src/_data/catalog/source_categories.yml
+src/_data/catalog/sources.yml
