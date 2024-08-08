@@ -107,7 +107,7 @@ Segment normalizes the Phone field by removing any non-numeric symbols, whitespa
 ### Hashing
 Facebook requires you to hash all PII before sending it to the Facebook Conversions API. 
 
-Segment hashes the following fields by default:
+Segment automatically hashes any of the following fields that are not already SHA256 hashed at egress:
 * Email
 * Phone
 * First name
