@@ -7,15 +7,12 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-The Data Graph is a semantic layer unifying all your customer datasets. With the Data Graph, you can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. Once the defined, the Data Graph allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
+The Data Graph is a semantic layer unifying all your customer datasets. You can define relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. The Data Graph enables businesses to map and understand the relationships between different datasets about their customers (accounts, subscriptions, households, products, etc.), and tie rich entity context back to the profile. Once defined, it allows you to make this relational data accessible to marketers and business stakeholders to empower them with all the data they need to create targeted and personalized customer engagements.
+- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets mapped to the Data Graph. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
+- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
 
 > info ""
 > Data Graph currently only supports workspaces in the United States.
-
-The Data Graph powers:
-
-- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets available in the Data Graph. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. From there, use Linked Audiences to unlock a world of new hyper-personalized campaigns.
-- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Start by building a [Data Graph](/docs/unify/data-graph/data-graph/) with the data models you want to use, and then use set up the enrichment in Destinations or Functions. 
 
 ## Prerequisites
 
@@ -49,7 +46,7 @@ To connect your warehouse to the Data Graph:
 ## Step 3: Build your Data Graph
 
 The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec and key features below to build your Data Graph:
-- Use the **Warehouse access** tab to view the warehouse tables you've granted Segment access to for the Data Graph
+- Use the **Warehouse access** tab to view the warehouse tables you've granted Segment access to
 - Begin typing to autopopulate the configuration spec within the editor, as well as to autocomplete your warehouse schema
 - Validate your Data Graph using the **Preview** tab
 
@@ -58,7 +55,7 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 - Define the profile. This maps to the Segment Profiles tables synced via Profiles Sync.
 - Define the relationship type.
   - The Data Graph supports three relationship types: 1) profile:entity 2) 1:many, and 3) many:many.
-  - The Data Graph currently supports 6 layers of depth, including the profile. There are no limits on the breadth of your Data Graph.
+  - It currently supports 6 layers of depth, including the profile. There are no limits on the breadth of your Data Graph.
   - Relationships are nested under the profile.
 
 **Example:**
