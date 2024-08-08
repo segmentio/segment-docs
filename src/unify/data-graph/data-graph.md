@@ -145,13 +145,13 @@ data_graph {
 
 Now define your relationships across your entities. The Data Graph supports three types of relationships:
 - Profile-to-entity relationship. This is the first level of relationships
-- 1:many relationships
-- Many:many relationships 
+- 1:many relationship
+- Many:many relationship
 
-All relationship types require you to define the `relationship` slug,`name`, and `related_entity`. Each type of relationship has unique `join_on` conditions. 
+All relationship types require you to define the relationship slug, label, and related entity. Each type of relationship has unique join on conditions. 
 
 #### Relationship #1: Define profile-to-entity relationship
-This is the first level of relationships and a unique type of relationship between an entity and the Segment profile entity.  
+This is the first level of relationships and a unique type of relationship between Segment profile entity and a related entity.  
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
@@ -159,10 +159,12 @@ This is the first level of relationships and a unique type of relationship betwe
 | `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                          |
 | `related_entity`   | References your already defined entity |
 
-To define a profile-to-entity relationship, choose to join on one of the following: 
-**Option 1:** Use the `external_id` block to join the profile entity with `user_id`, `email`, or `phone` as the identifier on the entity table
+To define a profile-to-entity relationship, choose to join on one of the following:
+
+**Option 1 (Most common):** Use the `external_id` block to join the profile entity with `user_id`, `email`, or `phone` as the identifier on the entity table
 - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping` table  
 - `join_key`: This is the column on the entity table that you are matching to the external identifier   
+
 **Option 2:** Use the `traits` block to join with a profile trait on the entity table
 - `name`: The trait name that corresponds to a column name in your Profiles Sync `profile_traits_updates` table
 - `join_key`: This is the column on the entity table that you are matching to the trait
@@ -177,23 +179,24 @@ data_graph {
     }
   
     # Define additional entities...
-  
+
+    # Note: Relationships are nested
     profile {
       profile_folder = "PRODUCTION.SEGMENT"
       type = "segment:materialized"
   
-      # Relationships are nested
+      # Relate accounts table to the profile 
       relationship "user-accounts" {
         name = "Premium Accounts"
         related_entity = "account-entity"
   
-        # Option 1: Relate account to profile with an external ID
+        # Option 1: Join with an external ID block
         external_id {
           type = "email"
           join_key = "EMAIL_ID"
         }
   
-        # Option 2: Relate account to profile with a trait
+        # Option 2: Join with a trait block
         trait {
           name = "cust_id"
           join_key = "ID"
@@ -204,7 +207,7 @@ data_graph {
 ```
 
 #### Relationship #2: Define a 1:many relationship
-To define a 1:many relationship, define the join on between the two entity tables.
+For 1:many relationships, define the join on between the two entity tables using the spec below.
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
@@ -224,16 +227,16 @@ data_graph {
     }
   
    # Define additional entities...
-  
+
+    # Note: Relationships are nested
     profile {
       profile_folder = "PRODUCTION.SEGMENT"
       type = "segment:materialized"
-  
-      # Relationships are nested                      
+                   
       relationship "user-accounts" {
         ...
   
-        # Define 1:many relationship by joining on right and left entity tables
+        # Define 1:many relationship between accounts and carts
         relationship "user-carts" {
           name = "Shopping Carts"
           related_entity = "carts-entity"
@@ -245,6 +248,10 @@ data_graph {
 ```
 
 #### Relationship #3: Define many:many relationship
+For many:many relationships, define the join on between the two entity tables with the `junction_table`.
+
+> warning ""
+> Attributes from a junction table are not referenceable via the Linked Audience Builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
@@ -252,11 +259,9 @@ data_graph {
 | `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                        |
 | `related_entity`   | References your already defined entity |
 
-To define a many:many relationship, define the join on between the two entity tables with the `junction_table`.
-> warning ""
-> Attributes from a junction table are not referenceable via the Linked Audience Builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
-
+**Junction table spec**
 | Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
 | `table_ref`      | Defines the fully qualified table reference to the join table.: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views  |
 | `primary_key`    | The unique identifier for the given table. Must be a column with unique values per row |
 | `left_join_on`   | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. `[schema].[table]` is implied within the junction table column name, so you do not need to define it again |
@@ -268,18 +273,18 @@ To define a many:many relationship, define the join on between the two entity ta
 
 data_graph { 
     # Define entities
-  
+
+    # Note: Relationships are nested
     profile {
       # Define profile
-  
-      # Relationships are nested           
+         
       relationship "user-accounts" {
         ...
   
         relationship "user-carts" {
           ...
   
-          # Define many:many relationship by joining entity tables with junction table
+          # Define many:many relationship between carts and products
           relationship "products" {
             name = "Purchased Products"
             related_entity = "product-entity"
@@ -292,7 +297,7 @@ data_graph {
           }
         }
       }
-    }
+  }
 }
          
 ```
@@ -404,12 +409,12 @@ A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audience
 - Under **Unify > Data Graph**, click the **Data consumers** tab
 - Click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
 
-### Edits that may cause breaking and potential breaking changes
+### Understand changes that may cause breaking and potential breaking changes
 
 Upon saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
 - **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship `slug` are immutable and treated as a delete if you make changes. You can modify the `label`. 
 -**Potential breaking change**: Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
 
-### Warehouse breaking changes
+### Detect warehouse breaking changes
 
 Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph and/or data consumers, such as when the table being referenced gets deleted from your warehouse, the primary key column no longer exists, etc. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
