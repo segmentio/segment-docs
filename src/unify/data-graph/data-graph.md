@@ -150,7 +150,7 @@ Now define your relationships across your entities. The Data Graph supports thre
 
 All relationship types require you to define the relationship slug, label, and related entity. Each type of relationship has unique join on conditions. 
 
-#### Relationship #1: Define profile-to-entity relationship
+#### Define profile-to-entity relationship
 This is the first level of relationships and a unique type of relationship between Segment profile entity and a related entity.  
 
 | Parameters     | Definition                                                           |
@@ -206,7 +206,7 @@ data_graph {
 }
 ```
 
-#### Relationship #2: Define a 1:many relationship
+#### Define a 1:many relationship
 For 1:many relationships, define the join on between the two entity tables using the spec below.
 
 | Parameters     | Definition                                                           |
@@ -247,7 +247,7 @@ data_graph {
 }
 ```
 
-#### Relationship #3: Define many:many relationship
+#### Define many:many relationship
 For many:many relationships, define the join on between the two entity tables with the `junction_table`.
 
 > warning ""
@@ -262,10 +262,10 @@ For many:many relationships, define the join on between the two entity tables wi
 **Junction table spec**
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `table_ref`      | Defines the fully qualified table reference to the join table.: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views  |
+| `table_ref`      | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views  |
 | `primary_key`    | The unique identifier for the given table. Must be a column with unique values per row |
-| `left_join_on`   | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. `[schema].[table]` is implied within the junction table column name, so you do not need to define it again |
-| `right_join_on`  | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`.`[schema].[table]` is implied within the junction table column name, so you do not need to define it again |
+| `left_join_on`   | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
+| `right_join_on`  | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
 
 **Example:**
 
