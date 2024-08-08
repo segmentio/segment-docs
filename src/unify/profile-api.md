@@ -243,7 +243,7 @@ All top-level API resources have support for bulk fetches using "list" API metho
 Each API request has an associated request identifier. You can find this value in the response headers, under `Request-Id`.
 
 ```bash
-curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
+curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<identifier>/metadata
 HTTP/1.1 200 OK
 Date: Mon, 01 Jul 2013 17:27:06 GMT
 Status: 200 OK
