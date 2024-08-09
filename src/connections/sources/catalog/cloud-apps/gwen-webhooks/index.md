@@ -24,7 +24,7 @@ This source is maintained by Insert Coin AB. For any issues with the source, [co
 
 ## Stream
 
-GWEN Webhooks uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
+GWEN Webhooks uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [in the GWEN documentation](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for GWEN Webhooks to pass the userId associated with the user who triggered the given update. This may or may not be a userId that you are keeping track of, depending on under what circumstances the user has been created within GWEN.
 For example, users created anonymously by using the [GWEN Analytics script](https://app.gwenplatform.com/docs/gwen-analytics){:target="blank"} will likely have a userId unknown to you.
