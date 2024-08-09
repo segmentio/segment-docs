@@ -45,7 +45,7 @@ sections:
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
     title: Facebook Lead Ads cloud source
   - path: /connections/destinations/catalog/actions-facebook-custom-audiences
-    title: Facebook Custom Audiences (Actions) destinations
+    title: Facebook Custom Audiences (Actions) destination
 
 
 - slug: google
