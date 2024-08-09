@@ -25,8 +25,7 @@ This destination sends audiences, or lists of users, from your data warehouse to
 
 ### Prerequisites
 - A Reverse ETL source already set up. If you don't yet have a Reverse ETL source, follow the instructions in Segment's [Reverse ETL documentation](/docs/connections/reverse-etl/#getting-started). Segment recommends setting an [External ID](#destination-settings) as the primary key for your Reverse ETL model, as you'll need an External ID to remove users from your custom audiences. 
-- A Facebook Custom Audiences account with the following permissions: 
-  - 
+- A Facebook account with [ads_management](https://developers.facebook.com/docs/permissions#ads_management){:target="_blank”} permissions for the target Facebook Ads Account(s).
 
 ### Connect to Facebook Custom Audiences
 1. From your Segment app, navigate to **Catalog > Destinations** and search for "Facebook Custom Audiences (Actions)". 
@@ -83,7 +82,7 @@ After you've connected your Facebook Custom Audiences destination to Segment, se
 6. Set how often your model syncs by setting the [Sync schedule](/docs/connections/reverse-etl/#step-4-create-mappings). 
 7. Select or create an audience in Facebook to sync your data with. Click the **Select or create audience in Facebook** button to save the audience ID to your mapping.
 8. Map your model columns to the appropriate Facebook Custom Audience parameters. Only the External ID is required. When a record is deleted from your source model, only the model primary key is sent to the mapping; other columns from your source model are not sent. Segment recommends using the External ID as your primary key in your source model.
-9. Send a test record. If successful, you should see a 200 response in Segment and one record removed from your custom audience. To verify that the record was successfully removed from your custom audience, open Facebook Ads Manager and navigate to **Audiences > {Audience Name} > History**.
+9. Send a test record. If successful, you should see a `200` response in Segment and one record removed from your custom audience. To verify that the record was successfully removed from your custom audience, open Facebook Ads Manager and navigate to **Audiences > {Audience Name} > History**.
 10. Click **Save Mapping** and enable the mapping.
 
 {% include components/actions-fields.html %}
