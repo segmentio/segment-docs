@@ -54,7 +54,8 @@ To configure Custom Domain:
   - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. 
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
-5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN. 
+5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
+6. Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for your Analytics.js sources. You can then copy and paste this snippet into the header of your website.
 6. Update your JavaScript snippet to reference the new subdomains or use the new Tracking API custom domain as your endpoint for server library sources. 
 
 ## FAQ
@@ -62,12 +63,21 @@ To configure Custom Domain:
 ### What sources can I use with Custom Domain?
 Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
-Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for you to copy-paste into the header of your website. For non-JavaScript sources, you can use the sub-domain as an endpoint when using the Tracking API.
+### How can I configure non-JavaScript sources to use Custom Domain?
+Non-JavaScript sources should use Custom Domain primarily for consistency, as it does not impact data collection for these sources. Only Analytics.js sources will have Custom Domain configurations added to the source settings UI in Segment. For non-Analytics.js sources, you’ll need to update your implementation to use the subdomain as an endpoint when using the Tracking API. For example:
+
+* Server Sources: When sending data from server-side implementations, use the `host` configuration parameter to send data to your subdomain instead of the default Segment domain.
+
+* Mobile Sources: When sending data from mobile implementations, use the `apiHost` configuration parameter to send data to your subdomain instead of the default Segment domain.
+
+### Is there a benefit in migrating server-side sources over to client-side with Custom Domain?
+Tracking data server-side is generally more reliable than tracking it client-side due to various device-based factors that can impact your tracking. For instance, users might block all cookies or use tools that interfere with network requests leaving the browser, leading to incomplete or inaccurate data collection when relying solely on client-side tracking.
+
+For business-critical events, we strongly recommend keeping your tracking server-side. This approach ensures that your data is less susceptible to disruptions from client-side variables, resulting in more accurate and reliable tracking.
+
 
 ### Is this a fully-managed solution? What servers or infrastructure do I need to set up on my side for this proxy? 
-Yes, Custom Domain is a fully-managed solution. 
-
-You must be able to delegate a DNS subdomain to Segment and add the name servers Segment provides to your DNS. 
+Yes, Custom Domain is a fully-managed solution. You must be able to delegate a DNS subdomain to Segment and add the name servers Segment provides to your DNS. 
 
 First, decide on your subdomain and then delegate it to Segment. Segment then asks you to add a DNS NS record to your DNS with specific values to complete the DNS delegation. From there on, Segment fully manages the infrastructure for serving Analytics.js and ingesting events data through the subdomain.
 
