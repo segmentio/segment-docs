@@ -37,3 +37,7 @@ The table below lists events that Authvia sends to Segment. These events appear 
 | Customer Deleted         | An existing Customer was Deleted from Authvia.                                                                                         |
 | Business Process Created | A new Business Process (Conversation) was created for a customer.                                                                      |
 | Business Process Updated | A customer has completed some, or all Actions in a business process. Alternatively, the Business Process was cancelled or it expired. |
+
+## Event Properties
+
+Go to [Read Authvia Webhook Documentation](https://developer.authvia.com/v3.3/reference/create-webhook-subscription){:target="_blank”} and  read Authvia Documentation for the list of properties included in the events.
