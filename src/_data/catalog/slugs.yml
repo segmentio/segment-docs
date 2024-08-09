@@ -313,3 +313,5 @@ destinations:
     override: "user_guiding"
   - original: "angler-ai"
     override: "actions-angler-ai"
+  - original: "facebook-custom-audiences-actions"
+    override: "actions-facebook-custom-audiences"
