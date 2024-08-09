@@ -17,15 +17,15 @@ This destination is maintained by [Algolia](https://www.algolia.com/){:target="_
 
 ## Getting Started
 
-1. From the Segment web app, click **Catalog**.
-2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find on the Algolia Dashboard, under API Keys menu.
+1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+2. Search for **Algolia** in the Destinations Catalog and select the **Algolia Insights (Actions)** destination.
+3. Choose which Source should send data to the Algolia destination.
+4. Sign in to the [Algolia dashboard](https://dashboard.algolia.com/users/sign_in) and retrieve your **App ID** and **API Key** for the application you'd like to connect. See **[Getting your Algolia credentials](#getting-your-algolia-credentials)** below for details on where to get these values.
+5. Enter the **App ID** and **API Key** in the Algolia destination settings in Segment.
 
-To find your App ID, there are two options. You can find the App Id in the Application dropdown in the Dashboard.
+### Getting your Algolia credentials
 
-![Application Dropdown](images/algolia_app_id_dropdown.png)
-
-The other location is where you will also find your API Keys. You can find your API Keys in your settings under API Keys, you will need a Search API Key to set up the Destination in Segment. 
+Your app ID and API key can be found in the **API Keys** section of your account settings in the Algolia dashboard. You will need a **search** API key to set up the destination.
 
 ![Dashboard Settings](images/algolia_dashboard_settings.png)
 
@@ -33,10 +33,12 @@ The other location is where you will also find your API Keys. You can find your 
 
 ![Api Keys](images/algolia_api_keys.png)
 
-> info ""
-> The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to end additional Algolia-related data like index name or queryID.
+### Algolia-related data
 
-To access your queryID, make sure clickAnalytics are enabled in your search event. If you're using Insights.js this will look like
+The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to add additional Algolia-related data like an index name and a query ID.
+
+To access your query ID, make sure [`clickAnalytics`](https://www.algolia.com/doc/api-reference/api-parameters/clickAnalytics/) is enabled in your searches. If you're using our JavaScript search API client, this will look like:
+
 ```js
 index.search('query', {
   userToken: 'user-1',
@@ -44,69 +46,96 @@ index.search('query', {
 })
 ``` 
 
-Once this is enabled you will be able to send properties like queryId in your segment events. You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/sending-events/implementing/connectors/segment/){:target="_blank”}.
+Once this is enabled, you will be able to access `queryID` in your search response, which you can then use in your Segment events.
+
+You can read more about how to send Algolia-related data to Segment in the [Algolia documentation](https://www.algolia.com/doc/guides/sending-events/connectors/segment/#augment-your-segment-events-with-algolia-related-data){:target="_blank”}.
 
 ## Mapping Events
 
-By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match [Segments V2 Ecommerce Spec](/docs/connections/spec/ecommerce/v2/) you can update this by using the Mapping Tab.
+By default, Algolia has set up mappings for `Product List Filtered`, `Product Clicked`, `Product Viewed`, `Product Added` and `Order Completed` events. If your event structure doesn't match Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/), you can update this in the destination mappings section of the Segment app.
 
-![Mappings Tab](images/mapping_tab.png)
-
-![Edit Mappings](images/mapping_tab_edit.png)
+![Mappings Tab](images/mappings_tab.png)
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
+If you're not familiar with the Segment spec, take a look to understand what the [Track](/docs/connections/spec/track/) method does.
 
-Algolia supports the following events from Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+Algolia supports the following Segment events out of the box:
 
 <table>
   <tr>
-   <td>Supported Events</td>
-   <td>Description</td>
+    <td>Supported Events</td>
+    <td>Description</td>
   </tr>
   <tr>
-   <td><code>Product Viewed</code></td>
-   <td>Fire this event when a visitor views a product.</td>
+    <td><code>Product List Filtered</code></td>
+    <td>Send this event when a visitor filters a product list or category.</td>
   </tr>
   <tr>
-   <td><code>Product Clicked</code></td>
-   <td>Fire this event when a visitor clicks a product.</td>
+    <td><code>Product Clicked</code></td>
+    <td>Fire this event when a visitor clicks a product.</td>
   </tr>
   <tr>
-   <td><code>Order Completed</code></td>
-   <td>Fire this event whenever an order/transaction was successfully completed by the customer.</td>
+    <td><code>Product Viewed</code></td>
+    <td>Fire this event when a visitor views a product.</td>
+  </tr>
+  <tr>
+    <td><code>Product Added</code></td>
+    <td>Fire this event when a visitor adds a product to their shopping cart.</td>
+  </tr>
+  <tr>
+    <td><code>Order Completed</code></td>
+    <td>Fire this event whenever an order/transaction was successfully completed by the customer.</td>
   </tr>
 </table>
 
-For a full list of required properties for each event type, see the [Spec: V2 Ecommerce Events](/docs/connections/spec/ecommerce/v2/)
+For a full list of required properties for each event type, see [Spec: V2 Ecommerce Events](/docs/connections/spec/ecommerce/v2/)
 
 ```js
-analytics.track('Product Viewed', {
-    objectID: "hit objectID",
-    index: "my-index-name",
-    queryID: "Algolia queryID", // required only for Click Analytics,
-    // ... other required properties from the spec
+analytics.track('Product List Filtered', {
+  search_index: "my-index-name",
+  filters: [
+    {
+      attribute: "color",
+      value: "yellow",
+    }
+  ],
+  query_id: "Algolia queryID", // required only for Click Analytics,
+  // ... other required properties from the spec
 })
 
 analytics.track('Product Clicked', {
-    objectID: "hit objectID",
-    position: hitPositionOnIndex, // number
-    index: "my-index-name",
-    queryID: "Algolia queryID", // required only for Click Analytics,
-    // ... other required properties from the spec
+  search_index: "my-index-name",
+  product_id: "hit objectID",
+  position: hitPositionOnIndex, // number
+  query_id: "Algolia queryID", // required only for Click Analytics,
+  // ... other required properties from the spec
+})
+
+analytics.track('Product Viewed', {
+  search_index: "my-index-name",
+  product_id: "hit objectID",
+  query_id: "Algolia queryID", // required only for Click Analytics,
+  // ... other required properties from the spec
+})
+
+analytics.track('Product Added', {
+  search_index: "my-index-name",
+  product_id: "hit objectID",
+  query_id: "Algolia queryID", // required only for Click Analytics,
+  // ... other required properties from the spec
 })
 
 analytics.track('Order Completed', {
-    index: "my-index-name",
-    queryID: "Algolia queryID", // required only for Click Analytics,
-    products: [
-        {
-            objectID: "hit objectID",
-            // ... other required properties from the spec
-        },
+  search_index: "my-index-name",
+  products: [
+    {
+      product_id: "hit objectID",
+      queryID: "Algolia queryID",
         // ...
-    ]
+    },
+    // ... other required properties from the spec
+  ]
 })
 ```
 
