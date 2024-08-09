@@ -24,7 +24,7 @@ This destination sends audiences, or lists of users, from your data warehouse to
 ## Getting started
 
 ### Prerequisites
-- A Reverse ETL source already set up. If you don't yet have a Reverse ETL source, follow the instructions in Segment's [Reverse ETL documentation](/docs/connections/reverse-etl/#getting-started). Segment recommends setting an [External ID](#destination-settings) as the primary key for your Reverse ETL model, as you'll need an External ID to remove users from your custom audiences. 
+- A Reverse ETL source already set up. If you don't yet have a Reverse ETL source, follow the instructions in Segment's [Reverse ETL documentation](/docs/connections/reverse-etl/#getting-started). Segment recommends setting an [External ID](#sync-audience) as the primary key for your Reverse ETL model, as you'll need an External ID to remove users from your custom audiences. 
 - A Facebook account with [ads_management](https://developers.facebook.com/docs/permissions#ads_management){:target="_blank”} permissions for the target Facebook Ads Account(s).
 
 ### Connect to Facebook Custom Audiences
