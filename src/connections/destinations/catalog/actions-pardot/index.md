@@ -53,7 +53,7 @@ To send data to a Salesforce Pardot sandbox instance, navigate to **Settings** a
 Your sandbox username appends the sandbox name to your Salesforce production username. For example, if a username for a production org is `user@acme.com` and the sandbox is named `test`, the username to log in to the sandbox is `user@acme.com.test`.
 
 > info ""
-> Data and configuration can’t be shared between sandbox and production accounts. Make sure you use the Pardot Business Unit ID corresponding to your sandbox account. Information on how to create a sandbox for Pardot can be found [here](https://help.salesforce.com/s/articleView?language=en_US&type=5&id=sf.pardot_sf_connector_sandbox.htm){:target="_blank"}.
+> Data and configuration can’t be shared between sandbox and production accounts. Make sure you use the Pardot Business Unit ID corresponding to your sandbox account. Information on how to create a sandbox for Pardot can be found in the Salesforce [Create a Sandbox for Account Engagement](https://help.salesforce.com/s/articleView?language=en_US&type=5&id=sf.pardot_sf_connector_sandbox.htm){:target="_blank"} documentation.
 
 ### How do I add custom prospect fields?
 Custom fields can be included in the Other Fields mapping. Custom fields must be predefined in your Pardot account and should end with `__c` (for example, `custom_field__c`). Please include the `__c` in your mapping.
