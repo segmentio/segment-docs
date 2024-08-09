@@ -7,9 +7,6 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/BigQuery-setup'
 ---
 
-> info "Linked Audiences is in public beta"
-> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 > info ""
 > At this time, you can only use BigQuery with Linked Events. 
 

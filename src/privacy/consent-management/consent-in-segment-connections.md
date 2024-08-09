@@ -76,6 +76,6 @@ If you have a category configured in your consent management tool (for example, 
 
 If there is a category configured in Segment (`functional`) that is not mapped in your CMP, data will not flow to destinations mapped to the `functional` category.
 
-## Content observability
+## Consent observability
 
 Events discarded due to consent preferences appear in [Delivery Overview](/docs/connections/delivery-overview/) at the "Filtered at destination" step with the discard reason *Filtered by end user consent*.
