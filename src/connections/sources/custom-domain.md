@@ -56,7 +56,7 @@ To configure Custom Domain:
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
 6. Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for your Analytics.js sources. You can then copy and paste this snippet into the header of your website.
-6. Update your JavaScript snippet to reference the new subdomains or use the new Tracking API custom domain as your endpoint for server library sources. 
+7. Update your JavaScript snippet to reference the new subdomains or use the new Tracking API custom domain as your endpoint for server library sources. 
 
 ## FAQ
 
