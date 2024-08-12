@@ -202,7 +202,7 @@ Next, define the profile. This is a special class of entity that represents Segm
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `profile_folder`      | Define the fully qualified path of the folder or schema location for the profile tables.     |
-| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration: `segment:unmaterialized` or `segment:materialized`.|
+| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration under [Selective Sync settings](/docs/unify/profiles-sync/profiles-sync-setup/#step-3-set-up-selective-sync): `segment:unmaterialized` or `segment:materialized`.|
 
 **Example:**
 
@@ -230,7 +230,7 @@ Now define your relationships between your entities. The Data Graph supports thr
 
 All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions. 
 
-#### Define profile:entity relationship
+#### Define profile-to-entity relationship
 This is the first level of relationships and a unique type of relationship between Segment profile entity and a related entity.  
 
 | Parameters     | Definition                                                           |
@@ -404,8 +404,8 @@ A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audience
 ### Understand changes that may cause breaking and potential breaking changes
 
 Upon saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
-- **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship `slug` are immutable and treated as a delete if you make changes. You can modify the `label`.
-- **Potential breaking change**: Some changes such as updating the entity 'table_ref' or 'primary_key', may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
+- **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship slug are immutable and treated as a delete if you make changes. You can modify the label.
+- **Potential breaking change**: Some changes such as updating the entity `table_ref` or `primary_key`, may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
 
 ### Detect warehouse breaking changes
 
