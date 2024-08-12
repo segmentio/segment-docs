@@ -56,4 +56,6 @@ No. Alternatively, you may delete the entire user profile from Segment using a [
 
 ### How does profile creation affect MTUs, particularly where a profile isn't merged with the parent profile due to exceeding the merge limit?
 Segment determines the Monthly Tracked Users (MTUs) count by the number of unique user IDs and anonymous IDs processed, regardless of how you manage these profiles in Unify and Engage. This count is taken as events are sent to Segment, before they reach Unify and Engage. Therefore, the creation of new profiles or the merging of profiles in Unify doesn't affect the MTU count. The MTU count only increases when you send new unique user or anonymous IDs to Segment.
- 
+
+### What is the event lookback period on the Profile Explorer?
+The [Profile Explorer](/docs/unify/#profile-explorer) retains event details for a period of up to 2 weeks. For accessing event information beyond this timeframe, it is recommended to use [Profiles Sync](/docs/unify/profiles-sync/overview/) for comprehensive event analysis and retention.
