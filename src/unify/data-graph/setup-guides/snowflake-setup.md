@@ -13,15 +13,15 @@ On this page, you'll learn how to connect your Snowflake data warehouse to Segme
 
 ## Snowflake credentials
 
-Log in to Snowflake with admin privileges to provide the Data Graph with the necessary permissions below. Segment recommends setting up a new Snowflake user and only giving this user permission to access the required databases and schemas.
+Log in to Snowflake with admin privileges to provide the Data Graph with the necessary permissions below. 
 
 ## Step 1: Create Segment user and internal database for the Data Graph
 
-The first step is to create a new Segment role and grant it the appropriate permissions. Run the SQL code block below in your SQL worksheet in Snowflake to execute the following tasks:
+Segment recommends setting up a new Snowflake user and only giving this user permission to access the required databases and schemas. Run the SQL code block below in your SQL worksheet in Snowflake to execute the following tasks:
 
 - Create a new role and user for the Segment Data Graph. This new role will only have access to the datasets you provide access to for the Data Graph.
 - Grant the Segment user access to the warehouse of your choice. If you'd like to create a new warehouse, uncomment the SQL below.
-- Create a new database for the Data Graph. **Segment requires write access to this database in order to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. Hence, Segment recommends creating an empty database for this purpose using the script below.** This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
+- Create a new database for the Data Graph. **Segment requires write access to this database in order to create a schema for internal bookkeeping and to store checkpoint tables for the queries that are executed. Therefore, Segment recommends creating a new empty database for this purpose.** This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
 
 > info ""
 > The variables specified at the top of the code block with the `SET` command are placeholders and should be updated.
