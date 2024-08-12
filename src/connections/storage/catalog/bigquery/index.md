@@ -13,6 +13,8 @@ Google AdWords into a BigQuery data warehouse.  When you integrate BigQuery with
 The Segment warehouse connector runs a periodic ETL (Extract - Transform - Load) process to pull raw events and objects from your sources and load them into your BigQuery cluster. 
 For more information about the ETL process, including how it works and common ETL use cases, refer to [Google Cloud's ETL documentation](https://cloud.google.com/learn/what-is-etl){:target="_blank"}.
 
+{% include content/storage-do-include.md %}
+
 ## Getting Started
 
 To store your Segment data in BigQuery, complete the following steps:
