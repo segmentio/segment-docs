@@ -1,4 +1,4 @@
-[---
+---
 title: Data Graph
 plan: unify
 beta: true
