@@ -16,7 +16,7 @@ Segment assumes that you already have a workspace that includes the datasets you
 ## Step 1: Create a new Service Principal user
 Segment recommends setting up a new Service Principal user and only giving this user permissions to access the required catalogs and schemas. 
 
-If you already have a Service Principal user you'd like to use, grant it "Can use" permissions for your data warehouse and proceed to [step 2](#Create-a-catalog-for-Segment-to-store-checkpoint-tables).
+If you already have a Service Principal user you'd like to use, grant it "Can use" permissions for your data warehouse and proceed to [Step 2](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables).
 
 ### a) Create a new Service Principal user
 1. Log in to the Databricks UI as an Admin.
@@ -37,24 +37,16 @@ If you already have a Service Principal user you'd like to use, grant it "Can us
 4. Add the Service Principal user and grant them “Can use” access. 
 5. Click **Add**. 
 
-### c) (Optional) Confirm Service Principal permissions
-Confirm that the Service Principal user that you're using to connect to Segment has "Can use" permissions for your warehouse. 
-
-To confirm that your Service Principal user has "Can use" permission: 
-1. In the Databricks console, navigate to SQL Warehouses and select your warehouse. 
-2. Navigate to Overview and click **Permissions**. 
-3. Verify that the Service Principal user has "Can use" permission. 
-
 ## Step 2: Create a catalog for Segment to store checkpoint tables
 **Segment requires write access to this catalog for internal bookkeeping and to store checkpoint tables for the queries that are executed. Therefore, Segment recommends creating a new catalog for this purpose.** This is also the catalog you'll be required to specify when connecting Databricks with the Segment app.
 
 > info ""
 > Segment recommends creating a new database for the Data Graph.
-> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions to update user access for the Segment Reverse ETL catalog](#update-user-access-for-segment-reverse-etl-catalog).
+> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-catalog) to update user access for the Segment Reverse ETL catalog.
 
 ```SQL
 CREATE CATALOG IF NOT EXISTS `SEGMENT_LINKED_PROFILES_DB`;
--- Copy the Client ID by clicking “Generate secret” for the Service Principal user
+-- Copy the saved Client ID from previously generated secret
 GRANT USAGE ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 GRANT CREATE ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 GRANT SELECT ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
@@ -122,10 +114,10 @@ To connect your warehouse to the Data Graph:
 1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
 2. Click Connect warehouse.
 3. Select Databricks as your warehouse type. 
-4. Enter your warehouse credentials. Segment requires the following settings to connect to your Databricks warehouse. You can find these details in your Databricks workspace by navigating to **SQL Warehouse > Connection details**.
+4. Enter your warehouse credentials. You can find these details in your Databricks workspace by navigating to **SQL Warehouse > Connection details**. Segment requires the following settings to connect to your Databricks warehouse:
 - **Hostname**: The address of your Databricks server
 - **Http Path**: The address of your Databricks compute resources
-- **Port**: The port used to connect to your Databricks warehouse. The default port is 443, but your port might be different. 
+- **Port**: The port used to connect to your Databricks warehouse. The default port is 443, but your port might be different 
 - **Catalog**: The catalog you designated in [Step 2](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables)
 - **Service principal client ID**: The client ID used to access to your Databricks warehouse
 - **OAuth secret**: The OAuth secret used to connect to your Databricks warehouse
