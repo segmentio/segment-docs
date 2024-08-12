@@ -58,13 +58,13 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 2. Then, define the profile block. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc.
 3. Finally, define how your datasets are related to each other. The Data Graph preserves these relationships and carries this rich context to the destinations to unlock personalization.
 
-**Relationships**
+**Defining Relationships**
 
 Similar to the concept of [cardinality in data modeling](/en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships:
-- **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables.
-- **1:many relationship:** For example, an `account` can have many `carts`, and each `cart` can only be associated with one `account`.
-- **many:many relationship:** For example, a user can have many 'carts', and each cart can have many 'products'. These `products` can also belong to many `carts`.
-- The Data Graph currently supports 5 levels of relationships starting from the profile. For example, relating the accounts table to the profile block is one level of relationship, relating a 1:many relationship between the accounts and carts table is the second level of relationship, and so on. There are no limits on the breadth of your Data Graph.
+- **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
+- **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
+- **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
+- The Data Graph currently supports 5 levels of relationships starting from the profile. For example, relating the accounts table to the profile block is the first level of relationship, relating a 1:many relationship between the accounts and carts table is the second level of relationship, and so on. There are no limits on the breadth of your Data Graph.
 - Relationships are nested under the profile. Refer to the example below.
 
 **Data Graph Example** 
