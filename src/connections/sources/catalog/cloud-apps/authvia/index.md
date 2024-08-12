@@ -40,4 +40,4 @@ The table below lists events that Authvia sends to Segment. These events appear 
 
 ## Event Properties
 
-Go to [Read Authvia Webhook Documentation](https://developer.authvia.com/v3.3/reference/create-webhook-subscription){:target="_blank”} and  read Authvia Documentation for the list of properties included in the events.
+For a list of properties included in the event payloads, refer to [Authvia's Webhook Documentation](https://developer.authvia.com/v3.3/reference/create-webhook-subscription){:target="_blank”}.
