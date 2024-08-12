@@ -245,7 +245,7 @@ data_graph {
         relationship "user-carts" {
           name = "Shopping Carts"
           related_entity = "carts-entity"
-          join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
+          join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
         }
       }
     }
@@ -296,8 +296,8 @@ data_graph {
             junction_table {
               table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
               primary_key = "ID"
-              left_join_on = "CART.ID = CART_ID"
-              right_join_on = "PRODUCT_ID = PRODUCT.SKU"
+              left_join_on = "cart-entity.ID = CART_ID"
+              right_join_on = "PRODUCT_ID = product-entity.SKU"
             }
           }
         }
@@ -367,7 +367,7 @@ data_graph {
         relationship "user-carts" {
           name = "Shopping Carts"
           related_entity = "cart-entity"
-          join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
+          join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
     
           # Define many:many relationship between carts and products
           relationship "products" { 
@@ -376,8 +376,8 @@ data_graph {
             junction_table {
               primary_key = "ID"
               table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
-              left_join_on = "CART.ID = CART_ID"
-              right_join_on = "PRODUCT_ID = PRODUCT.SKU"
+              left_join_on = "cart-entity.ID = CART_ID"
+              right_join_on = "PRODUCT_ID = product-entity.SKU"
             }      
           }
         }
@@ -396,7 +396,7 @@ data_graph {
         relationship "user-subscriptions" {
           name = "Subscriptions"
           related_entity = "subscription-entity"
-          join_on = "HOUSEHOLD.SUB_ID = SUBSCRIPTION.HOUSEHOLD_ID"
+          join_on = "household-entity.SUB_ID = subscription-entity.HOUSEHOLD_ID"
     }
 }
 
