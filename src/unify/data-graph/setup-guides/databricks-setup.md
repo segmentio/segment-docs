@@ -12,6 +12,8 @@ redirect_from:
 
 On this page, you'll learn how to connect your Databricks data warehouse to the Segment Data Graph. 
 
+<!-- remove this and go for it! -->
+
 ## Set up Databricks credentials
 
 Sign in to Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
