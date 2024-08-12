@@ -53,33 +53,112 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 - Begin typing to autopopulate the configuration spec within the editor, as well as to autocomplete your warehouse schema
 - Validate your Data Graph using the **Preview** tab
 
-### Data Graph structure
-- Define your entities. Each entity corresponds to a table in your warehouse.
-- Define the profile. This maps to the Segment Profiles tables synced via Profiles Sync.
-- Define the relationship.
-  - The Data Graph supports three relationship types: 1) profile:entity 2) 1:many, and 3) many:many.
-  - It currently supports 6 layers of depth, including the profile. There are no limits on the breadth of your Data Graph.
-  - Relationships are nested under the profile.
+### Key steps to build your Data Graph
+1. First, define your entities. An entity corresponds to a table in your warehouse. Segment flexibly supports tables, views and materialized views.
+2. Then, define the profile block. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc.
+3. Finally, define how your datasets are related to each other. The Data Graph preserves these relationships and carries this rich context to the destinations to unlock personalization.
 
-**Example:**
+**Relationships**
+
+Similar to the concept of [cardinality in data modeling](/en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships:
+- **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables.
+- **1:many relationship:** For example, an `account` can have many `carts`, and each `cart` can only be associated with one `account`.
+- **many:many relationship:** For example, a user can have many 'carts', and each cart can have many 'products'. These `products` can also belong to many `carts`.
+- The Data Graph currently supports 5 levels of relationships starting from the profile. For example, relating the accounts table to the profile block is one level of relationship, relating a 1:many relationship between the accounts and carts table is the second level of relationship, and so on. There are no limits on the breadth of your Data Graph.
+- Relationships are nested under the profile. Refer to the example below.
+
+**Data Graph Example** 
+
+<img src="/docs/unify/images/data-graph-example.png" alt="An example of a Data Graph" width="5888"/>
+
 ```python
-
 data_graph {
-    ...
-    profile { 
-      relationship "a"{
-        ...
-        relationship "b" {
-          ...
-          relationship "c"{
-            ...
+    version =  "v1.0.0"
+  
+    # Define entities
+    entity "account-entity" {
+      name = "account"
+      table_ref = "PRODUCTION.CUST.ACCOUNT"
+      primary_key = "ID"
+    }
+  
+    entity "product-entity" {
+      name = "product"
+      table_ref = "PRODUCTION.PROD.PRODUCT_SKUS"
+      primary_key = "SKU"
+    }
+  
+    entity "cart-entity" {
+      name = "cart"
+      table_ref = "PRODUCTION.CUST.CART"
+      primary_key = "ID"
+      enrichment_enabled = true
+    }
+
+    entity "household-entity" {
+      name = "household"
+      table_ref = "PRODUCTION.CUST.HOUSEHOLD"
+      primary_key = "HOUSEHOLD_ID"
+    }
+
+    entity "subscription-entity" {
+      name = "subscription"
+      table_ref = "PRODUCTION.CUST.SUBSCRIPTION"
+      primary_key = "SUB_ID"
+    }
+  
+    # Define the profile entity, which corresponds to Segment Profiles tables synced via Profiles Sync
+    # Recommend setting up Profiles Sync materialized views to optimize warehouse compute costs
+    profile {
+      profile_folder = "PRODUCTION.SEGMENT"
+      type = "segment: materialized"
+  
+      # First branch - relate accounts table to the profile. Unique type of relationship between an entity and the profile block
+      relationship "user-accounts" {
+        name = "Premium Accounts"
+        related_entity = "account-entity"
+        # Join the profile entity with user_id, email, or phone as the identifier on the entity table
+        # Option to replace with the traits block below to join with a profile trait on the entity table instead
+        external_id {
+          type = "email"
+          join_key = "EMAIL_ID"
+        }
+  
+        # Define 1:many relationship between accounts and carts (e.g. an account can be associated with many carts)
+        relationship "user-carts" {
+          name = "Shopping Carts"
+          related_entity = "cart-entity"
+          join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
+    
+          # Define many:many relationship between carts and products (e.g. there can be multiple carts, and each cart can be associated with multiple products)
+          relationship "products" { 
+            name = "Purchased Products"
+            related_entity = "product-entity"
+            junction_table {
+              primary_key = "ID"
+              table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
+              left_join_on = "cart-entity.ID = CART_ID"
+              right_join_on = "PRODUCT_ID = product-entity.SKU"
+            }      
           }
         }
       }
-      relationship "d" {
-        ...
-      }
-    }  
+
+      # Second branch - relate households table to the profile by joining with an external ID block
+      relationship "user-households" {
+        name = "Households"
+        related_entity = "household-entity"
+        external_id {
+          type = "email"
+          join_key = "EMAIL_ID"
+        }
+  
+        # Define 1:many relationship between households and subscriptions (e.g. a household can be associated with multiple subscriptions)
+        relationship "user-subscriptions" {
+          name = "Subscriptions"
+          related_entity = "subscription-entity"
+          join_on = "household-entity.SUB_ID = subscription-entity.HOUSEHOLD_ID"
+    }
 }
 
 ```
@@ -309,98 +388,6 @@ data_graph {
 ## Step 4: Validate your Data Graph
 You can validate your Data Graph using the preview, then click Save. After you've set up your Data Graph, your partner teams can start leveraging these datasets with with [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
-## Data Graph Example 
-
-<img src="/docs/unify/images/data-graph-example.png" alt="An example of a Data Graph" width="5888"/>
-
-```python
-data_graph {
-    version =  "v1.0.0"
-  
-    # Define entities
-    entity "account-entity" {
-      name = "account"
-      table_ref = "PRODUCTION.CUST.ACCOUNT"
-      primary_key = "ID"
-    }
-  
-    entity "product-entity" {
-      name = "product"
-      table_ref = "PRODUCTION.PROD.PRODUCT_SKUS"
-      primary_key = "SKU"
-    }
-  
-    entity "cart-entity" {
-      name = "cart"
-      table_ref = "PRODUCTION.CUST.CART"
-      primary_key = "ID"
-      enrichment_enabled = true
-    }
-
-    entity "household-entity" {
-      name = "household"
-      table_ref = "PRODUCTION.CUST.HOUSEHOLD"
-      primary_key = "HOUSEHOLD_ID"
-    }
-
-    entity "subscription-entity" {
-      name = "subscription"
-      table_ref = "PRODUCTION.CUST.SUBSCRIPTION"
-      primary_key = "SUB_ID"
-    }
-  
-    # Define the profile entity
-    profile {
-      profile_folder = "PRODUCTION.SEGMENT"
-      type = "segment: materialized"
-  
-      # First branch - relate accounts table to the profile by joining with an external ID block
-      relationship "user-accounts" {
-        name = "Premium Accounts"
-        related_entity = "account-entity"
-        external_id {
-          type = "email"
-          join_key = "EMAIL_ID"
-        }
-  
-        # Define 1:many relationship between accounts and carts
-        relationship "user-carts" {
-          name = "Shopping Carts"
-          related_entity = "cart-entity"
-          join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
-    
-          # Define many:many relationship between carts and products
-          relationship "products" { 
-            name = "Purchased Products"
-            related_entity = "product-entity"
-            junction_table {
-              primary_key = "ID"
-              table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
-              left_join_on = "cart-entity.ID = CART_ID"
-              right_join_on = "PRODUCT_ID = product-entity.SKU"
-            }      
-          }
-        }
-      }
-
-      # Second branch - relate households table to the profile by joining with an external ID block
-      relationship "user-households" {
-        name = "Households"
-        related_entity = "household-entity"
-        external_id {
-          type = "email"
-          join_key = "EMAIL_ID"
-        }
-  
-        # Define 1:many relationship between households and subscriptions
-        relationship "user-subscriptions" {
-          name = "Subscriptions"
-          related_entity = "subscription-entity"
-          join_on = "household-entity.SUB_ID = subscription-entity.HOUSEHOLD_ID"
-    }
-}
-
-```
 ## Edit & manage your Data Graph
 
 To edit your Data Graph:
