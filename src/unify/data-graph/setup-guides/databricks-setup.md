@@ -126,7 +126,7 @@ To connect your warehouse to the Data Graph:
 - **Hostname**: The address of your Databricks server
 - **Http Path**: The address of your Databricks compute resources
 - **Port**: The port used to connect to your Databricks warehouse. The default port is 443, but your port might be different. 
-- **Catalog**: The catalog you designated in [Step 2: Create a catalog for Segment to store checkpoint tables](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables)
+- **Catalog**: The catalog you designated in [Step 2](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables)
 - **Service principal client ID**: The client ID used to access to your Databricks warehouse
 - **OAuth secret**: The OAuth secret used to connect to your Databricks warehouse
 
