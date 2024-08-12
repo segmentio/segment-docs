@@ -13,18 +13,20 @@ On this page, you'll learn how to connect your Snowflake data warehouse to Segme
 
 ## Snowflake credentials
 
-Log in to Snowflake with admin privileges to provide the Data Graph with the necessary permissions below. 
+Segment assumes that you already have a warehouse that includes the datasets you'd like to use for the Data Graph. Log in to Snowflake with admin privileges to provide the Data Graph with the necessary permissions below. 
 
-## Step 1: Create Segment user and internal database for the Data Graph
+## Step 1: Create a user and internal database for Segment to store checkpoint tables
 
-Segment recommends setting up a new Snowflake user and only giving this user permission to access the required databases and schemas. Run the SQL code block below in your SQL worksheet in Snowflake to execute the following tasks:
+Segment recommends setting up a new Snowflake user and only giving this user permissions to access the required databases and schemas. Run the SQL code block below in your SQL worksheet in Snowflake to execute the following tasks:
 
 - Create a new role and user for the Segment Data Graph. This new role will only have access to the datasets you provide access to for the Data Graph.
 - Grant the Segment user access to the warehouse of your choice. If you'd like to create a new warehouse, uncomment the SQL below.
-- Create a new database for the Data Graph. **Segment requires write access to this database in order to create a schema for internal bookkeeping and to store checkpoint tables for the queries that are executed. Therefore, Segment recommends creating a new empty database for this purpose.** This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
+- **Segment requires write access to this database in order to create a schema for internal bookkeeping and to store checkpoint tables for the queries that are executed. Therefore, Segment recommends creating a new database for this purpose.** This is also the database you'll be required to specify for the "Database Name" when connecting Snowflake with the Segment app.
 
 > info ""
-> The variables specified at the top of the code block with the `SET` command are placeholders and should be updated.
+> Segment recommends creating a new database for the Data Graph.
+> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema)to update user access for the Segment Reverse ETL schema.
+
 
 ```SQL
 -- ********** SET UP THE FOLLOWING WAREHOUSE PERMISSIONS **********
@@ -78,9 +80,9 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 ```
 
-## Step 2: Grant read-only access to other databases for the Data Graph
+## Step 2: Grant read-only access to additional databases for the Data Graph
 
-Next, give the Segment role **read-only** access to all the other databases you want to use for Data Graph including the Profiles Sync database. Repeat the SQL query below for **each** database you want to use for the Data Graph.
+Next, give the Segment role **read-only** access to additional databases you want to use for Data Graph including the Profiles Sync database. Repeat the SQL query below for **each** database you want to use for the Data Graph.
 
 ``` SQL
 
@@ -103,7 +105,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($linked_read_on
 
 ```
 
-## (Optional) Step 3: Restrict Snowflake schema access
+## (Optional) Step 3: Restrict read-only access to schemas
 
 If you want to restrict access to specific [Snowflake schemas and tables](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges), then run the following commands: 
 
@@ -127,24 +129,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN SCHEMA identifier($linked_read_only
 
 ```
 
-## (If applicable) Step 4: Update user acccess for Segment Reverse ETL schema 
-
-> warning ""
-> This is only applicable if you choose to use an existing database as the Segment connection database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/).
-
-If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient privileges on an existing `_segment_reverse_etl` schema.
-
-``` SQL
--- If you want to use an existing database that already has Segment Reverse ETL schemas, you’ll need to run some additional steps below to grant the role access to the existing schemas.
-
-SET retl_schema = concat($segment_connection_db,'.__segment_reverse_etl');
-GRANT USAGE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
-GRANT CREATE TABLE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
-GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
-
-```
-
-## Step 5: Confirm permissions 
+## Step 4: Confirm permissions 
 
 To verify you have set up the right permissions for a specific table, log in with the username and password you created for `SEGMENT_CONNECTION_USERNAME` and run the following command to verify the role you created has the correct permissions. If this command succeeds, you should be able to view the respective table.
 
@@ -159,22 +144,32 @@ SHOW SCHEMAS;
 SELECT * FROM identifier($table_name) LIMIT 10;
 
 ```
-## Step 6: Connect your warehouse to the Data Graph
+## Step 5: Connect your warehouse to the Data Graph
 To connect your warehouse to the Data Graph:
 
 1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
 2. Click Connect warehouse.
 3. Select Snowflake as your warehouse type. 
-4. Enter your warehouse credentials. Segment requires the following settings to connect to your Snowflake warehouse.
-<img src="/docs/unify/images/snowflake-setup.png" alt="Connect Snowflake to Data Graph" width="5888"/>
-
-- **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
-- **Database**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
-- **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
-- **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
+4. Enter your warehouse credentials. Segment requires the following settings to connect to your Snowflake warehouse:
+- **Account ID**: The Snowflake account ID that uniquely identifies your organization account
+- **Database**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below
+- **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below
+- **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below
 - **Authentication**: There are 2 supported authentication methods:
-  - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth). Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created.
-  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
+  - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth). Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created
+  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below
  
 5. Test your connection, then click Save.
 
+## Update user acccess for Segment Reverse ETL schema 
+If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient privileges on an existing `_segment_reverse_etl` schema.
+
+``` SQL
+-- If you want to use an existing database that already has Segment Reverse ETL schemas, you’ll need to run some additional steps below to grant the role access to the existing schemas.
+
+SET retl_schema = concat($segment_connection_db,'.__segment_reverse_etl');
+GRANT USAGE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
+GRANT CREATE TABLE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
+GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
+
+```
