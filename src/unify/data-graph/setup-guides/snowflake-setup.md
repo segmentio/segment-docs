@@ -14,6 +14,8 @@ On this page, you'll learn how to connect your Snowflake data warehouse to Segme
 
 Log in to Snowflake with admin privileges to provide Segment Data Graph with the necessary permissions below. 
 
+<!-- remove this and go for it! -->
+
  
 ## Required connection settings within Segment
 
