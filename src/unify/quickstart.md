@@ -40,12 +40,12 @@ You probably have teammates who help set up your Segment Workspace with the data
    Segment recommends connecting your production website or App source as a great starting point.
 
 > info ""
-> If the source you want to add doesn't appear on the list, then check if the source is enabled. If the source is enabled, verify that you have set up a connection policy which enforces that you can only add sources with specific labels to this space. Read more about Segment's connection policy [here](/docs/unify/identity-resolution/space-setup/#step-three-set-up-a-connection-policy).
+> If the source you want to add doesn't appear on the list, then check if the source is enabled. If the source is enabled, verify that you have set up a connection policy which enforces that you can only add sources with specific labels to this space. Read more about Segment's connection policy in the [Space Setup](/docs/unify/identity-resolution/space-setup/#step-three-set-up-a-connection-policy) docs.
 
 > success ""
 > **Tip:** It sounds a little counter- intuitive to connect a production source to a developer space, but your production sources have rich user data in them, which is what you need to build and validate user profiles.
 
-Once you select sources, Segment starts a replay of one month of historical data from these sources into your Unify space. We're doing this step first so you have some user data to build your first profiles.
+Once you select sources, Segment starts a replay of one month of historical data from these sources into your Unify space. Segment does this step first so you have some user data to build your first profiles.
 
 The replay usually takes several hours, but the duration will vary depending on how much data you have sent through these sources in the past one month. When the replay finishes, you are notified in the Sources tab under Settings, shown below.
 

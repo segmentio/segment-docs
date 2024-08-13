@@ -7,7 +7,7 @@ hidden: true
 
 
 
-Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/connections/sources/#what-is-a-source).
+Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source in Segment's [What is a Source](/docs/connections/sources/#what-is-a-source) documentation.
 
 To get started with Cxense and Segment, you'll need the following:
 

@@ -8,7 +8,7 @@ This integration is maintained by [WebEngage Support](mailto:support@webengage.c
 
 Steps to integrate Segment with WebEngage:
 
-You will be required to provide the API key if you intend on sending any using WebEngage's server-side component. The API key can be found in your WebEngage dashboard on the top right under **Integrations > REST API**. If you don't have a WebEngage account, you can create one [here](https://webengage.com/sign-up){:target="_blank"}.
+You will be required to provide the API key if you intend on sending any using WebEngage's server-side component. The API key can be found in your WebEngage dashboard on the top right under **Integrations > REST API**. If you don't have a WebEngage account, you can create one [on the WebEngage site](https://webengage.com/sign-up){:target="_blank"}.
 
 To use the client-side web or mobile bundled SDKs, enter your License Code. WebEngage only needs the License Code you want to enable the device/packaged Integration which will allow you to use WebEngage's in-app and push notification functionality.
 

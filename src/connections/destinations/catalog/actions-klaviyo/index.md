@@ -1,7 +1,6 @@
 ---
 title: Klaviyo (Actions) Destination
 id: 650bdf1a62fb34ef0a8058e1
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

@@ -87,6 +87,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: E5Y3BqhAg2
+    display_name: Authvia
+    hidden: false
+    slug: authvia
+    url: connections/sources/catalog/cloud-apps/authvia
+    regions:
+      - us
+    endpoints:
+      - us
   - id: R7eWaTLYUs
     display_name: AutopilotHQ
     hidden: false

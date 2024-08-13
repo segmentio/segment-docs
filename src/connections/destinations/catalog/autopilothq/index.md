@@ -12,7 +12,7 @@ Are you instead trying to set up Autopilot as a Source to get data from Autopilo
 ## Getting Started
   1. From the Segment web app, click **Catalog**.
   2. Search for "Autopilot" in the Catalog, select it, and choose which of your sources to connect the destination to.
-  3. In the destination settings, enter your "API Key" from [here](https://login.autopilothq.com/login#settings/app-connections/segment-sync){:target="_blank”} or go to Autopilot: Settings -> App Connections -> Segment and copy/paste the API key which is listed there.
+  3. In the destination settings, enter your "API Key" from [your Autopilot Segment Sync settings page](https://login.autopilothq.com/login#settings/app-connections/segment-sync){:target="_blank”} or go to Autopilot: Settings -> App Connections -> Segment and copy/paste the API key which is listed there.
   4. Once enabled 'identify' and 'track' calls will be sent to Autopilot.
 
 ## Identify
