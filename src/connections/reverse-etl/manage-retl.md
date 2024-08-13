@@ -44,7 +44,7 @@ To check the status of your extractions:
 > Segment retries events for 14 days following a total or partial sync failure. Before loading the failed records on a subsequent sync, Segment checks for the latest changes in your data to ensure the data loaded into your warehouse isn't stale. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to ensure the record loads on the next sync. 
 
 ## Reset syncs
-You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model.
+You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model. During the next sync, all records extracted by the model are sent to your destination, not just the records that changed since the last sync.
 
 To reset a sync:
 1. Select the three dots next to **Sync now**.
