@@ -32,7 +32,7 @@ analytics.page('Pricing', {
 });
 ```
 
-Page calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank”}).
+Page calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [on the Segment blog](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank”}).
 
 
 ## Screen
@@ -44,7 +44,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 properties:@{ @"kustomer_session_id": @"abc123" }];
 ```
 
-Screen calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank”}).
+Screen calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [on the Segment blog](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank”}).
 
 ## Identify
 

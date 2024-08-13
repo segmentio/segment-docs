@@ -508,7 +508,7 @@ const insertId = uuidv5(`${messageId}:${projectId}:${eventName}`, MIXPANEL_NAMES
 
 If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
 
-Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more [here](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"}.
+Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more in Mixpanel's [Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} documentation.
 
 
 ### Bypass "Last Seen" in Server-side Calls
@@ -550,7 +550,7 @@ In-app notifications are only available for projects either bundling the Segment
 
 Segment supports Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
-For *in-app* notifications and surveys, follow the Mixpanel documentation [here](https://developer.mixpanel.com/docs/swift#in-app-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, follow the Mixpanel documentation for [Swift](https://developer.mixpanel.com/docs/swift#in-app-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions in Segment's [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) documentation by and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Server-side)
 

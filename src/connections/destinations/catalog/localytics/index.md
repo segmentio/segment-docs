@@ -29,7 +29,7 @@ is not yet supported.
 [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/)), with the Localytics SDKs [bundled](/docs/connections/spec/mobile-packaging-sdks/) in order to send data to Localytics.
 
 You must also add the Maven Localytics repo (since Localytics doesn't publish it on Maven Central). You can see an example of how to add that
-[here](https://github.com/segment-integrations/analytics-android-integration-localytics/blob/master/build.gradle#L44){:target="_blank"}.
+in the [@segment-integrations/analytics-android-integration-localytics](https://github.com/segment-integrations/analytics-android-integration-localytics/blob/master/build.gradle#L44){:target="_blank"} repository.
 
 ## Identify
 

@@ -19,9 +19,6 @@ hide_action:
 
 The Google Ads Conversions destination enables you to upload offline conversions and conversion adjustments to Google Ads in a privacy safe way. With this server-side destination, you can upload conversions to the [Google Ads API](https://developers.google.com/google-ads/api/docs/conversions/overview){:target="_blank"} and tie them to a user's online click or phone call. In addition, you can improve the accuracy of your conversion measurement by sending conversion enhancements, restatements, and retractions.
 
-> warning "Upload Enhanced Conversion (Legacy) Actions will be deprecated after June 30th, 2024"
-> Segment will begin migrating all enabled Upload Enhanced Conversion (Legacy) mappings to the updated Upload Conversion Adjustment mappings on June 7th, 2024. **After Segment migrates your mappings, you must take action to prevent data loss**. For more information, see the [Automatic migration from Upload Enhanced Conversion (Legacy) Action](#automatic-migration-from-upload-enhanced-conversion-legacy-action) documentation.
-
 > info "Consent mode"
 > Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up.
 
@@ -35,63 +32,6 @@ The Google Ads Conversions destination enables you to upload offline conversions
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 {% include components/actions-fields.html settings="true"%}
-
-## Migrate from your legacy Upload Enhanced Conversion Action
-
-To migrate from the legacy Upload Enhanced Conversion Action to the updated Upload Conversion Adjustment Action: 
-
-1. Navigate to the Google Ads Conversions destination in your workspace and select the **Settings** tab. 
-2. On the Settings tab, enter your Conversion ID and Customer ID into the named fields. 
-2. Update the following fields for the Upload Conversion Adjustment Action mapping: 
-    - Conversion Action ID
-    - Adjustment Type
-3. Replicate as many fields from your original mapping as possible, using the following table for reference. 
-
-Review the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) section for more details about each field.
-
-| Upload Enhanced Conversion (Legacy)| Upload Conversion Adjustment | Default Mapping                      |
-|------------------------|----------------------------|--------------------------------------|
-| conversion_label       | N/A             | `$.properties.conversion_label`        |
-| email                  |  email_address             | `$.properties.email` or `$.traits.email` or `$.context.traits.email` |
-| transaction_id         | order_id                    | `$.properties.orderId`                 |
-| user_agent             | user_agent                  | `$.context.userAgent`                 |
-| conversion_time        | conversion_timestamp        | `$.timestamp`                        |
-| value                  | N/A             |` $.properties.total`                  |
-| currency_code          | N/A              | `$.properties.currency`             |
-| is_app_incrementality  | N/A              |` false`                           |
-| pcc_game               | N/A              | `false`                             |
-| phone_number           | phone_number                | `$.properties.phone` or `$.traits.phone` |
-| first_name             | first_name                  | `$.properties.firstName` or `$.traits.firstName` |
-| last_name              | last_name                   | `$.properties.lastName` or `$.traits.lastName` |
-| street_address         | street_address              | `$.properties.address.street` or `$.traits.address.street` |
-| city                   | city                       | `$.properties.address.city` or `​​$.traits.address.city` |
-| region                 | state                      | `$.properties.address.state` or `$.traits.address.state` |
-| post_code              | postal_code                 | `$.properties.address.postalCode` or `$.traits.address.postalCode` |
-| country                | country                     | `$.properties.address.country` or `$.traits.address.country` |
-| N/A | gclid                  | Default Not Available        | 
-| N/A | adjustment_timestamp   | Default Not Available        | 
-| N/A | restatement_value      | Default Not Available        | 
-| N/A | restatement_currency_code | Default Not Available     |
-
-
-### Automatic migration from Upload Enhanced Conversion (Legacy) Action
-The Upload Enhanced Conversion action relies on the Google Enhanced Conversion Legacy API, which will be deprecated on June 30th, 2024.
-
-On June 7, 2024, Segment will begin migrating all enabled legacy Upload Enhanced Conversion mappings to the new Upload Conversion Adjustment mapping, preserving as many mapping fields as possible. Migrated mappings will have the same names as your legacy mappings, with `[Migrated]` appended. For example, if your mapping was named "Enhanced Conversions", Segment would name your migrated mapping "Enhanced Conversions [Migrated]". 
-
-![A screenshot of the Google Enhanced Conversions mappings page, with migrated mappings disabled.](images/google-enhanced-conversions-migration.png)
-
-After this migration occurs, you must take the following steps: 
-1. Open the your Google Ads Conversions destination and select the **Settings** tab. 
-2. Enter your Conversion ID and Customer ID into their respective fields. Find information about what these values are in the [destination settings](#destination-settings).  
-3. Select the **Mappings** tab.
-4. Update the Conversion Action and Adjustment Type fields in the Upload Conversion Adjustment mapping to match the fields outlined in the above table. ![A screenshot of a migrated mapping, with the required fields outlined in black.](images/mapping-fields.png)
-5. Enable the migrated mapping(s). 
-6. Disable the legacy Upload Enhanced Conversion mappings. 
-
-To migrate your mapping yourself, use the steps in the [Migrate from your legacy Upload Enhanced Conversion Action](#migrate-from-your-legacy-upload-enhanced-conversion-action) documentation. 
-
-Segment will deprecate all legacy Upload Enhanced Conversion legacy actions after June 30th, 2024.
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 

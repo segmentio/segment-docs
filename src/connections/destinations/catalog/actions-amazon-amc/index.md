@@ -1,7 +1,6 @@
 ---
 title: Amazon Ads DSP and AMC Destination
 id: 66543798b2fb3cb3e9ff992c
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

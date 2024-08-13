@@ -108,7 +108,7 @@ To configure DoubleClick Floodlight:
 7. Click **Save** and make sure you enable the mapping. 
 
 > info ""
-> The destination does not have configurable settings until you create an audience, described [here](#create-an-audience-and-finish-dv360-configuration).
+> The destination does not have configurable settings until you create an audience, described in the [Create an audience and finish DV360 configuration](#create-an-audience-and-finish-dv360-configuration) documentation.
 
 ### Create an audience and finish DV360 configuration
 
