@@ -25,10 +25,10 @@ To get started with comScore and Segment, you'll want to first integrate your mo
 For mobile sources, you will need to enter your comScore **c2 ID** and **Publisher Secret**.
 
 ### iOS
-To install comScore via Segment on iOS, please follow the additional set up steps in the Segment-Comscore iOS repository [here](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore){:target="_blank"}.
+To install comScore using Segment on iOS, please follow the additional set up steps in the [Segment-Comscore iOS repository](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore){:target="_blank"}.
 
 ### Android
-To install comScore via Segment on Android, please follow the additional set up steps in the Segment-Comscore Android repository [here](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore){:target="_blank"}.
+To install comScore using Segment on Android, please follow the additional set up steps in the [Segment-Comscore Android repository](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore){:target="_blank"}.
 
 ## Page
 

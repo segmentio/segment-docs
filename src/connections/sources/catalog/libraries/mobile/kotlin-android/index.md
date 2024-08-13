@@ -167,7 +167,7 @@ Once you've installed the mobile or server Analytics Kotlin library, you can sta
 ### Destinations
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 
 <div class="double">
