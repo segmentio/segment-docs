@@ -84,7 +84,6 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
 5. Click **Test Connection** to test to see if the connection works.
 6. Click **Add source** if the test connection is successful.
 
-<!--- need to test what information needs to be entered into Segment UI --->
 
 Learn more about the Snowflake Account ID in Snowflake's [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"} documentation.
 
