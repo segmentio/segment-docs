@@ -86,6 +86,6 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
 
 <!--- need to test what information needs to be entered into Segment UI --->
 
-Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
+Learn more about the Snowflake Account ID in Snowflake's [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"} documentation.
 
 After you've successfully added your Snowflake source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
