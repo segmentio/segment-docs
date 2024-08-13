@@ -1,7 +1,6 @@
 ---
 title: Salesforce DMP Destination
 rewrite: true
-beta: true
 hidden: true
 ---
 

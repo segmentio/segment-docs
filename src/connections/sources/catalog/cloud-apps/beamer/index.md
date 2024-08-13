@@ -1,6 +1,5 @@
 ---
 title: Beamer Source
-beta: true
 id: ErcsNGMEwt
 ---
 {% include content/source-region-unsupported.md %}

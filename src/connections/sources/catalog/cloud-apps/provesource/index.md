@@ -1,6 +1,5 @@
 ---
 title: ProveSource Source
-beta: true
 id: aC11S74HWK
 ---
 {% include content/source-region-unsupported.md %}

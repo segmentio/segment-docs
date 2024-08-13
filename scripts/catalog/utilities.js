@@ -133,11 +133,7 @@ const doesCatalogItemExist = (item) => {
     let content = `---\ntitle: '${item.display_name} Source'\nhidden: true\n---`;
 
     if (!docsPath.includes('/sources/')) {
-      let betaFlag = '';
-      if (item.status === 'PUBLIC_BETA') {
-        betaFlag = 'beta: true\n';
-      }
-      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\nid: ${item.id}\npublished: false\n${betaFlag}---\n`;
+      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\nid: ${item.id}\npublished: false\n`;
     }
 
     fs.mkdirSync(docsPath);

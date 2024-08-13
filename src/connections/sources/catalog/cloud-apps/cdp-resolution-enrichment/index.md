@@ -1,7 +1,6 @@
 ---
 title: Delivr.ai Enrich Source
 id: HoFsjsDOW2
-beta: true
 hidden: true
 ---
 

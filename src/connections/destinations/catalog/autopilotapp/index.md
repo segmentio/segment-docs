@@ -1,7 +1,6 @@
 ---
 title: Ortto Destination
 rewrite: true
-beta: true
 id: 613ef845b8784e858199fe2d
 ---
 [Ortto](https://ortto.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps thousands of organizations around the world automate their communications through email notifications, such as regular email newsletters, abandoned cart emails, as well as SMS messages, and more, to help organizations market and grow their businesses faster.
