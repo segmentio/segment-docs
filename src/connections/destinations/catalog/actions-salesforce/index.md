@@ -36,6 +36,12 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings). You must select which Event Types and/or Event Names will trigger each mapping.
 7. Enable the destination and configured mappings.
 
+> info "Salesforce (Actions) authentication limitations"
+> You must authenticate with the Salesforce (Actions) destination using OAuth. A single user can connect up to 5 Salesforce destinations, but upon connecting a 6th instance of the Salesforce (Actions) destination, Salesforce revokes the oldest destination's authorization. If the same user reauthorizes that same destination, this same behavior occurs on the next oldest destination that was authorized, and so on. To prevent this behavior, ensure that a different user with the same Salesforce permissions connects any additional Salesforce destinations.
+> 
+> _For additional information on these limitations, see the Salesforce [Manage OAuth-Enabled Connected Apps Access to Your Data](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_request_manage.htm&type=5#:~:text=Each%20connected%20app%20allows%20five%20unique%20approvals%20per%20user.){:target="_blank”}  documentation._
+
+
 {% include components/actions-fields.html %}
 
 ## Configuration options
@@ -154,7 +160,7 @@ When using the `create` operation, it's possible for duplicate records to be cre
 Please note this is only a concern when using the `create` operation. You can use the `upsert` operation instead to avoid duplicates if `upsert` meets your needs.
 
 ### How does Salesforce Bulk API work?
-When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 1000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
+When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 5000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
 
 > info ""
 > To monitor Bulk API uploads in Salesforce, search for 'Bulk Data Load Jobs' in the Quick Find box, then select **Bulk Data Load Jobs**. This will redirect you to the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page (Environment > Jobs > Bulk Data Load Jobs), where you can view the progress of current jobs, along with success and error messages for recent Bulk V2 operations.

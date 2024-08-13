@@ -11,13 +11,15 @@ PostgreSQL, or Postgres, is an object-relational database management system (ORD
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
-> note "Segment sources required"
+> info "Segment sources required"
 > In order to add a Postgres destination to Segment, you must first add a source. To learn more about sources in Segment, check out the [Sources Overview](/docs/connections/sources) documentation.
 
 ## Getting started
 Segment supports the following Postgres database providers:
 - [Heroku](#heroku-postgres)
 - [RDS](#rds-postgres)
+
+{% include content/storage-do-include.md %}
 
 Segment supported a third Postgres provider, Compose, until Compose was [was deprecated on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}. To continue sending your Segment data to a Postgres destination, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres).
 

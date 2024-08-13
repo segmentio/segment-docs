@@ -37,6 +37,7 @@ Integrating by adding Voucherify as a Source to Segment supports the following e
 Below are the events that Voucherify sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Voucherify includes the `userId` if available.
 
 ### Redemption events
+
 | Event                                  | Description                                                                                                                                    | Fields                                                                                                                        |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Customer Redemption Succeeded          | Triggered when a redemption is successfully completed by a customer (successful use of a voucher to receive a discount or other reward).       | order (object), promotion_tier (object), redemption (object), voucher (object), holder (object)                               |
@@ -45,6 +46,7 @@ Below are the events that Voucherify sends to Segment. These events appear as ta
 | Customer Redemption Rollback Failed    | Triggered when an attempt to roll back the redemption fails.                                                                                   | order (object), promotion_tier (object), redemption (object), redemption_rollback (object), voucher (object), holder (object) |
 
 ### Customer rewarded events
+
 | Event                                 | Description                                                                                 | Fields                                                                                                                               |
 |---------------------------------------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | Customer Reward Redemptions Created   | Triggered when a customer redeems a reward in Voucherify account.                           | reward (object), reward_assignment (object), reward_redemption (object), voucher (object), source (object), holder (object), balance |
@@ -53,12 +55,14 @@ Below are the events that Voucherify sends to Segment. These events appear as ta
 | Customer Rewarded Loyalty Points      | Triggered when a customer is rewarded with loyalty points.                                  | earning_rule (object),  loyalty_tier (object), order (object), voucher (object), holder (object), balance                            |
 
 ### Validation events
+
 | Event                         | Description                                                                        | Fields              |
 |-------------------------------|------------------------------------------------------------------------------------|---------------------|
 | Customer Validation Succeeded | Triggered when a customer's validation is completed (customer entered valid code). | validation (object) |
 | Customer Validation Failed    | Triggered when a customer's validation fails.                                      | validation (object) |
 
 ### Publication events
+
 | Event                          | Description                                                                          | Fields               |
 |--------------------------------|--------------------------------------------------------------------------------------|----------------------|
 | Customer Publication Succeeded | Triggered when a publication (assigning a code to particular customer) is completed. | publication (object) |
