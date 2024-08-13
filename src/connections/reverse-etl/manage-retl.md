@@ -81,7 +81,8 @@ When you set up destination actions in Reverse ETL, depending on the destination
 You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
 
 Example: 
-    
+
+```json    
     {
         "product": {
             "id": 0001,
@@ -91,6 +92,7 @@ Example:
             "inventory": 500
         }
     }
+```
 
 To send data to a mapping field that requires object data, you can choose between these two options: 
 
@@ -108,7 +110,7 @@ To send data to a mapping field that requires array data, the model must provide
 
 Example: 
 
-    
+```json    
     [
     {
         "currency": "USD",
@@ -124,7 +126,7 @@ Example:
         "quantity": 2
     }
     ]
-    
+```    
 
 To send data to a mapping field that requires array data, you can choose between these two options: 
 
