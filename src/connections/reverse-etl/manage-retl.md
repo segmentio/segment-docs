@@ -49,7 +49,7 @@ You can reset your syncs so that your data is synced from the beginning. This me
 To reset a sync:
 1. Select the three dots next to **Sync now**.
 2. Select **Reset sync**. 
-3. Select the checkbox that you understand what happens when a sync is reset.
+3. Select **I understand what happens when I reset a sync state**. 
 4. Click **Reset sync**.
 
 ## Replays
