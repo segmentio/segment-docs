@@ -110,7 +110,7 @@ To create a mapping:
         * You can only choose to start the extraction at the top of the hour.
         * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
 11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
-    * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
+    * You map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
     * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
 12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
 13. Click **Create Mapping**.
