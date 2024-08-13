@@ -8,7 +8,7 @@ View your sync history, gain insights into sync statuses, and restart or replay 
 ## Sync overview
 On the Reverse ETL sync overview tab for your destination, you can see information about your recent Reverse ETL syncs at a glance, search for recent syncs, and quickly access the mappings and models that power Reverse ETL.
 
-![A screenshot of the sync overview page, which includes one failed sync and three successful syncs. ](images/sync-overview.png)
+![A screenshot of the sync overview page, which includes one failed sync and three successful syncs.](images/sync-overview.png)
 
 You can view the following information about each sync: 
 - **Latest sync**: The progress of your latest sync: syncs can either be **In progress**, **Successful**, or **Failed**. Also included is the timestamp of the sync start time.
@@ -66,7 +66,7 @@ To subscribe to alerts:
     - **Reverse ETL sync partial success**: Receive a notification when your Reverse ETL sync is partially successful.
 4. Select one or more of the following alert options: 
     - **Enable email notifications**: Enter an email address or alias that should receive alerts.
-    - **Enable Slack notifications**: Enter a Webhook URL and Slack channel name.
+    - **Enable Slack notifications**: Enter a webhook URL and Slack channel name.
     - **Enable in-app notifications**: Select this option to see an in-app notification.
 5. Click **Create alert**.
 
@@ -75,7 +75,7 @@ To subscribe to alerts:
 
 ## Supported object and arrays 
 
-When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data to be in the form of an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping). 
+When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data as an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping). 
 
 ### Object mapping
 You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
