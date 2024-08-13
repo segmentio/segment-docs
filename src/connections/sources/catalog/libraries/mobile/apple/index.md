@@ -152,7 +152,7 @@ See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/librar
 
 ## Tools and extensions
 
-Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.
+Analytics-Swift is built with extensibility in mind. Use the tools list below to improve data collection.
 
 - [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift/swift-typewriter)
