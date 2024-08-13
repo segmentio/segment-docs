@@ -66,5 +66,3 @@ To get started with using Reverse ETL for subscriptions:
 9. Select the model you want to use and then select **Send Subscriptions**.
 10. Click **Create Mapping**.
 11. Follow the steps in the [Create Mappings](/docs/connections/reverse-etl/setup/#step-4-create-mappings) section to set your mappings.
-
-<!--- TODO: Add link ^^ --->
