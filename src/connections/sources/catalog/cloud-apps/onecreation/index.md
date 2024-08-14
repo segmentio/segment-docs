@@ -25,7 +25,7 @@ This source is maintained by One Creation. For any issues with the source, [cont
 
 One Creation uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-One Creation assigns a unique ID to each user. This ID is passed to Segment as theuserID. The user's email address is included as a trait. 
+One Creation assigns a unique ID to each user. This ID is passed to Segment as the `userId`. The user's email address is included as a trait.
 
 ## Events
 
