@@ -90,7 +90,10 @@ If you have Google Ads enabled and see duplicate events in GTM, check to see if 
 Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank"} to prevent this duplication. 
 
 
-In reviewing the "dataLayer" tab for each event in GTM, it was observed that the `eventModel` field, which is an internal Google field, is only present in events captured by the Google Ads SDK. To prevent GTM tags from firing multiple times due to duplicate events, you can create a GTM variable and use `eventModel` as a condition to filter events.
+On the dataLayer, you might find the `eventModel` field, which is an internal Google field only present in events captured by the Google Ads SDK. To prevent GTM tags from creating duplicate events, you can create a GTM variable and use `eventModel` as a condition to filter events.
+
+> warning "The following solution was shared by a Segment customer and is not officially endorsed by Segment"
+> Please test this solution before implementing it with production data. If you have any questions about the GTM setup, consult the [GTM documentation](https://support.google.com/tagmanager/answer/6103657?hl=en){:target="_blank"}.
 
 1. Create a [GTM variable](https://support.google.com/tagmanager/answer/7683056?hl=en){:target="_blank"} to capture the `eventModel` field when events hit the Google DataLayer
 2. Set the variable to add the value "GTM" to the `eventModel` field when the field is not present in the event dataLayer. The format value should be set to "Convert undefined to GTM"
