@@ -15,7 +15,7 @@ This source is maintained by One Creation. For any issues with the source, [cont
 2. Search for "One Creation" in the Sources Catalog, select One Creation, and click Add Source.
 3. On the next screen, give the Source a name configure any other settings.
 
-    The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+- The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. OneCreation_Prod, OneCreation_Staging, OneCreation_Dev).
 
 4. Click Add Source to save your settings.
 5. Copy the Write key from the Segment UI.
