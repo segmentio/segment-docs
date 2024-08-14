@@ -388,7 +388,7 @@ data_graph {
 ## Step 4: Validate your Data Graph
 You can validate your Data Graph using the preview, then click Save. After you've set up your Data Graph, your partner teams can start leveraging these datasets with with [Linked Events](/docs/unify/data-graph/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
-## Edit & manage your Data Graph
+## Edit and manage your Data Graph
 
 To edit your Data Graph:
 
