@@ -67,6 +67,8 @@ Segment users can send data to [Google Ads Customer Match](https://developers.go
 
 #### Connect Reverse ETL to Google Ads Customer Match
 
+After you’ve connected your Google Ads destination to Segment, set up [Reverse ETL mappings](/docs/connections/reverse-etl/setup/#step-4-create-mappings) to sync to a Google Customer Match List.
+
 ##### Add users to your Google Customer Match User List  
 1. From your Segment workspace, navigate to your Reverse ETL source.
 2. Select the Reverse ETL model you'd like to sync with Google Ads.
@@ -88,6 +90,29 @@ Segment users can send data to [Google Ads Customer Match](https://developers.go
 6. Select an External ID Type, configure your mappings, and click **Next**. 
 9. Enter a name for your mapping, set your sync schedule, and click **Save**.  
 10. On the mapping's overview page, set the Status toggle to **Enabled**.  
+
+## Data normalization
+
+To improve match rates, Segment built in normalization and hashing for common fields to align with Google's best practices outlined in Google's [Prepare data for upload](https://developers.google.com/google-ads/api/docs/conversions/enhanced-conversions/leads#prepare-data){:target="_blank"} and [Add customer data](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started#add-user){:target="_blank"} documentation.
+
+### Normalization 
+
+Segment automatically strips whitespace and converts the following fields to lowercase:
+  * Email
+  * First name
+  * Last name
+
+Segment normalizes the Phone field by removing any non-numeric symbols. Segment also converts each phone number to [E.164](https://en.wikipedia.org/wiki/E.164){:target="_blank"} format before hashing. E.164 format represents a phone number as a number up to fifteen digits in length starting with a + sign.
+
+### Hashing
+
+Google requires you to hash all PII before sending it to the Google API. 
+
+Segment automatically hashes any of the following fields that are not already hashed at egress:
+ * Email
+ * Phone number
+ * First name
+ * Last name
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
