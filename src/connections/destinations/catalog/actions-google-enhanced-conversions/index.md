@@ -45,7 +45,6 @@ The Google Ads destination allows users to upload [conversions](https://develope
   * Click **Connect to Google Ads Conversions** to authenticate with Google. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
 7. Follow the steps in the Destinations Actions documentation to [customize your mappings](/docs/connections/destinations/actions/#customize-mappings).
 
-{% include components/actions-fields.html settings="true"%}
 
 ### Connect to Google Ads Customer Match lists
 
@@ -113,6 +112,8 @@ Segment automatically hashes any of the following fields that are not already ha
  * Phone number
  * First name
  * Last name
+
+{% include components/actions-fields.html settings="true"%}
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
