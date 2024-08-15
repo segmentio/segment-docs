@@ -410,10 +410,10 @@ A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audience
 
 ### Understand changes that may cause breaking and potential breaking changes
 
-Upon saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
+Upon editing and saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
 - **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship slug are immutable and treated as a delete if you make changes. You can modify the label.
 - **Potential breaking change**: Some changes such as updating the entity `table_ref` or `primary_key`, may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
 
 ### Detect warehouse breaking changes
 
-Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph and/or data consumers, such as when the table being referenced gets deleted from your warehouse, the primary key column no longer exists, etc. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
+Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse, the primary key column no longer exists, etc. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
