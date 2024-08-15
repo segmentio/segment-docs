@@ -6,8 +6,6 @@ hide-dossier: false
 private: true
 hidden: true
 id: 643697130067c2f408ff28ca
-redirect_from:
-  - "/connections/destinations/catalog/actions-rokt-audiences" 
 ---
 {% include content/plan-grid.md name="actions" %}
 

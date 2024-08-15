@@ -1,6 +1,5 @@
 ---
 title: Set Up Segment Data Lakes
-redirect_from: '/connections/destinations/catalog/data-lakes/'
 redirect_from:
   - '/connections/destinations/catalog/data-lakes/'
   - '/connections/destinations/catalog/azure-data-lakes/'
