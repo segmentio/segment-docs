@@ -7,7 +7,7 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-The Data Graph is a semantic layer unifying all your customer datasets, enabling you to define relationships between any entity data set in the warehouse (i.e. accounts, subscriptions, households, products, etc) with the Segment Profiles you send with Profiles Sync. Once defined, the Data Graph allows you to make this rich relational data accessible to marketers and business stakeholders to empower them to create targeted and personalized customer engagements.
+The Data Graph is a semantic layer unifying all your customer datasets, enabling you to define relationships between any entity data set in the warehouse (i.e. accounts, subscriptions, households, products, etc.) with the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/). Once defined, the Data Graph allows you to make this rich relational data accessible to marketers and business stakeholders to empower them to create targeted and personalized customer engagements.
 - **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets defined in the Data Graph unlocking a world of new hyper-personalized campaigns.
 - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Available for Destinations Actions and Functions.
 
@@ -15,8 +15,10 @@ The Data Graph is a semantic layer unifying all your customer datasets, enabling
 
 To use the Data Graph, you'll need the following:
 
-- A supported data warehouse
-- If using Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. Note: Profiles Sync is not required for Linked Events
+- A supported data warehouse with appropriate Data Graph permissions
+- For Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up for a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings for Linked Audiences: 
+  - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
+  - Under **Track event tables**, select "Sync all Track Call Tables" to enable filtering on event history for Linked Audiences conditions.
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions
 
 ## Step 1: Set up Data Graph permissions in your data warehouse
@@ -64,7 +66,7 @@ Similar to the concept of [cardinality in data modeling](/en.wikipedia.org/wiki/
 - **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
 - **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
 - **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
-- The Data Graph currently supports 5 levels of relationships starting from the profile. For example, relating the accounts table to the profile block is the first level of relationship, relating a 1:many relationship between the accounts and carts table is the second level of relationship, and so on. There are no limits on the breadth of your Data Graph.
+- The Data Graph currently supports 6 levels of depth (or nodes) starting from the profile. For example, relating the `profile` to the `accounts` table to the `carts` table is 3 levels of depth. There are no limits on the width of your Data Graph or the number of entities.
 - Relationships are nested under the profile. Refer to the example below.
 
 **Data Graph Example** 
@@ -113,24 +115,27 @@ data_graph {
       profile_folder = "PRODUCTION.SEGMENT"
       type = "segment: materialized"
   
-      # First branch - relate accounts table to the profile. Unique type of relationship between an entity and the profile block
+      # First branch - relate accounts table to the profile
+      # This is a unique type of relationship between an entity and the profile block
       relationship "user-accounts" {
         name = "Premium Accounts"
         related_entity = "account-entity"
-        # Join the profile entity with user_id, email, or phone as the identifier on the entity table
+        # Join the profile entity with an identifier (e.g. email) on the related entity table
         # Option to replace with the traits block below to join with a profile trait on the entity table instead
         external_id {
           type = "email"
           join_key = "EMAIL_ID"
         }
   
-        # Define 1:many relationship between accounts and carts (e.g. an account can be associated with many carts)
+        # Define 1:many relationship between accounts and carts
+        # e.g. an account can be associated with many carts
         relationship "user-carts" {
           name = "Shopping Carts"
           related_entity = "cart-entity"
           join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
     
-          # Define many:many relationship between carts and products (e.g. there can be multiple carts, and each cart can be associated with multiple products)
+          # Define many:many relationship between carts and products
+          # e.g. there can be multiple carts, and each cart can be associated with multiple products
           relationship "products" { 
             name = "Purchased Products"
             related_entity = "product-entity"
@@ -153,7 +158,8 @@ data_graph {
           join_key = "EMAIL_ID"
         }
   
-        # Define 1:many relationship between households and subscriptions (e.g. a household can be associated with multiple subscriptions)
+        # Define 1:many relationship between households and subscriptions
+        # e.g. a household can be associated with multiple subscriptions
         relationship "user-subscriptions" {
           name = "Subscriptions"
           related_entity = "subscription-entity"
@@ -209,10 +215,11 @@ Next, define the profile. This is a special class of entity that represents Segm
 ```python
 
 data_graph {
-    # Define your entities
+    # Define entities
     ...
   
-    # Define the profile entity
+    # Define the profile entity, which corresponds to Segment Profiles tables synced via Profiles Sync
+    # Recommend setting up Profiles Sync materialized views to optimize warehouse compute costs
     profile {
       profile_folder = "PRODUCTION.SEGMENT"
       type = "segment:materialized"
@@ -274,13 +281,13 @@ data_graph {
         name = "Premium Accounts"
         related_entity = "account-entity"
   
-        # Option 1: Join with an external ID block
+        # Option 1: Join the profile entity with an identifier (e.g. email) on the related entity table
         external_id {
           type = "email"
           join_key = "EMAIL_ID"
         }
   
-        # Option 2: Join with a trait block
+        # Option 2: Join the profile entity with a profile trait on the related entity table
         trait {
           name = "cust_id"
           join_key = "ID"
