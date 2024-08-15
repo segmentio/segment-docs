@@ -404,7 +404,7 @@ To edit your Data Graph:
 
 ### View Data Graph data consumers
 
-A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audiences) referencing datasetes, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
+A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audiences) referencing datasets, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
 - Under **Unify > Data Graph**, click the **Data consumers** tab
 - Under **Unify > Data Graph > Overview** or the **Data Graph editor > Preview**, click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
 
