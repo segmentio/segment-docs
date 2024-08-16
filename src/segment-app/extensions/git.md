@@ -21,7 +21,7 @@ Follow these steps to set up Git Sync:
 
 The Git sync extension syncs the following resources from Segment to your Git repository:
 
-- [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/))
+- [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/)
 - [Warehouses](/docs/connections/storage/warehouses/)
 - [Destination Filters and Mappings](/docs/connections/destinations/destination-filters/)
 - [Tracking Plans](/docs/protocols/tracking-plan/create/)
