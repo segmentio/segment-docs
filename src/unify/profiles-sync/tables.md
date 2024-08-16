@@ -267,7 +267,7 @@ These materialized tables provide a snapshot of your Segment profiles, batch upd
 
 Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
 
-You can also use [historical backfill](/docs/unify/profiles-sync/#using-historical-backfill) with tables Segment materializes.
+You can also use [historical backfill](/docs/unify/profiles-sync/profiles-sync-setup/#using-historical-backfill) with tables Segment materializes.
 
 > warning ""
 > For materialized view tables, you must have delete permissions for your data warehouse. 
