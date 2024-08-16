@@ -60,7 +60,7 @@ The Dynamic Yield Audience Destination can accept identifiers other than userId,
 2. Click**Add identifier** then select the identifier type you'd like to use.
 3. Provide a name for the identifier in the **Identifier in destination** field.
 4. Scroll back up to the top of the Audience Settings panel and ensure that the **Identifier Type** field contains the name of the identifier you configured in the Customized Setup panel.
-6. Click **Save** and then click **Add Destination** button.
+5. Click **Save** and then click **Add Destination** button.
 
 The Destination is now connected to your Audience and starts syncing data to Dynamic Yield with the specified custom identifier.
 
