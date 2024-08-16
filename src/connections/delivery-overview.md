@@ -24,10 +24,10 @@ You can refine these tables using the time picker and the metric toggle, located
 The pipeline view provides insights into each step that your data takes enroute to the destination, with additional information available for each steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (for example, Failed on ingest, Filtered at source, Filtered at destination, and Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also includes a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
 
 Each of the following integrations has a slightly different pipeline view to account for differences in the data processing journey (process?):
-- [Classic destinations](#classic-destinations): Destinations built with Segment's classic framework. Examples include ABC, DEF, and XYZ.
-- [Actions destinations](#actions-destinations): Destinations built with Segment's new Destination Actions framework. Examples include ABC, DEF, and XYZ. 
-- [Storage destinations](#storage-destinations): Warehouse and blob storage destinations. Examples include ABC, DEF, LMNOP.
-- [Linked Audiences](#linked-audiences): Any 
+- [Classic destinations](#classic-destinations): Destinations built with Segment's classic framework. 
+- [Actions destinations](#actions-destinations): Destinations built with Segment's new Destination Actions framework.
+- [Storage destinations](#storage-destinations): Warehouse and blob storage destinations.
+- [Linked Audiences](#linked-audiences): Any destinations connected to a Linked Audience. 
 
 #### Classic destinations
 The pipeline view for classic destinations includes the following steps:
