@@ -47,7 +47,7 @@ Once these steps have been completed you can connect Audiences to the Destinatio
 4. On the Audience Settings panel, provide a value for the following fields: 
      - **Audience Name**: The name Segment uses when creating the Audience in Dynamic Yield.
      - **Identifier Type**: Select `userid`, `anonymousid`, or `email`. * See [Customized Identifier Setup](#customized-identifier-setup) for how to configure identifiers other than userid, email or anonymousid.
-6. Enable the **Send Track** toggle. You don't need to change the **Enter Event** or **Exit Event** fields as these are not used by this Destination.
+5. Enable the **Send Track** toggle. You don't need to change the **Enter Event** or **Exit Event** fields, as these are not used by this Destination.
 6. Click **Default Setup** panel under **Event settings**.
 7. Click **Save** and then click **Add Destination**.
 The Destination is now connected to your Audience and starts syncing data to Dynamic Yield.
