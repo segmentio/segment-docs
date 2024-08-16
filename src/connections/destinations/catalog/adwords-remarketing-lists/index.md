@@ -147,8 +147,6 @@ Engage matches users in your audience using email and mobile device ID (IDFA) va
 
 You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/), or as an [external id](/docs/unify/identity-resolution/externalids/) for the user. If you use Segment’s mobile SDKs to collect events from a mobile app, the user’s IDFA is automatically captured. If you don't use Segment’s mobile SDKs, you can set the user’s IDFA by setting it within `context.device.advertisingId`.
 
-You can set an email on the user profile by including `email` as a trait, as a property on an event, or as an external id for the user. If you use Segment's mobile SDKs to collect events from a mobile app, IDFA is automatically captured for the user. You can also set a user's IDFA on a mobile app by setting it within `context.device.advertisingId`.
-
 If a user has more than one email address or IDFA on their account as `external_ids`, Engage sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can't identify users based on the data that you provide.
 
 ### Invalid Settings error in Event Delivery
@@ -186,3 +184,8 @@ When you create Engage audiences, add conditions to specify which App ID to send
 #### Why is there a schemaType validation error when I test an event?
 
 Typically this is a validation error and the permissions need to be re-authorized. Ensure the user who is authorizing has adminstration permissions. 
+
+
+#### Limitations on Identifiers and Traits for Google Ads Remarketing Lists with Trait Activation
+
+When configuring [Id Sync](/docs/engage/trait-activation/id-sync/) and [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) for Google Ads Remarketing Lists, the destination setup permits the inclusion of 1 extra identifier in the payload. Additionally, in the Customized Setup, only one Trait can be mapped, and this must specifically be mapped to the `phone`.
