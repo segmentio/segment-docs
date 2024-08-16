@@ -21,7 +21,13 @@ Delivery Overview has three core features:
 You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
 
 ### Pipeline view
-The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also includes a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
+The pipeline view provides insights into each step that your data takes enroute to the destination, with additional information available for each steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (for example, Failed on ingest, Filtered at source, Filtered at destination, and Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also includes a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
+
+Each of the following integrations has a slightly different pipeline view to account for differences in the data processing journey (process?):
+- [Classic destinations](#classic-destinations): Destinations built with Segment's classic framework. Examples include ABC, DEF, and XYZ.
+- [Actions destinations](#actions-destinations): Destinations built with Segment's new Destination Actions framework. Examples include ABC, DEF, and XYZ. 
+- [Storage destinations](#storage-destinations): Warehouse and blob storage destinations. Examples include ABC, DEF, LMNOP.
+- [Linked Audiences](#linked-audiences): Any 
 
 #### Classic destinations
 The pipeline view for classic destinations includes the following steps:
@@ -54,12 +60,21 @@ The pipeline view for storage destination includes the following steps:
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
 - **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
 - **Events to warehouse rows**: A read-only box that shows the point in the delivery process where Segment converts events into warehouse rows.
-- **Failed to sync**: Syncs that either failed to sync or were partially successful. Selecting this step takes you to a table of all syncs with one or more failed collections. Select a sync from the table to view the discard reason, any collections that failed, the status, and the number of rows that synced for each collection. For information about common errors, see Ware
+- **Failed to sync**: Syncs that either failed to sync or were partially successful. Selecting this step takes you to a table of all syncs with one or more failed collections. Select a sync from the table to view the discard reason, any collections that failed, the status, and the number of rows that synced for each collection. For common warehouse errors and associated troubleshooting information, see the [Warehouse errors](/docs/connections/storage/warehouses/warehouse-errors/) documentation.
 - **Successfully synced**: A record of all successful or partially successful syncs made with your destination. To view the reason a partially successfully sync was not fully successful, see the Failed to sync step. 
 
 The following image shows a storage destination with 23 partially successful syncs: 
 
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
+
+#### Linked Audiences
+Delivery Overview for Linked Audiences includes a toggle view above the data pipeline so you can narrow the results to one Linked Audience and one or more [activations](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination).
+
+The pipeline view for Linked Audiences includes the following steps: 
+- **Events from Audience**: Audience events Segment received from a connected source.
+- **Filtered at destination**: Events that Segment discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types are filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
+- **Failed delivery**: The events that Segment rejected due to a destination error or internal validation. 
+- **Successful delivery**: Events that Segment successfully delivered to the connected destination.
 
 ### Breakdown table
 The breakdown table provides you with greater detail about the selected events.
