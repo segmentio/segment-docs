@@ -278,10 +278,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events              | Properties |
-| ------------------- | ---------- |
-| Trial Started       | `category` |
-| Subscription Stared |            |
+| Events               | Properties |
+| -------------------- | ---------- |
+| Trial Started        | `category` |
+| Subscription Started |            |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Acquire paid subscriptions use case:
@@ -303,10 +303,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events              | Properties |
-| ------------------- | ---------- |
-| Subscription Stared |            |
-| Trial Started       | `category` |
+| Events               | Properties |
+| -------------------- | ---------- |
+| Subscription Started |            |
+| Trial Started        | `category` |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Convert trials to paid subscriptions use case:
