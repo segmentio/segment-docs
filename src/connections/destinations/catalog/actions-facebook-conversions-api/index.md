@@ -118,7 +118,7 @@ Use this approach if you don't want to track users from the browser with Faceboo
 
 ### Send app events
 
-App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}. Learn how to create a dataset [here](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"}.
+App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API in Facebook's [Conversions API for App Events](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"} documentation. Learn how to create a dataset in Facebook's [About datasets in Meta Events Manager](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"} documentation.
 
 #### Configuring app events
 Sending app events requires the `action_source` parameter to be set to `app`.
@@ -209,7 +209,7 @@ Segment automatically maps User Data fields to their corresponding parameters [a
 
 ### Server Event Parameter Requirements
 
-Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement. Facebook requires additional fields as well such as, Event Name, Event Type, and User Data. See the full list of required fields [here](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event/). 
+Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement. Facebook requires additional fields as well such as, Event Name, Event Type, and User Data. See the full list of required fields in Facebook's [Server Event Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event/){:target="_blank”} documentation. 
 
 ### Verify Events in Facebook
 

@@ -42,7 +42,7 @@ _NOTE_: You can find your account's endpoint by simply going to your Oracle Resp
 
 3. Enter the name of the default **Folder** you'd like to send your Segment data to. Don't worry, you can override the default folder name on a per-call basis using destination specific options for [`.identify()`](#overriding-default-folder-and-list-names).
 
-4. Enter the name of your default **Profile List** where you would like to store your `.identify()` calls. Again, this can be overriden using destination specific options on a per-call basis as seen [here](#overriding-default-folder-and-list-names).
+4. Enter the name of your default **Profile List** where you would like to store your `.identify()` calls. Again, this can be overriden using destination specific options on a per-call basis as seen in the [Overriding default folder and list names](#overriding-default-folder-and-list-names) section.
 
 5. Choose whether you'd like to set your **Default Permission Status** to be `OPTIN` or `OPTOUT`. Unless configured otherwise, the default will be `OPTOUT`.
 

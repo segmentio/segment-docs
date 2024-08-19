@@ -1,5 +1,4 @@
 ---
-beta: true
 title: Tractionboard Destination
 id: 569007b3e954a874ca44cd4e
 ---

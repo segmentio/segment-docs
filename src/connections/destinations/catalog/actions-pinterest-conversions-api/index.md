@@ -40,7 +40,7 @@ To connect the Pinterest Conversions API Destination:
    - Destination Name
    - [Ad Account ID](https://developers.pinterest.com/docs/conversions/conversions/#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id){:target="_blank”}
    - [Conversions Token](https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token){:target="_blank”}
-6. Navigate to the **Mappings** tab, there are already Prebuilt mapping like `Checkout,Search,Add to Cart` defined with prescribed parameter . All required ,recommended and optional fields are listed [here](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields){:target="_blank”}
+6. Navigate to the **Mappings** tab, there are already Prebuilt mapping like `Checkout`, `Search`, `Add to Cart` defined with prescribed parameters. All required, recommended, and optional fields are listed in Pinterest's [Best practices](https://developers.pinterest.com/docs/api-features/conversion-best-practices/#required-recommended-and-optional-fields){:target="_blank”} documentation.
 7. If you want to create **New Mapping**, and select **Report Conversions Event** ,configure and enable it.
 8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 9. Enable the destination using the **Enable Destination** toggle switch and click **Save Changes**.

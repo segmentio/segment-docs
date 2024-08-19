@@ -150,8 +150,10 @@ sections:
       title: Cloud Sources
     - path: /connections/sources/debugger
       title: Source Debugger
-    - path: /connections/sources/custom-domains
-      title: Set Up a Custom Domain Proxy in Segment
+    - path: /connections/sources/custom-domain
+      title: Segment-Managed Custom Domain
+    - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+      title: Self-Managed Custom Proxy
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema
@@ -182,8 +184,14 @@ sections:
     section:
     - path: /connections/reverse-etl
       title: Reverse ETL Overview
+    - path: /connections/reverse-etl/setup
+      title: Set Up Reverse ETL
+    - path: /connections/reverse-etl/manage-retl
+      title: Manage Reverse ETL Syncs
+    - path: /connections/reverse-etl/system
+      title: Reverse ETL System
     - path: /connections/reverse-etl/reverse-etl-catalog
-      title: Reverse ETL Catalog
+      title: Reverse ETL Destination Catalog
     - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
       section:
@@ -407,6 +415,10 @@ sections:
       title: Generative Audiences
     - path: '/engage/audiences/generative-audiences-nutrition-facts'
       title: Generative Audiences Nutrition Facts Label
+    - path: '/engage/audiences/recommendation-audiences'
+      title: Recommendation Audiences
+    - path: '/engage/audiences/recommendation-audiences-nutrition-label'
+      title: Recommendation Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
     - path: '/engage/audiences/send-audience-data'

@@ -1,6 +1,5 @@
 ---
 title: Shopify
-redirect_from:
 id: pL0LSh5JRA
 hidden: true
 ---

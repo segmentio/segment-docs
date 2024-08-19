@@ -135,4 +135,4 @@ Once you've added a few `track` calls, **you're done!** You successfully instrum
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics for Android. You might also want to check out our full [Analytics for Android reference](/docs/connections/sources/catalog/libraries/mobile/android) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics-Android. You might also want to check out Segment's full [Analytics-Android reference](/docs/connections/sources/catalog/libraries/mobile/android) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.

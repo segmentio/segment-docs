@@ -1,7 +1,6 @@
 ---
 title: Peaka Destination
 id: 651ea97b7982672f1d66b93c
-beta: true
 ---
 
 [Peaka](https://peaka.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Zero-ETL platform that connects to any source. With Peak you can ingest high-volume event and streaming data, and replace batch with real-time access.

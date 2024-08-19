@@ -1,7 +1,6 @@
 ---
 title: Klaviyo (Actions) Destination
 id: 650bdf1a62fb34ef0a8058e1
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -86,7 +85,7 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 ## FAQ
 
 ### Dealing with Error Responses from Klaviyo's API
-
+ 
 #### 429 Too Many Requests
 
 If you're encountering rate limiting issues, consider enabling batching for the Action receiving these errors. To enable mapping, navigate to the mapping configuration and set "Batch data to Klaviyo" to "Yes". This adjustment might help alleviate the rate limiting problem.
@@ -95,3 +94,13 @@ If you're encountering rate limiting issues, consider enabling batching for the 
 In most cases, you can safely ignore a `409` error code. 
 
 When you use the [Upsert Profile](/docs/connections/destinations/catalog/actions-klaviyo/#upsert-profile) mapping to send Identify events, Segment first attempts to [create a new profile in Klaviyo](https://developers.klaviyo.com/en/reference/create_profile){:target="_blank”}. If the first request returns with a `409` error code, Segment sends a second request to [update the existing profile with the given profile ID](https://developers.klaviyo.com/en/reference/update_profile){:target="_blank”}. 
+
+### Can I send Engage Audiences to a pre-created Klaviyo List?
+
+No. Engage audiences are designed to initiate the creation of new lists in Klaviyo when you use the "Add Profile to List - Engage" mapping. You cannot link Engage lists to existing Klaviyo lists and cannot edit the List ID for Engage audiences.
+
+### How can I unsuppress a profile when adding it to a list?
+
+When adding a user to a list, our action make use of the [Bulk Profile Import](https://developers.klaviyo.com/en/reference/spawn_bulk_profile_import_job){target="_blank"} endpoint (when batching is enabled), and the [Add Profile To List](https://developers.klaviyo.com/en/reference/create_list_relationships){target="_blank"} endpoint for non-batched requests. Both of which will not update a users suppression status if they were previously suppressed. 
+
+To ensure a suppressed profile gets unsuppressed, you can use the "Subscribe Profile" action. When a profile is subscribed in Klaviyo, it automatically unsuppresses any previously suppressed user. You can combine this action with other actions to achieve your goal. If this solution does not fully address your use case, please contact us at friends@segment.com so we can consider your specific requirements.

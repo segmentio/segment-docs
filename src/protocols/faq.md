@@ -102,7 +102,11 @@ When you first create your Tracking Plan, you can add events from your Source Sc
 
 ### Can I import events from my Source Schema into a Tracking Plan?
 
-When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan. .  
+When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan.
+
+### Can I recover a Tracking Plan that was deleted?
+
+You cannot recover a deleted Tracking Plan and Segment cannot recover it on your behalf. Please delete Tracking Plans with caution.
 
 
 ## Protocols Validation

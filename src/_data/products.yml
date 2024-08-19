@@ -191,3 +191,12 @@ items:
     team: false
     business: true
     add-on: false
+
+- product_display_name: Custom Domain
+  slug: custom-domain
+  plan-note: "Custom Domain is available to customers on Business tier plans."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false

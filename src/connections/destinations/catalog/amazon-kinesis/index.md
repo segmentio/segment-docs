@@ -5,6 +5,8 @@ id: 57da359580412f644ff33fb9
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/){:target="_blank”} enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
+> info "Amazon Kinesis is not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Getting Started
 

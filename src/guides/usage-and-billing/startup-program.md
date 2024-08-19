@@ -16,7 +16,7 @@ The Segment Startup Program includes three components:
 - Partner **Startup Deals** - Segment partners with other technology companies that offer valuable tools for startups to offer exclusive deals and promotions from marketing, data warehouse, and analytics tools.
 - **Startup Resources** - Segment offers learning materials on topics like analytics, product-market fit, and more for founders to become experts on data analytics and making the most of Segment's technology.
 
-Interested companies can apply [here](http://segment.com/industry/startups).
+Interested companies can apply on the [Startup Program](http://segment.com/industry/startups){:target="_blank”} site.
 
 *Can vary based on affiliated accelerator and VC partners.
 
@@ -45,7 +45,7 @@ If you go over the total credit applied, you will be charged for the additional 
 Once you've used your total credits, you might be eligible to renew for another year at a discounted rate. Otherwise, we can talk about options for upgrading your plan.
 
 **How do I get the startup partner deals?**
-Once you've been accepted to the Segment Startup Program, you can apply for the partner deals using [this form](http://bit.ly/segment-deal-redeem). (You can view a list of the available deals [here](https://bit.ly/segment-partner-deals).)
+Once you've been accepted to the Segment Startup Program, you can apply for the partner deals using [this Airtable form](http://bit.ly/segment-deal-redeem){:target="_blank”}. (You can view a list of the available deals [in a section of the Airtable form](https://bit.ly/segment-partner-deals){:target="_blank”}.)
 
 **How do I know if my accelerator/incubator/VC firm has a relationship with Segment?**
 Ask your program manager to see if they participate in the Segment Startup Program. If they do not, you can request that they [apply to become a partner](https://airtable.com/shr84MIvVo4k8xbaO){:target="_blank"}.
