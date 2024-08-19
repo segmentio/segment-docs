@@ -44,7 +44,7 @@ Once these steps have been completed you can connect Audiences to the Destinatio
 
 1. Navigate to your **Engage Space > Audiences**.
 2. Select the Audience you'd like to sync to your Dynamic Yield by Mastercard Audiences destination. 
-3. Click **+ Add destination**, select the **Dynamic Yield by Mastercard Audiences** Destination you connected earlier, and click **Add Destination.**
+3. Click **+ Add destination**, select the **Dynamic Yield by Mastercard Audiences** Destination you connected earlier, and click **Add Destination**.
 4. On the Audience Settings panel, provide a value for the following fields: 
      - **Audience Name**: The name Segment uses when creating the Audience in Dynamic Yield.
      - **Identifier Type**: Select `userid`, `anonymousid`, or `email`. * See [Customized Identifier Setup](#customized-identifier-setup) for how to configure identifiers other than userid, email or anonymousid.
