@@ -278,7 +278,61 @@ The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports 
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. It's also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the whole batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. 
+
+### Handling partial batch failures
+
+It's also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
+
+```js
+async function onBatch(events, settings) {
+	const responseArray = [];
+	for (let i = 0; i < events.length; i++) {
+		try {
+			await processEvent(events[i], settings);
+			responseArray.push({
+				status: 200 // success
+			});
+		} catch (error) {
+			let response;
+			switch (error.name) {
+				case 'ValidationError':
+					response = {
+						status: 400, // Bad request - non-retryable
+						errormessage: error.message
+					};
+					break;
+				case 'RetryError':
+					response = {
+						status: 500, // Retry error
+						errormessage: error.message
+					};
+					break;
+				default:
+					response = {
+						status: 500, // Internal server error
+						errormessage: 'An unexpected error occurred'
+					};
+					break;
+			}
+
+			responseArray.push(response);
+		}
+	}
+	console.log(responseArray);
+	return responseArray;
+}
+
+async function processEvent(event, settings) {
+	// business logic
+	if (event.properties.shouldFail) {
+		throw new ValidationError('Validation Error: invalid field');
+	}
+	if (event.properties.retry) {
+		throw new RetryError('Retry Error');
+	}
+}
+```
 
 ```json
 [
@@ -287,18 +341,18 @@ Standard [function error types](/docs/connections/functions/destination-function
 	},
 	{
 		"status": 400,
-		"errormessage": "Bad Request"
+		"errormessage": "Validation Error: invalid field"
 	},
 	{
 		"status": 200
 	},
 	{
 		"status": 500,
-		"errormessage": "Error processing request"
+		"errormessage": "Retry Error"
 	},
 	{
 		"status": 500,
-		"errormessage": "Error processing request"
+		"errormessage": "An unexpected error occurred"
 	},
 	{
 		"status": 200
@@ -308,15 +362,13 @@ Standard [function error types](/docs/connections/functions/destination-function
 
 For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
-| Error Type             | Result  |
+| Event Status           | Result  |
 | ---------------------- | ------- |
-| Bad Request            | Discard |
-| Invalid Settings       | Discard |
-| Message Rejected       | Discard |
-| RetryError             | Retry   |
-| Timeout                | Retry   |
-| Unsupported Event Type | Discard |
-
+| 200 (Sucess)           | Success |
+| 400 (ValidationError)  | Discard |
+| 200 (Sucess)           | Success |
+| 500 (RetryError)       | Retry   |
+| 500 (Unsupported Event Type) | Retry |
 
 ## Save and deploy the function
 
