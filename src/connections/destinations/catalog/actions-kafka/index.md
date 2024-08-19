@@ -1,14 +1,11 @@
 ---
 title: Kafka Destination
-beta: true
 id: 65dde5755698cb0dab09b489
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
 [Kafka](https://kafka.apache.org/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a highly scalable and fault-tolerant messaging system that enables real-time data processing and stream processing at scale. When integrated with Segment, Kafka serves as a powerful backbone for managing and processing event data collected by Segment, allowing businesses to efficiently ingest, route, and analyze data across various applications and systems in real time.
-
-This destination is maintained by Segment. For any issues with the destination, [contact the Segment Support team](mailto:friends@segment.com).
 
 ## Getting started
 

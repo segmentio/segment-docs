@@ -4,12 +4,23 @@ strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 60ae8b97dcb6cc52d5d0d5ab
+hide_action:
+  - id: 3daKK91WWi3VqaWhjQGJpY
+    name: "Customer Match User List"
+  - id: 7vmdP8TJSYA31eRZZoDqN7
+    name: "Click Conversion"
+  - id: ndcXYK6HoSX6ydB8JdMgaT
+    name: "Call Conversion"
+  - id: mFUPoRTLRXhZ3sGbM8H3Qo
+    name: "Conversion Adjustment"
+  - id: oWa5UioHjz5caK7t7tc57f
+    name: 'Upload Enhanced Conversion (Legacy)'
 ---
 
 The Google Ads Conversions destination enables you to upload offline conversions and conversion adjustments to Google Ads in a privacy safe way. With this server-side destination, you can upload conversions to the [Google Ads API](https://developers.google.com/google-ads/api/docs/conversions/overview){:target="_blank"} and tie them to a user's online click or phone call. In addition, you can improve the accuracy of your conversion measurement by sending conversion enhancements, restatements, and retractions.
 
 > info "Consent mode"
-> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up. 
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up.
 
 ## Getting started
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
@@ -20,49 +31,7 @@ The Google Ads Conversions destination enables you to upload offline conversions
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Ads Conversions**. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-> warning "Upload Enhanced Conversion (Legacy) Action Deprecation"
-> Google plans to sunset the legacy API, leading to the discontinuation of the Upload Enhanced Conversions (Legacy) Action. New subscriptions using the sunsetting Upload Enhanced Conversion (Legacy) Action are **no longer possible**, but existing subscriptions will remain functional. 
->
-> Segment recommends users to transition to the "Upload Click Conversion," "Upload Call Conversion," and "Upload Conversion Adjustment" actions, to send data through the new Google Ads API. 
->
-> [Use these steps](#migrate-your-upload-enhanced-conversion-legacy-action) to migrate your Upload Enhanced Conversion (Legacy) Action subscriptions. 
-
 {% include components/actions-fields.html settings="true"%}
-
-## Migrate your Upload Enhanced Conversion (Legacy) Action
-
-To migrate from Upload Enhanced Conversion (Legacy) Action to the Upload Conversion Adjustment Action: 
-
-1. Fill out your Conversion ID and Customer ID settings.
-2. Fill out the required fields for the Upload Conversion Adjustment Action: 
-- Conversion Action ID
-- Adjustment Type
-3. Replicate as many fields from your original mapping as possible using the table below for reference. Look at the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) for more details about each field. 
-
-| Upload Enhanced Conversion (Legacy)| Upload Conversion Adjustment | Default Mapping                      |
-|------------------------|----------------------------|--------------------------------------|
-| conversion_label       | NOT AVAILABLE          | `$.properties.conversion_label`        |
-| email                  |  email_address             | `$.properties.email or $.traits.email or $.context.traits.email` |
-| transaction_id         | order_id                    | `$.properties.orderId`                 |
-| user_agent             | user_agent                  | `$.context.userAgent`                 |
-| conversion_time        | conversion_timestamp      | `$.timestamp `                        |
-| value                  | NOT AVAILABLE              |` $.properties.total `                  |
-| currency_code          | NOT AVAILABLE              | `$.properties.currency   `             |
-| is_app_incrementality  | NOT AVAILABLE              |` false   `                           |
-| pcc_game               | NOT AVAILABLE              | `false `                             |
-| phone_number           | phone_number                | `$.properties.phone or $.traits.phone` |
-| first_name             | first_name                  | `$.properties.firstName or $.traits.firstName` |
-| last_name              | last_name                   | `$.properties.lastName or $.traits.lastName` |
-| street_address         | street_address              | `$.properties.address.street or $.traits.address.street` |
-| city                   | city                       | `$.properties.address.city or ​​$.traits.address.city` |
-| region                 | state                      | `$.properties.address.state or $.traits.address.state` |
-| post_code              | postal_code                 | `$.properties.address.postalCode or $.traits.address.postalCode` |
-| country                | country                     | `$.properties.address.country or $.traits.address.countr`y |
-| | gclid                  | Default Not Available        | 
-| | adjustment_timestamp   | Default Not Available        | 
-| | restatement_value      | Default Not Available        | 
-| | restatement_currency_code | Default Not Available     |
-
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
@@ -113,7 +82,7 @@ Conversions tracked by other means, such as importing goals from Google Analytic
 
 ### Enhanced conversions for leads
 
-[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. According to Goggle, if you do not have GCLID at your source payload, you have to pass user identifiers, at least email or phone number in your mappings, for Google to make the match. A conversion must be addressed to an existing profile. If there's not a match, Google responds with a failure.
+[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. According to Google, if you do not have GCLID at your source payload, you have to pass user identifiers, at least email or phone number in your mappings, for Google to make the match. A conversion must be addressed to an existing profile. If there's not a match, Google responds with a failure.
 
 ### Refreshing access tokens
 
@@ -127,3 +96,6 @@ This error indicates that the conversion action specified in the upload request 
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
 
+### `The required field was not present., at conversions[0].gclid` Error
+
+Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.

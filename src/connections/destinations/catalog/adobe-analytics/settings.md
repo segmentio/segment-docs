@@ -454,7 +454,7 @@ analytics.page({
 
 ## Custom Traffic Variables - props
 
-Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html){:target="_blank”}. You can map your Segment properties in your destination settings to any of your Adobe props.
+Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation on [Traffic variables (props) overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html){:target="_blank”}. You can map your Segment properties in your destination settings to any of your Adobe props.
 
 ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property mapping under the Props tab.](images/prop-mapping.png)
 

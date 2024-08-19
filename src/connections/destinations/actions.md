@@ -181,7 +181,7 @@ If necessary, click **New Mapping** to create a new, blank action.
 4. Set up the data mapping from the Segment format to the destination tool format.
 - You can click the Source field, then select the **Enrichments** tab to view and select Enrichments to use.
 5. Test the mapping with data from a sample event.
-    The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
+    The edit panel shows you the mapping output in the format for the destination tool. The **Select Object** option sends the entire object from the event, while the **Edit Object** option lets you map each individual property. You can change your mapping as needed and re-test.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 7. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
@@ -212,6 +212,10 @@ Mapping fields are case-sensitive. The following type filters and operators are 
     You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
 {% comment %}
+
+> info "Valid property and trait values"
+> Property and trait names must begin with the characters: [a-z], [A-Z] or '_'. Property and trait names don't support special characters in the first character. If you save a property or trait with a special character in the first character, you'll get an Invalid Trigger error. 
+
 > info "Event property operators and supported data types"
 > Operators support matching on values with a **string** data type:
 > - `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`

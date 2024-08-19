@@ -28,7 +28,10 @@ To set up the Segment BigQuery connector:
 20. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again.
 6. Click **Add source** if the test connection is successful.
 
-After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl#step-2-add-a-model).
+After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model).
+
+> info "BigQuery Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
 
 ## Constructing your own role or policy
 When you construct your own role or policy, Segment needs the following permissions:
@@ -48,3 +51,5 @@ Permission | Details
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
 
 The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. 
+
+After you've successfully added your BigQuery source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 

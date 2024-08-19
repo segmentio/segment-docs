@@ -1,16 +1,21 @@
 ---
-title: Self Hosting or Proxying Analytics.js
+title: Self-Managed Custom Proxy
 redirect_from: '/connections/sources/custom-domains/'
 strat: ajs
 ---
 
-Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
+Custom proxies allow you to proxy Analytics.js and all tracking event requests through your own domain.
 
-You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination. 
+You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires that the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination.
+
+> info "Business Tier customers can also use Custom Domain"
+> Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS to track event requests through your domain instead of tracking events through Segment's default domain. For more information, see the [Custom Domain](/docs/connections/sources/custom-domain) documentation. 
+
+{% include content/domain-delegation-solutions.md %}
 
 ## Custom Proxy prerequisites
 
-To set up a custom domain, you need:
+To set up a custom proxy, you need:
 
 - Access to your site DNS settings
 - A CDN you can serve assets from
@@ -20,7 +25,7 @@ To set up a custom domain, you need:
 > info "Custom Proxy Troubleshooting"
 > If you experience issues configuring a custom proxy, contact your organization's IT department for help. Segment does not have access to the resources you need to configure a custom proxy.
 
-This guide explains how to set up a custom domain in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
+This guide explains how to set up a custom proxy in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
 
@@ -31,7 +36,7 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`
 
 > info ""
-> Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
+> Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
 ## Custom Proxy setup
 

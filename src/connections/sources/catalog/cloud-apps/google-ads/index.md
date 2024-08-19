@@ -34,7 +34,7 @@ id: cQ8NOxeApJ
 
 ### Permissions
 
-When you set up your Google Ads Source, you may notice that all the Google Ads accounts your Google user can view aren't listed. This is because the Google Ads API doesn't expose a list of "managed" or sub-accounts to non-administrators using the API. That said, if you have read permissions to the account and would like to add it, please [contact Support](https://segment.com/help/contact){:target="_blank"}. For more information about finding your Google Ads Customer ID, see [here](https://support.google.com/google-ads/answer/1704344?co=ADWORDS.IsAWNCustomer%3Dfalse&hl=en){:target="_blank"}.
+When you set up your Google Ads Source, you may notice that all the Google Ads accounts your Google user can view aren't listed. This is because the Google Ads API doesn't expose a list of "managed" or sub-accounts to non-administrators using the API. That said, if you have read permissions to the account and would like to add it, please [contact Support](https://segment.com/help/contact){:target="_blank"}. For more information about finding your Google Ads Customer ID, see Google's [Find your Google Ads customer ID](https://support.google.com/google-ads/answer/1704344?co=ADWORDS.IsAWNCustomer%3Dfalse&hl=en){:target="_blank"} docs.
 
 ### What Google Ads MCC do you sync?
 By default, the primary Google Ads account connected to your Google account syncs to Segment. If you would like to override this, please [contact Support](https://segment.com/help/contact){:target="_blank"}.

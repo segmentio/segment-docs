@@ -13,6 +13,8 @@ Use Destination Insert Functions to enrich, transform, or filter your data befor
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
+> info "Destination Insert Functions are not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Create destination insert functions
 
@@ -49,12 +51,15 @@ You can also use this page to [enable destination insert functions](#enable-the-
 
 ## Code the destination insert function
 
+> info ""
+> To prevent "Unsupported Event Type" errors, ensure your insert function handles all event types (page, track, identify, alias, group) that are expected to be sent to the destination. It is highly recommended to [test the function](https://segment.com/docs/connections/functions/insert-functions/#test-the-destination-insert-function) with each event type to confirm they are being handled as expected.
+
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
-> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before insert functions.
+> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/) and the event doesn’t pass the filter, then your function isn’t invoked for that event as Segment applies destination filters before insert functions. The same is true for the [integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object)). If an event is configured with the integrations object not to go to a particular destination, then the insert function connected to that destination won't be invoked. 
 
-The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
+The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't. For event types that you want to send through the destination, return the event in the respective event handlers.
 
 > info ""
 > Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. To keep an event type as is but still send it downstream, add a `return event` inside the event type handler statement.
@@ -178,11 +183,18 @@ You can read more about [error handling](#destination-insert-functions-logs-and-
 
 ## Insert Functions and Actions destinations
 
-There are a couple of behavioral nuances to consider when using Insert Functions with Actions destinations.
+A payload must come into the pipeline with the attributes that allow it to match your mapping triggers. You can't use an Insert Function to change the event to match your mapping triggers. If an event comes into an Actions destination and already matches a mapping trigger, that mapping subscription will fire. If a payload doesn't come to the Actions destination matching a mapping trigger, even if an Insert Function is meant to alter the event to allow it to match a trigger, it won't fire that mapping subscription. Segment sees the mapping trigger first in the pipeline, so a payload won't make it to the Insert Function at all if it doesn't come into the pipeline matching a mapping trigger. 
 
-Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, it will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen, no mappings subscriptions will fire. If you have an Insert Function enabled for a destination, make sure that you configure your payloads so that they only trigger a single mapping subscription.
+Unlike Source Functions and Destination Functions, which return multiple events, an Insert Function only returns one event. When the Insert Function receives an event, it sends the event to be handled by its configured mappings.
 
-A payload must also come into the pipeline with the attributes that allow it to match your mapping triggers. You can't use an Insert Function to change the event to match your mapping triggers. If an event comes into an Actions destination and already matches a mapping trigger, that mapping subscription will fire. If a payload doesn't come to the Actions destination matching a mapping trigger, even if an Insert Function is meant to alter the event to allow it to match a trigger, it won't fire that mapping subscription. Segment sees the mapping trigger first in the pipeline, so a payload won't make it to the Insert Function at all if it doesn't come into the pipeline matching a mapping trigger. 
+If you would like [multiple mappings triggered by the same event](/docs/connections/destinations/actions/#:~:text=Multiple%20mappings%20triggered,Subscription%20Updated%20event.):
+1. Create different types of mappings (Identify, Track, Page, etc) or multiple mappings of the same type.
+2. Configure the mapping's [trigger conditions](/docs/connections/destinations/actions/#conditions) to look for that event name/type or other available field within the payload.
+3. Configure the mapped fields to send different data. 
+
+You can also configure the Insert Function to add additional data to the event's payload before it's handled by the mappings and configure the mapping's available fields to reference the payload's available fields. 
+
+You may want to consider the [context object's](/docs/connections/spec/common/#context) available fields when adding new data to the event's payload.
 
 ## Create settings and secrets
 
@@ -500,6 +512,42 @@ Segment's data pipeline applies Destination Filters before invoking Insert Funct
 ##### Why am I receiving a 500 Internal Error when saving the same of the destination insert function?
 
 There is an 120-Character limit for the insert function display name.
+
+##### Why does the Event Delivery tab show "Unsupported Event Type" errors for events supported by the destination after I enabled an insert function?
+
+This error occurs because your insert function code might not be handling all event types (Page, Track, Identify, Alias, Group) that your destination supports. When these unlisted events pass through the function, they are rejected with the "Unsupported Event Type" error.
+
+To resolve this, verify your insert function includes handlers for all expected event types and returns the event object for each. Here’s an example of how you can structure your insert function to handle all event types:
+
+```
+async function onTrack(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onPage(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onIdentify(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onAlias(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onGroup(event, settings) {
+  //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+// Ensure that all expected event types are included in your function
+```
+By including handlers for all the major event types, you ensure that all supported events are processed correctly, preventing the "Unsupported Event Type" error. Always test your updated code before implementing it in production.
 
 {% comment %}
 

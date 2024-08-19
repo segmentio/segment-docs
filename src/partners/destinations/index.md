@@ -17,7 +17,7 @@ Sign up for the [Segment Select Partner Program](https://segment.com/partners/in
 
 Before you begin development, consider the following points:
 
-1. Decide the type of destination you want to build. Developer Center supports building cloud-mode and device-mode web destinations. Segment recommends building a cloud-mode destination, because data is sent to Segment prior to going to your API, so customers can take advantage of Segment features like filters, transformations, and replays. You can learn more [here](https://segment.com/docs/connections/destinations/#connection-modes). Developer Center does not support building device-mode mobile destinations. Segment recommends building a plugin to get information like session ID from the device.
+1. Decide the type of destination you want to build. Developer Center supports building cloud-mode and device-mode web destinations. Segment recommends building a cloud-mode destination, because data is sent to Segment prior to going to your API, so customers can take advantage of Segment features like filters, transformations, and replays. You can learn more in the [Connection Modes](/docs/connections/destinations/#connection-modes) documentation. Developer Center does not support building device-mode mobile destinations. Segment recommends building a plugin to get information like session ID from the device.
 
 2. Spec out the integration. If you want some guidance, you can use this [template](https://docs.google.com/document/d/1dIJxYge9N700U9Nhawapy25WMD8pUuey72S5qo3uejA/edit#heading=h.92w309fjzhti){:target="_blank"}, which will prompt you to think about the connection mode of the destination, the method of authentication, the settings, and the Actions and default Field Mappings that you want to build.
 
