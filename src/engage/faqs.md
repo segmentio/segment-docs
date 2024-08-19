@@ -151,3 +151,7 @@ Based on Engage behavior, standard source events such as Page, Track and Identif
 ## Why can't I connect the audience/computed trait to an existing destination in my workspace?
 
 Engage will not allow you to connect an audience/computed trait to a destination that is already linked to a [Connections-based source](https://segment.com/docs/connections/sources/). Instead, create a new instance of the destination with the correct Engage space selected as the data source.
+
+## How will the "5 most common values" be calculated for traits?
+
+The "5 most common values" represent a list of the most common values observed for that trait across the entire space, not associated with any specific user.
