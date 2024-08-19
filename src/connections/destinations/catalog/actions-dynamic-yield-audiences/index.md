@@ -18,7 +18,7 @@ This destination is maintained by Dynamic Yield by Mastercard. For any issues wi
 
 ### Create an instance of the Dynamic Yield Destination
 
-1. From your Segment workspace, navigate to **Connections > Catalog**
+1. From your Segment workspace, navigate to **Connections > Catalog**.
 2. Use the search field to find the **Dynamic Yield by Mastercard Audiences** Destination, then select it.
 3. Click **Add destination**.
 4. Select the Engage Space you'd like to connect your destination to and click **Next**. 
