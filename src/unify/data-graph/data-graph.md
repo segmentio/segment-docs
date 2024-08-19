@@ -7,9 +7,13 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-The Data Graph is a semantic layer unifying all your customer datasets, enabling you to define relationships between any entity data set in the warehouse (i.e. accounts, subscriptions, households, products, etc.) with the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/). Once defined, the Data Graph allows you to make this rich relational data accessible to marketers and business stakeholders to empower them to create targeted and personalized customer engagements.
-- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Enables marketers to self-serve and build targeting logic based on any data sets defined in the Data Graph unlocking a world of new hyper-personalized campaigns.
-- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams, in real time, with any data set coming from a data warehouse or data lake, and send those enriched events to any Destination. Available for Destinations Actions and Functions.
+The Data Graph is a semantic layer that unifies all your customer datasets, letting you define and manage relationships between any entity data set in your warehouse (accounts, subscriptions, households, products) and the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/). 
+
+By linking these datasets, the Data Graph turns complex relational data into actionable insights, enabling marketers and business stakeholders to create targeted, personalized customer interactions.
+relational data into actionable insights, making it accessible to marketers and business stakeholders  
+
+- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to self-serve and build targetic logic based on any datasets defined in the Data Graph, unlocking new possibilities for hyper-personalized campaigns.
+- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Allows data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions.
 
 ## Prerequisites
 
