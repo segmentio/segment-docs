@@ -1,6 +1,5 @@
 ---
 title: Yotpo Source
-beta: true
 id: q4JbVJwmrg
 ---
 

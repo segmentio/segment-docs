@@ -105,7 +105,7 @@ When you click on an element on your website, a window appears where you can ent
    Segment recommends that you use an "Object Action" format (for example, `Blog Post Clicked`, and use Title Case (capitalize the first letter of each word ) when naming events.
 
 2. **Properties**. Add properties to the event to add contextual information about the action that the user took. Properties are optional, but they are very helpful when you analyze events data later.
-   - Use `snake_case` for property names (all lowercase, with spaces between words represented as an underscore “_”). For a guide on event naming best practices, check out the Docs [here](/docs/protocols/tracking-plan/best-practices/#formalize-your-naming-and-collection-standards).
+   - Use `snake_case` for property names (all lowercase, with spaces between words represented as an underscore “_”). For a guide on event naming best practices, check out the Protocols [docs](/docs/protocols/tracking-plan/best-practices/#formalize-your-naming-and-collection-standards).
    - Check the [list of properties that are collected by default](/docs/connections/spec/common/) before you add a property.
 
 3. **Advanced**. You can also click the `</>` button to manually edit the CSS selector. If you didn't select the right element, you can choose the element on the page again by clicking on the finger button.

@@ -84,9 +84,21 @@ If you are seeing `404` error on the JavaScript console of your page and it is a
 
 
 ### Duplicate Events
+
 If you have Google Ads enabled and see duplicate events in GTM, check to see if the event is set as a conversion in Google Ads. Duplicate conversions are common when you use both Google Ads and GTM, since Segment's Adwords destination initializes the gtag script with the dataLayer itself. So, when you fire a mapped event, Segment submits the payload directly to the dataLayer.
 
 Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank"} to prevent this duplication. 
+
+
+On the dataLayer, you might find the `eventModel` field, which is an internal Google field only present in events captured by the Google Ads SDK. To prevent GTM tags from creating duplicate events, you can create a GTM variable and use `eventModel` as a condition to filter events.
+
+> warning "The following solution was shared by a Segment customer and is not officially endorsed by Segment"
+> Please test this solution before implementing it with production data. If you have any questions about the GTM setup, consult the [GTM documentation](https://support.google.com/tagmanager/answer/6103657?hl=en){:target="_blank"}.
+
+1. Create a [GTM variable](https://support.google.com/tagmanager/answer/7683056?hl=en){:target="_blank"} to capture the `eventModel` field when events hit the Google DataLayer
+2. Set the variable to add the value "GTM" to the `eventModel` field when the field is not present in the event dataLayer. The format value should be set to "Convert undefined to GTM"
+3. Add the newly created variable to your GTM trigger so that only events containing `eventModel = GTM` trigger the tag.
+
 
 
 ## Appendices

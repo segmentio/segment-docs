@@ -36,6 +36,12 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings). You must select which Event Types and/or Event Names will trigger each mapping.
 7. Enable the destination and configured mappings.
 
+> info "Salesforce (Actions) authentication limitations"
+> You must authenticate with the Salesforce (Actions) destination using OAuth. A single user can connect up to 5 Salesforce destinations, but upon connecting a 6th instance of the Salesforce (Actions) destination, Salesforce revokes the oldest destination's authorization. If the same user reauthorizes that same destination, this same behavior occurs on the next oldest destination that was authorized, and so on. To prevent this behavior, ensure that a different user with the same Salesforce permissions connects any additional Salesforce destinations.
+> 
+> _For additional information on these limitations, see the Salesforce [Manage OAuth-Enabled Connected Apps Access to Your Data](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_request_manage.htm&type=5#:~:text=Each%20connected%20app%20allows%20five%20unique%20approvals%20per%20user.){:target="_blank”}  documentation._
+
+
 {% include components/actions-fields.html %}
 
 ## Configuration options

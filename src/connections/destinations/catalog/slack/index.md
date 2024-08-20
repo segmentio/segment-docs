@@ -121,8 +121,6 @@ In addition to exact event names, you can also enter regex patterns for channels
 /[a-zA-Z]+ing$/g
 ```
 
-More information on regex can be found [here](http://www.zytrax.com/tech/web/regex.htm){:target="_blank"}.
-
 
 ## Troubleshooting
 

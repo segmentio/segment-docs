@@ -26,7 +26,7 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 
 ## Step 2: Install the SDK
 
-Segment recommends you install Analytics for iOS by using either [Cocoapods](http://cocoapods.org/) or your Swift Package Manager. These allow you to create a build with specific bundled destinations, and they have a simplified installation and upgrading process.
+Segment recommends you install Analytics-iOS by using either [CocoaPods](http://cocoapods.org/){:target="_blank"} or your Swift Package Manager. These allow you to create a build with specific bundled destinations, and they have a simplified installation and upgrading process.
 
 ### Install the SDK using Swift Package Manager
 
@@ -234,4 +234,4 @@ Analytics.shared().flush()
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](/docs/connections/sources/catalog/libraries/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics-iOS. You might also want to check out our full [Analytics-iOS reference](/docs/connections/sources/catalog/libraries/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.
