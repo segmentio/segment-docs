@@ -5,14 +5,9 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
-<!-- PW, 8/20/24: remove this and edit away -->
+The Data Graph acts as a semantic layer that allows businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements.
 
-The Data Graph is a semantic layer that unifies all your customer datasets, letting you define and manage relationships between any entity data set in your warehouse (accounts, subscriptions, households, products) and the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/). 
-
-By linking these datasets, the Data Graph turns complex relational data into actionable insights, enabling marketers and business stakeholders to create targeted, personalized customer interactions.
-relational data into actionable insights, making it accessible to marketers and business stakeholders  
-
-- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to self-serve and build targetic logic based on any datasets defined in the Data Graph, unlocking new possibilities for hyper-personalized campaigns.
+- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support.
 - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Allows data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions.
 
 ## Prerequisites
@@ -21,17 +16,20 @@ To use the Data Graph, you'll need the following:
 
 - A supported data warehouse with the appropriate Data Graph permissions
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions
-- For Linked Audiences, set up [Profiles Sync](/docs/unify/profiles-sync/) in a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings for Linked Audiences: 
+- For Linked Audiences, set up [Profiles Sync](/docs/unify/profiles-sync/) in a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings: 
   - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
   - Under **Track event tables**, select **Sync all Track Call Tables** to enable filtering on event history for Linked Audiences conditions.
 
 ## Step 1: Set up Data Graph permissions in your data warehouse
 > warning ""
 > Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
+
 > info ""
 > Data Graph currently only supports workspaces in the United States.
 
-To get started with the Data Graph, set up the required permissions in your warehouse. Segment supports [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) for both Linked Audiences and Linked Events. 
+To get started with the Data Graph, set up the required permissions in your warehouse. Segment supports the following: 
+- Linked Audiences: [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/)
+- Linked Events: [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), and [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)
 
 To track the data sent to Segment on previous syncs, Segment uses [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a dedicated schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
@@ -61,7 +59,7 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 
 **Defining Relationships**
 
-Similar to the concept of [cardinality in data modeling](en.wikipedia.org/wiki/Cardinality_(data_modeling)){:target="_blank"}, the Data Graph supports 3 types of relationships:
+Similar to the concept of [cardinality in data modeling](en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships:
 - **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
 - **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
 - **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
@@ -112,7 +110,7 @@ data_graph {
     # Recommend setting up Profiles Sync materialized views to optimize warehouse compute costs
     profile {
       profile_folder = "PRODUCTION.SEGMENT"
-      type = "segment: materialized"
+      type = "segment:materialized"
   
       # First branch - relate accounts table to the profile
       # This is a unique type of relationship between an entity and the profile block
@@ -200,7 +198,7 @@ data_graph {
 
 ### 3b: Define the profile
 > info ""
-> Segments recommends that you select materialized views under the Profiles Sync Selective Sync settings to optimize warehouse compute costs.
+> Segments recommends that you select materialized views under the Profiles [Selective Sync settings](/docs/unify/profiles-sync/profiles-sync-setup/#step-3-set-up-selective-sync) to optimize warehouse compute costs.
 
 Next, define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
 
@@ -229,15 +227,13 @@ data_graph {
 
 ### 3c: Define relationships
 
-Now define your relationships between your entities. The Data Graph supports three types of relationships:
-- Profile:entity relationship. This is the first level of relationships
-- 1:many relationship
-- Many:many relationship
-
-All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions. 
+Now define your relationships between your entities. Similar to the concept of [cardinality in data modeling](en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships below. All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions. 
+- **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
+- **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
+- **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
 
 #### Define profile-to-entity relationship
-This is the first level of relationships and a unique type of relationship between Segment profile entity and a related entity.  
+This is the first level of relationships and a unique type of relationship between the Segment profile entity and a related entity.  
 
 | Parameters       | Definition                                                                                                                                                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -247,13 +243,13 @@ This is the first level of relationships and a unique type of relationship betwe
 
 To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following: 
 
-**Option 1 (Most common):** Use the `external_id` block to join the profile entity with an entity table using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are  `user_id`, `email`, or `phone` depending on the column in the entity table that you want to join with.
+**Option 1 (Most common) - Join on an external ID:** Use the `external_id` block to join the profile entity with an entity table using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are  `user_id`, `email`, or `phone` depending on the column in the entity table that you want to join with.
 - `type`: Represents the [external ID type](/docs/unify/identity-resolution/externalids/#default-externalids) (`email`, `phone`, `user_id`) in your id-res settings. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
   - [Materialized](/docs/unify/profiles-sync/tables/#the-user_identifiers-table) (Recommended): This corresponds to the `type` column in your Profiles Sync `user_identifiers` table.
   - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-external_id_mapping_updates-table): This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping_updates` table. 
 - `join_key`: This is the column on the entity table that you are matching to the external identifier.
 
-**Option 2:** Use the `traits` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits). 
+**Option 2 - Join on a profile trait:** Use the `traits` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits). 
 - `name`: Represents a trait name in your Unify profiles. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
   - [Materialized](/docs/unify/profiles-sync/tables/#the-profile_traits-table) (Recommended): The trait name corresponds to a unique value of the `name` column in your Profiles Sync `user_traits` table. 
   - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-profile_traits_updates-table): This corresponds to a column in the Profile Sync `profile_trait_updates` table.
@@ -341,7 +337,7 @@ data_graph {
 For many:many relationships, define the join on between the two entity tables with the `junction_table`.
 
 > warning ""
-> Attributes from a junction table are not referenceable via the Linked Audience Builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
+> Attributes from a junction table are not referenceable via the Linked Audience builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
 
 
 | Parameters       | Definition                                                                                                                                                                                                 |
@@ -354,7 +350,7 @@ For many:many relationships, define the join on between the two entity tables wi
 
 | Parameters      | Definition                                                                                                                                                                                                                                                             |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `table_ref`     | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views                                                                                             |
+| `table_ref`     | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views                                                                                             |
 | `primary_key`   | The unique identifier for the given table. Must be a column with unique values per row                                                                                                                                                                                 |
 | `left_join_on`  | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again   |
 | `right_join_on` | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
@@ -405,7 +401,7 @@ To edit your Data Graph:
 
 ### View Data Graph data consumers
 
-A data consumer refers to a Segment feature (like Linked Events, Linked Audiences) referencing datasets, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
+A data consumer refers to a Segment feature like Linked Events and Linked Audiences that are referencing datasets, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
 - Under **Unify > Data Graph**, click the **Data consumers** tab
 - Under **Unify > Data Graph > Overview** or the **Data Graph editor > Preview**, click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
 
@@ -417,4 +413,4 @@ Upon editing and saving changes to your Data Graph, a modal will pop up to warn 
 
 ### Detect warehouse breaking changes
 
-Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
+Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. You will also have the option to trigger a manual sync of your warehouse schema. 
