@@ -1,6 +1,7 @@
 ---
 title: 'One Creation Source'
 id: IB9M67ZWaA
+hidden: true
 ---
 
 [One Creation](https://www.one-creation.com/){:target="_blank”} provides brands with a Digital Preference Wallet to confirm, collect, and digitize consumer preference data. By seamlessly integrating into every customer touchpoint, the platform enhances services while enforcing consent (including Time-Based Consent) and data sharing rules. 
