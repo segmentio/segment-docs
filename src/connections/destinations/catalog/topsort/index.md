@@ -6,7 +6,7 @@ beta: true
 
 [Topsort](https://www.topsort.com){:target="_blank"} is an AI-powered retail media platform enabling retailers and marketplaces to build their own high-performing ad networks, rivaling Google and Amazon. With its advanced auto-bidding algorithm and fast integration, Topsort provides an advertising solution that delivers exceptional returns on ad spend (ROAS) while respecting users privacy by being cookie-less.
 
-Events integration is one of the 3 steps to integrate with Topsort (see [Integration Overview](https://docs.topsort.com/reference/integration-overview){:target="_blank"} for more details). It allows marketplaces to have a full metrics report available through Topsort's Reporting API or directly in the [Topsort Manager Platform](https://app.topsort.com){:target="_blank"} dashboards. It also provides the necessary information for the Topsort team to display relevant ads, optimize budget consumption, attribute purchases and accomplish sellers conversion goals.
+Setting up an events integration is one of the 3 steps to integrate with Topsort (see [Integration Overview](https://docs.topsort.com/reference/integration-overview){:target="_blank"} for more details). It allows marketplaces to have a full metrics report available through Topsort's Reporting API or directly in the [Topsort Manager Platform](https://app.topsort.com){:target="_blank"} dashboards. It also provides the necessary information for the Topsort team to display relevant ads, optimize budget consumption, attribute purchases and accomplish sellers' conversion goals.
 
 This destination is maintained by Topsort. For any issues with the destination, [contact the Topsort Support team](mailto:support@topsort.com){:target="_blank"}.
 
