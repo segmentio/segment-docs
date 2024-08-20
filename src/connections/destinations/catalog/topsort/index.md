@@ -39,7 +39,7 @@ analytics.track("Product Clicked", {
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for "Topsort" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the [Topsort Manager Platform](https://app.topsort.com){:target="_blank"}, go to [Settings > API Integration](https://app.topsort.com/new/es/marketplace/account-settings/api-integration){:target="_blank"} to find or create your **Marketplace API Key** for auctions and events.
-4. Go back to the Topsort destination on the segment app and enter the value for your **Marketplace API Key**.
+4. Return to the Topsort destination in the Segment app and enter the value for your **Marketplace API Key**.
 5. Make sure to enable only the Track events relevant to your site and so that the events do not get duplicated with a single user action. For example: If you always trigger a `Product Clicked` event together with the `Product Added` event when a user makes a click in the "Add to cart" button, then you should enable only the `Product Clicked` event for the Topsort Destination.
 
 ### Identify
