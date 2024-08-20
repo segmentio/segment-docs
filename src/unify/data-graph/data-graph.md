@@ -5,6 +5,8 @@ redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
 
+<!-- PW, 8/20/24: remove this and edit away -->
+
 The Data Graph is a semantic layer that unifies all your customer datasets, letting you define and manage relationships between any entity data set in your warehouse (accounts, subscriptions, households, products) and the Segment Profiles you send with [Profiles Sync](/docs/unify/profiles-sync/). 
 
 By linking these datasets, the Data Graph turns complex relational data into actionable insights, enabling marketers and business stakeholders to create targeted, personalized customer interactions.
