@@ -29,15 +29,7 @@ To use the Data Graph, you'll need the following:
 > info ""
 > Data Graph currently only supports workspaces in the United States.
 
-To get started with the Data Graph, set up the required permissions in your warehouse: 
-
-| Warehouse                                                           | Linked Audiences   | Linked Events      |
-| ------------------------------------------------------------------- | ------------------ | ------------------ |
-| [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)   | :white_check_mark: | :white_check_mark: |
-| [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) | :white_check_mark: | :white_check_mark: |
-| [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)     | 📆 Coming soon    | :white_check_mark: |
-| [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/)     | 📆 Coming soon    | :white_check_mark: |
-
+To get started with the Data Graph, set up the required permissions in your warehouse. Segment supports [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) for both Linked Audiences and Linked Events. 
 
 To track the data sent to Segment on previous syncs, Segment uses [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a dedicated schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
