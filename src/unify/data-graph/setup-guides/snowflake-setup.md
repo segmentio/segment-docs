@@ -1,8 +1,6 @@
 ---
 title: Snowflake Setup
 plan: unify
-beta: true
-hidden: true
 redirect_from:
   - '/unify/linked-profiles/setup-guides/snowflake-setup'
 ---
@@ -82,7 +80,7 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 ## Step 2: Grant read-only access to additional databases for the Data Graph
 
-Next, give the Segment role **read-only** access to additional databases you want to use for Data Graph including the Profiles Sync database. Repeat the SQL query below for **each** database you want to use for the Data Graph.
+Next, give the Segment role **read-only** access to additional databases you want to use for Data Graph including the Profiles Sync database. Repeat the following SQL query for **each** database you want to use for the Data Graph.
 
 ``` SQL
 
@@ -107,7 +105,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($linked_read_on
 
 ## (Optional) Step 3: Restrict read-only access to schemas
 
-If you want to restrict access to specific [Snowflake schemas and tables](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges), then run the following commands: 
+If you want to restrict access to specific [Snowflake schemas and tables](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}, then run the following commands: 
 
 ```SQL
 -- [Optional] Further restrict access to only specific schemas and tables 
@@ -145,10 +143,11 @@ SELECT * FROM identifier($table_name) LIMIT 10;
 
 ```
 ## Step 5: Connect your warehouse to the Data Graph
+
 To connect your warehouse to the Data Graph:
 
 1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
-2. Click Connect warehouse.
+2. Click **Connect warehouse**.
 3. Select Snowflake as your warehouse type. 
 4. Enter your warehouse credentials. Segment requires the following settings to connect to your Snowflake warehouse:
 - **Account ID**: The Snowflake account ID that uniquely identifies your organization account
@@ -156,8 +155,8 @@ To connect your warehouse to the Data Graph:
 - **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below
 - **Authentication**: There are 2 supported authentication methods:
-  - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth). Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created
-  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below
+  - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created
+  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
  
 5. Test your connection, then click Save.
 
