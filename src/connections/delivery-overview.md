@@ -30,7 +30,7 @@ Each of the following integrations has a slightly different pipeline view to acc
 - [Linked Audiences](#linked-audiences): Any destinations connected to a Linked Audience. 
 
 #### Classic destinations
-The pipeline view for classic destinations includes the following steps:
+The pipeline view for [classic destinations](/docs/connections/destinations/) includes the following steps:
 - **Successfully received**: Events that Segment ingested from your source.
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
@@ -39,7 +39,7 @@ The pipeline view for classic destinations includes the following steps:
 - **Successful delivery**: Events that were successfully delivered to the destination.
 
 #### Actions destinations
-The pipeline view for Actions destination includes the following steps: 
+The pipeline view for [Actions destinations](/docs/connections/destinations/#destination-actions) includes the following steps: 
 - **Successfully received**: Events that Segment ingested from your source.
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
@@ -54,7 +54,7 @@ The following image shows an Actions destination filtered to include only Track 
 ![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
 
 #### Storage destinations
-The pipeline view for storage destination includes the following steps: 
+The pipeline view for [storage destinations](/docs/connections/storage/) includes the following steps: 
 - **Successfully received**: Events that Segment ingested from your source.
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
@@ -68,7 +68,7 @@ The following image shows a storage destination with 23 partially successful syn
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
 
 #### Linked Audiences
-Delivery Overview for Linked Audiences includes a toggle view above the data pipeline so you can narrow the results to one Linked Audience and one or more [activations](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination).
+Delivery Overview for [Linked Audiences](/docs/engage/audiences/linked-audiences/) includes a toggle view above the data pipeline so you can narrow the results to one Linked Audience and one or more [activations](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination).
 
 The pipeline view for Linked Audiences includes the following steps: 
 - **Events from Audience**: Audience events Segment received from a connected source.
@@ -156,5 +156,4 @@ The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filte
 This table provides a list of all possible discard reasons available at each pipeline step. 
 
 {% include content/delivery-overview-discards.html %}
-
 <!--- not in the product yet{% include content/retl-discards.md %}--->
