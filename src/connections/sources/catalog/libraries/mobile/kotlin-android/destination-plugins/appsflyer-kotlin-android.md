@@ -82,7 +82,7 @@ Segment includes all the event properties as callback parameters on the AppsFlye
 
 ## Install Attributed
 
-Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
+Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [in the Spec: Mobile](/docs/connections/spec/mobile/#install-attributed) docs and will propagate to your other downstream destinations.
 
 This logic depends on the Appsflyer `AppsFlyerConversionListener` [interface](https://dev.appsflyer.com/hc/docs/android-sdk-reference-appsflyerconversionlistener){:target="_blank"}, and will only send when Appsflyer detects an install.
 

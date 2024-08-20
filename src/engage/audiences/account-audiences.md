@@ -56,7 +56,7 @@ The three types of user-level conditions are:
 
 ## Account-level computed and SQL traits
 
-Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see [here](/docs/engage/audiences/computed-traits/#types-of-computed-traits) for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
+Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see the [Types of computed traits](/docs/engage/audiences/computed-traits/#types-of-computed-traits) docs for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
 
 Use-cases for account-level computed traits include:
 - Calculate the number of times users associated with an account logged in during the past month
