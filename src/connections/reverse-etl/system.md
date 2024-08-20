@@ -11,7 +11,7 @@ Reverse ETL computes the incremental changes to your data directly within your d
 > info "Delete Records Payload"
 > The only value passed for deleted records is its unique ID which can be accessed as `__segment_id`. 
 
-For Segment to compute the data changes within your warehouse, Segment needs to have both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment keeps track of changes to the query results through tables that Segment manages in a dedicated schema (for example, `_segment_reverse_etl`), which requires some write permissions.
+For Segment to compute the data changes within your warehouse, Segment needs to have both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment keeps track of changes to the query results through tables that Segment manages in a dedicated schema (for example, `__segment_reverse_etl`), which requires some write permissions.
 
 > warning ""
 > There may be cost implications to having Segment query your warehouse tables.

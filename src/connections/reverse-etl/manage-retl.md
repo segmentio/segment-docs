@@ -139,3 +139,22 @@ Select array | This enables you to send all nested properties within the array.
 > Certain array mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your array don't match the destination properties, the data won't send. Segment recommends you to use the **Customize array** option to ensure your mapping is successful.
 
 Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property.
+
+## Null value management
+
+You can choose to exclude null values from *optional* mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an optional field may overwrite an existing value in your downstream tool.
+
+For example, if you opt to sync null values with your destination and an end user fills out a form but chooses to leave an optional telephone number field blank, the existing telephone number you have on file in your destination could be overwritten with the null value. By opting out of null values for your downstream destination, you preserve the existing telephone number you have on file for your customer.
+
+By default, Segment syncs null values from mapped fields to your downstream destinations. Some destinations do not allow the syncing of null values for certain fields, and will reject requests that contain them. Segment disables the option to opt out of syncing null values for these destinations.
+
+To opt out of including null values in your downstream syncs:
+
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.  
+2. Select the destination and the mapping you want to edit.  
+3. Click **Edit mapping**.  
+4. Under the "Optional fields" header, select the field you want to edit.  
+5. In the field dropdown selection, disable the **Sync null values** toggle.
+
+> success ""
+> If the toggle appears dimmed, your destination rejects requests that contain null values. If the destination rejects requests that contain null values, Segment automatically opts you into syncing the value, even if it is null. 

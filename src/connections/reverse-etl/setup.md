@@ -105,13 +105,12 @@ To create a mapping:
     * **Day and time**: Extractions perform at specific times on selected days of the week.
 10. Select how often you want the schedule to sync in **Schedule configuration**.
     * For an **Interval** schedule type, you can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
-        * 15 minutes is considered real-time for warehouse syncs
     * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time.
         * You can only choose to start the extraction at the top of the hour.
-        * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
+        * Scheduling multiple extractions to start at the same time from the same data warehouse might cause extraction errors.
 11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
+    * If you're setting up a [destination action](/docs/connections/destinations/actions/#set-up-a-destination-action), depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
 12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
 13. Click **Create Mapping**.
 14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
