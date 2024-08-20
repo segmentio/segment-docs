@@ -3,10 +3,10 @@ title: Analytics Swift Adjust Plugin
 strat: swift
 ---
 
-[Adjust](https://adjust.com){:target="_blank"} is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub [here](https://github.com/segment-integrations/analytics-swift-integration-adjust).
+[Adjust](https://adjust.com){:target="_blank"} is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub in the [@segment-integrations/analytics-swift-integration-adjust](https://github.com/segment-integrations/analytics-swift-integration-adjust){:target="_blank”} repo.
 
 > info ""
-> Note that this plugin simply adds session data for Adjust, and events are sent via Cloud Mode.
+> Note that this plugin simply adds session data for Adjust, and events are sent in Cloud Mode.
 
 ## Getting started
 
@@ -19,14 +19,14 @@ strat: swift
 
 ## Adding the dependency
 
-### via Xcode
+### Xcode
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
 
 https://github.com/segment-integrations/analytics-swift-integration-adjust
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 

@@ -7,6 +7,9 @@ The Segment HTTP Tracking API lets you record analytics data from any website or
 
 Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
 
+> info "HTTP API sources in EU workspaces should use the `events.eu1.segmentapis.com` endpoint"
+> If you are located in the EU and use the `https://api.segment.io/v1/` endpoint, you might not see any errors, but your events will not appear in the Segment app. For more information about regional support, see the [Source Regional support](/docs/guides/regional-segment/#source-regional-support) documentation. 
+
 ## Headers
 
 ### Authentication
@@ -79,7 +82,7 @@ Common reasons events are not accepted by Segment include:
   - **Payload is too large:** The HTTP API can handle API requests that are 32KB or smaller. The batch API endpoint accepts a maximum of 500KB per request, with a limit of 32KB per event in the batch. If these limits are exceeded, Segment returns a 400 Bad Request error. 
   - **Identifier is not present**: The HTTP API requires that each payload has a userId and/or anonymousId.
   - **Track event is missing name**: All Track events sent to Segment must have an `event` field. 
-  - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values.
+  - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values with fewer than 100 characters. 
   - **Invalid JSON**: If you send an event with invalid JSON, Segment returns a 400 Bad Request error.
 
 Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} with any requests or suggestions you may have.

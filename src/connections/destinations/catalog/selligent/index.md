@@ -1,5 +1,4 @@
 ---
-beta: true
 title: Selligent Destination
 hidden: true
 ---

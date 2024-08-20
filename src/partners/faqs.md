@@ -22,7 +22,7 @@ For unknown users, Segment will handle generating a unique `anonymousId` using o
 
 Segment handles cacheing these values on our mobile SDKs and client-side analytics.js library and sending the values on subsequent calls. Our server-side libraries rely on the customer creating either the `anonymousId` or `userId` and passing this in on each call.
 
-Read more about our unique ID's [here](https://segment.com/blog/a-brief-history-of-the-uuid/).
+Read more about unique IDs on Segment's blog: [A brief history of the UUID](https://segment.com/blog/a-brief-history-of-the-uuid/){:target="_blank”}.
 
 ### Do you have semantic events?
 
@@ -38,13 +38,13 @@ No. Since Segment queues events, Segment cannot guarantee the order in which the
 
 ### Does Segment de-dupe messages?
 
-Yes! Segment de-dupes messages by `messageId`.
+Yes, Segment de-dupes messages by `messageId`.
 
 Segment maintains a sliding window of all `messageId`s received for each source, only allowing `messageId`s through that do not already appear within the window.
 
 Segment guarantees this window to be at least 24 hours of messages (meaning any message sent twice within 24 hours will be de-duped), but in practice, this window is significantly larger(currently sitting at around 170 days).
 
-You can read more [here](https://segment.com/blog/exactly-once-delivery/).
+You can read more on the Segment blog: [Delivering billions of messages exactly once](https://segment.com/blog/exactly-once-delivery/){:target="_blank”}.
 
 ### What is a replay?
 
@@ -62,9 +62,9 @@ Be sure to let us know if you are able to accept replays and what your rate limi
 
 Segment provides excellent data deliverability by employing API layer scalability and durability, data backup and replay, partner API monitoring, and library and integration cloud retries. Segment's API processes 170B+ billion calls per month across over a billion of monthly tracked users, is rate performant (avg. load 100,000 msg/sec), fully automated and scalable, can tolerate massive data spikes.
 
-Segment monitors hundreds of partner APIs for 500s, success rate, and end-to-end latency to help our customers proactively achieve the best data deliverability possible.
+Segment monitors hundreds of partner APIs for 500s, success rate, and end-to-end latency to help customers proactively achieve the best data deliverability possible.
 
-You can subscribe to updates [here](https://status.segment.com/).
+You can subscribe to updates on [status.segment.com](https://status.segment.com/){:target="_blank”}.
 
 ### Does Segment retry data?
 

@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Implementation Guide
+title: Analytics-Kotlin Implementation Guide
 strat: kotlin-android
 tags:
   - android

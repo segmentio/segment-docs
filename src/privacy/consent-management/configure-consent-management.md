@@ -29,8 +29,8 @@ Before you can configure consent in Segment, take the following steps:
 2. On the Consent management page, click **Create categories**.
 3. Confirm that you have completed the required prerequisites, and click **Next**.
 4. On the Create consent categories page, add the following information to the category form:
-  - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
-  - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive and cannot start with a number.
+  - **Category name**: Enter a name that describes your use case for the data sent to this destination.
+  - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive, cannot start with a number, and must have fewer than 35 characters.
   - **Mapped destinations**: Select one or more of your destinations to map to this category. Category mappings apply to all instances of a destination. 
 5. After you've finished setting up your category or categories, click **Save**.
 
@@ -44,10 +44,10 @@ Once you've created consent categories in the Segment app, you need to integrate
 - If using Unify and Engage, generates the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
 
 Segment provides a OneTrust wrapper for the following sources:
-- **Analytics.js**: Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. For more information about Segment's Analytics.js OneTrust wrapper, see the [Analytics.js OneTrust Wrapper](/docs/privacy/consent-management/onetrust-wrapper) documentation. You should also navigate to your Analytics.js source in the Segment app, select  **Settings > Analytics.js**, and enable **Destination Filters** before enabling your OneTrust wrapper. 
+- **Analytics.js**: Please follow the instructions from the README in the [@segmentio/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. For more information about Segment's Analytics.js OneTrust wrapper, see the [Analytics.js OneTrust Wrapper](/docs/privacy/consent-management/onetrust-wrapper) documentation. You should also navigate to your Analytics.js source in the Segment app, select  **Settings > Analytics.js**, and enable **Destination Filters** before enabling your OneTrust wrapper. 
 - **Kotlin**: Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
 - **Swift**: Please follow the instructions from the README in the [@segment-integrations/analytics-swift-consent](https://github.com/segment-integrations/analytics-swift-consent#segment-consent-management){:target="_blank"} repository.
-<!---- **React Native**: Please follow the instructions from the README in the [](){:target="_blank"} repository.--->
+**React Native**: Please follow the instructions from the README in the [@segmentio/analytics-react-native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-onetrust){:target="_blank"} repository.
 
 Ketch provides an integration for their Consent & Preference Management product. For more information, see the Ketch [Segment Tag Management Automation](https://docs.ketch.com/ketch/docs/segment-tag-management-automation){:target="_blank"} documentation.  
 
