@@ -19,28 +19,29 @@ relational data into actionable insights, making it accessible to marketers and 
 
 To use the Data Graph, you'll need the following:
 
-- A supported data warehouse with appropriate Data Graph permissions
-- For Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) will need to be set up for a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings for Linked Audiences: 
-  - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
-  - Under **Track event tables**, select "Sync all Track Call Tables" to enable filtering on event history for Linked Audiences conditions.
+- A supported data warehouse with the appropriate Data Graph permissions
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions
+- For Linked Audiences, set up [Profiles Sync](/docs/unify/profiles-sync/) in a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings for Linked Audiences: 
+  - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
+  - Under **Track event tables**, select **Sync all Track Call Tables** to enable filtering on event history for Linked Audiences conditions.
 
 ## Step 1: Set up Data Graph permissions in your data warehouse
 > warning ""
-> Data Graph, Reverse ETL, Profiles Sync require different warehouse permissions.
-
-To get started with the Data Graph, set up the required permissions in your warehouse: 
-| Warehouse     | Linked Audiences     | Linked Events                                                           |
-| ----------- | --------------------------------------- | ------------------------------ |
-| [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)      |:white_check_mark: | :white_check_mark: |
-| [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/)   | :white_check_mark: | :white_check_mark: | 
-| [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)  | 📆 Coming soon| :white_check_mark: |
-| [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/)  | 📆 Coming soon| :white_check_mark: |
-
+> Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
 > info ""
 > Data Graph currently only supports workspaces in the United States.
 
-To track what data has been sent to Segment on previous syncs, Segment leverages [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
+To get started with the Data Graph, set up the required permissions in your warehouse: 
+
+| Warehouse                                                           | Linked Audiences   | Linked Events      |
+| ------------------------------------------------------------------- | ------------------ | ------------------ |
+| [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)   | :white_check_mark: | :white_check_mark: |
+| [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/) | :white_check_mark: | :white_check_mark: |
+| [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)     | 📆 Coming soon    | :white_check_mark: |
+| [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/)     | 📆 Coming soon    | :white_check_mark: |
+
+
+To track the data sent to Segment on previous syncs, Segment uses [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a dedicated schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
 ## Step 2: Connect your warehouse to the Data Graph
 
