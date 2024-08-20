@@ -1,8 +1,6 @@
 ---
 title: Data Graph
 plan: unify
-beta: true
-hidden: true
 redirect_from:
   - '/unify/linked-profiles/data-graph'
 ---
@@ -55,19 +53,21 @@ To connect your warehouse to the Data Graph:
 
 ## Step 3: Build your Data Graph
 
-The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec and key features below to build your Data Graph:
+The Data Graph is a semantic layer that represents a subset of relevant business data that marketers and business stakeholders can use for audience targeting and personalization in downstream tools. Use the configuration language spec and the following features to build your Data Graph:
+
 - Use the **Warehouse access** tab to view the warehouse tables you've granted Segment access to
 - Begin typing to autopopulate the configuration spec within the editor, as well as to autocomplete your warehouse schema
 - Validate your Data Graph using the **Preview** tab
 
 ### Key steps to build your Data Graph
+
 1. First, define your entities. An entity corresponds to a table in your warehouse. Segment flexibly supports tables, views and materialized views.
-2. Then, define the profile block. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc.
+2. Then, define the profile block. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, and so on.
 3. Finally, define how your datasets are related to each other. The Data Graph preserves these relationships and carries this rich context to the destinations to unlock personalization.
 
 **Defining Relationships**
 
-Similar to the concept of [cardinality in data modeling](/en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships:
+Similar to the concept of [cardinality in data modeling](en.wikipedia.org/wiki/Cardinality_(data_modeling)){:target="_blank"}, the Data Graph supports 3 types of relationships:
 - **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
 - **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
 - **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
@@ -174,7 +174,7 @@ data_graph {
 
 ```
 
-### a) Define entities
+### 3a: Define entities
 The first step in creating a Data Graph is to define your entities. An entity corresponds to a table in the warehouse.
 
 | Parameters     | Definition                                                           |
@@ -204,7 +204,7 @@ data_graph {
 }
 ```
 
-### b) Define the profile
+### 3b: Define the profile
 > info ""
 > Segments recommends that you select materialized views under the Profiles Sync Selective Sync settings to optimize warehouse compute costs.
 
@@ -233,7 +233,7 @@ data_graph {
 
 ```
 
-### c) Define relationships
+### 3c: Define relationships
 
 Now define your relationships between your entities. The Data Graph supports three types of relationships:
 - Profile:entity relationship. This is the first level of relationships
@@ -245,11 +245,11 @@ All relationship types require you to define the relationship slug, name, and re
 #### Define profile-to-entity relationship
 This is the first level of relationships and a unique type of relationship between Segment profile entity and a related entity.  
 
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)  |
-| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                          |
-| `related_entity`   | References your already defined entity |
+| Parameters       | Definition                                                                                                                                                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`) |
+| `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                                                                            |
+| `related_entity` | References your already defined entity                                                                                                                                                                     |
 
 To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following: 
 
@@ -305,12 +305,12 @@ data_graph {
 #### Define a 1:many relationship
 For 1:many relationships, define the join on between the two entity tables using the spec below.
 
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)    |
-| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                        |
-| `related_entity`   | References your already defined entity |
-| `join_on`         |    Defines relationship between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
+| Parameters       | Definition                                                                                                                                                                                                                                         |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)                                         |
+| `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                                                              |
+| `related_entity` | References your already defined entity                                                                                                                                                                                                             |
+| `join_on`        | Defines relationship between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
 
 **Example:**
 
@@ -349,19 +349,21 @@ For many:many relationships, define the join on between the two entity tables wi
 > warning ""
 > Attributes from a junction table are not referenceable via the Linked Audience Builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
 
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `relationship`      | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)    |
-| `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                        |
-| `related_entity`   | References your already defined entity |
+
+| Parameters       | Definition                                                                                                                                                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`) |
+| `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                      |
+| `related_entity` | References your already defined entity                                                                                                                                                                     |
 
 **Junction table spec**
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `table_ref`      | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views  |
-| `primary_key`    | The unique identifier for the given table. Must be a column with unique values per row |
-| `left_join_on`   | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
-| `right_join_on`  | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
+
+| Parameters      | Definition                                                                                                                                                                                                                                                             |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `table_ref`     | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]` Segment flexibly supports tables, views and materialized views                                                                                             |
+| `primary_key`   | The unique identifier for the given table. Must be a column with unique values per row                                                                                                                                                                                 |
+| `left_join_on`  | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again   |
+| `right_join_on` | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
 
 **Example:**
 
@@ -409,7 +411,7 @@ To edit your Data Graph:
 
 ### View Data Graph data consumers
 
-A data consumer refers to a Segment feature (e.g. Linked Events, Linked Audiences) referencing datasets, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
+A data consumer refers to a Segment feature (like Linked Events, Linked Audiences) referencing datasets, such as entities and/or relationships, from the Data Graph. You can view a list of data consumers in two places:
 - Under **Unify > Data Graph**, click the **Data consumers** tab
 - Under **Unify > Data Graph > Overview** or the **Data Graph editor > Preview**, click into a node on the Data Graph preview and a side sheet will pop up with the list of data consumers for the respective relationship
 
@@ -421,4 +423,4 @@ Upon editing and saving changes to your Data Graph, a modal will pop up to warn 
 
 ### Detect warehouse breaking changes
 
-Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse, the primary key column no longer exists, etc. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
+Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. 
