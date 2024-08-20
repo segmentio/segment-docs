@@ -1,5 +1,4 @@
 ---
-beta: true
 title: Swrve Destination
 id: 59c467ba9e26eb0001380743
 ---
@@ -56,7 +55,7 @@ Swrve supports the `identify`, `track` and `screen` methods.
 
 ### Integrating Push & A/B Testing
 
-Follow Swrve's push notification documentation [here](https://docs.swrve.com/developer-documentation/integration/android){:target="_blank"}.
+Follow [Swrve's push notification documentation](https://docs.swrve.com/developer-documentation/integration/android){:target="_blank"}.
 
 ### Integrating In-app Messaging & Conversations
 
@@ -106,7 +105,7 @@ No further action is required to integrate in-app messages or Conversations, whi
 
 ### Integrating Push & A/B Testing
 
-Follow Swrve's push notification documentation [here](https://docs.swrve.com/developer-documentation/integration/ios){:target="_blank"}.
+Follow [Swrve's push notification documentation](https://docs.swrve.com/developer-documentation/integration/ios){:target="_blank"}.
 
 ### Integrating In-app Messaging & Conversations
 

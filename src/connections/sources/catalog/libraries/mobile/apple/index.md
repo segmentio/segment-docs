@@ -130,7 +130,7 @@ See Segment's documentation for [device-mode destinations](/docs/connections/sou
 
 See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations/) for a full list of available cloud-mode destinations that Swift supports. 
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 <div class="double">
   {% include components/reference-button.html
@@ -152,7 +152,7 @@ See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/librar
 
 ## Tools and extensions
 
-Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.
+Analytics-Swift is built with extensibility in mind. Use the tools list below to improve data collection.
 
 - [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift/swift-typewriter)

@@ -1,7 +1,6 @@
 ---
 title: Houseware Destination
 rewrite: true
-beta: true
 id: 60a40b2d20a31975d7b14052
 ---
 [Houseware](https://houseware.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps teams to generate actionable sales/conversion touchpoints in the user journeys to clock more revenue.

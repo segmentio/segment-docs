@@ -4,8 +4,6 @@ hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
 id: 6238cec53a46dd187d094eb7
-redirect_from:
-  - "/connections/destinations/catalog/actions-criteo-audiences" 
 ---
 {% include content/plan-grid.md name="actions" %}
 

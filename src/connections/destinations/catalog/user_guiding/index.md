@@ -1,7 +1,6 @@
 ---
 title: UserGuiding Destination
 id: 6549f3d6f2f494b41bf941f8
-beta: true
 ---
 
 [UserGuiding](https://userguiding.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a product adoption platform that helps product teams automate in-app experiences that turn new users into champions.

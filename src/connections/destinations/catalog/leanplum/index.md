@@ -32,7 +32,7 @@ CocoaPods is the dependency manager we use for Objective-C projects. If you alre
 
     `sudo gem install cocoapods`
 
-    For issues with installing CocoaPods, refer [here](https://cocoapods.org/){:target="_blank"}
+    For issues with installing CocoaPods, refer to the [cocoapods website](https://cocoapods.org/){:target="_blank"}
 
 2. Add a podfile. In your terminal, navigate to your app's directory. Add a podfile to your app by running the following command:
 
@@ -99,7 +99,7 @@ For addition documentation you can also check [Leanplum docs](https://support.le
     <uses-permission android:name="android.permission.INTERNET"/>
     ```
 
-    If you want to use the advanced features of Leanplum, also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android){:target="_blank"}.
+    If you want to use the advanced features of Leanplum, also add the additional permissions, as described [in Leanplum's Android documentation](https://docs.leanplum.com/reference/android-setup){:target="_blank"}.
 
 4. Add the following lines to your Application or Controller:
 

@@ -75,7 +75,7 @@ Sources pages check if the source is a cloud-app, then include information about
 
 ## Edit pages
 
-Content with in each `.md` file is markdown. For information about styling, and available extensions, see `_src/utils/formatguide.md` or the live version [here](https://segment.com/docs/utils/formatguide).
+Content with in each `.md` file is markdown. For information about styling, and available extensions, see `_src/utils/formatguide.md` or the live version in the [utils section of the docs](/docs/utils/formatguide).
 
 ## Building a preview
 

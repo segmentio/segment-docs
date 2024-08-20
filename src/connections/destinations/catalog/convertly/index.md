@@ -1,7 +1,6 @@
 ---
 title: Convertly Destination
 id: 65e8b496eec9c40dbccbf749
-beta: true
 ---
 
 [Convertly](https://www.tryconvertly.com){:target="\_blank”} lets you run AI on your product analytics. Create and generate charts and analyze data in minutes.
