@@ -156,4 +156,5 @@ The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filte
 This table provides a list of all possible discard reasons available at each pipeline step. 
 
 {% include content/delivery-overview-discards.html %}
+
 <!--- not in the product yet{% include content/retl-discards.md %}--->
