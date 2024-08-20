@@ -44,7 +44,7 @@ analytics.track("Product Clicked", {
 
 ### Identify
 
-Topsort strongly recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/) and that you hash the user ID before sending it to Topsort.
+Topsort recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/) and that you hash the user ID before sending it to Topsort.
 
 Please find an example Identify call below:
 
