@@ -99,3 +99,8 @@ Journeys triggers audience or trait-related events for each email `external_id` 
 #### How quickly do user profiles move through Journeys?
 
 It may take up to five minutes for a user profile to enter each step of a Journey, including the entry condition. For Journey steps that reference a batch audience or SQL trait, Journeys processes user profiles at the same rate as the audience or trait computation. Visit the Engage docs to [learn more about compute times](/docs/engage/audiences/#understanding-compute-times).
+
+#### How to ensure consistent user evaluation in Journey entry conditions that use Historical Data?
+
+When a Journey is published, the computation of the entry step begins immediately in real-time, while the backfill process of historical data runs concurrently. It is important to note that if a user's events or traits evaluated in the entry condition span both real-time and historical data, unintended behavior may occur. This discrepancy could result in users qualifying in real-time, but should not have when their historical data is taken into account.
+To prevent this, consider manually creating an audience that incorporates these conditions, including historical data. This pre-built audience can then be referenced in your Journey entry condition. This approach ensures a consistent evaluation of users based on both their real-time and historical data.
