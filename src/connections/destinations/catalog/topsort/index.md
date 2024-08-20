@@ -11,7 +11,6 @@ Setting up an events integration is one of the 3 steps to integrate with Topsort
 
 This destination is maintained by Topsort. For any issues with the destination, [contact the Topsort Support team](mailto:support@topsort.com){:target="_blank"}.
 
-<!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 
 ## Getting started
 
