@@ -16,7 +16,7 @@ This destination is maintained by Topsort. For any issues with the destination, 
 
 ### Intro to Topsort Events
 
-This destination will help you track the 3 main events Topsort needs to serve the most relevant ads and accomplish attribution for sponsored listings: `impressions`, `clicks` and `purchases`. Here is an explanation of what each one of these means to Topsort:
+This destination helps you track the 3 main events Topsort needs to serve the most relevant ads and accomplish attribution for sponsored listings: `impressions`, `clicks` and `purchases`. Here is an explanation of what each one of these means to Topsort:
 
 1. **Impression**: Every time a user sees a promoted product in a listing page (PLP) or section.
 2. **Click**: If the user then clicks or adds the promoted product to a cart, then a `click` should be triggered.
