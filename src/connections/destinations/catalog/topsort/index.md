@@ -44,9 +44,10 @@ analytics.track("Product Clicked", {
 4. Return to the Topsort destination in the Segment app and enter the value for your **Marketplace API Key**.
 5. Enable only the Track events relevant to your site and so that the events do not get duplicated with a single user action. For example, if you always trigger a `Product Clicked` event together with the `Product Added` event when a user makes a click in the "Add to cart" button, then you should enable only the `Product Clicked` event for the Topsort Destination.
 {% include components/actions-fields.html %}
+
 ### Identify
 
-Topsort recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/) and that you hash the user ID before sending it to Topsort.
+For Segment's browser and mobile libraries Topsort recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/).
 
 Please find an example Identify call below:
 
@@ -58,3 +59,5 @@ analytics.identify('361b1fdfbeaa9d64a13c033eb9f970dc6740f6bc', {
 
 Once a user is identified, each call to Segment's [Track method](/docs/connections/spec/track/) automatically records the user ID.
 Users that are not logged in can be tracked using an [anonymousID](/docs/connections/spec/identify/#anonymous-id).
+
+If you use a server side source please provide one of both options, anonymousId or userId.
