@@ -481,5 +481,3 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 1. Double check that you've set up the library correctly.
 
 2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
-
-{% include content/server-side-troubleshooting.md %}
