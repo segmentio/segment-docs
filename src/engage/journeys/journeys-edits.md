@@ -35,6 +35,10 @@ After you’ve published, users who meet the entry criteria can enter the new jo
 
 You can return to the Journeys list page to view the new live journey and its previous versions, which are nested under the journey container.
 
+> info "Journey settings"
+> A Journey's settings cannot be edited once the Journey has been published. This includes the [Entry settings and Exit settings](https://segment.com/docs/engage/journeys/build-journey/#journey-exits-and-re-entry). The only settings that can be edited after a Journey is published are the Journey's name and description.
+
+
 ## Working with Journeys versioning
 
 ### Exit settings and user flow between journeys
