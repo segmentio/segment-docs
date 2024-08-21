@@ -60,4 +60,4 @@ analytics.identify('361b1fdfbeaa9d64a13c033eb9f970dc6740f6bc', {
 Once a user is identified, each call to Segment's [Track method](/docs/connections/spec/track/) automatically records the user ID.
 Users that are not logged in can be tracked using an [anonymousID](/docs/connections/spec/identify/#anonymous-id).
 
-If you use a server side source please provide one of both options, anonymousId or userId.
+If you use a server-side source please provide one or more identifiers: `anonymousId` or `userId`.
