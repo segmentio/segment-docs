@@ -193,6 +193,8 @@ If you're using real estate, travel, or automotive [Dynamic Ads](https://www.fac
 
 For most implementations, Segment recommends leaving these mappings blank. By default, Segment sets `content_type` to "product".
 
+This same mapping can be used to change the `content_id` from the default value (product_id or the sku) to anything specific for Facebook Pixel. You can utilise this [Facebook documentation](https://www.facebook.com/business/help/606577526529702?id=1205376682832142) for details of the mapping.
+
 ## Troubleshooting
 
 ### PII blocklisting
