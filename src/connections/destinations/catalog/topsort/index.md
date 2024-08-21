@@ -18,9 +18,9 @@ This destination is maintained by Topsort. For any issues with the destination, 
 
 This destination helps you track the 3 main events Topsort needs to serve the most relevant ads and accomplish attribution for sponsored listings: `impressions`, `clicks` and `purchases`. Here is an explanation of what each one of these means to Topsort:
 
-1. **Impression**: Every time a user sees a promoted product in a listing page (PLP) or section.
-2. **Click**: If the user then clicks or adds the promoted product to a cart, then a `click` should be triggered.
-3. **Purchase**: Finally, when an order is completed and confirmed to be successful, a `purchase` event should be reported to Topsort. You can report a purchase whether it has promoted products or not. We will take care of filtering relevant promoted products inside the completed order given the information about promoted clicks.
+- **Impression**: Every time a user sees a promoted product in a listing page (PLP) or section, you should trigger an `impressions` event.
+- **Click**: If the user then clicks or adds the promoted product to a cart, you should trigger a `click` event.
+- **Purchase**: When an order is completed and confirmed to be successful, report a `purchase` event to Topsort. You can report a purchase whether it has promoted products or not. Topsort takes care of filtering relevant promoted products inside the completed order given the information about promoted clicks.
 
 This destination has 3 default presets that map the Track events `'Product Viewed'`, `'Product Clicked'` and `'Order Completed'` to Topsort's `impression`, `click` and `purchase` events respectively. If you’re not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. The mappings in the Topsort destination are built based on the Segment [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/). If you have different Segment Track events mapped to these action definitions then we can adapt this destination to your case. Once the destination is configured make sure to activate only the mappings relevant to your site, see point 5 of the [set up](#set-up-your-topsort-destination).
 
