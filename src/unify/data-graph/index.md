@@ -3,6 +3,7 @@ title: Data Graph
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/data-graph'
+  - '/unify/data-graph/data-graph'
 ---
 
 The Data Graph acts as a semantic layer that allows businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements.
@@ -59,7 +60,7 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 
 **Defining Relationships**
 
-Similar to the concept of [cardinality in data modeling](en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships:
+Similar to the concept of [cardinality in data modeling](https://w.wiki/Ay$u){:target="_blank"}, the Data Graph supports 3 types of relationships:
 - **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
 - **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
 - **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
@@ -228,9 +229,9 @@ data_graph {
 ### 3c: Define relationships
 
 Now define your relationships between your entities. Similar to the concept of [cardinality in data modeling](en.wikipedia.org/wiki/Cardinality_(data_modeling)), the Data Graph supports 3 types of relationships below. All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions. 
-- **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
-- **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
-- **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
+- **[Profile-to-entity relationship](#define-profile-to-entity-relationship):** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
+- **[1:many relationship](#define-a-1many-relationship):** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
+- **[many:many relationship](#define-manymany-relationship):** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
 
 #### Define profile-to-entity relationship
 This is the first level of relationships and a unique type of relationship between the Segment profile entity and a related entity.  
