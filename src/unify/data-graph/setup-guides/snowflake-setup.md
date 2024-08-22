@@ -7,6 +7,8 @@ redirect_from:
 > warning ""
 > Data Graph, Reverse ETL, Profiles Sync require different warehouse permissions.
 
+<!-- PW, 8/20/24; remove this and edit away -->
+
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/). 
 
 ## Snowflake credentials
