@@ -5,8 +5,6 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/databricks-setup'
 ---
 
-<!-- PW, 8/20/24: Remove this and edit away -->
-
 On this page, you'll learn how to connect your Databricks data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/). 
 
 ## Databricks credentials
