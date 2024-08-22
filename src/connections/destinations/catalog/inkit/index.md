@@ -2,6 +2,7 @@
 title: Inkit Destination
 rewrite: true
 id: 5f0746ced1c79b49ddee49fd
+hidden: true
 ---
 [Inkit](https://inkit.com){:target="_blank"} and Segment empower organizations to securely generate and distribute documents - both digitally as well as through direct mail. 
 For example, automatically create and send electronic documents like invoices, reports, notices, and more through a magic link or e-delivery. Or generate and send documents for e-signature, storage, postcards, letters, and more, all powered by the Inkit integration for Segment.
