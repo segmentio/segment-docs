@@ -5,7 +5,9 @@ redirect_from:
     - '/unify/linked-profiles/linked-audiences'
 ---
 
-Linked Audiences allows you to build a warehouse-first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/data-graph/data-graph/). 
+Linked Audiences empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. 
+
+This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support.
 
 With Linked Audiences, you can:
 
@@ -136,13 +138,16 @@ To activate your Linked Audience:
 
 ### Step 2a: Connecting to a destination
 
-[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. Segment supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations) for Linked Audiences.
+[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
+
+> info "Linked Audiences destinations"
+> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. Navigate to **Engage > Audiences**.
 2. Select the Linked Audience you set up in the previous step. 
-3. Select **Add destination**.
+3. Select **Add destination**. 
 4. Select a destination from the catalog.
 5. Click **Configure data to send to destination**.
 
