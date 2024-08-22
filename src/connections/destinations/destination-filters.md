@@ -260,6 +260,6 @@ When Segment sends an event to a destination but encounters a timeout error, it 
   - **Source-Scoped Transformations**: If destination filters are enabled, Segment processes [source scoped transformations](/docs/protocols/transform/#step-2-set-up-the-transformation) before the events reach destination filters.
   - **Destination-Scoped Transformations**: Segment processes [destination-specific transformations](/docs/protocols/transform/#step-2-set-up-the-transformation)  after the events have passed through the destination filters.
 
-#### Are destination filter conditions case sensitive?
+#### Are destination filter conditions case-sensitive?
 
-Yes. Make sure to test your filter conditions with a test event before saving and enabling the filter.
+Destination filters are case-sensitive. Make sure to test your filter conditions with a test event before saving and enabling the filter.
