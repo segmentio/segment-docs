@@ -1,10 +1,8 @@
 ---
 title: Linked Audiences
 plan: engage-foundations
-beta: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences'
-hidden: true
 ---
 
 Linked Audiences allows you to build a warehouse-first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/data-graph/data-graph/). 
@@ -165,6 +163,16 @@ Profile exits audience          | Send an event when a profile no longer matches
 Entity enters audience          | Send an event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the event.         | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br> Notify a traveler when a flight associated with their profile is delayed.<br> Notify a customer when a product associated with their profile's wishlist is back in stock.
 Entity exits audience           | Send an event when an entity condition associated with a profile no longer matches the audience condition. You must select the entity that triggers Segment to send the event| Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br> Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
 Profile enters or exits audience| Send an event when a profile's audience membership changes.   | Update a user profile in a destination with the most recent audience membership.     
+
+| Trigger                          | Event type | Definition                                                                                                 | Examples                                                                                                                                                                                                                                                                         |
+| -------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Profile enters audience          | Track      | Send an event when a profile matches the audience condition.                                               | Send a congratulatory email when a traveler qualifies for premium status with a mileage program. Send a discount to all customers with a particular product on their wishlist.                                                                                                   |
+| Profile exits audience           | Track      | Send an event when a profile no longer matches the audience condition.                                     | Send an email to credit card owners to confirm that their credit cards have been paid in full. Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                          |
+| Entity enters audience           | Track      | Send an event when an entity condition associated with a profile matches the audience condition.           | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance. Notify a traveler when a flight associated with their profile is delayed. Notify a customer when a product associated with their profile's wishlist is back in stock. |
+| Entity exits audience            | Track      | Send an event when an entity condition associated with a profile no longer matches the audience condition. | Send a confirmation to a customer when a credit card associated with their profile has been paid off. Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                          |
+| Profile enters or exits audience | Identify   | Send an event when a profile's audience membership changes.                                                | Update a user profile in a destination with the most recent audience membership.                                                                                                                                                                                                 |
+
+
 
 ### Step 2d: Configure the event
 
