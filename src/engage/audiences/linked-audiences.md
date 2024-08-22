@@ -6,26 +6,24 @@ redirect_from:
     - '/unify/linked-profiles/linked-audiences'
 hidden: true
 ---
-> info "Linked Audiences is in public beta"
-> Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-Linked Audiences allows you to build a warehouse-first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+Linked Audiences allows you to build a warehouse-first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/data-graph/data-graph/). 
 
-You can:
+With Linked Audiences, you can:
 
 - Preserve rich relationships between all the data in your warehouse by creating connections with any entity data back to your audience profile.
 - Build advanced audience segments that include the rich context needed for personalization downstream.
 - Use a low code builder, enabling marketers to activate warehouse data without having to wait for data pull requests before launching campaigns to targeted audiences.
 
-To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
+To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
 
 ## Prerequisites
 
 Before you begin setting up your Linked Audience, ensure you have:
 
 - [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
-- Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
-- [Ensure someone has set up your data graph](/docs/unify/linked-profiles/data-graph/).
+- Set up your warehouse permissions using [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
+- [Ensure someone has set up your data graph](/docs/unify/data-graph/data-graph/).
 - Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
 ## Setting up Linked Audiences
@@ -36,6 +34,7 @@ To set up your Linked Audience, complete the following steps:
 - [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
 - [Step 3: Send a test event to your destination](#step-3-send-a-test-event-to-your-destination)
 - [Step 4: Enable your Linked Audience](step-4-enable-your-linked-audience)
+- [Step 5: Monitor your Activation]()
 
 ## Step 1: Build a Linked Audience
 
@@ -159,7 +158,7 @@ Select the Destination Action to call when the event happens, then click **Next*
 
 Configure how and when events are produced with each audience run. Select the entities referenced in the audience builder to act as a trigger for your events. 
 
-Event Selection                 |Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
+Trigger                | Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
 --------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Profile enters audience         | Send an event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
 Profile exits audience          | Send an event when a profile no longer matches the audience condition.                                                                    | Send an email to credit card owners to confirm that their credit cards have been paid in full.<br> Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
