@@ -339,6 +339,18 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
+  - section_title: Data Graph
+    slug: unify/data-graph
+    section:
+    - path: /unify/data-graph/
+      title: Data Graph
+    - section_title: Setup Guides
+      slug: unify/data-graph/setup-guides/
+      section:
+      - path: /unify/data-graph/setup-guides/snowflake-setup/
+        title: Snowflake Setup
+      - path: /unify/data-graph/setup-guides/databricks-setup/
+        title: Databricks Setup
   - section_title: Traits
     slug: unify/traits
     section:
@@ -409,6 +421,8 @@ sections:
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
+    - path: '/engage/audiences/linked-audiences'
+      title: Linked Audiences
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
