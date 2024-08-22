@@ -345,7 +345,7 @@ sections:
     - path: /unify/data-graph/
       title: Data Graph
     - section_title: Setup Guides
-      slug: unify/data-graph/setup-guides/
+      slug: /unify/data-graph/setup-guides/
       section:
       - path: /unify/data-graph/setup-guides/snowflake-setup/
         title: Snowflake Setup
