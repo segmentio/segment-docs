@@ -136,7 +136,7 @@ To activate your Linked Audience:
 
 ### Step 2a: Connecting to a destination
 
-[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination.
+[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. Segment supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations) for Linked Audiences.
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
@@ -184,7 +184,7 @@ As you're enriching your events in Linked Audiences, you should view a preview o
 
 Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**.
 
-These fields are pre-filled with properties that will work by default.
+These fields are pre-filled with properties configured by default.
 
 ## Step 3: Send a test event to your destination
 
@@ -196,10 +196,9 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 ## Step 4: Enable your Linked Audience
 
-After building your Linked Audience, choose **Save and Enable**. You'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically disables your audience so that it doesn't start computing until you're ready. A compute is when Segment runs the audience conditions on your data warehouse and sends events downstream. 
+After building your Linked Audience, choose **Save and Enable**. You'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically disables your audience so that it doesn't start computing until you're ready. A run is when Segment runs the audience conditions on your data warehouse and sends events downstream. 
 
-To enable your audience:
-Select the **Enabled** toggle, then select **Enable audience**.
+To enable your audience, select the **Enabled** toggle, then select **Enable audience**.
 
 ### Run Now
 
@@ -219,3 +218,19 @@ You can maintain your run schedule at any time from the audience's **Settings** 
 You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
 
 There may be up to a 5 minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
+
+## Step 5: Monitor your activation
+
+With your Linked Audience activated, follow these steps to monitor your activation:
+
+1. From the Audience Overview page, selected one of your connected destinations.
+2. Under the **Settings** tab, click **Destination delivery**, which then opens the Linked Audiences Delivery Overview.
+
+### Delivery Overview for Linked Audiences
+
+Delivery Overview shows you four steps in your data activation pipeline:
+
+- **Events from Audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership. 
+- **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
+- **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.
