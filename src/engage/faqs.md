@@ -12,7 +12,7 @@ Yes. You can learn more about the Audience API by visiting the [Segment Public A
 
 ## Can I programmatically determine if a user belongs to a particular audience?
 
-Yes. Eecause Engage creates a trait with the same name as your audience, you can query the Profile API to determine if a user belongs to a particular audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following Profile API URL:
+Yes. Because Engage creates a trait with the same name as your audience, you can query the Profile API to determine if a user belongs to a particular audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following Profile API URL:
 
 ```
 https://profiles.segment.com/v1/namespaces/<namespace_id>/collections/users/profiles/email:bob@segment.com/traits?include=high_value_users
