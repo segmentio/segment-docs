@@ -33,8 +33,8 @@ To set up your Linked Audience, complete the following steps:
 - [Step 1: Build a Linked Audience](#step-1-build-a-linked-audience)
 - [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
 - [Step 3: Send a test event to your destination](#step-3-send-a-test-event-to-your-destination)
-- [Step 4: Enable your Linked Audience](step-4-enable-your-linked-audience)
-- [Step 5: Monitor your Activation]()
+- [Step 4: Enable your Linked Audience](#step-4-enable-your-linked-audience)
+- [Step 5: Monitor your Activation](#step-5-monitor-your-activation)
 
 ## Step 1: Build a Linked Audience
 
