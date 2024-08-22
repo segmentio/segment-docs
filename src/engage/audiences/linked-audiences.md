@@ -156,14 +156,6 @@ Select the Destination Action to call when the event happens, then click **Next*
 
 Configure how and when events are produced with each audience run. Select the entities referenced in the audience builder to act as a trigger for your events. 
 
-Trigger                | Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Profile enters audience         | Send an event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
-Profile exits audience          | Send an event when a profile no longer matches the audience condition.                                                                    | Send an email to credit card owners to confirm that their credit cards have been paid in full.<br> Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
-Entity enters audience          | Send an event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the event.         | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br> Notify a traveler when a flight associated with their profile is delayed.<br> Notify a customer when a product associated with their profile's wishlist is back in stock.
-Entity exits audience           | Send an event when an entity condition associated with a profile no longer matches the audience condition. You must select the entity that triggers Segment to send the event| Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br> Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
-Profile enters or exits audience| Send an event when a profile's audience membership changes.   | Update a user profile in a destination with the most recent audience membership.     
-
 | Trigger                          | Event type | Definition                                                                                                 | Examples                                                                                                                                                                                                                                                                         |
 | -------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Profile enters audience          | Track      | Send an event when a profile matches the audience condition.                                               | Send a congratulatory email when a traveler qualifies for premium status with a mileage program. Send a discount to all customers with a particular product on their wishlist.                                                                                                   |
@@ -188,11 +180,9 @@ As you're enriching your events in Linked Audiences, you should view a preview o
 
 ![A screenshot of the Add activation page, where you can review your payload data.](/docs/engage/images/linked_audience_payload.png)
 
-**Important:** It is important to make a copy of the data from your final payload schema; you will need this data later when you set up your destination. 
-
 #### Map event
 
-Only required fields are displayed. All optional & pre-filled fields are hidden.
+Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**.
 
 These fields are pre-filled with properties that will work by default.
 
@@ -203,10 +193,6 @@ Send a test event to ensure that everything is connected properly and your desti
 Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**.  
 
 The Event content drop-down shows you a preview of what the data sent to your destination might look like. 
-
-### Step 3a: Configure your multi-channel marketing campaign 
-
-If you're using a multi-channel marketing tool, set up your email campaign before continuing. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
 
 ## Step 4: Enable your Linked Audience
 
