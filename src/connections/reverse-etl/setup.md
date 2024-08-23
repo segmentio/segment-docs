@@ -101,7 +101,7 @@ To create a mapping:
 ## Initial sync for a given mapping
 After you've set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
-## Manage Reverse ETL syncs
+## Edit Reverse ETL syncs
 ### Edit your model
 
 To edit your model:
