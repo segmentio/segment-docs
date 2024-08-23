@@ -35,7 +35,16 @@ The mappings in the Topsort destination are built based on the Segment [Ecommerc
 5. Enable only the Track events relevant to your site and so that the events do not get duplicated with a single user action. For example, if you always trigger a `Product Clicked` event together with the `Product Added` event when a user makes a click in the "Add to cart" button, then you should enable only the `Product Clicked` event for the Topsort Destination.
 
 {% include components/actions-fields.html %}
+### Track
 
+You don't need to change anything about the way you report Track events to Segment. The only extra field you need to provide, only for the `impression` and `click` events, is the `resolvedBidId` given in the winner promoted product (whether it is from the [Auctions API](https://docs.topsort.com/reference/createauctions){:target="_blank"} or the [proxy](https://docs.topsort.com/reference/listings-low-code){:target="_blank"} response). Please find below an example call to track a product listing page (PLP) click event with the `resolvedBidId` included:
+
+```js
+analytics.track("Product Clicked", {
+  product_id: product.id,
+  name: product.name,
+  resolvedBidId: product.resolvedBidId
+});
 ### Identify
 
 For Segment's browser and mobile libraries Topsort recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/).
