@@ -1,7 +1,6 @@
 ---
 title: Topsort Events Destination
 id: 66ba237845b93b71bca2713e
-beta: true
 ---
 
 [Topsort](https://www.topsort.com){:target="_blank"} is an AI-powered retail media platform enabling retailers and marketplaces to build their own high-performing ad networks, rivaling Google and Amazon. With its advanced auto-bidding algorithm and fast integration, Topsort provides an advertising solution that delivers exceptional returns on ad spend (ROAS) while respecting users privacy by being cookie-less.
