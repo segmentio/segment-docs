@@ -26,15 +26,6 @@ This destination has 3 default presets that map the Track events `'Product Viewe
 
 The mappings in the Topsort destination are built based on the Segment [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/). If you have different Segment Track events mapped to these action definitions, then Topsort can adapt this destination to your case. Once the destination is configured, activate only the mappings relevant to your site. See point 5 of the [set up](#set-up-your-topsort-destination) for more details.
 
-You don't need to change anything about the way you report Track events to Segment. The only extra field you need to provide, only for the `impression` and `click` events, is the `resolvedBidId` given in the winner promoted product (whether it is from the [Auctions API](https://docs.topsort.com/reference/createauctions){:target="_blank"} or the [proxy](https://docs.topsort.com/reference/listings-low-code){:target="_blank"} response). Please find below an example call to track a product listing page (PLP) click event with the `resolvedBidId` included:
-
-```js
-analytics.track("Product Clicked", {
-  product_id: product.id,
-  name: product.name,
-  resolvedBidId: product.resolvedBidId
-});
-```
 
 ### Set up your Topsort destination
 
