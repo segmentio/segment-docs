@@ -45,6 +45,8 @@ analytics.track("Product Clicked", {
   name: product.name,
   resolvedBidId: product.resolvedBidId
 });
+```
+
 ### Identify
 
 For Segment's browser and mobile libraries Topsort recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/).
