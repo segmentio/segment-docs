@@ -1,0 +1,15 @@
+## This manually-generated file powers segment.com/docs/release-notes. 
+
+notes: 
+  - title: Segment Extensions General Availability
+    slug: "segment-extensions-ga"
+    description: "Segment Extensions, including dbt and Git Sync, is generally available. Extensions provides third-party integrations that add an automated experience with your existing tools, like dbt labs for syncing models or Git repositories for managing versioning for Segment Workspace changes. dbt Extension is available to all tiers, while Git Sync is available for Team and Business plans. For more information, see Segment's Extensions documentation."
+    date: "2024-08-16"
+    plans:
+      free: true
+      team: true
+      business: true
+    release-stage: 
+      ga: true
+    product-areas: 
+      segment-app: true
