@@ -298,3 +298,25 @@ Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTi
 
 > info ""
 > For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calculated `timestamp` value set in the future.
+>
+
+## FAQ
+
+### Why Are Events Received with Timestamps Set in the Past or Future?
+
+If you're using one of Segment's client-side libraries, please note that several factors can cause timestamp discrepancies in your event data.
+
+1. **Overriding Timestamp Value:**  
+   - When a manual timestamp is set in the payload with a date in the past, it can cause events to appear as if they were sent earlier than they actually were.
+
+2. **Analytics.js Source with Retries Enabled:**  
+   - The [Retries](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#retries) feature supports offline traffic by queuing events in Analytics.js. These events are sent or retried later when an internet connection is available, keeping the original timestamp intact.
+
+3. **Mobile App Backgrounded or Closed:**  
+   - If a user closes the app, events may be queued within the app. These queued events won't be sent until the app is re-opened, potentially in the future, leading to timestamp discrepancies.
+
+4. **Inaccurate Browser/Device Clock Settings:**  
+   - Timestamps can be incorrect if the client's device time is inaccurate, as the `originalTimestamp` relies on the client device's clock, which can be manually adjusted.
+
+5. **Traffic from Internet Bots:**  
+   - [Internet Bots](https://segment.com/docs/guides/ignore-bots/#whats-a-bot) can sometimes send requests with unusual timestamps, either intentionally or due to incorrect settings, leading to discrepancies.
