@@ -12,7 +12,7 @@ Once configured, this integration lets you send Salesforce data directly to Segm
 Before you begin, make sure that you have the following:
 
 - a Segment workspace with [Unify](/docs/unify/) enabled and [Identity Resolution](/docs/unify/identity-resolution/) set up
-- administrator access to your Salesforce account
+- Administrator access to your Salesforce account
 - Salesforce Unify Direct Integration enabled for your workspace. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if you don't yet have the integration enabled.
 
 ## Integration steps
