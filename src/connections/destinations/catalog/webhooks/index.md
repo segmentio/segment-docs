@@ -217,9 +217,9 @@ if (signature === digest) {
 }
 ```
 
-For Batch events, the process to authenticate these requests slightly differs as it involves verifying the X-Signature header against a hash of the **first event** in the batch.
+For Batch events, the process to authenticate these requests slightly differs as it involves verifying the X-Signature header against a hash of the *first event* in the batch.
 
-An example of how one might authenticate batch requests would be:
+An example of how you might authenticate batch requests would be:
 
 ```javascript
  const signature = req.headers['x-signature'];
