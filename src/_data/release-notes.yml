@@ -2,14 +2,24 @@
 
 notes: 
   - title: Segment Extensions General Availability
-    slug: "segment-extensions-ga"
+    slug: segment-extensions-ga
     description: "Segment Extensions, including dbt and Git Sync, is generally available. Extensions provides third-party integrations that add an automated experience with your existing tools, like dbt labs for syncing models or Git repositories for managing versioning for Segment Workspace changes. dbt Extension is available to all tiers, while Git Sync is available for Team and Business plans. For more information, see Segment's Extensions documentation."
-    date: "2024-08-16"
-    plans:
-      free: true
-      team: true
-      business: true
-    release-stage: 
-      ga: true
-    product-areas: 
-      segment-app: true
+    date: "August 16, 2024"
+    product-area: 
+      - segment app 
+    release-stage: ga
+    plan: 
+        - free
+        - team
+        - business
+  - title: Linked Audiences and Data Graph General Availability
+    slug: segment-linked-and-data-graph-ga
+    description: "Segment's Linked Audiences and Data Graph are now Generally Available for Snowflake & Databricks. Linked Audiences empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support. The Data Graph acts as a semantic layer that allows businesses to define relationships between entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. The Data Graph makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements."
+    date: "August 23, 2024"
+    product-area: 
+      - twilio engage 
+    release-stage: ga
+    plan: 
+        - unify
+        - team
+        - business

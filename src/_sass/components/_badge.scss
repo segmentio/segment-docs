@@ -32,4 +32,9 @@
     background-color: white;
     color: color(gray-800);
   }
+
+  &--purple {
+    background-color: lighten(color(code-violet), 35%);
+    color: color(code-violet);
+  }
 }

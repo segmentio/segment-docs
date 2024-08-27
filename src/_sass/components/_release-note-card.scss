@@ -1,0 +1,53 @@
+.release-note-card {
+  color: color(gray-800);
+
+  &--box {
+    $this: &;
+
+    position: relative;
+    padding: 20px;
+    background-color: color(white);
+    border: 1px solid color(gray-400);
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: 200ms ease;
+  
+/* @include breakpoint(medium up)  {
+      padding: 30px;
+    }*/
+
+    &:hover {
+      border: 1px solid color(gray-100);
+      border-color: color(gray-500);
+      text-decoration: none;
+    }
+  }
+
+  &--note-header {
+    font-size: 24px;
+    font-weight: 600;
+    width: fit-content(40%);
+    text-wrap: balance;
+    color: color(gray-900)
+  }
+
+  &--title {
+    padding: 5px;
+  }
+
+  &--content {
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint(medium up)  {
+      text-align: left;
+    }
+  }
+  
+  &--date {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: color(gray-900);
+  }
+}
