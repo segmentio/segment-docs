@@ -81,6 +81,6 @@ Keep the following in mind as you work with the Salesforce Unify Direct Integrat
 
 - Start with a subset of data to test your integration before expanding to all Salesforce objects.
 - Regularly review your mapping to ensure it reflects any changes in your Salesforce schema or Segment Profile needs.
-- Monitor your integration for any errors or data discrepancies.
+- Monitor both your Salesforce source and Segment Profiles destination for errors and data discrepancies.
 
 The Salesforce Unify Direct Integration supports mapping from a single Salesforce collection per data model. For complex use cases requiring data from multiple collections, you may need to create multiple data models and mappings.
