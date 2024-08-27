@@ -28,16 +28,19 @@
     font-weight: 600;
     width: fit-content(40%);
     text-wrap: balance;
-    color: color(gray-900)
+    color: color(gray-900);
+    margin-bottom: 20px;
   }
 
-  &--title {
-    padding: 5px;
+  &--badges {
+    padding-top: 10px;
   }
 
   &--content {
     width: 100%;
-    text-align: center;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     @include breakpoint(medium up)  {
       text-align: left;
