@@ -26,7 +26,7 @@ Segment recommends setting up a new Snowflake user and only giving this user per
 > If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema)to update user access for the Segment Reverse ETL schema.
 
 
-```SQL
+```sql
 -- ********** SET UP THE FOLLOWING WAREHOUSE PERMISSIONS **********
 
 -- Update the following variables 
@@ -82,7 +82,7 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 Next, give the Segment role **read-only** access to additional databases you want to use for Data Graph including the Profiles Sync database. Repeat the following SQL query for **each** database you want to use for the Data Graph.
 
-``` SQL
+```sql
 
 SET segment_connection_role = 'SEGMENT_LINKED_ROLE';
 
@@ -107,7 +107,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($linked_read_on
 
 If you want to restrict access to specific [Snowflake schemas and tables](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}, then run the following commands: 
 
-```SQL
+```sql
 -- [Optional] Further restrict access to only specific schemas and tables 
 SET db = 'MY_DB';
 SET schema = 'MY_DB.MY_SCHEMA_NAME';
@@ -131,7 +131,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN SCHEMA identifier($linked_read_only
 
 To verify you have set up the right permissions for a specific table, log in with the username and password you created for `SEGMENT_CONNECTION_USERNAME` and run the following command to verify the role you created has the correct permissions. If this command succeeds, you should be able to view the respective table.
 
-``` SQL
+```sql
 set segment_connection_role = 'SEGMENT_LINKED_ROLE';
 set linked_read_only_database = 'YOUR_DB';
 set table_name = 'YOUR_DB.SCHEMA.TABLE';
@@ -163,12 +163,11 @@ To connect your warehouse to the Data Graph:
 ## Update user acccess for Segment Reverse ETL schema 
 If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient privileges on an existing `_segment_reverse_etl` schema.
 
-``` SQL
+```sql
 -- If you want to use an existing database that already has Segment Reverse ETL schemas, you’ll need to run some additional steps below to grant the role access to the existing schemas.
 
 SET retl_schema = concat($segment_connection_db,'.__segment_reverse_etl');
 GRANT USAGE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
 GRANT CREATE TABLE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
 GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA identifier($retl_schema) TO ROLE identifier($segment_connection_role);
-
 ```
