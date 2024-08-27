@@ -51,8 +51,7 @@ Next, add a Segment Profiles destination:
 2. Segment returns you to the Segment Profiles Destination. Click **Add mapping**.
 2. Select your data model and map your selected Salesforce data to fields in Segment Profiles (typically "Identify" for profile updates).
    - Select the Profile space you want to update.
-   - Map Salesforce fields to Segment Profile fields.
-   - **You must map either a User ID or Anonymous ID field.**
+   - Map Salesforce fields to Segment Profile fields. **You must map either a User ID or Anonymous ID field.**
 4. Test your mapping with real data from Salesforce.
 5. Save your mapping configuration.
 
