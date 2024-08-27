@@ -69,7 +69,7 @@ Data now begins syncing between Salesforce and Segment.
 
 ## Data synchronization
 
-After you've connected Salesforce and the Segment Profiles destination, the integration begin syncing data based on the following:
+After you've connected Salesforce and the Segment Profiles destination, the integration begins syncing data:
 
 - New or updated records in Salesforce get sent to Segment Profiles based on your mapping configuration.
 - The initial sync includes historical data within the range specified in your Selective Sync settings.
