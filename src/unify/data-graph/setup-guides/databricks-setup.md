@@ -43,7 +43,7 @@ If you already have a Service Principal user you'd like to use, grant it "Can us
 > Segment recommends creating a new database for the Data Graph.
 > If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-catalog) to update user access for the Segment Reverse ETL catalog.
 
-```SQL
+```sql
 CREATE CATALOG IF NOT EXISTS `SEGMENT_LINKED_PROFILES_DB`;
 -- Copy the saved Client ID from previously generated secret
 GRANT USAGE ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
@@ -55,14 +55,14 @@ GRANT SELECT ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 
 Run the following SQL to grant the Data Graph read-only access to the Profiles Sync catalog:
 
-```SQL
+```sql
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${profiles_sync_catalog}` TO `${client_id}`;
 ```
 
 ## Step 4: Grant read-only access to additional catalogs for the Data Graph
 Run the following SQL to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph.
 
-```SQL 
+```sql 
 -- ********** REPEAT THIS COMMAND FOR EACH CATALOG YOU WANT TO USE FOR THE DATA GRAPH **********
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${catalog}` TO `${client_id}`;
 ```
@@ -73,18 +73,17 @@ GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${catalog}` TO `${client_id}`;
 
 Restrict access to specific schemas by running the following SQL:
 
-```SQL
+```sql
 GRANT USAGE ON CATALOG `${catalog}` TO `${client_id}`;
 USE CATALOG `${catalog}`;
 GRANT USAGE, SELECT ON SCHEMA `${schema_1}` TO `${client_id}`;
 GRANT USAGE, SELECT ON SCHEMA `${schema_2}` TO `${client_id}`;
 ...
-
 ```
 ### Restrict read-only access to tables
 Restrict access to specific tables by running the following SQL: 
 
-```SQL
+```sql
 GRANT USAGE ON CATALOG `${catalog}` TO `${client_id}`;
 USE CATALOG `${catalog}`;
 GRANT USAGE ON SCHEMA `${schema_1}` TO `${client_id}`;
@@ -102,7 +101,7 @@ Sign in to the [Databricks CLI with your Client ID secret](https://docs.databric
 > success ""
 > If this command succeeds, you can view the table. 
 
-```SQL
+```sql
 USE DATABASE ${linked_read_only_database} ;
 SHOW SCHEMAS;
 SELECT * FROM ${schema}.${table} LIMIT 10;
@@ -128,6 +127,6 @@ To connect your warehouse to the Data Graph:
 ## Update user access for Segment Reverse ETL catalog
 If Segment Reverse ETL has ever run in the catalog you are configuring as the Segment connection catalog, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing catalog. Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` catalog.
 
-```SQL
+```sql
 GRANT ALL PRIVILEGES ON SCHEMA ${segment_internal_catalog}.__segment_reverse_etl TO `${client_id}`;
 ```
