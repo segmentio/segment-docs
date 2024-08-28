@@ -78,3 +78,5 @@ Segment supports the following regulation types:
 - **SUPPRESS_WITH_DELETE**: Suppress new data based on the `userId` and also delete all existing data for that ID from your workspace and our internal archives. While Segment forwards the deletion request to your downstream destinations, Segment cannot guarantee deletion in your third-party tools.
 - **DELETE_INTERNAL**: Deletes user data from within Segment archives only and not from any connected destinations.
 - **DELETE_ONLY**: Deletes user data from Segment and your connected warehouses. Also sends a deletion request to your downstream destinations.
+
+**Note**: Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might incur additional charges levied by your destination provider.
