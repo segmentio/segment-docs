@@ -2,9 +2,8 @@
 
 notes: 
   - title: Segment Extensions General Availability
-    slug: segment-extensions-ga
     description: "Segment Extensions, including dbt and Git Sync, is generally available. <br><br> Extensions provides third-party integrations that add an automated experience with your existing tools, like dbt labs for syncing models or Git repositories for managing versioning for Segment Workspace changes. dbt Extension is available to all tiers, while Git Sync is available for Team and Business plans. <br><br> For more information, see Segment's [Extensions documentation](/docs/segment-app/extensions/)."
-    date: 08-16-2024
+    date: August 16, 2024
     product-area: 
       - segment app 
     release-stage: ga
@@ -14,9 +13,8 @@ notes:
         - business
     read-more: "/docs/segment-app/extensions/"
   - title: Linked Audiences and Data Graph General Availability
-    slug: segment-linked-and-data-graph-ga
     description: "Segment's Linked Audiences and Data Graph are now Generally Available for Snowflake & Databricks. Linked Audiences empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support. The Data Graph acts as a semantic layer that allows businesses to define relationships between entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. The Data Graph makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements."
-    date: 08-23-2024
+    date: August 23, 2024
     product-area: 
       - twilio engage 
     release-stage: ga
@@ -24,3 +22,16 @@ notes:
         - unify
         - team
         - business
+    read-more: "/docs/engage/audiences/linked-audiences/"
+  - title: Delivery Overview for Storage Destinations is in Public Beta
+    description: "End-to-end observability is coming to Warehouse Destinations.  For the first time, Delivery Overview gives you a comprehensive breakdown of how streaming source events convert to warehouse rows. For more information, see the Delivery Overview documentation."
+    date: August 12, 2024
+    product-area: 
+      - segment app
+      - storage 
+    release-stage: beta
+    plan: 
+        - free
+        - team
+        - business
+    read-more: "/docs/connections/delivery-overview/#storage-destinations"
