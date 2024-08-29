@@ -31,6 +31,9 @@ The following regulation types are available:
  - **SUPPRESS_WITH_DELETE_INTERNAL:** Suppress new data and delete from Segment internals only
  - **DELETE_ONLY:** Delete existing data without suppressing any new data
 
+> info "" 
+> Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.
+
 ## Suppression Support and the Right to Revoke Consent
 
 `SUPPRESS` regulations add a user to your suppression list by the `userId`. Segment blocks suppressed users across all sources; messages you send to Segment with a suppressed `userId` are blocked at the API. These messages do not appear in the debugger, are not saved in archives and systems, and are not sent to any downstream server-side destinations. However, if you set up a destination in [device-mode](/docs/connections/destinations/#connection-modes), the events are sent directly to destinations as well. In this case, Suppression doesn't suppress the events.
