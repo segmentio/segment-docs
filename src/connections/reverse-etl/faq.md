@@ -23,3 +23,6 @@ Segment uses the [gosnowflake library](https://pkg.go.dev/github.com/snowflakedb
 
 ## Can I have multiple queries in the Query Builder?
 No. In Reverse ETL, Segment executes queries in a [common table expression](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#with_clause){:target="_blank”}, which can only bind the results from **one single** subquery. If there are multiple semicolons `;` in the query, they'll be treated as several subqueries (even if the second part is only an inline comment) and cause syntax errors.
+
+## Can I use functions with Reverse ETL?
+Functions aren't supported by Reverse ETL. As a workaround, instead of using the [Segment Connections](/docs/connections/destinations/catalog/actions-segment/) integration, use the [Webhook (Actions)](/docs/connections/destinations/catalog/actions-webhook/) integration behind your Reverse ETL extraction. With that in place, you can send data to [Source Functions](/docs/connections/functions/source-functions/). You can write the code in that function to do the work you had wanted to do in the Insert Function. From there, the data your code allows to move on, flows into a Segment source just like it would if you were using Segment Connections.
