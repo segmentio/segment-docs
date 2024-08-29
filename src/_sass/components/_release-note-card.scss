@@ -1,13 +1,10 @@
 .release-note-card {
-  color: color(gray-800);
-
   &--box {
     $this: &;
 
     position: relative;
     padding: 10px;
     background-color: color(white);
-    border: 1px solid color(gray-400);
     margin-top: 20px;
     border-radius: 8px;
     transition: 200ms ease;
@@ -71,5 +68,6 @@
 
   &--filter-button{
     display: inline-block;
+    /*width: 50%;*/
   }
 }

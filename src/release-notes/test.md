@@ -8,7 +8,7 @@ hide_toc: true
   <button class="button button-hollow" style="style=width:1500%" onclick="javascript:hideCards(ga)">GA</button>
   <button class="button button-hollow" onclick="javascript:hideCards(beta)">Beta</button>
   <button class="button button-hollow" onclick="javascript:hideCards(pilot)">Pilot</button>
-  <button class="button" style="color(#3366ff)" onclick="javascript:showCards()">Reset</button>
+  <button class="button" style="color: #3366ff" onclick="javascript:showCards()">Reset</button>
 </div>
 
 {% assign notes = site.data.release-notes.notes %}
