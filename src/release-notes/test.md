@@ -3,9 +3,13 @@ title: Release Notes Test
 hide_toc: true
 ---
 
-<button class="button button-fill filter-button" onclick="javascript:hideCards(ga)">GA</button>
-<button class="button button-fill filter-button" onclick="javascript:hideCards(beta)">Beta</button>
-<button class="button button-fill filter-button" onclick="javascript:showCards()">Reset filter</button>
+<div class="release-note-card--filter-button">
+  <p>Select one of the following buttons to see release notes in that release stage:<br></p>
+  <button class="button button-hollow" style="style=width:1500%" onclick="javascript:hideCards(ga)">GA</button>
+  <button class="button button-hollow" onclick="javascript:hideCards(beta)">Beta</button>
+  <button class="button button-hollow" onclick="javascript:hideCards(pilot)">Pilot</button>
+  <button class="button" style="color(#3366ff)" onclick="javascript:showCards()">Reset</button>
+</div>
 
 {% assign notes = site.data.release-notes.notes %}
 {% for note in notes %}

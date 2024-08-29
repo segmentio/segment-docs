@@ -60,11 +60,16 @@
     right: 20;
     padding: 5px;
   }
+
   &--hidden {
     visibility: hidden;
     left: -999px;
     width: 1px;
     height: 1px;
     overflow: hidden;
+  }
+
+  &--filter-button{
+    display: inline-block;
   }
 }
