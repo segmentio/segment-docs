@@ -17,10 +17,10 @@ hide_toc: true
 <div class="release-note-card--box">
   <span class="release-note-card--note-header" id="{{ note.title | slugify }}">{{ note.title }}</span><br>
   <div class="release-note-card--badges">
-    <span class="badge badge--purple {{ note.release-stage | slugify }}">{{ note.release-stage }}</span>
+    <span class="badge badge {{ note.release-stage | slugify }}">{{ note.release-stage }}</span>
     {% assign plans = note.plan %}
       {% for plan in plans %}
-      <span class="badge badge {{ plan | slugify }}">{{ plan }}</span>
+      <span class="badge badge--purple {{ plan | slugify }}">{{ plan }}</span>
       {% endfor %}
     {% assign product-area = note.product-area %}
       {% for item in product-area %}

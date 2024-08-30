@@ -1,17 +1,6 @@
 ## This manually-generated file powers segment.com/docs/release-notes. 
 
 notes: 
-  - title: Segment Extensions General Availability
-    description: "Segment Extensions, including dbt and Git Sync, is generally available. <br><br> Extensions provides third-party integrations that add an automated experience with your existing tools, like dbt labs for syncing models or Git repositories for managing versioning for Segment Workspace changes. dbt Extension is available to all tiers, while Git Sync is available for Team and Business plans. <br><br> For more information, see Segment's [Extensions documentation](/docs/segment-app/extensions/)."
-    date: August 16, 2024
-    product-area: 
-      - segment app 
-    release-stage: ga
-    plan: 
-        - free
-        - team
-        - business
-    read-more: "/docs/segment-app/extensions/"
   - title: Linked Audiences and Data Graph General Availability
     description: "Segment's Linked Audiences and Data Graph are now Generally Available for Snowflake & Databricks. <br> [Linked Audiences](/docs/engage/audiences/linked-audiences/) empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support. <br> The [Data Graph](/docs/unify/data-graph/) acts as a semantic layer that allows businesses to define relationships between entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. The Data Graph makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements."
     date: August 23, 2024
@@ -23,6 +12,17 @@ notes:
         - team
         - business
     read-more: "/docs/engage/audiences/linked-audiences/"
+  - title: Segment Extensions General Availability
+    description: "Segment Extensions, including dbt and Git Sync, is generally available. <br><br> Extensions provides third-party integrations that add an automated experience with your existing tools, like dbt labs for syncing models or Git repositories for managing versioning for Segment Workspace changes. dbt Extension is available to all tiers, while Git Sync is available for Team and Business plans. <br><br> For more information, see Segment's [Extensions documentation](/docs/segment-app/extensions/)."
+    date: August 16, 2024
+    product-area: 
+      - segment app 
+    release-stage: ga
+    plan: 
+        - free
+        - team
+        - business
+    read-more: "/docs/segment-app/extensions/"
   - title: Delivery Overview for Storage Destinations is in Public Beta
     description: "End-to-end observability is coming to Warehouse Destinations.  For the first time, Delivery Overview gives you a comprehensive breakdown of how streaming source events convert to warehouse rows. <br> For more information, see the [Delivery Overview](/docs/connections/delivery-overview/#storage-destinations) documentation."
     date: August 12, 2024
@@ -35,3 +35,78 @@ notes:
         - team
         - business
     read-more: "/docs/connections/delivery-overview/#storage-destinations"
+  - title: Facebook Custom Audiences (Actions) Public Beta
+    description: "The [Facebook Custom Audiences (Actions) destination](/docs/connections/destinations/catalog/actions-facebook-custom-audiences/) is now in Public Beta. Deliver effective Facebook Ads campaigns by defining and syncing custom audiences to power ad suppression, acquisition (using lookalikes), retargeting, and more. <br><br> This destination sends audiences, or lists of users, from your data warehouse to Facebook Custom Audiences using Reverse ETL. Syncs can add or remove users from your Facebook Custom Audiences as records are created, updated, or deleted in your warehouse."
+    date: August 12, 2024
+    product-area: 
+      - destinations
+    release-stage: beta
+    plan: 
+        - free
+        - team
+        - business
+    read-more: "/docs/connections/destinations/catalog/actions-facebook-custom-audiences/"
+  - title: Trait Activation in Destination Functions General Availability
+    description: "Trait Activation in Destination Functions is available to all users on Business Tier plans with Engage Foundations. This feature enables you to pass Traits and Identifiers on the Segment Profile to Destination Functions used in your Engage flows, eliminating the need for calling the Public Profile API. For more information, see the [Trait Activation documentation](/docs/engage/trait-activation/)."
+    date: July 30, 2024
+    product-area: 
+      - twilio engage
+    release-stage: ga
+    plan: 
+        - addon
+        - business
+    read-more: "/docs/engage/trait-activation/"
+  - title: LinkedIn Conversions API General Availability
+    description: "The [LinkedIn Conversions API (CAPI) destination](/docs/connections/destinations/catalog/actions-linkedin-conversions/) is now generally available. Optimize and measure your LinkedIn ad campaigns by sending end-user conversion events to LinkedIn."
+    date: July 25, 2024
+    product-area: 
+      - destinations
+    release-stage: ga
+    plan: 
+        - free
+        - team
+        - business
+    read-more: "/docs/connections/destinations/catalog/actions-linkedin-conversions/"
+  - title: Google Display and Video 360 (Actions) General Availability
+    description: "The Google Display and Video 360 destination, rebuilt on Destination Actions, is now generally available. <br><br> This destination lets you streamline activation of end-to-end ad campaigns under Google Marketing Platform."
+    date: July 25, 2024
+    product-area: 
+      - destinations
+    release-stage: ga
+    plan: 
+        - free
+        - team
+        - business
+    read-more: "/docs/connections/destinations/catalog/actions-display-video-360/"
+  - title: Marketo Static Lists (Actions) General Availability
+    description: "The [Marketo Static Lists destination](/docs/connections/destinations/catalog/actions-marketo-static-lists/), rebuilt on Destination Actions, is now generally available. Sync profiles as a List to Marketo for your marketing campaigns from an Engage Audience, Linked Audience, or a Reverse ETL model."
+    date: July 25, 2024
+    product-area: 
+      - destinations
+    release-stage: ga
+    plan: 
+        - free
+        - team
+        - business
+    read-more: "/docs/connections/destinations/catalog/actions-marketo-static-lists/"
+  - title: Custom Domain General Availability
+    description: "Custom Domain is a managed service run by Segment, available to all Business Tier customers at no additional cost. Custom Domain enables you to configure a first-party subdomain over HTTPS to track event requests through your domain instead of Segment's default domain. This allows you to collect comprehensive first-party data and build a more complete view of your customer's behaviors. For more information, see the [Custom Domain documentation](/docs/connections/sources/custom-domain/)."
+    date: July 25, 2024
+    product-area: 
+      - sources
+    release-stage: ga
+    plan: 
+        - business
+    read-more: "/docs/connections/sources/custom-domain/"
+  - title: Predictions is now HIPAA Eligible
+    description: Predictions, Segment's artificial intelligence and machine learning feature that lets you predict the likelihood that users will perform any event tracked in Segment, is now HIPAA Eligible. [HIPAA Eligible workspaces](/docs/privacy/hipaa-eligible-segment/) require a Business Assosciate Addendum (BAA). For information about Twilio's HIPAA Eligible Services, see the [HIPAA Eligible Services](https://www.twilio.com/content/dam/twilio-com/global/en/other/hippa/pdf/HIPAA-Eligible-Services.pdf){:target="_blank”} documentation.
+    date: July 24, 2024
+    product-area:
+      - twilio engage
+      - compliance
+    release-stage: ga
+    plan:
+      - business
+      - add on
+      - twilio engage premier
+    read-more: "/docs/unify/traits/predictions/"
