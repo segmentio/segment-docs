@@ -24,7 +24,7 @@ To add your warehouse as a source:
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
 2. Click **+ Add Reverse ETL source**.
 3. Select the source you want to add. 
-4. Follow the corresponding guide to setup the required permissions for your Reverse ETL source:
+4. Follow the corresponding guide to set up the required permissions for your Reverse ETL source:
   - [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup)
   - [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup)
   - [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup)
@@ -40,7 +40,7 @@ Models define sets of data you want to sync to your Reverse ETL destinations. A 
 2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future.)
 3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destination(s).
 4. Choose a column to use as the unique identifier for each record in the **Unique Identifier column** field.
-    * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected, such as a primary key. This column is used to detect new, updated, and deleted records.
+    * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected, like a primary key. This column is used to detect new, updated, and deleted records.
 5. Click **Preview** to see a preview the first 10 records for the SQL query. 
     * Segment caches preview queries and result sets in the UI, and stores the preview cache at the source level. If you make two queries for the same source, Segment returns identical preview results. However, during the next synchronization, the latest data will be sent to the connected destinations.
 6. Click **Next**.
@@ -67,7 +67,7 @@ To add your first destination:
 4. Select the Reverse ETL source you want to connect the destination to.
 5. Enter the **Destination name** and click **Create Destination**.
 6. Enter the required information on the **Settings** tab of the destination.
-7. Navigate to the destination settings tab and enable the destination. Note: If the destination is disabled, then Segment won't be able to start a sync.
+7. Navigate to the destination settings tab and enable the destination. If the destination is disabled, then Segment won't be able to start a sync.
 
 ## Step 4: Create mappings
 Mappings enable you to map the data you extract from your warehouse to the fields in your destination. A destination can have multiple mappings.
@@ -79,14 +79,14 @@ To create a mapping:
 4. Select the model to sync from.
 5. Select the **Action** you want to sync and click **Next**.
       * Actions determine the information sent to the destination. The list of Actions will be unique to each destination.
-6. Add the mapping name. The mapping name will default to the Action's name (e.g. 'Track Event'), but can be customized to allow you to identify the mapping across others.
+6. Add a name for your mapping. The mapping name defaults to the Action's name (for example, 'Track Event'), but can be customized to allow you to identify the mapping across others.
 7. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
       * Added records
       * Updated records
       * Added or updated records
       * Deleted records
 8. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
-9. Select how often you want the schedule to sync in **Schedule configuration**.
+9. Select how often you want Segment to sync your data under **Schedule configuration**.
     * **Interval**: Extractions perform based on a selected time cycle. You can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
     * **Day and time**: Extractions perform at specific times on selected days of the week.
 10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
