@@ -164,6 +164,7 @@ out the following resources to learn more about regular expressions so you can
 build new custom matchers:
 
 - [RegExr](https://regexr.com/) - an online tool to experiment with regular expressions and test them
+- [Cyrilex](https://extendsclass.com/regex-tester.html) - an online visual tool for experimenting with and testing regular expressions
 - [RegexOne](https://regexone.com/) - a tutorial which takes you from regular expression basics to advanced topics
 - [Regexp Cheatsheet](https://devhints.io/regexp) - a handy cheatsheet to have nearby when you're writing regular expressions
 
