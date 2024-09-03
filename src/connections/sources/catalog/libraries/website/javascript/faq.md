@@ -120,14 +120,13 @@ The Analytics.js library sets the `context.page.referrer` value from the [`windo
 
 There are no rate limits in place for the CDN settings endpoint.
 
-## Does Segment offer a way to convert IP addresses to geolocation data, and what are my options if I need this functionality?
+## I need to convert IP addresses to geolocation data. Can Segment do it for me?
 
-Segment does not automatically convert IP addresses to geolocation data. Our platform focuses on collecting raw data, leaving post-processing tasks like IP to geolocation conversion to your downstream tools, such as Google Analytics.
+Segment doesn't convert IP addresses to geolocation data. Segment focuses on collecting raw data, leaving post-processing tasks like IP-to-geolocation conversion to your downstream tools, like Google Analytics.
 
 If you need this functionality, you have a couple of options:
 
-* Use Downstream Tools: Many analytics platforms, like Google Analytics, can automatically handle IP-to-geolocation conversion.
-
-* Utilize a Third-Party API: Alternatively, you can use third-party services like Geolocation API to convert IP addresses to geolocation data. Afterward, you can pass this information as a trait in Identify calls or as a property in Track calls to Segment. Note that implementing this solution will require some engineering resources. This allows you to manage geolocation data according to your specific needs.
+**Use downstream tools**: Many analytics platforms, like Google Analytics, can automatically handle IP-to-geolocation conversion.
+**Use a third-party API**: Alternatively, you can use third-party services like Geolocation API to convert IP addresses to geolocation data. Afterward, you can pass this information as a trait in Identify calls or as a property in Track calls to Segment. This allows you to manage geolocation data according to your specific needs, though it will likely require engineering resources.
 
 
