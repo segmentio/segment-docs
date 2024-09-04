@@ -33,7 +33,7 @@ To add your warehouse as a source:
   - [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup)
 
 ## Step 2: Add a model
-Models define sets of data you want to sync to your Reverse ETL destinations. A source can have multiple models. Segment supports SQL models and dbt models.
+Models define sets of data you want to sync to your Reverse ETL destinations. A source can have multiple models. Segment supports [SQL models](/docs/connections/reverse-etl/setup/#step-4-create-mappings) and [dbt models](/docs/segment-app/extensions/dbt/).
 
 ### SQL editor
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab. Select your source and click **Add Model**.
@@ -55,7 +55,7 @@ In Reverse ETL, destinations are the business tools or apps you use that Segment
 
 Refer to the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/) to view the supported actions destinations. Reverse ETL supports to unique destinations:
 - **[Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination)**: Send warehouse data back into Segment to leverage your existing mappings or access non-actions destinations in the Connections catalog.
-- **[Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/)**: Engage users can use this destinaton to create and update [Profiles](/docs/unify/) that can then be accessed through [Profile API](/docs/unify/profile-api/) and activated within [Twilio Engage](/docs/engage). 
+- **[Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/)**: Engage Premier Subscriptions users can use Reverse ETL to sync subscription data from their warehouses to destinations.
 
 > info "Separate endpoints and credentials required to set up third party destinations"
 > Before you begin setting up your destinations, note that each destination has different authentication requirements. See the documentation for your intended destination for more details.
