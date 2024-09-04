@@ -112,6 +112,7 @@ To create a mapping:
 11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
     * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
+    * *(Optional)* Click **Suggest Mappings** to get suggested mappings. Learn more about [suggested mappings](#suggested-mappings).
 12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
 13. Click **Create Mapping**.
 14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
@@ -119,6 +120,16 @@ To create a mapping:
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
 To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
+
+### Suggested mappings
+
+> info ""
+> Suggested mappings is fully available for RETL mappings, and is in public beta for event streams and connections. 
+
+Segment offers suggested mappings that automatically propose relevant destination fields for both model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the setup. For more information, see [Segment's suggested mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/) and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
+
+> warning ""
+> Make sure to review the suggested mappings for accuracy before finalizing as the suggestions aren't guaranteed to be 100% accurate. 
 
 ### Edit your mapping
 
