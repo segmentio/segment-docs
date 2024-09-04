@@ -19,11 +19,11 @@ When you enable Parse.ly from the Segment web app, your changes appear in the Se
 
 Remember to remove the Parse.ly native snippet from your page.
 
-Parsely is more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic){:target="_blank"}.
+Parsely is more useful when you implement JSON-LD metadata across your website as described in Parse.ly's [Metadata: Setup and configuration](https://docs.parse.ly/metadata/){:target="_blank"} documentation.
 
 ## Page
 
-By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/){:target="_blank"}, Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's Page method.
+By default, unless you are using [Dynamic Tracking](https://docs.parse.ly/gtm-dynamic-tracking/){:target="_blank"}, Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's Page method.
 
 If you are using dynamic tracking, you must explicitly let us know in your [integration settings](#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
 
@@ -80,11 +80,11 @@ analytics.alias("507f191e81");
 ```
 
 
-### Mapping custom properties to semantic Parsely properties
+### Mapping custom properties to semantic Parse.ly properties
 
-If you'd like to map certain semantic Parse.ly properties to your own custom properties (ones that do not abide by our [page spec](/docs/connections/spec/page), you can define your mappings in your Segment destination settings! You can put the name of your Segment property on the left and the Parse.ly property on the right hand side.
+If you'd like to map certain semantic Parse.ly properties to your own custom properties (ones that do not abide by Segment's [Page spec](/docs/connections/spec/page)), you can define your mappings in your Segment destination settings. You can put the name of your Segment property on the left and the Parse.ly property on the right hand side.
 
-We currently support mapping the following Parse.ly properties (make sure you spell these correctly on the right hand side of this setting!):
+Segment supports mapping the following Parse.ly properties (make sure you spell these correctly on the right hand side of this setting.):
 
 * `articleSection`
 * `thumbnailUrl`
@@ -99,11 +99,11 @@ We currently support mapping the following Parse.ly properties (make sure you sp
 
 ### Video Content Started
 
-When a user starts playback of a video, you should use our [Video Content Started](/docs/connections/spec/video/#content-events) event. We will map the properties from the Video Content Started event to the following Parse.ly video metadata fields:
+When a user starts playback of a video, you should use Segment's [Video Content Started](/docs/connections/spec/video/#content-events) event. Segment maps the properties from the Video Content Started event to the following Parse.ly video metadata fields:
 
 <table>
     <tr>
-      <td>**Parsely Parameter**</td>
+      <td>**Parse.ly Parameter**</td>
       <td>**Segment Property**</td>
       <td>**Data Type**</td>
     </tr>
@@ -176,7 +176,7 @@ When a user pauses playback of a video, you should use our [Video Playback Pause
 
 ### Video Playback Interrupted
 
-When a playback of a video is interrupted, you should use our [Video Playback Interrupted](/docs/connections/spec/video/#playback-events) event. This event just takes an `assetId` and maps to Parse.ly's `reset` method (documentation [here](https://www.parse.ly/help/integration/video_v2/){:target="_blank"}).
+When a playback of a video is interrupted, you should use our [Video Playback Interrupted](/docs/connections/spec/video/#playback-events) event. This event just takes an `assetId` and maps to Parse.ly's `reset` method (documented in the Parse.ly [Video Tracking](https://docs.parse.ly/parse-ly-video-tracking/){:target="_blank"} documentation).
 
 **Note:** this event is only relevant for web tracking. Our server side integration does not support this event.
 

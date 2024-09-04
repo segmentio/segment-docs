@@ -81,6 +81,10 @@ The Segment App doesn't show detected Personally Identifiable Information (PII) 
 
 Workspace Owners can grant specific individuals or groups access to PII from their Access Management settings. PII Access only applies to the resources a user or user group has access to; it doesn't expand a user's access beyond the original scope. All Workspace Owners have PII access by default.
 
+For example, users with PII Access and Source Admin/Read-Only permissions can view any PII present in the Source Debugger. However, users with the PII Access role don't have Privacy Portal access.
+
+Only users with the Workspace Owner role can access the Privacy Portal.
+
 
 ## Roles for managing Engage destinations
 

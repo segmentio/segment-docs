@@ -3,11 +3,9 @@ title: Clearbit Reveal Destination
 rewrite: true
 id: 57e0726680412f644ff36883
 ---
-[Clearbit Reveal](https://clearbit.com/segment){:target="_blank"} helps customers instantly match IP addresses with company names, and see full profiles for all site visitors. It turns your anonymous web traffic into a full company profile — complete with industry, employee count, funding details, and much more. You can find a list of the different attributes you can collect with Clearbit [here](https://clearbit.com/attributes){:target="_blank"}.
+[Clearbit Reveal](https://clearbit.com/segment){:target="_blank"} helps customers instantly match IP addresses with company names, and see full profiles for all site visitors. It turns your anonymous web traffic into a full company profile — complete with industry, employee count, funding details, and much more. You can find a list of the different attributes you can collect with Clearbit [on Clearbit's attributes page](https://clearbit.com/attributes){:target="_blank"}.
 
 ## Getting Started
-
-
 
 Setup within Segment:
 1. From the Segment web app, click **Catalog**.

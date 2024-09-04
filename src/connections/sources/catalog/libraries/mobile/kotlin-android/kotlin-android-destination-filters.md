@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Destination Filters
+title: Analytics-Kotlin Destination Filters
 strat: kotlin-android
 ---
 
