@@ -87,7 +87,7 @@ To create a mapping:
       * Deleted records
 8. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
 9. Select how often you want Segment to sync your data under **Schedule configuration**.
-    * **Interval**: Extractions perform based on a selected time cycle. You can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
+    * **Interval**: Extractions perform based on a selected time cycle. Select one of the following options: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
     * **Day and time**: Extractions perform at specific times on selected days of the week.
 10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
