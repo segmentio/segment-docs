@@ -86,7 +86,7 @@ To add your first destination:
 ## Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
-> info "Simplified Mappings"
+> info "Some Reverse ETL destinations support Simplified Mappings"
 > Some Destination Actions offer a simplified mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your source to your destination. This offers you more granular control over the way data flows to your destination. 
 >
 > For more information about Simplified Mappings, see the [Simplified Mappings](/docs/connections/destinations/#simplified-mappings) documentation.
