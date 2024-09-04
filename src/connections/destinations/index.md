@@ -44,11 +44,9 @@ Many destinations can accept data from all types of sources, but some are only c
 
 In June 2021, Segment released a new form of destinations called [Destinations Actions](/docs/connections/destinations/actions/). These destinations allow users to create *subscriptions*: sets of conditions in which data is sent to the destinations and data mappings, to format that data for the destination tool. Segment watches for data that matches the conditions you create (*triggers*) for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
-### Simplified Mappings
+## Simplified Mappings
 
-Some destinations offer a simplified mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your source to your destination. This offers you more granular control over the way data flows to your destination. 
-
-Segment allows you to 
+Some Destination Actions offer a simplified mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your source to your destination. This offers you more granular control over the way data flows to your destination. 
 
 The following destinations support Simplified Mappings: 
 - [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
