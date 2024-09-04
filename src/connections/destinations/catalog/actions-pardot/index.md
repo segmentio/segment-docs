@@ -34,7 +34,7 @@ To get started using Pardot with Segment:
 4. Accept the Beta terms.
 5. Select the source that will send data to Pardot (Actions) and follow the steps to name your destination.
 6. On the **Settings** tab, authenticate with Salesforce Pardot using OAuth. Input the Pardot Business Unit ID associated with your Pardot Account, and click **Save**.
-7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 8. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html %}

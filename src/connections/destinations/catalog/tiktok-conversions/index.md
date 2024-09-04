@@ -38,7 +38,7 @@ The TikTok Conversions destination is configured to use the TikTok Events API. T
 3. Click **Configure TikTok Conversions**.
 4. Select the source that will send data to TikTok Conversions and follow the steps to name your destination.
 5. On the Settings tab, enter in your TikTok Access Token and Pixel Code and click **Save**.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 {% include components/actions-fields.html %}
 

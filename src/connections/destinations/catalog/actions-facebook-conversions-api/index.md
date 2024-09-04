@@ -60,7 +60,7 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 3. Click **Configure Facebook Conversions API (Actions)** in the top-right corner of the screen.
 4. Select the source that will send data to Facebook Conversions API and follow the steps to name your destination.
 5. On the **Settings** tab, enter in your Pixel ID and click **Save**.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 {% include components/actions-fields.html %}
 
