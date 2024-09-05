@@ -44,6 +44,19 @@ Many destinations can accept data from all types of sources, but some are only c
 
 In June 2021, Segment released a new form of destinations called [Destinations Actions](/docs/connections/destinations/actions/). These destinations allow users to create *subscriptions*: sets of conditions in which data is sent to the destinations and data mappings, to format that data for the destination tool. Segment watches for data that matches the conditions you create (*triggers*) for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
+Some destinations offer a streamlined mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your warehouse to your destination. This offers you more granular control over the way data flows to your destination and gets data flowing into your destinations more quickly. 
+
+The following destinations support streamlined mappings: 
+- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
+
+To create a streamlined mapping: 
+1. Navigate to the overview page for your destination and select the Mappings tab.
+2. Click **+ New Mapping**.
+3. Define the behavior each sync should have by selecting a pre-built mapping or an Action, then click **Next**. 
+4. Define an event trigger, map required fields, and complete any optional setup steps. When you're finished configuring your mapping, click **Next**. 
+5. Enter a name for your mapping, then click **Save and enable**. 
+
+
 ## Connection modes
 
 {% include content/connection-modes-intro.md %}
