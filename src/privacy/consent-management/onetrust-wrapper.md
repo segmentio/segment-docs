@@ -7,7 +7,7 @@ This guide about Segment's Analytics.js OneTrust wrapper contains context about 
 
 For questions about OneTrust Consent and Preference Management behavior, see the [OneTrust documentation](https://my.onetrust.com/s/topic/0TO3q000000kIWOGA2/universal-consent-preference-management?language=en_US){:target="_blank"}. 
 
-For questions about the Analytics.js OneTrust wrapper, see the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. 
+For questions about the [Analytics.js OneTrust wrapper](https://segment.com/docs/privacy/consent-management/onetrust-wrapper/), see the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. 
 
 ## OneTrust consent banner behavior
 
