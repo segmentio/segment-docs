@@ -86,11 +86,6 @@ To add your first destination:
 ## Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
-> info "Some Reverse ETL destinations support Simplified Mappings"
-> Some Destination Actions offer a simplified mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your source to your destination. This offers you more granular control over the way data flows to your destination. 
->
-> For more information about Simplified Mappings, see the [Simplified Mappings](/docs/connections/destinations/#simplified-mappings) documentation.
-
 To create a mapping:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
@@ -124,6 +119,22 @@ To create a mapping:
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
 To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
+
+Some destinations offer a streamlined mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your warehouse to your destination. This offers you more granular control over the way data flows to your destination and gets data flowing into your destinations more quickly. 
+
+The following destinations support streamlined mappings: 
+- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
+
+To create a streamlined mapping: 
+1. Navigate to the overview page for the destination attached to your Reverse ETL source and click **Add Mapping**.
+2. Select the Reverse ETL model you would like to power your mapping and click **Next**. 
+3. Define the behavior each sync should have. For example, select the records you would like to sync, the way you would like to Segment to update data in your destination, and how Segment should respond when you delete a record in your warehouse.
+4. Select a "key", or the unique value Segment should use to match records between your warehouse and your destination.
+    - _(Optional)_: Select one or more columns to sync to your downstream destination. This is not required, but can help you control the granularity of data that flows to your downstream destination. 
+    - _(Optional)_: Send a test event downstream to verify that your records sync as expected. 
+7. When you're satisfied with your mappings, click **Next**. 
+8. On the Settings page, enter a name for your destination and set a sync schedule. 
+9. Click **Save and enable** to create your mapping. 
 
 ### Edit your mapping
 

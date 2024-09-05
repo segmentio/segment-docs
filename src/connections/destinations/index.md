@@ -44,24 +44,6 @@ Many destinations can accept data from all types of sources, but some are only c
 
 In June 2021, Segment released a new form of destinations called [Destinations Actions](/docs/connections/destinations/actions/). These destinations allow users to create *subscriptions*: sets of conditions in which data is sent to the destinations and data mappings, to format that data for the destination tool. Segment watches for data that matches the conditions you create (*triggers*) for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
-## Simplified Mappings
-
-Some Destination Actions offer a simplified mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your source to your destination. This offers you more granular control over the way data flows to your destination. 
-
-The following destinations support Simplified Mappings: 
-- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
-
-To create a Simplified Mapping: 
-1. Navigate to the overview page for the destination attached to your Reverse ETL source and click **Add Mapping**.
-2. Select the Reverse ETL model you would like to power your mapping and click **Next**. 
-3. Define the behavior each sync should have. For example, select the records you would like to sync, the way you would like to Segment to update data in your destination, and how Segment should respond when you delete a record in your warehouse.
-4. Select a "key", or the unique value Segment should use to match records between your warehouse and your destination.
-    - _(Optional)_: Select one or more columns to sync to your downstream destination. This is not required, but can help you control the granularity of data that flows to your downstream destination. 
-    - _(Optional)_: Send a test event downstream to verify that your records sync as expected. 
-7. When you're satisfied with your mappings, click **Next**. 
-8. On the Settings page, enter a name for your destination and set a sync schedule. 
-9. Click **Save and enable** to create your mapping. 
-
 ## Connection modes
 
 {% include content/connection-modes-intro.md %}
