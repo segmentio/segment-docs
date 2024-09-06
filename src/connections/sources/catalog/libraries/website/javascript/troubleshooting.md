@@ -40,7 +40,7 @@ This error can occur for a few reasons:
 
 3. Browser Cache: Try clearing the browser cache, as this is a common cause for ChunkLoadError.
 
-4. Cloudflare Caching: If you're using Cloudflare, disable caching for the Segment JS file.
+4. Cloudflare Caching: If you're using Cloudflare to proxy Segment, please disable caching for the Segment JS file.
 
 ## Do you see events appear in your debugger?
 
