@@ -91,15 +91,20 @@ To create a mapping:
 2. Select the destination that you want to create a mapping for.  
 3. Click **Add Mapping**.
 4. Select the model to sync from.
-5. Select the **Action** you want to sync and click **Next**.
-      * Actions determine the information sent to the destination. The list of Actions will be unique to each destination.
-6. Add the mapping's name. The initial name will default to the Action's name (for example, 'Track Event') but is completely customizable. It will allow you to identify the mapping amongst others.
-7. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
-      * Added records
-      * Updated records
-      * Added or updated records
-      * Deleted records
-8. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
+5. In the Define sync behavior section, select the **Action** you want to sync.
+      * Actions determine the information sent to the destination. The list of Actions are unique to each destination.
+6. Select which records to send to your destination after Segment completes extracting data based on your model.   
+   * As of September 2024, some destinations have [sync modes](/docs/connections/destinations/#sync-modes), which let you specify how Segment should send data to the destination. Sync modes are unique to each destination. 
+   * Destinations without sync modes let you select from the following options: 
+     * Added records  
+     * Updated records  
+     * Added or updated records  
+     * Deleted records
+7. In the **Map fields** section, define how to map the record columns from your model to your destination. Map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of Action selected.  
+   * If you’re setting up a Destination Action, some mapping fields might require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays) for more information.  
+   <!---* _(Optional)_ Use the [Suggested Mappings](#suggested-mappings) feature to identify and match near-matching field names to streamline the field mapping process. --> 
+8. In the **Send test record section**, select a test record to preview the fields that you mapped to your destination. When you've verified that the records appear as expected, click **Next**. 
+9. Enter a name for your mapping. The name initially defaults to the Action's name, for example, `Track Event`, but you can make changes to this default name.
 9. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
     * **Interval**: Extractions perform based on a selected time cycle.
     * **Day and time**: Extractions perform at specific times on selected days of the week.
@@ -109,32 +114,8 @@ To create a mapping:
     * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time.
         * You can only choose to start the extraction at the top of the hour.
         * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
-11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
-    * You map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
-12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
-13. Click **Create Mapping**.
-14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
-15. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
-    * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
-To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
-
-Some destinations offer a streamlined mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your warehouse to your destination. This offers you more granular control over the way data flows to your destination and gets data flowing into your destinations more quickly. 
-
-The following destinations support streamlined mappings: 
-- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
-
-To create a streamlined mapping: 
-1. Navigate to the overview page for the destination attached to your Reverse ETL source and click **Add Mapping**.
-2. Select the Reverse ETL model you would like to power your mapping and click **Next**. 
-3. Define the behavior each sync should have. For example, select the records you would like to sync, the way you would like to Segment to update data in your destination, and how Segment should respond when you delete a record in your warehouse.
-4. Select a "key", or the unique value Segment should use to match records between your warehouse and your destination.
-    - _(Optional)_: Select one or more columns to sync to your downstream destination. This is not required, but can help you control the granularity of data that flows to your downstream destination. 
-    - _(Optional)_: Send a test event downstream to verify that your records sync as expected. 
-7. When you're satisfied with your mappings, click **Next**. 
-8. On the Settings page, enter a name for your destination and set a sync schedule. 
-9. Click **Save and enable** to create your mapping. 
+To add multiple mappings from your warehouse to your destination, repeat steps 1-10 above.
 
 ### Edit your mapping
 

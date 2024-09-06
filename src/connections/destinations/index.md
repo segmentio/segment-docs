@@ -44,19 +44,6 @@ Many destinations can accept data from all types of sources, but some are only c
 
 In June 2021, Segment released a new form of destinations called [Destinations Actions](/docs/connections/destinations/actions/). These destinations allow users to create *subscriptions*: sets of conditions in which data is sent to the destinations and data mappings, to format that data for the destination tool. Segment watches for data that matches the conditions you create (*triggers*) for the subscription, and when the conditions are met, uses an explicit mapping to transform the incoming data to an output format that your destination can use.
 
-Some destinations offer a streamlined mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your warehouse to your destination. This offers you more granular control over the way data flows to your destination and gets data flowing into your destinations more quickly. 
-
-The following destinations support streamlined mappings: 
-- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
-
-To create a streamlined mapping: 
-1. Navigate to the overview page for your destination and select the Mappings tab.
-2. Click **+ New Mapping**.
-3. Define the behavior each sync should have by selecting a pre-built mapping or an Action, then click **Next**. 
-4. Define an event trigger, map required fields, and complete any optional setup steps. When you're finished configuring your mapping, click **Next**. 
-5. Enter a name for your mapping, then click **Save and enable**. 
-
-
 ## Connection modes
 
 {% include content/connection-modes-intro.md %}
@@ -119,6 +106,19 @@ Some features that usually require Device-mode include: automatic A/B testing, d
 The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes. Segment provides a list of [all destinations and their connection modes](/docs/connections/destinations/cmodes-compare/).
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
+
+## Sync modes
+
+In September 2024, Segment released a new sync modes capability that allows users to define how changes in the source should be sent downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates destination based on the source data. 
+
+The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you're syncing customer data, you might have the option to Insert, Update, or Upsert records.
+
+Available sync modes include: 
+- **Update**: Modify existing records in the destination without adding new ones.
+- **Insert**: Add new records without altering existing data.
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
+- **Remove**: Remove records from a list, audience, or journey.
 
 ## Add a destination
 To add a Destination:
