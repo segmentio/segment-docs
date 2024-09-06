@@ -185,19 +185,6 @@ If necessary, click **New Mapping** to create a new, blank action.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 7. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
-Some destinations offer a streamlined mapping experience, where you directly configure the sync behavior Segment uses to send data to destination rather than mapping fields from your warehouse to your destination. This offers you more granular control over the way data flows to your destination and gets data flowing into your destinations more quickly. 
-
-The following destinations support streamlined mappings: 
-- [Google Ads Conversions](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/)
-
-To create a streamlined mapping: 
-1. Navigate to the overview page for your destination and select the Mappings tab.
-2. Click **+ New Mapping**.
-3. Define the behavior each sync should have by selecting a pre-built mapping or an Action, then click **Next**. 
-4. Define an event trigger, map required fields, and complete any optional setup steps. When you're finished configuring your mapping, click **Next**. 
-5. Enter a name for your mapping, then click **Save and enable**. 
-
-
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
 
