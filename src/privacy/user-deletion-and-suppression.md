@@ -32,8 +32,7 @@ The following regulation types are available:
  - **DELETE_ONLY:** Delete existing data without suppressing any new data
 
 
-> info "" 
-> Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.
+> info "Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers."
 
 ## Suppression Support and the Right to Revoke Consent
 
