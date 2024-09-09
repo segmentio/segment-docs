@@ -34,6 +34,7 @@ csv
 deeplink
 Dev
 Doubleclick
+Databricks
 endcapture
 endfor
 endif
