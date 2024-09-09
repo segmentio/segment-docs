@@ -67,7 +67,7 @@ To edit your model:
 ## Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
-Reverse ETL supports 30+ destinations: see all destinations listed in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/). If the destination you want to send data to is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+Reverse ETL supports the destinations in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/). If the destination you want to send data to is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
 
 Engage users can use the [Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/) to create and update [Profiles](/docs/unify/) that can then be accessed through [Profile API](/docs/unify/profile-api/) and activated within [Twilio Engage](/docs/engage). 
 

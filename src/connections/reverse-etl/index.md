@@ -6,10 +6,10 @@ redirect_from:
   - '/reverse-etl/'
 ---
 
-Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide and syncs the data to your third party destinations. 
+Reverse ETL (Extract, Transform, Load) extracts data from a warehouse using a query you provide and syncs this warehouse data to your third party destinations. 
 
 Use Reverse ETL when you want to:
-* **Enable your marketing teams**: Sync audiences and other data built in the warehouse to multi-channel marketing tools, like Braze, Hubspot, or Salesforce Marketing Cloud, to personalize marketing campaigns.
+* **Elevate marketing campaigns**: Sync audiences and other data built in the warehouse to multi-channel marketing tools, like Braze, Hubspot, or Salesforce Marketing Cloud, to personalize marketing campaigns.
 * **Enrich your customer profiles**: Sync enriched data to destinations like Mixpanel for a more complete view of the customer, or enrich Segment Profiles with data from your warehouse.
 * **Activate data in Twilio Engage**: Send data in the warehouse back into Segment as events that can be activated in all supported destinations, including Twilio Engage destinations.
 * **Strengthen your conversion events**: Pass offline or enriched data to conversion APIs like Facebook, Google Ads, TikTok, or Snapchat.
@@ -26,7 +26,7 @@ Use Reverse ETL when you want to:
     href="/docs/connections/reverse-etl/setup"
     icon="getting-started.svg"
     title="Set up Reverse ETL"
-    description="Add a Reverse ETL source, set up a model, add a destination, and create mappings to sync data from your warehouse to your downstream destinations."
+    description="Set up the infrastructure you need to sync data from your warehouse to your downstream destinations."
   %}
   
   {% include components/reference-button.html
@@ -53,7 +53,7 @@ Learn more about the system that powers Reverse ETL, supported destinations, and
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/reverse-etl-catalog"
       title="Destination catalog"
-      description="View the destinations that support Reverse ETL sources."
+      description="View the destinations that you can connect to your Reverse ETL sources."
     %}
   </div>
 
