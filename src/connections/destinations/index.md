@@ -115,7 +115,6 @@ The available sync modes can vary based on the destination, integration type, an
 
 Available sync modes include: 
 - **Update**: Modify existing records in the destination without adding new ones.
-- **Insert**: Add new records without altering existing data.
 - **Upsert**: Update existing records and add new ones, if necessary.
 - **Add**: Add records to a list, segment, or journey.
 - **Remove**: Remove records from a list, audience, or journey.
