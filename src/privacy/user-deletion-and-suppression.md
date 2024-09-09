@@ -31,7 +31,8 @@ The following regulation types are available:
  - **SUPPRESS_WITH_DELETE_INTERNAL:** Suppress new data and delete from Segment internals only
  - **DELETE_ONLY:** Delete existing data without suppressing any new data
 
-> info "" 
+
+> info ""
 > Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.
 
 ## Suppression Support and the Right to Revoke Consent
