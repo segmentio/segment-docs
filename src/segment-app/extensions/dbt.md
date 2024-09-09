@@ -48,7 +48,7 @@ To set up dbt Cloud:
 
 1. In your Segment workspace, navigate to **Settings > Extensions**.
 2. Click **Manage dbt Cloud**.
-3. Add your dbt Cloud API key, and, optionally, a custom subdomain. Click **Save**.
+3. Add your dbt Cloud API key (this should be your dbt Personal Access Token ), and, optionally, a custom subdomain (by default, the subdomain is set to 'cloud'.  Your custom subdomain can be found in the url, for example https://cloud.getdbt.com/). Click **Save**.
 
 ### Model syncs
 
