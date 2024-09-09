@@ -111,7 +111,7 @@ In order to override the default, check the destination settings pane in the Seg
 
 In September 2024, Segment released a new sync modes capability that allows users to define how changes in the source should be sent downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates destination based on the source data. 
 
-The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you're syncing customer data, you might have the option to Insert, Update, or Upsert records.
+The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you sync customer data, you might have the option to Insert, Update, or Upsert records.
 
 Available sync modes include: 
 - **Update**: Modify existing records in the destination without adding new ones.
