@@ -404,9 +404,9 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 
 If the module detects that it can't flush faster than it's receiving messages, it'll simply stop accepting messages. This means your program will never crash because of a backed up analytics queue. The default `max_queue_size` is `10000`.
 
-### How do I flush right now?!
+### Flush
 
-You can also flush on demand. For example, at the end of your program, you'll want to flush to make sure there's nothing left in the queue. Just call the `flush` method:
+At the end of your program, you'll want to flush to make sure there's nothing left in the queue by calling the `flush` method:
 
 ```python
 analytics.flush()
