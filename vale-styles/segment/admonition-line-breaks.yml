@@ -1,0 +1,7 @@
+extends: conditional
+message: "Add a line break before adding an alert."
+link: https://segment.com/docs/utils/formatguide/#alerts
+
+level: warning
+first: '^.*[^\s].*$'
+second: '^>\sinfo|warning|error\s"'
