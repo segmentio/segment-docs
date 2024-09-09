@@ -91,10 +91,10 @@ To create a mapping:
 2. Select the destination that you want to create a mapping for.  
 3. Click **Add Mapping**.
 4. Select the model to sync from.
-5. In the Define sync behavior section, select the **Action** you want to sync.
+5. In the **Define sync behavior** section, select the **Action** you want to sync.
       * Actions determine the information sent to the destination. The list of Actions are unique to each destination.
 6. Select which records to send to your destination after Segment completes extracting data based on your model.   
-   * As of September 2024, some destinations have [sync modes](/docs/connections/destinations/#sync-modes), which let you specify how Segment should send data to the destination. Sync modes are unique to each destination. 
+   * Some destinations have [sync modes](/docs/connections/destinations/#sync-modes), which let you specify how Segment should send data to the destination. Sync modes are unique to each destination. 
    * Destinations without sync modes let you select from the following options: 
      * Added records  
      * Updated records  
