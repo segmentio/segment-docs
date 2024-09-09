@@ -30,17 +30,17 @@ var writeKey;
 ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 ```
 
-## How to Resolve 'Failed to Load Analytics.js ChunkLoadError'
+## How do I resolve the 'Failed to Load Analytics.js ChunkLoadError'?
 
-This error can occur for a few reasons:
+The error can occur for different reasons:
 
-1. Snippet Syntax: Ensure the Segment snippet is correctly added to the page. Check for any missing or extra characters. Please follow our guide [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-install-segment-to-your-site).
+* Snippet syntax: Ensure you correctly added the Segment snippet to the page. Check for any missing or extra characters. Follow [this guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-install-segment-to-your-site).
 
-2. NPM Package: If using Segment via NPM, refer to this [guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
+* NPM package: If you're using Segment through NPM, refer to [this guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
 
-3. Browser Cache: Try clearing the browser cache, as this is a common cause for ChunkLoadError.
+* Browser cache: Clear the browser cache, as this is a common cause for `ChunkLoadError`.
 
-4. Cloudflare Caching: If you're using Cloudflare to proxy Segment, please disable caching for the Segment JS file.
+* Cloudflare caching: If you use Cloudflare to proxy Segment, disable caching for the Segment JS file.
 
 ## Do you see events appear in your debugger?
 
