@@ -48,8 +48,12 @@ The extract phase is the time spent connecting to your database, executing the m
 
 Name | Details | Limit
 ----- | ------- | ------
-Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 30 million records
+Record count | The maximum number of records a single sync will process. If a sync would contain more than 150 million records, Segment separates the data into multiple syncs, each containing no more than 150 million records <br><br> Note: This is the number of records extracted from the warehouse, not the limit for the number of records loaded to the destination (for example, new/update/deleted). | <sup>*</sup>150 million records
 Column count | The maximum number of columns a single sync will process. | 512 columns
 Column name length | The maximum length of a record column. | 128 characters
 Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON size | The maximum size of any single column value. | 128 KiB
+
+<sup>*</sup>: _If Segment identifies a sync would be larger than 150 million records, Segment extracts 150 million of the records in the initial sync and syncs any additional records during the next scheduled or manual sync._ 
+
+_For example, if a sync would contain 700 million records, Segment would run an initial 150 million record sync, and during the next three scheduled or manual syncs, would sync 150 million records. The fifth scheduled or manual sync would contain the remaining 100 million records._ 

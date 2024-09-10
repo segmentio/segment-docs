@@ -30,6 +30,18 @@ var writeKey;
 ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 ```
 
+## How do I resolve the 'Failed to Load Analytics.js ChunkLoadError'?
+
+The error can occur for different reasons:
+
+* Snippet syntax: Ensure you correctly added the Segment snippet to the page. Check for any missing or extra characters. Follow [this guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-install-segment-to-your-site).
+
+* NPM package: If you're using Segment through NPM, refer to [this guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
+
+* Browser cache: Clear the browser cache, as this is a common cause for `ChunkLoadError`.
+
+* Cloudflare caching: If you use Cloudflare to proxy Segment, disable caching for the Segment JS file.
+
 ## Do you see events appear in your debugger?
 
 When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page)? You can also check the JavaScript console in the browser and manually fire an event, like an Identify call, which would show up in the debugger.

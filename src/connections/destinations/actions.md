@@ -185,7 +185,6 @@ If necessary, click **New Mapping** to create a new, blank action.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 7. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
-
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
 
