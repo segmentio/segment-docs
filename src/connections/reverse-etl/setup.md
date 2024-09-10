@@ -40,9 +40,9 @@ Models define sets of data you want to sync to your Reverse ETL destinations. A 
 2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future.)
 3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destination(s).
 4. Choose a column to use as the unique identifier for each record in the **Unique Identifier column** field.
-    * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected, like a primary key. This column is used to detect new, updated, and deleted records.
-5. Click **Preview** to see a preview the first 10 records for the SQL query. 
-    * Segment caches preview queries and result sets in the UI, and stores the preview cache at the source level. If you make two queries for the same source, Segment returns identical preview results. However, during the next synchronization, the latest data will be sent to the connected destinations.
+    * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted records.
+5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 records of your warehouse.
+    * Segment caches preview queries and result sets in the UI, and stores the preview cache at the source level.
 6. Click **Next**.
 7. Enter your **Model Name**.
 8. Click **Create Model**.
@@ -53,9 +53,9 @@ Use Segment's dbt extension to centralize model management and versioning. Users
 ## Step 3: Add a destination
 In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to. A model can have multiple destinations.
 
-Refer to the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/) to view the supported actions destinations. Reverse ETL supports to unique destinations:
-- **[Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination)**: Send warehouse data back into Segment to leverage your existing mappings or access non-actions destinations in the Connections catalog.
-- **[Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/)**: Engage Premier Subscriptions users can use Reverse ETL to sync subscription data from their warehouses to destinations.
+Reverse ETL supports the destinations in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/). If the destination you want to send data to is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+
+Engage users can use the [Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/) to create and update [Profiles](/docs/unify/) that can then be accessed through [Profile API](/docs/unify/profile-api/) and activated within [Twilio Engage](/docs/engage). 
 
 > info "Separate endpoints and credentials required to set up third party destinations"
 > Before you begin setting up your destinations, note that each destination has different authentication requirements. See the documentation for your intended destination for more details.
@@ -109,6 +109,88 @@ To edit your model:
 2. Select the source and the model you want to edit.
 3. On the overview tab, click **Edit** to edit your query.
 4. Click the **Settings** tab to edit the model name or change the schedule settings.
+
+### Supported object and arrays 
+
+When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data as an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping). 
+
+#### Object mapping
+You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
+
+Example: 
+
+```json    
+    {
+        "product": {
+            "id": 0001,
+            "color": "pink",
+            "name": "tshirt",
+            "revenue": 20,
+            "inventory": 500
+        }
+    }
+```
+
+To send data to a mapping field that requires object data, you can choose between these two options: 
+
+Option | Details
+------ | --------
+Customize object | This enables you to manually set up the mapping fields with any data from the model. If the model contains some object data, you can select properties within the object to set up the mappings as well.
+Select object | This enables you to send all nested properties within an object. The model needs to provide data in the format of the object. 
+
+> success ""
+> Certain object mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your object don't match with the destination properties, the data won't send. Segment recommends you to use **Customize Object** to ensure your mapping is successful.
+
+
+#### Array mapping
+To send data to a mapping field that requires array data, the model must provide data in the format of an array of objects. An example is an `Order completed` model with a `Product purchased` column that’s in an array format.
+
+Example: 
+
+```json    
+    [
+    {
+        "currency": "USD",
+        "price": 40,
+        "productName": "jacket",
+        "purchaseTime": "2021-12-17 23:43:47.102",
+        "quantity": 1
+    },
+    {
+        "currency": "USD",
+        "price": 5,
+        "productName": "socks",
+        "quantity": 2
+    }
+    ]
+```    
+
+To send data to a mapping field that requires array data, you can choose between these two options: 
+
+Option | Details
+------ | --------
+Customize array | This enables you to select the specific nested properties to send to the destination. 
+Select array | This enables you to send all nested properties within the array.
+
+> success ""
+> Certain array mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your array don't match the destination properties, the data won't send. Segment recommends you to use the **Customize array** option to ensure your mapping is successful.
+
+Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property.
+
+### Null value management
+You can choose to exclude null values from optional mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an optional field may overwrite an existing value in your downstream tool.
+
+For example, if you opt to sync null values with your destination and an end user fills out a form but chooses to leave an optional telephone number field blank, the existing telephone number you have on file in your destination could be overwritten with the null value. By opting out of null values for your downstream destination, you would preserve the existing telephone number in your destination.
+
+By default, Segment syncs null values from mapped fields to your downstream destinations. Some destinations do not allow the syncing of null values, and will reject requests that contain them. Segment disables the option to opt out of syncing null values for these destinations.
+
+To opt out of including null values in your downstream syncs:
+1. Navigate to Connections > Destinations and select the Reverse ETL tab.
+2. Select the destination and the mapping you want to edit.
+3. Click Edit mapping.
+4. Under **Optional fields**, select the field you want to edit.
+5. In the field dropdown selection, disable the **Sync null values** toggle.
+
 
 ### Edit your mapping
 
