@@ -1,6 +1,8 @@
 extends: existence
-message: 'Add a line break before an alert to preserve formatting.'
-nonword: true
+message: "Add a line break before an alert to preserve formatting."
 level: error
+code: true
+scope: 
+  - raw
 raw: 
-  - '^.[^\s].*$\n^>\sinfo|warning|error\s'
+  - '.+$\r?\n^>\sinfo\s|.+$\r?\n^>\swarning\s|.+$\r?\n^>\serror\s'
