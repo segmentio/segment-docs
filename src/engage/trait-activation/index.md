@@ -11,7 +11,6 @@ Use Trait Activation to configure sync payloads that you send from Engage Audien
 
 Trait Activation includes both [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/). With Trait Enrichment, use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations or destination functions. Use ID Sync to select identifiers and a sync strategy for each identifier when syncing Engage Audiences to Destinations.
 
-
 ## Trait Activation setup
 
 To get started with Trait Activation, you'll need to set up the destination that you'll use with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
