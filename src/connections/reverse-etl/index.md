@@ -53,7 +53,7 @@ Learn more about the system that powers Reverse ETL, supported destinations, and
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/reverse-etl-catalog"
       title="Destination catalog"
-      description="View the destinations that you can connect to your Reverse ETL sources."
+      description="View the destinations you can connect to your Reverse ETL sources."
     %}
   </div>
 

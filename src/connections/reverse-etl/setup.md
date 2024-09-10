@@ -189,11 +189,11 @@ For example, if you opt to sync null values with your destination and an end use
 By default, Segment syncs null values from mapped fields to your downstream destinations. Some destinations do not allow the syncing of null values, and will reject requests that contain them. Segment disables the option to opt out of syncing null values for these destinations.
 
 To opt out of including null values in your downstream syncs:
-Navigate to Connections > Destinations and select the Reverse ETL tab.
-Select the destination and the mapping you want to edit.
-Click Edit mapping.
-Under the "Optional fields" header, select the field you want to edit.
-In the field dropdown selection, disable the Sync null values toggle.
+1. Navigate to Connections > Destinations and select the Reverse ETL tab.
+2. Select the destination and the mapping you want to edit.
+3. Click Edit mapping.
+4. Under **Optional fields**, select the field you want to edit.
+5. In the field dropdown selection, disable the **Sync null values** toggle.
 
 
 ### Edit your mapping
