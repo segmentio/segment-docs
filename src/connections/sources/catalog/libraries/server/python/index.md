@@ -406,7 +406,7 @@ If the module detects that it can't flush faster than it's receiving messages, i
 
 ### Flush
 
-At the end of your program, you'll want to flush to make sure there's nothing left in the queue by calling the `flush` method:
+You can all the `flush` method at the end of your program to make sure there's nothing left in the queue:
 
 ```python
 analytics.flush()
