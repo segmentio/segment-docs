@@ -263,6 +263,7 @@ To duplicate your mappings:
 
 Segment creates a disabled mapping with the name "Original Mapping Name (Copy)". You must enable the mapping for data to flow. 
 
+
 ## FAQ and troubleshooting
 
 ### Validation error when using the Event Tester
