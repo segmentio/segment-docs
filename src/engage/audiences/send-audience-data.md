@@ -67,4 +67,4 @@ You can add and access mappings within your audience's connected destination by 
 Segment then returns you to the audience's destination side panel, which shows your new mapping(s).
 
 > success ""
-> Use Segment's [Duplicate mappings](/docs/connections/destinations/actions/#duplicate-mappings) feature to create an exact copy of an existing mapping. The copied mapping has the same attributes and settings as your original mapping.
+> Use Segment's [Duplicate mappings](/docs/connections/destinations/actions/#duplicate-mappings) feature to create an exact copy of an existing mapping. The copied mapping has the same configurations and enrichments as your original mapping.

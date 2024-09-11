@@ -251,7 +251,7 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 
 ## Duplicate Mappings
 
-You can use the Duplicate Mappings feature to create an exact copy of a mapping. The duplicated mapping has the same attributes and settings as your original mapping. 
+You can use the Duplicate Mappings feature to create an exact copy of a mapping. The duplicated mapping has the same configurations and enrichments as your original mapping. 
 
 Duplicate Mappings supports [Actions destinations](#actions-destination), [Reverse ETL destinations](/docs/connections/reverse-etl/reverse-etl-catalog), and destinations connected to Engage [Audiences](/docs/engage/audiences) and [Journeys](/docs/engage/journeys).  
 
