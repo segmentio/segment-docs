@@ -4,7 +4,7 @@ title: Analytics Swift Braze Plugin
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s destination plugin code is open source and available on GitHub. You can view it [here](https://github.com/braze-inc/analytics-swift-braze). This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
+Braze’s destination plugin code is open source and available on GitHub. You can view it on GitHub in the [@braze-inc/analytics-swift-braze](https://github.com/braze-inc/analytics-swift-braze){:target="_blank”} repo. This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
 
 ## Getting Started
 

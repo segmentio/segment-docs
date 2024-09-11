@@ -23,7 +23,7 @@ The Adobe Target Cloud Mode destination sends user information to the Adobe Targ
 3. Click **Configure Adobe Target Cloud Mode** in the top-right corner of the screen.
 4. Select the source that will send data to Adobe Target Cloud Mode and follow the steps to name your destination.
 5. On the **Settings** tab, input your Adobe Target destination settings.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html %}

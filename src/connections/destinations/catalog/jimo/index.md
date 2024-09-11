@@ -1,7 +1,6 @@
 ---
 title: Jimo Destination
 id: 6294dd197382c750f0fe1e2d
-hidden: true
 ---
 
 [Jimo](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} enables product teams to connect with end-users in any step of the product lifecycle from ideas, shaping to release, multiplying by 5 users’ engagement and loyalty over a product.

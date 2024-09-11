@@ -1,7 +1,6 @@
 ---
 title: Yahoo Audiences Destination
 id: 6514281004d549fae3fd086a
-beta: true
 ---
 
 The Yahoo Audiences integration facilitates seamless connectivity between Engage Audiences and Yahoo DSP, offering users the flexibility to configure their data delivery preferences within the Segment platform.

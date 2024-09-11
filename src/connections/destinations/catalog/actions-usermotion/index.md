@@ -1,7 +1,6 @@
 ---
 title: UserMotion (Actions) Destination
 id: 6537b5da8f27fd20713a5ba8
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

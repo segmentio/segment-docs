@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Migration Guide
+title: Analytics-Kotlin Migration Guide
 strat: kotlin-android
 tags:
   - android
@@ -384,6 +384,9 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
 
 ## 4. Upgrade Notes
+
+> info "You might need to call Identify as a one-off after migrating to Kotlin"
+> To preserve the userId for users identified prior to your migration to Kotlin, you must make a one-off Identify call. This is due to a storage format change between the Analytics-Android and Analytics-Kotlin libraries.
 
 ### 4.a) Changes to the Configuration Object
 

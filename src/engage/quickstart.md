@@ -41,15 +41,14 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. On the left sidebar navigate to **Profiles** > **Profiles Settings** > **Sources** > **+ Add Source**.
-2. Choose one or two production sources from your Connections workspace.
-   
-Segment recommends connecting your production website or App source as a great starting point.
-_The flag **Replay data** is enabled by default, **Replay data : Enable this option to replay the last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source._
-
-3. The **Replay data** flag is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source. You can disable this option by toggling it - this prevents the replaying historical data from the source. If you need more historical data available from this source, fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
-```
-Segment Source Details:
+1. On the left sidebar navigate to **Unify** > **Unify Settings** > **Profile Sources** > **+ Connect Source**.
+2. Choose one or two production sources from your Connections workspace. Segment recommends connecting your production website or App source as a great starting point.
+3. Toggle the **Replay data** flag when connecting a new source : `enabled` vs. `disabled`.
+   - **Enabled :** The **Replay data** flag is enabled by default when connecting a source to an Engage/Unify Space. Enable this flag to replay the last month of data into the Engage/Unify Space.
+   - **Disabled :** You can disable this option by toggling it, which prevents the replaying of historical data from the source to the Space. This means that only data that the source has received after the point when the source was connected to the Space will be available within the Engage/Unify Space.
+4. If you need more historical data available from this source, please fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
+    
+```Segment Source Details:
 - Name: source-name
 - SourceId: XXXXX or Link to Source
 
@@ -59,7 +58,8 @@ Details for replay:
 - End time: (Use the following UTC format) 2023-01-21T10:10:00Z UTC
 - All the events or only a subset of event names? Provide event names and/or method calls (page/identify/track/group) if only a subset of events is needed.
 ```
-_How much data can I replay from my source into Engage?_ : Your workspace's "computations history" limit is defined in the contract and can be found in the [workspace settings]([url](https://app.segment.com/goto-my-workspace/settings/usage?metric=mtu&period=current)).
+
+- **How much data can I replay from my source into Engage?** Your workspace's "computations history" limit is defined in your workspace's contract and can be found on the page [Usage & billing](https://app.segment.com/goto-my-workspace/settings/usage?metric=mtu&period=current) under the section _**Additional packages : Engage**_ : _"Up to __ days computation history"._
 
 To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3-connect-production-sources).
 

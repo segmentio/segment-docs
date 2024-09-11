@@ -140,12 +140,12 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
     </tr>
   </thead>
   <tbody>
-{% for field in action.fields %}
+{% for field in action.fields %}{% unless field.id == 'jYj1UxYzS5aJNU2Ue2gakK' or field.id == '2KMUXqzqudDytGbcBz2iwP' or field.id == '6VBmtsRbVxHVM61LtnFVwX' or field.id == 'q6eYyJGaCYcPSHeZPpaK5x' %}
 <tr>
 <td>{{field.label}}{% if field.required %}<span class="required" title="This field is required">*</span>{% endif %}</td>
 <td>{% if field.type %}Type: <code>{{field.type}}</code><br />{%endif%}{{field.description | markdownify}}</td>
 </tr>
-{%endfor%}
+{%endunless%}{%endfor%}
 </tbody>
 </table>
 </div>

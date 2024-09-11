@@ -11,7 +11,7 @@ Segment has a special deduplication service that sits behind the `api.segment.co
 Segment deduplicates on the event's `messageId`, _not_ on the contents of the event payload. Segment doesn't have a built-in way to deduplicate data for events that don't generate `messageId`s. The message de-duplication is not scoped to a specific source or a workspace, and applies to all events being received by Segment.
 
 > info ""
-> Keep in mind that Segment's libraries all generate `messageId`s for each event payload, with the exception of the Segment HTTP API, which assigns each event a unique `messageId` when the message is ingested. You can override these default generated IDs and manually assign a `messageId` if necessary.
+> Keep in mind that Segment's libraries all generate `messageId`s for each event payload, with the exception of the Segment HTTP API, which assigns each event a unique `messageId` when the message is ingested. You can override these default generated IDs and manually assign a `messageId` if necessary. The `messageId` field is limited to 100 characters.
 
 ## Warehouse deduplication
 Duplicate events that are more than 24 hours apart from one another deduplicate in the Warehouse. Segment deduplicates messages going into a Warehouse ([including Profiles Sync data](/docs/unify/profiles-sync/)) based on the `messageId`, which is the `id` column in a Segment Warehouse.

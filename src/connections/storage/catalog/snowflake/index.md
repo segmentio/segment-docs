@@ -23,6 +23,8 @@ There are six steps to get started using Snowflake with Segment.
 5. [Test the user and credentials](#step-5-test-the-user-and-credentials)
 6. [Connect Snowflake to Segment](#step-6-connect-snowflake-to-segment)
 
+{% include content/storage-do-include.md %}
+
 ### Prerequisites 
 
 To set up the virtual warehouse, database, role, and user in Snowflake for Segment's Snowflake destination, you must have the `ACCOUNTADMIN` role, or, a custom role with the following [Snowflake privileges](https://docs.snowflake.com/en/user-guide/security-access-control-overview#label-access-control-overview-privileges){:target="_blank"}: 
