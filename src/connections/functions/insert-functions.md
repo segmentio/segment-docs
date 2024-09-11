@@ -603,4 +603,4 @@ For more information, visit Segment's [Public API docs](https://docs.segmentapis
 
 ##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
 
-The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit won't be visible in the user interface.
