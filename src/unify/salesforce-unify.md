@@ -66,7 +66,7 @@ Finish by enabling the destination mappings and the source:
 
 1. From the settings tab of the Segment Profiles destination you created, toggle the **Enable destination** switch to **Enabled**, then click **Save**. 
 2. From the overview tab of the same Segment Profiles destination, toggle the **Mapping Status** switch to **Enabled**.
-3. Return to your Salesforce source and navigate to **Settings > Basic settings.**
+3. Return to your Salesforce source and navigate to **Settings > Basic settings**.
 4. Toggle the **Enable source** switch to on.
 
 Data now begins syncing between Salesforce and Segment.
