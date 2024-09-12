@@ -98,17 +98,8 @@ To create a mapping:
 12. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
-## Initial sync for a given mapping
-After you've set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
-
-## Edit Reverse ETL syncs
-### Edit your model
-
-To edit your model:
-1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
-2. Select the source and the model you want to edit.
-3. On the overview tab, click **Edit** to edit your query.
-4. Click the **Settings** tab to edit the model name or change the schedule settings.
+> success ""
+> Use Segment's [Duplicate mappings](/docs/connections/destinations/actions/#duplicate-mappings) feature to create an exact copy of an existing mapping. The copied mapping has the same configurations and enrichments as your original mapping.
 
 ### Supported object and arrays 
 
@@ -190,6 +181,19 @@ To opt out of including null values in your downstream syncs:
 3. Click Edit mapping.
 4. Under **Optional fields**, select the field you want to edit.
 5. In the field dropdown selection, disable the **Sync null values** toggle.
+
+
+## Initial sync for a given mapping
+After you've set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
+
+## Edit Reverse ETL syncs
+### Edit your model
+
+To edit your model:
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
+2. Select the source and the model you want to edit.
+3. On the overview tab, click **Edit** to edit your query.
+4. Click the **Settings** tab to edit the model name or change the schedule settings.
 
 
 ### Edit your mapping

@@ -216,7 +216,7 @@ The `page` call has the following fields:
 | `name`       | optional | String   | The name of the page.                                                                                                                                                                                                                                |
 | `properties` | optional | Object   | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.                           |
 | `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_. |
-| `callback`   | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.                                                                                                                                             |
+| `callback`   | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first. However, this function might not execute if one of the device-mode libraries has been blocked from loading.                                                                                                                                           |
 
 #### Default page properties
 
@@ -362,7 +362,7 @@ analytics.identify("hello world")
 
 The `ready` method lets you pass in a method that gets called after Analytics.js finishes initializing and after all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations. Because it doesn't fire until all enabled device-mode destinations are loaded, it can't be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
 
-The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization.
+The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization. If you're looking to detect when Analytics.js has loaded, instead of using the `ready` method, you can listen for the `initialize` event to be emitted (`window.analytics.initialized`). This event returns `true` even when a destination is blocked.
 
 The code in the `ready` function only executes after `ready` is emitted. 
 

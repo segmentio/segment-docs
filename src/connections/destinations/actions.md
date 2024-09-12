@@ -249,6 +249,21 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 >
 > If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
 
+## Duplicate Mappings
+
+You can use the Duplicate Mappings feature to create an exact copy of a mapping. The duplicated mapping has the same configurations and enrichments as your original mapping. 
+
+Duplicate Mappings supports [Actions destinations](#actions-destination), [Reverse ETL destinations](/docs/connections/reverse-etl/reverse-etl-catalog), and destinations connected to Engage [Audiences](/docs/engage/audiences) and [Journeys](/docs/engage/journeys).  
+
+To duplicate your mappings: 
+
+1. Navigate to **Connections > Destinations** and select the destination with the mappings you'd like to copy. 
+2. On the destination's **Mappings** tab, select the menu button (**...**) and click **Duplicate Mapping**. 
+3. Review the popup and click **Duplicate Mapping**.
+
+Segment creates a disabled mapping with the name "Original Mapping Name (Copy)". You must enable the mapping for data to flow. 
+
+
 ## FAQ and troubleshooting
 
 ### Validation error when using the Event Tester

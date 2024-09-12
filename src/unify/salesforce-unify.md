@@ -7,6 +7,9 @@ This guide outlines the process for setting up Salesforce as a data source with 
 
 Once configured, this integration lets you send Salesforce data directly to Segment Profiles, eliminating the need for a data warehouse and enabling faster data synchronization and profile enrichment.
 
+> info "API usage and billing"
+> The Salesforce Unify Direct Profile Integration increases API usage. Verify your API limits and Segment billing before you enable the Salesforce Unify Direct Profile Integration.
+
 ## Prerequisites
 
 Before you begin, make sure that you have the following:
@@ -61,9 +64,10 @@ Next, add a Segment Profiles destination:
 
 Finish by enabling the destination mappings and the source:
 
-1. From the overview tab of the Segment Profiles destination you created, toggle the **Mapping Status** switch to **Enabled**.
-2. Return to your Salesforce source and navigate to **Settings > Basic settings.**
-2. Toggle the **Enable source** switch to on.
+1. From the settings tab of the Segment Profiles destination you created, toggle the **Enable destination** switch to **Enabled**, then click **Save**. 
+2. From the overview tab of the same Segment Profiles destination, toggle the **Mapping Status** switch to **Enabled**.
+3. Return to your Salesforce source and navigate to **Settings > Basic settings**.
+4. Toggle the **Enable source** switch to on.
 
 Data now begins syncing between Salesforce and Segment.
 
