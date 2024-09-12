@@ -98,6 +98,9 @@ To create a mapping:
 12. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
+> success ""
+> Use Segment's [Duplicate mappings](/docs/connections/destinations/actions/#duplicate-mappings) feature to create an exact copy of an existing mapping. The copied mapping has the same configurations and enrichments as your original mapping.
+
 ### Supported object and arrays 
 
 When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data as an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping). 
