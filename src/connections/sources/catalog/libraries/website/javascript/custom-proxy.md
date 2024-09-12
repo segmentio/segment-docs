@@ -178,6 +178,60 @@ To add a CNAME record to your DNS settings:
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
+## Common issues
+
+These are some common issues that occur for cusotmers implemtning a cusotm proxy. This not an exhaustive list, and these settings may change in CloudFront or CloudFlare over time.
+
+#### CloudFlare returning a 403 error
+
+There are two ways of configuring the CDN distribution in Cloudflare and the 403 error is an indication that one of the below options is misconfigured:
+
+1. If you have a CloudFlare enterprise plan then create a Page Rule in Cloudflare so that Segment's CDN wouldn't refuse the requests via the Cloudflare Proxy.
+
+If cdn.segment.com is another CNAME, which resolves to xxx.cloudfront.net, you will need to use a Page Rule in Cloudflare to override the host header to match the hostname for proxy requests.
+
+More in Cloudflare’s docs on overriding the host header can be found [here](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/). 
+
+
+2. For customers who are not on the Cloudflare Enterprise plan, use the CloudFlare Workers. Workers usually can run on the main domain www.domain.com but if you want to http://segment.domain.com it needs to be in your DNS like [this](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record).
+
+When creating the worker you can use this example provided by [CloudFlare](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy) with the origins set to: 
+
+```ts
+const ORIGINS = {
+"yourcdndomain.com": "cdn.segment.com",
+}
+```
+
+#### CloudFlare CORS issue
+
+In order to resolve a CORS OPTIONS pre-request fetch error, you’ll have to specify "Strict (SSL-Only Origin Pull)" as a Cloudflare Page rule for the api.segment.io proxy. Please see CloudFlare [documentation](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options#h_065d742e-8c0b-4ed4-8fb5-037e10fe5f9a) on this process.
+
+#### CloudFront returning a 403 error
+
+If your CloudFront Proxy is returing a 403 error, the following change in CloudFront may solve the issue:
+
+```ts
+Before:
+Cache Based on Selected Request Headers: All
+
+After:
+Cache Based on Selected Request Headers: None
+```
+
+Alternatively, this setting may solve your issue:
+
+```ts
+Before:
+Origin request policy: AllViewer
+
+After:
+Origin request policy: None
+```
+
+### CloudFront CORS issue
+
+To resolve a CORS issue you may need to follow this [CloudFront](https://aws.amazon.com/premiumsupport/knowledge-center/no-access-control-allow-origin-error/) guide which outlines adding a referrer header in the request sent to Segment.
 
 ## Self-hosting Analytics.js
 
