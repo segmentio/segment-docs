@@ -207,7 +207,7 @@ const ORIGINS = {
 
 In order to resolve a CORS OPTIONS pre-request fetch error, you’ll have to specify "Strict (SSL-Only Origin Pull)" as a Cloudflare Page rule for the api.segment.io proxy. Please see CloudFlare [documentation](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options#h_065d742e-8c0b-4ed4-8fb5-037e10fe5f9a) on this process.
 
-#### CloudFront returning a 403 error
+#### CloudFront Proxy returning a 403 error
 
 If your CloudFront Proxy is returing a 403 error, the following change in CloudFront may solve the issue:
 
