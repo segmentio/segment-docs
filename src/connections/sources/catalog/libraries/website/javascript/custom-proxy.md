@@ -231,7 +231,7 @@ Origin request policy: None
 
 ### CloudFront CORS issue
 
-To resolve a CORS issue you may need to follow this [CloudFront](https://aws.amazon.com/premiumsupport/knowledge-center/no-access-control-allow-origin-error/) guide which outlines adding a referrer header in the request sent to Segment.
+To resolve a CORS issue, you might need to add a referrer header in the request you send to Segment. Follow AWS's [How do I resolve the "No 'Access-Control-Allow-Origin' header is present on the requested resource" error from CloudFront?](https://aws.amazon.com/premiumsupport/knowledge-center/no-access-control-allow-origin-error/){:target="_blank”} guide, which explains how to add a referrer header.
 
 ## Self-hosting Analytics.js
 
