@@ -209,7 +209,7 @@ In order to resolve a CORS OPTIONS pre-request fetch error, you’ll have to spe
 
 #### CloudFront Proxy returning a 403 error
 
-If your CloudFront Proxy is returing a 403 error, the following change in CloudFront may solve the issue:
+If your CloudFront Proxy is returing a 403 error, the following change in CloudFront might resolve the issue:
 
 ```ts
 Before:
