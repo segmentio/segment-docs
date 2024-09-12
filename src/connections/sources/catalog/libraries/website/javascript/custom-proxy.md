@@ -186,11 +186,7 @@ These are some common issues that occur for customers implementing a custom prox
 
 There are two ways of configuring the CDN distribution in Cloudflare and the 403 error is an indication that one of the below options is misconfigured:
 
-1. If you have a CloudFlare enterprise plan then create a Page Rule in Cloudflare so that Segment's CDN wouldn't refuse the requests via the Cloudflare Proxy.
-
-If cdn.segment.com is another CNAME, which resolves to xxx.cloudfront.net, you will need to use a Page Rule in Cloudflare to override the host header to match the hostname for proxy requests.
-
-More in Cloudflare’s docs on overriding the host header can be found [here](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/). 
+1. If you have a CloudFlare enterprise plan, create a Page Rule in CloudFlare so that Segment's CDN doesn't refuse the requests made through the CloudFlare Proxy. If cdn.segment.com is another CNAME that resolves to xxx.cloudfront.net, you will need to use a Page Rule in CloudFlare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see CloudFlare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
 
 
 2. For customers who are not on the CloudFlare Enterprise plan, use CloudFlare Workers. Workers usually run on the main domain (for example, `www.domain.com`), but if you want Workers to run on a subdomain, like `http://segment.domain.com`, you must record the subdomain in your DNS. For more information, see CloudFlare's [Routes and domains](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record){:target="_blank”} documentation.
