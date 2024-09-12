@@ -184,7 +184,7 @@ These are some common issues that occur for customers implementing a custom prox
 
 #### CloudFlare returning a 403 error
 
-There are two ways of configuring the CDN distribution in Cloudflare and the 403 error is an indication that one of the below options is misconfigured:
+When you encounter a 403 error, can mean that you've misconfigured your CloudFlare CDN distribution. Try one of the following options to fix the error: 
 
 1. If you have a CloudFlare enterprise plan, create a Page Rule in CloudFlare so that Segment's CDN doesn't refuse the requests made through the CloudFlare Proxy. If cdn.segment.com is another CNAME that resolves to xxx.cloudfront.net, you will need to use a Page Rule in CloudFlare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see CloudFlare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
 
