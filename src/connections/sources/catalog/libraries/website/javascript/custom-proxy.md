@@ -193,7 +193,7 @@ If cdn.segment.com is another CNAME, which resolves to xxx.cloudfront.net, you w
 More in Cloudflare’s docs on overriding the host header can be found [here](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/). 
 
 
-2. For customers who are not on the Cloudflare Enterprise plan, use the CloudFlare Workers. Workers usually can run on the main domain www.domain.com but if you want to http://segment.domain.com it needs to be in your DNS like [this](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record).
+2. For customers who are not on the CloudFlare Enterprise plan, use CloudFlare Workers. Workers usually run on the main domain (for example, `www.domain.com`), but if you want Workers to run on a subdomain, like `http://segment.domain.com`, you must record the subdomain in your DNS. For more information, see CloudFlare's [Routes and domains](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record){:target="_blank”} documentation.
 
 When creating a Worker you can use this example provided by CloudFlare in their [Bulk origin override](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy){:target="_blank”} documentation with the origins set to: 
 
