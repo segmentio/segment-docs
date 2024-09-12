@@ -8,7 +8,7 @@ This guide outlines the process for setting up Salesforce as a data source with 
 Once configured, this integration lets you send Salesforce data directly to Segment Profiles, eliminating the need for a data warehouse and enabling faster data synchronization and profile enrichment.
 
 > info "API usage and billing"
-> The Salesforce Unify Direct Profile Integration increases API usage. Verify your API limits and Segment billing before enabling.
+> The Salesforce Unify Direct Profile Integration increases API usage. Verify your API limits and Segment billing before you enable the Salesforce Unify Direct Profile Integration.
 
 ## Prerequisites
 
