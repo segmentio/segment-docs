@@ -195,7 +195,7 @@ More in Cloudflare’s docs on overriding the host header can be found [here](ht
 
 2. For customers who are not on the Cloudflare Enterprise plan, use the CloudFlare Workers. Workers usually can run on the main domain www.domain.com but if you want to http://segment.domain.com it needs to be in your DNS like [this](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record).
 
-When creating the worker you can use this example provided by [CloudFlare](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy) with the origins set to: 
+When creating a Worker you can use this example provided by CloudFlare in their [Bulk origin override](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy){:target="_blank”} documentation with the origins set to: 
 
 ```ts
 const ORIGINS = {
