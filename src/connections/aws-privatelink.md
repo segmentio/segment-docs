@@ -60,7 +60,7 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
 ### Configure PrivateLink for Redshift
 Implement Segment's PrivateLink integration by taking the following steps:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
-2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html){:target="_blank”}.
+2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-cross-vpc-console-grantor.html){:target="_blank”}.
 3. Reach back out to your CSM and provide them with the Cluster identifier for your cluster and your AWS account ID. 
 4. Segment creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
 5. After Segment provides you with the URL, use it to update or create new Redshift integrations. The following integrations support PrivateLink: 
