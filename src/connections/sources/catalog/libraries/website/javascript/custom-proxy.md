@@ -180,7 +180,7 @@ To add a CNAME record to your DNS settings:
 
 ## Common issues
 
-These are some common issues that occur for cusotmers implemtning a cusotm proxy. This not an exhaustive list, and these settings may change in CloudFront or CloudFlare over time.
+These are some common issues that occur for customers implementing a custom proxy. This not an exhaustive list, and these CloudFront or CloudFlare settings may change.
 
 #### CloudFlare returning a 403 error
 
