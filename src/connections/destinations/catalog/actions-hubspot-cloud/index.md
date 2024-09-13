@@ -67,7 +67,7 @@ Segment's v2 Actions, [Custom Object v2](/docs/connections/destinations/catalog/
 ### Sync modes
 Sync modes allow users to define how Segment should update the data in your destination.
 
-Available sync modes for the Custom Object and Custom Event Actions include: 
+Available sync modes for the Custom Object v2 and Custom Event v2 Actions include: 
 - **Update**: Modify existing records in the destination without adding new ones.
 - **Upsert**: Update existing records and add new ones, if necessary.
 - **Add**: Add records to a list, segment, or journey.
