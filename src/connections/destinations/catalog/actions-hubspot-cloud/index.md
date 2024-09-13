@@ -53,7 +53,34 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 > info ""
 > To ensure that data is sent downstream, configure and enable at least one mapping to handle a connected sources event(s).
 
+## Actions v2
+
+Segment's v2 Actions, [Custom Object v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-object-v2) and [Custom Event v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-event-v2), support the following features:
+
+- **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from HubSpot
+- **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app. 
+
+> warning ""
+> You might need to reauthorize your HubSpot account to use all of the features associated with v2 Actions.
+
+### Sync modes
+Sync modes allow users to define how Segment should update the data in your downstream destination.
+
+Available sync modes for the Custom Object and Custom Event Actions include: 
+- **Update**: Modify existing records in the destination without adding new ones.
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
+
 {% include components/actions-fields.html %}
+
+## Rate limits
+HubSpot's [API rate limit](https://developers.hubspot.com/docs/api/usage-details#rate-limits){:target="_blank"} is 100 API calls per 10 seconds. While Segment implements retries for temporary issues, large data volumes sent simultaneously might exceed this limit and result in incomplete data transmission.
+
+For customers with substantial data volumes, Segment recommends segmenting the data into smaller batches and scheduling transfers over an extended period of time. This approach ensures successful data transmission to HubSpot without encountering rate limits.
+
+> info "HubSpot Associations might exacerbate rate limit issues"
+> [HubSpot Associations](https://developers.hubspot.com/docs/api/crm/associations){:target="_blank"} often require additional API calls. When working with Associations, carefully plan your strategy and consider a more gradual approach to creating them, especially for large datasets, to avoid reaching your API call limit.
 
 
 ## Support for association between two custom object records in upsert custom object records
