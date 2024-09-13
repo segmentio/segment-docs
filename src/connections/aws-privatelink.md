@@ -5,7 +5,7 @@ title: Amazon Web Services PrivateLink
 [Amazon Web Services' PrivateLink](https://aws.amazon.com/privatelink/){:target="_blank”} is an AWS service that provides private connectivity between VPCs without exposing traffic to the public Internet. Keeping traffic in the Amazon network reduces the data security risk associated with exposing your Warehouse traffic to the Internet.
 
 > info ""
-> Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. Only warehouses located in regions `us-east-1`, `us-west-`, or `eu-west-1` are eligible for PrivateLink. You might incur additional networking costs while using AWS PrivateLink. 
+> Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. Only warehouses located in regions `us-east-1`, `us-west-2`, or `eu-west-1` are eligible for PrivateLink. You might incur additional networking costs while using AWS PrivateLink. 
 
 During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), and [Redshift](#redshift). 
 
