@@ -362,7 +362,7 @@ analytics.identify("hello world")
 
 The `ready` method lets you pass in a method that gets called after Analytics.js finishes initializing and after all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations. Because it doesn't fire until all enabled device-mode destinations are loaded, it can't be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
 
-The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization. If you're looking to detect when Analytics.js has loaded, instead of using the `ready` method, you can listen for the `initialize` event to be emitted (`window.analytics.initialized`). This event returns `true` even when a destination is blocked.
+The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization. If you want to check when Analytics.js has loaded, you can look at the value of `window.analytics.initialized`. When it’s true, the library has successfully initialized, even if some destinations are blocked. Please note, window.analytics.initialized is a simple boolean, not an event or a pub/sub system. This means you can't subscribe to changes in its value. If you need to detect when it changes from false to true, you’ll need to set up a polling mechanism to monitor the value.
 
 The code in the `ready` function only executes after `ready` is emitted. 
 
