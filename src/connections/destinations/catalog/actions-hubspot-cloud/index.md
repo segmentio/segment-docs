@@ -55,6 +55,9 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 
 ## Actions v2
 
+> info "You can use the Custom Object v2 Action to send Sensitive Data to HubSpot"
+> If you are participating in HubSpot's [Sensitive Data in HubSpot CRM beta](https://developers.hubspot.com/sensitive-data){:target="_blank"}, use the Custom Object v2 Action to send sensitive data to HubSpot.
+
 Segment's v2 Actions, [Custom Object v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-object-v2) and [Custom Event v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-event-v2), support the following features:
 
 - **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data
