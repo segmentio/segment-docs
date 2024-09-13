@@ -43,6 +43,9 @@ Your inputs must meet the following criteria:
   - `LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID`
   - `ACXIOM_ID`
   - `ORACLE_MOAT_ID`
-- `conversionHappenedAt` must be a valid timestamp (milliseconds since epoch) and must have happened in the past 90 days
+- `conversionHappenedAt` must be a valid epoch timestamp (milliseconds since epoch) and must have happened in the past 90 days. Segment additionally accepts [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted timestamp, and converts it to valid epoch timestamp value.
 
 Any deviations from this specification might lead to failed inputs.
+
+### Why LinkedIn still shows "no integration data" after I successfully sent the data?
+LinkdedIn won't reject events due to the lack ofcurrency and amount data, but they will not correctly recogonize the events you sent via Segment. Please ensure your payload has the data or try "Validate" for other undocumented errors.
