@@ -65,7 +65,7 @@ Segment's v2 Actions, [Custom Object v2](/docs/connections/destinations/catalog/
 > You might need to reauthorize your HubSpot account to use all of the features associated with v2 Actions.
 
 ### Sync modes
-Sync modes allow users to define how Segment should update the data in your downstream destination.
+Sync modes allow users to define how Segment should update the data in your destination.
 
 Available sync modes for the Custom Object and Custom Event Actions include: 
 - **Update**: Modify existing records in the destination without adding new ones.
