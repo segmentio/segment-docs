@@ -180,18 +180,18 @@ To add a CNAME record to your DNS settings:
 
 ## Common issues
 
-These are some common issues that occur for customers implementing a custom proxy. This not an exhaustive list, and these CloudFront or CloudFlare settings may change.
+These are some common issues that occur for customers implementing a custom proxy. This is not an exhaustive list, and these CloudFront or Cloudflare settings may change.
 
-#### CloudFlare returning a 403 error
+#### Cloudflare returning a 403 error
 
-When you encounter a 403 error, can mean that you've misconfigured your CloudFlare CDN distribution. Try one of the following options to fix the error: 
+A 403 error can mean that you've misconfigured your Cloudflare CDN distribution. Try one of the following options to fix the error: 
 
-1. If you have a CloudFlare enterprise plan, create a Page Rule in CloudFlare so that Segment's CDN doesn't refuse the requests made through the CloudFlare Proxy. If cdn.segment.com is another CNAME that resolves to xxx.cloudfront.net, you will need to use a Page Rule in CloudFlare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see CloudFlare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
+1. If you have a Cloudflare enterprise plan, create a Page Rule in Cloudflare so that Segment's CDN doesn't refuse the requests made through the Cloudflare Proxy. If `cdn.segment.com` is another CNAME that resolves to `xxx.cloudfront.net`, you will need to use a Page Rule in Cloudflare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see Cloudflare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
 
 
-2. For customers who are not on the CloudFlare Enterprise plan, use CloudFlare Workers. Workers usually run on the main domain (for example, `www.domain.com`), but if you want Workers to run on a subdomain, like `http://segment.domain.com`, you must record the subdomain in your DNS. For more information, see CloudFlare's [Routes and domains](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record){:target="_blank”} documentation.
+2. For customers who are not on the Cloudflare Enterprise plan, use Cloudflare Workers. Workers usually run on the main domain (for example, `www.domain.com`), but if you want Workers to run on a subdomain, like `http://segment.domain.com`, you must record the subdomain in your DNS. For more information, see Cloudflare's [Routes and domains](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record){:target="_blank”} documentation.
 
-When creating a Worker you can use this example provided by CloudFlare in their [Bulk origin override](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy){:target="_blank”} documentation with the origins set to: 
+When creating a Worker you can use this example provided by Cloudflare in their [Bulk origin override](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy){:target="_blank”} documentation with the origins set to: 
 
 ```ts
 const ORIGINS = {
@@ -199,9 +199,9 @@ const ORIGINS = {
 }
 ```
 
-#### CloudFlare CORS issue
+#### Cloudflare CORS issue
 
-In order to resolve a CORS OPTIONS pre-request fetch error, you must specify "Strict (SSL-Only Origin Pull)" as a CloudFlare Page rule for the api.segment.io proxy. Please see CloudFlare's [Encryption modes](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options#h_065d742e-8c0b-4ed4-8fb5-037e10fe5f9a){:target="_blank”} documentation for more details.
+In order to resolve a CORS OPTIONS pre-request fetch error, you must specify "Strict (SSL-Only Origin Pull)" as a Cloudflare Page rule for the `api.segment.io` proxy. Please see Cloudflare's [Encryption modes](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options#h_065d742e-8c0b-4ed4-8fb5-037e10fe5f9a){:target="_blank”} documentation for more details.
 
 #### CloudFront Proxy returning a 403 error
 
