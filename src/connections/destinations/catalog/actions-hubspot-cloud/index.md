@@ -61,7 +61,7 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 Segment's v2 Actions, [Custom Object v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-object-v2) and [Custom Event v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-event-v2), support the following features:
 
 - **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data
-- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from HubSpot
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from HubSpot.
 - **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app. 
 
 > warning ""
