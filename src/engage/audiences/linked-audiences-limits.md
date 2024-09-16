@@ -14,4 +14,10 @@ Your plan includes a high limit of Activation Events, which ensures that the vas
 
  To see how many Activation Events you’ve processed using Linked Audiences, navigate to **Settings > Usage & billing** and select the **Linked Audiences** tab. If your limit is reached before the end of your billing period, your syncs won't automatically pause to avoid disruptions to your business. You may be billed for overages in cases of significant excess usage. If you consistently require a higher limit, contact your sales representative to upgrade your plan with a custom limit.
 
-If you have a non-standard or high volume usage plan, you may have unique Linked Audiences limits or custom pricing.
+ Plan | Linked Audiences Limit | How to increase your limit
+ ---- | ---------------------- | ---------------------------
+ Free | Not available for purchase | N/A
+ Team | Not available for purchase | N/A
+ Business | 40 x the number of MTUs or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan  
+
+If you have a non-standard or high volume usage plan, you have unique Linked Audiences limits or custom pricing.
