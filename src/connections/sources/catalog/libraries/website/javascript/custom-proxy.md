@@ -178,6 +178,56 @@ To add a CNAME record to your DNS settings:
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
+## Common issues
+
+These are some common issues that occur for customers implementing a custom proxy. This is not an exhaustive list, and these CloudFront or Cloudflare settings may change.
+
+#### Cloudflare returning a 403 error
+
+A 403 error can mean that you've misconfigured your Cloudflare CDN distribution. Try one of the following options to fix the error: 
+
+1. If you have a Cloudflare enterprise plan, create a Page Rule in Cloudflare so that Segment's CDN doesn't refuse the requests made through the Cloudflare Proxy. If `cdn.segment.com` is another CNAME that resolves to `xxx.cloudfront.net`, you will need to use a Page Rule in Cloudflare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see Cloudflare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
+
+
+2. For customers who are not on the Cloudflare Enterprise plan, use Cloudflare Workers. Workers usually run on the main domain (for example, `www.domain.com`), but if you want Workers to run on a subdomain, like `http://segment.domain.com`, you must record the subdomain in your DNS. For more information, see Cloudflare's [Routes and domains](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record){:target="_blank”} documentation.
+
+When creating a Worker you can use this example provided by Cloudflare in their [Bulk origin override](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy){:target="_blank”} documentation with the origins set to: 
+
+```ts
+const ORIGINS = {
+"yourcdndomain.com": "cdn.segment.com",
+}
+```
+
+#### Cloudflare CORS issue
+
+In order to resolve a CORS OPTIONS pre-request fetch error, you must specify "Strict (SSL-Only Origin Pull)" as a Cloudflare Page rule for the `api.segment.io` proxy. Please see Cloudflare's [Encryption modes](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options#h_065d742e-8c0b-4ed4-8fb5-037e10fe5f9a){:target="_blank”} documentation for more details.
+
+#### CloudFront Proxy returning a 403 error
+
+If your CloudFront Proxy is returing a 403 error, the following change in CloudFront might resolve the issue:
+
+```ts
+Before:
+Cache Based on Selected Request Headers: All
+
+After:
+Cache Based on Selected Request Headers: None
+```
+
+Alternatively, this setting may solve your issue:
+
+```ts
+Before:
+Origin request policy: AllViewer
+
+After:
+Origin request policy: None
+```
+
+### CloudFront CORS issue
+
+To resolve a CORS issue, you might need to add a referrer header in the request you send to Segment. Follow AWS's [How do I resolve the "No 'Access-Control-Allow-Origin' header is present on the requested resource" error from CloudFront?](https://aws.amazon.com/premiumsupport/knowledge-center/no-access-control-allow-origin-error/){:target="_blank”} guide, which explains how to add a referrer header.
 
 ## Self-hosting Analytics.js
 
