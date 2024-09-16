@@ -26,50 +26,50 @@ The default behavior is for Quin AI to pass the event data associated with the a
 
 The table below lists events that Quin sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
-| Event Name         | Description                        |
-|--------------------|------------------------------------|
-| pageview           | Get an action after viewing a page |
-| click              | Get an action after a click        |  
+| Event Name | Description                        |
+|------------|------------------------------------|
+| Page View  | Get an action after viewing a page |
+| Click      | Get an action after a click        |  
 
 
 ## Event Properties
 
 The table below list the properties included in the events listed above.
 
-| Property Name              | Description                                                 |
-|----------------------------|-------------------------------------------------------------|
-| `ActionAudienceId`         | ID of the target audience for the action                    |
-| `ActionControlGroup`       | Boolean indicating if the action is part of a control group |
-| `ActionId`                 | Unique identifier for the action                            |
-| `ActionIsCustom`           | Boolean indicating if the action is custom                  |
-| `ActionName`               | Name of the action                                          |                          
-| `ActionType`               | Type of the action                                          |                         
-| `BasketPrice`              | Total price of the items in the basket                      |                         
-| `BasketQuantity`           | Total quantity of items in the basket                       |                         
-| `EventAction`              | Type of event action (e.g., pageview, click)                |                       
-| `EventCategory`            | Category of the event                                       |                                                          
-| `EventCount`               | Number of events                                            |                        
-| `EventCustomAttributes`    | Map of custom attributes associated with the event          |                         
-| `EventDuration`            | Duration of the event in seconds                            |                        
-| `EventLabel`               | Label of the event                                          |                        
-| `EventPlatform`            | Platform on which the event occurred (e.g., web, mobile)    |                        
-| `EventTimestamp`           | Timestamp when the event occurred                           |                       
-| `EventURL`                 | URL associated with the event                               |                      
-| `GoogleClientId`           | Google Analytics client ID                                  |                        
-| `ItemCategory`             | Category of the item                                        |                                                             
-| `ItemCurrency`             | Currency of the item price (e.g., TRY)                      |                                                             
-| `ItemCustomAttributes`     | Map of custom attributes associated with the item           |                                                             
-| `ItemId`                   | Unique identifier for the item                              |                                                             
-| `ItemName`                 | Name of the item                                            |                                                             
-| `ItemPrice`                | Price of the item                                           |                                                             
-| `MostVisitedCategory`      | List of most visited categories                             |                                                             
-| `MostVisitedCategoryCount` | Number of times the most visited categories were visited    |                                                             
-| `Prediction`               | Map of prediction probabilities for various outcomes        |
-| `ReturningUser`            | Boolean indicating if the user is a returning user          |                                                             
-| `SessionId`                | Unique identifier for the session                           |                                                             
-| `UTMCampaign`              | UTM campaign parameter                                      |                                                             
-| `UTMMedium`                | UTM medium parameter                                        |                                                             
-| `UTMSource`                | UTM source parameter                                        |                                                                              
+| Property Name                 | Description                                                 |
+|-------------------------------|-------------------------------------------------------------|
+| `action_audience_id`          | ID of the target audience for the action                    |
+| `action_control_group`        | Boolean indicating if the action is part of a control group |
+| `action_id`                   | Unique identifier for the action                            |
+| `action_is_custom`            | Boolean indicating if the action is custom                  |
+| `action_name`                 | Name of the action                                          |                          
+| `action_type`                 | Type of the action                                          |                         
+| `basket_price`                | Total price of the items in the basket                      |                         
+| `basket_quantity`             | Total quantity of items in the basket                       |                         
+| `event_action`                | Type of event action (e.g., pageview, click)                |                       
+| `event_category`              | Category of the event                                       |                                                          
+| `event_count`                 | Number of events                                            |                        
+| `event_custom_attributes`     | Map of custom attributes associated with the event          |                         
+| `evet_duration`               | Duration of the event in seconds                            |                        
+| `event_label`                 | Label of the event                                          |                        
+| `event_platform`              | Platform on which the event occurred (e.g., web, mobile)    |                        
+| `event_timestamp`             | Timestamp when the event occurred                           |                       
+| `event_url`                   | URL associated with the event                               |                      
+| `google_client_id`            | Google Analytics client ID                                  |                        
+| `item_category`               | Category of the item                                        |                                                             
+| `item_currency`               | Currency of the item price (e.g., TRY)                      |                                                             
+| `item_custom_attributes`      | Map of custom attributes associated with the item           |                                                             
+| `item_id`                     | Unique identifier for the item                              |                                                             
+| `item_name`                   | Name of the item                                            |                                                             
+| `item_price`                  | Price of the item                                           |                                                             
+| `most_visited_category`       | List of most visited categories                             |                                                             
+| `most_visited_category_count` | Number of times the most visited categories were visited    |                                                             
+| `prediction`                  | Map of prediction probabilities for various outcomes        |
+| `returning_user`              | Boolean indicating if the user is a returning user          |                                                             
+| `session_id`                  | Unique identifier for the session                           |                                                             
+| `utm_campaign`                | UTM campaign parameter                                      |                                                             
+| `utm_mdedium`                 | UTM medium parameter                                        |                                                             
+| `utm_source`                  | UTM source parameter                                        |                                                                              
 
 
 ## Adding Destinations
