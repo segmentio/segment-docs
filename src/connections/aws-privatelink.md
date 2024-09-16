@@ -5,7 +5,7 @@ title: Amazon Web Services PrivateLink
 [Amazon Web Services' PrivateLink](https://aws.amazon.com/privatelink/){:target="_blank”} is an AWS service that provides private connectivity between VPCs without exposing traffic to the public Internet. Keeping traffic in the Amazon network reduces the data security risk associated with exposing your Warehouse traffic to the Internet.
 
 > info ""
-> Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. Only warehouses located in region `us-east-1` are eligible for PrivateLink. You might incur additional networking costs while using AWS PrivateLink. 
+> Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. Only warehouses located in regions `us-east-1`, `us-west-2`, or `eu-west-1` are eligible for PrivateLink. You might incur additional networking costs while using AWS PrivateLink. 
 
 During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), and [Redshift](#redshift). 
 
@@ -60,7 +60,7 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
 ### Configure PrivateLink for Redshift
 Implement Segment's PrivateLink integration by taking the following steps:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
-2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html){:target="_blank”}.
+2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-cross-vpc-console-grantor.html){:target="_blank”}.
 3. Reach back out to your CSM and provide them with the Cluster identifier for your cluster and your AWS account ID. 
 4. Segment creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
 5. After Segment provides you with the URL, use it to update or create new Redshift integrations. The following integrations support PrivateLink: 

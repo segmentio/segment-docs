@@ -6,14 +6,14 @@ redirect_from:
   - '/reverse-etl/'
 ---
 
-Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide and syncs the data to your third party destinations. 
+Reverse ETL (Extract, Transform, Load) extracts data from a warehouse using a query you provide and syncs this warehouse data to your third party destinations. 
 
 Use Reverse ETL when you want to:
-* **Enable your marketing teams**: Sync audiences and other data built in the warehouse to Braze, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
-* **Enrich your customer profiles**: Sync enriched data to Mixpanel for a more complete view of the customer, or enrich Segment Unify with data from your warehouse.
+* **Elevate marketing campaigns**: Sync audiences and other data built in the warehouse to multi-channel marketing tools, like Braze, Hubspot, or Salesforce Marketing Cloud, to personalize marketing campaigns.
+* **Enrich your customer profiles**: Sync enriched data to destinations like Mixpanel for a more complete view of the customer, or enrich Segment Profiles with data from your warehouse.
 * **Activate data in Twilio Engage**: Send data in the warehouse back into Segment as events that can be activated in all supported destinations, including Twilio Engage destinations.
 * **Strengthen your conversion events**: Pass offline or enriched data to conversion APIs like Facebook, Google Ads, TikTok, or Snapchat.
-* **Empower business teams**: Connect Google Sheets to a view in the warehouse to create up-to-date reports for other business teams.
+* **Make warehouse data accessible to business teams**: Connect destinations like Google Sheets to a view in the warehouse to allow business teams to access up-to-date reports.
 
 > info "Reverse ETL supports event and object data"
 > Event and object data includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
@@ -26,14 +26,14 @@ Use Reverse ETL when you want to:
     href="/docs/connections/reverse-etl/setup"
     icon="getting-started.svg"
     title="Set up Reverse ETL"
-    description="Add a Reverse ETL source, set up a model, add a destination, and create mappings to transfer data from your warehouse to your downstream destinations."
+    description="Set up the infrastructure you need to sync data from your warehouse to your downstream destinations."
   %}
   
   {% include components/reference-button.html
     href="/docs/connections/reverse-etl/manage-retl"
     icon="reverse-etl.svg"
     title="Manage Reverse ETL Syncs"
-    description="View your sync history, gain insights into sync statuses, and restart or replay failed or partially successful syncs."
+    description="View your sync history, reset your syncs, or subscribe to alerts."
   %}
 </div>
 
@@ -53,7 +53,7 @@ Learn more about the system that powers Reverse ETL, supported destinations, and
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/reverse-etl-catalog"
       title="Destination catalog"
-      description="View the 30+ destinations with native Reverse ETL support and learn how to send data to the rest of the Segment catalog using Segment Connections."
+      description="View the destinations you can connect to your Reverse ETL sources."
     %}
   </div>
 
@@ -79,6 +79,6 @@ Learn more about the system that powers Reverse ETL, supported destinations, and
   icon="projects.svg"
   href="https://segment.com/customers/mongodb/"
   title="Customer story: MongoDB"
-  description="Learn how MongoDB used Reverse ETL to connect the work of analytics teams to downstream marketing and sales tools to deliver just-in-time communicates that increased customer satisfaction and engagement."
+  description="Learn how MongoDB used Reverse ETL to connect the work of analytics teams to downstream marketing and sales tools to deliver just-in-time communications that increased customer satisfaction and engagement."
 %}
 
