@@ -109,7 +109,7 @@ In order to override the default, check the destination settings pane in the Seg
 
 ## Sync modes
 
-Sync mode allows users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
+Sync modes allow users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
 
 The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you sync customer data, you might have the option to Insert, Update, or Upsert records.
 
