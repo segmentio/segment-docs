@@ -40,7 +40,10 @@ Follow these steps to integrate the Signals SDK into your website:
     pnpm install @segment/analytics-signals 
 ```
 
-2. Add the initialization code:
+2. Add the initialization code and configuration options:
+
+> success ""
+> see [configuration options](#configuration-options) for a complete list.
 
 ```ts
 // analytics.js/ts
@@ -103,6 +106,22 @@ signalsPlugin.addSignal({
   data: { foo: 'bar' }
 })
 ```
+
+## Configuration Options
+
+Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Kotlin.
+
+| `Option`            | Required | Value                     | Description                                                                                                                                                                                           |
+| ------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `writeKey`          | Yes      | string                    | Source write key                                                                                                                                                                                      |
+| `maxBufferSize` | No       | number                  | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                    |
+| `processSignal` | No       | string                  | Override the default signal processing function from the edge function. If this is set, the edge function will not be used.
+| `enableDebugLogging` | No       | boolean                  | Enable debug logs.
+| `disableSignalRedaction` | No       | boolean                  | Disable default Signal data redaction.
+| `apiHost` | No       | string                 | Override the default signals API host. Default is `signals.segment.io/v1`.
+| `functionHost` | No       | string                 | Override the default edge host. Default is `cdn.edgefn.segment.com`
+| `flushAt` | No       | number                   | How many signals to flush at once when sending to the signals API. Default is `5` .                                                                                                                                         |
+| `flushInterval`      | No       | number | How many ms to wait before flushing signals to the API. The default is `2000`. |
 
 ## Next steps
 

@@ -33,7 +33,10 @@ Next, you'll need to add the Signals SDKs to your Swift applicatiion.
     https://github.com/segmentio/Signals-swift.git
     ```
 
-2. Add the initialization code:
+2. Add the initialization code and configuration options:
+
+> success ""
+> see [configuration options](#configuration-options) for a complete list.
 
     ```swift
     // Configure Analytics with your settings
@@ -86,6 +89,23 @@ Next, you'll need to verify signal emission and [create rules](/docs/connections
 5. Click **Preview**, then click **Save & Deploy**.
 
 Segment displays `Rule updated successfully` to verify that it saved your rule.
+
+## Configuration Options
+
+Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Swift.
+
+| `Option`               | Required | Value                      | Description                                                                                                                                                                                            |
+| ---------------------- | -------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `writeKey`             | Yes      | String                     | Source write key                                                                                                                                                                                       |
+| `maximumBufferSize`    | No       | Integer                    | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                     |
+| `relayCount`           | No       | Integer                    | Relays signals to Segment every Xth event. Default is `20`.                                                                                                                                            |
+| `relayInterval`        | No       | TimeInterval  | Relays signals to segment every X seconds. Default is `60`.                                                                                                                                            |
+| `broadcasters`         | No       | `SignalBroadcaster`        | An array of broadcasters. These objects forward signal data to their destinations, like `WebhookBroadcaster` or  `DebugBroadcaster` writing to the developer console. Default is `SegmentBroadcaster`. |
+| `useUIKitAutoSignal`   | No       | Bool                       | Tracks UIKit component interactions automatically. Default is `false`.                                                                                                                                 |
+| `useSwiftUIAutoSignal` | No       | Bool                       | Tracks SwiftUI component interactions automatically. Default is `false`.                                                                                                                               |
+| `useNetworkAutoSignal` | No       | Bool                       | Tracks network events automatically. Default is `false`.                                                                                                                                               |
+| `allowedNetworkHosts`  | No       | Array                      | An array of allowed network hosts.                                                                                                                                                                     |
+| `blockedNetworkHosts`  | No       | Array                      | An array of blocked network hosts.                                                                                                                                                
 
 ## Next steps
 
