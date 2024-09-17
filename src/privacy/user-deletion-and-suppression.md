@@ -75,7 +75,7 @@ Note that list only includes `SUPPRESS_ONLY` regulations. If you created a User 
 
 To create a suppression regulation and add a `userId` to this list, click **Suppress New User**, and enter the `userId` in the field that appears. Then click **Request Suppression**.
 
-Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppression list, mostly processed within 24 hours. In some cases, the suppression request can take up to 30 days to process.
+Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppression list, mostly processed within 24 hours. In some cases, the suppression request can take up to 30 days to process. You can suppress up to 5000 userIds per call through the Public API.
 
 ### Remove a user from the suppression list
 
