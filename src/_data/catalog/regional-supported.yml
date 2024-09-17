@@ -817,6 +817,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: WGp9SQFRVu
+    display_name: Quin AI
+    hidden: false
+    slug: quin-ai
+    url: connections/sources/catalog/cloud-apps/quin-ai
+    regions:
+      - us
+    endpoints:
+      - us
   - id: bnpfpwKnhu
     display_name: Radar
     hidden: false
