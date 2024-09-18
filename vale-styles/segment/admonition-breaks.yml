@@ -5,4 +5,4 @@ code: true
 scope: 
   - raw
 raw: 
-  - '.+$\r?\n^>\sinfo\s|.+$\r?\n^>\swarning\s|.+$\r?\n^>\serror\s'
+  - '.+$\r?\n^>\sinfo\s|.+$\r?\n^>\swarning\s|.+$\r?\n^>\serror\s|.+$\r?\n^>\ssuccess\s'
