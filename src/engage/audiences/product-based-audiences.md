@@ -1,6 +1,8 @@
 ---
 title: Product Based Audiences
 plan: engage-foundations
+redirect_from:
+  - '/engage/audiences/recommendation-audiences'
 ---
 Product Based Audiences lets you select a product, article, song, or other piece of content from your catalog, and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Product Based Audiences for user-based commerce, media, and content affinity use cases. 
 
