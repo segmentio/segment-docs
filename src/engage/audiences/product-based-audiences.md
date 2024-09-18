@@ -1,10 +1,12 @@
 ---
-title: Recommendation Audiences
+title: Product Based Audiences
 plan: engage-foundations
+redirect_from:
+  - '/engage/audiences/recommendation-audiences'
 ---
-Recommendation Audiences lets you select a parameter and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Recommendation Audiences for user-based commerce, media, and content affinity use cases. 
+Product Based Audiences lets you select a product, article, song, or other piece of content from your catalog, and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Product Based Audiences for user-based commerce, media, and content affinity use cases. 
 
-You can use Recommendation Audiences to power the following common marketing campaigns: 
+You can use Product Based Audiences to power the following common marketing campaigns: 
 
 - **Cross-selling**: Identify an audience of users who recently purchased a laptop and send those customers an email with a discount on items in the "laptop accessories" category. 
 - **Upselling**: Identify an audience of users who regularly interact with your free service and send them a promotion for your premium service. 
@@ -13,10 +15,10 @@ You can use Recommendation Audiences to power the following common marketing cam
 - **Next best action**: Identify an audience of users who frequently read articles in your website's "Sports" category and recommend those users your latest sports article. 
 - **Increasing average order value (AOV)**: Identify an audience of users who frequently interact with the "For Kids" section of your website and send them a back to school promotion in August, with free shipping after a set price threshold. 
 
-## Create a Recommendation Audience
+## Create a Product Based Audience
 
 ### Set up your Recommendation Catalog
-A Recommendation Catalog identifies the product events you'd like to generate recommendations from and maps those events against your existing data set.
+Segment utilizes your interaction events (order_completed, product_added, product_searched, song_played, article_saved) and the event metadata of those interaction events to power our CustomerAI Recommendations workflow.
 
 To create your Recommendation Catalog:
 1. Open your Engage space and navigate to **Engage** > **Engage Settings** > **Recommendation catalog**. 
@@ -30,10 +32,10 @@ To create your Recommendation Catalog:
 > warning ""
 > Segment can take several hours to create your Recommendation Catalog. 
 
-### Create your Recommendation Audience
+### Create your Product Based Audience
 Once you've created your Recommendation Catalog, you can build a Recommendation Audience. A Recommendation Audience lets you select a parameter and then build an audience of the people that are most likely to engage with that parameter. 
 
-To create a Recommendation Audience: 
+To create a Product Based Audience: 
 1. Open your Engage space and click **+ New audience**. 
 2. Select **Recommendation Audience** and click **Next**. 
 3. Select a property and value that you'd like to build your audience around (for example, if the property was "Company", you could select a value of "Twilio"). For values that haven't updated yet, enter an exact value into the **Enter value** field. If you're missing a property, return to your [Recommendation catalog](#set-up-your-recommendation-catalog) and update your mapping to include the property. 
@@ -43,7 +45,7 @@ To create a Recommendation Audience:
 7. Enter a name for your destination, update any optional fields, and click **Create Audience** to create your audience. 
 
 > warning ""
-> Segment can take up to a day to calculate your Recommendation Audience.
+> Segment can take up to a day to calculate your Product Based Audience.
 
 ## Best practices
 
