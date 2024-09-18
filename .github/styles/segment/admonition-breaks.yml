@@ -1,0 +1,5 @@
+extends: existence
+message: Add a line break before an alert to preserve formatting.
+level: error
+token: 
+  - '(?:.[?:\r\n]^>\s)'
