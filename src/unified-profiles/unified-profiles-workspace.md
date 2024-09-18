@@ -137,7 +137,7 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 After you complete the Unified Profiles guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, and cloud applications that can send data into Segment, and *destinations*, or apps and business tools that can receive forwarded data from Segment.
 
 > warning "Editing or deleting the two sources automatically created during the guided setup can lead to data loss"
-> During the guided setup process, Segment creates two sources: a [Java source](/docs/connections/sources/catalog/libraries/server/java/quickstart/) named `flex-unify-server-source` that connects your Segment workspace to Flex, and an Personas source, named `Personas [workspace-name]`, that activates your customer data. If you edit or delete these sources, reach out to Flex support for next steps. 
+> During the guided setup process, Segment creates two sources: a [Java source](/docs/connections/sources/catalog/libraries/server/java/quickstart/) named `flex-unify-server-source` that connects your Segment workspace to Flex, and an Personas source, named `Personas [workspace-name]`, that activates your customer data. If you edit or delete these sources, reach out to [Segment support](mailto:friends@segment.com){:target="_blank"} for next steps. 
 
 See the [Unified Profiles entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Unified Profiles workspaces.
 
@@ -193,6 +193,15 @@ These sources are limited to the following types:
   - [Twilio Event Streams](/docs/connections/sources/catalog/cloud-apps/twilio/){:target="_blank"}
   - [HTTP](/docs/connections/sources/catalog/libraries/server/http-api/){:target="_blank"}
   - [Java](/docs/connections/sources/catalog/libraries/server/java/){:target="_blank"}
+  - [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/){:target="_blank"}
+
+Additionally, you can reach out to [Segment support](mailto:friends@segment.com){:target="_blank"} to request access to any of the following sources: 
+  - [Hubspot](/docs/connections/sources/catalog/cloud-apps/hubspot/)
+  - [Sendgrid](https://segment.com/docs/connections/sources/catalog/cloud-apps/sendgrid/)
+  - [Marketo](/docs/connections/sources/catalog/cloud-apps/marketo/)
+  - [Braze](/docs/connections/sources/catalog/cloud-apps/braze/)
+  - [Shopify](https://segment.com/docs/connections/sources/catalog/libraries/website/shopify-littledata/)
+  - [Qualtrics](/docs/connections/sources/catalog/cloud-apps/qualtrics/)
 
 ### Destinations
 
