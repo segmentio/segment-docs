@@ -23,7 +23,7 @@ Segment recommends setting up a new Snowflake user and only giving this user per
 
 > info ""
 > Segment recommends creating a new database for the Data Graph.
-> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema)to update user access for the Segment Reverse ETL schema.
+> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema) to update user access for the Segment Reverse ETL schema.
 
 
 ```sql
