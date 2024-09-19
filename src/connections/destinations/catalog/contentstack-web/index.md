@@ -4,16 +4,16 @@ id: 66ccaa142d6b2d223bb1ebda
 ---
 
 > info "This destination sends data in device-mode"
-> This destination transmits data from the browser directly to Contentstack on the client-side. Contentstack supports both device-mode and cloud-mode destinations. Learn more about the Cloud-mode destiantion [here](docs/connections/destinations/catalog/actions-contentstack).
+> This destination transmits data from the browser directly to Contentstack on the client-side. Contentstack supports both device-mode and cloud-mode destinations. For more about the Cloud-mode destination, see [Contentstack Cloud Destination](/docs/connections/destinations/catalog/actions-contentstack).
 
-[Contentstack](https://www.contentstack.com/?utm_source=segment&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a headless CMS that allows you to build digital experiences using a modular approach. This integration allows you to sync data from Segment to your Contentstack Personalize project, enabling dynamic and personalized content delivery.
+[Contentstack](https://www.contentstack.com/?utm_source=segment&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a headless CMS that allows you to build digital experiences using a modular approach. This integration lets you sync data from Segment to your Contentstack Personalize project, enabling dynamic and personalized content delivery.
 
 This destination is maintained by Contentstack. For any issues with the destination, [contact their Support team](https://www.contentstack.com/customers/support){:target="_blank”}.
 
 ## Prerequisites
 
-- Contentstack account with Personalize enabled
-- A Contentstack Personalize project created in your Contentstack organization.
+- a Contentstack account with Personalize enabled
+- a Contentstack Personalize project created in your Contentstack organization
 
 ## Before you begin
 
@@ -32,13 +32,12 @@ This destination is maintained by Contentstack. For any issues with the destinat
 
 {% include components/actions-fields.html %}
 
-## Send Events to Segment
+## Send events to Segment
 
-Start sending the payload of events to Segment using track or identify calls. This will not only send events to Segment but will forward the selected values to Contentstack Personalization.
-- Note: Ensure your event payloads align with the mapping configuration you created for the Contentstack destination in Segment.
+Start sending the payload of events to Segment using track or identify calls. This will not only send events to Segment but will forward the selected values to Contentstack Personalization. Ensure your event payloads align with the mapping configuration you created for the Contentstack destination in Segment.
 
-## Receive Personalized Content
+## Receive personalized content
 
-As per your events/payloads, your Contentstack Personalize project should now start receiving events for understanding the users associated with your mapped values.
+Based on your events/payloads, your Contentstack Personalize project should now start receiving events for understanding the users associated with your mapped values.
 
-- Note: Ensure the event names and properties you use match those defined in your Contentstack Personalize project. For advanced customization, you can explore the Contentstack Personalize Documentation to further enhance your personalized experiences
+The event names and properties you use must match those defined in your Contentstack Personalize project. For advanced customization and to further enhance your personalized experience, explore Contentstack Personalize in [Contentstack's Documentation](https://www.contentstack.com/docs){:target="_blank”}.

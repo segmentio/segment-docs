@@ -4,7 +4,7 @@ id: 664ce7bdc820c71f7e3ff031
 ---
 
 > info "This destination sends data in cloud-mode"
-> This destination transmits data from Segment to Contentstack server-side. Contentstack supports both device-mode and cloud-mode destinations. For more more about the device-mode web destination, see [Contentstack Web](docs/connections/destinations/catalog/contentstack-web).
+> This destination transmits data from Segment to Contentstack server-side. Contentstack supports both device-mode and cloud-mode destinations. For more more about the device-mode web destination, see [Contentstack Web](/docs/connections/destinations/catalog/contentstack-web).
 
 [Contentstack](https://www.contentstack.com/?utm_source=segment&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a headless CMS that allows you to build digital experiences using a modular approach. This integration lets you sync data from Segment to your Contentstack Personalize project, enabling dynamic and personalized content delivery.
 
@@ -38,6 +38,6 @@ Start sending the payload of events to Segment using Track or Identify calls. Th
 
 ## Receive personalized content
 
-As per your events/payloads, your Contentstack Personalize project should now start receiving events to help you understand the users associated with your mapped values.
+Based on your events/payloads, your Contentstack Personalize project should now start receiving events to help you understand the users associated with your mapped values.
 
 The event names and properties you use must match those defined in your Contentstack Personalize project. For advanced customization and to further enhance your personalized experience, explore Contentstack Personalize in [Contentstack's Documentation](https://www.contentstack.com/docs){:target="_blank”}.
