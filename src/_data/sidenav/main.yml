@@ -429,10 +429,10 @@ sections:
       title: Generative Audiences
     - path: '/engage/audiences/generative-audiences-nutrition-facts'
       title: Generative Audiences Nutrition Facts Label
-    - path: '/engage/audiences/recommendation-audiences'
-      title: Recommendation Audiences
-    - path: '/engage/audiences/recommendation-audiences-nutrition-label'
-      title: Recommendation Audiences Nutrition Facts Label
+    - path: '/engage/audiences/product-based-audiences'
+      title: Product Based Audiences
+    - path: '/engage/audiences/product-based-audiences-nutrition-label'
+      title: Product Based Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
     - path: '/engage/audiences/send-audience-data'

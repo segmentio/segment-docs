@@ -57,7 +57,8 @@ To set up a new Actions-framework destination for the first time:
 4. If prompted, select the source you want to connect to the new destination.
 5. Enter your credentials. This could be an API Key and secret key, or similar information that allows the destination to connect to your account.
 6. Next, choose how you want to set up the destination, and click **Configure Actions**.
-    You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
+   * You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
+   * *(Optional)* Click **Suggest Mappings** to get suggested mappings. Learn more about [suggested mappings](#suggested-mappings).
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
 > info ""
@@ -187,6 +188,16 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
+
+## Suggested mappings
+
+> info ""
+> Suggested mappings is fully available for RETL mappings, and is in public beta for event streams and connections. 
+
+Segment offers suggested mappings that automatically propose relevant destination fields for both model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the setup. For more information, see [Segment's suggested mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
+
+> warning ""
+> Review the suggested mappings for accuracy before finalizing them as the suggestions aren't guaranteed to be 100% accurate. 
 
 ### Coalesce function
 
