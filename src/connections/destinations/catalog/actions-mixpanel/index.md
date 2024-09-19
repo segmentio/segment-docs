@@ -141,9 +141,10 @@ analytics.track('Example Event', { custom_group_key : 'group1' });
 
 If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
 
-### Failed events due to message Id
+### Failed events due to messageId
+Segment maps the `messageId` of a Segment event to Mixpanel's `insert_id` value. If you are generating your own `messageId`, ensure the format complies with Mixpanel's `insert_id` requirements. For more information, see Mixpanel's [Import Events](https://developer.mixpanel.com/reference/import-events#propertiesinsert_id){:target="_blank”} documentation. 
 
-By default, message Id of an event is map to insert ID in Mixpanel. If you are generating your own message ID, check that the message Id comply to the format of Insert ID as mentioned in the [document in Mixpanel](https://developer.mixpanel.com/reference/import-events#propertiesinsert_id). Otherwise, this will result in 400 Bad Request error from Mixpanel.
+Failing to generate a `messageId` that complies with Mixpanel's `insert_id` standard might result in a `400 Bad Request` error from Mixpanel.
 
 ### Why is Boardman, Oregon appearing in my users' profile location field?
 
