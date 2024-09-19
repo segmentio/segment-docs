@@ -1,5 +1,6 @@
 extends: existence
 message: Add a line break before an alert to preserve formatting.
-level: error
+level: warning
+nonword: true
 token: 
-  - '(?:.[?:\r\n]^>\s)'
+  - '.+$\r?\n^>\s\binfo\b\s|.+$\r?\n^>\s\bwarning\b\s|.+$\r?\n^>\s\berror\b\s|.+$\r?\n^>\s\bsuccess\b\s'

@@ -5,7 +5,6 @@ title: Sending Segment Data to Destinations
 You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations.
 
 Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, customer outreach, and more.
-
 > info ""
 > Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace.
 
