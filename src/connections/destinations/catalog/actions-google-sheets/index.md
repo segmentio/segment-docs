@@ -27,6 +27,22 @@ The Google Sheets destination can be connected to **Reverse ETL warehouse source
 > info ""
 > The Google Sheets destination only supports sending new or updated rows to your spreadsheet. Deleting rows is not supported.
 
+## Actions v2
+
+Segment's v2 Action, [Post Sheet v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-object-v2), supports the following features:
+
+- **Sync modes**: Control how Segment updates your data by selecting a sync mode, or a strategy for updating your data in Google Sheets.
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Google Sheets.
+- **Create and modify data**: Use Sync modes to create objects in Google Sheets without having to leave the Segment app. 
+
+### Sync modes
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Available sync modes for the Post Sheet v2 Action includes: 
+- **Update**: Update a record if a match with the specified identifier is found. Segment does nothing if the row doesn't exist.
+- **Upsert**: If a record with the specified identifier is found, it is updated. If not, a new row is created.
+- **Add**: Add a new record when the specified identifier doesn't exist. If it does, the record is skipped.
+
 {% include components/actions-fields.html settings="false"%}
 
 ## FAQ
