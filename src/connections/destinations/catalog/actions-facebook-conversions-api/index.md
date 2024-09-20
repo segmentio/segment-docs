@@ -63,7 +63,6 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 ## Actions v2
-
 Segment created new Actions v2 to provide you with additional access to features. Segment's Actions v2 support the following features: 
   - **Sync modes**: Control how Segment updates your Facebook Business Events Manager by selecting a [sync mode](#sync-modes), or a strategy for updating your downstream data.
   - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Facebook.
