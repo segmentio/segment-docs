@@ -3,7 +3,7 @@
     $this: &;
 
     position: relative;
-    padding: 10px;
+    padding: 5px;
     background-color: color(white);
     margin-top: 20px;
     border-radius: 8px;
@@ -13,11 +13,11 @@
       padding: 30px;
     }*/
 
-    &:hover {
+   /* &:hover {
       border: 1px solid color(gray-100);
       border-color: color(gray-500);
       text-decoration: none;
-    }
+    }*/
   }
 
   &--note-header {
@@ -31,6 +31,7 @@
 
   &--badges {
     padding: 2px;
+    display: inline-block;
   }
 
   &--content {
@@ -45,7 +46,6 @@
   }
   
   &--date {
-    display: inline-block;
     font-size: 12px;
     font-weight: 500;
     color: color(gray-700);
@@ -53,7 +53,7 @@
 
   &--read-more {
     position: absolute;
-    bottom: 20;
+    bottom: 10;
     right: 20;
     padding: 5px;
   }
@@ -69,5 +69,9 @@
   &--filter-button{
     display: inline-block;
     /*width: 50%;*/
+  }
+
+  hr {
+    padding: 2px;
   }
 }

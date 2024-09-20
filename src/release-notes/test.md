@@ -26,14 +26,16 @@ hide_toc: true
       {% for item in product-area %}
       <span class="badge badge--success {{ item | slugify }}">{{ item }}</span>
       {% endfor %}
+    <p class="release-note-card--date">Released {{ note.date }}</p> 
   </div>
 <div class="release-note-card--content">
   <main>
-    <p>{{ note.description | markdownify }}</p>
-    <p class="release-note-card--date">Released {{ note.date }}</p> <a class="button button-fill release-note-card--read-more" href="{{ note.read-more }}">Read more</a>
+    <p>{{ note.description | markdownify }}</p><br>
+    <a class="button button-fill release-note-card--read-more" href="{{ note.read-more }}">Learn more</a>
   </main>
 </div>
 </div>
+<hr style="height:0.05px">
 </section>
 {% endfor %}
 
