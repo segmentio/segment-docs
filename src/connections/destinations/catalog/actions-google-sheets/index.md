@@ -32,7 +32,6 @@ The Google Sheets destination can be connected to **Reverse ETL warehouse source
 Segment's v2 Action, [Post Sheet v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-object-v2), supports the following features:
 
 - **Sync modes**: Control how Segment updates your data by selecting a sync mode, or a strategy for updating your data in Google Sheets.
-- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Google Sheets.
 - **Create and modify data**: Use Sync modes to create objects in Google Sheets without having to leave the Segment app. 
 
 ### Sync modes
