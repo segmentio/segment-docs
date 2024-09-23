@@ -3,6 +3,9 @@ title: Linked Audiences Limits
 plan: engage-foundations
 ---
 
+> info ""
+> Linked Audiences is an add-on to Twilio Engage. To use [Linked Audiences](/docs/engage/audiences/linked-audiences), you must have access to Engage.
+
 To provide consistent performance and reliability at scale, Segment enforces default use limits for Linked Audiences.
 
 ## Usage limits
@@ -21,3 +24,4 @@ Your plan includes a high limit of Activation Events, which ensures that the vas
  Business | 40 x the number of MTUs or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan  
 
 If you have a non-standard or high volume usage plan, you have unique Linked Audiences limits or custom pricing.
+
