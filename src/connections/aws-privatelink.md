@@ -43,10 +43,10 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
 
 ### Configure PrivateLink for RDS Postgres
 1. Create a Network Load Balancer VPC endpoint service using the instructions in the [Create a service powered by AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html){:target="_blank”} documentation. 
-2. Reach out to your Customer Success Manager (CSM) for more details about Segment's AWS principal.
+2. Reach out to your Customer Success Manager (CSM) for details about Segment's AWS principal.
 3. Add the Segment AWS principal as an “Allowed Principal” to consume the Network Load Balancer VPC endpoint service you created in step 1.
-4. Reach out to your CSM and provide them with the Service name for the service that you created above. Segment's engineering team provisions a VPC endpoint for the service in the Segment Edge VPC. 
-5. After creating the VPC endpoint, Segment provides you with private DNS so you can update the **Host** in your Segment app settings or create a new Postgres integration. <br> The following RDS Postgres integrations support PrivateLink: 
+4. Reach out to your CSM and provide them with the Service Name for the service that you created above. Segment's engineering team provisions a VPC endpoint for the service in the Segment Edge VPC. 
+5. Segment provides you with the VPC endpoint's private DNS name. Use the DNS name as the **Host** setting to update or create new Postgres integrations in the Segment app. <br> The following RDS Postgres integrations support PrivateLink: 
   - [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
   - [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
 
@@ -61,8 +61,8 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
 Implement Segment's PrivateLink integration by taking the following steps:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
 2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-cross-vpc-console-grantor.html){:target="_blank”}.
-3. Reach back out to your CSM and provide them with the Cluster identifier for your cluster and your AWS account ID. 
-4. Segment creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
-5. After Segment provides you with the URL, use it to update or create new Redshift integrations. The following integrations support PrivateLink: 
+3. Reach back out to your CSM and provide them with the Cluster Identifier for your cluster and your AWS account ID. 
+4. Segment's engineering team creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
+5. Use the provided PrivateLink Endpoint URL as the **Hostname** setting to update or create new Redshift integrations in the Segment app. The following integrations support PrivateLink: 
   - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
   - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
