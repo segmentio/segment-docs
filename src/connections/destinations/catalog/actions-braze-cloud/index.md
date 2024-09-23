@@ -34,6 +34,11 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 > info ""
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
+> info "V2 Actions"
+> The V2 versions of each action include improved sync mode support. Only valid sync modes for each action will be available. Because of this the `_update_existing_only` parameter is now tied to the sync mode you select for the mapping. If you select the `update` sync mode, we will always pass `_update_existing_only: true` to Braze, and if you choose the `add` sync mode, we will always pass `_update_existing_only: false` to Braze.
+
+{% include content/connection-modes.md %}
+
 {% include components/actions-fields.html settings="true"%}
 
 ## Migration from Braze Classic
