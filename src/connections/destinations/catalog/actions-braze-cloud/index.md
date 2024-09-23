@@ -37,8 +37,6 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 > info "V2 Actions"
 > The V2 versions of each action include improved sync mode support. Only valid sync modes for each action will be available. Because of this the `_update_existing_only` parameter is now tied to the sync mode you select for the mapping. If you select the `update` sync mode, we will always pass `_update_existing_only: true` to Braze, and if you choose the `add` sync mode, we will always pass `_update_existing_only: false` to Braze.
 
-{% include content/connection-modes.md %}
-
 {% include components/actions-fields.html settings="true"%}
 
 ## Migration from Braze Classic
