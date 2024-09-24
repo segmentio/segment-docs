@@ -7,7 +7,7 @@ title: Amazon Web Services PrivateLink
 > info ""
 > Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. Only warehouses located in regions `us-east-1`, `us-west-2`, or `eu-west-1` are eligible for PrivateLink. You might incur additional networking costs while using AWS PrivateLink. 
 
-During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), and [Redshift](#redshift). 
+During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), [Redshift](#redshift), and [Snowflake](#snowflake). 
 
 ## Databricks
 
@@ -22,7 +22,7 @@ Before you can configure AWS PrivateLink for Databricks, complete the following 
   - Configure a [security group](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html#security-groups){:target="_blank”} with bidirectional access to 0.0.0.0/0 and ports 443, 3306, 6666, 2443, and 8443-8451. 
 
 ### Configure PrivateLink for Databricks
-To configure PrivateLink for Databricks:
+To implement Segment's PrivateLink integration for Databricks:
 1. Follow the instructions in Databricks' [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} documentation. You must create a [back-end](https://docs.databricks.com/en/security/network/classic/privatelink.html#private-connectivity-overview){:target="_blank”} connection to integrate with Segment's front-end connection. 
 2. After you've configured a back-end connection for Databricks, request access to Segment's PrivateLink integration by reaching out to your Customer Success Manager (CSM).
 3. Your CSM sets up a call with Segment R&D to continue the onboarding process. 
@@ -34,7 +34,7 @@ The following Databricks integrations support PrivateLink:
 ## RDS Postgres 
 
 ### Prerequisites
-Before you can configure AWS PrivateLink for RDS Postgres, complete the following prerequisites in your Databricks workspace:
+Before you can configure AWS PrivateLink for RDS Postgres, complete the following prerequisites:
 - **Set up a Network Load Balancer (NLB) to route traffic to your Postgres database**: Segment recommends creating a NLB that has target group IP address synchronization, using a solution like AWS Lambda. 
 If any updates are made to the Availability Zones (AZs) enabled for your NLB, please let your CSM know so that Segment can update the AZs of your VPC endpoint.
 - **Configure your NLB with one of the following settings**: 
@@ -42,6 +42,7 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
   - If you must enforce inbound rules on PrivateLink traffic, add an inbound rule that allows traffic belonging to Segment's PrivateLink/Edge CIDR: `10.0.0.0/8`
 
 ### Configure PrivateLink for RDS Postgres
+To implement Segment's PrivateLink integration for RDS Postgres:
 1. Create a Network Load Balancer VPC endpoint service using the instructions in the [Create a service powered by AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html){:target="_blank”} documentation. 
 2. Reach out to your Customer Success Manager (CSM) for details about Segment's AWS principal.
 3. Add the Segment AWS principal as an “Allowed Principal” to consume the Network Load Balancer VPC endpoint service you created in step 1.
@@ -58,7 +59,7 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
 - **Your cluster is using a port within the ranges 5431-5455 or 8191-8215**: Clusters with cluster relocation enabled [might encounter an error if updated to include a port outside of this range](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-recovery.html#:~:text=You%20can%20change%20to%20another%20port%20from%20the%20port%20range%20of%205431%2D5455%20or%208191%2D8215.%20(Don%27t%20change%20to%20a%20port%20outside%20the%20ranges.%20It%20results%20in%20an%20error.)){:target="_blank”}.
 
 ### Configure PrivateLink for Redshift
-Implement Segment's PrivateLink integration by taking the following steps:
+To implement Segment's PrivateLink integration for Redshift:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
 2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-cross-vpc-console-grantor.html){:target="_blank”}.
 3. Reach back out to your CSM and provide them with the Cluster Identifier for your cluster and your AWS account ID. 
@@ -66,3 +67,21 @@ Implement Segment's PrivateLink integration by taking the following steps:
 5. Use the provided PrivateLink Endpoint URL as the **Hostname** setting to update or create new Redshift integrations in the Segment app. The following integrations support PrivateLink: 
   - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
   - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+
+## Snowflake
+
+### Prerequisites
+Before you can configure AWS PrivateLink for Snowflake, complete the following prerequisites:
+- Your Snowflake account must be on the Business Critical [Edition](https://docs.snowflake.com/en/user-guide/intro-editions){:target="_blank”} or higher.
+- Your Snowflake account is hosted on the Amazon Web Services (AWS) [cloud platform](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms){:target="_blank”}.
+
+### Configure PrivateLink for Snowflake
+To implement Segment's PrivateLink integration for Snowflake:
+1. Follow Snowflake's PrivateLink documentation to [enable AWS PrivateLink](https://docs.snowflake.com/en/user-guide/admin-security-privatelink#enabling-aws-privatelink){:target="_blank”} for your Snowflake account.
+2. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will provide you with Segment’s AWS Edge account ID.
+3. Create a Snowflake Support Case to authorize PrivateLink connections from Segment's AWS account ID as a third party vendor to your Snowflake account.
+4. After Snowflake support authorizes Segment, call the [SYSTEM$GET_PRIVATELINK_CONFIG](https://docs.snowflake.com/en/sql-reference/functions/system_get_privatelink_config) function while using the Snowflake ACCOUNTADMIN role. Reach back out to your Segment CSM and provide them with the **privatelink-vpce-id** and **privatelink-account-url** values from the function output. Note down for yourself the **privatelink-account-name** value.
+5. Segment's engineering team creates a VPC endpoint on your behalf. Segment also creates a CNAME record to reroute Segment traffic to use your VPC endpoint. This ensures that Segment connections to your **privatelink-account-name** are made over PrivateLink.
+6. Your CSM notifies you that the setup on Segment's side is complete. Use your **privatelink-account-name** as the **Account** setting to update or create new Snowflake integrations in the Segment app. The following integrations support PrivateLink:
+  - [Snowflake storage destination](/docs/connections/storage/catalog/snowflake/)
+  - [Snowflake Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
