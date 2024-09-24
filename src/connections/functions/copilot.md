@@ -4,9 +4,6 @@ title: Functions Copilot
 
 Functions Copilot helps you generate JavaScript code for functions using natural language prompts. For more information about the language model used to generate JavaScript code, see the [Functions Copilot Nutrition Facts Label](/docs/connections/functions/functions-copilot-nutrition-facts/).
 
-> info "Functions Copilot Public Beta"
-> Functions Copilot is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 ## Functions Copilot benefits
 
 Functions Copilot improves efficiency and productivity by streamlining the process of creating and managing custom functions. 
