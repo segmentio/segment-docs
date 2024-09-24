@@ -59,9 +59,6 @@ You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync
 
 The notification channels that you select for one alert will apply to all alerts in your workspace. 
 
-> success ""
-> If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
-
 ### Failed or partially successful syncs
 To subscribe to alerts for a failed or partially successful sync: 
 1. Navigate to **Settings > User Preferences**. 
@@ -74,6 +71,9 @@ To subscribe to alerts for a failed or partially successful sync:
     - **Enable Slack notifications**: Enter a webhook URL and Slack channel name.
     - **Enable in-app notifications**: Select this option to see an in-app notification.
 5. Click **Create alert**.
+
+> success ""
+> If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
 
 ### Model-level volume spike alerts
 
