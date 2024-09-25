@@ -40,7 +40,7 @@ You can customize additional event settings at any time.
 With Customized setup, you can choose which identifiers you want to map downstream to your destination.
 
 > warning "Review your settings before configuring an ID strategy"
-> If you want to send `ios.idfa` as a part of your ID strategy, confirm that you've enabled the `send_mobile_ids` setting when connecting your destination to an audience or journey.   
+> If you want to send `ios.idfa` as a part of your ID strategy, confirm that you've enabled the `send_mobile_ids` setting when connecting your destination to an audience or Journey.   
 
 1. Using **Customized Setup**, click **+ Add Identifier** and add the identifiers:
 - **Segment**: Choose your identifiers from Segment.
@@ -49,7 +49,6 @@ With Customized setup, you can choose which identifiers you want to map downstre
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your audience or journey.
-
  
 ## Limits and best practices
 
