@@ -11,6 +11,10 @@ During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databr
 
 ## Databricks
 
+The following Databricks integrations support PrivateLink:
+- [Databricks storage destination](/docs/connections/storage/catalog/databricks/)
+- [Databricks Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+
 > info "Segment recommends reviewing the Databricks documentation before attempting AWS PrivateLink setup"
 > The setup required to configure the Databricks PrivateLink integration requires front-end and back-end PrivateLink configuration. Review the [Databricks documentation on AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} to ensure you have everything required to set up this configuration before continuing. 
 
@@ -24,14 +28,18 @@ Before you can configure AWS PrivateLink for Databricks, complete the following 
 ### Configure PrivateLink for Databricks
 To implement Segment's PrivateLink integration for Databricks:
 1. Follow the instructions in Databricks' [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} documentation. You must create a [back-end](https://docs.databricks.com/en/security/network/classic/privatelink.html#private-connectivity-overview){:target="_blank”} connection to integrate with Segment's front-end connection. 
-2. After you've configured a back-end connection for Databricks, request access to Segment's PrivateLink integration by reaching out to your Customer Success Manager (CSM).
-3. Your CSM sets up a call with Segment R&D to continue the onboarding process. 
-
-The following Databricks integrations support PrivateLink:
-  - [Databricks storage destination](/docs/connections/storage/catalog/databricks/)
-  - [Databricks Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+2. After you've configured a back-end connection for Databricks, let your Customer Success Manager (CSM) know that you're interested in PrivateLink.
+3. Segment's engineering team creates a custom VPC endpoint on your behalf. Segment then provides you with the VPC endpoint's ID.
+4. Follow the instructions in Databricks' [Register PrivateLink objects](https://docs.databricks.com/en/security/network/classic/privatelink.html#step-3-register-privatelink-objects){:target="_blank”} documentation. It'll instruct you to register the VPC endpoint in your Databricks account and to create or update your Private Access Setting to include the VPC endpoint.
+5. Configure your Databricks workspace to [use the Private Access Setting object](https://docs.databricks.com/en/security/network/classic/privatelink.html#step-4-create-or-update-your-workspace-with-privatelink-objects) from the previous step.
+6. Reach back out to your CSM and provide them with your Databricks Workspace URL. Segment configures their internal DNS to reroute Segment traffic for your Databricks workspace to your VPC endpoint.
+7. Your CSM notifies you that Segment's PrivateLink integration is complete. If you have any existing Segment Databricks integrations that use your Databricks workspace URL, they now use PrivateLink. You can also create new Databricks integrations in the Segment app. All newly created integrations using your Databricks workspace URL will automatically use PrivateLink.
 
 ## RDS Postgres 
+
+The following RDS Postgres integrations support PrivateLink:
+- [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
+- [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
 
 ### Prerequisites
 Before you can configure AWS PrivateLink for RDS Postgres, complete the following prerequisites:
@@ -44,14 +52,16 @@ If any updates are made to the Availability Zones (AZs) enabled for your NLB, pl
 ### Configure PrivateLink for RDS Postgres
 To implement Segment's PrivateLink integration for RDS Postgres:
 1. Create a Network Load Balancer VPC endpoint service using the instructions in the [Create a service powered by AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html){:target="_blank”} documentation. 
-2. Reach out to your Customer Success Manager (CSM) for details about Segment's AWS principal.
+2. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment's AWS principal.
 3. Add the Segment AWS principal as an “Allowed Principal” to consume the Network Load Balancer VPC endpoint service you created in step 1.
 4. Reach out to your CSM and provide them with the Service Name for the service that you created above. Segment's engineering team provisions a VPC endpoint for the service in the Segment Edge VPC. 
-5. Segment provides you with the VPC endpoint's private DNS name. Use the DNS name as the **Host** setting to update or create new Postgres integrations in the Segment app. <br> The following RDS Postgres integrations support PrivateLink: 
-  - [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
-  - [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
+5. Segment provides you with the VPC endpoint's private DNS name. Use the DNS name as the **Host** setting to update or create new Postgres integrations in the Segment app.
 
 ## Redshift
+
+The following Redshift integrations support PrivateLink:
+- [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
+- [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
 
 ### Prerequisites
 - **You're using the RA3 node type**: To access Segment's PrivateLink integration, use an RA3 instance.
@@ -64,16 +74,18 @@ To implement Segment's PrivateLink integration for Redshift:
 2. After you receive the Edge account ID and VPC ID, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-cross-vpc-console-grantor.html){:target="_blank”}.
 3. Reach back out to your CSM and provide them with the Cluster Identifier for your cluster and your AWS account ID. 
 4. Segment's engineering team creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
-5. Use the provided PrivateLink Endpoint URL as the **Hostname** setting to update or create new Redshift integrations in the Segment app. The following integrations support PrivateLink: 
-  - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
-  - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+5. Use the provided PrivateLink Endpoint URL as the **Hostname** setting to update or create new Redshift integrations in the Segment app.
 
 ## Snowflake
 
+The following Snowflake integrations support PrivateLink:
+- [Snowflake storage destination](/docs/connections/storage/catalog/snowflake/)
+- [Snowflake Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
+
 ### Prerequisites
 Before you can configure AWS PrivateLink for Snowflake, complete the following prerequisites:
-- Your Snowflake account must be on the Business Critical [Edition](https://docs.snowflake.com/en/user-guide/intro-editions){:target="_blank”} or higher.
-- Your Snowflake account is hosted on the Amazon Web Services (AWS) [cloud platform](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms){:target="_blank”}.
+- Your Snowflake account is on the Business Critical [Edition](https://docs.snowflake.com/en/user-guide/intro-editions){:target="_blank”} or higher.
+- Your Snowflake account is hosted on the [AWS cloud platform](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms){:target="_blank”}.
 
 ### Configure PrivateLink for Snowflake
 To implement Segment's PrivateLink integration for Snowflake:
@@ -81,7 +93,5 @@ To implement Segment's PrivateLink integration for Snowflake:
 2. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will provide you with Segment’s AWS Edge account ID.
 3. Create a Snowflake Support Case to authorize PrivateLink connections from Segment's AWS account ID as a third party vendor to your Snowflake account.
 4. After Snowflake support authorizes Segment, call the [SYSTEM$GET_PRIVATELINK_CONFIG](https://docs.snowflake.com/en/sql-reference/functions/system_get_privatelink_config) function while using the Snowflake ACCOUNTADMIN role. Reach back out to your Segment CSM and provide them with the **privatelink-vpce-id** and **privatelink-account-url** values from the function output. Note down for yourself the **privatelink-account-name** value.
-5. Segment's engineering team creates a VPC endpoint on your behalf. Segment also creates a CNAME record to reroute Segment traffic to use your VPC endpoint. This ensures that Segment connections to your **privatelink-account-name** are made over PrivateLink.
-6. Your CSM notifies you that the setup on Segment's side is complete. Use your **privatelink-account-name** as the **Account** setting to update or create new Snowflake integrations in the Segment app. The following integrations support PrivateLink:
-  - [Snowflake storage destination](/docs/connections/storage/catalog/snowflake/)
-  - [Snowflake Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
+5. Segment's engineering team creates a custom VPC endpoint on your behalf. Segment also creates a CNAME record to reroute Segment traffic to use your VPC endpoint. This ensures that Segment connections to your **privatelink-account-name** are made over PrivateLink.
+6. Your CSM notifies you that the setup on Segment's side is complete. Use your **privatelink-account-name** as the **Account** setting to update or create new Snowflake integrations in the Segment app.
