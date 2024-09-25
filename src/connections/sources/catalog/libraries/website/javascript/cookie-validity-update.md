@@ -44,7 +44,7 @@ analytics.load('writeKey', {
 })
 ```
 
-To set these values via the [NPM package](https://github.com/segmentio/analytics-next/tree/master/packages/browser), you can set these cookie values like so:
+To set the values using the [NPM package](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank"}, set the cookie values like to:
 ```js
     analytics = AnalyticsBrowser.load({
         writeKey: 'writeKey'
