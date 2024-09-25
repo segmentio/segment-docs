@@ -33,7 +33,7 @@ To implement Segment's PrivateLink integration for Databricks:
 4. Follow the instructions in Databricks' [Register PrivateLink objects](https://docs.databricks.com/en/security/network/classic/privatelink.html#step-3-register-privatelink-objects){:target="_blank”} documentation. It'll instruct you to register the VPC endpoint in your Databricks account and to create or update your Private Access Setting to include the VPC endpoint.
 5. Configure your Databricks workspace to [use the Private Access Setting object](https://docs.databricks.com/en/security/network/classic/privatelink.html#step-4-create-or-update-your-workspace-with-privatelink-objects) from the previous step.
 6. Reach back out to your CSM and provide them with your Databricks Workspace URL. Segment configures their internal DNS to reroute Segment traffic for your Databricks workspace to your VPC endpoint.
-7. Your CSM notifies you that Segment's PrivateLink integration is complete. If you have any existing Segment Databricks integrations that use your Databricks workspace URL, they now use PrivateLink. You can also create new Databricks integrations in the Segment app. All newly created integrations using your Databricks workspace URL will automatically use PrivateLink.
+7. Your CSM notifies you that Segment's PrivateLink integration is complete. If you have any existing Segment Databricks integrations that use your Databricks workspace URL, they now automatically use PrivateLink. You can also create new Databricks integrations in the Segment app. All newly created integrations using your Databricks workspace URL will automatically use PrivateLink.
 
 ## RDS Postgres 
 
@@ -64,6 +64,7 @@ The following Redshift integrations support PrivateLink:
 - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
 
 ### Prerequisites
+Before you can configure AWS PrivateLink for Redshift, complete the following prerequisites:
 - **You're using the RA3 node type**: To access Segment's PrivateLink integration, use an RA3 instance.
 - **You've enabled cluster relocation**: Cluster relocation migrates your cluster behind a proxy and keeps the cluster endpoint unchanged, even if your cluster needs to be migrated to a new Availability Zone. A consistent cluster endpoint makes it possible for Segment's Edge account and VPC to remain connected to your cluster. To enable cluster relocation, follow the instructions in the AWS [Relocating your cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-recovery.html){:target="_blank”} documentation. 
 - **Your cluster is using a port within the ranges 5431-5455 or 8191-8215**: Clusters with cluster relocation enabled [might encounter an error if updated to include a port outside of this range](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-recovery.html#:~:text=You%20can%20change%20to%20another%20port%20from%20the%20port%20range%20of%205431%2D5455%20or%208191%2D8215.%20(Don%27t%20change%20to%20a%20port%20outside%20the%20ranges.%20It%20results%20in%20an%20error.)){:target="_blank”}.
