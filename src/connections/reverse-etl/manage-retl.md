@@ -55,8 +55,6 @@ You can choose to replay syncs. To replay a specific sync, contact [friends@segm
 ## Alerting
 You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures, spikes in data ingested from your model, and fluctuations in the volume of events successfully delivered from your mapping. 
 
-<!--- TODO: rewrite above + confrm w/ eric that the following is true--->
-
 The notification channels that you select for one alert will apply to all alerts in your workspace. 
 
 ### Failed or partially successful syncs
@@ -83,16 +81,14 @@ To receive a volume spike alert in a Slack channel, you must first create a Slac
 
 1. Navigate to the model you'd like to create an alert for and select the **Alerts** tab. 
 2. Click **Create alert**. 
-3. Set a *change in event volume* percentage, or the percentage of change in event volume from your source that would prompt an alert.  <!--- TODO: add example (in this step or the section intro?)--->
+3. Set a *change in event volume* percentage, or the percentage of change in event volume from your source that would prompt an alert.
 4. Select one or more of the following notification channels: 
     - **Email**: Select this channel to receive emailed alerts at the email address that you use to sign in to Segment. 
     - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
     - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
 5. Toggle the **Enable alert** setting on and click **Create**. 
 
-To edit or disable your alert, navigate to your model's Alerts tab and select the Actions menu.  
-
-<!--- TODO: fix the above wording ^ --->
+To edit or disable your alert, navigate to your model's Alerts tab and select the Actions menu for the model you'd like to edit.
 
 ### Mapping-level successful delivery rate fluctuations
 
@@ -110,6 +106,6 @@ To subscribe to alerts for successful delivery fluctuations at the mapping level
     - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
 5. Toggle the **Enable alert** setting on and click **Create**. 
 
-To edit or disable your alert, navigate to your mapping's Alerts tab and select the Actions menu.  
+To edit or disable your alert, navigate to your mapping's Alerts tab and select the Actions menu for the alert you'd like to edit.  
 
 <!--- TODO: fix the above wording ^ --->
