@@ -107,5 +107,3 @@ To subscribe to alerts for successful delivery fluctuations at the mapping level
 5. Toggle the **Enable alert** setting on and click **Create**. 
 
 To edit or disable your alert, navigate to your mapping's Alerts tab and select the Actions menu for the alert you'd like to edit.  
-
-<!--- TODO: fix the above wording ^ --->
