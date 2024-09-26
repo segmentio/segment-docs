@@ -38,7 +38,7 @@ If you have a non-standard or high volume usage plan, you may have unique Revers
 
 Name | Details | Limit
 --------- | ------- | ------
-Model query length | The maximum length for the model SQL query. | 131,072 characters
+Model query length | The maximum length for the model SQL query. | 65,535 characters
 Model identifier column name length | The maximum length for the ID column name. | 191 characters
 Model timestamp column name length | The maximum length for the timestamp column name. | 191 characters
 Sync frequency | The shortest possible duration Segment allows between syncs. | 15 minutes
