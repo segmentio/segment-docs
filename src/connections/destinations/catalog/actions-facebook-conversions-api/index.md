@@ -62,6 +62,29 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 5. On the **Settings** tab, enter in your Pixel ID and click **Save**.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
+## Actions v2
+Segment created new Actions v2 to provide you with additional access to features. Segment's Actions v2 support the following features: 
+  - **Sync modes**: Control how Segment updates your Facebook Business Events Manager by selecting a [sync mode](#sync-modes), or a strategy for updating your downstream data.
+  - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Facebook.
+
+> warning ""
+> You might need to reauthorize your Facebook Business Events Manager account to use all of the features associated with v2 Actions.
+
+The following Facebook Conversions API (Actions) are Actions v2: 
+  - [Purchase v2](#purchase-v2)
+  - [Add to Cart v2](#add-to-cart-v2)
+  - [Custom Event v2](#custom-event-v2)
+  - [Page View v2](#page-view-v2)
+  - [View Content v2](#view-content-v2)
+  - [Initiate Checkout v2](#initiate-checkout-v2)
+  - [Search v2](#search-v2)
+
+### Sync modes
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Available sync modes for the Facebook Conversions API (Actions) include: 
+- **Add**: Add records to a list, segment, or journey.
+
 {% include components/actions-fields.html %}
 
 ## Configuration options

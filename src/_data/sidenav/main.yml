@@ -421,8 +421,13 @@ sections:
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
-    - path: '/engage/audiences/linked-audiences'
-      title: Linked Audiences
+    - section_title: Linked Audiences
+      slug: '/engage/audiences/linked-audiences'
+      section: 
+      - path: '/engage/audiences/linked-audiences'
+        title: Linked Audiences Overview
+      - path:  '/engage/audiences/linked-audiences-limits'
+        title: Linked Audiences Limits
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
