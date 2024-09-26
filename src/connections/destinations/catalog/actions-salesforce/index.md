@@ -44,7 +44,7 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 
 ## Actions v2
 
-Segment created new Actions v2 to provide you with additional access to features. Segment's Actions v2 support the following features: 
+Segment's Actions v2 provide you with access to the following features: 
   - **Sync modes**: Control how Segment updates Salesforce by selecting a [sync mode](#sync-modes), or a strategy for updating your downstream data.
   - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Salesforce.
   - **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
