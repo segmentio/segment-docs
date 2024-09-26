@@ -201,3 +201,4 @@ For "Bulk Upsert External ID", see [Salesforce’s help documentation](https://h
 
 > warning ""
 > The field mapped to Bulk Upsert External Id should **not** be included in the Other Fields mapping. Including it as a custom field will cause an error in Salesforce. Although the Bulk API may return successful responses, the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page in Salesforce will display error messages for failed operations.
+
