@@ -4,9 +4,6 @@ title: Functions Copilot
 
 Functions Copilot helps you generate JavaScript code for functions using natural language prompts. For more information about the language model used to generate JavaScript code, see the [Functions Copilot Nutrition Facts Label](/docs/connections/functions/functions-copilot-nutrition-facts/).
 
-> info "Functions Copilot Public Beta"
-> Functions Copilot is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 ## Functions Copilot benefits
 
 Functions Copilot improves efficiency and productivity by streamlining the process of creating and managing custom functions. 
@@ -42,4 +39,3 @@ Keep the following limitations in mind as you work with Functions Copilot:
 
 - **Context limitations**: Functions Copilot generates code based on Segment-specific terminology and the prompts you write. As a result, the generated output may not always be accurate. If the function doesn't initially meet your needs, try to refine or rewrite your prompt.
 - **Language support**: Functions Copilot only supports English prompts. Using other languages may impact the accuracy of the generated output.
-- **Regional support**: Functions Copilot is only available for US region Segment workspaces.
