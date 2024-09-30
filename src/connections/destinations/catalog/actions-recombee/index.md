@@ -1,8 +1,9 @@
 ---
 title: Recombee (Actions) Destination
+hidden: true
 versions:
   - name: Recombee AI
-    link: /docs/connections/destinations/catalog/recombee-ai
+    link: /docs/connections/destinations/catalog/recombee-ai     
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -19,23 +20,23 @@ This destination is maintained by Recombee. For any issues with the destination,
 2. From the Segment web app, navigate to **Connections > Destinations** and click **Add Destination**.
 3. Select **Recombee (Actions)** and click **Add Destination**.
 4. Select an existing Source to connect to Recombee (Actions).
-5. Go to the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"}:
+5. Navigate to the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"} and complete the following actions:
   - Choose the Recombee Database where you want to send the interactions.
   - Click **Settings** in the menu on the left.
   - In the **API ID & Tokens** settings section, find the **Database ID** and the **Private Token** of the Database.
-6. Back in the Segment web app, go to the Recombee destination settings.
+6. Back in the Segment app, navigate to the settings page of the Recombee destination you created.
   - Copy the **Database ID** from the Recombee Admin UI and paste it into the **Database ID** field in the destination settings.
   - Copy the **Private Token** from the Recombee Admin UI and paste it into the **Private Token** field in the destination settings.
 
 Once you send the data from Segment to the Recombee destination you can:
-  - Go to the KPI console of the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"} to see the numbers of the ingested interactions (updated in Real-time)
-  - Click the ID of an Item (or User) in the Items (or Users) catalog section in the Admin UI to view a specific ingested interaction.
+  - Open the KPI console of the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"} to see the numbers of the ingested interactions (updated in realtime).
+  - Select the ID of an Item (or User) in the Items (or Users) catalog section in the Admin UI to view a specific ingested interaction.
 
 {% include components/actions-fields.html %}
 
 ## Reporting successful recommendations
 
-You can inform Recombee that a specific interaction resulted from a successful recommendation (meaning the recommendations were presented to a user, and the user clicked on one of the items) by setting the ID of the successful recommendation request in the `Recommendation ID` field of the action (this is the `recomm_id` property by default). You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics){:target="_blank"}
+You can inform Recombee that a specific interaction resulted from a successful recommendation (meaning the recommendations were presented to a user, and the user clicked on one of the items) by setting the ID of the successful recommendation request in the `Recommendation ID` field of the action (this is the `recomm_id` property by default). You can read more about this setting in Recombee's [Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics){:target="_blank"}
 
 Sending the `Recommendation ID` gives you precise numbers about successful recommendations in the KPI section of the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"}. This explicit feedback also helps improve the output of the recommendation models.
 
