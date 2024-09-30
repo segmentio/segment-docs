@@ -35,7 +35,26 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 > info "V2 Actions"
-> The V2 versions of each action include improved sync mode support. Only valid sync modes for each action are available. As a result, the `_update_existing_only` parameter is tied to the sync mode you select for the mapping. If you select the `update` sync mode, Segment passes `_update_existing_only: true` to Braze, and if you choose the `add` sync mode, Segment passes `_update_existing_only: false` to Braze.
+> The `_update_existing_only` parameter is tied to the sync mode you select for the mapping. If you select the `update` sync mode, Segment passes `_update_existing_only: true` to Braze, and if you choose the `add` sync mode, Segment passes `_update_existing_only: false` to Braze.
+
+## Actions v2
+
+Segment’s v2 Actions, [Custom Object v2](#custom-object-v2) and [Custom Event v2](#custom-event-v2), support the following features:
+
+- **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data. 
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Braze.
+- **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
+
+> warning ""
+> You might need to reauthorize your Braze account to use all of the features associated with v2 Actions.
+
+### Sync modes
+
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Sync modes available for v2 Actions include:
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
 
 {% include components/actions-fields.html settings="true"%}
 
