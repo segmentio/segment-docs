@@ -53,7 +53,7 @@ To reset a sync:
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
 ## Alerting
-You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures, spikes in data ingested from your model, and fluctuations in the volume of events successfully delivered from your mapping. 
+You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and fluctuations in the volume of events successfully delivered to your mapping. 
 
 The notification channels that you select for one alert will apply to all alerts in your workspace. 
 
@@ -73,6 +73,7 @@ To subscribe to alerts for a failed or partially successful sync:
 > success ""
 > If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
 
+<!--- IG 9/2024 - not yet working
 ### Model-level volume spike alerts
 
 You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a set percentage. For example, if you set a change percentage of 4% and your source received 100 events over the first 24 hours, Segment would notify you the following day if your source ingested fewer than 96 or more than 104 events.
@@ -83,12 +84,13 @@ To receive a volume spike alert in a Slack channel, you must first create a Slac
 2. Click **Create alert**. 
 3. Set a *change in event volume* percentage, or the percentage of change in event volume from your source that would prompt an alert.
 4. Select one or more of the following notification channels: 
-    - **Email**: Select this channel to receive emailed alerts at the email address that you use to sign in to Segment. 
+    - **Email**: Enter an email address or alias that should receive alerts.
     - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
     - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
 5. Toggle the **Enable alert** setting on and click **Create**. 
 
 To edit or disable your alert, navigate to your model's Alerts tab and select the Actions menu for the model you'd like to edit.
+--->
 
 ### Mapping-level successful delivery rate fluctuations
 
@@ -96,12 +98,14 @@ You can create an alert that notifies you when the volume of events successfully
 
 To receive a successful delivery rate fluctuation alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
+![A screenshot of the Alerts tab for a Mapping, with the new mapping sidesheet partially filled out.](images/mapping-alerting.jpeg)
+
 To subscribe to alerts for successful delivery fluctuations at the mapping level: 
 1. Navigate to your intended mapping and select the **Alerts** tab. 
 2. Click **Create alert**. 
 3. Set an *alert threshold*, or the percentage of successfully delivered events that would prompt an alert. 
 4. Select one or more of the following notification channels: 
-    - **Email**: Select this channel to receive emailed alerts at the email address that you use to sign in to Segment. 
+    - **Email**: Enter an email address or alias that should receive alerts.
     - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
     - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
 5. Toggle the **Enable alert** setting on and click **Create**. 
