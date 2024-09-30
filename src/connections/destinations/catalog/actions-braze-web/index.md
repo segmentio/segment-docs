@@ -159,6 +159,10 @@ For more details on this snippet, see Braze's [Soft push prompt](https://www.bra
  });
 ```
 
+### Enable SDK Authentication
+
+When "Enable SDK Authentication" is enabled, Segment will set Braze's `enableSdkAuthentication` to `true`. When this feature is enabled, the Braze SDK will append the current user’s last known JWT to network requests made to Braze Servers.
+
 
 ## Important differences from the classic Braze destination
 - Braze Web Mode (Actions) supports the Braze [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) supports server and mobile sources, but to use mobile sources in device-mode, use the Braze Classic destination.
