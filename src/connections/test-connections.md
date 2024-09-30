@@ -67,3 +67,7 @@ The Event Tester is not available for Data Lakes.
 #### Why are my destination filters being ignored?
 
 Events passed into the Event Tester bypass destination filters. Destination filters are applied to events as they are sent to specific destinations. However, the Event Tester is designed to help you troubleshoot your Sources, their configuration, and their downstream destinations by showing a sample of the data available. It allows you to check that data is being sent, and that it's in the correct format without the filters being applied. This means that when you use the Event Tester, you're seeing the data before any destination filters or other processing rules are applied, providing a clear view of the raw event data as it comes from the source.
+
+### Why am I only seeing event downstream that are sent through the Event Tester?
+
+If you have an insert function implemented, please ensure you have a handler for each type of event you are sending downstream. The Event Tester won’t make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline. The Event Tester is not impacted by an Insert Function at all. Which maybe causing you to see events downstream that aren't being sent through the insert function. Use the Function tester rather than the Event Tester to see how your Insert Function impacts your data.
