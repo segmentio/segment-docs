@@ -98,3 +98,5 @@ Customers who have access to the Custom Domain feature can rename analytics to `
 ### What happens to the Analytics.js cookies already set on the user's browser prior to a Custom Domain implementation?
 Analytics.js cookies are not lost in the transition to Custom Domain. When users revisit your website, the previous Analytics.js cookies continue to be fetched and added to events, if available.
 
+### Custom domain for a new AJS source within the same workspace
+Custom domain is enabled for all AJS sources during the initial setup. If you plan to use an existing domain, you need to update the source settings with the custom domains.
