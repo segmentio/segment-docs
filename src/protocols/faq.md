@@ -155,9 +155,9 @@ Segment's [Schema Controls](docs/connections/sources/schema/destination-data-con
 3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: Segment evaluates incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
 
 
-### Why am I still seeing unplanned properties within the source Schema, when the properties have been added to newer versions of the Tracking Plan?
+### Why am I still seeing unplanned properties in my Source Schema when I've added the properties to a new version of my Tracking Plan?
 
-The schema will only validate events against the oldest event version that exists in the tracking plan, so if you have version 1 and version 2, the schema page will only check the tracking plan against version 1.
+The source schema only validates events against the oldest event version in a Tracking Plan. If, for example, you have a version 1 and version 2 of your Tracking Plan, the schema only checks against version 1 of your Tracking Plan.
 
 ### Do blocked and discarded events count towards my MTU counts?
 
