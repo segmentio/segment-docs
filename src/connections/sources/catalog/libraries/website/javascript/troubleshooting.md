@@ -129,6 +129,10 @@ If you're having issues with your destinations loading with Prototype.js, there 
 
 Analytics.js generates a campaign object inside the context object whenever the URL contains search parameters. Without any UTM parameters, the campaign object remains empty. 
 
+## Why Are Events Received with Timestamps Set in the Past or Future?
+
+Please see full details [here](https://segment.com/docs/connections/spec/common/#why-are-events-received-with-timestamps-set-in-the-past-or-future).
+
 ## Known issues:
 
 [Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues).
