@@ -28,7 +28,7 @@ Accoil is most effective when used with Segment. Here’s how it functions:
 
 1. **Send event data**: Use Segment to funnel your product event data into Accoil. Focus on the events that are most significant to your product and users.
 2. **Build engagement profiles**: Teams can easily create and manage product engagement profiles, helping monitor feature adoption, user engagement, and buyer journey stages.
-3. **Connect to your tools**: Once your profiles are set up, Accoil connects to your GTM tools—like Slack, Intercom, HubSpot, and more. With detailed account and user insights, teams can take meaningful actions, such as alerting sales about accounts that have reached key milestones or notifying customer success about potential churn risks.
+3. **Connect to your tools**: Once your profiles are set up, Accoil connects to your GTM tools—like Slack, Intercom, HubSpot, and more. With detailed account and user insights, teams can take meaningful actions, like alerting sales about accounts that have reached key milestones or notifying customer success about potential churn risks.
 
 ## Getting Started
 
