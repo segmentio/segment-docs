@@ -36,6 +36,9 @@ For data to flow to your downstream destinations, you'll need to connect your in
 2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
+
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
@@ -46,9 +49,6 @@ To access insert functions through the Destinations tab:
 Use this page to edit and manage insert functions in your workspace. 
 
 You can also use this page to [enable destination insert functions](#enable-the-insert-function) in your workspace.
-
-> warning "Storage Destination Limit"
-> Currently, you are not able to connect a Storage Destination to an Insert Function.
 
 ## Code the destination insert function
 
