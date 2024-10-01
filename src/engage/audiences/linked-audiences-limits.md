@@ -9,6 +9,10 @@ plan: engage-foundations
 To provide consistent performance and reliability at scale, Segment enforces default use limits for Linked Audiences.
 
 ## Usage limits
+
+> info ""
+> List actions destinations are not supported currently.
+
 The Linked Audiences module provides you the flexibility to create and publish unlimited Linked Audiences within each billing cycle. This means you won't encounter any limitations or pauses in service related to the number of Linked Audiences you generate.
 
 Linked Audience limits are measured based on Activation Events, which is the number of times profiles are processed to each destination, including audience entered, audience exited, and entity change events. This includes both successful and failed attempts. For example, if you processed an audience of 50k to Braze and Google Ads Conversions, then your total Activation Event usage is 100k records.
