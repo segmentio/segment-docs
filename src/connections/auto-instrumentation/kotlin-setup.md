@@ -3,7 +3,7 @@ title: Auto-Instrumentation Setup
 hidden: true
 ---
 
-This guide outlines the steps required to set up the Signals SDK in your applications using Swift or Kotlin.
+This guide outlines the steps required to set up the Signals SDK in your Android OS applications using Kotlin.
 
 You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
 
@@ -25,61 +25,7 @@ You'll first need to add a source and copy its write key:
 
 ## Step 2: Add dependencies and initialization code
 
-Next, you'll need to add the Signals SDKs to your Swift and Kotlin development environments.
-
-### Swift
-
-Follow these steps to integrate the Signals SDK into your Swift application:
-
-1. Use Swift Package Manager to add the Signals SDK from the following repository:
-
-    ```zsh
-    https://github.com/segmentio/Signals-swift.git
-    ```
-
-2. Add the initialization code:
-
-    ```swift
-    // Configure Analytics with your settings
-    {... <analytics config>....} 
-
-    // Set up the Signals SDK configuration
-    let config = Signals.Configuration(
-        writeKey: "<WRITE_KEY>",          // Replace <WRITE_KEY> with the write key you previously copied
-        maximumBufferSize: 100,
-        useSwiftUIAutoSignal: true,
-        useNetworkAutoSignal: true
-    )
-
-    // Locate and set the fallback JavaScript file for edge functions
-    let fallbackURL = Bundle.main.url(forResource: "MyEdgeFunctions", withExtension: "js")
-
-    // Apply the configuration and add the Signals plugin
-    Signals.shared.useConfiguration(config)
-    Analytics.main.add(plugin: LivePlugins(fallbackFileURL: fallbackURL))
-    Analytics.main.add(plugin: Signals.shared)
-    ```
-
-Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in Step 1.
-
-#### SwiftUI projects
-
-If your app is written in SwiftUI, you'll need to add a `TypeAlias.swift` file to your project that captures interaction and navigation Signals, like in this example:
-
-```swift
-import Foundation
-import Signals
-
-typealias Button = SignalButton
-typealias NavigationStack = SignalNavigationStack
-typealias NavigationLink = SignalNavigationLink
-typealias TextField = SignalTextField
-typealias SecureField = SignalSecureField
-```
-
-### Kotlin
-
-Follow these steps to integrate the Signals SDK into your Kotlin application: 
+Next, you'll need to add the Signals SDKs to your Kotlin application.
 
 1. Update your module’s Gradle build file to add the right dependencies:
 
@@ -98,7 +44,10 @@ Follow these steps to integrate the Signals SDK into your Kotlin application:
     }
     ```
 
-2. Add the following code to your application to initialize the Signals SDK:
+2. Add the initialization code and configuration options:
+
+> success ""
+> see [configuration options](#configuration-options) for a complete list.
 
     ```kotlin
     // Configure Analytics with your settings
@@ -143,6 +92,18 @@ Next, you'll need to verify signal emission and [create rules](/docs/connections
 
 Segment displays `Rule updated successfully` to verify that it saved your rule.
 
+## Configuration Options
+
+Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Kotlin.
+
+| `Option`            | Required | Value                     | Description                                                                                                                                                                                           |
+| ------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `writeKey`          | Yes      | String                    | Source write key                                                                                                                                                                                      |
+| `maximumBufferSize` | No       | Integer                   | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                    |
+| `broadcastInterval` | No       | Integer                   | Broadcasts signals to Segment every X event. Default is `60`.                                                                                                                                         |
+| `broadcasters`      | No       | `List<SignalBroadcaster>` | An array of broadcasters. These objects forward signal data to their destinations, like `WebhookBroadcaster` or `DebugBroadcaster` writing to the developer console. Default is `SegmentBroadcaster`. |
+
+
 ## Next steps
 
-This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers examples rules. 
+This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers example rules. 

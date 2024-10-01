@@ -32,7 +32,7 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
 > info ""
-> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
+> Braze now supports sending `email` as an identifier. Braze requires that you include `userId`, `braze_id`, or `email` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 
 ## Actions v2
@@ -68,4 +68,3 @@ Braze requires one of either `external_id`, `user_alias`, or `braze_id` to be pr
 
 ### Missing events
 When an event is sent under an alias, the event may seem to be missing when the alias cannot be found in Braze. This may be due to incorrect search for the alias in Braze. To search for an alias in Braze, use the format "Alias Label:Alias Name". For example, if the "Alias Label" field is set as email and "Alias Name" field is set as email address (for example: "test@email.com"), use "email:test@email.com" to search for the alias in Braze.
-

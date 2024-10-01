@@ -40,4 +40,4 @@ Start sending the payload of events to Segment using Track or Identify calls. Th
 
 Based on your events/payloads, your Contentstack Personalize project should now start receiving events to help you understand the users associated with your mapped values.
 
-The event names and properties you use must match those defined in your Contentstack Personalize project. For advanced customization and to further enhance your personalized experience, explore Contentstack Personalize in [Contentstack's Documentation](https://www.contentstack.com/docs){:target="_blank”}.
+The event names and properties you use must match those defined in your Contentstack Personalize project. For advanced customization and to further enhance your personalized experience, explore Contentstack Personalize in [Contentstack's Documentation](https://www.contentstack.com/docs/personalize){:target="_blank”}.
