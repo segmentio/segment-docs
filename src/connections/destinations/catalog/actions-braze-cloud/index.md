@@ -32,7 +32,7 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
 > info ""
-> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
+> Braze now supports sending `email` as an identifier. Braze requires that you include `userId`, `braze_id`, or `email` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 > info "V2 Actions"
 > The V2 versions of each action include improved sync mode support. Only valid sync modes for each action are available. As a result, the `_update_existing_only` parameter is tied to the sync mode you select for the mapping. If you select the `update` sync mode, Segment passes `_update_existing_only: true` to Braze, and if you choose the `add` sync mode, Segment passes `_update_existing_only: false` to Braze.
