@@ -141,7 +141,7 @@ To activate your Linked Audience:
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
 
 > info "Linked Audiences destinations"
-> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List actions destinations are not supported currently.
+> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
