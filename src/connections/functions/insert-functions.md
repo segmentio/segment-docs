@@ -47,8 +47,8 @@ Use this page to edit and manage insert functions in your workspace.
 
 You can also use this page to [enable destination insert functions](#enable-the-insert-function) in your workspace.
 
-> warning "Storage Destination Limit"
-> Currently, you are not able to connect a Storage Destination to an Insert Function.
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
 
 ## Code the destination insert function
 
