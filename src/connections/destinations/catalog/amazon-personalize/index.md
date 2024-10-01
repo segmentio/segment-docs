@@ -194,7 +194,7 @@ Segment's S3 destination contains a copy of all of the source data you configure
 
 Note that this step is not required unless you plan to do batch data extraction from S3.
 
-Your Glue ETL job will need to crawl each source folder to extract the backup data that forms your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Segment's event structure is described in detail [here](/docs/connections/sources/catalog/libraries/server/http/).
+Your Glue ETL job will need to crawl each source folder to extract the backup data that forms your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Segment's event structure is described in detail on Segment's [HTTP source](/docs/connections/sources/catalog/libraries/server/http/) documentation.
 
 The following examples show how to configure an AWS Glue job to convert Segment historical data into the Apache Avro format that Personalize wants to consume for training data sets.
 
@@ -596,7 +596,7 @@ Once Segment's event CSV is finished importing into a user-item interaction data
     ![A screenshot of the Dataset groups dashboard, with a box around the Start button in the Create solutions column.](images/PersonalizeCreateSolution.png)
 
 2. On the **Create solution** page, enter a **Solution name**.
-  * For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html){:target="_blank"}.
+  * For a discussion on the different recipes you can use with Personalize, see Amazon's [Choosing a recipe](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html){:target="_blank"} documentation.
 
     ![A screenshot of the Create solution page, with a solution name entered in the Solution name field.](images/PersonalizeSolutionConfig.png)
 

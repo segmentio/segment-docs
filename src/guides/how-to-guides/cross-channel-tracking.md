@@ -91,7 +91,7 @@ UTM parameters are types of query strings added to the end of a URL. When clicke
 
 ![Diagram showing how different UTM parameters redirect to your site and then are displayed in Traffic analytics.](images/x-channel_GWqnp2I6.png)
 
-UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
+UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined in the [Spec: Common](/docs/connections/spec/common/#context-fields-automatically-collected) docs. These parameters do not persist to subsequent calls unless you pass them explicitly.
 
 UTM parameters contain three essential components:
 

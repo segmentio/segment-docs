@@ -70,7 +70,7 @@ Twilio powers Engage SMS delivery. For more information, view [Twilio's document
 | Email Marked as Spam         | The recipient marked the email as spam.                                              |
 | Email Machine Opened         | The email was [machine opened](/docs/engage/analytics/#understanding-machine-opens). |
 | Email Unsubscribed           | The recipient unsubscribed from all emails.                                          |
-| Email Group Unsusbcribed     | The recipient unsubscribed from a specific group.                                    |
+| Email Group Unsubscribed     | The recipient unsubscribed from a specific group.                                    |
 | Email Subscribed             | The recipient subscribed to all emails.                                              |
 | Email Group Subscribed       | The recipient subscribed to a specific group.                                        |
 | Channel Subscription Updated | The user's subscription state was globally updated.                                  |

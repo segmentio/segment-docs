@@ -23,7 +23,7 @@ Common use cases for destination filters include:
 Keep the following limitations in mind when you use destination filters:
 
 - Destination Filters aren't applied to events sent through the Event Tester.
-- Segment applies destination filters one at a time in the order that they appear in your workspace.
+- Segment applies destination filters in the following order: Sample, Drop ('Only Sends' are Drops), Drop Properties, Allow Properties.
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
 - *(For device-mode)* Destination filters don't apply to items that are added to the payload server-side such as IP addresses.
@@ -257,5 +257,9 @@ Destination filters only filter events sent after filter setup. If you just adde
 When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.
 
 #### How do destination filters handle Protocols Transformations?
+  - **Source-Scoped Transformations**: If destination filters are enabled, Segment processes [source scoped transformations](/docs/protocols/transform/#step-2-set-up-the-transformation) before the events reach destination filters.
+  - **Destination-Scoped Transformations**: Segment processes [destination-specific transformations](/docs/protocols/transform/#step-2-set-up-the-transformation)  after the events have passed through the destination filters.
 
-When you enable a destination-specific Transformation, Segment processes your events with a destination filter. Segment processes source-level Transformations before the events reach the destination filter.
+#### Are destination filter conditions case-sensitive?
+
+Destination filters are case-sensitive. Make sure to test your filter conditions with a test event before saving and enabling the filter.

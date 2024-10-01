@@ -176,7 +176,7 @@ analytics.trackForm(form, event, [properties])
 
 Field | | Type | Description
 ----- | | ---- | -----------
-`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._
+`form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._ Segment recommends that you wait until the DOM loads before passing the form element.
 `event` | | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.
 `properties` | optional | Object or Function | A dictionary of properties to pass with the track method. Or a **function** that returns an object to use as the `properties` of the event.
 
@@ -216,7 +216,7 @@ The `page` call has the following fields:
 | `name`       | optional | String   | The name of the page.                                                                                                                                                                                                                                |
 | `properties` | optional | Object   | A dictionary of properties of the page. Note: Analytics.js collects `url`, `title`, `referrer` and `path` are automatically. This defaults to a `canonical url`, if available, and falls back to `document.location.href`.                           |
 | `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_. |
-| `callback`   | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first.                                                                                                                                             |
+| `callback`   | optional | Function | A function that runs after a timeout of 300 ms, giving the browser time to make outbound requests first. However, this function might not execute if one of the device-mode libraries has been blocked from loading.                                                                                                                                           |
 
 #### Default page properties
 
@@ -360,11 +360,13 @@ analytics.identify("hello world")
 
 ### Ready
 
-The `ready` method allows you to pass in a method that is called once Analytics.js finishes initializing, and once all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations.
+The `ready` method lets you pass in a method that gets called after Analytics.js finishes initializing and after all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations. Because it doesn't fire until all enabled device-mode destinations are loaded, it can't be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
 
-The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization.
+The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization. If you want to check when Analytics.js has loaded, you can look at the value of `window.analytics.initialized`. When it’s true, the library has successfully initialized, even if some destinations are blocked.
 
-The code in the `ready` function only executes after `ready` is emitted.
+**Note**: `window.analytics.initialized` is a simple boolean, not an event or a pub/sub system. This means you can't subscribe to changes in its value. If you need to detect when it changes from `false` to `true`, you must set up a polling mechanism to monitor the value.
+
+The code in the `ready` function only executes after `ready` is emitted. 
 
 If you want to access end-tool library methods that do not match any Analytics.js methods, like adding an extra setting to Mixpanel, you can use a `ready` callback so that you're guaranteed to have access to the Mixpanel object, like so:
 
@@ -513,7 +515,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 ### Load options
 
 > info ""
-> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
+> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet from the [Analytics.js Quickstart](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary, then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
@@ -683,29 +685,16 @@ Here are some examples of using `addSourceMiddleware` for enrichment and validat
     });
     ```
 
-### Plugin categories
-Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
-* **Critical Plugins**:
-  - Errors thrown in `load()` will completely stop segment from initializing.
-
-| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape.<br><br> Source middleware added via `addSourceMiddleware` is treated as a before plugin. |
-
-* **Non-critical Plugins**:
-  -  This plugin can throw an error on `load()`, and all other segment plugins, including destinations, will load as usual, without blocking the delivery pipeline.
-
-> info ""
-> Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
-
-Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these four entry types of non-critical plugins:
+### Advanced Plugin API
+For advanced modification to the event pipeline.
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enrichment`  | Executes as the first level of event processing. These plugins modify an event.  |
-| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution. |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added via `addSourceMiddleware` is treated as a `before` plugin. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. |
+| `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
-| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality. |
+| `utility`     | Executes _only once_ during the analytics.js bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This doesn't allow you to modify events. |
 
 ### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
@@ -949,7 +938,7 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   })
   ```
 
-  Pass in the destination plugin to the added config option called `plugins`.  A list of all action destination packages can be found [here](https://github.com/segmentio/action-destinations/blob/main/packages/destinations-manifest/package.json){:target="_blank"}.
+  Pass in the destination plugin to the added config option called `plugins`.  A list of all action destination packages can be found on GitHub in the [@segmentio/action-destinations](https://github.com/segmentio/action-destinations/blob/main/packages/destinations-manifest/package.json){:target="_blank"} repository.
 
 
 * To add classic destinations from npm: 

@@ -55,7 +55,7 @@ userId is a mandatory field which is used to identify the contact in Freshsales.
 
 #### Traits
 
-Traits are pieces of information you know about a user that are included in an identify method.
+Traits are pieces of information you know about a user. They are a mandatory part of the [Identify method](/docs/connections/spec/identify/).
 
 #### Default Traits
 

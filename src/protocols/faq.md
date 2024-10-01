@@ -85,9 +85,29 @@ Segment's code uses built-in logic to verify if an event exists in the Tracking 
 
 Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
 
+### Why do I have two different Tracking Plan IDs?
+
+When you access a Tracking Plan, you'll come across two IDs: `tp_` and `rs_`. Segment uses the two IDs to identify your Tracking Plan in the two APIs you can use to manage your workspace: the [Public API](/docs/api/public-api/) and the [Config API](/docs/api/config-api/). 
+
+To view the two IDs for your Tracking Plan, navigate to the Tracking Plan you'd like to view the ID for and select the dropdown next to **Tracking Plan ID**. 
+
+If you're using the Public API, you'll need the ID that starts with `tp_`. 
+
+If you're using the Config API, you'll need the ID that starts with `rs`. 
+
+
+### How do I import events from a Source Schema into a Tracking Plan?
+
+When you first create your Tracking Plan, you can add events from your Source Schema by selecting the **Import events from Source** button on the Tracking Plan editor page. You can manually add these events after you've connected your Source Schema to your Tracking Plan by clicking the (+) next to the event on your Source Schema page.  
+
 ### Can I import events from my Source Schema into a Tracking Plan?
 
-When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan. .  
+When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan.
+
+### Can I recover a Tracking Plan that was deleted?
+
+You cannot recover a deleted Tracking Plan and Segment cannot recover it on your behalf. Please delete Tracking Plans with caution.
+
 
 ## Protocols Validation
 

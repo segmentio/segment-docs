@@ -87,6 +87,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: E5Y3BqhAg2
+    display_name: Authvia
+    hidden: false
+    slug: authvia
+    url: connections/sources/catalog/cloud-apps/authvia
+    regions:
+      - us
+    endpoints:
+      - us
   - id: R7eWaTLYUs
     display_name: AutopilotHQ
     hidden: false
@@ -98,7 +107,7 @@ sources:
       - us
   - id: xNpohElkX2
     display_name: Azure
-    hidden: false
+    hidden: true
     slug: azure
     url: connections/sources/catalog/cloud-apps/azure
     regions:
@@ -120,6 +129,15 @@ sources:
     hidden: true
     slug: bigquery
     url: connections/sources/catalog/cloud-apps/bigquery
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: FOWuS0UQmP
+    display_name: Blip
+    hidden: false
+    slug: blip
+    url: connections/sources/catalog/cloud-apps/blip
     regions:
       - us
     endpoints:
@@ -196,6 +214,15 @@ sources:
     hidden: false
     slug: commandbar
     url: connections/sources/catalog/cloud-apps/commandbar
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: nEjnxv4kbB
+    display_name: ConfigCat
+    hidden: false
+    slug: configcat
+    url: connections/sources/catalog/cloud-apps/configcat
     regions:
       - us
     endpoints:
@@ -761,6 +788,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: MW9K4HgBZz
+    display_name: Pushwoosh Source
+    hidden: false
+    slug: pushwoosh-source
+    url: connections/sources/catalog/cloud-apps/pushwoosh-source
+    regions:
+      - us
+    endpoints:
+      - us
   - id: XRksQPCr7X
     display_name: Python
     hidden: false
@@ -777,6 +813,15 @@ sources:
     hidden: false
     slug: qualtrics
     url: connections/sources/catalog/cloud-apps/qualtrics
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: WGp9SQFRVu
+    display_name: Quin AI
+    hidden: false
+    slug: quin-ai
+    url: connections/sources/catalog/cloud-apps/quin-ai
     regions:
       - us
     endpoints:
@@ -901,6 +946,15 @@ sources:
     endpoints:
       - us
       - eu
+  - id: GCeG0vmcDW
+    display_name: SendGrid Marketing Campaigns
+    hidden: false
+    slug: sendgrid-marketing-campaigns
+    url: connections/sources/catalog/cloud-apps/sendgrid-marketing-campaigns
+    regions:
+      - us
+    endpoints:
+      - us
   - id: V8ji9rWzoS
     display_name: Shopify (by Littledata)
     hidden: false
@@ -1061,6 +1115,15 @@ sources:
     endpoints:
       - us
       - eu
+  - id: q4JbVJwmrg
+    display_name: Yotpo
+    hidden: false
+    slug: yotpo
+    url: connections/sources/catalog/cloud-apps/yotpo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 117eYCe9jH
     display_name: Youbora
     hidden: true

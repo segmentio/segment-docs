@@ -3,8 +3,6 @@ title: GWEN (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 6411f979382d3759292d739f
-redirect_from:
-  - "/connections/destinations/catalog/actions-cloud-gwen"
 ---
 
 {% include content/plan-grid.md name="actions" %}

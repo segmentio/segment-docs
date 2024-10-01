@@ -1,8 +1,6 @@
 ---
 title: Moloco Commerce Media Destination
 id: 65f05e455b125cddd886b793
-beta: true
-private: true
 ---
 
 [Moloco Commerce Media](https://www.moloco.com/products/moloco-retail-media-platform){:target="_blank”} (MCM) is a technology solution that empowers marketplaces and online retailers to build and scale a retail media business (for example, sponsored ads). Moloco’s solution helps platforms leverage and activate their first-party data to deliver highly relevant and performant ads, automate ad decision-making, and scale their ads business.
@@ -44,7 +42,7 @@ analytics.identify('361b1fdfbeaa9d64a13c033eb9f970dc6740f6bc', {
 Once a user is identified, each call to Segment's [Track method](/docs/connections/spec/track/) automatically records the user ID.
 Users that are not logged in can be tracked using an [anonymousID](/docs/connections/spec/identify/#anonymous-id). Moloco Commerce Media does not use anonymousIDs for users that are not logged in. Segment recommends formatting your anonymousID in UUID format.
 
-> info" "
+> info " "
 > If you hash the user ID before sending it to Moloco, ensure you reuse the same hashed ID when calling other Moloco APIs.
 
 

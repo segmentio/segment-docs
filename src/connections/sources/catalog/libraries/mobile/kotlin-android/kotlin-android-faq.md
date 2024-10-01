@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin FAQ
+title: Analytics-Kotlin FAQ
 strat: kotlin-android
 ---
 
