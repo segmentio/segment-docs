@@ -199,3 +199,4 @@ To resolve this, ensure that the ConversionActionType value in Google Ads is cor
 ### `The required field was not present., at conversions[0].gclid` Error
 
 Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.
+
