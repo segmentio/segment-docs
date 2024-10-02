@@ -37,8 +37,14 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 
 ## Actions v2
 
-Segment’s v2 Actions, [Custom Object v2](#custom-object-v2) and [Custom Event v2](#custom-event-v2), support the following features:
+Segment’s introduced the following v2 Actions to add additional functionality to the Braze Cloud Mode (Actions) destination: 
+- [Update User Profile v2](#update-user-profile-v2)
+- [Track Event v2](#track-event-v2)
+- [Identify User v2](#identify-user-v2)
+- [Create Alias v2](#create-alias-v2)
+- [Track Purchase v2](#track-purchase-v2)
 
+These Actions support the following features:
 - **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data. 
 - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Braze.
 - **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
