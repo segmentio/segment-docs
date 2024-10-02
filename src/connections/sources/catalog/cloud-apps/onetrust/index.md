@@ -21,7 +21,9 @@ This source is maintained by OneTrust. For any issues with the source, [contact 
 3. On the next screen, give the Source **a nickname** configure any other settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `OneTrust_Prod`, `OneTrust_Staging`, or `OneTrust_Dev`).
 
-4. In OneTrust, navigate to **Integrations > Connections > Import**, and upload <a href="./OneTrust-Segment-Track-API-Integration.json" download>this JSON file</a>.
+4. In OneTrust, go to **Integrations > Connections > Import** and upload the appropriate JSON file.  
+   - For US Segment workspaces (default), use [this JSON file](./OneTrust-Segment-Track-API-Integration.json).  
+   - If you're in an EU Segment workspace, use [this JSON file](./OneTrust-Segment-Track-API-Integration-EU.json).
 
 5. Copy the **Write key** from the Segment UI, and paste it in as the Auth header for the OneTrust integration. 
 
