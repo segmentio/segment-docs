@@ -11,6 +11,13 @@ Yes, the limit is 32KB per event message. Events with a payload larger than 32KB
 
 In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
+## Should I update my Segment snippet, and where can I find the latest version?
+
+While the current version of your Segment snippet has served well, updating to the latest version introduces several enhancements and fixes that could improve your setup. You can view the full list of version updates [here](https://github.com/segmentio/snippet/blob/master/History.md).
+
+You can find the latest version of the Segment snippet in the Overview tab of your JavaScript source or [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet). While you’re not required to update immediately, upgrading ensures you’re taking advantage of the latest improvements in the Segment library.
+
+
 ## Why do I see a network request to `/m`?
 
 In May 2018, Segment began collecting client-side performance metrics in Analytics.js. This includes metrics like:
