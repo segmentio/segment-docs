@@ -13,7 +13,7 @@ In the event that Analytics.js does not load, callbacks passed into your API cal
 
 ## Should I update my Segment snippet, and where can I find the latest version?
 
-While the current version of your Segment snippet has served well, updating to the latest version introduces several enhancements and fixes that could improve your setup. You can view the full list of version updates [here](https://github.com/segmentio/snippet/blob/master/History.md).
+While the current version of your Segment snippet has served well, updating to the latest version introduces several enhancements and fixes that could improve your setup. You can view the full list of version updates [here](https://github.com/segmentio/snippet/releases).
 
 You can find the latest version of the Segment snippet in the Overview tab of your JavaScript source or [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet). While you’re not required to update immediately, upgrading ensures you’re taking advantage of the latest improvements in the Segment library.
 
