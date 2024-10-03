@@ -14,6 +14,8 @@ Custom Domain is a fully-managed service that enables you to configure a first-p
 
 {% include content/domain-delegation-solutions.md %}
 
+>info "There should be no downtime, as the default Segment domains will continue to work alongside the customer's domains, once the setup is complete"
+
 ### How DNS subdomain delegation works
 DNS subdomain delegation is a process where the control of a specific subdomain is assigned to another DNS server, allowing that server to manage the DNS records for the subdomain. This delegation is useful for distributing the management of DNS records and enables specialized handling of subdomain traffic.
 
