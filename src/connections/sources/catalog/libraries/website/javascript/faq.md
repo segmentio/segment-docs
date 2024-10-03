@@ -17,6 +17,8 @@ Segment released an updated version of the Analytics.js snippet, which introduce
 You can find the latest version of the Segment snippet in your JavaScript source's Overview tab or in the [Quickstart: Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet) documentation.
  
 While there is no deadline to upgrade your snippet to the latest version, upgrading lets you use the latest improvements in the Segment library.
+
+
 ## Why do I see a network request to `/m`?
 
 In May 2018, Segment began collecting client-side performance metrics in Analytics.js. This includes metrics like:
