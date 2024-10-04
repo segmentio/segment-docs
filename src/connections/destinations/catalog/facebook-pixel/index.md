@@ -247,7 +247,7 @@ Segment does not handle nested properties that need to be blocklisted, including
 
 ### Mapping `revenue` to `value`
 
-Segment pre-maps `revenue` or `total` to `value`. If you have a custom `value` property, it will be overwritten with the value from `revenue` or `total`, or it will appear as '0.00' if those two properties are not present. If you have a `value` property, a [destination middleware](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/middleware/#using-destination-middlewares){:target="_blank"} or [destination plugin](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#advanced-plugin-api){:target="_blank"} can be used to transform the name before it is sent downstream to avoid any data loss. 
+Segment pre-maps `revenue` or `total` to `value`. If you have a custom `value` property, it's overwritten with the value from `revenue` or `total`, or it appears as '0.00' if those two properties aren't present. If you have a `value` property, you can use a [destination middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/#using-destination-middlewares) or [destination plugin](/docs/connections/sources/catalog/libraries/website/javascript/#advanced-plugin-api){:target="_blank"} to transform the name before it is sent downstream to avoid any data loss. 
 
 
 {% include content/client-side-script-unverified.md %}
