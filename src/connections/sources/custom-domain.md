@@ -59,6 +59,12 @@ To configure Custom Domain:
 
 ## FAQ
 
+### Can I set up multiple Custom Domains?
+For best practices, Segment recommends using only **one** custom domain per domain and only in **production** environments. It is not recommended to create multiple custom domains for the same source, and there are several reasons for this:
+
+- For default settings of the Analytics.js library, our customers only use a single segment.io - so having a single domain would be adequate.
+- If you are working in the development or stage environment, we recommend that you disable any adblockers / user consent managers so that a custom domain will not be required in this case.
+
 ### What sources can I use with Custom Domain?
 Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
