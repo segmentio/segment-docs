@@ -10,6 +10,9 @@ This page walks you through the steps to set up a use case in your Segment insta
 > info "Permissions"
 > To implement a use case, you'll need to be a Workspace Owner for your Segment account. See the [Roles](/docs/segment-app/iam/roles/) documentation for more information. 
 
+> info ""
+> You can onboard to Segment with a Use Case if you’re a new business tier user or haven’t yet connected a source and destination.
+
 ## Use case setup overview
 
 From a high level, setting Segment up with a use case takes place in four stages:
