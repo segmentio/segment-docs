@@ -65,13 +65,14 @@ Example Call:
 Group calls link users to accounts and records account-level attributes.
 
 Example Call:
-   ````javascript
+   ```javascript
    analytics.group('accountId123', {
      name: 'Example Company',
      createdAt: '2021-03-15T09:00:00Z',  // ISO 8601 or Unix timestamp format
      mrr: 3000,
      status: 'active'
    });
+   ```
 
 ### Track
 
@@ -85,6 +86,7 @@ Example Call:
      item: 'Book',
      price: 25.00
    });
+   ```
 
 ### Page and Screen
 
@@ -94,6 +96,7 @@ Example Calls:
    ```javascript
    analytics.page('Home Page');
    analytics.screen('Dashboard');
+   ```
 
 ## Key Notes
 
