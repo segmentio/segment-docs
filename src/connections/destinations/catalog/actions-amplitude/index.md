@@ -241,3 +241,11 @@ In the following example, the Amplitude User property `friendCount` equals 4.
 "traits" : {"$add": {"friendCount": 3} }
 "traits" : {"$add": {"friendCount": 1} }
 ```
+## FAQ and troubleshooting
+
+### Why isn't the Session_Id being automatically added to my WEB events?
+For the Session_Id to be automatically added to events, your browser must allow the following request URL to load:
+
+```https://cdn.segment.com/next-integrations/actions/amplitude-plugins/..```
+
+To check if this request is being loaded, [inspect the network requests](https://developer.chrome.com/docs/devtools/network) on your website and look for 'Amplitude.' If the request is being blocked, please ensure it is allowed on your side.
