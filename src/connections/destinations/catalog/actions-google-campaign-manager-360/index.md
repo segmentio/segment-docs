@@ -20,7 +20,7 @@ The Google Campaign Manager 360 destination allows users to upload [conversions]
 
 ### Prerequisites
 
-Before you begin, you need to have a Google Campaign Manager 360 account, with a Profile ID and a Floodlight Configuration ID. It'll be also necessary to configure the Floodlight activities you want to track.
+Before you begin, you need to have a Google Campaign Manager 360 account, with a Profile ID and a Floodlight Configuration ID. These are necessary to configure the Floodlight activities you want to track.
 
 ### Connect to Google Campaign Manager 360
 
