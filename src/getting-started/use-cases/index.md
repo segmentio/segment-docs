@@ -1,6 +1,5 @@
 ---
 title: Use Cases Overview
-hidden: true
 ---
 
 Use Cases are pre-built Segment setup guides tailored to common business goals. 

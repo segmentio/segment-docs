@@ -1,6 +1,5 @@
 ---
 title: Choosing a Use Case
-hidden: true
 ---
 
 Segment built Use Cases to streamline the process of implementing Segment for specific business objectives. 

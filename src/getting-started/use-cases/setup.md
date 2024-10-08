@@ -1,6 +1,5 @@
 ---
 title: Use Cases Setup
-hidden: true
 ---
 
 Use Cases help you onboard quickly and efficiently to Segment by guiding you through specific steps tailored to your business needs.
