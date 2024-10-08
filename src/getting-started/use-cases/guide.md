@@ -7,6 +7,9 @@ Segment built Use Cases to streamline the process of implementing Segment for sp
 
 This guide will help you navigate through the available use cases and select the one that best aligns with your business goals. 
 
+> info ""
+> You can onboard to Segment with a Use Case if you’re a new business tier user or haven’t yet connected a source and destination.
+
 ## Understanding business goals and use cases
 
 Segment supports 25 use cases, organized into 4 main business goals:
