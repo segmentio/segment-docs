@@ -92,6 +92,18 @@ https://my-website.com?segment_signals_debug=false
 
 ### Advanced
 
+#### Emitting Custom Signals 
+If you need to listen for data that is unavailable to the Signals plugin by default, you can create and emit a custom signal:
+
+```ts
+import { signalsPlugin } from './analytics' // assuming you exported your plugin instance.
+
+signalsPlugin.addSignal({
+  type: 'userDefined',
+  data: { foo: 'bar' }
+})
+```
+
 #### Listening to signals
 ```ts
 const signalsPlugin = new SignalsPlugin()
