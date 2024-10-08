@@ -99,7 +99,7 @@ Customers who have access to the Custom Domain feature can rename analytics to `
 Analytics.js cookies are not lost in the transition to Custom Domain. When users revisit your website, the previous Analytics.js cookies continue to be fetched and added to events, if available.
 
 ### Can I use the same subdomain across multiple workspaces?
-No, each workspace requires its own unique subdomain (e.g., `mysubdomain.mydomain.com`). 
+No, each workspace requires its own unique subdomain (for example, `mysubdomain.mydomain.com`). 
 
 
 
