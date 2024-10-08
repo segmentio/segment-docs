@@ -33,7 +33,7 @@ Accoil is most effective when used with Segment. Here’s how it functions:
 
 To start using the Accoil destination:
 
-1. In your Segment workspace, navigate to the Catalog page and search for "Accoil Analytics".
+1. In your Segment workspace, navigate to the [Catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog/){:target="_blank"} and search for "Accoil Analytics".
 2. Select Accoil Analytics from the results and click **Add Destination**.
 3. Choose the Segment source you want to connect to Accoil.
 4. Navigate to your Accoil dashboard and find your API Key under **General Account Settings**. Copy this API Key.
