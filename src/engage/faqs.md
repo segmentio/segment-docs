@@ -33,6 +33,10 @@ The following response indicates that Bob is a high-value user:
 
 For more information on profile queries, visit the [Profile API documentation](/docs/unify/profile-api).
 
+## Can I remove a trait from a User profile?
+
+To remove a trait from a user profile, you can send in a key-value pair in the properties object with null in an event from one of the connected sources, e.g. `"properties": {"trait1": null, ...}, ....`. Sending in an empty string i.e. `,"trait2": "",` will also have the same effect.
+
 ## Can I modify audience keys?
 
 You can't change the audience key after it's created. To change the key, you need to re-create the audience.
