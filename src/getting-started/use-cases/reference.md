@@ -1,6 +1,5 @@
 ---
 title: Use Cases Reference
-hidden: true
 ---
 
 This reference guide provides detailed information on the suggested events, sources, and destinations for each Segment use case. Use this guide to ensure you're tracking the right events and connecting the best sources and destinations for your specific needs.
