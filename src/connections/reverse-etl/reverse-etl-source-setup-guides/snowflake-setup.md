@@ -5,6 +5,8 @@ redirect_from:
   - '/reverse-etl/snowflake-setup/'
 ---
 
+{% include content/warehouse-ip.html %}
+
 Set up Snowflake as your Reverse ETL source. 
 
 At a high level, when you set up Snowflake for Reverse ETL, the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema <br>(`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
