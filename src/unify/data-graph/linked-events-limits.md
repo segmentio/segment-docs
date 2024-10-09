@@ -8,7 +8,7 @@ hidden: true
 To provide consistent performance and reliability at scale, Segment enforces default use limits for Linked Events.
 
 ## Usage limits
-Linked Events provide you with the flexibility to enrich unlimited events in downstream destinations. This means you won't encounter any limitations or pauses in service related to the number of Linked Events enrichments.
+Linked Events provides you with the flexibility to enrich unlimited events in downstream destinations. This means you won't encounter any limitations or pauses in service related to the number of Linked Events enrichments.
 
 Segment measures Linked Events limits based on entities and entity rows. 
 * **Entities:** The warehouse tables that are declared in the Data Graph with the `enrichment_enabled = true` property. 

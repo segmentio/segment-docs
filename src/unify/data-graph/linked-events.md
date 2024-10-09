@@ -1,8 +1,7 @@
 ---
-title: Linked Events
-beta: true
+title: Linked Events Overview
 plan: unify
-hidden: true
+hidden: false
 ---
 
 > info "Linked Events is in private beta"
