@@ -27,7 +27,7 @@ You will need Admin permissions to your Marketo account.
 ![Screenshot of the set up flow for the Marketo source.](images/img.png)
 
 > warning "Lead Activity Type IDs"
-> In Marketo's settings, the Lead Activity Type IDs field is labeled as optional, but is required to see the `lead_activities` table. Segment recommends that you complete this field to see all available data.  By default the activity type IDs 12,13,32,37 are used to sync data to the `leads` table and `leads_activity_attributes` table, the default activity id can be changed or removed .
+> In Marketo's settings, the Lead Activity Type IDs field is labeled as optional, but is required to see the `lead_activities` table. Segment recommends that you complete this field to see all available data.  By default the activity type IDs 12,13,32,37 are used to sync data to the `leads` table and `leads_activity_attributes` table. [Contact Support](https://segment.com/help/contact/){:target="_blank"} to modify the default activity type IDs.
 
 
 ### Configure your Marketo source
