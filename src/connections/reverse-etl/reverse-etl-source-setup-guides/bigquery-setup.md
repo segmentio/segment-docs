@@ -22,6 +22,13 @@ Permission | Details
 
 The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset.
 
+To create a new role in BigQuery console:
+1. Navigate to **IAM & Admin > Roles** in BigQuery.
+2. Click **+ CREATE ROLE** to create a new role. 
+3. Add **title** and **Description** as you like.
+4. Click **ADD PERMISSIONS** and add the permission listed in the above tables. You will to repeat that until all required permissions were added. 
+5. Click **CREATE**.
+
 ## Create service account 
 
 > warning ""
@@ -29,10 +36,10 @@ The `bigquery.datasets.*` permissions can be scoped only to the `__segment_rever
 
 To set up the Segment BigQuery connector:
 1. Navigate to **IAM & Admin > Service Accounts** in BigQuery.  
-2. Click **+ Create Service Account** to create a new service account
-3. Enter your **Service account name** and a description of what the account will do
+2. Click **+ Create Service Account** to create a new service account.
+3. Enter your **Service account name** and a description of what the account will do.
 4. Click **Create and Continue**.
-5. In the **Grant this service account access to project** section, select the *BigQuery User* role to add.
+5. In the **Grant this service account access to project** section, select the role you created in the previous section.
 6. Click **+ Add another role** and add the *BigQuery Job User* role.
 7. Click **Continue**.
 8. Click **Done**.
