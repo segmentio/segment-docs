@@ -362,6 +362,13 @@ sections:
         title: Snowflake Setup
       - path: /unify/data-graph/setup-guides/databricks-setup/
         title: Databricks Setup
+    - section_title: Linked Events 
+      slug: /unify/data-graph/linked-events/
+      section: 
+      - path: /unify/data-graph/linked-events/ 
+        title: Linked Events Overview
+      - path: /unify/data-graph/linked-events-limits/
+        title: Linked Events Limits
   - section_title: Traits
     slug: unify/traits
     section:
