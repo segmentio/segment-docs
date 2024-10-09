@@ -92,7 +92,7 @@ https://my-website.com?segment_signals_debug=false
 
 ### Advanced
 
-#### Emitting Custom Signals 
+#### Emitting custom signals 
 If you need to listen for data that is unavailable to the Signals plugin by default, you can create and emit a custom signal:
 
 ```ts
