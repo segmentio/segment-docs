@@ -26,7 +26,7 @@ With this approach, use BigQuery predefined roles to create a service account fo
 7. Click **Continue**., then click **Done**.
 
 ### Grant Limited Access
-With this approach we will use custom role with the below permissions:
+With this approach we will setup a custom role with the following permissions:
 
 Permission | Details
 ---------- | --------
