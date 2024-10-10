@@ -46,7 +46,7 @@ Permission | Details
 9. Click **Create and Continue**. 
 10. In the **Grant this service account access to project** section, select the role you just created. 
 11. Click **Continue**. 
-12. Click **Done**. 
+12. Click **Done**. Copy and keep the Service Account email handy for the next steps
 13. Navigate to the BigQuery SQL editor and create a dataset that will be used by Segment:
     ```sql
     CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
