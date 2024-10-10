@@ -4,34 +4,33 @@ redirect_from:
   - '/reverse-etl/bigquery-setup/'
 ---
 ## Constructing your own role or policy
+
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset.
 
-When constructing a role and service-account we provide guidance for two approaches:
-1. Grant full access - this approach gives Segment all the required permissions and is slightly faster as it also gives us to permission to automatically complete the setup for you.
-2. Grant limited access - this approach is more secured, but because of the limited access we have, we require few additional one time setup steps from you.
+When creating a role and service-account, we offer two approaches:
+1. **Grant Full Access**: This option provides Segment with all the necessary permissions and allows us to complete the setup for you automatically. It's the quicker option, requiring minimal effort on your part.
+2. **Grant Limited Access**: This option is more secure, as it restricts permissions. However, due to the limited access, a few additional setup steps will need to be completed manually by you. These are one-time steps, and we will guide you through the process.
 
-You can choose whatever works best for you and skip the other step.
+You are free to choose the approach that best suits your needs, and can skip the other.
 
-
-### Grant full access
+### Grant Full Access
 With this approach we will use BigQuery predefined roles: 
 1. Navigate to **IAM & Admin > Service Accounts** in BigQuery.
 2. Click **+ Create Service Account** to create a new service account.
-3. Enter your **Service account name** and a description of what the account will do.
+3. Enter your **Service account name** and a description of what the service-account will do.
 4. Click **Create and Continue**. 
 5. Click **+ Add another role** and add the *BigQuery User* role. 
 6. Click **+ Add another role** and add the *BigQuery Data Editor* role. 
 7. Click **Continue**. 
 8. Click **Done**.
 
-### Grant limited access
-With this approach we will use costume role with the below permissions:
+### Grant Limited Access
+With this approach we will use custom role with the below permissions:
 
 Permission | Details
 ---------- | --------
 `bigquery.datasets.get` | This allows Segment to determine if the `__segment_reverse_etl` dataset exists.
-`bigquery.tables.create` | This allows Segment to determine if the tables Segment uses to track state in the `__segment_reverse_etl` dataset exists.
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
 
 
