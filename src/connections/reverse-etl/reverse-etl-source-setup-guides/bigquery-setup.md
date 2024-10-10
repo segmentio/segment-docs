@@ -56,6 +56,14 @@ Permission | Details
     GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
     ```
 
+### BigQuery resource location
+When connecting your BigQuery warehouse to Segment, you'll need to know the location of your resources.
+
+You can find the location of your BigQuery resources using the following method:
+1. In the BigQuery console, navigate to your dataset. In the explorer panel on the left, expand the project and dataset to view the tables.
+2. Click on the name of the dataset, and it opens a page showing its details.
+3. The Location of the dataset (like US or EU) is displayed in the Dataset Info.
+
 ## Set up BigQuery as your Reverse ETL source
 1. In the BigQuery console, search for the service account you created. 
 2. When your service account pulls up, click the 3 dots under **Actions** and select **Manage keys**. 
