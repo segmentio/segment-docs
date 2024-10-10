@@ -40,7 +40,7 @@ Permission | Details
 3. Add **title** and **Description** as you like.
 4. Click **ADD PERMISSIONS** and add the permission listed in the above tables. You will need to repeat that until all required permissions are added.
 5. Click **CREATE**. 
-6. Navigate to **IAM & Admin > Service Accounts** in BigQuery. 
+6. Navigate to **IAM & Admin > Service Accounts**. 
 7. Click **+ Create Service Account** to create a new service account. 
 8. Enter your **Service account name** and a description of what the account will do. 
 9. Click **Create and Continue**. 
