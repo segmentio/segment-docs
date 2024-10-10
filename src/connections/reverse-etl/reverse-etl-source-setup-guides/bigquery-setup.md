@@ -18,7 +18,8 @@ You can choose the approach that best suits your needs.
 With this approach we will use BigQuery predefined roles: 
 1. Navigate to **IAM & Admin > Service Accounts** in BigQuery.
 2. Click **+ Create Service Account** to create a new service account.
-3. Enter your **Service account name** and a description of what the service-account will do.
+3. Enter your **Service account name** and a description of what the service account will do.
+
 4. Click **Create and Continue**. 
 5. Click **+ Add another role** and add the **BigQuery User** role. 
 6. Click **+ Add another role** and add the **BigQuery Data Editor** role. 
