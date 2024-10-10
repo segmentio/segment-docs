@@ -69,14 +69,14 @@ You can find the location of your BigQuery resources using the following method:
 2. When your service account pulls up, click the 3 dots under **Actions** and select **Manage keys**. 
 3. Click **Add Key > Create new key**. 
 4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded. 
-5. Copy all the content within the **JSON** file created and downloaded in previous section. 
-6. Navigate to the Segment UI and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
-7. Enter your **Data Location**. The data location can be found by:
-   - In the BigQuery console navigate to your dataset: In the explorer panel on the left, expand the project and dataset to view the tables.
-   - Click on the name of the dataset, and it will open a page showing its details.
-   - The Location of the dataset (like US or EU) is displayed in the Dataset Info.
-8. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again. 
-9. Click **Add source** if the test connection is successful.
+5. Copy all the content in the JSON file you created in the previous step. 
+6. Open the Segment app and navigate to **Connections > Sources**. 
+7. On the My sources page, click **+ Add source**.  
+8. Search for "BigQuery" and select the BigQuery source from the sources catalog. On the BigQuery overview page, click **Add Source**. 
+9. On the Set up BigQuery page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
+10. Enter the location of your BigQuery warehouse in the **Data Location** field. 
+11. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again. 
+12. If the test connection completes successfully, click **Add source** to complete the setup process.
 
 After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
 
