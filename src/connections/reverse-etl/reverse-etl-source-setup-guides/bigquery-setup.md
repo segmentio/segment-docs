@@ -23,8 +23,7 @@ With this approach we will use BigQuery predefined roles:
 4. Click **Create and Continue**. 
 5. Click **+ Add another role** and add the **BigQuery User** role. 
 6. Click **+ Add another role** and add the **BigQuery Data Editor** role. 
-7. Click **Continue**. 
-8. Click **Done**.
+7. Click **Continue**., then click **Done**.
 
 ### Grant Limited Access
 With this approach we will use custom role with the below permissions:
