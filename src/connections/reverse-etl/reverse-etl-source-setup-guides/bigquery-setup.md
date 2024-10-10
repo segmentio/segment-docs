@@ -35,7 +35,7 @@ Permission | Details
 `bigquery.tables.getData` | This allows Segment to run `SELECT` queries on tables that will be defined in the model. 
 
 
-1. Navigate to **IAM & Admin > Roles** in BigQuery.
+1. In BigQuery, navigate to **IAM & Admin > Roles**.
 2. Click **+ CREATE ROLE** to create a new role.
 3. Add **title** and **Description** as you like.
 4. Click **ADD PERMISSIONS** and add the permission listed in the above tables. You will to repeat that until all required permissions were added.
