@@ -12,7 +12,7 @@ When creating a role and service-account, we offer two approaches:
 1. **Grant Full Access**: This option provides Segment with all the necessary permissions and allows us to complete the setup for you automatically. It's the quicker option, requiring minimal effort on your part.
 2. **Grant Limited Access**: This option is more secure, as it restricts permissions. However, due to the limited access, a few additional setup steps will need to be completed manually by you. These are one-time steps, and we will guide you through the process.
 
-You are free to choose the approach that best suits your needs, and can skip the other.
+You can choose the approach that best suits your needs.
 
 ### Grant Full Access
 With this approach we will use BigQuery predefined roles: 
