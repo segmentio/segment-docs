@@ -48,7 +48,7 @@ Permission | Details
 11. Click **Continue**. 
 12. Click **Done**. 
 13. Navigate to the BigQuery SQL editor and create a dataset that will be used by Segment:
-    ```
+    ```sql
     CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
     ```
 14. Grant additional permissions just on the newly created dataset:
