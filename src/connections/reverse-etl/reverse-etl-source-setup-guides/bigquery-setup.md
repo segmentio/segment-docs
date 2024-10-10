@@ -8,9 +8,9 @@ redirect_from:
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset.
 
-When creating a role and service-account, we offer two approaches:
-1. **Grant Full Access**: This option provides Segment with all the necessary permissions and allows us to complete the setup for you automatically. It's the quicker option, requiring minimal effort on your part.
-2. **Grant Limited Access**: This option is more secure, as it restricts permissions. However, due to the limited access, a few additional setup steps will need to be completed manually by you. These are one-time steps, and we will guide you through the process.
+There are two approaches you can take when granting Segment access to your BigQuery resources: 
+1. **Grant Full Access**: This option allows Segment to automatically complete the setup for you after you provide Segment with all the necessary permissions. This option requires less time and engineering effort on your part.
+2. **Grant Limited Access**: This option is more secure, as it restricts the permissions Segment has access to. However, due to the limited access, you must complete a few additional setup steps. These are one-time steps, and the documentation provides you with the information required to complete this process.
 
 You can choose the approach that best suits your needs.
 
