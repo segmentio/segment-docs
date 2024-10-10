@@ -120,10 +120,16 @@ When filtering on event properties, you can dynamically reference the value of a
 
 **Entity conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
-NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
-STRING data type: equals, not equals, contains, does not contain, starts with, ends with
-TIMESTAMP data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as shown below:
+
+| Data Type | Supported Operators                                                                    |
+| --------- | -------------------------------------------------------------------------------------- |
+| NUMBER    | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| STRING    | equals, not equals, contains, does not contain, starts with, ends with                 |
+| DATE      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIME      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+
 
 ## Step 2: Activate your Linked Audience
 
