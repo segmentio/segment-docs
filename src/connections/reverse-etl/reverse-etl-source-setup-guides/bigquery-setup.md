@@ -51,7 +51,7 @@ Permission | Details
     ```sql
     CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
     ```
-14. Grant additional permissions just on the newly created dataset:
+14. Grant Limited Access to the Segment Reverse ETL dataset
     ```sql
     GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
     ```
