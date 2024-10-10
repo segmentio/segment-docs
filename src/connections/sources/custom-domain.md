@@ -59,6 +59,9 @@ To configure Custom Domain:
 
 ## FAQ
 
+### Can I set up multiple Custom Domains?
+Segment recommends creating a different subdomain (for example, `mysubdomain.mydomain.com`) for each source. You cannot connect multiple custom domains to the same source.
+
 ### What sources can I use with Custom Domain?
 Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
