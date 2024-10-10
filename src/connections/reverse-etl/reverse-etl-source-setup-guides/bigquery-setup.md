@@ -62,7 +62,10 @@ Permission | Details
 4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded. 
 5. Copy all the content within the **JSON** file created and downloaded in previous section. 
 6. Navigate to the Segment UI and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
-7. Enter your **Data Location**. 
+7. Enter your **Data Location**. The data location can be found by:
+   - In the BigQuery console navigate to your dataset: In the explorer panel on the left, expand the project and dataset to view the tables.
+   - Click on the name of the dataset, and it will open a page showing its details.
+   - The Location of the dataset (like US, EU, etc.) is displayed in the Dataset Info.
 8. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again. 
 9. Click **Add source** if the test connection is successful.
 
