@@ -32,6 +32,7 @@ Permission | Details
 ---------- | --------
 `bigquery.datasets.get` | This allows Segment to determine if the `__segment_reverse_etl` dataset exists.
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
+`bigquery.tables.getData` | This allows Segment to run `SELECT` queries on tables that will be defined in the model. 
 
 
 1. Navigate to **IAM & Admin > Roles** in BigQuery.
