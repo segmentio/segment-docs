@@ -96,7 +96,7 @@ at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
 
-#### Operator Selection
+#### Operator selection
 
 You can create audience definitions using either `AND` or `OR` operators across all condition levels. You can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups.
 
@@ -112,13 +112,13 @@ This information appears when you click the user profile generated from the audi
 
 ![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic References
+#### Dynamic references
 
-**Event Conditions**
+**Event conditions**
 
 When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value. These operators support dynamic references: equals, not equals, less than, greater than, less than or equal, greater than or equal, contains, does not contain, starts with, ends with.
 
-**Entity Conditions**
+**Entity conditions**
 
 When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
 NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
@@ -179,7 +179,7 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
-#### Show/Hide preview 
+#### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 
