@@ -15,8 +15,8 @@ When creating a role and service-account, we offer two approaches:
 You can choose the approach that best suits your needs.
 
 ### Grant Full Access
-With this approach we will use BigQuery predefined roles: 
-1. Navigate to **IAM & Admin > Service Accounts** in BigQuery.
+With this approach, use BigQuery predefined roles to create a service account for Segment to assume. 
+1. In BigQuery, navigate to **IAM & Admin > Service Accounts**.
 2. Click **+ Create Service Account** to create a new service account.
 3. Enter your **Service account name** and a description of what the service account will do.
 
