@@ -57,7 +57,7 @@ Permission | Details
     ```
 
 ## Set up BigQuery as your Reverse ETL source
-1. In the BigQuery console, search for the service account you just created. 
+1. In the BigQuery console, search for the service account you created. 
 2. When your service account pulls up, click the 3 dots under **Actions** and select **Manage keys**. 
 3. Click **Add Key > Create new key**. 
 4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded. 
