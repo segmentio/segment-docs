@@ -38,7 +38,7 @@ Permission | Details
 1. In BigQuery, navigate to **IAM & Admin > Roles**.
 2. Click **+ CREATE ROLE** to create a new role.
 3. Add **title** and **Description** as you like.
-4. Click **ADD PERMISSIONS** and add the permission listed in the above tables. You will to repeat that until all required permissions were added.
+4. Click **ADD PERMISSIONS** and add the permission listed in the above tables. You will need to repeat that until all required permissions are added.
 5. Click **CREATE**. 
 6. Navigate to **IAM & Admin > Service Accounts** in BigQuery. 
 7. Click **+ Create Service Account** to create a new service account. 
