@@ -120,7 +120,7 @@ When filtering on event properties, you can dynamically reference the value of a
 
 **Entity conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as shown below:
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as in the following table:
 
 | Data Type | Supported Operators                                                                    |
 | --------- | -------------------------------------------------------------------------------------- |
