@@ -208,3 +208,7 @@ Transformations are but one tool among many to help you improve data quality. Se
 ### Are transformations applied when using the Event Tester?
 
 Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
+
+### Why am I getting the error "rules must contain less than or equal to 200 items" when using the Public API and can this limit be increased?
+
+This error occurs because there is a limit of 200 rules per API update, which is by design to ensure stable API performance. Unfortunately, increasing this limit isn’t possible at the moment. To work around this, split your update into smaller batches with 200 or fewer rules each.
