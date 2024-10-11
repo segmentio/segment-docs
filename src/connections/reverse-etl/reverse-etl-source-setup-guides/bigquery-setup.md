@@ -3,6 +3,9 @@ title: BigQuery Reverse ETL Setup
 redirect_from:
   - '/reverse-etl/bigquery-setup/'
 ---
+> info "BigQuery Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
+
 ## Constructing your own role or policy
 
 > warning ""
@@ -23,7 +26,7 @@ With this approach, use BigQuery predefined roles to create a service account fo
 4. Click **Create and Continue**. 
 5. Click **+ Add another role** and add the [**BigQuery User**](https://cloud.google.com/bigquery/docs/access-control#bigquery.user) role. 
 6. Click **+ Add another role** and add the [**BigQuery Data Editor**](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor) role. 
-7. Click **Continue**, then click **Done**.
+7. Click **Continue**, then click **Done**. 
 
 ### Grant Limited Access
 With this approach we will setup a custom role with the following permissions:
@@ -37,7 +40,7 @@ Permission | Details
 
 1. In BigQuery, navigate to **IAM & Admin > Roles**.
 2. Click **+ CREATE ROLE** to create a new role.
-3. Add **title** and **Description** as you like.
+3. Add **Title** and **Description** as you like.
 4. Click **ADD PERMISSIONS** and add the permission listed in the above tables. You will need to repeat that until all required permissions are added.
 5. Click **CREATE**. 
 6. Navigate to **IAM & Admin > Service Accounts**. 
@@ -46,12 +49,12 @@ Permission | Details
 9. Click **Create and Continue**. 
 10. In the **Grant this service account access to project** section, select the role you just created. 
 11. Click **Continue**. 
-12. Click **Done**. Copy and keep the Service Account email handy for the next steps
+12. Click **Done**. Copy and keep the Service Account email handy for the next steps.
 13. Navigate to the BigQuery SQL editor and create a dataset that will be used by Segment:
     ```sql
     CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
     ```
-14. Grant limited Access to the Segment Reverse ETL dataset
+14. Grant limited access to the Segment Reverse ETL dataset
     ```sql
     GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
     ```
@@ -71,14 +74,11 @@ You can find the location of your BigQuery resources using the following method:
 4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded. 
 5. Copy all the content in the JSON file you created in the previous step. 
 6. Open the Segment app and navigate to **Connections > Sources**. 
-7. On the My sources page, click **+ Add source**.  
+7. On the _My sources_ page, click **+ Add source**.  
 8. Search for "BigQuery" and select the BigQuery source from the sources catalog. On the BigQuery overview page, click **Add Source**. 
-9. On the Set up BigQuery page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
+9. On the _Set up BigQuery_ page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
 10. Enter the location of your BigQuery warehouse in the **Data Location** field. 
 11. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again. 
 12. If the test connection completes successfully, click **Add source** to complete the setup process.
 
 After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
-
-> info "BigQuery Reverse ETL sources support Segment's dbt extension"
-> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
