@@ -95,11 +95,9 @@ When you use the [Upsert Profile](/docs/connections/destinations/catalog/actions
 
 #### 403 Forbidden
 
-If you encounter a `403` error, consider implementing [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) in your workspace. 
+Some customers experience 403 errors when sending audience data to Klaviyo through Segment. This occurs due to Klaviyo's security measures blocking requests from shared IPs, which are common when using cloud-hosted platforms, like Segment, that use dynamically generated IP addresses.
 
-Klaviyo's Cloudflare instance might block incoming API requests from clients, like Segment, that use shared IP addresses. If Klaviyo blocks your incoming call, you might see a `403 Forbidden` error in Segment, but this error will not show up in any of Klaviyo's API logs.
-
-To reduce the number of `403` errors that you encounter, enable IP Allowlisting for your workspace. For more information the range of IP addresses Klaviyo uses for integration traffic, see Klaviyo's [How to allowlist Klaviyo integration traffic IP addresses](https://help.klaviyo.com/hc/en-us/articles/19143781289115){:target="_blank”} documentation. 
+To reduce the number of `403` errors that you encounter, enable [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) for your workspace. For more information the range of IP addresses Klaviyo uses for integration traffic, see Klaviyo's [How to allowlist Klaviyo integration traffic IP addresses](https://help.klaviyo.com/hc/en-us/articles/19143781289115){:target="_blank”} documentation. 
 
 
 ### Can I send Engage Audiences to a pre-created Klaviyo List?
