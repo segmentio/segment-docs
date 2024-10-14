@@ -235,3 +235,4 @@ entity "account-entity" {
      enrichment_enabled = true
 }
 ```
+
