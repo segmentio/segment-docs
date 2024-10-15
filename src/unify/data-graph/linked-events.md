@@ -174,12 +174,22 @@ In the Mappings tab, locate the **Select Mappings** section where you can enrich
 > warning ""
 > At this time, Linked Events doesn't support a preview of enriched payloads.
 
-### Save your Enrichments
+### Save your enrichments
 
 When you're satisfied with the mappings, click **Save**. Segment returns you to the Mappings table.
 
 > warning ""
 > At this time, when you select mappings or test events, you won’t see enrichment data. Enrichment data is only available with real events.
+
+## Enrichment observability
+
+To verify which of your events matched one or more enrichments:
+1. Navigate to [Delivery Overview](/docs/connections/delivery-overview/#actions-destinations) for your connected destination. 
+2. Select the **Successfully received** step in the pipeline view.
+3. Select the **Events enriched** tab. This table breaks down events into the following categories: 
+     - **Successfully enriched**: Events that were enriched by all entities
+     - **Partially enriched**: Events that were only enriched by only some of your entities
+     - **Unenriched events**: Events that did not match any entities
 
 ## FAQs
 
@@ -221,3 +231,4 @@ entity "account-entity" {
      enrichment_enabled = true
 }
 ```
+

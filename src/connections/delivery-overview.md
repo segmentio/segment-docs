@@ -34,7 +34,7 @@ The pipeline view for classic destinations includes the following steps:
 
 #### Actions destinations
 The pipeline view for Actions destination includes the following steps: 
-- **Successfully received**: Events that Segment ingested from your source.
+- **Successfully received**: Events that Segment ingested from your source. You can filter these events by event type, event name, app version, and [enrichment status](/docs/unify/data-graph/linked-events/).
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
 - **Mapping dropdown**: Select a [mapping](/docs/connections/destinations/actions/#customize-mappings) to filter the events in the Filtered at destination, Failed delivery and Successful delivery pipeline steps. 
