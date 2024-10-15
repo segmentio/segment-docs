@@ -1,12 +1,8 @@
 ---
-title: Linked Events
-beta: true
+title: Linked Events Overview
 plan: unify
-hidden: true
+hidden: false
 ---
-
-> info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
  
 Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
 
