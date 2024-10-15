@@ -443,7 +443,7 @@ Options are no longer supported and should be converted into plugins.
 
 ### 4.d) Traits are no longer attached to `analytics.track()` events automatically 
 
-In order to prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. In order to achieve this, you can write a simple `before` plugin: 
+To prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. To achieve this, you can write a `before` plugin: 
 
 ```kotlin
 import com.segment.analytics.kotlin.core.Analytics
