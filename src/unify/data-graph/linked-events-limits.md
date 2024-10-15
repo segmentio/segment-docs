@@ -1,8 +1,7 @@
 ---
 title: Linked Events Limits
-beta: true
 plan: unify
-hidden: true
+hidden: false
 ---
 
 To provide consistent performance and reliability at scale, Segment enforces default use limits for Linked Events.
@@ -25,7 +24,7 @@ Business | If you use Unify and Engage, you'll receive a trial version with: <br
 ### Special cases
 * If you have a non-standard or high volume usage plan, you may have unique Linked Events limits or custom pricing.
 * If you're on the trial version of Linked Events, you won't be able to add more than 1 million entity row syncs. Reach out to your Customer Success representative to upgrade to the Linked Events paid tier.
-* If you're using the paid version of Linked Events, and you reach your entity row limit before the end of your billing period, your syncs won't automatically pause to avoid disruptions to your business. You may be billed for overages in cases of significant excess usage. If you consistently require a higher limit, please contact your sales representative to upgrade your plan with a custom limit. 
+* If you're using the paid version of Linked Events, and you reach your entity row limit before the end of your billing period, your syncs won't automatically pause to avoid disruptions to your business. You may be billed for overages in cases of significant excess usage. If you consistently require a higher limit, contact your sales representative to upgrade your plan with a custom limit. 
 
 > info ""
-> There is a hard limit of 100 million entity rows that cause syncs to pause. 
+> There is a hard limit of 100 million entity rows that causes syncs to pause. 
