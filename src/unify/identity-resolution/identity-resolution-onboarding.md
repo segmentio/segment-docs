@@ -70,7 +70,7 @@ Segment's 11 default are:
 
 You can also provide a trait or property key to match on to add custom identifiers. You can preview the locations where Segment looks for the identifier. Segment accepts both camelCase and snake_case for context.traits, traits, and properties, but accepts lowercase types for identifiers only in the context.externalIds object.
 
-![Provide a trait or property key to match on](images/custom_identifiers.png)
+![Screenshot of the Custom Identifier interface in Segment. The 'Trait / Property key to match on' field is filled with 'app_id.' Two preview message locations are displayed, showing examples of JSON-like event payloads with 'appId' or 'app_id' as traits or properties. The interface includes settings to limit the value count to 5 and set frequency to 'Ever.' At the bottom, there's an option to 'Add new identifier' or 'Cancel.'](images/custom_identifiers.png)
 
 #### Blocked values
 
