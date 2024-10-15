@@ -24,8 +24,8 @@ With this approach, use BigQuery predefined roles to create a service account fo
 3. Enter your **Service account name** and a description of what the service account will do.
 
 4. Click **Create and Continue**. 
-5. Click **+ Add another role** and add the [**BigQuery User**](https://cloud.google.com/bigquery/docs/access-control#bigquery.user) role. 
-6. Click **+ Add another role** and add the [**BigQuery Data Editor**](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor) role. 
+5. Click **+ Add another role** and add the [**BigQuery User**](https://cloud.google.com/bigquery/docs/access-control#bigquery.user){:target="_blank”} role. 
+6. Click **+ Add another role** and add the [**BigQuery Data Editor**](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor){:target="_blank”} role. 
 7. Click **Continue**, then click **Done**. 
 
 ### Grant Limited Access
