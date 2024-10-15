@@ -361,7 +361,7 @@ The following options were removed in Analytics-Swift:
 
 ### 4.a) Traits are no longer attached to `analytics.track()` events automatically 
 
-In order to prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. In order to achieve this, you can write a simple `before` plugin: 
+To prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. To achieve this, you can write a `before` plugin: 
 
 ```swift
 import Foundation
