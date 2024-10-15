@@ -74,7 +74,7 @@ You can find the location of your BigQuery resources using the following method:
 4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded. 
 5. Copy all the content in the JSON file you created in the previous step. 
 6. Open the Segment app and navigate to **Connections > Sources**. 
-7. On the _My sources_ page, click **+ Add source**.  
+7. On the My sources page, click **+ Add source**.  
 8. Search for "BigQuery" and select the BigQuery source from the sources catalog. On the BigQuery overview page, click **Add Source**. 
 9. On the _Set up BigQuery_ page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
 10. Enter the location of your BigQuery warehouse in the **Data Location** field. 
