@@ -14,8 +14,8 @@ To set up your BigQuery source with Reverse ETL, you must [construct a BigQuery 
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset.
 
 There are two approaches you can take when granting Segment access to your BigQuery resources: 
-1. **Grant Full Access**: This option allows Segment to automatically complete the setup for you after you provide Segment with all the necessary permissions. This option requires less time and engineering effort on your part.
-2. **Grant Limited Access**: This option is more secure, as it restricts the permissions Segment has access to. However, due to the limited access, you must complete a few additional setup steps. These are one-time steps, and the documentation provides you with the information required to complete this process.
+- **Grant Full Access**: This option allows Segment to automatically complete the setup for you after you provide Segment with all the necessary permissions. This option requires less time and engineering effort on your part.
+- **Grant Limited Access**: This option is more secure, as it restricts the permissions Segment has access to. However, due to the limited access, you must complete a few additional setup steps. These are one-time steps, and the documentation provides you with the information required to complete this process.
 
 You can choose the approach that best suits your needs.
 
