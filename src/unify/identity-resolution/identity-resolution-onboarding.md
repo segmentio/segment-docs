@@ -40,7 +40,7 @@ During the space creation process, the first step is to choose an Identity Resol
 
 ![Choose an Identity Resolution configuration](images/first_screen.png)
 
-### Out-of-the-Box
+### Out-of-the-box
 
 For most first-time users, Segment recommends that you use the out-of-the-box configuration and answer a short series of questions for a best-fit setup for your use-case.
 
@@ -176,7 +176,7 @@ You can review the identifiers, priorities, limits, and blocked values before yo
 
 After you configure Identity Resolution settings, the next step is to connect a [source](/docs/connections/sources/) to the Segment space.
 
-## Create an Audience
+## Create an audience
 
 After you connect a source, Segment creates user profiles based off of replayed and newly incoming data.
 
