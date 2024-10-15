@@ -1,9 +1,7 @@
 ---
-title: Accoil Destination
+title: Accoil Analytics Destination
 hide-boilerplate: true
 hide-dossier: false
-private: true
-hidden: true
 id: 65cb48feaca9d46bf269ac4a
 ---
 
@@ -35,8 +33,8 @@ Accoil is most effective when used with Segment. Here’s how it functions:
 
 To start using the Accoil destination:
 
-1. In your Segment workspace, navigate to the Catalog page and search for "Accoil Analytics."
-2. Select Accoil Analytics from the results and click **Add Destination**
+1. In your Segment workspace, navigate to the [Catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog/){:target="_blank"} and search for "Accoil Analytics".
+2. Select Accoil Analytics from the results and click **Add Destination**.
 3. Choose the Segment source you want to connect to Accoil.
 4. Navigate to your Accoil dashboard and find your API Key under **General Account Settings**. Copy this API Key.
 5. Paste the API Key into the Accoil destination settings within Segment, then click "Connect" to complete the integration.
@@ -67,13 +65,14 @@ Example Call:
 Group calls link users to accounts and records account-level attributes.
 
 Example Call:
-   ````javascript
+   ```javascript
    analytics.group('accountId123', {
      name: 'Example Company',
      createdAt: '2021-03-15T09:00:00Z',  // ISO 8601 or Unix timestamp format
      mrr: 3000,
      status: 'active'
    });
+   ```
 
 ### Track
 
@@ -87,6 +86,7 @@ Example Call:
      item: 'Book',
      price: 25.00
    });
+   ```
 
 ### Page and Screen
 
@@ -96,6 +96,7 @@ Example Calls:
    ```javascript
    analytics.page('Home Page');
    analytics.screen('Dashboard');
+   ```
 
 ## Key Notes
 

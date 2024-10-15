@@ -20,6 +20,17 @@ sections:
     title: Testing and Debugging
   - path: /getting-started/whats-next
     title: What's Next
+  - section_title: Use Cases
+    slug: getting-started/use-cases
+    section:
+    - path: /getting-started/use-cases/
+      title: Use Cases Overview
+    - path: /getting-started/use-cases/guide/
+      title: Choosing a Use Case
+    - path: /getting-started/use-cases/setup/
+      title: Use Cases Setup
+    - path: /getting-started/use-cases/reference/
+      title: Use Cases Reference
 
 - section_title: Guides
   section:

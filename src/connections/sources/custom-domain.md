@@ -59,6 +59,9 @@ To configure Custom Domain:
 
 ## FAQ
 
+### Can I set up multiple Custom Domains?
+Segment recommends creating a different subdomain (for example, `mysubdomain.mydomain.com`) for each source. You cannot connect multiple custom domains to the same source.
+
 ### What sources can I use with Custom Domain?
 Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
@@ -97,4 +100,9 @@ Customers who have access to the Custom Domain feature can rename analytics to `
 
 ### What happens to the Analytics.js cookies already set on the user's browser prior to a Custom Domain implementation?
 Analytics.js cookies are not lost in the transition to Custom Domain. When users revisit your website, the previous Analytics.js cookies continue to be fetched and added to events, if available.
+
+### Can I use the same subdomain across multiple workspaces?
+No, each workspace requires its own unique subdomain (for example, `mysubdomain.mydomain.com`). 
+
+
 
