@@ -76,7 +76,7 @@ You can find the location of your BigQuery resources using the following method:
 6. Open the Segment app and navigate to **Connections > Sources**. 
 7. On the My sources page, click **+ Add source**.  
 8. Search for "BigQuery" and select the BigQuery source from the sources catalog. On the BigQuery overview page, click **Add Source**. 
-9. On the _Set up BigQuery_ page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
+9. On the Set up BigQuery page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
 10. Enter the location of your BigQuery warehouse in the **Data Location** field. 
 11. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again. 
 12. If the test connection completes successfully, click **Add source** to complete the setup process.
