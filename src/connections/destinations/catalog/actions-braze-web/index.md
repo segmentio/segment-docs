@@ -182,6 +182,5 @@ The following [Debounce Middleware](/docs/connections/destinations/catalog/actio
 
 When an Identify call is fired on a website, Segment first caches and compares the user traits object. 
 
--If the user traits differ from what was previously cached, the data flows through destination filters, insert functions, and then through destination mappings. 
-
+- If the user traits differ from what was previously cached, the data flows through destination filters, insert functions, and then through destination mappings. 
 - If user traits are the same as what's cached, Segment assumes that that data was already sent to Braze and a does not make a new request to Braze. 
