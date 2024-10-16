@@ -51,7 +51,8 @@ To configure Custom Domain:
   - **Domain Name**: Enter the subdomain that Segment should use for event request tracking.
   - **Additional Domain Name**: If applicable, add an additional subdomain. This field is optional.
   - **Source names**: Select the sources you would like to use for Custom Domain. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
-  - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. 
+  - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you have a Content Security Policy (CSP) enabled, you must add the new subdomains provided by Segment to your CSP once the Custom Domain feature is enabled. This ensures that the subdomains are not blocked by your CSP when loading Segment.
+    
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
