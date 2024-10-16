@@ -176,10 +176,12 @@ Keep the following in mind if you plan to move to Braze (Actions) from the class
 
 ## FAQ
 
-### How Debounce Middleware works? 
+### How does the Debounce Middleware Action work? 
 
-The [Debounce Middleware](/docs/connections/destinations/catalog/actions-braze-web/#debounce-middleware) action is unique and behaves differently from the other actions. Debounce Middleware logic is executed at the source-level: 
+The following [Debounce Middleware](/docs/connections/destinations/catalog/actions-braze-web/#debounce-middleware) logic is executed at the source-level:
 
-- When an Identify call is fired on a website, we will first cache and compare the user traits. If the user traits object differs from what has been cached previously, the data will be passed on to the destination flow (Destination Filters → Insert Functions → Destination Mappings). 
+When an Identify call is fired on a website, Segment first caches and compares the user traits object. 
 
-- Otherwise, if user traits are the same as what's cached, we assume that that data was already sent to Braze and a new request is not made to their system. 
+-If the user traits differ from what was previously cached, the data flows through destination filters, insert functions, and then through destination mappings. 
+
+- If user traits are the same as what's cached, Segment assumes that that data was already sent to Braze and a does not make a new request to Braze. 
