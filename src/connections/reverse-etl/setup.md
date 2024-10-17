@@ -87,7 +87,7 @@ To create a mapping:
      * Added or updated records  
      * Deleted records
 7. In the **Map fields** section, define how to map the record columns from your model to your destination. Map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of Action selected.  
-   * If you’re setting up a Destination Action, some mapping fields might require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays) for more information.  
+   * If you’re setting up a Destination Action, some mapping fields might require data to be in the form of an object or array. See the [supported objects and arrays for mapping](docs/connections/reverse-etl/setup/#supported-object-and-arrays) for more information.  
    * _(Optional)_ Use the [Suggested Mappings](#suggested-mappings) feature to identify and match near-matching field names to streamline the field mapping process.
 8. In the **Send test record section**, select a test record to preview the fields that you mapped to your destination. When you've verified that the records appear as expected, click **Next**. 
 9. Enter a name for your mapping. The name initially defaults to the Action's name, for example, `Track Event`, but you can make changes to this default name.
