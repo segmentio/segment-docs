@@ -4,10 +4,11 @@ hide-boilerplate: true
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/vendor-braze/'
+  - '/connections/destinations/catalog/braze-web-device-mode-actions/'
 id: 60fb01aec459242d3b6f20c1
 versions:
   - name: 'Braze Cloud Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-cloud-mode-actions'
+    link: '/docs/connections/destinations/catalog/actions-braze-cloud'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---
