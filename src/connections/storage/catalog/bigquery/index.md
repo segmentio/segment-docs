@@ -4,7 +4,6 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/bigquery/'
 ---
-{% include content/warehouse-ip.html %}
 
 Segment's [BigQuery](https://cloud.google.com/bigquery/){:target="_blank"} connector makes it easy
 to load web, mobile, and third-party source data like Salesforce, Zendesk, and
@@ -138,6 +137,13 @@ To remove access to the shared Service Account:
 
 For more information about managing IAM access, refer to Google's documentation, [Manage access to projects, folders, and organization](https://cloud.google.com/iam/docs/granting-changing-revoking-access){:target="_blank"}.
 
+### Allowlisting IPs
+
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ## Best Practices
 
