@@ -50,8 +50,8 @@ To set up dbt Cloud:
 2. Click **Manage dbt Cloud**.
 3. Add your dbt Cloud API key or dbt Personal Access Token and an optional custom subdomain, then click **Save**. 
 
-> info "Add a custom subdomain" 
-> By default, dbt sets the subdomain to 'cloud'. To identify your custom subdomain, open your URL and copy the portion before `.getdbt.com`. For example, if your domain was `https://subdomain.getdbt.com/`, your subdomain would be `subdomain`. 
+> info "Adding a custom subdomain"
+> By default, dbt sets the subdomain to cloud. To identify your custom subdomain, open your URL and copy the portion before `.getdbt.com`. For example, if your domain was `https://subdomain.getdbt.com/`, your subdomain would be `subdomain`. 
 
 ### Model syncs
 

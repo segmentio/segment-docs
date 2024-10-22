@@ -3,9 +3,11 @@ title: Braze Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 60f9d0d048950c356be2e4da
+redirect_from: 
+  - '/connections/destinations/catalog/braze-cloud-mode-actions/'
 versions:
   - name: 'Braze Web Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-web-device-mode-actions/'
+    link: '/docs/connections/destinations/catalog/actions-braze-web/'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---
