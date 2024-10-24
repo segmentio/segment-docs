@@ -1,31 +1,29 @@
 ---
 title: Linked Audiences
 plan: engage-foundations
-beta: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences'
-hidden: true
 ---
-> info "Linked Audiences is in public beta"
-> Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-Linked Audiences allows you to build a warehouse-first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+Linked Audiences empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. 
 
-You can:
+This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support.
+
+With Linked Audiences, you can:
 
 - Preserve rich relationships between all the data in your warehouse by creating connections with any entity data back to your audience profile.
 - Build advanced audience segments that include the rich context needed for personalization downstream.
 - Use a low code builder, enabling marketers to activate warehouse data without having to wait for data pull requests before launching campaigns to targeted audiences.
 
-To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
+To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/).
 
 ## Prerequisites
 
 Before you begin setting up your Linked Audience, ensure you have:
 
 - [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
-- Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
-- [Ensure someone has set up your data graph](/docs/unify/linked-profiles/data-graph/).
+- Set up your warehouse permissions using [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
+- [Ensure someone has set up your data graph](/docs/unify/data-graph/data-graph/).
 - Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
 ## Setting up Linked Audiences
@@ -35,7 +33,8 @@ To set up your Linked Audience, complete the following steps:
 - [Step 1: Build a Linked Audience](#step-1-build-a-linked-audience)
 - [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
 - [Step 3: Send a test event to your destination](#step-3-send-a-test-event-to-your-destination)
-- [Step 4: Enable your Linked Audience](step-4-enable-your-linked-audience)
+- [Step 4: Enable your Linked Audience](#step-4-enable-your-linked-audience)
+- [Step 5: Monitor your Activation](#step-5-monitor-your-activation)
 
 ## Step 1: Build a Linked Audience
 
@@ -97,7 +96,7 @@ at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
 
-#### Operator Selection
+#### Operator selection
 
 You can create audience definitions using either `AND` or `OR` operators across all condition levels. You can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups.
 
@@ -113,18 +112,24 @@ This information appears when you click the user profile generated from the audi
 
 ![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic References
+#### Dynamic references
 
-**Event Conditions**
+**Event conditions**
 
 When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value. These operators support dynamic references: equals, not equals, less than, greater than, less than or equal, greater than or equal, contains, does not contain, starts with, ends with.
 
-**Entity Conditions**
+**Entity conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
-NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
-STRING data type: equals, not equals, contains, does not contain, starts with, ends with
-TIMESTAMP data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as in the following table:
+
+| Data Type | Supported Operators                                                                    |
+| --------- | -------------------------------------------------------------------------------------- |
+| NUMBER    | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| STRING    | equals, not equals, contains, does not contain, starts with, ends with                 |
+| DATE      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIME      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+
 
 ## Step 2: Activate your Linked Audience
 
@@ -139,13 +144,16 @@ To activate your Linked Audience:
 
 ### Step 2a: Connecting to a destination
 
-[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination.
+[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
+
+> info "Linked Audiences destinations"
+> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. Navigate to **Engage > Audiences**.
 2. Select the Linked Audience you set up in the previous step. 
-3. Select **Add destination**.
+3. Select **Add destination**. 
 4. Select a destination from the catalog.
 5. Click **Configure data to send to destination**.
 
@@ -159,13 +167,15 @@ Select the Destination Action to call when the event happens, then click **Next*
 
 Configure how and when events are produced with each audience run. Select the entities referenced in the audience builder to act as a trigger for your events. 
 
-Event Selection                 |Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Profile enters audience         | Send an event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
-Profile exits audience          | Send an event when a profile no longer matches the audience condition.                                                                    | Send an email to credit card owners to confirm that their credit cards have been paid in full.<br> Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
-Entity enters audience          | Send an event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the event.         | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br> Notify a traveler when a flight associated with their profile is delayed.<br> Notify a customer when a product associated with their profile's wishlist is back in stock.
-Entity exits audience           | Send an event when an entity condition associated with a profile no longer matches the audience condition. You must select the entity that triggers Segment to send the event| Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br> Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
-Profile enters or exits audience| Send an event when a profile's audience membership changes.   | Update a user profile in a destination with the most recent audience membership.     
+| Trigger                          | Event type | Definition                                                                                                 | Examples                                                                                                                                                                                                                                                                         |
+| -------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Profile enters audience          | Track      | Send an event when a profile matches the audience condition.                                               | Send a congratulatory email when a traveler qualifies for premium status with a mileage program. Send a discount to all customers with a particular product on their wishlist.                                                                                                   |
+| Profile exits audience           | Track      | Send an event when a profile no longer matches the audience condition.                                     | Send an email to credit card owners to confirm that their credit cards have been paid in full. Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                          |
+| Entity enters audience           | Track      | Send an event when an entity condition associated with a profile matches the audience condition.           | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance. Notify a traveler when a flight associated with their profile is delayed. Notify a customer when a product associated with their profile's wishlist is back in stock. |
+| Entity exits audience            | Track      | Send an event when an entity condition associated with a profile no longer matches the audience condition. | Send a confirmation to a customer when a credit card associated with their profile has been paid off. Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                          |
+| Profile enters or exits audience | Identify   | Send an event when a profile's audience membership changes.                                                | Update a user profile in a destination with the most recent audience membership.                                                                                                                                                                                                 |
+
+
 
 ### Step 2d: Configure the event
 
@@ -175,19 +185,17 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
-#### Show/Hide preview 
+#### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 
 ![A screenshot of the Add activation page, where you can review your payload data.](/docs/engage/images/linked_audience_payload.png)
 
-**Important:** It is important to make a copy of the data from your final payload schema; you will need this data later when you set up your destination. 
-
 #### Map event
 
-Only required fields are displayed. All optional & pre-filled fields are hidden.
+Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**.
 
-These fields are pre-filled with properties that will work by default.
+These fields are pre-filled with properties configured by default.
 
 ## Step 3: Send a test event to your destination
 
@@ -197,16 +205,11 @@ Enter the destination User id for the profile you want to use to test the event,
 
 The Event content drop-down shows you a preview of what the data sent to your destination might look like. 
 
-### Step 3a: Configure your multi-channel marketing campaign 
-
-If you're using a multi-channel marketing tool, set up your email campaign before continuing. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
-
 ## Step 4: Enable your Linked Audience
 
-After building your Linked Audience, choose **Save and Enable**. You'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically disables your audience so that it doesn't start computing until you're ready. A compute is when Segment runs the audience conditions on your data warehouse and sends events downstream. 
+After building your Linked Audience, choose **Save and Enable**. You'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically disables your audience so that it doesn't start computing until you're ready. A run is when Segment runs the audience conditions on your data warehouse and sends events downstream. 
 
-To enable your audience:
-Select the **Enabled** toggle, then select **Enable audience**.
+To enable your audience, select the **Enabled** toggle, then select **Enable audience**.
 
 ### Run Now
 
@@ -226,3 +229,19 @@ You can maintain your run schedule at any time from the audience's **Settings** 
 You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
 
 There may be up to a 5 minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
+
+## Step 5: Monitor your activation
+
+With your Linked Audience activated, follow these steps to monitor your activation:
+
+1. From the Audience Overview page, selected one of your connected destinations.
+2. Under the **Settings** tab, click **Destination delivery**, which then opens the Linked Audiences Delivery Overview.
+
+### Delivery Overview for Linked Audiences
+
+Delivery Overview shows you four steps in your data activation pipeline:
+
+- **Events from Audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership. 
+- **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
+- **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.

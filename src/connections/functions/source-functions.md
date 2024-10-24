@@ -434,3 +434,7 @@ No. Tracking Pixels operate client-side only and need to be loaded onto your web
 ##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
 
 The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
+
+#### Can I send a custom response from my Source Function to an external tool?
+
+No, Source Functions can't send custom responses to the tool that triggered the Function's webhook. Source Functions can only send a success or failure response, not a custom one.

@@ -20,7 +20,7 @@
 
 
 {% if settings.size > 0 %}
-### Destination Settings
+## Destination Settings
 
 <table >
   <thead>
@@ -127,6 +127,20 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
       </p>
     </div>
   </div>
+{% endif %}
+
+<!--- IG 9/2024 - PM wanted to call out that this specific HubSpot Cloud (Actions) Action can make multiple assosciations-->
+
+{% if action.id == 'dMYued7r3VjK4c2gBWUTZi' %}
+<div class="premonition info">
+  <div class="fa fa-check-circle"></div>
+  <div class="content">
+    <p class="header">You can use the Custom Object v2 Action to make multiple assosciations</p>
+    <p markdown=1>
+       For more information, see HubSpot's [Associate records](https://knowledge.hubspot.com/records/associate-records){:target="_blank”} documentation.
+    </p>
+  </div>
+</div>
 {% endif %}
 
 {% if action.fields.size > 0 %}

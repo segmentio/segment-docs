@@ -51,13 +51,17 @@ To configure Custom Domain:
   - **Domain Name**: Enter the subdomain that Segment should use for event request tracking.
   - **Additional Domain Name**: If applicable, add an additional subdomain. This field is optional.
   - **Source names**: Select the sources you would like to use for Custom Domain. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
-  - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. 
+  - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you've enabled a Content Security Policy (CSP), you must add the new subdomains provided by Segment to your CSP once you've enabled the Custom Domain feature. This ensures that the CSP does not block the subdomains when you load Segment.
+    
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
 6. Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for your Analytics.js sources. Copy and paste this snippet into the header of your website. You can also use the subdomain provided for the Tracking API as the new endpoint for your server library sources. 
 
 ## FAQ
+
+### Can I set up multiple Custom Domains?
+Segment recommends creating a different subdomain (for example, `mysubdomain.mydomain.com`) for each source. You cannot connect multiple custom domains to the same source.
 
 ### What sources can I use with Custom Domain?
 Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
@@ -97,4 +101,9 @@ Customers who have access to the Custom Domain feature can rename analytics to `
 
 ### What happens to the Analytics.js cookies already set on the user's browser prior to a Custom Domain implementation?
 Analytics.js cookies are not lost in the transition to Custom Domain. When users revisit your website, the previous Analytics.js cookies continue to be fetched and added to events, if available.
+
+### Can I use the same subdomain across multiple workspaces?
+No, each workspace requires its own unique subdomain (for example, `mysubdomain.mydomain.com`). 
+
+
 

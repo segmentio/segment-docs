@@ -13,7 +13,7 @@ You can build Audiences from core **tracking events**, **traits**, and **compute
 
 You can build an Audience from existing events, traits, computed traits, or other Audiences.
 
-![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png)
+<!-- PW: 9/23/24, commenting this screenshot out until we can get a more accurate one ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png) -->
 
 > info ""
 > The **Include Anonymous Users** checkbox determines which external IDs need to exist on a profile for Segment to include the user in the audience:
@@ -39,19 +39,31 @@ Select `and not who` to indicate users that have not performed an event. For exa
 
 You can also specify two different types of time-windows, `within` and `in between`. The `within` property lets you specify an event that occurred in the last `x` number of days, while `in between` lets you specify events that occurred over a rolling time window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
-### Custom Traits 
+### Building audiences with traits
 
-You can also build Audiences based on [custom traits](/docs/unify/traits/custom-traits/). These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events. 
+You can also build audiences using Custom Traits, Computed Traits, SQL Traits, and audience memberships.
+
+#### Custom Traits 
+
+[Custom traits](/docs/unify/traits/custom-traits/) are user or account-specific attributes. You can collect these traits from your apps when a user completes a form or signs up using an [Identify call](/docs/connections/spec/identify). You can view these traits in the Profile explorer. Custom Traits are mutable and update to the latest value seen by the user's Identify events. 
 
 > info ""
-> When an audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience, and becomes visible in Segment as a custom trait.
+> When you delete an audience that previously generated Identify events, the data for the audience key stays attached to profiles that entered the audience. This data then becomes visible in Segment as a custom trait.
 
-### Computed Traits
+#### Computed Traits
 
-You can also use computed traits in an Audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
+You can also use computed traits in an audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
 
 > info ""
 > Engage supports nested traits, but the Audience builder doesn’t support accessing objects nested in arrays. When you send arrays of objects, they are flattened into strings. As a result, the same conditions that work on strings will work on the array. Within the builder, you can only use string operations like `contains` and `does not contain` to look for individual characters or a set of characters in the flattened array.
+
+#### SQL Traits
+
+With SQL Traits, you can use data in your warehouse to build an audience. By running SQL queries on this warehouse data, you can import specific traits back into Segment to enhance both Segment audiences and the data you send to downstream destinations.
+
+#### Audience memberships
+
+When you build an audience based on audience membership, you use existing audiences as criteria for creating new audiences. You can include or exclude profiles based on their membership in other audiences, allowing you to generate more specific audience segments.
 
 ### Time comparison
 

@@ -702,6 +702,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: IB9M67ZWaA
+    display_name: One Creation
+    hidden: false
+    slug: one-creation
+    url: connections/sources/catalog/cloud-apps/one-creation
+    regions:
+      - us
+    endpoints:
+      - us
   - id: o9OyD6xsVJ
     display_name: OneSignal
     hidden: false
@@ -813,6 +822,15 @@ sources:
     hidden: false
     slug: qualtrics
     url: connections/sources/catalog/cloud-apps/qualtrics
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: WGp9SQFRVu
+    display_name: Quin AI
+    hidden: false
+    slug: quin-ai
+    url: connections/sources/catalog/cloud-apps/quin-ai
     regions:
       - us
     endpoints:

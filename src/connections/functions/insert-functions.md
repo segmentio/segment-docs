@@ -38,6 +38,9 @@ For data to flow to your downstream destinations, you'll need to connect your in
 2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
+
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
@@ -602,3 +605,7 @@ DELETE deleteInsertFunction(fn_id)
 For more information, visit Segment's [Public API docs](https://docs.segmentapis.com/tag/Functions){:target="_blank"}.
 
 {% endcomment %}
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit won't be visible in the user interface.

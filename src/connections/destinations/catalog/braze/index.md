@@ -5,7 +5,7 @@ hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
 maintenance-content: >
-  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions) for a device-mode integration with access to Braze SDK features.
+  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-web) for a device-mode integration with access to Braze SDK features.
   <br />
   If you use a Braze mobile [device-mode connection](/docs/connections/destinations/#connection-modes), for example to use Braze Content Cards or In-App Messaging, use the Braze (Classic) Destination. Segment will continue to make updates to the Segment Braze mobile device-mode SDK.
 

@@ -49,17 +49,13 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Journeys
 
-> info ""
-> These limits only apply to existing users who started with Engage prior to August 18, 2023. Visit Segment's updated Unify and Engage [limits](/docs/unify/product-limits/) to learn more.
-
-
-| Item            | Limit description                | Details                                                                      |
-| --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| Steps           | 500                              | The maximum number of steps per Journey.                                     |
-| Step Name       | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
-| Key             | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
-| Journey Name    | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
-| Compute credits | Half a credit for each step (up to 250 compute credits)     | Each step in a published Journey consumes half of one compute credit.        |
+| Item            | Limit description                                       | Details                                                                      |
+| --------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Steps           | 100                                                     | The maximum number of steps per Journey.                                     |
+| Step Name       | Maximum length of 170 characters                        | Once the limit is reached, you cannot add additional characters to the name. |
+| Key             | Maximum length of 255 characters                        | Once the limit is reached, you cannot add additional characters to the key.  |
+| Journey Name    | Maximum length of 73 characters                         | Once the limit is reached, you cannot add additional characters to the name. |
+| Compute credits | Half a credit for each step (up to 250 compute credits) | Each step in a published Journey consumes half of one compute credit.        |
 
 
  
