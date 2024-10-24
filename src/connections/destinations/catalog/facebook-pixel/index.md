@@ -245,5 +245,9 @@ Facebook Pixel events typically don't display in real-time within the Facebook A
 
 Segment does not handle nested properties that need to be blocklisted, including the standard PII properties. If you have properties you would like to blocklist, you can use [destination filters](/docs/connections/destinations/destination-filters/) to drop those properties before they are sent downstream. 
 
+### Mapping `revenue` to `value`
+
+Segment pre-maps `revenue` or `total` to `value`. If you have a custom `value` property, it's overwritten with the value from `revenue` or `total`, or it appears as '0.00' if those two properties aren't present. If you have a `value` property, you can use a [destination middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/#using-destination-middlewares) or [destination plugin](/docs/connections/sources/catalog/libraries/website/javascript/#advanced-plugin-api){:target="_blank"} to transform the name before it is sent downstream to avoid any data loss. 
+
 
 {% include content/client-side-script-unverified.md %}
