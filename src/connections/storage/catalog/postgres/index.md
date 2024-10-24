@@ -4,8 +4,6 @@ rewite: true
 redirect_from:
   - '/connections/warehouses/catalog/postgres/'
 ---
-{% include content/warehouse-ip.html %}
-
 
 PostgreSQL, or Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications.
 
@@ -103,6 +101,14 @@ To make sure your Postgres database is secure:
 - Allowlist the Segment IP addresses (`52.25.130.38/32` and `34.223.203.0/28`). Otherwise, Segment can't load your data.
 - Create a service user that has `read/write` permissions.
 - Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
+
+### Allowlisting IPs
+
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ## Best Practices
 

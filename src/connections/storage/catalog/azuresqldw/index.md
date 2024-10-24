@@ -4,14 +4,12 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/azuresqldw/'
 ---
-{% include content/warehouse-ip.html %}
-
 
 Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/){:target="_blank"}, previously known as Azure SQL Data Warehouse, is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
 
 {% include content/storage-do-include.md %}
 
-## Getting Started
+## Getting started
 
 Complete the following prerequisites in Microsoft Azure before connecting your Azure Synapse Analytics databases to Segment:
 
@@ -86,6 +84,14 @@ The default [resource allocation class](https://docs.microsoft.com/en-us/azure/s
 ### Using Selective Sync
 
 Users with a Business Tier plan can enable Selective Sync for their Azure Synapse Analytics destination. With Selective Sync, you can customize which collections and properties from a source are sent to each warehouse, which leads to faster, more relevant syncs. To learn more about Selective Sync, review the [Warehouse Syncs](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) documentation.
+
+### Allowlisting IPs
+
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ## Troubleshooting
 

@@ -4,7 +4,6 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/redshift/'
 ---
-{% include content/warehouse-ip.html %}
 
 This guide explains the process to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
 
@@ -74,6 +73,14 @@ VPCs keep servers inaccessible to traffic from the internet. With VPC, you're ab
 
 ### SSL/TLS
 Always require SSL/TLS and make sure your data warehouse accepts only secure connections. Segment only connects to your data warehouse using SSL/TLS.
+
+### Allowlisting IPs
+
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ## Best practices
 
