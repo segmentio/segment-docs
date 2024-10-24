@@ -127,7 +127,6 @@ Yes. Keep the following in mind when you work with Predictions:
 - **Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again."** Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
 Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.
 
-#### How is the average defined?
+#### How is the average calculated?
 
-The combined probabilities are summed up and then divided by total number of users. A score below 1 in "Likelier to convert than average" means that the user is less likely than average to convert.
-
+The probabilities for all users are added together and then divided by the total number of users. If a user's score in "Likelier to convert than average" is below 1, it means they are less likely than the average user to convert.
