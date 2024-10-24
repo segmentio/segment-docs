@@ -497,7 +497,7 @@ No, Destination Insert Functions are currently available for use with Cloud Mode
 
 ##### Can I use Insert Functions with Storage destinations?
 
-Destination Insert Functions are exclusively supported by Cloud Mode (server-side) destinations and cannot be integrated with Storage destinations at this time.
+Insert Functions are only supported by Cloud Mode (server-side) destinations and aren't compatible with Storage destinations.
 
 ##### Can I connect an insert function to multiple destinations?
 
