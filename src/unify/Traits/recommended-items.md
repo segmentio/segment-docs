@@ -34,7 +34,7 @@ Follow these steps to create a Recommended Item trait:
 
 Segment begins creating your new trait. This process could take up to 48 hours.
 
-## Example use case: 
+## Example use case: personalized album recommendations
 
 Suppose you’re managing a music streaming app and want to give each user personalized music recommendations based on their listening habits. Here's how you might set this trait up:
 
