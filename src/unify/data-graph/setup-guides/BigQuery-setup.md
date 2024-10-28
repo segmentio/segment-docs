@@ -78,12 +78,8 @@ GRANT `roles/bigquery.dataViewer` ON SCHEMA `YOUR_DATASET_NAME` TO "serviceAccou
 ## Update user access for Segment Reverse ETL dataset
 If you ran Segment Reverse ETL in the project you are configuring as the Segment connection project, a Segment-managed dataset is already created and you need to provide the new Segment user access to the existing dataset. 
 
-Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `__segment_reverse_etl` dataset:
+Grant the [BigQuery Data Editor](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor){:target="_blank"} role on the `__segment_reverse_etl` dataset to the service account if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `__segment_reverse_etl` dataset. Note that the `__segment_reverse_etl` dataset is hidden in the console. Run the following SQL command:  
 
 ```
 GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
 ```
-
-Grant the [BigQuery Data Editor](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor){:target="_blank"} role on the `__segment_reverse_etl` dataset to the service account. Note that the `__segment_reverse_etl` dataset is hidden in the console. 
-
-
