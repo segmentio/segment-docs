@@ -11,6 +11,12 @@ This recommendation is designed for cases where you want to personalize experien
 
 In this guide, you’ll learn how to set up a Recommended Item trait, as well as best practices to get the most out of your recommendations.
 
+## Before you begin
+
+Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events (like `order_completed`, `product_added`, and so on), as well as providing product from those interaction events.
+
+For more information on setting up your Recommendation Catalog, see the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
+
 ## Create a Recommended Item trait
 
 Follow these steps to create a Recommended Item trait:
@@ -25,3 +31,4 @@ Follow these steps to create a Recommended Item trait:
 6. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
 7. (Optional:) Select destinations you want to sync the trait to, then click **Next**.
 8. Give your trait a name, then click **Create Trait**.
+
