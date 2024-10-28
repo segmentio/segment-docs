@@ -18,13 +18,10 @@ Recommended Items uses your interaction events (like `order_completed`, `product
 3. **Item ranking**: Based on this analysis, Segment generates an ordered list of recommended items for each user, ranked from most to least likely to engage.
 4. **Profile storage**: Segment then saves these recommendations as an array on each eligible user profile.
 
-## Before you begin
-
-Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events (like `order_completed`, `product_added`, and so on), as well as providing product from those interaction events.
-
-For more information on setting up your Recommendation Catalog, see the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
-
 ## Create a Recommended Item trait
+
+> info "Before you begin"
+> Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events, as well as providing product metadata from those interaction events. If you've not yet set up your Recommendation Catalog, follow the instructions in the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
 
 Follow these steps to create a Recommended Item trait:
 
@@ -55,3 +52,4 @@ Suppose you’re managing a music streaming app and want to give each user perso
 | Trait naming         | Name your trait `Personalized Album Recommendations`, making it easy to identify for future campaigns.                                                                          |
 
 By setting up a trait like this, each user profile now includes personalized recommendations that reflect individual tastes. You can use these recommendations across a range of touchpoints, like in-app sections, personalized email content, or targeted messaging, to create a more engaging and customized user experience.
+
