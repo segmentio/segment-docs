@@ -84,10 +84,6 @@ In this example, `anonymous_id: a1` is not reset during a `User Logout`. Without
 
 This is especially helpful for preventing "blob users" that are merged together by non-unique anonymous IDs or by common group emails like `team@company.com`.
 
-## Can we remove a trait from a User profile?
-
-To remove a trait from a user profile, you can send in a key-value pair in the properties object with null as the value for that trait from one of the connected sources. E.g. `"properties": {"trait1": null, ...}, ....` Sending in an empty string i.e. `trait2: ""` will also have the same effect.
-
 ## Which destinations support syncing the identity graph?
 Most destinations on the Segment Platform are built up around a user model. They assume that a user will have a single userId. Further, most Destinations are not built to handle anonymous traffic.
 
