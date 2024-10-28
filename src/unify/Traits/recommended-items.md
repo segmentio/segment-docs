@@ -5,11 +5,18 @@ plan: unify-plus
 
 Recommended Items, part of Segment's CustomerAI, lets you add personalized item recommendations as a trait to each user profile.
 
-Based on a user's past interactions, this trait generates a list of up to 5 items, like products, articles, or songs, that each user is most likely to engage with.
-
-This recommendation is designed for cases where you want to personalize experiences, like email content, in-app recommendations, or website suggestions, to fit each user's unique preferences.
+Based on a user's past interactions, this trait generates a list of up to 5 items, like products, articles, or songs, that each user is most likely to engage with. This recommendation is designed for cases where you want to personalize experiences, like email content, in-app recommendations, or website suggestions, to fit each user's unique preferences.
 
 In this guide, you’ll learn how to set up a Recommended Item trait, as well as best practices to get the most out of your recommendations.
+
+## How Recommended Items works
+
+Recommended Items uses your interaction events (like `order_completed`, `product_added`, and `product_searched`) along with event metadata to generate personalized recommendations for each user. Here’s an overview of the process:
+
+1. **Data collection**: Segment captures user interactions from your select events.
+2. **Pattern analysis**: Machine learning models analyze these interactions to recognize patterns and user preferences.
+3. **Item ranking**: Based on this analysis, Segment generates an ordered list of recommended items for each user, ranked from most to least likely to engage.
+4. **Profile storage**: Segment then saves these recommendations as an array on each eligible user profile.
 
 ## Before you begin
 
