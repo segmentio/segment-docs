@@ -18,6 +18,8 @@ Usage limits for each customer during the AWS PrivateLink Private Beta include t
 The following Databricks integrations support PrivateLink:
 - [Databricks storage destination](/docs/connections/storage/catalog/databricks/)
 - [Databricks Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+- [Databricks Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)
+- [Databricks Data Graph](/docs/unify/data-graph/setup-guides/databricks-setup/)
 
 > info "Segment recommends reviewing the Databricks documentation before attempting AWS PrivateLink setup"
 > The setup required to configure the Databricks PrivateLink integration requires front-end and back-end PrivateLink configuration. Review the [Databricks documentation on AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} to ensure you have everything required to set up this configuration before continuing. 
