@@ -359,5 +359,35 @@ The following options were removed in Analytics-Swift:
 | `trackInAppPurchases`       | Deprecated                                                                                                  |
 | `trackPushNotifications`    | Deprecated                                                                                                  |
 
+### 4.a) Traits are no longer attached to `analytics.track()` events automatically 
+
+To prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. To achieve this, you can write a `before` plugin: 
+
+```swift
+import Foundation
+import Segment
+
+class InjectTraits: Plugin {
+    let type = PluginType.enrichment
+    weak var analytics: Analytics? = nil
+    
+    func execute<T: RawEvent>(event: T?) -> T? {
+        if event?.type == "identify" {
+            return event
+        }
+        
+        var workingEvent = event
+        
+        if var context = event?.context?.dictionaryValue {
+            context[keyPath: "traits"] = analytics?.traits()
+            
+            workingEvent?.context = try? JSON(context)
+        }
+        
+        return workingEvent
+    }
+}
+```
+
 ### Conclusion
 Once you’re up and running, you can take advantage of Analytics-Swift’s additional features, such as [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-plugins), [Functions](/docs/connections/functions/), and [Typewriter](/docs/connections/sources/catalog/libraries/mobile/apple/swift-typewriter) support. 

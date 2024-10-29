@@ -34,7 +34,7 @@ You can set up 1 of the following options:
 ### CSV
 
 > warning "You cannot remove test profiles in your Unified Profiles workspace"
-> Contact Flex support to remove test profiles you uploaded to your Unified Profiles workspace.
+> Contact [Segment support](mailto:friends@segment.com){:target="_blank"} to remove test profiles you uploaded to your Unified Profiles workspace.
 
 1. On the Getting started page, click **Upload CSV**. 
 2. Review the information on the Upload profiles and custom traits page. 

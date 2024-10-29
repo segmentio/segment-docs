@@ -151,6 +151,9 @@ You can set an email on the user profile by including `email` as a trait, as a p
 
 If a user has more than one email address or IDFA on their account as `external_ids`, Engage sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can't identify users based on the data that you provide.
 
+> info "ID Sync"
+> [Segment's ID Sync](/docs/engage/trait-activation/id-sync/), you can send additional identifiers to Actions destinations. However, due to Google’s restrictions on identifier limits per request, the Google Ads Remarketing Lists destination can only include one additional identifier in audience payloads. If the Google Ads Remarketing Lists destination is already receiving data from an audience and you enable ID Sync afterward, the new identifiers won’t be applied retroactively to existing users. To update identifiers for the entire user base, a full resync is required. [Contact Segment support](https://segment.com/requests/integrations/){:target="_blank"} to request a resync with your new ID Sync configuration.
+
 ### Invalid Settings error in Event Delivery
 
 Make sure that this destination was created in [Engage](/docs/engage/) as it requires additional event data not available in standard destinations.

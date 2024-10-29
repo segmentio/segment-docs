@@ -6,14 +6,11 @@ Segment's dbt extension lets you use [Reverse ETL](/docs/connections/reverse-etl
 
 With Segment's dbt extension, you can:
 
-- Securely connect Segment to the GitHub repository that stores your dbt models.
+- Securely connect Segment to a Git repository that stores your dbt models.
 - Use centralized dbt models to set up Reverse ETL.
 - Trigger Reverse ETL syncs from dbt jobs.
 
 This page explains how to set up a dbt Model and then use the model with Reverse ETL.
-
-> info ""
-> Extensions, including dbt sync, is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
 
 ## Before you begin
 
@@ -21,14 +18,16 @@ Keep the following in mind as you set up the dbt extension:
 
 - The extension supports [dbt Core v1.7](https://docs.getdbt.com/docs/dbt-versions/core-upgrade/upgrading-to-v1.7){:target="_blank"}.
 - You can use [Snowflake](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/), [Databricks](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/), [Redshift](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/), [Postgres](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/), and [BigQuery](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/) as Reverse ETL sources.
-- dbt models aren't synchronized from the dbt cloud. The model sync connects to a Git repository that loads models into Segment for use with Reverse ETL. 
+- dbt models aren't synchronized from the dbt cloud. The model sync connects to a Git repository that loads models into Segment for use with Reverse ETL.
+- You can connect to GitHub using a GitHub App, token, or SSH.
+- For [GitLab](https://docs.gitlab.com/ee/user/ssh.html){:target="_blank"} and [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/configure-ssh-and-two-step-verification/){:target="_blank"}, use SSH to connect.
 
 ## Set up Git dbt Models and dbt Cloud
 
 To set up the dbt extension, you'll need:
 
 - an existing dbt account with a Git repository
-- (for job syncs:) dbt cloud with jobs already created
+- for job syncs, dbt cloud with jobs already created
 
 ### Git repository and dbt Models setup
 
@@ -36,8 +35,8 @@ Follow these steps to connect the Git repository that stores your dbt Models:
 
 1. In your Segment workspace, navigate to **Settings > Extensions**.
 2. Click **Set up Git sync**.
-3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key or GitHub token, then click **Next**.
-4. In the **Connect source** window, select a Reverse ETL warehouse source from the dropdown, then click **Save**.
+3. On the **Configure service credentials** page, select a service and protocol, add your GitHub App, SSH private key or GitHub token, then click **Next**.
+4. In the **Connect source** window, select an existing Reverse ETL warehouse source from the dropdown, then click **Save**.
 
 After you've saved your setup, you can configure your Git repository's settings to your needs by changing the repository, branch, dbt version, default schema, and project path.
 
@@ -49,7 +48,10 @@ To set up dbt Cloud:
 
 1. In your Segment workspace, navigate to **Settings > Extensions**.
 2. Click **Manage dbt Cloud**.
-3. Add your dbt Cloud API key, and, optionally, a custom subdomain. Click **Save**.
+3. Add your dbt Cloud API key or dbt Personal Access Token and an optional custom subdomain, then click **Save**. 
+
+> info "Adding a custom subdomain"
+> By default, dbt sets the subdomain to cloud. To identify your custom subdomain, open your URL and copy the portion before `.getdbt.com`. For example, if your domain was `https://subdomain.getdbt.com/`, your subdomain would be `subdomain`. 
 
 ### Model syncs
 

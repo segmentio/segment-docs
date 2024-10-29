@@ -11,6 +11,14 @@ Yes, the limit is 32KB per event message. Events with a payload larger than 32KB
 
 In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
+## Is there an updated version of the Segment snippet?
+Segment released an updated version of the Analytics.js snippet, which introduces several enhancements and fixes that might improve your setup. For a full list of version updates, see the Analytics.js snippet's [Releases](https://github.com/segmentio/snippet/releases){:target="_blank”}.
+
+You can find the latest version of the Segment snippet in your JavaScript source's Overview tab or in the [Quickstart: Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet) documentation.
+ 
+While there is no deadline to upgrade your snippet to the latest version, upgrading lets you use the latest improvements in the Segment library.
+
+
 ## Why do I see a network request to `/m`?
 
 In May 2018, Segment began collecting client-side performance metrics in Analytics.js. This includes metrics like:
@@ -120,6 +128,13 @@ The Analytics.js library sets the `context.page.referrer` value from the [`windo
 
 There are no rate limits in place for the CDN settings endpoint.
 
+## I need to convert IP addresses to geolocation data. Can Segment do it for me?
 
+Segment doesn't convert IP addresses to geolocation data. Segment focuses on collecting raw data, leaving post-processing tasks like IP-to-geolocation conversion to your downstream tools, like Google Analytics.
+
+If you need this functionality, you have a couple of options:
+
+**Use downstream tools**: Many analytics platforms, like Google Analytics, can automatically handle IP-to-geolocation conversion.
+**Use a third-party API**: Alternatively, you can use third-party services like Geolocation API to convert IP addresses to geolocation data. Afterward, you can pass this information as a trait in Identify calls or as a property in Track calls to Segment. This allows you to manage geolocation data according to your specific needs, though it will likely require engineering resources.
 
 

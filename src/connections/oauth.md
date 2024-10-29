@@ -105,7 +105,7 @@ To obtain the access token:
     EXP | The expiry time in seconds. This is expected to be valid only for a short duration under a minute. 
     JTI | The unique identifer for the token. 
 
-2. Send a form-url-encoded `POST` request to the regional authorization server with the following parameters:
+2. Send a form-url-encoded `POST` request to the regional authorization server's `\token` route with the following parameters:
     
     ```
     grant_type=client_credentials
