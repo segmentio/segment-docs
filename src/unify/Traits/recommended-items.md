@@ -13,15 +13,22 @@ In this guide, you’ll learn how Recommended Items works, how to set up a Recom
 
 Recommended Items uses your interaction events (like `order_completed`, `product_added`, and `product_searched`) along with event metadata to generate personalized recommendations for each user. Here’s an overview of the process:
 
-1. **Data collection**: Segment captures user interactions from your select events.
+1. **Data collection**: Segment captures user interactions from your chosen events.
 2. **Pattern analysis**: Machine learning models analyze these interactions to recognize patterns and user preferences.
 3. **Item ranking**: Based on this analysis, Segment generates an ordered list of recommended items for each user, ranked from most to least likely to engage.
 4. **Profile storage**: Segment then saves these recommendations as an array on each eligible user profile.
 
+Once Segment attaches the recommendation array to a profile, you can use it to:
+
+- Personalize experiences with the [Profile API](/docs/unify/profile-api/)
+- Send Recommended Items traits to downstream destinations
+- Build further segments based on Recommended Items
+- Trigger customized campaigns and experiences tailored to individual users
+
 ## Create a Recommended Item trait
 
 > info "Before you begin"
-> Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events, as well as providing product metadata from those interaction events. If you've not yet set up your Recommendation Catalog, follow the instructions in the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
+> Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events and providing product metadata to support recommendations. If you haven't yet set up your Recommendation Catalog, follow the steps in the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
 
 Follow these steps to create a Recommended Item trait:
 
