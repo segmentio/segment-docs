@@ -252,7 +252,7 @@ Segment does not handle nested properties that need to be blocklisted, including
 
 When both Facebook Pixel and Facebook Conversions API are enabled, you may see a "Mismatched IP Address" warning in Facebook reports. This happens because:
 
-* Facebook Pixel: This collects the user’s IP address directly from the browser, including IPv6 addresses when available, independently of Segment. So, even though Segment’s Analytics.js defaults to collecting only IPv4 addresses, the Facebook Pixel will still automatically collect IPv6 if available, and send it to Facebook.
+* Facebook Pixel: This collects the user’s IP address directly from the browser, [including IPv6 addresses when available](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters#), independently of Segment. So, even though Segment’s Analytics.js defaults to collecting only IPv4 addresses, the Facebook Pixel will still automatically collect IPv6 if available, and send it to Facebook.
 
 * Facebook Conversions API: Events sent to Facebook through the Conversions API may include an IPv4 address collected by Segment Analytics.js, which results in both IPv4 and IPv6 addresses being sent for the same event.
 
