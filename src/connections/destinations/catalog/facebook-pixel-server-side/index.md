@@ -326,12 +326,10 @@ minutes. You can confirm that Facebook received them:
 
 ## Troubleshooting
 
-### Why am I seeing a "Mismatched IP Address" in Facebook after enabling Facebook Conversions API alongside Facebook Pixel?
+### Why do I see a "Mismatched IP Address" warning in Facebook after enabling the Facebook Conversions API alongside Facebook Pixel?
 
-When both Facebook Pixel and Facebook Conversions API are enabled, you may see a "Mismatched IP Address" warning in Facebook reports. This happens because:
-
-* Facebook Pixel: This collects the user’s IP address directly from the browser, [including IPv6 addresses when available](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters#), independently of Segment. So, even though Segment’s Analytics.js defaults to collecting only IPv4 addresses, the Facebook Pixel will still automatically collect IPv6 if available, and send it to Facebook.
-
-* Facebook Conversions API: Events sent to Facebook through the Conversions API may include an IPv4 address collected by Segment Analytics.js, which results in both IPv4 and IPv6 addresses being sent for the same event.
+When you enable both Facebook Pixel and the Facebook Conversions API, you may see a "Mismatched IP Address" warning in Facebook reports. This happens because:
+* Facebook Pixel collects the user’s IP address directly from the browser, [including IPv6 addresses when available](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters#){:target="_blank"}, independently of Segment. Even though Segment’s Analytics.js defaults to collecting only IPv4 addresses, Facebook Pixel automatically collects IPv6 if available, and sends it to Facebook.
+* Events sent to Facebook through the Conversions API may include an IPv4 address collected by Segment Analytics.js, which results in both IPv4 and IPv6 addresses being sent for the same event.
 
 Since these two addresses don’t match, Facebook flags it as a "Mismatched IP Address." To resolve this, you can manually collect and send the IPv6 address (when available) in the event payload to Segment, and map it to the Facebook Conversions API destination. This ensures consistency between the IP addresses received by Facebook.
