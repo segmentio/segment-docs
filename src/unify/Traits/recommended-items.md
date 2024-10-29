@@ -7,7 +7,7 @@ Recommended Items, part of Segment's CustomerAI, lets you add personalized item 
 
 Based on a user's past interactions, this trait generates a list of up to 5 items, like products, articles, or songs, that each user is most likely to engage with. This recommendation is designed for cases where you want to personalize experiences, like email content, in-app recommendations, or website suggestions, to fit each user's unique preferences.
 
-In this guide, you’ll learn how to set up a Recommended Item trait, as well as best practices to get the most out of your recommendations.
+In this guide, you’ll learn how Recommended Items works, how to set up a Recommended Item trait, and best practices to get the most out of your recommendations.
 
 ## How Recommended Items works
 
@@ -53,3 +53,10 @@ Suppose you’re managing a music streaming app and want to give each user perso
 
 By setting up a trait like this, each user profile now includes personalized recommendations that reflect individual tastes. You can use these recommendations across a range of touchpoints, like in-app sections, personalized email content, or targeted messaging, to create a more engaging and customized user experience.
 
+## Best practices
+
+Keep the following in mind as you work with Recommended Items:
+
+- **Limit recommendations to key items**: Start with 5-7 items per profile. This keeps recommendations concise and tailored to each user's preferences.
+- **Consider audience size**: Larger audiences could dilute the likelihood of high engagement for each recommended item. Aim for the top 20% of users to keep recommendations impactful.
+- **Give the system time to build the trait**: Recommendation traits can take up to 48 hours to calculate, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
