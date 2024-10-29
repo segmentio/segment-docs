@@ -234,4 +234,4 @@ Google doesn't offer guidance around how to deduplicate the same event coming in
 
 ### User-provided data collection
 
-Google has introduced a beta feature for collecting data provided by users, [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad). It's important to note that this feature is currently not supported by Segment, and, acknowledging this feature policy in your Google Analytics 4 Account has irreversible effects.
+Google offers a beta feature called [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"} that collects data directly from users. Segment doesn't support this feature. Acknowledging the feature policy in your Google Analytics 4 account is permanent, even though you can later disable the data collection itself.
