@@ -3,11 +3,15 @@ title: Recommended Items
 plan: unify-plus
 ---
 
-Recommended Items, part of Segment's CustomerAI, lets you add personalized item recommendations as a trait to each user profile.
+Recommended Items, part of Segment's CustomerAI, lets you add personalized item recommendations as a [computed trait](/docs/unify/traits/computed-traits/) to each user profile.
 
-Based on a user's past interactions, this trait generates a list of up to 5 items, like products, articles, or songs, that each user is most likely to engage with. This recommendation is designed for cases where you want to personalize experiences, like email content, in-app recommendations, or website suggestions, to fit each user's unique preferences.
+Based on a user's past interactions, this trait generates a list of up to 5 items, like products, articles, or songs, that each user is most likely to engage with. 
 
-In this guide, you’ll learn how Recommended Items works, how to set up a Recommended Item trait, and best practices to get the most out of your recommendations.
+Segment designed Recommended Items for cases where you want to personalize experiences, like email content, in-app recommendations, or website suggestions, to fit each user's unique preferences.
+
+On this page, you’ll learn how Recommended Items works, how to create a Recommended Item trait, and best practices to get the most out of your recommendations.
+
+![The Select Computed Trait screen in the Segment UI, showing options like Predictions, Recommendation (selected), Event counter, Aggregation, and Most frequent. The Recommendation option description reads "Recommend personalized products" and includes additional details about Cross Sell, Personalization, and Next Best Action use cases.](../images/recommendation_items.png).
 
 ## How Recommended Items works
 
@@ -25,7 +29,7 @@ Once Segment attaches the recommendation array to a profile, you can use it to:
 - Build further segments based on Recommended Items
 - Trigger customized campaigns and experiences tailored to individual users
 
-## Create a Recommended Item trait
+## Create a Recommended Items trait
 
 > info "Before you begin"
 > Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events and providing product metadata to support recommendations. If you haven't yet set up your Recommendation Catalog, follow the steps in the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
@@ -35,10 +39,11 @@ Follow these steps to create a Recommended Item trait:
 1. In your Segment workspace, navigate to **Unify > Traits > + Create computed trait**.
 2. In the **New Computed Trait** builder, click **Recommendation**, then click **Next**.
 3. In **Select users**, click **+ Add condition** to choose the users who should receive recommendations.
-    - You can create recommendations for up to 2 million non-anonymous customers.
+    - You can create recommendations for up to 2 million **non-anonymous** customers.
 4. In **Define recommended items**, choose the item type you want to recommend. 
     - This is based on your product catalog.
-5. Choose how many item types you want to return onto each profile. You can select up to 5 item types.
+5. Choose how many item types you want to return onto each profile. 
+    - You can select up to 5 item types.
 6. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
 7. (Optional:) Select destinations you want to sync the trait to, then click **Next**.
 8. Give your trait a name, then click **Create Trait**.
@@ -47,7 +52,9 @@ Segment begins creating your new trait. This process could take up to 48 hours.
 
 ## Example use case: personalized album recommendations
 
-Suppose you’re managing a music streaming app and want to give each user personalized music recommendations based on their listening habits. Here's how you might set this trait up:
+Suppose you’re managing a music streaming app and want to give each user personalized music recommendations based on their listening habits. 
+
+Here's how you could configure this trait:
 
 | Step                 | Configuration                                                                                                                                                                   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +62,7 @@ Suppose you’re managing a music streaming app and want to give each user perso
 | Item type            | Select **Albums** as the item type to recommend. Because you have an extensive catalog of music, this lets each listener receive recommendations tailored to their interests.   |
 | Number of item types | You decide to return a maximum of 5 albums for each profile, keeping the recommendations relevant and concise.                                                                  |
 | Calculate            | Clicking **Calculate** gives you an overview of how many users will receive the album recommendations. Use it to ensure your conditions and catalog mapping meet your criteria. |
-| Sync to destinations | This optional steps lets you sync the trait to third-party destinations that can deliver album recommendations over email, in-app messaging, or push notifications.             |
+| Sync to destinations | This optional step lets you sync the trait to third-party destinations to deliver album recommendations over email, in-app messaging, or push notifications.                    |
 | Trait naming         | Name your trait `Personalized Album Recommendations`, making it easy to identify for future campaigns.                                                                          |
 
 By setting up a trait like this, each user profile now includes personalized recommendations that reflect individual tastes. You can use these recommendations across a range of touchpoints, like in-app sections, personalized email content, or targeted messaging, to create a more engaging and customized user experience.
@@ -65,5 +72,5 @@ By setting up a trait like this, each user profile now includes personalized rec
 Keep the following in mind as you work with Recommended Items:
 
 - **Limit recommendations to key items**: Start with 5-7 items per profile. This keeps recommendations concise and tailored to each user's preferences.
-- **Consider audience size**: Larger audiences could dilute the likelihood of high engagement for each recommended item. Aim for the top 20% of users to keep recommendations impactful.
-- **Give the system time to build the trait**: Recommendation traits can take up to 48 hours to calculate, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
+- **Consider audience size**: Larger audiences can dilute engagement rates for each recommended item. Focusing on the top 20% of users keeps recommendations relevant and impactful.
+- **Give the system time to build the trait**: Recommended Item traits can take up to 48 hours to build, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
