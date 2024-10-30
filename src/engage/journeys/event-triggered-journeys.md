@@ -110,4 +110,4 @@ Start by setting the `checkout_started` event as the trigger and specify a uniqu
 
 Say you want to follow up with users after they engage with specific content, like downloading an e-book or watching a demo video. Event-triggered Journeys can help you send timely, personalized messages based on these interactions.
 
-To do this, set the entry event to `content_downloaded` or `video_watched` and configure the journey to send a follow-up email. You could even personalize the email with details from the triggering event, like the content title or timestamp, by configuring your Destination Function to enrich the message with event-specific context.
+To do this, set the entry event to `content_downloaded` or `video_watched` and configure the journey to send a follow-up email. You could even personalize the email with details from the triggering event, like the content title or timestamp, by configuring your destination payload to enrich the message with event-specific context.
