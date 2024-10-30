@@ -42,7 +42,9 @@ To set up an Event-triggered Journey:
 8. Preview the contextual payload that Segment will send to your destination(s).
 9. After you've finished setting up your journey, click **Publish**, then click **Publish** again in the popup.
 
-## Working with Event-trigged Journeys
+### Journey setup configuration options
+
+Event-triggered Journeys includes advanced options to help you tailor journey behavior and customize data delivery to downstream destinations.
 
 #### Unique identifiers
 
@@ -54,3 +56,8 @@ By defining an identifier, you ensure that follow-up events within the journey g
 
 For example, in an abandonment journey, suppose a user starts two applications (like `application_started`), each with a different `application_id`. By setting `application_id` as the unique identifier, Segment can match follow-up events (like `application_completed`) to the correct application journey. This way, each journey instance only receives the completion event for its specific application.
 
+#### Set data to downstream destinations
+
+Event-triggered Journeys lets you send journey data to designated destinations, facilitating real-time, personalized messaging. Event-triggered Journeys supports the [Braze Actions](/docs/connections/destinations/catalog/actions-braze-cloud/), [Customer.io Actions](/docs/connections/destinations/catalog/actions-customerio/), and [Iterable Actions](/docs/connections/destinations/catalog/actions-iterable/) destinations.
+
+For other destinations, you can use [Destination Functions](/docs/connections/functions/destination-functions/) to run additional logic, like enriching with Profile API traits or filtering the payload.
