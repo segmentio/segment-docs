@@ -3,7 +3,7 @@ title: Recommended Items
 plan: unify-plus
 ---
 
-Recommended Items, part of Segment's CustomerAI, lets you add personalized item recommendations as a [computed trait](/docs/unify/traits/computed-traits/) to each user profile.
+With Recommended Items, you can add personalized item recommendations as a [computed trait](/docs/unify/traits/computed-traits/) to each user profile.
 
 Based on a user's past interactions, this trait generates a list of up to 5 items, like products, articles, or songs, that each user is most likely to engage with. 
 
