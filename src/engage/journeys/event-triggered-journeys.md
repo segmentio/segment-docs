@@ -9,6 +9,9 @@ Unlike traditional audience-based journeys that rely on pre-defined user segment
 
 On this page, you'll learn how to create an Event-triggered Journey, configure entry conditions, and apply best practices.
 
+> info "Event-Triggered Journeys is in Beta"
+> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
 ## Overview
 
 Event-triggered Journeys help you create a responsive approach for time-sensitive use cases, like cart abandonment campaigns and transactional messages. 
