@@ -62,6 +62,19 @@ Event-triggered Journeys lets you send journey data to supported destinations, f
 
 For other destinations, you can use [Destination Functions](/docs/connections/functions/destination-functions/) to run additional logic, like enriching with [Profile API traits](/docs/unify/profile-api/) or filtering the payload.
 
+## Best practices
+
+Follow the best practices in this table to optimize your Event-triggered Journeys:
+
+| Recommendation                          | Details                                                                                                                                                                                                                                |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use specific event filters              | When you configure entry events, apply precise filters based on event property values to refine which users enter the journey. This helps target specific user actions and improves the journey's relevance.                           |
+| Use unique identifiers                  | If a journey allows users to enter multiple times, set a unique identifier to track each instance accurately. Using an identifier like `application_id` ensures that follow-up events stay associated with the right journey instance. |
+| Limit personal identifiable information | Stay compliant and respect user privacy by not including any sensitive or personal identifiable information (PII) data in journey conditions and destinations.                                                                         |
+| Preview payloads before publishing      | Review the journey payload to verify that it includes all necessary context from the triggering event. This helps confirm that the data reaching destinations matches your campaign needs.                                             |
+| Test journey after publishing           | Consider setting up a live test right after publishing to confirm that the journey behaves as expected and that data flows correctly to destinations.                                                                                  |
+
+
 ## Working with Event-triggered Journeys
 
 Segment built Event-triggered Journeys to respond instantly to events, offering real-time capabilities with a few considerations in mind.
