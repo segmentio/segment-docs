@@ -55,9 +55,10 @@ Event-triggered Journeys includes advanced options to help you tailor journey be
 
 Unique identifiers in Event-triggered Journeys help you manage multiple journey instances when a user triggers the same event more than once. 
 
-You can configure unique identifiers if you select **Re-enter every time event occurs** when you create an event-triggered journey. Choose an event property as the unique identifier to ensure downstream events link back to the right journey instance.
+When you select **Re-enter every time event occurs** when you create an event-triggered journey, you can choose an event property as a unique identifier. Selecting this option does two things:
 
-By defining an identifier, you ensure that follow-up events within the journey get matched to the correct instance, preserving context for tracking and personalization. 
+- It creates a separate journey instance for each unique identifier value, allowing multiple instances to run in parallel for the same user.
+- It ensures that any follow-up events link back to the right journey instance, preserving context for tracking and personalization. 
 
 For example, in an abandonment journey, suppose a user starts two applications (like `application_started`), each with a different `application_id`. By setting `application_id` as the unique identifier, Segment can match follow-up events (like `application_completed`) to the correct application journey. This way, each journey instance only receives the completion event for its specific application.
 
