@@ -37,6 +37,7 @@ To set up an Event-triggered Journey:
 3. Give your new journey a name and, optionally, a description.
 4. Select entry event:
    - Choose the event that will trigger user entry into the journey.
+   - (Optional:) Use an audience filter to restrict entry to users who are already part of a specific audience.
    - (Optional:) Apply filters based on event property values to refine entry conditions. For example, enter only if `{property} = value A, value B, or value C`.
 5. Configure entry rules:
    - **Re-enter every time event occurs** (default): Users enter the journey each time they trigger the specified event.
