@@ -86,3 +86,23 @@ Segment built Event-triggered Journeys to respond instantly to events, offering 
 - **Event payload structure**: The event payload sent to destinations includes a unique computation key to track each journey instance. Segment automatically generates this key for each entry, ensuring data integrity for personalization
 - **Editing and versioning**: After you publish an event-triggered journey, you won't be able to edit it. To modify a journey, create a new journey. 
 - **Real-time delivery**: Event-triggered Journeys aim for an expected delivery time of under 5 minutes from the moment an event occurs to when the payload reaches the destination. However, external factors outside of Segment's control may occasionally introduce latency.
+
+## Use Cases
+
+Event-triggered Journeys can power a variety of real-time, personalized experiences. This section details some common scenarios to help you see how they might work in practice.
+
+### Real-time event forwarding
+
+Suppose you want to instantly send a personalized message whenever a user completes a specific action on your site, like filling out a form or subscribing to a service. With Event-triggered Journeys, you can configure the journey to trigger each time this entry event occurs. Segment will forward the event data, including all relevant details, to your connected destination in real-time.
+
+### Real-time abandonment Campaigns
+
+Imagine you’re running an e-commerce site and want to follow up with users who start the checkout process but don’t complete it within a certain timeframe. You can create an Event-triggered Journey to watch for abandonment cases like these.
+
+Start by setting the `checkout_started` event as the trigger and specify a unique identifier like `session_id` to track each user’s journey instance. Then, configure the journey to check for the `purchase_completed` event within a defined window (for example, 1 hour). If the user doesn’t complete the purchase, the journey can automatically send a nudge to encourage them to finish their order.
+
+### Personalized follow-up Messages
+
+Say you want to follow up with users after they engage with specific content, like downloading an e-book or watching a demo video. Event-triggered Journeys can help you send timely, personalized messages based on these interactions.
+
+To do this, set the entry event to `content_downloaded` or `video_watched` and configure the journey to send a follow-up email. You could even personalize the email with details from the triggering event, like the content title or timestamp, by configuring your Destination Function to enrich the message with event-specific context.
