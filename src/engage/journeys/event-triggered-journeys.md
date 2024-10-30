@@ -11,7 +11,9 @@ On this page, you'll learn how to create an Event-triggered Journey, configure e
 
 ## Overview
 
-Event-triggered Journeys help you create a responsive approach for time-sensitive use cases, like cart abandonment campaigns and transactional messages. Where audience-based journeys activate based on aggregated conditions, Event-triggered Journeys respond instantly to individual events, delivering personalized experiences based on the full context of each event.
+Event-triggered Journeys help you create a responsive approach for time-sensitive use cases, like cart abandonment campaigns and transactional messages. 
+
+Where [audience-based journeys](/docs/engage/journeys/build-journey/) activate based on aggregated conditions, Event-triggered Journeys respond instantly to individual events, delivering personalized experiences based on the full context of each event.
 
 Opt for an event-triggered journey in situations like these:
 
@@ -21,10 +23,8 @@ Opt for an event-triggered journey in situations like these:
 
 ## Build an Event-triggered Journey
 
-Before you begin building an Event-triggered Journey, make sure that:
-
-- You've enabled all [destinations](/docs/connections/destinations/) intended for event delivery in [Connections](/docs/connections/).
-- The events you want to use as triggers are already available in your Segment workspace.
+> info "Before you begin"
+> Before you start building an event-triggered journey, make sure that you've enabled all [destinations](/docs/connections/destinations/) you plan to send data to, and that the events you want to use as triggers are already available in your Segment workspace.
 
 To set up an Event-triggered Journey:
 
@@ -56,8 +56,19 @@ By defining an identifier, you ensure that follow-up events within the journey g
 
 For example, in an abandonment journey, suppose a user starts two applications (like `application_started`), each with a different `application_id`. By setting `application_id` as the unique identifier, Segment can match follow-up events (like `application_completed`) to the correct application journey. This way, each journey instance only receives the completion event for its specific application.
 
-#### Set data to downstream destinations
+#### Send data to downstream destinations
 
-Event-triggered Journeys lets you send journey data to designated destinations, facilitating real-time, personalized messaging. Event-triggered Journeys supports the [Braze Actions](/docs/connections/destinations/catalog/actions-braze-cloud/), [Customer.io Actions](/docs/connections/destinations/catalog/actions-customerio/), and [Iterable Actions](/docs/connections/destinations/catalog/actions-iterable/) destinations.
+Event-triggered Journeys lets you send journey data to supported destinations, facilitating real-time, personalized messaging. Event-triggered Journeys supports the [Braze Actions](/docs/connections/destinations/catalog/actions-braze-cloud/), [Customer.io Actions](/docs/connections/destinations/catalog/actions-customerio/), and [Iterable Actions](/docs/connections/destinations/catalog/actions-iterable/) destinations.
 
-For other destinations, you can use [Destination Functions](/docs/connections/functions/destination-functions/) to run additional logic, like enriching with Profile API traits or filtering the payload.
+For other destinations, you can use [Destination Functions](/docs/connections/functions/destination-functions/) to run additional logic, like enriching with [Profile API traits](/docs/unify/profile-api/) or filtering the payload.
+
+## Working with Event-triggered Journeys
+
+Segment built Event-triggered Journeys to respond instantly to events, offering real-time capabilities with a few considerations in mind.
+
+- **Entry event requirements**: The entry event you use must already exist in your Segment workspace for it to appear as a selection in journey setup. Make sure that you've already created the event before setting up your journey.
+- **Event property filters**: You can filter event properties using the `equals` or `equals any of` operators. When you apply multiple conditions, filters operate with `AND` logic, meaning all conditions must be true for the event to trigger entry into the journey.
+- **Audience filtering**: You can only use active, pre-existing audience records as filters. For more complex filtering, like specific profile traits or multiple audiences, first [create the audience](/docs/engage/audiences/#building-an-audience) in **Engage > Audiences**, then apply it as a filter once it’s live.
+- **Destination options**: While Event-triggered Journeys support several actions-based destinations (like Braze, Customer.io, and Iterable) you can only add one destination for each journey instance. For other destinations, use a Destination Function to apply custom logic to the payload.
+- **Event payload structure**: The event payload sent to destinations includes a unique computation key to track each journey instance. Segment automatically generates this key for each entry, ensuring data integrity for personalization
+- **Editing and versioning**: After you publish an event-triggered journey, you won't be able to edit it. To modify a journey, create a new journey. 
