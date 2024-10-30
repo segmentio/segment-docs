@@ -88,9 +88,9 @@ Segment built Event-triggered Journeys to respond instantly to events, offering 
 - **Event property filters**: You can filter event properties using the `equals` or `equals any of` operators. When you apply multiple conditions, filters operate with `AND` logic, meaning all conditions must be true for the event to trigger entry into the journey.
 - **Audience filtering**: You can only use active, pre-existing audience records as filters. For more complex filtering, like specific profile traits or multiple audiences, first [create the audience](/docs/engage/audiences/#building-an-audience) in **Engage > Audiences**, then apply it as a filter once it’s live.
 - **Destination options**: While Event-triggered Journeys support several actions-based destinations (like Braze, Customer.io, and Iterable) you can only add one destination for each journey instance. For other destinations, use a Destination Function to apply custom logic to the payload.
-- **Event payload structure**: The event payload sent to destinations includes a unique computation key to track each journey instance. Segment automatically generates this key for each entry, ensuring data integrity for personalization
+- **Event payload structure**: Each payload sent to a destination includes a unique key to identify the specific send step within the journey, rather than the journey instance itself. You can also set a custom event name to make it easier to identify the specific event instance you want to track in your destination.
 - **Editing and versioning**: After you publish an event-triggered journey, you won't be able to edit it. To modify a journey, create a new journey. 
-- **Real-time delivery**: Event-triggered Journeys aim for an expected delivery time of under 5 minutes from the moment an event occurs to when the payload reaches the destination. However, external factors outside of Segment's control may occasionally introduce latency.
+- **Real-time delivery**: Event-triggered Journeys aim for an expected delivery time of under 5 minutes from the moment an event is performed to when the payload reaches the destination, assuming there is no delay step in the journey. However, external factors outside of Segment's control may occasionally introduce latency.
 
 ## Use Cases
 
