@@ -165,6 +165,13 @@ If you proxy your events through the `apiHost` config option, you must forward t
 > warning ""
 > If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK.
 
+## Telemetry
+Telemetry data related to the configuration and usage of the Analytics-Swift SDK is collected and sent to Segment by default.  This includes some basic configuration information, plugins and event types used, and basic error information.  No PII is collected and the information is downsampled to reduce traffic.
+
+The Telemetry system can be disabled at any time by setting `Telemetry.shared.enable = false`.
+
+When internal errors or errors from plugins occur, the writekey may be included with the error data to help customers track down problems.  This can be disabled by setting `Telemetry.shared.sendWriteKeyOnError = false`.
+
 ## Timestamps in Swift
 Due to efficiency updates made to Segment's Swift library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
 
