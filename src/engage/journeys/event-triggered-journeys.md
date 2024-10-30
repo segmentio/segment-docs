@@ -37,7 +37,20 @@ To set up an Event-triggered Journey:
 5. Configure entry rules:
    - **Re-enter every time event occurs** (default): Users enter the journey each time they trigger the specified event.
    - **Enter one time**: Users enter the journey once only, regardless of repeated event triggers.
-6. **If you chose Re-enter every time event occurs in Step 5**, select a unique identifier. 
+6. **If you chose Re-enter every time event occurs in Step 5**, select a [unique identifier](#unique-identifiers). 
 7. Configure event delivery to destinations by selecting a destination or setting up a custom destination function.
 8. Preview the contextual payload that Segment will send to your destination(s).
 9. After you've finished setting up your journey, click **Publish**, then click **Publish** again in the popup.
+
+## Working with Event-trigged Journeys
+
+#### Unique identifiers
+
+Unique identifiers in Event-triggered Journeys help you manage multiple journey instances when a user triggers the same event more than once. 
+
+You can configure unique identifiers if you select **Re-enter every time event occurs** when you create an event-triggered journey. Choose an event property as the unique identifier to ensure downstream events link back to the right journey instance.
+
+By defining an identifier, you ensure that follow-up events within the journey get matched to the correct instance, preserving context for tracking and personalization. 
+
+For example, in an abandonment journey, suppose a user starts two applications (like `application_started`), each with a different `application_id`. By setting `application_id` as the unique identifier, Segment can match follow-up events (like `application_completed`) to the correct application journey. This way, each journey instance only receives the completion event for its specific application.
+
