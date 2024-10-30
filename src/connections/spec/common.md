@@ -204,7 +204,7 @@ Other libraries only collect `context.library`, any other context variables must
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
 > info "IPv6"
-> At the moment, Segment doesn't support automatically collecting IPv6 addresses.
+> Segment doesn't support automatically collecting IPv6 addresses.
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
