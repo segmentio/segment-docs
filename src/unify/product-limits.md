@@ -21,7 +21,7 @@ Unify Plus customers receive the following based on their signup date:
 - **New Unify version (as of November 1, 2024)**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
 - **Existing Unify version (prior to November 1, 2024)**: 50 Computed Traits, 5 Predictions
 
-Additionally, Unify Plus limits vary based on your Engage plan:
+Unify Plus limits vary based on your Engage plan:
 
 - **Engage Plus**: 100 Audiences, 75 Journey Steps, 10 Recommendation Audiences
 - **Engage Foundations** (available for renewal only as of November 1, 2024): 100 Audiences, 75 Journey Steps
