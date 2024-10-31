@@ -18,20 +18,13 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 Unify Plus customers receive the following based on their signup date:
 
-- **For new customers (as of November 1, 2024)**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
-- **For existing customers (prior to November 1, 2024)**: 50 Computed Traits, 5 Predictions
+- **New Unify version (as of November 1, 2024)**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
+- **Existing Unify version (prior to November 1, 2024)**: 50 Computed Traits, 5 Predictions
 
 Additionally, Unify Plus limits vary based on your Engage plan:
 
-- **For new customers (as of November 1, 2024)**:
-  - **Engage Foundations**: 100 Audiences, 75 Journey Steps
-  - **Engage Plus**: 100 Audiences, 75 Journey Steps, 10 Recommendation Audiences
-
-- **For existing customers (prior to November 1, 2024)**: Engage Foundations includes 100 Audiences, 75 Journey Steps
-
-> info "Recommended Items Computed Trait"
-> Unify Plus customers who signed up before November 1, 2024, receive a single-use demo version of the [Recommended Items trait](/docs/unify/Traits/recommended-items), which does not refresh.
-
+- **Engage Plus**: 100 Audiences, 75 Journey Steps, 10 Recommendation Audiences
+- **Engage Foundations** (available for renewal only as of November 1, 2024): 100 Audiences, 75 Journey Steps
 
 Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more. 
 
