@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 > info ""
-> Beginning August 18, 2023, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits in the [Engage Default Limits](/docs/engage/product-limits/) documentation.
+> Beginning November 1, 2024, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits in the [Engage Default Limits](/docs/engage/product-limits/) documentation.
 
 
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Unify. Most customers do not exceed these limits.
@@ -16,9 +16,22 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Unify Plus limits
 
-Beginning August 18, 2023, new Unify Plus users will receive 50 Computed and five AI Traits. In addition, new users will receive the following depending on your Engage plan: 
-- **Engage Foundations**: 100 Audiences and 75 Journey Steps
-- **Engage Premier**: 125 Audiences and 100 Journey Steps
+Unify Plus customers receive the following based on their signup date:
+
+- **For new customers (as of November 1, 2024)**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
+- **For existing customers (prior to November 1, 2024)**: 50 Computed Traits, 5 Predictions
+
+Additionally, Unify Plus limits vary based on your Engage plan:
+
+- **For new customers (as of November 1, 2024)**:
+  - **Engage Foundations**: 100 Audiences, 75 Journey Steps
+  - **Engage Plus**: 100 Audiences, 75 Journey Steps, 10 Recommendation Audiences
+
+- **For existing customers (prior to November 1, 2024)**: Engage Foundations includes 100 Audiences, 75 Journey Steps
+
+> info "Recommended Items Computed Trait"
+> Unify Plus customers who signed up before November 1, 2024, receive a single-use demo version of the [Recommended Items trait](/docs/unify/Traits/recommended-items), which does not refresh.
+
 
 Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more. 
 
