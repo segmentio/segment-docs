@@ -12,7 +12,7 @@ This destination is different from the existing DV360 Actions as it allows you t
 
 This destination can only be used with Engage. 
 
-## Set up
+## Setup
 Configuring this integration requires action by both you in your Segment workspace, and Google in your Google Marketing Platform account. As a result, the time required to finish configuration and setup can vary.
 
 ### Enable the destination
@@ -68,7 +68,7 @@ Segment automatically sends consent as `TRUE` for this destination.  Segment use
 ## Data requirements
 Based on Google’s documentation, make sure you send the correct required identifiers:
 * [Contact info list requirements](https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences#contactinfo){:target="_blank"}
-   * For example, you must send first name, last name, zip code, and country code all together and not just one. Make sure all phone numbers are in [E.164 format](https://en.wikipedia.org/wiki/E.164){:target="_blank"}. 
+   * For example, you must send first name, last name, ZIP code, and country code all together and not just one. Make sure all phone numbers are in [E.164 format](https://en.wikipedia.org/wiki/E.164){:target="_blank"}. 
 * [Mobile ID Requirements](https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences#mobiledeviceidlist){:target="_blank"}
 
 
