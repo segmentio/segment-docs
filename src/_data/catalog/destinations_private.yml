@@ -799,3 +799,544 @@ items:
                 '@path': $.traits
           enable_batching: true
         trigger: type = "track" or type = "identify"
+  - id: 6683e1d5e37fd84efcf3bbef
+    display_name: First Party Dv360
+    name: First Party Dv360
+    slug: first-party-dv360
+    previous_names:
+      - First Party Dv360
+    url: connections/destinations/catalog/first-party-dv360
+    website: http://www.segment.com
+    status: PRIVATE_BUILDING
+    logo:
+      url: >-
+        https://cdn-devcenter.segment.com/da053d87-a568-4bae-827f-857f7f4b2aba.svg
+    mark:
+      url: >-
+        https://cdn-devcenter.segment.com/31811060-3f10-46b0-94de-bf299beb94a4.svg
+    methods:
+      track: true
+      identify: false
+      group: false
+      alias: false
+      screen: false
+      page: false
+    platforms:
+      browser: true
+      mobile: false
+      server: true
+      warehouse: false
+      cloudAppObject: false
+    components: []
+    browserUnbundlingSupported: false
+    browserUnbundlingPublic: false
+    replay: false
+    settings: []
+    actions:
+      - id: pMRu4ozQwh3SzjYycCzDfn
+        name: Add to List
+        slug: addToList
+        description: Adds to list
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: null
+        fields: []
+      - id: kjEdc2dNCshXomx9VDnp9
+        name: Remove Customer Match Members - Mobile Device Id List
+        slug: removeFromAudMobileDeviceId
+        description: >-
+          Remove customer match members in Google Display & Video 360 Mobile
+          Device Id List Audience.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: event = "Audience Entered"
+        fields:
+          - id: dRiii61cWqivpbMNjxGUKL
+            sortOrder: 0
+            fieldKey: mobileDeviceIds
+            label: Mobile Device IDs
+            type: STRING
+            description: >-
+              A list of mobile device IDs defining Customer Match audience
+              members. The size of mobileDeviceIds mustn't be greater than
+              500,000.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.mobileDeviceIds
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: ppDfvVSHs3wpC3Ycoh2gUu
+            sortOrder: 1
+            fieldKey: external_id
+            label: External ID
+            type: STRING
+            description: The ID of the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.external_audience_id
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: 6w8gbwpX2zANVtazbjtfMc
+            sortOrder: 2
+            fieldKey: advertiser_id
+            label: Advertiser ID
+            type: STRING
+            description: The Advertiser ID associated with the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.audience_settings.advertiserId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: 81favwMqHXmAecMuLmXGo6
+            sortOrder: 3
+            fieldKey: enable_batching
+            label: Enable Batching
+            type: BOOLEAN
+            description: Enable batching of requests.
+            placeholder: ''
+            defaultValue: true
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: tuBG56koj3PdEWoMt7j8Xv
+            sortOrder: 4
+            fieldKey: batch_size
+            label: Batch Size
+            type: NUMBER
+            description: >-
+              Maximum number of events to include in each batch. Actual batch
+              sizes may be lower.
+            placeholder: ''
+            defaultValue: 500000
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+      - id: texVBBbJ5ZvG5eBR49wLoL
+        name: Edit Customer Match Members - Mobile Device Id List
+        slug: addToAudMobileDeviceId
+        description: >-
+          Add or update customer match members in Google Display & Video 360
+          Mobile Device Id List Audience.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: event = "Audience Entered"
+        fields:
+          - id: 8hSAZXT5u7knkEUGKLpe8A
+            sortOrder: 0
+            fieldKey: mobileDeviceIds
+            label: Mobile Device IDs
+            type: STRING
+            description: >-
+              A list of mobile device IDs defining Customer Match audience
+              members. The size of mobileDeviceIds mustn't be greater than
+              500,000.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.mobileDeviceIds
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 2KfCTSk2bzm1Br7DZ5d9jM
+            sortOrder: 1
+            fieldKey: external_id
+            label: External ID
+            type: STRING
+            description: The ID of the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.external_audience_id
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: 9ecWScNV2vuWrFNgfoHf1
+            sortOrder: 2
+            fieldKey: advertiser_id
+            label: Advertiser ID
+            type: STRING
+            description: The Advertiser ID associated with the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.audience_settings.advertiserId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: gpaqTHscj6acVK5x12WsMV
+            sortOrder: 3
+            fieldKey: enable_batching
+            label: Enable Batching
+            type: BOOLEAN
+            description: Enable batching of requests.
+            placeholder: ''
+            defaultValue: true
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: 4p4wD9VF3j7GSp3TvBMLHB
+            sortOrder: 4
+            fieldKey: batch_size
+            label: Batch Size
+            type: NUMBER
+            description: >-
+              Maximum number of events to include in each batch. Actual batch
+              sizes may be lower.
+            placeholder: ''
+            defaultValue: 500000
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+      - id: u4XdrL4XCgThQLiwKZKC7e
+        name: Edit Customer Match Members - Contact Info List
+        slug: addToAudContactInfo
+        description: >-
+          Add or update customer match members in Google Display & Video 360
+          Contact Info List Audience.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: event = "Audience Entered"
+        fields:
+          - id: 8Ry596bd6tBhdH2ErcXZUS
+            sortOrder: 0
+            fieldKey: emails
+            label: Emails
+            type: STRING
+            description: >-
+              A list of the user's emails. If not already hashed, the system
+              will hash them before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.emails
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: zCC3pVDww1k3bwsYeU3ak
+            sortOrder: 1
+            fieldKey: phoneNumbers
+            label: Phone Numbers
+            type: STRING
+            description: >-
+              A list of the user's phone numbers. If not already hashed, the
+              system will hash them before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.phoneNumbers
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9JQTx74mEBTAMwcUjfKo93
+            sortOrder: 2
+            fieldKey: zipCodes
+            label: ZIP Codes
+            type: STRING
+            description: A list of the user's zip codes.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.zipCodes
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: qPeGF7HX6EhNJpQoRwNmnN
+            sortOrder: 3
+            fieldKey: firstName
+            label: First Name
+            type: STRING
+            description: >-
+              The user's first name. If not already hashed, the system will hash
+              it before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.firstName
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 2NGtbSMELmDoTmdQGWb8jH
+            sortOrder: 4
+            fieldKey: lastName
+            label: Last Name
+            type: STRING
+            description: >-
+              The user's last name. If not already hashed, the system will hash
+              it before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.lastName
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: w8BbkKZShNdnyc2uASpB4Z
+            sortOrder: 5
+            fieldKey: countryCode
+            label: Country Code
+            type: STRING
+            description: The country code of the user.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits..countryCode
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: wA4Syt8pYqUASr9cAQEWvA
+            sortOrder: 6
+            fieldKey: external_id
+            label: External ID
+            type: STRING
+            description: The ID of the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.external_audience_id
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: hqpDxsMA2C4r8TdNiyaGtM
+            sortOrder: 7
+            fieldKey: advertiser_id
+            label: Advertiser ID
+            type: STRING
+            description: The Advertiser ID associated with the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.audience_settings.advertiserId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: v3qUWULxzJDrdjTUgSpigZ
+            sortOrder: 8
+            fieldKey: enable_batching
+            label: Enable Batching
+            type: BOOLEAN
+            description: Enable batching of requests.
+            placeholder: ''
+            defaultValue: true
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: ndYdVUnqzCJfyzoVPKay9F
+            sortOrder: 9
+            fieldKey: batch_size
+            label: Batch Size
+            type: NUMBER
+            description: >-
+              Maximum number of events to include in each batch. Actual batch
+              sizes may be lower.
+            placeholder: ''
+            defaultValue: 500000
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+      - id: vykfWPGTjXpdHZiaaSUYRC
+        name: Remove Customer Match Members - Contact Info List
+        slug: removeFromAudContactInfo
+        description: >-
+          Remove customer match members in Google Display & Video 360 Contact
+          Info List Audience.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: event = "Audience Exited"
+        fields:
+          - id: eEkzo7KFjZZ5SY6MYsGNsa
+            sortOrder: 0
+            fieldKey: emails
+            label: Emails
+            type: STRING
+            description: >-
+              A list of the user's emails. If not already hashed, the system
+              will hash them before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.emails
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: umefzMMP12tpbD2oopGbPv
+            sortOrder: 1
+            fieldKey: phoneNumbers
+            label: Phone Numbers
+            type: STRING
+            description: >-
+              A list of the user's phone numbers. If not already hashed, the
+              system will hash them before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.phoneNumbers
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 3sx6yoo2rwgRPCB5WYDZCb
+            sortOrder: 2
+            fieldKey: zipCodes
+            label: ZIP Codes
+            type: STRING
+            description: A list of the user's zip codes.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.zipCodes
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: jeiJHUQawC7xqWmAnxJp3Z
+            sortOrder: 3
+            fieldKey: firstName
+            label: First Name
+            type: STRING
+            description: >-
+              The user's first name. If not already hashed, the system will hash
+              it before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.firstName
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 9KEVS8t6JhY8474QVZcKiF
+            sortOrder: 4
+            fieldKey: lastName
+            label: Last Name
+            type: STRING
+            description: >-
+              The user's last name. If not already hashed, the system will hash
+              it before use.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits.lastName
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: kUE2RG2AqX2LGqcykzFbUU
+            sortOrder: 5
+            fieldKey: countryCode
+            label: Country Code
+            type: STRING
+            description: The country code of the user.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.traits..countryCode
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: xfEU7m8dxHehcuUBoLj7SS
+            sortOrder: 6
+            fieldKey: external_id
+            label: External ID
+            type: STRING
+            description: The ID of the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.external_audience_id
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: o4hCVmsRy2dkqCxAvYk2ZX
+            sortOrder: 7
+            fieldKey: advertiser_id
+            label: Advertiser ID
+            type: STRING
+            description: The Advertiser ID associated with the DV360 Audience.
+            placeholder: ''
+            defaultValue:
+              '@path': $.context.personas.audience_settings.advertiserId
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: mYacAw9gXNbCxHdS5JioJF
+            sortOrder: 8
+            fieldKey: enable_batching
+            label: Enable Batching
+            type: BOOLEAN
+            description: Enable batching of requests.
+            placeholder: ''
+            defaultValue: true
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+          - id: 4yLRfKRg9qcv6JR87whu9H
+            sortOrder: 9
+            fieldKey: batch_size
+            label: Batch Size
+            type: NUMBER
+            description: >-
+              Maximum number of events to include in each batch. Actual batch
+              sizes may be lower.
+            placeholder: ''
+            defaultValue: 500000
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+            hidden: true
+    presets: []

@@ -77,6 +77,8 @@ sections:
     title: Google Ads Remarketing Lists destination (Personas)
   - path: /connections/destinations/catalog/actions-display-video-360
     title: Display and Video 360 (Actions) Destination
+  - path: /connections/destinations/catalog/actions-first-party-dv360
+    title: First Party Display and Video 360 (Actions) Destination
 
 
 - slug: salesforce
