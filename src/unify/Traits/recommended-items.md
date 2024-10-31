@@ -45,7 +45,7 @@ To create a Recommended Item trait:
 5. Choose how many item types you want to return onto each profile. 
     - You can select up to 5 item types.
 6. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
-7. (Optional:) Select destinations you want to sync the trait to, then click **Next**.
+7. (*Optional*) Select destinations you want to sync the trait to, then click **Next**.
 8. Give your trait a name, then click **Create Trait**.
 
 Segment begins creating your new trait. This process could take up to 48 hours.
