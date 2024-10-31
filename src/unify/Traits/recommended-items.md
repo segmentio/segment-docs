@@ -34,7 +34,7 @@ Once Segment attaches the recommendation array to a profile, you can use it to:
 > info "Before you begin"
 > Before you create Recommended Item traits, you'll first need to set up a Recommendation Catalog. The catalog setup process involves mapping your interaction events and providing product metadata to support recommendations. If you haven't yet set up your Recommendation Catalog, follow the steps in the [Product Based Audiences documentation](/docs/engage/audiences/product-based-audiences/#set-up-your-recommendation-catalog).
 
-Follow these steps to create a Recommended Item trait:
+To create a Recommended Item trait:
 
 1. In your Segment workspace, navigate to **Unify > Traits > + Create computed trait**.
 2. In the **New Computed Trait** builder, click **Recommendation**, then click **Next**.
