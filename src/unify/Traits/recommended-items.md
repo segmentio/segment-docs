@@ -39,7 +39,7 @@ Follow these steps to create a Recommended Item trait:
 1. In your Segment workspace, navigate to **Unify > Traits > + Create computed trait**.
 2. In the **New Computed Trait** builder, click **Recommendation**, then click **Next**.
 3. In **Select users**, click **+ Add condition** to choose the users who should receive recommendations.
-    - You can create recommendations for up to 2 million **non-anonymous** customers.
+    - You can create recommendations for up to 2 million *non-anonymous* customers.
 4. In **Define recommended items**, choose the item type you want to recommend. 
     - This is based on your product catalog.
 5. Choose how many item types you want to return onto each profile. 
