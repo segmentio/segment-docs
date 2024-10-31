@@ -55,7 +55,7 @@ Event-Triggered Journeys includes advanced options to help you tailor journey be
 
 Unique identifiers in event-triggered journeys help you manage multiple journey instances when a user triggers the same event more than once. 
 
-When you select **Re-enter every time event occurs** when you create an event-triggered journeys, you can choose an event property as a unique identifier. Selecting this option does two things:
+When you select **Re-enter every time event occurs** when you create an event-triggered journey, you can choose an event property as a unique identifier. Selecting this option does two things:
 
 - It creates a separate journey instance for each unique identifier value, allowing multiple instances to run in parallel for the same user.
 - It ensures that any follow-up events link back to the right journey instance, preserving context for tracking and personalization. 
