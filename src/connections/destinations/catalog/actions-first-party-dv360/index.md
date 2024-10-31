@@ -61,7 +61,7 @@ Consent mode in the Gtag library and Google Analytics is designed to help websit
 
 With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
 
-Segment automatically sends consent as `TRUE` for this destination.  Segment uses the [bulk-uploader workflow](https://developers.google.com/authorized-buyers/rtb/bulk-uploader#workflow){:target="_blank"} which requires consented data. Ensure all audiences and journeys are connected to consented audiences.  
+Segment automatically sends consent as `TRUE` for this destination.  Segment uses the [bulk-uploader workflow](https://developers.google.com/authorized-buyers/rtb/bulk-uploader#workflow){:target="_blank"} which requires consented data. Ensure all audiences and journeys are connected to consented audiences.
 
 {% include components/actions-fields.html %}
 
