@@ -29,8 +29,8 @@ If you have a non-standard or high volume usage plan, you have unique Linked Aud
 
 Name | Limit | Details 
 ---- | ----- | --------
-RETL row limit | 150 million | The audience compute fails if the total output exceeds the limit. 
-RETL column limit | 500 columns | The audience compute fails if the number of columns exceeds the limit. 
+Row limit | 150 million | The audience compute fails if the total output exceeds the limit. 
+Column limit | 500 columns | The audience compute fails if the number of columns exceeds the limit. 
 Global concurrent audience runs | 5 total within any given space | New audience runs are queued once the limit is reached and will start execution once prior audience runs complete.
 Event Size | 32 KB | Segment doesn’t emit messages for profiles whose total related entities and enrichments exceed the limit.
 Data Graph depth | 6 | You can't save a Data Graph if you exceed the limit. 
