@@ -5,8 +5,6 @@ redirect_from:
   - '/connections/warehouses/catalog/snowflake/'
 ---
 
-{% include content/warehouse-ip.html %}
-
 [Snowflake](https://docs.snowflake.net/manuals/index.html){:target="_blank"} is a data warehouse, built for the cloud, that delivers performance, simplicity, concurrency and affordability.
 
 > info ""

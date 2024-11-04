@@ -47,7 +47,7 @@ CODEOWNERS  @segmentio/segment-doc-team
 /src/unify @pwseg 
 
 # Protocols owners
-/src/protocols @forstisabella
+/src/protocols @forstisabella @pwseg
 
 # Storage owners
-/src/connections/storage @forstisabella
+/src/connections/storage @forstisabella @pwseg
