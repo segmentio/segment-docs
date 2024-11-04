@@ -54,8 +54,8 @@ No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the 
 ### Can I delete specific events from a user profile in Unify? 
 No. Alternatively, you may delete the entire user profile from Segment using a [GDPR deletion request](/docs/privacy/user-deletion-and-suppression/).
 
-## Can I remove a trait from a User profile?
-To remove a trait from a user profile, you can send in an identify event with null as the value for the trait in the traits object from one of the connected sources. E.g. `"traits": {"trait1": null, ..}, ...`. Note that sending in an empty string (i.e. `"traits": {"trait2": "", ..}, ...` will update the trait to be an 'empty' string, and will not remove the trait from the user profile.
+## Can I remove a trait from a user profile?
+To remove a trait from a user profile, send an identify event with null as the value for the trait in the traits object from one of the connected sources. For example, `"traits": {"trait1": null, ..}, ...`. Note that sending in an empty string such as,`"traits": {"trait2": "", ..}, ...` updates the trait to be an 'empty' string and won't remove the trait from the user profile.
 
 ### How does profile creation affect MTUs, particularly where a profile isn't merged with the parent profile due to exceeding the merge limit?
 Segment determines the Monthly Tracked Users (MTUs) count by the number of unique user IDs and anonymous IDs processed, regardless of how you manage these profiles in Unify and Engage. This count is taken as events are sent to Segment, before they reach Unify and Engage. Therefore, the creation of new profiles or the merging of profiles in Unify doesn't affect the MTU count. The MTU count only increases when you send new unique user or anonymous IDs to Segment.
