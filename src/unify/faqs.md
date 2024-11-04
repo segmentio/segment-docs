@@ -54,7 +54,7 @@ No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the 
 ### Can I delete specific events from a user profile in Unify? 
 No. Alternatively, you may delete the entire user profile from Segment using a [GDPR deletion request](/docs/privacy/user-deletion-and-suppression/).
 
-## Can I remove a trait from a user profile?
+### Can I remove a trait from a user profile?
 To remove a trait from a user profile, send an identify event with null as the value for the trait in the traits object from one of the connected sources. For example, `"traits": {"trait1": null, ..}, ...`. Note that sending in an empty string such as,`"traits": {"trait2": "", ..}, ...` updates the trait to be an 'empty' string and won't remove the trait from the user profile.
 
 ### How does profile creation affect MTUs, particularly where a profile isn't merged with the parent profile due to exceeding the merge limit?
