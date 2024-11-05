@@ -3,6 +3,10 @@ title: Analytics.js Frequently Asked Questions
 strat: ajs
 ---
 
+## Is it possible to configure Analytics.js to automatically collect IPv6 when available?
+
+Currently, Analytics.js does not automatically collect IPv6 addresses. If IPv6 is available on the user’s device or network, the IPv6 address must be manually sent to Segment. You’ll need to configure your setup to capture and pass the IPv6 address in your event payloads, as our library doesn’t collect it by default.
+
 ## Is there a size limit on requests?
 
 Yes, the limit is 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js and Segment servers return a `200` response , but the event is silently dropped once it enters Segment's pipeline. 
