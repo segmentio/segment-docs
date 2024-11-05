@@ -18,8 +18,8 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 Unify Plus customers receive the following based on their signup date:
 
-- **New Unify version (as of November 1, 2024)**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
-- **Existing Unify version (prior to November 1, 2024)**: 50 Computed Traits, 5 Predictions
+- **Unify Plus as of November 1, 2024**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
+- **Unify Plus before to November 1, 2024**: 50 Computed Traits, 5 Predictions
 
 Unify Plus limits vary based on your Engage plan:
 
