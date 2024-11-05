@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 > info ""
-> Beginning November 1, 2024, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits in the [Engage Default Limits](/docs/engage/product-limits/) documentation.
+> Beginning November 6, 2024, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits in the [Engage Default Limits](/docs/engage/product-limits/) documentation.
 
 
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Unify. Most customers do not exceed these limits.
@@ -18,13 +18,13 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 Unify Plus customers receive the following based on their signup date:
 
-- **New Unify version (as of November 1, 2024)**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
-- **Existing Unify version (prior to November 1, 2024)**: 50 Computed Traits, 5 Predictions
+- **Unify Plus beginning November 6, 2024**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
+- **Unify Plus before November 6, 2024**: 50 Computed Traits, 5 Predictions
 
 Unify Plus limits vary based on your Engage plan:
 
 - **Engage Plus**: 100 Audiences, 75 Journey Steps, 10 Recommendation Audiences
-- **Engage Foundations** (available for renewal only as of November 1, 2024): 100 Audiences, 75 Journey Steps
+- **Engage Foundations** (available for renewal only as of November 6, 2024): 100 Audiences, 75 Journey Steps
 
 Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more. 
 
