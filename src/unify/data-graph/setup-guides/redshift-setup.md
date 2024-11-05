@@ -1,5 +1,5 @@
 ---
-title: Redshift Setup
+title: Redshift Data Graph Setup
 beta: true
 plan: unify
 hidden: true
