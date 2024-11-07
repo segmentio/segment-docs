@@ -89,7 +89,7 @@ For more information on using Terraform, visit [Terraform's documentation](https
 Git Connections enable Segment to sync data with your preferred Git repository through supported like SSH and token-based authentication.
 
 > info ""
-> Git Sync and the dbt integration operate independently. You don’t need Git Sync set up to use dbt, and dbt Cloud can trigger its own syncs without relying on Git Sync.
+> Git Sync and the dbt integration operate independently. You don’t need to set up Git Sync to use dbt, and dbt Cloud can trigger its own syncs without relying on Git Sync.
 
 ### Supported connection types
 
