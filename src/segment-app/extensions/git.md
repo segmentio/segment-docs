@@ -90,12 +90,11 @@ Segment supports the following credential types for setting up a Git Connection:
 
 - **SSH**: Compatible with GitHub, GitLab, and Bitbucket, SSH provides a secure method for connecting to your repository.
 - **Git Token**: Git tokens are also supported across GitHub, GitLab, and Bitbucket, enabling token-based authentication for added flexibility.
-- **GitHub App**: For GitHub users, GitHub App integrations offer enhanced security and functionality. This method is exclusive to GitHub and supports additional features, such as [CI checks]().
+- **GitHub App**: For GitHub users, GitHub App integrations offer enhanced security and functionality. This method is exclusive to GitHub and supports additional features, like CI checks.
 
 ### Reusing Git Connections
 
 Segment lets you set up multiple Git Connections, allowing you to reuse credentials across both dbt and Git Sync. You can either use the same credential for multiple configurations or create separate Git Connections for each product and environment as needed.
 
 If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the necessary read and write permissions for both integrations.
-
 
