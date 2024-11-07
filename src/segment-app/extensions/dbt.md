@@ -94,7 +94,7 @@ If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the
 ## Setting Up CI checks
 
 > info "CI Check availability"
-> CI Checks are available only with the GitHub App connection.
+> CI checks are available only with the GitHub App connection.
 
 CI checks in Segment help prevent breaking changes to active dbt models. Avoid changing dbt models currently in use with an active Reverse ETL sync, since changes could disrupt existing mappings and active syncs.
 
