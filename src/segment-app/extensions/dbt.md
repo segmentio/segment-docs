@@ -83,7 +83,7 @@ Segment supports the following credential types for setting up a Git Connection:
 
 - **SSH**: Compatible with GitHub, GitLab, and Bitbucket, SSH provides a secure method for connecting to your repository.
 - **Git Token**: Git tokens are also supported across GitHub, GitLab, and Bitbucket, enabling token-based authentication for added flexibility.
-- **GitHub App**: For GitHub users, GitHub App integrations offer enhanced security and functionality. This method is exclusive to GitHub and supports additional features, like [CI checks]().
+- **GitHub App**: For GitHub users, GitHub App integrations offer enhanced security and functionality. This method is exclusive to GitHub and supports additional features, like [CI checks](#setting-up-ci-checks).
 
 ### Reusing Git Connections
 
@@ -104,3 +104,9 @@ To enable CI Checks, authorize a GitHub App credential for your Git connection. 
 
 ## Troubleshooting dbt Extensions
 
+The following table lists common dbt Extension errors, as well as their solutions:
+
+| Error       | Error message                                                              | Solution                                                                                                                                                                                                      |
+| ----------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Failed sync | `Sync Failed: Incorrect dbt Project File Path: dbt project file not found` | Verify that the path to your `dbt_project.yml` file is relative to the repository root, excluding the root branch. <br> For example, use `project/dbt_project.yml` instead of `main/project/dbt_project.yml`. |
+| Failed sync | `Sync Failed: remote: Write access to repository not granted`              | Verify that the account associated with the token has a write role in the repository settings. Fine-grained tokens may require specific roles, depending on your Git provider.                                |
