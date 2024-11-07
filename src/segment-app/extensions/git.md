@@ -23,13 +23,20 @@ The Git sync extension syncs the following resources from Segment to your Git re
 
 - [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/)
 - [Warehouses](/docs/connections/storage/warehouses/)
-- [Destination Filters and Mappings](/docs/connections/destinations/destination-filters/)
+- [Destination Filters and Mappings](/docs/connections/destinations/destination-filters/) for Connections
 - [Tracking Plans](/docs/protocols/tracking-plan/create/)
 - [Functions](/docs/connections/functions/)
 - [Transformations](/docs/protocols/transform/)
 - [Reverse ETL](/docs/connections/reverse-etl/)
 - [Users](/docs/segment-app/iam/concepts/#team-members) and [User groups](/docs/segment-app/iam/concepts/#user-groups)
 - [Labels](/docs/segment-app/iam/labels/#where-can-i-create-labels)
+
+The Git sync extension doesn't support the following resources:
+
+- [Spaces](/docs/segment-app/workspace-home/)
+- [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/)
+- [Data Graph](/docs/unify/data-graph/)
+- Mappings for [Linked Audiences](/docs/engage/audiences/linked-audiences/)
 
 Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} to request support for additional Git Sync resources.
 
@@ -49,7 +56,7 @@ Using HCL makes it easier to document Segment's data model, especially for users
 
 Segment supports one-way synchronization from Segment to Git, but you can set up two-way synchronization using the Segment Terraform provider.
 
-Terraform offers an open-source way to manage Segment resources through a Git repository as an alternative to a fully managed two-way sync. However, this method requires third-party tools like [Atlantis](https://www.runatlantis.io/){:target="_blank"} for CI integration, which Segment doesn’t officially support.
+Terraform offers an open-source way to manage Segment resources through a Git repository as an alternative to a fully managed two-way sync. This method requires third-party tools like [Atlantis](https://www.runatlantis.io/){:target="_blank"} for CI integration.
 
 To manage Segment resources using Git and Terraform, follow these steps:
 
