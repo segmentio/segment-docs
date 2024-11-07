@@ -98,3 +98,4 @@ Segment lets you set up multiple Git Connections, allowing you to reuse credenti
 
 If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the necessary read and write permissions for both integrations.
 
+## Troubleshooting Git Sync

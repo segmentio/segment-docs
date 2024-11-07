@@ -102,3 +102,5 @@ When CI checks are enabled, Segment monitors model changes in your Git repositor
 
 To enable CI Checks, authorize a GitHub App credential for your Git connection. Once connected, you can enable CI Checks in the dbt model sync configuration section.
 
+## Troubleshooting dbt Extensions
+
