@@ -416,7 +416,7 @@ Upon editing and saving changes to your Data Graph, a modal will pop up to warn 
 
 Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, like when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. You will also have the option to trigger a manual sync of your warehouse schema. 
 
-### Alerts for warehouse breaking changes
+### Receive alerts for warehouse breaking changes
 
 Configure alerts for breaking changes to receive notifications over Slack, email, or in-app notification whenever Segment detects a breaking change in your warehouse.
 
