@@ -99,3 +99,11 @@ Segment lets you set up multiple Git Connections, allowing you to reuse credenti
 If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the necessary read and write permissions for both integrations.
 
 ## Troubleshooting Git Sync
+
+When setting up Git Sync, you may run into an access error when setting up Git Sync with the following message: `“Unable to create Git Sync due to Git connection issues. Please check your configuration and try again`.
+
+This error can occur if there are issues with your Git connection settings or permissions. To resolve the error, verify that:
+
+- Your credentials have write access to the Git repository, as Segment requires this to sync changes.
+- Your repository is hosted by GitHub, GitLab, or Bitbucket (Segment doesn't support self-hosted repositories).
+- Branch protections are disabled on the repository.
