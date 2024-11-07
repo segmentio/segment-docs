@@ -90,3 +90,15 @@ Segment supports the following credential types for setting up a Git Connection:
 Segment lets you set up multiple Git Connections, allowing you to reuse credentials across both dbt and Git Sync. You can either use the same credential for multiple configurations or create separate Git Connections for each product and environment as needed.
 
 If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the necessary read and write permissions for both integrations.
+
+## Setting Up CI checks
+
+> info "CI Check availability"
+> CI Checks are available only with the GitHub App connection.
+
+CI checks in Segment help prevent breaking changes to active dbt models. Avoid changing dbt models currently in use with an active Reverse ETL sync, since changes could disrupt existing mappings and active syncs.
+
+When CI checks are enabled, Segment monitors model changes in your Git repository. If a model already linked to an active Reverse ETL sync gets modified, Segment automatically rejects the change to maintain data integrity.
+
+To enable CI Checks, authorize a GitHub App credential for your Git connection. Once connected, you can enable CI Checks in the dbt model sync configuration section.
+
