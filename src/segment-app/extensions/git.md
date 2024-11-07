@@ -107,7 +107,7 @@ If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the
 
 ## Troubleshooting Git Sync
 
-When setting up Git Sync, you may run into an access error when setting up Git Sync with the following message: `“Unable to create Git Sync due to Git connection issues. Please check your configuration and try again`.
+When setting up Git Sync, you may run into an access error with the following message: `“Unable to create Git Sync due to Git connection issues. Please check your configuration and try again`.
 
 This error can occur if there are issues with your Git connection settings or permissions. To resolve the error, verify that:
 
