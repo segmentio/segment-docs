@@ -414,4 +414,17 @@ Upon editing and saving changes to your Data Graph, a modal will pop up to warn 
 
 ### Detect warehouse breaking changes
 
-Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. You will also have the option to trigger a manual sync of your warehouse schema. 
+Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, like when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. You will also have the option to trigger a manual sync of your warehouse schema. 
+
+### Alerts for warehouse breaking changes
+
+Configure alerts for breaking changes to receive notifications over Slack, email, or in-app notification whenever Segment detects a breaking change in your warehouse.
+
+To configure alerts for breaking changes: 
+1. Open your workspace and navigate to **Settings > User Preferences > Activity Notifications**. 
+2. Select **Data Graph**.
+3. Select one of the following notification methods: 
+  - **Email**: Select this to receive notifications at either the email address associated with your account or another email address that you enter into this field. 
+  - **Slack**: Select this and enter a Slack webhook URL and channel name to send alerts to a channel in your Slack workspace.
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+4. Click **Save**.
