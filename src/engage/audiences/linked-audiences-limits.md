@@ -36,6 +36,6 @@ Event Size | 32 KB | Segment doesn’t emit messages for profiles whose total re
 Data Graph depth | 6 | You can't save a Data Graph if you exceed the limit. 
 Preview size | 3K rows | The maximum number of rows you can have to generate a preview. The preview fails if you bring back too many entities. 
 Entity value type ahead cache | Up to 100 unique values | The maximum number of entity values Segment stores in cache. 
-Entity columns | Up to 200 unique values | The maximum number of entity property columns Segment surfaces in the condition builder.
-Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Compute Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse. 
+Entity columns | Up to 1000 unique values | The maximum number of entity property columns Segment surfaces in the condition builder.
+Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Run Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse. 
 
