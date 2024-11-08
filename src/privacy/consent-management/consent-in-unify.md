@@ -103,6 +103,6 @@ You can validate consent is present on the Profile by looking for the consent tr
 
 ## Troubleshooting consent preferences stored on the Profile
 
-### If I have 2 sources connected to a Unify space and only 1 is set up to collect consent, what consent preferences does Segment record?
+### If I have 2 sources connected to a Unify space and only 1 is set up to collect consent, which consent preferences does Segment record?
 
 Consent preferences collected in the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) from the source are used to store consent on the Profile. Sources with no consent object do not impact what is stored on the Profile. If the source generates an empty consent object, Segment interprets this as an end-user failing to consent to any category. As a result, the consent preference will be updated to `false` for all consent categories.
