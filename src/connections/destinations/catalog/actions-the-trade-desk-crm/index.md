@@ -50,7 +50,7 @@ To sync additional Audiences from your Engage space, create a separate instance 
 
 ## Limitations
 
-* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync.
+* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync. This means the Actions Mapping Event Tester does not work (only one test event can be configured).
 * Audience attempts to sync once per day.
 * Audience sync is a full sync.
 
