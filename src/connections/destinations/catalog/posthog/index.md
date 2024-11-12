@@ -95,3 +95,6 @@ analytics.track('user_signed_up', {
     $groups: { company: 'Initech' }
 })
 ```
+
+## Session Ids
+Segment does not include a Session ID with events. This means that events will not have session properties, and will not work with Posthog web analytics. You can fix this by providing your own `$session_id`, see https://posthog.com/docs/data/sessions#custom-session-ids for more details on the required format.
