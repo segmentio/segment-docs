@@ -26,18 +26,11 @@ This integration is maintained by Transcend. For support, please [contact the Tr
 
 ## Connect with Transcend
 
-<<<<<<< HEAD
 1. In Transcend, add the Segment integration from the Transcend catalog.
 2. Enter your Segment subdomain and API key in the provided input fields.
 3. Connect the integration.
 4. Configure data points if using the integration for privacy requests (e.g., erasure and tracking opt-out for Segment data are enabled by default).
 5. If needed, enable the **Data Silo Discovery** plugin in the **Configuration** tab.
-=======
-1. Enter your Segment subdomain and API key in Transcend.
-2. Connect the integration.
-3. Configure data points if using the integration for privacy requests (for example, erasure and tracking opt-out for Segment data are enabled by default).
-4. If needed, enable the **Data Silo Discovery** plugin in the **Configuration** tab.
->>>>>>> b6506bde31180317c2929c84901aed04eb6909d5
 
 ## Privacy Requests
 Transcend facilitates privacy requests using Segment's API, including erasure and tracking opt-out for Segment users. Note that this integration only manages requests within Segment. To delete data from upstream systems, you should connect those systems directly to Transcend.
