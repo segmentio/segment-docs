@@ -24,7 +24,7 @@
   <div class="qi-content">
     <h6>Integration Info</h6>
     <ul class="qi">
-      <li><p markdown=1>The {{ page.title }} is a Segment [Public API](/docs/api/public-api/){:target="_blank"} integration. It facilitates privacy requests via Segment’s API, including erasure and tracking opt-out for Segment users.</p></li>
+      <li><p markdown=1>The {{ page.title }} is a Segment [Public API](/docs/api/public-api/){:target="_blank"} integration. It facilitates privacy requests using Segment’s API, including erasure and tracking opt-out for Segment users.</p></li>
       {% if currentIntegration.status == "PUBLIC_BETA" %}<li>This source is in <span class="release-pill">Beta</span></li>{% endif %}
     </ul>
     <h6>Partner Owned</h6>
