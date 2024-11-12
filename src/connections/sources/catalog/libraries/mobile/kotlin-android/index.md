@@ -203,3 +203,11 @@ Analytics-Kotlin is built with extensibility in mind. Use the tools list below t
 
 ## Timestamps in Kotlin
 Due to efficiency updates made to Segment's Kotlin library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
+
+
+## Telemetry
+Telemetry data related to the configuration and usage of the Analytics-Kotlin SDK is collected and sent to Segment by default.  This includes some basic configuration information, plugins and event types used, and basic error information.  No PII or event data is collected and the information is downsampled to reduce traffic.
+
+The Telemetry system can be disabled at any time by setting `Telemetry.enable = false`.
+
+When internal errors or errors from plugins occur, the writekey may be included with the error data to help customers track down problems.  This can be disabled by setting `Telemetry.sendWriteKeyOnError = false`.
