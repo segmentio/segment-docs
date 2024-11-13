@@ -14,7 +14,7 @@ This integration is maintained by Transcend. For support, please [contact the Tr
 1. Navigate to the Segment workspace you want to integrate with Transcend.
 3. Find the unique workspace identifier, or subdomain, in your URL. For example, if your workspace URL is `https://app.segment.com/your-workspace-subdomain/home`, then `your-workspace-subdomain` is your subdomain. Remember this value or copy it to a safe place, as you will need it to set up your Transcend integration.
 
-### Create an API Key
+### Create an API key
 1. Open your Segment workspace and navigate to **Settings** at the bottom of the left navigation bar.
 2. Under **Workspace Settings**, select **Access Management**.
 3. In the **User Access Management** pane, switch from **User** to **Tokens** view.
@@ -29,13 +29,13 @@ This integration is maintained by Transcend. For support, please [contact the Tr
 1. In Transcend, add the Segment integration from the Transcend catalog.
 2. Enter your Segment subdomain and API key in the provided input fields.
 3. Connect the integration.
-4. Configure data points if using the integration for privacy requests (e.g., erasure and tracking opt-out for Segment data are enabled by default).
+4. Configure data points if using the integration for privacy requests. Erasure and tracking opt-out for Segment data are enabled by default.
 5. If needed, enable the **Data Silo Discovery** plugin in the **Configuration** tab.
 
-## Privacy Requests
+## Privacy requests
 Transcend facilitates privacy requests using Segment's API, including erasure and tracking opt-out for Segment users. Note that this integration only manages requests within Segment. To delete data from upstream systems, you should connect those systems directly to Transcend.
 
-### Note on Erasure Requests
+### Erasure requests
 Transcend will:
 - Use the provided Segment `userID` to delete historical data.
 - Send a `SUPPRESS_ONLY` regulation request to Segment. *For more information about Segment's regulation requests, see the [User Deletion and Suppression](/docs/privacy/user-deletion-and-suppression/) documentation.* 
@@ -46,7 +46,7 @@ Segment's dashboard currently does not display `DELETE_INTERNAL` regulations: th
 ### Enrichment
 Transcend can identify Segment users based on a defined `userId`. Configure identifiers in Transcend to track users within Segment.
 
-### Data Mapping
+### Data mapping
 The Segment integration includes a **Data Silo Discovery** plugin to identify additional services your company uses. This helps build a comprehensive data map. Enabling silo discovery allows Transcend to scan Segment’s sources and destinations, identifying app names and domains. 
 
 Note: If you are only using Data Mapping, the Transcend integration does not need access to employee or customer personal data.
