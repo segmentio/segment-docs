@@ -1,6 +1,5 @@
 ---
 title: Beamer Destination
-beta: true
 rewrite: true
 id: 5d2d8f56f159f30001b3c3a9
 ---

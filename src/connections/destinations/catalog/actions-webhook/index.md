@@ -28,6 +28,10 @@ Segment's Webhooks (Actions) destination uses internet protocol and HTTP callbac
 
 In Webhook Actions mapping, the default value of batch size is `1000`. You can change this value, but there's a maximum batch size limit of `4000`. 
 
+## Shared secret with batching
+
+If you have batching enabled and are using a shared secret to authenticate your requests, Segment signs the _first_ event in the batch rather than the whole batch. When verifying the `X-Signature` header in your code, ensure you're only signing the first event in the batch to match the signature with what Segment creates. 
+
 ## FAQs
 
 ### Why is a Webhooks (Actions) Destination helpful with end-to-end tests?

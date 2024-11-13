@@ -117,6 +117,9 @@ Instructions for configuring Microsoft Entra ID can be found on the Microsoft Do
 
 2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial){:target="_blank”}
 
+> info ""
+> To make Azure compatible with Segment's SCIM v2 implementation, append the flag `?aadOptscim062020` to the tenant URL as explained in the [Microsoft Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior){:target="_blank”}. By appending the flag to your tenant URL, your request has the correct structure when you remove a user from a group.
+
 ## OneLogin Setup Guide
 
 Instructions for configuring OneLogin can be found on the OneLogin Docs website.

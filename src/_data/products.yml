@@ -176,9 +176,27 @@ items:
 
 - product_display_name: Consent Management
   slug: consent-management
-  plan-note: "Consent Management is available to customers on the Business Tier Plan"
+  plan-note: "Consent Management is available to customers on Business tier plans."
   plans:
     free: false
     team: false
     business: true
     addon: false
+
+- product_display_name: OAuth 2.0
+  slug: oauth-2
+  plan-note: "OAuth 2.0 is available to customers on Business tier plans."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false
+
+- product_display_name: Custom Domain
+  slug: custom-domain
+  plan-note: "Custom Domain is available to customers on Business tier plans."
+  plans:
+    free: false
+    team: false
+    business: true
+    add-on: false

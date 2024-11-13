@@ -12,7 +12,7 @@ engage: true
 
 The Google Ads Remarketing Lists destination is one of Segment's most popular Engage List destinations. It has a variety of use cases related to exclusion, acquisition (using Similar Audience), remarketing, and more.
 
-This destination can send audiences created in [Engage](/docs/engage/) to Google Ads as a [Customer List](https://support.google.com/google-ads/answer/6276125){:target="_blank"}. Once you set this destination up, Segment sends an initial user list of users to the [Google Ads API](https://developers.google.com/google-ads/api/docs/remarketing/overview){:target="_blank"}. As users move in and out of the audience, Segment automatically updates the list in Google every hour. This allows you to run advertising campaigns without having manually update the list of users to target in your Google Ads campaigns.
+This destination can send audiences created in [Engage](/docs/engage/) to Google Ads as a [Customer List](https://support.google.com/google-ads/answer/6276125){:target="_blank"}. Once you set this destination up, Segment sends an initial user list of users to the [Google Ads API](https://developers.google.com/google-ads/api/docs/remarketing/overview){:target="_blank"}. As users move in and out of the audience, Segment automatically updates the list in Google. This allows you to run advertising campaigns without having manually update the list of users to target in your Google Ads campaigns.
 
 You can send either an email address or mobile device ID (IDFA) from Engage to Google as custom matchers. You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/), or as an [external id](/docs/unify/identity-resolution/externalids/) for the user. If you use Segment’s mobile SDKs to collect events from a mobile app, the user’s IDFA is automatically captured. If you don't use Segment’s mobile SDKs, you can set the user’s IDFA by setting it within `context.device.advertisingId`. You are also required to collect `context.device.type` and `context.device.adTrackingEnabled` on the event payload. Additionally, ensure `android.idfa` and `ios.idfa` are enabled as identifiers in your [Identity Resolution settings](/docs/unify/identity-resolution/identity-resolution-settings/) in Engage.
 
@@ -45,7 +45,7 @@ Google Ads Remarketing Lists allows you to efficiently run several marketing and
 
 ### Exclusion audiences (suppression audiences)
 
-Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. You can then send those users to Google in a timely manner (hourly syncs) to prevent advertising to users that already converted. You can do this by creating an audience in Engage, syncing it to the Google Ads Remarketing Lists, and setting it as an [Exclusion List](https://support.google.com/google-ads/answer/2549058){:target="_blank"} in your Google Ads campaign.
+Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. You can then send those users to Google in a timely manner to prevent advertising to users that already converted. You can do this by creating an audience in Engage, syncing it to the Google Ads Remarketing Lists, and setting it as an [Exclusion List](https://support.google.com/google-ads/answer/2549058){:target="_blank"} in your Google Ads campaign.
 
 
 ### Similar audience
@@ -66,7 +66,7 @@ When you create an audience in Engage and connect it to Google Ads Remarketing L
 
 1. Creates a Google Ads User List (Customer List) with the name you entered in Engage.
 2. Adds any users that fit the audience definition based on email or mobile ID (IDFA). Google uses these identifiers to match users in your list to users in the Google system who can be served ads.
-3. Every hour, Segment either adds or removes users from this audience based on the same identifiers.
+3. Either adds or removes users from this audience based on the same identifiers.
 
 ## Set up
 
@@ -150,6 +150,9 @@ You can set an email address on the user profile by including `email` as a trait
 You can set an email on the user profile by including `email` as a trait, as a property on an event, or as an external id for the user. If you use Segment's mobile SDKs to collect events from a mobile app, IDFA is automatically captured for the user. You can also set a user's IDFA on a mobile app by setting it within `context.device.advertisingId`.
 
 If a user has more than one email address or IDFA on their account as `external_ids`, Engage sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can't identify users based on the data that you provide.
+
+> info "ID Sync"
+> [Segment's ID Sync](/docs/engage/trait-activation/id-sync/), you can send additional identifiers to Actions destinations. However, due to Google’s restrictions on identifier limits per request, the Google Ads Remarketing Lists destination can only include one additional identifier in audience payloads. If the Google Ads Remarketing Lists destination is already receiving data from an audience and you enable ID Sync afterward, the new identifiers won’t be applied retroactively to existing users. To update identifiers for the entire user base, a full resync is required. [Contact Segment support](https://segment.com/requests/integrations/){:target="_blank"} to request a resync with your new ID Sync configuration.
 
 ### Invalid Settings error in Event Delivery
 

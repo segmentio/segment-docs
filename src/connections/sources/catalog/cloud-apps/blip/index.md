@@ -1,7 +1,6 @@
 ---
 title: Blip Source
 id: FOWuS0UQmP
-beta: true
 ---
 
 [Blip](https://www.blip.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an advanced conversation platform powered by AI.

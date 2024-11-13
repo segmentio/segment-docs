@@ -5,8 +5,17 @@ services:
     command: make dev
     image: jekyll/jekyll:latest
     volumes:
-      - '.:/srv/jekyll'
-      - './vendor/bundle:/usr/local/bundle'
+    - '.:/srv/jekyll'
+    - './vendor/bundle:/usr/local/bundle'
     ports:
-      - 4000:4000
+    - 4000:4000
     container_name: jekyll
+    # If you are on arm64 and experiencing issues with the tests (hangs,
+    # connection reset) then try the following in order:
+
+    # - stopping and removing all downloaded container images
+    # - ensuring you have the latest Docker Desktop version
+    # - factory reset your Docker Desktop settings
+
+    # If you are still running into issues please post in #help-infra-seg.
+    platform: linux/amd64

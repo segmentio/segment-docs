@@ -13,6 +13,8 @@ Use Destination Insert Functions to enrich, transform, or filter your data befor
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
+> info "Destination Insert Functions are not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Create destination insert functions
 
@@ -36,6 +38,9 @@ For data to flow to your downstream destinations, you'll need to connect your in
 2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
+
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
@@ -55,9 +60,9 @@ You can also use this page to [enable destination insert functions](#enable-the-
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
-> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before insert functions.
+> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/) and the event doesn’t pass the filter, then your function isn’t invoked for that event as Segment applies destination filters before insert functions. The same is true for the [integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object)). If an event is configured with the integrations object not to go to a particular destination, then the insert function connected to that destination won't be invoked. 
 
-The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
+The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't. For event types that you want to send through the destination, return the event in the respective event handlers.
 
 > info ""
 > Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. To keep an event type as is but still send it downstream, add a `return event` inside the event type handler statement.
@@ -495,6 +500,10 @@ However, if your function aims to enrich event data by fetching additional infor
 
 No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
 
+##### Can I use Insert Functions with Storage destinations?
+
+Insert Functions are only supported by Cloud Mode (server-side) destinations and aren't compatible with Storage destinations.
+
 ##### Can I connect an insert function to multiple destinations?
 
 Yes, an insert function can be connected to multiple destinations. 
@@ -600,3 +609,7 @@ DELETE deleteInsertFunction(fn_id)
 For more information, visit Segment's [Public API docs](https://docs.segmentapis.com/tag/Functions){:target="_blank"}.
 
 {% endcomment %}
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit won't be visible in the user interface.
