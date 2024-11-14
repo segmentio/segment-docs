@@ -4,9 +4,9 @@ plan: consent-management
 redirect_from: "/privacy/consent-in-unify"
 ---
 
-Segment uses Profiles in [Unify](/docs/unify/) as the source of truth of an end user's consent preference when enforcing consent in Twilio Engage or Linked Audiences. To get consent preference on the profile, Segment requires the use of the [Segment Consent Preference Updated event](#segment-consent-preference-updated-event) and [Identify](/docs/connections/spec/Identify) events to route events to Unify. The Segment Consent Preference Updated and Identify events should include the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object).
+Segment uses Profiles in [Unify](/docs/unify/) as the source of truth of an end user's consent preference when enforcing consent in Twilio Engage or Linked Audiences. To get consent preference on the profile, you must generate a [Segment Consent Preference Updated event](#segment-consent-preference-updated-event). The Segment Consent Preference Updated event should include the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object).
 
-> info "Consent in the profile is in public beta"
+> info "Consent on the profile is in public beta"
 > Storing consent preferences on the profile is actively in development and some things may change before it becomes generally available.
 
 
@@ -84,9 +84,6 @@ To avoid profile-level conflicts, Segment recommends that you take the following
 > success ""
 > Profile conflicts only impact profiles used in Engage spaces.
 
-### Reconcile profile conflicts
-End user consent preferences may be in conflict if one of your end users consents to different categories on different devices or if two distinct IDs are linked to one Unify profile during merge.
-
 ## Enforcing consent in Twilio Engage
 Consent enforcement in Twilio Engage and Linked is currently unavailable during the public beta. Segment stores consent preferences as traits on the Profile. These traits can be used like any other when building Audiences/Journeys in Twilio Engage and Linked Audiences. 
 
@@ -98,7 +95,7 @@ You can validate consent is present on the profile by looking for the consent tr
 
 - **If the value is `true`**: Your user consented to have their data used for this purpose
 - **If the value is `false`**: Your user did not consent to have their data used for this purpose
-- **If the value is `conflict`**: At the time this profile was merged, there was a conflict in the consent preferences recorded for a consent category. For more information about consent conflicts, see the [profile conflicts](#profile-conflicts) documentation.
+- **If the value is `conflict`**: At the time this profile was merged, there was a conflict in the consent preferences recorded for a consent category. For more information about consent conflicts, see the [profile-level conflict](#profile-level-conflict) documentation.
 
 
 ## Troubleshooting consent preferences stored on the profile
