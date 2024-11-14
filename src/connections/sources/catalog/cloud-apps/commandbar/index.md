@@ -1,6 +1,5 @@
 ---
 title: CommandBar Source
-beta: true
 id: QHndBw5kGO
 ---
 

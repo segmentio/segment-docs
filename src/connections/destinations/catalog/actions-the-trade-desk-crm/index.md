@@ -3,7 +3,6 @@ title: The Trade Desk CRM Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
-beta: true
 id: 6440068936c4fb9f699b0645
 redirect_from: "/connections/destinations/catalog/the-trade-desk-crm/"
 ---
@@ -13,6 +12,9 @@ redirect_from: "/connections/destinations/catalog/the-trade-desk-crm/"
 This integration lets users link Engage audiences to The Trade Desk and transmit Personally Identifiable Information (PII), including email addresses and hashed emails. Users have the flexibility to configure their delivery preferences within Segment.
 
 The Trade Desk destination can only be connected to Twilio Engage sources.
+
+> info "The Trade Desk CRM is not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Getting started
 

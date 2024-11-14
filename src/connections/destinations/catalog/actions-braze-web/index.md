@@ -2,17 +2,19 @@
 title: Braze Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
+redirect_from:
+  - '/connections/destinations/catalog/vendor-braze/'
+  - '/connections/destinations/catalog/braze-web-device-mode-actions/'
+id: 60fb01aec459242d3b6f20c1
+versions:
+  - name: 'Braze Cloud Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/actions-braze-cloud'
+  - name: 'Braze (Classic)'
+    link: '/docs/connections/destinations/catalog/braze'
 ---
 {% include content/plan-grid.md name="actions" %}
 
 [Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
-
-
-
-
-> success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
 ## Benefits of Braze Web Mode (Actions) vs Braze Classic
 
@@ -26,7 +28,11 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
 3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
-{% include components/actions-fields.html name="braze-web" connection="true" %}
+> info ""
+> If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
+
+
+{% include components/actions-fields.html settings="true"%}
 
 ## Other features
 
@@ -94,13 +100,13 @@ analytics.ready(function() {
 });
 ```
 
-1. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
+1. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this in Braze's [Initial SDK setup for web](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"} documentation.
 
 2. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push){:target="_blank"}.
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/push_notifications/soft_push_prompt/#step-1-create-a-push-primer-campaign){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Add the following snippet to your site:
 
@@ -141,7 +147,7 @@ analytics.ready(function() {
  });
 ```
 
-For more details on this snippet, see Braze's documentation [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts){:target="_blank"}.
+For more details on this snippet, see Braze's [Soft push prompt](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/push_notifications/soft_push_prompt/#step-3-update-integration){:target="_blank"} documentation.
 
 > info ""
 > Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
@@ -154,13 +160,13 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
  });
 ```
 
+### Enable SDK Authentication
+
+When "Enable SDK Authentication" is enabled, Segment will set Braze's `enableSdkAuthentication` to `true`. When this feature is enabled, the Braze SDK will append the current user’s last known JWT to network requests made to Braze Servers.
 
 
 ## Important differences from the classic Braze destination
 - Braze Web Mode (Actions) supports the Braze [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) supports server and mobile sources, but to use mobile sources in device-mode, use the Braze Classic destination.
-
-
-{% include components/actions-fields.html %}
 
 
 ## Migration from Braze Classic
@@ -168,3 +174,14 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
 
+
+## FAQ
+
+### How does the Debounce Middleware Action work? 
+
+The following [Debounce Middleware](/docs/connections/destinations/catalog/actions-braze-web/#debounce-middleware) logic is executed at the source-level:
+
+When an Identify call is fired on a website, Segment first caches and compares the user traits object. 
+
+- If the user traits differ from what was previously cached, the data flows through destination filters, insert functions, and then through destination mappings. 
+- If user traits are the same as what's cached, Segment assumes that that data was already sent to Braze and a does not make a new request to Braze. 

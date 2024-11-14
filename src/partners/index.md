@@ -38,7 +38,7 @@ To develop your integration in the Developer Center, complete the following step
 
 ### Become a Segment Partner
 
-Sign up for the [Segment Select Partner Program](https://segment.com/partners/integration/). During the sign-up process, you’ll agree to the [Segment Partner Program Agreement](https://segment.com/legal/partnersagreement/) and [Privacy Policy](https://segment.com/legal/privacy/).
+Sign up for the [Segment Select Partner Program](https://segment.com/partners/integration/){:target="_blank”}. During the sign-up process, you’ll agree to the [Segment Partner Program Agreement](https://segment.com/legal/partnersagreement/){:target="_blank”} and [Privacy Policy](https://segment.com/legal/privacy/){:target="_blank”}.
 
 ### Understand Segment's conceptual model and Spec
 
@@ -48,7 +48,7 @@ The [Segment Spec](/docs/connections/spec) provides best practices for the speci
 
 ### Follow Segment's security guidance
 
-Security for both customers and partners is a priority at Segment. Before you start building on the Developer Center, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following these guidelines:
+Security for both customers and partners is a priority at Segment. Before you start building on the Developer Center, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target="_blank”} and ensure you're following these guidelines:
 
 - Follow a secure software-development lifecycle, which enables you to create code that is safe for Segment customers and their end users, and that enables you to maintain and raise the security of that code over time
 - If you or your code comes into contact with Segment customer- or end-user data for any reason, protect it with commercially reasonable methods throughout its data lifecycle, including creation, handling, transporting, storing and destruction.
@@ -57,7 +57,7 @@ Security for both customers and partners is a priority at Segment. Before you st
 
 ### Request access to the Segment Developer Center
 
-Segment provides access to the developer on request. [Click here](https://segment.com/partners/developer-center/){:target="_blank"} to request access. A Segment account is required for this step.
+Segment provides access to the Developer Portal on request. Open the Developer Portal page and click [Sign up](https://segment.com/partners/developer-center/){:target="_blank"} to request access. A Segment account is required for this step.
 
 Segment receives a large volume of requests so please include a valid company website and email address, answer all questions with details about integration's use case as well as highlighting specific customer requests to expedite the approval process.
 
@@ -79,11 +79,11 @@ Before users can go hands on with your integration, a review by Segment engineer
 
 #### Destinations
 
-To submit your destination for review, follow the destination-specific instructions [here](/docs/partners/destinations#submit-a-pull-request).
+To submit your destination for review, follow the destination-specific instructions in the [Submit a pull request](/docs/partners/destinations#submit-a-pull-request) docs.
 
 #### Sources
 
-To submit your source for review, complete the steps described in the Developer Portal, and click **Submit for review**.
+To submit your source for review, complete the steps described in the Developer Portal and click **Submit for review**.
 
 {% comment %}
 ## Provide integration metadata for the catalog

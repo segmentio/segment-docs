@@ -5,9 +5,10 @@ redirect_from:
   - '/connections/warehouses/catalog/snowflake/'
 ---
 
-{% include content/warehouse-ip.html %}
-
 [Snowflake](https://docs.snowflake.net/manuals/index.html){:target="_blank"} is a data warehouse, built for the cloud, that delivers performance, simplicity, concurrency and affordability.
+
+> info ""
+> Segment has a Terraform provider, powered by the Public API, that you can use to create a Snowflake warehouse. See the [segment_warehouse (Resource)](https://registry.terraform.io/providers/segmentio/segment/latest/docs/resources/warehouse){:target="_blank”} documentation for more information.
 
 ## Getting started
 
@@ -19,6 +20,8 @@ There are six steps to get started using Snowflake with Segment.
 4. [Create a user for Segment](#step-4-create-user-for-segment)
 5. [Test the user and credentials](#step-5-test-the-user-and-credentials)
 6. [Connect Snowflake to Segment](#step-6-connect-snowflake-to-segment)
+
+{% include content/storage-do-include.md %}
 
 ### Prerequisites 
 
@@ -86,7 +89,48 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 
 ### Step 4: Create a user for Segment
 
-Create the user that Segment uses to connect to your warehouse. Be sure to use a strong, unique password.
+Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. For enhanced security, Segment recommends creating a user that authenticates with an encrypted key pair.
+
+> info "Key-pair authentication restricted to Business Tier users only"
+> Users on other plans can authenticate with Snowflake using a [username and password](#create-a-user-that-authenticates-with-a-username-and-password).
+
+#### Create a user that authenticates with a key pair
+If you are creating a user that will use a key pair to authenticate, you first must create a public key and then can create a new user. 
+
+##### Generate keys
+
+To start, open a terminal window and generate a private key by running the following command, replacing `key_name` with the name you'd like to give the key. The command generates a private key in PEM format, and will prompt you to enter a passphrase. Write down or remember this passphrase, as you will need it when creating your Segment user and configuring your destination in the Segment app.
+
+> success ""
+> If you want to generate an unencrypted private key, append `-nocrypt` to the end of the command.
+
+```
+openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out key_name.p8
+```
+
+After you've created the private key, save the file to a local directory. You'll need to upload the .p8 file to the Segment app when you create your Snowflake destination. 
+
+Next, generate your public key by running the following command, replacing `key_name.p8` with the name of the private key that you previously created and `public_key_name` with the name of your new public key. 
+
+```
+openssl rsa -in key_name.p8 -pubout -out public_key_name.pub
+```
+
+After you've created the public key, save the file to a local directory. 
+
+##### Generate a new user and assign the key to them
+
+Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated.
+
+``` sql
+CREATE USER SEGMENT_USER 
+  DEFAULT_ROLE = SEGMENT
+  RSA_PUBLIC_KEY = 'enter your public key';
+GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
+```
+
+#### Create a user that authenticates with a username and password
+If you are creating a user that will use a username and password to authenticate, execute the following SQL command. Be sure to set a strong, unique password.
 
 ```sql
 CREATE USER "SEGMENT_USER"
@@ -98,13 +142,30 @@ GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 
 ### Step 5: Test the user and credentials
 
-Before you continue, test and validate the new user and credentials. When you can run the following commands successfully, you can connect Snowflake to Segment.
+Before you continue, test and validate the new user and credentials. After you verify the new credentials, you can connect Snowflake to Segment.
 
+#### Test a key pair
 Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
 To install SnowSQL and verify your accounts:
 
 1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
-2. Open the Installer and follow instructions
+2. Open the Installer and follow instructions.
+3. When the installation is complete, run the following command, replacing "account", "username", and "path_to_the_rsa_key_encrypted.p8" with your Snowflake Account ID, username, and path to your private RSA key:
+
+```
+snowsql -a segment -u <username> -d <Database> -w <warehouse> --private-key-path <path_to_the_rsa_key_encrypted.p8>
+```
+
+For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
+
+For example, if your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
+
+#### Test a username and password
+Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
+To install SnowSQL and verify your accounts:
+
+1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
+2. Open the Installer and follow instructions.
 3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
 
 ```
@@ -167,12 +228,23 @@ After configuring your Snowflake resources, connect them to Segment.
 
 1. In the Segment App, select Add Destination.
 2. Search for and select "Snowflake".
-3. Add your credentials as follows:
-  - **User**: The user name that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
-  - **Password**: The password that you set in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+3. Enter a name for your destination.
+4. Enter your Snowflake credentials as follows:
   - **Account**: The account id of your cluster, not the url (for example, url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region. For example, your url might be: `my-business.us-east-1.snowflakecomputing.com/` and your account-id would be: `my-business.us-east-1`)
-  - **Database**: The database name that you created in [Step 2: Create database](#step-2-create-database)
   - **Warehouse**: The name of the warehouse that you created in [Step 1: Create a virtual warehouse](#step-1-create-a-virtual-warehouse)
+  - **Database**: The database name that you created in [Step 2: Create database](#step-2-create-database)
+  - **Username**: The username that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+  - **Authentication method**: Select the authentication method that you used when creating a user in [Step 4: Create a user for Segment](#step-4-create-user-for-segment). You can select either Key pair or Password. 
+  
+  If you selected Key pair as your authentication method: 
+  - **Private key**: Upload your private key (stored in .p8 format) that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+  - **Passphrase** _(Optional)_ : If you created an encrypted key, enter the passphrase you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+
+  > info "Segment supports uploading one key at a time"
+  > Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.  
+  
+  If you selected Password as your authentication method:
+  - **Password**: The password that you set in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
 
 ## Security
 
@@ -187,6 +259,12 @@ If you create a network policy with Snowflake and are located in the EU, add `3.
 At this time, the Segment Snowflake destination is not compatible with Snowflake's MFA or SSO settings. If your connected user has MFA or SSO enabled, you will need to disable it for syncs to run correctly.
 
 ## Best Practices
+
+### Key pair authentication
+
+Segment recommends that you authenticate with your Snowflake warehouse using an encrypted key pair. Key-pair authentication uses PKCS#8 private keys, which are typically exchanged in the PEM base64-encoded format. 
+
+Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.
 
 ### Auto Suspend and Auto Resume
 
@@ -249,3 +327,7 @@ Queuing - you can use a different Warehouse for Segment, or use the recommendati
 {% include content/warehouse-sync-sched.md %}
 
 ![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
+
+### I'm encountering a "JWT token is invalid" error. What do I do?
+
+For more information about troubleshooting a `JWT token is invalid` error, see Snowflake's [Key Pair Authentication: Troubleshooting](https://docs.snowflake.com/user-guide/key-pair-auth-troubleshooting){:target="_blank”} documentation. 

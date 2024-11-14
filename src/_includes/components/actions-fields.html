@@ -20,7 +20,7 @@
 
 
 {% if settings.size > 0 %}
-### Destination Settings
+## Destination Settings
 
 <table >
   <thead>
@@ -115,6 +115,33 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
 <p>{{action.description | markdownify}}</p>
 <p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action. {% if action.defaultTrigger %}The default Trigger is: <code>{{action.defaultTrigger}}</code> {%endif%}</p>
 
+<!--- IG 7/2024 - CSE requested this note, as customers were confused about why some required fields didn't appear in the in-app LaunchDarkly Audiences mappings -->
+
+{% if action.id == 'aPAULh8sgt5bcTeXJuXTB6' %}
+  <div class="premonition info">
+    <div class="fa fa-check-circle"></div>
+    <div class="content">
+      <p class="header">Segment automatically maps Audience ID and Audience Key fields</p>
+      <p markdown=1>
+        Segment hides these two fields from the UI to avoid user error, as these fields remain static in Engage. Audience ID defaults to `property : context.personas.computation_id` and Audience Key defaults to `property : context.personas.computation_key`.
+      </p>
+    </div>
+  </div>
+{% endif %}
+
+<!--- IG 9/2024 - PM wanted to call out that this specific HubSpot Cloud (Actions) Action can make multiple assosciations-->
+
+{% if action.id == 'dMYued7r3VjK4c2gBWUTZi' %}
+<div class="premonition info">
+  <div class="fa fa-check-circle"></div>
+  <div class="content">
+    <p class="header">You can use the Custom Object v2 Action to make multiple assosciations</p>
+    <p markdown=1>
+       For more information, see HubSpot's [Associate records](https://knowledge.hubspot.com/records/associate-records){:target="_blank”} documentation.
+    </p>
+  </div>
+</div>
+{% endif %}
 
 {% if action.fields.size > 0 %}
 <p class="button button-hollow" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to show / hide fields</p>
@@ -127,12 +154,12 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
     </tr>
   </thead>
   <tbody>
-{% for field in action.fields %}
+{% for field in action.fields %}{% unless field.id == 'jYj1UxYzS5aJNU2Ue2gakK' or field.id == '2KMUXqzqudDytGbcBz2iwP' or field.id == '6VBmtsRbVxHVM61LtnFVwX' or field.id == 'q6eYyJGaCYcPSHeZPpaK5x' %}
 <tr>
 <td>{{field.label}}{% if field.required %}<span class="required" title="This field is required">*</span>{% endif %}</td>
 <td>{% if field.type %}Type: <code>{{field.type}}</code><br />{%endif%}{{field.description | markdownify}}</td>
 </tr>
-{%endfor%}
+{%endunless%}{%endfor%}
 </tbody>
 </table>
 </div>

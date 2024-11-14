@@ -2,7 +2,6 @@
 title: Attio (Actions) Destination
 hide-boilerplate: true
 id: 64c031541451bb784943f809
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -155,6 +154,25 @@ domains matches the one you've provided here. If it finds it, it will update the
 attribute with the value `"@attio"`. If it doesn't find it, a new Company will be created
 with both the domain and twitter handles above.
 
+## Batching support
+
+This action supports batching. You can toggle batching using the **Edit Mapping > Enable
+Batching** property.
+
+Batching sends groups of events to Attio in a single request, rather than individually,
+which can improve stability & correctness if you are sending a lot of events.
+
+However, there are a couple of caveats to be aware of:
+
+  1. Attio will process these events asynchronously, which means it might take a few
+     seconds between Attio acknowledging the request and the record updates appearing in
+     your Attio workspace.
+
+  2. Invalid events will be silently dropped. This can happen if your mapping
+     configuration points to a non-existent Attio attribute, or you're trying to write the
+     wrong attribute type (for example: writing a number to a domain attribute). We recommend you
+     continue to use the **Send test event** feature on the mapping page to check
+     configurations before saving them.
 
 ## Attribute types
 

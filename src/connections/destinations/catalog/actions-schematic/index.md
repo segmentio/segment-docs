@@ -1,6 +1,5 @@
 ---
 title: Schematic (Actions) Destination
-beta: true
 id: 65b8e9eca1b5903a031c6378
 ---
 
@@ -8,7 +7,7 @@ id: 65b8e9eca1b5903a031c6378
 
 [Schematic](https://schematichq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to launch, package, meter, and monitor features with ease, so you can manage it all in one place as your business grows.
 
-Segment is the easiest way to send events from your application to Schematic. If you already have Segment up and running in your applicaiton, Schematic recommends this approach so you don't have to implement any additional code.
+Segment is the easiest way to send events from your application to Schematic. If you already have Segment up and running in your application, Schematic recommends this approach so you don't have to implement any additional code.
 
 Schematic maintains this destination. For any issues with the destination, [contact the Schematic Support team](mailto:hi@schematichq.com).
 

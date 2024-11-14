@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Code Samples
+title: Analytics-Swift Code Samples
 strat: swift
 ---
 

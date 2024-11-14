@@ -40,7 +40,7 @@ the recommended setting to send that field downstream.
 The easiest way to find a customer's `userId` is by querying an existing tool. Specifically, you can use your Segment [data warehouse](https://segment.com/warehouses) to query the `users` table for another known item of information about the user (their email address, for example) and then use that row to find their userId.
 
 ### How many deletion requests can I send?
-You can send us batches of up to 5,000 `userIds`, or 4 MB, per payload. We process these batches asynchronously. [Contact us](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
+You can send us batches of up to 5,000 `userIds`, or 4 MB, per payload. We process these batches asynchronously. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} if you need to process more than 110,000 users within a 30 day period.
 
 ### Which Destinations can I send deletion requests to?
 
@@ -78,3 +78,7 @@ Segment supports the following regulation types:
 - **SUPPRESS_WITH_DELETE**: Suppress new data based on the `userId` and also delete all existing data for that ID from your workspace and our internal archives. While Segment forwards the deletion request to your downstream destinations, Segment cannot guarantee deletion in your third-party tools.
 - **DELETE_INTERNAL**: Deletes user data from within Segment archives only and not from any connected destinations.
 - **DELETE_ONLY**: Deletes user data from Segment and your connected warehouses. Also sends a deletion request to your downstream destinations.
+
+
+> info ""
+> Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.

@@ -94,7 +94,7 @@ Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an
 
 ## Install Attributed
 
-Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
+Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [in Segment's Mobile Spec](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
 ### Revenue Tracking
 

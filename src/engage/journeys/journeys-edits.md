@@ -35,6 +35,10 @@ After you’ve published, users who meet the entry criteria can enter the new jo
 
 You can return to the Journeys list page to view the new live journey and its previous versions, which are nested under the journey container.
 
+> info "Journey settings"
+> A Journey's settings can't be edited once the Journey has been published, including [entry and exit settings](/docs/engage/journeys/build-journey/#journey-exits-and-re-entry). The only settings you can change after publishing a Journey are the Journey's name and description.
+
+
 ## Working with Journeys versioning
 
 ### Exit settings and user flow between journeys
@@ -61,4 +65,4 @@ Adding a list destination to a journey version creates a new record in Segment�
 
 For example, if you add a list destination to Version 1 of a journey, and users begin flowing into the version, then Segment will begin creating the new record. If you create a Version 2 draft from Version 1 of the journey while Segment is still creating the new record, you won’t be able to publish Version 2 until this process is completed. 
 
-If the version has a list destination but no users have flowed into the version, though, Segment won't create a new record for that list destination and you won't have to wait to publish a new journey version.
+If the version has a list destination but no users have flowed into the version, though, Segment won't create a new record for that list destination, and you won't have to wait to publish a new journey version.

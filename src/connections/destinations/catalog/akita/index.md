@@ -1,5 +1,4 @@
 ---
-beta: true
 title: Akita Destination
 published: false
 hidden: true
