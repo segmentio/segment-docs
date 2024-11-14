@@ -49,7 +49,8 @@ On StackAdapt platform:
 
 1. Under **Audience & Attribution** > **Customer Data** > **Profiles**, you should be able to see a list of profiles being synced to StackAdapt platform.
 2. Under **Audience & Attribution** > **Customer Data** > **Segments**, on the top right corner, click **Create Segment**.
-3. Set the rules
+3. Set the rules [Check with audience team on this]
+4. Under **Audience & Attribution** > **Customer Data** > **Profiles**, you should be able to see a list of profiles being synced to StackAdapt platform. Please note that it can take up to 4 hours for profiles to show in the StackAdapt platform.
 
 ### Sending an Audience to StackAdapt
 
