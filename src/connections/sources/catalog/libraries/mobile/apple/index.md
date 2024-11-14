@@ -170,7 +170,7 @@ The Analytics-Swift SDK collects telemetry data on configuration and usage by de
 
 You can disable telemetry at any time by setting `Telemetry.shared.enable = false`.
 
-When internal errors or errors from plugins occur, the write key may be included with error data to help you identify the issue(s).  You can disable this by setting `Telemetry.shared.sendWriteKeyOnError = false`.
+When internal errors or errors from plugins occur, the write key may be included with error data to help Segment identify the issue(s).  You can disable this by setting `Telemetry.shared.sendWriteKeyOnError = false`.
 
 ## Timestamps in Swift
 Due to efficiency updates made to Segment's Swift library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
