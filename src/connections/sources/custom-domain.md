@@ -50,7 +50,7 @@ To configure Custom Domain:
   - **Subject**: Enter a subject line for your support request.
   - **Domain Name**: Enter the subdomain that Segment should use for event request tracking.
   - **Additional Domain Name**: If applicable, add an additional subdomain. This field is optional.
-  - **Source names**: Select the sources you would like to use for Custom Domain. We recommend starting with a stage/dev source. For the initial setup an [Analytics.js](docs/connections/sources/catalog/libraries/website/javascript/) source is required. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
+  - **Source names**: Select the sources you would like to use for Custom Domain. Segment recommends starting with a stage or dev source. For initial setup, an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source is required. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
   - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you've enabled a Content Security Policy (CSP), you must add the new subdomains provided by Segment to your CSP once you've enabled the Custom Domain feature. This ensures that the CSP does not block the subdomains when you load Segment.
     
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
@@ -64,7 +64,7 @@ To configure Custom Domain:
 Segment recommends creating a different subdomain (for example, `mysubdomain.mydomain.com`) for each source. You cannot connect multiple custom domains to the same source.
 
 ### What sources can I use with Custom Domain?
-For the initial setup an [Analytics.js](docs/connections/sources/catalog/libraries/website/javascript/) source is required. Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
+For initial setup, Segment requires an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source. Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
 ### How can I configure non-JavaScript sources to use Custom Domain?
 
