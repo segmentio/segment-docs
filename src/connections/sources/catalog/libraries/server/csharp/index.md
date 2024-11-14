@@ -56,7 +56,7 @@ To get started with the Analytics-CSharp library:
     var analytics = new Analytics(configuration);
     ```
 > info ""
->When using the library with a scoped lifetime, be aware of potential consequences. Our SDK is designed to be stateless, meaning objects are disposed of when the analytics instance is disposed. We avoid using singletons for configurations or HTTP clients to prevent memory management issues. Instead, if customers wish to use singletons, we recommend customers create their own HTTP client provider with a singleton HTTP client for better control and management.
+>When using the library with a scoped lifetime, be aware of potential consequences. Our SDK is designed to be disposable, meaning objects are disposed of when the analytics instance is disposed. We avoid using singletons for configurations or HTTP clients to prevent memory management issues. Instead, if customers wish to use singletons, we recommend customers create their own HTTP client provider with a singleton HTTP client for better control and management.
 
 | Option Name                 | Description   |
 |-----------------------------|---------------|
