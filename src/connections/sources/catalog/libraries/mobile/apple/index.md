@@ -166,7 +166,7 @@ If you proxy your events through the `apiHost` config option, you must forward t
 > If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK.
 
 ## Telemetry
-The Analytics-Swift SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. No personally identifiable information (PII) or event data is collected, and Segment downsamples the data to minimize traffic.
+The Analytics-Swift SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
 
 You can disable telemetry at any time by setting `Telemetry.shared.enable = false`.
 
