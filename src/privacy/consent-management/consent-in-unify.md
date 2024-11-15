@@ -4,7 +4,7 @@ plan: consent-management
 redirect_from: "/privacy/consent-in-unify"
 ---
 
-Segment uses Profiles in [Unify](/docs/unify/) as the source of truth of an end user's consent preference when enforcing consent in Twilio Engage or Linked Audiences. To get consent preference on the profile, you must generate a [Segment Consent Preference Updated event](#segment-consent-preference-updated-event). The Segment Consent Preference Updated event should include the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object).
+Segment uses the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) on Segment events, including the [Segment Consent Preference Updated](#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on the profile. Consent on the profiles serves as the source of truth of an end user’s consent preference when enforcing consent in Twilio Engage or Linked Audiences.
 
 > info "Consent on the profile is in public beta"
 > Storing consent preferences on the profile is actively in development and some things may change before it becomes generally available.
