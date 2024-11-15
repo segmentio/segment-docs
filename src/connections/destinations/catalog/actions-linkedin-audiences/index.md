@@ -49,7 +49,7 @@ To sync additional Audiences from your Engage space, create a separate mapping i
 
 {% include components/actions-fields.html settings="true"%}
 
-## Note for Segment Linked Audiences
+## Linked Audiences
 
 For Linked Audiences, you must set "Add" or "Remove" as the value for the **DMP User Action** field, as the **Auto Detect** option is not supported.
 
