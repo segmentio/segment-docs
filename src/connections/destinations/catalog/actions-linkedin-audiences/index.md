@@ -51,7 +51,7 @@ To sync additional Audiences from your Engage space, create a separate mapping i
 
 ## Linked Audiences
 
-For Linked Audiences, you must set "Add" or "Remove" as the value for the **DMP User Action** field, as the **Auto Detect** option is not supported.
+If you're using Linked Audiences, you must set *Add* or *Remove* as the value for the **DMP User Action** field, as Linked Audiences doesn't support the **Auto Detect** option.
 
 ## Troubleshooting
 
