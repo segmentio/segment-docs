@@ -60,7 +60,7 @@ If you're using Linked Audiences, you must set *Add* or *Remove* as the value fo
 This error occurs when the **DMP User Action** field is not set to "Add" or "Remove" in the mapping. Or it's set to "Auto Detect," which comes with a couple of caveats:
 
 - For Linked Audiences, you must set *Add* or *Remove* as the value for the **DMP User Action** field, as the **Auto Detect** option isn't supported.
-- For Profile Audiences, it must match the default "Enter Event" names set in the destination settings at the Audience level. Those defaults are "Audience Entered" and "Audience Exited."
+- For Profile Audiences, it must match the default *Enter Event* names set in the destination settings at the Audience level. Those defaults are *Audience Entered* and *Audience Exited*.
 
 ### Access & Refresh Tokens
 LinkedIn's OAuth access tokens have a time to live (TTL) of 60 days; refresh tokens have a TTL of one year. Segment automatically updates your access token as long as your refresh token is valid. You won't see any errors or interruptions in data delivery if your access token expires while your refresh token is valid.
