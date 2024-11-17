@@ -4,7 +4,7 @@ beta: true
 plan: engage-foundations
 ---
 
-With Generative Audiences, you can use use generative AI to create Engage Audiences with natural language prompts. 
+With Generative Audiences, part of Segment's AI capabilities, you can use use generative AI to create Engage Audiences with natural language prompts. 
 
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
@@ -29,7 +29,7 @@ To create an audience with Generative Audiences:
 > To help you write your prompt, view these [example prompts](#example-prompts) and [best practices](#best-practices).
 
 > success "Before you begin"
-> To use Generative Audiences, a workspace owner must first accept the Customer AI Terms and Conditions.
+> To use Generative Audiences, a workspace owner must first accept Segment's Terms and Conditions.
 
 ### Modify an audience description 
 
