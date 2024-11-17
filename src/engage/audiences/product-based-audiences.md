@@ -18,7 +18,7 @@ You can use Product Based Audiences to power the following common marketing camp
 ## Create a Product Based Audience
 
 ### Set up your Recommendation Catalog
-Segment utilizes your interaction events (order_completed, product_added, product_searched, song_played, article_saved) and the event metadata of those interaction events to power our CustomerAI Recommendations workflow.
+Segment uses your interaction events (`order_completed`, `product_added`, `product_searched`, `song_played`, `article_saved`) and the event metadata of those interaction events to power the Recommendations workflow.
 
 To create your Recommendation Catalog:
 1. Open your Engage space and navigate to **Engage** > **Engage Settings** > **Recommendation catalog**. 
