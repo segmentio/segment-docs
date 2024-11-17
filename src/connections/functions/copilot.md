@@ -30,7 +30,7 @@ This table lists example prompts you can use with Functions Copilot:
 Follow this guidance when you use Functions Copilot:
 
 - Avoid using personally identifiable information (PII) or sensitive data.
-- Write specific prompts. Specificity leads to more accurate CustomerAI function generation. Use the names of existing events, related attributes, and properties.
+- Write specific prompts. Specificity leads to more accurate function generation. Use the names of existing events, related attributes, and properties.
 - Iterate on your prompts. If you don't get the result you're looking for, try rewriting the prompt.
 
 ###  Limitations
