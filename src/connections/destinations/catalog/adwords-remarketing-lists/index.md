@@ -185,6 +185,6 @@ When you create Engage audiences, add conditions to specify which App ID to send
 
 Typically, this is a validation error and the permissions need to be reauthorized. Ensure the user who is authorizing has administration permissions. 
 
-#### Limitations on Identifiers and Traits for Google Ads Remarketing Lists with Trait Activation
+#### Limitations on identifiers and traits for Google Ads Remarketing Lists with Trait Activation
 
-When configuring [Id Sync](/docs/engage/trait-activation/id-sync/) and [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) for Google Ads Remarketing Lists, the destination setup permits the inclusion of 1 extra identifier in the payload. Additionally, in the Customized Setup, only one Trait can be mapped, and this must specifically be mapped to the `phone`.
+When configuring [ID Sync](/docs/engage/trait-activation/id-sync/) and [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) for Google Ads Remarketing Lists, you can include one additional identifier in the payload. In the Customized Setup, only one Trait can be mapped, and it must be assigned to the `phone` field.
