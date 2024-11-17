@@ -58,7 +58,7 @@ You can use Engage to create a detailed profile of your most loyal customers (so
 
 ### Remarketing audiences
 
-You can use Engage to target users who completed some initial action, but didn't follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.  For example, you might send an email to someone who didn't complete a sign-up form or who didn't complete a shopping cart checkout.
+You can use Engage to target users who completed some initial action, but didn't follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process. For example, you might send an email to someone who didn't complete a signup form or who didn't complete a shopping cart checkout.
 
 ## How it works
 
@@ -68,7 +68,7 @@ When you create an audience in Engage and connect it to Google Ads Remarketing L
 2. Adds any users that fit the audience definition based on email or mobile ID (IDFA). Google uses these identifiers to match users in your list to users in the Google system who can be served ads.
 3. Either adds or removes users from this audience based on the same identifiers.
 
-## Set up
+## Setup
 
 Before you start, make sure you have administrative access to the Google Ads account so you can set up and link this destination.
 
@@ -78,14 +78,14 @@ Before you start, make sure you have administrative access to the Google Ads acc
 
 2. Search for "Google Ads Remarketing Lists” and click **Configure**.
 
-3. Click **Connect to Google Ads Remarketing Lists** and sign in to your Google Ads account. Make sure you sign in to the account that has administrator access!
+3. Click **Connect to Google Ads Remarketing Lists** and sign in to your Google Ads account. Make sure you sign in to the account that has administrator access.
 
-4. When prompted, click **Allow**. This is required for Segment to update your Google Ads Remarketing Lists.
+4. When prompted, click **Allow**. Segment needs this to update your Google Ads Remarketing Lists.
 
 5. Select the Google Ads account or sub-account to connect with Engage.
 
-> info ""
-> **What are sub-accounts?** Because the Google My Client Center (MCC) account allows a user to access multiple Google Ads accounts through a single user account, Segment has updated the selector to include these additional "sub-accounts." By default, Segment syncs the "primary" Google Ads account connected to your Google account, but when using Google MCC, you can select any of the Google Ads accounts managed by your primary Google Ads account. If you're not using MCC, your primary Google Ads account is connected. MCC is typically used by advertisers or agencies that manage multiple client accounts.
+> info "What are sub-accounts"
+> Because the Google My Client Center (MCC) account allows a user to access multiple Google Ads accounts through a single user account, Segment has updated the selector to include these additional "sub-accounts." By default, Segment syncs the "primary" Google Ads account connected to your Google account, but when using Google MCC, you can select any of the Google Ads accounts managed by your primary Google Ads account. If you're not using MCC, your primary Google Ads account is connected. MCC is typically used by advertisers or agencies that manage multiple client accounts.
 
 ### 2. Create an audience in Segment and connect it to Google Ads Remarketing Lists
 
@@ -107,7 +107,7 @@ In Google Ads, go to **Tools & Settings** > **Shared Library** > **Audience mana
 ![A screenshot of the Google Ads Audience lists page, with one list currently populating.](images/garl-audience_mgr.png)
 
 > info ""
-> **Note**: Google Ads can take 24+ hours to fully process initial audience uploads before they can be used for a campaign. If the audience is still processing, the list status appears as “Populating”.
+> Google Ads can take 24+ hours to fully process initial audience uploads before they can be used for a campaign. If the audience is still processing, the list status appears as “Populating”.
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
@@ -145,13 +145,13 @@ If you have any questions setting up consent mode, reach out to [friends@segment
 
 Engage matches users in your audience using email and mobile device ID (IDFA) values. Make sure you are tracking these with Segment to have as high a match rate as possible.
 
-You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/), or as an [external id](/docs/unify/identity-resolution/externalids/) for the user. If you use Segment’s mobile SDKs to collect events from a mobile app, the user’s IDFA is automatically captured. If you don't use Segment’s mobile SDKs, you can set the user’s IDFA by setting it within `context.device.advertisingId`.
+You can set an email address on the user profile by including `email` as a trait on an [Identify call](/docs/connections/spec/identify/), as a property on a [Track call](/docs/connections/spec/track/), or as an [external id](/docs/unify/identity-resolution/externalids/) for the user. If you use Segment’s mobile SDKs to collect events from a mobile app, the user’s IDFA is automatically captured. If you don't use Segment’s mobile SDKs, you can set the user’s IDFA by setting it within `context.device.advertisingId`.
 
 If a user has more than one email address or IDFA on their account as `external_ids`, Engage sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can't identify users based on the data that you provide.
 
 ### Invalid Settings error in Event Delivery
 
-Make sure that this destination was created in [Engage](/docs/engage/) as it requires additional event data not available in standard destinations.
+Make sure that this destination was created in [Engage](/docs/engage/), as it requires additional event data not available in standard destinations.
 
 ### Invalid user list ID error in Event Delivery
 
