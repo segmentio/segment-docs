@@ -1,12 +1,13 @@
 ---
-title: Product Based Audiences
+title: Product Based Recommendation Audiences
 plan: engage-foundations
 redirect_from:
   - '/engage/audiences/recommendation-audiences'
 ---
-Product Based Audiences lets you select a product, article, song, or other piece of content from your catalog, and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Product Based Audiences for user-based commerce, media, and content affinity use cases. 
 
-You can use Product Based Audiences to power the following common marketing campaigns: 
+Product Based Recommendation Audiences lets you select a product, article, song, or other piece of content from your catalog, and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Product Based Recommendation Audiences for user-based commerce, media, and content affinity use cases. 
+
+You can use Product Based Recommendation Audiences to power the following common marketing campaigns: 
 
 - **Cross-selling**: Identify an audience of users who recently purchased a laptop and send those customers an email with a discount on items in the "laptop accessories" category. 
 - **Upselling**: Identify an audience of users who regularly interact with your free service and send them a promotion for your premium service. 
