@@ -55,13 +55,7 @@ To build a Linked Audience:
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
-### Maintaining Linked Audiences 
-
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. On the Overview page, you can view relevant audience information, such as Profiles in audience, Run schedule, Latest run, and Next run. 
-
-You can also delete Linked Audiences from the menu options or edit your Linked Audience in the Builder tab. If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
-
-You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state.
 
 ### Linked Audience conditions 
 
@@ -95,6 +89,7 @@ exactly: supports 0 or greater,
 at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
+
 
 #### Operator selection
 
@@ -245,3 +240,14 @@ Delivery Overview shows you four steps in your data activation pipeline:
 - **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
 - **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
 - **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.
+
+## Maintaining Linked Audiences 
+
+You can maintain your Linked Audience by accessing these tabs on the main page of your Linked Audience:
+
+Tab name | Information
+-------- | -----------
+Overview | On this tab you can: <br>* View relevant audience information, such as Profiles in audience count, run schedule, latest run, and next run. <br>* Enable or disable, manually run, clone and delete audiences. <br>&nbsp;&nbsp;- *Note:* Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that it was cloned from. <br> * View the list of profiles in the audience with the Audience Explorer. <br>* View connected destinations and configured activation events.
+Builder | On this tab you can: <br>* View or edit your linked audience conditions. <br>&nbsp;&nbsp; - *Note:* If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
+Runs | On this tab you can: <br>* View information about the last 50 audience runs, such as start time, run duration, run result, and change summary. You can also view granular run stats to help you understand the duration of each step in the run such as: <br> &nbsp;&nbsp; - Queueing run: The time spent in the queue waiting for other runs to finish before this one begins. <br>&nbsp;&nbsp; - Extracting from warehouse: The duration of the audience query and data transfer from the source warehouse. <br>&nbsp;&nbsp; - Preparing to deliver events: The time taken to process and ready events for delivery to connected destination(s).
+Settings | On this tab you can view or edit the linked audience name, description, and run schedule.
