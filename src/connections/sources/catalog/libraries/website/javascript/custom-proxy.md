@@ -247,3 +247,12 @@ analytics.load({
    cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
  })
 ```
+
+## Restore the API host to the Segment default
+
+If you wish to restore the proxied API host to it's original value:
+1. Navigate to the **Source > Settings > Analytis.js tab**
+2. Scroll down until you see the Host address field. 
+3. Under the field, there is a small blue text that says 'Restore to a default value'. Click **Restore** and then **Save**. 
+
+Any changes made to the CDN host must be update manually in your code. 

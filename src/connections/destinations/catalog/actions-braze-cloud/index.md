@@ -3,9 +3,11 @@ title: Braze Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 60f9d0d048950c356be2e4da
+redirect_from: 
+  - '/connections/destinations/catalog/braze-cloud-mode-actions/'
 versions:
   - name: 'Braze Web Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-web-device-mode-actions/'
+    link: '/docs/connections/destinations/catalog/actions-braze-web/'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---
@@ -32,10 +34,33 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
 > info ""
-> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
+> Braze now supports sending `email` as an identifier. Braze requires that you include `userId`, `braze_id`, or `email` for all calls made in cloud-mode. Segment sends a `braze_id` if the `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
-> info "V2 Actions"
-> The V2 versions of each action include improved sync mode support. Only valid sync modes for each action are available. As a result, the `_update_existing_only` parameter is tied to the sync mode you select for the mapping. If you select the `update` sync mode, Segment passes `_update_existing_only: true` to Braze, and if you choose the `add` sync mode, Segment passes `_update_existing_only: false` to Braze.
+
+## Actions v2
+
+Segment’s introduced the following v2 Actions to add additional functionality to the Braze Cloud Mode (Actions) destination: 
+- [Update User Profile v2](#update-user-profile-v2)
+- [Track Event v2](#track-event-v2)
+- [Identify User v2](#identify-user-v2)
+- [Create Alias v2](#create-alias-v2)
+- [Track Purchase v2](#track-purchase-v2)
+
+These Actions support the following features:
+- **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data. 
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Braze.
+- **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
+
+> warning ""
+> You might need to reauthorize your Braze account to use all of the features associated with v2 Actions.
+
+### Sync modes
+
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Sync modes available for v2 Actions include:
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
 
 {% include components/actions-fields.html settings="true"%}
 

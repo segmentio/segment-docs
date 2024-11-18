@@ -1,7 +1,6 @@
 ---
 title: 'One Creation Source'
 id: IB9M67ZWaA
-hidden: true
 ---
 
 [One Creation](https://www.one-creation.com/){:target="_blank”} provides brands with a Digital Preference Wallet to collect, digitize, and refresh consumer preference data. By seamlessly integrating into every customer touchpoint, the platform enhances services while enforcing consent (including Time-Based Consent) and data sharing rules. 
@@ -40,7 +39,7 @@ The following table lists events that One Creation sends to Segment. These event
 
 1. When a user responds to an One Creation data request campaign, One Creation sends the user's response to Segment. This is achieved by triggering an Identify call to create the traits and a Track call to record the **Submitted Preferences** event.
 2. When a user agrees to extend data usage through an One Creation extension campaign, One Creation triggers an Identify call to update the user's extended traits with the latest values. Additionally, a Track call is triggered to record the **Extended Preferences** event. 
-3. When data associated with a campaign expires, One Creation triggers an Identify call to update traits with the **Expired_** prefix and a Track call to record the **Expired Data** event.
+3. When data associated with a campaign expires, One Creation triggers an Identify call to update traits with the value **Expired** and a Track call to record the **Expired Data** event.
 
 ## Event properties
 

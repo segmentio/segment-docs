@@ -42,7 +42,7 @@ Custom Domain supports the following sources:
 ## Getting started
 
 > info ""
-> Custom Domain setup won't disrupt your event tracking. Default Segment domains will continue to function alongside your custom domains once the setup is complete.
+> Custom Domain configuration won't disrupt your event tracking. Default Segment domains will continue to function alongside your custom domains once the setup is complete.
 
 To configure Custom Domain:
 1. Select the subdomain you'd like Segment to use for event request tracking (for example, `cdp.domain.com`).
@@ -52,8 +52,9 @@ To configure Custom Domain:
   - **Subject**: Enter a subject line for your support request.
   - **Domain Name**: Enter the subdomain that Segment should use for event request tracking.
   - **Additional Domain Name**: If applicable, add an additional subdomain. This field is optional.
-  - **Source names**: Select the sources you would like to use for Custom Domain. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
-  - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. 
+  - **Source names**: Select the sources you would like to use for Custom Domain. Segment recommends starting with a stage or dev source. For initial setup, an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source is required. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
+  - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you've enabled a Content Security Policy (CSP), you must add the new subdomains provided by Segment to your CSP once you've enabled the Custom Domain feature. This ensures that the CSP does not block the subdomains when you load Segment.
+    
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
@@ -61,8 +62,11 @@ To configure Custom Domain:
 
 ## FAQ
 
+### Can I set up multiple Custom Domains?
+Segment recommends creating a different subdomain (for example, `mysubdomain.mydomain.com`) for each source. You cannot connect multiple custom domains to the same source.
+
 ### What sources can I use with Custom Domain?
-Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
+For initial setup, Segment requires an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source. Custom Domain was largely developed to support JavaScript sources. It helps with comprehensive collection of first-party data from your website when accessed over any platform (desktop, mobile, and more). You can use the subdomain for all other non-JavaScript sources as well, for consistency, but it will have no impact on data collection for those sources.  
 
 ### How can I configure non-JavaScript sources to use Custom Domain?
 
@@ -98,3 +102,6 @@ Customers who have access to the Custom Domain feature can rename analytics to `
 
 ### What happens to the Analytics.js cookies already set on the user's browser prior to a Custom Domain implementation?
 Analytics.js cookies are not lost in the transition to Custom Domain. When users revisit your website, the previous Analytics.js cookies continue to be fetched and added to events, if available.
+
+### Can I use the same subdomain across multiple workspaces?
+No, each workspace requires its own unique subdomain (for example, `mysubdomain.mydomain.com`).

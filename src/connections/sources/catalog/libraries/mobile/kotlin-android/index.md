@@ -201,5 +201,13 @@ Analytics-Kotlin is built with extensibility in mind. Use the tools list below t
 > warning ""
 > If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK.
 
+## Telemetry
+The Analytics-Kotlin SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
+
+You can disable telemetry at any time by setting `Telemetry.enable = false`.
+
+When internal errors or errors from plugins occur, the write key may be included with error data to help Segment identify the issue(s).  You can disable this by setting `Telemetry.sendWriteKeyOnError = false`.
+
+
 ## Timestamps in Kotlin
 Due to efficiency updates made to Segment's Kotlin library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).

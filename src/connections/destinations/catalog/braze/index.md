@@ -5,7 +5,7 @@ hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
 maintenance-content: >
-  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions) for a device-mode integration with access to Braze SDK features.
+  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-web) for a device-mode integration with access to Braze SDK features.
   <br />
   If you use a Braze mobile [device-mode connection](/docs/connections/destinations/#connection-modes), for example to use Braze Content Cards or In-App Messaging, use the Braze (Classic) Destination. Segment will continue to make updates to the Segment Braze mobile device-mode SDK.
 
@@ -16,11 +16,12 @@ id: 54efbf12db31d978f14aa8b5
 The Braze Destination is open-sourced on GitHub. Source code for the following integrations is available:
 
 - [iOS](https://github.com/Appboy/appboy-segment-ios){:target="_blank"} (maintained by Braze)
-- [Android](https://github.com/Appboy/appboy-segment-android){:target="_blank"}(maintained by Braze)
-- [Swift](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"}(maintained by Braze)
-- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"}(maintained by Braze)
+- [Android](https://github.com/Appboy/appboy-segment-android){:target="_blank"} (maintained by Braze)
+- [Swift](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"} (maintained by Braze)
+- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"} (maintained by Braze)
 - [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} (maintained by Segment)
 - [Server](https://github.com/segmentio/integration-appboy){:target="_blank"} (maintained by Segment)
+- [React Native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze){:target="_blank"} (maintained by Segment)
 
 For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact){:target="_blank"}.
 

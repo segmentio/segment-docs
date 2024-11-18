@@ -21,7 +21,21 @@ Your plan includes a high limit of Activation Events, which ensures that the vas
  ---- | ---------------------- | ---------------------------
  Free | Not available for purchase | N/A
  Team | Not available for purchase | N/A
- Business | 40 x the number of MTUs or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan  
+ Business | 40 x the number of MTUs or 0.4 x the number of monthly API calls | Contact your sales rep to upgrade your plan  
 
 If you have a non-standard or high volume usage plan, you have unique Linked Audiences limits or custom pricing.
+
+## Product limits
+
+Name | Limit | Details 
+---- | ----- | --------
+RETL row limit | 150 million | The audience compute fails if the total output exceeds the limit. 
+RETL column limit | 500 columns | The audience compute fails if the number of columns exceeds the limit. 
+Global concurrent audience runs | 5 total within any given space | New audience runs are queued once the limit is reached and will start execution once prior audience runs complete.
+Event Size | 32 KB | Segment doesn’t emit messages for profiles whose total related entities and enrichments exceed the limit.
+Data Graph depth | 6 | You can't save a Data Graph if you exceed the limit. 
+Preview size | 3K rows | The maximum number of rows you can have to generate a preview. The preview fails if you bring back too many entities. 
+Entity value type ahead cache | Up to 100 unique values | The maximum number of entity values Segment stores in cache. 
+Entity columns | Up to 1000 unique values | The maximum number of entity property columns Segment surfaces in the condition builder.
+Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Run Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse. 
 

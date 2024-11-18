@@ -96,7 +96,7 @@ at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
 
-#### Operator Selection
+#### Operator selection
 
 You can create audience definitions using either `AND` or `OR` operators across all condition levels. You can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups.
 
@@ -112,18 +112,24 @@ This information appears when you click the user profile generated from the audi
 
 ![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic References
+#### Dynamic references
 
-**Event Conditions**
+**Event conditions**
 
 When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value. These operators support dynamic references: equals, not equals, less than, greater than, less than or equal, greater than or equal, contains, does not contain, starts with, ends with.
 
-**Entity Conditions**
+**Entity conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
-NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
-STRING data type: equals, not equals, contains, does not contain, starts with, ends with
-TIMESTAMP data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as in the following table:
+
+| Data Type | Supported Operators                                                                    |
+| --------- | -------------------------------------------------------------------------------------- |
+| NUMBER    | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| STRING    | equals, not equals, contains, does not contain, starts with, ends with                 |
+| DATE      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIME      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+
 
 ## Step 2: Activate your Linked Audience
 
@@ -141,7 +147,7 @@ To activate your Linked Audience:
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
 
 > info "Linked Audiences destinations"
-> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
+> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
@@ -179,7 +185,7 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
-#### Show/Hide preview 
+#### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 

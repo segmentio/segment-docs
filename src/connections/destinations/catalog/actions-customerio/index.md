@@ -29,8 +29,6 @@ id: 5f7dd78fe27ce7ff2b8bfa37
 
 {% include components/actions-fields.html settings="true"%}
 
-{% include components/actions-fields.html %}
-
 
 ## Migration from Customer.io classic
 

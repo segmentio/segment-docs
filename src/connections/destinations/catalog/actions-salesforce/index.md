@@ -42,6 +42,33 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 > _For additional information on these limitations, see the Salesforce [Manage OAuth-Enabled Connected Apps Access to Your Data](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_request_manage.htm&type=5#:~:text=Each%20connected%20app%20allows%20five%20unique%20approvals%20per%20user.){:target="_blank”}  documentation._
 
 
+## Actions v2
+
+Segment's Actions v2 provide you with access to the following features: 
+  - **Sync modes**: Control how Segment updates Salesforce by selecting a [sync mode](#sync-modes), or a strategy for updating your downstream data.
+  - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Salesforce.
+  - **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
+
+> warning ""
+> You might need to reauthorize your Salesforce account to use all of the features associated with Actions v2.
+
+The following Actions support the Actions v2 functionality: 
+  - [Account v2](#account-v2)
+  - [Custom Object v2](#custom-object-v2)
+  - [Case v2](#case-v2)
+  - [Opportunity v2](#opportunity-v2)
+  - [Lead v2](#lead-v2)
+  - [Contact v2](#contact-v2)
+
+### Sync modes
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Available sync modes for the Salesforce (Actions) destination include: 
+- **Add**: Add a new record when the specified identifier doesn't exist. If it does exist, Segment skips the record.
+- **Update**: Update a record if a match with the specified identifier is found. Segment does nothing if the record doesn't exist.
+- **Upsert**: If a record with the specified identifier is found, it is updated. If not, Segment creates a new record
+- **Delete**: Remove the record associated with a specified identifier. Not available when using batching.
+
 {% include components/actions-fields.html %}
 
 ## Configuration options
@@ -174,3 +201,4 @@ For "Bulk Upsert External ID", see [Salesforce’s help documentation](https://h
 
 > warning ""
 > The field mapped to Bulk Upsert External Id should **not** be included in the Other Fields mapping. Including it as a custom field will cause an error in Salesforce. Although the Bulk API may return successful responses, the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page in Salesforce will display error messages for failed operations.
+
