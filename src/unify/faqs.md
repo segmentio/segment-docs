@@ -9,13 +9,13 @@ Yes, Identity Graph supports multiple external IDs.
 
 Identity Graph automatically collects a rich set of external IDs without any additional code:
 
-1. Device level IDs (ex: `anonymous_id`, `ios.idfa` and `android.id`)
-2. Device token IDs (ex: `ios.push_token` and `android_push_token`)
-3. User level IDs (ex: `user_id`)
+1. Device level IDs (example: `anonymous_id`, `ios.idfa` and `android.id`)
+2. Device token IDs (example: `ios.push_token` and `android_push_token`)
+3. User level IDs (example: `user_id`)
 4. Common external IDs (`email`)
-5. Cross domain analytics IDs (`cross_domain_id`)
+5. Cross-domain analytics IDs (`cross_domain_id`)
 
-If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
+If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an [Identify](/docs/connections/spec/identify/) or [Track call](/docs/connections/spec/identify/). If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
 
 ## How does Unify handle identity merging?
 Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
