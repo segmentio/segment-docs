@@ -90,7 +90,7 @@ Segment doesn't recommend that you change the subdomain after the initial setup.
 ### Who is responsible for managing the SSL certificate for the Custom Domain?
 Segment hosts and manages SSL Certificate on the Custom Domain. At this time, Segment does not support importing a certificate you may already have, as Segment must request a SSL certificate on your behalf using AWS Certificate Manager (ACM) when initially setting up your Custom Domain. 
 
-Segment also uses AWS Certificate Manager (ACM) to manage and renew certificates.
+Segment also uses ACM to manage and renew certificates.
 
 ### Can you rename `window.analytics` with Custom Domain?
 Yes, Custom Domain allows Segment to rename `window.analytics` to a unique name to avoid being blocked by some ad blocking software. 
