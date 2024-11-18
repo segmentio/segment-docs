@@ -62,7 +62,7 @@ The [Profile Explorer](/docs/unify/#profile-explorer) retains event details for 
 
 ### Can I remove a trait from a user profile?
 
-Yes, you can remove a trait from a user profile by sending an identify event with the trait value set to `null` in the traits object from one of your connected sources. For example: 
+Yes, you can remove a trait from a user profile by sending an Identify event with the trait value set to `null` in the traits object from one of your connected sources. For example: 
 
 ```json
 {
