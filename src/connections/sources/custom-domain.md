@@ -29,7 +29,7 @@ Implementing a Custom Domain using CNAME delegation requires you to add a CNAME 
 ## Supported sources
 
 Custom Domain supports the following sources: 
-- [Analytics.js](docs/connections/sources/catalog/libraries/website/javascript/)
+- [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)
 - [Clojure](/docs/connections/sources/catalog/libraries/server/clojure/)
 - [Go](/docs/connections/sources/catalog/libraries/server/go/)
 - [Java](/docs/connections/sources/catalog/libraries/server/java/)
