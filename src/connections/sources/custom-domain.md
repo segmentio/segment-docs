@@ -6,6 +6,8 @@ hidden: true
 
 Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS.  You can then track event requests through your own domain (for example, `cdp.mydomain.com`), instead of the default (`segment.com`). Tracking events through your own domain allows for more secure and complete first-party data collection by reclaiming first-party data lost to browser controls. With a more complete view of your customer behaviors, you can build more robust profiles for greater attribution and ROAS.  
 
+> info "Custom Domain is only available to Business Tier customers"
+> Customers not on the Business Tier but who have interest in Custom Domain should [contact Segment's sales team](https://segment.com/demo/){:target="_blank”} for assistance with upgrading to a Business Tier plan. Segment also offers an alternative DNS record service, [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/).
 
 ![A graphic that shows how Internet traffic moves back and forth from your domain, to your custom domain, then to Segment's CDN and Ingest APIs.](images/custom-domain.png)
 
@@ -13,8 +15,6 @@ Custom Domain is a fully-managed service that enables you to configure a first-p
 > Segment recommends configuring Custom Domain alongside [Consent Management](/docs/privacy/consent-management/) to ensure you are respectful of your end users' consent preferences.
 
 {% include content/domain-delegation-solutions.md %}
-
->info "There should be no downtime, as the default Segment domains will continue to work alongside the customer's domains, once the setup is complete"
 
 ### How DNS subdomain delegation works
 DNS subdomain delegation is a process where the control of a specific subdomain is assigned to another DNS server, allowing that server to manage the DNS records for the subdomain. This delegation is useful for distributing the management of DNS records and enables specialized handling of subdomain traffic.
@@ -41,8 +41,8 @@ Custom Domain supports the following sources:
 
 ## Getting started
 
-> info "Custom Domain is only available to Business Tier customers"
-> Customers not on the Business Tier but who have interest in Custom Domain should [contact Segment's sales team](https://segment.com/demo/){:target="_blank”} for assistance with upgrading to a Business Tier plan. Segment also offers an alternative DNS record service, [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/).
+> info ""
+> Custom Domain setup won't disrupt your event tracking. Default Segment domains will continue to function alongside your custom domains once the setup is complete.
 
 To configure Custom Domain:
 1. Select the subdomain you'd like Segment to use for event request tracking (for example, `cdp.domain.com`).
@@ -57,7 +57,7 @@ To configure Custom Domain:
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
-6. Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for your Analytics.js sources. Copy and paste this snippet into the header of your website. You can also use the subdomain provided for the Tracking API as the new endpoint for your server library sources. 
+6. Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for your Analytics.js sources. Copy and paste this snippet into the header of your website. You can also use the subdomain provided for the Tracking API as the new endpoint for your server library sources.
 
 ## FAQ
 
@@ -75,7 +75,6 @@ For non-Analytics.js sources, you’ll need to update your implementation to use
 Server-side tracking is generally more reliable than client-side tracking. For example, when tracking data client-side, you might lose data when users might block all cookies or use tools that interfere with network requests leaving the browser.
 
 For business-critical events, Segment recommends server-side data tracking. This approach means that your data is less susceptible to disruptions from client-side variables, which can result in more accurate and reliable tracking.
-
 
 ### Is this a fully-managed solution? What servers or infrastructure do I need to set up on my side for this proxy? 
 Yes, Custom Domain is a fully-managed solution. However, you must set up the following infrastructure on your end: 
