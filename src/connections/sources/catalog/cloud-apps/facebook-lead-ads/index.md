@@ -105,8 +105,6 @@ Segment recommends updating the `checkbox_key` in your Facebook Lead Ads source 
 If no `checkbox_key` is added to Segment's source settings, Segment sends lead information by default, regardless of your custom disclaimer selections.
 ![A screenshot of the settings page for a Facebook Lead Ads source, with a red box around the Customer Disclaimer Responses setting.](images/customer-disclaimer-settings.png)
 
-
-
 ## Adding Destinations
 
 Now that your Source is set up, you can connect it with destinations. 
