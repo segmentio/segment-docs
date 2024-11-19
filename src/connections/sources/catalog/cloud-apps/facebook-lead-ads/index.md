@@ -98,12 +98,13 @@ See the example below:
 
 ## Customer Disclaimer Responses
 
-If any checkboxes on the Custom Disclaimer form in Facebook are selected, the `custom_disclaimer_responses` field will be included in the data request sent to Segment. For more information, please refer to [Facebook's documentation](https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving#reading-custom-disclaimer-responses).
+If you've selected any checkboxes on Facebook's Custom Disclaimer form, the `custom_disclaimer_responses` field is included in the data request sent to Segment. For more information, please refer to Facebook's [Retrieving Leads documentation](https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving#reading-custom-disclaimer-responses){:target="_blank”}.
 
-Segment recommends adding the `checkbox_key` in your source settings to ensure that our integration accurately checks custom disclaimer responses. If no custom disclaimer checkboxes are selected, Segment will not forward lead information to the source.
+Segment recommends updating the `checkbox_key` in your Facebook Lead Ads source settings to ensure that Segment accurately checks custom disclaimer responses. If no custom disclaimer checkboxes are selected, Segment does not forward lead information to the source. 
+
+If no `checkbox_key` is added to Segment's source settings, Segment sends lead information by default, regardless of your custom disclaimer selections.
 ![A screenshot of the settings page for a Facebook Lead Ads source, with a red box around the Customer Disclaimer Responses setting.](images/customer-disclaimer-settings.png)
 
-However, if no `checkbox_key` is added to Segment's source settings, our integration will send lead information by default, regardless of custom disclaimer selections.
 
 
 ## Adding Destinations
