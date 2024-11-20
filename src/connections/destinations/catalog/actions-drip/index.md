@@ -1,32 +1,4 @@
-# 💥 Segment Partner Actions Destination Documentation Template
-
-> Hi Partners 👋🏼
->
-> Welcome to Segment - glad to have you onboard! This doc serves as a guideline for your team to create best-in-class documentation alongside your amazing product.
->
-> Here are the guidelines we want you to have in mind when writing out your documentation:
->
-> - Be succinct and simple in your writing. Reduce text bloat where possible.
-> - Avoid 1st person language as it’s confusing for customers if they don’t know who wrote the docs (Segment or the Partner).
-> - Where pre-reading is required, hyperlink to other more generic parts of Segment’s (or your) documentation.
->
-> - Screenshots/Images are generally discouraged unless absolutely necessary
->
-> The below template intends to provide a standardized structure. To submit your documentation, complete the following steps:
->
-> 1. Fork and clone the `segment-docs` repo locally
-> 2. Create a new branch (e.g., partner-name/destination)
-> 3. Create an `index.md` file in the following path `src/connections/destinations/catalog/{destination-slug}/index.md
-> 4. Copy the template below into your `index.md` file, and edit it to be in line with how your integration operates
-> 5. Add, commit, and push your code, then submit a pull request to the `segment-docs` repo
->
-> If a section does not apply to your integration, feel free to remove. Please don’t create separate sections unless absolutely necessary. In most cases, creating a H3 (###) sub-heading under an existing section is the best option!
->
-> If you have any questions in the meantime, please reach out to our team at partner-support@segment.com.
-
-## Template begins here...
-
----
+--
 title: Drip (Actions) Destination
 ---
 
