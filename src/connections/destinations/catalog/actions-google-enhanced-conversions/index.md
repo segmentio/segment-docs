@@ -127,7 +127,7 @@ This error indicates that the conversion action specified in the upload request 
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
 
-### Conversion Upload Error 
+### Conversion Upload error 
 
-Due to Google's requirement to use only one click ID to update a conversion. Essentially, only one identifier (GCLID, GBRAID, or WBRAID) should be used per ClickConversion entry, and including more than one in a single entry will result in an error.
+You may encounter this error if you use more than one identifier to update a conversion. You must only use one identifier (GCLID, GBRAID, or WBRAID) for each ClickConversion entry.
 
