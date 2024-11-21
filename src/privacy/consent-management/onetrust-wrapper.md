@@ -11,6 +11,8 @@ For questions about the Analytics.js OneTrust wrapper, see the [@segment/analyti
 
 ## Expected wrapper behavior
 
+The following table explains how Segment's OneTrust wrapper works with different configurations of consent categories and destination behaviors. 
+
 | Consent categories | Unmapped destinations | Mapped destinations | Wrapper behavior |
 | ------------------ | --------------------- | ------------------- | ---------------- |
 | All categories are disabled | No unmapped destinations <br> **or** <br> All unmapped destinations are disabled | Any configuration | No data flows to Segment | 
