@@ -3,11 +3,24 @@ title: Analytics.js OneTrust Wrapper
 plan: consent-management
 ---
 
-This guide about Segment's Analytics.js OneTrust wrapper contains context about which configurations might cause data loss, steps you can take to remediate data loss, and configurations that minimize data loss. 
+This guide to Segment's Analytics.js OneTrust wrapper contains expected wrapper behavior, context about which configurations might cause data loss, steps you can take to remediate data loss, and configurations that minimize data loss. 
 
 For questions about OneTrust Consent and Preference Management behavior, see the [OneTrust documentation](https://my.onetrust.com/s/topic/0TO3q000000kIWOGA2/universal-consent-preference-management?language=en_US){:target="_blank"}. 
 
 For questions about the Analytics.js OneTrust wrapper, see the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. 
+
+## Expected wrapper behavior
+
+| Consent categories | Unmapped destinations | Mapped destinations | Wrapper behavior |
+| ------------------ | --------------------- | ------------------- | ---------------- |
+| All categories are disabled | No unmapped destinations <br> **or** <br> All unmapped destinations are disabled | Any configuration | No data flows to Segment | 
+| All categories are disabled | At least 1 enabled destination is not mapped to a consent category | Any configuration | Data flows to Segment | 
+| All categories are disabled | S3 destination is unmapped | Any configuration | Data flows to Segment |
+| One or more categories are enabled | No unmapped destinations <br> **or** <br> All unmapped destinations are disabled | All destinations are disabled | No data flows to Segment |
+| One or more categories are enabled | No unmapped destinations <br> **or** <br> All unmapped destinations are disabled | One or more destinations are enabled | Data flows to Segment | 
+| One or more categories are enabled | One or more destinations are enabled | One or more destinations are enabled | Data flows to Segment |
+| One or more categories are enabled | One or more destinations are enabled | One or more destinations are enabled | Data flows to Segment |
+
 
 ## OneTrust consent banner behavior
 
