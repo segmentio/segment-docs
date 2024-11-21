@@ -10,8 +10,8 @@ This destination is maintained by Postscript. For any issues with the destinatio
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"} search for "Postscript".
-2. Select <YOURINTEGRATION> and click **Add Destination**.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"} search for *Postscript*.
+2. Select **Postscript** and click **Add Destination**.
 3. Select an existing Source to connect to Postscript (Actions).
 4. Go to the [Postscript app](https://app.postscript.io/){:target="_blank"}.
 5. Select your Shop name in the left sidebar, then select **API**.
