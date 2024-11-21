@@ -143,6 +143,32 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
 </div>
 {% endif %}
 
+<!--- IG 11/24: Eng requested notes for the following StackAdapt Audiences destination actions-->
+
+{% if action.id == 'dkwweyGfhoSh7jWwSi9n4D' %}
+  <div class="premonition warning">
+    <div class="fa fa-check-square"></div>
+    <div class="content">
+      <p class="header">Foward Audience Event is only compatible with Engage Audiences</p>
+      <p markdown=1>
+        The Foward Audience Event Action syncs Engage Audiences with StackAdapt. Users without Twilio Engage should use the [Forward Profile](#forward-profile) Action.
+      </p>
+    </div>
+  </div>
+{% endif %}
+
+{% if action.id == 'dkwweyGfhoSh7jWwSi9n4D' %}
+  <div class="premonition info">
+    <div class="fa fa-check-circle"></div>
+    <div class="content">
+      <p class="header">Forward Profile is compatible with Segment Connections</p>
+      <p markdown=1>
+        If you're a Twilio Engage user, use the [Foward Audience Event](#foward-audience-event) Action to sync Engage Audiences with StackAdapt.
+      </p>
+    </div>
+  </div>
+{% endif %}
+
 {% if action.fields.size > 0 %}
 <p class="button button-hollow" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to show / hide fields</p>
 <div class="collapse settings-content-{{action.slug}} show">
