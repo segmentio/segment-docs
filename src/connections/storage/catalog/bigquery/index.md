@@ -36,7 +36,7 @@ To create a project and enable BigQuery:
 ### Create a service account for Segment
 
 To create a service account for Segment: 
-1. From the Navigation panel on the left, select **IAM & admin** > **Service accounts**.
+1. From the Navigation panel on the left in the Google Developer Console, select **IAM & admin** > **Service accounts**.
 2. Click **Create Service Account**.
 3. Enter a name for the service account (for example, `segment-warehouses`) and click **Create**.
 4. Assign the service account the following roles:
