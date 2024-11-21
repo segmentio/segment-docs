@@ -96,6 +96,15 @@ See the example below:
 }
 ```
 
+## Customer Disclaimer Responses
+
+If you've selected any checkboxes on Facebook's Custom Disclaimer form, the `custom_disclaimer_responses` field is included in the data request sent to Segment. For more information, please refer to Facebook's [Retrieving Leads documentation](https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving#reading-custom-disclaimer-responses){:target="_blank”}.
+
+Segment recommends updating the `checkbox_key` in your Facebook Lead Ads source settings to ensure that Segment accurately checks custom disclaimer responses. If no custom disclaimer checkboxes are selected, Segment does not forward lead information to the source. 
+
+If no `checkbox_key` is added to Segment's source settings, Segment sends lead information by default, regardless of your custom disclaimer selections.
+![A screenshot of the settings page for a Facebook Lead Ads source, with a red box around the Customer Disclaimer Responses setting.](images/customer-disclaimer-settings.png)
+
 ## Adding Destinations
 
 Now that your Source is set up, you can connect it with destinations. 
@@ -139,7 +148,6 @@ Destinations that can be used with the Facebook Lead Ads Source:
 - Madkudu
 
 Log into your downstream tools and check that your events are populating, and contain all of the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](/docs/connections/destinations/) for troubleshooting.
-
 
 ## Troubleshooting
 

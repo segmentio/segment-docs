@@ -180,6 +180,13 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
+#### Copy personalization syntax
+Click **Copy to use in Braze Cloud Mode (Actions)** to copy the personalization syntax for the selected traits and properties to use in your destination messaging templates.
+
+> info ""
+> This feature is in beta for customers using Braze. Some functionality may change before it becomes generally available. This feature is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+
 #### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
