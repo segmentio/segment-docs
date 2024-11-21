@@ -109,7 +109,7 @@ There are certain cases where you don't actually know who the user is according 
 
 In these cases, you should use an Anonymous ID.
 
-The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—Segment recommends [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier){:target="_blank"}.
+The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one — Segment recommends [UUIDv4 format](/docs/guides/working-with-ids/#segments-guidance-on-identifier-formats).
 
 > info ""
 > Segment's [browser and mobile libraries](/docs/connections/sources/) automatically use Anonymous IDs to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
@@ -126,9 +126,9 @@ analytics.identify({
 
 User IDs are a more permanent and robust identifier, like a database ID. Since these IDs are consistent across a customer's lifetime, Identify calls should include a User ID as often as possible.
 
-A User ID is usually the unique identifier that you recognize a user by in your own database. For example, if you're using MongoDB it might look something like `507f191e810c19729de860ea`.
+A User ID is usually the unique identifier that you recognize a user by in your own database. For example, if you're using MongoDB, User IDs might look something like this: `507f191e810c19729de860ea`.
 
-Segment recommends using database IDs instead of simple email addresses or usernames, because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools. And even better, you'll be able to correlate analytics data with your own internal database.
+Segment recommends using database IDs, [in `uuidv4` format](/docs/guides/working-with-ids/#segments-guidance-on-identifier-formats), instead of email addresses or usernames because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools, and you'll be able to correlate analytics data with your own internal database.
 
 > success ""
 > Instead of using an email address or a username as a User ID, send them along as [custom traits](/docs/unify/traits/custom-traits/).
@@ -167,4 +167,4 @@ Reserved custom traits Segment has standardized:
 > info ""
 > You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead. Segment attempts to handle all the destination-specific conversions for you automatically. If you need help understanding if a specific field will be converted to a destination, take a look at Segment's [open source integration code](https://github.com/segment-integrations?q=&type=all&language=&sort=){:target="_blank"}, view the destination's documentation, or [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"}.
 
-**You can pass these reserved traits using camelCase or snake_case**, so in JavaScript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
+**You can pass these reserved traits using camelCase or snake_case**, so in JavaScript you can match the rest of your camelCase code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.

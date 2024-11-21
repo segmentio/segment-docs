@@ -58,6 +58,8 @@ Your access token enables you to call the Profile API and access customer data.
 > warning ""
 > To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign.
 > For example, if a `phone_number` identifier has the value `+5555550123`, enter `phone_number:%2B5555550123` in your query.
+> 
+> If the field you're using within the Profile API endpoint contains a value with a non-alphanumeric character, then the Profile API may respond with `500` error. In this case, see [W3's ASCII Encoding Refernece](https://www.w3schools.com/tags/ref_urlencode.ASP#:~:text=ASCII%20Encoding%20Reference,%25C3%25BF){:target="_blank"}, which lists the escape characters you can use to replace the non-alphanumeric character in the Profile API endpoint so that the Profile API will respond with a `200 Success`.
 
 ### Query the user's event traits
 
@@ -241,7 +243,7 @@ All top-level API resources have support for bulk fetches using "list" API metho
 Each API request has an associated request identifier. You can find this value in the response headers, under `Request-Id`.
 
 ```bash
-curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
+curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<identifier>/metadata
 HTTP/1.1 200 OK
 Date: Mon, 01 Jul 2013 17:27:06 GMT
 Status: 200 OK

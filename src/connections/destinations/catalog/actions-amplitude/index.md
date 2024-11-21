@@ -27,13 +27,13 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 
 ## Getting started
 
-1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
+1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the top right and then click **Organization Settings** to navigate to your **Projects** in the menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "Amplitude" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
-Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 ### Log Purchases in existing destination instances
 
@@ -57,7 +57,7 @@ The Amplitude (Actions) destination does not offer a device-mode connection mode
 
 Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/). 
 
-When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software or write any code to run on the user's device, and can use more of the Segment platform features for data going to Amplitude, like [Protocols filtering and transformations](/docs/protocols/) and [Unify Identity Resolution](/unify/identity-resolution/).
+When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software or write any code to run on the user's device, and can use more of the Segment platform features for data going to Amplitude, like [Protocols filtering and transformations](/docs/protocols/) and [Unify Identity Resolution](/docs/unify/identity-resolution/).
 
 If you're using one of Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) libraries, you will need to include the Amplitude destination plugin to enable session tracking. 
 
@@ -208,7 +208,7 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 Keep the following in mind if you plan to move to Amplitude (Actions) from a classic Amplitude destination.
 
 > info ""
-> In some cases, Amplitude Classic uses different default mappings than Amplitude (Actions). For example, the `Viewed Home Page` event in Amplitude Classic will be `Viewed Home` in Amplitude Actions, unless you configure it as `Viewed Home Page`. Be sure to follow the steps in the Destination Actions documentation to [customize your mappings](/docs/connections/destinations/actions/#customizing-mappings). Review how events appear in each destination, and configure the Actions' mappings properly to maintain continuity between Classic and Actions destinations.
+> In some cases, Amplitude Classic uses different default mappings than Amplitude (Actions). For example, the `Viewed Home Page` event in Amplitude Classic will be `Viewed Home` in Amplitude Actions, unless you configure it as `Viewed Home Page`. Be sure to follow the steps in the Destination Actions documentation to [customize your mappings](/docs/connections/destinations/actions/#customize-mappings). Review how events appear in each destination, and configure the Actions' mappings properly to maintain continuity between Classic and Actions destinations.
 
 ### Amplitude (Actions) uses Amplitude's HTTP API v2
 
@@ -241,3 +241,13 @@ In the following example, the Amplitude User property `friendCount` equals 4.
 "traits" : {"$add": {"friendCount": 3} }
 "traits" : {"$add": {"friendCount": 1} }
 ```
+## FAQ and troubleshooting
+
+### Why doesn't Segment automatically add the `session_id` to my web events?
+For Segment to automatically add the `session_id` to events, your browser must allow the following request URL to load:
+
+```
+https://cdn.segment.com/next-integrations/actions/amplitude-plugins/..
+```
+
+To check if you are loading this request, [inspect the network requests](https://developer.chrome.com/docs/devtools/network){:target="_blank”} on your website and look for 'Amplitude.' If the request is not loading, confirm it is allowed on your side.

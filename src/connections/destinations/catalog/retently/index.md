@@ -2,14 +2,17 @@
 rewrite: true
 title: Retently Destination
 id: 5eb91ce4f1eb124fa7445dce
+hidden: true
 ---
+
+> warning ""
+> The Retently integration with Segment has been deprecated and is no longer available in our catalog. For instructions on how to send data to Retently from Segment using a webhooks destination, refer to the  [Retently documentation](https://help.retently.com/en/articles/8217913-trigger-transactional-surveys-via-segment-events#h_963db1f67a){:target="_blank”}.
+
 [Retently](https://www.retently.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a customer experience management service. Measure your customer satisfaction with your company, products, or services by sending NPS, CSAT, CES, or 5-STAR surveys and act on the received feedback.
 
 This destination is maintained by Retently. For any issues with the destination, [contact the Retently Support team](mailto:support@retently.com).
 
 ## Getting Started
-
-
 
 The Retently destination allows you to send transactional surveys when an event is triggered in Segment.
 

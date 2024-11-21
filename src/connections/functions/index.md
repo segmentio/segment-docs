@@ -41,3 +41,9 @@ Use cases:
 - Ensure data compliance by performing tokenisation, encryption, or decryption before sending data downstream 
 
 To learn more, visit [destination insert functions](/docs/connections/functions/insert-functions).
+
+#### Functions Copilot
+
+With Functions Copilot, you can instrument custom integrations, enrich and transform data, and even secure sensitive data nearly instantaneously without writing a line of code. 
+
+To learn more, visit the [Functions Copilot documentation](/docs/connections/functions/copilot/).

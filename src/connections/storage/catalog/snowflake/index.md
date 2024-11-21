@@ -5,24 +5,42 @@ redirect_from:
   - '/connections/warehouses/catalog/snowflake/'
 ---
 
-{% include content/warehouse-ip.html %}
+[Snowflake](https://docs.snowflake.net/manuals/index.html){:target="_blank"} is a data warehouse, built for the cloud, that delivers performance, simplicity, concurrency and affordability.
 
-[Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.
+> info ""
+> Segment has a Terraform provider, powered by the Public API, that you can use to create a Snowflake warehouse. See the [segment_warehouse (Resource)](https://registry.terraform.io/providers/segmentio/segment/latest/docs/resources/warehouse){:target="_blank”} documentation for more information.
 
-## Getting Started
+## Getting started
 
-There are six steps to get started using Snowflake with Segment. Make sure that you are running the commands in each step while logged in as an `ACCOUNTADMIN`, or an account that has `MANAGE GRANTS`. While Segment uses predefined user (`SEGMENT_USER`), role (`SEGMENT`), warehouse (`SEGMENT_WAREHOUSE`) and database (`SEGMENT_EVENTS`) names, you can use any names you like.
+There are six steps to get started using Snowflake with Segment. 
 
-1. Create Virtual Warehouse
-2. Create Database
-3. Create Role for Segment
-4. Create User for Segment
-5. Test the User and Credentials
-6. Connect Snowflake to Segment
+1. [Create a virtual warehouse](#step-1-create-a-virtual-warehouse)
+2. [Create a database](#step-2-create-database)
+3. [Create a role for Segment](#step-3-create-role-for-segment)
+4. [Create a user for Segment](#step-4-create-user-for-segment)
+5. [Test the user and credentials](#step-5-test-the-user-and-credentials)
+6. [Connect Snowflake to Segment](#step-6-connect-snowflake-to-segment)
 
-### Create Virtual Warehouse
+{% include content/storage-do-include.md %}
 
-The Segment Snowflake destination requires a Snowflake [virtual warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses.html){:target="_blank"} to load data in to. To avoid conflicts with other regular operations in your cluster, Segment recommends that you create a new warehouse just for Segment loads, but this is not mandatory. An X-Small warehouse works for most customers when starting.
+### Prerequisites 
+
+To set up the virtual warehouse, database, role, and user in Snowflake for Segment's Snowflake destination, you must have the `ACCOUNTADMIN` role, or, a custom role with the following [Snowflake privileges](https://docs.snowflake.com/en/user-guide/security-access-control-overview#label-access-control-overview-privileges){:target="_blank"}: 
+
+- [CREATE WAREHOUSE](https://docs.snowflake.com/en/sql-reference/sql/create-warehouse#access-control-requirements){:target="_blank"}: Used to create a Segment-specific virtual warehouses
+- [CREATE DATABASE](https://docs.snowflake.com/en/sql-reference/sql/create-database#access-control-requirements){:target="_blank"}: Used to create a Segment-specific database
+- [CREATE ROLE](https://docs.snowflake.com/en/sql-reference/sql/create-role#access-control-requirements){:target="_blank"}: Used to create the role that the Segment user assumes in your Snowflake instance
+- [CREATE USER](https://docs.snowflake.com/en/sql-reference/sql/create-user#access-control-requirements){:target="_blank"}: Used to create the Segment user in your Snowflake instance
+
+To set up the Snowflake storage destination in Segment, you must have either a [role in the Segment app](/docs/segment-app/iam/roles/) of _Workspace Owner_ or, for Business Tier users, _Warehouse Destination Admin_. 
+
+### Step 1: Create a virtual warehouse
+
+Segment's Snowflake destination requires you to first create a Snowflake [virtual warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank"}. 
+
+To avoid conflicts with other operations in your cluster, Segment recommends that you create a new warehouse just for Segment loads. An X-Small warehouse is large enough for most Segment customers when they first create their Snowflake destination.
+
+To create a new virtual warehouse, navigate to **Warehouses** > **Create** in Snowflake's Classic Console or execute the following SQL command:
 
 ```sql
 CREATE WAREHOUSE "SEGMENT_WAREHOUSE"
@@ -32,45 +50,87 @@ CREATE WAREHOUSE "SEGMENT_WAREHOUSE"
     AUTO_RESUME = TRUE;
 ```
 
-Make sure `AUTO_SUSPEND` is set to ~10 minutes in the UI (or 600 if using SQL) and `AUTO_RESUME` is enabled, to avoid extra costs.
+> success ""
+> Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) and enable `AUTO_RESUME` to avoid extra costs, as Snowflake uses [per-second billing](https://docs.snowflake.com/en/user-guide/warehouses-considerations#automating-warehouse-suspension){:target="_blank"}. 
 
-### Create Database
+### Step 2: Create a database
 
-The Segment Snowflake destination creates its own schemas and tables, so it's recommended to create a new database for this purpose to avoid name conflicts with existing data.
+Segment recommends creating a new database just for Segment information, as the Segment Snowflake destination creates its own schemas and tables and could create name conflicts with your existing data.
+
+To create a new database, execute the following SQL command:
 
 ```sql
 CREATE DATABASE "SEGMENT_EVENTS";
 ```
 
-### Create Role for Segment
+### Step 3: Create a role for Segment
 
-You need to run these commands rather than creating a role with the "Create Role" dialog in the UI.
+You need to run these SQL commands rather than creating a role with the "Create Role" dialog in the Classic Console UI.
 
-This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. Segment recommends that you not reuse this role for other operations.
-
-1. Click on to Worksheets;
+This role gives Segment just enough permission to load data into your database. Segment recommends that you don't reuse this role for other operations.
+1. Click on **Worksheets**
 2. Select SEGMENT_EVENTS under database objects
-3. Change role to ACCOUNTADMIN
-
-4. Create a new role using the following command:
+3. Change the role to `ACCOUNTADMIN`
+4. Create a new role by executing the following command:
 ```sql
 CREATE ROLE "SEGMENT";
 ```
 
-5. Grant access to the virtual warehouse:
+5. Grant access to the virtual warehouse by executing the following SQL command:
 ```sql
 GRANT USAGE ON WAREHOUSE "SEGMENT_WAREHOUSE" TO ROLE "SEGMENT";
 ```
 
-6. Grant access to the database:
+6. Grant access to the database by executing the following SQL command:
 ```sql
 GRANT USAGE ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 ```
 
-### Create User for Segment
+### Step 4: Create a user for Segment
 
-Finally, you need to create the user that will be connected to Segment. Be sure to use a strong, unique password.
+Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. For enhanced security, Segment recommends creating a user that authenticates with an encrypted key pair.
+
+> info "Key-pair authentication restricted to Business Tier users only"
+> Users on other plans can authenticate with Snowflake using a [username and password](#create-a-user-that-authenticates-with-a-username-and-password).
+
+#### Create a user that authenticates with a key pair
+If you are creating a user that will use a key pair to authenticate, you first must create a public key and then can create a new user. 
+
+##### Generate keys
+
+To start, open a terminal window and generate a private key by running the following command, replacing `key_name` with the name you'd like to give the key. The command generates a private key in PEM format, and will prompt you to enter a passphrase. Write down or remember this passphrase, as you will need it when creating your Segment user and configuring your destination in the Segment app.
+
+> success ""
+> If you want to generate an unencrypted private key, append `-nocrypt` to the end of the command.
+
+```
+openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out key_name.p8
+```
+
+After you've created the private key, save the file to a local directory. You'll need to upload the .p8 file to the Segment app when you create your Snowflake destination. 
+
+Next, generate your public key by running the following command, replacing `key_name.p8` with the name of the private key that you previously created and `public_key_name` with the name of your new public key. 
+
+```
+openssl rsa -in key_name.p8 -pubout -out public_key_name.pub
+```
+
+After you've created the public key, save the file to a local directory. 
+
+##### Generate a new user and assign the key to them
+
+Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated.
+
+``` sql
+CREATE USER SEGMENT_USER 
+  DEFAULT_ROLE = SEGMENT
+  RSA_PUBLIC_KEY = 'enter your public key';
+GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
+```
+
+#### Create a user that authenticates with a username and password
+If you are creating a user that will use a username and password to authenticate, execute the following SQL command. Be sure to set a strong, unique password.
 
 ```sql
 CREATE USER "SEGMENT_USER"
@@ -80,16 +140,33 @@ CREATE USER "SEGMENT_USER"
 GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 ```
 
-### Test the User and Credentials
+### Step 5: Test the user and credentials
 
-Before you continue, test and validate the new user and credentials. When you can run the following commands successfully, you can connect Snowflake to Segment.
+Before you continue, test and validate the new user and credentials. After you verify the new credentials, you can connect Snowflake to Segment.
 
-Segment uses [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html){:target="_blank"} to run these verification steps.
-To install and verify your accounts:
+#### Test a key pair
+Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
+To install SnowSQL and verify your accounts:
 
-1. Download [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html){:target="_blank"}
-2. Open the Installer and follow instructions
-3. Once the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account and username:
+1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
+2. Open the Installer and follow instructions.
+3. When the installation is complete, run the following command, replacing "account", "username", and "path_to_the_rsa_key_encrypted.p8" with your Snowflake Account ID, username, and path to your private RSA key:
+
+```
+snowsql -a segment -u <username> -d <Database> -w <warehouse> --private-key-path <path_to_the_rsa_key_encrypted.p8>
+```
+
+For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
+
+For example, if your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
+
+#### Test a username and password
+Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
+To install SnowSQL and verify your accounts:
+
+1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
+2. Open the Installer and follow instructions.
+3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
 
 ```
 snowsql -a <account>  -u <user>
@@ -97,11 +174,11 @@ snowsql -a <account>  -u <user>
 
 For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
 
-If your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
+For example, if your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
 
 You can also find part of your account name by running the following query on your worksheet in Snowflake:
 
-```
+```sql
 SELECT CURRENT_ACCOUNT();
 ```
 4. Enter password when prompted.
@@ -145,24 +222,37 @@ USE WAREHOUSE "SEGMENT_WAREHOUSE";
 USE DATABASE "SEGMENT_EVENTS";
 ```
 
-### Connect Snowflake to Segment
+### Step 6: Connect Snowflake to Segment
 
-After creating a Snowflake warehouse, the next step is to connect Segment.
+After configuring your Snowflake resources, connect them to Segment.
 
 1. In the Segment App, select Add Destination.
 2. Search for and select "Snowflake".
-3. Add your credentials as follows:
-- User - The user name (as created above).
-- Password - The password for the user.
-- Account - The account id of your cluster, not the url (for example, url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region, for example your url might look like: `my-business.us-east-1.snowflakecomputing.com/` and your  accound-id would be: `my-business.us-east-1`)
-- Database - The database name (as created above).
-- Warehouse - The warehouse name (as created above).
+3. Enter a name for your destination.
+4. Enter your Snowflake credentials as follows:
+  - **Account**: The account id of your cluster, not the url (for example, url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region. For example, your url might be: `my-business.us-east-1.snowflakecomputing.com/` and your account-id would be: `my-business.us-east-1`)
+  - **Warehouse**: The name of the warehouse that you created in [Step 1: Create a virtual warehouse](#step-1-create-a-virtual-warehouse)
+  - **Database**: The database name that you created in [Step 2: Create database](#step-2-create-database)
+  - **Username**: The username that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+  - **Authentication method**: Select the authentication method that you used when creating a user in [Step 4: Create a user for Segment](#step-4-create-user-for-segment). You can select either Key pair or Password. 
+  
+  If you selected Key pair as your authentication method: 
+  - **Private key**: Upload your private key (stored in .p8 format) that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+  - **Passphrase** _(Optional)_ : If you created an encrypted key, enter the passphrase you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+
+  > info "Segment supports uploading one key at a time"
+  > Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.  
+  
+  If you selected Password as your authentication method:
+  - **Password**: The password that you set in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
 
 ## Security
 
 ### Allowlisting IPs
 
-If you create a network policy with Snowflake, add the following IP addresses to the "Allowed IP Addresses" list: `52.25.130.38/32`, `34.223.203.0/28`
+If you create a network policy with Snowflake and are located in the US, add  `52.25.130.38/32` and `34.223.203.0/28` to the "Allowed IP Addresses" list.
+
+If you create a network policy with Snowflake and are located in the EU, add `3.251.148.96/29` to your "Allowed IP Addresses" list.
 
 ### Multi-Factor Authentication (MFA) & SSO
 
@@ -170,30 +260,33 @@ At this time, the Segment Snowflake destination is not compatible with Snowflake
 
 ## Best Practices
 
-### Auto Suspend
+### Key pair authentication
 
-Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) to avoid credit consumption by the Segment syncing process.
+Segment recommends that you authenticate with your Snowflake warehouse using an encrypted key pair. Key-pair authentication uses PKCS#8 private keys, which are typically exchanged in the PEM base64-encoded format. 
 
+Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.
 
-### Auto Resume
+### Auto Suspend and Auto Resume
+
+Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) to minimize the credit consumption of Segment's syncing process.
 
 If you enable the `AUTO_SUSPEND` feature, Segment recommends that you also enable `AUTO-RESUME`. This will ensure that your Snowflake warehouse automatically resumes when Segment loads data. Otherwise, Segment will not be able to load data unless you [manually resume your Snowflake warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses-considerations.html#automating-warehouse-resumption){:target="_blank"}.
 
 ### Unique Warehouse, Database, and Role
 
-Segment recommends creating a unique Warehouse, Database and Role for the Segment Snowflake connection to your Snowflake instance.
+Segment recommends creating a unique Warehouse, Database, and Role for the Segment Snowflake connection to your Snowflake instance to avoid conflicts with other operations happening in your cluster.
 
 ## Troubleshooting
 
 ### I get "Object does not exist" when running "USE DATABASE" or "USE WAREHOUSE", even if the warehouse or the database are created.
 
-Make sure you have created the role and assigned the proper permissions with the account `SYSADMIN` or `ACCOUNTADMIN`. Other non-system accounts don't assign the right permissions.
+Make sure you created the role and assigned the proper permissions with the account `SYSADMIN` or `ACCOUNTADMIN`. Other non-system accounts don't assign the right permissions.
 
-### I've consumed all the credits after the initial sync.
+### I've consumed all my credits after the initial sync.
 
-If you have used all your credits, you will need to contact Snowflake to purchase more.
+If you have used all your credits, you must contact Snowflake to purchase more.
 
-Also make sure `AUTO_SUSPEND` is enabled and set to 5 or 10 minutes in the warehouse used by Segment. This setting will help avoid unintended use of credits by the Segment Snowflake destination.
+Also, make sure `AUTO_SUSPEND` is enabled and set to 5 or 10 minutes in the warehouse used by Segment. This setting helps avoid unintended use of credits by the Segment Snowflake destination.
 
 ### My syncs are going slower than I expect.
 
@@ -212,10 +305,10 @@ Most customers have the best luck starting with a X-Small instance.
 A `rollback` is issued at the end of each session to make sure there's no "in-flight" processes hanging out that could block other processes later.
 
 ### Does Segment use transactions for loading data?
-Segment doesn't open transactions explicitly because that would lock resources. However, if autocommit is enabled, each statement functions as it's own transaction, and a silent commit is issued after each.
+Segment doesn't open transactions explicitly because that would lock resources. However, if `autocommit` is enabled, each statement functions as its own transaction, and a silent commit is issued after each.
 
 ### What privileges do I need to grant?
-You shouldn't need to grant any additional privileges. However, you may need to confirm that the USAGE privilege on those schemas is granted to the same role granted to the user connecting to Snowflake through data bricks.
+You shouldn't need to grant any additional privileges. However, you may need to confirm that the USAGE privilege on those schemas is granted to the same role granted to the user connecting to Snowflake through Databricks.
 
 Run these statements in Snowflake UI or CLI, and check the output to verify the permissions.
 
@@ -234,3 +327,7 @@ Queuing - you can use a different Warehouse for Segment, or use the recommendati
 {% include content/warehouse-sync-sched.md %}
 
 ![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
+
+### I'm encountering a "JWT token is invalid" error. What do I do?
+
+For more information about troubleshooting a `JWT token is invalid` error, see Snowflake's [Key Pair Authentication: Troubleshooting](https://docs.snowflake.com/user-guide/key-pair-auth-troubleshooting){:target="_blank”} documentation. 

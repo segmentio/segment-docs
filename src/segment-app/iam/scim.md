@@ -29,7 +29,7 @@ The other value you need is an API key (sometimes referred to as an Authorizatio
 
 You can find this page in the [settings sidebar of your Segment app](https://app.segment.com/goto-my-workspace/settings/advanced){:target="_blank”}.
 
-![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/asset_generate_scim_token.png)
+![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/generate_sso_token.jpg)
 
 ## Features
 
@@ -107,7 +107,7 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 > success ""
 > **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
-![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
+![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_group.jpg)
 
 ## Microsoft Entra ID Setup Guide
 
@@ -116,6 +116,9 @@ Instructions for configuring Microsoft Entra ID can be found on the Microsoft Do
 1. [Complete the Microsoft Entra ID setup guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial){:target="_blank”}
 
 2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial){:target="_blank”}
+
+> info ""
+> To make Azure compatible with Segment's SCIM v2 implementation, append the flag `?aadOptscim062020` to the tenant URL as explained in the [Microsoft Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior){:target="_blank”}. By appending the flag to your tenant URL, your request has the correct structure when you remove a user from a group.
 
 ## OneLogin Setup Guide
 

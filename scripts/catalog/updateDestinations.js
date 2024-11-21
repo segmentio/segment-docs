@@ -14,6 +14,15 @@ require('dotenv').config();
 
 const PAPI_URL = "https://api.segmentapis.com";
 
+  // Function to remove hidden fields from action
+const removeHiddenFields=function (actions) {
+        return actions.map(action => ({
+            ...action,
+            fields: action.fields.filter(field => !field.hidden)
+        })
+        );
+      }
+
 
 const updateDestinations = async () => {
     let destinations = [];
@@ -88,9 +97,9 @@ const updateDestinations = async () => {
       settings.forEach(setting => {
         setting.description = sanitize(setting.description);
       });
-  
-      let actions = destination.actions;
-      let presets = destination.presets;
+
+     let actions = removeHiddenFields(destination.actions);
+     let presets = destination.presets;
   
       const clone = (obj) => Object.assign({}, obj);
       const renameKey = (object, key, newKey) => {
@@ -142,7 +151,8 @@ const updateDestinations = async () => {
         connection_modes,
         settings,
         actions,
-        presets
+        presets,
+        partnerOwned: destination.partnerOwned
       };
   
       // Add the updated destination to the destinationsUpdated array

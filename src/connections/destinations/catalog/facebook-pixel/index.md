@@ -193,6 +193,8 @@ If you're using real estate, travel, or automotive [Dynamic Ads](https://www.fac
 
 For most implementations, Segment recommends leaving these mappings blank. By default, Segment sets `content_type` to "product".
 
+The same mapping can be used to change the `content_id` from the default value (product_id or the sku) to anything specific for Meta Pixel. For more information about required Meta Pixel events, see Meta's [Required Meta Pixel events and parameters for Advantage+ catalog ads](https://www.facebook.com/business/help/606577526529702?id=1205376682832142){:target="_blank”} documentation.
+
 ## Troubleshooting
 
 ### PII blocklisting
@@ -238,6 +240,10 @@ If someone saw or clicked on your ad on a mobile phone then later came back dire
 
 
 Facebook Pixel events typically don't display in real-time within the Facebook Ads Manager or other reporting interfaces. While Facebook Pixel events are tracked in near real-time, there might be some delay before you see them in your reporting. Visit [Facebook's documentation](https://www.facebook.com/business/help/147965221941551){:target="_blank"} to learn more. 
+
+### Blocklisting nested properties 
+
+Segment does not handle nested properties that need to be blocklisted, including the standard PII properties. If you have properties you would like to blocklist, you can use [destination filters](/docs/connections/destinations/destination-filters/) to drop those properties before they are sent downstream. 
 
 
 {% include content/client-side-script-unverified.md %}

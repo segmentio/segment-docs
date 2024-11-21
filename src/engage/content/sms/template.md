@@ -2,6 +2,20 @@
 title: SMS Template
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
+
 Use Twilio Engage to build SMS message templates to include throughout your marketing campaigns.
 
 You can build an SMS template and include personalized content in messages based on user profile traits. Once you build the SMS, Twilio Engage saves the template for you to preview, maintain, and reuse.

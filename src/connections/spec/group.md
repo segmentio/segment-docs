@@ -12,6 +12,13 @@ In addition to the `groupId`, which is how you'd identify the specific group or 
 
 When using the Group call, it's helpful if you have accounts with multiple users.
 
+
+> info "Segment doesn't have an ungroup call"
+> If you're using a device-mode destination that has a method for ungrouping users, you can invoke it directly on the client side [using Segment's ready() method](/docs/connections/sources/catalog/libraries/website/javascript/#ready). 
+>
+> For cloud-mode destinations, you can [create a Destination Function](/docs/connections/functions/destination-functions/) to ungroup users. 
+
+
 Here's the payload of a typical Group call, with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
@@ -47,6 +54,8 @@ Beyond the common fields, the Group call takes the following fields:
   {% include content/spec-table-header.md %}
   {% include content/spec-field-group-id.md %}
   {% include content/spec-field-group-traits.md %}
+  {% include content/spec-field-user-id.md %}
+  {% include content/spec-field-anonymous-id.md %}
 </table>
 
 

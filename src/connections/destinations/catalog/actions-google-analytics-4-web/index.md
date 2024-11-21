@@ -28,13 +28,13 @@ To connect the Google Analytics 4 Web destination:
 3. Click **Configure Google Analytics 4 Web**.
 4. Select the web source that will send data to Google Analytics 4 and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). For mobile source tracking, view the [Firebase Destination](/docs/connections/destinations/catalog/firebase/).
 5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 web stream.
-6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-add-the-segment-snippet) includes this initial call by default.
-8. For GA4 to accept events on page, enable Set Configuration Mapping triggered by the first Segment event called after analytics.load(). Set Configuration Mapping calls the gtag(‘config’) command to enable tracking to your GA4 Measurement ID. This command MUST be called at each new page load.
+8. For GA4 to accept events on page, enable Set Configuration Mapping triggered by the first Segment event called after analytics.load(). Set Configuration Mapping calls the gtag(‘config’) command to enable tracking to your GA4 Measurement ID. 
 
 After you've set up and enabled the Set Configuration Mapping, enable at least one event in your **Mappings** tab. From there, view your events and parameters using the Google [Realtime](https://support.google.com/analytics/answer/9271392){:target="_blank"} or[DebugView](https://support.google.com/analytics/answer/7201382){:target="_blank"} reports. These two reports show you the events users trigger on your website as they occur. The DebugView report requires additional configuration before you can use it. Additional tools for debugging are to view all your Google enabled tracking via https://tagassistant.google.com(https://tagassistant.google.com){:target=”_blank”} or in your browser’s Dev Tools, view GA4 collect requests by filtering by /collect.
 
-Google Analytics automatically populates some events and parameters. For example, there are [Automatically Collected] (https://support.google.com/analytics/answer/9234069){:target=”_blank”} events collected by triggering the Set Configuration Mapping. Calling gtag(‘config’) and enabling [Enhanced Measurement events](https://support.google.com/analytics/answer/9216061){:target=”_blank”}, which are controlled by toggling “on” in your GA4 Admin panel, use event listeners to send events. All events tracked via GA4 Web populate some commonly used parameters like `page_location` without additional configuration. Review the [Google Analytics event parameters](https://support.google.com/analytics/table/13594742){:target=”_blank” documentation for more information.
+Google Analytics automatically populates some events and parameters. For example, there are [Automatically Collected](https://support.google.com/analytics/answer/9234069){:target=”_blank”} events collected by triggering the Set Configuration Mapping. Calling gtag(‘config’) and enabling [Enhanced Measurement events](https://support.google.com/analytics/answer/9216061){:target=”_blank”}, which are controlled by toggling “on” in your GA4 Admin panel, use event listeners to send events. All events tracked via GA4 Web populate some commonly used parameters like `page_location` without additional configuration. Review the [Google Analytics event parameters](https://support.google.com/analytics/table/13594742){:target=”_blank” documentation for more information.
 
 ### Recommended events
 
@@ -113,7 +113,7 @@ To enable consent mode for your Google Analytics 4 Web destination:
             * Ad User Data Consent State
             * Ad Personalization Consent State
             You can manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings.
-        5. *(Option 2)* Under the **Select mappings** section, create an event variable to directly grab the value from the payload (for example, `properties.adStorageConsentState`). Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string. Do this for these fields:
+        5. *(Option 2)* Under the **Select mappings** section, create an event variable to directly grab the value from the payload (for example, `properties.adStorageConsentState`). Ensure it translates to `granted` or `denied`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `granted` or `denied`. Do this for these fields:
             * Ads Storage Consent State
             * Analytics Storage Consent State
             * Ad User Data Consent State
@@ -133,7 +133,7 @@ The Google Analytics 4 debug mode, [DebugView](https://support.google.com/analyt
 
 ### Send events from both the browser and the server 
 
-With Google Analytics 4 Web, events are sent from the browser (client-side) to GA4. If you use Segment’s [Google Analytics 4 Cloud destination](/docs/connections/destinations/catalog/actions-google-analytics-4/#benefits-of-google-analytics-4-cloud) to send events through the Measurement Protocol API and want to tie data between client-side and server-side, you need to pass the same Client ID from the browser and the server for GA4 to merge events around a distinct user, and if you want the server-side event to be tied to the client-side session, you must pass the session_id in the server side event.
+With Google Analytics 4 Web, events are sent from the browser to GA4. If you use Segment’s [Google Analytics 4 Cloud destination](/docs/connections/destinations/catalog/actions-google-analytics-4/#benefits-of-google-analytics-4-cloud) to send events through the API and tie data between client-side and server-side, you need to pass the same Client ID from the browser and the server. To do this, fetch the Gtag-generated **clientId** on the web client and pass it to Segment as a property. For more information, see [Google Analytics 4 destination: User Identification](/docs/connections/destinations/catalog/actions-google-analytics-4/#user-identification) on the next steps. Additionally, when using Gtag, Google generates a session_id and session_number when a session begins. The session_id and session_number generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side, see [Using Gtagjs and Google Analytics 4 Cloud Destination](/docs/connections/destinations/catalog/actions-google-analytics-4/#using-gtagjs-and-google-analytics-4-cloud-destination) for more information and an example. 
 
 The client_id and the session_id are both cookies stored in the user browser. You can use [Google gtag get commands](https://developers.google.com/tag-platform/gtagjs/reference#get){:target=”_blank”} or other cookie methods to parse these values from the _ga cookie and _ga_measurementId cookie:
 - If your _ga cookie is GA1.1.1783165678.1701112990 then 1783165678.1701112990 is your client_id
@@ -158,7 +158,9 @@ For event data to be sent downstream to Google Analytics:
 
 1. Configure and enable the  **Set Configuration Fields** mapping. This mapping is required for data to be sent downstream because it sets configuration to the GA4 Measurement ID indicated in the Settings and establishes data flow using the `config` command.
 2. Confirm you call `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. _The Segment snippet includes this initial call by default._
-3. Send data with an event: typically this is a `page_view` as your first event. 
+3. Send data with an event: typically this is a `page_view` as your first event.
+
+Google has introduced a feature for collecting [user-provided data](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}, which Segment doesn't support. If you’ve enabled this feature in your Google Analytics 4 account, it is irreversible and may cause issues with receiving data. If everything else is set up correctly but data is still not appearing, check if this feature is enabled. If it is, you’ll need to create a new GA4 space to resolve the issue.
 
  > note "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
  > If you need to override this setting for your particular use case, see [Can I override my send_page_view selection that I declared in Settings?](#can-i-override-my-send_page_view-selection-that-i-declared-in-settings)
@@ -167,7 +169,7 @@ If no events are flowing to your GA4 instance, use one of the Debugging Tools to
 
 ### Duplicate `page_view` events in GA4
 
-If you are sending multiple `gtag(‘config’)` commands called from Set Configuration mapping on one page before a new DOM has loaded, and you have defined `send_page_view: true` with each ‘Config’ event, you may see duplicate `page_view` events sent to your GA4 measurement id. If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}. 
+If you are sending multiple `gtag(‘config’)` commands called from Set Configuration mapping on one page before a new DOM has loaded, and you have defined `send_page_view: true` with each ‘Config’ event, you may see duplicate `page_view` events sent to your GA4 measurement id. If this is the case, see Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}. 
 
 If your site is a Single Page Application (SPA), you may want to leave the **Ignore duplicate instances of on-page configuration** toggle disabled in the Google Tag Admin as a new DOM is not called on each new page path. If you have a SPA, disabled the **Ignore duplicate instances of on-page configuration** toggle, and have multiple Set Configuration mappings, use Segment's new **Send Page Views** field mapping to override the `send_page_view` parameter in your Settings. This selection takes precedence over what is defined in the Segment Settings. If you leave the selection for your destination undefined, it will fall back to what you selected in the Segment Settings.
 
@@ -192,13 +194,13 @@ To observe this feature, trigger a `Page` call with UTM parameters present in th
 
 ### Pass Custom Event parameters to all events and Custom Item parameters to all recommended Ecommerce events
 
-To pass custom event parameters to all events on the page, navigate to your Set Configuration Mapping, click Show All Fields, and enter any custom Event Parameters, including page_view. Any event parameters that have the same parameter key in Event Mappings will take precedence over what is set in the Set Configuration Mapping. 
+To pass custom event parameters to all events on the page, navigate to your Set Configuration Mapping, click **Show All Fields**, and enter any custom Event Parameters, including page_view. Any event parameters that have the same parameter key as your other event mappings will take precedence over what is set in the Set Configuration Mapping. 
 
 To send custom item parameters, add the custom item parameter name in mappings where there is a Products array. Register your custom item parameter in the GA4 Admin panel if you would like this value processed in the GA4 UI. You can ONLY add custom item parameters in the Products array. If you add custom item parameters as an Event Parameter, they will be registered as an Event Parameter.
 
 ### My Events Send to the wrong Google ID
 
-In each Event Mapping, there is a “Send To” parameter. Set this to “True” if you would like to include the send_to parameter and only send the event to the measurement_id indicated in the settings. If you select “False” or do not enter a selection, GA4 Events will broadcast to all measurement IDs, including Google Ads IDs, on the page.
+In each Event Mapping, there is a “Send To” parameter. Set this to “True” if you would like to include the send_to parameter and only send the event to the measurement_id configured in your settings. If you select “False” or do not enter a selection, GA4 Events will broadcast to all measurement IDs, including Google Ads IDs, on the page. These measurement IDs may be set outside of Segment. For more info on how the send_to parameter works, see Google's documentation on [Group and Route Data](https://developers.google.com/tag-platform/gtagjs/routing){:target="_blank"}.
 
 ### Can I override my send_page_view selection that I declared in the Settings?
 
@@ -207,3 +209,7 @@ Yes. In the Set Configuration Mapping, click Show All Fields and scroll to Send 
 ### Differences between the Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
 Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two depends on your specific use case, technical expertise, and the platforms from which you want to track data.
+
+### User-provided data collection
+
+Google has introduced a beta feature for collecting data provided by users, [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}. Note that this feature is currently not supported by Segment, and, acknowledging this feature policy in your Google Analytics 4 Account has irreversible effects.

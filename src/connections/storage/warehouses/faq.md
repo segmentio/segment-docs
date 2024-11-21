@@ -114,12 +114,11 @@ Segment recommends scripting any sort of additions of data you might have to war
 
 ## Which IPs should I allowlist?
 
-{% include content/warehouse-ip.html %}
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
 
-You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your warehouse port. Currently, Redshift and Postgres are the only connectors that require you to configure an IP upon setup. Segment recommends enabling IP allowlists for added security.
-
-
-If you're in the EU region, use CIDR `3.251.148.96/29`. To learn more about EU workspace locations, contact your account manager.
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 
 ## Will Segment sync my historical data?
@@ -194,3 +193,8 @@ To change the name of your schema without disruptions:
 ## Can I selectively filter data/events sent to my warehouse based on a property?
 
 At the moment, there isn't a way to selectively filter events that are sent to the warehouse. The warehouse connector works quite differently from our streaming destinations and only has the [selective sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) functionality that allows you to enable/disable specific properties or events.
+
+## Can data from multiple sources be synced to the same database schema?
+It's not possible for different sources to sync data directly to the same schema in your warehouse. When setting up a new schema within the Segment UI, you can't use a schema name that's already in use by another source. Segment recommends syncing the data separately and then joining it downstream in your warehouse. 
+
+For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.

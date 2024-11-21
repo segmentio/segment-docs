@@ -3,7 +3,10 @@ title: Audit Trail
 plan: audit-trail
 ---
 
-The Audit Trail allows you to view user and system activity, filter activity for specific actions or actors, and export your data to an event streams source or CSV file. 
+
+The Audit Trail allows you to view the last 90 days of user and system activity, filter activity for specific actions or actors, and export your data to an event streams source or CSV file. 
+
+For any requests exceeding the 90-day timeframe, contact [Segment Support](https://segment.com/help/contact/){:target="_blank”} for assistance.
 
 > info "Viewing the Audit Trail requires Workspace Owner permissions"
 > You must have the Workspace Owner role to view the Audit Trail page. For more information about roles and permissions within Segment, see the [Roles documentation](/docs/segment-app/iam/roles/). 
@@ -72,4 +75,4 @@ These tasks are a part of internal Segment process, and there are systems in pla
 
 The Audit Trail logic, however, is configured to notify you about every task failure, even if it then later succeeds.
 
-If you would like to avoid receiving the notifications for transient failures, **[reach out to support](https://segment.com/help/contact/)**, to request enabling a setting to reduce the number of notifications your workspace receives.
+If you would like to avoid receiving the notifications for transient failures, **[reach out to support](https://segment.com/help/contact/)** to request enabling a setting to reduce the number of notifications your workspace receives.

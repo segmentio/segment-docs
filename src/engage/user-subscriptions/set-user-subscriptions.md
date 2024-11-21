@@ -2,10 +2,23 @@
 title: Set User Subscriptions
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
 
 Segment associates a [user subscription state](/docs/engage/user-subscriptions/subscription-states/) with each email address and phone number in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
 
-You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs. On this page, you’ll learn how and when to use both processes.
+You can set a user’s subscription state using a CSV file or, programmatically, using Reverse ETL or Segment’s APIs. On this page, you’ll learn how and when to use these processes.
 
 ## Setting user subscriptions with a CSV file upload
 
@@ -109,3 +122,7 @@ For successful requests, Segment instantly updates subscription states in your w
 
 > success ""
 > While SMS and WhatsApp share the same number, you must add a separate subscription state for both of them.
+
+## Setting user subscriptions with Reverse ETL
+
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. To get started with using Reverse ETL for managing subscriptions, see  [Reverse ETL for Engage Premier Subscriptions](https://segment.com/docs/connections/reverse-etl/#reverse-etl-for-engage-premier-subscriptions).

@@ -27,7 +27,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <!--End of Zendesk Chat Script-->
 ```
 
-If you are using the `Web Widget` (see example below), **you will need to contact Zendesk Support in order to get your Chat Account ID or you can follow the steps outlined [here](https://support.zendesk.com/hc/en-us/articles/360022366613-How-do-I-find-my-Chat-Account-Key-):**
+If you are using the `Web Widget` (see example below), **you will need to contact Zendesk Support in order to get your Chat Account ID or you can follow the steps outlined in Zendesk's [How do I find my Chat Account Key?](https://support.zendesk.com/hc/en-us/articles/360022366613-How-do-I-find-my-Chat-Account-Key-){:target="_blank”} docs:**
 
 ```js
 <!-- Start of Zendesk Widget script -->

@@ -1,8 +1,6 @@
 ---
 title: Gameball (Actions) Destination
 id: 64d3487dcc68fe039fb6237f
-hidden: true
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

@@ -217,6 +217,24 @@ if (signature === digest) {
 }
 ```
 
+For Batch events, the process to authenticate these requests slightly differs as it involves verifying the X-Signature header against a hash of the *first event* in the batch.
+
+An example of how you might authenticate batch requests would be:
+
+```javascript
+ const signature = req.headers['x-signature'];
+ const digest = crypto
+       .createHmac('sha1', 'sharedsecretvalue')
+       .update(JSON.stringify(req.body[0]),'utf-8')
+       .digest('hex');
+
+if (signature === digest) {
+
+ // do cool stuff
+
+}
+```
+
 ### SSL Certification
 
 If your server is using HTTPS, note that our webhooks destination does not work with self-signed certs. If webhooks detects a self-signed cert it will throw an error and no request will be sent.

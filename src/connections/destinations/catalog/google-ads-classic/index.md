@@ -109,7 +109,7 @@ To authorize Segment to track conversion events using the Google Ads (Classic) A
 
 #### Generate a Link ID in your Google Ads (Classic) Account
 
-Authorization between an Google Ads (Classic) account and a third-party-application is done using the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001){:target="_blank"}.
+Authorization between an Google Ads (Classic) account and a third-party-application is done using the use of a Link Id. This process is detailed in Google's [Link a third-party app analytics provider and Google Ads](https://support.google.com/adwords/answer/7365001){:target="_blank"} documentation.
 
 > warning ""
 > During this process, you are required to enter a Provider ID. Segment's Provider ID is: `7552494388`.

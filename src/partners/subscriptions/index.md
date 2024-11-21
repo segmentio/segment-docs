@@ -15,7 +15,7 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](/docs/connections/spec).
 2. Follow Segment's security guidance.
-3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/)/docs/connections/test-connections/.
 4. Create an App.
 5. Build and test your Component(s).
 6. Publish documentation.
@@ -27,4 +27,4 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 > note ""
 > **NOTE:** On July 31, 2021 support for building Subscription Functions was removed from Developer Center. You may continue building [Subscription Webhooks](/docs/partners/subscriptions/build-webhook) in place of Subscription Functions. Work has begun on Developer Center 2.0 which will offer a more holistic approach to building on Segment. If you're interested in joining the beta in the coming months, please fill out [this form](https://airtable.com/shrvZzQ6NTTwsc6rQ){:target="_blank"}!
 
-[Subscription Webhooks](/docs/partners/subscriptions/build-webhook) allow you to build a new HTTP service that receives Webhook POSTs from Segment. Read more in-depth technical details about building webhooks [here](/docs/partners/subscriptions/build-webhook).
+[Subscription Webhooks](/docs/partners/subscriptions/build-webhook) allow you to build a new HTTP service that receives Webhook POSTs from Segment. Read more in-depth technical details about building webhooks in the [Subscription Webhooks](/docs/partners/subscriptions/build-webhook) docs.

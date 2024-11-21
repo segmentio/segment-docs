@@ -18,6 +18,8 @@ Ensure you have connected and enabled destinations in your Space.
 3. Click **Connect destinations** to select the destination you'll send the data to.
 4. Click **Save**.
 
+To include an advertising destination in a Journey, ensure you have connected and enabled the destination within your Space, then utilize the [Show an Ad](docs/engage/journeys/step-types/#show-an-ad) step.
+
 ## Test event payloads
 
 With the Engage event tester, you can send a test event payload to a Destination. As a result, you can confirm that you've correctly configured Journey Audiences before you publish your Journey.
@@ -43,6 +45,8 @@ To use Trait Activation with Journeys:
 2. Select [a supported](/docs/engage/trait-activation/trait-activation-setup/#set-up-a-destination) destination from a journey step.
 3. Select **Customized Setup**, then add identifier and trait mappings to customize the way you send data to your destination. For more, visit the [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/#customized-setup/) and [ID Sync](/docs/engage/trait-activation/id-sync/#customized-setup/) setup docs.
 
+> success ""
+> Use Segment's [Duplicate mappings](/docs/connections/destinations/actions/#duplicate-mappings) feature to create an exact copy of an existing mapping. The copied mapping has the same configurations and enrichments as your original mapping.
 
 ## What events are sent to destinations?
 
