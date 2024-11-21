@@ -4,7 +4,7 @@ title: Postscript Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-[<Postscript>](https://postscript.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} empowers ecommerce brands to drive incremental revenue through SMS marketing. With tools for subscriber growth, personalized messaging, and performance tracking, Postscript helps businesses engage their audience and boost conversions.
+[Postscript](https://postscript.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} empowers ecommerce brands to drive incremental revenue through SMS marketing. With tools for subscriber growth, personalized messaging, and performance tracking, Postscript helps businesses engage their audience and boost conversions.
 
 This destination is maintained by Postscript. For any issues with the destination, [contact their Support team](mailto:support@postscript.io).
 
