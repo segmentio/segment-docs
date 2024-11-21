@@ -47,3 +47,9 @@ To learn more, visit [destination insert functions](/docs/connections/functions/
 With Functions Copilot, you can instrument custom integrations, enrich and transform data, and even secure sensitive data nearly instantaneously without writing a line of code. 
 
 To learn more, visit the [Functions Copilot documentation](/docs/connections/functions/copilot/).
+
+#### IP Allowlisting for functions
+
+With IP Allowlisting, users can ensure that outbound traffic from Functions will originate only from a predefined set of IP addresses. This provides added security for external services by making it easier to recognize and allowlist trusted traffic sources.
+
+To learn more, visit [IP Allowlisting documentation](/docs/connections/destinations/#ip-allowlisting).
