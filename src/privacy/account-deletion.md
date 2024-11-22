@@ -58,6 +58,7 @@ To delete a Unify space, email the Customer Success team [(friends@segment.com)]
 > success ""
 > You can find your Unify space ID by navigating to the Unify settings page and selecting **API Access**.
 
+
 ## Delete your workspace data
 
 Workspace admins can delete all of the data associated with a workspace, including customer data. 
