@@ -33,7 +33,7 @@ To disable a Unify space, email the Customer Success team [(friends@segment.com)
  - Workspace slug
  - Unify space ID
 
-### Disable an Engage space
+### Delete an Engage space
 
 Deleted spaces, and all data associated with a deleted space, are permanently removed from Segment's servers. You cannot recover a deleted space. 
 
