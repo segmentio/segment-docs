@@ -2,7 +2,7 @@
 title: Account & Data Deletion
 ---
 
-Segment allows you to delete specific data relating to an individual end user, all data from associated with a source, or all data within your entire workspace.
+Segment allows you to delete specific data relating to an individual end user, all data from associated with a source, all data related to a Unify space, or all data in your entire workspace.
 
 ## Delete individual user data
 To delete the data for an individual user from you workspace, follow the instructions on the [User Deletion and Suppression](/docs/privacy/user-deletion-and-suppression) page.
@@ -17,6 +17,40 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 > note "Deleting source data"
 > When Segment deletes your data for a particular source, the deletion is not forwarded to sources or data storage providers associated with your account: your data is only removed from Segment's S3 archive buckets. To remove your data from external sources, reach out to the individual source about their deletion practices. 
+
+## Remove a Unify space
+
+You can remove a Unify space from your workspace by disabling it, which hides the space from the Segment UI, or by deleting it, which removes all data about that space from Segment's servers. Disabled or deleted spaces do not count toward your [Unify limits](/docs/unify/product-limits/). 
+
+> warning "You cannot reuse space names"
+> Do not use the names of previously disabled or deleted spaces for new Unify spaces.
+
+### Disable a Unify space
+
+Disabled spaces are not accessible from the Segment app UI, but all data from your space remains on Segment's servers. Disabled spaces do not count toward your Unify space limit, and can be re-enabled by sending an email to the Customer Success team [(friends@segment.com)](mailto:friends@segment.com).
+
+To disable a Unify space, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
+ - Workspace slug
+ - Unify space ID
+
+### Disable an Engage space
+
+Deleted spaces, and all data associated with a deleted space, are permanently removed from Segment's servers. You cannot recover a deleted space. 
+
+#### (Optional) Remove Profiles Sync
+If you enabled Profiles Sync on the Unify space you'd like to delete, you must first remove the Profiles Sync connection before deleting your Unify space. 
+
+To delete Profiles Sync:
+1. From the Segment app, navigate to the Unify tab and select Profile Sync. 
+2. Select the Settings tab and click **Delete warehouse**. 
+3. Follow the prompts to confirm deletion. 
+
+To delete a Unify space, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
+ - Workspace slug
+ - Unify space ID
+
+> info " "
+> Segment typically completes Unify space deletion 30-45 days after you initiate a deletion request.
 
 ## Delete your workspace data
 
