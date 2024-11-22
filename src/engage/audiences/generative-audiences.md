@@ -4,7 +4,7 @@ beta: true
 plan: engage-foundations
 ---
 
-With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
+With Generative Audiences, part of Segment's AI capabilities, you can use use generative AI to create Engage Audiences with natural language prompts. 
 
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
@@ -22,14 +22,14 @@ To create an audience with Generative Audiences:
 4. From the Build screen, click **Build with AI**.
 5. Enter your audience prompt in the description box. 
 - Use a minimum of 20 characters and up to 300 characters maximum. 
-6. Click **Build**. Based on your prompt, CustomerAI generates audience conditions for your review. 
+6. Click **Build**. Based on your prompt, Segment generates audience conditions for your review. 
 - Segment displays a progress bar until the audience conditions are generated.
 
 > success ""
 > To help you write your prompt, view these [example prompts](#example-prompts) and [best practices](#best-practices).
 
 > success "Before you begin"
-> To use Generative Audiences, a workspace owner must first accept the Customer AI Terms and Conditions.
+> To use Generative Audiences, a workspace owner must first accept Segment's Terms and Conditions.
 
 ### Modify an audience description 
 
@@ -52,7 +52,7 @@ Use the following examples to help you get started with audience prompts.
 
 ### Using negative conditions 
 
-Below are a few examples of how CustomerAI configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
+This section shows a few examples of how Generative Audiences configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
 
 1. **Prompt**: "Customers who have not purchased in the last 30 days." 
 - **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
@@ -67,8 +67,8 @@ Below are a few examples of how CustomerAI configures audience conditions for ne
 
 As you use Generative Audiences, keep the following best practices in mind:
 
-- Avoid using any customer Personal Identifiable Information (PII) or sensitive data. Personal, confidential, or sensitive information isn't required to use CustomerAI. 
-- Write specific descriptions. CustomerAI generates more accurate conditions when you use the names of existing events and traits. 
+- Avoid using any customer Personal Identifiable Information (PII) or sensitive data. Personal, confidential, or sensitive information isn't required to use Generative Audiences. 
+- Write specific descriptions. Segment's models generate more accurate conditions when you use the names of existing events and traits. 
 - Ensure that all events and traits you reference exist in your workspace.
 - Try different prompts. If you don't receive what you want on the first try, rewrite your prompt. Submitting a new prompt replaces existing conditions.
 - Preview your audience to ensure you're matching with the correct profiles prior to moving on to the next step.
@@ -82,7 +82,7 @@ You can also use the Profile explorer (**Unify** > **Profile explorer**) to view
 Learn more about [using existing events and traits](/docs/engage/audiences/) to build audiences. 
  
 > warning ""
-> Due to a [limited space schema](#limited-space-schema), CustomerAI may not recognize some events or traits that are inactive in your workspace. 
+> Due to a [limited space schema](#limited-space-schema), Segment may not recognize some events or traits that are inactive in your workspace. 
  
 ## Error handling
 
