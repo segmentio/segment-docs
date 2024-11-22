@@ -33,9 +33,15 @@ To disable a Unify space, email the Customer Success team [(friends@segment.com)
  - Workspace slug
  - Unify space ID
 
+> success ""
+> You can find your Unify space ID by navigating to the Unify settings page and selecting **API Access**.
+
 ### Disable an Engage space
 
 Deleted spaces, and all data associated with a deleted space, are permanently removed from Segment's servers. You cannot recover a deleted space. 
+
+> info " "
+> Segment typically completes Unify space deletion 30-45 days after you initiate a deletion request.
 
 #### (Optional) Remove Profiles Sync
 If you enabled Profiles Sync on the Unify space you'd like to delete, you must first remove the Profiles Sync connection before deleting your Unify space. 
@@ -49,8 +55,8 @@ To delete a Unify space, email the Customer Success team [(friends@segment.com)]
  - Workspace slug
  - Unify space ID
 
-> info " "
-> Segment typically completes Unify space deletion 30-45 days after you initiate a deletion request.
+> success ""
+> You can find your Unify space ID by navigating to the Unify settings page and selecting **API Access**.
 
 ## Delete your workspace data
 
