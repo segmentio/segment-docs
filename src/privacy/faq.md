@@ -2,11 +2,11 @@
 title: Privacy Frequently Asked Questions
 ---
 
-## Privacy Portal Questions
+## Privacy Portal questions
 
-### Why aren't fields from my Cloud Object Sources (such as Salesforce and Zendesk) showing up in the Privacy Portal Inbox and Inventory?
+### Why aren't fields from my Cloud Object Sources (like Salesforce and Zendesk) showing up in the Privacy Portal Inbox and Inventory?
 
-We do not currently support Cloud Object Sources in the Privacy Portal, but it's on our roadmap. Stay tuned for new features in the future.
+Segment doesn't support Cloud Object Sources in the Privacy Portal.
 
 ### Why is Segment suggesting my fields should be classified as Yellow or Red?
 
@@ -33,13 +33,14 @@ Segment classifications are simply recommendations. If an integration you rely
 on requires a field that we recommend be classified as Yellow, you can override
 the recommended setting to send that field downstream.
 
-## User Deletion and Suppression Questions
+## User deletion and suppression Questions
 
 ### How can I find my user's userId?
 
 The easiest way to find a customer's `userId` is by querying an existing tool. Specifically, you can use your Segment [data warehouse](https://segment.com/warehouses) to query the `users` table for another known item of information about the user (their email address, for example) and then use that row to find their userId.
 
 ### How many deletion requests can I send?
+
 You can send us batches of up to 5,000 `userIds`, or 4 MB, per payload. We process these batches asynchronously. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} if you need to process more than 110,000 users within a 30 day period.
 
 ### Which Destinations can I send deletion requests to?
