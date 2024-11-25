@@ -73,3 +73,7 @@ Audiences without ID Sync aren't allowed to select any strategy, and by default 
 
 #### Can I edit config once the audience has synced? 
 Yes, you can edit configuration in the Destination **Settings** tab at any time. However, changes will only take place in subsequent audience syncs, or in new audiences connected to the destination.
+
+#### Why is the audience exited events being triggered for all the anonymousIds available in the user profile?
+
+This is expected behavior. If it’s an Audience Exit, ID Sync config and space-level ID Strategy is not applied. For Audience Exit, all id combinations are sent in an effort to try and match any identifier that was ever sent in the downstream destination in order to remove it from the external audience.
