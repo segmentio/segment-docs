@@ -155,3 +155,7 @@ Engage will not allow you to connect an audience/computed trait to a destination
 ## How are the "5 most common values" for traits calculated?
 
 The "5 most common values" are the most frequently observed values for a given trait across all users, not tied to any individual user.
+
+## Does audience definition have a character limit?
+
+Audience definition character limit is 10k.
