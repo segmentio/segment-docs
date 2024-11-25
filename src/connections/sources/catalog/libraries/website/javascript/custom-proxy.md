@@ -168,6 +168,9 @@ Set up a proxy for the tracking API so that all calls proxy through your domain.
 | Origin Domain Name | `api.segment.io` | The domain name to which the proxy is served |
 
 
+> info ""
+> Events travel through the proxy before reaching tracking api.
+
 #### Add CNAME Record to DNS
 
 To add a CNAME record to your DNS settings:
