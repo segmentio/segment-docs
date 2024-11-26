@@ -39,7 +39,7 @@ The Understand your prediction dashboard displays the following model metrics:
 - **Top contributing events**; this graph visually describes the events factored into the model, as well as the associated weights used to create the prediction.
 
 > info ""
-> We can't view the 'Understand your prediction' tab for the 'Predicted LTV' computed trait because we only use the order completed event for the trait calculation. However, other types of predictive traits utilize multiple events.
+> The 'Understand your prediction' tab for the 'Predicted LTV' computed trait is not available, as only 'Order Completed' events are used for the trait calculation. However, other types of predictive traits utilise multiple events.
 
 ## Predictions use cases
 
