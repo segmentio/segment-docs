@@ -20,11 +20,10 @@ Only Workspace Owners can access the portal.
 
 All Segment plans include access to the Privacy Portal. Data privacy is a fundamental Segment feature, not an add-on.
 
-### If I block data at the Source level, can I reverse it or get that data back using Segment's Data Replay feature?
+### If I block data at the source level, can I reverse it or recover the data using Segment's Data Replay feature?
 
-If you use Privacy Controls to block data at the Source level, the data never
-enters Segment, and we cannot Replay that data for you. We recommend caution
-when blocking data at the Source level.
+When you block data at the source level using Privacy Controls, the data never enters Segment. As a result, Segment can't replay the data. Segment recommends exercising caution when blocking data at the source level.
+
 
 ### The Privacy Portal classified my property as `Yellow`, but it's required for some of my destinations to function. What should I do?
 
