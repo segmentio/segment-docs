@@ -11,7 +11,7 @@ Predictions are stored as [computed traits](/docs/unify/Traits/computed-traits/)
 
 After selecting a cohort, use Predictions with the following Segment features:
 
-- [Audiences](/docs/engage/audiences/), which you can create with predictions as a base. As part of Engage, Segment also offers prebuilt [Suggested Predictive Audiences](/docs/unify/traits/predictions/suggested-predictive-audiences/).
+- [Audiences](/docs/engage/audiences/), build new audiences using Predictions as a base. Segment also provides prebuilt [Suggested Predictive Audiences](/docs/unify/traits/predictions/suggested-predictive-audiences/) as part of Engage..
 - [Journeys](/docs/engage/journeys/); use Predictions in Journeys to trigger [Engage marketing campaigns](/docs/engage/campaigns/) when users enter a high-percentage cohort, or send promotional material if a customer shows interest and has a high propensity to buy.
 - [Destinations](/docs/connections/destinations/); send your Predictions downstream to [Warehouses](/docs/connections/storage/warehouses/), support systems, and ad platforms.
 
