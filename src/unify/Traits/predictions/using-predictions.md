@@ -26,7 +26,25 @@ The **Explore your prediction** section of the Prediction tab visualizes predict
 You can then create an Audience from the group you've selected, letting you send efficient, targeted marketing campaigns within Journeys. You can also send your prediction data to downstream destinations.
 
 ### Model monitoring
- 
+
+Predictions rank your customers by their likelihood to perform a specific conversion event, from most to least likely.
+
+For each custom prediction, Segment monitors the percentile cohort where customers were ranked when they performed the predicted conversion event. After around 7 days, Segment creates a graph data visualization, allowing you to evaluate the prediction’s accuracy based on real workspace data.
+
+
+
+For example, suppose you're predicting the likelihood of customers completing an `order_completed` event. The graph shows that:
+
+- Customers in the 91–100% cohort performed the event about 6,700 times.
+- Customers in the 81–90% cohort performed the event about 3,900 times.
+- Customers in the 71–80% cohort performed the event about 3,000 times.
+
+This pattern shows that the prediction was extremely accurate in identifying customers most likely to convert. Ideally, most graphs will show a similar trend, where the highest-ranked cohorts have the most conversion activity.
+
+However, this pattern can change depending on how you use Predictions. For example, if you run a marketing campaign targeting the bottom 10% cohort, you might see an increase in conversions for that group instead.
+
+Like any AI or machine learning tool, Predictions may not always be perfect. Start small, test your predictions, and refine your approach as needed. Model monitoring makes it easier to measure and improve the accuracy of your predictions.
+
 #### Model statistics
 
 The Predictions tab's **Understand your prediction** section provides insights into the performance of the underlying predictive model. This information helps you understand the data points that contribute to the prediction results.
