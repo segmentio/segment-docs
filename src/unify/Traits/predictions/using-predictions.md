@@ -7,7 +7,7 @@ redirect_from:
 
 ## Working with Predictions in Segment
 
-Segment creates Predictions as Computed Traits, with scores saved to user profiles as a percentage cohort. For example, `0.8` on a user's profile indicates that the user is in the the cohort's 80th percentile, or the top 20%. 
+Predictions are stored as [computed traits](/docs/unify/Traits/computed-traits/) in user profiles, with scores represented as percentage cohorts. For example, a score of `0.8` indicates the user is in the 80th percentile, or the top 20% of the cohort.
 
 Once you've selected a cohort, you can use Predictions in concert with other Segment features:
 
