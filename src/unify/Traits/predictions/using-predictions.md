@@ -9,7 +9,7 @@ redirect_from:
 
 Predictions are stored as [computed traits](/docs/unify/Traits/computed-traits/) in user profiles, with scores represented as percentage cohorts. For example, a score of `0.8` indicates the user is in the 80th percentile, or the top 20% of the cohort.
 
-Once you've selected a cohort, you can use Predictions in concert with other Segment features:
+After selecting a cohort, use Predictions with the following Segment features:
 
 - [Audiences](/docs/engage/audiences/), which you can create with predictions as a base. As part of Engage, Segment also offers prebuilt [Suggested Predictive Audiences](/docs/unify/traits/predictions/suggested-predictive-audiences/).
 - [Journeys](/docs/engage/journeys/); use Predictions in Journeys to trigger [Engage marketing campaigns](/docs/engage/campaigns/) when users enter a high-percentage cohort, or send promotional material if a customer shows interest and has a high propensity to buy.
