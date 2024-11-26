@@ -31,7 +31,7 @@ Predictions rank your customers by their likelihood to perform a specific conver
 
 For each custom prediction, Segment monitors the percentile cohort where customers were ranked when they performed the predicted conversion event. After around 7 days, Segment creates a graph data visualization, allowing you to evaluate the prediction’s accuracy based on real workspace data.
 
-
+![Bar chart showing conversion history across percentile cohorts. The top 10% cohort has the highest number of conversions, followed by the 81-90% cohort, with decreasing conversions as cohorts move lower in the percentile range.](../../images/model_monitoring.png)
 
 For example, suppose you're predicting the likelihood of customers completing an `order_completed` event. The graph shows that:
 
