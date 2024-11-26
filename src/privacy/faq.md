@@ -6,11 +6,11 @@ title: Privacy Frequently Asked Questions
 
 ### Why aren't fields from my Cloud Object Sources (like Salesforce and Zendesk) showing up in the Privacy Portal Inbox and Inventory?
 
-Segment doesn't support Cloud Object Sources in the Privacy Portal.
+The Privacy Portal doesn't doesn't support fields from Cloud Object Sources like Salesforce or Zendesk.
 
-### Why is Segment suggesting my fields should be classified as Yellow or Red?
+### Why does Segment suggest classifying my fields as Yellow or Red?
 
-You can see a full list of the fields we exact-match and fuzzy-match against [by default](/docs/privacy/portal/#default-pii-matchers). These classifications are our best-guess suggestions, and you can easily change them by following the instructions to [change a recommended classification](/docs/privacy/portal/#change-a-recommended-classification).
+Segment provides suggested classifications based on [default PII matchers](/docs/privacy/portal/#default-pii-matchers). These suggestions include exact and fuzzy matches for potential PII. You can update these classifications by following the instructions to [change a recommended classification](/docs/privacy/portal/#change-a-recommended-classification).
 
 ### Who can access the Privacy Portal?
 
