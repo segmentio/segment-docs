@@ -97,7 +97,9 @@ No. Engage audiences are designed to initiate the creation of new lists in Klavi
 
 When adding a user to a list, our action make use of the [Bulk Profile Import](https://developers.klaviyo.com/en/reference/spawn_bulk_profile_import_job){target="_blank"} endpoint (when batching is enabled), and the [Add Profile To List](https://developers.klaviyo.com/en/reference/create_list_relationships){target="_blank"} endpoint for non-batched requests. Both of which will not update a users suppression status if they were previously suppressed. 
 
-To ensure a suppressed profile gets unsuppressed, you can use the "Subscribe Profile" action. When a profile is subscribed in Klaviyo, it automatically unsuppresses any previously suppressed user. You can combine this action with other actions to achieve your goal. If this solution does not fully address your use case, please contact us at friends@segment.com so we can consider your specific requirements.
+To unsuppress a previously suppressed profile in Klaviyo, use the Subscribe Profile action. This action automatically removes the suppression status for the user when they are subscribed. You can also pair this action with other mappings to suit your workflow.
+
+If this approach doesn't address your use case, [reach out to Segment](mailto:friends@segment.com) to discuss your specific requirements.
 
 ### Can we enable batching for the entire Klaviyo (Actions) destination?
 
