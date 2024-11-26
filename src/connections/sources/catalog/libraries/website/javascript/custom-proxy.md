@@ -161,15 +161,11 @@ To add a CNAME record for the Segment proxy to your organizations DNS settings:
 
 ### Tracking API Proxy
 
-Set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
+As events travel through the proxy before reaching the tracking API, set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
 
 | Field              | Value            | Description                                  |
 | ------------------ | ---------------- | -------------------------------------------- |
 | Origin Domain Name | `api.segment.io` | The domain name to which the proxy is served |
-
-
-> info ""
-> Events travel through the proxy before reaching tracking api.
 
 #### Add CNAME Record to DNS
 
