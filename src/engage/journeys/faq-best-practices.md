@@ -99,3 +99,7 @@ Journeys triggers audience or trait-related events for each email `external_id` 
 #### How quickly do user profiles move through Journeys?
 
 It may take up to five minutes for a user profile to enter each step of a Journey, including the entry condition. For Journey steps that reference a batch audience or SQL trait, Journeys processes user profiles at the same rate as the audience or trait computation. Visit the Engage docs to [learn more about compute times](/docs/engage/audiences/#understanding-compute-times).
+
+#### Why are we seeing a count mismatch between the Entries/Completed field in the Journey and the Entry/Exit step of the Journey?
+
+The Entries and Completed fields show the total unique count, while the Entry and Exit step count displays the total count of all users (including the merges).
