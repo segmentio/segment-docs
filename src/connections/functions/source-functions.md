@@ -439,6 +439,8 @@ The test function interface has a 4KB console logging limit. Outputs surpassing 
 
 No, Source Functions can't send custom responses to the tool that triggered the Function's webhook. Source Functions can only send a success or failure response, not a custom one.
 
-#### When I try to save my Source Function, why am I seeing this error message: "Functions are unable to send data or events back to their originating source. Please ensure the URL used for outgoing data from the function is correct."?
+#### Why am I seeing the error "Functions are unable to send data or events back to their originating source" when trying to save my Source Function?
 
-To prevent possible infinite looping, Segment checks your Function code to ensure that you don't have `https://fn.segmentapis.com` included. That URL is used to send data to a Source Function. Including that URL in your Function code is a sign that an infinite loop may occur so Segment ensures you can't save your Function if that URL is included. To fix this, please remove that URL from your Function code.
+This error occurs because Segment prevents Source Functions from sending data back to their own webhook endpoint (`https://fn.segmentapis.com`). Allowing this could create an infinite loop where the function continuously triggers itself.
+
+To resolve this error, check your Function code and ensure the URL `https://fn.segmentapis.com` is not included. This URL is used to send data to a Source Function and shouldn't appear in your outgoing requests. Once you remove this URL from your code, you’ll be able to save the Function successfully.
