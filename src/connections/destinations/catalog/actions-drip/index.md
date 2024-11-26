@@ -1,5 +1,6 @@
 --
 title: Drip (Actions) Destination
+id: 673b62169b3342fbe0fc28da
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -8,12 +9,10 @@ title: Drip (Actions) Destination
 
 This destination is maintained by Drip. For any issues with the destination, [contact their Support team](mailto:support@drip.com).
 
-> (delete after reading) The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination.
-
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Drip".
-2. Select Drip and click **Add Destination**.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Drip (Actions)".
+2. Select Drip (Actions) and click **Add Destination**.
 3. Select an existing Source to connect to Drip (Actions).
 4. Go to the [Drip dashboard](https://www.getdrip.com/dashboard){:target="_blank"}
 5. In the Settings tab, select the User Settings, find and copy the **API key** at the bottom of the page.
