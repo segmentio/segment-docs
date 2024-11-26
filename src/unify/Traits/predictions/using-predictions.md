@@ -72,7 +72,7 @@ Predictions may not be as beneficial in the following situations:
 
 ## FAQs
 
-#### What type of machine learning model do you use? 
+#### What type of machine learning model does Segment use? 
 
 Segment uses a binary classification model that uses decision trees.
 
@@ -92,7 +92,7 @@ These data science statistics measure the effectiveness of Segment's predictions
 
 The Prediction Quality Score factors AUC, log loss, and lift quality to determine whether Segment recommends using the prediction. A model can have a score of Poor, Fair, Good, or Excellent.
 
-#### How do you store trait values? 
+#### How does Segment store trait values? 
 
 The created trait value represents the user's percentile cohort. This value will refresh when we re score the customers based on your refresh cadence. If you see `0.85` on a user's profile, this means the user is in the 85th percentile, or the top 15% for the prediction.
 
