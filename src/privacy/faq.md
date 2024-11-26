@@ -16,10 +16,9 @@ Segment provides suggested classifications based on [default PII matchers](/docs
 
 Only Workspace Owners can access the portal.
 
-### Which Segment plan types get access to the Privacy Portal?
+### Which Segment plan types include access to the Privacy Portal?
 
-All Segment plans have access to the Privacy Portal, because we believe data
-privacy should be a right, not an add-on.
+All Segment plans include access to the Privacy Portal. Data privacy is a fundamental Segment feature, not an add-on.
 
 ### If I block data at the Source level, can I reverse it or get that data back using Segment's Data Replay feature?
 
