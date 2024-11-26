@@ -24,22 +24,19 @@ All Segment plans include access to the Privacy Portal. Data privacy is a fundam
 
 When you block data at the source level using Privacy Controls, the data never enters Segment. As a result, Segment can't replay the data. Segment recommends exercising caution when blocking data at the source level.
 
+### The Privacy Portal classified my property as Yellow, but my destinations require it to function. What should I do?
 
-### The Privacy Portal classified my property as `Yellow`, but it's required for some of my destinations to function. What should I do?
+Segment classifications are recommendations. If a destination requires a field classified as Yellow, you can override the recommended classification to ensure the field gets sent downstream.
 
-Segment classifications are simply recommendations. If an integration you rely
-on requires a field that we recommend be classified as Yellow, you can override
-the recommended setting to send that field downstream.
+## User deletion and suppression questions
 
-## User deletion and suppression Questions
+### How can I find a specific `userId`?
 
-### How can I find my user's userId?
-
-The easiest way to find a customer's `userId` is by querying an existing tool. Specifically, you can use your Segment [data warehouse](https://segment.com/warehouses) to query the `users` table for another known item of information about the user (their email address, for example) and then use that row to find their userId.
+To locate a specific `userId`, query your Segment [data warehouse](https://segment.com/warehouses){:target="_blank”} for the `users` table. Use other known details about the user, like their email address, to identify the correct row and retrieve the `userId`.
 
 ### How many deletion requests can I send?
 
-You can send us batches of up to 5,000 `userIds`, or 4 MB, per payload. We process these batches asynchronously. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} if you need to process more than 110,000 users within a 30 day period.
+You can send batches of up to 5,000 `userIds`, or 4 MB, per payload. Segment processes these batches asynchronously. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} if you need to process more than 110,000 users within a 30-day period.
 
 ### Which Destinations can I send deletion requests to?
 
