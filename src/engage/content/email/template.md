@@ -131,6 +131,6 @@ Segment doesn't support profile traits in object and array datatypes in [Broadca
 
 ## FAQs
 
-### Will changes made to a template be automatically reflected in a Journey step that utilizes the template?
+### Do updates to an email template automatically apply to Journey steps using it?
 
-When using a template in a Journey Step, it serves as the foundational template for that particular step. Once an email template is selected for use in a Journey, any modifications made to that original template will not reflect in the Journey's version of the template after it has been added. Similarly, any customizations made to the email template within a Journey step will not alter the original template.
+When you add a template to a Journey step, it becomes a copy specific to that step. Changes made to the original template won’t update the Journey version, and edits made in the Journey step won’t affect the original template. This keeps your Journey changes separate while preserving the original for reuse.
