@@ -128,11 +128,11 @@ Iterable supports sending push notification events to Segment. These events are 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`
 
-## High Retry Rate
+## High retry rate
 
-If you are experiencing a large amount of retries within your destinations that are connected to your HTTP API source, this could be due to a related Etimedout errors. The errors seem to be Etimedout errors, in general, these are relatively normal intermittent problems that can come about when HTTP requests are made from server to server. 
+If you're experiencing a large amount of retries within your destinations that are connected to your HTTP API source, this could be due to Etimedout errors. Etimedout errors are intermittent problems that can come about when HTTP requests are made from server to server. 
 
-The Etimedout error is the result of an HTTP response not being received in a specific timeframe. Read more about how Segment retries events to destinations [here](/docs/connections/destinations/#retries-between-segment-and-destinations).
+The Etimedout error is the result of an HTTP response not being received in a specific timeframe. [Learn more](/docs/connections/destinations/#retries-between-segment-and-destinations) about how Segment retries events to destinations.
 
 
 ## Using Iterable with Engage
