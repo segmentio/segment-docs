@@ -50,6 +50,10 @@ Models define sets of data you want to sync to your Reverse ETL destinations. A 
 ### dbt model
 Use Segment's dbt extension to centralize model management and versioning. Users who set up a BigQuery, Databricks, Postgres, Redshift, or Snowflake source can use Segment's [dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes. 
 
+> warning "Limitation"
+> Please be aware that if there are **5** mappings with a dbt Cloud schedule for a model, you will not be able to create additional mappings with the same dbt Cloud schedule type, regardless of the account or job selected. The limit applies per model.
+
+
 ## Step 3: Add a destination
 In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to. A model can have multiple destinations.
 
