@@ -3,7 +3,6 @@ title: LiveRamp Audiences Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 644ad6c6c4a87a3290450602
-beta: true
 ---
 
 [LiveRamp](https://liveramp.com/){:target="_blank"} gives companies and their partners the power to connect, control, and activate data to transform customer experiences and generate more valuable business outcomes. Segment's integration with LiveRamp lets you push user audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} into your LiveRamp account to execute various marketing use cases.
@@ -11,6 +10,9 @@ beta: true
 The LiveRamp Audiences destination allows users to connect their Engage Audiences to LiveRamp through their SFTP or a customer-managed S3 cloud storage bucket. Users will be able to configure their delivery preferences within Segment.
 
 The LiveRamp Audiences destination can be connected to **Twilio Engage sources only**. 
+
+> info "LiveRamp Audiences is not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Getting started
 

@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin (Server)
+title: Analytics-Kotlin (Server)
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/kotlin/'
 id: yMu7LRR59b

@@ -38,7 +38,7 @@ compile ('com.kahuna.integration.android.segment:kahuna:+') {
 }
 ```
 
-Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](/docs/connections/sources/catalog/libraries/mobile/android/#bundling-integrations):
+Then, bundle Kahuna during your Segment Analytics initialization, with more details in the Segment [Android source documentation](/docs/connections/sources/catalog/libraries/mobile/android/#bundling-integrations):
 
 ```java
 Analytics analytics = new Analytics.Builder(this, "SEGMENT_KEY")
@@ -54,7 +54,7 @@ Add the Kahuna pod dependency:
 pod "Segment-Kahuna
 ```
 
-Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](/docs/connections/sources/catalog/libraries/mobile/ios/#bundling-integrations):
+Then, bundle Kahuna during your Segment Analytics initialization, with more details in Segment's [iOS source documentation](/docs/connections/sources/catalog/libraries/mobile/ios/#bundling-integrations):
 
 ```objc
 #import <Segment-Kahuna/SEGKahunaIntegrationFactory.h>

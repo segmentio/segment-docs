@@ -217,7 +217,7 @@ Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId
 ## Install Attributed
 
 ### Client
-Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
+Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification explained in Segment's [Mobile Spec](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
 ### Server
 If you track events server-side, AppsFlyer can still send attribution postbacks, but you need to configure this functionality in your AppsFlyer account. To enable this:

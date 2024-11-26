@@ -23,7 +23,7 @@ The Adobe Target Web destination loads Adobe's `at.js` script for you in order t
 3. Click **Configure Adobe Target Web** in the top-right corner of the screen.
 4. Select the web source that will send data to Adobe Target Web and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/).
 5. On the **Settings** tab, input your Adobe Target destination settings.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html %}

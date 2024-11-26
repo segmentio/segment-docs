@@ -46,4 +46,4 @@ To learn more, visit [destination insert functions](/docs/connections/functions/
 
 With Functions Copilot, you can instrument custom integrations, enrich and transform data, and even secure sensitive data nearly instantaneously without writing a line of code. 
 
-To learn more, visit the [Functions Copilot documentation](//docs/connections/functions/functions-copilot).
+To learn more, visit the [Functions Copilot documentation](/docs/connections/functions/copilot/).

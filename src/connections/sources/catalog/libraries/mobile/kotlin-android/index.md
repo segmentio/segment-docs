@@ -1,5 +1,5 @@
 ---
-title: 'Analytics for Kotlin (Android)'
+title: 'Analytics-Kotlin (Android)'
 strat: kotlin-android
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/kotlin/'
@@ -167,7 +167,7 @@ Once you've installed the mobile or server Analytics Kotlin library, you can sta
 ### Destinations
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 
 <div class="double">
@@ -190,7 +190,7 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 ## Tools and extensions
 
-Analytics for Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
+Analytics-Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
 
 - [Plugin architecture](https://segment.com/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter)
@@ -200,6 +200,14 @@ Analytics for Kotlin is built with extensibility in mind. Use the tools list bel
 
 > warning ""
 > If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK.
+
+## Telemetry
+The Analytics-Kotlin SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
+
+You can disable telemetry at any time by setting `Telemetry.enable = false`.
+
+When internal errors or errors from plugins occur, the write key may be included with error data to help Segment identify the issue(s).  You can disable this by setting `Telemetry.sendWriteKeyOnError = false`.
+
 
 ## Timestamps in Kotlin
 Due to efficiency updates made to Segment's Kotlin library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
