@@ -17,7 +17,7 @@ After selecting a cohort, use Predictions with the following Segment features:
 
 ### Prediction tab
 
-Once Segment has generated your prediction, you can access it in your Trait's **Prediction** tab. The Prediction tab gives you actionable insight into your prediction. 
+You can access generated Predictions in the **Prediction** tab of your Trait. The Prediction tab gives you actionable insight into your prediction. 
 
 ![The Explore your prediction section of the Computed Trait Prediction tab](../../images/explore_prediction.png)
 
