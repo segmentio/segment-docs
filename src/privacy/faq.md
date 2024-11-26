@@ -38,9 +38,9 @@ To locate a specific `userId`, query your Segment [data warehouse](https://segme
 
 You can send batches of up to 5,000 `userIds`, or 4 MB, per payload. Segment processes these batches asynchronously. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} if you need to process more than 110,000 users within a 30-day period.
 
-### Which Destinations can I send deletion requests to?
+### Which destinations can I send deletion requests to?
 
-In addition to your Raw Data destinations (Amazon S3 and Data Warehouses), we can forward requests to the following streaming destinations:
+In addition to your Raw Data destinations (Amazon S3 and data warehouses), Segment can forward requests to the following streaming destinations:
 
 - Amplitude
 - Iterable
@@ -56,25 +56,26 @@ In addition to your Raw Data destinations (Amazon S3 and Data Warehouses), we ca
 - Google Cloud PubSub
 - Friendbuy (Cloud Destination)
 
-Segment cannot guarantee that data is deleted from your Destinations. When you issue a user deletion request, Segment forwards the request to supported streaming Destinations. You must still contact these Destinations to confirm that they've executed the request.
+Segment forwards deletion requests but cannot guarantee that data is deleted from downstream destinations. You must contact these destinations to confirm that they executed the request.
 
-### Which destinations require additional destination setting configuration?
+### Which destinations require additional configuration to process deletion requests?
 
 #### Amplitude
-If you have the Amplitude destination enabled in one or more sources, you must include Amplitude's secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under "Secret Key"). You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings) of your Amplitude project.
+To process deletion requests in Amplitude, add your Amplitude secret key to the destination settings under "Secret Key." You can find this key in your Amplitude project's [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings){:target="_blank”}.
+
 
 #### Google Analytics
-To send user deletion requests to Google Analytics you must authenticate your Google Analytics account with Segment using OAuth. If you have the Google Analytics destination enabled in one or more sources, you must authenticate your account in each destination(s) settings. Navigate to the **User Deletion** settings in your Segment Google Analytics settings and use your email and password to authenticate your account.
+To send deletion requests to Google Analytics, authenticate your account with Segment using OAuth. Go to the **User Deletion** settings in your Segment Google Analytics destination and use your email and password to complete authentication.
+
 
 ### What regulation types does Segment support?
 
 Segment supports the following regulation types:
-- **SUPPRESS_ONLY**: Suppress new data based on the `userId` without deleting existing data stored in your workspace and in downstream destinations.
-- **UNSUPPRESS**: Stop the ongoing suppression of a `userId`.
-- **SUPPRESS_WITH_DELETE**: Suppress new data based on the `userId` and also delete all existing data for that ID from your workspace and our internal archives. While Segment forwards the deletion request to your downstream destinations, Segment cannot guarantee deletion in your third-party tools.
-- **DELETE_INTERNAL**: Deletes user data from within Segment archives only and not from any connected destinations.
+- **SUPPRESS_ONLY**: Suppresses new data for a `userId` without deleting existing data in your workspace or downstream destinations.
+- **UNSUPPRESS**: Stops ongoing suppression of a `userId`.
+- **SUPPRESS_WITH_DELETE**: Suppresses new data for a `userId` and deletes all existing data for that ID in your workspace and Segment's internal archives. Segment forwards the deletion request to downstream destinations but can't guarantee deletion in third-party tools.
+- **DELETE_INTERNAL**: Deletes user data only from Segment archives, without affecting downstream destinations.
 - **DELETE_ONLY**: Deletes user data from Segment and your connected warehouses. Also sends a deletion request to your downstream destinations.
-
 
 > info ""
 > Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.
