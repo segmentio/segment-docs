@@ -33,7 +33,7 @@ The Predictions tab's **Understand your prediction** section provides insights i
 
 The Understand your prediction dashboard displays the following model metrics:
 
-- **AUC**, or Area under [the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic){:target="_blank"}; AUC lands between 0 and 1, where 1 is a perfect future prediction, and 0 represents the opposite. Higher AUC indicates better predictions. 
+- **AUC**, or Area under [the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic){:target="_blank"}; AUC values range from 0 to 1, with 1 indicating a perfect prediction and 0 indicating the opposite. Higher AUC indicates better predictions. 
 - **Lift Quality**, which measures the effectiveness of a predictive model. Segment calculates lift quality as the ratio between the results obtained with and without the predictive model. Higher lift quality indicates better predictions.
 - **Log Loss**; the more a predicted probability diverges from the actual value, the higher the log-loss value will be. Lower log loss indicates better predictions.
 - **Top contributing events**; this graph visually describes the events factored into the model, as well as the associated weights used to create the prediction.
