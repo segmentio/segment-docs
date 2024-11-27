@@ -38,6 +38,9 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
+>info ""
+> Any of Segment's integrations will be loaded via the proxy, however, we don't host 3rd party SDKs (with a few rare exceptions), so Fullstory's SDK for example would still be loaded by their own CDN.
+
 ## Custom Proxy setup
 
 There are two options you can choose from when you set up your custom domain proxy.
