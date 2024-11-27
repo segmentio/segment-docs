@@ -52,6 +52,13 @@ To reset a sync:
 3. Click **I understand what happens when I reset a sync state**. 
 4. Click **Reset sync**.
 
+## Cancel syncs
+Reverse ETL users can cancel syncs during the extract and load phases.
+
+To cancel a sync, click the kebab menu (three dots) on the sync’s row in the Syncs History tab or expand the sync details side sheet. You can also find the 'Cancel Sync' button in the sync details side sheet on the Syncs Overview page. Additionally, the Syncs Overview page now allows you to filter by 'Canceling' (syncs where a cancel request is being processed) and 'Canceled' (syncs successfully canceled) statuses.
+
+Once a sync is canceled, the record count under 'Extraction Results' reflects the records already processed, which will not be included in future syncs. To reprocess these records, you can reset or replay the sync.
+
 ## Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
