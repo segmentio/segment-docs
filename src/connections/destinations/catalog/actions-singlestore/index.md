@@ -1,5 +1,6 @@
 ---
 title: SingleStore (Actions) Destination
+id: 6720ddceaa24532723b39d63
 ---
 
 {% include content/plan-grid.md name="actions" %}
