@@ -25,7 +25,7 @@ If you do not have an existing StackAdapt API key, [reach out to the StackAdapt 
 1. From the Segment web app, navigate to **Connections > Catalog > Destinations**.
 2. Search for and select the "StackAdapt Audience" destination.
 3. Click **Add Destination**.
-4. Select an existing source to connect to the StackAdapt Audience destination.
+4. Select an existing source that is Engage Space to connect to the StackAdapt Audience destination.
 5. Enter a name for your destination.
 6. On the Settings screen, provide your StackAdapt GraphQL API token.
 7. Toggle on the destination using the **Enable Destination** toggle.
@@ -41,7 +41,7 @@ To sync an Engage audience with StackAdapt:
 2. Add a condition to the Engage audience to ensure the required email trait is included.
 3. Open the previously created StackAdapt Audience destination.
 4. On the Mappings tab, click **New Mapping** and select **Forward Audience Event**.
-5. Under Define event trigger, click **Add Condition** and add this condition: Event Type is `Track` or `Identify`. Click **Add Condition** and add this condition: Event Name is `Audience Entered` or `Audience Exited`.
+5. Under Define event trigger, click **Add Condition** and add this condition: Event Type is `Track` or `Identify`.
 6. Under **Map fields**, select the advertiser you want to sync the audience with. You can identify a specific advertiser by finding its ID in StackAdapt.
    ![Image showing sample map fields](images/map-fields-example.png)
 
