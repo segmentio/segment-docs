@@ -8,7 +8,7 @@ This destination app is maintained by Antavo. For any issues with the destinatio
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Antavo Actions".
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"} search for "Antavo Actions".
 2. Select and click **Add Destination**.
 3. Select an existing Source to connect to Antavo Actions.
 4. Log in to Antavo and go to the **Settings → API Settings** menu; find and copy your Antavo **API key**.
