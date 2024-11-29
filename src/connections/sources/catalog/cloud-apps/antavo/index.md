@@ -2,7 +2,7 @@
 title: Antavo Source
 ```
 
-[Antavo](http://www.antavo.com){:target="_blank”} allows you to synchronize loyalty events and profile updates into Segment.
+[Antavo](http://www.antavo.com){:target="_blank"} allows you to synchronize loyalty events and profile updates into Segment.
 
 The Antavo Source allows you to sync profile updates and loyalty events into Segment Destination apps and Segment warehouse.
 
@@ -35,7 +35,7 @@ source, [contact the Antavo support team](mailto:support@antavo.com).
 
 Two main event types are synced into Segment: Profile updates and loyalty events.  
 Both event types require userID, which can be selected in Antavo.  
-Any customer attribute in Antavo can be selected as “external customer ID.”
+Any customer attribute in Antavo can be selected as "external customer ID".
 
 ### Profile updates
 
@@ -77,6 +77,6 @@ When a built-in or custom loyalty event - added to the **Event sync** - happens,
 
 As the last step of the Antavo Source setup, you can select Destinations to receive data.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://github.com/segmentio/segment-docs/blob/develop/docs/connections/event-delivery){:target="_blank”} tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://github.com/segmentio/segment-docs/blob/develop/docs/connections/event-delivery){:target="_blank"} tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Antavo support team](mailto:support@antavo.com).
