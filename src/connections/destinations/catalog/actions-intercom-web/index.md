@@ -72,3 +72,38 @@ If you are seeing 404 responses in your browser's network tab, you've likely enc
 
 ### Intercom does not support rETL event batching
 The Intercom (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in rETL.
+
+### Why are my Identify() calls not updating/creating Intercom profiles or showing users as leads/visitors?
+Intercom requires requests to include user data/traits beyond `email` or `user_hash` to update/create profiles or change user status from leads/visitors. Without additional user data/traits, Intercom skips sending a "ping" requests assuming no changes were made to the user data.
+
+Example Scenarios
+
+* Doesn't Work:
+
+```
+analytics.identify("123");
+
+analytics.identify("123", { email: "example@domain.com" });
+
+analytics.identify("123",{email: "example@domain.com"}, {
+   integrations: {
+    Intercom: {
+      user_hash: "81b65b9abea0444437a5d92620f03acc33f04fabbc32da1e047260024f80566a"
+    }
+  }})
+```
+
+* Works:
+  
+Adding a trait like `name` resolves the issue:
+
+```
+analytics.identify("123", {
+   email: "example@domain.com",
+   name: "John Doe"
+}, {
+   integrations: { Intercom: { user_hash: "hash" } }
+});
+```
+
+Always include a trait, such as `name` or if you don't have a trait to send with identify calls, just map Segment `timestamp` to Intercom `last_request_at` in Segment to Intercom.
