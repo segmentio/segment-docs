@@ -18,7 +18,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 
 ### Getting your StackAdapt GraphQL Token
 
-If you do not have an existing StackAdapt API key, [reach out to the StackAdapt team for help](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593).
+If you do not have an existing StackAdapt API key, [reach out to the StackAdapt team for help](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
 
 ### Setting up the StackAdapt Audience destination in Segment Engage
 
