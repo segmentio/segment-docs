@@ -87,7 +87,7 @@ Select your workspace name in the top left corner of the Segment app. Then selec
 
 ![Screenshot 2024-03-26 at 9 25 29 AM](https://github.com/segmentio/segment-docs/assets/82051355/e6c80788-9e6b-4040-a8b1-a166babb6be3)
 
-After clicking 'View all workspaces', you be directed to a page that has all your workspaces and you can just create a new workspace.
+After clicking 'View all workspaces', you be directed to a page that has all your workspaces to create a New Workspace.
 
 ![Screenshot 2024-03-26 at 9 21 53 AM](https://github.com/segmentio/segment-docs/assets/82051355/bdf31420-d84b-454f-9f0d-cb3a27480d7f)
 
