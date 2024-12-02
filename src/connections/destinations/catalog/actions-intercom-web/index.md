@@ -70,15 +70,13 @@ If you are seeing 404 responses in your browser's network tab, you've likely enc
 - You set the wrong App ID on the Intercom Actions (Web) destination settings page.
 - You set the wrong Regional Data Hosting value on the Intercom Actions (Web) destination settings page. Intercom gates regional endpoints by plan level, so you may not have access to EU data hosting.
 
-### Intercom does not support rETL event batching
-The Intercom (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in rETL.
+### Intercom does not support Reverse ETL event batching
+The Intercom (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in Reverse ETL.
 
-### Why are my Identify() calls not updating/creating Intercom profiles or showing users as leads/visitors?
-Intercom requires requests to include user data/traits beyond `email` or `user_hash` to update/create profiles or change user status from leads/visitors. Without additional user data/traits, Intercom skips sending a "ping" requests assuming no changes were made to the user data.
+### Why are my Identify calls not updating or creating Intercom profiles, or not showing users as leads or visitors?
+Intercom requires requests to include user data/traits beyond `email` or `user_hash` to update or create profiles and change user status from leads/visitors. Without additional user data/traits, Intercom assumes no changes were made to a user's data and does not send a "ping" request.
 
-Example Scenarios
-
-* Doesn't Work:
+In the following example, which only includes an `email` and `user_hash`, Intercom would not send a "ping" request and update the status of this user:
 
 ```
 analytics.identify("123");
@@ -93,9 +91,7 @@ analytics.identify("123",{email: "example@domain.com"}, {
   }})
 ```
 
-* Works:
-  
-Adding a trait like `name` resolves the issue:
+However, in the following example that also contains the `name` trait, Intercom sends a "ping" request and updates the status of this user:
 
 ```
 analytics.identify("123", {
@@ -106,4 +102,4 @@ analytics.identify("123", {
 });
 ```
 
-Always include a trait, such as `name` or if you don't have a trait to send with identify calls, just map Segment `timestamp` to Intercom `last_request_at` in Segment to Intercom.
+When sending calls to Intercom, always include a trait, like`name`. If you don't have a trait to send with Identify calls, map Segment's `timestamp` field to Intercom's `last_request_at` field.
