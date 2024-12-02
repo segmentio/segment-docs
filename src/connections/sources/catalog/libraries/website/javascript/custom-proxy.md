@@ -13,8 +13,6 @@ You cannot use custom proxy setup for Analytics.js CDN or Tracking API with devi
 
 {% include content/domain-delegation-solutions.md %}
 
->info "There should be no downtime, as the default Segment domains will continue to work alongside the customer's domains, once the setup is complete"
-
 ## Custom Proxy prerequisites
 
 To set up a custom proxy, you need:
@@ -64,6 +62,8 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
+
+Once the setup is complete, there should be no downtime, as the default Segment domains continue to work alongside the customer's domains. 
 
 
 ## Custom CDN / API Proxy
