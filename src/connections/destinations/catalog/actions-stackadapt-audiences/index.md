@@ -57,7 +57,7 @@ If you want to create a StackAdapt Audience from your Twilio Engage Audience:
 1. Open StackAdapt and navigate to **Audience & Attribution** > **Customer Data** > **Segments**, then click **Create Segment**.
 2. Choose **Segment Engage Audience ID** or **Segment Engage Audience Name** as the rule.
 3. Select the value for the corresponding filter.
-4. Click on **Submit** to create the segment.
+4. Click **Submit** to create the segment.
 
 ### Sending an Audience to StackAdapt
 
