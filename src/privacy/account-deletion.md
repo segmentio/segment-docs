@@ -20,14 +20,14 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 ## Remove a Unify space
 
-You can remove a Unify space from your workspace by disabling it, which hides the space from the Segment UI, or by deleting it, which removes all data about that space from Segment's servers. Disabled or deleted spaces do not count toward your [Unify limits](/docs/unify/product-limits/). 
+You can remove a Unify space from your workspace by disabling it, which hides the space from the Segment UI, or by deleting it, which removes all data about that space from Segment's servers. Disabled or deleted spaces don't count toward your [Unify limits](/docs/unify/product-limits/). 
 
-> warning "You cannot reuse space names"
-> Do not use the names of previously disabled or deleted spaces for new Unify spaces.
+> warning "You can't reuse space names"
+> Don't use the names of previously disabled or deleted spaces for new Unify spaces.
 
 ### Disable a Unify space
 
-Disabled spaces are not accessible from the Segment app UI, but all data from your space remains on Segment's servers. Disabled spaces do not count toward your Unify space limit, and can be re-enabled by sending an email to the Customer Success team [(friends@segment.com)](mailto:friends@segment.com).
+Disabled spaces aren't accessible from the Segment app UI, but all data from your space remains on Segment's servers. Disabled spaces don't count toward your Unify space limit, and can be re-enabled by sending an email to the Customer Success team [(friends@segment.com)](mailto:friends@segment.com).
 
 To disable a Unify space, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
  - Workspace slug
@@ -38,7 +38,7 @@ To disable a Unify space, email the Customer Success team [(friends@segment.com)
 
 ### Delete a Unify space
 
-Deleted spaces, and all data associated with a deleted space, are permanently removed from Segment's servers. You cannot recover a deleted space. 
+Deleted spaces, and all data associated with a deleted space, are permanently removed from Segment's servers. You can't recover a deleted space. 
 
 > info " "
 > Segment typically completes Unify space deletion 30-45 days after you initiate a deletion request.
