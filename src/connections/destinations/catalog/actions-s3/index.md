@@ -18,17 +18,13 @@ The traditional AWS S3 Classic destination enabled the storage of raw logs conta
 The AWS S3 (Actions) destination enhances this capability by introducing configurable options to format and structure event data prior to storage. This new approach offers several key benefits:
 
 1. Standardized Data Formatting
-Instead of raw, unprocessed logs, AWS S3 (Actions) lets you define consistent output formats for your data. This standardization simplifies downstream analysis, ensuring your event payloads adhere to predefined schemas without requiring custom transformation processes after storage.
+AWS S3 (Actions) lets you define consistent output formats for your data, either CSV or TXT file formats, in a folder definition that you choose. The previous AWS S3 Classic Destination only allowed raw JSON payloads stored within a specific folder called `"segment-logs"`. 
 
 2. Configurable Data Translation
-AWS S3 (Actions) supports translation rules that can map raw event attributes to more meaningful or actionable representations. You can configure these rules to meet specific data schema requirements, reducing the need for post-processing and improving compatibility with other tools and analytics platforms.
+AWS S3 (Actions) supports translation rules that can map raw event attributes to more meaningful or actionable representations. You can configure these rules to meet specific data schema requirements, either adding in custom columns or using the default ones.
 
 3. Enhanced Delivery Controls
-The destination provides advanced options for batching, compression, and file naming conventions. These controls help optimize storage efficiency and simplify data retrieval workflows.
-
-4. Improved Data Consistency and Quality
-By standardizing event payloads before delivery, AWS S3 (Actions) minimizes inconsistencies and errors often associated with raw data ingestion. This leads to cleaner, more reliable data for downstream systems.
-
+The destination provides advanced options for batch size controls and file naming conventions. These controls can help optimize efficiency and simplify data retrieval workflows.
 
 ## Getting Started
 Setting up the AWS S3 (Actions) destination is a straightforward process designed to help you quickly configure and deploy standardized event data to your Amazon S3 bucket. Follow these steps to get started:
