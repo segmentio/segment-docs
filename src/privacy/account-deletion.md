@@ -20,7 +20,7 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 ## Delete the data from a Unify space
 
-To delete a Unify space and all associated data, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
+Workspace Owners can delete a Unify space and all of its associated data by sending an email to the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
  - Workspace slug
  - Unify space name
 
