@@ -1,5 +1,5 @@
 ---
-title: Recombee (Actions) Destination
+title: Recombee Destination
 hidden: true
 id: 66f2aea175bae98028d5185a
 versions:
@@ -17,7 +17,7 @@ This destination is maintained by Recombee. For any issues with the destination,
 
 ## Benefits of Recombee (Actions) vs Recombee AI Classic
 
-Recombee (Actions) provides the following benefits over the classic Recombee destination:
+The new Recombee destination built on the Segment Actions framework provides the following benefits over the classic Recombee AI destination:
 
 - **Streamlined Configuration**: You can now create mappings in a dedicated tab in the Segment web app, as opposed to needing to edit this in the settings. This allows you to configure the mappings on a per-event basis and makes it easier to verify that your mappings work as intended.
 - **Removable Bookmarks**: You can now configure a mapping to send a *Delete Bookmark* Action, which removes the bookmark interaction from the Recombee database.

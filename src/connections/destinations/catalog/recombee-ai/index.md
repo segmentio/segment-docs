@@ -2,6 +2,7 @@
 title: Recombee AI Destination
 rewrite: true
 maintenance: true
+maintenance-content: This destination is no longer available in the Segment catalog but will remain active in workspaces where it has already been installed. Recombee has developed an updated destination built on the Actions framework. See [Recombee Destination](/docs/connections/destinations/catalog/actions-recombee/) for more information.
 hide-settings: true
 hide-personas-partial: true
 id: 6095391bd839b62fca8a8606
