@@ -24,7 +24,9 @@ To delete a Unify space and all associated data, email the Customer Success team
  - Workspace slug
  - Unify space name
 
-> info " "
+Segment waits for 5 calendar days after your request before starting a space deletion. If you want to cancel your Unify space deletion request, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) during the first 5 calendar days after your initial request. 
+
+> info "Data removed during a Unify space deletion"
 > When you delete a Unify space, Segment removes all profiles, computed traits, audiences, journeys, and other settings related to the Unify space from internal Segment servers. Unify space deletion doesn't delete data from connected Twilio Engage destinations. To remove your data from external destinations, reach out to the individual destination about their deletion practices. 
 
 ## Delete your workspace data
