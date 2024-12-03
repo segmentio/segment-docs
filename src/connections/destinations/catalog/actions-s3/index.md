@@ -2,7 +2,7 @@
 title: S3 (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-# id: 5f7dd8e302173ff732db5cc4
+id: 66eaa166f650644f04389e2c
 # versions:
 #   - name: AWS S3 (Classic)
 #     link: /docs/connections/destinations/catalog/aws-s3/
@@ -13,7 +13,7 @@ The AWS S3 (Actions) destination allows you to store event data as objects in a 
 
 
 ## Benefits of AWS S3 (Actions) vs AWS S3 Classic
-The traditional AWS S3 Classic destination enabled the storage of raw logs containing data Segment received, directly into your S3 bucket. While this provided a straightforward data storage solution, users often needed to implement additional processing to standardize or transform these logs for downstream analytics or integrations.
+The traditional AWS S3 Classic destination enabled the storage of raw logs containing data Segment received, directly into your S3 bucket. While this provided a straightforward data storage solution, users often needed to implement additional processing to standardize or transform these logs (in JSON format) for downstream analytics or integrations.
 
 The AWS S3 (Actions) destination enhances this capability by introducing configurable options to format and structure event data prior to storage. This new approach offers several key benefits:
 
@@ -69,8 +69,7 @@ To setup the IAM role to properly authorize Segment with the AWS S3 (Actions) de
        "Sid": "",
        "Effect": "Allow",
        "Principal": {
-         "AWS":     
-         	"arn:aws:iam::595280932656:role/customer-s3-dev-action-destination-access",                  
+         "AWS":                      
          	"arn:aws:iam::595280932656:role/customer-s3-prod-action-destination-access"
        },
        "Action": "sts:AssumeRole",
@@ -99,9 +98,9 @@ To finish configuration, enable the AWS S3 (Actions) Destination in your workspa
 6. Verify Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
 
 ### Actions
-Segment’s introduced the following v2 Actions to the AWS S3(Actions) destination: 
+Build your own Mappings. The following action is supported: 
 - [Sync to S3](#sync-to-s3)
 
-{% include components/actions-fields.html %}
+{% include components/actions-fields.html settings="true"%}
 
 
