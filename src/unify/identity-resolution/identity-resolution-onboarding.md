@@ -44,7 +44,12 @@ When there are multiple profiles that match the identifiers in an event, Segment
 
 ## Identity Resolution settings
 
-Identity Admins should first configure Identity Resolution Settings to protect the identity graph from inaccurate merges and user profiles.
+Identity Admins should configure Identity Resolution Settings to protect the identity graph from inaccurate merges and ensure the accuracy of user profiles.
+
+Segment recommends testing Identity Resolution rules in a Dev space before applying them to Production. Ensure your Dev space matches expected data and business logic before duplicating settings for a Production environment.
+
+> warning "Changes to rules"
+> Making Identity Resolution rules less restrictive (for example, by increasing identifier limits) won’t affect existing or future profiles. However, **making rules more restrictive** (for example, by reducing limits or changing priority rankings) can negatively impact profiles that no longer adhere to the new rules. Test changes thoroughly in a Dev space.
 
 During the space creation process, the first step is to choose an Identity Resolution configuration. If this is your first space, you have the option to choose a Segment-suggested Out-of-the-Box configuration or a custom Identity Resolution setup. All other spaces have a third option of importing settings from a different space.
 
