@@ -1,16 +1,21 @@
 ---
-title: Consent in Unify
+title: Consent Stored on the Profile
 plan: consent-management
 redirect_from: "/privacy/consent-in-unify"
 ---
 
-> info "Consent in Unify and Twilio Engage is currently unavailable."
-> However, Segment's OneTrust consent wrappers automatically generate the Segment Consent Preference Updated Track event, which will be required for future integrations with Unify and Twilio Engage.
+Segment uses the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) on Segment events, including the [Segment Consent Preference Updated](#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on the profile. Consent on the profiles serves as the source of truth of an end user’s consent preference when enforcing consent in Twilio Engage or Linked Audiences.
 
-Segment uses Profiles in [Unify](/docs/unify/) as the source of truth of an end user's consent preference when enforcing consent in Twilio Engage. To get consent preference on the Profile, Segment requires the use of the [Segment Consent Preference Updated event](#segment-consent-preference-updated-event) and [Identify](/docs/connections/spec/Identify) events to route events to Unify. The Segment Consent Preference Updated and Identify events should include the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object).
+> info "Consent on the profile is in public beta"
+> Storing consent preferences on the profile is actively in development and some things may change before it becomes generally available.
+
 
 ## Segment Consent Preference Updated event
-Every time an end user provides or updates their consent preferences, Segment requires you to generate a **Segment Consent Preference Updated** event. If you are using [Segment's OneTrust consent wrappers](/docs/privacy/consent-management/configure-consent-management/#step-2-integrating-your-cmp-with-segment), Segment automatically generates a Segment Consent Preference Updated event. This event is required to add the end user’s consent preference on their Profile in Unify.
+
+> success ""
+> The Segment Consent Preference Updated event is generally available (GA). 
+
+Every time an end user provides or updates their consent preferences, Segment requires you to generate a **Segment Consent Preference Updated** event. If you are using [Segment's OneTrust consent wrappers](/docs/privacy/consent-management/configure-consent-management/#step-2-integrating-your-cmp-with-segment), Segment automatically generates a Segment Consent Preference Updated event. This event is required to add the end user’s consent preference on their profile in Unify.
 
 For example, if an end user agreed to share their information for functional and advertising purposes but not for analytics or data sharing, the Segment Consent Preference Updated [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
@@ -53,3 +58,47 @@ If you use Destination Actions to send consent information to your destinations,
 
 > info "Sharing consent with Classic Destinations is not available"
 > Segment only supports sharing consent with Actions Destinations. 
+
+## Profile conflicts
+You can experience conflicts in an end user's consent preferences when they set different consent preferences across different devices (device-level conflicts) or when you merge two Profiles with different consent preferences into one profile with a distinct userID (profile-level conflicts).
+
+### Device-level conflicts
+A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices. For example, if an end-user didn't consent to Advertising on their mobile phone, but later consented to Advertising on their desktop computer, their consent for the `advertising` category would be set to `true`. This results in a conflict between the consent preferences they originally provided and the consent preferences they 
+
+You can select one of the following options to resolve conflicting consent preferences:
+- **Rely on a single source of truth for consent preferences**: Apply the consent preferences found in your single source of truth across all of a user's devices.
+- **Ask user to resolve conflict**: Ask a user for consent preference information and apply their preferences across all of a user's devices. If this new request for consent preferences results in a conflict with the information stored in your single source of truth, prompt your user to resolve the conflict and provide their consent preferences. 
+
+![A diagram showing different consent preferences being reconciled for a single profile.](images/device-level-consent-conflcit.png)
+
+### Profile-level conflict
+A profile-level conflict occurs when two distinct userIDs with different consent preferences are merged into one Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
+
+![A diagram showing different users linked to one profile.](images/profile-level-consent-conflict.png)
+
+To avoid profile-level conflicts, Segment recommends that you take the following steps:
+1. **Use `user_id` to identify a profile or person.** Using other identifiers, like a phone number, email, or `anonymous_id`, can result in a profile-level conflict. 
+2. **Set `user_id` as the highest priority identifier in the [Identity Resolution](/docs/unify/identity-resolution/identity-resolution-settings/#priority) settings.**
+3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again).
+
+> success ""
+> Profile conflicts only impact profiles used in Engage spaces.
+
+## Enforcing consent in Twilio Engage
+Consent enforcement in Twilio Engage and Linked is currently unavailable during the public beta. Segment stores consent preferences as traits on the Profile. These traits can be used like any other when building Audiences/Journeys in Twilio Engage and Linked Audiences. 
+
+> warning ""
+> Consent stored on the profile does not automatically enforce consent in Twilio Engage or Linked Audiences.
+
+## Validating consent preferences stored on a profile
+You can validate consent is present on the profile by looking for the consent trait provided for a profile on the consent tab.
+
+- **If the value is `true`**: Your user consented to have their data used for this purpose
+- **If the value is `false`**: Your user did not consent to have their data used for this purpose
+- **If the value is `conflict`**: At the time this profile was merged, there was a conflict in the consent preferences recorded for a consent category. For more information about consent conflicts, see the [profile-level conflict](#profile-level-conflict) documentation.
+
+
+## Troubleshooting consent preferences stored on the profile
+
+### If I have 2 sources connected to a Unify space and only 1 is set up to collect consent, which consent preferences does Segment record?
+Consent preferences collected in the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) from the source are used to store consent on the profile. Sources with no consent object do not impact what is stored on the profile. If the source generates an empty consent object, Segment interprets this as an end-user failing to consent to any category. As a result, the consent preference will be updated to `false` for all consent categories.
