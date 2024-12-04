@@ -42,7 +42,7 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 8. File a [support case](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case){:target="_blank"} with the LiveRamp team to configure and enable ingestion.
 
 
-**Note**: Mapping tester will not be available for this destination. Batched events are required to activate the destination.
+**Note**: Mapping tester will not be available for this destination. Batched events are required to activate the destination. The destination can only be tested end-to-end with a source attached to it.
 
 
 {% include components/actions-fields.html settings="false"%}
