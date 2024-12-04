@@ -29,18 +29,21 @@ Navigate to **Unify > Profile explorer** to view identities attached to a profil
 
 ### Flat matching logic
 
-After receiving a new event, Segment looks for profiles that match any of the identifiers on the event.
+When Segment receives a new event, it looks for profiles that match any of the identifiers on the event.
 
-Based on the existence of a match, one of three actions can occur:
+Based on the existence of a match, one of three actions occurs:
 
-**1: Create a new profile**
-When there are no pre-existing profiles that have matching identifiers to the event, Segment creates a new user profile.
+**1: Create a new profile**  
+If no existing profiles match any identifiers in the event, Segment creates a new user profile.
 
-**2: Add to existing profile**
-When there is one profile that matches all identifiers in an event, Segment attempts to map the traits, identifiers, and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below.
+**2: Add to existing profile**  
+If a single profile matches all identifiers in the event, Segment maps the traits, identifiers, and events from the call to that profile. If the profile exceeds its identifier limits, Segment defers to the Identity Resolution rules.
 
-**3: Merge existing profiles**
-When there are multiple profiles that match the identifiers in an event, Segment checks the Identity Resolution rules outlined below, and attempts to merge profiles.
+**3: Merge existing profiles**  
+If multiple profiles match identifiers in the event, Segment checks the Identity Resolution rules and merges profiles accordingly.
+
+#### Example: Shared iPad Use Case
+In shared device scenarios, like in-store iPads used by multiple customers, events from different users may share the same device identifier. Without proper Identity Resolution rules, these events might merge into a single user profile. To avoid inaccurate merges, configure rules to block default identifiers or set appropriate priorities.
 
 ## Identity Resolution settings
 
