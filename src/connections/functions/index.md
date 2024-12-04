@@ -48,8 +48,10 @@ With Functions Copilot, you can instrument custom integrations, enrich and trans
 
 To learn more, visit the [Functions Copilot documentation](/docs/connections/functions/copilot/).
 
-#### IP Allowlisting for functions
+#### IP Allowlisting
 
-With IP Allowlisting, users can ensure that outbound traffic from Functions will originate only from a predefined set of IP addresses. This provides added security for external services by making it easier to recognize and allowlist trusted traffic sources.
+IP Allowlisting uses a NAT gateway to route outbound Functions traffic from Segment’s servers to your destinations through a limited range of IP addresses, which can prevent malicious actors from establishing TCP and UDP connections with your integrations.
 
-To learn more, visit [IP Allowlisting documentation](/docs/connections/destinations/#ip-allowlisting).
+IP Allowlisting is available for customers on Business Tier plans.
+
+To learn more, visit [Segment's IP Allowlisting documentation](/docs/connections/destinations/#ip-allowlisting).
