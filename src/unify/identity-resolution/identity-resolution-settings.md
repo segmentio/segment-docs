@@ -1,6 +1,7 @@
 ---
 title: Identity Resolution Settings
 plan: unify
+hidden: true
 redirect_from:
 - '/personas/identity-resolution/identity-graph-rules/'
 - '/personas/identity-resolution/identity-resolution-settings/'
