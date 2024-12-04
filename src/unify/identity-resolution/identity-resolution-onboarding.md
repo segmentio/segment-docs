@@ -66,27 +66,35 @@ If you have custom unique identifiers or don't have a canonical `user_id`, you'r
 
 ### Custom rules
 
-If you're familiar with identity or have custom identifiers, Segment recommends that you select Custom Rules.
+If you're familiar with identity or have custom identifiers, Segment recommends selecting Custom Rules.
 
 Segment redirects you to the Identity Resolution Settings page where you can add Default Identifiers or Custom Identifiers.
 
-Segment's 11 default are:
+Segment promotes the following default traits and identifiers in `track` and `identify` calls to external IDs:
 
 | External ID Type     | Message Location in Track or Identify Call                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `user_id`            | userId                                                                                                        |
 | `email`              | traits.email or context.traits.email                                                                          |
-| `android.id `        | context.device.id when context.device.type = 'android'                                                        |
+| `android.id`         | context.device.id when context.device.type = 'android'                                                        |
 | `android.idfa`       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
 | `android.push_token` | context.device.token when context.device.type = 'android'                                                     |
 | `anonymous_id`       | anonymousId                                                                                                   |
 | `ga_client_id`       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
-| `group_id `          | groupId                                                                                                       |
-| `ios.id `            | context.device.id when context.device.type = 'ios'                                                            |
+| `group_id`           | groupId                                                                                                       |
+| `ios.id`             | context.device.id when context.device.type = 'ios'                                                            |
 | `ios.idfa`           | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true     |
 | `ios.push_token`     | context.device.token when context.device.type = 'ios'                                                         |
 
-You can also provide a trait or property key to match on to add custom identifiers. You can preview the locations where Segment looks for the identifier. Segment accepts both camelCase and snake_case for context.traits, traits, and properties, but accepts lowercase types for identifiers only in the context.externalIds object.
+These identifiers are pre-configured and labeled as *Default* in the Identity Resolution table.
+
+#### Adding Custom Identifiers
+To add a custom identifier:
+1. Enter the **Trait or Property Key** to match on (e.g., `app_id` or `customer_key`).
+2. Preview the locations where Segment looks for the identifier.
+3. Configure additional options, such as value limits and blocked values, to ensure accurate profile resolution.
+
+Segment accepts both camelCase and snake_case for `context.traits`, `traits`, and `properties`, but identifiers in the `context.externalIds` object must use lowercase.
 
 ![Screenshot of the Custom Identifier interface in Segment. The 'Trait / Property key to match on' field is filled with 'app_id.' Two preview message locations are displayed, showing examples of JSON-like event payloads with 'appId' or 'app_id' as traits or properties. The interface includes settings to limit the value count to 5 and set frequency to 'Ever.' At the bottom, there's an option to 'Add new identifier' or 'Cancel.'](images/custom_identifiers.png)
 
