@@ -53,3 +53,26 @@ analytics.track("Login Button Clicked");
 Segment sends Track calls to Attentive Mobile as a `track` event. The event is saved to the Attentive subscriber, and is usable in both the [Attentive Segments product](https://help.attentivemobile.com/hc/en-us/categories/360004558392-Subscriber-segments){:target="_blank"} and the [Attentive Journeys product](https://help.attentivemobile.com/hc/en-us/categories/6084285157396){:target="_blank"}.
 
 It may take up to 10 minutes for the track events to appear in Attentive.
+
+### Destination Actions
+
+Attentive (Actions) Destination
+
+{% include content/plan-grid.md name="actions" %}
+
+This destination is maintained by Attentive. For any issues with the destination, contact their [Support team](mailto:whiteglove@attentivemobile.com).
+
+To enable your new Attentive (Actions) destination:
+1. Create a new private app by opening Attenive's UI and clicking [Marketplace > Create App](https://ui.attentivemobile.com/integrations/app/setup){:target="_blank"}. 
+2. Enter an `App name` and `Contact email`. Then change the permissions for Custom Events, Custom Attributes, eCommerce and Subscribers to `Write`.
+3. Then, click `Create` to save the app. An API key will be provided. Copy the API key.
+4. Return to Segment and open the destination settings for your Attentive destination. 
+5. Enter the private key into the "API Key" field. 
+6. Enable your migrated Actions destination. 
+
+{% include components/actions-fields.html %}
+
+(delete after reading) Additional Context
+
+Attentive's (Actions) Destinations leverage Attentive's APIs. For more information on the APIs, they can be found on [Attentive's Developer Site](https://docs.attentivemobile.com/){:target="_blank"}. 
+
