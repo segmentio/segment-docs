@@ -68,7 +68,7 @@ To enable your new Attentive (Actions) destination:
 3. Then, click `Create` to save the app. An API key will be provided. Copy the API key.
 4. Return to Segment and open the destination settings for your Attentive destination. 
 5. Enter the private key into the "API Key" field. 
-6. Enable your migrated Actions destination. 
+6. Enable your Actions destination. 
 
 {% include components/actions-fields.html %}
 
