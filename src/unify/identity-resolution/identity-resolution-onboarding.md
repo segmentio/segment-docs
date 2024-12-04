@@ -5,6 +5,16 @@ redirect_from:
   - "/personas/identity-resolution/identity-resolution-onboarding"
 ---
 
+Identity Resolution unifies user identifiers (like email addresses, device IDs, or custom IDs) from multiple sources into a single, accurate user profile. This ensures consistent user recognition and targeting across channels.
+
+Accurate Identity Resolution prevents data fragmentation and ensures a reliable identity graph, which is critical for delivering personalized experiences and gaining actionable insights.
+
+This guide explains:
+
+How to configure Identity Resolution during initial setup.
+How to modify settings to adapt to evolving data sources and requirements.
+
+
 > info ""
 > The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings).
 
