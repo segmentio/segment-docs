@@ -37,9 +37,9 @@ Ensure you have the following in place before configuring the AWS S3 (Actions) d
 ### Create an IAM role in the AWS console
 To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) destination:
 
-1. Login to your AWS account 
+1. Log in to your AWS account. 
 2. Create a new or use an existing bucket with `PutObject`, `GetObject`, `ListObject` access to the S3 bucket.
-3. Go to IAM > Roles > Create Role
+3. Navigate to **IAM > Roles > Create Role**.
 4. Provide the following policy permissions for the IAM that was just created: 
 ```json
 {
