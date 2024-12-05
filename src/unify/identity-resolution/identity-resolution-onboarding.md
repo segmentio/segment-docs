@@ -49,8 +49,9 @@ Segment recommends testing Identity Resolution rules in a Dev space before apply
 
 ### Implications of changing Identity Resolution rules
 
-Adjusting Identity Resolution rules can significantly impact your user profiles and downstream systems. While loosening rules is generally safe, tightening them can lead to profile fragmentation or data loss. 
-Keep the following impacts in mind before you make changes:
+Updating Identity Resolution rules can affect your profiles and downstream systems in critical ways. Loosening rules is typically safe, but stricter rules may fragment or corrupt profiles, especially those already in use.
+
+Before making any changes, consider these key impacts:
 
 - **Less restrictive rules**:  
   Increasing identifier limits or expanding priorities applies only to future events and generally won’t disrupt existing profiles.
@@ -243,7 +244,7 @@ If your application sends `user_id`, `email`, and `anonymous_id`, prioritize ide
 
 ### Proactively block invalid identifier values
 
-Using invalid or placeholder values as identifiers can lead to inaccurate merges and data fragmentation. To prevent this, use [blocked values](/docs/unify/identity-resolution/identity-resolution-settings/#blocked-values) to exclude common defaults and test values. Segment ignores blocked values during Identity Resolution, but blocked values remain in the event payload for debugging. 
+Using invalid or placeholder values as identifiers can cause inaccurate merges and data fragmentation. To prevent this, use [blocked values](/docs/unify/identity-resolution/identity-resolution-settings/#blocked-values) to exclude common defaults and test values. Segment ignores blocked values during Identity Resolution, but blocked values remain in the event payload for debugging. 
 
 Segment recommends blocking:
 
