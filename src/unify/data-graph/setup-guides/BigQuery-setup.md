@@ -37,6 +37,11 @@ Segment recommends you to create a new dataset for the Data Graph. If you choose
 
 To create your dataset, navigate to the BigQuery SQL editor and create a dataset that will be used by Segment. 
 
+```
+CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
+GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
+```
+
 ## Step 3: Grant read-only access for the Data Graph 
 Grant the [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer){:target="_blank"} role to the service account at the project level. Make sure to grant read-only access to the Profiles Sync project in case you have a separate project.
 
