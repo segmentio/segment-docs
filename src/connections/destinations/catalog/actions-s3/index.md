@@ -57,7 +57,7 @@ To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) d
     ]
 }
 ```
-5. Click on the Trust Relationships tab and edit the trust policy to allow the IAM user to assume the role (If a user is not already created, please refer to the AWS documentation to create a user)
+5. Click on the Trust Relationships tab and edit the trust policy to allow the IAM user to assume the role. If a user is not already created, refer to the AWS documentation to create a user.
 ```json
 {
    "Version": "2012-10-17",
