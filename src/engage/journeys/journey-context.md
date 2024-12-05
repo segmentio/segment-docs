@@ -23,7 +23,7 @@ With journey context, you can:
 
 ## What is Journey context?
 
-Journey context is a flexible data structure that captures key details about the events and conditions that shape a customer’s journey. Journey context provides a point-in-time snapshot of event properties, ensuring accurate and reliable data is available throughout the journey.
+Journey context is a flexible data structure that captures key details about the events and conditions that shape a customer’s journey. Journey context provides a point-in-time snapshot of event properties, making accurate and reliable data available throughout the journey.
 
 Journey context stores:
 - **Event properties**: Information tied to specific user actions, like `Appointment ID` or `Order ID`.
@@ -61,7 +61,7 @@ This is useful for scenarios like:
 - **Customizing messages:** Using event properties to include relevant details in communications.
 - **Scheduling workflows:** Triggering actions based on contextual data, like the time of a scheduled appointment.
 
-By incorporating event-specific data at each step, journey context helps ensure workflows remain relevant and adaptable to user actions.
+By incorporating event-specific data at each step, journey context helps workflows remain relevant and adaptable to user actions.
 
 ### Journey steps that use context
 
@@ -87,7 +87,7 @@ For example, users in a premium audience can be directed to a tailored experienc
 
 #### Contextual delay
 
-A contextual delay introduces a wait period based on time-related data in journey context. This ensures workflows align with real-world events.
+A contextual delay introduces a wait period based on time-related data in journey context. This keeps workflows aligned with real-world events.
 
 For example, a journey can wait until one hour before an `Appointment Start Time` to send a reminder email. The delay reads from journey context but doesn't add any new data to it.
 
@@ -105,9 +105,7 @@ For example, a payload sent to a messaging platform might include `Order ID` and
 
 ## Context structure
 
-The structure of journey context ensures that event-specific data gets organized and is accessible throughout the journey workflow. By standardizing how data is stored, Segment makes it easier to reference, use, and send this information at different stages of a journey.
-
-### How Journey context is structured
+The structure of journey context organizes event-specific data gets and makes it accessible throughout the journey workflow. By standardizing how data is stored, Segment makes it easier to reference, use, and send this information at different stages of a journey.
 
 Journey context is organized as a collection of key-value pairs, where each key represents a data point or category, and its value holds the associated data. This structure supports various types of information, like event properties, split outcomes, and function outputs.
 
@@ -145,4 +143,4 @@ Journey context underpins the flexibility and precision of Event-Triggered Journ
 
 Whether you're orchestrating real-time abandonment recovery, scheduling contextual delays, or personalizing messages with event-specific data, journey context provides the tools to make your workflows more relevant and effective. 
 
-To learn more about how Event-Triggered Journeys work and how journey context fits into the bigger picture, visit the [Event-Triggered Journeys documentation](/docs/engage/journeys/event-triggered-journeys/).
+To learn more about how Event-Triggered Journeys work, visit the [Event-Triggered Journeys documentation](/docs/engage/journeys/event-triggered-journeys/).
