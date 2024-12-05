@@ -45,8 +45,8 @@ Setup is now complete, and the audience starts syncing to The Trade Desk.
 
 To sync additional Audiences from your Engage space, create a separate instance of The Trade Desk CRM Destination.
 
-**Note**: Mapping tester will not be available for this destination. Batched events are required to activate the destination. The destination can only be tested end-to-end with a source attached to it.
-
+> info "Mapping tester availability"
+> The Mapping Tester is not available for The Trade Desk CRM destination. Since this destination requires batched events for activation, testing can only be performed end-to-end with a connected source.
 
 {% include components/actions-fields.html settings="true"%}
 
