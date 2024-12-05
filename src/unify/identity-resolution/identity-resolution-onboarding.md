@@ -12,10 +12,6 @@ This page explains:
 - How to configure Identity Resolution during initial setup.
 - How to modify settings to adapt to evolving data sources and requirements.
 
-
-> info ""
-> This guide applies to spaces created after October 5th, 2020. For spaces created before this date, see the legacy [Identity Resolution content](/docs/unify/identity-resolution/identity-resolution-settings).
-
 Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId`, and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the Profile explorer.
 
 Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
@@ -95,6 +91,8 @@ To add a custom identifier:
 Segment accepts both camelCase and snake_case for `context.traits`, `traits`, and `properties`, but identifiers in the `context.externalIds` object must use lowercase.
 
 ![Screenshot of the Custom Identifier interface in Segment. The 'Trait / Property key to match on' field is filled with 'app_id.' Two preview message locations are displayed, showing examples of JSON-like event payloads with 'appId' or 'app_id' as traits or properties. The interface includes settings to limit the value count to 5 and set frequency to 'Ever.' At the bottom, there's an option to 'Add new identifier' or 'Cancel.'](images/custom_identifiers.png)
+
+After you define custom identifiers, you can refine their behavior further by blocking invalid values or setting limits.
 
 #### Blocked values
 
@@ -192,7 +190,7 @@ When choosing the priority of your identifier, ask the following questions about
 
 To maintain an accurate identity graph and avoid incorrect profile merges, Segment recommends the following best practices:
 
-### Set appropriate identifier limits
+### Choose limits that fit your data patterns
 
 Carefully setting limits for each identifier type ensures that profiles remain accurate without excessive or conflicting data. Keep the following guidelines in mind when you configure limits:
 
