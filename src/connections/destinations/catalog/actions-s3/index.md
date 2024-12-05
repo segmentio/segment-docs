@@ -80,7 +80,7 @@ To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) d
  }
 ```
 ## Step 2: Add the AWS S3 (Actions) Destination in Segment
-To finish configuration, enable the AWS S3 (Actions) Destination in your workspace. 
+To finish the configuration, enable the AWS S3 (Actions) Destination in your workspace. 
 
 1. Add the **AWS S3 (Actions)** destination from the Destinations tab of the catalog.
 2. Select the data source you want to connect to the destination.
