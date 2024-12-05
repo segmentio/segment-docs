@@ -12,6 +12,8 @@ This page explains:
 - How to configure Identity Resolution during initial setup.
 - How to modify settings to adapt to evolving data sources and requirements.
 
+## How Identity Resolution works
+
 Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId`, and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the Profile explorer.
 
 Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
@@ -41,14 +43,37 @@ In shared device scenarios, like in-store iPads used by multiple customers, even
 > success ""
 > Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
 
-Identity Admins should configure Identity Resolution Settings to protect the identity graph from inaccurate merges and ensure the accuracy of user profiles.
+Identity Admins should configure Identity Resolution ettings to protect the identity graph from inaccurate merges and ensure the accuracy of user profiles.
 
 Segment recommends testing Identity Resolution rules in a Dev space before applying them to Production. Ensure your Dev space matches expected data and business logic before duplicating settings for a Production environment.
 
-> warning "Changes to rules"
-> Making Identity Resolution rules less restrictive (for example, by increasing identifier limits) won’t affect existing or future profiles. However, **making rules more restrictive** (for example, by reducing limits or changing priority rankings) can negatively impact profiles that no longer adhere to the new rules. Test changes thoroughly in a Dev space.
+### Implications of changing Identity Resolution rules
 
-During the space creation process, the first step is to choose an Identity Resolution configuration. If this is your first space, you have the option to choose a Segment-suggested Out-of-the-Box configuration or a custom Identity Resolution setup. All other spaces have a third option of importing settings from a different space.
+Adjusting Identity Resolution rules can significantly impact your user profiles and downstream systems. While loosening rules is generally safe, tightening them can lead to profile fragmentation or data loss. 
+Keep the following impacts in mind before you make changes:
+
+- **Less restrictive rules**:  
+  Increasing identifier limits or expanding priorities applies only to future events and generally won’t disrupt existing profiles.
+- **More restrictive rules**:  
+  - Profiles may no longer merge as expected, resulting in duplicate or fragmented profiles.
+  - Existing profiles that adhered to old rules might lose connections to key identifiers, leading to corrupted profiles and issues in downstream tools or reports.
+- **Testing changes**:  
+  Always test rule changes in a Dev space with representative data to validate behavior, including profile merges, identifier integrity, and downstream tool compatibility.
+
+- **Documentation**:  
+  Keep a record of rule changes for your team and to help troubleshoot.
+
+### Best practices for avoiding profile corruption
+
+- Avoid making rules stricter after profiles have already been created in Production.
+- Implement stricter rules early in your Dev space configuration to prevent future disruptions.
+- Regularly review your profiles to ensure Identity Resolution settings align with your data model and business requirements.
+
+When you create a space, start by choosing an Identity Resolution configuration. If this is your first space, select from these options:
+
+- Out-of-the-Box Configuration: A quick-start option that helps most users get set up with minimal effort.
+- Custom Configuration: Recommended for users with unique data needs or specific identifiers.
+- Import Settings: Available for users with existing configurations. You can import settings from another space to maintain consistency across environments.
 
 ![Choose an Identity Resolution configuration](images/first_screen.png)
 
@@ -157,26 +182,28 @@ If this event maps to this profile, the resulting profile would then contain two
 
 At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so Segment creates a new profile with user_id `abc456`.
 
-By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into Segment are user_id, email, anonymous_id, and ga_client_id, the rank would be as follows:
+By default, Segment explicitly orders `user_id` and `email` as rank `1` and `2`, respectively. All other identifiers must be manually configured in the Identity Resolution Settings page. 
 
-| Identifier   | Priority |
-| ------------ | -------- |
-| user_id      | 1        |
-| email        | 2        |
-| anonymous_id | 3        |
-| ga_client_id | 4        |
+For example, if the configured identifiers for an event include `user_id`, `email`, `anonymous_id`, and `ga_client_id`, their priority order would be:
 
-If a new android.id identifier appeared without first giving it explicit order, the order would automatically reshuffle to:
+| Identifier     | Priority |
+| -------------- | -------- |
+| `user_id`      | 1        |
+| `email`        | 2        |
+| `anonymous_id` | 3        |
+| `ga_client_id` | 4        |
 
-| Identifier   | Priority |
-| ------------ | -------- |
-| user_id      | 1        |
-| email        | 2        |
-| android.id   | 3        |
-| anonymous_id | 4        |
-| ga_client_id | 5        |
+If you want to add a new identifier such as `android.id`, you must explicitly configure its rule in the Identity Resolution Settings page. Once configured, it would follow the defined priority order, such as:
 
-If you require an explicit order for all identifiers, configure this in the Identity Resolution Settings page before sending in events.
+| Identifier     | Priority |
+| -------------- | -------- |
+| `user_id`      | 1        |
+| `email`        | 2        |
+| `android.id`   | 3        |
+| `anonymous_id` | 4        |
+| `ga_client_id` | 5        |
+
+Segment no longer adds new identifiers automatically. For Identity Resolution to work with new identifiers, you must manually create rules in the Identity Resolution Settings page before sending events.
 
 ![The Identity Resolution Configuration screen](images/edit-priority.png)
 
