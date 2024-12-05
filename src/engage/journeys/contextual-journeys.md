@@ -143,6 +143,6 @@ This payload contains:
 
 Journey context underpins the flexibility and precision of Event-Triggered Journeys. By capturing key details about events and decisions as they happen, journey context lets workflows respond dynamically to user actions and conditions. 
 
-Whether you're orchestrating real-time abandonment recovery, scheduling contextual delays, or personalizing messages with event-specific data, journey context provides the tools to make your workflows more relevant and effective.
+Whether you're orchestrating real-time abandonment recovery, scheduling contextual delays, or personalizing messages with event-specific data, journey context provides the tools to make your workflows more relevant and effective. 
 
 To learn more about how Event-Triggered Journeys work and how journey context fits into the bigger picture, visit the [Event-Triggered Journeys documentation](/docs/engage/journeys/event-triggered-journeys/).
