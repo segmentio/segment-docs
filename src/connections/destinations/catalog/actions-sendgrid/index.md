@@ -21,15 +21,27 @@ id: 631a6f32946dd8197e9cab66
 
 {% include components/actions-fields.html %}
 
+## Using the 'Send email with Dynamic Template' Action 
 
-## Recording Custom User Traits
+### Capabilities
+This Action can be used to send emails to Contacts in Sendgrid using [Sendgrid Dynamic Templates](https://www.twilio.com/docs/sendgrid/ui/sending-email/how-to-send-an-email-with-dynamic-templates). The Dynamic Template being used must already exist in Sendgrid. Use the Action field named 'Dynamic Template Data' to populate values in the Dynamic Template. 
+
+### Contacts are not required
+Emails will be sent to the specified email address even if it is not listed as a Contact in SendGrid Marketing Campaigns.
+
+### Sendgrid API Key permissions
+
+TODO - Dustin to explain what types of permissions the API Key needs here
+
+## Using the 'Upsert Contact' Action 
+
+### Recording Custom User Traits
 If you want to view any other custom user traits in the Marketing Campaigns list dashboard, you must create a [Custom Field inside Marketing Campaigns’s UI](https://docs.sendgrid.com/ui/managing-contacts/custom-fields#creating-custom-fields){:target="_blank"} of the traits in your identify calls. Note that you do not need to map all user.traits you are sending inside Marketing Campaigns. You only need to create Custom Fields of the traits you want to see in your list view.
 
-## Custom Fields
+### Custom Fields
 To send custom fields/user traits to Marketing Campaigns you need to create the field first in Marketing Campaigns for each trait you want sent to Marketing Campaigns. Then when you call identify with keys that match those traits they will appear in your Marketing Campaigns list.
 
 For any other custom traits just add a Custom Field inside of SendGrid Marketing Campaigns with a tag that matches the key you are using in your identify call.
 
-
-## Recording userId
+### Recording userId
 To record a Segment userId in SendGrid Marketing Campaigns, you must pass the userID as a trait on your identify() calls. SendGrid does not automatically map the Segment userID to any Marketing Campaigns properties.
