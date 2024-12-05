@@ -24,9 +24,9 @@ Navigate to **Unify > Profile explorer** to view identities attached to a profil
 
 ### Flat matching logic
 
-When Segment receives a new event, it looks for profiles that match any of the identifiers on the event.
+Flat matching logic determines how Segment processes events to match them with existing profiles or create new ones. This ensures accurate profile resolution when events contain multiple identifiers.
 
-Based on the existence of a match, one of three actions occurs:
+When Segment receives a new event, it looks for profiles that match any of the identifiers on the event. Based on the existence of a match, one of three actions occurs:
 
 **1: Create a new profile**  
 If no existing profiles match any identifiers in the event, Segment creates a new user profile.
@@ -83,7 +83,6 @@ Segment promotes the following default traits and identifiers in Track and Ident
 | `ios.id`             | `context.device.id` when `context.device.type` = `ios`                                                                |
 | `ios.idfa`           | `context.device.advertisingId` when `context.device.type` = `ios` AND `context.device.adTrackingEnabled` = `true`     |
 | `ios.push_token`     | `context.device.token` when `context.device.type` = `ios`                                                             |
-
 
 These identifiers are pre-configured and labeled as *Default* in the Identity Resolution table.
 
