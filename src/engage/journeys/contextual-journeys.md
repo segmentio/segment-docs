@@ -113,8 +113,6 @@ Journey context is organized as a collection of key-value pairs, where each key 
 
 For example, when a user triggers an event like `Appointment Scheduled`, Segment stores its properties (like `Appointment ID`, `Appointment Start Time`) as key-value pairs. You can then reference these values in later journey steps or include them in external payloads.
 
-### Example of journey context payload
-
 The following example shows how journey context might look during a workflow. In this case, the user scheduled an appointment, and the workflow added related event data to the context:
 
 ```json
