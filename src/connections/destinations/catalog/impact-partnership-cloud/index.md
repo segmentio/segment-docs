@@ -17,6 +17,9 @@ This destination is maintained by Impact. For any issues with the destination, c
 4. Go to the [Impact Partnership Cloud Settings](https://app.impact.com){:target="_blank"}, find and copy the "Account SID", "Auth Token", and "Campaign ID".
 5. Back in the Impact Partnership Cloud destination settings in Segment, enter the "Account SID", "Auth Token", and "Campaign ID".
 
+> warning "Workspace owner required for OAuth setup"
+> Only a Segment workspace owner can enable OAuth between Impact and Segment. If you run into during setup, check your workspace settings to verify you have the required permissions.
+
 ## Page
 
 If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
