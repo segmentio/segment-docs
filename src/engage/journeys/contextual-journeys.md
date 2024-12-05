@@ -62,49 +62,43 @@ By incorporating event-specific data at each step, journey context helps ensure 
 
 ### Journey steps that use context
 
-Journey context is referenced and updated at various steps in Event-Triggered Journeys. Each of these steps plays a specific role in adapting the journey to user behavior or conditions.
+Journey context gets referenced and updated at various steps in an event-triggered journey. Each step plays a specific role in adapting the journey to user behavior or conditions.
 
-#### **1. Wait for Event Split**
+#### Wait for event split
 
-This step checks whether a user performs a specific event within a given time window. If the event occurs, its details are added to journey context for use in later steps.
+This step checks whether a user performs a specific event within a given time window. If the event occurs, Segment adds its details to journey context for use in later steps.
 
-- **Example:** A journey may wait to see if a `checkout_completed` event occurs within two hours of a user starting checkout. If the event happens, the workflow can proceed; otherwise, it may take an alternate path.
-- **Details:** The data captured includes event properties (e.g., `Order ID`) and the results of the split evaluation.
+For example, a journey may wait to see if a `checkout_completed` event occurs within two hours of a user starting checkout. If the event happens, the workflow can proceed; otherwise, it may take an alternate path. The data captured includes event properties (like `Order ID`) and the results of the split evaluation.
 
-#### **2. Context Split**
+#### Context split
 
 This step evaluates conditions using data already stored in journey context. Based on the conditions, users are routed to different branches of the journey.
 
-- **Example:** A user who triggers an event with a property like `order_value > 100` might be routed to one branch, while other users follow a different path.
-- **Details:** The split uses attributes from journey context, such as event properties or prior split outcomes, to determine the appropriate branch.
+For example, a user who triggers an event with a property like `order_value > 100` might be routed to one branch, while other users follow a different path. The split uses attributes from journey context, like event properties or prior split outcomes, to determine the appropriate branch.
 
-#### **3. Profile Data Split**
+#### Profile data split
 
-This step evaluates user traits or audience memberships to determine branching. While profile data is not stored in journey context, it complements the static data available in the journey.
+This step evaluates user traits or audience memberships to determine branching. While Segment doesn't store profile data in journey context, it complements the static data available in the journey.
 
-- **Example:** Users in a premium audience can be directed to a tailored experience, while others follow the standard flow.
-- **Details:** The results of this split are stored in journey context for reference in later steps.
+For example, users in a premium audience can be directed to a tailored experience, while others follow the standard flow. Segment stores the results of this split in journey context for reference in later steps.
 
-#### **4. Contextual Delay**
+#### Contextual delay
 
-A Contextual Delay introduces a wait period based on time-related data in journey context. This ensures workflows align with real-world events.
+A contextual delay introduces a wait period based on time-related data in journey context. This ensures workflows align with real-world events.
 
-- **Example:** A journey can wait until one hour before an `Appointment Start Time` to send a reminder email.
-- **Details:** The delay reads from journey context but does not add any new data to it.
+For example, a journey can wait until one hour before an `Appointment Start Time` to send a reminder email. The delay reads from journey context but doesn't add any new data to it.
 
-#### **5. Function Steps**
+#### Function steps
 
-Function Steps process data from journey context through custom logic. The output of the function is written back to context for use in later steps.
+Function steps process data from journey context through custom logic. The output of the function gets written back to context for use in later steps.
 
-- **Example:** A function might calculate a discount percentage based on an event property, then store that value in journey context for later use.
-- **Details:** The output is scoped to a dedicated object (`function_output`) to keep the context structured and reliable.
+For example, a function might calculate a discount percentage based on an event property, then store that value in journey context for later use. The output gets scoped to a dedicated object (`function_output`) to keep the context structured and reliable.
 
-#### **6. Send to Destination**
+#### Send to destination
 
-The Send to Destination step allows journey context data to be included in payloads sent to external tools, such as messaging platforms or analytics systems.
+The send to destination step allows journey context data to be included in payloads sent to external tools, like messaging platforms or analytics systems.
 
-- **Example:** A payload sent to a messaging platform might include `Order ID` and `Cart Contents` to personalize the message.
-- **Details:** Users can select which parts of journey context to include in the payload.
+For example, a payload sent to a messaging platform might include `Order ID` and `Cart Contents` to personalize the message. Users can select which parts of journey context to include in the payload.
 
 <!--
 
