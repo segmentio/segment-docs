@@ -1,5 +1,5 @@
 ---
-title: Journeys Context
+title: Journey Context
 plan: engage-foundations
 hidden: true
 ---
