@@ -100,20 +100,45 @@ The send to destination step allows journey context data to be included in paylo
 
 For example, a payload sent to a messaging platform might include `Order ID` and `Cart Contents` to personalize the message. Users can select which parts of journey context to include in the payload.
 
+## Context structure
+
+The structure of journey context ensures that event-specific data gets organized and is accessible throughout the journey workflow. By standardizing how data is stored, Segment makes it easier to reference, use, and send this information at different stages of a journey.
+
+### How Journey context is structured
+
+Journey context is organized as a collection of key-value pairs, where each key represents a data point or category, and its value holds the associated data. This structure supports various types of information, like event properties, split outcomes, and function outputs.
+
+For example, when a user triggers an event like `Appointment Scheduled`, Segment stores its properties (like `Appointment ID`, `Appointment Start Time`) as key-value pairs. You can then reference these values in later journey steps or include them in external payloads.
+
+### Example of journey context payload
+
+The following example shows how journey context might look during a workflow. In this case, the user scheduled an appointment, and the workflow added related event data to the context:
+
+```json
+{
+  "appointment_scheduled": {
+    "appointment_id": "12345",
+    "start_time": "2024-12-06T10:00:00Z",
+    "end_time": "2024-12-06T11:00:00Z",
+    "provider_name": "Dr. Smith"
+  },
+  "split_decision": {
+    "split_name": "appointment_type_split",
+    "branch_chosen": "existing_patient"
+  },
+  "function_output": {
+    "discount_percentage": 15
+  }
+}
+
+This payload contains:
+
+- **Event properties**: Captured under the `appointment_scheduled` key.
+- **Split outcomes**: Documented in the `split_decision` object.
+- **Function results**: Stored in the `function_output` object for use in later steps.
+
 <!--
 
-3. Using Journey Context
-Overview of how context supports orchestration and personalization.
-Examples of event data and their role in customer journeys.
-4. Journey Step Features
-Subsections for:
-Wait for Event Split
-Context Split
-Profile Data Split
-Contextual Delay
-Function Steps
-Send to Destination
-Explain how each step uses or modifies journey context.
 5. Context Structure
 Explanation of context organization and data flow.
 Include a sample payload for reference.
