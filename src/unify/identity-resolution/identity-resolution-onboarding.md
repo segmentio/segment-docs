@@ -237,11 +237,12 @@ Before you make changes to Identity Resolution settings in production, validate 
 
 Your data sources and user behaviors may change over time. Periodically review your Identity Resolution settings to update identifier limits, blocked values, and priorities as needed to maintain accuracy and prevent issues.
 
-### Importing from an existing space
+## Importing from an existing space
 
-This option is available to new spaces after you create an initial Dev space. Segment recommends this option when identity settings are validated as correct in the initial Dev space and should be copied into the Production space.
+Importing Identity Resolution settings from an existing space is a quick way to replicate tested and validated configurations. This option is available to new spaces after creating an initial Dev space.
 
-You can review the identifiers, priorities, limits, and blocked values before you complete the import.
+Segment recommends importing settings when your Dev space rules are finalized and align with your business logic. After importing, review the identifiers, priorities, limits, and blocked values to confirm accuracy before completing the import.
+
 
 ![Review identifiers, priorities, limits, and blocked values before import](images/import.png)
 
