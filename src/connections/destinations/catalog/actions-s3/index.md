@@ -17,14 +17,11 @@ The traditional AWS S3 Classic destination enabled the storage of raw logs conta
 
 The AWS S3 (Actions) destination enhances this capability by introducing configurable options to format and structure event data prior to storage. This new approach offers several key benefits:
 
-1. Standardized Data Formatting
-AWS S3 (Actions) lets you define consistent output formats for your data, either CSV or TXT file formats, in a folder definition that you choose. The previous AWS S3 Classic Destination only allowed raw JSON payloads stored within a specific folder called `"segment-logs"`. 
+* **Standardized Data Formatting**. AWS S3 (Actions) lets you define consistent output formats for your data, either CSV or TXT file formats, in a folder definition that you choose. The previous AWS S3 Classic Destination only allowed raw JSON payloads stored within a specific folder called `"segment-logs"`. 
 
-2. Configurable Data Translation
-AWS S3 (Actions) supports translation rules that can map raw event attributes to more meaningful or actionable representations. You can configure these rules to meet specific data schema requirements, either adding in custom columns or using the default ones.
+* **Configurable Data Translation**.  AWS S3 (Actions) supports translation rules that can map raw event attributes to more meaningful or actionable representations. You can configure these rules to meet specific data schema requirements by either adding in custom columns or using the default ones.
 
-3. Enhanced Delivery Controls
-The destination provides advanced options for batch size controls and file naming conventions. These controls can help optimize efficiency and simplify data retrieval workflows.
+* **Enhanced Delivery Controls**. The destination provides advanced options for batch size controls and file naming conventions. These controls can help optimize efficiency and simplify data retrieval workflows.
 
 ## Getting Started
 Setting up the AWS S3 (Actions) destination is a straightforward process designed to help you quickly configure and deploy standardized event data to your Amazon S3 bucket. Follow these steps to get started:
