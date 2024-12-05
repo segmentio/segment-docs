@@ -23,8 +23,8 @@ The AWS S3 (Actions) destination enhances this capability by introducing configu
 
 * **Enhanced Delivery Controls**. The destination provides advanced options for batch size controls and file naming conventions. These controls can help optimize efficiency and simplify data retrieval workflows.
 
-## Getting Started
-Setting up the AWS S3 (Actions) destination is a straightforward process designed to help you quickly configure and deploy standardized event data to your Amazon S3 bucket. Follow these steps to get started:
+## Getting started
+Setting up the AWS S3 (Actions) destination is a straightforward process designed to help you configure and deploy standardized event data to your Amazon S3 bucket. Follow these steps to get started:
 
 ### Prerequisites
 Ensure you have the following in place before configuring the AWS S3 (Actions) destination:
