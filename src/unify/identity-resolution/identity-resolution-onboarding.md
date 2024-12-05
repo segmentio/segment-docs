@@ -16,9 +16,6 @@ This page explains:
 > info ""
 > This guide applies to spaces created after October 5th, 2020. For spaces created before this date, see the legacy [Identity Resolution content](/docs/unify/identity-resolution/identity-resolution-settings).
 
-> success ""
-> Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
-
 Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId`, and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the Profile explorer.
 
 Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
@@ -44,6 +41,9 @@ If multiple profiles match identifiers in the event, Segment checks the Identity
 In shared device scenarios, like in-store iPads used by multiple customers, events from different users may share the same device identifier. Without proper Identity Resolution rules, these events might merge into a single user profile. To avoid inaccurate merges, configure rules to block default identifiers or set appropriate priorities.
 
 ## Identity Resolution settings
+
+> success ""
+> Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
 
 Identity Admins should configure Identity Resolution Settings to protect the identity graph from inaccurate merges and ensure the accuracy of user profiles.
 
