@@ -13,7 +13,7 @@ This page explains Journey context, which can help you dynamically adapt each jo
 
 ## Overview
 
-Unlike traditional audience-based journeys, which rely solely on user progress through predefined steps, event-triggered Journeys capture and store the details of user-triggered events. This shift allows you to access the data that caused users to reach a specific step and use it to make more precise decisions throughout the journey.
+Unlike traditional audience-based journeys, which rely solely on user progress through predefined steps, event-triggered Journeys capture and store the details of user-triggered events. This shift allows you to access the data that caused users to reach a specific step and use it to make more precise decisions throughout the journey. 
 
 With journey context, you can:
 
