@@ -16,11 +16,12 @@ id: 54efbf12db31d978f14aa8b5
 The Braze Destination is open-sourced on GitHub. Source code for the following integrations is available:
 
 - [iOS](https://github.com/Appboy/appboy-segment-ios){:target="_blank"} (maintained by Braze)
-- [Android](https://github.com/Appboy/appboy-segment-android){:target="_blank"}(maintained by Braze)
-- [Swift](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"}(maintained by Braze)
-- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"}(maintained by Braze)
+- [Android](https://github.com/Appboy/appboy-segment-android){:target="_blank"} (maintained by Braze)
+- [Swift](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"} (maintained by Braze)
+- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"} (maintained by Braze)
 - [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} (maintained by Segment)
 - [Server](https://github.com/segmentio/integration-appboy){:target="_blank"} (maintained by Segment)
+- [React Native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze){:target="_blank"} (maintained by Segment)
 
 For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact){:target="_blank"}.
 

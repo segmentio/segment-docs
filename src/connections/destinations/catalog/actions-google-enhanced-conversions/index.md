@@ -13,7 +13,7 @@ hide_action:
     name: "Call Conversion"
   - id: mFUPoRTLRXhZ3sGbM8H3Qo
     name: "Conversion Adjustment"
-  - id: oWa5UioHjz5caK7t7tc57f
+  - id: h8sh7d7TUJYR1uv6RKZTGQ
     name: 'Upload Enhanced Conversion (Legacy)'
 ---
 
@@ -195,6 +195,10 @@ Because of the duplicate API requests, you may see a warning in Google for unpro
 This error indicates that the conversion action specified in the upload request has not been set up for conversion uploads, as outlined in [Google's Ads documentation](https://developers.google.com/google-ads/api/reference/rpc/v15/ConversionUploadErrorEnum.ConversionUploadError#invalid_conversion_action_type){:target="_blank”}.
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
+
+### Conversion upload error 
+
+You may encounter this error if you use more than one identifier to update a conversion. You must only use one identifier (GCLID, GBRAID, or WBRAID) for each ClickConversion entry.
 
 ### `The required field was not present., at conversions[0].gclid` Error
 

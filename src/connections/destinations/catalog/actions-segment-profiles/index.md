@@ -35,9 +35,6 @@ The Segment Profiles destination is not subject to API call or MTU costs. Any us
 ### Succesful syncs but no changes on profiles
 Make sure that the Endpoint Region setting matches the region of your workspace. If the region is correct and you don't see any profile changes, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
-### Test Mapping
-The **Test Mapping** feature on the Mapping page does not send events to Profiles. It will only validate the mappings and confirm that the event will be accepted by the Tracking API. To send and validate the event in profile, please run a RETL sync.
-
 ### Can I view samples of events received in Engage by the Segment Profiles Destination?
 
 Records sent to the Segment Profiles Destination are managed through a Unify Spaces' Profile Sources. Samples of these events may be reviewed in a [Profile Source Debugger](https://segment.com/docs/unify/debugger/). For a more comprehensive analysis of the events received in Unify & Engage, consider utilizing [Profiles Sync](https://segment.com/docs/unify/profiles-sync/overview/) connected to your Data Warehouse.

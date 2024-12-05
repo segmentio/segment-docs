@@ -358,10 +358,12 @@ sections:
     - section_title: Setup Guides
       slug: /unify/data-graph/setup-guides/
       section:
-      - path: /unify/data-graph/setup-guides/snowflake-setup/
-        title: Snowflake Setup
+      - path: /unify/data-graph/setup-guides/bigquery-setup/
+        title: BigQuery Data Graph Setup
       - path: /unify/data-graph/setup-guides/databricks-setup/
-        title: Databricks Setup
+        title: Databricks Data Graph Setup
+      - path: /unify/data-graph/setup-guides/snowflake-setup/
+        title: Snowflake Data Graph Setup
     - section_title: Linked Events 
       slug: /unify/data-graph/linked-events/
       section: 
@@ -389,6 +391,8 @@ sections:
       title: Custom Traits
     - path: '/unify/traits/sql-traits'
       title:  SQL Traits
+    - path: '/unify/traits/recommended-items'
+      title: Recommended Items
   - path: /unify/profile-api
     title: Profile API
   - path: /unify/debugger

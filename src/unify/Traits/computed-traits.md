@@ -25,6 +25,8 @@ Segment currently supports the following types of computed traits:
   - [Last](#last)
   - [Unique List](#unique-list)
   - [Unique List Count](#unique-list-count)
+  - [Predictions](/docs/unify/traits/predictions/)
+  - [Recommended Items](/docs/unify/traits/recommended-items/)
 - [Conditions](#conditions)
 - [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
 - [Editing Realtime Traits](#editing-realtime-traits)
