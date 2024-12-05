@@ -93,10 +93,6 @@ To finish the configuration, enable the AWS S3 (Actions) Destination in your wor
 5. Enable the destination.
 6. Verify the Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
 
-### Actions
-Build your own Mappings. The following action is supported: 
-- [Sync to S3](#sync-to-s3)
-
 {% include components/actions-fields.html settings="true"%}
 
 
