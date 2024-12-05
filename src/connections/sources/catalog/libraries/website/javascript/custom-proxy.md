@@ -38,6 +38,9 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
+> info "Segment loads most integrations through the proxy, except for third-party SDKs"
+> Third-party SDKs are loaded by a partner's CDN, even with a Segment proxy configured. For example, if you have  a Segment custom proxy enabled and send data to a FullStory destination, FullStory's CDN would load the FullStory SDK. 
+
 ## Custom Proxy setup
 
 There are two options you can choose from when you set up your custom domain proxy.
@@ -62,6 +65,8 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
+
+There should be no downtime once the setup is complete, as the default Segment domains continue to work alongside the customer's domains. 
 
 
 ## Custom CDN / API Proxy
