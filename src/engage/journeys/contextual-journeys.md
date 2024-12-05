@@ -17,12 +17,11 @@ With journey context, you can:
 > info "Private Beta"
 > Event-Triggered Journeys is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. During private beta, Event-Triggered Journeys is not HIPAA eligible.
 
-## What is Journey Context?
+## What is Journey context?
 
 Journey context is a flexible data structure that captures key details about the events and conditions that shape a customer’s journey. Journey context provides a point-in-time snapshot of event properties, ensuring accurate and reliable data is available throughout the journey.
 
 Journey context stores:
-
 - **Event properties**: Information tied to specific user actions, like `Appointment ID` or `Order ID`.
 - **Split evaluations**: Results of branch decisions made during the journey, enabling future steps to reference these outcomes.
 
@@ -46,13 +45,13 @@ Event properties are the foundation of Journey context. Examples of event proper
   - `Order ID`
   - An array of cart contents
 
-Each event’s properties are captured as a point-in-time snapshot when the event occurs. This ensures the data remains consistent for use in personalization, branching, and other advanced workflow steps.
+Segment captures each event’s properties as a point-in-time snapshot when the event occurs, ensuring that the data remains consistent for use in personalization, branching, and other advanced workflow steps.
 
 ## Using Journey context in Event-Triggered Journeys
 
-Journey context is a system for capturing and referencing data about events and conditions within a customer journey. It allows Event-Triggered Journeys to respond dynamically to user behavior by making event-specific data available for decisions and actions at each step.
+Journey context provides the framework for capturing and referencing data about events and conditions within a journey. It allows Event-Triggered Journeys to dynamically respond to user behavior by making event-specific data available for decisions and actions at each step.
 
-Journey context helps you create workflows that use real-time data, instead of relying on predefined, static rules. This is useful for scenarios like:
+This is useful for scenarios like:
 
 - **Abandonment recovery:** Checking whether a user completed a follow-up action, like a purchase.
 - **Customizing messages:** Using event properties to include relevant details in communications.
@@ -130,6 +129,7 @@ The following example shows how journey context might look during a workflow. In
     "discount_percentage": 15
   }
 }
+```
 
 This payload contains:
 
@@ -137,18 +137,10 @@ This payload contains:
 - **Split outcomes**: Documented in the `split_decision` object.
 - **Function results**: Stored in the `function_output` object for use in later steps.
 
-<!--
+## Next steps
 
-5. Context Structure
-Explanation of context organization and data flow.
-Include a sample payload for reference.
-6. Best Practices
-Tips for optimizing journeys with context (e.g., using filters, testing).
-7. Example Use Cases
-Illustrative scenarios demonstrating the power of journey context in real-world applications.
-8. Troubleshooting and FAQs
-Common issues and resolutions.
-Clarifications about limitations (e.g., context doesn’t store dynamic traits).
+Journey context underpins the flexibility and precision of Event-Triggered Journeys. By capturing key details about events and decisions as they happen, journey context lets workflows respond dynamically to user actions and conditions. 
 
+Whether you're orchestrating real-time abandonment recovery, scheduling contextual delays, or personalizing messages with event-specific data, journey context provides the tools to make your workflows more relevant and effective.
 
--->
+To learn more about how Event-Triggered Journeys work and how journey context fits into the bigger picture, visit the [Event-Triggered Journeys documentation](/docs/engage/journeys/event-triggered-journeys/).
