@@ -34,7 +34,7 @@ Ensure you have the following in place before configuring the AWS S3 (Actions) d
 - IAM Access IDs: Prepare your AWS IAM ARN ID and IAM External ID. These will be needed to authenticate and authorize Segment with your S3 bucket.
 
 
-### Create an IAM role in the AWS console
+### Step 1: Create an IAM role in the AWS console
 To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) destination:
 
 1. Log in to your AWS account. 
