@@ -3,6 +3,8 @@ title: AWS S3 (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 66eaa166f650644f04389e2c
+private: true
+beta: true
 # versions:
 #   - name: AWS S3 (Classic)
 #     link: /docs/connections/destinations/catalog/aws-s3/
