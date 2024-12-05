@@ -191,6 +191,52 @@ When choosing the priority of your identifier, ask the following questions about
 2. Are they unique IDs? Give Unique IDs such as email higher priority than possibly shared identifiers like android.id or ios.id.
 3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, and ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
 
+## Best practices for Identity Resolution
+
+To maintain an accurate identity graph and avoid incorrect profile merges, Segment recommends the following best practices:
+
+### Set appropriate identifier limits
+
+Carefully setting limits for each identifier type ensures that profiles remain accurate without excessive or conflicting data. Keep the following guidelines in mind when you configure limits:
+
+- **Immutable IDs** like `user_id`: Assign a strict limit of `1 ever` to ensure profiles have only one permanent identifier.
+- **Frequently changing IDs** like `anonymous_id` or `ga_client_id`: Use a sliding window limit, like 5 weekly, to reflect temporary or session-based identifiers.
+- **Rarely updated IDs** like `email`, `android.id`, or `ios.id`: Use a longer limit, like **5 annually**, to account for updates over time.
+
+### Define clear identifier priorities
+
+Priorities determine how Segment resolves conflicts when multiple identifiers exceed their limits. Assigning clear priorities helps ensure that your most reliable identifiers get used for matching. Use these recommendations to set priorities:
+
+- Assign immutable identifiers like `user_id` the highest priority.
+- Rank unique but mutable identifiers like `email` below immutable identifiers.
+- Lower the priority of temporary or shared identifiers such as `anonymous_id` or `ios.idfa`.
+
+#### Example:
+
+If your application sends `user_id`, `email`, and `anonymous_id`, prioritize identifiers like this:
+
+1. `user_id` (highest priority)
+2. `email`
+3. `anonymous_id` (lowest priority)
+
+### Proactively block invalid identifier values
+
+Using invalid or placeholder values as identifiers can lead to inaccurate merges and data fragmentation. To prevent this, use [blocked values](/docs/unify/identity-resolution/identity-resolution-settings/#blocked-values) to exclude common defaults and test values. Segment ignores blocked values during Identity Resolution, but blocked values remain in the event payload for debugging. 
+
+Segment recommends blocking:
+
+- **Common hard-coded test values**: `void`, `abc123`, `-1`
+- **Patterns of invalid values**: `^[0-]*$` (like zeros or dashes)
+- **Null or anonymous values**: `null`, `anonymous`
+
+### Test changes in a Dev space
+
+Before you make changes to Identity Resolution settings in production, validate your updates in a Dev space. Testing ensures that rules behave as expected and align with your business logic. After you confirm the behavior, duplicate the tested settings into your production space.
+
+### Regularly review and update rules
+
+Your data sources and user behaviors may change over time. Periodically review your Identity Resolution settings to update identifier limits, blocked values, and priorities as needed to maintain accuracy and prevent issues.
+
 ### Importing from an existing space
 
 This option is available to new spaces after you create an initial Dev space. Segment recommends this option when identity settings are validated as correct in the initial Dev space and should be copied into the Production space.
