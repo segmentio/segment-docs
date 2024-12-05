@@ -5,9 +5,7 @@ redirect_from:
   - "/personas/identity-resolution/identity-resolution-onboarding"
 ---
 
-Identity Resolution unifies user identifiers (like email addresses, device IDs, or custom IDs) from multiple sources into a single, accurate user profile. This ensures consistent user recognition and targeting across channels.
-
-Accurate Identity Resolution prevents data fragmentation and ensures a reliable identity graph, which is critical for delivering personalized experiences and gaining actionable insights.
+Identity Resolution unifies user identifiers (like email addresses, device IDs, or custom IDs) from multiple sources into a single, accurate user profile. This process prevents data fragmentation and ensures your ability to deliver personalized experiences and actionable insights.
 
 This page explains:
 
@@ -242,7 +240,6 @@ Your data sources and user behaviors may change over time. Periodically review y
 Importing Identity Resolution settings from an existing space is a quick way to replicate tested and validated configurations. This option is available to new spaces after creating an initial Dev space.
 
 Segment recommends importing settings when your Dev space rules are finalized and align with your business logic. After importing, review the identifiers, priorities, limits, and blocked values to confirm accuracy before completing the import.
-
 
 ![Review identifiers, priorities, limits, and blocked values before import](images/import.png)
 
