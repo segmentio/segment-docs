@@ -137,7 +137,7 @@ This payload contains:
 - **Split outcomes**: Documented in the `split_decision` object.
 - **Function results**: Stored in the `function_output` object for use in later steps.
 
-## Next steps
+## Journey context and Event-Triggered Journeys
 
 Journey context underpins the flexibility and precision of Event-Triggered Journeys. By capturing key details about events and decisions as they happen, journey context lets workflows respond dynamically to user actions and conditions. 
 
