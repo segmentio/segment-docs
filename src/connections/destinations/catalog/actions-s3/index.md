@@ -83,16 +83,15 @@ To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) d
 To finish configuration, enable the AWS S3 (Actions) Destination in your workspace. 
 
 1. Add the **AWS S3 (Actions)** destination from the Destinations tab of the catalog.
-    ![AWS S3](images/aws-s3-catalog.png)
-2. Select the data source you'll connect to the destination.
+2. Select the data source you want to connect to the destination.
 3. Provide a unique name for the destination.
 4. Complete the destination settings:
-   1. Enter the name of the region in which the bucket you created above resides.
-   2. Enter the name of the bucket you created above. Be sure to enter the bucket's **name** and not URI.
-   3. Enter the ARN of the IAM role you created above. The ARN should follow the format `arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME.`
-   4. Enter the IAM External ID, which is a value set in the Trust Relationship under your AWS IAM Role.
+   * Enter the name of the region in which the bucket you created above resides.
+   * Enter the name of the bucket you created above. Be sure to enter the bucket's **name** and not URI.
+   * Enter the ARN of the IAM role you created above. The ARN should follow the format `arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME.`
+   * Enter the IAM External ID, which is a value set in the Trust Relationship under your AWS IAM Role.
 5. Enable the destination.
-6. Verify Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
+6. Verify the Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
 
 ### Actions
 Build your own Mappings. The following action is supported: 
