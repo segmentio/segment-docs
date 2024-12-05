@@ -69,7 +69,7 @@ Segment promotes the following default traits and identifiers in Track and Ident
 | External ID Type     | Message Location in Track or Identify Call                                                                            |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `user_id`            | `userId`                                                                                                              |
-| `email`              | `traits.email` or `context.traits.email`                                                                              |
+| `email`              | `traits.email` or `properties.email.context.traits.email.` or `context.externalIds`                                   |
 | `android.id`         | `context.device.id` when `context.device.type` = `android`                                                            |
 | `android.idfa`       | `context.device.advertisingId` when `context.device.type` = `android` AND `context.device.adTrackingEnabled` = `true` |
 | `android.push_token` | `context.device.token` when `context.device.type` = `android`                                                         |
@@ -88,7 +88,7 @@ To add a custom identifier:
 2. Preview the locations where Segment looks for the identifier.
 3. Configure additional options, such as value limits and blocked values, to ensure accurate profile resolution.
 
-Segment accepts both camelCase and snake_case for `context.traits`, `traits`, and `properties`, but identifiers in the `context.externalIds` object must use lowercase.
+Segment accepts both camelCase and snake_case for context.traits, traits, and properties to accommodate varying data formats. However, for identifiers in the context.externalIds object, Segment requires lowercase types to ensure consistency and prevent potential processing errors.
 
 ![Screenshot of the Custom Identifier interface in Segment. The 'Trait / Property key to match on' field is filled with 'app_id.' Two preview message locations are displayed, showing examples of JSON-like event payloads with 'appId' or 'app_id' as traits or properties. The interface includes settings to limit the value count to 5 and set frequency to 'Ever.' At the bottom, there's an option to 'Add new identifier' or 'Cancel.'](images/custom_identifiers.png)
 
@@ -153,7 +153,7 @@ For example, consider a Segment space with the following Identity Resolution con
 
 A profile already exists with `user_id` **abc123** and `email` **jane@example1.com**. A new event comes in with new `user_id` **abc456** but the same `email` **jane@example1.com**.
 
-If this event maps to this profile, the resulting profile would then contain two `user_id` values and one `email`. Given that `user_id` has a limit of 1, this exceeds the limit of that identifier. As a result, Segment checks the priority of the `user_id` identifier. Because `email` and `user_id` are the two identifiers on the event and `email` ranks lower than `user_id`, Segment demotes `email` as an identifier on the incoming event and tries again.
+If this event maps to this profile, the resulting profile would then contain two `user_id` values and one `email`. Given that `user_id` has a limit of 1, this exceeds the limit of that identifier. As a result, Segment checks the priority of the `user_id` identifier. Since `email` ranks lower than `user_id`, Segment demotes `email` as an identifier on the incoming event and tries again.
 
 At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so Segment creates a new profile with user_id `abc456`.
 
