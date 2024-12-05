@@ -33,15 +33,13 @@ source, [contact the Antavo support team](mailto:support@antavo.com).
 
 ## Events
 
-Two main event types are synced into Segment: Profile updates and loyalty events.  
-Both event types require userID, which can be selected in Antavo.  
-Any customer attribute in Antavo can be selected as "external customer ID".
+Antavo syncs two main types of events to Segment: Profile Updates and Loyalty Events. Profile Updates are sent as Segment Identify events, while Loyalty Events are sent as Segment Track events.
+
+Both event types include a `userId`, which can be configured in Antavo. You can designate any customer attribute as the "external customer ID" to use as the Segment `userId`.
 
 ### Profile updates
 
-This event happens when a customer attribute - added to the **Customer field sync** - changes.
-- Antavo always includes the `userId`.
-- Customer attributes are included in `traits` object.
+Profile Updates occur when a customer attribute, added to the Antavo **Customer field sync**, updates. Customer attributes are included in the traits object.
 
 ```
 {
@@ -57,9 +55,7 @@ This event happens when a customer attribute - added to the **Customer field syn
 
 ### Loyalty events
 
-When a built-in or custom loyalty event - added to the **Event sync** - happens, event data are streamlined to the Antavo Source.
-- Antavo always includes the `userId`.
-- Event properties are included in `properties` object.
+Loyalty Events occur when a built-in or custom event, added to the Antavo Event sync, is triggered. The event data is then sent to the Segment Antavo Source. Event properties are included in the properties object.
 
 ```
 {
