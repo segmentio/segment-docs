@@ -5,6 +5,9 @@ id: 6230c835c0d6535357ee950d
 
 {% include content/plan-grid.md name="actions" %}
 
+> info "Device Mode (Web) Destination"
+> This destination sends data to Koala from the browser using Koala’s SDK. Koala also offers a server-side destination that transfers data from Segment to Koala. For more information, see the [Koala (Cloud) Destination documentation](/docs/connections/destinations/catalog/actions-koala-cloud).
+
 Koala enables you to identify website visitors with ease so you can turn traffic into actionable leads. See which companies are researching your docs, checking out your pricing page, and showing intent to buy.
 
 Segment is the easiest way to install Koala. If you've already got Segment running on your website, Koala recommends this approach. With Segment, you can instrument Koala without code.

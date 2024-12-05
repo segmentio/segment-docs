@@ -331,6 +331,9 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
 ## 4. Upgrade Notes: Changes to the Configuration Object
 
+> info "Call Identify as a one-off after migrating to Swift"
+> To preserve the userId for users identified prior to your migration to Swift, you must make a one-off Identify call. This is due to a storage format change between the Analytics-iOS and the Analytics-Swift libraries.
+
 The following option was renamed in Analytics-Swift:
 
 | Before                   | After                             |
@@ -358,6 +361,36 @@ The following options were removed in Analytics-Swift:
 | `trackAttributionData`      | This feature no longer exists.                                                                              |
 | `trackInAppPurchases`       | Deprecated                                                                                                  |
 | `trackPushNotifications`    | Deprecated                                                                                                  |
+
+### 4.a) Traits are no longer attached to `analytics.track()` events automatically 
+
+To prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. To achieve this, you can write a `before` plugin: 
+
+```swift
+import Foundation
+import Segment
+
+class InjectTraits: Plugin {
+    let type = PluginType.enrichment
+    weak var analytics: Analytics? = nil
+    
+    func execute<T: RawEvent>(event: T?) -> T? {
+        if event?.type == "identify" {
+            return event
+        }
+        
+        var workingEvent = event
+        
+        if var context = event?.context?.dictionaryValue {
+            context[keyPath: "traits"] = analytics?.traits()
+            
+            workingEvent?.context = try? JSON(context)
+        }
+        
+        return workingEvent
+    }
+}
+```
 
 ### Conclusion
 Once you’re up and running, you can take advantage of Analytics-Swift’s additional features, such as [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-plugins), [Functions](/docs/connections/functions/), and [Typewriter](/docs/connections/sources/catalog/libraries/mobile/apple/swift-typewriter) support. 

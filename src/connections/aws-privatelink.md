@@ -18,6 +18,8 @@ Usage limits for each customer during the AWS PrivateLink Private Beta include t
 The following Databricks integrations support PrivateLink:
 - [Databricks storage destination](/docs/connections/storage/catalog/databricks/)
 - [Databricks Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+- [Databricks Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)
+- [Databricks Data Graph](/docs/unify/data-graph/)
 
 > info "Segment recommends reviewing the Databricks documentation before attempting AWS PrivateLink setup"
 > The setup required to configure the Databricks PrivateLink integration requires front-end and back-end PrivateLink configuration. Review the [Databricks documentation on AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} to ensure you have everything required to set up this configuration before continuing. 
@@ -44,6 +46,7 @@ To implement Segment's PrivateLink integration for Databricks:
 The following RDS Postgres integrations support PrivateLink:
 - [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
 - [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
+- [RDS Postgres Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/)
 
 ### Prerequisites
 Before you can implement AWS PrivateLink for RDS Postgres, complete the following prerequisites:
@@ -66,6 +69,8 @@ To implement Segment's PrivateLink integration for RDS Postgres:
 The following Redshift integrations support PrivateLink:
 - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
 - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+- [Redshift Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/)
+- [Redshift Data Graph](/docs/unify/data-graph/)
 
 ### Prerequisites
 Before you can implement AWS PrivateLink for Redshift, complete the following prerequisites:
@@ -86,6 +91,8 @@ To implement Segment's PrivateLink integration for Redshift:
 The following Snowflake integrations support PrivateLink:
 - [Snowflake storage destination](/docs/connections/storage/catalog/snowflake/)
 - [Snowflake Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
+- [Snowflake Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/)
+- [Snowflake Data Graph](/docs/unify/data-graph/)
 
 ### Prerequisites
 Before you can implement AWS PrivateLink for Snowflake, complete the following prerequisites:

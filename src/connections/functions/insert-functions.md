@@ -500,6 +500,10 @@ However, if your function aims to enrich event data by fetching additional infor
 
 No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
 
+##### Can I use Insert Functions with Storage destinations?
+
+Insert Functions are only supported by Cloud Mode (server-side) destinations and aren't compatible with Storage destinations.
+
 ##### Can I connect an insert function to multiple destinations?
 
 Yes, an insert function can be connected to multiple destinations. 

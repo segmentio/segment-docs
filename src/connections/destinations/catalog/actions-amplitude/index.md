@@ -241,3 +241,13 @@ In the following example, the Amplitude User property `friendCount` equals 4.
 "traits" : {"$add": {"friendCount": 3} }
 "traits" : {"$add": {"friendCount": 1} }
 ```
+## FAQ and troubleshooting
+
+### Why doesn't Segment automatically add the `session_id` to my web events?
+For Segment to automatically add the `session_id` to events, your browser must allow the following request URL to load:
+
+```
+https://cdn.segment.com/next-integrations/actions/amplitude-plugins/..
+```
+
+To check if you are loading this request, [inspect the network requests](https://developer.chrome.com/docs/devtools/network){:target="_blank”} on your website and look for 'Amplitude.' If the request is not loading, confirm it is allowed on your side.

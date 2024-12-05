@@ -1,5 +1,5 @@
 ---
-title: Snowflake Setup
+title: Snowflake Data Graph Setup
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/setup-guides/snowflake-setup'

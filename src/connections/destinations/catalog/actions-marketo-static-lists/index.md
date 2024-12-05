@@ -27,7 +27,8 @@ The Marketo Static Lists (Actions) destination lets you sync users into Marketo 
 - **Lookback window allowed**: Yes
 - **Client or Server-Side Connection**: Server-side
 
-{% include content/sync-frequency-note.md %}
+> info "Real-time to batch destination sync frequency"
+> You can expect a sync frequency of 15 to 18 hours for real-time audience connections to Marketo Static Lists (Actions).
 
 ## Configuring Marketo Static Lists
 

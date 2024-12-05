@@ -117,7 +117,7 @@ If you choose to re-enable a table or property to sync again, only new data gene
 
 #### Using historical backfill
 
-Profiles Sync sends profiles to your warehouse on an hourly basis, beginning after you complete setup. You can use backfill, however, to sync historical profiles to your warehouse, as well.
+Profiles Sync sends profiles to your warehouse hourly once setup completes. Setup is complete after an initial automated backfill syncs all profile data. To initiate the backfill, the Profiles Sync requires live data flowing into your workspace. If live data isn’t available, you can send test data to trigger the backfill sooner. Backfill can also sync historical profiles to your warehouse.
 
 > info ""
 > You can only use historical backfill for tables that you enable with [Selective Sync](#using-selective-sync) during setup. Segment does not backfill tables that you disable with Selective Sync.

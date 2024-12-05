@@ -4,10 +4,11 @@ hide-boilerplate: true
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/vendor-braze/'
+  - '/connections/destinations/catalog/braze-web-device-mode-actions/'
 id: 60fb01aec459242d3b6f20c1
 versions:
   - name: 'Braze Cloud Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-cloud-mode-actions'
+    link: '/docs/connections/destinations/catalog/actions-braze-cloud'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---
@@ -172,3 +173,15 @@ When "Enable SDK Authentication" is enabled, Segment will set Braze's `enableSdk
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
+
+
+## FAQ
+
+### How does the Debounce Middleware Action work? 
+
+The following [Debounce Middleware](/docs/connections/destinations/catalog/actions-braze-web/#debounce-middleware) logic is executed at the source-level:
+
+When an Identify call is fired on a website, Segment first caches and compares the user traits object. 
+
+- If the user traits differ from what was previously cached, the data flows through destination filters, insert functions, and then through destination mappings. 
+- If user traits are the same as what's cached, Segment assumes that that data was already sent to Braze and a does not make a new request to Braze. 

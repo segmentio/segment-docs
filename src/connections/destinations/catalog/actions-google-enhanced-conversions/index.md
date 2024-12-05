@@ -13,7 +13,7 @@ hide_action:
     name: "Call Conversion"
   - id: mFUPoRTLRXhZ3sGbM8H3Qo
     name: "Conversion Adjustment"
-  - id: oWa5UioHjz5caK7t7tc57f
+  - id: h8sh7d7TUJYR1uv6RKZTGQ
     name: 'Upload Enhanced Conversion (Legacy)'
 ---
 
@@ -113,6 +113,24 @@ Segment automatically hashes any of the following fields that are not already ha
  * First name
  * Last name
 
+## Actions v2
+
+Segment’s v2 Actions, [Call Conversion v2](#call-conversion-v2), [Conversion Adjustment v2](#conversion-adjustment-v2), and [Click Conversion v2](#click-conversion-v2), support the following features:
+
+- **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data. 
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Google Ads.
+- **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
+
+> warning ""
+> You might need to reauthorize your Google Ads account to use all of the features associated with v2 Actions.
+
+### Sync modes
+
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Sync modes available for v2 Actions include:
+- **Add**: Add records to a list, segment, or journey.
+
 {% include components/actions-fields.html settings="true"%}
 
 ## Consent mode
@@ -178,6 +196,11 @@ This error indicates that the conversion action specified in the upload request 
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
 
+### Conversion upload error 
+
+You may encounter this error if you use more than one identifier to update a conversion. You must only use one identifier (GCLID, GBRAID, or WBRAID) for each ClickConversion entry.
+
 ### `The required field was not present., at conversions[0].gclid` Error
 
 Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.
+
