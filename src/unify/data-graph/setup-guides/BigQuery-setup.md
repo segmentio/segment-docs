@@ -31,18 +31,11 @@ To set the roles and permissions:
 
 
 ## Step 2: Create a dataset for Segment to store checkpoint tables
-**Segment requires write access to this dataset for internal bookkeeping and to store checkpoint tables for the queries that are executed. Therefore, Segment recommends creating a new dataset for this purpose.** 
+Create a new dataset as Segment requires write access to the dataset for internal bookkeeping and to store checkpoint tables for the queries that are executed. 
 
-> info ""
-> Segment recommends creating a new dataset for the Data Graph.
-> If you choose to use an existing dataset that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-catalog) to update user access for the Segment Reverse ETL catalog.
+Segment recommends you to create a new dataset for the Data Graph. If you choose to use an existing dataset that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](/docs/unify/data-graph/setup-guides/bigquery-setup/#update-user-access-for-segment-reverse-etl-dataset) to update user access for the Segment Reverse ETL catalog.
 
-Navigate to the BigQuery SQL editor and create a dataset that will be used by Segment. 
-
-```
-CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
-GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
-```
+To create your dataset, navigate to the BigQuery SQL editor and create a dataset that will be used by Segment. 
 
 ## Step 3: Grant read-only access for the Data Graph 
 Grant the [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer){:target="_blank"} role to the service account at the project level. Make sure to grant read-only access to the Profiles Sync project in case you have a separate project.
