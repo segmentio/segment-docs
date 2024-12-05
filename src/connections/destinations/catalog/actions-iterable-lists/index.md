@@ -2,11 +2,24 @@
 title: Iterable Lists (Actions) Destination
 strat: iterable
 hide-boilerplate: true
-id: 645babd9362d97b777391326
+id: 66a7c28810bbaf446695d27d
 hide-dossier: true
+engage: true
 ---
 
-Iterable Lists destination allows users to upload lists of users to Iterable, in the form of audiences. 
+Iterable Lists destination allows users to upload lists of users to Iterable, in the form of audiences. Iterable Lists feature [is described here](https://support.iterable.com/hc/en-us/articles/115000770906-Adding-Users-and-Creating-Lists).
+
+This is an Engage Destination, which means it can be used to send data to Iterable Lists from Segment Engage Audiences.
+
+## How it works
+
+**Every time you create an audience in Engage and connect it to the Iterable Lists destination, Segment does the following:**
+
+1. When the audience is created, Segment will create a new list in Iterable with the audience key as the list name;
+2. When a user enters the audience, Segment will add the user to the list in Iterable;
+3. When a user exits the audience, Segment will remove the user from the list in Iterable.
+
+{% include content/sync-frequency-note.md %}
 
 ## Getting started
 
@@ -35,4 +48,3 @@ Iterable Lists destination allows users to upload lists of users to Iterable, in
 16. Optionally, you can test the mapping by clicking on **Test Mapping**;
 17. Click on **Next**;
 18. Under the last step ("Settings"), give this mapping a name, and click on **Save and enable**, if you want to enable the mapping right away, or **Save**, if you want to enable it later.
-
