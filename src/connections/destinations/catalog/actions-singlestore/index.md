@@ -21,60 +21,53 @@ This destination is maintained by SingleStore. For any issues with the destinati
 4. Enter a name for your SingleStore (Actions) destination, update any additional settings, then click **Save**. 
 6. Navigate to the Mappings tab for your SingleStore destination and click **New Mapping**.
 7. Select **Send Data**. 
-8. Within "Map fields", select your database from the list presented
-9. Click "Next" and then "Save"
-10. Voila!  Your data should start flowing into your SingleStore database within moments.
+8. In the Map fields section, select your database from the list presented.
+9. Click **Next** and then **Save**.  
 
 {% include components/actions-fields.html %}
 
 ### Finding your SingleStore connection settings
-You can generally find your SingleStore connection settings by heading to the [SingleStore Portal](https://portal.singlestore.com) and following these steps:
-1. Select "Deployments"
+To find your SingleStore connection settings, head to the [SingleStore Portal](https://portal.singlestore.com){:target="_blank”} and complete the following steps:
+1. Select **Deployments**.
 2. Choose your Workspace and Database within the list of Deployments
-3. Click "Connect" dropdown
-4. Choose Connect to your own app and that will provide the key settings
+3. From the Connect dropdown, select **Connect to your own app**. SingleStore will display the the key settings you need to connect your SingleStore database to Segment. 
 
-## The database structure
-Segment creates a table called `segment_raw_data` and writes data to your SingleStore database using the following schema.
+## Database structure
+Segment creates a table called `segment_raw_data` and writes data to your SingleStore database using the following schema:
 
-### Columns in the segment_raw_data table
-|Column|	Type	|Description|
-|-|-|-|
-|`message`|	JSON (utf8_bin)|	The entire message received from Segment in JSON format|
-|`timestamp`|	datetime|	The timestamp of when the event was generated|
-|`event`|	VARCHAR(255)|	The event name (for Track events)|
-|`messageId`|	VARCHAR(255)|	The unique identifier of the event to ensure there is no duplication|
-|`type`|	VARCHAR(255)|	The type of the event (e.g., identify, track, page, group)|
+| Column |	Type	| Description |
+| -------- | ------ |  ----------- |
+| `message` |	JSON (utf8_bin) |	The entire message received from Segment, in JSON format |
+| `timestamp` |	datetime |	The timestamp of when the event was generated |
+| `event` |	VARCHAR(255) |	The event name (for Track events) |
+| `messageId` |	VARCHAR(255) |	The unique identifier of the event to ensure there is no duplication |
+| `type` |	VARCHAR(255) |	The type of the event (for example, Identify, Track, Page, Group) |
 
 
-### Accessing Nested Data
+### Accessing nested data
 To query specific data from the Segment event within SingleStore, you can de-reference the JSON pointer within the message column. For example:
-```
+
+```sql
 SELECT message::properties FROM segment_raw_data;
 ```
+
 This query retrieves the properties object from the JSON message, allowing you to work with nested event data.
 
 ## Troubleshooting
 
 ### Connection Errors
-**Issue:** Unable to connect to the SingleStore database.
-
-**Solution:**
+If you're unable to connect to the SingleStore database:
 * Verify that the Host and Port are correct.
 * Ensure that your SingleStore database is accessible from Segment’s servers.
 * Check firewall settings and network configurations.
 
 ### Authentication Failures
-**Issue:** Authentication errors when Segment attempts to connect.
-
-**Solution:**
+If you encounter authentication errors when Segment attempts to connect:
 * Confirm that the Username and Password are correct.
 * Ensure that the user has the necessary permissions to write to the database.
 
 ### Data Not Appearing in SingleStore
-**Issue:** Events are not being recorded in the segment_raw_data table.
-
-**Solution:**
+If events are not recorded in the `segment_raw_data` table:
 * Verify that your sources are correctly sending data to Segment.
 * Check the event types to ensure they are supported.
 * Review your SingleStore database logs for any errors.
@@ -82,11 +75,11 @@ This query retrieves the properties object from the JSON message, allowing you t
 ## Frequently Asked Questions
 ### Can I customize the schema used in SingleStore?
 
-By default, the mapping is predefined to store the complete raw Segment events in the segment_raw_data table. If you prefer, within the mapping, you can choose to selectively include or exclude specific fields to be sent and written into SingleStore.
+By default, the mappings store the complete raw Segment events in the `segment_raw_data` table. If you prefer, within the mapping, you can choose to selectively include or exclude specific fields to be sent and written into SingleStore.
 
 ### How does SingleStore handle data types from Segment?
 
-All event data is stored natively as JSON within the message column. This allows for flexible schema management and easy access to nested properties using SQL queries.  SingleStore's ability to dynamically and quickly parse the JSON allows all types of complex events to be queried or used in notebooks.
+All event data is stored natively as JSON in the message column. This allows for flexible schema management and easy access to nested properties using SQL queries.  SingleStore's ability to dynamically and quickly parse the JSON allows all types of complex events to be queried or used in notebooks.
 
 ### Is the data ingestion process real-time?
 
