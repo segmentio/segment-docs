@@ -19,7 +19,7 @@ This destination is maintained by SingleStore. For any issues with the destinati
 2. Select "SingleStore" and click **Add Destination**.
 3. Select an existing Source to connect to SingleStore (Actions).
 4. Enter a name for your SingleStore (Actions) destination, update any additional settings, then click **Save**. 
-6. Now go to your "Mappings" and click "New Mapping"
+6. Navigate to the Mappings tab for your SingleStore destination and click **New Mapping**.
 7. Select "Send Data"
 8. Within "Map fields", select your database from the list presented
 9. Click "Next" and then "Save"
