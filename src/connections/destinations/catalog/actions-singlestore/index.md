@@ -18,8 +18,7 @@ This destination is maintained by SingleStore. For any issues with the destinati
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "SingleStore".
 2. Select "SingleStore" and click **Add Destination**.
 3. Select an existing Source to connect to SingleStore (Actions).
-4. Enter the settings to connect to your SingleStore instance
-5. Click "Save"
+4. Enter a name for your SingleStore (Actions) destination, update any additional settings, then click **Save**. 
 6. Now go to your "Mappings" and click "New Mapping"
 7. Select "Send Data"
 8. Within "Map fields", select your database from the list presented
