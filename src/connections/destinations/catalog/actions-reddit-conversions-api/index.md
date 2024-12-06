@@ -1,5 +1,5 @@
 ---
-title: Reddit Conversions API (Actions) Destination
+title: Reddit Conversions API
 ---
 
 {% include content/plan-grid.md name="actions" %}
