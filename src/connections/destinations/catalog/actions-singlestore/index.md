@@ -5,7 +5,7 @@ id: 6720ddceaa24532723b39d63
 
 {% include content/plan-grid.md name="actions" %}
 
-[<SingleStore>](https://singlestore.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a high-performance, cloud-native database designed for real-time analytics and applications. By integrating SingleStore with Segment, you can ingest, analyze, and act on your customer data instantly, unlocking faster insights for your business.
+[SingleStore](https://singlestore.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a high-performance, cloud-native database designed for real-time analytics and applications. By integrating SingleStore and Segment, you can ingest, analyze, and act on your customer data instantly, unlocking faster insights for your business.
 * **Real-Time Analytics:** Handle streaming and transactional data simultaneously with ultra-low latency.
 * **Advanced Data Science:** Run complex data science and machine learning models directly within the database.
 * **Seamless Integration:** Consolidate data from Segment and other sources to enable responsive, real-time experiences.
