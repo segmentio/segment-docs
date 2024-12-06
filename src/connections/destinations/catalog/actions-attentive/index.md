@@ -9,7 +9,6 @@ Attentive Mobile maintains this destination. For any issues with the destination
 
 ### Destination Actions
 
-Attentive (Actions) Destination
 
 {% include content/plan-grid.md name="actions" %}
 
