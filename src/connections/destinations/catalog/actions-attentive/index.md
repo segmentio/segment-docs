@@ -12,7 +12,6 @@ Attentive Mobile maintains this destination. For any issues with the destination
 
 {% include content/plan-grid.md name="actions" %}
 
-This destination is maintained by Attentive. For any issues with the destination, contact their [Support team](mailto:whiteglove@attentivemobile.com).
 
 To enable your new Attentive (Actions) destination:
 1. Create a new private app by opening Attenive's UI and clicking [Marketplace > Create App](https://ui.attentivemobile.com/integrations/app/setup){:target="_blank"}. 
