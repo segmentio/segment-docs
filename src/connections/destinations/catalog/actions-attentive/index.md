@@ -7,7 +7,7 @@ id: 674f2453916dadbd36d899dc
 
 Attentive Mobile maintains this destination. For any issues with the destination, [contact the Attentive Mobile Support team](mailto:support@attentivemobile.com).
 
-### Destination Actions
+## Getting Started
 
 
 {% include content/plan-grid.md name="actions" %}
