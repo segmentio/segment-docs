@@ -11,7 +11,7 @@ id: 6720ddceaa24532723b39d63
 * **Seamless Integration:** Consolidate data from Segment and other sources to enable responsive, real-time experiences.
 * **Scalability:** Effortlessly support complex queries and high-velocity data without compromising on speed or cost efficiency.
 
-This destination is maintained by SingleStore. For any issues with the destination, [contact SingleStore Support team](https://support.singlestore.com/).
+This destination is maintained by SingleStore. For any issues with the destination, [contact the SingleStore Support team](https://support.singlestore.com/){:target="_blank”}.
 
 ## Getting started
 
