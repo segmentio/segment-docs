@@ -128,18 +128,19 @@ The following example shows how journey context might look during a workflow. In
 
 ```json
 {
-  "appointment_scheduled": {
-    "appointment_id": 12345,
-    "start_time": "2024-12-06T10:00:00Z",
-    "end_time": "2024-12-06T11:00:00Z",
-    "provider_name": "Dr. Smith"
-  },
-  "appointment_rescheduled": {
-    "appointment_id": 12345,
-    "start_time": "2024-12-07T10:00:00Z",
-    "end_time": "2024-12-07T11:00:00Z",
-    "provider_name": "Dr. Jameson"
-  }
+  "journey_context": {
+    "appointment_scheduled": {
+      "appointment_id": 12345,
+      "start_time": "2024-12-06T10:00:00Z",
+     "end_time": "2024-12-06T11:00:00Z",
+      "provider_name": "Dr. Smith"
+    },
+    "appointment_rescheduled": {
+      "appointment_id": 12345,
+      "start_time": "2024-12-07T10:00:00Z",
+      "end_time": "2024-12-07T11:00:00Z",
+      "provider_name": "Dr. Jameson"
+    }
   // "split_decision": {
   //   "split_name": "appointment_type_split",
   //   "branch_chosen": "existing_patient"
@@ -147,12 +148,14 @@ The following example shows how journey context might look during a workflow. In
   // "function_output": {
   //   "discount_percentage": 15
   // }
+  }
 }
 ```
 
 This payload contains:
 
-- **Event properties**: Captured under the `appointment_scheduled` key.
+- **Entry Event properties**: Captured under the `appointment_scheduled` key.
+- **Hold Until Event properties**: Captured under the `appointment_rescheduled` key. 
 // - **Split outcomes**: Documented in the `split_decision` object.
 // - **Function results**: Stored in the `function_output` object for use in later steps.
 
