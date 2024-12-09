@@ -43,23 +43,24 @@ To add the Rokt Audiences (Actions) destination:
 
 5. On the **Settings** tab, enter the name of your destination. For example, `Rokt audiences – <audience name>`.
 
-6. Enter your Rokt **API key**.
+6. Enter your RPub, RSec, and Account id values in the integration. Your Rokt account manager can share RPub/RSec values
+with you. Rokt Account ID can be found by following instructions [here](https://docs.rokt.com/developers/integration-guides/rokt-ads/account-id/#account-id).
 
 7. Click **Save Changes**.
 
-8. In the **Mappings** tab, click **+ New Mapping** and select **Add Users to Audience**. Don't change any defaults.
+8. In the **Mappings** tab within the Rokt Audience destination, click **+ New Mapping** and select **Sync Engage Audience to Rokt** under the "Actions" tab.
+Don't change any defaults.
 
 9. Under the **Configure actions fields**, set **Enable Batching** to *Yes* and click **Save**.
 
-7. Repeat steps 8 and 9 for **Remove Users from Audience**.
+10. Go to the **Settings** tab and select the toggle to **Enable** the destination.
 
-8. **Enable** both mappings.
+11. Select your space, and navigate to **Engage > Audiences**. Select the source audience that you want to send to your Rokt Audiences (Actions) destination.
 
-9. Go to the **Settings** tab and select the toggle to **Enable** the destination.
+12. Click **Add Destinations** and select the Rokt Audience (Actions) destination you created.
+In the settings that appear on the right-hand side, toggle the **Send Track** option on and **Send Identify**.
 
-10. Select your space, and navigate to **Engage > Audiences**. Select the source audience that you want to send to your Rokt Audiences (Actions) destination.
-
-11. Click **Add Destinations** and select the Rokt Audience (Actions) destination you created. In the settings that appear on the right-hand side, toggle the **Send Track** option on and **Send Identify**. Click **Save**.
+13. Within the same panel view, select "Default Setup". You may now hit  Click **Save** in the top right corner.
 
 Your Rokt Audiences (Actions) destination is now ready to receive audiences, and your Persona audiences are now accessible in your Rokt Advertiser dashboard. Keep in mind that it can take 12-24 hours for the first sync when the number of email identifies are in the millions.
 
