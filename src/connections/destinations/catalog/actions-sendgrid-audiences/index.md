@@ -1,0 +1,65 @@
+---
+title: [SendGrid Lists (Actions)] Destination
+---
+
+{% include content/plan-grid.md name="actions" %}
+
+[SendGrid Lists (Actions)](https://mc.sendgrid.com/contacts/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} help customers organize their email recipients into targeted groups, enabling them to send personalized, relevant content to specific audiences. This improves engagement, increases email deliverability, and streamlines campaign management.
+
+This destination is maintained by Segment. For any issues with the destination [contact the Segment Support team](mailto:friends@segment.com).
+
+## Getting started
+
+**SendGrid Lists (Actions)** is designed to work with **Engage Audiences** only. The steps below outline how to create and connect the Destination to Engage and then to an Engage Audience. **SendGrid Lists (Actions)** is not designed to connect to regular Connections Sources. 
+
+### Create a SendGrid API Key
+1. Sign in to your SendGrid account, then navigate to **Settings** > **API Keys**.
+2. Click **Create API Key** and follow the instructions to generate a new API key. Ensure Full Access permission is selected. 
+3. Save the API key value securely, as you will need it in later steps.
+
+### Create and connect 'SendGrid Lists (Actions)' to an Engage Space
+
+1. From your Segment workspace's home page, click on **Engage** > **Engage Settings** > **Settings**. Click the **Add destination** button. 
+2. Search for **SendGrid Lists (Actions)** and select its tile. Click **Add Destination** and then **Confirm Source**.
+3. On the Basic Settings screen provide **Name** and **API Key** values in the specified fields. Enable the Destination. 
+
+### Create a Mapping
+
+1. From your Segment workspace's home page, click **Connections** > **Destinations**, then search for the **Destination** created in previous steps and click on its tile.
+2. Click on **Mappings** > **New Mapping** > **Sync Audience** > **Save**. 
+3. On the next screen, enable the Mapping using the **Status** toggle.
+
+### Connect an Audience
+
+1. From your Segment workspace's home page, navigate to the Audience you'd like to sync to SendGrid by clicking on **Engage** > **Audiences**, then selecting the Audience to connect. 
+2. Click **Add Destination**, then search for the **SendGrid Lists (Actions)** instance you created earlier and select its tile. 
+3. Enter a **List Name**, select **Default Setup**, and click **Save**. On the following screen, click **Add 1 Destination**. 
+
+The **SendGrid Lists (Actions)** will now start to sync the **Engage Audience** to a **SendGrid List**.
+
+{% include components/actions-fields.html %}
+
+
+## Additional information
+
+### Does Segment create Lists in SendGrid?
+Segment automatically creates Lists in SendGrid. The List will be named with the value provided in the **Name** field. If no name is provided in the **Name** field Segment will default to using the Audience's **Audience Key** value. 
+
+### Does Segment create new Contacts in SendGrid?
+Segment will create Contacts in SendGrid if a Contact doesn't already exist.
+
+### Will Segment delete Contacts from SendGrid?
+Segment will not delete Contacts from SendGrid. If a user is removed from an Engage Audience, Segment will remove the Contact from the associated List in SendGrid but will not delete the Contact. 
+
+### Sending additional user traits
+Segment supports sending Engage user profile traits to SendGrid Contact User Attributes. The following additional manual configuration steps are required: 
+
+1. Use Engage's [Trait Enrichment](https://segment.com/docs/engage/trait-activation/trait-enrichment/) to configure Engage to include specific user profile traits when syncing users to the SendGrid List. 
+2. Standard **User Attributes**: The **Sync Audience** Action's **User Attributes** field should be used to map **First Name**, **Last Name**, **Address Line 1**, **Address Line 2**, **City**, **State/Province/Region**, **Country**, and **Postal Code** values to Sendgrid. 
+3. Non-standard **User Attributes**: The **Sync Audience** Action's **Custom Fields** field should be used to map non-standard or custom **User Attribute** to SendGrid. Note that these **User Attributes** must be pre-defined in SendGrid. Segment supports sending only string, number, and date values via the **Custom Fields** field.
+
+### Supported identifiers 
+Segment can sync Engage users to a SendGrid List using any of the following identifier types: **Email Address**, **Anonymous ID**, **Phone Number ID**, and **External ID**. The following additional manual configuration steps are required in order to use **Anonymous ID**, **Phone Number ID**, and **External ID** identifier types: 
+
+1. Use Engage's [ID Sync](https://segment.com/docs/engage/trait-activation/id-sync/) capability to configure Engage to include **Anonymous ID**, **Phone Number ID**, or **External ID** identifiers when syncing users to the SendGrid List. 
+2. Map the **Anonymous ID**, **Phone Number ID**, and **External ID** identifiers using the **Sync Audience** Action's **Anonymous ID**, **Phone Number ID**, and **External ID** fields. 
