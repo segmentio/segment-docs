@@ -45,12 +45,15 @@ Setup is now complete, and the audience starts syncing to The Trade Desk.
 
 To sync additional Audiences from your Engage space, create a separate instance of The Trade Desk CRM Destination.
 
+> info "Mapping tester availability"
+> The Mapping Tester isn't available for this destination. Since this destination requires batched events for activation, testing can only be performed end-to-end with a connected source.
+
 {% include components/actions-fields.html settings="true"%}
 
 
 ## Limitations
 
-* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync.
+* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync. 
 * Audience attempts to sync once per day.
 * Audience sync is a full sync.
 

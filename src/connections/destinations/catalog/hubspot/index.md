@@ -196,6 +196,14 @@ HubSpot Plan: API Add-On (Any Tier)
 * Maximum Number of API Calls per 10 Seconds, per Key or Token: **120**
 * Maximum Number of API Calls per Day, per Key or Token: **1,000,000**
 
+### Maximum data size returned from HubSpot
+
+When Segment pulls contact or company fields from HubSpot, there is a 1MB limit on the size of the data Segment allows to return from HubSpot’s platform. If this limit is exceeded, the request and response process stops, and the event you tried to send to HubSpot won't be delivered.
+
+To avoid this issue:
+- **Maintain clean and concise datasets**: Regularly review and remove unused or redundant fields.
+- **Minimize returned traits**: Verify that only the fields essential for to your workflow are included in the data retrieved from HubSpot.
+By keeping your datasets streamlined, you improve data hygiene and reduce the risk of exceeding Segment's data size limit for processing.
 
 ### Sending Dates as Property Values
 
