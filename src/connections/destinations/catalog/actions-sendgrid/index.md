@@ -24,15 +24,34 @@ hide_action:
 
 {% include components/actions-fields.html %}
 
+## Additional details for the 'Send email with Dynamic Template' Action 
 
-## Recording Custom User Traits
+### Usage
+The 'Send email with Dynamic Template' Action can be used to send emails via Sendgrid using [Sendgrid Dynamic Templates](https://www.twilio.com/docs/sendgrid/ui/sending-email/how-to-send-an-email-with-dynamic-templates). The Dynamic Template being used must already exist in Sendgrid. Use the Action field named 'Dynamic Template Data' to populate values in the Dynamic Template. 
+
+### Contacts
+Emails will be sent to the specified email addresses, even if they are not listed as Contacts in SendGrid Marketing Campaigns.
+
+### Sendgrid API Key
+Segment and SendGrid recommend defining the SendGrid API key within a subuser account and ensuring the domain being used is authenticated under that same subuser account. The 'Send email with Dynamic Template' Action requires the Sendgrid API Key to have the following scopes assigned:   
+1. Category Management: full
+2. IP Management: full
+3. IP Management: full
+4. Template Engine: full
+
+## Additional details for the 'Upsert Contact' Action 
+
+### Recording Custom User Traits
 If you want to view any other custom user traits in the Marketing Campaigns list dashboard, you must create a [Custom Field inside Marketing Campaigns’s UI](https://docs.sendgrid.com/ui/managing-contacts/custom-fields#creating-custom-fields){:target="_blank"} of the traits in your identify calls. Note that you do not need to map all user.traits you are sending inside Marketing Campaigns. You only need to create Custom Fields of the traits you want to see in your list view.
 
-## Custom Fields
+### Custom Fields
 To send custom fields/user traits to Marketing Campaigns you need to create the field first in Marketing Campaigns for each trait you want sent to Marketing Campaigns. Then when you call identify with keys that match those traits they will appear in your Marketing Campaigns list.
 
 For any other custom traits just add a Custom Field inside of SendGrid Marketing Campaigns with a tag that matches the key you are using in your identify call.
 
-
-## Recording userId
+### Recording userId
 To record a Segment userId in SendGrid Marketing Campaigns, you must pass the userID as a trait on your identify() calls. SendGrid does not automatically map the Segment userID to any Marketing Campaigns properties.
+
+### Sendgrid API Key
+The 'Upsert Contact' Action requires the Sendgrid API Key to have the following scopes assigned:
+1. Marketing: full
