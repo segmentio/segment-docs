@@ -362,8 +362,8 @@ sections:
         title: BigQuery Data Graph Setup
       - path: /unify/data-graph/setup-guides/databricks-setup/
         title: Databricks Data Graph Setup
-      - path: Redshift Data Graph Setup
-        title: /unify/data-graph/setup-guides/redshift-setup/
+      - path: /unify/data-graph/setup-guides/redshift-setup/
+        title: Redshift Data Graph Setup
       - path: /unify/data-graph/setup-guides/snowflake-setup/
         title: Snowflake Data Graph Setup
     - section_title: Linked Events 
