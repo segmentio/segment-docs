@@ -208,7 +208,8 @@ The coalesce function takes a primary value and uses it if it is available. If t
 The replace function allows you to replace a string, integer, or boolean with a new value. You have the option to replace up to two values within a single field.
 
 ### Concatenate function
-You can concatenate two properties by using a pipe '|' character, or add the string value (e.g. +1`phoneNumber`) in the event variable field itself to concatenate. 
+You can concatenate two properties by adding them next to each other, or add the string value (e.g. +1`phoneNumber`) in the event variable field itself to concatenate. Here is an example:
+![Screenshot of the Mappings example for concatenating two values](images/mapping-concatenation.png)
 
 ### Conditions
 
