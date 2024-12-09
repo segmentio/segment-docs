@@ -52,7 +52,7 @@ Some Auto-Instrumentation advantages include:
 
 Once you integrate the Analytics SDK and Signals SDK into your website or application, Segment begins to passively monitor user activity like button clicks, page navigation, and network data. Segment captures these events as "signals" and sends them to your Auto-Instrumentation source in real time.
 
-In Segment, the Auto-Instrumentation source lets you view raw signals. You can then [use this data to create detailed analytics events](/docs/connections/auto-instrumentation/configuration/) based on those signals, enriching your insights into user behavior and applicatino performance.
+In Segment, the Auto-Instrumentation source lets you view raw signals. You can then [use this data to create detailed analytics events](/docs/connections/auto-instrumentation/configuration/) based on those signals, enriching your insights into user behavior and application performance.
 
 ## Setup Guides
 
