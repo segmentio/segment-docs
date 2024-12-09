@@ -1,5 +1,5 @@
 ---
-title: Databricks Setup
+title: Databricks Data Graph Setup
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/setup-guides/databricks-setup'
