@@ -56,7 +56,7 @@ Segment supports sending Engage user profile traits to SendGrid Contact User Att
 
 1. Use [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to include specific user profile traits when syncing users to a SendGrid List. 
 2. Standard **User Attributes**: The **Sync Audience** Action's **User Attributes** field should be used to map **First Name**, **Last Name**, **Address Line 1**, **Address Line 2**, **City**, **State/Province/Region**, **Country**, and **Postal Code** values to Sendgrid. 
-3. Non-standard **User Attributes**: The **Sync Audience** Action's **Custom Fields** field should be used to map non-standard or custom **User Attribute** to SendGrid. Note that these **User Attributes** must be pre-defined in SendGrid. Segment supports sending only string, number, and date values via the **Custom Fields** field.
+3. Custom User Attributes: Define a custom User Attribute in SendGrid, then use [Sync Audience ](#sync-audience-action) Action to send custom User Attributes to SendGrid using the Custom Fields field. You can only send string, number, and date values to SendGrid with this method.
 
 ### Supported identifiers 
 Segment can sync members of an Engage Audience to a SendGrid List using any of the following identifier types:
