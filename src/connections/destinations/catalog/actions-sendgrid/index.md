@@ -36,7 +36,7 @@ Segment and SendGrid recommend that you define the SendGrid API key within a sub
 - IP Management: full
 - Template Engine: full
 
-## Additional details for the 'Upsert Contact' Action 
+## Additional details for the Upsert Contact Action 
 
 ### Recording Custom User Traits
 If you want to view any other custom user traits in the Marketing Campaigns list dashboard, you must create a [Custom Field inside Marketing Campaigns’s UI](https://docs.sendgrid.com/ui/managing-contacts/custom-fields#creating-custom-fields){:target="_blank"} of the traits in your identify calls. Note that you do not need to map all user.traits you are sending inside Marketing Campaigns. You only need to create Custom Fields of the traits you want to see in your list view.
