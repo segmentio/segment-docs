@@ -1,5 +1,7 @@
 ---
-title: [SendGrid Lists (Actions)] Destination
+title: SendGrid Lists (Actions) Destination
+engage: true
+id: 
 ---
 
 {% include content/plan-grid.md name="actions" %}
