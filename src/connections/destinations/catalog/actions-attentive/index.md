@@ -14,6 +14,8 @@ Attentive (Actions) Destination
 
 This destination is maintained by Attentive. For any issues with the destination, contact their [Support team](mailto:whiteglove@attentivemobile.com).
 
+
+## Getting started
 To enable your new Attentive (Actions) destination:
 1. Create a new private app by opening Attenive's UI and clicking [Marketplace > Create App](https://ui.attentivemobile.com/integrations/app/setup){:target="_blank"}. 
 2. Enter an `App name` and `Contact email`. Then change the permissions for Custom Events, Custom Attributes, eCommerce and Subscribers to `Write`.
