@@ -19,7 +19,7 @@ SendGrid Lists (Actions) is designed to work with Engage Audiences only. The ste
 2. Click **Create API Key** and follow the instructions to generate a new API key. Be sure to grant the API key **Full Access** permission. 
 3. Save the API key value securely, as you will need it in later steps.
 
-### Create and connect 'SendGrid Lists (Actions)' to an Engage Space
+### Connect a SendGrid Lists (Actions) destination to an Engage Space
 
 1. From your Segment workspace's home page, navigate to **Engage** > **Engage Settings** > **Settings** and click **Add destination**. 
 2. Search for SendGrid Lists (Actions) and select the SendGrid Lists (Action) tile. Click **Add Destination** and **Confirm Source**.
