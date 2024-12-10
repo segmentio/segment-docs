@@ -31,10 +31,10 @@ SendGrid sends emails to the email addresses you specify, even if they are not l
 
 ### Sendgrid API Key
 Segment and SendGrid recommend that you define the SendGrid API key within a subuser account and the domain is authenticated under that same subuser account. The Send Email With Dynamic Template Action requires that the  SendGrid API Key has the following scopes assigned:   
-1. Category Management: full
-2. IP Management: full
-3. IP Management: full
-4. Template Engine: full
+- Category Management: full
+- IP Management: full
+- IP Management: full
+- Template Engine: full
 
 ## Additional details for the 'Upsert Contact' Action 
 
