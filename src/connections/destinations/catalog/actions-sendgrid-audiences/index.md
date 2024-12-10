@@ -4,7 +4,7 @@ title: [SendGrid Lists (Actions)] Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-[SendGrid Lists (Actions)](https://mc.sendgrid.com/contacts/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} help customers organize their email recipients into targeted groups, enabling them to send personalized, relevant content to specific audiences. This improves engagement, increases email deliverability, and streamlines campaign management.
+[SendGrid Lists (Actions)](https://mc.sendgrid.com/contacts/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps customers organize their email recipients into targeted groups, enabling them to send personalized, relevant content to specific audiences. This improves engagement, increases email deliverability, and streamlines campaign management.
 
 This destination is maintained by Segment. For any issues with the destination, [contact the Segment Support team](mailto:friends@segment.com).
 
