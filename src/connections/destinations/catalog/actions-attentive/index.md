@@ -25,5 +25,4 @@ To enable your new Attentive (Actions) destination:
 {% include components/actions-fields.html %}
 
 
-Attentive's (Actions) Destinations leverage Attentive's APIs. For more information on the APIs, they can be found on [Attentive's Developer Site](https://docs.attentivemobile.com/){:target="_blank"}. 
 
