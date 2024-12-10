@@ -10,7 +10,7 @@ This destination is maintained by Segment. For any issues with the destination [
 
 ## Getting started
 
-**SendGrid Lists (Actions)** is designed to work with **Engage Audiences** only. The steps below outline how to create and connect the Destination to Engage and then to an Engage Audience. **SendGrid Lists (Actions)** is not designed to connect to regular Connections Sources. 
+SendGrid Lists (Actions) is designed to work with Engage Audiences only. The steps below outline how to create and connect the Destination to Engage and then to an Engage Audience. SendGrid Lists (Actions) is not designed to connect to Connections Sources. 
 
 ### Create a SendGrid API Key
 1. Sign in to your SendGrid account, then navigate to **Settings** > **API Keys**.
