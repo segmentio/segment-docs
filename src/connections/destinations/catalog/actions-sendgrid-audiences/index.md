@@ -49,7 +49,7 @@ Segment automatically creates Lists in SendGrid. The List will be named with the
 Segment will create Contacts in SendGrid if a Contact doesn't already exist.
 
 ### Will Segment delete Contacts from SendGrid?
-Segment will not delete Contacts from SendGrid. If a user is removed from an Engage Audience, Segment will remove the Contact from the associated List in SendGrid but will not delete the Contact. 
+Segment doesn't delete Contacts from SendGrid. If you remove a user from an Engage Audience, Segment does remove the Contact from the associated SendGrid List, but doesn't delete the Contact from SendGrid. 
 
 ### Sending additional user traits
 Segment supports sending Engage user profile traits to SendGrid Contact User Attributes. The following additional manual configuration steps are required: 
