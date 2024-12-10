@@ -42,7 +42,7 @@ The SendGrid Lists (Actions) destination will now start to sync your Engage Audi
 {% include components/actions-fields.html %}
 
 
-## Additional information
+## Troubleshooting
 
 ### Does Segment create Lists in SendGrid?
 Segment automatically creates Lists in SendGrid. If you provide a value in the **Name** field, Segment names the List the value you provided. If you do not provide a name in the  **Name** field, Segment gives the List the Engage Audience's **Audience Key** value. 
