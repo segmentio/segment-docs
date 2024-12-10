@@ -59,7 +59,13 @@ Segment supports sending Engage user profile traits to SendGrid Contact User Att
 3. Non-standard **User Attributes**: The **Sync Audience** Action's **Custom Fields** field should be used to map non-standard or custom **User Attribute** to SendGrid. Note that these **User Attributes** must be pre-defined in SendGrid. Segment supports sending only string, number, and date values via the **Custom Fields** field.
 
 ### Supported identifiers 
-Segment can sync Engage users to a SendGrid List using any of the following identifier types: **Email Address**, **Anonymous ID**, **Phone Number ID**, and **External ID**. The following additional manual configuration steps are required in order to use **Anonymous ID**, **Phone Number ID**, and **External ID** identifier types: 
+Segment can sync members of an Engage Audience to a SendGrid List using any of the following identifier types:
+ - Email Address
+ - Anonymous ID
+ - Phone Number ID
+ - External ID 
+ 
+ To sync Engage users to a list using Anonymous ID, Phone Number ID, and External ID identifier types, complete the following configuration steps: 
 
-1. Use Engage's [ID Sync](https://segment.com/docs/engage/trait-activation/id-sync/) capability to configure Engage to include **Anonymous ID**, **Phone Number ID**, or **External ID** identifiers when syncing users to the SendGrid List. 
-2. Map the **Anonymous ID**, **Phone Number ID**, and **External ID** identifiers using the **Sync Audience** Action's **Anonymous ID**, **Phone Number ID**, and **External ID** fields. 
+1. Configure [ID Sync](/docs/engage/trait-activation/id-sync/) to include Anonymous ID, Phone Number ID, or External ID identifiers when syncing users from an Engage Audience to the SendGrid List. 
+2. Map the Anonymous ID, Phone Number ID, and External ID identifiers using the [Sync Audience ](#sync-audience-action) Action's Anonymous ID, Phone Number ID, and External ID fields. 
