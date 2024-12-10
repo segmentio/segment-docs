@@ -37,7 +37,7 @@ SendGrid Lists (Actions) is designed to work with Engage Audiences only. The ste
 2. Click **Add Destination**, then search for the **SendGrid Lists (Actions)** instance you created earlier and select its tile. 
 3. Enter a **List Name**, select **Default Setup**, and click **Save**. On the following screen, click **Add 1 Destination**. 
 
-The **SendGrid Lists (Actions)** will now start to sync the **Engage Audience** to a **SendGrid List**.
+The SendGrid Lists (Actions) destination will now start to sync your Engage Audience to a SendGrid List.
 
 {% include components/actions-fields.html %}
 
