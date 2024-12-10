@@ -51,4 +51,4 @@ To record a Segment userId in SendGrid Marketing Campaigns, you must pass the us
 
 ### SendGrid API Key
 The Upsert Contact Action requires the SendGrid API Key to have the following scopes:
-1. Marketing: full
+- Marketing: full
