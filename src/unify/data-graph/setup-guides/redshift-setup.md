@@ -112,9 +112,7 @@ To connect your warehouse to Segment:
 5. Test your connection, then click **Save**.
 
 ## Update user access for Segment Reverse ETL dataset
-If Segment Reverse ETL ran in the project you are configuring as the Segment connection project, a Segment-managed dataset is already created, and you need to provide the new Segment user access to the existing dataset. Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `__segment_reverse_etl`.
-
-Run the following command:
+If Segment Reverse ETL ran in the project you are configuring as the Segment connection project, a Segment-managed dataset is already created, and you need to provide the new Segment user access to the existing dataset. Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `__segment_reverse_etl`:
 
 ```sql
 -- If you want to use an existing database that already has Segment Reverse ETL schemas, you’ll need to run some additional steps below to grant the role access to the existing schemas.
