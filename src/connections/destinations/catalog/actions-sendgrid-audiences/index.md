@@ -27,7 +27,7 @@ SendGrid Lists (Actions) is designed to work with Engage Audiences only. The ste
 
 ### Create a Mapping
 
-1. From your Segment workspace's home page, click **Connections** > **Destinations**, then search for the **Destination** created in previous steps and click on its tile.
+1. From your Segment workspace's home page, click **Connections** > **Destinations** and select the SendGrid Lists (Actions) destination you previously created.
 2. Click on **Mappings** > **New Mapping** > **Sync Audience** > **Save**. 
 3. On the next screen, enable the Mapping using the **Status** toggle.
 
