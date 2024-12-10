@@ -34,7 +34,7 @@ SendGrid Lists (Actions) is designed to work with Engage Audiences only. The ste
 ### Connect an Audience
 
 1. From your Segment workspace's home page, navigate to the Audience you'd like to sync to SendGrid by clicking on **Engage** > **Audiences**, then selecting the Audience to connect. 
-2. Click **Add Destination**, then search for the **SendGrid Lists (Actions)** instance you created earlier and select its tile. 
+2. Click **Add Destination**, and select the SendGrid Lists (Actions) destination you previously created.
 3. Enter a **List Name**, select **Default Setup**, and click **Save**. When prompted, select **Add 1 Destination**. 
 
 The SendGrid Lists (Actions) destination will now start to sync your Engage Audience to a SendGrid List.
