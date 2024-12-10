@@ -49,6 +49,6 @@ For any other custom traits just add a Custom Field inside of SendGrid Marketing
 ### Recording userId
 To record a Segment userId in SendGrid Marketing Campaigns, you must pass the userID as a trait on your identify() calls. SendGrid does not automatically map the Segment userID to any Marketing Campaigns properties.
 
-### Sendgrid API Key
+### SendGrid API Key
 The 'Upsert Contact' Action requires the Sendgrid API Key to have the following scopes assigned:
 1. Marketing: full
