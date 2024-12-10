@@ -14,7 +14,7 @@ This destination is maintained by Segment. For any issues with the destination [
 
 ### Create a SendGrid API Key
 1. Sign in to your SendGrid account, then navigate to **Settings** > **API Keys**.
-2. Click **Create API Key** and follow the instructions to generate a new API key. Ensure Full Access permission is selected. 
+2. Click **Create API Key** and follow the instructions to generate a new API key. Be sure to grant the API key **Full Access** permission. 
 3. Save the API key value securely, as you will need it in later steps.
 
 ### Create and connect 'SendGrid Lists (Actions)' to an Engage Space
