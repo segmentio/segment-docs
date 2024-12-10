@@ -23,7 +23,7 @@ SendGrid Lists (Actions) is designed to work with Engage Audiences only. The ste
 
 1. From your Segment workspace's home page, click on **Engage** > **Engage Settings** > **Settings**. Click the **Add destination** button. 
 2. Search for **SendGrid Lists (Actions)** and select its tile. Click **Add Destination** and then **Confirm Source**.
-3. On the Basic Settings screen provide **Name** and **API Key** values in the specified fields. Enable the Destination. 
+3. On the Basic Settings screen, provide **Name** and **API Key** values in the specified fields, toggle "Enable destination" to on, and then click **Save Changes**. 
 
 ### Create a Mapping
 
