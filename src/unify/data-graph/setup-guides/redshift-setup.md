@@ -20,7 +20,7 @@ If you're setting up Profiles Sync for the first time in the Unify space, go thr
 1. Navigate to **Unify > Profile Sync**.
 2. Select the **Settings** tab and select **Selective sync**. 
 3. Select all the tables under **Profile raw tables**. These include, `external_id_mapping_updates`, `id_graph_updates`, `profile_traits_updates`. Linked Audiences require Profile Sync to be configured such that both the Profile raw tables and the Profile materialized tables are synchronized with your Redshift instance.
-4. Select all of the tables under **Profile materialized tables**. These include, `profile_merges`, `user_traits`, `user_identifiers`. This allows faster and more cost-efficient Linked Audiences computations in your data warehouse. 
+4. Select all of the tables under **Profile materialized tables**. These include `profile_merges`, `user_traits`, `user_identifiers`. This allows faster and more cost-efficient Linked Audiences computations in your data warehouse. 
 5. Select **Sync all Track Call Tables** under **Track event tables** to enable filtering on event history for Linked Audiences conditions. 
 
 ## Getting started 
@@ -79,7 +79,7 @@ Grant table permissions based on your needs. Learn more about [Amazon’s table 
 Table permissions can either be handled in bulk:
 
 ```sql
--- query data from a all tables in a schema
+-- query data from all tables in a schema
 GRANT SELECT ON ALL TABLES IN SCHEMA "the_schema_name" TO ROLE SEGMENT_LINKED_ROLE;
 ```
 
@@ -106,7 +106,7 @@ To connect your warehouse to Segment:
 4. Enter your warehouse credentials. Segment requires the following settings to connect to your Redshift warehouse:
    * **Host Name:** The Redshift URL
    * **Port:** The Redshift connection port
-   * **Database:** The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_linked_profiles_db` in the SQL above
+   * **Database:** The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_linked_profiles_db` in the SQL above.
    * **Username:** The Redshift user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_linked_user` in the SQL above.
    * **Password:**  The password of the user above
 5. Test your connection, then click **Save**.
