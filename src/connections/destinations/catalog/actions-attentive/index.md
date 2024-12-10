@@ -11,7 +11,6 @@ Attentive Mobile maintains this destination. For any issues with the destination
 
 Attentive (Actions) Destination
 
-{% include content/plan-grid.md name="actions" %}
 
 This destination is maintained by Attentive. For any issues with the destination, contact their [Support team](mailto:whiteglove@attentivemobile.com).
 
