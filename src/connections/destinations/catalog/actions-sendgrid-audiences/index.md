@@ -54,7 +54,7 @@ Segment will not delete Contacts from SendGrid. If a user is removed from an Eng
 ### Sending additional user traits
 Segment supports sending Engage user profile traits to SendGrid Contact User Attributes. The following additional manual configuration steps are required: 
 
-1. Use Engage's [Trait Enrichment](https://segment.com/docs/engage/trait-activation/trait-enrichment/) to configure Engage to include specific user profile traits when syncing users to the SendGrid List. 
+1. Use [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to include specific user profile traits when syncing users to a SendGrid List. 
 2. Standard **User Attributes**: The **Sync Audience** Action's **User Attributes** field should be used to map **First Name**, **Last Name**, **Address Line 1**, **Address Line 2**, **City**, **State/Province/Region**, **Country**, and **Postal Code** values to Sendgrid. 
 3. Non-standard **User Attributes**: The **Sync Audience** Action's **Custom Fields** field should be used to map non-standard or custom **User Attribute** to SendGrid. Note that these **User Attributes** must be pre-defined in SendGrid. Segment supports sending only string, number, and date values via the **Custom Fields** field.
 
