@@ -24,7 +24,7 @@ id: 631a6f32946dd8197e9cab66
 ## Additional details for the Send Email With Dynamic Template Action 
 
 ### Usage
-The 'Send email with Dynamic Template' Action can be used to send emails via Sendgrid using [Sendgrid Dynamic Templates](https://www.twilio.com/docs/sendgrid/ui/sending-email/how-to-send-an-email-with-dynamic-templates). The Dynamic Template being used must already exist in Sendgrid. Use the Action field named 'Dynamic Template Data' to populate values in the Dynamic Template. 
+The [Send Email With Dynamic Template](#send-email-with-dynamic-template) Action can be used to send emails through SendGrid using [SendGrid Dynamic Templates](https://www.twilio.com/docs/sendgrid/ui/sending-email/how-to-send-an-email-with-dynamic-templates){:target="_blank”}. The Dynamic Template you use must already exist in SendGrid. Use the Action field [Dynamic Template Data](#dynamic-template-data) to populate values in the Dynamic Template. 
 
 ### Contacts
 Emails will be sent to the specified email addresses, even if they are not listed as Contacts in SendGrid Marketing Campaigns.
