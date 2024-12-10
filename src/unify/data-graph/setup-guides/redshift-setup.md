@@ -15,7 +15,8 @@ Set up your Redshift data warehouse to Segment for the [Data Graph](/docs/unify/
 
 To use Linked Audiences with Redshift, the Data Graph only supports [materialized views](/docs/unify/profiles-sync/tables/#tables-segment-materializes). 
 
-To configure Profiles Sync for your Unify space:
+If you're setting up Profiles Sync for the first time in the Unify space, go through the setup flow for Selective sync. If Profiles Sync is already set up for your Unify space, follow these steps to configure Profiles Sync for your Unify space:
+
 1. Navigate to **Unify > Profile Sync**.
 2. Select the **Settings** tab and select **Selective sync**. 
 3. Select all the tables under **Profile raw tables**. These include, `external_id_mapping_updates`, `id_graph_updates`, `profile_traits_updates`. Linked Audiences require Profile Sync to be configured such that both the Profile raw tables and the Profile materialized tables are synchronized with your Redshift instance.
@@ -24,7 +25,7 @@ To configure Profiles Sync for your Unify space:
 
 ## Getting started 
 
-You need to be an account admin to set up the Segment Redshift connector as well as write permissions for the `__segment_reverse_etl` dataset.
+You need to be an AWS Redshift account admin to set up the Segment Redshift connector as well as write permissions for the `__segment_reverse_etl` dataset.
 
 To get started with Redshift:
 1. Log in to Redshift and select the Redshift cluster you want to connect. 
