@@ -30,7 +30,7 @@ The [Send Email With Dynamic Template](#send-email-with-dynamic-template) Action
 SendGrid sends emails to the email addresses you specify, even if they are not listed as Contacts in SendGrid Marketing Campaigns.
 
 ### Sendgrid API Key
-Segment and SendGrid recommend defining the SendGrid API key within a subuser account and ensuring the domain being used is authenticated under that same subuser account. The 'Send email with Dynamic Template' Action requires the Sendgrid API Key to have the following scopes assigned:   
+Segment and SendGrid recommend that you define the SendGrid API key within a subuser account and the domain is authenticated under that same subuser account. The Send Email With Dynamic Template Action requires that the  SendGrid API Key has the following scopes assigned:   
 1. Category Management: full
 2. IP Management: full
 3. IP Management: full
