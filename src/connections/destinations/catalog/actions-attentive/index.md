@@ -12,7 +12,6 @@ Attentive Mobile maintains this destination. For any issues with the destination
 Attentive (Actions) Destination
 
 
-This destination is maintained by Attentive. For any issues with the destination, contact their [Support team](mailto:whiteglove@attentivemobile.com).
 
 
 ## Getting started
