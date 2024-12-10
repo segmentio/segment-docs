@@ -17,7 +17,7 @@ SendGrid Lists (Actions) is designed to work with Engage Audiences only. The ste
 ### Create a SendGrid API Key
 1. Sign in to your SendGrid account, then navigate to **Settings** > **API Keys**.
 2. Click **Create API Key** and follow the instructions to generate a new API key. Be sure to grant the API key **Full Access** permission. 
-3. Save the API key value securely, as you will need it in later steps.
+3. Save the API key value in a secure location, as you will need it in later steps.
 
 ### Connect a SendGrid Lists (Actions) destination to an Engage Space
 
