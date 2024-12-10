@@ -201,6 +201,72 @@ Engage then processes your realtime Audience or Trait edits. While the edit task
 > warning ""
 > You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions
 
+## Monitor the health of your Audience syncs
+
+Use Segment's [Delivery Overview](#delivery-overview) and [Alerting](#alerting) features to monitor the health of your Audience syncs and get notified when event volume spikes or drops. 
+
+### Delivery Overview
+
+Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any event-streaming destination receiving events from Engage Audiences.
+
+Delivery Overview has three core features:
+- [Pipeline view](#pipeline-view): a visual overview of each step your data takes during the delivery process - from your source recieving audience events all the way to events successfully delivered to your connected destination. 
+- [Breakdown table](#breakdown-table): If you select a step in the pipeline view, you can see more detail about the events that were processed at each pipeline step.
+- [Discard table](#discard-table): If you select an event in a breakdown table, you can see more details about the events that failed or were filtered out of your process and allows you to inspect samples of them.
+
+You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
+
+For more information about the pipeline view, see the [Delivery Overview](/docs/connections/delivery-overview/) documentation.
+
+> info "Linked Audiences have additional filtering functionality"
+> Linked Audiences users can also filter the Delivery Overview event pipeline by [event emitters](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). For more information, see the [Linked Audiences](/docs/engage/audiences/linked-audiences/#delivery-overview-for-linked-audiences) documentation.
+
+#### Steps in the pipeline view
+
+Audiences have the following steps in the pipeline view: 
+
+Delivery Overview shows you four steps in your data activation pipeline:
+
+- **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: 
+- **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. 
+- **Failed delivery**: Events that Segment attempted to deliver to your destination, but ultimately failed to deliver to your destination. Failed delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
+
+### Alerting
+
+Create alerts related to the performance and throughput of Audience syncs and receive in-app, email, and Slack notifications when event volume fluctuations occur.
+
+> info "Generate a Slack webhook to receive Slack notifications"
+> To receive an alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+
+To access Audience alerting, navigate to **Engage > Audiences**, select an Audience, and click the Alerts tab.
+
+On the Alerts tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
+
+#### Activation event health spikes or drops
+
+You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your Audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
+
+To create an Activation event health spikes or drops alert: 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
+2. Select the Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
+3. On the Create alert sidesheet, select the destination for which you'd like to monitor event health. 
+4. Enter a percentage of activation event health that you'd like to be notified for. 
+5. Select one or more of the following alert channels:
+  - **Email**: Select this to receive notifications at the provided email address. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. 
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+6. Click **Save**.
+
+To make changes to a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
+
+To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
+
+> info "Deleting alerts created by other users requires Workspace Owner role"
+> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users. 
+
 ## Access your Audiences using the Profiles API
 
 You can access your Audiences using the Profile API by querying the `/traits` endpoint. For example, you can query for `high_value_user` property with the following `GET` request:
