@@ -10,6 +10,8 @@ The TikTok Conversions destination is a server-to-server integration with the Ti
 
 Data shared through the Events API is processed similarly to information shared through the TikTok pixel and TikTok SDK business tools. Advertisers can use events data to power solutions like dynamic showcase ads (DSA), custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.
 
+This integration is partner owned. Please reach out to the partner's support team for any issues.
+
 ## Benefits of TikTok Conversions
 The TikTok Conversions destination provides the following benefits:
 
