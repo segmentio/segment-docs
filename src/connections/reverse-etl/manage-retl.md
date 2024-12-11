@@ -42,7 +42,7 @@ Segment automatically retries events that were extracted from your data warehous
 Segment checks for the latest changes in your data before loading the failed records on a subsequent (automatically scheduled or manually triggered) sync to ensure the data loaded into Segment isn’t stale and only the latest version of the data is loaded to destination. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to resolve the load error on a subsequent sync.
 
 > warning "Syncs with intervals less than or equal to two hours may not see failed events on the sync immediately following failed record"
-> Syncs with intervals less than or equal to one hour may not see failed events right away, as Segment's internal systems take up to one hour to retry events that initially failed. 
+> Syncs with intervals less than or equal to two hours may not see failed events right away, as Segment's internal systems take up to two hours to retry events that initially failed. 
 
 ## Reset syncs
 Reverse ETL uses the Unique Identifier column to detect data changes, like new, updated, and deleted records. If you encounter an error, you can reset Segment’s tracking of this column and force Segment to manually add all records from your dataset. 
