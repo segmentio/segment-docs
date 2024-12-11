@@ -2,6 +2,7 @@
 title: SendGrid Lists (Actions) Destination
 engage: true
 id: 67338e95bf70aed334093dae
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
