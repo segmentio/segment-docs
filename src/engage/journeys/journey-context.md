@@ -17,7 +17,7 @@ Unlike traditional audience-based journeys, which rely solely on user progress t
 
 With journey context, you can:
 
-// - Split journeys based on event attributes or outcomes.
+<!-- Split journeys based on event attributes or outcomes.-->
 - Personalize customer experiences using real-time event data.
 - Enable advanced use cases like abandonment recovery, dynamic delays, and more.
 
@@ -31,7 +31,6 @@ For example:
 Journey context is a flexible data structure that captures key details about the events and conditions that shape a customer’s journey. Journey context provides a point-in-time snapshot of event properties, making accurate and reliable data available throughout the journey.
 
 Journey context stores event property information tied to specific user actions, like `Appointment ID` or `Order ID`.
-// - **Split evaluations**: Results of branch decisions made during the journey, enabling future steps to reference these outcomes.
 
 Journey context doesn't store:
 - **Profile traits**, which may change over time.
@@ -57,7 +56,7 @@ Event properties are the foundation of Journey context. Examples of event proper
 
 Segment captures each event’s properties as a point-in-time snapshot when the event occurs, ensuring that the data remains consistent for use in personalization. 
 
-// branching, and other advanced workflow steps.
+<!-- branching, and other advanced workflow steps. -->
 
 ## Using Journey context in Event-Triggered Journeys
 
@@ -67,7 +66,7 @@ This is useful for scenarios like:
 
 - **Abandonment recovery:** Checking whether a user completed a follow-up action, like a purchase.
 - **Customizing messages:** Using event properties to include relevant details in communications.
-// - **Scheduling workflows:** Triggering actions based on contextual data, like the time of a scheduled appointment.
+<!-- - **Scheduling workflows:** Triggering actions based on contextual data, like the time of a scheduled appointment. -->
 
 By incorporating event-specific data at each step, journey context helps workflows remain relevant and adaptable to user actions.
 
@@ -81,11 +80,11 @@ This step checks whether a user performs a specific event within a given time wi
 
 For example, a journey may wait to see if a `checkout_completed` event occurs within two hours of a user starting checkout. If the event happens, its properties are added to context and the workflow can proceed; otherwise, it may take an alternate path. The data captured includes event properties (like `Order ID`).
 
-// and the results of the split evaluation.
+<!-- // and the results of the split evaluation. -->
 
 If a Hold Until branch is set to send profiles back to the beginning of the step when the event is performed, those events are also captured in context. Because they may or may not be performed during a journey, they will show as available in future steps but will not be guaranteed for every user's progression through the journey.
 
-// #### Context split
+<!-- // #### Context split
 
 // This step evaluates conditions using data already stored in journey context. Based on the conditions, users are routed to different branches of the journey.
 
@@ -107,7 +106,7 @@ If a Hold Until branch is set to send profiles back to the beginning of the step
 
 // Function steps process data from journey context through custom logic. The output of the function gets written back to context for use in later steps.
 
-// For example, a function might calculate a discount percentage based on an event property, then store that value in journey context for later use. The output gets scoped to a dedicated object (`function_output`) to keep the context structured and reliable.
+// For example, a function might calculate a discount percentage based on an event property, then store that value in journey context for later use. The output gets scoped to a dedicated object (`function_output`) to keep the context structured and reliable. -->
 
 #### Send to destination
 
@@ -120,7 +119,8 @@ For example, a payload sent to a messaging platform might include `Order ID` and
 The structure of journey context organizes event-specific data gets and makes it accessible throughout the journey workflow. By standardizing how data is stored, Segment makes it easier to reference, use, and send this information at different stages of a journey.
 
 Journey context is organized as a collection of key-value pairs, where each key represents a data point or category, and its value holds the associated data.
-// This structure supports various types of information, like event properties, split outcomes, and function outputs.
+
+<!-- This structure supports various types of information, like event properties, split outcomes, and function outputs. -->
 
 For example, when a user triggers an event like `Appointment Scheduled`, Segment stores its properties (like `Appointment ID`, `Appointment Start Time`) as key-value pairs. You can then reference these values in later journey steps or include them in external payloads.
 
@@ -141,13 +141,6 @@ The following example shows how journey context might look during a workflow. In
       "end_time": "2024-12-07T11:00:00Z",
       "provider_name": "Dr. Jameson"
     }
-  // "split_decision": {
-  //   "split_name": "appointment_type_split",
-  //   "branch_chosen": "existing_patient"
-  // },
-  // "function_output": {
-  //   "discount_percentage": 15
-  // }
   }
 }
 ```
@@ -156,15 +149,13 @@ This payload contains:
 
 - **Entry Event properties**: Captured under the `appointment_scheduled` key.
 - **Hold Until Event properties**: Captured under the `appointment_rescheduled` key. 
-// - **Split outcomes**: Documented in the `split_decision` object.
-// - **Function results**: Stored in the `function_output` object for use in later steps.
 
 ## Journey context and Event-Triggered Journeys
 
 Journey context underpins the flexibility and precision of Event-Triggered Journeys. By capturing key details about events and decisions as they happen, journey context lets workflows respond dynamically to user actions and conditions. 
 
-Whether you're orchestrating real-time abandonment recovery, 
-// scheduling contextual delays,
-or personalizing messages with event-specific data, journey context provides the tools to make your workflows more relevant and effective. 
+Whether you're orchestrating real-time abandonment recovery or personalizing messages with event-specific data, journey context provides the tools to make your workflows more relevant and effective. 
 
 To learn more about how Event-Triggered Journeys work, visit the [Event-Triggered Journeys documentation](/docs/engage/journeys/event-triggered-journeys/).
+
+<!-- PW, 10 December 2024; on PM request, commented out certain sections with functionalities not yet available during public beta. -->
