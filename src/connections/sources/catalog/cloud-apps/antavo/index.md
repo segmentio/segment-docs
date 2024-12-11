@@ -1,7 +1,7 @@
-```
+---
 title: Antavo Source
 id: WXNgKpZMsd
-```
+---
 
 [Antavo](http://www.antavo.com){:target="_blank"} allows you to synchronize loyalty events and profile updates into Segment.
 
