@@ -230,7 +230,6 @@ Segment supports IP Allowlisting in [all destinations](/docs/connections/destina
 - [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
 - [TradeDesk](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
-- [Destination Functions](/docs/connections/functions/destination-functions/)
 
 Destinations that are not supported receive traffic from randomly assigned IP addresses. 
 
