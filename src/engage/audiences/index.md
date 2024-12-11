@@ -203,35 +203,39 @@ Engage then processes your realtime Audience or Trait edits. While the edit task
 
 ## Monitor the health of your Audience syncs
 
-Use Segment's [Delivery Overview](#delivery-overview) and [Alerting](#alerting) features to monitor the health of your Audience syncs and get notified when event volume spikes or drops. 
+Use Segment's [Delivery Overview](#delivery-overview) and [Alerting](#alerting) features to monitor the health of your Audience syncs and get notifications when event volume spikes or drops. 
 
 ### Delivery Overview
 
 Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any event-streaming destination receiving events from Engage Audiences.
 
 Delivery Overview has three core features:
-- [Pipeline view](#pipeline-view): a visual overview of each step your data takes during the delivery process - from your source recieving audience events all the way to events successfully delivered to your connected destination. 
-- [Breakdown table](#breakdown-table): If you select a step in the pipeline view, you can see more detail about the events that were processed at each pipeline step.
-- [Discard table](#discard-table): If you select an event in a breakdown table, you can see more details about the events that failed or were filtered out of your process and allows you to inspect samples of them.
+- [Pipeline view](/docs/connections/delivery-overview/#pipeline-view): A visual overview of each step your data takes during the delivery process - from when your source receives audience events to when events are successfully delivered to your connected destination. 
+- [Breakdown table](/docs/connections/delivery-overview/#breakdown-table): If you select a step in the pipeline view, you can see more detail about the events that were processed at each pipeline step.
+- [Discard table](/docs/connections/delivery-overview/#discard-table): If you select an event in a breakdown table, you can see more details about the events that failed or were filtered out of your process and allows you to inspect samples of them.
 
-You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
+For more information about the breakdown and discard tables, see the [Delivery Overview](/docs/connections/delivery-overview/) documentation.
 
-For more information about the pipeline view, see the [Delivery Overview](/docs/connections/delivery-overview/) documentation.
+To view Delivery Overview for an Audience:
+1. From your Segment workspace's home page, navigate to **Connections > Destinations**.
+2. Select the Destination connected to your Audience and select the Delivery Overview tab. 
+3. On the Delivery Overview page, select the Audience dropdown to filter by a specific Audience, select the Date range dropdown to filter by a specific time period, or toggle the Show metrics as percentages toggle on to view your metrics as percentages. 
+
+#### Steps in the pipeline view
+
+By default, Segment displays Delivery Overview information for all Audiences connected to your destination. You can filter your Delivery Overview pipeline view by an individual Audience for more granular data. 
+
+You can also further refine the data displayed on the pipeline view using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, _85% of events_ or _an 133% increase in events_) or as counts (_13 events_ or _an increase of 145 events_.) Delivery Overview shows percentages by default.
 
 > info "Linked Audiences have additional filtering functionality"
 > Linked Audiences users can also filter the Delivery Overview event pipeline by [event emitters](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). For more information, see the [Linked Audiences](/docs/engage/audiences/linked-audiences/#delivery-overview-for-linked-audiences) documentation.
 
-#### Steps in the pipeline view
-
 Audiences have the following steps in the pipeline view: 
-
-Delivery Overview shows you four steps in your data activation pipeline:
-
 - **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
-- **Filtered at source**: 
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
 - **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
-- **Events pending retry**: A step that reveals the number of events that are awaiting retry. 
-- **Failed delivery**: Events that Segment attempted to deliver to your destination, but ultimately failed to deliver to your destination. Failed delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. Unlike the other steps, you cannot click into this step to view the breakdown table. 
+- **Failed delivery**: Events that Segment _attempted_ to deliver to your destination, but that ultimately _failed_ to be delivered. Failed delivery might indicate an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
 - **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
 
 ### Alerting

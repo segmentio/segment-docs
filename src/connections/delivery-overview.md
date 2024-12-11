@@ -63,6 +63,15 @@ The following image shows a storage destination with 23 partially successful syn
 
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
 
+#### Destinations connected to Audiences
+Destinations connected to an Audience have the following steps in the pipeline view: 
+- **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
+- **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. Unlike the other steps, you cannot click into this step to view the breakdown table. 
+- **Failed delivery**: Events that Segment _attempted_ to deliver to your destination, but that ultimately _failed_ to be delivered. Failed delivery might indicate an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
+
 ### Breakdown table
 The breakdown table provides you with greater detail about the selected events.
 
