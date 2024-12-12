@@ -1,4 +1,7 @@
-## title: Rabble AI Destination
+---
+title: Rabble AI Destination
+id: 65c0426487cd2bfcaaae517c
+---
 
 [Rabble AI](https://rabble.ai){:target="\_blank”} is an advanced AI platform which provides a simple and unique way for SaaS companies to understand their customers based on behavioral patterns in their existing engagement data.
 
