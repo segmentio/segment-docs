@@ -841,6 +841,24 @@ Whenever the UTM parameters are no longer a part of the URL, Segment no longer i
 **Additional Note**:
 Segment does not validate UTM parameter names. This design supports the flexibility to track both standard parameters (e.g., utm_source, utm_medium) and custom parameters defined by users. As a result, all parameters present in the URL are collected as-is and added to the context field, without checks for naming conventions or validity.
 
+If you want to ensure that only standard UTM parameters (e.g., utm_source, utm_medium, utm_campaign, utm_content, utm_term) are included in the context.campaign object, you can implement [Source middleware](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/middleware/) in your analytics.js setup. Here’s an example:
+
+```js
+window.analytics.addSourceMiddleware(({ payload, next }) => {
+  if (payload.obj.context?.campaign) {
+    const allowedFields = ["source", "medium", "term", "campaign", "content"];
+    const campaign = payload.obj.context.campaign;
+    Object.keys(campaign).forEach(key => {
+      if (!allowedFields.includes(key)) {
+        delete campaign[key];
+      }
+    });
+  }
+  next(payload);
+});
+```
+This middleware will filter out any non-standard parameters from the context.campaign object before they are sent to Segment or forwarded to your enabled destinations.
+
 ## Analytics.js performance
 
 The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
