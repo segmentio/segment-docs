@@ -256,7 +256,7 @@ Segment's Identity Resolution has processed these events, which contain a `segme
 
 
 
-## Tables Segment Materializes
+## Tables Segment materializes
 
 With Profiles Sync, you can access the following three tables that Segment materializes for a more complete view of your profile:
 
@@ -272,7 +272,7 @@ If you're not using materialized views for Profile Sync and would like to switch
 
 1. Enable Materialized Views through Selective Sync:
    - Navigate to **Unify** on the sidebar and select **Profiles Sync**.
-   - Ensure you are viewing the **Engage space** you would like to enable materialized views for.
+   - Ensure you are viewing the Engage space you would like to enable materialized views for.
    - Go to **Settings** → **Selective Sync** and enable the following tables:
      - `user_traits`
      - `user_identifiers`
@@ -280,9 +280,9 @@ If you're not using materialized views for Profile Sync and would like to switch
 
 2. **Request a Full Profiles and Events Backfill**
    - After enabling the materialized views, you'll need to ensure historical data is populated in the materialized tables.
-   - Write to [friends@segment.com](mailto:friends@segment.com){:target="_blank"} and request:
+   - Write to [friends@segment.com](mailto:friends@segment.com) and request:
      - A full **Profiles Backfill** to populate historical profiles data.
-     - An **Events Backfill** to include any relevant historical events. Please share a date range for us to pull data in for the events backfill. 
+     - An **Events Backfill** to include any relevant historical events, including a date range for Segment to pull data in for the events backfill. 
 
 3. **Verify Your Data**
    - Once the backfill is complete, review the data in your warehouse to confirm all necessary historical information has been included.
@@ -293,9 +293,9 @@ If you're not using materialized views for Profile Sync and would like to switch
 ### Why materialized views?
 
 Materialized views offer several advantages:
-- **Faster Queries:** Pre-aggregated data reduces query complexity.
-- **Improved Performance:** Access enriched profiles and historical events directly without manual joins.
-- **Data Consistency:** Automatically updated views ensure your data stays in sync with real-time changes.
+- **Faster queries:** Pre-aggregated data reduces query complexity.
+- **Improved performance:** Access enriched profiles and historical events directly without manual joins.
+- **Data consistency:** Automatically updated views ensure your data stays in sync with real-time changes.
 
 
 ### The user_traits table
