@@ -31,17 +31,18 @@ To check the status of your extractions:
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
-<!--- IG 9/2024 - EM for RETL asked me to roll back the docs for this feature on 9/25/24!
+
 ## Automatic retry handling
+
+> info "Automatic retry handling might not yet be available in your workspace"
+> To ensure overall system stability and performance, Segment is releasing automatic retry handling to all workspaces in a phased rollout program. Segment expects this feature to be available to all customers by January 31, 2025.
 
 Segment automatically retries events that were extracted from your data warehouse but failed to load for up to 14 days or 5 syncs following a partially successful sync or a sync failure. 
 
 Segment checks for the latest changes in your data before loading the failed records on a subsequent (automatically scheduled or manually triggered) sync to ensure the data loaded into Segment isn’t stale and only the latest version of the data is loaded to destination. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to resolve the load error on a subsequent sync.
 
-> warning "Syncs with intervals less than one hour may not see failed events on the sync immediately following failed record"
-> Syncs with intervals less than or equal to one hour may not see failed events right away, as Segment's internal systems take up to one hour to retry events that initially failed. 
-
---->
+> warning "Syncs with intervals less than or equal to two hours may not see failed events on the sync immediately following failed record"
+> Syncs with intervals less than or equal to two hours may not see failed events right away, as Segment's internal systems take up to two hours to retry events that initially failed. 
 
 ## Reset syncs
 Reverse ETL uses the Unique Identifier column to detect data changes, like new, updated, and deleted records. If you encounter an error, you can reset Segment’s tracking of this column and force Segment to manually add all records from your dataset. 
