@@ -18,7 +18,7 @@ This destination is maintained by Segment. For any issues with the destination [
 4. On the "Copy secret key" page, save the **SID** and **Secret** values securely. You will need these in a later step. 
 5. Click the **Done** button to create the API Key. 
 
-### Create the Twilio Messaging Destination 
+### Create the Twilio Messaging destination 
 
 1. From your Segment workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Twilio Messaging".
 2. Select the Twilio Messaging tile and click **Add Destination**.
