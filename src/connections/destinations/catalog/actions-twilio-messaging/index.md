@@ -20,11 +20,12 @@ This destination is maintained by Segment. For any issues with the destination [
 
 ### Create the Twilio Messaging destination 
 
-1. From your Segment workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Twilio Messaging".
-2. Select the Twilio Messaging tile and click **Add Destination**.
+To create the Twilio Messaging destination:
+1. From your Segment workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for *Twilio Messaging*.
+2. Select the *Twilio Messaging* and click **Add Destination**.
 3. Select an existing Source to connect to Twilio Messaging.
 4. On the Settings page, provide the **Twilio Account SID**, **Twilio API Key SID** and **Twilio API Key Secret** values.
-5. Enable the Destination then click the **Save Changes** button. 
+5. Enable the Destination then click **Save Changes**. 
 
 ### Configure the Send message mapping
 
