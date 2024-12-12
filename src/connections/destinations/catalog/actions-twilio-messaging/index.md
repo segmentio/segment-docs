@@ -55,7 +55,7 @@ Segment does not have a Content Template Builder capability. Content Templates m
 
 ### Sender details
 Three types of Sender types are supported: 
-1. Phone Number - An E.164 formatted phone number. Check in the Twilio Console to ensure that the selected number supports the selected Channel type. 
+1. Phone Number - An E.164 formatted phone number. Check the Twilio Console to ensure that the selected number supports the selected Channel type. 
 2. Messenger Sender ID - This is supported only when the **Facebook Messenger** channel type is selected.
 3. Twilio Messaging Service - This is supported for all channels. 
 
