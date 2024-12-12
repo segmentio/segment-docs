@@ -45,10 +45,10 @@ The following Twilio Content Template types are supported: **Text**, **Media**, 
 ### Inline messages
 Messages can also be sent without referencing a Twilio Content Template. In this case the message body, Media URLs, and variables can be defined directly in Mapping fields. Segment then constructs the final message body by combining the provided body and variables before sending it through Twilio.
 
-1. Select **Inline** from the 'Content Template Type' mapping field. 
-2. Provide the message body in the **Inline Template** field. Variables can be included using Handlebars notation. e.g. {{first_name}} 
-3. Provide Media URLs in the **Inline Media URLs** field. 
-4. Define variables using the **Inline Variables** field. Make sure to define variables for every variable included in the message body. 
+1. Select **Inline** from the *Content Template Type* mapping field. 
+2. Provide the message body in **Inline Template**. You can include variables using Handlebars notation. For example, `{{first_name}}`.
+3. Provide Media URLs in **Inline Media URLs**. 
+4. Define variables using the **Inline Variables**. Make sure to define variables for every variable included in the message body. 
 
 ### Can templates be defined or edited in Segment?
 Segment does not have a Content Template Builder capability. Content Templates must be built in Twilio first, then referenced in Segment. Alternatively, the 'Inline message' option can be used (see above). 
