@@ -266,11 +266,11 @@ With Profiles Sync, you can access the following three tables that Segment mater
 
 These materialized tables provide a snapshot of your Segment profiles, batch updated according to your sync schedule.
 
-### Switching to Materialized Profile Sync
+### Switching to materialized Profile Sync
 
-If you are currently not using materialized views for Profile Sync and would like to switch, follow these steps:
+If you're not using materialized views for Profile Sync and would like to switch, follow these steps:
 
-1. **Enable Materialized Views via Selective Sync**
+1. Enable Materialized Views through Selective Sync:
    - Navigate to **Unify** on the sidebar and select **Profiles Sync**.
    - Ensure you are viewing the **Engage space** you would like to enable materialized views for.
    - Go to **Settings** → **Selective Sync** and enable the following tables:
@@ -290,7 +290,7 @@ If you are currently not using materialized views for Profile Sync and would lik
 > warning ""
 > For materialized view tables, you must have delete permissions for your data warehouse. 
 
-### Why Materialized Views?
+### Why materialized views?
 
 Materialized views offer several advantages:
 - **Faster Queries:** Pre-aggregated data reduces query complexity.
