@@ -40,7 +40,7 @@ This destination is maintained by Segment. For any issues with the destination [
 Messages can be sent via SMS, MMS, WhatsApp and Facebook Messenger channels. 
 
 ### Supported Content Template types
-The following Twilio Content Template types are supported: **Text**, **Media**, **Quick reply**, **Call to action**, **List picker**, **Card**, **WhatsApp card**, **WhatsApp Authentication** and **Catalog**.
+Segment supports these Twilio Content Template types: Text, Media, Quick reply, Call to action, List picker, Card, WhatsApp card, WhatsApp Authentication and Catalog.
 
 ### Inline messages
 You can send messages without referencing a Twilio Content Template. In this case the message body, Media URLs, and variables can be defined directly in Mapping fields. Segment then constructs the final message body by combining the provided body and variables before sending it through Twilio.
