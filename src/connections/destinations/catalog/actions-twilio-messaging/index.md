@@ -43,7 +43,7 @@ Messages can be sent via SMS, MMS, WhatsApp and Facebook Messenger channels.
 The following Twilio Content Template types are supported: **Text**, **Media**, **Quick reply**, **Call to action**, **List picker**, **Card**, **WhatsApp card**, **WhatsApp Authentication** and **Catalog**.
 
 ### Inline messages
-Messages can also be sent without referencing a Twilio Content Template. In this case the message body, Media URLs, and variables can be defined directly in Mapping fields. Segment then constructs the final message body by combining the provided body and variables before sending it through Twilio.
+You can send messages without referencing a Twilio Content Template. In this case the message body, Media URLs, and variables can be defined directly in Mapping fields. Segment then constructs the final message body by combining the provided body and variables before sending it through Twilio.
 
 1. Select **Inline** from the *Content Template Type* mapping field. 
 2. Provide the message body in **Inline Template**. You can include variables using Handlebars notation. For example, `{{first_name}}`.
