@@ -28,9 +28,11 @@ This destination is maintained by Segment. For any issues with the destination [
 
 ### Configure the Send message Mapping
 
-1. From the Twilio Messaging Destination's **Settings** page, click **Mapping** > **New Mapping**.  
+To configure the Send message mapping:
+1. From the Twilio Messaging Destination's **Settings** page, navigate to **Mapping > New Mapping**.  
 2. Select the **Send message** Action. 
-3. Provide Mapping Trigger and Field values to configure the Mapping. Then Save and Enable the Mapping. 
+3. Provide Mapping Trigger and Field values to configure the Mapping. 
+4. Save and enable the Mapping. 
 
 {% include components/actions-fields.html %}
 
