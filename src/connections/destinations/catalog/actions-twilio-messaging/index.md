@@ -39,7 +39,7 @@ To configure the Send message mapping:
 ## Additional information
 
 ### Supported messaging channels
-Messages can be sent via SMS, MMS, WhatsApp and Facebook Messenger channels. 
+You can send messages using SMS, MMS, WhatsApp and Facebook Messenger channels. 
 
 ### Supported Content Template types
 Segment supports these Twilio Content Template types: Text, Media, Quick reply, Call to action, List picker, Card, WhatsApp card, WhatsApp Authentication and Catalog.
