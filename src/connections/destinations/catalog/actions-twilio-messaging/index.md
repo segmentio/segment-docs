@@ -26,7 +26,7 @@ This destination is maintained by Segment. For any issues with the destination [
 4. On the Settings page, provide the **Twilio Account SID**, **Twilio API Key SID** and **Twilio API Key Secret** values.
 5. Enable the Destination then click the **Save Changes** button. 
 
-### Configure the Send message Mapping
+### Configure the Send message mapping
 
 To configure the Send message mapping:
 1. From the Twilio Messaging Destination's **Settings** page, navigate to **Mapping > New Mapping**.  
