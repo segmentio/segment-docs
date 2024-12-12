@@ -12,11 +12,12 @@ This destination is maintained by Segment. For any issues with the destination [
 
 ### Create Twilio API Key and Secret
 
-1. Sign in to your [Twilio Console](https://console.twilio.com/). On the "Twilio Home" page save the **Account SID** value securely. You will need it in a later step. 
-2. While still on the "Twilio Home" page, click on **Go to API Keys**.
-3. On the "API keys & tokens" page, click **Create API key** then follow the instructions to create the key. **Key Type** should be set to Standard.
-4. On the "Copy secret key" page, save the **SID** and **Secret** values securely. You will need these in a later step. 
-5. Click the **Done** button to create the API Key. 
+To create the Twilio API Key and Secret Key:
+1. Sign in to your [Twilio Console](https://console.twilio.com/). On the **Twilio Home** page save the **Account SID** value securely. You will need it in a later step. 
+2. Click **Go to API Keys** on the **Twilio Home** page.
+3. On the **API keys & tokens** page, click **Create API key**, then follow the instructions to create the key. **Key Type** should be set to Standard.
+4. On the **Copy secret key** page, save the **SID** and **Secret** values securely. You will need these in a later step. 
+5. Click **Done** to create the API Key. 
 
 ### Create the Twilio Messaging destination 
 
