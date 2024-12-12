@@ -31,17 +31,18 @@ To check the status of your extractions:
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
-<!--- IG 9/2024 - EM for RETL asked me to roll back the docs for this feature on 9/25/24!
+
 ## Automatic retry handling
+
+> info "Automatic retry handling might not yet be available in your workspace"
+> To ensure overall system stability and performance, Segment is releasing automatic retry handling to all workspaces in a phased rollout program. Segment expects this feature to be available to all customers by January 31, 2025.
 
 Segment automatically retries events that were extracted from your data warehouse but failed to load for up to 14 days or 5 syncs following a partially successful sync or a sync failure. 
 
 Segment checks for the latest changes in your data before loading the failed records on a subsequent (automatically scheduled or manually triggered) sync to ensure the data loaded into Segment isn’t stale and only the latest version of the data is loaded to destination. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to resolve the load error on a subsequent sync.
 
-> warning "Syncs with intervals less than one hour may not see failed events on the sync immediately following failed record"
-> Syncs with intervals less than or equal to one hour may not see failed events right away, as Segment's internal systems take up to one hour to retry events that initially failed. 
-
---->
+> warning "Syncs with intervals less than or equal to two hours may not see failed events on the sync immediately following failed record"
+> Syncs with intervals less than or equal to two hours may not see failed events right away, as Segment's internal systems take up to two hours to retry events that initially failed. 
 
 ## Reset syncs
 Reverse ETL uses the Unique Identifier column to detect data changes, like new, updated, and deleted records. If you encounter an error, you can reset Segment’s tracking of this column and force Segment to manually add all records from your dataset. 
@@ -51,6 +52,20 @@ To reset a sync:
 2. Select **Reset sync**. 
 3. Click **I understand what happens when I reset a sync state**. 
 4. Click **Reset sync**.
+
+## Cancel syncs
+You can cancel syncs when your sync is currently running during the extraction and load phase. 
+
+To cancel a sync:
+1. Navigate to **Connections > Destinations > Reverse ETL**.
+2. Select the mapping with a sync that is in progress.
+3. Select the sync that is in progress.
+4. Click **Cancel sync** to cancel the sync. 
+5. Select the reason for canceling the sync. 
+
+Your canceled syncs with have a status as *Canceled,* and any syncs that are in the process of being canceled will have a status of *Canceling*. 
+
+Once you cancel a sync, the record count under **Extraction Results** reflects the records already processed. These records won't be included in future syncs. To reprocess these records, you can reset or replay the sync.
 
 ## Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.

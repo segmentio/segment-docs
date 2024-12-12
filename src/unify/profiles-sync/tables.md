@@ -259,18 +259,43 @@ Segment's Identity Resolution has processed these events, which contain a `segme
 ## Tables Segment materializes
 
 With Profiles Sync, you can access the following three tables that Segment materializes for a more complete view of your profile:
+
 - [`user_traits`](#the-user_traits-table)
 - [`user_identifiers`](#the-user_identifiers-table)
 - [`profile_merges`](#the-profile_merges-table)
 
-These materialized tables provide a snapshot of your Segment profiles, batch updated according to your sync schedule. 
+These materialized tables provide a snapshot of your Segment profiles, batch updated according to your sync schedule.
 
-Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
+### Switching to materialized Profile Sync
 
-You can also use [historical backfill](/docs/unify/profiles-sync/profiles-sync-setup/#using-historical-backfill) with tables Segment materializes.
+If you're not using materialized views for Profile Sync and would like to switch, follow these steps:
+
+1. Enable Materialized Views through Selective Sync:
+   - Navigate to **Unify** on the sidebar and select **Profiles Sync**.
+   - Ensure you are viewing the Engage space you would like to enable materialized views for.
+   - Go to **Settings** → **Selective Sync** and enable the following tables:
+     - `user_traits`
+     - `user_identifiers`
+     - `profile_merges`
+
+2. **Request a Full Profiles and Events Backfill**
+   - After enabling the materialized views, you'll need to ensure historical data is populated in the materialized tables.
+   - Write to [friends@segment.com](mailto:friends@segment.com) and request:
+     - A full **Profiles Backfill** to populate historical profiles data.
+     - An **Events Backfill** to include any relevant historical events, including a date range for Segment to pull data in for the events backfill. 
+
+3. **Verify Your Data**
+   - Once the backfill is complete, review the data in your warehouse to confirm all necessary historical information has been included.
 
 > warning ""
 > For materialized view tables, you must have delete permissions for your data warehouse. 
+
+### Why materialized views?
+
+Materialized views offer several advantages:
+- **Faster queries:** Pre-aggregated data reduces query complexity.
+- **Improved performance:** Access enriched profiles and historical events directly without manual joins.
+- **Data consistency:** Automatically updated views ensure your data stays in sync with real-time changes.
 
 
 ### The user_traits table
