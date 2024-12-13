@@ -1,5 +1,6 @@
 ---
-title: [Twilio Messaging] Destination
+title: Twilio Messaging Destination
+id: 674f23ece330374dc1ecc874
 ---
 
 {% include content/plan-grid.md name="actions" %}
