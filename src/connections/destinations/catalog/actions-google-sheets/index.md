@@ -58,3 +58,7 @@ When syncing data to Google Sheets, the columns will be arranged alphabetically,
 ### Can I add or remove columns after data has been synced?
 
 Once data has been synced to Google Sheets, any subsequent addition or removal of columns in the RETL Model and/or Mapping may lead to misalignment of existing data, as Segment does not retroactively adjust previously synced data. For updates involving column modifications, Segment recommends starting with a new Sheet to ensure data integrity.
+
+### Can I send objects to Google Sheets?
+
+Sending a JavaScript Object is not a supported data type in Google Sheets. You would need to stringify this property first, failure to do so may result in a `400` error. Our Actions mapping framework supports encoding Objects as Strings via the `json(properties, encode)` method. Alternatively an Insert Function can be used to modify the property.
