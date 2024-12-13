@@ -1,6 +1,7 @@
 ---
 title: Twilio Messaging Destination
 id: 674f23ece330374dc1ecc874
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
