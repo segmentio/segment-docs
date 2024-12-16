@@ -39,8 +39,8 @@ Compared to the classic Recombee AI destination, the following configuration cha
 
 1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 2. From the Segment web app, navigate to **Connections > Destinations** and click **Add Destination**.
-3. Select **Recombee (Actions)** and click **Add Destination**.
-4. Select an existing Source to connect to Recombee (Actions).
+3. Select **Recombee** and click **Add Destination**.
+4. Select an existing Source to connect to Recombee.
 5. Navigate to the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"} and complete the following actions:
   - Choose the Recombee Database where you want to send the interactions.
   - Click **Settings** in the menu on the left.
