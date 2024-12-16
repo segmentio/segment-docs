@@ -79,7 +79,9 @@ At least one of the following identifier types is required when syncing members 
  - Phone Number ID (must be in [E.164](https://www.twilio.com/docs/glossary/what-e164){:target="_blank”} format)
  - External ID 
  
-To sync Engage users to a list using Anonymous ID, Phone Number ID, and External ID identifier types, complete the following configuration steps: 
+Sending more than one identifier should only be done with caution: If you provide more than one identifier, SendGrid will require all of those identifiers for future updates to that Contact.
 
-1. Configure [ID Sync](/docs/engage/trait-activation/id-sync/) to include Anonymous ID, Phone Number ID, or External ID identifiers when syncing users from an Engage Audience to the SendGrid List. 
-2. Map the Anonymous ID, Phone Number ID, and External ID identifiers using the [Sync Audience ](#sync-audience-action) Action's Anonymous ID, Phone Number ID, and External ID fields. 
+To sync Engage users to a SendGrid list using an identifier type other than email, additional steps may be required:
+
+1. Configure [ID Sync](/docs/engage/trait-activation/id-sync/) to include a value for the identifier when syncing users from an Engage Audience to the SendGrid List. 
+2. Map the identifier using the correct [Sync Audience ](#sync-audience-action) Action's mapping field.  
