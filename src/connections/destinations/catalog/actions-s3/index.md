@@ -27,9 +27,9 @@ The AWS S3 (Actions) destination enhances this capability by introducing configu
 
 ## Supported Integrations
 The AWS S3 (Actions) Destination supports the following Segment features as supported native Destination integration points: 
-* rETL
-* Classic and Linked Audiences 
-* Connections
+* [Reverse ETL](/docs/connections/reverse-etl/)
+* [Classic and Linked Audiences](/docs/engage/audiences/)
+* [Connections](/docs/connections/)
 
 ## Getting started
 Setting up the AWS S3 (Actions) destination is a straightforward process designed to help you configure and deploy standardized event data to your Amazon S3 bucket. Follow these steps to get started:
@@ -42,7 +42,7 @@ Ensure you have the following in place before configuring the AWS S3 (Actions) d
 - IAM Access IDs: Prepare your AWS IAM ARN ID and IAM External ID. These will be needed to authenticate and authorize Segment with your S3 bucket.
 
 
-## Step 1: Create an IAM role in the AWS console
+### Step 1: Create an IAM role in the AWS console
 To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) destination:
 
 1. Log in to your AWS account. 
@@ -88,7 +88,7 @@ To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) d
  }
 ```
 
-## Step 2: Add the AWS S3 (Actions) Destination in Segment
+### Step 2: Add the AWS S3 (Actions) Destination in Segment
 To finish the setup, enable the AWS S3 (Actions) Destination in your workspace:
 
 1. Add the **AWS S3 (Actions)** destination from the Destinations tab of the catalog.
@@ -104,11 +104,11 @@ To finish the setup, enable the AWS S3 (Actions) Destination in your workspace:
 {% include components/actions-fields.html settings="true"%}
 
 ## Step 3: Configure the AWS S3 (Actions) Destination mappings
-To finish the configuration, finalize the mappings of the new AWS S3 (Actions) Destination: 
+To finish the configuration, add mappings to your new AWS S3 (Actions) Destination:
 
 1. Add a new **Sync to S3** Action into the destination. 
-2. Define the Event Trigger. If multiple types are accepted in the Event Trigger, the generated files will automatically be split by type in S3 (i.e Track events file and Identifer events file).
-3. Configure the Column Mappings that are needed, if any of the default columns are **not** needed, leave the value blank. You can also choose to add new mapping fields to set up any customized columns as needed. 
-4. Configure the Other Settings as needed.
-5. Enable the Mapping and start sending data! 
+2. Define the Event Trigger. If multiple types are accepted in the Event Trigger, the generated files will automatically be split by type in S3 (for example, you might have a Track events file and an Identify events file).
+3. Configure the Column Mappings. If you don't need any of the default columns, leave the value blank. You can also choose to add new mapping fields to set up customized columns as needed. 
+4. Configure any additional settings as required.
+5. Enable the Mapping.
 6. Verify the Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
