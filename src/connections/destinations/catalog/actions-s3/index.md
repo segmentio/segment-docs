@@ -103,7 +103,7 @@ To finish the setup, enable the AWS S3 (Actions) Destination in your workspace:
 
 {% include components/actions-fields.html settings="true"%}
 
-## Step 3: Configure the AWS S3 (Actions) Destination mappings
+### Step 3: Configure the AWS S3 (Actions) Destination mappings
 To finish the configuration, add mappings to your new AWS S3 (Actions) Destination:
 
 1. Add a new **Sync to S3** Action into the destination. 
@@ -111,4 +111,4 @@ To finish the configuration, add mappings to your new AWS S3 (Actions) Destinati
 3. Configure the Column Mappings. If you don't need any of the default columns, leave the value blank. You can also choose to add new mapping fields to set up customized columns as needed. 
 4. Configure any additional settings as required.
 5. Enable the Mapping.
-6. Verify the Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
+6. Verify that Segment is sending data to your S3 bucket by navigating to `<your_S3_bucket>/` in the AWS console. 
