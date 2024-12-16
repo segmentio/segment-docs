@@ -40,7 +40,18 @@ When you import events or properties from a Library, you can enable syncing to e
 
 To enable syncing, select the desired Library from the Tracking Plan import flow, and toggle the syncing option. This selects all events or properties in the Library for import. Partial syncs are not supported.
 
-Syncing a Library makes events and properties un-editable, and bypasses the Tracking Plan merge step. You can add properties to synced events, but cannot remove those synced events unless you also remove the Library sync. To unsync a library, click **View Synced Libraries** from the Tracking Plan and click the overflow menu to unsync the Library.
+Syncing a Library makes events and properties un-editable, and bypasses the Tracking Plan merge step. You can add properties to synced events, but cannot remove those synced events unless you also remove the Library sync. 
+
+### Library unsyncing
+
+To unsync a library, click **View Synced Libraries** from the Tracking Plan and click the overflow menu to unsync the Library.
+However, please note that when a property or a event library is unsynced from a tracking Plan, it will not remove the properties and events synced via the library, instead, it will chnage the source of the event or the property as 'Manually Added'. From here, you can select the events and proeprties to manaully delete them.
+
+![Screenshots of event properties that was synced via a library, however after unsycing the event library, the following images shows how the event appears in the tracking plan before and after](![image](https://github.com/user-attachments/assets/09f2e4dd-a988-414a-9333-343cc915474c) 
+![after un-syncing, they appear as 'Manually Added',](https://segment.zendesk.com/attachments/token/g5zAeCdyxxmj6xeDHUtMRu5fw/?name=image.png)
+)
+
+You'd not be able to resync the property/event library until you delete the event properties manually from the Tracking Plan and that is because, since the same properties/events already exist in the Tracking Plan as 'Manually Added', it will not allow you to sync a property library with the same properties
 
 > warning ""
 > All changes made to a synced library pass through to the Tracking Plans and may impact data deliverability
