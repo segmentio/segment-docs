@@ -107,10 +107,8 @@ To finish the setup, enable the AWS S3 (Actions) Destination in your workspace:
 To finish the configuration, finalize the mappings of the new AWS S3 (Actions) Destination: 
 
 1. Add a new **Sync to S3** Action into the destination. 
-2. Define the Event Trigger 
+2. Define the Event Trigger. If multiple types are accepted in the Event Trigger, the generated files will automatically be split by type in S3 (i.e Track events file and Identifer events file).
 3. Configure the Column Mappings that are needed, if any of the default columns are **not** needed, leave the value blank. You can also choose to add new mapping fields to set up any customized columns as needed. 
-4. Configure the Other Settings as needed: 
-   * Enable Batching, Delimiter and File Extension are all required.
-   * **Note** If the audience_action or batch_size column names are not needed, these fields can be left blank so they do not output on the S3 file.
+4. Configure the Other Settings as needed.
 5. Enable the Mapping and start sending data! 
 6. Verify the Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
