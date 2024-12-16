@@ -63,7 +63,7 @@ Segment supports sending Engage user profile traits to SendGrid Contact User Att
 2. Standard User Attributes: Use the [Sync Audience Action](#sync-audience-action)'s User Attributes field to map the following [Contact Profile Fields](https://www.twilio.com/docs/sendgrid/ui/managing-contacts/segmenting-your-contacts#contact-profile-fields){:target="_blank”} to SendGrid:
  - First Name
  - Last Name
- - Phone Number
+ - Phone Number (must be in [E.164](https://www.twilio.com/docs/glossary/what-e164) format)
  - Address Line 1
  - Address Line 2
  - City
@@ -74,9 +74,9 @@ Segment supports sending Engage user profile traits to SendGrid Contact User Att
 
 ### Supported identifiers 
 At least one of the following identifier types is required when syncing members of an Engage Audience to a SendGrid List:
- - Email Address
+ - Email Address (must be a valid email address)
  - Anonymous ID
- - Phone Number ID
+ - Phone Number ID (must be in [E.164](https://www.twilio.com/docs/glossary/what-e164) format)
  - External ID 
  
 To sync Engage users to a list using Anonymous ID, Phone Number ID, and External ID identifier types, complete the following configuration steps: 
