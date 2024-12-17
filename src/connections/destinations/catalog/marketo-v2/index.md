@@ -162,7 +162,8 @@ Analytics.track(
 - **Primary Field**. When creating a Custom Activity in Marketo, you have to set a Primary Field. If you are unsure which field was set as the primary field, when you are looking at the list of fields for your Custom Activity in Marketo, there will be a red star next to your Primary Field.
 ![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cZuvsHeaepX+.png)
 
-Please note that you cannot map fields nested in objects as Marketo Custom Activitiy property names. Please flatten any objects you may need to access data from either before you send it to Segment or using an [Insert Function]([url](https://segment.com/docs/connections/functions/insert-functions/)).
+> info ""
+> You can't map fields nested in objects as Marketo Custom Activity property names. You must flatten any objects you may need to access data from either before you send it to Segment, or while using an [Insert Function](/docs/connections/functions/insert-functions/).
 
 ## Page
 
