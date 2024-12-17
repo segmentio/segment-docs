@@ -150,7 +150,9 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### If I omit unplanned properties or properties that generate JSON schema violations, what happens to them?
 
-Properties that are omitted due to JSON Schema Violations or being unplanned are not stored in Segment logs. Segment only stores fully blocked events for 30 days. Omitted properties are dropped from the events and can only be found in the `context.violations` object of an event payload. If Violations are forwarded to a new source, then the omitted properties can also be seen in the Violation Generated event under `violationField` in the `properties` object of the event. 
+Segment doesn't store unplanned properties and properties omitted due to JSON Schema Violations in Segment logs. Segment drops omitted properties from the events. You can find the omitted properties in the `context.violations` object of an event payload. If you forward Violations to a new source, then you can also see the omitted properties in the Violation Generated event under `violationField` in the `properties` object. 
+
+Segment only stores fully blocked events for 30 days. 
 
 ### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
 
