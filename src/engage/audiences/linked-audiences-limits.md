@@ -38,4 +38,5 @@ Preview size | 3K rows | The maximum number of rows you can have to generate a p
 Entity value type ahead cache | Up to 100 unique values | The maximum number of entity values Segment stores in cache. 
 Entity columns | Up to 1000 unique values | The maximum number of entity property columns Segment surfaces in the condition builder.
 Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Run Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse. 
+Destination Mappings | Up to 100 mappings | You can set up to 100 action destination mappings per destination instance.
 
