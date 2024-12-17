@@ -838,6 +838,28 @@ So, for example, if somebody follows the link with above query string to your si
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
 
+Segment doesn't validate UTM parameter names. This design supports the flexibility to track both standard parameters (for example, utm_source, utm_medium) and custom parameters defined by users. As a result, all parameters present in the URL collected as is, and are added to the context field without checks for naming conventions or validity.
+
+If you want to ensure that only standard UTM parameters (such as, utm_source, utm_medium, utm_campaign, utm_content, utm_term) are included in the context.campaign object, you can implement [Source middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/) in your Analytics.js setup. 
+
+For example:
+
+```js
+window.analytics.addSourceMiddleware(({ payload, next }) => {
+  if (payload.obj.context?.campaign) {
+    const allowedFields = ["source", "medium", "term", "campaign", "content"];
+    const campaign = payload.obj.context.campaign;
+    Object.keys(campaign).forEach(key => {
+      if (!allowedFields.includes(key)) {
+        delete campaign[key];
+      }
+    });
+  }
+  next(payload);
+});
+```
+This middleware filters out any non-standard parameters from the `context.campaign` object before they're sent to Segment or forwarded to your enabled destinations.
+
 ## Analytics.js performance
 
 The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
