@@ -29,8 +29,8 @@ To use the Data Graph, you'll need the following:
 > Data Graph currently only supports workspaces in the United States.
 
 To get started with the Data Graph, set up the required permissions in your warehouse. Segment supports the following: 
-- Linked Audiences: [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/)
-- Linked Events: [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), and [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/)
+- Linked Audiences: [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), and [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) 
+- Linked Events: [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), and [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) 
 
 To track the data sent to Segment on previous syncs, Segment uses [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a dedicated schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in. 
 
@@ -414,4 +414,17 @@ Upon editing and saving changes to your Data Graph, a modal will pop up to warn 
 
 ### Detect warehouse breaking changes
 
-Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, such as when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. You will also have the option to trigger a manual sync of your warehouse schema. 
+Segment has a service that regularly scans and monitors the Data Graph for changes that occur in your warehouse that may break components of the Data Graph, like when the table being referenced by the Data Graph gets deleted from your warehouse or when the primary key column no longer exists. An alert banner will be displayed on the Data Graph landing page. The banner will be removed once the issues are resolved in your warehouse and/or the Data Graph. You will also have the option to trigger a manual sync of your warehouse schema. 
+
+### Receive alerts for warehouse breaking changes
+
+Configure alerts for breaking changes to receive notifications over Slack, email, or in-app notification whenever Segment detects a breaking change in your warehouse.
+
+To configure alerts for breaking changes: 
+1. Open your workspace and navigate to **Settings > User Preferences > Activity Notifications**. 
+2. Select **Data Graph**.
+3. Select one of the following notification methods: 
+  - **Email**: Select this to receive notifications at either the email address associated with your account or another email address that you enter into this field. 
+  - **Slack**: Select this and enter a Slack webhook URL and channel name to send alerts to a channel in your Slack workspace.
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+4. Click **Save**.

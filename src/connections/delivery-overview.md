@@ -21,7 +21,11 @@ Delivery Overview has three core features:
 You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
 
 ### Pipeline view
+
 The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also includes a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
+
+> info "Lookback window"
+> Delivery Overview applies a 5-minute lookback period to provide stable, accurate metrics across all pipeline steps. This interval accounts for processing delays and ensures the data Segment displays reflects a reliable snapshot of recent events.
 
 #### Classic destinations
 The pipeline view for classic destinations includes the following steps:
@@ -34,7 +38,7 @@ The pipeline view for classic destinations includes the following steps:
 
 #### Actions destinations
 The pipeline view for Actions destination includes the following steps: 
-- **Successfully received**: Events that Segment ingested from your source.
+- **Successfully received**: Events that Segment ingested from your source. You can filter these events by event type, event name, app version, and [enrichment status](/docs/unify/data-graph/linked-events/).
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
 - **Mapping dropdown**: Select a [mapping](/docs/connections/destinations/actions/#customize-mappings) to filter the events in the Filtered at destination, Failed delivery and Successful delivery pipeline steps. 
@@ -42,8 +46,6 @@ The pipeline view for Actions destination includes the following steps:
 - **Retry count**: The number of events currently pending retry. 
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements.
 - **Successful delivery**: Events that were successfully delivered to the destination.
-
-The following image shows an Actions destination filtered to include only Track Page View events in the last three pipeline steps:
 
 ![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
 

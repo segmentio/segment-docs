@@ -2,6 +2,7 @@
 title: DevRev (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
+hidden: true
 id: 649adeaa719bd3f55fe81bef
 ---
 

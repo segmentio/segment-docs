@@ -823,18 +823,18 @@ Because Segment tracks across subdomains, you can either use the same Segment so
 
 UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives using a link containing UTM parameters, Segment's analytics.js library will parse the URL query string and add the information to the event payload. For more information about UTM tracking, see the [Tracking Customers Across Channels and Devices](/docs/guides/how-to-guides/cross-channel-tracking/) documentation.
 
-UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, if you include the following three parameters in your URL: ?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in the raw view of your Source Debugger.)
+UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, if you include the following three parameters in your URL: `?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign`, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in the raw view of your Source Debugger.)
 
 So, for example, if somebody follows the link with above query string to your site, the subsequent 'page' call in your Debugger should contain the below and will be passed to any enabled destinations:
 
-
+```js
 "context": {
  "campaign": {
  "medium": "email",
  "name": "mytestcampaign",
  "source": "mysource",
  },
-
+```
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
 

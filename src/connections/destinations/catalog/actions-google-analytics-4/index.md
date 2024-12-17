@@ -232,5 +232,9 @@ Because [Google's Measurement Protocol API](https://developers.google.com/analyt
 The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
 
 ### Client/server-side event deduplication 
+
 Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you don't send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
 
+### User-provided data collection
+
+Google offers a beta feature called [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"} that collects data directly from users. Segment doesn't support this feature. Acknowledging the feature policy in your Google Analytics 4 account is permanent, even though you can later disable the data collection itself.

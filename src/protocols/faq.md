@@ -158,6 +158,11 @@ Segment's [Schema Controls](docs/connections/sources/schema/destination-data-con
 2. **Standard Schema Controls/"JSON Schema Violations"**: Segment checks the names and evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
 3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: Segment evaluates incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
 
+
+### Why am I still seeing unplanned properties in my Source Schema when I've added the properties to a new version of my Tracking Plan?
+
+The source schema only validates events against the oldest event version in a Tracking Plan. If, for example, you have a version 1 and version 2 of your Tracking Plan, the schema only checks against version 1 of your Tracking Plan.
+
 ### Do blocked and discarded events count towards my MTU counts?
 
 Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
@@ -203,3 +208,7 @@ Transformations are but one tool among many to help you improve data quality. Se
 ### Are transformations applied when using the Event Tester?
 
 Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
+
+### Why am I getting the error "rules must contain less than or equal to 200 items" when using the Public API? Can I increase this limit?
+
+This error occurs because there is a limit of 200 rules per API update. This restriction is by design to ensure stable API performance. Segment is not able to increase this limit on your behalf. To work around this, split your update into smaller batches, each with 200 or fewer rules.

@@ -88,3 +88,9 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
 Learn more about the Snowflake Account ID in Snowflake's [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"} documentation.
 
 After you've successfully added your Snowflake source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
+
+## Security
+### Allowlisting IPs
+If you create a network policy with Snowflake and are located in the US, add  `52.25.130.38/32` and `34.223.203.0/28` to the "Allowed IP Addresses" list.
+
+If you create a network policy with Snowflake and are located in the EU, add `3.251.148.96/29` to your "Allowed IP Addresses" list.

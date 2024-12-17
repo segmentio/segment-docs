@@ -20,6 +20,17 @@ sections:
     title: Testing and Debugging
   - path: /getting-started/whats-next
     title: What's Next
+  - section_title: Use Cases
+    slug: getting-started/use-cases
+    section:
+    - path: /getting-started/use-cases/
+      title: Use Cases Overview
+    - path: /getting-started/use-cases/guide/
+      title: Choosing a Use Case
+    - path: /getting-started/use-cases/setup/
+      title: Use Cases Setup
+    - path: /getting-started/use-cases/reference/
+      title: Use Cases Reference
 
 - section_title: Guides
   section:
@@ -347,10 +358,21 @@ sections:
     - section_title: Setup Guides
       slug: /unify/data-graph/setup-guides/
       section:
-      - path: /unify/data-graph/setup-guides/snowflake-setup/
-        title: Snowflake Setup
+      - path: /unify/data-graph/setup-guides/bigquery-setup/
+        title: BigQuery Data Graph Setup
       - path: /unify/data-graph/setup-guides/databricks-setup/
-        title: Databricks Setup
+        title: Databricks Data Graph Setup
+      - path: /unify/data-graph/setup-guides/redshift-setup/
+        title: Redshift Data Graph Setup
+      - path: /unify/data-graph/setup-guides/snowflake-setup/
+        title: Snowflake Data Graph Setup
+    - section_title: Linked Events 
+      slug: /unify/data-graph/linked-events/
+      section: 
+      - path: /unify/data-graph/linked-events/ 
+        title: Linked Events Overview
+      - path: /unify/data-graph/linked-events-limits/
+        title: Linked Events Limits
   - section_title: Traits
     slug: unify/traits
     section:
@@ -371,6 +393,8 @@ sections:
       title: Custom Traits
     - path: '/unify/traits/sql-traits'
       title:  SQL Traits
+    - path: '/unify/traits/recommended-items'
+      title: Recommended Items
   - path: /unify/profile-api
     title: Profile API
   - path: /unify/debugger

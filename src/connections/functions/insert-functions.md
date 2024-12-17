@@ -38,6 +38,9 @@ For data to flow to your downstream destinations, you'll need to connect your in
 2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
+
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
@@ -496,6 +499,10 @@ However, if your function aims to enrich event data by fetching additional infor
 ##### Can I use Insert Functions with Device Mode destinations?
 
 No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
+
+##### Can I use Insert Functions with Storage destinations?
+
+Insert Functions are only supported by Cloud Mode (server-side) destinations and aren't compatible with Storage destinations.
 
 ##### Can I connect an insert function to multiple destinations?
 
