@@ -6,6 +6,8 @@ id: 5fabc0b00f88248bbce4db48
 
 [Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature flagging that’s purpose-built for B2B.
 
+
+With Bucket, you can:
 - Release features gradually with simple flags.
 - Gate features based on customer subscriptions.
 - Iterate fast with adoption metrics and feedback.
