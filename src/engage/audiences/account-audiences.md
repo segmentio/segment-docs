@@ -23,8 +23,10 @@ You can use account-level audiences to accomplish the following use cases:
 
 ## Enable account-level audiences
 
-1. Contact [friends@segment.com](mailto:friends@segment.com) and provide your workspace ID to have account-level audiences enabled for your workspace. Navigate to **Settings > Workspace Settings > General Settings** to view your workspace ID.
-2. Ensure that `group_id` is configured as an identifier in Engage Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings/).
+1. Contact [friends@segment.com](mailto:friends@segment.com) to request the feature. Include the following information in your request:
+   - Your Workspace ID: Navigate to **Settings > Workspace Settings > General Settings** to view your workspace ID.
+   - A brief description of your intended use cases for account-level audiences.
+2. If your workspace has the feature enabled, ensure that `group_id` is configured as an identifier in Engage Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings/).
 3. Instrument [group](/docs/connections/spec/group/) calls to send account information to Segment.
 
 ## Account-level audience conditions
