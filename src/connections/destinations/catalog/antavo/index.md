@@ -1,5 +1,6 @@
 ---
 title: Antavo (Actions) Destination
+hidden: true
 ---
 
 The Antavo (Actions) Destination allows you to sync profile updates in Segment and trigger loyalty events.
@@ -16,3 +17,5 @@ This destination is maintained by Antavo. For any issues with the destination, [
       - If the multi-account extension is enabled in Antavo, make sure to include the account ID.
       - If customer attributes are included in the Data section - make sure attribute names match your Antavo settings.
 7. If you haven’t configured the Segment integration in Antavo, go to the **Modules** menu and enable the Twilio Segment Extension in Antavo.
+
+{% include components/actions-fields.html %}
