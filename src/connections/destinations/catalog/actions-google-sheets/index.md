@@ -61,4 +61,4 @@ Once data has been synced to Google Sheets, any subsequent addition or removal o
 
 ### Can I send objects to Google Sheets?
 
-Sending a JavaScript Object is not a supported data type in Google Sheets. You would need to stringify this property first, failure to do so may result in a `400` error. Our Actions mapping framework supports encoding Objects as Strings via the `json(properties, encode)` method. Alternatively an Insert Function can be used to modify the property.
+You can't send JavaScript objects as they're not a supported data type in Google Sheets. You need to stringify the property first. Failure to do so results in a `400` error. Segment's Actions mapping framework supports encoding objects as strings through the `json(properties, encode)` method. Alternatively, you can use an Insert Function to modify the property. 
