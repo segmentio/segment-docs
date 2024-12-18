@@ -50,7 +50,7 @@ The Conversion Upload action allows you to send conversion data to Google Campai
 
 The Google Campaign Manager 360 destination requires the following fields for the Conversion Upload action:
 
-* **Required ID**: The identifier that identifies a user for the conversion. Only one value at a time can be provided, from the following fields:
+* **Required ID**: The identifier that identifies a user for the conversion. Only one value at a time can be provided from the following fields:
   * Google Click ID (gclid);
   * Display Click ID (dclid);
   * Encrypted User ID;
@@ -58,8 +58,8 @@ The Google Campaign Manager 360 destination requires the following fields for th
   * Match ID;
   * Impression ID;
   * Encrypted User ID Candidates;
-* **Timestamp**: The time the conversion occurred;
-* **Value**: The value of the conversion;
+* **Timestamp**: The time the conversion occurred.
+* **Value**: The value of the conversion.
 * **Ordinal**: The ordinal of the conversion. This field is used to control how conversions of the same user and day are de-duplicated.
 
 ### Conversion Adjustment Upload
@@ -77,8 +77,8 @@ The Google Campaign Manager 360 destination requires the following fields for th
   * Mobile Device ID;
   * Match ID;
   * Impression ID;
-* **Timestamp**: The time the conversion occurred;
-* **Value**: The value of the conversion;
+* **Timestamp**: The time the conversion occurred.
+* **Value**: The value of the conversion.
 * **Ordinal**: The ordinal of the conversion. This field is used to control how conversions of the same user and day are de-duplicated.
 
 ## Hashing
