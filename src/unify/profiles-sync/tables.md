@@ -267,7 +267,7 @@ With Profiles Sync, you can access the following three tables that Segment mater
 These materialized tables provide a snapshot of your Segment profiles, batch updated according to your sync schedule.
 
 > success ""
-> These tables will have two months of historical data on backfill.
+> Materialised view tables will have two months of historical data on backfill.
 
 ### Switching to materialized Profile Sync
 
