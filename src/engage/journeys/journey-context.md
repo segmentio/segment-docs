@@ -1,7 +1,6 @@
 ---
 title: Journey Context
 plan: engage-foundations
-hidden: true
 ---
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) redefine how you orchestrate and personalize customer experiences.
