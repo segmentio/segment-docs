@@ -482,6 +482,13 @@ sections:
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
+    - section_title: Event-Triggered Journeys
+      slug: '/engage/journeys/event-triggered-journeys'
+      section: 
+      - path: '/engage/journeys/event-triggered-journeys'
+        title: Event-Triggered Journeys Overview
+      - path: '/engage/journeys/journey-context/'
+        title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
     - path: '/engage/journeys/use-cases'
