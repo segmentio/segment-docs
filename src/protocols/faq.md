@@ -148,6 +148,12 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 
 Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
 
+### If I omit unplanned properties or properties that generate JSON schema violations, what happens to them?
+
+Segment doesn't store unplanned properties and properties omitted due to JSON Schema Violations in Segment logs. Segment drops omitted properties from the events. You can find the omitted properties in the `context.violations` object of an event payload. If you forward Violations to a new source, then you can also see the omitted properties in the Violation Generated event under `violationField` in the `properties` object. 
+
+Segment only stores fully blocked events for 30 days. 
+
 ### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
 
 If you're seeing unplanned properties/traits in your payload despite using Schema Controls, you might want to select a new degree of blocking controls. 

@@ -506,7 +506,11 @@ Insert Functions are only supported by Cloud Mode (server-side) destinations and
 
 ##### Can I connect an insert function to multiple destinations?
 
-Yes, an insert function can be connected to multiple destinations. 
+Yes, you can connect an insert function to multiple destinations.
+
+##### Can I connect multiple insert functions to one destination?
+
+No, you can only connect one insert function to a destination.
 
 ##### Can I have destination filters and a destination insert function in the same connection?
 

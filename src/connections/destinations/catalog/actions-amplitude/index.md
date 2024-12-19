@@ -241,13 +241,36 @@ In the following example, the Amplitude User property `friendCount` equals 4.
 "traits" : {"$add": {"friendCount": 3} }
 "traits" : {"$add": {"friendCount": 1} }
 ```
-## FAQ and troubleshooting
+## FAQs and troubleshooting
 
-### Why doesn't Segment automatically add the `session_id` to my web events?
-For Segment to automatically add the `session_id` to events, your browser must allow the following request URL to load:
+### Does Segment load the Amplitude SDK on the webpage to collect data?
+Segment doesn't load the Amplitude SDK directly on the webpage. Instead, Segment collects data using the Analytics.js library. Once events reach Segment’s servers, they are forwarded to Amplitude’s servers using Amplitude’s HTTP API.
 
+### How does Segment handle the Amplitude session ID?
+The Analytics.js library includes a plugin that sets the Amplitude session ID on the device. This session ID is used to track sessions and is automatically attached to events sent to Amplitude. By default, the session ID is set to timeout after 30 minutes of inactivity. You can review the code implementation for setting the [session ID](https://github.com/segmentio/action-destinations/blob/12255568e4a6d35cf05ee79a118ee6c1a6823f31/packages/browser-destinations/destinations/amplitude-plugins/src/sessionId/index.ts#L33){:target="_blank”}.
+
+###  How can I retrieve the Amplitude session ID set by Segment?
+Since Segment doesn't load the Amplitude SDK, the Amplitude native method `amplitude.getInstance()._sessionId` won't work. You can retrieve the session ID using the this method:
+
+``` js
+localStorage.getItem('analytics_session_id');
 ```
+
+This call accesses the session ID stored in the browser's local storage. You can review the [retrieval code](https://github.com/segmentio/action-destinations/blob/12255568e4a6d35cf05ee79a118ee6c1a6823f31/packages/browser-destinations/destinations/amplitude-plugins/src/sessionId/index.ts#L64){:target="_blank”}.
+
+###  Why doesn't Segment automatically add the session_id to my Web Events?
+
+For Segment to automatically add the session_id to your web events, your website must allow the following URL:
+
+``` js
 https://cdn.segment.com/next-integrations/actions/amplitude-plugins/..
 ```
 
-To check if you are loading this request, [inspect the network requests](https://developer.chrome.com/docs/devtools/network){:target="_blank”} on your website and look for 'Amplitude.' If the request is not loading, confirm it is allowed on your side.
+To check if your website allows the URL:
+
+1. Open your browser’s developer tools and [inspect the network requests](https://developer.chrome.com/docs/devtools/network){:target="_blank”} on your website.
+2. Look for a request related to Amplitude.
+
+If the request is missing:
+   * Ensure your browser settings or network configuration allow the URL to load.
+   * Check for any third-party script blockers or restrictions that might prevent it.
