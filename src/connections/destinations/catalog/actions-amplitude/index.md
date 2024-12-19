@@ -258,7 +258,7 @@ localStorage.getItem('analytics_session_id');
 
 This call accesses the session ID stored in the browser's local storage. You can review the [retrieval code](https://github.com/segmentio/action-destinations/blob/12255568e4a6d35cf05ee79a118ee6c1a6823f31/packages/browser-destinations/destinations/amplitude-plugins/src/sessionId/index.ts#L64){:target="_blank”}.
 
-###  Why is Segment not automatically adding the session_id to my Web Events?
+###  Why doesn't Segment automatically add the session_id to my Web Events?
 
 For Segment to automatically add the session_id to your web events, your website must allow the following URL:
 
