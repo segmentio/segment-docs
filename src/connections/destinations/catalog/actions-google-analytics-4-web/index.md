@@ -158,7 +158,9 @@ For event data to be sent downstream to Google Analytics:
 
 1. Configure and enable the  **Set Configuration Fields** mapping. This mapping is required for data to be sent downstream because it sets configuration to the GA4 Measurement ID indicated in the Settings and establishes data flow using the `config` command.
 2. Confirm you call `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. _The Segment snippet includes this initial call by default._
-3. Send data with an event: typically this is a `page_view` as your first event. 
+3. Send data with an event: typically this is a `page_view` as your first event.
+
+Google has introduced a feature for collecting [user-provided data](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}, which Segment doesn't support. If you’ve enabled this feature in your Google Analytics 4 account, it is irreversible and may cause issues with receiving data. If everything else is set up correctly but data is still not appearing, check if this feature is enabled. If it is, you’ll need to create a new GA4 space to resolve the issue.
 
  > note "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
  > If you need to override this setting for your particular use case, see [Can I override my send_page_view selection that I declared in Settings?](#can-i-override-my-send_page_view-selection-that-i-declared-in-settings)

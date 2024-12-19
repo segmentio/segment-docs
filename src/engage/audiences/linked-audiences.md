@@ -55,13 +55,7 @@ To build a Linked Audience:
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
-### Maintaining Linked Audiences 
-
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. On the Overview page, you can view relevant audience information, such as Profiles in audience, Run schedule, Latest run, and Next run. 
-
-You can also delete Linked Audiences from the menu options or edit your Linked Audience in the Builder tab. If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
-
-You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state.
 
 ### Linked Audience conditions 
 
@@ -80,8 +74,8 @@ As you're building your Linked Audience, you can choose from the following condi
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.|
-| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.|
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
+| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
 | with [ trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
 | without [ trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|
 | part of [audience](/docs/glossary/#audience)    | Creates a condition that filters profiles that are part of an existing audience. |
@@ -96,7 +90,8 @@ at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
 
-#### Operator Selection
+
+#### Operator selection
 
 You can create audience definitions using either `AND` or `OR` operators across all condition levels. You can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups.
 
@@ -112,18 +107,24 @@ This information appears when you click the user profile generated from the audi
 
 ![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic References
+#### Dynamic references
 
-**Event Conditions**
+**Event conditions**
 
 When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value. These operators support dynamic references: equals, not equals, less than, greater than, less than or equal, greater than or equal, contains, does not contain, starts with, ends with.
 
-**Entity Conditions**
+**Entity conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
-NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
-STRING data type: equals, not equals, contains, does not contain, starts with, ends with
-TIMESTAMP data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as in the following table:
+
+| Data Type | Supported Operators                                                                    |
+| --------- | -------------------------------------------------------------------------------------- |
+| NUMBER    | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| STRING    | equals, not equals, contains, does not contain, starts with, ends with                 |
+| DATE      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIME      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+
 
 ## Step 2: Activate your Linked Audience
 
@@ -141,7 +142,7 @@ To activate your Linked Audience:
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
 
 > info "Linked Audiences destinations"
-> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
+> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
@@ -179,7 +180,14 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
-#### Show/Hide preview 
+#### Copy personalization syntax
+Click **Copy to use in Braze Cloud Mode (Actions)** to copy the personalization syntax for the selected traits and properties to use in your destination messaging templates.
+
+> info ""
+> This feature is in beta for customers using Braze. Some functionality may change before it becomes generally available. This feature is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+
+#### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 
@@ -239,3 +247,14 @@ Delivery Overview shows you four steps in your data activation pipeline:
 - **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
 - **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
 - **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.
+
+## Maintaining Linked Audiences 
+
+You can maintain your Linked Audience by accessing these tabs on the main page of your Linked Audience:
+
+Tab name | Information
+-------- | -----------
+Overview | On this tab you can: <br>* View relevant audience information, such as Profiles in audience count, run schedule, latest run, and next run. <br>* Enable or disable, manually run, clone and delete audiences. <br>&nbsp;&nbsp;- *Note:* Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that it was cloned from. <br> * View the list of profiles in the audience with the Audience Explorer. <br>* View connected destinations and configured activation events.
+Builder | On this tab you can: <br>* View or edit your linked audience conditions. <br>&nbsp;&nbsp; - *Note:* If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
+Runs | On this tab you can: <br>* View information about the last 50 audience runs, such as start time, run duration, run result, and change summary. You can also view granular run stats to help you understand the duration of each step in the run such as: <br> &nbsp;&nbsp; - Queueing run: The time spent in the queue waiting for other runs to finish before this one begins. <br>&nbsp;&nbsp; - Extracting from warehouse: The duration of the audience query and data transfer from the source warehouse. <br>&nbsp;&nbsp; - Preparing to deliver events: The time taken to process and ready events for delivery to connected destinations. <br>* If there are no changes associated with a run, there will be no values shown for the granular run stats.
+Settings | On this tab you can view or edit the linked audience name, description, and run schedule.

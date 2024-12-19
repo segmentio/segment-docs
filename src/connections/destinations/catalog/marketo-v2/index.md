@@ -162,6 +162,9 @@ Analytics.track(
 - **Primary Field**. When creating a Custom Activity in Marketo, you have to set a Primary Field. If you are unsure which field was set as the primary field, when you are looking at the list of fields for your Custom Activity in Marketo, there will be a red star next to your Primary Field.
 ![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cZuvsHeaepX+.png)
 
+> info ""
+> You can't map fields nested in objects as Marketo Custom Activity property names. You must flatten any objects you may need to access data from either before you send it to Segment, or while using an [Insert Function](/docs/connections/functions/insert-functions/).
+
 ## Page
 
 When you call [`Page`](/docs/connections/spec/page/), Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage){:target="_blank"}. The URL is built from your `.page()` event and properties object into the form Marketo expects, so no need to worry about doing that yourself.

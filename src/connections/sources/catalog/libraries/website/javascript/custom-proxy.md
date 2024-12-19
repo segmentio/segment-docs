@@ -38,6 +38,9 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
+> info "Segment loads most integrations through the proxy, except for third-party SDKs"
+> Third-party SDKs are loaded by a partner's CDN, even with a Segment proxy configured. For example, if you have  a Segment custom proxy enabled and send data to a FullStory destination, FullStory's CDN would load the FullStory SDK. 
+
 ## Custom Proxy setup
 
 There are two options you can choose from when you set up your custom domain proxy.
@@ -62,6 +65,8 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
+
+There should be no downtime once the setup is complete, as the default Segment domains continue to work alongside the customer's domains. 
 
 
 ## Custom CDN / API Proxy
@@ -161,12 +166,11 @@ To add a CNAME record for the Segment proxy to your organizations DNS settings:
 
 ### Tracking API Proxy
 
-Set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
+As events travel through the proxy before reaching the tracking API, set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
 
 | Field              | Value            | Description                                  |
 | ------------------ | ---------------- | -------------------------------------------- |
 | Origin Domain Name | `api.segment.io` | The domain name to which the proxy is served |
-
 
 #### Add CNAME Record to DNS
 
@@ -247,3 +251,12 @@ analytics.load({
    cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
  })
 ```
+
+## Restore the API host to the Segment default
+
+If you wish to restore the proxied API host to it's original value:
+1. Navigate to the **Source > Settings > Analytis.js tab**
+2. Scroll down until you see the Host address field. 
+3. Under the field, there is a small blue text that says 'Restore to a default value'. Click **Restore** and then **Save**. 
+
+Any changes made to the CDN host must be update manually in your code. 

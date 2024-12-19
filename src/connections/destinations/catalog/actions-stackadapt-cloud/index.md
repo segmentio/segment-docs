@@ -3,15 +3,14 @@ title: StackAdapt Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 61d8859be4f795335d5c677c
-redirect_from: '/connections/destinations/catalog/actions-stackadapt/'
+redirect_from: "/connections/destinations/catalog/actions-stackadapt/"
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-By setting up StackAdapt as a Segment destination, your Segment events will be forwarded to [StackAdapt](https://www.stackadapt.com/){:target="_blank"}. This allows you to generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
+By setting up StackAdapt as a Segment destination, your Segment events will be forwarded to [StackAdapt](https://www.stackadapt.com/){:target="\_blank"}. This allows you to generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
 
-This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
-
+This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
 
 ## Getting started
 
@@ -20,7 +19,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 1. Log in to your StackAdapt account and navigate to the Pixels page.
 2. Above the list of pixels, click **Install StackAdapt Pixel**.
 
-    ![Image showing location of link to install Pixel](images/install-pixel-link.png)
+   ![Image showing location of link to install Pixel](images/install-pixel-link.png)
 
 3. In the instructions that appear, copy the universal pixel ID from the code snippet. Below is an example of a code snippet where the universal pixel ID is `sqQHa3Ob1hFi__2EcYYVZg1`.
 
@@ -41,9 +40,9 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 
 Segment events that are forwarded to StackAdapt can be used to track ad conversions, and to generate retargeting and lookalike audiences. Please review the StackAdapt documentation for the general setup of these if you are not already familiar:
 
-- [Creating Conversion Events](https://support.stackadapt.com/hc/en-us/articles/360005859214-Creating-Conversion-Events){:target="_blank"}
-- [Creating Retargeting Audiences](https://support.stackadapt.com/hc/en-us/articles/360005939153-Creating-Retargeting-Audiences){:target="_blank"}
-- [How to Generate and Target a Lookalike Audience](https://support.stackadapt.com/hc/en-us/articles/360023738733-How-to-Generate-and-Target-a-Lookalike-Audience){:target="_blank"}
+- [Creating Conversion Events](https://support.stackadapt.com/hc/en-us/articles/360005859214-Creating-Conversion-Events){:target="\_blank"}
+- [Creating Retargeting Audiences](https://support.stackadapt.com/hc/en-us/articles/360005939153-Creating-Retargeting-Audiences){:target="\_blank"}
+- [How to Generate and Target a Lookalike Audience](https://support.stackadapt.com/hc/en-us/articles/360023738733-How-to-Generate-and-Target-a-Lookalike-Audience){:target="\_blank"}
 
 Setup of conversion events, retargeting audiences, and lookalike audiences that fire on Segment events is largely the same as the setup in the StackAdapt documentation, with a few caveats:
 
@@ -64,7 +63,7 @@ A Segment event fired with the code `analytics.track("User Registered")` can be 
 The StackAdapt destination also supports forwarding ecommerce fields for the purpose of creating event rules that match ecommerce events, with default mappings to properties specified in the [Segment V2 Ecommerce Event Spec](/docs/connections/spec/ecommerce/v2/) as described in the below table:
 
 | Segment Ecommerce Event Property | StackAdapt Event Key |
-|----------------------------------|----------------------|
+| -------------------------------- | -------------------- |
 | `order_id`                       | `order_id`           |
 | `revenue`                        | `revenue`            |
 | `product_id`                     | `product_id`         |
@@ -76,7 +75,7 @@ The StackAdapt destination also supports forwarding ecommerce fields for the pur
 For events that can involve multiple products, such as checkout events, StackAdapt forwards a JSON array of product objects with a `products` key and fields that map by default to following Segment product array fields:
 
 | Segment Ecommerce Event Property | StackAdapt Product Object Key |
-|----------------------------------|-------------------------------|
+| -------------------------------- | ----------------------------- |
 | `products.$.product_id`          | `product_id`                  |
 | `products.$.category`            | `product_category`            |
 | `products.$.name`                | `product_name`                |
@@ -110,7 +109,7 @@ analytics.track('Order Completed', {
 Although trait fields are not frequently used in event rules, the StackAdapt destination forwards them and they can be used if desired.
 
 | Segment Trait Property | StackAdapt Event Key |
-|------------------------|----------------------|
+| ---------------------- | -------------------- |
 | `traits.email`         | `email`              |
 | `traits.first_name`    | `first_name`         |
 | `traits.last_name`     | `last_name`          |
@@ -123,13 +122,13 @@ For example, to create a conversion event when a user with the domain `example.c
 This rule would match a Segment event fired with code such as:
 
 ```javascript
-analytics.track('Order Completed', {
-  order_id: '50314b8e9bcf000000000000',
+analytics.track("Order Completed", {
+  order_id: "50314b8e9bcf000000000000",
   traits: {
-    email: 'john.smith@example.com',
-    first_name: 'John',
-    last_name: 'Smith',
-    phone: '+180055501000'
+    email: "john.smith@example.com",
+    first_name: "John",
+    last_name: "Smith",
+    phone: "+180055501000"
   }
 });
 ```
@@ -167,4 +166,4 @@ When forwarding past events using Reverse ETL, only users who have interacted wi
 
 ## Data and privacy
 
-Review [StackAdapt's Data Processing Agreement](https://www.stackadapt.com/data-processing-agreement){:target="_blank"} to learn more about StackAdapt's privacy and data terms.
+Review [StackAdapt's Data Processing Agreement](https://www.stackadapt.com/data-processing-agreement){:target="\_blank"} to learn more about StackAdapt's privacy and data terms.

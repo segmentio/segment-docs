@@ -5,15 +5,21 @@ title: Amazon Web Services PrivateLink
 [Amazon Web Services' PrivateLink](https://aws.amazon.com/privatelink/){:target="_blank”} is an AWS service that provides private connectivity between VPCs without exposing traffic to the public Internet. Keeping traffic in the Amazon network reduces the data security risk associated with exposing your Warehouse traffic to the Internet.
 
 > info ""
-> Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. Only warehouses located in regions `us-east-1`, `us-west-2`, or `eu-west-1` are eligible for PrivateLink. You might incur additional networking costs while using AWS PrivateLink. 
+> Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. You might incur additional networking costs while using AWS PrivateLink. 
 
-During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), [Redshift](#redshift), and [Snowflake](#snowflake). 
+You can configure AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), [Redshift](#redshift), and [Snowflake](#snowflake). Only warehouses located in regions `us-east-1`, `us-west-2`, or `eu-west-1` are eligible.
+
+Usage limits for each customer during the AWS PrivateLink Private Beta include the following: 
+- Up to 2 AWS PrivateLink VPC endpoints.  
+- A monthly data transfer limit of 300GB total for all PrivateLink VPC endpoints connected to Segment.
 
 ## Databricks
 
 The following Databricks integrations support PrivateLink:
 - [Databricks storage destination](/docs/connections/storage/catalog/databricks/)
 - [Databricks Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+- [Databricks Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)
+- [Databricks Data Graph](/docs/unify/data-graph/)
 
 > info "Segment recommends reviewing the Databricks documentation before attempting AWS PrivateLink setup"
 > The setup required to configure the Databricks PrivateLink integration requires front-end and back-end PrivateLink configuration. Review the [Databricks documentation on AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} to ensure you have everything required to set up this configuration before continuing. 
@@ -40,6 +46,7 @@ To implement Segment's PrivateLink integration for Databricks:
 The following RDS Postgres integrations support PrivateLink:
 - [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
 - [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
+- [RDS Postgres Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/)
 
 ### Prerequisites
 Before you can implement AWS PrivateLink for RDS Postgres, complete the following prerequisites:
@@ -62,6 +69,8 @@ To implement Segment's PrivateLink integration for RDS Postgres:
 The following Redshift integrations support PrivateLink:
 - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
 - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+- [Redshift Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/)
+- [Redshift Data Graph](/docs/unify/data-graph/)
 
 ### Prerequisites
 Before you can implement AWS PrivateLink for Redshift, complete the following prerequisites:
@@ -82,6 +91,8 @@ To implement Segment's PrivateLink integration for Redshift:
 The following Snowflake integrations support PrivateLink:
 - [Snowflake storage destination](/docs/connections/storage/catalog/snowflake/)
 - [Snowflake Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
+- [Snowflake Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/)
+- [Snowflake Data Graph](/docs/unify/data-graph/)
 
 ### Prerequisites
 Before you can implement AWS PrivateLink for Snowflake, complete the following prerequisites:

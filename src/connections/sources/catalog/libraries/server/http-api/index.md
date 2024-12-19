@@ -64,6 +64,7 @@ For example, to use the access token in the HTTP API Source, use `access_token` 
       "email": "test@example.org",
       "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
       "userId": "123",
+      "type": "track",
       "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
   }
 ```

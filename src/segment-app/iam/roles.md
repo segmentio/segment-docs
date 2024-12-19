@@ -88,9 +88,10 @@ Only users with the Workspace Owner role can access the Privacy Portal.
 
 ## Roles for managing Engage destinations
 
-Engage destinations aren't included in the Engage roles by default. Users with Engage roles (including the Engage Admin) need additional permissions for each Engage space they work with to manage that Engage space's destinations.
-
-Grant these users `Unify and Engage Admin` on the selected Engage space and `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
+When managing destination connections in an Engage space, you may require additional permissions. 
+- **Connecting or disconnecting destinations to Engage spaces:** To allow a user to connect or disconnect destination instances to your Engage space, grant `Unify and Engage Admin` access for the specific Engage space, and `Source Admin` access for the source(s) linked to that Engage space, named `Engage (space name)`.
+- **Managing connections to Engage features (Computed Traits/Audiences/Journeys)**: To allow a user to attach or detach a destination in your Engage space to specific Engage features like Audiences or Journeys, grant these users `Unify and Engage Admin` access on the selected Engage space. The `Source Admin` role is not necessary for this action.
+ 
 
 ## Roles for connecting resources
 

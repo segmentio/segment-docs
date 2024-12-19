@@ -98,3 +98,4 @@ WebKit
 Wootric
 Zendesk
 Okta
+Klaviyo
