@@ -182,6 +182,6 @@ To resolve this, ensure that the ConversionActionType value in Google Ads is cor
 
 Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.
 
-### what is the difference between the action "Upload Click Conversions" and "Click Conversion V2"?
-The only difference with the new "Click Conversion v2" action is the rollout of [sync modes]([https://developers.google.com/google-ads/api/reference/rpc/v15/ConversionUploadErrorEnum.ConversionUploadError#invalid_conversion_action_type](https://segment.com/docs/connections/destinations/#sync-modes)){:target="_blank”}. And these sync mode options will not be available for the "Upload click conversion" actions mapping over the UI. Other than that, both action mappings will work in the same way.
+### What are the differences between the Upload Click Conversions and Click Conversion V2 Actions?
+The only difference between the Upload Click Conversions and Click Conversion V2 Actions is that the Click Conversion V2 Action has [sync modes](/docs/connections/destinations/#sync-modes).
 
