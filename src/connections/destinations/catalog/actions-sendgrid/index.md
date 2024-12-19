@@ -5,9 +5,6 @@ hide-dossier: true
 redirect_from:
   - "/connections/destinations/catalog/sendgrid-marketing-campaigns/"
 id: 631a6f32946dd8197e9cab66
-hide_action:
-  - id: 2NyqxNN5TGJa1CP5xEYeLu
-    name: "Send email with Dynamic Template"
 ---
 
 
