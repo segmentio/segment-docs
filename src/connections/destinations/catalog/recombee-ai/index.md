@@ -1,23 +1,21 @@
 ---
 title: Recombee AI Destination
 rewrite: true
+maintenance: true
+maintenance-content: This destination is no longer available in the Segment catalog, but will remain active in workspaces where it has already been configured. Recombee has developed an updated destination built on the Actions framework. See [Recombee Destination](/docs/connections/destinations/catalog/actions-recombee/) for more information.
 hide-settings: true
 hide-personas-partial: true
 id: 6095391bd839b62fca8a8606
+versions:
+  - name: Recombee (Actions)
+    link: /docs/connections/destinations/catalog/actions-recombee
 ---
-[Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Recommender as a Service, that can use your data to provide the most accurate recommendations of content or products for your users.
 
-Use this Segment destination to send your interaction data views, purchases, plays, etc.) to Recombee.
+[Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Recommender as a Service that can use your data to provide the most accurate recommendations of content or products for your users.
 
-This destination is maintained by Recombee. For any issues with the destination, [contact the Recombee Support team](mailto:support@recombee.com).
-
-> note "Note:"
-> The Recombee Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Recombee Destination and its documentation, [contact the Recombee support team](mailto:support@recombee.com)!
-
+Use this Segment destination to send your interaction data, like views, purchases, or plays, to Recombee.
 
 ## Getting Started
-
-
 
 1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
@@ -26,15 +24,14 @@ This destination is maintained by Recombee. For any issues with the destination,
 4. Go to the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"}:
    - Choose the Recombee Database where you want to send the interactions.
    - Click **Settings** in the menu on the left.
-   - In the **Settings** section find the **API Identifier** of the Database and its corresponding **Private Token**
+   - In the **Settings** section find the **Database ID** and the **Private Token** of the Database.
 5. Back in the Segment web app, go to the Recombee destination settings.
-    - Paste the **API Identifier** you just copied in the **Database ID** field.
+    - Paste the **Database ID** you just copied in the **Database ID** field.
     - Paste the **Private Token** you just copied in the **API Key** field.
 
 Once you send the data from Segment to the Recombee destination you can:
    - Go to the KPI console of the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"} to see the numbers of the ingested interactions (updated in Real-time)
    - Click the ID of an Item, User in Items, or section in the Users catalog to see a specific ingested interaction.
-
 
 ## Page
 
@@ -45,7 +42,6 @@ analytics.page()
 ```
 
 Segment sends Page calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view){:target="_blank"}.
-
 
 ## Track
 
@@ -62,6 +58,7 @@ analytics.track('Video Content Playing', {
 ```
 
 #### Sending semantic spec events to Recombee
+
 Recombee Destination can process several [Semantic Events](/docs/connections/spec/semantic/):
 
 [Ecommerce](/docs/connections/spec/ecommerce/v2/):
@@ -91,7 +88,6 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 
 Segment sends Screen calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view){:target="_blank"}.
 
-
 ## Alias
 
 If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
@@ -108,8 +104,8 @@ Segment sends a [Delete User](https://docs.recombee.com/api.html#delete-user){:t
 All the data associated with the user (including interactions) are removed from Recombee.
 
 ## Reporting successful recommendations
-You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics){:target="_blank"}
 
+You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics){:target="_blank"}
 
 Recombee recognizes the `recomm_id` property in all the events that send interactions.
 
@@ -140,7 +136,6 @@ If you don't provide an **Item ID Property Name**:
 - `content_asset_id` or `asset_id` is used for [Video Events](/docs/connections/spec/video/).
 - `name` property is used if it exists.
 
-
 ### Track Events Mapping (Optional)
 
 Recombee can automatically handle different [Ecommerce Events](/docs/connections/spec/ecommerce/v2/) and [Video Events](/docs/connections/spec/video/) in the *Track* call type (see the [Track section](#track)).
@@ -157,7 +152,6 @@ The value of the mapping is the name of your event, and the key can be one of:
   - a property `rating` must exist and contain a number from interval [-1.0,1.0], where -1.0 means the worst rating possible, 0.0 means neutral, and 1.0 means absolutely positive rating.
 - [View Portion](https://docs.recombee.com/api.html#set-view-portion){:target="_blank"}
   - the portion (how much of the content was consumed by the user) is computed from the `position` and `total_length` properties (see [Content Event Object](/docs/connections/spec/video/#content-event-object)), or can be given as the `portion` property (a number between 0 and 1).
-
 
 ### API URI (Optional)
 
