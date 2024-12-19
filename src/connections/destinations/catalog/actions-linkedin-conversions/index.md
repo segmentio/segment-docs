@@ -47,5 +47,6 @@ Your inputs must meet the following criteria:
 
 Any deviations from this specification might lead to failed inputs.
 
-### Why LinkedIn still shows "no integration data" after I successfully sent the data?
-LinkdedIn won't reject events due to the lack of currency and amount data, but they will not correctly recogonize the events you sent via Segment. Please ensure your payload has the data or try [Event Tester](/docs/connections/test-connections/#ensuring-an-event-is-successfully-making-it-to-a-specific-destination) for other causes.
+### Why does LinkedIn show "no integration data" after I successfully sent the data?
+
+One reason may be that your events are missing currency and amount fields. LinkdedIn’s API itself won't reject events due to the lack of currency and amount data, but their platform will silently drop these events later in LinkedIn’s processing. Please ensure your payload has those fields with valid values.
