@@ -109,7 +109,7 @@ In order to override the default, check the destination settings pane in the Seg
 
 ## Sync modes
 
-Sync mode allows users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
+Sync modes allow users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
 
 The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you sync customer data, you might have the option to Insert, Update, or Upsert records.
 
@@ -230,7 +230,6 @@ Segment supports IP Allowlisting in [all destinations](/docs/connections/destina
 - [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
 - [TradeDesk](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
-- [Destination Functions](/docs/connections/functions/destination-functions/)
 
 Destinations that are not supported receive traffic from randomly assigned IP addresses. 
 

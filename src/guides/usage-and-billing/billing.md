@@ -34,7 +34,7 @@ All Segment customers with a US business address may be subject to state and loc
 
 Segment collects Value Added Tax (VAT) and Goods and Services Tax (GST) on the services sold to its international customers located in certain foreign jurisdictions. 
 
-For more information about sales tax, VAT, and GST, see the [Segment VAT/GST FAQs](/docs/assets/pdf/faq-segment-dissolution-vat.pdf).
+For more information about sales tax, VAT, and GST, see the [Segment VAT/GST FAQs](/docs/assets/pdf/Segment_VAT_GST_FAQ.pdf).
 
 
 ## Do I qualify for a tax exemption?

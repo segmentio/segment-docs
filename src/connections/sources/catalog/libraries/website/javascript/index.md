@@ -362,7 +362,9 @@ analytics.identify("hello world")
 
 The `ready` method lets you pass in a method that gets called after Analytics.js finishes initializing and after all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations. Because it doesn't fire until all enabled device-mode destinations are loaded, it can't be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
 
-The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization. If you're looking to detect when Analytics.js has loaded, instead of using the `ready` method, you can listen for the `initialize` event to be emitted (`window.analytics.initialized`). This event returns `true` even when a destination is blocked.
+The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization. If you want to check when Analytics.js has loaded, you can look at the value of `window.analytics.initialized`. When it’s true, the library has successfully initialized, even if some destinations are blocked.
+
+**Note**: `window.analytics.initialized` is a simple boolean, not an event or a pub/sub system. This means you can't subscribe to changes in its value. If you need to detect when it changes from `false` to `true`, you must set up a polling mechanism to monitor the value.
 
 The code in the `ready` function only executes after `ready` is emitted. 
 
@@ -821,20 +823,42 @@ Because Segment tracks across subdomains, you can either use the same Segment so
 
 UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives using a link containing UTM parameters, Segment's analytics.js library will parse the URL query string and add the information to the event payload. For more information about UTM tracking, see the [Tracking Customers Across Channels and Devices](/docs/guides/how-to-guides/cross-channel-tracking/) documentation.
 
-UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, if you include the following three parameters in your URL: ?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in the raw view of your Source Debugger.)
+UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, if you include the following three parameters in your URL: `?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign`, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in the raw view of your Source Debugger.)
 
 So, for example, if somebody follows the link with above query string to your site, the subsequent 'page' call in your Debugger should contain the below and will be passed to any enabled destinations:
 
-
+```js
 "context": {
  "campaign": {
  "medium": "email",
  "name": "mytestcampaign",
  "source": "mysource",
  },
-
+```
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
+
+Segment doesn't validate UTM parameter names. This design supports the flexibility to track both standard parameters (for example, utm_source, utm_medium) and custom parameters defined by users. As a result, all parameters present in the URL collected as is, and are added to the context field without checks for naming conventions or validity.
+
+If you want to ensure that only standard UTM parameters (such as, utm_source, utm_medium, utm_campaign, utm_content, utm_term) are included in the context.campaign object, you can implement [Source middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/) in your Analytics.js setup. 
+
+For example:
+
+```js
+window.analytics.addSourceMiddleware(({ payload, next }) => {
+  if (payload.obj.context?.campaign) {
+    const allowedFields = ["source", "medium", "term", "campaign", "content"];
+    const campaign = payload.obj.context.campaign;
+    Object.keys(campaign).forEach(key => {
+      if (!allowedFields.includes(key)) {
+        delete campaign[key];
+      }
+    });
+  }
+  next(payload);
+});
+```
+This middleware filters out any non-standard parameters from the `context.campaign` object before they're sent to Segment or forwarded to your enabled destinations.
 
 ## Analytics.js performance
 

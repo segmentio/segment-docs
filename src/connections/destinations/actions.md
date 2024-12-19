@@ -38,8 +38,8 @@ A Destination Action contains a hierarchy of components, that work together to e
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Global Settings | Define authentication and connection-related information like API and Secret keys.                                                                                                                                                                                                                                                                                                                      |
 | Mappings        | Handle the individual calls to the destination. In them, you define what type of call you want to make to the destination, and what Triggers that call. Individual Destination Actions may come enabled with some predefined mappings to handle common events like Screen calls, Identify calls, and Track calls. Mappings have two components that make this possible: **Triggers** and an **Action**. |
-| Triggers        | Enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the Trigger. <br /> <br /> Self-service users can add a maximum of two conditions per Trigger.                                                                                                                                                             |
-| Actions         | Determine the information sent to the destination. In the Configure action section, you map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.                                                                                                                                                |
+| Triggers        | Enable you to define *when* the corresponding Action fires. As part of a Trigger, you can use condition-based filters to narrow the scope of the Trigger. Triggers don't support matching on event fields containing `.$` or `.$.`, which reference an array type. <br /> <br /> Self-service users can add a maximum of two conditions per Trigger. |
+| Actions         | Determine the information sent to the destination. In the Configure action section, you map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected. |
 
 For example, in the Amplitude (Actions) destination, you define your API and Secret keys in the destination's global settings. Then, the provided Page Calls mapping:
 
@@ -57,7 +57,8 @@ To set up a new Actions-framework destination for the first time:
 4. If prompted, select the source you want to connect to the new destination.
 5. Enter your credentials. This could be an API Key and secret key, or similar information that allows the destination to connect to your account.
 6. Next, choose how you want to set up the destination, and click **Configure Actions**.
-    You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
+   * You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
+   * *(Optional)* Click **Suggest Mappings** to get suggested mappings. Learn more about [suggested mappings](#suggested-mappings).
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
 > info ""
@@ -187,6 +188,16 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
+
+## Suggested mappings
+
+> info ""
+> Suggested mappings is fully available for RETL mappings, and is in public beta for event streams and connections. 
+
+Segment offers suggested mappings that automatically propose relevant destination fields for both model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the setup. For more information, see [Segment's suggested mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
+
+> warning ""
+> Review the suggested mappings for accuracy before finalizing them as the suggestions aren't guaranteed to be 100% accurate. 
 
 ### Coalesce function
 

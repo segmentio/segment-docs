@@ -3,7 +3,7 @@ title: Pushwoosh Source
 id: MW9K4HgBZz
 ---
 
-[Pushwoosh] (https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a comprehensive mobile engagement platform, offering advanced push notifications, and in-app messaging to enhance customer interactions and retention.
+[Pushwoosh](https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a comprehensive mobile engagement platform, offering advanced push notifications, and in-app messaging to enhance customer interactions and retention.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) that can  export data into your Segment warehouse, as well as federate the exported data into your other enabled Segment Destinations.
 

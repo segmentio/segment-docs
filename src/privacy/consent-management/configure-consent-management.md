@@ -39,19 +39,26 @@ Before you can configure consent in Segment, take the following steps:
 
 ## Step 2: Integrating your CMP with Segment
 
-Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment. Segment recommends using a CMP wrapper, but you can use any solution provided it meets the following criteria:
-- Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) in every event
-- If using Unify and Engage, generates the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
+Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment. 
 
-Segment provides a OneTrust wrapper for the following sources:
-- **Analytics.js**: Please follow the instructions from the README in the [@segmentio/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. For more information about Segment's Analytics.js OneTrust wrapper, see the [Analytics.js OneTrust Wrapper](/docs/privacy/consent-management/onetrust-wrapper) documentation. You should also navigate to your Analytics.js source in the Segment app, select  **Settings > Analytics.js**, and enable **Destination Filters** before enabling your OneTrust wrapper. 
-- **Kotlin**: Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
-- **Swift**: Please follow the instructions from the README in the [@segment-integrations/analytics-swift-consent](https://github.com/segment-integrations/analytics-swift-consent#segment-consent-management){:target="_blank"} repository.
-- **React Native**: Please follow the instructions from the README in the [@segmentio/analytics-react-native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-onetrust){:target="_blank"} repository.
+Segment supports the following CMPs:
 
-Ketch provides an integration for their Consent & Preference Management product. For more information, see the Ketch [Segment Tag Management Automation](https://docs.ketch.com/ketch/docs/segment-tag-management-automation){:target="_blank"} documentation.  
+| Consent Management Platform | Supported web libraries    | Supported mobile libraries   | Contact       |
+| --------------------------- | -------------------------- | ---------------------------- | ------------- |
+| OneTrust                    |![supported](/docs/images/supported.svg) [Analytics.js](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}<sup>*</sup> | ![supported](/docs/images/supported.svg) [Kotlin](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} <br> ![supported](/docs/images/supported.svg) [Swift](https://github.com/segment-integrations/analytics-swift-consent#segment-consent-management){:target="_blank"} <br> ![supported](/docs/images/supported.svg) [React Native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-onetrust){:target="_blank"} | For support and troubleshooting, contact [Segment](mailto:friends@segment.com){:target="_blank"}. |
+| TrustArc                   | ![supported](/docs/images/supported.svg) [Analytics.js](https://github.com/trustarc/trustarc-segment-wrapper){:target="_blank"} | ![unsupported](/docs/images/unsupported.svg) | For support and troubleshooting, contact [TrustArc](https://trustarc.com/contact/){:target="_blank"}. |
+| Ketch                      | ![supported](/docs/images/supported.svg) [Analytics.js](https://docs.ketch.com/ketch/docs/segment-tag-management-automation){:target="_blank"} | ![unsupported](/docs/images/unsupported.svg) | For support and troubleshooting, contact [Ketch](https://www.ketch.com/contact-us){:target="_blank"}. |
 
-If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation. To get started building your own wrapper, follow the instructions in the [@segment/analytics-consent-tools](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} repository. 
+<sup>*</sup>_If you send data to device-mode destinations connected to your Analytics.js source, you must navigate to your Analytics.js source in the Segment app, select **Settings > Analytics.js**, and enable Destination Filters._ 
+
+> success ""
+> For more information about Segment’s Analytics.js OneTrust wrapper, see the [Analytics.js OneTrust Wrapper](/docs/privacy/consent-management/onetrust-wrapper/) documentation. 
+
+If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the following requirements for data and event generation:
+  - Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) in every event
+  - If using Unify and Engage, generates the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
+
+To get started building your own wrapper, follow the instructions in the [@segment/analytics-consent-tools](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} repository. 
 
 > warning "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
 > If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 

@@ -49,6 +49,7 @@ Sub-bullets/sub-lists | If there are mutliple tasks within a step, break it up i
 FAQs | Use H4s for FAQs. Don't use the liquid formatting. <b><br>When naming the FAQ section, use `FAQ` instead of `Frequently Asked Questions`. 
 External links | When inserting links that aren't on the segment.com/docs subdomain, follow this format: `[link text](https://google.com){:target="_blank"}` <br>Make sure the `{:target="_blank"}` is included after the link. This ensures that the link to the external site opens up in a new tab to avoid taking users away from the docs site.
 Code blocks | When giving a code example that is more than a line long, use a code block. (For keyboard shortcuts, variables, and commands, use the single-backtick `code format`). Always use triple-backtick code fences to create a code block. Do not use the three-indent (three tabs/six spaces) mode, as this can conflict with nested list rendering.
+HTTP response codes | When including an HTTP error code, write the entire code (for example, 400 Bad Request) and format the error code using single-backtick `code format`.
 
 
 ## Segment Specific Terms

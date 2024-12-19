@@ -1,6 +1,8 @@
 ---
 title: Salesforce Unify Direct Integration Guide
 plan: unify
+redirect_from:
+  - '/unify/salesforce-unify'
 ---
 
 This guide outlines the process for setting up Salesforce as a data source with Segment Profiles. 
@@ -58,7 +60,7 @@ Next, add a Segment Profiles destination:
 4. Test your mapping with real data from Salesforce.
 5. Save your mapping configuration.
 
-![A screenshot of the "Select Mappings" interface in Segment, showing fields for mapping event data from a source to a destination. The interface includes options for selecting objects, customizing objects, and mapping fields such as Profile Space, User ID, Anonymous ID, Group ID, Traits, and Timestamp.](./images/select_mappings.png)
+![A screenshot of the "Select Mappings" interface in Segment, showing fields for mapping event data from a source to a destination. The interface includes options for selecting objects, customizing objects, and mapping fields such as Profile Space, User ID, Anonymous ID, Group ID, Traits, and Timestamp.](../../../images/select_mappings.png)
 
 ### 5. Enable the destination mapping and Salesforce source
 

@@ -1,5 +1,5 @@
 ---
-title: Snowflake Setup
+title: Snowflake Data Graph Setup
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/setup-guides/snowflake-setup'
@@ -23,7 +23,7 @@ Segment recommends setting up a new Snowflake user and only giving this user per
 
 > info ""
 > Segment recommends creating a new database for the Data Graph.
-> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema)to update user access for the Segment Reverse ETL schema.
+> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema) to update user access for the Segment Reverse ETL schema.
 
 
 ```sql
@@ -160,7 +160,7 @@ To connect your warehouse to the Data Graph:
  
 5. Test your connection, then click Save.
 
-## Update user acccess for Segment Reverse ETL schema 
+## Update user access for Segment Reverse ETL schema 
 If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient privileges on an existing `_segment_reverse_etl` schema.
 
 ```sql

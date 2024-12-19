@@ -172,7 +172,7 @@ There are certain destinations to which you may not want to send the `userId`. T
 
 ## Filter conditional operators
 * `contains`: checks whether the field's value includes the provided substring
-* `glob matches`: case sensitive, checks whether the value matches provided string
+* `glob matches`: case sensitive, can accept wildcard characters, checks whether the value matches provided string
 * `is (number)`: checks whether the value is exactly the provided integer
 * `is (string)`: checks whether the value is exactly the provided string
 * `is false`: checks whether the value is type boolean and is `false`

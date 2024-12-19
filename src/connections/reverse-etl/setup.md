@@ -50,6 +50,10 @@ Models define sets of data you want to sync to your Reverse ETL destinations. A 
 ### dbt model
 Use Segment's dbt extension to centralize model management and versioning. Users who set up a BigQuery, Databricks, Postgres, Redshift, or Snowflake source can use Segment's [dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes. 
 
+> success " "
+> If you use dbt Cloud with Reverse ETL, you can [create up to 5 mappings](#step-4-create-mappings) that use the sync strategy **dbt Cloud**, which extracts data from your warehouse and syncs it with your destination after a job in dbt Cloud is complete. 
+
+
 ## Step 3: Add a destination
 In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to. A model can have multiple destinations.
 
@@ -87,8 +91,8 @@ To create a mapping:
      * Added or updated records  
      * Deleted records
 7. In the **Map fields** section, define how to map the record columns from your model to your destination. Map the fields that come from your source to fields that the destination expects to find. Fields on the destination side depend on the type of Action selected.  
-   * If you’re setting up a Destination Action, some mapping fields might require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays) for more information.  
-   <!---* _(Optional)_ Use the [Suggested Mappings](#suggested-mappings) feature to identify and match near-matching field names to streamline the field mapping process. --> 
+   * If you’re setting up a Destination Action, some mapping fields might require data to be in the form of an object or array. See the [supported objects and arrays for mapping](docs/connections/reverse-etl/setup/#supported-object-and-arrays) for more information.  
+   * _(Optional)_ Use the [Suggested Mappings](#suggested-mappings) feature to identify and match near-matching field names to streamline the field mapping process.
 8. In the **Send test record section**, select a test record to preview the fields that you mapped to your destination. When you've verified that the records appear as expected, click **Next**. 
 9. Enter a name for your mapping. The name initially defaults to the Action's name, for example, `Track Event`, but you can make changes to this default name.
 10. Select how often you want Segment to sync your data under **Schedule configuration**.
@@ -195,6 +199,16 @@ To edit your model:
 3. On the overview tab, click **Edit** to edit your query.
 4. Click the **Settings** tab to edit the model name or change the schedule settings.
 
+
+### Suggested mappings
+
+> info ""
+> Suggested mappings is fully available for RETL mappings. 
+
+Segment offers suggested mappings that automatically propose relevant destination fields for model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the mappings setup process. For more information, see [Segment's suggested mappings blog post](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Facts Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
+
+> warning ""
+> Review the suggested mappings for accuracy before finalizing them, as Segment can't guarantee all of the suggested mappings are accurate.
 
 ### Edit your mapping
 
