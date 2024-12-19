@@ -78,9 +78,7 @@ For other destinations or more complex logic, you can use [Destination Functions
    - Send a **test event** to validate the configuration.  
    - Ensure that the data is received correctly by the destination and mapped as expected.
 
-#### Behind the Scenes
-
-When a journey reaches this step, the system prepares and sends the payload based on your configuration. The integration ensures compatibility with the selected destination’s API, allowing seamless data transfer and execution of the specified action.
+When a journey reaches this step, the Segment prepares and sends the payload based on your configuration. The integration ensures compatibility with the selected destination’s API, allowing seamless data transfer and execution of the specified action.
 
 ### Journey setup configuration options
 
@@ -97,11 +95,10 @@ When you select **Re-enter every time event occurs** when you create an event-tr
 
 For example, in an abandonment journey, suppose a user starts two applications (like `application_started`), each with a different `application_id`. By setting `application_id` as the unique identifier, Segment can match follow-up events (like `application_completed`) to the correct application journey. As a result, each journey instance only receives the completion event for its specific application.
 
-### Notes and Limitations
+### Notes and limitations
 
-- **Supported Destinations:** Currently, only Actions Destinations in the Segment catalog are supported.  
-- **Data Mapping:** Ensure all required keys for the destination are properly mapped to avoid errors.
-
+- **Supported destinations:** Only Actions Destinations in the Segment catalog are supported.  
+- **Data mapping:** Ensure all required keys for the destination are properly mapped to avoid errors.
 
 ## Best practices
 
@@ -122,7 +119,7 @@ Segment built Event-Triggered Journeys to respond instantly to events, offering 
 - **Entry event requirements**: The entry event you use must already exist in your Segment workspace for it to appear as a selection in journey setup. Make sure that you've already created the event before setting up your journey.
 - **Event property filters**: You can filter event properties using the `equals` or `equals any of` operators. When you apply multiple conditions, filters operate with `AND` logic, meaning all conditions must be true for the event to trigger entry into the journey.
 - **Audience filtering**: You can only use active, pre-existing audience records as filters. For more complex filtering, like specific profile traits or multiple audiences, first [create the audience](/docs/engage/audiences/#building-an-audience) in **Engage > Audiences**, then apply it as a filter once it’s live.
-- **Destination options**: While Event-Triggered Journeys support all [actions-based destinations](/docs/connections/destinations/actions/) and Destination Functions, you can currently only add one destination per Send to Destination step. If you need to send to multiple destinations, you can use multiple Send to Destination steps.
+- **Destination options**: While Event-Triggered Journeys support all [actions-based destinations](/docs/connections/destinations/actions/) and Destination Functions, you can only add one destination per Send to Destination step. If you need to send to multiple destinations, you can use multiple Send to Destination steps.
 - **Event payload structure**: Each payload sent to a destination includes a unique key to identify the specific send step within the journey, rather than the journey instance itself. You can also set a custom event name to make it easier to identify the specific event instance you want to track in your destination.
 - **Editing and versioning**: After you publish an event-triggered journey, you won't be able to edit it. To modify a journey, create a new journey. 
 - **Real-time delivery**: Event-Triggered Journeys aim for an expected delivery time of under 5 minutes from the moment an event is performed to when the payload reaches the destination, assuming there is no delay step in the journey. However, external factors outside of Segment's control may occasionally introduce latency.
