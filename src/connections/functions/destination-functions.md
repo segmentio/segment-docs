@@ -94,10 +94,6 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 
 <!-- TODO - could also go into the `runtime.md` include above, if applied identically to both types of functions. -->
 
-
-To ensure smooth operation of functions even when fetch calls fail, a `try-catch` block can be incorporated. This allows for the interception of any errors during the API call, enabling the application of specific error handling procedures such as error logging for future debugging or the assignment of fallback values when the API call is unsuccessful. By positioning the continuation logic either outside the `try-catch` block or within a `finally` block, the function is guaranteed to proceed with its execution, maintaining its workflow irrespective of the outcome of the API call.
-
-
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
