@@ -19,7 +19,7 @@ The Segment Startup Program includes three components:
 Interested companies can apply on the [Startup Program](http://segment.com/industry/startups){:target="_blank”} site.
 
 > info "Application deadline"
-> Effective January 6, 2025, Segment will no longer accept applications for the Segment Startup Program. Applications submitted before 11:59 PM PT on December 5, 2024 will be reviewed and honored. However, any applications received after this deadline will not be accepted. There will be no exceptions.
+> Effective January 6, 2025, Segment will no longer accept applications for the Segment Startup Program. Applications submitted before 11:59 PM PT on December 5, 2024 will be reviewed and honored. Any applications received after this deadline won't be accepted. There will be no exceptions.
 
 *Can vary based on affiliated accelerator and VC partners.
 
