@@ -306,6 +306,6 @@ Threfore, if you see a 401 error in a sample response, it is likely that you’l
 
 Segment integrations process events through mappings individially. This means that no context is held that would allow you to map a value from one event to the field of a subsequent event. Each event itself must contain all of the data you'd like to send downstream in regards to it. For example, you cannot send `email` in on an Identify call and then access that same `email` field on a Track call that comes in later if that Track call doesn't also have `email` set on it. 
 
-### Unable to view/edit the mapping as expected, and it is throwing a 'Couldn't load page' error.
+### I'm getting a 'Couldn't load page' error when viewing or editing a mapping
 
-It might be due to the browser cache or the event property name containing a "/". To resolve this, try clearing the browser cache or accessing the mapping page in an Incognito window. Additionally, check if the property name mapped in the mapping contains a "/". If so, please try renaming the property name without the "/" and map it in the mapping to avoid this error.
+This issue can occur due to a browser cache conflict or if an event property name includes a `/`. To resolve it, try clearing your browser cache or accessing the mapping page in an incognito window. Additionally, check if the mapped property name contains a `/`. If it does, rename the property to remove the `/` and update the mapping.
