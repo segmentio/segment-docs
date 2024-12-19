@@ -2,7 +2,7 @@
 title: Recombee AI Destination
 rewrite: true
 maintenance: true
-maintenance-content: This destination is no longer available in the Segment catalog but will remain active in workspaces where it has already been installed. Recombee has developed an updated destination built on the Actions framework. See [Recombee Destination](/docs/connections/destinations/catalog/actions-recombee/) for more information.
+maintenance-content: This destination is no longer available in the Segment catalog, but will remain active in workspaces where it has already been configured. Recombee has developed an updated destination built on the Actions framework. See [Recombee Destination](/docs/connections/destinations/catalog/actions-recombee/) for more information.
 hide-settings: true
 hide-personas-partial: true
 id: 6095391bd839b62fca8a8606
@@ -13,7 +13,7 @@ versions:
 
 [Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Recommender as a Service that can use your data to provide the most accurate recommendations of content or products for your users.
 
-Use this Segment destination to send your interaction data (views, purchases, plays, etc.) to Recombee.
+Use this Segment destination to send your interaction data, like views, purchases, or plays, to Recombee.
 
 ## Getting Started
 
