@@ -37,7 +37,6 @@ Keep the following limitations in mind when you use destination filters:
   - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-filters/){:target="_blank"}
   - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-destination-filters/){:target="_blank"}
 - Destination Filters don't apply to events that send through the destination Event Tester.
-- Destination Filters within the UI and [FQL](/docs/api/public-api/fql/) do not currently support matching on event fields containing '.$' or '.$.', which references fields with an array type. 
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
