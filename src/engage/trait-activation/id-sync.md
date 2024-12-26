@@ -73,3 +73,6 @@ Audiences without ID Sync aren't allowed to select any strategy, and by default 
 
 #### Can I edit config once the audience has synced? 
 Yes, you can edit configuration in the Destination **Settings** tab at any time. However, changes will only take place in subsequent audience syncs, or in new audiences connected to the destination.
+
+#### Where are traits added onto Track calls?
+When you use ID Sync with a Track call, all custom identifiers and traits will be added to the `properties` object except the `email` field. The `email` field, if it exists, will populate in the `context.traits` object.
