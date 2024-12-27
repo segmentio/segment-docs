@@ -96,6 +96,10 @@ For Engage customers, users with either the Engage User or Engage Admin roles ca
 
 Journeys triggers audience or trait-related events for each email `external_id` on a profile. If a profile has two email addresses, you'll see two Audience Entered and two Audience Exited events for each Journey step. Journeys sends both email addresses to downstream destinations.
 
+### Why am I seeing multiple Audience Entered events?
+
+The Audience Entered event being seen multiple times is expected behavior, as a user triggers events while stepping through the journey, Audience Entered events will be generated.
+
 #### How quickly do user profiles move through Journeys?
 
 It may take up to five minutes for a user profile to enter each step of a Journey, including the entry condition. For Journey steps that reference a batch audience or SQL trait, Journeys processes user profiles at the same rate as the audience or trait computation. Visit the Engage docs to [learn more about compute times](/docs/engage/audiences/#understanding-compute-times).
