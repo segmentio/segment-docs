@@ -139,7 +139,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `active`    | Boolean | Whether a user is active. <br><br> This is usually used to flag an `.identify()` call to just update the traits but not "last seen."                                                                                                                                                                            |
 | `app`       | Object  | dictionary of information about the current application, containing `name`, `version`, and `build`. <br><br> This is collected automatically from the mobile libraries when possible.                                                                                                                           |
 | `campaign`  | Object  | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. <br><br> This maps directly to the common UTM campaign parameters.                                                                    |
-| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`.                                                                                                                                                                           |
+| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`. <br><br> **Note:** If you collect information about iOS devices, note that the `model` value set by Apple might not exactly correspond to an iPhone model number. For example, an `iPhone 15 Pro Max` has a `model` value of `iPhone16,2`.                                                                                                                                                                           |
 | `ip`        | String  | Current user's IP address.                                                                                                                                                                                                                                                                                      |
 | `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.                                                                                                                                                                                                    |
 | `locale`    | String  | Locale string for the current user, for example `en-US`.                                                                                                                                                                                                                                                        |
@@ -203,8 +203,8 @@ Other libraries only collect `context.library`, any other context variables must
 | timezone                 | ✅            | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
-> info "IPv6 Addresses are not Supported"
-> Segment does not support collection of IP addresses that are in the IPv6 format.
+> info "IPv6"
+> Segment doesn't support automatically collecting IPv6 addresses.
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 

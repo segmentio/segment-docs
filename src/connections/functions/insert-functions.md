@@ -38,6 +38,9 @@ For data to flow to your downstream destinations, you'll need to connect your in
 2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
+
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
@@ -497,9 +500,17 @@ However, if your function aims to enrich event data by fetching additional infor
 
 No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
 
+##### Can I use Insert Functions with Storage destinations?
+
+Insert Functions are only supported by Cloud Mode (server-side) destinations and aren't compatible with Storage destinations.
+
 ##### Can I connect an insert function to multiple destinations?
 
-Yes, an insert function can be connected to multiple destinations. 
+Yes, you can connect an insert function to multiple destinations.
+
+##### Can I connect multiple insert functions to one destination?
+
+No, you can only connect one insert function to a destination.
 
 ##### Can I have destination filters and a destination insert function in the same connection?
 
@@ -602,3 +613,7 @@ DELETE deleteInsertFunction(fn_id)
 For more information, visit Segment's [Public API docs](https://docs.segmentapis.com/tag/Functions){:target="_blank"}.
 
 {% endcomment %}
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit won't be visible in the user interface.

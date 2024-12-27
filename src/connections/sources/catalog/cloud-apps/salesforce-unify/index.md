@@ -1,11 +1,16 @@
 ---
 title: Salesforce Unify Direct Integration Guide
 plan: unify
+redirect_from:
+  - '/unify/salesforce-unify'
 ---
 
 This guide outlines the process for setting up Salesforce as a data source with Segment Profiles. 
 
 Once configured, this integration lets you send Salesforce data directly to Segment Profiles, eliminating the need for a data warehouse and enabling faster data synchronization and profile enrichment.
+
+> info "API usage and billing"
+> The Salesforce Unify Direct Profile Integration increases API usage. Verify your API limits and Segment billing before you enable the Salesforce Unify Direct Profile Integration.
 
 ## Prerequisites
 
@@ -55,15 +60,16 @@ Next, add a Segment Profiles destination:
 4. Test your mapping with real data from Salesforce.
 5. Save your mapping configuration.
 
-![A screenshot of the "Select Mappings" interface in Segment, showing fields for mapping event data from a source to a destination. The interface includes options for selecting objects, customizing objects, and mapping fields such as Profile Space, User ID, Anonymous ID, Group ID, Traits, and Timestamp.](./images/select_mappings.png)
+![A screenshot of the "Select Mappings" interface in Segment, showing fields for mapping event data from a source to a destination. The interface includes options for selecting objects, customizing objects, and mapping fields such as Profile Space, User ID, Anonymous ID, Group ID, Traits, and Timestamp.](../../../images/select_mappings.png)
 
 ### 5. Enable the destination mapping and Salesforce source
 
 Finish by enabling the destination mappings and the source:
 
-1. From the overview tab of the Segment Profiles destination you created, toggle the **Mapping Status** switch to **Enabled**.
-2. Return to your Salesforce source and navigate to **Settings > Basic settings.**
-2. Toggle the **Enable source** switch to on.
+1. From the settings tab of the Segment Profiles destination you created, toggle the **Enable destination** switch to **Enabled**, then click **Save**. 
+2. From the overview tab of the same Segment Profiles destination, toggle the **Mapping Status** switch to **Enabled**.
+3. Return to your Salesforce source and navigate to **Settings > Basic settings**.
+4. Toggle the **Enable source** switch to on.
 
 Data now begins syncing between Salesforce and Segment.
 

@@ -11,7 +11,6 @@ Use Trait Activation to configure sync payloads that you send from Engage Audien
 
 Trait Activation includes both [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/). With Trait Enrichment, use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations or destination functions. Use ID Sync to select identifiers and a sync strategy for each identifier when syncing Engage Audiences to Destinations.
 
-
 ## Trait Activation setup
 
 To get started with Trait Activation, you'll need to set up the destination that you'll use with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
@@ -22,12 +21,13 @@ To get started with Trait Activation, you'll need to set up the destination that
 Select your destination, view its Segment documentation, then follow the corresponding required setup steps. 
 
 
-|-----------------------|---------------|
-|Destination            |  Type         |  
-| [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | List |
-| [Google Ads Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/#overview) | List | 
-| [Destination Actions](/docs/connections/destinations/actions/#available-actions-based-destinations). | Actions      |
-| [Destination Functions](/docs/connections/functions/destination-functions/#create-a-destination-function) | Function |
+|Destination            |  Type                                                                              |  Compatible with Trait Enrichment | Compatible with ID Sync |
+|-----------------------| -----------------------------------------------------------------------------------| --------------------------------- | ----------------------- |
+| [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)    | List     | ![Supported](/docs/images/supported.svg){:class="inline"} | ![Supported](/docs/images/supported.svg){:class="inline"} |
+| [Google Ads Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/#overview) | List     | ![Supported](/docs/images/supported.svg){:class="inline"} | ![Supported](/docs/images/supported.svg){:class="inline"} |
+| [Destination Actions](/docs/connections/destinations/actions/#available-actions-based-destinations)        | Actions  | ![Supported](/docs/images/supported.svg){:class="inline"} | ![Supported](/docs/images/supported.svg){:class="inline"} |
+| [Destination Functions](/docs/connections/functions/destination-functions/#create-a-destination-function)  | Function | ![Supported](/docs/images/supported.svg){:class="inline"} | ![Supported](/docs/images/supported.svg){:class="inline"} | 
+| [Classic Destinations](/docs/connections/destinations/#add-a-destination)                                  | Classic  | ![Unsupported](/docs/images/unsupported.svg){:class="inline"} | ![Supported](/docs/images/supported.svg){:class="inline"} |
 
 ### Resyncs 
 

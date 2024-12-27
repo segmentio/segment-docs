@@ -2,7 +2,7 @@
 title: Segment Startup Program
 ---
 
-Segment offers a **Startup Program** to enable early startups to track data correctly and easily test the marketing and analytics tools necessary to grow their business. The program is open to any early-stage startup that meets the following eligibility requirements:
+Segment offers a **Startup Program** to enable early startups to track data and test the marketing and analytics tools necessary to grow their business. The program is open to any early-stage startup that meets the following eligibility requirements:
 
 
 - Incorporated less than two years ago
@@ -17,6 +17,9 @@ The Segment Startup Program includes three components:
 - **Startup Resources** - Segment offers learning materials on topics like analytics, product-market fit, and more for founders to become experts on data analytics and making the most of Segment's technology.
 
 Interested companies can apply on the [Startup Program](http://segment.com/industry/startups){:target="_blank”} site.
+
+> info "Application deadline"
+> Effective January 6, 2025, Segment will no longer accept applications for the Segment Startup Program. Applications submitted before 11:59 PM PT on December 5, 2024 will be reviewed and honored. Any applications received after this deadline won't be accepted. There will be no exceptions.
 
 *Can vary based on affiliated accelerator and VC partners.
 

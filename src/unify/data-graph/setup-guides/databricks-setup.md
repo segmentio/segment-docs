@@ -1,5 +1,5 @@
 ---
-title: Databricks Setup
+title: Databricks Data Graph Setup
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/setup-guides/databricks-setup'
@@ -67,9 +67,7 @@ Run the following SQL to grant your Service Principal user read-only access to a
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${catalog}` TO `${client_id}`;
 ```
 
-## (Optional) Step 5: Restrict read-only access
-
-### Restrict read-only access to schemas
+## (Optional) Step 5: Restrict read-only access to schemas
 
 Restrict access to specific schemas by running the following SQL:
 
@@ -79,19 +77,6 @@ USE CATALOG `${catalog}`;
 GRANT USAGE, SELECT ON SCHEMA `${schema_1}` TO `${client_id}`;
 GRANT USAGE, SELECT ON SCHEMA `${schema_2}` TO `${client_id}`;
 ...
-```
-### Restrict read-only access to tables
-Restrict access to specific tables by running the following SQL: 
-
-```sql
-GRANT USAGE ON CATALOG `${catalog}` TO `${client_id}`;
-USE CATALOG `${catalog}`;
-GRANT USAGE ON SCHEMA `${schema_1}` TO `${client_id}`;
-USE SCHEMA `${schema_1}`;
-GRANT SELECT ON TABLE `${table_1}` TO `${client_id}`;
-GRANT SELECT ON TABLE `${table_2}` TO `${client_id}`;
-...
-
 ```
 
 ## Step 6: Validate the permissions of your Service Principal user

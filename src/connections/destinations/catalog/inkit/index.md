@@ -54,10 +54,11 @@ For example, you might send a letter in which you need to include the recipient'
 If you aren't familiar with the Segment Spec, see the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call with Inkit would look like:
 
 
-> note""
-> All address elements should be satisified within the segment's user identity
-(exception of address_line_2 which is a custom entry)
-Expected Requirements
+> note " "
+> All address elements should be satisfied within the Segment's user identity, with the (exception of address_line_2 which is a custom entry).
+
+
+Expected Requirements:
 
 ```js
 analytics.identify('userId123', {

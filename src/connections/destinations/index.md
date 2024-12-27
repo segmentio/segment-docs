@@ -107,6 +107,18 @@ The first place to look is the individual destination documentation. Each one in
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
+## Sync modes
+
+Sync modes allow users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
+
+The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you sync customer data, you might have the option to Insert, Update, or Upsert records.
+
+Available sync modes include: 
+- **Update**: Modify existing records in the destination without adding new ones.
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
+- **Remove**: Remove records from a list, audience, or journey.
+
 ## Add a destination
 To add a Destination:
 
@@ -218,7 +230,6 @@ Segment supports IP Allowlisting in [all destinations](/docs/connections/destina
 - [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
 - [TradeDesk](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
-- [Destination Functions](/docs/connections/functions/destination-functions/)
 
 Destinations that are not supported receive traffic from randomly assigned IP addresses. 
 

@@ -3,28 +3,19 @@ title: Manage Reverse ETL Syncs
 beta: false
 ---
 
-View your sync history, gain insights into sync statuses, and restart or replay failed or partially successful syncs.
+View your sync history, reset your syncs, or subscribe to alerts.
 
 ## Sync overview
-On the Reverse ETL sync overview tab for your destination, you can see information about your recent Reverse ETL syncs at a glance, search for recent syncs, and quickly access the mappings and models that power Reverse ETL.
+The Reverse ETL sync overview tab, located under **Connections > Destinations**, gives you an overview of your latest Reverse ETL syncs. 
 
 ![A screenshot of the sync overview page, which includes one failed sync and three successful syncs.](images/sync-overview.png)
 
 You can view the following information about each sync: 
-- **Latest sync**: The progress of your latest sync: syncs can either be **In progress**, **Successful**, or **Failed**. Also included is the timestamp of the sync start time.
-- **Mapping**: The named mapping that powered the sync and a hyperlink to the mapping's overview page. 
-- **Model**: The name that you gave the SQL query used to withdraw information from your warehouse, with a hyperlink to the model overview page. Below the model name, you can see the warehouse source that Segment extracts information from.
-- **Action**: The Action that your destination uses to map information from your warehouse to your downstream destination. 
-- **Mapping status**: The status of your mapping: either **Enabled** or **Disabled**. 
-
-You can also filter the sync overview table to return only the syncs that match your criteria. 
-
-You can filter for the following sync attributes: 
-- **Sync status**: The status of your sync: In progress, Successful, Partially successful, or Failed.
-- **Start time**: Select a predefined time period, or create a custom date range. 
-- **Model**: The model connected to your sync. 
-- **Destination**: Select one or more of your connected destinations. 
-- **Mapping status**: The status of your mapping: either **Enabled** or **Disabled**. 
+- **Latest sync**: The status of your latest sync. Syncs can either be **In progress**, **Successful**, or **Failed**.
+- **Mapping**: The named mapping. 
+- **Model**: The model that extracts data from your warehouse.
+- **Action**: The action that your destination uses to map information from your warehouse to your downstream destination. 
+- **Mapping status**: The status of your mapping - either **Enabled** or **Disabled**. 
 
 ## Sync history
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
@@ -40,11 +31,21 @@ To check the status of your extractions:
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
-<!--- info "Segment automatically retries events that were extracted but failed to load"
-> Segment retries events for 14 days following a total or partial sync failure. Before loading the failed records on a subsequent sync, Segment checks for the latest changes in your data to ensure the data loaded into your warehouse isn't stale. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to ensure the record loads on the next sync. --->
+
+## Automatic retry handling
+
+> info "Automatic retry handling might not yet be available in your workspace"
+> To ensure overall system stability and performance, Segment is releasing automatic retry handling to all workspaces in a phased rollout program. Segment expects this feature to be available to all customers by January 31, 2025.
+
+Segment automatically retries events that were extracted from your data warehouse but failed to load for up to 14 days or 5 syncs following a partially successful sync or a sync failure. 
+
+Segment checks for the latest changes in your data before loading the failed records on a subsequent (automatically scheduled or manually triggered) sync to ensure the data loaded into Segment isn’t stale and only the latest version of the data is loaded to destination. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to resolve the load error on a subsequent sync.
+
+> warning "Syncs with intervals less than or equal to two hours may not see failed events on the sync immediately following failed record"
+> Syncs with intervals less than or equal to two hours may not see failed events right away, as Segment's internal systems take up to two hours to retry events that initially failed. 
 
 ## Reset syncs
-You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model. During the next sync, all records extracted by the model are sent to your destination, not just the records that changed since the last sync.
+Reverse ETL uses the Unique Identifier column to detect data changes, like new, updated, and deleted records. If you encounter an error, you can reset Segment’s tracking of this column and force Segment to manually add all records from your dataset. 
 
 To reset a sync:
 1. Select the three dots next to **Sync now**.
@@ -52,13 +53,30 @@ To reset a sync:
 3. Click **I understand what happens when I reset a sync state**. 
 4. Click **Reset sync**.
 
+## Cancel syncs
+You can cancel syncs when your sync is currently running during the extraction and load phase. 
+
+To cancel a sync:
+1. Navigate to **Connections > Destinations > Reverse ETL**.
+2. Select the mapping with a sync that is in progress.
+3. Select the sync that is in progress.
+4. Click **Cancel sync** to cancel the sync. 
+5. Select the reason for canceling the sync. 
+
+Your canceled syncs with have a status as *Canceled,* and any syncs that are in the process of being canceled will have a status of *Canceling*. 
+
+Once you cancel a sync, the record count under **Extraction Results** reflects the records already processed. These records won't be included in future syncs. To reprocess these records, you can reset or replay the sync.
+
 ## Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
 ## Alerting
-You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and partial successes. 
+You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and fluctuations in the volume of events successfully delivered to your mapping. 
 
-To subscribe to alerts: 
+The notification channels that you select for one alert will apply to all alerts in your workspace. 
+
+### Failed or partially successful syncs
+To subscribe to alerts for a failed or partially successful sync: 
 1. Navigate to **Settings > User Preferences**. 
 2. Select **Reverse ETL** in the **Activity Notifications** section.
 3. Click the Reverse ETL sync status that you'd like to receive notifications for. You can select one or more of the following sync statuses:
@@ -73,69 +91,41 @@ To subscribe to alerts:
 > success ""
 > If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
 
-## Supported object and arrays 
+<!--- IG 9/2024 - not yet working
+### Model-level volume spike alerts
 
-When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data as an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping). 
+You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a set percentage. For example, if you set a change percentage of 4% and your source received 100 events over the first 24 hours, Segment would notify you the following day if your source ingested fewer than 96 or more than 104 events.
 
-### Object mapping
-You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
+To receive a volume spike alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
-Example: 
+1. Navigate to the model you'd like to create an alert for and select the **Alerts** tab. 
+2. Click **Create alert**. 
+3. Set a *change in event volume* percentage, or the percentage of change in event volume from your source that would prompt an alert.
+4. Select one or more of the following notification channels: 
+    - **Email**: Enter an email address or alias that should receive alerts.
+    - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
+    - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
+5. Toggle the **Enable alert** setting on and click **Create**. 
 
-```json    
-    {
-        "product": {
-            "id": 0001,
-            "color": "pink",
-            "name": "tshirt",
-            "revenue": 20,
-            "inventory": 500
-        }
-    }
-```
+To edit or disable your alert, navigate to your model's Alerts tab and select the Actions menu for the model you'd like to edit.
+--->
 
-To send data to a mapping field that requires object data, you can choose between these two options: 
+### Mapping-level successful delivery rate fluctuations
 
-Option | Details
------- | --------
-Customize object | This enables you to manually set up the mapping fields with any data from the model. If the model contains some object data, you can select properties within the object to set up the mappings as well.
-Select object | This enables you to send all nested properties within an object. The model needs to provide data in the format of the object. 
+You can create an alert that notifies you when the volume of events successfully received by your mapping in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
 
-> success ""
-> Certain object mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your object don't match with the destination properties, the data won't send. Segment recommends you to use **Customize Object** to ensure your mapping is successful.
+To receive a successful delivery rate fluctuation alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
+![A screenshot of the Alerts tab for a Mapping, with the new mapping sidesheet partially filled out.](images/mapping-alerting.jpeg)
 
-### Array mapping
-To send data to a mapping field that requires array data, the model must provide data in the format of an array of objects. An example is an `Order completed` model with a `Product purchased` column that’s in an array format.
+To subscribe to alerts for successful delivery fluctuations at the mapping level: 
+1. Navigate to your intended mapping and select the **Alerts** tab. 
+2. Click **Create alert**. 
+3. Set an *alert threshold*, or the percentage of successfully delivered events that would prompt an alert. 
+4. Select one or more of the following notification channels: 
+    - **Email**: Enter an email address or alias that should receive alerts.
+    - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
+    - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
+5. Toggle the **Enable alert** setting on and click **Create**. 
 
-Example: 
-
-```json    
-    [
-    {
-        "currency": "USD",
-        "price": 40,
-        "productName": "jacket",
-        "purchaseTime": "2021-12-17 23:43:47.102",
-        "quantity": 1
-    },
-    {
-        "currency": "USD",
-        "price": 5,
-        "productName": "socks",
-        "quantity": 2
-    }
-    ]
-```    
-
-To send data to a mapping field that requires array data, you can choose between these two options: 
-
-Option | Details
------- | --------
-Customize array | This enables you to select the specific nested properties to send to the destination. 
-Select array | This enables you to send all nested properties within the array.
-
-> success ""
-> Certain array mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your array don't match the destination properties, the data won't send. Segment recommends you to use the **Customize array** option to ensure your mapping is successful.
-
-Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property.
+To edit or disable your alert, navigate to your mapping's Alerts tab and select the Actions menu for the alert you'd like to edit.  

@@ -23,13 +23,20 @@ The Git sync extension syncs the following resources from Segment to your Git re
 
 - [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/)
 - [Warehouses](/docs/connections/storage/warehouses/)
-- [Destination Filters and Mappings](/docs/connections/destinations/destination-filters/)
+- [Destination Filters and Mappings](/docs/connections/destinations/destination-filters/) for Connections
 - [Tracking Plans](/docs/protocols/tracking-plan/create/)
 - [Functions](/docs/connections/functions/)
 - [Transformations](/docs/protocols/transform/)
 - [Reverse ETL](/docs/connections/reverse-etl/)
 - [Users](/docs/segment-app/iam/concepts/#team-members) and [User groups](/docs/segment-app/iam/concepts/#user-groups)
 - [Labels](/docs/segment-app/iam/labels/#where-can-i-create-labels)
+
+The Git sync extension doesn't support the following resources:
+
+- [Spaces](/docs/segment-app/workspace-home/)
+- [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/)
+- [Data Graph](/docs/unify/data-graph/)
+- Mappings for [Linked Audiences](/docs/engage/audiences/linked-audiences/)
 
 Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} to request support for additional Git Sync resources.
 
@@ -49,7 +56,7 @@ Using HCL makes it easier to document Segment's data model, especially for users
 
 Segment supports one-way synchronization from Segment to Git, but you can set up two-way synchronization using the Segment Terraform provider.
 
-Terraform offers an open-source way to manage Segment resources through a Git repository as an alternative to a fully managed two-way sync. However, this method requires third-party tools like [Atlantis](https://www.runatlantis.io/){:target="_blank"} for CI integration, which Segment doesn’t officially support.
+Terraform offers an open-source way to manage Segment resources through a Git repository as an alternative to a fully managed two-way sync. This method requires third-party tools like [Atlantis](https://www.runatlantis.io/){:target="_blank"} for CI integration.
 
 To manage Segment resources using Git and Terraform, follow these steps:
 
@@ -76,3 +83,34 @@ To manage Segment resources using Git and Terraform, follow these steps:
 
 
 For more information on using Terraform, visit [Terraform's documentation](https://developer.hashicorp.com/terraform/docs){:target="_blank"}.
+
+## Git Connections
+
+Git Connections enable Segment to sync data with your preferred Git repository through supported like SSH and token-based authentication.
+
+> info ""
+> Git Sync and the dbt integration operate independently. You don’t need to set up Git Sync to use dbt, and dbt Cloud can trigger its own syncs without relying on Git Sync.
+
+### Supported connection types
+
+Segment supports the following credential types for setting up a Git Connection:
+
+- **SSH**: Compatible with GitHub, GitLab, and Bitbucket, SSH provides a secure method for connecting to your repository.
+- **Git token**: Git tokens are also supported across GitHub, GitLab, and Bitbucket, enabling token-based authentication..
+- **GitHub App**: For GitHub users, GitHub App integrations offer enhanced security and functionality. This method is exclusive to GitHub and supports additional features, like CI checks.
+
+### Reusing Git Connections
+
+Segment lets you set up multiple Git Connections, allowing you to reuse credentials across both dbt and Git Sync. You can either use the same credential for multiple configurations or create separate Git Connections for each product and environment as needed.
+
+If you plan to reuse a Git token across both dbt and Git Sync, ensure it has the necessary read and write permissions for both integrations.
+
+## Troubleshooting Git Sync
+
+When setting up Git Sync, you may run into an access error with the following message: `“Unable to create Git Sync due to Git connection issues. Please check your configuration and try again`.
+
+This error can occur if there are issues with your Git connection settings or permissions. To resolve the error, verify that:
+
+- Your credentials have write access to the Git repository, as Segment requires this to sync changes.
+- Your repository is hosted by GitHub, GitLab, or Bitbucket (Segment doesn't support self-hosted repositories).
+- Branch protections are disabled on the repository.

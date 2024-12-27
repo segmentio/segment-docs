@@ -137,8 +137,8 @@ Add a policy to the role created above to give Segment access to the relevant Gl
                 "elasticmapreduce:DescribeStep",
                 "elasticmapreduce:DescribeCluster",
                 "elasticmapreduce:CancelSteps",
-                "elasticmapreduce:AddJobFlowSteps"
-                "elasticmapredue:AddTags"
+                "elasticmapreduce:AddJobFlowSteps",
+                "elasticmapreduce:AddTags"
             ],
             "Effect": "Allow",
             "Resource": "*",
