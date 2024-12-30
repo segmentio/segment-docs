@@ -278,3 +278,6 @@ This error occurs when creating audiences that reference each other, meaning aud
 
 ### How does the historical data flag work?
 Including historical data lets you take past information into account. You can data only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
+
+### Why does the Audience Overview show a different count than the Audience preview?
+Segment uses two different systems to calculate the count for the Audience Overview and the Audience preview. The Audience Overview shows a count based on the lst successful run of the Audience, thus it is only updated every 16 hours or so. However, the preview will be more accurate to who fits the audience description at that exact moment in time. 
