@@ -53,6 +53,7 @@ To create your own custom externalID, click *Add Identifier*, and add the follow
 - Value Limit
 - Blocked Values
 
+#### For ID Resolution V1 
 These custom identifiers must be sent in the custom `externalIds` field in the `context` object of any call to the Segment API. The four fields below are all required:
 
 | Key        | Value                                                                        |
@@ -79,6 +80,9 @@ analytics.track('Subscription Upgraded', {
   ]
 })
 ```
+
+#### For ID Resolution V2
+New custom identifiers sent in the traits object of an Identify call should populate under Identifiers once received by Segment.
 
 Segment recommends that you add custom externalIDs to the Identity Resolution table *before* events containing this identifier flow through the space. Once an event with a new type of externalID flows into the space, the externalID is automatically added to the table if it wasn't manually added. When the externalID is automatically added, it defaults to the preset priority and limit, as explained below.
 
