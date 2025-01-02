@@ -328,7 +328,6 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
 - [Reset (Logout)](#reset-or-log-out)
-- [Keepalive](#keepalive)
 
 ### Load
 
@@ -372,7 +371,7 @@ If you want to access end-tool library methods that do not match any Analytics.j
 
 
 ```js
-analytics.ready(function() {
+analytics.ready(() => {
   window.mixpanel.set_config({ verbose: true });
 });
 ```
@@ -422,7 +421,7 @@ analytics.on(method, callback);
 Example:
 
 ```js
-analytics.on('track', function(event, properties, options) {
+analytics.on('track', (event, properties, options) => {
 
   bigdataTool.push(['recordEvent', event]);
 
@@ -460,11 +459,6 @@ analytics.reset();
 The `reset` method only clears the cookies and `localStorage` created by Segment. It doesn't clear data from other integrated tools, as those native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
 
 Segment doesn't share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
-
-### Keepalive
-
-You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. This is available for all events. You can read more about this in the [Github PR](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830){:target="_blank"}.
-
 
 ## Managing data flow with the Integrations object
 
@@ -530,7 +524,7 @@ analytics.load('writekey', { integrations: { All: false, 'Google Analytics': tru
 This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
 
 ```js
-onConsentDialogClosed(function(consentedTools){
+onConsentDialogClosed((consentedTools) => {
   analytics.load('writekey', { integrations: consentedTools })
 })
 ```
@@ -587,6 +581,47 @@ When enabled, Analytics.js automatically retries network and server errors. With
 - **Better handle network issues**. When your application can't connect to the Segment API, Segment continues to store the events on the browser to prevent data loss.
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
+
+
+## Headers
+
+### Add custom headers
+You can override your headers by custom
+```ts
+analytics.load("<YOUR_WRITE_KEY>",
+  {
+    integrations: {
+      'Segment.io': {
+        deliveryStrategy: {
+          config: {
+            headers: { 'x-api-key': 'foo' }
+          },
+        },
+      },
+    },
+  }
+```
+
+## Keepalive
+
+You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. 
+
+By default, this is set to `false`. This is because there is a 64kb limit for all fetch requests with keepalive. So when sending keepalive requests, you are competing with other in-flight keepalive requests, regardless of being Segment related requests or not -- which can result in data loss in some scenarios. By default, we only use keep-alive if 1. the page is 'unloading' and 2. the user is using batching.
+
+```ts
+analytics.load("<YOUR_WRITE_KEY>",
+  {
+    integrations: {
+      'Segment.io': {
+        deliveryStrategy: {
+          config: {
+            keepalive: true
+          },
+        },
+      },
+    },
+  }
+```
 
 
 ## Batching
