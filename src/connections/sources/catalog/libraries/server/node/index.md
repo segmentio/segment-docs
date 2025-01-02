@@ -291,23 +291,15 @@ See the complete `AnalyticsSettings` interface [in the analytics-next repository
 
 ## Usage in serverless environments
 
-When calling Track within functions in serverless runtime environments, wrap the call in a `Promise` and `await` it to avoid having the runtime exit or freeze:
-
-```js
-await new Promise((resolve) =>
-  analytics().track({ ... }, resolve)
-)
-```
-
 See the complete documentation on [Usage in AWS Lambda](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-aws-lambda){:target="_blank"}, [Usage in Vercel Edge Functions](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-vercel-edge-functions){:target="_blank"}, and [Usage in Cloudflare Workers](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-cloudflare-workers){:target="_blank"}
 
 ## Graceful shutdown
-Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
+Avoid losing events after shutting down your console. Call `.flush({ close: true })` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
 
 ```javascript
-await analytics.closeAndFlush()
+await analytics.flush({ close: true })
 // or
-await analytics.closeAndFlush({ timeout: 5000 }) // force resolve after 5000ms
+await analytics.flush({ close: true, timeout: 5000 }) // force resolve after 5000ms
 ```
 
 Here's an example of how to use graceful shutdown:
@@ -316,7 +308,7 @@ const app = express()
 const server = app.listen(3000)
 
 const onExit = async () => {
-  await analytics.closeAndFlush()
+  await analytics.flush({ close: true })
   server.close(() => {
     console.log("Gracefully closing server...")
     process.exit()
@@ -326,15 +318,15 @@ const onExit = async () => {
 ```
 
 ### Collect unflushed events 
-If you need to preserve all of your events in the instance of a forced timeout, even ones that came in after analytics.closeAndFlush() was called, you can still collect those events by using:
+If you need to preserve all of your events in the instance of a forced timeout, even ones that came in after analytics.flush({ close: true }) was called, you can still collect those events by using:
 
 ```javascript
 const unflushedEvents = []
 
 analytics.on('call_after_close', (event) => unflushedEvents.push(events))
-await analytics.closeAndFlush()
+await analytics.flush({ close: true })
 
-console.log(unflushedEvents) // all events that came in after closeAndFlush was called
+console.log(unflushedEvents) // all events that came in after flush was called
 ```
 
 ## Regional configuration
@@ -364,6 +356,7 @@ analytics.on('error', (err) => console.error(err))
 ### Event emitter interface
 The event emitter interface allows you to track events, like Track and Identify calls, and it calls the function you provided with some arguments upon successful delivery. `error` emits on delivery error. 
 
+
 ```javascript
 analytics.on('error', (err) => console.error(err))
 
@@ -371,6 +364,7 @@ analytics.on('identify', (ctx) => console.log(ctx))
 
 analytics.on('track', (ctx) => console.log(ctx))
 ```
+
 
 Use the emitter to log all HTTP Requests.
 
@@ -388,6 +382,24 @@ Use the emitter to log all HTTP Requests.
       body: '...',
   }
   ```
+  
+  ### Emitter Types
+
+  The following table documents all the emitter types available in the Analytics Node.js library:
+
+  | Emitter Type      | Description                                                                 |
+  |-------------------|-----------------------------------------------------------------------------|
+  | `error`           | Emitted when there is an error during event delivery or SDK initialization.                       |
+  | `identify`        | Emitted when an Identify call is made.
+  | `track`           | Emitted when a Track call is made.
+  | `page`            | Emitted when a Page call is made.
+  | `group`           | Emitted when a Group call is made.
+  | `alias`           | Emitted when an Alias call is made.
+  | `flush`            | Emitted after a batch is flushed.
+  | `http_request`    | Emitted when an HTTP request is made.                                        |
+  | `call_after_close`| Emitted when an event is received after the flush with `{ close: true }`.   |
+
+  These emitters allow you to hook into various stages of the event lifecycle and handle them accordingly.
 
 
 ## Plugin architecture
@@ -396,22 +408,14 @@ When you develop in [Analytics.js 2.0](/docs/connections/sources/catalog/librari
 Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
 
 ### Plugin categories
-Plugins are bound by Analytics.js 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
-* **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
-* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
 
-> info ""
-> Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
-
-Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
-
-| Type | Details
------- | --------              
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline.  
-| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. 
-| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.  
-| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.  
-| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.                                                                                                                                                                                
+| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
+| ------------- | ------------- |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added via `addSourceMiddleware` is treated as a `before` plugin. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. |
+| `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
+| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
+| `utility`     | Executes _only once_ during the bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This doesn't allow you to modify events. |
 
 ### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
