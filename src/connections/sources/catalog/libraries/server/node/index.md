@@ -480,27 +480,27 @@ analytics.on('http_request', (event) => console.log(event))
   | `alias`           | Emitted when an Alias call is made.
   | `flush`            | Emitted after a batch is flushed.
   | `http_request`    | Emitted when an HTTP request is made.                                        |
+  | `register`        | Emitted when a plugin is registered
   | `call_after_close`| Emitted when an event is received after the flush with `{ close: true }`.   |
 
   These emitters allow you to hook into various stages of the event lifecycle and handle them accordingly.
 
 
 ## Plugin architecture
-When you develop in [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), the plugins you write can improve functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+The plugins you write can improve functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
-Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
 
 ### Plugin categories
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------- | ------------- |
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added via `addSourceMiddleware` is treated as a `before` plugin. |
-| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added via `addSourceMiddleware` is treated as a `before` plugin. No events will be sent to destinations until `.load()` method is resolved. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. No events will be sent to destinations until `.load()` method is resolved. |
 | `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
 | `utility`     | Executes _only once_ during the bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This doesn't allow you to modify events. |
 
-### Example plugins
+### Example plugin
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
 
 ```js
@@ -517,48 +517,7 @@ export const lowercase: Plugin = {
     return ctx
   }
 }
-
-const identityStitching = () => {
-  let user
-
-  const identity = {
-    // Identifies your plugin in the Plugins stack.
-    // Access `window.analytics.queue.plugins` to see the full list of plugins
-    name: 'Identity Stitching',
-    // Defines where in the event timeline a plugin should run
-    type: 'enrichment',
-    version: '0.1.0',
-
-    // Used to signal that a plugin has been property loaded
-    isLoaded: () => user !== undefined,
-
-    // Applies the plugin code to every `identify` call in Analytics.js
-    // You can override any of the existing types in the Segment Spec.
-    async identify(ctx) {
-      // Request some extra info to enrich your `identify` events from
-      // an external API.
-      const req = await fetch(
-        `https://jsonplaceholder.typicode.com/users/${ctx.event.userId}`
-      )
-      const userReq = await req.json()
-
-      // ctx.updateEvent can be used to update deeply nested properties
-      // in your events. It's a safe way to change events as it'll
-      //  create any missing objects and properties you may require.
-      ctx.updateEvent('traits.custom', userReq)
-      user.traits(userReq)
-
-      // Every plugin must return a `ctx` object, so that the event
-      // timeline can continue processing.
-      return ctx
-    },
-  }
-
-  return identity
-}
 ```
-
-You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/packages/browser/src/plugins){:target="_blank"} to see more examples.
 
 ### Register a plugin
 Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
