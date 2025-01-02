@@ -289,10 +289,8 @@ Setting | Details
 
 See the complete `AnalyticsSettings` interface [in the analytics-next repository](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}.
 
-## Usage in serverless environments
-
-## Runtime Support
-- Node.js >= 18
+## Usage in serverless environments and non-node runtimes
+We support a variety of runtimes, including, but not limited to:
 - AWS Lambda
 - Cloudflare Workers
 - Vercel Edge Functions
