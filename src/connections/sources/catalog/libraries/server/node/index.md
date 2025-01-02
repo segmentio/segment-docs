@@ -291,7 +291,97 @@ See the complete `AnalyticsSettings` interface [in the analytics-next repository
 
 ## Usage in serverless environments
 
-See the complete documentation on [Usage in AWS Lambda](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-aws-lambda){:target="_blank"}, [Usage in Vercel Edge Functions](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-vercel-edge-functions){:target="_blank"}, and [Usage in Cloudflare Workers](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-cloudflare-workers){:target="_blank"}
+## Runtime Support
+- Node.js >= 18
+- AWS Lambda
+- Cloudflare Workers
+- Vercel Edge Functions
+- Web Workers / Browser (no device mode destination support)
+
+### Usage in AWS Lambda
+- [AWS lambda execution environment](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html) is challenging for typically non-response-blocking async activites like tracking or logging, since the runtime terminates / freezes after a response is emitted.
+
+Here is an example of using analytics.js within a handler:
+```ts
+const { Analytics } = require('@segment/analytics-node');
+
+ // Preferable to create a new analytics instance per-invocation. Otherwise, we may get a warning about overlapping flush calls. Also, custom plugins have the potential to be stateful, so we prevent those kind of race conditions.
+const createAnalytics = () => new Analytics({
+      writeKey: '<MY_WRITE_KEY>',
+    }).on('error', console.error);
+
+module.exports.handler = async (event) => {
+  const analytics = createAnalytics()
+
+  analytics.identify({ ... })
+  analytics.track({ ... })
+
+  // ensure analytics events get sent before program exits
+  await analytics.flush()
+
+  return {
+    statusCode: 200,
+  };
+  ....
+};
+```
+
+### Usage in Vercel Edge Functions
+
+```ts
+import { Analytics } from '@segment/analytics-node';
+import { NextRequest, NextResponse } from 'next/server';
+
+const createAnalytics = () => new Analytics({
+  writeKey: '<MY_WRITE_KEY>',
+}).on('error', console.error)
+
+export const config = {
+  runtime: 'edge',
+};
+
+export default async (req: NextRequest) => {
+  const analytics = createAnalytics()
+
+  analytics.identify({ ... })
+  analytics.track({ ... })
+
+  // ensure analytics events get sent before program exits
+  await analytics.flush()
+
+  return NextResponse.json({ ... })
+};
+```
+
+### Usage in Cloudflare Workers
+
+```ts
+import { Analytics, Context } from '@segment/analytics-node';
+
+
+const createAnalytics = () => new Analytics({
+  writeKey: '<MY_WRITE_KEY>',
+}).on('error', console.error);
+
+export default {
+  async fetch(
+    request: Request,
+    env: Env,
+    ctx: ExecutionContext
+  ): Promise<Response> {
+    const analytics = createAnalytics()
+
+    analytics.identify({ ... })
+    analytics.track({ ... })
+
+    // ensure analytics events get sent before program exits
+    await analytics.flush()
+
+    return new Response(...)
+  },
+};
+
+```
 
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.flush({ close: true })` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
@@ -354,24 +444,17 @@ analytics.on('error', (err) => console.error(err))
 
 
 ### Event emitter interface
-The event emitter interface allows you to track events, like Track and Identify calls, and it calls the function you provided with some arguments upon successful delivery. `error` emits on delivery error. 
+The event emitter interface allows you to pass a callback which will be invoked whenever a specific emitter event occurs in your app, such as when a certain method call is made.
 
+For example:
 
 ```javascript
+analytics.on('track', (ctx) => console.log(ctx))
 analytics.on('error', (err) => console.error(err))
 
-analytics.on('identify', (ctx) => console.log(ctx))
 
-analytics.on('track', (ctx) => console.log(ctx))
-```
-
-
-Use the emitter to log all HTTP Requests.
-
-  ```javascript
-  analytics.on('http_request', (event) => console.log(event))
-
-  // when triggered, emits an event of the shape:
+// when triggered, emits an event of the shape:
+analytics.on('http_request', (event) => console.log(event))
   {
       url: 'https://api.segment.io/v1/batch',
       method: 'POST',
@@ -389,7 +472,7 @@ Use the emitter to log all HTTP Requests.
 
   | Emitter Type      | Description                                                                 |
   |-------------------|-----------------------------------------------------------------------------|
-  | `error`           | Emitted when there is an error during event delivery or SDK initialization.                       |
+  | `error`           | Emitted when there is an error after SDK initialization.                       |
   | `identify`        | Emitted when an Identify call is made.
   | `track`           | Emitted when a Track call is made.
   | `page`            | Emitted when a Page call is made.
