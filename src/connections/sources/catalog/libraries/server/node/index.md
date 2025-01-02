@@ -15,7 +15,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 ## Getting Started
 
 > warning ""
-> Make sure you're using a version of Node that's 16 or higher. 
+> Make sure you're using a version of Node that's 18 or higher. 
 
 1. Run the relevant command to add Segment's Node library module to your `package.json`.
 
