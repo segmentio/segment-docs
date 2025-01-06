@@ -496,7 +496,7 @@ The plugins you write can improve functionality, enrich data, and control the fl
 | `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. No events send to destinations until `.load()` method is resolved. |
 | `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
-| `utility`     | Executes _only once_ during the bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This doesn't allow you to modify events. |
+| `utility`     | Executes _only once_ during the bootstrap. Gives you access to the analytics instance using the plugin's `load()` method. This doesn't allow you to modify events. |
 
 ### Example plugin
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
