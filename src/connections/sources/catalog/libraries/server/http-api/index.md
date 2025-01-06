@@ -464,7 +464,7 @@ Segment returns a `200` response for all API requests except errors caused by la
 
 Common reasons that events are not accepted by Segment: 
   - **Payload is too large:** Most HTTP API routes can handle API requests that are 32KB or smaller. If this limit is exceeded, Segment returns a 400 Bad Request error.
-  - **The `\batch` API endpoint** This endpoint accepts a maximum of 500KB per batch API request. Additionally, each batch request can only have up to 2500 events, and each batched event needs to be less than 32KB. Segment will return a `200` response but reject the event, when the number of batched events exceeds limit.
+  - **The `\batch` API endpoint:** This endpoint accepts a maximum of 500KB per batch API request. Each batch request can only have up to 2500 events, and each batched event needs to be less than 32KB. Segment returns a `200` response but rejects the event when the number of batched events exceeds the limit.
   - **Identifier is not present**: The HTTP API requires that each payload has a userId and/or anonymousId.  If you send events without either the userId or anonymousId, Segment’s tracking API responds with an no_user_anon_id error. Check the event payload and client instrumentation for more details.
   - **Track event is missing name**: All Track events sent to Segment must have an `event` field. 
   - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values with fewer than 100 characters. 
