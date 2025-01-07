@@ -297,7 +297,7 @@ Segment supports a variety of runtimes, including, but not limited to:
 - Web Workers / Browser (no device mode destination support)
 
 ### Usage in AWS Lambda
-- [AWS lambda execution environment](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html) is challenging for typically non-response-blocking async activites like tracking or logging, since the runtime terminates / freezes after a response is emitted.
+- [AWS lambda execution environment](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html){:target="_blank"} is challenging for typically non-response-blocking async activities like tracking or logging, since the runtime terminates or freezes after a response is emitted.
 
 Here is an example of using analytics.js within a handler:
 ```ts
