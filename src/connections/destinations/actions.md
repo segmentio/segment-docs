@@ -209,7 +209,7 @@ The replace function allows you to replace a string, integer, or boolean with a 
 
 ### Flatten function
 
-The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys will be delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
+The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
 
 ### Conditions
 
