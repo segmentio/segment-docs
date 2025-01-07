@@ -265,8 +265,8 @@ For example, an attribution event coming from an attribution partner would look 
 }];
 ```
 
-> info ""
-> Attribution and install counts can differ between Segment and attribution providers like AppsFlyer. You can read more about this in our guide [Segment's Role in Attribution](https://segment.com/docs/guides/how-to-guides/segment-and-attribution/){:target="_blank"}
+> info "Attribution and install counts might differ between Segment and attribution providers like AppsFlyer"
+> For more information about the factors that contribute to these differences, see the [Segment's Role in Attribution](/docs/guides/how-to-guides/segment-and-attribution/) documentation.
 
 ## Other Features
 
