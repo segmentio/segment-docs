@@ -207,6 +207,10 @@ The coalesce function takes a primary value and uses it if it is available. If t
 
 The replace function allows you to replace a string, integer, or boolean with a new value. You have the option to replace up to two values within a single field.
 
+### Flatten function
+
+The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
+
 ### Conditions
 
 > info ""
