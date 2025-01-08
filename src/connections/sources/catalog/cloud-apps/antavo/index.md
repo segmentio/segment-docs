@@ -70,6 +70,9 @@ Loyalty Events occur when a built-in or custom event, added to the Antavo Event 
 }
 ```
 
+### Integrations Object
+Antavo automatically filters data from being sent to Salesforce destinations ([Salesforce (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-salesforce){:target="_blank"}, [Salesforce Marketing Cloud (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-salesforce-marketing-cloud){:target="_blank"}) and the [Antavo](https://segment.com/docs/connections/destinations/catalog/antavo){:target="_blank"} destination. This is achieved by adding these destinations to the [Integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object){:target="_blank"} in the event payloads. Since Antavo has a dedicated Salesforce integration, this filtering helps prevent infinite loops.
+
 ## Adding Destinations
 
 As the last step of the Antavo Source setup, you can select Destinations to receive data.
