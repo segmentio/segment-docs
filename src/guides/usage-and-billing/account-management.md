@@ -28,7 +28,7 @@ Once the account is deleted you will not have access to workspaces associated wi
 
 ## How do I delete my workspace entirely?
 
-To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General Settings** tab, then click **Delete Workspace**. After a 5 day cool-off period, Segment will irrevocably delete your account. 
+To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General Settings** tab, then click **Delete Workspace**. After a 5 day cool-off period, Segment will irrevocably delete your workspace. 
 
 If you want to revoke the workspace deletion request during the 5 day cool-off period, open the [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} page, select the **General Settings** tab and click **Revoke Workspace Deletion**. 
 
