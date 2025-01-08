@@ -241,12 +241,12 @@ With your Linked Audience activated, follow these steps to monitor your activati
 
 ### Delivery Overview for Linked Audiences
 
-In addition to the standard Audience observability provided by [Delivery Overview](/docs/engage/audiences/#delivery-overview), Linked Audiences can filter Delivery Overview's pipeline view by [events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). 
+In addition to the standard Audience observability provided by [Delivery Overview](/docs/engage/audiences/#delivery-overview), Linked Audiences can filter Delivery Overview's pipeline view by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). 
 
 To filter by events: 
-1. From your Segment workspace's home page, navigate to **Connections > Destinations**.
-2. Select the Destination connected to your Audience and navigate to the Delivery Overview tab. 
-3. On the Delivery Overview page, select the Audience dropdown to filter by a specific Audience, then select the Linked audience event dropdown to filter by a specific event. 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**.
+2. Find an Audience, click the **(...)** menu, and select Delivery Overview. 
+3. On the Delivery Overview page, select the Linked audience event dropdown to filter by a specific event. 
 
 Linked Audiences have the following steps in Delivery Overview's pipeline view: 
 - **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
