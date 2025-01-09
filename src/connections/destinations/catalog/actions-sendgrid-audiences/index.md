@@ -79,7 +79,8 @@ At least one of the following identifier types is required when syncing members 
  - Phone Number ID (must be in [E.164](https://www.twilio.com/docs/glossary/what-e164){:target="_blank”} format)
  - External ID 
  
-Sending more than one identifier should only be done with caution: If you provide more than one identifier, SendGrid will require all of those identifiers for future updates to that Contact.
+> warning ""
+> If you provide more than one type of identifier for each user in your initial sync, you must send all of those identifier types for any future updates to that Contact.
 
 To sync Engage users to a SendGrid list using an identifier type other than email, additional steps may be required:
 
