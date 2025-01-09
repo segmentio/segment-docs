@@ -166,8 +166,8 @@ You can also test within the mapping itself. To test the mapping:
 4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination.
 
 
-   >info ""
-   >The mechanism that allows that feature to pull an event from the pipeline only holds a small subset at a time and may not always find the event you're looking for. When that happens you can simply navigate to your source debugger, find an event to test with, copy that raw event, and paste the event into the Add test event interface.  
+> info "Test Mapping might not return the events you're looking for"
+> Segment only surfaces a small subset of events for the Test Mapping feature and might not always return the event you're looking for. If you'd like to test with a specific event, copy a specific event from your [Source Debugger](/docs/connections/sources/debugger/) and paste it into the **Add test event** interface.
 
 ## Customize mappings
 
