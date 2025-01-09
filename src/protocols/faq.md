@@ -177,6 +177,10 @@ Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [
 
 Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
+### Can I use schema controls to block events forwarded to my source from another source?
+
+You can only use schema controls to block events at the point that they are ingested into Segment. When you forward an event that Segment has previously ingested from another source, that event bypasses the pipeline that Segment uses to block events and cannot be blocked a second time. 
+
 ## Protocols Transformations
 
 ### Do transformations work with Segment replays?

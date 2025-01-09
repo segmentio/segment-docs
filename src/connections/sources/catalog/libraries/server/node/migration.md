@@ -32,14 +32,14 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
 
      <br> Before:
     ```javascript  
-    await analytics.flush(function(err, batch) {
+    await analytics.flush((err, batch) => {
         console.log('Flushed, and now this program can exit!');
     });
     ```
 
     After:
     ```javascript
-    await analytics.closeAndFlush()
+    await analytics.flush({ close: true })
     ```
 
 ### Key differences between the classic and updated version     
