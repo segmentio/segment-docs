@@ -78,6 +78,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: WXNgKpZMsd
+    display_name: Antavo
+    hidden: false
+    slug: antavo
+    url: connections/sources/catalog/cloud-apps/antavo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: dZeHygTSD4
     display_name: Apple
     hidden: false
