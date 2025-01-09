@@ -82,7 +82,7 @@ At least one of the following identifier types is required when syncing members 
 > warning ""
 > If you provide more than one type of identifier for each user in your initial sync, you must send all of those identifier types for any future updates to that Contact.
 
-To sync Engage users to a SendGrid list using an identifier type other than email, additional steps may be required:
+To sync Engage users to a SendGrid list using an identifier type other than email, complete the following additional steps:
 
 1. Configure [ID Sync](/docs/engage/trait-activation/id-sync/) to include a value for the identifier when syncing users from an Engage Audience to the SendGrid List. 
 2. Map the identifier using the correct [Sync Audience ](#sync-audience-action) Action's mapping field.  
