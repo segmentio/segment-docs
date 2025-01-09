@@ -75,7 +75,7 @@ You can now test using IdP-initiated SSO (by clicking login to Segment from with
 
 For most customers, Segment recommends requiring SSO for all users. If you do not require SSO, users can still log in with a username and password. If some members cannot log in using SSO, Segment also supports SSO exceptions.
 
-These options are off by default, but configurable on the "Advanced Settings" page. Login via SSO to toggle "Require SSO" setting. 
+These options are off by default, but you can configure them on the **Advanced Settings** page. Log in using SSO to toggle the **Require SSO** setting. 
 
 ![Screenshot of the Advanced Settings page in the Authentication settings tab.](images/asset_require_sso.png)
 
