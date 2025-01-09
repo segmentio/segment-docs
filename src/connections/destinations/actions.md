@@ -163,7 +163,11 @@ You can also test within the mapping itself. To test the mapping:
 1. Navigate to the **Mappings** tab of your destination. 
 2. Select a mapping and click the **...** and select **Edit Mapping**. 
 3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source, or you can add your own sample event. 
-4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination. 
+4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination.
+
+
+> info "Test Mapping might not return the events you're looking for"
+> Segment only surfaces a small subset of events for the Test Mapping feature and might not always return the event you're looking for. If you'd like to test with a specific event, copy a specific event from your [Source Debugger](/docs/connections/sources/debugger/) and paste it into the **Add test event** interface.
 
 ## Customize mappings
 
