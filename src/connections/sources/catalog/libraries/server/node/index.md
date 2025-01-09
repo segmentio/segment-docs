@@ -489,6 +489,7 @@ The plugins you write can improve functionality, enrich data, and control the fl
 
 
 ### Plugin categories
+Segment has these five entry types of plugins:
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------- | ------------- |
