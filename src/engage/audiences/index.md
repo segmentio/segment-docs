@@ -217,7 +217,6 @@ Delivery Overview has three core features:
 For more information about the breakdown and discard tables, see the [Delivery Overview](/docs/connections/delivery-overview/) documentation.
 
 To view Delivery Overview for an Audience:
-To filter by events: 
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**.
 2. Find an Audience, click the **(...)** menu, and select Delivery Overview. 
 3. On the Delivery Overview page, select the Audience dropdown to filter by a specific Audience, select the Date range dropdown to filter by a specific time period, or toggle the Show metrics as percentages toggle on to view your metrics as percentages. 
