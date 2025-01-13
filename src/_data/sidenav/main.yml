@@ -311,6 +311,36 @@ sections:
     title: OAuth 2.0
   - path: /connections/aws-privatelink
     title: AWS PrivateLink Integration
+
+- section_title: Monitor
+  section:
+  - path: /monitor
+    title: Monitor Overview
+  - path: /monitor/audit-trail
+    title: Audit Trail
+  - section_title: Alerting
+    section: 
+    - path: /monitor/alerting
+      title: Alerting Overview
+    - path: /monitor/alerting/audience-alerting
+      title: Audience Alerting
+    - path: /monitor/alerting/connections-alerting
+      title: Connections Alerting
+    - path: /monitor/alerting/retl-alerting
+      title: Reverse ETL Alerting
+  - section_title: Delivery Overview
+    section: 
+    - path: /monitor/delivery-overview
+      title: Delivery Overview
+    - path: /monitor/delivery-overview/delivery-overview-classic-destinations
+      title: Delivery Overview for Classic Destinations
+    - path: /monitor/delivery-overview/delivery-overview-actions-destinations
+      title: Delivery Overview for Actions Destinations
+    - path: /monitor/delivery-overview/delivery-overview-for-storage
+      title: Delivery Overview for Storage Destinations
+    - path: /monitor/delivery-overview/delivery-overview-audiences
+      title: Delivery Overview for Audiences
+
 - section_title: Unify
   section:
   - path: /unify

@@ -1,13 +1,15 @@
 ---
 title: Connections Alerting
-beta: true
 ---
 
-Connections Alerting allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection. 
+Connections Alerting allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of a Segment connection. 
 
-To access Connections Alerting, select an event-streaming connection (like a web library source or cloud mode destination) and click the **Alerts** tab. 
+To access Connections Alerting, select an event-streaming connection (like a web library source or cloud mode destination) and click the **Alerts** tab.
 
 On the Alerts tab, you can create alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create.
+
+> info "Deleting alerts created by other users requires Workspace Owner role" 
+> All users can delete alerts that they created, but only those with [Workspace Owner role](http:///docs/segment-app/iam/roles/) can delete alerts created by other users.
 
 ## Source volume alerts
 
