@@ -30,7 +30,7 @@ Segment’s alerting capabilities allow you to receive in-app, email, or Slack n
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/faq"
       title="Audience Alerting"
-      description="Monitor the fluctuations in event volume sent from your Audiences downstream to your destinations"
+      description="Monitor fluctuations in event volume sent from your Audiences downstream to your destinations"
     %}
   </div>
 </div>

@@ -9,7 +9,7 @@ To access Connections Alerting, select an event-streaming connection (like a web
 On the Alerts tab, you can create alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create.
 
 > info "Deleting alerts created by other users requires Workspace Owner role" 
-> All users can delete alerts that they created, but only those with [Workspace Owner role](http:///docs/segment-app/iam/roles/) can delete alerts created by other users.
+> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users.
 
 ## Source volume alerts
 
@@ -34,9 +34,6 @@ To make changes to a source volume alert, select the icon in the Actions column 
 
 To delete a source volume alert, select the icon in the Actions column for the alert and click **Delete**.
 
-> info "Deleting alerts created by other users requires Workspace Owner permissions"
-> All users can delete source volume alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users. 
-
 ## Successful delivery rate alerts
 
 You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
@@ -56,8 +53,5 @@ To create a successful delivery rate alert:
 To make changes to a successful delivery rate alert, select the icon in the Actions column for the alert and click **Edit**. 
 
 To delete a successful delivery rate alert, select the icon in the Actions column for the alert and click **Delete**. 
-
-> info "Deleting alerts created by other users requires Workspace Owner permissions"
-> All users can delete successful delivery alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users.
 
 Segment generates delivery alerts for failed deliveries and successful deliveries, which are the last two stages of the delivery pipeline. As a result, alerts are based on Segment's attempts to send qualified events to your destination, excluding those filtered out by business rules (like protocols, destination filters, or mappings).

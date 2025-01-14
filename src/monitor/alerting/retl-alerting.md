@@ -7,13 +7,13 @@ You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync
 The notification channels that you select for one alert will apply to all alerts in your workspace.
 
 > info "Deleting alerts created by other users requires Workspace Owner role" 
-> All users can delete alerts that they created, but only those with [Workspace Owner role](http:///docs/segment-app/iam/roles/) can delete alerts created by other users.
+> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users.
 
 ### Failed or partially successful syncs
 
 To subscribe to alerts for a failed or partially successful sync:
 
-1. Navigate to **Settings \> User Preferences**.  
+1. Navigate to **Settings > User Preferences**.  
 2. Select **Reverse ETL** in the **Activity Notifications** section.  
 3. Click the Reverse ETL sync status that you'd like to receive notifications for. You can select one or more of the following sync statuses:  
    - **Reverse ETL sync failed**: Receive a notification when your Reverse ETL sync fails.  
@@ -24,13 +24,14 @@ To subscribe to alerts for a failed or partially successful sync:
    - **Enable in-app notifications**: Select this option to see an in-app notification.  
 5. Click **Create alert**.
 
-success "" If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications.
+> success "" 
+> If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications.
 
 ### Mapping-level successful delivery rate fluctuations
 
 You can create an alert that notifies you when the volume of events successfully received by your mapping in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below.
 
-To receive a successful delivery rate fluctuation alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="\_blank”} documentation.
+To receive a successful delivery rate fluctuation alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
 To subscribe to alerts for successful delivery fluctuations at the mapping level:
 

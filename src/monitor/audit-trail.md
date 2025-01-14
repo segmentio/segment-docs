@@ -15,6 +15,9 @@ To view the Audit Trail:
 1. From the Segment app, select **Settings**. 
 2. From the Settings tab, select **Admin**. 
 
+> success ""
+> HIPAA-eligible workspaces have additional audit information available upon request. For more information, see the [HIPAA Eligible Segment](/docs/privacy/hipaa-eligible-segment/#hipaa-auditing) documentation. 
+
 ## Audit Trail events
 
 The Audit Trail returns information about the following Segment product areas: 

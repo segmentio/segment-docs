@@ -81,7 +81,7 @@ With Delivery Overview, you can verify that your source receives your events, th
 
 You can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header. Once you enable alerts, if the successful delivery rate of all events is less than the threshold percentage in the last 24 hours, you'll be notified through in-app notification and/or workspace email.
 
-Note that this is dependent on your [notification settings](http:///docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail.
+Note that this is dependent on your [notification settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail.
 
 You can also use [Connections Alerting](/docs/connections/alerting), a feature that allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection.
 

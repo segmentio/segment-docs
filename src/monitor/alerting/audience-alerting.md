@@ -8,7 +8,7 @@ To access Audience alerting, navigate to **Engage > Audiences**, select an Audie
 
 On the Alerts tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
 
-info "Generate a Slack webhook to receive Slack notifications" To receive an alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="\_blank”} documentation.
+info "Generate a Slack webhook to receive Slack notifications" To receive an alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
 To access Audience alerting, navigate to **Engage \> Audiences**, select an Audience, and click the Alerts tab.
 
