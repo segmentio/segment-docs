@@ -575,8 +575,6 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
-    - path: /privacy/data-retention-policy
-      title: Data Retention Policy
   - section_title: Consent Management
     slug: privacy/consent-management
     expanded: true
@@ -595,6 +593,8 @@ sections:
       title: Consent FAQs
   - path: /privacy/account-deletion
     title: Account & Data Deletion
+  - path: /privacy/data-retention-policy
+    title: Data Retention Policy
   - path: /privacy/hipaa-eligible-segment
     title: HIPAA Eligible Segment
   - path: /privacy/faq
