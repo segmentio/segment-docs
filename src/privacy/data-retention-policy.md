@@ -104,7 +104,7 @@ A churned customer is a Business or Team Tier customer that has:
 * Explicitly terminated the contract OR  
 * Has unpaid invoices and has their workspace fully locked out.
 
-Customers that have explicitly terminated their Segment contract will have their data deleted and unrecoverable within 30 days of contract termination. 
+Customers that have explicitly terminated their Segment contract will have their data unrecoverably deleted within 30 days of contract termination. 
 
 Customers that have unpaid invoices and have their workspaces fully locked out will have their data unrecoverably deleted after 90 days of full lock out, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
 
@@ -115,10 +115,10 @@ Customers that have unpaid invoices and have their workspaces fully locked out w
 
 ## Unused Free Tier workspace
 
-Unused Free Tier workspace is a workspace that has not received any Segment event traffic or user activity in the last 90 days. 
+An Unused Free Tier workspace is a workspace that has not received any Segment event traffic or user activity in the last 90 days. 
 
 Segment will unrecoverably delete the workspace after 90 days of inactivity, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
 
 ### Data deletion timeline
 
-When data reaches the end of its retention period, deletion will be scheduled in accordance with Segment’s  data retention policy. While Segment aims to complete the deletion process promptly, there may be occasional delays due to processing times or technical constraints. Segment is committed to initiating data deletions as soon as possible and will strive to complete deletions within 7 days of the scheduled date.
+When data reaches the end of its retention period, deletion will be scheduled in accordance with Segment’s data retention policy. While Segment aims to complete the deletion process promptly, there may be occasional delays due to processing times or technical constraints. Segment is committed to initiating data deletions as soon as possible and will strive to complete deletions within 7 days of the scheduled date.
