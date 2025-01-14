@@ -16,6 +16,8 @@ For more information about the breakdown and discard tables, see the [Delivery O
 
 The pipeline view for storage destinations includes the following steps:
 
+![A screenshot of the pipeline view for an storage destination, with 734,000 events successfully received by a source, and 217,000 events successfully delivered to a destination](/docs/monitor/delivery-overview/images/delivery-overview-actions-destination.jpeg)
+
 - **Successfully received**: Events that Segment ingested from your source.  
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.  
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.  

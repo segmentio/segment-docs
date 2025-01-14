@@ -16,6 +16,8 @@ For more information about the breakdown and discard tables, see the [Delivery O
 
 The pipeline view for Actions destination includes the following steps:
 
+![A screenshot of the pipeline view for an Actions destination, with 1.17 million events successfully received by a source, and 3.03 million events successfully synced to a destination](/docs/monitor/delivery-overview/images/delivery-overview-storage-destinations.jpeg)
+
 - **Successfully received**: Events that Segment ingested from your source. You can filter these events by event type, event name, app version, and [enrichment status](/docs/unify/data-graph/linked-events/).  
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.  
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.  
