@@ -101,7 +101,7 @@ If contracting from Unify or Unify+, your Connection data will remain unaffected
 
 A churned customer is a Business or Team Tier customer that has:
 
-* Explicitly terminated the contract OR  
+* Explicitly terminated the contract **OR**  
 * Has unpaid invoices and has their workspace fully locked out.
 
 Customers that have explicitly terminated their Segment contract will have their data unrecoverably deleted within 30 days of contract termination. 
