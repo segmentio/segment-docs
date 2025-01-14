@@ -588,6 +588,8 @@ When enabled, Analytics.js automatically retries network and server errors. With
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
+>info ""
+> The `_metadata` field is calculated on every retry. This is gives insight on if an event was sent to a device mode version of a destination. This could be inaccurate if the you changed your destination configurations for your source in between when the retries occurred.
 
 ## Batching
 Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
