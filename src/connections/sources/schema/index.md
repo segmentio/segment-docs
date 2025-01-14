@@ -39,6 +39,8 @@ If you no longer want to track a specific event, you can either remove it from y
 > info ""
 > For sources with a connected Tracking Plan, use Protocols to block unplanned events.
 
+>info ""
+> After blocking events, you will still see these events being ingested into the debugger with a block symbol. This gives insight to the events that are being blocked by Segment.
 
 Once you block an event, Segment stops forwarding it to all of your Cloud and Device-mode Destinations, including your warehouses. You can remove the events from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties.
 
