@@ -13,7 +13,9 @@ Delivery Overview has three core features:
 For more information about the breakdown and discard tables, see the [Delivery Overview](/docs/monitoring/delivery-overview/) documentation.
 
 ## Pipeline view
+
 The pipeline view for classic destinations includes the following steps:
+
 - **Successfully received**: Events that Segment ingested from your source.  
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.  
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.  

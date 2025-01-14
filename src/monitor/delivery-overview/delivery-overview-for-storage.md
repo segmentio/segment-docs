@@ -12,7 +12,7 @@ Delivery Overview has three core features:
 
 For more information about the breakdown and discard tables, see the [Delivery Overview](/docs/monitoring/delivery-overview) documentation.
 
-Storage destinations
+## Pipeline view
 
 The pipeline view for storage destinations includes the following steps:
 

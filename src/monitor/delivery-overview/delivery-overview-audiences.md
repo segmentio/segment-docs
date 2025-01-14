@@ -24,6 +24,8 @@ You can also further refine the data displayed on the pipeline view using the ti
 > info "Linked Audiences have additional filtering functionality" 
 > Linked Audiences users can filter the Delivery Overview event pipeline by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). For more information, see the [Linked Audiences](/docs/engage/audiences/linked-audiences/#delivery-overview-for-linked-audiences) documentation.
 
+## Pipeline view
+
 Audiences have the following steps in the pipeline view:
 
 - **Events from audience**<sup>*</sup>: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.  
