@@ -575,6 +575,8 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
+    - path: /privacy/data-retention-policy
+      title: Data Retention Policy
   - section_title: Consent Management
     slug: privacy/consent-management
     expanded: true
