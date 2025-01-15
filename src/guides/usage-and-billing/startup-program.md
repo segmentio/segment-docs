@@ -11,7 +11,7 @@ Segment offered a **Startup Program** to enable early startups to track data cor
 - Incorporated less than two years ago
 - Raised no more than $5MM in total funding
 - Located in Google Cloud [eligible territory](https://cloud.google.com/terms/cloud-sales-list){:target="_blank"}
-- haven't previously received other Segment discounts
+- Hasn't previously received other Segment discounts
 
 The Segment Startup Program includes three components:
 
