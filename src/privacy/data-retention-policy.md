@@ -40,18 +40,14 @@ The default data retention period for each of the data types is as follows:
 | **Team**     | 365 days             | 90 days               | Not applicable               | 365 days | Not applicable |
 | **Free**     | 180 days             | 60 days               | Not applicable               | 180 days | Not applicable |
 
-    
-<!-- IG 1/25: To be implemented 
-
 Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through “Workspace Default Archive Retention Period”.  
-
---->
 
 ### What is the impact of this policy?
 
 With this data retention policy, all data beyond the retention period will be unrecoverably deleted from all of Segment and will impact the following:
 
-* [Data Replays](/docs/guides/what-is-replay/) will only be available for data within the retention period. Unify, Engage and Linked customers that replay data to recreate Unify Spaces or Profiles may encounter variations in the number of profiles, as well as in the identifiers, traits and properties associated with the profiles, depending on the data available. Backfill Data will only be available for data within the retention period.  
+* [Data Replays](/docs/guides/what-is-replay/) will only be available for data within the retention period. Unify, Engage and Linked customers that replay data to recreate Unify Spaces or Profiles may encounter variations in the number of profiles, as well as in the identifiers, traits and properties associated with the profiles, depending on the data available.
+* Backfill Data will only be available for data within the retention period.  
 * [Data residency](/docs/guides/regional-segment/) migrations across regions (US and EU) will only be available for data within the retention period.  
 * Additional impacts  to Object data:  
   * Cloud Object Data (using push) updated using the [Set API](/docs/connections/sources/catalog/libraries/server/object-api/#set) or [Bulk API](docs/connections/sources/catalog/libraries/server/object-bulk-api/): Any data older than 180 days is treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
@@ -110,14 +106,14 @@ Customers that have unpaid invoices and have their workspaces fully locked out w
 
 | Tier         | Data Retention             |
 | ------------ | -------------------------- |
-| **Business** | 90 days post full lockout. |
-| **Team**     | 90 days post full lockout. |
+| **Business** | 30 days post full lockout. |
+| **Team**     | 30 days post full lockout. |
 
 ## Unused Free Tier workspace
 
-An Unused Free Tier workspace is a workspace that has not received any Segment event traffic or user activity in the last 90 days. 
+An Unused Free Tier workspace is a workspace that has not received any Segment event traffic or user activity in the last 30 days. 
 
-Segment will unrecoverably delete the workspace after 90 days of inactivity, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
+Segment will unrecoverably delete the workspace after 30 days of inactivity, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
 
 ### Data deletion timeline
 
