@@ -4,7 +4,7 @@ hidden: true
 ---
 
 > info "Startup program discontinued"
-> As of January 6, 2025, Segment discontinued its Startup Program. Segment no longer accepts new or second-year renewal applications for the Program.
+> As of January 6, 2025, Segment discontinued its Startup Program. Segment no longer accepts new (or second-year renewal) applications for the Program.
 
 Segment offered a **Startup Program** to enable early startups to track data correctly and test the marketing and analytics tools necessary to grow their business. The program is open to any early-stage startup that meets the following eligibility requirements:
 

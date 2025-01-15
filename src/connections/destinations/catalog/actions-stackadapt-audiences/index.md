@@ -5,7 +5,6 @@ hide-dossier: true
 beta: true
 id: 66e96b9f4ee97f41caa06487
 hidden: true
-redirect_from: "/connections/destinations/catalog/actions-stackadapt-audiences/"
 ---
 
 {% include content/plan-grid.md name="actions" %}
