@@ -1,30 +1,27 @@
 ---
 title: Segment Startup Program
+hidden: true
 ---
+
+> info "Startup program discontinued"
+> As of January 6, 2025, Segment no longer accepts new or second-year renewal applications for the Segment Startup Program. 
 
 Segment offers a **Startup Program** to enable early startups to track data correctly and test the marketing and analytics tools necessary to grow their business. The program is open to any early-stage startup that meets the following eligibility requirements:
 
-
 - Incorporated less than two years ago
 - Raised no more than $5MM in total funding
-- Located in Google Cloud [eligible territory](https://cloud.google.com/terms/cloud-sales-list)
+- Located in Google Cloud [eligible territory](https://cloud.google.com/terms/cloud-sales-list){:target="_blank"}
 - haven't previously received other Segment discounts
 
 The Segment Startup Program includes three components:
 
-- Segment's **Startup Deal** - Participating startups receive $25,000* in annual credit toward our monthly [Team plan](https://segment.com/pricing/) for as long as they meet our eligibility requirements (up to 2 years).
+- Segment's **Startup Deal** - Participating startups receive $25,000* in annual credit toward our monthly [Team plan](https://segment.com/pricing/){:target="_blank"} for as long as they meet our eligibility requirements (up to 2 years).
 - Partner **Startup Deals** - Segment partners with other technology companies that offer valuable tools for startups to offer exclusive deals and promotions from marketing, data warehouse, and analytics tools.
 - **Startup Resources** - Segment offers learning materials on topics like analytics, product-market fit, and more for founders to become experts on data analytics and making the most of Segment's technology.
 
 Interested companies can apply on the [Startup Program](http://segment.com/industry/startups){:target="_blank”} site.
 
-> info "Application deadline"
-> Effective January 6, 2025, Segment will no longer accept applications for the Segment Startup Program. Applications submitted before 11:59 PM PT on December 5, 2024 will be reviewed and honored. However, any applications received after this deadline will not be accepted. There will be no exceptions.
-
-*Can vary based on affiliated accelerator and VC partners.
-
-
-## Frequently Asked Questions
+## Frequently asked questions
 
 **How are the Segment credits applied?**
 Credits are applied to your monthly bill, covering up to $25,000* in total usage per year. Any additional usage costs are not covered by the program.
