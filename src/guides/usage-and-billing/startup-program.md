@@ -23,6 +23,9 @@ Interested companies can apply on the [Startup Program](http://segment.com/indus
 
 ## Frequently asked questions
 
+**Is the Segment Startup Program still active?**
+No. As of January 2025, Segment no longer accepts applications for the Segment Startup Program.
+
 **How are the Segment credits applied?**
 Credits are applied to your monthly bill, covering up to $25,000* in total usage per year. Any additional usage costs are not covered by the program.
 
@@ -33,9 +36,9 @@ Eligible startups can [apply directly](http://segment.com/industry/startups) for
 If you've been accepted to the program, you'll receive an email with a welcome message and next steps. If you haven't received an email, you can also check in your Segment workspace and look for a Startup Program icon in the top right corner.
 
 **Where can I view the credits applied to my Segment account?**
-The Startup Program credits are reflected in the Workspace usage and billing page.
+Startup Program credits are reflected in the Workspace usage and billing page.
 
-**Do I have to be a "new" customer to receive a coupon?**
+**Do I have to be a new customer to receive a coupon?**
 New and current Segment users who have not previously received any other coupon are eligible to apply.
 
 **What happens if I go over my total credit applied?**
