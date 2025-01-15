@@ -1,78 +1,81 @@
 ---
-title: Data Warehouses
-redirect_from: '/connections/warehouses/'
-plan: warehouses
+title: Warehouses Overview
 ---
 
-## What's a Warehouse?
+A **data warehouse** is a central repository of data collected from one or more sources. Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres. You can use your data warehouse as a source of data or can send data from your other business tools downstream to your warehouse. 
 
-{% include content/whats-a-warehouse.md %}
+You might want to use Segment's warehouse integrations in the following situations:
+* **Make warehouse data accessible to business teams**: Use [Reverse ETL](/docs/connections/reverse-etl) to connect destinations like Google Sheets to a view in the warehouse to allow business teams to access up-to-date reports.
+* **Elevate customer communications**: With [Data Graph](/docs/unify/data-graph), you can create relationships between different entity datasets in your warehouse, like households, accounts, subscriptions, and products to create personalized customer communications.
+* **Store customer data in one location for data teams**: Collect customer data from a Segment source and send it downstream to a [storage destination](/docs/connections/storage/warehouses/) for further analysis by data teams.
+* **Create a central view of your customers**: [Profile Sync](/docs/unify/profiles-sync/overview) creates a central view of a single customer by aggregating information from multiple data sources into a central profile, which is then synced with your warehouse to build a consistent view of your customer that you can use in Segment or in other business tools. 
+* **Import historical data into Segment**: Import historical data from your warehouse into a new business tool using [Reverse ETL](/docs/connections/reverse-etl).
 
+## Get started with warehouses
 
-When selecting and building a data warehouse, consider three questions:
+<div class="flex flex--wrap gutter gutter--large">
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="/docs/connections/reverse-etl/"
+      title="Reverse ETL"
+      description="Set up your warehouse as a data source to start using Reverse ETL."
+    %}
+  </div>
 
-1.  What type of data will be collected?
-2.  How many data sources will there be?
-3.  How will the data be used?
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="/docs/unify/profiles-sync/overview/"
+      title="Profile Sync"
+      description="Create a centralized view of your customers in your warehouse that you can use with your business tools."
+    %}
+  </div>
 
-Relational databases are great when you know and predefine the information collected and how it will be linked. This is usually the type of database used in the world of user analytics. For instance, a users table might be populated with the columns `name`, `email_address`, or `plan_name`.
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="/docs/unify/data-graph/"
+      title="Data Graph"
+      description="Make relational datasets easily accessible to business teams for targeted and personalized customer engagements."
+    %}
+  </div>
+</div>
 
-Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres.
+<div class="flex flex--wrap gutter gutter--large">
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="/docs/connections/storage/warehouses/"
+      title="Data Warehouse Destination"
+      description="Set up your warehouse as destination to store data from your sources in one location."
+    %}
+  </div>
 
-{% include content/how-a-sync-works.md %}
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="/docs/engage/audiences/index"
+      title="Twilio Engage"
+      description="Create SQL Traits with the data stored in your data warehouse to enhance your Engage Audiences."
+    %}
+  </div>
 
-<div data-headings-anchors id="warehouse-schemas"></div>
-> info "Looking for the Warehouse Schemas docs?"
-> They've moved: [Warehouse Schemas](/docs/connections/storage/warehouses/schema).
+  <div class="flex__column flex__column--12 flex__column--4@medium">
+    {% include components/reference-button.html
+      href="/docs/guides/duplicate-data"
+      title="Deduplicate data"
+      description="Learn more about the secondary deduplication supported by Segment's warehouse integrations."
+    %}
+  </div>
+</div>
 
-{% include components/reference-button.html href="https://segment.com/academy/intro/when-to-use-sql-for-analysis/?referrer=docs" icon="media/academy.svg" title="Analytics Academy: When to use SQL for analysis" description="When your existing analytics tools can't answer your questions, it's time to level-up and use SQL for analysis." %}
+## Supported warehouses
 
-### More Help
+Learn which Segment integrations support your selected warehouse. 
 
-[How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
-
-[How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
-
-Check out the [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) page and [a list of helpful SQL queries to get you started with Redshift ](/docs/connections/storage/warehouses/redshift-useful-sql).
-
-## FAQs
-
-[How do I decide between Redshift, Postgres, and BigQuery?](/docs/connections/storage/warehouses/choose-warehouse/)
-
-[What do you recommend for Postgres: Amazon or Heroku?](/docs/connections/storage/warehouses/choose-warehouse/)
-
-[How do I give users permissions?](/docs/connections/storage/warehouses/add-warehouse-users/)
-
-[What are the limitations of Redshift clusters and warehouses connectors?](/docs/connections/storage/warehouses/redshift-faq/)
-
-[Where do I find my source slug?](/docs/connections/storage/warehouses/faq/#how-do-i-find-my-source-slug)
-
-### Setting up a warehouse
-
-[How do I create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema?](/docs/connections/storage/warehouses/add-warehouse-users/)
-
-[Which IPs should I allowlist?](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist)
-
-[Will Segment sync my historical data?](/docs/connections/storage/warehouses/faq/#will-segment-sync-my-historical-data)
-
-[Can I load in my own data into my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
-
-[Can I control what data is sent to my warehouse?](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse)
-
-### Managing a warehouse
-
-[How fresh is the data in my warehouse?](/docs/connections/storage/warehouses/faq/#how-fresh-is-the-data-in-segment-warehouses)
-
-[Can I add, tweak, or delete some of the tables?](/docs/connections/storage/warehouses/faq/#can-we-add-tweak-or-delete-some-of-the-tables)
-
-[Can I transform or clean up old data to new formats or specs?](/docs/connections/storage/warehouses/faq/#can-we-transform-or-clean-up-old-data-to-new-formats-or-specs)
-
-[What are common errors and how do I debug them?](/docs/connections/storage/warehouses/warehouse-errors/)
-
-[How do I speed up my Redshift queries?](/docs/connections/storage/warehouses/redshift-tuning/)
-
-### Analyzing with SQL
-
-[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/how-to-guides/forecast-with-sql/)
-
-[How do I measure the ROI of my Marketing Campaigns?](/docs/guides/how-to-guides/measure-marketing-roi/)
+| Warehouse               | Storage destination                                     | Reverse ETL                                               | Profiles Sync                                             | Data Graph                                 | 
+| ----------------------- | ------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------- |
+| Azure Synapse Analytics | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> |
+| BigQuery                | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> |
+| Databricks              | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> |
+| IBM Db2                 | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> |
+| Heroku Postgres         | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> |
+| RDS Postgres            | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> |
+| Redshift                | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> |
+| Snowflake               | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> |
