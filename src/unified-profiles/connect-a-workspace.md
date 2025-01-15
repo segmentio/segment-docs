@@ -14,9 +14,7 @@ If you already have a Segment workspace, you can use a new or pre-existing [Segm
 
 ## Prerequisites
 
-<!--PW: 15 Nov 2024, need to figure out what to do with these Flex CustomerAI links -->
-
-- You must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
+- You must have requested access from the [Unified Profiles in Flex page](https://console.twilio.com/us1/develop/flex/unified-profiles){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 - Your Segment workspace must be on the Business Tier plan with a Unify Plus entitlement. To upgrade to the Business Tier plan, communicate with your sales contact or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team.
 
 ## Step 1: Set up your Unify space
