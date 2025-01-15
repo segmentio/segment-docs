@@ -227,7 +227,7 @@ Fields that are classified as 'Red' are masked for users that do not have PII Ac
 Keep in mind that if you have set Standard Controls to block fields from any of your sources, any new classifications you create in the Inbox will start to take affect immediately. For example, if you have a Privacy Control set up to block **Red** data from your Android source, any new fields you classify in the Inbox as **Red** will be blocked from entering Segment from your Android source.
 
 **Yellow Classification**:
-Fields that are classified as 'Yellow' are masked for users that do not have PII Access enabled. 
+Fields that are classified as 'Yellow' are masked for users that do not have PII Access enabled. A Custom Matcher is needed to mask fields other than those in the Default PII Matchers list.
 
 **Green Classification**:
 Classifying a field as 'Green' does not have any impact on the behavior of masking of fields within the Segment App, it is only available for the housekeeping purposes.
