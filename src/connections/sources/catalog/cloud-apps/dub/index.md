@@ -43,7 +43,7 @@ The event names "Lead Created" and "Sale Created" may differ based on what event
 
 You can refer to [Dub's Event Types](https://dub.co/docs/concepts/webhooks/event-types){:target="\_blank”} documentation to determine which attributes Dub forwards to Segment.
 
-## Adding Destinations
+## Adding destinations
 
 Now that your Source is set up, you can connect it with Destinations.
 
