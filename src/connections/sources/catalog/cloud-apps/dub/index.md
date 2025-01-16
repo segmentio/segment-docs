@@ -33,9 +33,9 @@ The table below lists events that Dub sends to Segment. These events appear as t
 
 | Event Name   | Description                     |
 | ------------ | ------------------------------- |
-| Link Clicked | Someone clicked your short link |
-| Lead Created | A lead event was created        |
-| Sale Created | A sale event was created        |
+| Link Clicked | Someone clicked your short link. |
+| Lead Created | A lead event was created.        |
+| Sale Created | A sale event was created.        |
 
 The event names "Lead Created" and "Sale Created" may differ based on what event name you're sending to Dub.
 
