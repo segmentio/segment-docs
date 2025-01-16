@@ -144,7 +144,7 @@ The schema functionality is a _reactive_ way to clean up your data, where the Tr
 
 That being said, there are plenty of scenarios where the reactive Schema functionality solves immediate needs for customers. Often times, customers will use both Schema Controls and Tracking Plan functionality across their Segment Sources. For smaller volume Sources with less important data, the Schema functionality often works perfectly.
 
-### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
+### If I enable blocking are events just blocked from specific Destinations or the entire Segment pipeline?
 
 Segment can block events from all Segment Destinations except for mobile device mode destinations. 
 
