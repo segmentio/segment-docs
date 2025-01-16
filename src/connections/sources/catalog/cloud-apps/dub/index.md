@@ -17,10 +17,10 @@ This source is maintained by Dub. For any issues with the source, [contact their
 
    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments. For example, Dub_Prod, Dub_Staging, Dub_Dev.
 
-4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI. You will need to input this key on the Dub.
-6. Go to [Dub Segment integration](https://app.dub.co/settings/integrations/segment) page, paste the key and click **Save changes**.
-7. Go back to Segment and navigate to your Dub source. Click **Add Destinations** to add any destinations that you want to receive Dub data.
+5. Click **Add Source** to save your settings.
+6. Copy the Write key from the Segment UI. 
+7. Go to the [Dub Segment integration page](https://app.dub.co/settings/integrations/segment){:target="_blank"} and paste the key and click **Save changes**.
+8. Go back to Segment and navigate to your Dub source. Click **Add Destinations** to add any destinations that you want to receive data.
 
 ## Stream
 
