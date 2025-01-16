@@ -146,7 +146,11 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 
 ### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
 
-Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+Segment can block events from all Segment Destinations except for mobile device mode destinations. 
+
+Events that are delivered from a mobile source in device mode bypass the point in the Segment pipeline where Segment blocks events, so mobile events sent using device mode are not blocked and are delivered to your Destinations. If you are a Business Tier customer using Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDKs, you can use [destination filters](/docs/connections/destinations/destination-filters/) to block events. 
+
+When an event is blocked using a Tracking Plan, it does not count towards your MTU limit. If you use [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/), blocked events forwarded to a new source will count toward your MTU limit.
 
 ### If I omit unplanned properties or properties that generate JSON schema violations, what happens to them?
 
