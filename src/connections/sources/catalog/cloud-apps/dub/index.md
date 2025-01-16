@@ -29,7 +29,7 @@ Dub uses Segment's stream source component to send Segment event data. It uses t
 
 ## Events
 
-The table below lists events that Dub sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Dub includes the `userId` if available.
+The table below lists events that Dub sends to Segment. These events appear as tables in your warehouse, and as regular events in other destinations. Dub includes the `userId` if available.
 
 | Event Name   | Description                     |
 | ------------ | ------------------------------- |
