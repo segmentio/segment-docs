@@ -15,7 +15,7 @@ This source is maintained by Dub. For any issues with the source, [contact their
 3. Click **Add Source**.
 4. Give the source a name and configure any other settings.
 
-   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Dub_Prod, Dub_Staging, Dub_Dev).
+   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments. For example, Dub_Prod, Dub_Staging, Dub_Dev.
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI. You will need to input this key on the Dub.
