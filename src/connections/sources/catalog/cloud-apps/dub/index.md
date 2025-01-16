@@ -6,7 +6,7 @@ title: Dub Source
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources). This means that Dub can export data into your Segment warehouse and also integrate the exported data into your other enabled Segment destinations.
 
-This source is maintained by Dub. For any issues with the source, [contact their Support team](mailto:support@dub.co).
+This source is maintained by Dub. For any issues with the source, [contact the Dub Support team](mailto:support@dub.co).
 
 ## Getting started
 
