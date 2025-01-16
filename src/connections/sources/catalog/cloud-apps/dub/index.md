@@ -41,7 +41,7 @@ The event names "Lead Created" and "Sale Created" may differ based on what event
 
 ## Event Properties
 
-You can refer to Dub's [Event Types](https://dub.co/docs/concepts/webhooks/event-types){:target="\_blank”} documentation to determine which attributes Dub forward to Segment.
+You can refer to [Dub's Event Types](https://dub.co/docs/concepts/webhooks/event-types){:target="\_blank”} documentation to determine which attributes Dub forwards to Segment.
 
 ## Adding Destinations
 
