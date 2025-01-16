@@ -39,7 +39,7 @@ The table below lists events that Dub sends to Segment. These events appear as t
 
 The event names "Lead Created" and "Sale Created" may differ based on what event name you're sending to Dub.
 
-## Event Properties
+## Event properties
 
 You can refer to [Dub's Event Types](https://dub.co/docs/concepts/webhooks/event-types){:target="\_blank”} documentation to determine which attributes Dub forwards to Segment.
 
