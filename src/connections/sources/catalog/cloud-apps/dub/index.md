@@ -4,7 +4,7 @@ title: Dub Source
 
 [Dub](https://dub.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is the all-in-one link attribution platform for businesses to understand how their marketing spend are converting to sales.
 
-This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources). This means that Dub can export data into your Segment warehouse and also integrate the exported data into your other enabled Segment destinations.
 
 This source is maintained by Dub. For any issues with the source, [contact their Support team](mailto:support@dub.co).
 
