@@ -13,7 +13,7 @@ This source is maintained by Dub. For any issues with the source, [contact their
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="\_blank”} click **Add Source**.
 2. Search for *Dub* and select the *Dub* tile. 
 3. Click **Add Source**.
-3. On the next screen, give the Source a name configure any other settings.
+4. Give the source a name and configure any other settings.
 
    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Dub_Prod, Dub_Staging, Dub_Dev).
 
