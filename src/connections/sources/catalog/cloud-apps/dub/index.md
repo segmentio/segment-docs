@@ -26,9 +26,6 @@ This source is maintained by Dub. For any issues with the source, [contact their
 
 Dub uses Segment's stream source component to send Segment event data. It uses the server-side Track method to send data to Segment. These events are then available in any destination that accepts server-side events, and are available in a schema in your data warehouse, so you can query using SQL.
 
-> (delete after reading) Clarify how your integration includes user identifiers in your event payloads, the example below is from Klaviyo:
-
-The default behavior is for Klaviyo to pass the userId associated with the email recipient as the userId. There are cases in which Klaviyo does not have an associated userId, in which case the email address will be passed in as the anonymousId.
 
 ## Events
 
