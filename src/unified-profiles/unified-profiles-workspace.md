@@ -9,7 +9,7 @@ For entitlements and limitations associated with a Unified Profiles workspace, s
 
 ## Prerequisites
 
-Before creating a Unified Profiles workspace, you must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
+Before creating a Unified Profiles workspace, you must have requested access from the [Unified Profiles in Flex page](https://console.twilio.com/us1/develop/flex/unified-profiles){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 
 ## Step 1: Select your data source
 

@@ -7,7 +7,7 @@ title: Amazon Web Services PrivateLink
 > info ""
 > Segment's PrivateLink integration is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank”}. You might incur additional networking costs while using AWS PrivateLink. 
 
-You can configure AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), [Redshift](#redshift), and [Snowflake](#snowflake). Only warehouses located in regions `us-east-1`, `us-west-2`, or `eu-west-1` are eligible.
+You can configure AWS PrivateLink for [Databricks](#databricks), [RDS Postgres](#rds-postgres), [Redshift](#redshift), and [Snowflake](#snowflake). Only warehouses located in regions `us-east-1`, `us-east-2`, `us-west-2`, or `eu-west-1` are eligible.
 
 Usage limits for each customer during the AWS PrivateLink Private Beta include the following: 
 - Up to 2 AWS PrivateLink VPC endpoints.  

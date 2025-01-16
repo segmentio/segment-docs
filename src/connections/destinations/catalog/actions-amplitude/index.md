@@ -51,7 +51,7 @@ To manually add the Log Purchases Action:
 
 ### Connection Modes for Amplitude (Actions) destination
 
-The Amplitude (Actions) destination does not offer a device-mode connection mode. Previous deployments of the Amplitude Segment destination required the device-mode connection to use the `session_id` tracking feature. However, the Amplitude (Actions) destination now includes session ID tracking by default when you use Segment's ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/) library.
+The Amplitude (Actions) destination does not offer a device-mode connection mode. Previous deployments of the Amplitude Segment destination required the device-mode connection to use the `session_id` tracking feature. However, the Amplitude (Actions) destination now includes session ID tracking by default when you use Segment's [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/) library.
 
 ### Track sessions
 
