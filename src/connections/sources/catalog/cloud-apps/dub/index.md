@@ -47,6 +47,6 @@ You can refer to [Dub's Event Types](https://dub.co/docs/concepts/webhooks/event
 
 Once your Source is set up, you can connect it with destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the specific destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Dub support team](mailto:support@dub.co).
