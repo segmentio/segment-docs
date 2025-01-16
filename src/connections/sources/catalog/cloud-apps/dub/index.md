@@ -24,7 +24,7 @@ This source is maintained by Dub. For any issues with the source, [contact their
 
 ## Stream
 
-Dub uses our stream Source component to send Segment event data. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Dub uses Segment's stream source component to send Segment event data. It uses the server-side Track method to send data to Segment. These events are then available in any destination that accepts server-side events, and are available in a schema in your data warehouse, so you can query using SQL.
 
 > (delete after reading) Clarify how your integration includes user identifiers in your event payloads, the example below is from Klaviyo:
 
