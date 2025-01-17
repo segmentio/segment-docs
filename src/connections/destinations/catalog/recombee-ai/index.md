@@ -11,7 +11,16 @@ versions:
     link: /docs/connections/destinations/catalog/actions-recombee
 ---
 
+<<<<<<< Updated upstream
 [Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Recommender as a Service that can use your data to provide the most accurate recommendations of content or products for your users.
+=======
+Use this Segment destination to send your interaction data views, purchases, plays, etc.) to Recombee.
+
+This destination is maintained by Recombee. For any issues with the destination, [contact the Recombee Support team](mailto:support@recombee.com).
+
+> info ""
+> The Recombee Destination is currently in beta, which means that the Recombee team is still actively developing the destination. If you have any feedback to help improve the Recombee Destination and its documentation, [contact the Recombee support team](mailto:support@recombee.com).
+>>>>>>> Stashed changes
 
 Use this Segment destination to send your interaction data, like views, purchases, or plays, to Recombee.
 

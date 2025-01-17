@@ -108,10 +108,7 @@ Using the examples provided, your Segment Lambda destination settings will look 
 To create an IAM policy:
 1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/){:target="_blank"}.
 2. Follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html){:target="_blank"} to allow Segment permission to invoke your Lambda function.
-3. Select the **Create Policy from JSON** option and use the following template policy in the **Policy Document** field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. An example of a Lambda ARN is: `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`.
-
-> note ""
-> **NOTE:** You can put in a placeholder ARN for now, as you will need to come back to this step to update the ARN of your Lambda once you create that.
+3. Select the **Create Policy from JSON** option and use the following template policy in the **Policy Document** field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. An example of a Lambda ARN is: `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`. You can put in a placeholder ARN for now, as you will need to come back to this step to update the ARN of your Lambda once you create that.
 
 ```json
 {
@@ -148,8 +145,8 @@ To create an IAM role:
 7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the External ID set in your AWS Lambda destination settings.
   * `arn:aws:iam::595280932656:role/customer-lambda-prod-destination-access` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.
 
-> note ""
-> **Note**: Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
+> success ""
+> You can find your Source ID by navigating to **Settings > API Keys** from your Segment source homepage.
 
     ```json
     {
