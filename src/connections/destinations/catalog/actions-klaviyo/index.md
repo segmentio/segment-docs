@@ -115,3 +115,7 @@ If this approach doesn't address your use case, [reach out to Segment](mailto:fr
 ### Can batching be enabled for the entire Klaviyo (Actions) destination?
 
 Batching is only available for events sent through the Upsert Profile action mapping. Other actions in the Klaviyo (Actions) destination don't support batching.
+
+### Why can't I see custom Profile Properties being passed to Klaviyo?
+
+Klaviyo's API supports only [Klaviyo default properties](https://help.klaviyo.com/hc/en-us/articles/115005074627#h_01HA32RZBASB9K0AQHHD8MHM3C) as Profile Properties. Any custom properties that are not included in this predefined list will be silently dropped and will not be added to the user's profile.
