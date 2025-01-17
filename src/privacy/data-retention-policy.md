@@ -6,17 +6,17 @@ Twilio Segment’s Data Retention and Deletion Policy provides clarity, consiste
 
 Starting **15th April 2025**, Segment will enforce a strict data retention policy for all:
 
-1. **[Active customers](#active-customers):** A Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 90 days.   
+1. **[Active customers](#active-customers):** A Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days.   
 2. **[Expired customers](#expired-customers):** A Business or Team Tier customer that hasn’t renewed their Segment contract and has their workspace downgraded to Free Tier.   
 3. **[Contracted customers](#contracted-customers):** A Business Tier customer that elects to stop using add-on features like Unify, Unify+, Engage and/or Linked.  
 4. **[Churned customers](#churned-customers):**  A Business or Team Tier customer that has either explicitly terminated the contract or has unpaid invoices and has their workspace fully locked out.  
-5. **[Unused Free Tier workspace](#unused-free-tier-workspace)**: A workspace on the Free Tier that has not received any Segment event traffic or had any user activity in the last 90 days.   
+5. **[Unused Free Tier workspace](#unused-free-tier-workspace)**: A workspace on the Free Tier that has not received any Segment event traffic or had any user activity in the last 30 days.   
 
 ![A flowchart depicting the progression of active and no longer active customers.](images/data-retention-policy-flowchart.png)
 
 ## Active customers
 
-An active customer is a Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 90 days. 
+An active customer is a Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days. 
 
 Segment will enforce a maximum data retention period of up to 3 years for all active customers. If you currently have an extended retention period in place, Segment will continue to honor the previously agreed upon retention period. If your business requires a longer retention period, please contact your sales team to discuss available options.
 
@@ -74,7 +74,7 @@ Segment will enforce a maximum data retention period of 90 days for Unify data, 
 
 Expired customers will have:
 
-* Their data immediately subject to data retention of an active, Free Tier customer. All data beyond the retention period will be deleted and unrecoverable.  
+* Their data is immediately subject to data retention of an active, Free Tier customer. All data beyond the retention period will be deleted and unrecoverable.  
 * Their Unify data will be deleted and unrecoverable 90 days from the date their workspace was downgraded.
 
 ## Contracted customers 
@@ -102,7 +102,7 @@ A churned customer is a Business or Team Tier customer that has:
 
 Customers that have explicitly terminated their Segment contract will have their data unrecoverably deleted within 30 days of contract termination. 
 
-Customers that have unpaid invoices and have their workspaces fully locked out will have their data unrecoverably deleted after 90 days of full lock out, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
+Customers that have unpaid invoices and have their workspaces fully locked out will have their data unrecoverably deleted after 30 days of full lock out, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
 
 | Tier         | Data Retention             |
 | ------------ | -------------------------- |
