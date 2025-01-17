@@ -45,14 +45,14 @@ The basic tracking methods below serve as the building blocks of your Segment tr
 
 These methods correspond with those used in the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js.
 
-> note "Good to know"
+> success ""
 > For any of the methods described in this page, you can replace the properties in the code samples with variables that represent the data collected.
 
 ### Identify
 
 Use the `identify` method to link your users and their actions, to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
-> note "`identify` and anonymous visitors"
+> info "Identify calls and anonymous visitors"
 > Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from `localStorage` or assigns one for new visitors, and then attaches it to all `page` and `track` events both before and after an `identify`.
 
 The Identify method follows the format below:
@@ -431,7 +431,7 @@ analytics.on('track', function(event, properties, options) {
 
 This method emits events _before_ they are processed by the Segment integration, and may not include some of the normalization Segment performs on the client before sending the data to the Segment servers.
 
-> note "Note"
+> info ""
 > Page event properties are stored in the `options` object.
 
 

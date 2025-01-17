@@ -83,8 +83,8 @@ Our example ASP.NET site has a login and a register page. You'll want to identif
 
 To identify newly registered users, we'll use the `identify` and `track` call in the [Register.aspx.cs](https://github.com/segmentio/asp.net-example/blob/master/Account/Register.aspx.cs#L18-L24) controller.
 
-> note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 ```csharp
 Analytics.Client.Identify(user.Id, new Segment.Model.Traits
