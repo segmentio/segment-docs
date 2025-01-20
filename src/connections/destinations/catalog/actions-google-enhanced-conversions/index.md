@@ -206,3 +206,21 @@ Events going to Google for this integration require a `GCLID` field, an `email`,
 
 ### What are the differences between the Upload Click Conversions and Click Conversion V2 Actions?
 The only difference between the Upload Click Conversions and Click Conversion V2 Actions is that the Click Conversion V2 Action has [sync modes](/docs/connections/destinations/#sync-modes).
+
+### Why am I getting a `USER_PERMISSION_DENIED` 403 error when my credentials are correct?
+
+If you're getting this error:
+
+```
+"errors": [
+{
+"errorCode": {
+"authorizationError": "USER_PERMISSION_DENIED"
+},
+"message": "User doesn't have permission to access customer. Note: If you're accessing a client customer, the manager's customer id must be set in the 'login-customer-id' header. See https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid"
+}
+]
+```
+
+That generally means there is a conflict or problem between the account used for authorization through Segment and the Customer ID. You can read more about this [here]([url](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid:~:text=in%20the%20request%3A-,Authorization,must%20be%20set%20to%20the%20customer%20ID%20of%20the%20manager%20account.,-Key%20Term%3A)). 
+
