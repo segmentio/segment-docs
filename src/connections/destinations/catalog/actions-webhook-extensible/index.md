@@ -49,12 +49,12 @@ You've now completed setup, and your destination is ready for event mapping and 
 
 With authentication in place, you can now define how data flows from Segment to your webhook endpoints. Follow these steps to configure mappings and test the setup:
 
-1. From your destination's setting page, click **Mappings**, then **+New Mapping**.
+1. From your destination's settings page, click **Mappings**, then **+New Mapping**.
 2. On the Activate data screen, select the action you want to use.
 3. Define your event trigger, then click **Load Test Event From Source**.
 4. In the Map field section, define the API endpoint (URL) and the HTTP method (`POST`, `PATCH`, `PUT`).
 5. Map payload fields:
-   - Map individual fields or select a specific object from a test event.
+   - Map individual fields or select a specific object from a test event. Segment supports batching the entire payload but not specific objects within the payload.
    - (Optional) Use a [destination insert function](/docs/connections/functions/insert-functions/) to transform the payload according to the API specification.
 6. Configure optional parameters:
    - **Batch size**: Specify batch size if the API supports batching entire payloads.
@@ -63,20 +63,19 @@ With authentication in place, you can now define how data flows from Segment to 
 8. Click **Save**, then click **Next**.
 9. Give your mapping a name, then click **Save and enable**.
 
-Your mapping is now enabled.
+Your mapping is now enabled. Go to the next section to finish setup.
 
-> **Note**: Segment supports batching the entire payload but not specific objects within the payload.
+## 4. Enable the destination
 
-## Known limitations
+Follow these steps to enable your new destination:
+
+1. Return to the **Basic Settings** in your destination's **Settings** tab.
+2. Toggle **Enable Destination** to on, then click **Save Changes**.
+
+Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
+
+## Troubleshooting
 
 - **Token Expiration Issue**: If a token expires before a test event is sent, the test event may fail with a 401 error. Workarounds include:
   1. Using the **Event Tester** to validate connections.
   2. Reconnecting OAuth by editing and saving settings to fetch a new token.
-
-## Enabling the destination
-
-1. Enable the destination in the **Settings** page if it is not already enabled.
-2. Save the configuration to ensure "Extensible Webhooks" is live.
-
-Congratulations! Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
-
