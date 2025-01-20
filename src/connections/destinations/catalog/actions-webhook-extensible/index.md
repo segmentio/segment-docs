@@ -9,6 +9,15 @@ Segment's Extensible Webhooks destination lets you send custom data payloads to 
 
 Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com).
 
+## Overview
+
+To set up and use Extensible Webhooks, you'll follow these four main stages:
+
+1. **Create the new destination**: Add the Extensible Webhooks destination to your workspace and link it to a source.
+2. **Set up authentication**: Configure the required authentication settings to activate the destination.
+3. **Map and configure data**: Define how data flows from Segment to your webhook endpoints by mapping fields and customizing the payload.
+4. **Enable the destination**: Complete the setup by enabling the destination to start sending data.
+
 ## 1. Create a new Extensible Webhooks destination
 
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Extensible Webhooks."
@@ -76,6 +85,6 @@ Your Extensible Webhooks destination is now set up and ready to send data to you
 
 ## Troubleshooting
 
-- **Token Expiration Issue**: If a token expires before a test event is sent, the test event may fail with a 401 error. Workarounds include:
-  1. Using the **Event Tester** to validate connections.
-  2. Reconnecting OAuth by editing and saving settings to fetch a new token.
+### I ran into an issue where my test event failed with a `401` error. What should I do?**
+
+This error can occur when a token expires before the test event gets sent. To resolve this, use the Event Tester to validate the connection and verify the token is still active. Alternatively, reconnect OAuth by editing and saving the settings. This will fetch a new token and allow the test event to proceed successfully.
