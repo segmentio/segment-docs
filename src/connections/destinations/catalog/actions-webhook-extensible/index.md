@@ -45,16 +45,25 @@ Before you can enable the new destination, you'll first need to choose an authen
 
 You've now completed setup, and your destination is ready for event mapping and data configuration.
 
-## Mapping and data configuration
+## 3. Mapping and data configuration (optional)
 
-1. Define the API endpoint (URL) and the HTTP method (POST, PATCH, PUT).
-2. Configure optional parameters:
-   - **Batch Size**: Specify batch size if the API supports batching entire payloads.
-   - **Headers**: Add required headers (e.g., `content-type` defaults to `application/json`).
-3. Map payload fields:
+With authentication in place, you can now define how data flows from Segment to your webhook endpoints. Follow these steps to configure mappings and test the setup:
+
+1. From your destination's setting page, click **Mappings**, then **+New Mapping**.
+2. On the Activate data screen, select the action you want to use.
+3. Define your event trigger, then click **Load Test Event From Source**.
+4. In the Map field section, define the API endpoint (URL) and the HTTP method (`POST`, `PATCH`, `PUT`).
+5. Map payload fields:
    - Map individual fields or select a specific object from a test event.
-   - (Optional) Use a destination insert function to transform the payload according to the API specification.
-4. Send a test event to validate the setup. Debug any errors related to payload configuration or authentication.
+   - (Optional) Use a [destination insert function](/docs/connections/functions/insert-functions/) to transform the payload according to the API specification.
+6. Configure optional parameters:
+   - **Batch size**: Specify batch size if the API supports batching entire payloads.
+   - **Headers**: Add required headers (for example, `content-type`, which is required, defaults to `application/json`).
+7. Send a test event to validate the setup. Segment logs the response from your destination so that you can debug any errors (which are usually related to the payload configuration or authentication issues).
+8. Click **Save**, then click **Next**.
+9. Give your mapping a name, then click **Save and enable**.
+
+Your mapping is now enabled.
 
 > **Note**: Segment supports batching the entire payload but not specific objects within the payload.
 
@@ -69,4 +78,5 @@ You've now completed setup, and your destination is ready for event mapping and 
 1. Enable the destination in the **Settings** page if it is not already enabled.
 2. Save the configuration to ensure "Extensible Webhooks" is live.
 
+Congratulations! Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
 
