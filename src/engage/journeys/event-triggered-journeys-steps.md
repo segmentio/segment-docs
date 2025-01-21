@@ -9,7 +9,7 @@ Steps are the building blocks of a journey. This page explains the the **Hold Un
 
 This guide explains how these steps work, their key features, and best practices for using them effectively.
 
-## Hold until: smart pauses in journeys
+## Hold Until: smart pauses in journeys
 
 The **Hold Until** step adds a deliberate pause in a journey, waiting for specific user actions or a predefined time limit before progressing. This lets you create highly personalized experiences by responding to user behavior—or lack thereof—at the right moment.
 
@@ -18,7 +18,7 @@ Because the hold until step introduces a checkpoint in your journey where the ne
 - Personalization, by tailoring user interactions based on their actions.
 - Efficiency, helping you avoid sending irrelevant messages by waiting for meaningful triggers.
 
-### How Hold until works
+### How Hold Until works
 
 When a journey reaches a hold until step:
 
@@ -28,7 +28,7 @@ When a journey reaches a hold until step:
 
 ### Configurable parameters
 
-The following table explains the parameters you can configure for the Hold until step:
+The following table explains the parameters you can configure for the Hold Until step:
 
 | Parameter             | Details                                                                                                                                                                                                                                                                    |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,13 +59,43 @@ For example, an onboarding journey with a `Signup Completed` event could trigger
 - In one branch, the event leads to an email sequence welcoming the user.
 - In another branch, the same event triggers a survey request.
 
+As another example, consider the `Cart_Modified` event in an abandoned journey:
+1. A user enters the journey by modifying their cart, which triggers the `Cart_Modified` event.
+2. During the Hold Until step, the user modifies their cart four more times.
+
+The destination payload after the Hold Until step would look like this:
+
+```json
+{
+  "properties": {
+    "journey_context": {
+      "Cart_Modified": {
+        "organization": "Duff Brewery",
+        "compression_ratio": 5.2,
+        "output_code": "not_hotdog"
+      },
+      "Cart_Modified - user updates cart": {
+        "organization": "Acme Corp",
+        "user_name": "Homer Simpson",
+        "output_code": "always_blue"
+      }
+    }
+  }
+}
+```
+
+In this example:
+- `Cart_Modified` captures the properties of the first event that initiated the journey.
+- `Cart_Modified - user updates cart` captures the most recent modification within the Hold Until branch.
+
+
 By assigning an alias to each instance of the `Signup Completed` event (like `Signup_Email` and `Signup_Survey`), you can ensure that both branches retain the specific event context needed for their respective actions.
 
 To configure an alias, add the branch name or a custom identifier to the event name during setup. The alias will appear in the journey context and downstream payloads, allowing precise tracking and execution. Aliases should be meaningful and reflect the purpose of the event within the branch or step.
 
-### Managing Hold until steps
+### Managing Hold Until steps
 
-Deleting a Hold until step can impact downstream steps that rely on it. When you delete a configured step, Segment displays a modal that summarizes the potential impact on related branches and steps. Review all dependencies carefully to avoid unintentionally disrupting the journey.
+Deleting a Hold Until step can impact downstream steps that rely on it. When you delete a configured step, Segment displays a modal that summarizes the potential impact on related branches and steps. Review all dependencies carefully to avoid unintentionally disrupting the journey.
 
 ## Send to destination
 
@@ -102,10 +132,12 @@ Before activating the journey, **send a test event to verify that the payload ma
 
 The events that Segment sends to destinations from Event-Triggered Journeys include an object called `journey_context` within the event’s properties. The `journey_context` object contains:
 - The triggering event that started the journey.
-- Any events received during a Hold until step.
+- Any events received during a Hold Until step.
 - The properties associated with these events.
 
-You can also optionally include profile traits to provide richer context for the destination. Here's an example of the payload structure:
+You can also optionally include profile traits to provide richer context for the destination. 
+
+Here’s a detailed example of a payload structure, highlighting the journey context and how Segment enriches event data:
 
 ```json
 {
@@ -164,7 +196,7 @@ To edit or delete an activation, click the destination name in the journey canva
 
 #### Deleting activations
 
-If you delete an activation, future instances of the journey step will fail to send data to that destination. To avoid disruptions, make sure you've configured alternative logic or destintions before removing an activation.
+If you delete an activation, future instances of the journey step will fail to send data to that destination. To avoid disruptions, make sure you've configured alternative logic or destinations before removing an activation.
 
 ### Handling missing attributes
 
