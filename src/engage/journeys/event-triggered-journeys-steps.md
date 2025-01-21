@@ -157,3 +157,18 @@ To edit or delete an activation, click the destination name in the journey canva
 #### Deleting activations
 
 If you delete an activation, future instances of the journey step will fail to send data to that destination. To avoid disruptions, make sure you've configured alternative logic or destintions before removing an activation.
+
+### Handling missing attributes
+
+There may be cases where events sent to Segment are missing specific properties or when profile traits are unavailable. How Segment handles these scenarios depends on whether the attribute is explicitly mapped.
+
+#### If values are not mapped
+
+- When an event property is configured but it's not present in the incoming Track event, that property gets excluded from the payload sent to the destination.
+- Similarly, if a trait is configured but isn't present on the profile, the trait gets excluded from the payload.
+
+#### If values are mapped
+- If an event property is mapped but is missing in the Track event, Segment still includes the mapped key in the payload but with a value of `undefined`.
+- Similarly, if a mapped trait is missing on the profile, the key is included in the payload with a value of `undefined`.
+
+Carefully configuring mappings and handling missing attributes can help you maintain data integrity and avoid errors in downstream systems.
