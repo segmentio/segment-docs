@@ -36,3 +36,15 @@ The following table explains the parameters you can configure for the Hold until
 | Filters               | Event properties refine the triggering conditions for a branch.                                                                                                                                                                                                            |
 | Maximum hold duration | The fallback branch activates after the hold period, ranging from 5 minutes to 182 days (approximately 6 months)                                                                                                                                                           |
 
+### Additional features
+
+#### Send profiles back to the beginning of this step
+
+The Hold Until step can restart when a specified event reoccurs. This ensures that the hold duration resets and the journey context updates with the most recent event data.
+
+When the same event occurs again, the hold timer resets and the journey context is updated with the latest event data. For example, in an abandoned cart journey, if a user modifies their cart, restarting the step ensures updated cart contents and prevents premature follow-ups.
+
+Enable this feature by selecting Send profiles back to the beginning of this step each time this branch event occurs in the step configuration. Segment recommends putting branches for recurring events at the top of the list to improve readability.
+
+
+
