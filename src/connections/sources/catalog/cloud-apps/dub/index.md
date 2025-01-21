@@ -1,5 +1,6 @@
 ---
 title: Dub Source
+id: 1Z83r1kE0V
 ---
 
 [Dub](https://dub.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is the all-in-one link attribution platform for businesses to understand how their marketing spend are converting to sales.
