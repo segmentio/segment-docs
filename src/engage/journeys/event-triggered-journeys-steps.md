@@ -51,9 +51,17 @@ Enable this feature by selecting Send profiles back to the beginning of this ste
 In this example, users enter the journey when they modify their cart and wait for either a purchase or two hours to pass. If the user modifies their cart again during those two hours, the cart contents are updated, and the two-hour timer resets. As a result, follow-ups reflect the latest information.
 
 #### Event name aliases
-Aliases let you reuse the same event in multiple branches or steps without losing track of data. Assign unique names to make sure the journey retains both the most recent and earlier occurrences of the event.
+Event name aliases let you reuse the same event in multiple branches or steps without losing track of data. This approach encourages data clarity and integrity by preserving event-specific context for each branch or step where the alias is applied.
 
-By default, the most recent event overwrites previous data. When you use aliases, though, each branch or step can maintain its own version of the event for more granular control. For example, in a user onboarding journey, you can track separate instances of the `Signup Completed` event across different branches by adding the branch name to the event in the journey context.
+By default, when the same event is triggered multiple times, the most recent event data overwrites earlier occurrences. When you use aliases, though, each branch or step can maintain its own version of the event for more granular control. This is especially useful in journeys that involve repeated events or complex branching logic.
+
+For example, an onboarding journey with a `Signup Completed` event could trigger multiple actions:
+- In one branch, the event leads to an email sequence welcoming the user.
+- In another branch, the same event triggers a survey request.
+
+By assigning an alias to each instance of the `Signup Completed` event (like `Signup_Email` and `Signup_Survey`), you can ensure that both branches retain the specific event context needed for their respective actions.
+
+To configure an alias, add the branch name or a custom identifier to the event name during setup. The alias will appear in the journey context and downstream payloads, allowing precise tracking and execution. Aliases should be meaningful and reflect the purpose of the event within the branch or step.
 
 ### Managing Hold until steps
 
