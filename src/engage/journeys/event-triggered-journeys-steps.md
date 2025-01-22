@@ -89,9 +89,9 @@ In this example:
 - `Cart_Modified - user updates cart` captures the most recent modification within the Hold Until branch.
 
 
-By assigning an alias to each instance of the `Signup Completed` event (like `Signup_Email` and `Signup_Survey`), you can ensure that both branches retain the specific event context needed for their respective actions.
+Segment generates aliases for each instance of the `Signup Completed` event by concatenating the event name and branch name (for example `Signup Completed - Survey Branch`). With this approach, both branches retain the specific event context needed for their respective actions.
 
-To configure an alias, add the branch name or a custom identifier to the event name during setup. The alias will appear in the journey context and downstream payloads, allowing precise tracking and execution. Aliases should be meaningful and reflect the purpose of the event within the branch or step.
+Segment creates these aliases automatically during setup, and they show up in the journey context and downstream payloads. While you can't customize alias names, using clear and meaningful branch names helps maintain clarity and precise tracking.
 
 ### Managing Hold Until steps
 
