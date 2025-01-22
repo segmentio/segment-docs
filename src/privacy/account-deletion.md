@@ -20,14 +20,21 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 ## Delete the data from a Unify space
 
-Workspace Owners can delete a Unify space and all of its associated data by sending an email to the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) to create a support ticket. In your email to Customer Success, include the following information:
- - Workspace slug
- - Unify space name
+Workspace Owners can delete a Unify space and all of its profiles, computed traits, audiences, journeys, and other settings. Unify space deletion doesn't delete data from connected Twilio Engage destinations. To remove your data from external destinations, reach out to the individual destination about their deletion practices.
 
-Segment waits for 5 calendar days after your request before starting a space deletion. If you want to cancel your Unify space deletion request, email the Customer Success team [(friends@segment.com)](mailto:friends@segment.com) during the first 5 calendar days after your initial request. 
+To delete a Unify space: 
+1. Sign in to the Segment app and select **Unify**.
+2. From the Profile explorer page of your most recently selected Unify space, select **Spaces**. 
+3. On the Spaces tab, find the space you'd like to delete and click **Delete**.
+4. Enter the space name and click **Delete space**. 
 
-> info "Data removed during a Unify space deletion"
-> When you delete a Unify space, Segment removes all profiles, computed traits, audiences, journeys, and other settings related to the Unify space from internal Segment servers. Unify space deletion doesn't delete data from connected Twilio Engage destinations. To remove your data from external destinations, reach out to the individual destination about their deletion practices. 
+Segment waits for 5 calendar days after you initiate a deletion request to complete a space deletion. 
+
+### Cancel a Unify space deletion request 
+If you want to cancel your Unify space deletion request:
+1. Sign in to the Segment app and select **Unify**.
+2. From the Profile explorer page of your most recently selected Unify space, select **Spaces**. 
+3. On the Spaces tab, find the space you'd like to cancel the deletion of and click **Cancel deletion**. 
 
 ## Delete your workspace data
 
