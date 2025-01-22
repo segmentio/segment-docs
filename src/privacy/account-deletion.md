@@ -30,7 +30,7 @@ To delete a Unify space:
 
 Segment waits for 5 calendar days after you initiate a deletion request to complete a space deletion. 
 
-### Cancel a Unify space deletion request 
+### Cancel a Unify space deletion request
 If you want to cancel your Unify space deletion request:
 1. Sign in to the Segment app and select **Unify**.
 2. From the Profile explorer page of your most recently selected Unify space, select **Spaces**. 
