@@ -20,7 +20,7 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 ## Delete the data from a Unify space
 
-Workspace Owners can delete a Unify space and all of its profiles, computed traits, audiences, journeys, and other settings. Unify space deletion doesn't delete data from connected Twilio Engage destinations. To remove your data from external destinations, reach out to the individual destination about their deletion practices.
+Workspace Owners can delete a Unify space and all of its profiles, computed traits, audiences, journeys, and other settings. 
 
 To delete a Unify space: 
 1. Sign in to the Segment app and select **Unify**.
@@ -35,6 +35,9 @@ If you want to cancel your Unify space deletion request:
 1. Sign in to the Segment app and select **Unify**.
 2. From the Profile explorer page of your most recently selected Unify space, select **Spaces**. 
 3. On the Spaces tab, find the space you'd like to cancel the deletion of and click **Cancel deletion**. 
+
+> success ""
+> Unify space deletion doesn't delete data from connected Twilio Engage destinations. To remove your data from external destinations, reach out to the individual destination about their deletion practices.
 
 ## Delete your workspace data
 
