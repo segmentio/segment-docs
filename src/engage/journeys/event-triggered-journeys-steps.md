@@ -3,7 +3,7 @@ title: Event-Triggered Journeys Steps
 plan: engage-foundations
 ---
 
-[Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage are powered by versatile steps that enhance their flexibility and effectiveness. 
+[Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 
 Steps are the building blocks of a journey. This page explains the the **Hold Until** and **Send to Destination** steps, which enable precise control over journey progression and data delivery. 
 
