@@ -25,10 +25,6 @@ For example, if an end user agreed to share their information for functional and
   "type": "track",
   "event": "Segment Consent Preference Updated",
   "userId": "u123",
-  "traits": {
-     "email": "peter@example.com",
-     "phone": "555-555-5555",
-  }
   "timestamp": "2023-01-01T00:00:00.000Z",
   "context": {
     "consent": {
