@@ -28,7 +28,7 @@ To delete a Unify space:
 3. On the Spaces tab, find the space you'd like to delete and click **Delete**.
 4. Enter the space name and click **Delete space**. 
 
-Segment waits for 5 calendar days after you initiate a deletion request to complete a space deletion. 
+Segment does not begin a Unify space deletion until 5 calendar days after you initiate a deletion request. If you would like to reverse your space deletion request, you must cancel your request during the 5 calendar days after your initial request. Once Segment deletes a Unify space, it can't be recovered.
 
 ### Cancel a Unify space deletion request
 If you want to cancel your Unify space deletion request:
