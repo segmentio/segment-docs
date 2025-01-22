@@ -95,7 +95,7 @@ In this example:
 - `Cart_Modified - user updates cart` captures the most recent modification within the Hold Until branch.
 
 
-Segment generates aliases for each instance of the `Signup Completed` event by concatenating the event name and branch name (for example `Signup Completed - Survey Branch`). With this approach, both branches retain the specific event context needed for their respective actions.
+Segment generates aliases for each instance of an event by concatenating the event name and branch name (for example, `Cart_Modified - user updates cart`, like in the previous payload example). This approach allows both branches to retain the specific event context needed for their respective actions.
 
 Segment creates these aliases automatically during setup, and they show up in the journey context and downstream payloads. While you can't customize alias names, using clear and meaningful branch names helps maintain clarity and precise tracking.
 
@@ -103,17 +103,17 @@ Segment creates these aliases automatically during setup, and they show up in th
 
 Deleting a Hold Until step can impact downstream steps that rely on it. When you delete a configured step, Segment displays a modal that summarizes the potential impact on related branches and steps. Review all dependencies carefully to avoid unintentionally disrupting the journey.
 
-## Send to destination
+## Send to Destination
 
 The **Send to Destination** step lets you send journey data to one of your [configured Engage destinations](/docs/connections/destinations/), enabling real-time integration with tools like marketing platforms, analytics systems, or custom endpoints.
 
 This step supports Actions Destinations (excluding list destinations) and destination functions. It doesn't support storage destinations or classic (non-Actions) destinations.
 
-### How Send to destination works
+### How Send to Destination works
 
-When a journey reaches the Send to destination step, the journey packages the relevant data and sends it to your chosen destination. This could be a third-party platform, like a marketing tool, or a custom destination built using [Destination Functions](/docs/connections/functions/destination-functions/). The data that Segment sends includes key attributes from the journey context, profile traits, and any mapped fields you’ve configured.
+When a journey reaches the Send to Destination step, the journey packages the relevant data and sends it to your chosen destination. This could be a third-party platform, like a marketing tool, or a custom destination built using [Destination Functions](/docs/connections/functions/destination-functions/). The data that Segment sends includes key attributes from the journey context, profile traits, and any mapped fields you’ve configured.
 
-### Configure the Send to destination step
+### Configure the Send to Destination step
 
 > info "Set a destination up first"
 > Before you add configure this step, make sure you've already set up the destination(s) in Engage.
@@ -210,10 +210,11 @@ There may be cases where events sent to Segment are missing specific properties 
 
 #### If values are not mapped
 
-- When an event property is configured but it's not present in the incoming Track event, that property gets excluded from the payload sent to the destination.
+- When an event property is configured but it's not present in the incoming [Track event](/docs/connections/spec/track/), that property gets excluded from the payload sent to the destination.
 - Similarly, if a trait is configured but isn't present on the profile, the trait gets excluded from the payload.
 
 #### If values are mapped
+
 - If an event property is mapped but is missing in the Track event, Segment still includes the mapped key in the payload but with a value of `undefined`.
 - Similarly, if a mapped trait is missing on the profile, the key is included in the payload with a value of `undefined`.
 
