@@ -7,27 +7,24 @@ plan: engage-foundations
 
 Steps are the building blocks of a journey. This page explains the the **Hold Until** and **Send to Destination** steps, which enable precise control over journey progression and data delivery. 
 
-This guide explains how these steps work, their key features, and best practices for using them effectively.
-
 > info "Public Beta"
 > Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Event-Triggered Journeys is not currently HIPAA eligible.
 
 ## Hold Until: smart pauses in journeys
 
-The **Hold Until** step adds a deliberate pause in a journey, waiting for specific user actions or a predefined time limit before progressing. This lets you create highly personalized experiences by responding to user behavior—or lack thereof—at the right moment.
+The **Hold Until** step adds a deliberate pause in a journey, waiting for specific user actions or a predefined time limit before progressing. This lets you create highly personalized experiences by responding to user behavior (or the lack thereof) at the right moment.
 
-Because the hold until step introduces a checkpoint in your journey where the next action depends on user behavior, it creates opportunities for:
-
+Because the Hold Until step introduces a checkpoint in your journey where the next action depends on user behavior, it creates opportunities for:
 - Personalization, by tailoring user interactions based on their actions.
 - Efficiency, helping you avoid sending irrelevant messages by waiting for meaningful triggers.
 
 ### How Hold Until works
 
-When a journey reaches a hold until step:
+When a journey reaches a Hold Until step:
 
 1. It pauses and waits for one of the configured events to occur.
-2. If the event occurs, the instance moves down the corresponding branch immediately.
-3. If no event occurs within the specified time, the instance moves down the default "maximum hold duration" branch.
+2. If the event occurs, the journey moves down the corresponding branch immediately.
+3. If no event occurs within the specified time, the journey moves down the default maximum hold duration branch.
 
 ### Configurable parameters
 
@@ -37,9 +34,11 @@ The following table explains the parameters you can configure for the Hold Until
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Branches              | Configure up to 4 event branches, each tied to a specific event and optional event property filters. <br> Events must share a unique identifier with the entry event if the journey allows re-entry. <br>  Branches must be mutually exclusive to avoid validation errors. |
 | Filters               | Event properties refine the triggering conditions for a branch.                                                                                                                                                                                                            |
-| Maximum hold duration | The fallback branch activates after the hold period, ranging from 5 minutes to 182 days (approximately 6 months)                                                                                                                                                           |
+| Maximum hold duration | The fallback branch activates after the hold period, ranging from 5 minutes to 182 days (about 6 months)                                                                                                                                                           |
 
 ### Additional features
+
+The Hold Until step includes optional settings that let you customize how Segment stores and processes events in your journey. These features give you more control over event timing, data inclusion, and journey logic.
 
 #### Send profiles back to the beginning of this step
 
@@ -47,9 +46,9 @@ The Hold Until step can restart when a specified event reoccurs. This resets the
 
 When the same event occurs again, the hold timer resets, and Segment updates the journey context with the latest event data. However, Segment only includes events in the journey context if the profile follows the branch where the event was processed. 
 
-For example, in an abandoned cart journey, if a user modifies their cart during the hold period, the cart contents are updated, and the two-hour timer resets. This prevents premature follow-ups and ensures the latest data is used.
+For example, in an abandoned cart journey, if a user modifies their cart during the hold period, the cart contents are updated and the two-hour timer resets. This prevents premature follow-ups and keeps the data up-to-date.
 
-Enable this feature by selecting **Send profiles back to the beginning of this step each time this branch event occurs** in the step configuration. For more details about how journey context handles triggering events, see [Destination Event Payload Schema](/docs/engage/journeys/event-triggered-journeys-steps#destination-event-payload-schema).
+Enable this feature by selecting **Send profiles back to the beginning of this step each time this branch event occurs** in the step configuration. For more details about how journey context handles triggering events, see [Destination event payload schema](/docs/engage/journeys/event-triggered-journeys-steps#destination-event-payload-schema).
 
 Segment recommends putting branches for recurring events at the top of the list to improve readability.
 
