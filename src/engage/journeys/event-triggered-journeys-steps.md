@@ -40,11 +40,15 @@ The following table explains the parameters you can configure for the Hold Until
 
 #### Send profiles back to the beginning of this step
 
-The Hold Until step can restart when a specified event reoccurs. This ensures that the hold duration resets and the [journey context](/docs/engage/journeys/journey-context/) updates with the most recent event data.
+The Hold Until step can restart when a specified event reoccurs. This resets the hold duration and updates the [journey context](/docs/engage/journeys/journey-context/) with the most recent event data.
 
-When the same event occurs again, the hold timer resets and the journey context is updated with the latest event data. For example, in an abandoned cart journey, if a user modifies their cart, restarting the step ensures updated cart contents and prevents premature follow-ups.
+When the same event occurs again, the hold timer resets, and Segment updates the journey context with the latest event data. However, Segment only includes events in the journey context if the profile follows the branch where the event was processed. 
 
-Enable this feature by selecting Send profiles back to the beginning of this step each time this branch event occurs in the step configuration. Segment recommends putting branches for recurring events at the top of the list to improve readability.
+For example, in an abandoned cart journey, if a user modifies their cart during the hold period, the cart contents are updated, and the two-hour timer resets. This prevents premature follow-ups and ensures the latest data is used.
+
+Enable this feature by selecting **Send profiles back to the beginning of this step each time this branch event occurs** in the step configuration. For more details about how journey context handles triggering events, see [Destination Event Payload Schema](/docs/engage/journeys/event-triggered-journeys-steps#destination-event-payload-schema).
+
+Segment recommends putting branches for recurring events at the top of the list to improve readability.
 
 ![Flow diagram of an Event-Triggered Journey for an abandoned cart scenario. The journey starts with a trigger event labeled 'Cart_Modified,' followed by a 'Hold Until' step checking if the user buys within two hours. The Hold Until step includes three branches: 'User updated cart, reset timer' for additional cart modifications, 'User purchased' triggered by an 'Order_Confirmation' event, and a 'Maximum hold duration' fallback set to two hours, which leads to a 'Send Abandonment Nudge' step. The flow ends with a 'Completed' state.](images/hold_until.png)
 
@@ -118,7 +122,7 @@ Here’s how to configure this step within a journey:
    - Choose the destination for the data.
    - (Optional:) Assign a unique name for clarity on the journey canvas.
 2. Choose the action:
-   - Define the change to trigger in the destination, like adding a user to a list or updating a record.
+   - Define the change to trigger in the destination, like updating a record.
    - For Destination Functions, the behavior is defined in the function code, so no action selection is needed.
 3. Configure and map the event:
    - Name the event sent to the destination.
@@ -131,8 +135,8 @@ Before activating the journey, **send a test event to verify that the payload ma
 ### Destination event payload schema
 
 The events that Segment sends to destinations from Event-Triggered Journeys include an object called `journey_context` within the event’s properties. The `journey_context` object contains:
-- The triggering event that started the journey.
-- Any events received during a Hold Until step.
+- The triggering event that started the journey, unless it was replaced by a new event in a Hold Until step.
+- Events received during a Hold Until step, but only if the profile followed the branch where the event happened.
 - The properties associated with these events.
 
 You can also optionally include profile traits to provide richer context for the destination. 
