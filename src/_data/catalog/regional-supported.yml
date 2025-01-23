@@ -272,6 +272,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: 1Z83r1kE0V
+    display_name: Dub
+    hidden: false
+    slug: dub
+    url: connections/sources/catalog/cloud-apps/dub
+    regions:
+      - us
+    endpoints:
+      - us
   - id: VETiUX9u66
     display_name: Elastic Path
     hidden: false
