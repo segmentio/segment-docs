@@ -72,7 +72,7 @@ For example:
 - **Rely on a single source of truth for consent preferences**: Apply the consent preferences found in your single source of truth across all of a user's devices.
 - **Ask user to resolve conflict**: Ask a user for consent preference information and apply their preferences across all of a user's devices. If this new request for consent preferences results in a conflict with the information stored in your single source of truth, prompt your user to resolve the conflict and provide their consent preferences. 
 
-![A diagram showing different consent preferences being reconciled for a single profile.](images/device-level-consent-conflcit.png)
+![A diagram showing different consent preferences being reconciled for a single profile.](images/device-level-consent-conflict.png)
 
 ### Profile-level conflict
 A profile-level conflict occurs when two distinct userIDs with different consent preferences are merged into one Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
@@ -80,9 +80,9 @@ A profile-level conflict occurs when two distinct userIDs with different consent
 ![A diagram showing different users linked to one profile.](images/profile-level-consent-conflict.png)
 
 To avoid profile-level conflicts, Segment recommends that you take the following steps:
-1. **Use `user_id` to identify a profile or person.** Using other identifiers, like a phone number, email, or `anonymous_id`, can result in a profile-level conflict. 
-2. **Set `user_id` as the highest priority identifier in the [Identity Resolution](/docs/unify/identity-resolution/identity-resolution-settings/#priority) settings.**
-3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again). This helps you avoid ambiguity when multiple people use a shared device. 
+1. **Use `user_id` to uniquely identify a profile or person**: Using other identifiers, like a phone number, email address, or `anonymousId`, can result in a profile-level conflict. With a unique `user_id` for each profile, there can never be a profile level conflict between two users on the same profile.
+2. **Set `user_id` as the highest priority identifier**: Setting `user_id` as the highest priority identifier in your [Identity Resolution settings](/docs/unify/identity-resolution/identity-resolution-settings/#priority) correctly models the one-to-many relationship between `user_id` and `anonymousId`.  
+3. **Maintain the default `reset()` behavior that represents a logout and flushes the `user_id` and `anonymousId`**: When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the previous user and generate a new anonymousId for subsequent activity until a user logs in again. This helps you avoid ambiguity when multiple people use a shared device.
 
 > success ""
 > Profile conflicts only impact profiles used in Engage spaces.
