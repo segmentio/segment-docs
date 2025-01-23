@@ -137,7 +137,7 @@ Before activating the journey, **send a test event to verify that the payload ma
 ### Destination event payload schema
 
 The events that Segment sends to destinations from Event-Triggered Journeys include an object called `journey_context` within the event’s properties. The `journey_context` object contains:
-- The triggering event that started the journey, unless it was replaced by a new event in a Hold Until step.
+- The event that triggered the journey, unless it was replaced by a new event in a Hold Until step.
 - Events received during a Hold Until step, but only if the profile followed the branch where the event happened.
 - The properties associated with these events.
 
