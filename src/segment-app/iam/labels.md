@@ -3,53 +3,56 @@ title: Using Label-Based Access Control
 plan: iam
 ---
 
-Labels allow workspace owners to assign permissions to users to grant them access to groups. Groups represent collections of [sources](/docs/connections/sources/), or collections of Spaces.
+Labels let workspace owners assign permissions to users by organizing resources into groups. Groups can represent collections of [sources](/docs/connections/sources/) or Spaces.
 
-To create or configure labels in your Segment workspace, go to **Settings > Admin**, then click the Label Management tab. Only workspace owners can manage labels for the entire workspace.
+
+To create or configure labels in your Segment workspace, go to **Settings > Admin**, then click the Label Management tab. Only Workspace Owners can manage labels for the entire workspace.
 
 > info ""
 > All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Business Tier customers can create an unlimited number of labels.
 
 ## Custom environments
 
-By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
+By default, all workspaces include labels for `Dev` (development) and `Prod` (production) environments. Workspace Owners can configure what these labels are applied to, and can create up to 5 custom environments.
 
-Labels must be in `key:value` format, both the key and value must begin with a letter, and they can only contain letters, numbers, hyphens or dashes.
+Labels must use the `key:value` format. Both the key and value must begin with a letter, and they can only contain letters, numbers, hyphens, or dashes.
 
-To apply labels to Sources and Spaces, click the **Assign Labels** tab from the Labels screen. In the screen that appears, select the Sources and Spaces to apply the label to.
+To apply labels to sources and spaces, click the **Assign Labels** tab from the Manage Labels screen. In the screen that appears, select the sources and spaces to apply the label to.
 
 Once a label is in use (either assigned to a resource or used to restrict permissions on a user), the label cannot be deleted. You must first manually remove the label from any resources and permissions before you can delete it.
 
 > info ""
-> While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
+> While only Workspace Owners can bulk-edit labels, source and space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
 
-Workspace owners can also grant specific [Roles](/docs/segment-app/iam/roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
+Workspace Owners can also grant specific [role access](/docs/segment-app/iam/roles/) to specific labels. For example, you might give a Source Admin access to only sources that have the `Prod` label.
 
 Permissions can then be assigned to users in Access Management by label, on the Source Admin, Source Read-Only, Engage Admin, Engage User and Engage Read-Only users.
 
 ![Screenshot of the Select Sources popup, with the Assign Source Admin to: All Sources in Workspace including future Sources option selected.](images/labels-access-mgmt.png)
 
-## Custom Labels
+## Custom labels
 
-> note ""
-> **Note**: All Segment workspaces can create up to five custom labels. Additional label types (in addition to environment labels) are available to Segment Business Tier accounts.
+> info ""
+> All Segment workspaces can create up to 5 custom labels. Additional label types (in addition to environment labels) are available to Segment Business Tier accounts.
 
-To create additional custom labels, a workspace owner can create new key types in the Labels screen. The workspace owner can customize any combination of labels to mirror how resources should be partitioned in their organization. For example, some organizations may prefer to restrict access on their Sources and Spaces by brand or product area while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
+To create additional custom labels, a Workspace Owner can create new key types in the Manage Labels screen. The Workspace Owner can customize any combination of labels to mirror how resources should be partitioned in their organization. 
 
-When you create a new key, it becomes available in the Sources page as a column type that can be used to organize sources.
+For example, some organizations may prefer to restrict access on their sources and spaces by brand or product area, while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
 
-## Labels FAQ
+When you create a new key, it becomes available in the S    ources page as a column type that can be used to organize sources.
+
+## FAQ
 
 ##### Where can I create labels?
-Workspace owners can create labels for sources and Spaces from the Segment workspace **Settings** -> **Admin** -> **Labels**.
+You can create labels for sources and spaces from Segment workspace by going to **Settings -> Admin** and then clicking the **Label Management** tab.
 
 ##### What resources can I assign a label to?
 
-Labels currently only apply to Sources and Spaces.
+You can apply labels to sources and spaces.
 
 ##### Where can I assign labels?
 
-Workspace owners can assign bulk assign labels to sources and Spaces using the "Assign Labels" tab in the **Labels** screen. Source admins and Space admins can edit the labels on their individual resources in the "Settings" tab.
+You can assign labels to sources and spaces using the **Assign Labels** tab in the **Manage Labels** screen. Source Admins and Space Admins can edit the labels on their individual resources in the **Settings** tab.
 
 ##### Where can labels be used?
 
