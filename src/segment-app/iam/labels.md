@@ -60,19 +60,19 @@ Once a label has been created and has been assigned to resources within the work
 
 ##### Can I delete a label?
 
-Workspace owners can only delete a label if it is not being used (either assigned to a resource or used to restrict permissions on a user). First, manually remove the label from any resources or user permissions.
+Workspace owners can delete a label only if it’s not in use. See [Custom Environments](#custom-environments) for details on removing labels.
 
 ##### Can I rename a label?
 
-No, a label cannot be renamed. If you need to rename a label, we recommend you create the new label, and then assign it to all resources named the old label before deleting the old label.
+No. If you need to rename a label, first create a new label, assign it to all resources using the old label, and then delete the old label.
 
-##### Can I assign a resource multiple values from the same category?
-(for example, a source as both brand:A and brand:B))
+##### Can I assign multiple values from the same category to a resource?
 
-No, you can only assign one value per category. This is to ensure there is no confusion in logic around permissions. For example, if a user is assigned permission to brand:A, it would be unclear to the workspace owner if this user gets access to a source labeled both `brand:A` and `brand:B` or only sources with the sole label `brand:A`.
+No, you can assign only one value per category. This prevents confusion about permissions. For example, if a user has access to `brand:A`, it’s unclear whether they should also access sources labeled both `brand:A` and `brand:B`. To avoid this, each resource can have just one value per label category.
 
-##### How does assigning a user permissions based on labels work?
-Labels are additive, so you can only further restrict a user's permissions by adding more labels. If a user has access to everything labeled environment:production, we assume no restrictions on any other category of label. This user has less restricted permissions than another user who has access to everything with `environment:production` AND `region:apac`.
+##### How does assigning permissions based on labels work?
+
+Labels are additive, meaning they can only further restrict a user's permissions. For example, if a user has access to everything labeled `environment:production`, then they're not restricted by other label categories. This results in broader permissions compared to a user with access to both `environment:production` AND `region:apac`.
 
 For example, if the following sources had these set of labels:
 
@@ -82,13 +82,13 @@ For example, if the following sources had these set of labels:
 | B      | `environment:prod`, `product:truck` |
 | C      | `environment:dev, product: car`     |
 
-Then the following through users with Source Admin restricted with Labels will only have access to the following Sources:
+Then the following users with Source Admin restricted with labels will only have access to the following sources:
 
-| User  | Source Admin with Labels            | Access to Sources |
+| User  | Source Admin with labels            | Access to sources |
 | ----- | ----------------------------------- | ----------------- |
 | Sally | `environment:prod`                  | A, B              |
 | Bob   | `environment:prod`, `product:truck` | B                 |
 | Jane  | `product: car`                      | A, C              |
 
-##### Can I grant a user permissions with OR statements?
+##### Can I grant a user permissions with `OR` statements?
 You can only assign one set of additive labels on a per-user basis. However, to give a user who needs access to all sources labeled `brand:a` or `brand:b`, we recommend that you use Group permissions and assign this user to two separate groups, where one group has Source Admin access to `brand:a` and the other has Source Admin access to `brand:b`.
