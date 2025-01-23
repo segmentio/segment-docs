@@ -582,25 +582,24 @@ When enabled, Analytics.js automatically retries network and server errors. With
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
+## Delivery strategy configuration
 
-## Headers
+## Add custom headers
 
-### Add custom headers
-You can override your headers by custom
+You can override default headers by providing custom headers in your configuration. Use the `deliveryStrategy.config.headers` option to specify the headers, like in the following example:
+
 ```ts
-analytics.load("<YOUR_WRITE_KEY>",
-  {
-    integrations: {
-      'Segment.io': {
-        deliveryStrategy: {
-          config: {
-            headers: { 'x-api-key': 'foo' }
-          },
-        },
-      },
-    },
+analytics.load("<YOUR_WRITE_KEY>", {
+  integrations: {
+    'Segment.io': {
+      deliveryStrategy: {
+        config: {
+          headers: { 'x-api-key': 'foo' }
+        }
+      }
+    }
   }
-```
+});
 
 ## Keepalive
 
