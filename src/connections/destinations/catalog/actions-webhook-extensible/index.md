@@ -51,12 +51,12 @@ Before you can enable the new destination, you'll first need to choose an authen
      - Client Secret
      - Access Token URL
      - Refresh Token URL (usually the same as the Access Token URL)
-     - Scope
+     - Scopes
 4. Save the settings, then click **Connect** to activate the connection.
 
 You've now completed setup, and your destination is ready for event mapping and data configuration.
 
-## 3. Mapping and data configuration (optional)
+## 3. Mapping and data configuration 
 
 With authentication in place, you can now define how data flows from Segment to your webhook endpoints. Follow these steps to configure mappings and test the setup:
 
@@ -68,7 +68,7 @@ With authentication in place, you can now define how data flows from Segment to 
    - Map individual fields or select a specific object from a test event. Segment supports batching the entire payload but not specific objects within the payload.
    - (Optional) Use a [destination insert function](/docs/connections/functions/insert-functions/) to transform the payload according to the API specification.
 6. Configure optional parameters:
-   - **Batch size**: Specify batch size if the API supports batching entire payloads.
+   - **Batch size**: Specify the batch size if the API supports batching entire payloads.
    - **Headers**: Add required headers (for example, `content-type`, which is required, defaults to `application/json`).
 7. Send a test event to validate the setup. Segment logs the response from your destination so that you can debug any errors (which are usually related to the payload configuration or authentication issues).
 8. Click **Save**, then click **Next**.
@@ -80,7 +80,7 @@ Your mapping is now enabled. Go to the next section to finish setup.
 
 Follow these steps to enable your new destination:
 
-1. Return to the **Basic Settings** in your destination's **Settings** tab.
+1. Return to **Basic Settings** in your destination's **Settings** tab.
 2. Toggle **Enable Destination** to on, then click **Save Changes**.
 
 Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
