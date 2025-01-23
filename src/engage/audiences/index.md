@@ -248,7 +248,7 @@ Note the following limits for the CSV downloader:
 The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time.
 
 > info ""
-> The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration, unless the custom IDs are selected via [ID sync](/docs/engage/trait-activation/id-sync/). Segment only displays external IDs in the breakdown by default.
+> The Identifier Breakdown doesn't show custom IDs included in the Identity resolution configuration unless those IDs are explicitly selected through [ID sync](/docs/engage/trait-activation/id-sync/). By default, Segment only displays external IDs in the breakdown.
 
 ## FAQ
 
