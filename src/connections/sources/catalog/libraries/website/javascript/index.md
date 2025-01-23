@@ -603,9 +603,9 @@ analytics.load("<YOUR_WRITE_KEY>", {
 
 ## Keepalive
 
-You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. 
+You can use the `keepalive` option to make sure that Segment captures API calls triggered during a hard redirect. When enabled, `keepalive` will try to fire events before the redirect occurs.
 
-By default, this is set to `false`. This is because there is a 64kb limit for all fetch requests with keepalive. So when sending keepalive requests, you are competing with other in-flight keepalive requests, regardless of being Segment related requests or not -- which can result in data loss in some scenarios. By default, we only use keep-alive if 1. the page is 'unloading' and 2. the user is using batching.
+By default, `keepalive` is set to false, because all fetch requests with the `keepalive` flag are subject to a 64kb size limit. Additionally, keepalive requests share this size limit with all other in-flight `keepalive` requests, regardless of whether they're related to Segment. This competition for resources can lead to data loss in some scenarios.
 
 ```ts
 analytics.load("<YOUR_WRITE_KEY>",
