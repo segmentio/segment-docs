@@ -27,7 +27,7 @@ To set up and use Extensible Webhooks, you'll follow these four main stages:
 3. Select an existing source to connect to the destination.
 4. Enter a name for the destination and click **Create destination.**
 
-By default, the new destination is disabled. You'll enable it in the next section.
+By default, **the new destination is disabled**. You'll enable it in the next section.
 
 ## 2. Set up authentication
 
