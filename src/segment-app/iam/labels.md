@@ -5,12 +5,12 @@ plan: iam
 
 Labels allow workspace owners to assign permissions to users to grant them access to groups. Groups represent collections of Sources, or collections of Spaces.
 
-To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
+To create or configure labels in your Segment workspace, go to the **Settings > Admin**, then click the Label Management. Only workspace Owners can manage labels for the entire workspace.
 
 > info ""
 > All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Business Tier customers can create an unlimited number of labels.
 
-## Custom Environments
+## Custom environments
 
 By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
 
