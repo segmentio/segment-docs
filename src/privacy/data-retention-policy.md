@@ -18,7 +18,7 @@ Starting **15th April 2025**, Segment will enforce a strict data retention polic
 
 An active customer is a Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days. 
 
-Segment will enforce a maximum data retention period of up to 3 years for all active customers. If you currently have an extended retention period in place, Segment will continue to honor the previously agreed upon retention period. If your business requires a longer retention period, please contact your sales team to discuss available options.
+Segment will enforce a data retention period of up to 3 years for Business Tier customers. If you currently have an extended retention period in place, Segment will continue to honor the previously agreed upon retention period. If your business requires a longer retention period, please contact your sales team to discuss available options.
 
 ### What data is impacted?
 
@@ -34,14 +34,17 @@ The following data types are subject to the 3 year retention period:
 
 The default data retention period for each of the data types is as follows:
 
-| Tier         | Event Data Retention | Object Data Retention | Profile Event Data Retention | Audit    | HIPAA Audit    |
-| ------------ | -------------------- | --------------------- | ---------------------------- | -------  | -------------- |
-| **Business** | 3 years              | 180 days              | 3 years                      | 3 years  | 3 years        |
-| **Team**     | 365 days             | 90 days               | Not applicable               | 365 days | Not applicable |
-| **Free**     | 180 days             | 60 days               | Not applicable               | 180 days | Not applicable |
+| Tier         | Event Data Retention | Object Data Retention | Profile Event Data Retention <sup>*<sup> | Audit    | HIPAA Audit    |
+| ------------ | -------------------- | --------------------- | ---------------------------------------- | -------  | -------------- |
+| **Business** | 3 years              | 180 days              | 3 years                                  | 3 years  | 3 years        |
+| **Team**     | 365 days             | 90 days               | Not applicable                           | 365 days | Not applicable |
+| **Free**     | 180 days             | 60 days               | Not applicable                           | 180 days | Not applicable |
+
+
+<sup>*</sup>: _Segment will implement the Profile event data retention period in June 2025. Until this point, Unify users might see Profile Event Data that is more than 3 years old._ 
 
 Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through “Workspace Default Archive Retention Period”.  
-
+ 
 ### What is the impact of this policy?
 
 With this data retention policy, all data beyond the retention period will be unrecoverably deleted from all of Segment and will impact the following:
