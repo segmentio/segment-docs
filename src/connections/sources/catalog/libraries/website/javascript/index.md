@@ -584,7 +584,9 @@ Analytics.js stores events in `localStorage` and falls back to in-memory storage
 
 ## Delivery strategy configuration
 
-## Add custom headers
+The `deliveryStrategy.config` object lets you customize how data is delivered to Segment. This includes options like setting custom headers and enabling `keepalive` to capture events during hard redirects.
+
+### Adding custom headers
 
 You can override default headers by providing custom headers in your configuration. Use the `deliveryStrategy.config.headers` option to specify the headers, like in the following example:
 
@@ -605,23 +607,27 @@ analytics.load("<YOUR_WRITE_KEY>", {
 
 You can use the `keepalive` option to make sure that Segment captures API calls triggered during a hard redirect. When enabled, `keepalive` will try to fire events before the redirect occurs.
 
-By default, `keepalive` is set to false, because all fetch requests with the `keepalive` flag are subject to a 64kb size limit. Additionally, keepalive requests share this size limit with all other in-flight `keepalive` requests, regardless of whether they're related to Segment. This competition for resources can lead to data loss in some scenarios.
+By default, `keepalive` is set to false, because all fetch requests with the `keepalive` flag are subject to a 64kb size limit. Additionally, `keepalive` requests share this size limit with all other in-flight `keepalive` requests, regardless of whether they're related to Segment. This competition for resources can lead to data loss in some scenarios.
+
+Segment only uses `keepalive` by default if:
+- The browser detects that the page is unloading (like if the user closes the tab or navigates away).
+- You have batching enabled.
+
+To enable `keepalive`, use the following configuration:
 
 ```ts
-analytics.load("<YOUR_WRITE_KEY>",
-  {
-    integrations: {
-      'Segment.io': {
-        deliveryStrategy: {
-          config: {
-            keepalive: true
-          },
-        },
-      },
-    },
+analytics.load("<YOUR_WRITE_KEY>", {
+  integrations: {
+    'Segment.io': {
+      deliveryStrategy: {
+        config: {
+          keepalive: true
+        }
+      }
+    }
   }
+});
 ```
-
 
 ## Batching
 Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
