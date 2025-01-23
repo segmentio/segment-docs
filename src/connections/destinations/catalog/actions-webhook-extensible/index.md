@@ -84,9 +84,3 @@ Follow these steps to enable your new destination:
 2. Toggle **Enable Destination** to on, then click **Save Changes**.
 
 Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
-
-## Troubleshooting
-
-### I ran into an issue where my test event failed with a `401` error. What should I do?**
-
-This error can occur when a token expires before the test event gets sent. To resolve this, use the Event Tester to validate the connection and verify the token is still active. Alternatively, reconnect OAuth by editing and saving the settings. This will fetch a new token and allow the test event to proceed successfully.
