@@ -56,12 +56,19 @@ If you use Destination Actions to send consent information to your destinations,
 > Segment only supports sharing consent with Actions Destinations. 
 
 ## Profile conflicts
-You can experience conflicts in an end user's consent preferences when they set different consent preferences across different devices (device-level conflicts) or when you merge two Profiles with different consent preferences into one profile with a distinct userID (profile-level conflicts).
+You can experience conflicts in an end user's consent preferences when they set different consent preferences across different devices (device-level conflicts) or when you merge two Profiles with different consent preferences into one profile (profile-level conflicts).
 
 ### Device-level conflicts
-A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices. For example, if an end-user didn't consent to Advertising on their mobile phone, but later consented to Advertising on their desktop computer, their consent for the `advertising` category would be set to `true`. This results in a conflict between the consent preferences they originally provided and the consent preferences they 
+A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices. Segment resolves device-level conflicts by using the latest consent preferences. An end user's profiles with device level conflicts will always result in the consent status of true or false for the conflicting consent categories.
 
-You can select one of the following options to resolve conflicting consent preferences:
+For example, if an end-user didn't consent to Advertising on their mobile phone, but later consented to Advertising on their desktop computer, their consent for the `advertising` category would be set to `true`. This results in a conflict between the consent preferences they originally provided on their mobile phone and the consent preferences they provided on their desktop computer.
+
+> success ""
+> Segment uses `anonymousId` to approximate device identification, as some of Segment's libraries don't track `deviceId`.
+
+You must build an approach to address and resolve conflicting consent preferences in your website or mobile app. 
+
+For example:
 - **Rely on a single source of truth for consent preferences**: Apply the consent preferences found in your single source of truth across all of a user's devices.
 - **Ask user to resolve conflict**: Ask a user for consent preference information and apply their preferences across all of a user's devices. If this new request for consent preferences results in a conflict with the information stored in your single source of truth, prompt your user to resolve the conflict and provide their consent preferences. 
 
@@ -75,7 +82,7 @@ A profile-level conflict occurs when two distinct userIDs with different consent
 To avoid profile-level conflicts, Segment recommends that you take the following steps:
 1. **Use `user_id` to identify a profile or person.** Using other identifiers, like a phone number, email, or `anonymous_id`, can result in a profile-level conflict. 
 2. **Set `user_id` as the highest priority identifier in the [Identity Resolution](/docs/unify/identity-resolution/identity-resolution-settings/#priority) settings.**
-3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again).
+3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again). This helps you avoid ambiguity when multiple people use a shared device. 
 
 > success ""
 > Profile conflicts only impact profiles used in Engage spaces.
