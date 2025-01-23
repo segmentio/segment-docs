@@ -484,7 +484,9 @@ sections:
       slug: '/engage/journeys/event-triggered-journeys'
       section: 
       - path: /engage/journeys/event-triggered-journeys
-        title: Event-Triggered Journeys Overview
+        title: Overview
+      - path: /engage/journeys/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
       - path: /engage/journeys/journey-context
         title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
