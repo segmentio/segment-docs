@@ -45,7 +45,7 @@ When an event is blocked, the name of the event or property is added to your Sch
 
 In most cases, blocking an event immediately stops that event from sending to Destinations. In rare cases, it can take **up to six hours** to fully block an event from delivering to all Destinations.
 
-Blocked events appear in the debugger with a block symbol, adding visibility into events actively blocked by Segment
+Blocked events appear in the debugger with a block symbol, adding visibility into events actively blocked by Segment.
 
 ## Identify and Group Trait Filters
 
