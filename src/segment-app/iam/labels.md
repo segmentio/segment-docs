@@ -5,7 +5,6 @@ plan: iam
 
 Labels let workspace owners assign permissions to users by organizing resources into groups. Groups can represent collections of [sources](/docs/connections/sources/) or Spaces.
 
-
 To create or configure labels in your Segment workspace, go to **Settings > Admin**, then click the Label Management tab. Only Workspace Owners can manage labels for the entire workspace.
 
 > info ""
@@ -93,4 +92,3 @@ Then the following users with Source Admin restricted with labels will only have
 ##### Can I grant a user permissions with `OR` statements?
 
 To grant a user access to sources labeled `brand:a` or `brand:b`, use group permissions. Create two groups: one with Source Admin access to `brand:a` and another with Source Admin access to `brand:b`, then assign the user to both groups.
-
