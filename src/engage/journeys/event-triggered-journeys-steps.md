@@ -5,7 +5,7 @@ plan: engage-foundations
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 
-Steps are the building blocks of a journey. This page explains the the **Hold Until** and **Send to Destination** steps, which enable precise control over journey progression and data delivery. 
+Steps are the building blocks of a journey. This page explains the **Hold Until** and **Send to Destination** steps, which enable precise control over journey progression and data delivery. 
 
 > info "Public Beta"
 > Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Event-Triggered Journeys is not currently HIPAA eligible.
