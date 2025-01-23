@@ -192,7 +192,7 @@ This example shows how data is structured and enriched with contextual details s
 
 ### Managing activations
 
-Activations control the configuration for sending data to destinations, including the destination type, selected action, and mapped attributes. Managing activations allows you to adjust how data flows to a destination without altering the overall journey logic.
+Activations control the configuration for sending data to destinations, including the destination type, selected action, and mapped attributes. Managing activations allow you to adjust how data flows to a destination without altering the overall journey logic.
 
 #### Editing activations
 
