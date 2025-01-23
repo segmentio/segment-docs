@@ -196,7 +196,7 @@ Activations control the configuration for sending data to destinations, includin
 
 #### Editing activations
 
-You can make updates to an existing activation to align mapped attributes with changes in the downstream schema, as well as to add or remove profile traits included in the payload.
+You can make updates to an existing activation to align mapped attributes with changes in the downstream schema and add or remove profile traits included in the payload.
 
 To edit or delete an activation, click the destination name in the journey canvas and select the **More** menu. Changes apply only to new journey entries after saving your updates.
 
