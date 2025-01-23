@@ -58,6 +58,9 @@ The Understand your prediction dashboard displays the following model metrics:
 - **Log Loss**; the more a predicted probability diverges from the actual value, the higher the log-loss value will be. Lower log loss indicates better predictions.
 - **Top contributing events**; this graph visually describes the events factored into the model, as well as the associated weights used to create the prediction.
 
+> info ""
+> The 'Understand your prediction' tab for the 'Predicted LTV' computed trait is not available, as only 'Order Completed' events are used for the trait calculation. However, other types of predictive traits utilise multiple events.
+
 ## Predictions use cases
 
 Predictions offer more value in some situations than others. This sections covers common scenarios where predictions have high impact, as well as others where alternative approaches may be more appropriate.
