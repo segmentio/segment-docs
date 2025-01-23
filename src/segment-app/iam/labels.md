@@ -37,9 +37,9 @@ Permissions can then be assigned to users in Access Management by label, on the 
 
 To create additional custom labels, a Workspace Owner can create new key types in the Manage Labels screen. The Workspace Owner can customize any combination of labels to mirror how resources should be partitioned in their organization. 
 
-For example, some organizations may prefer to restrict access on their sources and spaces by brand or product area, while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
+For example, some organizations may restrict access to sources and spaces by brand or product area, while others might organize resources by tech stack or engineering department.
 
-When you create a new key, it becomes available in the S    ources page as a column type that can be used to organize sources.
+When you create a new key, it becomes available in the Sources page as a column type that can be used to organize sources.
 
 ## FAQ
 
@@ -68,7 +68,7 @@ No. If you need to rename a label, first create a new label, assign it to all re
 
 ##### Can I assign multiple values from the same category to a resource?
 
-No, you can assign only one value per category. This prevents confusion about permissions. For example, if a user has access to `brand:A`, it’s unclear whether they should also access sources labeled both `brand:A` and `brand:B`. To avoid this, each resource can have just one value per label category.
+No, each resource can have only one value per label category. This prevents confusion about permissions. For example, if a user has access to `brand:A`, it’s unclear whether they should also have access to sources labeled both `brand:A` and `brand:B`. Limiting resources to one value per category avoids this confusion.
 
 ##### How does assigning permissions based on labels work?
 
@@ -91,4 +91,6 @@ Then the following users with Source Admin restricted with labels will only have
 | Jane  | `product: car`                      | A, C              |
 
 ##### Can I grant a user permissions with `OR` statements?
-You can only assign one set of additive labels on a per-user basis. However, to give a user who needs access to all sources labeled `brand:a` or `brand:b`, we recommend that you use Group permissions and assign this user to two separate groups, where one group has Source Admin access to `brand:a` and the other has Source Admin access to `brand:b`.
+
+To grant a user access to sources labeled `brand:a` or `brand:b`, use group permissions. Create two groups: one with Source Admin access to `brand:a` and another with Source Admin access to `brand:b`, then assign the user to both groups.
+
