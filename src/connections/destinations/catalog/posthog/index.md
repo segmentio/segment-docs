@@ -96,5 +96,5 @@ analytics.track('user_signed_up', {
 })
 ```
 
-## Session Ids
-Segment does not include a Session ID with events. This means that events will not have session properties, and will not work with Posthog web analytics. You can fix this by providing your own `$session_id`, see https://posthog.com/docs/data/sessions#custom-session-ids for more details on the required format.
+## Adding custom session IDs
+Segment doesn't include a Session ID with events. This means that events don't have session properties and won't work with PostHog web analytics. As an alternative, you can provide your own `$session_id`. For more information on formatting the session ID, see [PostHog's custom session IDs](https://posthog.com/docs/data/sessions#custom-session-ids){:target="_blank"} documentation.
