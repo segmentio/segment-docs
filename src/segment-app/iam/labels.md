@@ -3,7 +3,7 @@ title: Using Label-Based Access Control
 plan: iam
 ---
 
-Labels let workspace owners assign permissions to users by organizing resources into groups. Groups can represent collections of [sources](/docs/connections/sources/) or Spaces.
+Labels let workspace owners assign permissions to users by organizing resources into groups. Groups can represent collections of [sources](/docs/connections/sources/) or [spaces](/docs/unify/quickstart/).
 
 To create or configure labels in your Segment workspace, go to **Settings > Admin**, then click the Label Management tab. Only Workspace Owners can manage labels for the entire workspace.
 
