@@ -46,8 +46,6 @@ If you would like to update the documentation yourself, create a Pull Request to
 
 
 
-
-
 ## List of READMEs
 
 - [Contributing](CONTRIBUTING.md)

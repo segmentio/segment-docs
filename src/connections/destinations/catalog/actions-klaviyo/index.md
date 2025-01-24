@@ -115,3 +115,15 @@ If this approach doesn't address your use case, [reach out to Segment](mailto:fr
 ### Can batching be enabled for the entire Klaviyo (Actions) destination?
 
 Batching is only available for events sent through the Upsert Profile action mapping. Other actions in the Klaviyo (Actions) destination don't support batching.
+
+###  Do I need to configure these event names in Klaviyo?
+
+Yes, the event names (Event Name, Metric Name and Product Event Name) must be preconfigured in Klaviyo. Events that are not preconfigured will not be processed or associated with user profiles.
+
+###  How do I configure event names in Klaviyo?
+
+Follow these steps:
+1. Log in to your Klaviyo account.
+2. Go to Analytics > Metrics.
+3. Add or verify the event names (Event Name, Metric Name and Product Event Name) you plan to use in Segment.
+4. Event names are case-sensitive. Ensure the names exactly match the ones used in your Segment integration.
