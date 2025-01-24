@@ -59,7 +59,7 @@ Once a label has been created and has been assigned to resources within the work
 
 ##### Can I delete a label?
 
-Workspace owners can delete a label only if it’s not in use. See [Custom Environments](#custom-environments) for details on removing labels.
+Workspace owners can only delete a label if it’s not in use. See [Custom Environments](#custom-environments) for details on removing labels.
 
 ##### Can I rename a label?
 
