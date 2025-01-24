@@ -163,7 +163,11 @@ You can also test within the mapping itself. To test the mapping:
 1. Navigate to the **Mappings** tab of your destination. 
 2. Select a mapping and click the **...** and select **Edit Mapping**. 
 3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source, or you can add your own sample event. 
-4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination. 
+4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination.
+
+
+> info "Test Mapping might not return the events you're looking for"
+> Segment only surfaces a small subset of events for the Test Mapping feature and might not always return the event you're looking for. If you'd like to test with a specific event, copy a specific event from your [Source Debugger](/docs/connections/sources/debugger/) and paste it into the **Add test event** interface.
 
 ## Customize mappings
 
@@ -206,6 +210,10 @@ The coalesce function takes a primary value and uses it if it is available. If t
 ### Replace function
 
 The replace function allows you to replace a string, integer, or boolean with a new value. You have the option to replace up to two values within a single field.
+
+### Flatten function
+
+The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
 
 ### Conditions
 
@@ -305,3 +313,7 @@ Threfore, if you see a 401 error in a sample response, it is likely that you’l
 ### Is it possible to map a field from one event to another?
 
 Segment integrations process events through mappings individially. This means that no context is held that would allow you to map a value from one event to the field of a subsequent event. Each event itself must contain all of the data you'd like to send downstream in regards to it. For example, you cannot send `email` in on an Identify call and then access that same `email` field on a Track call that comes in later if that Track call doesn't also have `email` set on it. 
+
+### I'm getting a 'Couldn't load page' error when viewing or editing a mapping
+
+This issue can occur due to a browser cache conflict or if an event property name includes a `/`. To resolve it, try clearing your browser cache or accessing the mapping page in an incognito window. Additionally, check if the mapped property name contains a `/`. If it does, rename the property to remove the `/` and update the mapping.

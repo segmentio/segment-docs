@@ -78,6 +78,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: WXNgKpZMsd
+    display_name: Antavo
+    hidden: false
+    slug: antavo
+    url: connections/sources/catalog/cloud-apps/antavo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: dZeHygTSD4
     display_name: Apple
     hidden: false
@@ -259,6 +268,15 @@ sources:
     hidden: false
     slug: drip
     url: connections/sources/catalog/cloud-apps/drip
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 1Z83r1kE0V
+    display_name: Dub
+    hidden: false
+    slug: dub
+    url: connections/sources/catalog/cloud-apps/dub
     regions:
       - us
     endpoints:

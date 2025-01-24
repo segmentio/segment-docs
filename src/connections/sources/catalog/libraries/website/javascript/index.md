@@ -328,7 +328,6 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
 - [Reset (Logout)](#reset-or-log-out)
-- [Keepalive](#keepalive)
 
 ### Load
 
@@ -372,7 +371,7 @@ If you want to access end-tool library methods that do not match any Analytics.j
 
 
 ```js
-analytics.ready(function() {
+analytics.ready(() => {
   window.mixpanel.set_config({ verbose: true });
 });
 ```
@@ -422,7 +421,7 @@ analytics.on(method, callback);
 Example:
 
 ```js
-analytics.on('track', function(event, properties, options) {
+analytics.on('track', (event, properties, options) => {
 
   bigdataTool.push(['recordEvent', event]);
 
@@ -460,11 +459,6 @@ analytics.reset();
 The `reset` method only clears the cookies and `localStorage` created by Segment. It doesn't clear data from other integrated tools, as those native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
 
 Segment doesn't share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
-
-### Keepalive
-
-You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. This is available for all events. You can read more about this in the [Github PR](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830){:target="_blank"}.
-
 
 ## Managing data flow with the Integrations object
 
@@ -530,7 +524,7 @@ analytics.load('writekey', { integrations: { All: false, 'Google Analytics': tru
 This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
 
 ```js
-onConsentDialogClosed(function(consentedTools){
+onConsentDialogClosed((consentedTools) => {
   analytics.load('writekey', { integrations: consentedTools })
 })
 ```
@@ -588,6 +582,52 @@ When enabled, Analytics.js automatically retries network and server errors. With
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
+## Delivery strategy configuration
+
+The `deliveryStrategy.config` object lets you customize how data is delivered to Segment. This includes options like setting custom headers and enabling `keepalive` to capture events during hard redirects.
+
+### Adding custom headers
+
+You can override default headers by providing custom headers in your configuration. Use the `deliveryStrategy.config.headers` option to specify the headers, like in the following example:
+
+```ts
+analytics.load("<YOUR_WRITE_KEY>", {
+  integrations: {
+    'Segment.io': {
+      deliveryStrategy: {
+        config: {
+          headers: { 'x-api-key': 'foo' }
+        }
+      }
+    }
+  }
+});
+
+## Keepalive
+
+You can use the `keepalive` option to make sure that Segment captures API calls triggered during a hard redirect. When enabled, `keepalive` will try to fire events before the redirect occurs.
+
+By default, `keepalive` is set to false, because all fetch requests with the `keepalive` flag are subject to a 64kb size limit. Additionally, `keepalive` requests share this size limit with all other in-flight `keepalive` requests, regardless of whether they're related to Segment. This competition for resources can lead to data loss in some scenarios.
+
+Segment only uses `keepalive` by default if:
+- The browser detects that the page is unloading (like if the user closes the tab or navigates away).
+- You have batching enabled.
+
+To enable `keepalive`, use the following configuration:
+
+```ts
+analytics.load("<YOUR_WRITE_KEY>", {
+  integrations: {
+    'Segment.io': {
+      deliveryStrategy: {
+        config: {
+          keepalive: true
+        }
+      }
+    }
+  }
+});
+```
 
 ## Batching
 Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
@@ -837,6 +877,28 @@ So, for example, if somebody follows the link with above query string to your si
 ```
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
+
+Segment doesn't validate UTM parameter names. This design supports the flexibility to track both standard parameters (for example, utm_source, utm_medium) and custom parameters defined by users. As a result, all parameters present in the URL collected as is, and are added to the context field without checks for naming conventions or validity.
+
+If you want to ensure that only standard UTM parameters (such as, utm_source, utm_medium, utm_campaign, utm_content, utm_term) are included in the context.campaign object, you can implement [Source middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/) in your Analytics.js setup. 
+
+For example:
+
+```js
+window.analytics.addSourceMiddleware(({ payload, next }) => {
+  if (payload.obj.context?.campaign) {
+    const allowedFields = ["source", "medium", "term", "campaign", "content"];
+    const campaign = payload.obj.context.campaign;
+    Object.keys(campaign).forEach(key => {
+      if (!allowedFields.includes(key)) {
+        delete campaign[key];
+      }
+    });
+  }
+  next(payload);
+});
+```
+This middleware filters out any non-standard parameters from the `context.campaign` object before they're sent to Segment or forwarded to your enabled destinations.
 
 ## Analytics.js performance
 

@@ -95,3 +95,6 @@ analytics.track('user_signed_up', {
     $groups: { company: 'Initech' }
 })
 ```
+
+## Adding custom session IDs
+Segment doesn't include a Session ID with events. This means that events don't have session properties and won't work with PostHog web analytics. As an alternative, you can provide your own `$session_id`. For more information on formatting the session ID, see [PostHog's custom session IDs](https://posthog.com/docs/data/sessions#custom-session-ids){:target="_blank"} documentation.
