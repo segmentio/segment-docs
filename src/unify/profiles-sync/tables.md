@@ -20,6 +20,12 @@ The following table shows how raw tables map to their corresponding materialized
 | `external_id_mapping_updates` | `user_identifiers` | Tracks external IDs associated with user profiles.            |
 | `profile_traits_updates`      | `user_traits`      | Tracks changes to user profile traits (like names or emails). |
 
+Raw tables are best for detailed, event-level analysis or debugging specific updates in the identity graph. They show every single change and event in your Profiles Sync pipeline.
+
+Materialized views are better for reporting, analytics, and when you need an up-to-date view of profile traits or identifiers. Materialized views reduce complexity by summarizing data from the raw tables.
+
+For example, if you want to debug why a specific profile trait was updated, you'd look at the `profile_traits_updates` raw table. But if you want to see the current profile data for a marketing campaign, you'd probably opt for the `user_traits` materialized view.
+
 
 
 Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
