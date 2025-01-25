@@ -7,7 +7,7 @@ Through Profiles Sync, Segment provides data sets and models to help you enrich 
 
 This page compares raw tables and materialized views, explaining their roles and use cases. It also outlines the tables Segment lands and the tables you can materialize as part of Profiles Sync.
 
-## Raw tables and materialized views
+## Understanding raw table and materialized views
 
 Profiles Sync creates two types of tables in your data warehouse: raw tables and materialized views. These tables help you work with profile and event data at different levels of detail.
 
