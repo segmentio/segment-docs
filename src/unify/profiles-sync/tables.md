@@ -14,6 +14,12 @@ Profiles Sync creates two types of tables in your data warehouse: raw tables and
 
 The following table shows how raw tables map to their corresponding materialized views:
 
+| Raw table                     | Materialized view  | Description                                                   |
+| ----------------------------- | ------------------ | ------------------------------------------------------------- |
+| `id_graph_updates`            | `profile_merges`   | Tracks changes in profile merges across the identity graph.   |
+| `external_id_mapping_updates` | `user_identifiers` | Tracks external IDs associated with user profiles.            |
+| `profile_traits_updates`      | `user_traits`      | Tracks changes to user profile traits (like names or emails). |
+
 
 
 Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
