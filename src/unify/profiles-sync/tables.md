@@ -5,6 +5,17 @@ plan: unify
 
 Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
 
+## Understanding raw and materialized views
+
+Profiles Sync creates two types of tables in your data warehouse: raw tables and materialized views. These tables help you work with profile and event data at different levels of detail.
+
+- Raw tables store unprocessed event-level data and capture all updates and changes as they occur.
+- Materialized views take data from raw tables and organize it into a streamlined view of profile traits, identifiers, and merges.
+
+The following table shows how raw tables map to their corresponding materialized views:
+
+
+
 Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
 
 ## Case study: anonymous site visits lead to profile merge
@@ -75,6 +86,7 @@ Initially, Segment generates two profiles for the first three calls. In the fina
 Profiles Sync tracks and provides information about these events through a set of tables, which you’ll learn about in the next section.
 
 
+
 ## Profile raw tables 
 
 Profile raw tables contain records of changes to your Segment profiles and Identity Graph over time. 
@@ -82,7 +94,6 @@ Profile raw tables contain records of changes to your Segment profiles and Ident
 With raw tables, you have full control over the materialization of Profiles in your warehouse, as well as increased observibility.
 
 Raw tables contain complete historical data when using historical backfill.
-
 
 ### The id_graph_updates table
 
