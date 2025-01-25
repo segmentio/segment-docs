@@ -3,9 +3,11 @@ title: Profiles Sync Tables and Materialized Views
 plan: unify
 ---
 
-Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
+Through Profiles Sync, Segment provides data sets and models to help you enrich customer profiles using your warehouse data.
 
-## Understanding raw and materialized views
+This page compares raw tables and materialized views, explaining their roles and use cases. It also outlines the tables Segment lands and the tables you can materialize as part of Profiles Sync.
+
+## Raw tables and materialized views
 
 Profiles Sync creates two types of tables in your data warehouse: raw tables and materialized views. These tables help you work with profile and event data at different levels of detail.
 
@@ -26,15 +28,13 @@ Materialized views are better for reporting, analytics, and when you need an up-
 
 For example, if you want to debug why a specific profile trait was updated, you'd look at the `profile_traits_updates` raw table. But if you want to see the current profile data for a marketing campaign, you'd probably opt for the `user_traits` materialized view.
 
-
-
-Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
-
 ## Case study: anonymous site visits lead to profile merge
-  
-To help illustrate the possible entries and values populated into Profiles Sync tables, view the event tabs below and consider the following scenario.
 
-Suppose the following four events lead to the creation of two separate profiles:
+This section uses a practical example of how Segment connects and merges anonymous profiles to illustrate how Profiles Sync populates and updates its tables. 
+  
+Explore the following event tabs to learn how these examples result in profile creation and merging.
+
+Suppose these four events lead to the creation of two separate profiles:
 
 {% codeexample %}
 {% codeexampletab Event 1 %}
