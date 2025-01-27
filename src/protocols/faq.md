@@ -183,9 +183,9 @@ Warehouse connectors don't use data type definitions for schema creation. The [d
 
 ### Why are unplanned properties not showing up as blocked in my Source Schema, even though I've set the Schema Configuration to omit them?
 
-Within your [Source Schema](https://segment.com/docs/connections/sources/schema/), you'll notice two columns next to the Event Name column: Allowed and Blocked. If you've set the [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) to **Block Unplanned Events** and **Omit Properties** unplanned properties/traits, the Source Schema will only show a property/trait as blocked when the entire event is blocked because it’s unplanned and not part of the Tracking Plan, and the property was part of the event payload. This setting will only be enforced if the property is an unplanned name, not an unplanned value.
+Next to the Event Name column in your [Source Schema](/docs/connections/sources/schema/) are two columns:  Allowed and Blocked. If you configure your [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) to Block Unplanned Events and Omit Properties, the Source Schema only shows a property or trait as blocked when the _entire event is blocked_ because it’s unplanned and not part of the Tracking Plan. The Block Unplanned Events and Omit Properties settings are only be enforced if the property is an unplanned name, not an unplanned value.
 
-To show a blocked value for a property/trait within your Source Schema, you'll need to trigger a violation, which can only be done using JSON Schema. Once you enforce your Schema Configuration to Omit Properties, this will show as blocked.
+To show a blocked value for a property/trait in your Source Schema, you'll need to trigger a violation, which can only be done using the JSON Schema. Once you configure your Schema Configuration to Omit Properties, the property or trait is shown as blocked.
 
 See an example payload below: 
 
