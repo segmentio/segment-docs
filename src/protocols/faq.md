@@ -170,7 +170,7 @@ To show a blocked value for a property/trait within your Source Schema, you'll n
 
 See an example payload below: 
 
-```
+```json
 "protocols": {
       "omitted": [
         "newProperty"
@@ -193,7 +193,7 @@ See an example payload below:
         }
       ]
 ```
-<img width="1073" alt="Screenshot 2024-07-19 at 2 16 04 PM" src="https://github.com/user-attachments/assets/b51534f6-c2db-4aeb-adf9-aa22b1b9f0bb">
+![A screenshot of the Source Schema page, with an event expanded to display a blocked property, newProperty.](images/protocols-faq-blocked-events.png)
 
 
 
