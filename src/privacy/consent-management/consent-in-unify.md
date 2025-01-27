@@ -59,9 +59,7 @@ If you use Destination Actions to send consent information to your destinations,
 You can experience conflicts in an end user's consent preferences when they set different consent preferences across different devices (device-level conflicts) or when you merge two Profiles with different consent preferences into one profile (profile-level conflicts).
 
 ### Device-level conflicts
-A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices. Segment resolves device-level conflicts by using the latest consent preferences. An end user's profiles with device level conflicts will always result in the consent status of true or false for the conflicting consent categories.
-
-For example, if an end-user didn't consent to Advertising on their mobile phone, but later consented to Advertising on their desktop computer, their consent for the `advertising` category would be set to `true`. This results in a conflict between the consent preferences they originally provided on their mobile phone and the consent preferences they provided on their desktop computer.
+A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices. 
 
 > success ""
 > Segment uses `anonymousId` to approximate device identification, as some of Segment's libraries don't track `deviceId`.
@@ -71,6 +69,10 @@ You must build an approach to address and resolve conflicting consent preference
 For example:
 - **Rely on a single source of truth for consent preferences**: Apply the consent preferences found in your single source of truth across all of a user's devices.
 - **Ask user to resolve conflict**: Ask a user for consent preference information and apply their preferences across all of a user's devices. If this new request for consent preferences results in a conflict with the information stored in your single source of truth, prompt your user to resolve the conflict and provide their consent preferences. 
+
+After you resolve your end users' conflicting consent preferences, pass the updated consent preferences to Segment. Segment updates the user's consent preferences with the preference you provided.  
+
+An end user's profile with device level conflicts will always result in a consent status of true or false for the conflicting consent categories.
 
 ![A diagram showing different consent preferences being reconciled for a single profile.](images/device-level-consent-conflict.png)
 
