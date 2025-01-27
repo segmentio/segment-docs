@@ -209,7 +209,7 @@ The only difference between the Upload Click Conversions and Click Conversion V2
 
 ### Why am I getting a `USER_PERMISSION_DENIED` 403 error when my credentials are correct?
 
-If you're getting this error:
+If you're getting the following error:
 
 ```
 "errors": [
@@ -222,5 +222,5 @@ If you're getting this error:
 ]
 ```
 
-That generally means there is a conflict or problem between the account used for authorization through Segment and the Customer ID. You can read more about this [here]([url](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid:~:text=in%20the%20request%3A-,Authorization,must%20be%20set%20to%20the%20customer%20ID%20of%20the%20manager%20account.,-Key%20Term%3A)). 
+That generally means there is a conflict or problem between the account used for authorization through Segment and the Customer ID. You can read more about this in Google's [API Call Structure](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid:~:text=in%20the%20request%3A-,Authorization,must%20be%20set%20to%20the%20customer%20ID%20of%20the%20manager%20account.,-Key%20Term%3A){:target="_blank”} documentation. 
 
