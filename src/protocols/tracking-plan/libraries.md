@@ -51,7 +51,7 @@ However, please note that when a property or a event library is unsynced from a 
 ![after un-syncing, they appear as 'Manually Added',](https://segment.zendesk.com/attachments/token/g5zAeCdyxxmj6xeDHUtMRu5fw/?name=image.png)
 )
 
-You'd not be able to resync the property/event library until you delete the event properties manually from the Tracking Plan and that is because, since the same properties/events already exist in the Tracking Plan as 'Manually Added', it will not allow you to sync a property library with the same properties
+**Note**: You cannot resync the same property/event library until the manually added properties and events are deleted from the Tracking Plan. This is because the existing properties/events (now marked as "Manually Added") conflict with the resync attempt.
 
 > warning ""
 > All changes made to a synced library pass through to the Tracking Plans and may impact data deliverability
