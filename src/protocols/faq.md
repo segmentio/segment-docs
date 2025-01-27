@@ -162,10 +162,11 @@ Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [
 
 Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
-### I've blocked events in my Schema Configuration why are they not showing up as blocked in my Source Schema?
-Within your [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) you'll notice there are two columns next to the Event Name titled Allowed and Blocked. If you've selected Omit Properties under Unplanned Properties/Traits then the Source Schema will only show a property as block if it is present when the whole event is blocked. This setting will only be enforced if the property is an unplanned name but not an unplanned value.
+### Why are unplanned properties not showing up as blocked in my Source Schema, even though I've set the Schema Configuration to omit them?
 
-In order to show a blocked value for an property/trait within your Source Schema, you'll need to trigger a violaiton which can only be done using JSON Schema. Once you enforce your Schema Configuration to Omit Properties this will show as blocked. 
+Within your [Source Schema](https://segment.com/docs/connections/sources/schema/), you'll notice two columns next to the Event Name column: Allowed and Blocked. If you've set the [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) to **Block Unplanned Events** and **Omit Properties** unplanned properties/traits, the Source Schema will only show a property/trait as blocked when the entire event is blocked because it’s unplanned and not part of the Tracking Plan, and the property was part of the event payload. This setting will only be enforced if the property is an unplanned name, not an unplanned value.
+
+To show a blocked value for a property/trait within your Source Schema, you'll need to trigger a violation, which can only be done using JSON Schema. Once you enforce your Schema Configuration to Omit Properties, this will show as blocked.
 
 See an example payload below: 
 
