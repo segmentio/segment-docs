@@ -1,6 +1,5 @@
 ---
 title: Set Up Segment Data Lakes
-redirect_from: '/connections/destinations/catalog/data-lakes/'
 redirect_from:
   - '/connections/destinations/catalog/data-lakes/'
   - '/connections/destinations/catalog/azure-data-lakes/'
@@ -73,7 +72,7 @@ You will see event data and [sync reports](/docs/connections/storage/data-lakes/
 To receive sync failure alerts by email, subscribe to the `Storage Destination Sync Failed` activity email notification within the **App Settings > User Preferences > [Notification Settings](https://app.segment.com/goto-my-workspace/settings/notifications){:target="_blank”}**.
 
 
-`Sync Failed` emails are sent on the 1st, 5th, and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
+`Sync Failed` emails are sent on the 1st, 5th, and 20th sync failure. Learn more about the types of errors which can cause sync failures in Segment's [Sync errors](/docs/connections/storage/data-lakes/sync-reports/#sync-errors) docs.
 
 
 ### (Optional) Step 4 - Replay historical data

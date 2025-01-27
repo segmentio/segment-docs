@@ -3,7 +3,6 @@ title: Facebook Conversions API destination
 rewrite: true
 maintenance: true
 maintenance-content: "A new version of this destination is available. See [Facebook Conversions API (Actions)](/docs/connections/destinations/catalog/actions-facebook-conversions-api/) for more information."
-beta: true
 redirect_from: '/connections/destinations/catalog/facebook-conversions-api/'
 hide-dossier: true
 ---
@@ -324,3 +323,13 @@ minutes. You can confirm that Facebook received them:
 > **Note**: It might take a few minutes before events appear in the Events Manager.
 
 ![Verify events in the Overview tab of the Events Manager](images/image2.png)
+
+## Troubleshooting
+
+### Why do I see a "Mismatched IP Address" warning in Facebook after enabling the Facebook Conversions API alongside Facebook Pixel?
+
+When you enable both Facebook Pixel and the Facebook Conversions API, you may see a "Mismatched IP Address" warning in Facebook reports. This happens because:
+* Facebook Pixel collects the user’s IP address directly from the browser, [including IPv6 addresses when available](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters#){:target="_blank"}, independently of Segment. Even though Segment’s Analytics.js defaults to collecting only IPv4 addresses, Facebook Pixel automatically collects IPv6 if available, and sends it to Facebook.
+* Events sent to Facebook through the Conversions API may include an IPv4 address collected by Segment Analytics.js, which results in both IPv4 and IPv6 addresses being sent for the same event.
+
+Since these two addresses don’t match, Facebook flags it as a "Mismatched IP Address." To resolve this, you can manually collect and send the IPv6 address (when available) in the event payload to Segment, and map it to the Facebook Conversions API destination. This ensures consistency between the IP addresses received by Facebook.

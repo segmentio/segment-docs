@@ -1,5 +1,4 @@
 ---
-beta: true
 title: All Aboard Destination
 ---
 

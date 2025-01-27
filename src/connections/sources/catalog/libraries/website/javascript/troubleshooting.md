@@ -30,6 +30,18 @@ var writeKey;
 ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 ```
 
+## How do I resolve the 'Failed to Load Analytics.js ChunkLoadError'?
+
+The error can occur for different reasons:
+
+* Snippet syntax: Ensure you correctly added the Segment snippet to the page. Check for any missing or extra characters. Follow [this guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-install-segment-to-your-site).
+
+* NPM package: If you're using Segment through NPM, refer to [this guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
+
+* Browser cache: Clear the browser cache, as this is a common cause for `ChunkLoadError`.
+
+* Cloudflare caching: If you use Cloudflare to proxy Segment, disable caching for the Segment JS file.
+
 ## Do you see events appear in your debugger?
 
 When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page)? You can also check the JavaScript console in the browser and manually fire an event, like an Identify call, which would show up in the debugger.
@@ -116,6 +128,10 @@ If you're having issues with your destinations loading with Prototype.js, there 
 ## Why am I getting an empty campaign object in my event payload?
 
 Analytics.js generates a campaign object inside the context object whenever the URL contains search parameters. Without any UTM parameters, the campaign object remains empty. 
+
+## Why do I see events with timestamps in the past or future?
+
+You may see events with timestamp discrepancies due to manual overriding of the timestamp value, mobile apps closed or set in the background, traffic from bots, or inaccurate device or browser time. For more information, see Segment's [Common Fields Spec](/docs/connections/spec/common/#why-are-events-received-with-timestamps-set-in-the-past-or-future).
 
 ## Known issues:
 

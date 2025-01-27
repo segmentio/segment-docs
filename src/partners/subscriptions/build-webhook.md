@@ -14,7 +14,7 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](/docs/connections/spec).
 2. Follow Segment's security guidance.
-3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/){:target="_blank”}.
 4. Create an App.
 5. Build and test your Component(s).
 6. Publish documentation.
@@ -124,7 +124,7 @@ Upon receiving data, your endpoint should reply with one of the following status
 | `401` | The client's API key is malformed, has expired, or is otherwise no longer valid.                                                                                                                                                                                                                                     |
 | `403` | The client's API key is valid, but has been rejected due to inadequate permissions.                                                                                                                                                                                                                                  |
 | `500` | If you encounter an internal error when processing the message, reply with this code. (Hopefully you won't have to send too many of these.)                                                                                                                                                                          |
-| `501` | If Segment sends you an [API call type](https://segment.com/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/connections/spec/#api-calls). |
+| `501` | If Segment sends you an [API call type](/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports in the [Segment Spec documentation](/docs/connections/spec/#api-calls). |
 | `503` | Send Segment this code when your endpoint is temporarily down for maintenance or otherwise not accepting messages. This helps Segment avoid dropping users' messages during your downtime.                                                                                                                           |
 
 #### Response Body
@@ -178,7 +178,7 @@ To test your Destination in the Catalog, click the "Test" tab in the Developer C
 
 From here, click "Configure App", select a Source, and click "Confirm Source". You can now configure your destination by setting the "API Key", then clicking the toggle to enable the destination.
 
-Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester [here](/docs/guides/best-practices/how-do-I-test-my-connections/).
+Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester in the [Event Tester](/docs/connections/test-connections/) docs.
 
 Now you can use the JavaScript SDK in a browser to generate real analytics events.
 

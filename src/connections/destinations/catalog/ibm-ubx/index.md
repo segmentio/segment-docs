@@ -1,7 +1,6 @@
 ---
 title: IBM Universal Behavior Exchange Destination
 rewrite: true
-beta: true
 hidden: true
 id: 5a3ab305a1e66e00017185f9
 ---

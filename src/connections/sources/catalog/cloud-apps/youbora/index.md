@@ -1,6 +1,5 @@
 ---
 title: Youbora Source
-beta: true
 hidden: true
 id: 117eYCe9jH
 ---

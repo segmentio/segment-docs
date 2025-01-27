@@ -1,6 +1,5 @@
 ---
 title: 'Qualtrics Source'
-beta: true
 ---
 
 [Qualtrics](https://qualtrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis, and action.

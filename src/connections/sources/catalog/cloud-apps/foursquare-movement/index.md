@@ -1,6 +1,5 @@
 ---
 title: 'Foursquare Movement Source'
-beta: true
 id: Eek5OnuA7e
 redirect_from:
   - /connections/sources/catalog/cloud-apps/foursquare-pilgrim/

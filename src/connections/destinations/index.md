@@ -107,6 +107,18 @@ The first place to look is the individual destination documentation. Each one in
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
+## Sync modes
+
+Sync modes allow users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
+
+The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you sync customer data, you might have the option to Insert, Update, or Upsert records.
+
+Available sync modes include: 
+- **Update**: Modify existing records in the destination without adding new ones.
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
+- **Remove**: Remove records from a list, audience, or journey.
+
 ## Add a destination
 To add a Destination:
 
@@ -121,9 +133,9 @@ To add a Destination:
 
 [Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
 > note "Disabled destinations do not receive data"
-> If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay]([url](https://segment.com/docs/guides/what-is-replay/)), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
+> If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay](/docs/guides/what-is-replay/), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
 >
-> Some destinations are not compatible with Replays after a certain period of time. Check with Segment’s support team [friends@segment.com](friends@segment.com) to confirm that your intended destination allows historical timestamps. 
+> Some destinations are not compatible with Replays after a certain period of time, for example, 14 days. Check with Segment’s support team [friends@segment.com](mailto:friends@segment.com) to confirm that your intended destination allows historical timestamps. 
 
 ## Data deliverability
 
@@ -207,6 +219,25 @@ The following destinations support bulk batching:
 > info "You must manually configure bulk batches for Actions destinations"
 > To support bulk batching for the Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
 
-### IP Allowlist 
+## IP Allowlisting
 
-{% include content/ip-allowlist.md %}
+IP Allowlisting uses a NAT gateway to route traffic from Segment's servers to your destination through a limited range of IP addresses, which can prevent malicious actors from establishing TCP and UDP connections with your integrations.
+
+IP Allowlisting is available for customers on Business Tier plans.
+
+### Supported destinations
+Segment supports IP Allowlisting in [all destinations](/docs/connections/destinations/catalog/) except for the following:
+- [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
+- [TradeDesk](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
+- [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
+
+Destinations that are not supported receive traffic from randomly assigned IP addresses. 
+
+### Configure IP Allowlisting
+To enable IP Allowlisting for your workspace:
+1. From your Segment workspace, navigate to **[Settings > Workspace settings > Destination IP settings](https://app.segment.com/goto-my-workspace/settings/destination-ip-settings){:target="_blank”}**. 
+2. On the Destination IP settings page, click **Enable IP allowlisting**. 
+3. The page displays the IP address ranges that Segment uses to route data from Segment's internal systems to your destination. Note these ranges, as you'll need this information to enforce IP restriction in your downstream destinations. 
+4. Open each of your downstream tools and configure IP restriction for each destination. For more information, refer to the documentation for your downstream tool. 
+
+*IP restriction might not be supported in all destinations.*

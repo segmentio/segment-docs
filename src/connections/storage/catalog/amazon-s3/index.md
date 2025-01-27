@@ -184,9 +184,9 @@ Segment recommends doing this as a best practice. The following policy strictly 
 ## Region
 
 > warning ""
-> The Amazon S3 destination only supports workspaces in the US region. Workspaces outside of the US can't connect to this destination. If you wish to connect to a different region use Segment's new [AWS S3 destination](https://segment.com/docs/connections/storage/catalog/aws-s3/) instead.
+> The Amazon S3 destination only supports workspaces in the US region. Workspaces outside of the US can't connect to this destination. If you wish to connect to a different region use Segment's new [AWS S3 destination](/docs/connections/storage/catalog/aws-s3/) instead.
 
-Segment infers the region of your bucket when data is copied to it, so you don't need to specify a bucket region in your configuration. If you're using VPC Endpoints for your S3 bucket, make sure you configure the endpoint in the same region as your bucket. You can find more information on this in the AWS S3 docs [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html).
+Segment infers the region of your bucket when data is copied to it, so you don't need to specify a bucket region in your configuration. If you're using VPC Endpoints for your S3 bucket, make sure you configure the endpoint in the same region as your bucket. You can find more information on this in the AWS S3 docs [Gateway endpoints for Amazon S3](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html){:target="_blank"}.
 
 ## Custom Path Prefix
 
@@ -197,9 +197,9 @@ To use a custom key prefix for the files in your bucket, append the path to the 
 Segment recommends using the [AWS CLI](http://aws.amazon.com/cli/) and writing a short script to download specific days, one at a time. The AWS CLI is faster than [s3cmd](http://s3tools.org/s3cmd) because it downloads files in parallel.
 
 > info ""
-> S3 transparently decompresses the files for most clients. To access the raw gzipped data you can programmatically download the file using [the AWS SDK](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html) and setting `ResponseContentEncoding: none`. This functionality isn't available in the AWS CLI). You can also manually remove the metadata on the file (`Content-Type: text/plain` and `Content-Encoding: gzip`) through the AWS interface, which allows you to download the file as gzipped.
+> S3 transparently decompresses the files for most clients. To access the raw gzipped data you can programmatically download the file using [the AWS SDK](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html){:target="_blank"} and setting `ResponseContentEncoding: none`. This functionality isn't available in the AWS CLI. You can also manually remove the metadata on the file (`Content-Type: text/plain` and `Content-Encoding: gzip`) through the AWS interface, which allows you to download the file as gzipped.
 
-To configure the AWS CLI, see Amazon's documentation [here](http://docs.aws.amazon.com/cli/latest/userguide/installing.html). For linux systems, run the following command:
+To configure the AWS CLI, see Amazon's [Get started with the CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html){:target="_blank"} documentation. For Linux systems, run the following command:
 
 
 ```bash

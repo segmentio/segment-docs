@@ -36,7 +36,10 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`
 
 > info ""
-> Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
+> Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
+
+> info "Segment loads most integrations through the proxy, except for third-party SDKs"
+> Third-party SDKs are loaded by a partner's CDN, even with a Segment proxy configured. For example, if you have  a Segment custom proxy enabled and send data to a FullStory destination, FullStory's CDN would load the FullStory SDK. 
 
 ## Custom Proxy setup
 
@@ -62,6 +65,8 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
+
+There should be no downtime once the setup is complete, as the default Segment domains continue to work alongside the customer's domains. 
 
 
 ## Custom CDN / API Proxy
@@ -161,12 +166,11 @@ To add a CNAME record for the Segment proxy to your organizations DNS settings:
 
 ### Tracking API Proxy
 
-Set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
+As events travel through the proxy before reaching the tracking API, set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
 
 | Field              | Value            | Description                                  |
 | ------------------ | ---------------- | -------------------------------------------- |
 | Origin Domain Name | `api.segment.io` | The domain name to which the proxy is served |
-
 
 #### Add CNAME Record to DNS
 
@@ -178,6 +182,56 @@ To add a CNAME record to your DNS settings:
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
+## Common issues
+
+These are some common issues that occur for customers implementing a custom proxy. This is not an exhaustive list, and these CloudFront or Cloudflare settings may change.
+
+#### Cloudflare returning a 403 error
+
+A 403 error can mean that you've misconfigured your Cloudflare CDN distribution. Try one of the following options to fix the error: 
+
+1. If you have a Cloudflare enterprise plan, create a Page Rule in Cloudflare so that Segment's CDN doesn't refuse the requests made through the Cloudflare Proxy. If `cdn.segment.com` is another CNAME that resolves to `xxx.cloudfront.net`, you will need to use a Page Rule in Cloudflare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see Cloudflare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
+
+
+2. For customers who are not on the Cloudflare Enterprise plan, use Cloudflare Workers. Workers usually run on the main domain (for example, `www.domain.com`), but if you want Workers to run on a subdomain, like `http://segment.domain.com`, you must record the subdomain in your DNS. For more information, see Cloudflare's [Routes and domains](https://developers.cloudflare.com/workers/platform/routes#subdomains-must-have-a-dns-record){:target="_blank”} documentation.
+
+When creating a Worker you can use this example provided by Cloudflare in their [Bulk origin override](https://developers.cloudflare.com/workers/examples/bulk-origin-proxy){:target="_blank”} documentation with the origins set to: 
+
+```ts
+const ORIGINS = {
+"yourcdndomain.com": "cdn.segment.com",
+}
+```
+
+#### Cloudflare CORS issue
+
+In order to resolve a CORS OPTIONS pre-request fetch error, you must specify "Strict (SSL-Only Origin Pull)" as a Cloudflare Page rule for the `api.segment.io` proxy. Please see Cloudflare's [Encryption modes](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options#h_065d742e-8c0b-4ed4-8fb5-037e10fe5f9a){:target="_blank”} documentation for more details.
+
+#### CloudFront Proxy returning a 403 error
+
+If your CloudFront Proxy is returing a 403 error, the following change in CloudFront might resolve the issue:
+
+```ts
+Before:
+Cache Based on Selected Request Headers: All
+
+After:
+Cache Based on Selected Request Headers: None
+```
+
+Alternatively, this setting may solve your issue:
+
+```ts
+Before:
+Origin request policy: AllViewer
+
+After:
+Origin request policy: None
+```
+
+### CloudFront CORS issue
+
+To resolve a CORS issue, you might need to add a referrer header in the request you send to Segment. Follow AWS's [How do I resolve the "No 'Access-Control-Allow-Origin' header is present on the requested resource" error from CloudFront?](https://aws.amazon.com/premiumsupport/knowledge-center/no-access-control-allow-origin-error/){:target="_blank”} guide, which explains how to add a referrer header.
 
 ## Self-hosting Analytics.js
 
@@ -197,3 +251,12 @@ analytics.load({
    cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
  })
 ```
+
+## Restore the API host to the Segment default
+
+If you wish to restore the proxied API host to it's original value:
+1. Navigate to the **Source > Settings > Analytis.js tab**
+2. Scroll down until you see the Host address field. 
+3. Under the field, there is a small blue text that says 'Restore to a default value'. Click **Restore** and then **Save**. 
+
+Any changes made to the CDN host must be update manually in your code. 

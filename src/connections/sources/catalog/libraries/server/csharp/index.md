@@ -35,7 +35,7 @@ To get started with the Analytics-CSharp library:
 1. Create a Source in Segment. 
    1. Go to **Connections > Sources > Add Source**.
    2. Search for *Xamarin, Unity, or .NET* (whichever source you want to use) and click **Add Source**.  **Note:** There is no CSharp source. To use Analytics-CSharp, use either Xamarin, Unity, or .NET as your source. 
-2. Add the Analytics dependency to your project. Analytics-CSharp is distributed through NuGet. Check other installation options [here](https://www.nuget.org/packages/Segment.Analytics.CSharp/).
+2. Add the Analytics dependency to your project. Analytics-CSharp is distributed through NuGet. Check other installation options on the Segment.Analytics.CSharp [NuGet page](https://www.nuget.org/packages/Segment.Analytics.CSharp/){:target="_blank"}.
 
     ```
     dotnet add package Segment.Analytics.CSharp --version <LATEST_VERSION>
@@ -55,6 +55,9 @@ To get started with the Analytics-CSharp library:
         flushInterval: 30);
     var analytics = new Analytics(configuration);
     ```
+
+> info ""
+> Segment's SDK is designed to be disposable, meaning Segment disposes of objects when the analytics instance is disposed. Segment avoids using singletons for configurations or HTTP clients to prevent memory management issues. If you want to use singletons, create your own HTTP client provider with a singleton HTTP client for better control and management.
 
 | Option Name                 | Description   |
 |-----------------------------|---------------|
@@ -415,9 +418,9 @@ class FlushOnScreenEventsPolicy : IFlushPolicy
 ## Handling Errors
 You can handle analytics client errors through the `analyticsErrorHandler` option.
 
-The error handler configuration requires an instance that implements `IAnalyticsErrorHandler` which will get called whenever an error happens on the analytics client. It will receive a general `Exception`, but you can check if the exception is a type of `AnalyticsError` and converts to get more info about the error. Checkout [here](https://github.com/segmentio/Analytics-CSharp/blob/main/Analytics-CSharp/Segment/Analytics/Errors.cs#L77) to see a full list of error types that analytics throws.
+The error handler configuration requires an instance that implements `IAnalyticsErrorHandler` which will get called whenever an error happens on the analytics client. It will receive a general `Exception`, but you can check if the exception is a type of `AnalyticsError` and converts to get more info about the error. Check out [the @segmentio/Analytics-CSharp](https://github.com/segmentio/Analytics-CSharp/blob/main/Analytics-CSharp/Segment/Analytics/Errors.cs#L77){:target="_blank"} repository to see a full list of error types that analytics throws.
 
-You can use this error handling to trigger different behaviours in the client when a problem occurs. For example if the client gets rate limited you could use the error handler to swap flush policies to be less aggressive:
+You can use this error handling to trigger different behaviors in the client when a problem occurs. For example if the client gets rate limited you could use the error handler to swap flush policies to be less aggressive:
 
 ```csharp
 class NetworkErrorHandler : IAnalyticsErrorHandler
@@ -571,6 +574,9 @@ For sample usages of the SDK in specific platforms, checkout the following:
 
 ## Compatibility
 This library targets `.NET Standard 1.3` and `.NET Standard 2.0`. See the [list of compatible platforms](https://www.nuget.org/packages/Segment.Analytics.CSharp/#supportedframeworks-body-tab){:target="_blank"}.
+
+## Timestamps in C#
+The C# library adds the `sentAt` timestamp to event payloads to improve efficiency. This may affect the `timestamp` field calculated by Segment when operating in offline mode. For more details, see the [timestamp documentation](/docs/connections/spec/common/#sentat).
 
 ## Changelog
 [View the Analytics-CSharp changelog on GitHub](https://github.com/segmentio/analytics-csharp/releases){:target="_blank"}.

@@ -7,6 +7,9 @@ id: 60ad61f9ff47a16b8fb7b5d9
 versions:
   - name: "Google Analytics 4 Web"
     link: '/docs/connections/destinations/catalog/actions-google-analytics-4-web/'
+redirect_from:
+  - '/connections/destinations/catalog/google-analytics'
+  - '/connections/destinations/catalog/google-universal-analytics'
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -41,7 +44,7 @@ To add the Google Analytics 4 Cloud destination:
 3. Click **Configure Google Analytics 4 Cloud** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 
 {% include components/actions-fields.html %}
@@ -229,5 +232,9 @@ Because [Google's Measurement Protocol API](https://developers.google.com/analyt
 The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
 
 ### Client/server-side event deduplication 
-Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you not send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
 
+Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you don't send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
+
+### User-provided data collection
+
+Google offers a beta feature called [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"} that collects data directly from users. Segment doesn't support this feature. Acknowledging the feature policy in your Google Analytics 4 account is permanent, even though you can later disable the data collection itself.

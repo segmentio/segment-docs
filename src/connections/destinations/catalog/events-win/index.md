@@ -1,6 +1,5 @@
 ---
 title: events.win Destination
-beta: true
 id: 662d3328d029f89724a0c294
 ---
 

@@ -12,7 +12,7 @@ Here's how you can get started with using the Pinterest Tag!
 
 ### **1. Log into the Pinterest business account.**
 
-In order to access the Pinterest Tag, you will need to have a Pinterest business account. If you don't yet have one, sign up for one [here](https://ads.pinterest.com/){:target="_blank"}.
+In order to access the Pinterest Tag, you will need to have a Pinterest business account. If you don't yet have one, sign up for one [on Pinterest's website](https://ads.pinterest.com/){:target="_blank"}.
 
 
 ### **2. From the Ads menu, select Conversions.**

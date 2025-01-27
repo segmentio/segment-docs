@@ -209,7 +209,7 @@ The previous steps are required. For configuration options, including subscripti
 
 ### Instructions for Android
 
-Now that you've integrated Analytics for Kotlin, follow these steps to add the Engage Plugin for Android:
+Now that you've integrated Analytics-Kotlin, follow these steps to add the Engage Plugin for Android:
 
 1. Add the following to your Gradle dependencies:
 

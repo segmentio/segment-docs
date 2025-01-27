@@ -2,7 +2,6 @@
 title: Adobe Target Destination
 strat: adobe
 rewrite: true
-beta: true
 hidden: true
 published: false
 ---

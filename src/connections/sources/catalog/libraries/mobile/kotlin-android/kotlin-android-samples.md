@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Code Samples
+title: Analytics-Kotlin Code Samples
 strat: swift
 ---
 

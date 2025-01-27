@@ -5,7 +5,7 @@ strat: kotlin-android
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s destination plugin code is open source and available on GitHub. You can view it [here](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"}. This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
+Braze’s destination plugin code is open source and available on GitHub. You can view it on GitHub in the [@braze-inc/braze-segment-kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"} repository. This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
 
 ## Getting Started
 

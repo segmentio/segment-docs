@@ -1,0 +1,168 @@
+{
+  "name": "[Consent - Segment] Consent Updates Post to Tracking API",
+  "enabled": false,
+  "workflowType": "COMPOSITE",
+  "integrationName": "[Consent - Segment] Consent Updates Post to Tracking API",
+  "referenceIntegrationName": "Generic",
+  "dlqMessageCount": 0,
+  "throttlingLimit": 0,
+  "defaultDlqAction": "NONE",
+  "failedAlertFrequencyHrs": 0,
+  "redactLoggingEnabled": false,
+  "sensitivity": "DEFAULT",
+  "formatVersion": "1.0",
+  "trigger": {
+    "name": "[Consent - Segment] Consent Updates Post to Tracking API",
+    "workflowName": "[Consent - Segment] Consent Updates Post to Tracking API",
+    "triggerType": "EVENT",
+    "triggerContext": {
+      "EventTrigger": {
+        "type": "EVENT",
+        "eventCode": "3010",
+        "condition": null,
+        "baseCondition": null,
+        "preCondition": null,
+        "webhook": false,
+        "subFlow": false,
+        "config": false
+      }
+    },
+    "description": null,
+    "eventCode": "3010",
+    "schema": null
+  },
+  "actions": [
+    {
+      "processType": "APPLYEACH",
+      "processContext": {
+        "ApplyEach": {
+          "type": "APPLYEACH",
+          "jsonPath": "event:$..profiles.*",
+          "listKey": "event.payload.profiles",
+          "commonNodeLabel": "messagelog",
+          "continueOnError": null
+        }
+      },
+      "nodeLabel": "applyEach_0",
+      "nodeDescription": null,
+      "requestSchema": null,
+      "responseSchema": {
+        "name": "Data Subject Profile Updated",
+        "description": null,
+        "schema": "{\"format\": \"JSON\",\"type\": \"record\",\"fields\": [{\"type\": \"string\",\"name\": \"eventId\",\"default\": \"1afcc0cb-48ee-4a3a-a409-1b20a5399d9e\"},{\"type\": \"string\",\"name\": \"eventTime\",\"default\": \"2020-01-09T16:35:26.277+0000\"},{\"type\": \"string\",\"name\": \"eventType\",\"default\": \"3010\"},{\"format\": \"JSON\",\"type\": \"record\",\"name\": \"payload\",\"fields\": [{\"type\": \"string\",\"name\": \"dataSubjectGuid\",\"default\": \"aa85841a-0141-4441-86af-c320ed6f0d7e\"},{\"type\": \"string\",\"name\": \"dataSubjectEmail\",\"default\": \"intgDsTestWithoutBatch@otprivacy.com\"},{\"type\": \"boolean\",\"name\": \"consentOnBehalfOf\",\"default\": true},{\"type\": \"array\",\"name\": \"parentPrimaryIdentifiers\",\"items\": {\"format\": \"JSON\",\"type\": \"record\",\"fields\": [{\"type\": \"string\",\"name\": \"ParentIdentifier\",\"default\": \"parentEmail@ot.privacy.com\"},{\"format\": \"JSON\",\"type\": \"record\",\"name\": \"AdditionalParentIdentifierTypes\",\"fields\": []}]}},{\"type\": \"boolean\",\"name\": \"newDataSubject\",\"default\": true},{\"format\" : \"JSON\",\"type\" : \"record\",\"name\" : \"agentOnBehalf\",\"fields\": [{\"type\": \"string\",\"name\": \"agent\",\"default\": \"\"},{\"type\": \"boolean\",\"name\": \"onBehalf\",\"default\": false}]},{\"format\": \"JSON\",\"type\": \"record\",\"name\": \"contactFields\",\"fields\": [{\"type\": \"string\",\"name\": \"FirstName\",\"default\": \"John\"},{\"type\": \"string\",\"name\": \"LastName\",\"default\": \"Smith\"},{\"type\": \"string\",\"name\": \"Title\",\"default\": \"Mr.\"},{\"type\": \"string\",\"name\": \"Name\",\"default\": \"John Smith\"},{\"type\": \"string\",\"name\": \"Email\",\"default\": \"bob@builder.com\"},{\"type\": \"string\",\"name\": \"Address\",\"default\": \"Bangalore\"},{\"type\": \"string\",\"name\": \"Mobile\",\"default\": \"1234567890\"},{\"type\": \"string\",\"name\": \"CompanyName\",\"default\": \"companyname\"},{\"type\": \"string\",\"name\": \"Country\",\"default\": \"India\"},{\"type\": \"string\",\"name\": \"City\",\"default\": \"baganlore\"},{\"type\": \"string\",\"name\": \"Zip\",\"default\": \"560001\"},{\"type\": \"string\",\"name\": \"Password\",\"default\": \"password\"},{\"type\": \"string\",\"name\": \"Language\",\"default\": \"en-GB\"},{\"type\": \"string\",\"name\": \"MagicLink\",\"default\": \"ceb2uY3uH0phDvtCIYCn+8hjKjYgS6oQfMorWmmauCQ=\"}]},{\"type\": \"array\",\"name\": \"profiles\",\"items\": {\"format\": \"JSON\",\"type\": \"record\",\"fields\": [{\"type\": \"string\",\"name\": \"purposeId\",\"default\": \"3e900659-de89-4184-bb1a-0bca2e822b39\"},{\"type\": \"string\",\"name\": \"collectionPointGuid\",\"default\": \"21f16e84-8b2a-4217-8f52-b7bf6880df52\"},{\"type\": \"double\",\"name\": \"collectionPointVersion\",\"default\": 1},{\"type\": \"array\",\"name\": \"topics\",\"items\": {\"format\": \"JSON\",\"type\": \"record\",\"fields\": [{\"type\": \"string\",\"name\": \"topicGuid\",\"default\": \"6ed69adf-51a3-4452-ab8b-6280d58dafe8\"},{\"type\": \"string\",\"name\": \"integrationKey\",\"default\": \"fishing-int-key\"},{\"type\": \"boolean\",\"name\": \"value\",\"default\": true}]}},{\"type\": \"array\",\"name\": \"customPreferences\",\"items\": {\"format\": \"JSON\",\"type\": \"record\",\"fields\": [{\"type\": \"string\",\"name\": \"guid\",\"default\": \"5d134aee-0356-4a45-94a6-9f00769531d4\"},{\"type\": \"string\",\"name\": \"name\",\"default\": \"Test Custom Preference\"},{\"type\": \"array\",\"name\": \"options\",\"items\": {\"format\": \"JSON\",\"type\": \"record\",\"fields\": [{\"type\": \"string\",\"name\": \"guid\",\"default\": \"5d134aee-0356-4a45-94a6-9f00769531d5\"},{\"type\": \"string\",\"name\": \"name\",\"default\": \"Test Option1\"}]}}]}},{\"format\": \"JSON\",\"type\": \"record\",\"name\": \"profileFields\",\"fields\": [{\"type\": \"string\",\"name\": \"TotalTransactions\",\"default\": \"0\"},{\"type\": \"string\",\"name\": \"FirstTransaction\",\"default\": \"1543832130\"},{\"type\": \"string\",\"name\": \"ConsentDate\",\"default\": \"1543832130\"},{\"type\": \"string\",\"name\": \"TransactionStatus\",\"default\": \"ACTIVE\"},{\"type\": \"string\",\"name\": \"LastTransaction\",\"default\": \"1543832130\"},{\"type\": \"string\",\"name\": \"ActivationDate\",\"default\": \"1543832130\"},{\"type\": \"string\",\"name\": \"WithdrawalDate\",\"default\": \"1543832130\"},{\"type\": \"string\",\"name\": \"DoubleOptInConsent\",\"default\": \"N\"}]}]}}]},{\"format\": \"JSON\",\"type\": \"record\",\"name\": \"userDetails\",\"fields\": [{\"type\": \"string\",\"name\": \"roleId\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"tenantId\",\"default\": \"4\"},{\"type\": \"string\",\"name\": \"languageId\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"timeZoneOffsetInMinutes\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"tenantGuid\",\"default\": \"00000000-0000-0000-0000-000000000000\"},{\"type\": \"string\",\"name\": \"orgGroupId\",\"default\": \"00000000-0000-0000-0000-000000000000\"},{\"type\": \"string\",\"name\": \"userId\",\"default\": \"00000000-0000-0000-0000-000000000000\"},{\"type\": \"string\",\"name\": \"sessionId\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"role\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"email\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"permissions\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"scopes\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"permissionsCheckSum\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"defaultDomain\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"dsPortalDomain\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"originalHost\",\"default\": \"\"},{\"type\": \"string\",\"name\": \"locale\",\"default\": \"en_US\"}]},{\"type\": \"string\",\"name\": \"integrationId\",\"default\": \"00000000-0000-0000-0000-000000000000\"},{\"type\": \"string\",\"name\": \"workflowId\",\"default\": \"00000000-0000-0000-0000-000000000000\"},{\"type\": \"string\",\"name\": \"messageKey\",\"default\": \"intgDsTestWithoutBatch@otprivacy.com:21f16e84-8b2a-4217-8f52-b7bf6880df52\"},{\"type\": \"double\",\"name\": \"messageSequenceNumber\",\"default\": 1580445036773},{\"type\": \"string\",\"name\": \"deDuplicationStrategy\",\"default\": \"DISCARD_OLDER\"}]}"
+      }
+    },
+    {
+      "processType": "MESSAGELOG",
+      "processContext": {
+        "MessageLog": {
+          "type": "MESSAGELOG",
+          "continueOnError": null
+        }
+      },
+      "nodeLabel": "messagelog",
+      "nodeDescription": "Terminating Node : messagelog",
+      "requestSchema": null,
+      "responseSchema": {
+        "name": null,
+        "description": null,
+        "schema": null
+      }
+    },
+    {
+      "processType": "TRANSFORM",
+      "processContext": {
+        "DataTransformer": {
+          "type": "TRANSFORM",
+          "template": "<#list 0..step.applyEach_0.customPreferences?size-1 as n>\n${set('truePrefs${n}', [])}\n<#list 0..step.applyEach_0.customPreferences[n].options?size-1 as m>\n<#if ((step.applyEach_0.customPreferences[n].options[m].value?c)!\"\") == \"true\">\n${push('truePrefs${n}', '${(step.applyEach_0.customPreferences[n].options[m].name)}')}\n</#if>\n</#list>\n</#list>",
+          "independentNode": true,
+          "continueOnError": null,
+          "isIndependentNode": true
+        }
+      },
+      "nodeLabel": "dataTransformator_0",
+      "nodeDescription": null,
+      "requestSchema": null,
+      "responseSchema": {
+        "name": "Data Transformer",
+        "description": null,
+        "schema": "{\"format\":\"JSON\",\"type\":\"record\",\"fields\":[]}"
+      }
+    },
+    {
+      "processType": "TRANSFORM",
+      "processContext": {
+        "DataTransformer": {
+          "type": "TRANSFORM",
+          "template": "{\n  \"userId\": \"${(event.payload.dataSubjectEmail)!}\",\n  \"event\": \"Consent Updated\",\n  \"properties\": {\n    \"purposeID\": \"${(step.applyEach_0.purposeId)!}\",\n    \"purposeName\": \"${(step.applyEach_0.purposeName)!}\",\n    \"status\": \"${(step.applyEach_0.profileFields.TransactionStatus)!}\",\n<#list 0..step.applyEach_0.customPreferences?size-1 as n>\n    \"${(step.applyEach_0.customPreferences[n].name)}\" : \"<#list get('truePrefs${n}') as item>${item}<#sep>, </#list>\"\n<#sep>, </#list>\n  }\n}",
+          "independentNode": false,
+          "continueOnError": null,
+          "isIndependentNode": false
+        }
+      },
+      "nodeLabel": "transform_0",
+      "nodeDescription": "Https POST Consent Updates to Track API",
+      "requestSchema": null,
+      "responseSchema": {
+        "name": null,
+        "description": null,
+        "schema": null
+      }
+    },
+    {
+      "processType": "HTTP",
+      "processContext": {
+        "HttpConnector": {
+          "type": "HTTP",
+          "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Basic {encoded write key here}"
+          },
+          "requestURI": "https://events.eu1.segmentapis.com/v1/track",
+          "httpMethod": "POST",
+          "jweEncryptionRequired": false,
+          "jweDecryptionRequired": false,
+          "encryptionCredentialId": null,
+          "decryptionCredentialId": null,
+          "internal": false,
+          "continueOnError": "NONE",
+          "pathParams": {},
+          "queryParams": {},
+          "isInternal": false,
+          "isDSPortal": false,
+          "viewType": null
+        }
+      },
+      "nodeLabel": "http_0",
+      "nodeDescription": "Https POST Consent Updates to Track API",
+      "requestSchema": null,
+      "responseSchema": {
+        "name": null,
+        "description": null,
+        "schema": null
+      }
+    }
+  ],
+  "directions": [
+    {
+      "startNode": "applyEach_0",
+      "endNode": "messagelog"
+    },
+    {
+      "startNode": "applyEach_0",
+      "endNode": "dataTransformator_0"
+    },
+    {
+      "startNode": "dataTransformator_0",
+      "endNode": "transform_0"
+    },
+    {
+      "startNode": "transform_0",
+      "endNode": "http_0"
+    }
+  ],
+  "categoryBitValue": 258,
+  "seedSystem": false,
+  "halted": false,
+  "dlqEnabled": true
+}

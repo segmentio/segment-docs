@@ -102,7 +102,11 @@ When you first create your Tracking Plan, you can add events from your Source Sc
 
 ### Can I import events from my Source Schema into a Tracking Plan?
 
-When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan. .  
+When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan.
+
+### Can I recover a Tracking Plan that was deleted?
+
+You cannot recover a deleted Tracking Plan and Segment cannot recover it on your behalf. Please delete Tracking Plans with caution.
 
 
 ## Protocols Validation
@@ -140,9 +144,19 @@ The schema functionality is a _reactive_ way to clean up your data, where the Tr
 
 That being said, there are plenty of scenarios where the reactive Schema functionality solves immediate needs for customers. Often times, customers will use both Schema Controls and Tracking Plan functionality across their Segment Sources. For smaller volume Sources with less important data, the Schema functionality often works perfectly.
 
-### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
+### If I enable blocking are events just blocked from specific Destinations or the entire Segment pipeline?
 
-Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+Segment can block events from all Segment Destinations except for mobile device mode destinations. 
+
+Events that are delivered from a mobile source in device mode bypass the point in the Segment pipeline where Segment blocks events, so mobile events sent using device mode are not blocked and are delivered to your Destinations. If you are a Business Tier customer using Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDKs, you can use [destination filters](/docs/connections/destinations/destination-filters/) to block events. 
+
+When an event is blocked using a Tracking Plan, it does not count towards your MTU limit. If you use [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/), blocked events forwarded to a new source will count toward your MTU limit.
+
+### If I omit unplanned properties or properties that generate JSON schema violations, what happens to them?
+
+Segment doesn't store unplanned properties and properties omitted due to JSON Schema Violations in Segment logs. Segment drops omitted properties from the events. You can find the omitted properties in the `context.violations` object of an event payload. If you forward Violations to a new source, then you can also see the omitted properties in the Violation Generated event under `violationField` in the `properties` object. 
+
+Segment only stores fully blocked events for 30 days. 
 
 ### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
 
@@ -153,6 +167,11 @@ Segment's [Schema Controls](docs/connections/sources/schema/destination-data-con
 1. **Standard Schema Controls/"Unplanned Properties/Traits"**: Segment checks the names of incoming properties/traits against your Tracking Plan.
 2. **Standard Schema Controls/"JSON Schema Violations"**: Segment checks the names and evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
 3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: Segment evaluates incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
+
+
+### Why am I still seeing unplanned properties in my Source Schema when I've added the properties to a new version of my Tracking Plan?
+
+The source schema only validates events against the oldest event version in a Tracking Plan. If, for example, you have a version 1 and version 2 of your Tracking Plan, the schema only checks against version 1 of your Tracking Plan.
 
 ### Do blocked and discarded events count towards my MTU counts?
 
@@ -195,7 +214,9 @@ See an example payload below:
 ```
 ![A screenshot of the Source Schema page, with an event expanded to display a blocked property, newProperty.](images/protocols-faq-blocked-events.png)
 
+### Can I use schema controls to block events forwarded to my source from another source?
 
+You can only use schema controls to block events at the point that they are ingested into Segment. When you forward an event that Segment has previously ingested from another source, that event bypasses the pipeline that Segment uses to block events and cannot be blocked a second time. 
 
 ## Protocols Transformations
 
@@ -234,3 +255,7 @@ Transformations are but one tool among many to help you improve data quality. Se
 ### Are transformations applied when using the Event Tester?
 
 Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
+
+### Why am I getting the error "rules must contain less than or equal to 200 items" when using the Public API? Can I increase this limit?
+
+This error occurs because there is a limit of 200 rules per API update. This restriction is by design to ensure stable API performance. Segment is not able to increase this limit on your behalf. To work around this, split your update into smaller batches, each with 200 or fewer rules.

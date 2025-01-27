@@ -53,7 +53,7 @@ Once you save the API integration and add permissions, you will see a Summary pa
 3. Click **Configure Salesforce Marketing Cloud (Actions)** in the top-right corner of the screen.
 4. Select the source that will send data to SFMC and follow the steps to name your destination.
 5. On the **Settings** tab, input your SFMC Account ID (MID). In the Installed Package you created above, locate your Subdomain, Client ID, and Client Secret and input these settings. Your Subdomain can be found under "REST Base URI." Your Subdomain should be a 28-character string starting with the letters `mc`. Do not include the `.rest.marketingcloudapis.com` part of the URL.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
