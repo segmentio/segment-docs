@@ -7,9 +7,6 @@ With Consent Management in Reverse ETL, you can enforce your end-users' consent 
 
 To enforce consent stored in your warehouse, build a Reverse ETL model that identifies consent categories. You can create a "consent to" column mapping in a new data model or update an existing data model to include a "consent to" mapping. 
 
-> info "Consent in Reverse ETL supports Reverse ETL-supported Actions destinations and Segment Connections"
-> At this time, Consent in Reverse ETL does not support adding consent to Segment Profiles using the Segment Profiles destination. To enforce consent data in your classic Segment destinations, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 
-
 ## Prerequisites
 
 > info "Consent management edit and update capabilities limited to Workspace Owners"
@@ -121,9 +118,6 @@ from CONSENT_PREFERENCES;
 
 After you set up categories in the Segment app and create a SQL model that extracts consent information, connect your downstream destinations to complete the consent enforcement process. 
 
-> info "Consent in Reverse ETL supports Reverse ETL-supported Actions destinations and Segment Connections"
-> At this time, Consent in Reverse ETL does not support enforcing consent in the Segment Profiles destination. To enforce consent data in your classic Segment destinations, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 
-
 To add your first destination:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Click **Add Reverse ETL destination**.
@@ -146,8 +140,8 @@ Segment automatically adds the [consent object](/docs/privacy/consent-management
 
 Open the Source Debugger for your Reverse ETL source and confirm that the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) appears on every event and that the consent object has the categories you mapped in [Step 2: Identify consent columns](#step-2-identify-consent-columns).
 
-<!--- ### Segment Profiles
-Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your profiles contain the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event. --->
+### Segment Profiles
+Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your profiles contain the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event.
 
 ### Reverse ETL Actions destinations
 Segment automatically filters out data from users who have not consented to the category mapped to your destination. 
