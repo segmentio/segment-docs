@@ -3,7 +3,7 @@ title: Userlens By Wudpecker - Destination
 ---
 
 
-[Userlens By Wudpecker](https://userlens.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the Next-Gen of Product Intelligence. Userlens combines quantitative data from segment, posthog, etc and qualitative feedback from Intercom, Wudpecker user interviews, etc to give you a full picture of how your users are using your products and features.
+[Userlens By Wudpecker](https://userlens.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the Next-Gen of Product Intelligence. Userlens combines quantitative data from Segment, PostHog, etc and qualitative feedback from Intercom, Wudpecker user interviews, etc to give you a full picture of how your users are using your products and features.
 
 This destination is maintained by Wudpecker. For any issues with the destination, [contact the Wudpecker Support team](mailto:ankur@wudpecker.io).
 
