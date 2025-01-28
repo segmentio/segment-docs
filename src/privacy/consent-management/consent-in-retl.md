@@ -146,4 +146,4 @@ Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your 
 ### Reverse ETL Actions destinations
 Segment automatically filters out data from users who have not consented to the category mapped to your destination. 
 
-To verify that this behavior is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a RETL-supported Actions destination and view the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to.
+To verify that this behavior is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a Reverse ETL-supported Actions destination and view the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to.
