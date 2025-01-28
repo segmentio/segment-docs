@@ -296,3 +296,4 @@ Connect any Cloud-mode destination that supports Identify or Track calls to Enga
 - [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
 - [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
+- [TikTok Audiences](/docs/connections/destinations/catalog/actions-tiktok-audiences/)
