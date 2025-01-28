@@ -13,14 +13,6 @@ Twilio is certified under the DPF and relies on the DPF as its primary personal 
 
 Segment offers customers the option to lead on data residency by providing regional infrastructure in both Europe and the United States. The default region for all users is in Oregon, United States. You can configure workspaces to use the EU West Data Processing Region to ingest (for supported sources), process, filter, deduplicate, and archive data through Segment-managed archives hosted in AWS S3 buckets located in Dublin, Ireland. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
-## Existing Workspaces
-To ensure a smooth transition from a US-based Segment workspace to an EU workspace, Segment will provide additional support and tooling to help with the transition later this year. Use the form link below to provide more information about your current setup and goals for transitioning.
-
-> info ""
-> The Segment UI doesn't support moving workspaces between regions. To request help with this move, [complete the Data Residency Workspace Provisioning Flow form](https://segment.typeform.com/to/k5ADnN5e?typeform-source=segment.com#user_id=9hLQ2NuvaCLxFbdkMYbjFp){:target="_blank"}.
-
-{% include components/ajs-cookie.html %}
-
 ## Regional Data Ingestion
 
 Regional Data Ingestion enables you to send data to Segment from both Device-mode and Cloud-mode sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
