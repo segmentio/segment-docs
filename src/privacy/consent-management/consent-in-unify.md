@@ -66,7 +66,7 @@ A device-level conflict occurs when conflicting consent preferences linked to on
 
 For example, if an end-user didn’t consent to Advertising on their mobile phone, but later consented to Advertising on their desktop computer, this user would have a conflicting consent preference for the `advertising` category.
 
-By default, Segment relies on the latest consent preferences collected for a user, so would set the `advertising` category to `true` given that the **latest** consent preference collected (from the desktop computer) consented to the `advertising` category. 
+By default, Segment relies on the latest consent preferences collected for a user and would set the `advertising` category to `true` given that the **latest** consent preference collected (from the desktop computer) consented to the `advertising` category. 
 
 If you would like to use a different method of conflict resolution, you must build an approach to address and resolve conflicting consent preferences in your website or mobile app and then send the updated consent back to Segment. 
 
