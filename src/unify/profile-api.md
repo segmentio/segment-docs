@@ -64,14 +64,15 @@ Your access token enables you to call the Profile API and access customer data.
 ### Query the user's event traits
 
 1. From the HTTP API testing application of your choice, configure the authentication as described above.
-2. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
+2. [Find user by externalId](https://segment.com/docs/unify/profile-api/#find-a-users-external-id): The Profile API requires both the **type** of ID and the **value** separated by a colon. For example, anonymous_id:eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092.
+3. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
     `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
 
 
     If you're using the Profile API in the EU, use the following URL for all requests:
 
     `https://profiles.euw1.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
-3. Send a `GET` request to the URL.
+4. Send a `GET` request to the URL.
 
 ### Explore the user's traits in the response
 
