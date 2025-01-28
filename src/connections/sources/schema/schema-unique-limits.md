@@ -24,7 +24,7 @@ These limits can also affect the traits and properties that you can see in the C
 If you hit any of the limits or would like to clear out old events or properties, you can clear the Schema data from your Source Settings. In your Source, navigate to Settings, then Schema Configuration. Scroll down to the **Clear Schema History** setting.
 
 > warning ""
-> The settings to clear Identify/Groups traits will **not** be available if a Tracking plan is connected to the Source.
+> You can't clear Identify/Group traits if your Source is connected to a Tracking Plan. 
 
 ![Clear your Schema data with Clear Schema History](images/schema_config_clear_schema.png)
 
