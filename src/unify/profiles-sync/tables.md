@@ -18,7 +18,7 @@ The following table shows how raw tables map to their corresponding materialized
 
 | Raw table                     | Materialized view  | Description                                                   |
 | ----------------------------- | ------------------ | ------------------------------------------------------------- |
-| `id_graph_updates`            | `profile_merges`   | Tracks changes in profile merges across the identity graph.   |
+| `id_graph_updates`            | `profile_merges`   | Tracks changes in profile merges across the Identity Graph.   |
 | `external_id_mapping_updates` | `user_identifiers` | Tracks external IDs associated with user profiles.            |
 | `profile_traits_updates`      | `user_traits`      | Tracks changes to user profile traits (like names or emails). |
 
