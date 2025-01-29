@@ -22,7 +22,7 @@ The following table shows how raw tables map to their corresponding materialized
 | `external_id_mapping_updates` | `user_identifiers` | Tracks external IDs associated with user profiles.            |
 | `profile_traits_updates`      | `user_traits`      | Tracks changes to user profile traits (like names or emails). |
 
-Raw tables are best for detailed, event-level analysis or debugging specific updates in the identity graph. They show every single change and event in your Profiles Sync pipeline.
+Raw tables are best for detailed, event-level analysis or debugging specific updates in the Identity Graph. They show every single change and event in your Profiles Sync pipeline.
 
 Materialized views are better for reporting, analytics, and when you need an up-to-date view of profile traits or identifiers. Materialized views reduce complexity by summarizing data from the raw tables.
 
