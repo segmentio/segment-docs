@@ -672,6 +672,7 @@ sources:
       - us
     endpoints:
       - us
+      - eu
   - id: kpDbTUR9oD
     display_name: MoEngage (Source)
     hidden: false
