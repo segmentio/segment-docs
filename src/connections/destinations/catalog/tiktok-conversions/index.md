@@ -10,9 +10,6 @@ The TikTok Conversions destination is a server-to-server integration with the Ti
 
 Data shared through the Events API is processed similarly to information shared through the TikTok pixel and TikTok SDK business tools. Advertisers can use events data to power solutions like dynamic showcase ads (DSA), custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.
 
-## Destination Info
-Refer to it as Tiktok Conversions in the [Integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object){:target="_blank"}.
-
 TikTok maintains this integration. Please reach out to the [TikTok support team](mailto: segmenteng@bytedance.com) for any issues. 
 
 ## Benefits of TikTok Conversions
@@ -27,6 +24,9 @@ The TikTok Conversions destination provides the following benefits:
 ## Getting started
 
 Follow the instructions below to enable your TikTok ads account and add the TikTok Conversions destination to your Segment workspace.
+
+> info ""
+> Refer to the destination as Tiktok Conversions in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object){:target="_blank"}.
 
 ### TikTok Requirements
 
