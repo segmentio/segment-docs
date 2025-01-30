@@ -560,6 +560,10 @@ async function onGroup(event, settings) {
 ```
 By including handlers for all the major event types, you ensure that all supported events are processed correctly, preventing the "Unsupported Event Type" error. Always test your updated code before implementing it in production.
 
+##### What destination types support Insert Functions?
+
+Only cloud-mode [Event destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list) support destination Insert Functions. [List destinations](/docs/engage/using-engage-data/#list-destinations) are not compatible. 
+
 {% comment %}
 
 ## Using Segment's Public API
