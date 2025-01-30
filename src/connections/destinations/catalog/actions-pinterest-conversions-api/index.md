@@ -82,40 +82,34 @@ Conversion events must meet the following requirements to be considered for dedu
 
 The **App Name** field is required for many Pinterest Conversion API destination's mappings. 
 
-Segment's mobile libraries automatically collect and map the App Name to the correct field. However, Segment's web or server-based libraries don't automatically collect and map App Namee, which can cause mappings to fail. Segment recommends adding the App Name to the Segment event or hardcoding a static string in the mapping as the App Name.  
+Segment's mobile libraries automatically collect and map the App Name to the correct field. However, Segment's web or server-based libraries don't automatically collect and map App Name, which can cause mappings to fail. Segment recommends adding the App Name to the Segment event or hardcoding a static string in the mapping as the App Name.  
 
 ## Limited Data Processing
-Starting from Jan 1, 2023, Pinterest introduced the Limited Data Processing flag as per California Consumer Privacy Act (CCPA). With this flag set Pinterest will allow advertisers  to comply with CCPA.
+
+On January 1, 2023, Pinterest introduced the [Limited Data Processing (LDP) flag](https://developers.pinterest.com/docs/api-features/limited-data-processing/){:target="_blank"} to help advertisers comply with the California Consumer Privacy Act (CCPA).
 
 Advertisers are responsible for complying with user opt-outs, as well as identifying the user’s state of residency when implementing the Limited Data Processing flag.
 
-Keep in mind that the Limited Data Processing flag could impact campaign performance and targeting use cases. Pinterest recommends using the Limited Data Processing flag on a per-user basis for best results.
+Enabling LDP could impact campaign performance and targeting capabilities. Pinterest recommends applying the LDP flag on a per-user basis for the best results.
 
-LDP relies on 3 fields and is enabled only when all 3 combinations are met, if one of them is not met then LDP is disabled / ignored.
+LDP is enabled only if all three required fields in the following table are present. If any field is missing, LDP is ignored.
 
 | Field Name     | Field Description                               | Required Value for LDP |
 | -------------- | ----------------------------------------------- | ---------------------- |
-| `opt_out_type` | Opt Out Type based on User’s privacy preference | "LDP"                  |
-| `st`           | State of Residence                              | "CA"                   |
-| `country`      | Country of Residence                            | "US"                   |
-
+| `opt_out_type` | Opt out Type based on user’s privacy preference | "LDP"                  |
+| `st`           | State of residence                              | "CA"                   |
+| `country`      | Country of residence                            | "US"                   |
 
 
 ### PII Hashing
 
-Segment creates a SHA-256 hash of the following fields before sending to Pinterest:
-- External ID
-- Mobile Ad Identifier
-- Email
-- Phone
-- Gender
-- Date of Birth
-- Last Name
-- First Name
-- City  
-- State
-- Zip Code
-- Country
+Before sending data to Pinterest, Segment applies SHA-256 hashing to the following personally identifiable information (PII) fields:
+
+- User identifiers: external ID, mobile ad identifier
+- Contact information: email, phone
+- Demographics: gender, date of birth
+- Name details: first name, last name
+- Location: city, state, ZIP code, country
 
 ### User Data Parameters
 
