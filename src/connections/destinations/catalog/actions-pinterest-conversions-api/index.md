@@ -142,10 +142,10 @@ Segment automatically maps Custom Data fields (excluding `content_ids`, `content
 | Value           | `value`                               |
 | Content IDs     | `content_ids`                         |
 | Contents        | `contents`                            |
-| Number of Items | `num_items`                           |
+| Number of items | `num_items`                           |
 | Order ID        | `order_id`                            |
-| Search String   | `search_string`                       |
-| Opt Out Type    | `opt_out_type`                        |
+| Search string   | `search_string`                       |
+| Opt out type    | `opt_out_type`                        |
 
 ### Server Event Parameter Requirements
 
@@ -153,8 +153,7 @@ Pinterest requires the `action_source` server event parameter for all events sen
 
 ### Verify Events in Pinterest Conversions Dashboard
 
-After you start sending events, you should start seeing them in dashboard. You can confirm that Pinterest received them:
+After you start sending events, you should start seeing them in dashboard. You can confirm that Pinterest received them by following these steps:
 
-1. Go to the Events Overview.
-2. Click on the Event History to see all the events sent to Pinterest conversions.
-
+1. Go to **Events Overview** in Pinterest.
+2. Click **Event History** to see all the events Segment sent to Pinterest conversions.
