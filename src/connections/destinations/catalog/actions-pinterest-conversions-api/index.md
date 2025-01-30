@@ -19,11 +19,11 @@ The API for Conversions helps Pinterest provide a more comprehensive view of you
 The Pinterest Conversions API destination provides the following benefits:
 
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
-- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the Pinterest Conversions API.
+- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to the Pinterest Conversions API.
 - **Prebuilt mappings**. Mappings for standard Pinterest Conversions API events, like `Add to Cart`, are prebuilt with the prescribed parameters and available for customization.
-- **Support Deduplication**. Deduplication removes duplicates events which improves the accuracy of your conversions
-- **Support for page calls**. Page calls can be sent to Pinterest as a standard Page View.
-- **Support for multi-user arrays**. User data nested within arrays, like the `User Data` array in the Order Completed event, can be sent to Pinterest.
+- **Support for deduplication**. Deduplication removes duplicates events, which improves the accuracy of your conversions
+- **Support for Page calls**. You can send Page calls to Pinterest as a standard Page View.
+- **Support for multi-user arrays**. User data nested within arrays, like the `User Data` array in the `Order Completed` event, can be sent to Pinterest.
 - **Data normalization**. Data is normalized before it's hashed to send to Pinterest Conversions.
 
 ## Getting started
@@ -40,7 +40,7 @@ To connect the Pinterest Conversions API Destination:
    - Destination Name
    - [Ad Account ID](https://developers.pinterest.com/docs/conversions/conversions/#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id){:target="_blank”}
    - [Conversions Token](https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token){:target="_blank”}
-6. Navigate to the **Mappings** tab, there are already Prebuilt mapping like `Checkout`, `Search`, `Add to Cart` defined with prescribed parameters. All required, recommended, and optional fields are listed in Pinterest's [Best practices](https://developers.pinterest.com/docs/api-features/conversion-best-practices/#required-recommended-and-optional-fields){:target="_blank”} documentation.
+6. Go to the Mappings tab. Prebuilt mappings, such as `Checkout`, `Search`, and `Add to Cart`, include predefined parameters. All required, recommended, and optional fields are listed in Pinterest's [Best practices](https://developers.pinterest.com/docs/api-features/conversion-best-practices/#required-recommended-and-optional-fields){:target="_blank”} documentation.
 7. If you want to create **New Mapping**, and select **Report Conversions Event** ,configure and enable it.
 8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 9. Enable the destination using the **Enable Destination** toggle switch and click **Save Changes**.
@@ -49,11 +49,11 @@ To connect the Pinterest Conversions API Destination:
 {% include components/actions-fields.html settings="true"%}
 
 > warning ""
-> By default, all mappings send as `web` conversions. If you want to send events as mobile or offline conversions, update the Action Source in each mapping to be `app_android`, `app_ios`, `offline`.
+> By default, Segment sends all mappings as `web` conversions. To send events as mobile or offline conversions, update the Action Source in each mapping to `app_android`, `app_ios`, `offline`.
 
-## FAQ & Troubleshooting
+## FAQ
 
-### Deduplication with Pinterest Tag
+#### Deduplication with Pinterest tag
 
 Pinterest cannot know if a conversion reported by the Tag and another reported by the API for Conversions are the same.
 
