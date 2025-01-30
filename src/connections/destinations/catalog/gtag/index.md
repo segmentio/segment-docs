@@ -1,6 +1,5 @@
 ---
 title: 'Gtag Destination'
-beta: true
 hidden: true
 strat: google
 ---
@@ -49,7 +48,7 @@ Pass UTM parameters in the `context` object in `context.campaign`. For Google An
 
 ## Identify
 
-Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en){:target="_blank"}.
+Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this in the [Best practices to avoid sending Personally Identifiable Information (PII)](https://support.google.com/analytics/answer/6366371?hl=en){:target="_blank"} documentation.
 
 ### User ID
 Google Analytics Universal tracking method allows you to set a user ID for your identified visitors. [Read more here](https://support.google.com/analytics/answer/3123663){:target="_blank"}.
@@ -87,7 +86,7 @@ Segment's device-mode Analytics.js library supports them all.
 
 To configure a custom dimension:
 
-1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [here](https://support.google.com/analytics/answer/2709829?hl=en){:target="_blank"}.
+1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [[UA] Create and edit custom dimensions and metrics](https://support.google.com/analytics/answer/2709829?hl=en){:target="_blank"}.
 2. After you've enabled Google Analytics in Segment, you can map traits and properties to your custom dimensions.
 3. From your Segment Workspace, open the destinations catalog and select the Gtag destination, then Settings. Locate Custom Dimensions and declare the mapping.
 

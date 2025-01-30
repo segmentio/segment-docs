@@ -45,6 +45,8 @@ To use Trait Activation with Journeys:
 2. Select [a supported](/docs/engage/trait-activation/trait-activation-setup/#set-up-a-destination) destination from a journey step.
 3. Select **Customized Setup**, then add identifier and trait mappings to customize the way you send data to your destination. For more, visit the [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/#customized-setup/) and [ID Sync](/docs/engage/trait-activation/id-sync/#customized-setup/) setup docs.
 
+> success ""
+> Use Segment's [Duplicate mappings](/docs/connections/destinations/actions/#duplicate-mappings) feature to create an exact copy of an existing mapping. The copied mapping has the same configurations and enrichments as your original mapping.
 
 ## What events are sent to destinations?
 

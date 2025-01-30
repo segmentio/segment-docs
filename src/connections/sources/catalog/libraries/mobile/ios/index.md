@@ -1,11 +1,11 @@
 ---
-title: Analytics for iOS
+title: Analytics-iOS
 strat: ios
 repo: analytics-ios
 support_type: maintenance
 id: UBrsG9RVzw
 ---
-With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
+With Analytics-iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
 <br />
 <br />
 <br />
@@ -57,7 +57,7 @@ When the app is terminated, Segment saves the queue to disk, and loads that data
 
 ### Install the SDK
 
-The recommended way to install Analytics for iOS is using [Cocoapods](http://cocoapods.org/), since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
+The recommended way to install Analytics-iOS is using [CocoaPods](http://cocoapods.org/){:target="_blank"}, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `Analytics` dependency to your `Podfile`, like so:
 
@@ -313,7 +313,7 @@ Analytics.shared().identify("a user's id", traits: ["email": "a user's email add
   </tr>
 </table>
 
-Analytics for iOS works on its own background thread, so it will never block the main thread for the UI or the calling thread.
+Analytics-iOS works on its own background thread, so it will never block the main thread for the UI or the calling thread.
 
 Calling `- identify:` with a `userId` will write that ID to disk to be used in subsequent calls. That ID can be removed either by uninstalling the app or by calling [`reset`](#reset).
 

@@ -1,7 +1,6 @@
 ---
 title: Gleap (Actions) Destination
 id: 656f2474a919b7e6e4900265
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

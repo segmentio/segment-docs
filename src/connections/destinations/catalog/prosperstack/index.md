@@ -1,7 +1,6 @@
 ---
 title: ProsperStack Destination
 rewrite: true
-beta: true
 id: 6116daebcc926a434fe41bb3
 ---
 [ProsperStack](https://prosperstack.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the hosted cancellation flow for subscription businesses that automatically prevents churn. Retain customers with targeted offers and interventions designed to prevent cancellations and increase customer lifetime value.

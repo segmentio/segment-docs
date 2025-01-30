@@ -430,3 +430,17 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 #### Can I use a Source Function in place of adding a Tracking Pixel to my code?
 
 No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment. 
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
+
+#### Can I send a custom response from my Source Function to an external tool?
+
+No, Source Functions can't send custom responses to the tool that triggered the Function's webhook. Source Functions can only send a success or failure response, not a custom one.
+
+#### Why am I seeing the error "Functions are unable to send data or events back to their originating source" when trying to save my Source Function?
+
+This error occurs because Segment prevents Source Functions from sending data back to their own webhook endpoint (`https://fn.segmentapis.com`). Allowing this could create an infinite loop where the function continuously triggers itself.
+
+To resolve this error, check your Function code and ensure the URL `https://fn.segmentapis.com` is not included. This URL is used to send data to a Source Function and shouldn't appear in your outgoing requests. Once you remove this URL from your code, you’ll be able to save the Function successfully.

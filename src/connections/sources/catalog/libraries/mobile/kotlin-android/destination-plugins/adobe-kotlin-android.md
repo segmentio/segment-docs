@@ -4,7 +4,7 @@ strat: adobe
 redirect_from: '/connections/destinations/catalog/omniture/'
 id: 5783cec280412f644ff14226
 ---
-After you enable Adobe Analytics (formerly known as Omniture or Sitecatalyst) in Segment, you can start sending data from any of the Segment [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from Segment's mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html){:target="_blank”}. For more information, you can browse the code on GitHub [here](https://github.com/segment-integrations/analytics-kotlin-adobe-analytics).
+After you enable Adobe Analytics (formerly known as Omniture or Sitecatalyst) in Segment, you can start sending data from any of the Segment [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from Segment's mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html){:target="_blank”}. For more information, you can browse the code on GitHub in the [@segment-integrations/analytics-kotlin-adobe-analytics](https://github.com/segment-integrations/analytics-kotlin-adobe-analytics){:target="_blank”} repository.
 
 ## Planning for Adobe Analytics
 

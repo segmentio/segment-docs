@@ -12,7 +12,9 @@ Segment's Braze Cohorts destination syncs Engage audiences to Braze as cohorts. 
 
 ## Getting started
 
-Before connecting to the Braze Cohorts destination, you must have a [Braze](https://dashboard-01.braze.com/sign_in){:target="_blank"} account and an Ad Account ID.
+Before connecting to the Braze Cohorts destination, you must have a [Braze](https://dashboard-01.braze.com/sign_in){:target="_blank"} account and an Ad Account ID. 
+
+_(Optional)_: You can create a [cohort in Braze](https://www.braze.com/docs/partners/data_and_infrastructure_agility/customer_data_platform/segment/segment_engage/#step-4-create-a-braze-segment-from-the-engage-audience){:target="_blank"} before setting up the Braze Cohorts destination. If you don't create a cohort in advance, the Braze Cohorts destination creates one on your behalf. 
 
 To connect the Braze Cohorts destination:
 

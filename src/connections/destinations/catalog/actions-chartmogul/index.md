@@ -1,7 +1,6 @@
 ---
 title: ChartMogul (Actions) Destination
 id: 65f9888628c310646331738a
-beta: true
 ---
 
 

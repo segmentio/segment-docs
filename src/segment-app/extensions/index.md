@@ -2,12 +2,11 @@
 title: Extensions
 ---
 
-Extensions integrate third-party tools into your existing Segment workspace to help you automate tasks. 
+Extensions let you integrate third-party tools into your existing Segment workspace, helping you automate tasks, manage data flows, and maintain version control.
 
-> info ""
-> Extensions is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. During Public Beta, Extensions is available for Team and Developer plans only. [Reach out to Segment](mailto:friends@segment.com) if you're on a Business Tier plan and would like to participate in the Public Beta.
+Segment offers the following extensions:
 
-During public beta, Segment offers the following extensions:
+- [dbt models and dbt Cloud](/docs/segment-app/extensions/dbt): Sync your dbt Labs models with Segment to streamline model management, versioning, and CI checks. This extension lets you securely connect Segment to a Git repository, making it easier to integrate and manage dbt models across different environments like testing, staging, and production.
+- [Git Sync](/docs/segment-app/extensions/git): Manage versioning and track changes by syncing your Segment workspace a Git repository. The Git Sync extension helps maintain a clear and organized relationship between your workspace and its corresponding Git repository, ensuring that your resources are consistently managed and versioned across your environments.
 
-- [dbt models and dbt Cloud](/docs/segment-app/extensions/dbt), which lets you sync models with dbt Labs.
-- [Git sync](/docs/segment-app/extensions/git), which you can use to manage versioning and track changes in your Segment workspace.
+Segment built Extensions to help you get the most out of your Segment workspace, allowing you to keep your projects organized, efficient, and aligned with best practices for data management and version control.

@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Migration Guide
+title: Analytics-Kotlin Migration Guide
 strat: kotlin-android
 tags:
   - android
@@ -385,8 +385,8 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
 ## 4. Upgrade Notes
 
-> info "You might need to call Identify as a one-off after migrating to Kotlin"
-> To preserve the userId for users identified prior to your migration to Kotlin, you must make a one-off Identify call. This is due to a storage format change between the Analytics for Android and Analytics-Kotlin libraries.
+> info "Call Identify as a one-off after migrating to Kotlin"
+> To preserve the userId for users identified prior to your migration to Kotlin, you must make a one-off Identify call. This is due to a storage format change between the Analytics-Android and the Analytics-Kotlin libraries.
 
 ### 4.a) Changes to the Configuration Object
 
@@ -439,5 +439,40 @@ Properties have been replaced by JsonElement. Since Properties are essentially a
   {% endcodeexample %}
 ### 4.c) Options Support Removed
 Options are no longer supported and should be converted into plugins.
+
+
+### 4.d) Traits are no longer attached to `analytics.track()` events automatically 
+
+To prevent sending unwanted or unnecessary PII, traits collected in `analytics.identify()` events are no longer automatically attached to `analytics.track()` events. To achieve this, you can write a `before` plugin: 
+
+```kotlin
+import com.segment.analytics.kotlin.core.Analytics
+import com.segment.analytics.kotlin.core.Plugin
+import com.segment.analytics.kotlin.core.PluginType
+import com.segment.analytics.kotlin.core.platform.Plugin
+import com.segment.analytics.kotlin.core.events.RawEvent
+
+class InjectTraits : Plugin {
+
+    override val type: PluginType = PluginType.Enrichment
+    var analytics: Analytics? = null
+
+    override fun <T : RawEvent> execute(event: T?): T? {
+        if (event?.type == "identify") {
+            return event
+        }
+
+        var workingEvent = event
+        val context = event?.context?.toMutableMap()
+
+        if (context != null) {
+            context["traits"] = analytics?.traits()
+
+            workingEvent?.context = context
+        }
+        return workingEvent
+    }
+}
+```
 ## Conclusion
 Once you’re up and running, you can take advantage of Analytics-Kotlin’s additional features, like [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters/), [Functions](https://segment.com/docs/connections/functions/), and [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter/) support.

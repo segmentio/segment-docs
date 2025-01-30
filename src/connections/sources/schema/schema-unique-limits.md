@@ -23,6 +23,9 @@ These limits can also affect the traits and properties that you can see in the C
 
 If you hit any of the limits or would like to clear out old events or properties, you can clear the Schema data from your Source Settings. In your Source, navigate to Settings, then Schema Configuration. Scroll down to the **Clear Schema History** setting.
 
+> warning ""
+> You can't clear Identify/Group traits if your Source is connected to a Tracking Plan. 
+
 ![Clear your Schema data with Clear Schema History](images/schema_config_clear_schema.png)
 
 Clearing events from the Source Schema only clears them from the Segment interface. It does not impact the data sent to your destinations or warehouses. Once you clear the events, the Schema page starts to repopulate new events.

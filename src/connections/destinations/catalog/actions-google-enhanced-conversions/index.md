@@ -4,83 +4,134 @@ strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 60ae8b97dcb6cc52d5d0d5ab
+hide_action:
+  - id: 3daKK91WWi3VqaWhjQGJpY
+    name: "Customer Match User List"
+  - id: 7vmdP8TJSYA31eRZZoDqN7
+    name: "Click Conversion"
+  - id: ndcXYK6HoSX6ydB8JdMgaT
+    name: "Call Conversion"
+  - id: mFUPoRTLRXhZ3sGbM8H3Qo
+    name: "Conversion Adjustment"
+  - id: h8sh7d7TUJYR1uv6RKZTGQ
+    name: 'Upload Enhanced Conversion (Legacy)'
 ---
 
-The Google Ads Conversions destination enables you to upload offline conversions and conversion adjustments to Google Ads in a privacy safe way. With this server-side destination, you can upload conversions to the [Google Ads API](https://developers.google.com/google-ads/api/docs/conversions/overview){:target="_blank"} and tie them to a user's online click or phone call. In addition, you can improve the accuracy of your conversion measurement by sending conversion enhancements, restatements, and retractions. 
-
-> warning "Upload Enhanced Conversion (Legacy) Actions will be deprecated after June 30th, 2024"
-> Segment will begin migrating all enabled Upload Enhanced Conversion (Legacy) mappings to the updated Upload Conversion Adjustment mappings on June 7th, 2024. **After Segment migrates your mappings, you must take action to prevent data loss**. For more information, see the [Automatic migration from Upload Enhanced Conversion (Legacy) Action](#automatic-migration-from-upload-enhanced-conversion-legacy-action) documentation.
+The Google Ads destination allows users to upload [conversions](https://developers.google.com/google-ads/api/docs/conversions/upload-clicks){:target="_blank"}, [conversion adjustments](https://developers.google.com/google-ads/api/docs/conversions/upload-adjustments){:target="_blank"}, and [customer match lists](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started){:target="_blank"} in a privacy-safe manner. Marketers can use this integration to re-engage users across Search, Shopping, Gmail, YouTube, and Display by combining conversion data with customer match lists for more effective targeting.
 
 > info "Consent mode"
-> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up. 
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up.
 
 ## Getting started
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for “Google Ads Conversions” in the Destinations Catalog, and select the destination.
-3. Click **Configure Google Ads Conversions** in the top-right corner of the screen.
-4. Select the source that will send data to Google Ads Conversions and follow the steps to name your destination.
-5. On the **Settings** tab, enter your account-level Conversion ID and/or Customer ID and click **Save**.
-6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Ads Conversions**. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
-7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+
+> info ""
+> You can connect the Google Ads Conversions Destination to an event source, Reverse ETL source, or Engage space. 
+
+### Prerequisites
+* A Google Ads account and the account ID of your Google Ads Account. This should be 10-digits and in XXX-XXX-XXXX format.  
+* For sending data to a Google [Customer Match list](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started){:target="_blank"}, you will either need   
+  * An [Engage Audience](/docs/engage/audiences/) configured which you can connect to this destination  
+  * A Reverse ETL source already set up. If you don’t yet have a Reverse ETL source, follow the instructions in Segment’s [Reverse ETL documentation](/docs/connections/reverse-etl/setup/).
+
+### Connect to Google Ads
+1. From the Segment web app, navigate to **Catalog > Destinations**.
+2. Search for “Google Ads Conversions” in the Destinations Catalog and select the destination.
+3. Click **Add destination**.
+4. Select the source that will send data to Google Ads Conversions. 
+  * If you select an Engage space, you'll be redirected to Engage to complete the following steps.
+  * If you select a Reverse ETL source, you must enter a name for your destination and click **Create destination**.
+5. On the **Settings** tab for your Google Ads Conversions destination:
+  * Enter your account-level Conversion ID and/or Customer ID and click **Save**.
+  * Click **Connect to Google Ads Conversions** to authenticate with Google. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
+7. Follow the steps in the Destinations Actions documentation to [customize your mappings](/docs/connections/destinations/actions/#customize-mappings).
+
+
+### Connect to Google Ads Customer Match lists
+
+Segment users can send data to [Google Ads Customer Match](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match){:target="_blank"} lists using [Engage Audiences](#connect-engage-audiences-to-google-ads-customer-match) or [Reverse ETL](#connect-reverse-etl-to-google-ads-customer-match). 
+
+#### Connect Engage Audiences to Google Ads Customer Match
+
+1. Navigate to the Engage Audience you'd like to connect to Google Ads and click **Add destination**.  
+2. Select the instance of Google Ads you added to your Engage space.  
+3. Complete your Audience settings.  
+4. Disable **Send Identify** and enable **Send Track**.  
+    _Optional_: Configure your event settings and opt in to [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/).  
+6. Click **Save**.  
+7. Navigate to the destination’s mappings tab and click **View all destination settings**.  
+8. Navigate to the Mappings tab.  
+9. Click **+ New Mapping**.  
+10. Configure your mappings and use the **Show test record** preview toggle to verify your mappings.  
+11. Click **Save** and enable your mapping.
+
+#### Connect Reverse ETL to Google Ads Customer Match
+
+After you’ve connected your Google Ads destination to Segment, set up [Reverse ETL mappings](/docs/connections/reverse-etl/setup/#step-4-create-mappings) to sync to a Google Customer Match List.
+
+##### Add users to your Google Customer Match User List  
+1. From your Segment workspace, navigate to your Reverse ETL source.
+2. Select the Reverse ETL model you'd like to sync with Google Ads.
+3. Click **Add Mapping**.
+4. Select the Google Ads Conversions destination and click **Next**.
+5. Select the **Customer Match User List** action and the **Adds users to the connected Google Customer Match User List** sync mode.
+6. Select an existing List ID or provide a name for the list that Segment creates for you.
+7. Select an External ID Type, configure your mappings, and click **Next**. 
+8. Enter a name for your mapping, set your sync schedule, and click **Save**.  
+9. On the mapping's overview page, set the Status toggle to **Enabled**.  
+
+##### Remove users from the connected Google Customer Match User List  
+1. From your Segment workspace, navigate to your Reverse ETL source.
+2. Select the Reverse ETL model you'd like to sync with Google Ads.
+3. Click **Add Mapping**.
+4. Select the Google Ads Conversions destination and click **Next**.
+4. Select the **Customer Match User List** action and the **Remove users from the connected Google Customer Match User List** sync mode. 
+5. Select the List ID that you configured when you set up the [Add users to your Google Customer Match User List](#add-users-to-your-google-customer-match-user-list) mapping.
+6. Select an External ID Type, configure your mappings, and click **Next**. 
+9. Enter a name for your mapping, set your sync schedule, and click **Save**.  
+10. On the mapping's overview page, set the Status toggle to **Enabled**.  
+
+## Data normalization
+
+To improve match rates, Segment built in normalization and hashing for common fields to align with Google's best practices outlined in Google's [Prepare data for upload](https://developers.google.com/google-ads/api/docs/conversions/enhanced-conversions/leads#prepare-data){:target="_blank"} and [Add customer data](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started#add-user){:target="_blank"} documentation.
+
+### Normalization 
+
+Segment automatically strips whitespace and converts the following fields to lowercase:
+  * Email
+  * First name
+  * Last name
+
+Segment normalizes the Phone field by removing any non-numeric symbols. Segment also converts each phone number to [E.164](https://en.wikipedia.org/wiki/E.164){:target="_blank"} format before hashing. E.164 format represents a phone number as a number up to fifteen digits in length starting with a + sign.
+
+### Hashing
+
+Google requires you to hash all PII before sending it to the Google API. 
+
+Segment automatically hashes any of the following fields that are not already hashed at egress:
+ * Email
+ * Phone number
+ * First name
+ * Last name
+
+## Actions v2
+
+Segment’s v2 Actions, [Call Conversion v2](#call-conversion-v2), [Conversion Adjustment v2](#conversion-adjustment-v2), and [Click Conversion v2](#click-conversion-v2), support the following features:
+
+- **Sync modes**: Control how Segment updates your downstream destination by selecting a sync mode, or a strategy for updating your downstream data. 
+- **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Google Ads.
+- **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
+
+> warning ""
+> You might need to reauthorize your Google Ads account to use all of the features associated with v2 Actions.
+
+### Sync modes
+
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Sync modes available for v2 Actions include:
+- **Add**: Add records to a list, segment, or journey.
 
 {% include components/actions-fields.html settings="true"%}
-
-## Migrate from your legacy Upload Enhanced Conversion Action
-
-To migrate from the legacy Upload Enhanced Conversion Action to the updated Upload Conversion Adjustment Action: 
-
-1. Navigate to the Google Ads Conversions destination in your workspace and select the **Settings** tab. 
-2. On the Settings tab, enter your Conversion ID and Customer ID into the named fields. 
-2. Update the following fields for the Upload Conversion Adjustment Action mapping: 
-    - Conversion Action ID
-    - Adjustment Type
-3. Replicate as many fields from your original mapping as possible, using the following table for reference. 
-
-Review the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) section for more details about each field.
-
-| Upload Enhanced Conversion (Legacy)| Upload Conversion Adjustment | Default Mapping                      |
-|------------------------|----------------------------|--------------------------------------|
-| conversion_label       | N/A             | `$.properties.conversion_label`        |
-| email                  |  email_address             | `$.properties.email` or `$.traits.email` or `$.context.traits.email` |
-| transaction_id         | order_id                    | `$.properties.orderId`                 |
-| user_agent             | user_agent                  | `$.context.userAgent`                 |
-| conversion_time        | conversion_timestamp        | `$.timestamp`                        |
-| value                  | N/A             |` $.properties.total`                  |
-| currency_code          | N/A              | `$.properties.currency`             |
-| is_app_incrementality  | N/A              |` false`                           |
-| pcc_game               | N/A              | `false`                             |
-| phone_number           | phone_number                | `$.properties.phone` or `$.traits.phone` |
-| first_name             | first_name                  | `$.properties.firstName` or `$.traits.firstName` |
-| last_name              | last_name                   | `$.properties.lastName` or `$.traits.lastName` |
-| street_address         | street_address              | `$.properties.address.street` or `$.traits.address.street` |
-| city                   | city                       | `$.properties.address.city` or `​​$.traits.address.city` |
-| region                 | state                      | `$.properties.address.state` or `$.traits.address.state` |
-| post_code              | postal_code                 | `$.properties.address.postalCode` or `$.traits.address.postalCode` |
-| country                | country                     | `$.properties.address.country` or `$.traits.address.country` |
-| N/A | gclid                  | Default Not Available        | 
-| N/A | adjustment_timestamp   | Default Not Available        | 
-| N/A | restatement_value      | Default Not Available        | 
-| N/A | restatement_currency_code | Default Not Available     |
-
-
-### Automatic migration from Upload Enhanced Conversion (Legacy) Action
-The Upload Enhanced Conversion action relies on the Google Enhanced Conversion Legacy API, which will be deprecated on June 30th, 2024.
-
-On June 7, 2024, Segment will begin migrating all enabled legacy Upload Enhanced Conversion mappings to the new Upload Conversion Adjustment mapping, preserving as many mapping fields as possible. Migrated mappings will have the same names as your legacy mappings, with `[Migrated]` appended. For example, if your mapping was named "Enhanced Conversions", Segment would name your migrated mapping "Enhanced Conversions [Migrated]". 
-
-![A screenshot of the Google Enhanced Conversions mappings page, with migrated mappings disabled.](images/google-enhanced-conversions-migration.png)
-
-After this migration occurs, you must take the following steps: 
-1. Open the your Google Ads Conversions destination and select the **Settings** tab. 
-2. Enter your Conversion ID and Customer ID into their respective fields. Find information about what these values are in the [destination settings](#destination-settings).  
-3. Select the **Mappings** tab.
-4. Update the Conversion Action and Adjustment Type fields in the Upload Conversion Adjustment mapping to match the fields outlined in the above table. ![A screenshot of a migrated mapping, with the required fields outlined in black.](images/mapping-fields.png)
-5. Enable the migrated mapping(s). 
-6. Disable the legacy Upload Enhanced Conversion mappings. 
-
-To migrate your mapping yourself, use the steps in the [Migrate from your legacy Upload Enhanced Conversion Action](#migrate-from-your-legacy-upload-enhanced-conversion-action) documentation. 
-
-Segment will deprecate all legacy Upload Enhanced Conversion legacy actions after June 30th, 2024.
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
@@ -145,6 +196,31 @@ This error indicates that the conversion action specified in the upload request 
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
 
+### Conversion upload error 
+
+You may encounter this error if you use more than one identifier to update a conversion. You must only use one identifier (GCLID, GBRAID, or WBRAID) for each ClickConversion entry.
+
 ### `The required field was not present., at conversions[0].gclid` Error
 
 Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.
+
+### What are the differences between the Upload Click Conversions and Click Conversion V2 Actions?
+The only difference between the Upload Click Conversions and Click Conversion V2 Actions is that the Click Conversion V2 Action has [sync modes](/docs/connections/destinations/#sync-modes).
+
+### Why am I getting a `USER_PERMISSION_DENIED` 403 error when my credentials are correct?
+
+If you're getting the following error:
+
+```
+"errors": [
+{
+"errorCode": {
+"authorizationError": "USER_PERMISSION_DENIED"
+},
+"message": "User doesn't have permission to access customer. Note: If you're accessing a client customer, the manager's customer id must be set in the 'login-customer-id' header. See https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid"
+}
+]
+```
+
+That generally means there is a conflict or problem between the account used for authorization through Segment and the Customer ID. You can read more about this in Google's [API Call Structure](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid:~:text=in%20the%20request%3A-,Authorization,must%20be%20set%20to%20the%20customer%20ID%20of%20the%20manager%20account.,-Key%20Term%3A){:target="_blank”} documentation. 
+

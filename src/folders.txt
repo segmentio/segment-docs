@@ -144,8 +144,6 @@ connections/destinations/catalog/countly
 connections/destinations/catalog/activecampaign
 connections/destinations/catalog/activecampaign/images
 connections/destinations/catalog/amazon-kinesis
-connections/destinations/catalog/personas-display-video-360
-connections/destinations/catalog/personas-display-video-360/images
 connections/destinations/catalog/inspectlet
 connections/destinations/catalog/bytegain
 connections/destinations/catalog/klaviyo

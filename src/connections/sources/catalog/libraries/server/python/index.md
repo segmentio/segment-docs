@@ -156,7 +156,7 @@ The Page call has the following fields:
 | `user_id` _string                        | The ID for the user that is a part of the group.                                                                                                                                            |
 | `category` _string, optional_            | The category of the page. Useful for industries, like ecommerce, where many pages often live under a larger category.                                                                             |
 | `name` _string, optional_                | The name of the page, for example **Signup** or **Home**.                                                                                                                                   |
-| `properties` _dict, optional_            | The page properties. To see a reference of reserved page properties, see the spec [here](/docs/connections/spec/page/#properties).                                                          |
+| `properties` _dict, optional_            | The page properties. To see a reference of reserved page properties, see the [Spec: Page](/docs/connections/spec/page/#properties) documentation.                                                          |
 | `context` _dict, optional_               | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)             |
 | `timestamp` _datetime, optional_         | A `datetime` object representing when the Page took place. This is most useful if you're importing historical data. If the Page just happened, leave it blank to use the server's time. |
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                      |
@@ -404,9 +404,9 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 
 If the module detects that it can't flush faster than it's receiving messages, it'll simply stop accepting messages. This means your program will never crash because of a backed up analytics queue. The default `max_queue_size` is `10000`.
 
-### How do I flush right now?!
+### Flush
 
-You can also flush on demand. For example, at the end of your program, you'll want to flush to make sure there's nothing left in the queue. Just call the `flush` method:
+You can call the `flush` method at the end of your program to make sure there's nothing left in the queue:
 
 ```python
 analytics.flush()

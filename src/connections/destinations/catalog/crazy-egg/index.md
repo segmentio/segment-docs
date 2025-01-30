@@ -36,6 +36,6 @@ As this is automatically included in the `analytics.js` snippet by default, you 
 ## Troubleshooting
 
 ### I can't map user variables
-The current Crazy Egg Destination doesn't support mapping of user variables out of the box. You will need to add your own additional JavaScript as specified [here](https://help.crazyegg.com/articles/61-user-variables){:target="_blank"}.
+The current Crazy Egg Destination doesn't support mapping of user variables out of the box. You will need to add your own additional JavaScript as specified in Crazy Egg's [Custom User Variables](https://support.crazyegg.com/hc/en-us/articles/360054584474-Custom-User-Variables){:target="_blank"} documentation.
 
 {% include content/client-side-script-unverified.md %}

@@ -1,6 +1,5 @@
 ---
 title: Toplyne Cloud Mode (Actions) Destination
-beta: true
 hide-boilerplate: true
 hide-dossier: true
 id: 6408ac6c144a7d5ac55cf414

@@ -27,7 +27,8 @@ The Marketo Static Lists (Actions) destination lets you sync users into Marketo 
 - **Lookback window allowed**: Yes
 - **Client or Server-Side Connection**: Server-side
 
-{% include content/sync-frequency-note.md %}
+> info "Real-time to batch destination sync frequency"
+> You can expect a sync frequency of 15 to 18 hours for real-time audience connections to Marketo Static Lists (Actions).
 
 ## Configuring Marketo Static Lists
 
@@ -55,6 +56,9 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
 > warning "Warning:"
 > Do not create a list in the folder for the audience. Segment creates the list for you!
+
+### Using Marketo Static Lists (Actions) with the Event Tester
+This destination keeps track of a `List Id` field for you on the backend. That field is added to payloads as Segment processes them. This means that the Event Tester can't be used out-of-the-box as it can with most destinations. To test an event using the Event Tester for Marketo Static Lists (Actions), you need to add a valid `List Id` to the payload at the `context.personas.external_audience_id` key.
 
 ### Using Marketo Static Lists (Actions) destination with Engage
 

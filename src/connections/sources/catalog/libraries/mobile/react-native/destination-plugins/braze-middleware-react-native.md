@@ -5,9 +5,9 @@ strat: react-native
 
 [Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s middleware plugin code is open source and available on GitHub. You can view it [here](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze-middleware){:target="_blank"}.
+Braze’s middleware plugin code is open source and available on GitHub. You can view it on GitHub in the [@segmentio/analytics-react-native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze-middleware){:target="_blank"}.
 
-The Braze middleware plugin is a `BeforePlugin` used to debounce `identify` events for [Braze](https://www.braze.com). This Plugin should be used with a [Cloud Mode](/docs/connections/destinations/#connection-modes) connection to Braze. To connect to Braze with a Device Mode connection use the [Braze Destination Plugin](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze) instead. It is not possible to use both plugins in one `Analytics React Native` instance. 
+The Braze middleware plugin is a `BeforePlugin` used to debounce `identify` events for [Braze](https://www.braze.com){:target="_blank"}. This Plugin should be used with a [Cloud Mode](/docs/connections/destinations/#connection-modes) connection to Braze. To connect to Braze with a Device Mode connection use the [Braze Destination Plugin](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze){:target="_blank"} instead. It is not possible to use both plugins in one `Analytics React Native` instance. 
 
 ## Installation
 
@@ -24,7 +24,7 @@ yarn add @segment/analytics-react-native-plugin-braze-middleware
 ```
 ## Usage
 
-Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
+Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins){:target="_blank"} on the main Analytics client:
 
 In your code where you initialize the analytics client call the `.add(plugin)` method with an `BrazeMiddlewarePlugin` instance:
 

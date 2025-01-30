@@ -1,6 +1,5 @@
 ---
 title: Airship Source
-beta: true
 id: 85V0O2lkFs
 ---
 

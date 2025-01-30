@@ -1,6 +1,5 @@
 ---
 title: Use Cases Reference
-hidden: true
 ---
 
 This reference guide provides detailed information on the suggested events, sources, and destinations for each Segment use case. Use this guide to ensure you're tracking the right events and connecting the best sources and destinations for your specific needs.
@@ -278,10 +277,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events              | Properties |
-| ------------------- | ---------- |
-| Trial Started       | `category` |
-| Subscription Stared |            |
+| Events               | Properties |
+| -------------------- | ---------- |
+| Trial Started        | `category` |
+| Subscription Started |            |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Acquire paid subscriptions use case:
@@ -303,10 +302,10 @@ This table shows the events and properties Segment recommends you track for the 
 <br />
 <br />
 
-| Events              | Properties |
-| ------------------- | ---------- |
-| Subscription Stared |            |
-| Trial Started       | `category` |
+| Events               | Properties |
+| -------------------- | ---------- |
+| Subscription Started |            |
+| Trial Started        | `category` |
 
 <br />
 And this table shows the source and destination types that Segment recommends you set up for the Convert trials to paid subscriptions use case:

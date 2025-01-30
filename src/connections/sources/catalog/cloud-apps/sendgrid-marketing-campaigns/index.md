@@ -1,7 +1,6 @@
 ---
 title: SendGrid Marketing Campaigns Source
 id: GCeG0vmcDW
-beta: true
 ---
 
 [SendGrid Marketing Campaigns](http://twilio.com/docs/sendgrid/ui/integrations/segment?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} lets you automatically stream your email events directly into Segment for use inside your warehouse or other downstream destinations.

@@ -4,20 +4,20 @@ rewite: true
 redirect_from:
   - '/connections/warehouses/catalog/postgres/'
 ---
-{% include content/warehouse-ip.html %}
-
 
 PostgreSQL, or Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications.
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
-> note "Segment sources required"
+> info "Segment sources required"
 > In order to add a Postgres destination to Segment, you must first add a source. To learn more about sources in Segment, check out the [Sources Overview](/docs/connections/sources) documentation.
 
 ## Getting started
 Segment supports the following Postgres database providers:
 - [Heroku](#heroku-postgres)
 - [RDS](#rds-postgres)
+
+{% include content/storage-do-include.md %}
 
 Segment supported a third Postgres provider, Compose, until Compose was [was deprecated on March 1, 2023](https://help.compose.com/docs/compose-deprecation){:target="_blank"}. To continue sending your Segment data to a Postgres destination, consider using either [Heroku Postgres](#heroku-postgres) or [Amazon's Relational Database Service](#rds-postgres).
 
@@ -101,6 +101,14 @@ To make sure your Postgres database is secure:
 - Allowlist the Segment IP addresses (`52.25.130.38/32` and `34.223.203.0/28`). Otherwise, Segment can't load your data.
 - Create a service user that has `read/write` permissions.
 - Always require SSL/TLS and make sure your data warehouse can only accept secure connections. Segment only connects to your data warehouse using SSL/TLS.
+
+### Allowlisting IPs
+
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ## Best Practices
 

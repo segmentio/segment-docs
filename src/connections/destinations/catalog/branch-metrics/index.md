@@ -10,9 +10,9 @@ id: 5642909ae954a874ca44c582
 
 **As of November 2019, the Branch mobile SDKs for Segment are in maintenance mode.**
 
-Existing users of the Branch SDKs are unaffected, however new installations must implement the Branch native SDK separately. They can then enable Branch's [data export integration](https://docs.branch.io/integrations/segment-export/) to push additional data to Segment, and [data import integration](https://docs.branch.io/integrations/segment-import/){:target="_blank"} to pull additional Segment data into the Branch dashboard.
+Existing users of the Branch SDKs are unaffected, however new installations must implement the Branch native SDK separately. They can then enable Branch's [data export integration](https://docs.branch.io/integrations/segment-export/){:target="_blank”} to push additional data to Segment, and [data import integration](https://docs.branch.io/integrations/segment-import/){:target="_blank"} to pull additional Segment data into the Branch dashboard.
 
-The legacy instructions for implementing the Branch mobile SDKs for Segment have been removed from this documentation. If you need access to the removed sections, you can view them [here](https://web.archive.org/web/20191113225102//docs/connections/destinations/catalog/branch-metrics/){:target="_blank"}.
+The legacy instructions for implementing the Branch mobile SDKs for Segment have been removed from this documentation. If you need access to the removed sections, you can view the [Archived version of this documentation](https://web.archive.org/web/20191113225102//docs/connections/destinations/catalog/branch-metrics/){:target="_blank"}.
 
 ---
 

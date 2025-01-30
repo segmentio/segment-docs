@@ -230,5 +230,14 @@ Once you've created a source, the source is automatically enabled and can immedi
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed after it is created. You must create a new source if you would like to use a different source type.
 
+## Library tiers
 
+Segment has defined three tiers for libraries: Flagship, Maintenance, and Community. These tiers indicate the level of support, enhancements, and maintenance each library receives from Segment. 
 
+The criteria for assigning a library to a tier include its overall usage by customers and the availability of newer versions. Here's how Segment defines each tier:
+
+- **Flagship** libraries offer the most up-to-date functionality on Segment’s most popular platforms. Segment actively maintains Flagship libraries, which benefit from new feature releases and ongoing development and support.
+- **Maintenance** libraries send data as intended but receive no new feature support and only critical maintenance updates from Segment. When possible, Segment recommends using a Flagship version of these libraries.
+- **Community** libraries are neither managed nor updated by Segment. These libraries are available on GitHub under the MIT License for the open-source community to fork or contribute.
+
+If a library falls into one of these tiers, you'll see the tier label at the beginning of the library's page.

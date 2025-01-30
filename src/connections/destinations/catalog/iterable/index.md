@@ -73,7 +73,7 @@ First `track` event with `userId` and `email`; user will be created
 Subsequent `track` with `userId`
 
 > info ""
-> If you send an ISO formatted date field in your events, Segment converts it into UTC to conform to standard Iterable format: `yyyy-MM-dd HH:mm:ss ZZ` (for example, `2023-02-05 20:42:10 +00:00`). Iterable has a specific date format that must be used to segment a field by date. Read more about Iterable date field [here](https://support.iterable.com/hc/en-us/articles/208183076-Data-Field-Types-in-Iterable#date){:target="_blank"}.
+> If you send an ISO formatted date field in your events, Segment converts it into UTC to conform to standard Iterable format: `yyyy-MM-dd HH:mm:ss ZZ` (for example, `2023-02-05 20:42:10 +00:00`). Iterable has a specific date format that must be used to segment a field by date. Read more about Iterable date field in the [Field Data Types](https://support.iterable.com/hc/en-us/articles/208183076-Data-Field-Types-in-Iterable#date){:target="_blank"} documentation.
 
 ### Ecommerce
 
@@ -127,6 +127,12 @@ Iterable supports sending push notification events to Segment. These events are 
 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`
+
+## High retry rate
+
+If you're experiencing a large amount of retries within your destinations that are connected to your HTTP API source, this could be due to Etimedout errors. Etimedout errors are intermittent problems that can come about when HTTP requests are made from server to server. 
+
+The Etimedout error is the result of an HTTP response not being received in a specific timeframe. [Learn more](/docs/connections/destinations/#retries-between-segment-and-destinations) about how Segment retries events to destinations.
 
 
 ## Using Iterable with Engage
@@ -229,6 +235,6 @@ Segment sends an `identify` or `track` call for each email address on the user's
 
 ### Are you able to update a user's email through Iterable?
 
-Updating a user's email in Iterable is currently not possible via Segment. You will have to call updateEmail outside of Segment if you want to be able to do so: Updating a user's email address cannot be achieved with the standard Segment identify call alone. It requires sending an Update Email Request directly to the Iterable API from outside the Segment platform.
+Updating a user's email in Iterable is currently not possible with Segment. You will have to call updateEmail outside of Segment if you want to be able to do so: Updating a user's email address cannot be achieved with the standard Segment identify call alone. It requires sending an Update Email Request directly to the Iterable API from outside the Segment platform.
 
-The API request outlined [here](https://api.iterable.com/api/docs#users_updateEmail). This needs to be followed in order to ensure Iterable has the correct email address for any users who have updated their email address. A workaround to update an email in Iterable from Segment would be to hit that API endpoint using a destination function.
+The API request outlined in Iterable's [Update user email](https://api.iterable.com/api/docs#users_updateEmail){:target="_blank"} docs. This needs to be followed in order to ensure Iterable has the correct email address for any users who have updated their email address. A workaround to update an email in Iterable from Segment would be to hit that API endpoint using a destination function.

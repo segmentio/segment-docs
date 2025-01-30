@@ -1,5 +1,4 @@
 ---
-rewrite: true
 title: Survicate (Actions) Destination
 id: 65a6ac19ea6d3ced628be00b
 ---

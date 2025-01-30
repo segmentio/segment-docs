@@ -1,6 +1,5 @@
 ---
 title: QuanticMind Destination
-beta: true
 ---
 
 ## Server Side

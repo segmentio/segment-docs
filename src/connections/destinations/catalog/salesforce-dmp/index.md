@@ -1,7 +1,6 @@
 ---
 title: Salesforce DMP Destination
 rewrite: true
-beta: true
 hidden: true
 ---
 
@@ -51,8 +50,8 @@ If you don't provide a `namespace` Segment can't pass events downstream to SFDMP
 ### Setting up for a Server-Side Implementation
 
 6. To set up SFDMP for a server-side connection, enter your SFDMP `Server-side
-   Publisher UUID`. To locate this, we recommend that you contact your SFDMP representative. Helpful documentation can be found
-   [here](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API){:target="_blank"}.
+   Publisher UUID`. To locate this, Segment recommends that you contact your SFDMP representative. Helpful documentation can be found
+   [in the Salesforce Audience Studio Help Center](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API){:target="_blank"}.
 7. Once you've retrieved your `Server-side Publisher UUID`, follow the
    instructions in the Segment SFDMP settings to enter your `Pixel.gif Domain`,
    `Pixel.gif Site` and, optionally, your `Pixel.gif Section` in the correct

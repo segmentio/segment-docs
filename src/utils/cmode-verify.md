@@ -102,7 +102,7 @@ tests:
       mobile: true
       server: true 
 ---
-Use this page to verify that the static table at the top of each section matches the API generated tables below it. Any mismatches indicate a change in the API that requires further research to determine impact to the main Connection Modes table [here](docs/connections/destinations/cmodes-compare/).
+Use this page to verify that the static table at the top of each section matches the API generated tables below it. Any mismatches indicate a change in the API that requires further research to determine impact to the main Connection Modes table in the [Destinations Connection Modes comparison](docs/connections/destinations/cmodes-compare/) docs.
 
 Mismatches are shown highlighted in Red.
 

@@ -3,7 +3,7 @@ rewrite: true
 title: Quora Conversion Pixel Destination
 id: 5952698570a3e552b9575519
 ---
-[Quora Conversion Pixel](https://www.quora.com/business){:target="_blank"} enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in GitHub [here](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/quora-conversion-pixel){:target="_blank"}.
+[Quora Conversion Pixel](https://www.quora.com/business){:target="_blank"} enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in the [@segmentio/analytics.js-integrations](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/quora-conversion-pixel){:target="_blank"} GitHub repository.
 
 ## Getting Started
 

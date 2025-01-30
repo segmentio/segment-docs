@@ -28,7 +28,9 @@ Once the account is deleted you will not have access to workspaces associated wi
 
 ## How do I delete my workspace entirely?
 
-To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General** tab, then click **Delete Workspace**.
+To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General Settings** tab, then click **Delete Workspace**.  Segment will irrevocably delete your workspace 5 days after you initiate your deletion request. 
+
+If you want to revoke the workspace deletion request during the 5 days after you initiated your request, open the [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} page, select the **General Settings** tab and click **Revoke Workspace Deletion**. 
 
 You should also change your write keys for each source and remove all Segment snippets from your codebase.
 
@@ -59,7 +61,7 @@ Though workspaces can't be merged, you can move an existing source to a single w
 
 To move a source between workspaces, navigate to the source's **Settings** tab, then click **Transfer to Workspace**. Choose the workspace you're moving the source to, then click **Transfer Source**.
 
-When you transfer a source from one workspace to another, the connected destinations aren't transferred. You must manually reconnect these destinations and settings.
+When you transfer a source from one workspace to another, Segment migrates all connected non-storage destinations.
 
 > info ""
 > The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.

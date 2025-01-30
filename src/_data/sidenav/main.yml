@@ -20,6 +20,17 @@ sections:
     title: Testing and Debugging
   - path: /getting-started/whats-next
     title: What's Next
+  - section_title: Use Cases
+    slug: getting-started/use-cases
+    section:
+    - path: /getting-started/use-cases/
+      title: Use Cases Overview
+    - path: /getting-started/use-cases/guide/
+      title: Choosing a Use Case
+    - path: /getting-started/use-cases/setup/
+      title: Use Cases Setup
+    - path: /getting-started/use-cases/reference/
+      title: Use Cases Reference
 
 - section_title: Guides
   section:
@@ -91,8 +102,6 @@ sections:
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/discounts-for-startups-npos
       title: Discounts or Coupons
-    - path: /guides/usage-and-billing/startup-program
-      title: Segment Startup Program
 - section_title: Connections
   section:
   - path: /connections
@@ -150,8 +159,10 @@ sections:
       title: Cloud Sources
     - path: /connections/sources/debugger
       title: Source Debugger
-    - path: /connections/sources/custom-domains
-      title: Set Up a Custom Domain Proxy in Segment
+    - path: /connections/sources/custom-domain
+      title: Segment-Managed Custom Domain
+    - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+      title: Self-Managed Custom Proxy
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema
@@ -182,8 +193,14 @@ sections:
     section:
     - path: /connections/reverse-etl
       title: Reverse ETL Overview
+    - path: /connections/reverse-etl/setup
+      title: Set Up Reverse ETL
+    - path: /connections/reverse-etl/manage-retl
+      title: Manage Reverse ETL Syncs
+    - path: /connections/reverse-etl/system
+      title: Reverse ETL System
     - path: /connections/reverse-etl/reverse-etl-catalog
-      title: Reverse ETL Catalog
+      title: Reverse ETL Destination Catalog
     - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
       section:
@@ -331,6 +348,29 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
+  - section_title: Data Graph
+    slug: unify/data-graph
+    section:
+    - path: /unify/data-graph/
+      title: Data Graph
+    - section_title: Setup Guides
+      slug: /unify/data-graph/setup-guides/
+      section:
+      - path: /unify/data-graph/setup-guides/bigquery-setup/
+        title: BigQuery Data Graph Setup
+      - path: /unify/data-graph/setup-guides/databricks-setup/
+        title: Databricks Data Graph Setup
+      - path: /unify/data-graph/setup-guides/redshift-setup/
+        title: Redshift Data Graph Setup
+      - path: /unify/data-graph/setup-guides/snowflake-setup/
+        title: Snowflake Data Graph Setup
+    - section_title: Linked Events 
+      slug: /unify/data-graph/linked-events/
+      section: 
+      - path: /unify/data-graph/linked-events/ 
+        title: Linked Events Overview
+      - path: /unify/data-graph/linked-events-limits/
+        title: Linked Events Limits
   - section_title: Traits
     slug: unify/traits
     section:
@@ -351,6 +391,8 @@ sections:
       title: Custom Traits
     - path: '/unify/traits/sql-traits'
       title:  SQL Traits
+    - path: '/unify/traits/recommended-items'
+      title: Recommended Items
   - path: /unify/profile-api
     title: Profile API
   - path: /unify/debugger
@@ -401,14 +443,23 @@ sections:
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
+    - section_title: Linked Audiences
+      slug: '/engage/audiences/linked-audiences'
+      section: 
+      - path: '/engage/audiences/linked-audiences'
+        title: Linked Audiences Overview
+      - path:  '/engage/audiences/linked-audiences-limits'
+        title: Linked Audiences Limits
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
       title: Generative Audiences
     - path: '/engage/audiences/generative-audiences-nutrition-facts'
       title: Generative Audiences Nutrition Facts Label
-    - path: '/engage/audiences/recommendation-audiences'
-      title: Recommendation Audiences
+    - path: '/engage/audiences/product-based-audiences'
+      title: Product Based Audiences
+    - path: '/engage/audiences/product-based-audiences-nutrition-label'
+      title: Product Based Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
     - path: '/engage/audiences/send-audience-data'
@@ -429,6 +480,15 @@ sections:
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
+    - section_title: Event-Triggered Journeys
+      slug: '/engage/journeys/event-triggered-journeys'
+      section: 
+      - path: /engage/journeys/event-triggered-journeys
+        title: Overview
+      - path: /engage/journeys/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
+      - path: /engage/journeys/journey-context
+        title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
     - path: '/engage/journeys/use-cases'
