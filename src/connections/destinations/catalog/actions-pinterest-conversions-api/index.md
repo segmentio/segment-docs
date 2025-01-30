@@ -101,7 +101,7 @@ LDP is enabled only if all three required fields in the following table are pres
 | `country`      | Country of residence                            | "US"                   |
 
 
-### PII Hashing
+### PII hashing
 
 Before sending data to Pinterest, Segment applies SHA-256 hashing to the following personally identifiable information (PII) fields:
 
@@ -111,7 +111,7 @@ Before sending data to Pinterest, Segment applies SHA-256 hashing to the followi
 - Name details: first name, last name
 - Location: city, state, ZIP code, country
 
-### User Data Parameters
+### User data parameters
 
 Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields#User_data%2C%20and%20%2Ccustom_data%2C%20objects){:target="_blank"} before sending to Pinterest Conversions:
 
@@ -132,7 +132,7 @@ Segment automatically maps User Data fields to their corresponding parameters [a
 | Zip Code          | `zp`                                |
 | Country           | `country`                           |
 
-### Custom Data Parameters
+### Custom data parameters
 
 Segment automatically maps Custom Data fields (excluding `content_ids`, `contents`, `num_items`, `opt_out_type`) to their corresponding parameters [as expected by the Conversions API](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields#User_data%2C%20and%20%2Ccustom_data%2C%20objects){:target="_blank"} before sending to Pinterest Conversions:
 
@@ -147,11 +147,11 @@ Segment automatically maps Custom Data fields (excluding `content_ids`, `content
 | Search string   | `search_string`                       |
 | Opt out type    | `opt_out_type`                        |
 
-### Server Event Parameter Requirements
+### Server event parameter requirements
 
 Pinterest requires the `action_source` server event parameter for all events sent to the Pinterest Conversions API. This parameter specifies where the conversions occur.
 
-### Verify Events in Pinterest Conversions Dashboard
+### Verify events in Pinterest Conversions dashboard
 
 After you start sending events, you should start seeing them in dashboard. You can confirm that Pinterest received them by following these steps:
 
