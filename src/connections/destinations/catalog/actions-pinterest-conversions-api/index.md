@@ -74,7 +74,7 @@ Conversion Events must meet the following requirements to be considered for dedu
 > info ""
 > Segment offers a client-side destination specifically designed for the Pinterest Tag. You can find detailed documentation and further information on how to implement this integration by following this [link](https://segment.com/catalog/integrations/pinterest-tag/){:target="_blank”}.
 
-### Events fail to send due to no App Name set
+#### Events fail to send due to no App Name set
 
 App Name is a mandatory field for many of the Pinterest Conversion API destination's mappings. Segment's mobile libraries automatically collect and map the App Name to the correct field. However, Segment's web or server-based libraries do not automatically collect this field, which can cause mappings to fail. Segment recommends adding the App Name to the Segment event, or hardcoding a static string in the mapping as the App Name.  
 
