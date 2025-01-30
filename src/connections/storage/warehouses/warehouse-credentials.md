@@ -39,6 +39,5 @@ Each warehouse has unique requirements for authenticating them for integrations.
 * [Reverse ETL](/docs/connections/reverse-etl/setup/)
 * [Warehouse destinations](/docs/connections/storage/catalog/)
 
-
-
 ## Example use cases and permissions
+tbd
