@@ -54,26 +54,29 @@ To connect the Pinterest Conversions API Destination:
 
 ## FAQ
 
-#### Deduplication with Pinterest tag
+#### Deduplication with the Pinterest tag
 
-Pinterest cannot know if a conversion reported by the Tag and another reported by the API for Conversions are the same.
+When the Pinterest tag and the API for conversions both report the same event, Pinterest can't automatically determine if they're duplicates. Because Pinterest recommends using both methods together, deduplication is essential to prevent double-counting.
 
-Because Pinterest recommends using both the API for Conversions and the Pinterest Tag, deduplication is an essential part of the implementation process. It helps to avoid double-counting of a single event when it’s sent through multiple sources, such as the Pinterest Tag and the Pinterest API for Conversions.
+If an event is sent from both the Pinterest tag and the API using the same `event_id`, Pinterest treats them as a single event. This prevents conversions from being counted twice and improves attribution accuracy.
 
-For example, if a user triggers an add to cart event and the tag reports the data using `123` as the event ID. Later, their web server reports the conversion to the API and uses `123` as the event ID. When Pinterest receives the events, Segment looks at the event IDs to confirm they correspond to the same event. 
+For example:
 
-Deduplication prevents duplicate conversions when sending data through both the Pinterest tag and the API. This will result in more conversions being attributed than either alone, because if the tag doesn’t match an event, but the API does (or vice versa), the event can still be linked. 
+1. A user adds an item to their cart.
+2. The Pinterest tag reports the event with `event_id: 123`.
+3. Later, the web server also sends the event to the API with `event_id: 123`.
+4. When Pinterest receives both events, Segment checks the `event_id` to confirm they refer to the same action.
 
-Advertisers should use deduplication for any events they expect to be reported by multiple sources across the API and the Pinterest Tag.
+By using deduplication, advertisers can report conversions through both methods without inflating conversion counts. If an event is only received from one source, Pinterest still attributes it appropriately.
 
-Conversion Events must meet the following requirements to be considered for deduplication: 
+Conversion events must meet the following requirements to be considered for deduplication: 
 
-1. The event has non-empty and non-null values for `event_id` and `event_name`
-2. The `action_source` of the event is not `offline` (for example, events that occurred in the physical world, like in a local store)  The `action_source` parameter is an enum that gives the source of the event –  `app_android`, `app_ios`, `web`, or `offline`.
-3. The duplicate events arrived within 24 hours of the time of receipt of the first unique event.
+- The event includes a non-empty, non-null `event_id` and `event_name`.
+- The `action_source` is not `offline` (for example, it occurred in-app or on the web). Supported values include `app_android`, `app_ios`, and `web`.
+- The duplicate events arrive within 24 hours of the first recorded event.
 
 > info ""
-> Segment offers a client-side destination specifically designed for the Pinterest Tag. You can find detailed documentation and further information on how to implement this integration by following this [link](https://segment.com/catalog/integrations/pinterest-tag/){:target="_blank”}.
+> Segment offers a client-side destination for the Pinterest tag. See the [Pinterest destination documentation](/docs/connections/destinations/catalog/pinterest-tag/){:target="_blank"} for setup instructions and implementation details.
 
 #### Events fail to send due to no App Name set
 
