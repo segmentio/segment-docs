@@ -12,7 +12,7 @@ Yes. You can learn more about the Audience API by visiting the [Segment Public A
 
 ## Can I programmatically determine if a user belongs to a particular audience?
 
-Yes. Eecause Engage creates a trait with the same name as your audience, you can query the Profile API to determine if a user belongs to a particular audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following Profile API URL:
+Yes. Because Engage creates a trait with the same name as your audience, you can query the Profile API to determine if a user belongs to a particular audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following Profile API URL:
 
 ```
 https://profiles.segment.com/v1/namespaces/<namespace_id>/collections/users/profiles/email:bob@segment.com/traits?include=high_value_users
@@ -150,4 +150,8 @@ Based on Engage behavior, standard source events such as Page, Track and Identif
 
 ## Why can't I connect the audience/computed trait to an existing destination in my workspace?
 
-Engage will not allow you to connect an audience/computed trait to a destination that is already linked to a [Connections-based source](https://segment.com/docs/connections/sources/). Instead, create a new instance of the destination with the correct Engage space selected as the data source.
+Engage will not allow you to connect an audience/computed trait to a destination that is already linked to a [Connections-based source](/docs/connections/sources/). Instead, create a new instance of the destination with the correct Engage space selected as the data source.
+
+## How are the "5 most common values" for traits calculated?
+
+The "5 most common values" are the most frequently observed values for a given trait across all users, not tied to any individual user.

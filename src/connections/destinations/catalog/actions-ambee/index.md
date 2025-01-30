@@ -1,7 +1,6 @@
 ---
 title: "Ambee (Actions) Destination"
 hidden: true
-beta: true
 id: 647f2f7ce3b561ab931c2b77
 ---
 
@@ -47,7 +46,7 @@ Then, in the Source, navigate to **Settings** > **API Keys**.
 ### API Key
 
 To start working with Ambee as your destination, you'll need
-Ambee's API Key. Sign up for Ambee [here](https://auth.ambeedata.com/users/register?redirectUrl=https://api-dashboard.getambee.com){:target="_blank"}.
+Ambee's API Key. Sign up for Ambee [on the Ambee site](https://auth.ambeedata.com/users/register?redirectUrl=https://api-dashboard.getambee.com){:target="_blank"}.
 
 Once you are signed in, you will get your limited-period API key on the
 dashboard's homepage. If your use case requires data in bulk, you'll

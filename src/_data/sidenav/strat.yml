@@ -44,6 +44,8 @@ sections:
     title: Facebook Ads cloud source
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
     title: Facebook Lead Ads cloud source
+  - path: /connections/destinations/catalog/actions-facebook-custom-audiences
+    title: Facebook Custom Audiences (Actions) destination
 
 
 - slug: google
@@ -73,27 +75,34 @@ sections:
     title: Google Cloud Pub/Sub destination
   - path: /connections/destinations/catalog/adwords-remarketing-lists
     title: Google Ads Remarketing Lists destination (Personas)
+  - path: /connections/destinations/catalog/actions-display-video-360
+    title: Display and Video 360 (Actions) Destination
+  - path: /connections/destinations/catalog/actions-first-party-dv360
+    title: First Party Display and Video 360 (Actions) Destination
 
 
 - slug: salesforce
   section_title: Salesforce Integrations
   section:
   - path: /connections/destinations/catalog/actions-salesforce
-    title: Salesforce (Actions) destination
+    title: Salesforce (Actions) Destination
   - path: /connections/destinations/catalog/salesforce
-    title: Salesforce destination
+    title: Salesforce Destination
   - path: /connections/destinations/catalog/actions-salesforce-marketing-cloud
-    title: Salesforce Marketing Cloud (Actions) destination
+    title: Salesforce Marketing Cloud (Actions) Destination
   - path: /connections/destinations/catalog/salesforce-marketing-cloud
-    title: Salesforce Marketing Cloud destination
+    title: Salesforce Marketing Cloud Destination
   - path: /connections/destinations/catalog/actions-pardot
-    title: Salesforce Pardot (Actions) destination
+    title: Salesforce Pardot (Actions) Destination
   - path: /connections/destinations/catalog/pardot
-    title: Salesforce Pardot destination
+    title: Salesforce Pardot Destination
   - path: /connections/sources/catalog/cloud-apps/salesforce
-    title: Salesforce cloud source
+    title: Salesforce Cloud Source
   - path: /connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
-    title: Salesforce Marketing Cloud cloud source
+    title: Salesforce Marketing Cloud Source
+  - path: /connections/sources/catalog/cloud-apps/salesforce-unify
+    title: Salesforce Unify Direct Integration 
+
 
 
 

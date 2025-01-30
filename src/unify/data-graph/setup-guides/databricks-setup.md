@@ -1,28 +1,22 @@
 ---
-title: Databricks Setup
-beta: true
+title: Databricks Data Graph Setup
 plan: unify
-hidden: true
+redirect_from:
+  - '/unify/linked-profiles/setup-guides/databricks-setup'
 ---
 
-> info "Linked Audiences is in public beta"
-> Linked Audiences (with Data Graph, Linked Events) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+On this page, you'll learn how to connect your Databricks data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/). 
 
-On this page, you'll learn how to connect your Databricks data warehouse to the Segment Data Graph. 
+## Databricks credentials
 
-## Set up Databricks credentials
+Segment assumes that you already have a workspace that includes the datasets you'd like to use for the Data Graph. Sign in to Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
 
-Sign in to Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
+## Step 1: Create a new Service Principal user
+Segment recommends setting up a new Service Principal user and only giving this user permissions to access the required catalogs and schemas. 
 
-Segment assumes that you already have a workspace that includes the datasets you'd like to use for the Data Graph. Segment recommends setting up a new Service Principal user with only the permissions to access the required catalogs and schemas.
+If you already have a Service Principal user you'd like to use, grant it "Can use" permissions for your data warehouse and proceed to [Step 2](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables).
 
-### Step 1: Set up a Service Principal user
-
-Segment recommends that you set up a new Service Principal user. If you already have a Service Principal user you'd like to use, grant it "Can use" permissions for your data warehouse and proceed to [Step 2: Create a catalog for Segment to store checkpoint tables](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables). 
-
-If you want to create a new Service Principal user, complete the following substeps: 
-
-#### Substep 1: Create a new Service Principal user
+### 1a) Create a new Service Principal user
 1. Log in to the Databricks UI as an Admin.
 2. Click **User Management**. 
 3. Select the **Service principals** tab. 
@@ -34,42 +28,30 @@ If you want to create a new Service Principal user, complete the following subst
 9. Select the “Permissions” tab and click **Add Permissions**. 
 10. Add the newly created Service Principal user and click **Save**. 
 
-> success ""
-> If you already have a warehouse you'd like to use, you can move on to the next substep, [Substep 2: Add your Service Principal user to Warehouse User Lists](#substep-2-add-your-service-principal-user-to-warehouse-user-lists). If you need to create a new warehouse first, see the [Create a new warehouse](#create-a-new-warehouse) before completing the next substep. 
-
-#### Substep 2: Add your Service Principal user to Warehouse User Lists 
+### 1b) Add your Service Principal user to Warehouse User Lists 
 1. Log in to the Databricks UI as an Admin.
 2. Navigate to SQL Warehouses. 
 3. Select your warehouse and click **Permissions**. 
 4. Add the Service Principal user and grant them “Can use” access. 
 5. Click **Add**. 
 
-##### (Optional) Confirm Service Principal permissions
-Confirm that the Service Principal user that you're using to connect to Segment has "Can use" permissions for your warehouse. 
+## Step 2: Create a catalog for Segment to store checkpoint tables
 
-To confirm that your Service Principal user has "Can use" permission: 
-1. In the Databricks console, navigate to SQL Warehouses and select your warehouse. 
-2. Navigate to Overview and click **Permissions**. 
-3. Verify that the Service Principal user has "Can use" permission. 
+**Segment requires write access to this catalog for internal bookkeeping and to store checkpoint tables for the queries that are executed. Therefore, Segment recommends creating a new catalog for this purpose.** This is also the catalog you'll be required to specify when connecting Databricks with the Segment app.
 
-### Step 2: Create a catalog for Segment to store checkpoint tables
-
-> warning "Segment recommends creating an empty catalog for the Data Graph"
-> If you plan to use an existing catalog with Reverse ETL, follow the instructions in the [Update user access for Segment Reverse ETL catalog](#update-user-access-for-segment-reverse-etl-catalog) section.
- 
-Segment requires write access to a catalog to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. 
-
-Segment recommends creating an empty catalog for this purpose by running the following SQL. This is also the catalog that you'll be required to specify when setting up your Databricks integration in the Segment app. 
+> info ""
+> Segment recommends creating a new database for the Data Graph.
+> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-catalog) to update user access for the Segment Reverse ETL catalog.
 
 ```sql
 CREATE CATALOG IF NOT EXISTS `SEGMENT_LINKED_PROFILES_DB`;
--- Copy the Client ID by clicking “Generate secret” for the Service Principal user
+-- Copy the saved Client ID from previously generated secret
 GRANT USAGE ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 GRANT CREATE ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 GRANT SELECT ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 ```
 
-### Step 3: Grant read-only access to the Profiles Sync catalog
+## Step 3: Grant read-only access to the Profiles Sync catalog
 
 Run the following SQL to grant the Data Graph read-only access to the Profiles Sync catalog:
 
@@ -77,15 +59,15 @@ Run the following SQL to grant the Data Graph read-only access to the Profiles S
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${profiles_sync_catalog}` TO `${client_id}`;
 ```
 
-### Step 4: Grant read-only access to additional catalogs for the Data Graph
-Run the following SQL to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph: 
+## Step 4: Grant read-only access to additional catalogs for the Data Graph
+Run the following SQL to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph.
 
 ```sql 
--- Run this command for each catalog you want to use for the Segment Data Graph
+-- ********** REPEAT THIS COMMAND FOR EACH CATALOG YOU WANT TO USE FOR THE DATA GRAPH **********
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${catalog}` TO `${client_id}`;
 ```
 
-### (Optional) Restrict read-only access to schemas
+## (Optional) Step 5: Restrict read-only access to schemas
 
 Restrict access to specific schemas by running the following SQL:
 
@@ -95,26 +77,11 @@ USE CATALOG `${catalog}`;
 GRANT USAGE, SELECT ON SCHEMA `${schema_1}` TO `${client_id}`;
 GRANT USAGE, SELECT ON SCHEMA `${schema_2}` TO `${client_id}`;
 ...
-
 ```
 
-### (Optional) Restrict read-only access to tables
-Restrict access to specific tables by running the following SQL: 
+## Step 6: Validate the permissions of your Service Principal user
 
-```sql
-GRANT USAGE ON CATALOG `${catalog}` TO `${client_id}`;
-USE CATALOG `${catalog}`;
-GRANT USAGE ON SCHEMA `${schema_1}` TO `${client_id}`;
-USE SCHEMA `${schema_1}`;
-GRANT SELECT ON TABLE `${table_1}` TO `${client_id}`;
-GRANT SELECT ON TABLE `${table_2}` TO `${client_id}`;
-...
-
-```
-
-### Step 5: Validate the permissions of your Service Principal user
-
-Sign in to the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank”} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
+Sign in to the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank"} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
 
 > success ""
 > If this command succeeds, you can view the table. 
@@ -125,25 +92,25 @@ SHOW SCHEMAS;
 SELECT * FROM ${schema}.${table} LIMIT 10;
 ```
 
-### Step 6: Connect your warehouse to Segment
+## Step 7: Connect your warehouse to Segment
 
-Segment requires the following settings to connect to your Databricks warehouse. You can find these details in your Databricks workspace by navigating to **SQL Warehouse > Connection details**.
+To connect your warehouse to the Data Graph:
 
+1. Navigate to **Unify > Data Graph**. This should be a Unify space with Profiles Sync already set up.
+2. Click Connect warehouse.
+3. Select Databricks as your warehouse type. 
+4. Enter your warehouse credentials. You can find these details in your Databricks workspace by navigating to **SQL Warehouse > Connection details**. Segment requires the following settings to connect to your Databricks warehouse:
 - **Hostname**: The address of your Databricks server
 - **Http Path**: The address of your Databricks compute resources
-- **Port**: The port used to connect to your Databricks warehouse. The default port is 443, but your port might be different. 
-- **Catalog**: The catalog you designated in [Step 2: Create a catalog for Segment to store checkpoint tables](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables)
+- **Port**: The port used to connect to your Databricks warehouse. The default port is 443, but your port might be different 
+- **Catalog**: The catalog you designated in [Step 2](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables)
 - **Service principal client ID**: The client ID used to access to your Databricks warehouse
 - **OAuth secret**: The OAuth secret used to connect to your Databricks warehouse
 
-After identifying the following settings, continue setting up the Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/data-graph/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
+5. Test your connection, then click Save. 
 
-## Additional set up for warehouse permissions
-
-### Update user access for Segment Reverse ETL catalog
-Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` schema.
-
-If Segment Reverse ETL has ever run in the catalog you are configuring as the Segment connection catalog, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Update the Databricks table permissions by running the following SQL:
+## Update user access for Segment Reverse ETL catalog
+If Segment Reverse ETL has ever run in the catalog you are configuring as the Segment connection catalog, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing catalog. Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` catalog.
 
 ```sql
 GRANT ALL PRIVILEGES ON SCHEMA ${segment_internal_catalog}.__segment_reverse_etl TO `${client_id}`;

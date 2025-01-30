@@ -113,7 +113,7 @@ Here are some Public API use case examples:
 
 **Create or update versions**: Create or update a function to add a version record and save the source code.
 
-**Deploy a function**: Use the Public API to deploy a function. After you deploy, Segment marks the function version as `DEPLOYED`. Learn more about function version states [here](#latest-and-deployed-versions).
+**Deploy a function**: Use the Public API to deploy a function. After you deploy, Segment marks the function version as `DEPLOYED`. Learn more about function version states in the [Latest and deployed versions](#latest-and-deployed-versions) section.
 
 View Segment's [Public API](https://docs.segmentapis.com/tag/Functions){:target="_blank"} docs for more information on how to use Functions Versioning with the Public API.
 

@@ -195,7 +195,7 @@ Client.Set(*objects.Object{
 Client.Close()
 ```
 
-View the Objects-go library on GitHub [here](https://github.com/segmentio/objects-go){:target="_blank"}.
+View the Objects-go library on GitHub in the [@segmentio/objects-go](https://github.com/segmentio/objects-go){:target="_blank"} repository.
 
 Here is a `curl` example of how to get started:
 

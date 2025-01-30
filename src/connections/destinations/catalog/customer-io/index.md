@@ -131,7 +131,7 @@ For that, you need to make the following calls:
 
 ## Application Installed
 
-[Application Installed](/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#operation/add_device){:target="_blank"} API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](/docs/connections/spec/common/#context).
+[Application Installed](/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using the Customer.io [Add or update a customer device](https://customer.io/docs/api/#operation/add_device){:target="_blank"} API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [in the Spec: Common](/docs/connections/spec/common/#context) docs.
 
 {% comment %} api-example '{
 "action": "track",

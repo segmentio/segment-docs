@@ -218,6 +218,10 @@ No, SQL Traits supports string and numeric data types. You can cast arrays as a 
 
 After a SQL trait has been created, you can't change its Warehouse Source. You'll need to create a new trait if you want to change the Warehouse source.
 
+### What happens if a user is no longer returned by the SQL trait?
+
+If a user was present in one computation, but it is no longer present in the following one, the SQL trait will detect this difference and nullify all trait values for the user. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if you have a use case which calls for an exemption from this default behavior.
+
 ## Troubleshooting
 
 ### I'm getting a permissions error.

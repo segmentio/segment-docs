@@ -1,6 +1,5 @@
 ---
 title: Cordial Destination
-beta: true
 hidden: true
 ---
 

@@ -10,6 +10,8 @@ The TikTok Conversions destination is a server-to-server integration with the Ti
 
 Data shared through the Events API is processed similarly to information shared through the TikTok pixel and TikTok SDK business tools. Advertisers can use events data to power solutions like dynamic showcase ads (DSA), custom targeting, campaign optimization and attribution. Advertisers can see their event data in TikTok Events Manager.
 
+TikTok maintains this integration. Please reach out to the [TikTok support team](mailto: segmenteng@bytedance.com) for any issues. 
+
 ## Benefits of TikTok Conversions
 The TikTok Conversions destination provides the following benefits:
 
@@ -27,9 +29,9 @@ Follow the instructions below to enable your TikTok ads account and add the TikT
 
 The TikTok Conversions destination is configured to use the TikTok Events API. To generate a TikTok Pixel Code and Access Token:
 
-1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){:target="_blank"}.
-2. [Create a TikTok Pixel](https://ads.tiktok.com/help/article?aid=10021){:target="_blank"} in Developer Mode to obtain a Pixel Code. For more information about Developer Mode, please review the [TikTok developer documentation](https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890973258754){:target="_blank"}.
-3. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?rid=959icq5stjr&id=1701890979375106){:target="_blank"} and generate a long term Access Token.
+1. [Create a TikTok For Business account](https://business-api.tiktok.com/portal/docs?id=1738855099573250){:target="_blank"}.
+2. [Create a TikTok Pixel](https://ads.tiktok.com/help/article/get-started-pixel){:target="_blank"} in Developer Mode to obtain a Pixel Code. For more information about Developer Mode, please review the [TikTok developer documentation](https://business-api.tiktok.com/portal/docs?rid=5ipocbxyw8v&id=1739585702922241){:target="_blank"}.
+3. Follow instructions for [Authorization](https://business-api.tiktok.com/portal/docs?id=1739584855420929){:target="_blank"} and generate a long term Access Token.
 
 ### Connect TikTok Conversions to your workspace
 
@@ -38,7 +40,7 @@ The TikTok Conversions destination is configured to use the TikTok Events API. T
 3. Click **Configure TikTok Conversions**.
 4. Select the source that will send data to TikTok Conversions and follow the steps to name your destination.
 5. On the Settings tab, enter in your TikTok Access Token and Pixel Code and click **Save**.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 {% include components/actions-fields.html %}
 

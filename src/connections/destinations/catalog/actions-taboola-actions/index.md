@@ -1,7 +1,6 @@
 ---
 title: Taboola (Actions) Destination
 id: 66684ba89c0523461d8bb7f3
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

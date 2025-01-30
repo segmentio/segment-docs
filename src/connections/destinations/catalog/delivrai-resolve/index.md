@@ -1,7 +1,6 @@
 ---
 title: Delivr.ai Resolve (Browser) Destination
 id: 650c69e7f47d84b86c120b4c
-beta: true
 redirect_from:
   - '/connections/destinations/catalog/actions-cdpresolution/'
 ---

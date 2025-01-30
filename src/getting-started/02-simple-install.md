@@ -160,7 +160,7 @@ Once you add a few `track` calls, you're done with setting up Segment. You succe
 
 ### Step 1: Install the SDK
 <br>
-To install Analytics for iOS, Segment recommends you to use [Cocoapods](http://cocoapods.org), because it allows you to create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
+To install Analytics-iOS, Segment recommends you to use [CocoaPods](http://cocoapods.org){:target="_blank"}, because it allows you to create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
 <br>
 1) Add the `Analytics` dependency to your `Podfile` by adding the following line:
 

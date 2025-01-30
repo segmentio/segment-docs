@@ -1,12 +1,13 @@
 ---
 title: Use Cases Overview
-hidden: true
 ---
 
 Use Cases are pre-built Segment setup guides tailored to common business goals. 
 
 Use Cases eliminate guesswork with a structured approach to onboarding, helping you configure Segment correctly and align its features to your business objectives.
 
+> info ""
+> You can onboard to Segment with a Use Case if you’re a new Business Tier customer or haven’t yet connected a source and destination.
 
 ## Onboard to Segment with Use Cases
 

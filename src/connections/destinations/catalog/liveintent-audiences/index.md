@@ -1,6 +1,5 @@
 ---
 title: LiveIntent Audiences Destination
-beta: true
 hide-device: true
 hide-settings: true
 hide-cmodes: true

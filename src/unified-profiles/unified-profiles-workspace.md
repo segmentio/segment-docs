@@ -9,7 +9,7 @@ For entitlements and limitations associated with a Unified Profiles workspace, s
 
 ## Prerequisites
 
-Before creating a Unified Profiles workspace, you must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
+Before creating a Unified Profiles workspace, you must have requested access from the [Unified Profiles in Flex page](https://console.twilio.com/us1/develop/flex/unified-profiles){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 
 ## Step 1: Select your data source
 
@@ -34,7 +34,7 @@ You can set up 1 of the following options:
 ### CSV
 
 > warning "You cannot remove test profiles in your Unified Profiles workspace"
-> Contact Flex support to remove test profiles you uploaded to your Unified Profiles workspace.
+> Contact [Segment support](mailto:friends@segment.com){:target="_blank"} to remove test profiles you uploaded to your Unified Profiles workspace.
 
 1. On the Getting started page, click **Upload CSV**. 
 2. Review the information on the Upload profiles and custom traits page. 

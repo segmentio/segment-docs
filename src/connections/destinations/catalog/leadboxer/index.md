@@ -1,6 +1,5 @@
 ---
 title: LeadBoxer Destination
-beta: true
 ---
 
 ## Introduction

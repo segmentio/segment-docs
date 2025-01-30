@@ -7,24 +7,44 @@ redirect_from:
 
 ## Working with Predictions in Segment
 
-Segment creates Predictions as Computed Traits, with scores saved to user profiles as a percentage cohort. For example, `0.8` on a user's profile indicates that the user is in the the cohort's 80th percentile, or the top 20%. 
+Predictions are stored as [computed traits](/docs/unify/Traits/computed-traits/) in user profiles, with scores represented as percentage cohorts. For example, a score of `0.8` indicates the user is in the 80th percentile, or the top 20% of the cohort.
 
-Once you've selected a cohort, you can use Predictions in concert with other Segment features:
+After selecting a cohort, use Predictions with the following Segment features:
 
-- [Audiences](/docs/engage/audiences/), which you can create with predictions as a base. As part of Engage, Segment also offers prebuilt [Suggested Predictive Audiences](/docs/unify/traits/predictions/suggested-predictive-audiences/).
+- [Audiences](/docs/engage/audiences/), build new audiences using Predictions as a base. Segment also provides prebuilt [Suggested Predictive Audiences](/docs/unify/traits/predictions/suggested-predictive-audiences/) as part of Engage..
 - [Journeys](/docs/engage/journeys/); use Predictions in Journeys to trigger [Engage marketing campaigns](/docs/engage/campaigns/) when users enter a high-percentage cohort, or send promotional material if a customer shows interest and has a high propensity to buy.
 - [Destinations](/docs/connections/destinations/); send your Predictions downstream to [Warehouses](/docs/connections/storage/warehouses/), support systems, and ad platforms.
 
 ### Prediction tab
 
-Once Segment has generated your prediction, you can access it in your Trait's **Prediction** tab. The Prediction tab gives you actionable insight into your prediction. 
+You can access generated Predictions in the **Prediction** tab of your Trait. The Prediction tab gives you actionable insight into your prediction. 
 
 ![The Explore your prediction section of the Computed Trait Prediction tab](../../images/explore_prediction.png)
 
 The **Explore your prediction** section of the Prediction tab visualizes prediction data and lets you create Audiences to target. An interactive chart displays a percentile cohort score that indicates the likelihood of users in each group to convert on your chosen goal. You can choose the top 20%, bottom 80%, or create custom ranges for specific use cases.
 
 You can then create an Audience from the group you've selected, letting you send efficient, targeted marketing campaigns within Journeys. You can also send your prediction data to downstream destinations.
- 
+
+### Model monitoring
+
+Predictions rank your customers by their likelihood to perform a specific conversion event, from most to least likely.
+
+For each custom prediction, Segment monitors the percentile cohort where customers were ranked when they performed the predicted conversion event. After around 7 days, Segment creates a graph data visualization, allowing you to evaluate the prediction’s accuracy based on real workspace data.
+
+![Bar chart showing conversion history across percentile cohorts. The top 10% cohort has the highest number of conversions, followed by the 81-90% cohort, with decreasing conversions as cohorts move lower in the percentile range.](../../images/model_monitoring.png)
+
+For example, suppose you're predicting the likelihood of customers completing an `order_completed` event. The graph shows that:
+
+- Customers in the 91–100% cohort performed the event about 6,700 times.
+- Customers in the 81–90% cohort performed the event about 3,900 times.
+- Customers in the 71–80% cohort performed the event about 3,000 times.
+
+This pattern shows that the prediction was extremely accurate in identifying customers most likely to convert. Ideally, most graphs will show a similar trend, where the highest-ranked cohorts have the most conversion activity.
+
+However, this pattern can change depending on how you use Predictions. For example, if you run a marketing campaign targeting the bottom 10% cohort, you might see an increase in conversions for that group instead.
+
+Like any AI or machine learning tool, Predictions may not always be perfect. Start small, test your predictions, and refine your approach as needed. Model monitoring makes it easier to measure and improve the accuracy of your predictions.
+
 #### Model statistics
 
 The Predictions tab's **Understand your prediction** section provides insights into the performance of the underlying predictive model. This information helps you understand the data points that contribute to the prediction results.
@@ -33,7 +53,7 @@ The Predictions tab's **Understand your prediction** section provides insights i
 
 The Understand your prediction dashboard displays the following model metrics:
 
-- **AUC**, or Area under [the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic){:target="_blank"}; AUC lands between 0 and 1, where 1 is a perfect future prediction, and 0 represents the opposite. Higher AUC indicates better predictions. 
+- **AUC**, or Area under [the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic){:target="_blank"}; AUC values range from 0 to 1, with 1 indicating a perfect prediction and 0 indicating the opposite. Higher AUC indicates better predictions. 
 - **Lift Quality**, which measures the effectiveness of a predictive model. Segment calculates lift quality as the ratio between the results obtained with and without the predictive model. Higher lift quality indicates better predictions.
 - **Log Loss**; the more a predicted probability diverges from the actual value, the higher the log-loss value will be. Lower log loss indicates better predictions.
 - **Top contributing events**; this graph visually describes the events factored into the model, as well as the associated weights used to create the prediction.
@@ -72,7 +92,7 @@ Predictions may not be as beneficial in the following situations:
 
 ## FAQs
 
-#### What type of machine learning model do you use? 
+#### What type of machine learning model does Segment use? 
 
 Segment uses a binary classification model that uses decision trees.
 
@@ -92,7 +112,7 @@ These data science statistics measure the effectiveness of Segment's predictions
 
 The Prediction Quality Score factors AUC, log loss, and lift quality to determine whether Segment recommends using the prediction. A model can have a score of Poor, Fair, Good, or Excellent.
 
-#### How do you store trait values? 
+#### How does Segment store trait values? 
 
 The created trait value represents the user's percentile cohort. This value will refresh when we re score the customers based on your refresh cadence. If you see `0.85` on a user's profile, this means the user is in the 85th percentile, or the top 15% for the prediction.
 
@@ -126,3 +146,11 @@ Yes. Keep the following in mind when you work with Predictions:
 - **Predictions will not work as intended if you track more than 5,000 unique events in your workspace.**
 - **Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again."** Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
 Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.
+
+#### Why don't I see an events nested properties in the Predictions Builder?
+
+The Predictions Builder doesn't display nested properties.
+
+#### How is the average calculated?
+
+Segment calculates the average by adding the probabilities for all users and dividing by the total number of users. If a user's score in **Likelier to convert than average** is below 1, they are less likely to convert compared to the average user.

@@ -1,7 +1,6 @@
 ---
 title: Upollo Source
 id: 9TYqEh3nMe
-beta: true
 ---
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} gives unique and actionable insights that lead to conversion, retention, and expansion.

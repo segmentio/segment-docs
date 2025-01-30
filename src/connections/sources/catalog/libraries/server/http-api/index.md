@@ -64,6 +64,7 @@ For example, to use the access token in the HTTP API Source, use `access_token` 
       "email": "test@example.org",
       "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
       "userId": "123",
+      "type": "track",
       "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
   }
 ```
@@ -73,19 +74,6 @@ You can reuse the access token until the expiry period specified on the OAuth ap
 ### Content-Type
 
 To send data to Segment's HTTP API, a content-type header must be set to `'application/json'`.
-
-## Errors
-
-Segment returns a `200` response for all API requests except errors caused by large payloads and JSON errors (which return `400` responses.) To debug events that return `200` responses but aren't accepted by Segment, use the Segment Debugger.
-
-Common reasons events are not accepted by Segment include: 
-  - **Payload is too large:** The HTTP API can handle API requests that are 32KB or smaller. The batch API endpoint accepts a maximum of 500KB per request, with a limit of 32KB per event in the batch. If these limits are exceeded, Segment returns a 400 Bad Request error. 
-  - **Identifier is not present**: The HTTP API requires that each payload has a userId and/or anonymousId.
-  - **Track event is missing name**: All Track events sent to Segment must have an `event` field. 
-  - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values.
-  - **Invalid JSON**: If you send an event with invalid JSON, Segment returns a 400 Bad Request error.
-
-Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} with any requests or suggestions you may have.
 
 ## Rate limits
 
@@ -470,16 +458,27 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 When sending a HTTP call from a user's device, you can collect the IP address by setting `context.direct` to `true`.
 
+## Errors
+
+Segment returns a `200` response for all API requests except errors caused by large payloads and JSON errors (which return `400` responses.) To debug events that return `200` responses but aren't accepted by Segment, use the Segment Debugger.
+
+Common reasons that events are not accepted by Segment: 
+  - **Payload is too large:** Most HTTP API routes can handle API requests that are 32KB or smaller. If this limit is exceeded, Segment returns a 400 Bad Request error.
+  - **The `\batch` API endpoint:** This endpoint accepts a maximum of 500KB per batch API request. Each batch request can only have up to 2500 events, and each batched event needs to be less than 32KB. Segment returns a `200` response but rejects the event when the number of batched events exceeds the limit.
+  - **Identifier is not present**: The HTTP API requires that each payload has a userId and/or anonymousId.  If you send events without either the userId or anonymousId, Segment’s tracking API responds with an no_user_anon_id error. Check the event payload and client instrumentation for more details.
+  - **Track event is missing name**: All Track events sent to Segment must have an `event` field. 
+  - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values with fewer than 100 characters. 
+  - **Invalid JSON**: If you send an event with invalid JSON, Segment returns a 400 Bad Request error.
+  - **Incorrect credentials**: Double check your credentials for your downstream destinations.
+  - **Destination incompatibility**: Make sure that the destination you are troubleshooting can accept server-side API calls. You can see compatibility information on the [Destination comparison by category](/docs/connections/destinations/category-compare/) page and in the documentation for your specific destination.
+  - **Destination-specific requirements**: Check the documentation specific to the destination to see if there are other requirements for using the method and destination that you're trying to get working. 
+
+Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} with any requests or suggestions you may have.
+
 ## Troubleshooting
-
-{% include content/troubleshooting-intro.md %}
-
-<!-- LR: no quickstart for this file. removing this include and manually putting in a flat text version that can be customized {% include content/troubleshooting-server-debugger.md %} -->
 
 ### No events in my debugger
 
 1. Double check that you've set up the library correctly.
 
 2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
-
-{% include content/server-side-troubleshooting.md %}

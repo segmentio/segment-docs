@@ -1,7 +1,6 @@
 ---
 title: Startdeliver-v2 Destination
 id: 65ccc6147108efc0cf5c6fe1
-beta: true
 ---
 [Startdeliver](https://startdeliver.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} connects data from a variety of sources to provide a customer view optimized to Customer Success Managers.
 

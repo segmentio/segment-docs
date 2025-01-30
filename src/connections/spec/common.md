@@ -139,7 +139,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `active`    | Boolean | Whether a user is active. <br><br> This is usually used to flag an `.identify()` call to just update the traits but not "last seen."                                                                                                                                                                            |
 | `app`       | Object  | dictionary of information about the current application, containing `name`, `version`, and `build`. <br><br> This is collected automatically from the mobile libraries when possible.                                                                                                                           |
 | `campaign`  | Object  | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. <br><br> This maps directly to the common UTM campaign parameters.                                                                    |
-| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`.                                                                                                                                                                           |
+| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`. <br><br> **Note:** If you collect information about iOS devices, note that the `model` value set by Apple might not exactly correspond to an iPhone model number. For example, an `iPhone 15 Pro Max` has a `model` value of `iPhone16,2`.                                                                                                                                                                           |
 | `ip`        | String  | Current user's IP address.                                                                                                                                                                                                                                                                                      |
 | `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.                                                                                                                                                                                                    |
 | `locale`    | String  | Locale string for the current user, for example `en-US`.                                                                                                                                                                                                                                                        |
@@ -203,8 +203,8 @@ Other libraries only collect `context.library`, any other context variables must
 | timezone                 | ✅            | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
-> info "IPv6 Addresses are not Supported"
-> Segment does not support collection of IP addresses that are in the IPv6 format.
+> info "IPv6"
+> Segment doesn't support automatically collecting IPv6 addresses.
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
@@ -215,9 +215,11 @@ Other libraries only collect `context.library`, any other context variables must
 To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
 ```js
-analytics.track("Report Submitted", {},
-    {"groupId": "1234"}
-);
+analytics.track("Report Submitted", {}, {
+  context: {
+    groupId: "1234"
+  }
+});
 ```
 
 To add fields to the context object in the new mobile libraries, you must utilize a custom plugin. Documentation for creating plugins for each library can be found here:
@@ -298,3 +300,25 @@ Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTi
 
 > info ""
 > For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calculated `timestamp` value set in the future.
+>
+
+## FAQ
+
+### Why Are Events Received with Timestamps Set in the Past or Future?
+
+If you're using one of Segment's client-side libraries, please note that several factors can cause timestamp discrepancies in your event data.
+
+1. **Overriding Timestamp Value:**  
+   - When a manual timestamp is set in the payload with a date in the past, it can cause events to appear as if they were sent earlier than they actually were.
+
+2. **Analytics.js Source with Retries Enabled:**  
+   - The [Retries](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#retries) feature supports offline traffic by queuing events in Analytics.js. These events are sent or retried later when an internet connection is available, keeping the original timestamp intact.
+
+3. **Mobile App Backgrounded or Closed:**  
+   - If a user closes the app, events may be queued within the app. These queued events won't be sent until the app is re-opened, potentially in the future, leading to timestamp discrepancies.
+
+4. **Inaccurate Browser/Device Clock Settings:**  
+   - Timestamps can be incorrect if the client's device time is inaccurate, as the `originalTimestamp` relies on the client device's clock, which can be manually adjusted.
+
+5. **Traffic from Internet Bots:**  
+   - [Internet Bots](https://segment.com/docs/guides/ignore-bots/#whats-a-bot) can sometimes send requests with unusual timestamps, either intentionally or due to incorrect settings, leading to discrepancies.

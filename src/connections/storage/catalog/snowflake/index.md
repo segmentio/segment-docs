@@ -5,8 +5,6 @@ redirect_from:
   - '/connections/warehouses/catalog/snowflake/'
 ---
 
-{% include content/warehouse-ip.html %}
-
 [Snowflake](https://docs.snowflake.net/manuals/index.html){:target="_blank"} is a data warehouse, built for the cloud, that delivers performance, simplicity, concurrency and affordability.
 
 > info ""
@@ -22,6 +20,8 @@ There are six steps to get started using Snowflake with Segment.
 4. [Create a user for Segment](#step-4-create-user-for-segment)
 5. [Test the user and credentials](#step-5-test-the-user-and-credentials)
 6. [Connect Snowflake to Segment](#step-6-connect-snowflake-to-segment)
+
+{% include content/storage-do-include.md %}
 
 ### Prerequisites 
 

@@ -141,6 +141,11 @@ analytics.track('Example Event', { custom_group_key : 'group1' });
 
 If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
 
+### Failed events due to messageId
+Segment maps the `messageId` of a Segment event to Mixpanel's `insert_id` value. If you are generating your own `messageId`, ensure the format complies with Mixpanel's `insert_id` requirements. For more information, see Mixpanel's [Import Events](https://developer.mixpanel.com/reference/import-events#propertiesinsert_id){:target="_blank”} documentation. 
+
+Failing to generate a `messageId` that complies with Mixpanel's `insert_id` standard might result in a `400 Bad Request` error from Mixpanel.
+
 ### Why is Boardman, Oregon appearing in my users' profile location field?
 
 If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.

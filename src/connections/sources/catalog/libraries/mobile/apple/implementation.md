@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Implementation Guide
+title: Analytics-Swift Implementation Guide
 strat: swift
 tags:
   - apple

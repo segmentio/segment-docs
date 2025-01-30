@@ -5,7 +5,7 @@ hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
 maintenance-content: >
-  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions) for a device-mode integration with access to Braze SDK features.
+  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-web) for a device-mode integration with access to Braze SDK features.
   <br />
   If you use a Braze mobile [device-mode connection](/docs/connections/destinations/#connection-modes), for example to use Braze Content Cards or In-App Messaging, use the Braze (Classic) Destination. Segment will continue to make updates to the Segment Braze mobile device-mode SDK.
 
@@ -16,11 +16,12 @@ id: 54efbf12db31d978f14aa8b5
 The Braze Destination is open-sourced on GitHub. Source code for the following integrations is available:
 
 - [iOS](https://github.com/Appboy/appboy-segment-ios){:target="_blank"} (maintained by Braze)
-- [Android](https://github.com/Appboy/appboy-segment-android){:target="_blank"}(maintained by Braze)
-- [Swift](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"}(maintained by Braze)
-- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"}(maintained by Braze)
+- [Android](https://github.com/Appboy/appboy-segment-android){:target="_blank"} (maintained by Braze)
+- [Swift](https://github.com/braze-inc/analytics-swift-braze){:target="_blank"} (maintained by Braze)
+- [Kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"} (maintained by Braze)
 - [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} (maintained by Segment)
 - [Server](https://github.com/segmentio/integration-appboy){:target="_blank"} (maintained by Segment)
+- [React Native](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze){:target="_blank"} (maintained by Segment)
 
 For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact){:target="_blank"}.
 
@@ -57,9 +58,8 @@ For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze
       [SEGAnalytics setupWithConfiguration:config];
     ```
 
-    [Here](https://github.com/Appboy/appboy-segment-ios/blob/master/CocoapodsExample/Segment-Appboy/SEGAppDelegate.m){:target="_blank"}
- is a sample project which shows how to integrate the above.
-
+    You can find a sample project in the [@Appboy/appboy-segment-ios](https://github.com/Appboy/appboy-segment-ios/blob/master/CocoapodsExample/Segment-Appboy/SEGAppDelegate.m){:target="_blank"} repository that shows how to integrate the previous snippet. 
+ 
 #### Sample App
 
 Braze created a sample iOS application that integrates Braze using Segment. See the Braze [GitHub repository](https://github.com/Appboy/appboy-segment-ios/tree/master/CocoapodsExample){:target="_blank"}
@@ -406,13 +406,17 @@ analytics.ready(function() {
 });
 ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
+3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this in Braze's [Standard Android push integration](https://www.braze.com/docs/developer_guide/platform_integration_guides/android/push_notifications/android/integration/standard_integration/#step-6-upload-your-json-credentials-to-braze){:target="_blank"} documentation.
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push){:target="_blank"}.
+<!---TODO: IG 8/2024. This page might need a revamp, I fixed a lot of these links that didn't direct anywhere but if these links are broken the procedure might be too
+
+Actually sike this is in maintenance mode, nvm --->
+
+4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/push_notifications/integration/#safari){:target="_blank"}.
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/push_notifications/soft_push_prompt/#step-1-create-a-push-primer-campaign){:target="_blank"} to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
@@ -455,7 +459,7 @@ analytics.ready(function() {
  });
 ```
 
-For more details on this snippet, check out Braze's docs [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#soft-push-prompts){:target="_blank"}.
+For more details on this snippet, check out Braze's [Soft push prompt](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/push_notifications/soft_push_prompt/#step-3-update-integration){:target="_blank"} docs.
 
 **Note:** Place this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
