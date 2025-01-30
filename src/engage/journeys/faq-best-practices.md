@@ -100,7 +100,8 @@ Journeys triggers audience or trait-related events for each email `external_id` 
 
 It may take up to five minutes for a user profile to enter each step of a Journey, including the entry condition. For Journey steps that reference a batch audience or SQL trait, Journeys processes user profiles at the same rate as the audience or trait computation. Visit the Engage docs to [learn more about compute times](/docs/engage/audiences/#understanding-compute-times).
 
-#### How to ensure consistent user evaluation in Journey entry conditions that use Historical Data?
+#### How can I ensure consistent user evaluation in Journey entry conditions that use historical data?
 
-When a Journey is published, the computation of the entry step begins immediately in real-time, while the backfill process of historical data runs concurrently. It is important to note that if a user's events or traits evaluated in the entry condition span both real-time and historical data, unintended behavior may occur. This discrepancy could result in users qualifying in real-time, but should not have when their historical data is taken into account.
-To prevent this, consider manually creating an audience that incorporates these conditions, including historical data. This pre-built audience can then be referenced in your Journey entry condition. This approach ensures a consistent evaluation of users based on both their real-time and historical data.
+When you publish a journey, the entry step begins evaluating users in real time while the historical data backfill runs separately. If a user's events or traits span both real-time and historical data, they might qualify for the journey immediately, even if their full historical data would have disqualified them.
+
+To prevent inconsistencies, you can manually create an audience that includes the same conditions as the journey's entry step. This ensures that it evaluates both real-time and historical data. You can then use this pre-built audience as the journey's entry condition. This approach guarantees that Segment evaluates users consistently across both data sources.
