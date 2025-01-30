@@ -8,22 +8,22 @@ private: false
 hidden: false
 
 ---
-The Pinterest Conversions API destination is a server-to-server integration with [the Pinterest API for Conversions](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions){:target="_blank"} that allows advertisers to send conversions directly to Pinterest without requiring a Pinterest tag. These conversions map to Pinterest campaigns for conversion reporting to improve conversion visibility. When you pass events to Pinterest, advertisers can use Pinterest's insights to evaluate an ad's effectiveness to improve content, targeting, and placement of future ads.
+The Pinterest Conversions API destination is a server-to-server integration with [the Pinterest API for Conversions](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions){:target="_blank"}. This destination allows advertisers to send conversion events directly to Pinterest without needing a Pinterest tag. These conversions map to Pinterest campaigns for more accurate conversion reporting and improved visibility.
 
-Advertisers can send web, in-app, or offline conversions to Pinterest’s server to server endpoint in real time. Events received in real time or within an hour of the event occurring are reported as web or app events. Events received outside of this window, as well as delayed batch events, are considered offline events.
+Advertisers can send web, in-app, or offline conversions to Pinterest’s server in real time. Events received within an hour of occurring are reported as web or app events. Events received later, including batch-delayed events, are categorized as offline conversions.
 
-The API for Conversions helps Pinterest provide a more comprehensive view of your campaign performance. All advertisers who currently use the Pinterest tag will benefit from using it in tandem with the API for Conversions.
+Using the Pinterest API for conversions alongside the [Pinterest tag](https://help.pinterest.com/en/business/article/install-the-pinterest-tag){:target="_blank"} provides a more complete view of campaign performance.
 
 ## Benefits of Pinterest Conversions API (Actions)
 
 The Pinterest Conversions API destination provides the following benefits:
 
-- **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
-- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to the Pinterest Conversions API.
-- **Prebuilt mappings**. Mappings for standard Pinterest Conversions API events, like `Add to Cart`, are prebuilt with the prescribed parameters and available for customization.
-- **Support for deduplication**. Deduplication removes duplicates events, which improves the accuracy of your conversions
-- **Support for Page calls**. You can send Page calls to Pinterest as a standard Page View.
-- **Support for multi-user arrays**. User data nested within arrays, like the `User Data` array in the `Order Completed` event, can be sent to Pinterest.
+- **Simplified setup**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
+- **Clearer data mapping**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to the Pinterest Conversions API.
+- **Prebuilt event mappings**. Standard events like `Add to Cart` come preconfigured with recommended parameters.
+- **Deduplication support**. Prevents duplicate events and improving conversion accuracy.
+- **Page call support**. You can send [Page calls](/docs/connections/spec/page/) to Pinterest as a standard Page View.
+- **Multi-user array support**. User data nested within arrays, like the `User Data` array in the `Order Completed` event, can be sent to Pinterest.
 - **Data normalization**. Data is normalized before it's hashed to send to Pinterest Conversions.
 
 ## Getting started
@@ -61,7 +61,7 @@ Because Pinterest recommends using both the API for Conversions and the Pinteres
 
 For example, if a user triggers an add to cart event and the tag reports the data using `123` as the event ID. Later, their web server reports the conversion to the API and uses `123` as the event ID. When Pinterest receives the events, Segment looks at the event IDs to confirm they correspond to the same event. 
 
-By using deduplication advertisers can report conversions using both the tag and the API without having to worry about over-counting conversions. This will result in more conversions being attributed than either alone, because if the tag doesn’t match an event, but the API does (or vice versa), the event can still be linked. 
+Deduplication prevents duplicate conversions when sending data through both the Pinterest tag and the API. This will result in more conversions being attributed than either alone, because if the tag doesn’t match an event, but the API does (or vice versa), the event can still be linked. 
 
 Advertisers should use deduplication for any events they expect to be reported by multiple sources across the API and the Pinterest Tag.
 
