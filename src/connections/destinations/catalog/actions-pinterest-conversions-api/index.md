@@ -47,11 +47,10 @@ To connect the Pinterest Conversions API Destination:
 8. Follow the steps in [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 9. Toggle **Enable Destination** on, then click **Save Changes**.
 
-
 {% include components/actions-fields.html settings="true"%}
 
-> warning ""
-> By default, Segment sends all mappings as `web` conversions. To send events as mobile or offline conversions, update the Action Source in each mapping to `app_android`, `app_ios`, `offline`.
+> info "Setting conversion type"
+> By default, Segment sends all mappings as `web` conversions. To send events as mobile or offline conversions, set the Action Source in each mapping to `app_android`, `app_ios`, or `offline`.
 
 ## FAQ
 
