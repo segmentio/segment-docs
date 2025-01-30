@@ -1,12 +1,9 @@
 ---
 title: OAuth 2.0
-hidden: true
+plan: oauth-2
 ---
 
 OAuth 2.0 is an online authorization standard that uses tokens to grant access to API resources like Segment’s tracking API. You can use OAuth 2.0 as a security requirement for connections to third-party tools. 
-
-> info ""
-> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. OAuth 2.0 only supports server to Segment communication, a machine-to-machine workflow. Take a look at the [supported sources](#supported-sources) to see what sources Segment supports.
 
 ## Permissions 
 Depending on your workspace permissions, your access to OAuth apps is limited. 
@@ -108,7 +105,7 @@ To obtain the access token:
     EXP | The expiry time in seconds. This is expected to be valid only for a short duration under a minute. 
     JTI | The unique identifer for the token. 
 
-2. Send a form-url-encoded `POST` request to the regional authorization server with the following parameters:
+2. Send a form-url-encoded `POST` request to the regional authorization server's `\token` route with the following parameters:
     
     ```
     grant_type=client_credentials

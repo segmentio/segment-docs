@@ -8,9 +8,6 @@ Below you'll find a bunch of ways to set up notifications for yourself based on
 
 Connections Alerting allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection.
 
-> info "Connections Alerting is in beta"
-> The Connections Alerting feature is in active development, and some functionality may change before it becomes generally available. During the beta, Connections Alerting supports event-streaming connections: [event streaming sources](/docs/connections/sources/#event-streams-sources) and [cloud-mode destinations](/docs/connections/destinations/#event-streams-destinations).
-
 Connections Alerting allows you to create two different alerts:
 - **Source volume alerts**: These alerts notify you if your source ingests an abnormally small or large amount of data. For example, if you set a change percentage of 4%, you would be notified when your source ingests less than 96% or more than 104% of the typical event volume.
 - **Successful delivery rate alerts**: These alerts notify you if your destination's successful delivery rate falls outside of a percentage that you set. For example, if you set a percentage of 99%, you would be notified if you destination had a successful delivery rate of 98% or below.

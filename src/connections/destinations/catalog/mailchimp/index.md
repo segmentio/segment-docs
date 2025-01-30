@@ -136,6 +136,10 @@ Mailchimp doesn't support arrays as traits values. This can cause calls to not s
 #### Why am I seeing a `400 Bad Request` error?
 A **400 Bad Request** error can occur if the email address contains a misspelled domain name. For example, Mailchimp might reject`"joe@gmil.com"` because "gmail" is misspelled.
 
+#### Why am I seeing frequent `404 Bad Request` errors from Identify events with no error message?
+
+Mailchimp blocks concurrent requests for the same `userId` if they exceed its rate limit. Each Mailchimp API key allows a maximum of 10 concurrent requests, so sending multiple requests for the same user at the same time may result in `404 Bad Request` errors without a detailed error message.
+
 ## Engage
 
 You can send computed traits and audiences generated using [Engage](/docs/engage/) to Mailchimp as a **user property**. To learn more about Engage, schedule a [demo](https://segment.com/demo/){:target="_blank"}.

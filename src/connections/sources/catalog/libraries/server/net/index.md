@@ -7,9 +7,9 @@ tags:
   - C#
   - C-sharp
 ---
-Segment's .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then Segment routes your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
+Segment's .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit Segment's servers, and then Segment routes your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
 
-All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make Identify and Track calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
 
 > info "Analytics-CSharp (C#)"
 > With [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/), you can add Segment analytics to your C# based app which includes .NET. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
@@ -18,7 +18,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ### Client-side vs Server-side
 
-The best analytics installation combines both client-side and server-side tracking. A client-side analytics.js installation allows you to install A/B testing, heat mapping, session recording, and ad optimization tools. A server-side .NET installation allows you to accurately track events that aren't available client-side, such as payments. For best practices, [check out our guide client-side vs. server-side](/docs/guides/how-to-guides/collect-on-client-or-server/).
+The best analytics installation combines both client-side and server-side tracking. A client-side analytics.js installation allows you to install A/B testing, heat mapping, session recording, and ad optimization tools. A server-side .NET installation allows you to accurately track events that aren't available client-side, such as payments. For best practices, [check out Segment's guide to client-side vs. server-side](/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 
 ### Step 1: Add Analytics.js to your ASP.NET Master Page
@@ -33,15 +33,15 @@ Copy the snippet directly into your ASP.NET [Site.master](https://github.com/seg
 
 That snippet will load `analytics.js` onto the page _asynchronously_, so it won't affect your page load speed.
 
-As soon as that snippet is running on your site, you can start turning on any destinations on your Segment destinations page. In fact, if you reload, you can start seeing `page` calls in our debugger.
+As soon as that snippet is running on your site, you can start turning on any destinations on your Segment destinations page. In fact, if you reload, you can start seeing Page calls in the [source debugger](/docs/connections/sources/debugger/).
 
-For more in depth `analytics.js` information, check out our [analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/).
+For more in depth `analytics.js` information, check out Segment's [analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/).
 
-Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
+Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, Segment installs the .NET library and start sending an event every time a new user registers on your site.
 
-### Step 2: Install our .NET Library
+### Step 2: Install Segment's .NET Library
 
-Your website will use our .NET library to `identify` and `track` users.  You can use [NuGet](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) to install the library.
+Your website will use Segment's .NET library to Identify and Track users. You can use [NuGet](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) to install the library.
 
 ```bash
 Install-Package Analytics -Version <version>
@@ -51,7 +51,7 @@ Install-Package Analytics -Version <version>
 
 You can also accomplish the same thing in the Visual Studio `Tools` menu, select `Library Package Manager` and then click `Package Manager Console`.
 
-Now the .NET library needs to know which Segment project you want to send data to. You can initialize the library with your Segment source's `writeKey` in the [Global.asax file](https://github.com/segmentio/asp.net-example/blob/master/Global.asax#L14). Then you can use the `Analytics` singleton in any controller you want.:
+Now the .NET library needs to know which Segment project you want to send data to. You can initialize the library with your Segment source's `writeKey` in the [Global.asax file](https://github.com/segmentio/asp.net-example/blob/master/Global.asax#L14). Then you can use the `Analytics` singleton in any controller you want:
 
 ```csharp
 <%@ Application Language="C#" %>
@@ -92,9 +92,9 @@ The default initialization settings are production-ready and queue messages on a
 > note ""
 > **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-If you're not familiar with the Segment Specs, take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify](/docs/connections/spec/identify/) method does.
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -123,9 +123,9 @@ Analytics.Client.Identify("019mr8mf4r", new Traits() {
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [track](/docs/connections/spec/track/) method does.
+If you're not familiar with the Segment Spec, take a look to understand what the [Track](/docs/connections/spec/track/) method does.
 
-The `track` call has the following fields:
+The Track call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -134,7 +134,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`event` _String_</td>
-    <td>The name of the event you're tracking. We recommend human-readable names like <strong>Song Played</strong> or <strong>Status Updated</strong>.</td>
+    <td>The name of the event you're tracking. Segment recommends human-readable names like <strong>Song Played</strong> or <strong>Status Updated</strong>.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -157,9 +157,9 @@ Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [page](/docs/connections/spec/page/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Page](/docs/connections/spec/page/) method does.
 
-The `page` call has the following fields:
+The Page call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -168,7 +168,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`name` _String_</td>
-    <td>The webpage name you're tracking. We recommend human-readable names like <strong>Login</strong> or <strong>Register</strong>.</td>
+    <td>The webpage name you're tracking. Segment recommends human-readable names like <strong>Login</strong> or <strong>Register</strong>.</td>
   </tr>
   <tr>
     <td>`category` _String_</td>
@@ -184,7 +184,7 @@ The `page` call has the following fields:
   </tr>
 </table>
 
-Example `page` call:
+Example Page call:
 
 ```csharp
 Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
@@ -195,9 +195,9 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen](/docs/connections/spec/screen/) method does.
 
-The `screen` call has the following fields:
+The Screen call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -206,7 +206,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`name` _String_</td>
-    <td>The screen name you're tracking. We recommend human-readable names like <strong>Login</strong> or <strong>Register</strong>.</td>
+    <td>The screen name you're tracking. Segment recommends human-readable names like <strong>Login</strong> or <strong>Register</strong>.</td>
   </tr>
   <tr>
     <td>`category` _String_</td>
@@ -222,7 +222,7 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Example `screen` call:
+Example Screen call:
 
 ```csharp
 Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
@@ -232,9 +232,9 @@ Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [group](/docs/connections/spec/group/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group](/docs/connections/spec/group/) method does.
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -255,7 +255,7 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Example `group` call:
+Example Group call:
 
 ```csharp
 Analytics.Client.Group("userId", "groupId", new Traits() {
@@ -266,9 +266,9 @@ Analytics.Client.Group("userId", "groupId", new Traits() {
 
 ## Alias
 
-If you're not familiar with the Segment Specs, take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias](/docs/connections/spec/alias/) method does.
 
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -281,13 +281,13 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-Example `alias` call:
+Example Alias call:
 
 ```csharp
 Analytics.Client.Alias("previousId", "userId")
 ```
 
-Here's a full example of how we might use the `alias` call:
+Here's a full example of how you might use the Alias call:
 
 ```csharp
 // the anonymous user does actions ...
@@ -304,7 +304,7 @@ Analytics.Client.Track("identified@example.com", "Identified Action");
 
 ## Development Settings
 
-You can use this initialization during development while testing the library. `SetAsync(false)` will make sure the library makes a request to our servers every time it's called.
+You can use this initialization during development while testing the library. `SetAsync(false)` will make sure the library makes a request to Segment's servers every time it's called.
 
 ```csharp
 Analytics.Initialize("YOUR_WRITE_KEY", new Config().SetAsync(false));
@@ -319,7 +319,7 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
+**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment's servers will timestamp the requests for you.
 
 ```csharp
 Analytics.Client.Track("sadi89e2jd", "Workout Logged", new Properties() {
@@ -332,7 +332,7 @@ Analytics.Client.Track("sadi89e2jd", "Workout Logged", new Properties() {
 
 ## Selecting Destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `options` that lets you turn certain destinations on or off. By default all destinations are enabled.
+The Alias, Group, Identify, Page, and Track calls can all be passed an object of `options` that lets you turn certain destinations on or off. By default all destinations are enabled.
 
 You can specify which analytics destinations you want each action to go to.
 
@@ -346,15 +346,15 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Kissmetrics", true }` turns on Kissmetrics, etc.
+In this case, you're specifying that you want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified, and `{ "Kissmetrics", true }` turns on Kissmetrics.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Business Tier users can filter Track calls right from the Segment UI on your source schema page. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
-- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
+- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard still count towards your API usage.
 
 ## Context
 
@@ -403,7 +403,7 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
 
 ## Batching
 
-Our libraries are built to support high performance environments. That means it is safe to use Analytics.NET on a web server that's serving hundreds of requests per second.
+Segment's libraries are built to support high performance environments. That means it is safe to use Analytics.NET on a web server that's serving hundreds of requests per second.
 
 By default (in async mode), this library starts a single separate thread on initialization, and flushes all messages on that thread. That means every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
@@ -501,7 +501,7 @@ client.Track(...);
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}
 
 ### Logging
 

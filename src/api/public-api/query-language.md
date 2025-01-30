@@ -102,7 +102,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `sources({exclude: {a: Array}})`<br>`a` - an array of source `ids` to exclude         |
 | Return Type | `StreamFilter`                                                                        |
 | Description | Filters the stream to only items whose source `id` does not match the exclusion list. |
-| Example     | `sources({exclude: ['QgRHeujRJBM9j18yChyC', '/;hSBZDqGDPvXCKHbikPm']})`               |
+| Example     | `sources({exclude: 'QgRHeujRJBM9j18yChyC', '/;hSBZDqGDPvXCKHbikPm'})`               |
 
 | `within`    |                                                                                                                                                                                                                                        |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -243,7 +243,7 @@ The following tables list the query languages's available functions.
 | Syntax         | `contains({a: Array})`<br>`a` - array of possible values                                   |
 | Return Type    | `Comparator`                                                                               |
 | Description    | Matches when the value contains one of the elements of the parameter array as a substring. |
-| Example        | `contains(['shoes','shirts'])`                                                             |
+| Example        | `contains('shoes','shirts')`                                                             |
 
 | `omits`     |                                                                                                                                 |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -269,7 +269,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `one_of({a: Array})`<br>`a` - array of possible values                             |
 | Return Type | `Comparator`                                                                       |
 | Description | Matches when the value exactly matches one of the values from the parameter array. |
-| Example     | `one_of(['shoes','shirts'])`                                                       |
+| Example     | `one_of('shoes','shirts')`                                                       |
 
 | `before_date` |                                                           |
 | ------------- | --------------------------------------------------------- |

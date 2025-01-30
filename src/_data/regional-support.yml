@@ -304,7 +304,6 @@ destinations:
     - perfect-audience
     - perkville
     - persistiq
-    - personas-display-video-360
     - personas-facebook-custom-audiences
     - personyze
     - pingdom
@@ -435,7 +434,7 @@ destinations:
     - repeater
     - slack
     - stitch-data
-  
+
 warehouses:
   region:
     - azuresqldb
@@ -445,7 +444,7 @@ warehouses:
     - postgres
     - redshift
     - snowflake
-  endpoint: 
+  endpoint:
     - azuresqldb
     - azuresqldw
     - bigquery

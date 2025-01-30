@@ -28,7 +28,7 @@ To connect the Google Analytics 4 Web destination:
 3. Click **Configure Google Analytics 4 Web**.
 4. Select the web source that will send data to Google Analytics 4 and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). For mobile source tracking, view the [Firebase Destination](/docs/connections/destinations/catalog/firebase/).
 5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 web stream.
-6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-add-the-segment-snippet) includes this initial call by default.
 8. For GA4 to accept events on page, enable Set Configuration Mapping triggered by the first Segment event called after analytics.load(). Set Configuration Mapping calls the gtag(‘config’) command to enable tracking to your GA4 Measurement ID. 
 
@@ -158,7 +158,9 @@ For event data to be sent downstream to Google Analytics:
 
 1. Configure and enable the  **Set Configuration Fields** mapping. This mapping is required for data to be sent downstream because it sets configuration to the GA4 Measurement ID indicated in the Settings and establishes data flow using the `config` command.
 2. Confirm you call `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. _The Segment snippet includes this initial call by default._
-3. Send data with an event: typically this is a `page_view` as your first event. 
+3. Send data with an event: typically this is a `page_view` as your first event.
+
+Google has introduced a feature for collecting [user-provided data](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}, which Segment doesn't support. If you’ve enabled this feature in your Google Analytics 4 account, it is irreversible and may cause issues with receiving data. If everything else is set up correctly but data is still not appearing, check if this feature is enabled. If it is, you’ll need to create a new GA4 space to resolve the issue.
 
  > note "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
  > If you need to override this setting for your particular use case, see [Can I override my send_page_view selection that I declared in Settings?](#can-i-override-my-send_page_view-selection-that-i-declared-in-settings)
@@ -207,3 +209,7 @@ Yes. In the Set Configuration Mapping, click Show All Fields and scroll to Send 
 ### Differences between the Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
 Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two depends on your specific use case, technical expertise, and the platforms from which you want to track data.
+
+### User-provided data collection
+
+Google has introduced a beta feature for collecting data provided by users, [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}. Note that this feature is currently not supported by Segment, and, acknowledging this feature policy in your Google Analytics 4 Account has irreversible effects.

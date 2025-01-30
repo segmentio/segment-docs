@@ -1,7 +1,6 @@
 ---
 title: Extole Destination
 rewrite: true
-beta: true
 redirect_from: '/connections/destinations/catalog/extole/'
 id: 5e79ef31929aef3bdfbc53a5
 ---

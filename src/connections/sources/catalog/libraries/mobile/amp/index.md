@@ -57,7 +57,7 @@ For sources in [EU workspaces](/docs/guides/regional-segment/), use the followin
 </amp-analytics>
   ```
 
-By default, the snippet will automatically fire a page event which you can read more about [here](/docs/connections/sources/catalog/libraries/mobile/amp/#page).
+By default, the snippet will automatically fire a page event which you can read more about [in the Page section of this documentation](/docs/connections/sources/catalog/libraries/mobile/amp/#page).
 
 
 ## Page
@@ -222,8 +222,8 @@ This identity schema will allow you to join down funnel interaction with earlier
 ### Why aren't all my IDs prefixed with an 'amp-'?
 
 All AMP events won't consistently have an 'amp-' prefixed ID as this is only included in the event that the AMP page is directly visited on your domain.
-For further details refer to the various `Client ID` scenarios in relation to AMP pages [here]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id){:target="_blank"} (Segment can only guarantee that if the third scenario happens, the AMP ID will get generated and picked up).
-
+For further details refer to the various `Client ID` scenarios in relation to AMP pages [in Google's docs]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id){:target="_blank"} (Segment can only guarantee that if the third scenario happens, the AMP ID will get generated and picked up).
+<!-- TODO: the product linked above was deprecated, need to find a replacement or hide this page --->
 
 See a live <a href="https://segment-amp.firebaseapp.com">AMP with Segment analytics</a>
 <link rel="amphtml" href="https://segment-amp.firebaseapp.com">

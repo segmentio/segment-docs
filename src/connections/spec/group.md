@@ -54,6 +54,8 @@ Beyond the common fields, the Group call takes the following fields:
   {% include content/spec-table-header.md %}
   {% include content/spec-field-group-id.md %}
   {% include content/spec-field-group-traits.md %}
+  {% include content/spec-field-user-id.md %}
+  {% include content/spec-field-anonymous-id.md %}
 </table>
 
 

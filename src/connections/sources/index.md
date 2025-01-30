@@ -214,9 +214,30 @@ To create a source:
 4. Enter a name for your source as well as any information on the setup page.
 5. Click **Add Source**.
 
+Once you've created a source, the source is automatically enabled and can immediately receive events. You can review your new events in that source's [Debugger](/docs/connections/sources/debugger/) tab.
+
+
+> warning "Sources not connected to an enabled destination are disabled after 14 days"
+> If your source is not connected to any destinations or is only connected to disabled destinations, Segment automatically disables this source after 14 days, even if the source is receiving events. Disabled sources will no longer receive data. 
+> You can view when Segment disables your destination in your workspace's [Audit Trail](https://app.segment.com/goto-my-workspace/audit-trail) as `Event : Source Disabled` with `Actor : Segment`.
+> Workspace members receive an email notification before Segment disables your source so that your team has time to take action.
+> If you would like to prevent this behavior in your workspace, fill out [this Airtable form](https://airtable.com/appADTobzkv0FYLbi/shr7V9LFDZh31cYWW).
+
 > info "One source or multiple sources?"
 > Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
 > - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed after it is created. You must create a new source if you would like to use a different source type.
+
+## Library tiers
+
+Segment has defined three tiers for libraries: Flagship, Maintenance, and Community. These tiers indicate the level of support, enhancements, and maintenance each library receives from Segment. 
+
+The criteria for assigning a library to a tier include its overall usage by customers and the availability of newer versions. Here's how Segment defines each tier:
+
+- **Flagship** libraries offer the most up-to-date functionality on Segment’s most popular platforms. Segment actively maintains Flagship libraries, which benefit from new feature releases and ongoing development and support.
+- **Maintenance** libraries send data as intended but receive no new feature support and only critical maintenance updates from Segment. When possible, Segment recommends using a Flagship version of these libraries.
+- **Community** libraries are neither managed nor updated by Segment. These libraries are available on GitHub under the MIT License for the open-source community to fork or contribute.
+
+If a library falls into one of these tiers, you'll see the tier label at the beginning of the library's page.

@@ -81,12 +81,17 @@ The Segment App doesn't show detected Personally Identifiable Information (PII) 
 
 Workspace Owners can grant specific individuals or groups access to PII from their Access Management settings. PII Access only applies to the resources a user or user group has access to; it doesn't expand a user's access beyond the original scope. All Workspace Owners have PII access by default.
 
+For example, users with PII Access and Source Admin/Read-Only permissions can view any PII present in the Source Debugger. However, users with the PII Access role don't have Privacy Portal access.
+
+Only users with the Workspace Owner role can access the Privacy Portal.
+
 
 ## Roles for managing Engage destinations
 
-Engage destinations aren't included in the Engage roles by default. Users with Engage roles (including the Engage Admin) need additional permissions for each Engage space they work with to manage that Engage space's destinations.
-
-Grant these users `Unify and Engage Admin` on the selected Engage space and `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
+When managing destination connections in an Engage space, you may require additional permissions. 
+- **Connecting or disconnecting destinations to Engage spaces:** To allow a user to connect or disconnect destination instances to your Engage space, grant `Unify and Engage Admin` access for the specific Engage space, and `Source Admin` access for the source(s) linked to that Engage space, named `Engage (space name)`.
+- **Managing connections to Engage features (Computed Traits/Audiences/Journeys)**: To allow a user to attach or detach a destination in your Engage space to specific Engage features like Audiences or Journeys, grant these users `Unify and Engage Admin` access on the selected Engage space. The `Source Admin` role is not necessary for this action.
+ 
 
 ## Roles for connecting resources
 

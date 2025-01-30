@@ -25,7 +25,7 @@ To get started, go to your workspace settings and navigate to **Authentication >
 
 ![Screenshot of the Connections page, with the Choose a Connection section selected.](images/asset_XCyMZpwo.png)
 
-## Prepare your IdP for the connection.
+## Prepare your IdP for the connection
 
 Segment officially supports apps for Okta, Microsoft Entra ID, and OneLogin. Next, find Segment in your IdP's app catalog, and follow the set up instructions they provide.
 
@@ -53,17 +53,17 @@ Your provider will ask you for a few things from Segment, which Segment provides
 
 After you create the application in your IdP, you can come back to Segment and click "Next".
 
-## Configure Segment to Talk to Your IdP.
+## Configure Segment to Talk to Your IdP
 
 Your IdP provides a URL and x.509 certificate. Copy them into their respective fields in Segment.
 
-![Screenshot of the Segment Configure Connection screen.](images/asset_s19XDgWX.png)
+![Screenshot of the Segment Configure Connection screen.](images/sso_certificate.jpg)
 
 Then, click "Configure Connection."
 
 You're all set.
 
-## Test your connection with IdP-initiated SSO.
+## Test your connection with IdP-initiated SSO
 
 Back at the connections page, make sure your connection is enabled with the switch on the right.
 
@@ -71,11 +71,11 @@ Back at the connections page, make sure your connection is enabled with the swit
 
 You can now test using IdP-initiated SSO (by clicking login to Segment from within your IdP) is working correctly. If not, double check the IdP configuration gotchas section above.
 
-## Require SSO.
+## Require SSO
 
 For most customers, Segment recommends requiring SSO for all users. If you do not require SSO, users can still log in with a username and password. If some members cannot log in using SSO, Segment also supports SSO exceptions.
 
-These options are off by default, but configurable on the "Advanced Settings" page.
+These options are off by default, but you can configure them on the **Advanced Settings** page. Log in using SSO to toggle the **Require SSO** setting. 
 
 ![Screenshot of the Advanced Settings page in the Authentication settings tab.](images/asset_require_sso.png)
 
@@ -91,7 +91,7 @@ Segment supports SSO on the login page for emails that match your workspace's do
 
 In order to enable this, you'll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 
-![Screenshot of the Domains page under the Authentication section of the Workspace Settings.](images/asset_MSaDZk2f.png)
+![Screenshot of the Domains page under the Authentication section of the Workspace Settings.](images/sso_domain.jpg)
 
 Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS text record that you can add through your DNS provider. After you do so and click verify, you can move to the next step.
 
@@ -142,14 +142,17 @@ Follow these steps in Segment to set up the Okta/Segment SAML integration:
 
 Finish setting up the Okta/Segment SAML integration by carrying out these steps in Okta:
 
-1. In Okta, select the **Sign On** tab for the Segment SAML app, then click **Edit**.
-2. Enter the Customer ID you copied in Step 4 of the Segment steps.
-3. For **Application username format**, select **Email**.
-4. Click **Save**.
+1. In Okta, go to Applications > Catalog > Segment & click “Add Integration”.
+2. Enter an Application Label for your integration and click Next.
+3. Switch to “Sign-On Options” tab and select "SAML 2.0".
+4. In “Advanced Sign-on Settings”, enter the Customer ID you copied in Step 4 of the Segment steps.
+5. For **Application username format**, select **Email**.
+6. Click **Save**.
 
-![Settings in the Okta SSO tab](images/okta_sso.png)
+![Settings in the Okta SSO tab](images/okta_sso_step1.jpg)
+![Settings in the Okta SSO tab 2](images/okta_sso_step2.jpg)
 
-You've now completed setup.  For SP-initiated SSO, follow these steps:
+You've now completed setup. For SP-initiated SSO, follow these steps:
 
 1. Go to `https://app.segment.com`.
 2. Enter your email, select **Single Sign-On**, then click **Log In**.

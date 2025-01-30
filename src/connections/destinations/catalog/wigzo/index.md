@@ -10,7 +10,7 @@ This destination is maintained by Wigzo. For any issues with the destination, [c
 
 ## Getting Started
 
-The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](/docs/connections/destinations/#connection-modes).
+The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes Segment supports [in the Destination Overview docs](/docs/connections/destinations/#connection-modes).
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Wigzo" in the Catalog, select it, and choose which of your sources to connect the destination to.
