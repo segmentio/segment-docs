@@ -130,11 +130,11 @@ Again, this will **NOT** work for new users. New users will always have their su
 
 ## Troubleshooting
 
-### Why are my calls with trait arrays not showing up in Mailchimp?
+#### Why are my calls with trait arrays not showing up in Mailchimp?
 Mailchimp doesn't support arrays as traits values. This can cause calls to not show up.
 
-### Why is 400 Bad Request error encountered?
-Misspelling of email domain name in the email address might result in 400 Bad Request error as Mailchimp might reject such email, for example, "joe@gmil.com" because Gmail was misspelled.
+#### Why am I seeing a `400 Bad Request` error?
+A **400 Bad Request** error can occur if the email address contains a misspelled domain name. For example, Mailchimp might reject`"joe@gmil.com"` because "gmail" is misspelled.
 
 ## Engage
 
