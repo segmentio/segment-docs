@@ -8,11 +8,11 @@ private: false
 hidden: false
 
 ---
-The Pinterest Conversions API destination is a server-to-server integration with [The Pinterest API for Conversions](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions){:target="_blank"} that allows advertisers to send conversions directly to Pinterest without requiring a Pinterest Tag. These conversions map to Pinterest campaigns for conversion reporting to improve conversion visibility. When you pass events to Pinterest, advertisers can use Pinterest's insights to evaluate an ad's effectiveness to improve content, targeting, and placement of future ads.
+The Pinterest Conversions API destination is a server-to-server integration with [the Pinterest API for Conversions](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions){:target="_blank"} that allows advertisers to send conversions directly to Pinterest without requiring a Pinterest tag. These conversions map to Pinterest campaigns for conversion reporting to improve conversion visibility. When you pass events to Pinterest, advertisers can use Pinterest's insights to evaluate an ad's effectiveness to improve content, targeting, and placement of future ads.
 
-Advertisers can send web, in-app, or offline conversions to Pinterest’s server to server endpoint in real-time. Events received in real time or within an hour of the event occurring are reported as web or app events. Events received outside of this window, as well as delayed batch events are considered as offline events.
+Advertisers can send web, in-app, or offline conversions to Pinterest’s server to server endpoint in real time. Events received in real time or within an hour of the event occurring are reported as web or app events. Events received outside of this window, as well as delayed batch events, are considered offline events.
 
-The API for Conversions helps Pinterest provide a more comprehensive view of your campaign performance. All advertisers who currently use the Pinterest Tag will benefit from using it in tandem with the API for Conversions.
+The API for Conversions helps Pinterest provide a more comprehensive view of your campaign performance. All advertisers who currently use the Pinterest tag will benefit from using it in tandem with the API for Conversions.
 
 ## Benefits of Pinterest Conversions API (Actions)
 
