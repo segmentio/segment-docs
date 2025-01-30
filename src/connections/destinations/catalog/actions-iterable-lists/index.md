@@ -7,9 +7,9 @@ hide-dossier: true
 engage: true
 ---
 
-Iterable Lists destination allows users to upload lists of users to Iterable, in the form of audiences. Iterable Lists feature [is described here](https://support.iterable.com/hc/en-us/articles/115000770906-Adding-Users-and-Creating-Lists).
+The Iterable Lists destination allows users to upload lists of users to Iterable, in the form of audiences. For more information on this destination's features, visit [Iterable's lists documentation](https://support.iterable.com/hc/en-us/articles/115000770906-Adding-Users-and-Creating-Lists){:target="_blank"}.
 
-This is an Engage Destination, which means it can be used to send data to Iterable Lists from Segment Engage Audiences.
+This is an [Engage Destination](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list), which means it can be used to send data to Iterable Lists from Segment Engage Audiences.
 
 ## How it works
 
