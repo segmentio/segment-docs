@@ -69,14 +69,14 @@ To download a Source Schema CSV file:
 > info "All events and properties are now included in the CSV file"
 > When you export a Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view.
 
-## Understanding the Difference Between Schema UI and CSV Export
+## Difference between Schema UI and CSV Export
 
-When exporting a CSV from the Schema UI, it's important to note a key difference in how event data is structured:
+When exporting a CSV from the Schema UI, there are differences in how event data is structured:
 
 - In the Schema UI, all instances of a unique event name are grouped into a single row, regardless of the different properties associated with that event.
 - In the CSV file, each unique combination of an event name and its tracked properties appears as a separate row.
 
-This behavior is intentional and provides greater granularity, allowing you to see how different properties are tracked for the same event.
+This allows you to see how Segment tracks different properties for the same event.
 
 ### View download history
 
