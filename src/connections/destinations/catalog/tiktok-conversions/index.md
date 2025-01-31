@@ -25,6 +25,9 @@ The TikTok Conversions destination provides the following benefits:
 
 Follow the instructions below to enable your TikTok ads account and add the TikTok Conversions destination to your Segment workspace.
 
+> info ""
+> Refer to the destination as Tiktok Conversions in the [Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object){:target="_blank"}.
+
 ### TikTok Requirements
 
 The TikTok Conversions destination is configured to use the TikTok Events API. To generate a TikTok Pixel Code and Access Token:
