@@ -2,12 +2,13 @@
 rewrite: true
 title: Xtremepush Destination
 id: 5ca77adcc7781c00018a459b
+versions:
+  - name: Xtremepush (Actions) Destination
+    link: /docs/connections/destinations/catalog/actions-xtremepush/
 ---
 [Xtremepush](https://xtremepush.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a complete digital engagement platform. Empowering global brands to create personalised, real-time experiences for their customers across mobile, web, email, SMS and social. Xtremepush's clients are increasing revenue through data-driven, contextually-relevant interactions. The software is flexible, reliable and quick to deploy, backed up by a team of expert strategists and technical support.
 
 This destination is maintained by Xtremepush. For any issues with the destination, [contact the Xtremepush Support team](mailto:support@xtremepush.com).
-
-{% include content/beta-note.md %}
 
 
 

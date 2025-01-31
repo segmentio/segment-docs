@@ -2,7 +2,6 @@
 title: Attio (Actions) Destination
 hide-boilerplate: true
 id: 64c031541451bb784943f809
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -155,13 +154,31 @@ domains matches the one you've provided here. If it finds it, it will update the
 attribute with the value `"@attio"`. If it doesn't find it, a new Company will be created
 with both the domain and twitter handles above.
 
+## Batching support
+
+This action supports batching. You can toggle batching using the **Edit Mapping > Enable
+Batching** property.
+
+Batching sends groups of events to Attio in a single request, rather than individually,
+which can improve stability & correctness if you are sending a lot of events.
+
+However, there are a couple of caveats to be aware of:
+
+  1. Attio will process these events asynchronously, which means it might take a few
+     seconds between Attio acknowledging the request and the record updates appearing in
+     your Attio workspace.
+
+  2. Invalid events will be silently dropped. This can happen if your mapping
+     configuration points to a non-existent Attio attribute, or you're trying to write the
+     wrong attribute type (for example: writing a number to a domain attribute). We recommend you
+     continue to use the **Send test event** feature on the mapping page to check
+     configurations before saving them.
 
 ## Attribute types
 
-With the exception of location data, the Attio Action can write all other types of
-attribute to Attio. Below is an example of the format that each attribute must be; please
-note that you'll get validation failures if any of these are incorrect. To unset an
-attribute, you can also pass `null` as the value.
+The Attio Action can write all types of attribute to Attio. Below is an example of the
+format that each attribute must be; please note that you'll get validation failures if any
+of these are incorrect. To unset an attribute, you can also pass `null` as the value.
 
 | `type`               | Format                                                                                  | Example values                                              |
 |----------------------|-----------------------------------------------------------------------------------------|-------------------------------------------------------------|
@@ -171,7 +188,7 @@ attribute, you can also pass `null` as the value.
 | `date`               | YYYY-MM-DD                                                                              | `"2023-09-28"`                                              |
 | `domain`             | `{domain}.{tld}`                                                                        | `"app.attio.com"`, `"www.example.com"`                      |
 | `email`              | A valid email address                                                                   | `"person@example.com"`                                      |
-| `location`           | *unsupported*                                                                           |                                                             |
+| `location`           | String with all valid address parts (street address, city, state, country, and postal code) combined                                            | "1 Infinite Loop, Cupertino, CA, US"                        |
 | `number`             | Number, stored as a 64 bit float                                                        | `42.192`, `17`                                              |
 | `personal-name`      | Last name(s), First name(s) *(note the comma in the middle)*                            | `"Bloggs, Joe"`                                             |
 | `phone-number`       | [E.164 format](https://en.wikipedia.org/wiki/E.164), starting with `+...`               | `"+15558675309"`                                            |

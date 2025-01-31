@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Implementation Guide
+title: Analytics-Kotlin Implementation Guide
 strat: kotlin-android
 tags:
   - android
@@ -69,7 +69,7 @@ fun <T> track(name: String, properties: T, serializationStrategy: KSerializer<T>
 ```java
 analytics.track("View Product", buildJsonObject {
     put("productId", 123)
-    put("productName" "Striped trousers")
+    put("productName", "Striped trousers")
 });
 ```
 {% endcodeexampletab %}
@@ -257,6 +257,7 @@ analytics.reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+{% include content/reset-mobile.md %}
 
 ### OpenURL
 While Analytics Kotlin will automatically track deep links that open your app when the `trackDeepLinks` Configuration property is set to `true`. There are some situations when the app is already open that could cause a deep link open event to be missed.

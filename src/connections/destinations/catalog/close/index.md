@@ -1,7 +1,6 @@
 ---
 title: 'Close Destination'
 id: 61f8296b7d15c30a3bbe2b76
-beta: true
 hide-boilerplate: true
 hide-dossier: true
 redirect_from:
@@ -14,11 +13,6 @@ redirect_from:
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
 [Close](https://close.com/){:target="_blank"} is the inside sales CRM of choice for startups and small and midsize businesses (SMBs.)
-
-
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
 
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 

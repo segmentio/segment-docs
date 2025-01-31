@@ -7,6 +7,9 @@ id: 60ad61f9ff47a16b8fb7b5d9
 versions:
   - name: "Google Analytics 4 Web"
     link: '/docs/connections/destinations/catalog/actions-google-analytics-4-web/'
+redirect_from:
+  - '/connections/destinations/catalog/google-analytics'
+  - '/connections/destinations/catalog/google-universal-analytics'
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -17,6 +20,9 @@ When you have Segment installed, you can use your existing tracking implementati
 
 > warning ""
 > Google Analytics 4 doesn't officially support a pure server-to-server integration. However, Segment monitors the capabilities of the Measurement Protocol API and updates the cloud integration accordingly to achieve a reasonable level of reporting for mutual customers. For full functionality, please see the [Google Analytics 4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/).
+
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4/#consent-mode) and how to set it up. 
 
 ## Benefits of Google Analytics 4 Cloud
 
@@ -38,9 +44,45 @@ To add the Google Analytics 4 Cloud destination:
 3. Click **Configure Google Analytics 4 Cloud** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
+
 
 {% include components/actions-fields.html %}
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+### Set up consent mode
+To enable consent mode for your Google Analytics 4 Cloud destination, you must update the **Ad User Data Consent State** and **Ad Personalization Consent State** for all mappings you want to send with consent. Consent mode supports all actions with Google Analytics 4 Cloud. You can choose from 2 options to enable consent mode for your Google Analytics 4 Cloud destination. 
+
+* **Option 1** 
+	
+	To enable consent mode for Google Analytics 4 Cloud destination:
+	1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Cloud destination. 
+	2. Go to the **Mappings** tab of the destination.
+	3. Select the mapping you want to edit. 
+	4. Under the **Select mappings** section, find **Ad User Data Consent State**.
+	5. Select `GRANTED` in the dropdown that corresponds to **Ad User Data Consent State**. 
+	6. Select `GRANTED` in the dropdown that corresponds to **Ad Personalization Consent State**. 
+
+* **Option 2** 
+
+	Create an event variable to directly grab the value from the payload. To do this: 
+	1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Cloud destination. 
+	2. Go to the **Mappings** tab of the destination.
+	3. Select the mapping you want to edit. 
+	4. Under the **Select mappings** section, find **Ad User Data Consent State**.
+	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `GRANTED`or `DENIED`. 
+	6. Repeat step 5 for **Ad Personalization Consent State**. 
+
+
+If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
 ## Universal Analytics and Google Analytics 4
 
@@ -149,6 +191,15 @@ Google doesn't currently support passing certain reserved fields to the Google A
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 Cloud integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
 
+However, you can use Google's `/debug` endpoint to test your events against Google's Measurement Protocol Validation Server. For more information, see Google's [Validate events](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#:~:text=Protocol%20Validation%20Server-,/debug/mp/collect,-All%20other%20request){:target="_blank”} documentation. 
+
+To validate your events:
+
+1. Run a test through Segment's [Event Tester](/docs/connections/test-connections/) with the event you're concerned about. 
+2. Copy the `Request from Segment` value you see. This is the payload that Segment attempts to send to Google.
+3. Use an API testing tool, like Postman, to send that payload to Google's `/debug` endpoint. 
+4. Google's `/debug` endpoint returns a [validation code](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#validation_code){:target="_blank”} and a description of the error. 
+
 ### Mobile data
 
 To achieve complete reporting, Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
@@ -163,6 +214,7 @@ Google reserves certain event names, parameters, and user properties. Google sil
 - fields or events with reserved names
 - fields with a number as the key
 - fields or events with a dash (-) character in the name
+- property names with capital letters
  
 ### Verifying Event Meet GA4's Measurement Protocol API
 **Why are the events returning an error _Param [PARAM] has unsupported value._?**
@@ -180,3 +232,10 @@ Because [Google's Measurement Protocol API](https://developers.google.com/analyt
 
 The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
 
+### Client/server-side event deduplication 
+
+Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you don't send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
+
+### User-provided data collection
+
+Google offers a beta feature called [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"} that collects data directly from users. Segment doesn't support this feature. Acknowledging the feature policy in your Google Analytics 4 account is permanent, even though you can later disable the data collection itself.

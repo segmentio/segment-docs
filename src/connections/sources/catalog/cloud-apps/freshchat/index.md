@@ -1,6 +1,5 @@
 ---
 title: Freshchat Source
-beta: true
 id: tCkZda6aKQ
 ---
 
@@ -20,7 +19,7 @@ Before you start, make sure that you have admin rights in Freshchat and [Workspa
 5. Copy the Write key from the Segment UI to use in Freshchat.
 6. Log in to your Freshchat account.
 7. In Freshchat, navigate to Admin → Marketplace Apps → Segment Integration.
-8. Paste the your Segment write key and click **Authenticate account** to connect.
+8. Paste your Segment write key and click **Authenticate account** to connect.
 9. After your account is authenticated, select one or more of the following events to send to Segment:
     - On Agent Activity Create
     - On Conversation Create

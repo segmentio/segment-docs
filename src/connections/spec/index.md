@@ -33,3 +33,4 @@ Third, it **shares the events Segment recommends you track for a particular indu
   - [E-Commerce](/docs/connections/spec/ecommerce/v2/)
   - [Video](/docs/connections/spec/video/)
   - [B2B SaaS](/docs/connections/spec/b2b-saas/)
+  - [AI Copilot](/docs/connections/spec/copilot/)

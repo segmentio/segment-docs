@@ -2,6 +2,19 @@
 title: Email Campaigns
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. Segment recommends exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
 
 With Twilio Engage, you can send email and SMS campaigns to users who have opted in to receive your marketing materials. On this page, you’ll learn how to create and send an email campaign.
 
@@ -43,12 +56,13 @@ Follow these steps to create an email campaign:
 2. From the **Select a Step** window, click **Send an email**.
 3. In the **Send Email** window, select **Build a new email** or [Use a template](/docs/engage/content/email/template/) to choose an existing email template.
 4. Build or edit your design, then click **Save Email**.
-5. Fill out all **Send Email** fields relevant to your campaign, select the [subscription states or groups](/docs/engage/user-subscriptions/subscription-groups/) that you want to receive your email, then click **Save**.
+5. Fill out all **Send Email** fields relevant to your campaign, select the [subscription states or groups](/docs/engage/user-subscriptions/subscription-groups/) that you want to receive your email, (optionally) [select an IP pool](#working-with-ip-pools), then click **Save**.
 
 Some email campaign fields, like **Sender email** and **Subject**, are required.  The Send Email window indicates required fields with an asterisk.  Refer to the [email campaign fields](/docs/engage/campaigns/email-campaigns/#email-campaign-fields) table for a full description of available email fields.
 
 > info "Editing Templates"
 > If you use a template for your email, Engage creates an editable copy of the original.  Editing the template within the Journey won’t alter the original template.
+
 
 ### Send an email to all users
 
@@ -104,6 +118,20 @@ The following table contains descriptions of all available fields in the Journey
 | Body *           | The email’s content.  Select Build Email Content to create a new campaign, or Use a template to choose an existing template.                                                                    |
 | Which subscription states should receive this message?     |  The [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states) that Engage will send email campaigns to. Defaults to `subscribed` users only. Select **All subscription states including unsubscribed** to send emails to all users regardless of subscription state.  |
 
+## Working with IP pools
+
+When you create an email, you have the option to select an IP pool. An IP pool is a group of IP addresses available to you in SendGrid. You can create and view your IP pools in your Engage-linked SendGrid subuser account by navigating to **Settings > IP Addresses > IP Pools**.
+
+Your sending reputation is based on a combination of your domain and the IP address you use to send emails. Emails that end up in your recipients' spam folders could harm your sending reputation. As a result, you may want to keep your marketing and transactional emails on different IP addresses. 
+
+Keep the following in mind as you use IP pools:
+
+- If you don't select an IP pool, Segment will choose one of your SendGrid IP addresses at random.
+- If you select an IP pool during email setup but then delete the IP pool in SendGrid, emails will begin to fail after IP pool deletion. 
+- SendGrid lets you assign the same IP address to multiple IP pools. If you want to use different IP addresses for different Engage emails, verify within SendGrid that the pools you created have different IP addresses. 
+- You can change an IP pool for an email in a live journey by [editing the journey](/docs/engage/journeys/journeys-edits/), creating a new draft, changing the email's IP pool, then publishing the new journey version.
+
+For more information, see [SendGrid's IP pools documentation](https://docs.sendgrid.com/ui/account-and-settings/ip-pools){:target="_blank"}.
 
 ## Next steps
 

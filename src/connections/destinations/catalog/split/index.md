@@ -94,4 +94,4 @@ Each event may have a `value` field which you would like to use in Split metric 
 
 If you would not like Split to receive `track` calls, you can configure in your integration settings in Split.
 
-_**NOTE:** Split currently does not capture the properties of the your track events. The Split team is currently working to accept these properties for use in creating metrics in Split._
+_**NOTE:** Split currently does not capture the properties of your track events. The Split team is currently working to accept these properties for use in creating metrics in Split._

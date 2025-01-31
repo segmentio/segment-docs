@@ -13,7 +13,7 @@ This destination is maintained by Singular. For any issues with the destination,
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Singular" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Add your Singular "API KEY", found in your Singular Dashboard under 'Settings' > 'SDK Keys', to the Segment Settings UI.
+3. Add your Singular "API KEY", found in your Singular Dashboard under 'Developer Tools' > 'SDK Keys', to the Segment Settings UI.
 
 ## What's supported
 
@@ -26,56 +26,6 @@ This destination is maintained by Singular. For any issues with the destination,
 ## Install Attribution
 
 Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) using initialization config parameters ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#application-lifecycle-tracking), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
-
-
-## Apple Search Ads Attribution
-
-> note "Note"
-> If you are using the Device-Based Destination, there's no need to implement the code below, as the data is already collected automatically.
-
-To get attribution data into Singular, you must include the [analytics-ios-iads-attribution](https://github.com/segmentio/analytics-ios-iads-attribution){:target="_blank"} dependency and version 3.6.0 or higher of the [Analytics SDK](https://github.com/segmentio/analytics-ios){:target="_blank"}.
-
-To install it, simply add the following line to your Podfile:
-`pod "Analytics"`
-`pod "Analytics-iAds-Attribution"`
-
-Then import the header and initialize the configuration:
-```
-#import <Analytics-iAds-Attribution/SEGADTracker.h>
-
-// Initialize the configuration as you would normally.
-SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-...
-
-// Configure the client with the iAD middleware to attach iAd properties.
-configuration.middlewares = @[ [SEGADTracker middleware] ];
-
-[SEGAnalytics setupWithConfiguration:configuration];
-
-```
-When iAd information is available, the attribution information is transformed to Segment context this way:
-```
-[analytics track:@"Application Installed",
-    properties: nil,
-    options: @{
-      @"context" : @{
-        @"campaign" : @{
-          @"provider" : @"Apple",
-          @"click_date" : attributionInfo[@"iad-click-date"],
-          @"conversion_date" : attributionInfo[@"iad-conversion-date"],
-          @"source" : @"iAd",
-          @"name" : attributionInfo[@"iad-campaign-name"],
-          @"content" : attributionInfo[@"iad-keyword"],
-          @"ad_creative" : attributionInfo[@"iad-org-name"],
-          @"ad_group" : attributionInfo[@"iad-adgroup-name"],
-          @"id" : attributionInfo[@"iad-campaign-id"],
-          @"ad_group_id" : attributionInfo[@"iad-adgroup-id"]
-        }
-      }
-    }];
-
-```
-Singular has explicitly mapped the `Application Installed` lifecycle event to provide the iAd Information.
 
 
 ## Tracking Custom Events

@@ -24,7 +24,7 @@ The Snapchat Conversions API destination provides the following benefits:
 5. On the **Settings** tab, authenticate with Snap using OAuth. Click **Connect to Snapchat Conversions API**. Follow the prompts to authenticate using OAuth, with a Snapchat login that is a member of the Snapchat Ads account you want to connect.
 6. Add your [Snap Pixel ID](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} *if you plan to send web or offline events*. *If you plan to send app events,* add your [Snap App ID](https://businesshelp.snapchat.com/s/article/snap-app-id?language=en_US​){:target="_blank"} and App ID.
 7. Enable the destination and click **Save**.
-8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 > warning ""
 > To send events to Snap, you **must** add a Pixel ID for web and offline conversions or a Snap App ID and App ID for mobile conversions. If missing, events will fail.
@@ -57,7 +57,7 @@ There are many ways to send conversion data to Snap, including through the Snap 
 The Client Deduplication ID allows for a 48-hour deduplication window. The Transaction ID is only eligible for `PURCHASE` events and allows for a 30-day deduplication window. See Snapchat’s [Marketing API documentation](https://marketingapi.snapchat.com/docs/conversion.html#deduplication){:target="_blank"} and [Business Help Center](https://businesshelp.snapchat.com/s/article/event-deduplication?language=en_US){:target="_blank"} for more information.
 
 > info ""
-> Segment does not have client-side destinations for the Snap Pixel or Snap App Ads Kit (SDK). If you choose to integrate client-side, these must be implemented natively. See Snapchat’s [Install Snap Pixel](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} and [App Ads Kit](https://businesshelp.snapchat.com/s/article/app-ads-kit?language=en_US){:target="_blank"} for implementation details.
+> Segment does not have client-side destinations for the Snap Pixel or Snap App Ads Kit (SDK). If you choose to integrate client-side, these must be implemented natively. See Snapchat’s [Install Snap Pixel](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} and [App Ads Kit](https://businesshelp.snapchat.com/s/topic/0TO0y000000YmidGAC/app-ads-kit?language=en_US){:target="_blank"} for implementation details.
 
 ### Latency
 It may take up to 1-hour for events to appear in the Snapchat [Events Manager](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US){:target="_blank"}.

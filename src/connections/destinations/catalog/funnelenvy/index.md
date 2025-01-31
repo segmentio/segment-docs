@@ -7,8 +7,6 @@ id: 5d3752aec1c95d00012c80aa
 
 This destination is maintained by FunnelEnvy. For any issues with the destination, [contact the FunnelEnvy Support team](mailto:support@funnelenvy.com).
 
-{% include content/beta-note.md %}
-
 ## Implementation Prerequisite
 
 FunnelEnvy works differently than other Segment destinations: It requires that customers include a native FunnelEnvy snippet on their page along with the Segment snippet.

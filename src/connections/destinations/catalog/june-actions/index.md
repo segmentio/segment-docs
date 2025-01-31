@@ -43,8 +43,6 @@ This action sets or updates the properties of specific groups. Use this when you
 {% include components/actions-fields.html content1=group_identify_user_details section1="group" %}
 ## Migration from June Classic
 
-{% include content/ajs-upgrade.md %}
-
 If you're already using Segment cloud-mode, you're not expected to have breaking changes when upgrading to the June (Actions) destination. With the exception of a few new properties added to your events in the new Actions destination, there's no difference in the data received in June when using either of the June destinations.
 
 You can configure the new destination to point to a different June workspace and connect it to the same source(s) as the Classic destination and manually verify it before fully switching over.

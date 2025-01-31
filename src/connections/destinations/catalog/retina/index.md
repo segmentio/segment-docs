@@ -3,21 +3,18 @@ title: Retina AI Destination
 rewrite: true
 id: 5f287bfa332cce0b1ed18331
 ---
-# Retina AI Segment Destination
 
 [Retina AI](https://retina.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a customer intelligence partner that provides accurate **customer-level lifetime value** metrics at or before their first transaction. You can use this to improve targeting, ad relevance, conversion rates, and customer loyalty.
 
 Retina AI maintains this destination. For any issues with the destination, contact the [Retina AI Support Team](mailto:info@retina.ai).
 
-> note"
+> info " "
 > The Retina AI Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Retina AI Destination and its documentation, contact the [Retina AI Support Team](mailto:info@retina.ai).
 
 
 ## Getting Started
 
-
-
-To integrate Retina AI with Segment as a **Destination**:
+To integrate Retina AI with Segment as a destination:
 1. From your Segment UI's Destinations page click on “Add Destination”.
 2. Search for “Retina” in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add the “API Key” that Retina AI provides through a secure data transfer to your Segment workspace.
@@ -87,5 +84,3 @@ If you aren't familiar with the Segment Spec, take a look at the [Alias method d
 ```js
 analytics.alias("507f191e81");
 ```
-
----

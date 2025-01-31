@@ -7,7 +7,6 @@ id: 5cd62e29299eb40001acff12
 
 This destination is maintained by Trackier. For any issues with the destination, [contact the Trackier Support team](mailto:support@trackier.com).
 
-{% include content/beta-note.md %}
 
 
 ## Getting Started

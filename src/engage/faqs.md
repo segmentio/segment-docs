@@ -8,15 +8,17 @@ redirect_from:
 
 ## Do you have an Audiences API?
 
-You can add, remove, and modify audiences only by using the Engage in-app audience builder.
+Yes. You can learn more about the Audience API by visiting the [Segment Public API documentation](https://docs.segmentapis.com/tag/Audiences){:target="_blank"}.
 
-However, you can programmatically query the Profile API to determine if a user belongs to a particular audience because Engage creates a trait with the same name as your audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following profile API URL:
+## Can I programmatically determine if a user belongs to a particular audience?
+
+Yes. Because Engage creates a trait with the same name as your audience, you can query the Profile API to determine if a user belongs to a particular audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following Profile API URL:
 
 ```
 https://profiles.segment.com/v1/namespaces/<namespace_id>/collections/users/profiles/email:bob@segment.com/traits?include=high_value_users
 ```
 
-The following response indicates that Bob is indeed a high-value user:
+The following response indicates that Bob is a high-value user:
 
 ```json
 {
@@ -121,12 +123,35 @@ Yes, Engage supports the ability to send an audience or computed trait to two or
 
 ### Why am I getting alerts about an audience/computed trait sync failure, but when I look at the specific audience/computed trait it shows a successful sync?
 
-An audience/computed trait Run or a Sync may fail on its first attempt, but Engage will retry up to 5 times before considering it a hard failure and display on that audience/compute trait's Overview page. As long as the runs/syncs within the specific Audience's Overview page say they are successful, then these can be safely ignored.  The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
+An audience/computed trait run or sync may fail on its first attempt, but Engage will retry up to five times before considering it a hard failure that displays on the audience/compute trait's overview page. As long as the runs/syncs within the specific audience's overview page indicate success, you can ignore any failure alerts. 
 
-If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
+**How things work internally:**
+Segment's Engage scheduler fetches audiences/traits from the compute service and then handles the logic of generating tasks. These compute/sync tasks get scheduled and executed by another worker. These tasks are a list of steps to be executed. Each task has a series of steps that Segment marks as complete by saving a timestamp for the completion. If something disrupts the worker, it picks up at the latest step without a `completed_at` timestamp. In some cases, the step or entire task might fail due to timeout or worker disruption. No matter the cause, Segment will retry any failures. 
 
+The audit trail's configuration notifies about every task failure, even if the failure later succeeds. In most cases, you won't need to track these failures, unless you notice actual computation or sync failures. 
+
+If you don't want to receive notifications for temporary failures, **[reach out to support](https://segment.com/help/contact/)**. Upon request, Segment can disable temporary failure notifications, which will reduce the number of notifications your workspace receives.
 
 ## Why is the user count in a journey step greater than the entry/previous step of the journey?
 
 Each step of a Journey is an Engage audience under the hood. The conditions stack, so a user must be a member of the previous step (audience) and meet all conditions to be added to subsequent steps. However, if the user no longer meets entry conditions for a particular step, they'll exit and you'll see the user count reduced. For any subsequent steps a user is still a part of, they'll remain until they no longer meet entry conditions. 
 
+## Why were multiple audience-entered events triggered for the same user?
+
+Multiple audience events can trigger for a user if any of the following conditions occur:
+1) There is a merge on the user.
+2) An [`external_id`](/docs/engage/using-engage-data/#new-external-identifiers-added-to-a-profile) was added to the profile.
+3) The user has [multiple identifiers of the same type](/docs/engage/using-engage-data/#multiple-identifiers-of-the-same-type). Segment sends one event per identifier for each audience or computed trait event.
+4) The `include anonymous users` option is selected for an audience. Segment sends an event for every `anonymousId` on the user profile.
+
+## Why am I not seeing standard source events on the Engage source, even though it has been connected through "Unify -> Unify Settings -> Profile Sources" page?
+
+Based on Engage behavior, standard source events such as Page, Track and Identify calls aren't visible on the Engage source. The Engage source tracks and manages events related to audiences and computed traits within the Engage space. This includes events generated by changes in audience membership or computed trait calculations or when a user profile has been created in the Engage space. These are distinct from the typical Page calls, Track calls, or Identify calls (user interaction events) that you would observe in a standard Segment source.
+
+## Why can't I connect the audience/computed trait to an existing destination in my workspace?
+
+Engage will not allow you to connect an audience/computed trait to a destination that is already linked to a [Connections-based source](/docs/connections/sources/). Instead, create a new instance of the destination with the correct Engage space selected as the data source.
+
+## How are the "5 most common values" for traits calculated?
+
+The "5 most common values" are the most frequently observed values for a given trait across all users, not tied to any individual user.

@@ -1,6 +1,7 @@
 ---
 title: Analytics React Native Braze Plugin
 strat: react-native
+support-type: community
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
@@ -67,7 +68,7 @@ Segment sends Page calls to Braze as custom events if you have enabled either **
 ## Identify
 
 > info "Tip"
-> Add Segment's [Enrichment Plugin](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-middleware-react-native) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/){:target="_blank"} use by debouncing duplicate identify() calls from Segment.
+> Add Segment's [Enrichment Plugin](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-middleware-react-native) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/){:target="_blank"} use by debouncing duplicate identify() calls from Segment.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
@@ -117,7 +118,7 @@ The endpoint returns:
 ```
 
 > info "Tip"
-> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
+> If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
@@ -136,7 +137,7 @@ Except for Braze's [reserved user profile fields](https://www.braze.com/docs/api
 ## Track
 
 > info "Tip"
-> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/){:target="_blank"} use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
+> To lower [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/){:target="_blank"} use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 

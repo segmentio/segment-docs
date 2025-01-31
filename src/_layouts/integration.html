@@ -48,6 +48,7 @@ layout: default
                 <h1 id="{{ page.title | slugify }}">
                   {{ page.title }}
                 </h1>
+                {% include content/support-grid.md %}
               {%- endif -%}
 
               {%- if page.excerpt -%}

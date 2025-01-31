@@ -148,5 +148,8 @@ Yes. You can use [Warehouses Selective Sync](/docs/connections/storage/warehouse
 
 ### Why are there multiple schemas prefixed with `engage_` in my warehouse when I only have one space?
 
-Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Engage creates multiple sources to send events to the destinations connected to your space.
+Segment can only connect a source to one instance of each destination. For example, one source cannot send to two different Amplitude instances. As a workaround, Engage creates multiple sources to send events to the destinations connected to your space.
+
 For example, if you have three webhook destinations in your space, Engage creates three different sources to send events to them. This creates three different warehouse schemas, and is usually the reason you have more schemas than spaces.
+
+This approach doesn't apply to messaging destinations, however. Messaging destinations connected from journeys and broadcasts don't generate multiple background sources. 

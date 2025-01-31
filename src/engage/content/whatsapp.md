@@ -2,6 +2,19 @@
 title: WhatsApp Template
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
 
 With Twilio Engage, you can build personalized WhatsApp templates to store and use throughout marketing campaigns. 
 
@@ -62,13 +75,14 @@ If a merge tag doesn't apply to a subscriber, Engage will use the content you en
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
-
+ 
 
 ## Template approvals
 
 Meta must first review and approve your WhatsApp template before you can use it in a campaign. Meta approves most templates in under an hour, but some approvals can take up to 48 hours. Keep this time frame in mind if you plan to send time-sensitive campaigns. 
 
 For more on the template approval process, view [recommendations and best practices for creating WhatsApp Message Templates](https://support.twilio.com/hc/en-us/articles/360039737753-Recommendations-and-best-practices-for-creating-WhatsApp-Message-Templates){:target="_blank"}.
+
 
 ## Next steps
 

@@ -2,6 +2,19 @@
 title: Mobile Push Onboarding
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
 
 This page walks you through the process of setting up mobile push notifications using Segment, Twilio, and Firebase/Apple Developer.
 
@@ -196,7 +209,7 @@ The previous steps are required. For configuration options, including subscripti
 
 ### Instructions for Android
 
-Now that you've integrated Analytics for Kotlin, follow these steps to add the Engage Plugin for Android:
+Now that you've integrated Analytics-Kotlin, follow these steps to add the Engage Plugin for Android:
 
 1. Add the following to your Gradle dependencies:
 
@@ -317,8 +330,6 @@ To do so, you'll need to configure your Service instance to use the Credential t
 
 If you're just getting started, set up the APN credential first, then create your Service by clicking the blue plus button on the [Services Console](https://console.twilio.com/us1/develop/notify/services?frameUrl=%2Fconsole%2Fnotify%2Fservices%3Fx-target-region%3Dus1&_ga=2.170545120.1341805708.1700099403-1979911827.1631664239&_gl=1*1msrgrt*_ga*MTk3OTkxMTgyNy4xNjMxNjY0MjM5*_ga_RRP8K4M4F3*MTcwMDEwNTYwOC45Ny4xLjE3MDAxMDU2MjAuMC4wLjA.){:target="_blank"} page.
 
-For more information, view Twilio's [How to Configure iOS Push Notifications documentation](https://www.twilio.com/docs/notify/configure-ios-push-notifications){:target="_blank"}.
-
 ## 4. Configure Android push notifications 
 
 Follow the steps in Twilio's [Configuring Android Push Notifications](https://www.twilio.com/docs/notify/configure-android-push-notifications){:target="_blank"}.
@@ -353,6 +364,9 @@ Follow these steps to set up mobile push in Twilio Engage.
 11. Under **Enter your Twilio API Key information**, paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
 12. Click **Verify**, then select the messaging services you want to use in your space.
 13. Click **Save Twilio Account.**
+
+> info "Removing messaging services"
+> To remove a messaging service, navigate to Engage > Engage settings > Channels and click the pencil icon under **Twilio messaging service**. Enter the account credentials by either using the API key secret or creating a new API key. Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
 
 ### 5b. Create a new push service
 

@@ -1,12 +1,13 @@
 ---
 title: Analytics for Python
 id: XRksQPCr7X
+support_type: maintenance
 ---
 Segment's Python library lets you record analytics data from your Python code. The requests hit Segment's servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-python).
 
-All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers using a separate thread.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make Identify and Track calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers using a separate thread.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-python/releases.atom).
 
@@ -63,11 +64,11 @@ analytics.send = False
 > note ""
 > **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
+The Identify method lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 
-Segment recommends that you call `identify` once when the user's account is created, and later when their traits change.
+Segment recommends that you call Identify  once when the user's account is created, and later when their traits change.
 
-Example `identify` call:
+Example Identify  call:
 
 ```python
 analytics.identify('019mr8mf4r', {
@@ -77,31 +78,31 @@ analytics.identify('019mr8mf4r', {
 })
 ```
 
-The example `identify` call is identifying John by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name` and `friends` traits.
+The example Identify  call is identifying John by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name` and `friends` traits.
 
-The `identify` call has the following fields:
+The Identify  call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                                  |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `user_id` _string or int_                | The ID for this user in your database.                                                                                                                                                                       |
 | `traits` _dict, optional_                | A dict of traits you know about the user. Things like: `email`, `name` or `friends`.                                                                                                                         |
 | `context` _dict, optional_               | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)                              |
-| `timestamp` _datetime, optional_         | A `datetime` object representing when the `identify` took place. This is most useful if you import historical data. If the `identify` call just happened, leave it blank and Segment uses the server's time. |
+| `timestamp` _datetime, optional_         | A `datetime` object representing when the Identify call took place. This is most useful if you import historical data. If the Identify call just happened, leave it blank and Segment uses the server's time. |
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                                       |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                                            |
 
 
-Find details on the **identify method payload** in the [Spec](/docs/connections/spec/identify/).
+Find details on the **Identify  method payload** in the [Segment Spec](/docs/connections/spec/identify/).
 
 ## Track
 
-`track` lets you record the actions your users perform. Every action triggers what Segment calls an "event", which can also have associated properties.
+Track lets you record the actions your users perform. Every action triggers what Segment calls an "event", which can also have associated properties.
 
 You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, Segment recommends tracking just a few important events. You can always add more later!
+To get started, Segment recommends tracking just a few important events. You can always add more later.
 
-Example `track` call:
+Example Track call:
 
 ```python
 analytics.track('f4ca124298', 'Signed Up', {
@@ -110,7 +111,7 @@ analytics.track('f4ca124298', 'Signed Up', {
 ```
 This call informs Segment that your user just triggered the **Signed Up** event and chose your hypothetical `'Enterprise'` plan.
 
-`track` event properties can be anything you want to record, for example:
+Track event properties can be anything you want to record, for example:
 
 ```python
 analytics.track('f4ca124298', 'Article Bookmarked', {
@@ -120,7 +121,7 @@ analytics.track('f4ca124298', 'Article Bookmarked', {
 })
 ```
 
-The `track` method has the following fields:
+The Track method has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                   |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -128,49 +129,49 @@ The `track` method has the following fields:
 | `event` _string_                         | The name of the event you're tracking. Use human-readable names like **Song Played** or **Status Updated**.                                                                                   |
 | `properties` _dict, optional_            | A dictionary of properties for the event. If the event was **Product Added**, it might have properties like `price` or `product`.                                                             |
 | `context` _dict, optional_               | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)               |
-| `timestamp` _datetime, optional_         | A `datetime` object representing when the `track` took place. This is most useful if you're importing historical data. If the `track` just happened, leave it blank to use the server's time. |
+| `timestamp` _datetime, optional_         | A `datetime` object representing when the Track took place. This is most useful if you're importing historical data. If the Track just happened, leave it blank to use the server's time. |
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                        |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                             |
 
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in the [Spec](/docs/connections/spec/track/).
+Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Spec](/docs/connections/spec/track/).
 
 ## Page
 
-The [`page`](/docs/connections/spec/page) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [Page](/docs/connections/spec/page) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you use a client-side set up in combination with the Python library, page calls are **already tracked for you** by default. If you want to record your own page views manually and aren't using a client-side library, read on!
+If you use a client-side set up in combination with the Python library, page calls are **already tracked for you** by default. If you want to record your own page views manually and aren't using a client-side library, read on.
 
-Example `page` call:
+Example Page call:
 
 ```python
 analytics.page('user_id', 'Docs', 'Python', {
   'url': 'http://segment.com'
 })
 ```
-The `page` call has the following fields:
+The Page call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                 |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `user_id` _string                        | The ID for the user that is a part of the group.                                                                                                                                            |
-| `category` _string, optional_            | The category of the page. Useful for things like ecommerce where many pages often live under a larger category.                                                                             |
+| `category` _string, optional_            | The category of the page. Useful for industries, like ecommerce, where many pages often live under a larger category.                                                                             |
 | `name` _string, optional_                | The name of the page, for example **Signup** or **Home**.                                                                                                                                   |
-| `properties` _dict, optional_            | The page properties. To see a reference of reserved page properties, see the spec [here](/docs/connections/spec/page/#properties).                                                          |
+| `properties` _dict, optional_            | The page properties. To see a reference of reserved page properties, see the [Spec: Page](/docs/connections/spec/page/#properties) documentation.                                                          |
 | `context` _dict, optional_               | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)             |
-| `timestamp` _datetime, optional_         | A `datetime` object representing when the `page` took place. This is most useful if you're importing historical data. If the `page` just happened, leave it blank to use the server's time. |
+| `timestamp` _datetime, optional_         | A `datetime` object representing when the Page took place. This is most useful if you're importing historical data. If the Page just happened, leave it blank to use the server's time. |
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                      |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                           |
 
 
-Find details on the **`page` method payload** in the [Spec](/docs/connections/spec/page/).
+Find details on the **Page method payload** in the [Segment Spec](/docs/connections/spec/page/).
 
 ## Screen
 
-The [`screen`](/docs/connections/spec/screen) method lets you record screen views on your mobile app, along with optional extra information about the screen being viewed.
+The [Screen](/docs/connections/spec/screen) method lets you record screen views on your mobile app, along with optional extra information about the screen being viewed.
 
 If you use a Segment mobile SDK in combination with the library, screen calls are **already tracked for you** by default.If you want to record your own screen views manually and don't use a Segment SDK library, learn how below.
 
-Example `screen` call:
+Example Screen call:
 
 ```python
 analytics.screen('user_id', 'Settings', 'Brightness', {
@@ -178,7 +179,7 @@ analytics.screen('user_id', 'Settings', 'Brightness', {
 })
 ```
 
-The `screen` call has the following fields:
+The Screen call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                     |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -187,21 +188,21 @@ The `screen` call has the following fields:
 | `name` _string, optional_                | The name of the page, for example **Signup** or **Home**.                                                                                                                                       |
 | `properties` _dict, optional_            | A dictionary of properties of the screen.                                                                                                                                                       |
 | `context` _dict, optional_               | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)                 |
-| `timestamp` _datetime, optional_         | A `datetime` object representing when the `screen` took place. This is most useful if you're importing historical data. If the `screen` just happened, leave it blank to use the server's time. |
+| `timestamp` _datetime, optional_         | A `datetime` object representing when the Screen took place. This is most useful if you're importing historical data. If the Screen just happened, leave it blank to use the server's time. |
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                          |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                               |
 
 
-Find details on the **`screen` method payload** in the [Spec](/docs/connections/spec/screen/).
+Find details on the **Screen method payload** in the [Segment Spec](/docs/connections/spec/screen/).
 
 ---
 ## Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/python/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+Group lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/python/#identify) with a group. A group could be a company, organization, account, project or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example `group` call:
+Example Group call:
 
 ```python
 analytics.group('user_id', 'group_id', {
@@ -210,7 +211,7 @@ analytics.group('user_id', 'group_id', {
 })
 ```
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                   |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -218,36 +219,36 @@ The `group` call has the following fields:
 | `group_id` _string or number_            | The ID of the group.                                                                                                                                                                          |
 | `traits` _dict, optional_                | A dict of traits you know about the group. For a company, they might be things like `name`, `address`, or `phone`.                                                                            |
 | `context` _dict, optional_               | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)               |
-| `timestamp` _datetime, optional_         | A `datetime` object representing when the `group` took place. This is most useful if you're importing historical data. If the `group` just happened, leave it blank to use the server's time. |
+| `timestamp` _datetime, optional_         | A `datetime` object representing when the Group call took place. This is most useful if you're importing historical data. If the Group call just happened, leave it blank to use the server's time. |
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                        |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                             |
 
 
-Find more details about `group` including the **`group` method payload** in the [Spec](/docs/connections/spec/group/).
+Find more details about Group, including the **Group method payload**, in the [Segment Spec](/docs/connections/spec/group/).
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of Segment's destinations.
+Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of Segment's destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use Alias to rename the 'userId'.
 
-Example `alias` call:
+Example Alias call:
 
 ```python
 analytics.alias(previous_id, user_id)
 ```
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 | Field                            | Description                                                                                                                                                                                   |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `previous_id` _string_           | The previous ID for this user to alias from.                                                                                                                                                  |
 | `user_id` _string_               | The user ID to alias to.                                                                                                                                                                      |
 | `context` _dict, optional_       | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)               |
-| `timestamp` _datetime, optional_ | A `datetime` object representing when the `track` took place. This is most useful if you're importing historical data. If the `track` just happened, leave it blank to use the server's time. |
+| `timestamp` _datetime, optional_ | A `datetime` object representing when the Alias took place. This is most useful if you're importing historical data. If the Alias just happened, leave it blank to use the server's time. |
 | `integrations` _dict, optional_  | A dictionary of destinations to enable or disable                                                                                                                                             |
 
 
-Here's a full example of how Segment might use the `alias` call:
+Here's a full example of how Segment might use the Alias call:
 
 ```python
 # the anonymous user does actions under an anonymous ID
@@ -263,7 +264,7 @@ analytics.identify('1234', { plan: 'Free' })
 analytics.track('1234', 'Identified Action')
 ```
 
-For more details about `alias` including the **`alias` call payload**, see the [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **Alias call payload**, see the [Segment Spec](/docs/connections/spec/alias/).
 
 
 ## Historical import
@@ -315,7 +316,7 @@ datetime.datetime(2016, 6, 6, 1, 46, 33, 939388, tzinfo=tzoffset(None, 25200))
 datetime.datetime(2016, 6, 6, 1, 46, 33, 939388, tzinfo=tzoffset(None, -25200))
 ```
 
-If you find yourself with a naive object, and know what timezone it should be in, you can also use [pytz](http://pytz.sourceforge.net/) to create an aware `datetime` object from the naive one:
+If you find yourself with a naive object, and know what timezone it should be in, you can also use [pytz](http://pytz.sourceforge.net/){:target="_blank”} to create an aware `datetime` object from the naive one:
 
 ```python
 >>> import datetime
@@ -328,7 +329,7 @@ If you find yourself with a naive object, and know what timezone it should be in
 '2016-06-05T21:52:14.499635-07:00'
 ```
 
-The [pytz documentation](http://pytz.sourceforge.net/#example-usage) contains some good additional information on timezone usage, as well as how to handle some of the more interesting edge cases.
+The [pytz documentation](http://pytz.sourceforge.net/#example-usage){:target="_blank”} contains some good additional information on timezone usage, as well as how to handle some of the more interesting edge cases.
 
 Whatever your method, make sure you use aware `datetime` objects when importing your data or it will be in the wrong timezone.
 
@@ -368,9 +369,9 @@ analytics.flush()
 
 ## Selecting destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
+The Alias, Group, Identify, Page, and Track calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
 
-Here's an example `track` call with the `integrations` object shown.
+Here's an example Track call with the `integrations` object shown.
 
 ```python
 analytics.track('9742', 'Song Played', integrations={
@@ -403,9 +404,9 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 
 If the module detects that it can't flush faster than it's receiving messages, it'll simply stop accepting messages. This means your program will never crash because of a backed up analytics queue. The default `max_queue_size` is `10000`.
 
-### How do I flush right now?!
+### Flush
 
-You can also flush on demand. For example, at the end of your program, you'll want to flush to make sure there's nothing left in the queue. Just call the `flush` method:
+You can call the `flush` method at the end of your program to make sure there's nothing left in the queue:
 
 ```python
 analytics.flush()
@@ -457,7 +458,7 @@ Client('YOUR_WRITE_KEY', debug=True, on_error=on_error, send=True,
 | `debug` _bool_            | `True` to log more verbosely, `False` by default.                                                                                                                                                                          |
 | `send` _bool_             | `False` to avoid sending data to Segment, `True` by default.                                                                                                                                                               |
 | `on_error` _function_     | Set an error handler to be called whenever errors occur                                                                                                                                                                    |
-| `max_queue_size` _int_    | Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, [let us know](https://segment.com/help/contact/)! |
+| `max_queue_size` _int_    | Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, [let Segment know](https://segment.com/help/contact/). |
 | `upload_interval` _float_ | The frequency, in seconds, to send data to Segment. Default value is 0.5.                                                                                                                                                  |
 | `upload_size` _int_       | Number of items in a batch to upload. Default value is 100.                                                                                                                                                                |
 | `gzip` _bool_             | `True` to compress data with gzip before sending, `False` by default.                                                                                                                                                      |
@@ -530,11 +531,45 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 ## Google App Engine
 
-Google App Engine my not resolve project dependencies. If this is the case add the following to your project alongside analytics-python:
+Google App Engine may not resolve project dependencies. If this is the case add the following to your project alongside analytics-python:
 - [requests](https://github.com/kennethreitz/requests){:target="_blank"}
-- python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
+- [python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
 
 If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
+
+## OAuth 2.0
+
+Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
+
+You will need a public and private key pair where:
+- The public key is uploaded to the Segment dashboard. 
+- The private key is kept in your server environment to be used by this SDK. 
+Your server will verify its identity by signing a token request and will receive a token that is used to to authorize all communication with the Segment Tracking API.
+
+You'll need to provide the OAuth Application ID and the public key's ID, both of which are provided in the Segment dashboard.  There are also options available to specify the authorization server, custom scope, maximum number of retries, or a custom HTTP client if your environment has special rules for separate segment endpoints.
+
+Be sure to implement handling for Analytics SDK errors. Good logging will help distinguish any configuration issues.
+
+For more information, see the [Segment OAuth 2.0 documentation](/docs/connections/oauth/).
+
+```python
+import segment.analytics as analytics
+with open("private_key.pem") as f:
+    privatekey = f.read()
+
+analytics.write_key = '<YOUR WRITE KEY HERE>'
+
+analytics.oauth_client_id = 'CLIENT_ID' # OAuth application ID from segment dashboard
+analytics.oauth_client_key = privatekey # generated as a public/private key pair in PEM format from OpenSSL
+analytics.oauth_key_id = 'KEY_ID' # From segment dashboard after uploading public key
+
+def on_error(error, items):
+    print("An error occurred: ", error)
+analytics.on_error = on_error
+
+analytics.track('AUser', 'track')
+analytics.flush()
+```
 
 ## Troubleshooting
 
@@ -545,7 +580,7 @@ If you're having issues with threads outliving your request, check [Background t
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}
 
 ### Override context value
 
@@ -586,7 +621,9 @@ easy_install --upgrade segment-analytics-python
 
 *Experimental feature, available since `1.3.0b1`.*
 
-In some cases, you will want to disable threads and send each request synchronously. To do so, you can use the `sync_mode` option:
+In some cases, you will want to disable threads and send each request synchronously. If your source is managing tasks asynchronously using software like [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html){:target="_blank”}, consider enabling this option to resolve potential conflicts with the Segment Python library's threading system.
+
+To do so, you can use the `sync_mode` option:
 
 ```python
 import segment.analytics as analytics

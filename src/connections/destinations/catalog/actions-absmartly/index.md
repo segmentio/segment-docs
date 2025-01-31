@@ -1,8 +1,6 @@
 ---
 title: ABsmartly (Actions) Destination
 id: 64f703d1f6e9aa0a283ae3e2
-beta: true
-private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -40,7 +38,7 @@ for this purpose.
 > info ""
 > By default, the _Track Calls_ mapping will filter and not send any events with the name `Experiment Viewed` to ABsmartly.
 
-You can [install a custom event logger](https://docs.absmartly.com/docs/sdk%20documentation/getting-started/#using-a-custom-event-logger){:target="_blank"} in ABsmartly and send exposures directly to Segment.
+You can [install a custom event logger](https://docs.absmartly.com/docs/SDK-Documentation/getting-started#using-a-custom-event-logger){:target="_blank"} in ABsmartly and send exposures directly to Segment.
 
 ```javascript
 analytics.ready(function() {

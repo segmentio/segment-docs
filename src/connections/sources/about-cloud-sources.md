@@ -15,8 +15,7 @@ Event Cloud Sources can export their data both into Segment warehouses, and into
 
 ### Object Cloud-App Sources
 
-Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you analyze your data with SQL, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
-
+Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you can analyze your data with SQL, use [Reverse ETL](/docs/connections/reverse-etl) to extract data, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
 > note ""
 > In the app, data from website, mobile, and server sources can go to a warehouse **or** to destinations. Object Cloud-App Source data can **only** go to Warehouses.
@@ -31,6 +30,8 @@ Sources are functionally comprised of either one or both of the following compon
 You enable a cloud source from the Segment web app, and grant Segment access by pasting an API key or authenticating with OAuth. Segment then starts a scheduled job on your behalf which makes requests to the downstream tool, normalizes and transforms the data, and forwards that data to the Segment API.
 
 Cloud sources attempt to use as few API calls as possible, and (where possible) only fetch data that changed since the last sync. The syncs might take a long time (especially on the first sync), so the cloud source syncs have robust retry and rate limiting logic.
+
+[Contact Segment Product Support](https://segment.com/help/contact) if you'd like to change the cadence of your source's sync frequency. 
 
 ### API call use and collection selection
 

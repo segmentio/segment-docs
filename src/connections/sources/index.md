@@ -49,7 +49,7 @@ analytics.identify('user_123', {
 {% endcomment %}
 
 > info "If you don't see the source you're looking for in our catalog"
-> If a tool is not listed as a supported source in our [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration out-of-the-box within a Segment workspace. However, as an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
+> If a tool is not listed as a supported source in Segment's [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration out-of-the-box within a Segment workspace. However, as an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
 
 ## Types of sources
 
@@ -79,18 +79,33 @@ Event streams sources collect data from your website or app to monitor user acti
 
 ### Source Overview
 
-When viewing the Source Overview page for an event stream source, you can view a line chart and breakdown table that reflects the volume and details of the events that Segment ingested from your source.
+The Source Overview page for an event stream source shows you a [pipeline view](#pipeline-view) of all events Segment receives from your source, events that failed on ingest, events that are filtered at the source level, and "eligible events", which are the events that will flow into your destinations. If you select one of the steps in the pipeline view, you can see a line chart that reflects the fluctuations in volume alongside a [breakdown table](#breakdown-table) that has more details about the events impacted by the selected step.
 
-You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data.
+#### Pipeline view
 
-![A screenshot of the Source Overview page for an Android source.](images/source-overview.jpeg)
+The pipeline view shows each of the four steps Segment encounters when processing data from your source: 
 
-The breakdown table displays the following details:
-* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example).
-* **Event name**: The event name, provided by you or the source. You should only expect to see track calls with event names. If you see unnamed events in the breakdown table, it's because for other specs, you're either identifying users/groups or tracking what page/screen the user is on. Both of which do not have event names. 
-<!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
-* **Event count**: How many of each event was successfully received by your source.
-* **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage.
+- **Events successfully received**: All events that Segment received from your source.
+- **Failed on ingest**: Events that failed at the Tracking API level. For more information about errors that might cause events to fail on ingest, see Delivery Overview's [Troubleshooting](/docs/connections/delivery-overview/#troubleshooting) documentation.
+- **Filtered at source**: Events that were filtered out by source schema controls, Tracking Plans, or a common JSON schema.
+- **Eligible events**: Eligible events are the events that flow downstream to your Segment destinations. This value is read-only, but you can see the events that flow downstream to a particular destination using [Delivery Overview](/docs/connections/delivery-overview).
+
+> success ""
+> You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. Segment sets the time picker to show data for the last 24 hours by default. 
+
+![A screenshot of the Source Overview page for an Go source, with the Failed on ingest step selected.](images/source-overview.png)
+
+#### Breakdown table
+
+The breakdown table displays three tabs, **Event type**, **Event name**, and **App version**. 
+* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example). _This tab also contains a "% change" metric, which displays how the event counts differ from the last comparable time range, represented as a percentage._
+* **Event name**: The event name, provided by you or the source.
+* **App version**: The app/release version, provided by you or the source. 
+
+Each of these tabs displays an event count, which is the total number of events that Segment received in a particular step. 
+
+> info ""
+> The Unnamed or batched events under the **Event Name** tab is a collection of all identify and page/screen calls in the source.
 
 ### Website libraries
 
@@ -199,9 +214,30 @@ To create a source:
 4. Enter a name for your source as well as any information on the setup page.
 5. Click **Add Source**.
 
+Once you've created a source, the source is automatically enabled and can immediately receive events. You can review your new events in that source's [Debugger](/docs/connections/sources/debugger/) tab.
+
+
+> warning "Sources not connected to an enabled destination are disabled after 14 days"
+> If your source is not connected to any destinations or is only connected to disabled destinations, Segment automatically disables this source after 14 days, even if the source is receiving events. Disabled sources will no longer receive data. 
+> You can view when Segment disables your destination in your workspace's [Audit Trail](https://app.segment.com/goto-my-workspace/audit-trail) as `Event : Source Disabled` with `Actor : Segment`.
+> Workspace members receive an email notification before Segment disables your source so that your team has time to take action.
+> If you would like to prevent this behavior in your workspace, fill out [this Airtable form](https://airtable.com/appADTobzkv0FYLbi/shr7V9LFDZh31cYWW).
+
 > info "One source or multiple sources?"
 > Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
 > - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
-> - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
+> - A source type cannot be changed after it is created. You must create a new source if you would like to use a different source type.
+
+## Library tiers
+
+Segment has defined three tiers for libraries: Flagship, Maintenance, and Community. These tiers indicate the level of support, enhancements, and maintenance each library receives from Segment. 
+
+The criteria for assigning a library to a tier include its overall usage by customers and the availability of newer versions. Here's how Segment defines each tier:
+
+- **Flagship** libraries offer the most up-to-date functionality on Segment’s most popular platforms. Segment actively maintains Flagship libraries, which benefit from new feature releases and ongoing development and support.
+- **Maintenance** libraries send data as intended but receive no new feature support and only critical maintenance updates from Segment. When possible, Segment recommends using a Flagship version of these libraries.
+- **Community** libraries are neither managed nor updated by Segment. These libraries are available on GitHub under the MIT License for the open-source community to fork or contribute.
+
+If a library falls into one of these tiers, you'll see the tier label at the beginning of the library's page.

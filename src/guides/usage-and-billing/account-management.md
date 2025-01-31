@@ -20,7 +20,7 @@ Some of Segment's previous plans, including the legacy API plan, limited integra
 
 No. Deleting your account only stops you from accessing workspaces through your login. The workspace is where the subscription is managed, and it will not be deleted. Data will still flow into Segment and your Destinations, and you will still be charged if you delete your account but don't delete your workspace.
 
-##How do I delete my account?
+## How do I delete my account?
 
 To delete your account, go to the [User Settings](https://app.segment.com/settings/user){:target="_blank"} menu, and click **Delete Account** at the bottom of the page.
 
@@ -28,9 +28,21 @@ Once the account is deleted you will not have access to workspaces associated wi
 
 ## How do I delete my workspace entirely?
 
-To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General** tab, then click **Delete Workspace**.
+To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General Settings** tab, then click **Delete Workspace**.  Segment will irrevocably delete your workspace 5 days after you initiate your deletion request. 
+
+If you want to revoke the workspace deletion request during the 5 days after you initiated your request, open the [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} page, select the **General Settings** tab and click **Revoke Workspace Deletion**. 
 
 You should also change your write keys for each source and remove all Segment snippets from your codebase.
+
+## How do I change my account email address? 
+
+To update the email address associated with your Segment account:
+
+1. Go to [User Settings](https://app.segment.com/settings/user){:target="_blank"}.
+2. Update your email address in the **Email** field.
+3. Click **Update Profile**.
+
+You'll need to authenticate and verify your new email address for the change to take effect. Note that [workspace owners](/docs/segment-app/iam/roles/#global-roles) can't make this change for other users. 
 
 ## What happens if I change my workspace name or slug?
 
@@ -49,7 +61,7 @@ Though workspaces can't be merged, you can move an existing source to a single w
 
 To move a source between workspaces, navigate to the source's **Settings** tab, then click **Transfer to Workspace**. Choose the workspace you're moving the source to, then click **Transfer Source**.
 
-When you transfer a source from one workspace to another, the new source includes all the connected destinations with the same settings.
+When you transfer a source from one workspace to another, Segment migrates all connected non-storage destinations.
 
 > info ""
 > The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.

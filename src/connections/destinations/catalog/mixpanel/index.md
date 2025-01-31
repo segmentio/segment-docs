@@ -418,7 +418,16 @@ Remember, Segment sends one event per `page` call.
 
 ### Incrementing properties
 
-To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
+To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property. For example, you need to increment the following property:
+
+```javascript
+analytics.track('Event Name', {
+feedback_day_number: 1
+}
+);
+```
+
+Enter the `propertyname: _feedback_day_number_` in the destination settings. The property value now increases from 1.
 
 ### Reset Mixpanel Cookies
 
@@ -481,11 +490,25 @@ If you're testing in Xcode remember you must first background the app, then the 
 
 ## Appendices
 
+
+### Distinct ID
+
+In Device-mode, when a `distinct_id` is present in the browser, it is automatically sent to Mixpanel. In Cloud-mode, the `distinct_id` is set to Segment's `userId` if one is present. If there is no `userId` on the payload, `anonymousId` is set instead.
+
+
+### Insert ID
+
+`$insert_id` is only available for cloud events. For the Mixpanel (Legacy) destination, Segment generates `$insert_id` from the messageId, event name, and Mixpanel namespace constant using the [uuidv5](https://developer.hashicorp.com/terraform/language/functions/uuidv5) function:
+```javascript
+const insertId = uuidv5(`${messageId}:${projectId}:${eventName}`, MIXPANEL_NAMESPACE)
+```
+
+
 ### IP
 
 If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
 
-Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more [here](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"}.
+Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more in Mixpanel's [Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} documentation.
 
 
 ### Bypass "Last Seen" in Server-side Calls
@@ -527,7 +550,7 @@ In-app notifications are only available for projects either bundling the Segment
 
 Segment supports Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
-For *in-app* notifications and surveys, follow the Mixpanel documentation [here](https://developer.mixpanel.com/docs/swift#in-app-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, follow the Mixpanel documentation for [Swift](https://developer.mixpanel.com/docs/swift#in-app-messages){:target="_blank"}. Use the native functionality to control when to show an in-app message by following the instructions in Segment's [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) documentation by and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Server-side)
 

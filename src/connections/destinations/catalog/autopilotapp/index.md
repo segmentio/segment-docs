@@ -1,7 +1,6 @@
 ---
 title: Ortto Destination
 rewrite: true
-beta: true
 id: 613ef845b8784e858199fe2d
 ---
 [Ortto](https://ortto.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps thousands of organizations around the world automate their communications through email notifications, such as regular email newsletters, abandoned cart emails, as well as SMS messages, and more, to help organizations market and grow their businesses faster.
@@ -13,7 +12,8 @@ This destination is maintained by Ortto. For any issues with the destination, [c
 
 ## Getting Started
 
-
+> info ""
+> You need Workspace Owner permissions to create the Ortto destination through OAuth on Ortto's website.
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Ortto" in the Destinations Catalog, and select the "Ortto" destination.

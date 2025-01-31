@@ -4,7 +4,7 @@ title: "User Deletion and Suppression"
 
 In keeping with Segment's commitment to GDPR and CCPA readiness, Segment offers the ability to delete and suppress data about end-users when they are identifiable by a `userId`, should they revoke or alter consent to data collection. For example, if an end-user invokes the Right to Object or Right to Erasure under the GDPR or CCPA, you can use these features to block ongoing data collection about that user and delete all historical data about them from Segment's systems, connected S3 buckets and warehouses, and supported downstream partners.
 
-[Contact Support](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
+[Contact Support](https://segment.com/help/contact/) if you need to process more than 110,000 users within a 30 day period.
 
 > info "Business Plan Customers"
 > If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that Segment replays data for you.
@@ -24,11 +24,16 @@ With Regulations, you can issue a single request to delete and suppress data abo
 
 The following regulation types are available:
 
- - SUPPRESS_ONLY
- - UNSUPPRESS
- - SUPPRESS_WITH_DELETE
- - DELETE_INTERNAL
- - DELETE_ONLY
+ - **SUPPRESS_ONLY**: Suppress new data without deleting existing data
+ - **UNSUPPRESS:** Stop an ongoing suppression
+ - **SUPPRESS_WITH_DELETE:** Suppress new data and delete existing data
+ - **DELETE_INTERNAL:** Delete data from Segment internals only
+ - **SUPPRESS_WITH_DELETE_INTERNAL:** Suppress new data and delete from Segment internals only
+ - **DELETE_ONLY:** Delete existing data without suppressing any new data
+
+
+> info ""
+> Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.
 
 ## Suppression Support and the Right to Revoke Consent
 
@@ -50,8 +55,8 @@ Segment deletes messages with this `userId` from connected raw data Destinations
 
 Segment forwards these deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to).
 
-Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days. [Contact Support](https://segment.com/help/contact/){:target="_blank"} if you need to process more than 100,000 users within a 30 day period.
-
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 110,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 110,000 deletion requests submitted within those 30 days. You can delete up to 5000 `userId`s per call via Public API. [Contact Support](https://segment.com/help/contact/){:target="_blank"} if you need to process more than 110,000 users within a 30 day period.
+ 
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
 Segment forwards deletion requests to [supported Destinations](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to) (such as Braze, Intercom, and Amplitude) but you should confirm that each partner fulfills the request.
@@ -70,7 +75,7 @@ Note that list only includes `SUPPRESS_ONLY` regulations. If you created a User 
 
 To create a suppression regulation and add a `userId` to this list, click **Suppress New User**, and enter the `userId` in the field that appears. Then click **Request Suppression**.
 
-Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppression list, mostly processed within 24 hours. In some cases, the suppression request can take up to 30 days to process.
+Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppression list, mostly processed within 24 hours. In some cases, the suppression request can take up to 30 days to process. You can suppress up to 5000 userIds per call through the Public API.
 
 ### Remove a user from the suppression list
 

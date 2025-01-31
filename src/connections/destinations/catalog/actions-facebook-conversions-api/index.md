@@ -60,7 +60,30 @@ Set up your Pixel to work with the Facebook Conversions API (Actions) destinatio
 3. Click **Configure Facebook Conversions API (Actions)** in the top-right corner of the screen.
 4. Select the source that will send data to Facebook Conversions API and follow the steps to name your destination.
 5. On the **Settings** tab, enter in your Pixel ID and click **Save**.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
+
+## Actions v2
+Segment created new Actions v2 to provide you with additional access to features. Segment's Actions v2 support the following features: 
+  - **Sync modes**: Control how Segment updates your Facebook Business Events Manager by selecting a [sync mode](#sync-modes), or a strategy for updating your downstream data.
+  - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Facebook.
+
+> warning ""
+> You might need to reauthorize your Facebook Business Events Manager account to use all of the features associated with v2 Actions.
+
+The following Facebook Conversions API (Actions) are Actions v2: 
+  - [Purchase v2](#purchase-v2)
+  - [Add to Cart v2](#add-to-cart-v2)
+  - [Custom Event v2](#custom-event-v2)
+  - [Page View v2](#page-view-v2)
+  - [View Content v2](#view-content-v2)
+  - [Initiate Checkout v2](#initiate-checkout-v2)
+  - [Search v2](#search-v2)
+
+### Sync modes
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Available sync modes for the Facebook Conversions API (Actions) include: 
+- **Add**: Add records to a list, segment, or journey.
 
 {% include components/actions-fields.html %}
 
@@ -118,7 +141,7 @@ Use this approach if you don't want to track users from the browser with Faceboo
 
 ### Send app events
 
-App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}. Learn how to create a dataset [here](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"}.
+App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API in Facebook's [Conversions API for App Events](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"} documentation. Learn how to create a dataset in Facebook's [About datasets in Meta Events Manager](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"} documentation.
 
 #### Configuring app events
 Sending app events requires the `action_source` parameter to be set to `app`.
@@ -169,7 +192,11 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
-### User Data Formatting
+### Double hashing PII data
+
+If you hash data before sending it to Segment, and then Segment applies its hashing, this could result in double hashing. Double hashing might make the data unusable for matching purposes on platforms like Facebook, which rely on specific hashing algorithms (like SHA-256) applied to the original PII to match users. If your data involves a lot of PII and PHI, Segment recommendeds that you send this data to Segment in its original, non-hashed format. You can then rely on Segment's privacy tools and destination-specific configurations to ensure that data is hashed appropriately when sent to destinations that require hashed PII. This approach helps maintain the integrity and usability of the data while ensuring privacy and compliance.
+
+### User data formatting
 
 Segment applies formatting to User Data Parameters as follows:
 
@@ -205,7 +232,7 @@ Segment automatically maps User Data fields to their corresponding parameters [a
 
 ### Server Event Parameter Requirements
 
-Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement.
+Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement. Facebook requires additional fields as well such as, Event Name, Event Type, and User Data. See the full list of required fields in Facebook's [Server Event Parameters](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event/){:target="_blank”} documentation. 
 
 ### Verify Events in Facebook
 
@@ -218,4 +245,8 @@ After you start sending events, you should start seeing them in twenty minutes. 
 ### Send multiple External IDs
 
 [Facebook](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/external-id/){:target="_blank"} allows you to send one External ID per payload as a string, or multiple per payload in an array of External ID strings. Send an array of External IDs through Segment by mapping an array to the `externalId` field when setting up your Actions mappings.
+
+### Not seeing events in Facebook
+
+Facebook releases updates to its platform regularly. Those updates can include new requirements for use of the Conversions API. Check Facebook's [Graph API Changelog](https://developers.facebook.com/docs/graph-api/changelog){:target="_blank”}  to keep up to date with the current requirements. 
 

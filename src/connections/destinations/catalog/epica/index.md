@@ -7,8 +7,6 @@ id: 5c6dca8369c83b0001d6b868
 
 This destination is maintained by EPICA. For any issues with the destination, [contact the Epica Support team](mailto:support@epica.ai).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

@@ -20,41 +20,71 @@ The first function (Source Middleware) allows you to manipulate the payload and 
 
 ## Using Source Middlewares
 
-The function signature for creating Source Middleware has three parameters:
+To add source middleware, use the following API:
 
 ```js
-function({payload, next, integrations}){};
+analytics.addSourceMiddleware(({ payload, next, integrations }) => .... )
 ```
 
 - `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
 - `next` represents the next function to be called in the source middleware chain. If the middleware provided does not call this function, the event is dropped on the client and is not delivered to Segment or any destinations.
 - `integrations` is an array of objects representing all the integrations that the payload is sent to. If an integration in this array is set to a ‘falsey' value then the event is not be sent to the Integration.
 
+### Examples
+#### Modifying an event
 ```js
-var SMW1 = function({ payload, next, integrations }) {
-  payload.obj.pageTitle = document.title;
-  next(payload);
-};
+analytics.addSourceMiddleware(({ payload, next }) => {
+    const { event } = payload.obj.context
+    if (event.type === 'track') {
+      event.event.toLowerCase()
+    }
+    next(payload)
+});
+```
+
+#### Dropping an event
+```js
+analytics.addSourceMiddleware(({ payload, next }) => {
+  const { event } = payload.obj.context
+  if (!isValid(event)) {
+    return null // event is dropped
+  }
+  next(payload)
+});
 ```
 
 ## Using Destination Middlewares
 
-The function signature for creating Destination Middleware also has three parameters:
+
+To add destination middleware, use the following API:
 
 ```js
-function({payload, next, integration}){}
+analytics.addDestinationMiddleware('integrationA', ({ payload, next, integration }) => .... )
 ```
 
 - `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
 - `next` represents the next function to be called in the destination middleware chain. If the middleware provided does not call this function, then the event is dropped completely for the given destination.
-- `integration` is a string value representing the integration that this middleware is applied to.
+- `integration` is a string value representing the integration that this middleware is applied to. To apply middleware to all destinations (excluding Segment.io), you can use the `*` value.
 
+#### Example: Modifying an event
 ```js
-var DMW1 = function({ payload, integration, next }) {
+analytics.addDestinationMiddleware('integrationA', ({ payload, next, integration }) => {
   delete payload.obj.pageTitle;
   next(payload);
 };
 ```
+
+#### Example: Dropping an event
+```js
+analytics.addDestinationMiddleware('integrationA', ({ payload, next, integration }) => {
+  const { event } = payload.obj.context
+  if (!isValid(event)) {
+    return null // event is dropped
+  }
+  next(payload)
+});
+```
+
 
 > info ""
 > **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint.
@@ -64,8 +94,8 @@ var DMW1 = function({ payload, integration, next }) {
 The above defined Source & Destination Middleware can be added to the Analytics.js execution chain as:
 
 ```js
-analytics.addSourceMiddleware(SMW1);
-analytics.addDestinationMiddleware('integrationA', DMW1);
+analytics.addSourceMiddleware(() => ...);
+analytics.addDestinationMiddleware('integrationA', () => ...);
 ```
 
 

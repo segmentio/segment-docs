@@ -7,7 +7,6 @@ id: 5fa3ce52d18ccdfb384b13f7
 
 Startdeliver maintains this destination. For any issues with the destination, [contact their support team](mailto:support@startdeliver.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -18,7 +17,7 @@ Startdeliver maintains this destination. For any issues with the destination, [c
 3. Choose which Source should send data to the "Startdeliver" destination.
 4. Go to the [API keys](https://app.startdeliver.com/settings/apikeys){:target="_blank"} in your Startdeliver dashboard, generate an API key, make it active and grant it "Admin" permissions.
 5. Enter the "API Key" in the "Startdeliver" destination settings in Segment.
-6. Create a User custom field you want to match a Segment event on [here](https://app.startdeliver.com/settings/fields){:target="_blank"}. You will need a field's alias at the next step.
+6. Create a User custom field you want to match a Segment event on [in the Startdeliver app](https://app.startdeliver.com/settings/fields){:target="_blank"}. You will need a field's alias at the next step.
 7. Enter the "Startdeliver user custom field to match on" in the "Startdeliver" destination settings in Segment.
 
 

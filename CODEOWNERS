@@ -41,10 +41,10 @@ CODEOWNERS  @segmentio/segment-doc-team
 
 
 # Engage
-/src/engage/ @pwseg @rchinn-segment
+/src/engage/ @pwseg 
 
 # Unify
-/src/unify @rchinn-segment
+/src/unify @pwseg 
 
 # Protocols owners
 /src/protocols @forstisabella

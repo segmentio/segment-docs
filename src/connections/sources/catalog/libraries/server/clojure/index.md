@@ -3,13 +3,14 @@ title: Analytics for Clojure
 sourceTitle: 'Clojure'
 sourceCategory: 'Server'
 shortName: 'clojure'
+support_type: community
 id: B6L7qzHmhI
 ---
-The clojure library lets you record analytics data from your clojure code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+The clojure library lets you record analytics data from your clojure code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
-The library is open-source and was contributed by the very awesome [CircleCI](https://circleci.com/), thanks! You can [check it out on GitHub](https://github.com/circleci/analytics-clj). The clojure library is a wrapper around our [Java library](https://github.com/segmentio/analytics-java).
+The library is open-source and was contributed by [CircleCI](https://circleci.com/){:target="_blank"}. You can [check it out on GitHub](https://github.com/circleci/analytics-clj){:target="_blank"}. The clojure library is a wrapper around Segment's [Java library](https://github.com/segmentio/analytics-java){:target="_blank"}.
 
-The clojure library (like our other server side libraries) is built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+The Clojure library (like Segment's other server side libraries) is built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
 
 ## Getting Started
 
@@ -53,11 +54,11 @@ The default initialization settings are production-ready.
 
 ## Identify
 
-`identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+Identify calls let you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-Segment recommends calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are change.
+Segment recommends calling Identify a single time when the user's account is first created, and only identifying again later when their traits are change.
 
-Example `identify` call:
+Example Identify call:
 
 ```
 (identify analytics "user-id" {:email "bob@acme.com"})
@@ -65,7 +66,7 @@ Example `identify` call:
 
 This call is identifying the user by his unique User ID (the one you know him by in your database) and labeling him with an `email` trait.
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -78,17 +79,17 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
+Find details on the **identify method payload** in the [Segment Spec](/docs/connections/spec/identify/).
 
 ## Track
 
-`track` lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
+Track calls let you record the actions your users perform.  Every action triggers what Segment calls an "event", which can also have associated properties.
 
 You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
+To get started, Segment recommends tracking just a few important events. You can always add more later.
 
-Example `track` call:
+Example Track call:
 
 ```
 (track analytics "user-id" "Signed Up" {:plan "trial"})
@@ -100,11 +101,11 @@ Example `track` call:
    :integration-options {"Amplitude" {:session-id (:id session)}}})
 ```
 
-This example `track` call tells us that your user just triggered the **Signed Up** event on a "trial" plan.
+This example Track call tells you that your user just triggered the **Signed Up** event on a "trial" plan.
 
-`track` event properties can be anything you want to record. In this case, plan type.
+Track event properties can be anything you want to record. In this case, plan type.
 
-The `track` call has the following fields:
+The Track call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -113,7 +114,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`event` _String_</td>
-    <td>The name of the event you're tracking. We recommend human-readable names like <strong>Song Played</strong> or <strong>Status Updated</strong>.</td>
+    <td>The name of the event you're tracking. Segment recommends human-readable names like <strong>Song Played</strong> or <strong>Status Updated</strong>.</td>
   </tr>
   <tr>
     <td>`properties` _Map, optional_</td>
@@ -121,11 +122,11 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
+Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Spec](/docs/connections/spec/track/).
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+Group lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
@@ -134,7 +135,7 @@ This is useful for tools like [Intercom](/docs/connections/destinations/catalog/
 (group analytics "1234" "group-5678" {:name "Segment"})
 ```
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -151,11 +152,11 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group`, including the **`group` payload**, in our [Spec](/docs/connections/spec/group/).
+Find more details about Group, including the **Group payload**, in the [Segment Spec](/docs/connections/spec/group/).
 
 ## Screen
 
-The [`screen`](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
+The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
 You'll want to record a screen event an event whenever the user opens a screen in your app.
 
@@ -165,7 +166,7 @@ Not all services support screen, so when it's not supported explicitly, the scre
 (screen analytics "1234" "Login" {:path "/users/login"})
 ```
 
-The `screen` call has the following fields:
+A Screen call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -174,7 +175,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`name` _String_</td>
-    <td>The webpage name you're tracking. We recommend human-readable names like **Login** or **Register**.</td>
+    <td>The webpage name you're tracking. Segment recommends human-readable names like **Login** or **Register**.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -184,17 +185,17 @@ The `screen` call has the following fields:
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
-Example `alias` call:
+Example Alias call:
 
 ```
 (alias analytics "user-id" "real-id")
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
 ---
 
@@ -233,8 +234,6 @@ You can set a custom logger on the client using:
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling one of our API methods once the library is successfully installed—[`identify`](#identify), [`track`](#track), etc.
+2. Make sure that you're calling one of Segment's API methods once the library is successfully installed, like [Identify](#identify) or [Track](#track).
 
-
-
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

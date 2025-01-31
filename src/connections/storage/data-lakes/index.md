@@ -4,8 +4,10 @@ redirect_from: '/connections/destinations/catalog/data-lakes/'
 plan: data-lakes
 ---
 
-> warning "Segment Data Lakes (Azure) deletion policies"
-> Data deletion is not supported by Segment Data Lakes (Azure), as customers retain data in systems that they manage.
+> warning "Segment Data Lakes will enter Limited Access in October 2024"
+> After Segment Data Lakes enters Limited Access, new customers will no longer be able to create Segment Data Lake instances. Existing Segment customers with Data Lakes instances will continue to receive data and can create Data Lakes Destinations.
+>
+> Segment recommends considering alternative solutions, like [AWS S3](/docs/connections/storage/catalog/aws-s3/) or [Databricks](/docs/connections/storage/catalog/databricks/).
 
 A **data lake** is a centralized cloud storage location that holds structured and unstructured data.
 
@@ -19,8 +21,8 @@ Data lakes typically have four layers:
 
 Segment Data Lakes sends Segment data to a cloud data store, either AWS S3 or Azure Data Lake Storage Gen2 (ADLS), in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes reduces the amount of processing required to get real value out of your data.
 
-> info ""
-> Segment Data Lakes is available to Business tier customers only.
+> warning "Segment Data Lakes deletion policies"
+> Segment Data Lakes (AWS) and Segment Data Lakes (Azure) do not support Segment's [user deletion and suppression](/docs/privacy/user-deletion-and-suppression/) capabilities, as you retain your data in systems that you manage.
 
 To learn more about Segment Data Lakes, check out the Segment blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
 
@@ -179,7 +181,7 @@ Segment doesn't support User deletions in Data Lakes, but supports [user suppres
 
 
 ### How does Data Lakes handle schema evolution?
-As the data schema evolves and new columns are added, Segment Data Lakes will detect any new columns. New columns will be appended to the end of the table in the Glue Data Catalog.
+As the data schema evolves, both Segment Data Lakes (AWS) and Segment Data Lakes (Azure) can detect new columns and add them to Glue Data Catalog or Azure Data Lake Storage (ADLS). However, Segment can't update existing data types. To update Segment-created data types, please reach out to [AWS Support](https://aws.amazon.com/contact-us/){:target="_blank"} or [Azure Support](https://support.microsoft.com/en-us/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4){:target="_blank"}. 
 
 
 ### How does Data Lakes work with Protocols?

@@ -5,7 +5,7 @@ strat: kotlin-android
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/braze-inc/braze-segment-kotlin). This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
+Braze’s destination plugin code is open source and available on GitHub. You can view it on GitHub in the [@braze-inc/braze-segment-kotlin](https://github.com/braze-inc/braze-segment-kotlin){:target="_blank"} repository. This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
 
 ## Getting Started
 
@@ -66,7 +66,7 @@ Your events will now begin to flow to Braze in device mode.
 # Identify
 
 > info "Tip"
-> Add Segment's open-source [Middleware](https://github.com/segmentio/segment-braze-mobile-middleware) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+> Add Segment's open-source [Middleware](https://github.com/segmentio/segment-braze-mobile-middleware) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/) use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
@@ -86,7 +86,7 @@ If you're using a device-mode connection, Braze's SDK assigns a `device_id` and 
 ## Track
 
 > info "Tip"
-> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
+> To lower [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/) use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 

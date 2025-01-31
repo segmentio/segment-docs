@@ -118,8 +118,6 @@ The group id that Mixpanel will use is `12345`.
 
 ## Migration from Mixpanel Classic
 
-{% include content/ajs-upgrade.md %}
-
 Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations.
 
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
@@ -135,3 +133,19 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 
+To send Track events with a custom Group Key, include the key as a property of Track events. For example:
+```js
+analytics.track('Example Event', { custom_group_key : 'group1' });
+```
+### Failed events due to timestamp
+
+If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
+
+### Failed events due to messageId
+Segment maps the `messageId` of a Segment event to Mixpanel's `insert_id` value. If you are generating your own `messageId`, ensure the format complies with Mixpanel's `insert_id` requirements. For more information, see Mixpanel's [Import Events](https://developer.mixpanel.com/reference/import-events#propertiesinsert_id){:target="_blank”} documentation. 
+
+Failing to generate a `messageId` that complies with Mixpanel's `insert_id` standard might result in a `400 Bad Request` error from Mixpanel.
+
+### Why is Boardman, Oregon appearing in my users' profile location field?
+
+If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.

@@ -23,7 +23,7 @@ Common use cases for destination filters include:
 Keep the following limitations in mind when you use destination filters:
 
 - Destination Filters aren't applied to events sent through the Event Tester.
-- Segment applies destination filters one at a time in the order that they appear in your workspace.
+- Segment applies destination filters in the following order: Sample, Drop ('Only Sends' are Drops), Drop Properties, Allow Properties.
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
 - *(For device-mode)* Destination filters don't apply to items that are added to the payload server-side such as IP addresses.
@@ -31,7 +31,12 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
-- *(For mobile device-mode)* Destination filters for mobile device-mode doesn't support iOS and Android libraries.
+- *(For iOS and Android mobile device-mode)* Destination filters aren't supported. Segment's Swift, Kotlin and React Native libraries do support device-mode destination filters.
+- *(For Kotlin, Swift, and React Native device-mode)* You must enable the filters for your source. To do this, go to your source and navigate to **Settings >> Advanced** and turn on the toggle for **Destination Filters**. After you've done that, you'll still need to add the Destination Filters plugin to your application. Instructions for this can be found here:
+  - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters/#destination-filters){:target="_blank"}
+  - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-filters/){:target="_blank"}
+  - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-destination-filters/){:target="_blank"}
+- Destination Filters don't apply to events that send through the destination Event Tester.
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
@@ -44,7 +49,7 @@ To create a destination filter:
 4. Configure the rules for your filter.
 5. *(Optional)* Click **Load Sample Event** to see if the event passes through your filter.
 6. Click **Next Step**.
-7. Name your filter and click the toggle to enable it.
+7. Name your filter (max. 64 length) and click the toggle to enable it.
 8. Click **Save**.
 
 > info "Enable destination filters for Analytics.js sources"
@@ -87,7 +92,7 @@ Property-level allowlisting is available with Segment's API. Using destination f
 ![PII management example](images/destination-filters/pii_example.png)
 
 > info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
-> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud-mode destination.
 >
 > To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
@@ -164,6 +169,17 @@ There are certain destinations to which you may not want to send the `userId`. T
 }
 ```
 
+## Filter conditional operators
+* `contains`: checks whether the field's value includes the provided substring
+* `glob matches`: case sensitive, can accept wildcard characters, checks whether the value matches provided string
+* `is (number)`: checks whether the value is exactly the provided integer
+* `is (string)`: checks whether the value is exactly the provided string
+* `is false`: checks whether the value is type boolean and is `false`
+* `is not (number)`: checks whether the value isn't exactly the provided integer
+* `is not (string)`: checks whether the value isn't exactly the provided string
+* `is not null`: checks that the existing field does not have a `null` value
+* `is null`: check that the existing field has a `null` value
+* `is true`: checks whether the value is type boolean and is `true`
 
 ## Important notes
 
@@ -240,5 +256,9 @@ Destination filters only filter events sent after filter setup. If you just adde
 When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.
 
 #### How do destination filters handle Protocols Transformations?
+  - **Source-Scoped Transformations**: If destination filters are enabled, Segment processes [source scoped transformations](/docs/protocols/transform/#step-2-set-up-the-transformation) before the events reach destination filters.
+  - **Destination-Scoped Transformations**: Segment processes [destination-specific transformations](/docs/protocols/transform/#step-2-set-up-the-transformation)  after the events have passed through the destination filters.
 
-When you enable a destination-specific Transformation, Segment processes your events with a destination filter. Segment processes source-level Transformations before the events reach the destination filter.
+#### Are destination filter conditions case-sensitive?
+
+Destination filters are case-sensitive. Make sure to test your filter conditions with a test event before saving and enabling the filter.

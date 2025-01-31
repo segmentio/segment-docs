@@ -1,6 +1,5 @@
 ---
-tile: Boomtrain Destination
-beta: true
+title: Boomtrain Destination
 ---
 
 Boomtrain is a predictive intelligence platform for marketers that uses machine learning to drive increased clicks, engagement and revenue through customer communications. [Visit Website](http://boomtrain.com){:target="_blank"}.

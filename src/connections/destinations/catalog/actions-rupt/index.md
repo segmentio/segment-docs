@@ -2,15 +2,12 @@
 title: Rupt (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-beta: true
 id: 6501a5225aa338d11164cc0f
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
 [Rupt](https://rupt.dev?utm_source=segment.com&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps customers monitor and monetize account sharing.
-
-{% include content/ajs-upgrade.md %}
 
 ## Benefits of Rupt (Actions)
 

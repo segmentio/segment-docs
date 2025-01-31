@@ -9,8 +9,6 @@ This destination is maintained by Windsor. For any issues with the destination, 
 
 You can find more information on Windsor on [the Windsor docs site](https://docs.windsor.io){:target="_blank"}.
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

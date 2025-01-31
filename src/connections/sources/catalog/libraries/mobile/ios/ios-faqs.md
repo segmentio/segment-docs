@@ -28,6 +28,14 @@ Once you install the framework, import the header file and install as described 
 If you choose not to use a dependency manager, you must manually keep files up-to-date with regularly scheduled, manual updates.
 
 
+## Can I initiate multiple `writeKey`s for a single iOS project?
+No, Segment doesn't support sending events to multiple `writeKey`s for a single iOS project post-initialization. You can conditionally set the `writeKey` based on an environment variable. For example:
+```objc
+let writeKey
+ENV == 'production' ? (writeKey = 'A') : (writeKey = 'B')
+```
+
+
 ## Should I include each destination's native SDK in my project?
 
 No. Don't include destination-native SDKs manually for a service Segment supports. Instead, bundle the destination's Segment-integration SDK.

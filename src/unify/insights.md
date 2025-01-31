@@ -18,7 +18,12 @@ From the Profiles Insights page, you can navigate to these tabs:
 
 Use the errors and violations tab to view and help you troubleshoot any errors or violations that have occurred in your space.
 
-You can filter results by ID type, time range, specific violations, and more.
+You can filter results by ID type, time range, specific violations, and more. 
+
+To filter by `external_id`, you must enter an `external_id` value in the search bar.
+
+![An example of filtering by external_id](/docs/unify/images/external_id.png)
+
 
 ### Errors
 
@@ -75,4 +80,8 @@ The Audit trail displays all audit actions that occur in your Unify space. This 
 
 Click an audit log link to view the user who initiated the action, timestamp, and log details.
 
+## FAQ
 
+### What are the record display and search time limits for Profiles Insights?
+
+Profiles Insights can display up to 500 records and supports searches within a 30-day time frame.

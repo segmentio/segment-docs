@@ -1,12 +1,9 @@
 ---
 title: Podscribe (Actions) Destination
 id: 643fdecd5675b7a6780d0d67
-beta: true
 ---
 
 [Podscribe](https://podscribe.com/){:target="\_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
-
-{% include content/beta-note.md %}
 
 ## Getting started
 

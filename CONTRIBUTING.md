@@ -75,7 +75,17 @@ Sources pages check if the source is a cloud-app, then include information about
 
 ## Edit pages
 
-Content with in each `.md` file is markdown. For information about styling, and available extensions, see `_src/utils/formatguide.md` or the live version [here](https://segment.com/docs/utils/formatguide).
+Content with in each `.md` file is markdown. For information about styling, and available extensions, see `_src/utils/formatguide.md` or the live version in the [utils section of the docs](/docs/utils/formatguide).
+
+## Building a preview
+
+Netlify allows you to build a preview environment on any PR you create in GitHub. This is helpful when you want to send out a review, and the formatting and design are important to those reviewers. 
+
+To build a preview site, add `[netlify-build]` to a commit message on your PR. Here's an example of what the preview build will look like: 
+
+https://github.com/segmentio/segment-docs/pull/6051#issuecomment-1942723573 
+
+You can rebuild the preview by adding a new commit with  `[netlify-build]` in the commit message. 
 
 ### Front matter
 
@@ -99,6 +109,7 @@ Front matter variables have unique functions, including the following:
 - `hide-boilerplate`: defaults to false. When true, none of the content from `destination-footer.md` is appended to the destination page.
 - `hide-cmodes`: defaults to false. A renaming of "rewrite" for more clarity, hides the connection modes table in the boilerplate.
 - `hide-personas-partial`: defaults to false. When true, hides the section of content from `destination-footer.md` that talks about being able to receive personas data.
+- `hide_actions`: used to hide individual actions. Requires the `id` and `name` of each action.
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
 - `source-type`: These are only used to supplement when a Cloud App in the sources path doesn't appear in the Config API list, and needs its type explicitly set. It runs some logic in the `cloud-app-note.md` to explain which cloud-apps are object vs event sources.
 - `private`: Used to indicate that a destination is not publicly available (Private Beta or Pilot status), and is not available in the public catalog. When `private: true`, the build pulls integration metadata from `src/_data/catalog/destinations_private.yml`. To update the list of private destinations, use the `make private_destination` command, and enter the integration's ID when prompted.
@@ -112,3 +123,4 @@ Front matter variables have unique functions, including the following:
 - `redirect_from`: Defaults to null. Takes an array of URLs from the front matter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file. Use the path from the root of the content directory, for example `/connections/destinations/catalog/` rather than `/docs/connections/destinations/catalog/`. **Note** We are mostly using NGINX redirects for SEO purposes. Approximately quarterly, we'll collect these and add them to NGINX.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
+- `engage`: defaults to false. Hides the connection modes table and adds a note in the Destination Info box that reads "This destination is **only** compatible with [Twilio Engage](https://segment.com/docs/engage/)."

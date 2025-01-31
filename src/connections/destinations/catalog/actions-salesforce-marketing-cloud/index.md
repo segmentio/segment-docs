@@ -53,7 +53,7 @@ Once you save the API integration and add permissions, you will see a Summary pa
 3. Click **Configure Salesforce Marketing Cloud (Actions)** in the top-right corner of the screen.
 4. Select the source that will send data to SFMC and follow the steps to name your destination.
 5. On the **Settings** tab, input your SFMC Account ID (MID). In the Installed Package you created above, locate your Subdomain, Client ID, and Client Secret and input these settings. Your Subdomain can be found under "REST Base URI." Your Subdomain should be a 28-character string starting with the letters `mc`. Do not include the `.rest.marketingcloudapis.com` part of the URL.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
@@ -75,7 +75,7 @@ The batch feature is only compatible with the "Send Contact to Data Extension" a
 
 ### Data Extensions & API Events
 
-To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it appear will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension. 
+To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension.
 
 Data extensions and attributes must be created **before** sending data. You can create a data extension in your SFMC account by navigating to **Audience Builder > Contact Builder > Data Extensions > Create**. Segment recommends creating a single data extension to store all contact data, and individual data extensions for each event type you plan to send. Once a data extension is created, you can add attributes for any traits or properties you plan to send. You must include at least one Primary Key attribute that will be used to uniquely identify each row.
 

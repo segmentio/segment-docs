@@ -50,7 +50,7 @@ Behind the scenes, Segment's Optimizely Web destination creates a global Optimiz
 Segment forwards the event to Optimizely:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (for example, `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -64,13 +64,11 @@ Segment also handles the following mapping:
 
 ### Page
 
-Segment maps `page` calls to its own `track` events, i.e. invoking `analytics.page('Page Viewed')` using Segment's API maps the event to a `analytics.track('Page Viewed')` event. Segment maps the `track` event to other downstream destinations like a regular Segment `track` event.
+Segment maps `page` calls to its own `track` events. For example, invoking `analytics.page('Page Viewed')` using Segment's API maps the event to a `analytics.track('Page Viewed')` event. Segment maps the `track` event to other downstream destinations like a regular Segment `track` event.
 
 ### Experiment Listeners
 
-Upon activation of an Optimizely experiment, an "Experiment Viewed" `track` event is sent to Segment. The event includes Optimizely experiment metadata.
-
-Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
+Upon activation of an Optimizely experiment, an “Experiment Viewed” Track event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
 
 
 > note ""
@@ -138,7 +136,7 @@ This appends an additional property in your "Experiment Viewed" events called `n
   
 If you're sending your experiment data to Google Analytics in the form of `track` calls, Segment recommends creating hit-scoped custom dimensions in Google Analytics with titles like "Experiment Name" and "Variation Name," and then map the properties to those Custom Dimensions accordingly. For example, if you set Custom Dimension 5 to "Experiment Name" and Custom Dimension 1 to "Variation Name," here's how you'd configure the mappings in your Segment<>GA settings:
 
-  ![A screenshot of the Custom Dimensions tab of Optimzely.](images/customdimensions.png)
+  ![A screenshot of the Custom Dimensions tab of Optimizely.](images/customdimensions.png)
 
 ## Optimizely Full Stack (JavaScript SDK)
 
@@ -156,14 +154,13 @@ If you're sending your experiment data to Google Analytics in the form of `track
 
 If you are using Optimizely SDKs v3+ or the React SDK, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/){:target="_blank"} is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, refer to their documentation [here](https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions){:target="_blank"}.
-
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [How Optimizely Experimentation counts conversions](https://support.optimizely.com/hc/en-us/articles/19888476989325-How-Optimizely-Experimentation-counts-conversions){:target="_blank"}.
 ### Track
 
 Upon invocation of a Segment `track` event, Segment maps the event to an Optimizely `track` event:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (for example, `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -177,7 +174,7 @@ Segment also handles the following mapping:
 
 ### Page
 
-Segment maps `page` calls to its own `track` events, i.e. invoking `analytics.page("Page Viewed")` using Segment's API maps the event to `analytics.track("Page Viewed")`. Segment maps the `track` event downstream to other destinations like a regular Segment `track` event.
+Segment maps `page` calls to its own `track` events. For example, invoking `analytics.page("Page Viewed")` using Segment's API maps the event to `analytics.track("Page Viewed")`. Segment maps the `track` event downstream to other destinations like a regular Segment `track` event.
 
 ### Experiment Listeners
 
@@ -233,11 +230,10 @@ More importantly, to send the true referrer value with the initial `page` call i
 
 ```javascript
 <script>
-  !function(){function p(){var c=document.querySelector("link[rel='canonical']");return{__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer}}var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window.analytics.initialized)return window.analytics[e].apply(window.analytics,arguments);var n=Array.prototype.slice.call(arguments);["track","screen","alias","group","page","identify"].indexOf(e)>-1&&n.push(p());n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(t,i);analytics._loadOptions=n};analytics._writeKey="YOUR_WRITE_KEY";;analytics.SNIPPET_VERSION="5.0.1";
-  analytics.load("YOUR_WRITE_KEY");
+  !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="YOUR_WRITE_KEY";;analytics.SNIPPET_VERSION="5.2.1"; 
 
 
-   analytics.ready(function() {
+  analytics.ready(function() {
     /* MODIFIED SECTION */
   // Hey did Optimizely set an effective referrer?
   if (window.optimizelyEffectiveReferrer) var referrer = window.optimizelyEffectiveReferrer;

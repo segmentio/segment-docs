@@ -32,3 +32,6 @@ The Segment Connections destination enables you to mold data extracted from your
 
 ### API Calls and MTUs
 The Segment Connections destination sends data to Segment's Tracking API, which has cost implications. New users will count as new MTUs and each call will count as an API call. For information on how Segment calculates MTUs and API calls, please see [MTUs, Throughput and Billing](/docs/guides/usage-and-billing/mtus-and-throughput/).
+
+### Test Mapping
+The **Test Mapping** feature on the Mapping page does not send events to the Tracking API. It only validates the mappings and confirms that the event will be accepted by the Tracking API. To send and validate the event in your source, run a RETL sync.

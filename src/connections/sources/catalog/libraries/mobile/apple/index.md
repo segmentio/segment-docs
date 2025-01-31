@@ -5,6 +5,7 @@ redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
   - '/connections/sources/catalog/libraries/mobile/swift-ios/'
 id: dZeHygTSD4
+support_type: flagship
 tags:
   - apple
   - swift
@@ -22,7 +23,7 @@ Analytics-Swift provides several key benefits including improvements in stabilit
 
 Analytics-Swift offers improved performance when compared to Analytics iOS. For a more detailed overview, you can reference the [blog post](https://segment.com/blog/sdk-performance-improvements/). 
 
-- Faster event processing and deliver
+- Faster event processing and delivery
 - Significantly lower CPU usage
 - Small memory & disk usage footprint
 
@@ -40,6 +41,9 @@ For the first time ever, developers can filter and transform their users’ even
 Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-swift) on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-Swift) on Mobile. 
 
 ## Getting started
+> info "Multiple Instances"
+> Multiple Instances are supported as part of the Analytics-Swift mobile library. However, each instance must have a unique writeKey defined, or malformed JSON may be sent to our API resulting in 400 errors.
+
 To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.
@@ -122,7 +126,11 @@ Once you've installed the Analytics-Swift library, you can start collecting data
 ## Destinations
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+See Segment's documentation for [device-mode destinations](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/) for a full list of [supported device-mode plugins](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/#supported-device-mode-plugins).  
+
+See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations/) for a full list of available cloud-mode destinations that Swift supports. 
+
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 <div class="double">
   {% include components/reference-button.html
@@ -144,13 +152,26 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 ## Tools and extensions
 
-Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.
+Analytics-Swift is built with extensibility in mind. Use the tools list below to improve data collection.
 
 - [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift/swift-typewriter)
 - [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/swift/swift-destination-filters)
 - [Code samples](/docs/connections/sources/catalog/libraries/mobile/swift/swift-samples)
 
+## Proxying events
+If you proxy your events through the `apiHost` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server-side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
+
 > warning ""
-> If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK. 
+> If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK.
+
+## Telemetry
+The Analytics-Swift SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
+
+You can disable telemetry at any time by setting `Telemetry.shared.enable = false`.
+
+When internal errors or errors from plugins occur, the write key may be included with error data to help Segment identify the issue(s).  You can disable this by setting `Telemetry.shared.sendWriteKeyOnError = false`.
+
+## Timestamps in Swift
+Due to efficiency updates made to Segment's Swift library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
 

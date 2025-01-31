@@ -4,7 +4,7 @@ repo: analytics-next
 strat: node-js
 ---
 
-If you're using the [classic version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/classic) (named `analytics-node` on npm), [upgrade to the latest version of Analytics Node.js](/connections/sources/catalog/libraries/server/node/) (named `@segment/analytics-node` on npm). 
+If you're using the [classic version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/classic) (named `analytics-node` on npm), [upgrade to the latest version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/) (named `@segment/analytics-node` on npm). 
 
 1. Change the named imports.
 
@@ -32,14 +32,14 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
 
      <br> Before:
     ```javascript  
-    await analytics.flush(function(err, batch) {
+    await analytics.flush((err, batch) => {
         console.log('Flushed, and now this program can exit!');
     });
     ```
 
     After:
     ```javascript
-    await analytics.closeAndFlush()
+    await analytics.flush({ close: true })
     ```
 
 ### Key differences between the classic and updated version     
@@ -55,7 +55,6 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
     ```javascript
     (err, ctx) => void
     ```
-* The `flushAt` configuration option changed to `maxEventsInBatch`.
 
 * The `enable` setting (for disabling analytics during tests) changed to `disable`. `enable: false` changed to `disable: true`.
 

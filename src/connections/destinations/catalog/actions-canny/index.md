@@ -12,8 +12,6 @@ Canny maintains this destination. For any issues with the destination, [contact 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Canny Segment destination. There's also a page about the [non-Actions Canny destination](/docs/connections/destinations/catalog/canny/). Both of these destinations receive data from Segment.
 
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Canny (Actions) vs Canny Classic
 
 Canny (Actions) provides the following benefit over the classic Canny destination:

@@ -4,7 +4,6 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/bigquery/'
 ---
-{% include content/warehouse-ip.html %}
 
 Segment's [BigQuery](https://cloud.google.com/bigquery/){:target="_blank"} connector makes it easy
 to load web, mobile, and third-party source data like Salesforce, Zendesk, and
@@ -12,6 +11,8 @@ Google AdWords into a BigQuery data warehouse.  When you integrate BigQuery with
 
 The Segment warehouse connector runs a periodic ETL (Extract - Transform - Load) process to pull raw events and objects from your sources and load them into your BigQuery cluster. 
 For more information about the ETL process, including how it works and common ETL use cases, refer to [Google Cloud's ETL documentation](https://cloud.google.com/learn/what-is-etl){:target="_blank"}.
+
+{% include content/storage-do-include.md %}
 
 ## Getting Started
 
@@ -35,7 +36,7 @@ To create a project and enable BigQuery:
 ### Create a service account for Segment
 
 To create a service account for Segment: 
-1. From the Navigation panel on the left, select **IAM & admin** > **Service accounts**.
+1. Open the Google Developer Console, select the Navigation panel and navigate to **IAM & admin** > **Service accounts**.
 2. Click **Create Service Account**.
 3. Enter a name for the service account (for example, `segment-warehouses`) and click **Create**.
 4. Assign the service account the following roles:
@@ -136,6 +137,13 @@ To remove access to the shared Service Account:
 
 For more information about managing IAM access, refer to Google's documentation, [Manage access to projects, folders, and organization](https://cloud.google.com/iam/docs/granting-changing-revoking-access){:target="_blank"}.
 
+### Allowlisting IPs
+
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ## Best Practices
 
@@ -221,3 +229,9 @@ a need for streaming data into BigQuery, [contact Segment support](https://segme
 ### I see duplicates in my tables.
 
 This behavior is expected. Segment only de-duplicates data in your views. Refer to the [schema section](#schema) for more details.
+
+### Why does some of my older BigQuery data expire? 
+
+If you notice that you are missing older BigQuery data, it might be due to a [dataset's default table expiration](https://cloud.google.com/bigquery/docs/updating-datasets#partition-expiration){:target="_blank”} in BigQuery. The default table expiration sets a standard expiration on all partitioned tables that are created. 
+
+You can safely change the default table expiration to ‘Never’, which removes these expirations from the tables/dataset and changes the dataset's default table expiration. Segment can then run a backfill for you and send all of your historical data to your warehouse.

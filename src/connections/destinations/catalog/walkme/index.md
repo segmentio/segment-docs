@@ -7,8 +7,6 @@ id: 5d25d6e0885427000195bf80
 
 This destination is maintained by WalkMe. For any issues with the destination, [contact the WalkMe Support team](mailto:support@walkme.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

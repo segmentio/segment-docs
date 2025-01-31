@@ -17,9 +17,6 @@ versions:
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Heap destination. There's also a page about the [non-Actions Heap destination](/docs/connections/destinations/catalog/heap/). Both of these destinations receive data from Segment.
 
-
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Heap (Actions) vs Heap Classic
 
 Heap (Actions) provides the following benefits over the classic Heap destination:

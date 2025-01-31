@@ -22,7 +22,7 @@ Need more destinations or more MTUs? Upgrade to the [Team Plan](https://segment.
 
 ## How do I qualify for the Twilio Developer Plan?
 
-You must have an active Twilio account to sign up for the Twilio Developer Plan. Active Twilio users can sign up for the Twilio Developer Plan [here](https://www.segment.com/twilio-developer-plan).
+You must have an active Twilio account to sign up for the Twilio Developer Plan. Active Twilio users can sign up for the Twilio Developer Plan [on Segment's website](https://www.segment.com/twilio-developer-plan){:target="_blank”}.
 
 ## What is a data source?
 
@@ -51,8 +51,8 @@ For more information about Monthly Tracked Users, see [What is an MTU?](/docs/gu
 If you exceed the 10,000 MTU limit once in a 6-month period, Segment locks access to your account, but data still flows through Segment. To unlock your account, you can choose from these options:
 
 - **Option 1**: Wait for a full billing cycle (1 month) to go by without any overages. Segment unlocks your account if the MTU numbers reduce on their own.
-- **Option 2**: Upgrade to the [Team plan](https://segment.com/pricing/). This starts a 2-week free trial that gives you 14 days to fix your implementation to decrease the traffic.
-- **Option 3:** Upgrade to a [Business plan](https://segment.com/pricing/). Business plans are custom built for customers and typically have higher MTU limits than Team plans. [Click here](https://segment.com/demo) to schedule time with a Segment representative to see if a Business plan is a good fit for you.
+- **Option 2**: Upgrade to the [Team plan](https://segment.com/pricing/){:target="_blank”}. This starts a 2-week free trial that gives you 14 days to fix your implementation to decrease the traffic.
+- **Option 3:** Upgrade to a [Business plan](https://segment.com/pricing/){:target="_blank”}. Business plans are custom built for customers and typically have higher MTU limits than Team plans. [Schedule time with a Segment representative](https://segment.com/demo){:target="_blank”} to see if a Business plan is a good fit for you.
 
 If you exceed the 10,000 MTU limit twice in a 6-month period, Segment locks access to your account and also stops sending and receiving data. You can unlock your account by following option 2 or 3 above to upgrade your plan.
 

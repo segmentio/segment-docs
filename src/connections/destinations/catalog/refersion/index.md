@@ -7,8 +7,6 @@ id: 5cacbf88fa2aed000104edcc
 
 This destination is maintained by Refersion. For any issues with the destination, [contact the Refersion Support team](mailto:helpme@refersion.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

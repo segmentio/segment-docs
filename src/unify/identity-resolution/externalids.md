@@ -22,13 +22,12 @@ Segment automatically promotes the following traits and IDs in track and identif
 | External ID Type   | Message Location in Track or Identify Call                                                                    |
 | ------------------ | ------------------------------------------------------------------------------------------------------------- |
 | user_id            | userId                                                                                                        |
-| email              | traits.email or context.traits.email                                                                          |
+| email              | traits.email, context.traits.email or properties.email                                                        |
 | android.id         | context.device.id when context.device.type = 'android'                                                        |
 | android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
 | android.push_token | context.device.token when context.device.type = 'android'                                                     |
 | anonymous_id       | anonymousId                                                                                                   |
 | ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
-| group_id           | groupId                                                                                                       |
 | ios.id             | context.device.id when context.device.type = 'ios'                                                            |
 | ios.idfa           | context.device.advertisingId when context.device.type = 'ios'     |
 | ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |

@@ -7,7 +7,6 @@ id: 5c9b332f4a9ac00001e97649
 
 This destination is maintained by Smartlook. For any issues with the destination, [contact the Smartlook Support team](mailto:support@smartlook.com).
 
-{% include content/beta-note.md %}
 
 
 ## Getting Started

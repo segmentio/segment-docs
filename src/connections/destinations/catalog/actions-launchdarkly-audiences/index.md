@@ -1,7 +1,6 @@
 ---
 title: LaunchDarkly Audiences Destination
 id: 64e72a310da9ebedf99c8937
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

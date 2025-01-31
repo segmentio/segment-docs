@@ -52,9 +52,9 @@ You can then sort or filter each column to just the values you care about, by cl
 
 ### My source was disabled and it wasn't done by anyone in my workspace
 
-Segment disables sources that don't have enabled destinations after 14 days, and emails you before disabling any sources. Disabling these sources helps maintain a clean workspace.
+Sources without any enabled destinations are auto-disabled after 14 days. However, the workspace owner is notified by email before Segment disables the source. Data that flows into Segment but does not flow to any downstream tools is not valuable to you and unnecessarily takes up space. 
 
-Segment understands there maybe cases to keep a source active. If you'd like to add your source(s) to an exception list, you can do so by filling out this [Airtable form](https://airtable.com/shr7V9LFDZh31cYWW){:target="_blank"}.
+Segment understands there may be cases to keep a source active. If you'd like to add your sources to an exception list, you can do so by filling out this [Airtable form](https://airtable.com/shr7V9LFDZh31cYWW){:target="_blank"}.
 
-
-
+### Can I request Segment add an integration tool?
+Yes, you are able to submit an integration request here https://segment.com/requests/integrations/.

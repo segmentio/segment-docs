@@ -26,7 +26,7 @@ When you call [`identify`](/docs/connections/spec/identify/) on `analytics.js`, 
 * We call `api.visitor.updatePhoneNumber` with `traits.phone` if you send it.
 * We call `api.visitor.updateCustomFields` with `traits`.
 
-More documentation on the Olark API can be found [in Olark's docs](https://www.olark.com/documentation?r=qhl4tltg){:target="_blank"}.
+More documentation on the Olark API can be found [in Olark's docs](https://www.olark.com/api){:target="_blank"}.
 
 ## Track
 

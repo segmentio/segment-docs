@@ -9,22 +9,22 @@ Yes, Identity Graph supports multiple external IDs.
 
 Identity Graph automatically collects a rich set of external IDs without any additional code:
 
-1. Device level IDs (ex: `anonymous_id`, `ios.idfa` and `android.id`)
-2. Device token IDs (ex: `ios.push_token` and `android_push_token`)
-3. User level IDs (ex: `user_id`)
+1. Device level IDs (example: `anonymous_id`, `ios.idfa` and `android.id`)
+2. Device token IDs (example: `ios.push_token` and `android_push_token`)
+3. User level IDs (example: `user_id`)
 4. Common external IDs (`email`)
-5. Cross domain analytics IDs (`cross_domain_id`)
+5. Cross-domain analytics IDs (`cross_domain_id`)
 
-If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
+If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an [Identify](/docs/connections/spec/identify/) or [Track call](/docs/connections/spec/identify/). If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
 
 ## How does Unify handle identity merging?
-Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
+Segment analyzes each incoming event and extracts external IDs (like `user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
 
 1. Segment first searches the Identity Graph for incoming external IDs.
 2. If Segment finds no matching profile(s), it creates one.
-3. If Segment finds one profile, it merges the incoming event with that profile. (This means that Segment adds the external IDs on the incoming message and resolves the event to the profile.)
+3. If Segment finds one profile, it merges the incoming event with that profile. This means that Segment adds the external IDs on the incoming message and resolves the event to the profile.
 4. If Segment finds multiple matching profiles, Segment applies the identity resolution settings for merge protection. Specifically, Segment uses identifier limits and priorities to add the correct identifiers to the profile.
-5. Segment then applies [limits](/docs/unify/profile-api-limits/) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
+5. Segment then [applies limits](/docs/unify/profile-api-limits/) to ensure profiles remain under these limits. Segment doesn't add any further merges or mappings if the profile is at either limit, but event resolution for the profile will continue.
 
 {% comment %}
 
@@ -48,9 +48,37 @@ If two merged user profiles contain conflicting profile attributes, Segment sele
 
 Any of the external IDs can be used to query a profile. When a profile is requested, Segment traverses the merge graph and resolves all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.
 
-### Can ExternalID's be changed or removed from the profiles?
-No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the user profile.
+### Can external IDs be changed or removed from the profiles?
+No. As the Identity Graph uses external IDs, they remain for the lifetime of the user profile.
 
 ### Can I delete specific events from a user profile in Unify? 
 No. Alternatively, you may delete the entire user profile from Segment using a [GDPR deletion request](/docs/privacy/user-deletion-and-suppression/).
- 
+
+### How does profile creation affect MTUs, particularly where a profile isn't merged with the parent profile due to exceeding the merge limit?
+Segment determines the Monthly Tracked Users (MTUs) count by the number of unique user IDs and anonymous IDs processed, regardless of how you manage these profiles in Unify and Engage. This count is taken as events are sent to Segment, before they reach Unify and Engage. Therefore, the creation of new profiles or the merging of profiles in Unify doesn't affect the MTU count. The MTU count only increases when you send new unique user or anonymous IDs to Segment.
+
+### What is the event lookback period on the Profile Explorer?
+The [Profile Explorer](/docs/unify/#profile-explorer) retains event details for a period of up to 2 weeks. If you need event information beyond this timeframe, Segment recommends using [Profiles Sync](/docs/unify/profiles-sync/overview/) for comprehensive event analysis and retention.
+
+### Can I remove a trait from a user profile?
+
+Yes, you can remove a trait from a user profile by sending an Identify event with the trait value set to `null` in the traits object from one of your connected sources. For example: 
+
+```json
+{
+  "traits": {
+    "trait1": null
+  }
+}
+```
+Setting the trait value to an empty string won't remove the trait, like in this example:
+
+```json
+{
+  "traits": {
+    "trait2": ""
+  }
+}
+```
+
+Instead, this updates the trait to an empty string within the user profile.

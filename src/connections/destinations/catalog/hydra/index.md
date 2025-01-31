@@ -7,8 +7,6 @@ id: 5cd30f824e267500018a1063
 
 This destination is maintained by Hydra. For any issues with the destination, [contact the Hydra Support team](mailto:hello@hydra.ai).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

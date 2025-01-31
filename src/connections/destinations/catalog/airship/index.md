@@ -17,8 +17,6 @@ This destination is maintained by Airship. For any issues [contact the Airship S
 > success ""
 > **Good to know**: This page is about the Airship Segment destination, which receives data from Segment. There's also a page about the [Airship Segment source](/docs/connections/sources/catalog/cloud-apps/airship/), which sends data _to_ Segment!
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

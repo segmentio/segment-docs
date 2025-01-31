@@ -7,8 +7,6 @@ id: 5c7550de16b530000157a2d5
 
 This destination is maintained by Adtriba. For any issues with the destination, [contact the Adtriba Support team](mailto:support@adtriba.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

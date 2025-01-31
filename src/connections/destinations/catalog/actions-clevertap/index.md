@@ -8,11 +8,6 @@ id: 61d7456b078e79929de4ee8c
 
 {% include content/plan-grid.md name="actions" %}
 
-
-
-{% include content/ajs-upgrade.md %}
-
-
 [CleverTap](https://clevertap.com/){:target="_blank"} is a retention cloud that empowers digital consumer brands to increase customer retention and lifetime value. CleverTap drives contextual individualization with the help of a unified and deep data layer, AI/ML-powered insights, and automation enabling brands to offer hyper-personalized and delightful experiences to their customers.
 
 ## Advantages of CleverTap (Actions) Destination

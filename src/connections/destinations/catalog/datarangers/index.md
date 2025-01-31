@@ -1,7 +1,6 @@
 ---
 rewrite: true
 title: BytePlus
-beta: true
 ---
 
 BytePlus provides product analytics for mobile and web applications, including event/retention/funnel/error analysis, user segmentation, user paths, behavior lookup, A/B testing, and other functions.

@@ -91,23 +91,37 @@ UTM parameters are types of query strings added to the end of a URL. When clicke
 
 ![Diagram showing how different UTM parameters redirect to your site and then are displayed in Traffic analytics.](images/x-channel_GWqnp2I6.png)
 
-UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
+UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined in the [Spec: Common](/docs/connections/spec/common/#context-fields-automatically-collected) docs. These parameters do not persist to subsequent calls unless you pass them explicitly.
 
 UTM parameters contain three essential components:
 
-*   **utm\_campaign**: this is the name of your campaign. All marketing activities that support this campaign, needs to have the same utm\_campaign so that downstream analysis to measure performance for this specific campaign can be done off this primary key. (Example: "national-toastday")
+*   **utm\_campaign**: This is the name of your campaign. All marketing activities that support this campaign, needs to have the same utm\_campaign so that downstream analysis to measure performance for this specific campaign can be done off this primary key. (Example: "national-toastday")
 
-*   **utm\_medium**: how the traffic is coming to your site. Is it through email, a display ad, or an online forum? This ensures Segment's downstream analysis can easily see which channel performs the best. (Examples: "email", "paid-display", "paid-social", "organic-social")
+*   **utm\_medium**: How the traffic is coming to your site. Is it through email, a display ad, or an online forum? This ensures Segment's downstream analysis can easily see which channel performs the best. (Examples: "email", "paid-display", "paid-social", "organic-social")
 
-*   **utm\_source**: where is the traffic specifically coming from. You can be specific here. This ensures Segment's downstream analysis can measure which specific source brings the most conversions. (Examples: "twitter", "customer.io" (email tool), "facebook", "adroll")
+*   **utm\_source**: Where the traffic is specifically coming from. You can be specific here. This ensures Segment's downstream analysis can measure which specific source brings the most conversions. (Examples: "twitter", "customer.io" (email tool), "facebook", "adroll")
 
 
 With these being optional:
 
-*   **utm\_content**: for multiple calls to action on a single page, utm\_content indicates which one. For example, on a website, there may be three different display ads. While the link on each display ad will have the same utm\_campaign, utm\_medium, and utm\_source, the utm\_content will be different. (Examples: "banner", "left-side", "bottom-side")
+*   **utm\_content**: For multiple calls to action on a single page, utm\_content indicates which one. For example, on a website, there may be three different display ads. While the link on each display ad will have the same utm\_campaign, utm\_medium, and utm\_source, the utm\_content will be different. (Examples: "banner", "left-side", "bottom-side")
 
-*   **utm\_term**: this is the parameter suggested for paid search to identify keywords for your ad. If you're using Google Adwords and have enabled "autotagging", then you don't need to worry about this. Otherwise, you can manually pass the keywords from your search terms through this parameter so that you can see which keywords convert the most. Note that this parameter is reserved explicitly for search. (Examples: "toast", "butter", "jam")
+*   **utm\_term**: This is the parameter suggested for paid search to identify keywords for your ad. If you're using Google Adwords and have enabled "autotagging", then you don't need to worry about this. Otherwise, you can manually pass the keywords from your search terms through this parameter so that you can see which keywords convert the most. Note that this parameter is reserved explicitly for search. (Examples: "toast", "butter", "jam")
 
+If you'd like UTM parameters to persist in subsequent calls, you'll need to manually add those fields in the `context.campaign` object of your event call. For example:
+
+```js
+analytics.page("97980cfea0067", {}, {  campaign: {
+   name: "TPS Innovation Newsletter",
+   source: "Newsletter",
+   medium: "email",
+   term: "tps reports",
+   content: "image link"
+  },
+});
+```
+
+You can also store the values in cookies and/or localStorage and use [Analytics.js Middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/){:target="_blank"} to enrich the payload for subsequent calls.
 
 [Learn more about the semantics with each UTM parameter.](https://docs.google.com/file/d/0By71e2L6SonANjViYWUyOTktOGQ2Ny00NWJmLThlY2MtMDU3MzJhNWU0MDg1/edit?hl=en){:target="_blank"} _The key isn't to stick with the definitions that closely, but to be consistent within your own analytics system._
 
@@ -117,26 +131,26 @@ A marketing campaign is a single marketing message across several platforms, med
 
 Since the marketing campaign is from off-domain to your storefront (on your property or domain), then it's critical to use the proper and consistent UTM params across all of your channels:
 
-*   emails
+*   Emails
 
-*   paid acquisition
+*   Paid acquisition
 
-*   guest blog post in partner's newsletter
+*   Guest blog post in partner's newsletter
 
-*   article in the news
+*   Article in the news
 
-*   offline events / in real life / meat space
+*   Offline events / in real life / meat space
 
 
-Your UTM parameters would match a pattern such as
+Your UTM parameters would match a pattern such as:
 
-*   having the same utm\_campaign across all channels
+*   Having the same utm\_campaign across all channels
 
-*   different utm\_source and utm\_medium depending on the channel
+*   Different utm\_source and utm\_medium depending on the channel
 
-*   if you were on paid acquisition, the placement of the display ad would determine what goes in utm\_content
+*   If you were on paid acquisition, the placement of the display ad would determine what goes in utm\_content
 
-*   if you were using paid search, the term would be utm\_term
+*   If you were using paid search, the term would be utm\_term
 
 
 An example would be a National Toast Day campaign. This campaign would include emails, paid acquisition (with AdRoll and Facebook Ads), organic social (Twitter), and promotional content on partners' blogs.
@@ -172,11 +186,11 @@ Tracking with JavaScript in the browser has its benefits, such as using browser 
 
 If you do move key checkout events to the server side, you will have to manually send the data automatically collected by Segment's client-side JavaScript library to your server. These pieces of tracking data are still important for the following reasons:
 
-*   **UTM parameters**: collecting the UTM params will allow you to tie conversion events to your marketing campaign or activities. This is valuable in that you can immediately measure performance and calculate ROI on your campaigns.
+*   **UTM parameters**: Collecting the UTM params will allow you to tie conversion events to your marketing campaign or activities. This is valuable in that you can immediately measure performance and calculate ROI on your campaigns.
 
-*   **IP address**: the IP address can provide location intelligence for your customers. This means you can personalize your shopping experience or engagement emails with inventory that might be more relevant depending on your customers' locations.
+*   **IP address**: The IP address can provide location intelligence for your customers. This means you can personalize your shopping experience or engagement emails with inventory that might be more relevant depending on your customers' locations.
 
-*   **User Agent**: the User Agent will inform you of your customers' preferred device and shopping experience. Are they converting on a mobile web browser? Native app? Or on their laptop?
+*   **User Agent**: The User Agent will inform you of your customers' preferred device and shopping experience. Are they converting on a mobile web browser? Native app? Or on their laptop?
 
 
 [Learn how to use`context`](/docs/connections/spec/common/#context) to manually send this information on the server side.
@@ -199,9 +213,9 @@ One of the biggest challenges for brick-and-mortar stores is to measure the impa
 
 For Facebook advertisers, [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950){:target="_blank"} allow you to tie offline conversions to your campaigns. It's important to note that the offline data is labeled to an event set that has been assigned to a Facebook campaign. Here are the two ways to attribute offline conversions to Facebook advertisements:
 
-*   uploading offline event data about actions that aren't captured with Facebook Pixel or App Events to Facebook for them to match actions to your Facebook ads
+*   Uploading offline event data about actions that aren't captured with Facebook Pixel or App Events to Facebook for them to match actions to your Facebook ads
 
-*   enable and configure [Segment's Facebook Offline Conversions destination](/docs/connections/destinations/catalog/facebook-offline-conversions/), which automates attributing offline events to your Facebook ads in real-time
+*   Enable and configure [Segment's Facebook Offline Conversions destination](/docs/connections/destinations/catalog/facebook-offline-conversions/), which automates attributing offline events to your Facebook ads in real-time
 
 
 [Learn more about the benefits of Segment's Facebook Offline Conversions destination](https://segment.com/blog/facebook-offline-conversions-integration/){:target="_blank"}.

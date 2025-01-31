@@ -1,9 +1,10 @@
 ---
-title: 'Analytics for Kotlin (Android)'
+title: 'Analytics-Kotlin (Android)'
 strat: kotlin-android
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/kotlin/'
 id: dZeHygTSD4
+support_type: flagship
 tags:
   - android
   - kotlin
@@ -28,7 +29,7 @@ Analytics Kotlin uses thread-safety strategies to isolate Plugins, Device-Mode D
 
 Analytics Kotlin is a huge leap forward in terms of performance when compared to Analytics Android (Classic). For a more detailed overview, you can reference our [blog post](https://segment.com/blog/sdk-performance-improvements/). 
 
-- Faster event processing and deliver
+- Faster event processing and delivery
 - Significantly lower CPU usage
 - Small memory & disk usage footprint
 
@@ -121,6 +122,7 @@ To get started with the Analytics-Kotlin mobile library:
     `writeKey` *required* | This is your Segment write key. |
     `application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
     `apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
+    `cdnHost` | Default set to `cdn-settings.segment.com/v1`. <br> This sets a default CDN Host from which Segment retrieves settings. |
     `autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
     `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. <br> The [DRM API](https://source.android.com/devices/drm) generates the device ID. If the ID didn't generate previously (for example, because the app was newly installed), an empty string shows before the ID generation completes. You can overwrite the device ID with a custom ID by writing your own [`plugin`](#plugin) |
     `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
@@ -165,7 +167,7 @@ Once you've installed the mobile or server Analytics Kotlin library, you can sta
 ### Destinations
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 
 <div class="double">
@@ -188,7 +190,7 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 ## Tools and extensions
 
-Analytics for Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
+Analytics-Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
 
 - [Plugin architecture](https://segment.com/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter)
@@ -197,4 +199,15 @@ Analytics for Kotlin is built with extensibility in mind. Use the tools list bel
 - [Frequently Asked Questions](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq)
 
 > warning ""
-> If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK. 
+> If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK.
+
+## Telemetry
+The Analytics-Kotlin SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
+
+You can disable telemetry at any time by setting `Telemetry.enable = false`.
+
+When internal errors or errors from plugins occur, the write key may be included with error data to help Segment identify the issue(s).  You can disable this by setting `Telemetry.sendWriteKeyOnError = false`.
+
+
+## Timestamps in Kotlin
+Due to efficiency updates made to Segment's Kotlin library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).

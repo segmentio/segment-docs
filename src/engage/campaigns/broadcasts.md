@@ -2,6 +2,19 @@
 title: Broadcasts
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. Segment recommends exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
 
 Broadcasts are one-time email or SMS campaigns that you can send with Twilio Engage. Use broadcasts for single, one-off occasions like the following:
 
@@ -36,6 +49,9 @@ Follow these steps to create an email broadcast:
 > info ""
 > Segment recommends sending email broadcasts to users with a `subscribed` status. However, if you need to send an email broadcast to someone who hasn't subscribed, you can configure an email to [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
 
+> info "Blind carbon copy"
+> Broadcasts doesn't support BCC (blind carbon copy). If your use case requires BCC, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
+
 ## Create and send an SMS broadcast
 
 Follow these steps to create an email broadcast:
@@ -47,7 +63,10 @@ Follow these steps to create an email broadcast:
     - To send a message to a pre-built audience, choose `Part of an Audience`, then select the audience.
     - To exclude users from the audience, click **Add condition** in the **And who** section. Click **And who**, then select **And not who**. Segment will exclude users from the audience you choose.
 5. Click **Preview** to estimate the audience size.
-7. Select **Build**.
+6. Select **Build**.
+7. Choose an existing template or create a new template.
+    - You can edit existing templates. Edited templates won't be saved in the content tab.
+    - If you create a new template, enter a name, then select the language and content type.
 8. Choose a messaging service, enter your message into the body field, and add any merge tags. 
     - (Optional:) Test your SMS.
     - Include opt out instructions; your SMS broadcast must contain `Reply STOP to unsubscribe`.

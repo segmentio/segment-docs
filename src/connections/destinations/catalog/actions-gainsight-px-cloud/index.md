@@ -12,8 +12,6 @@ This destination is maintained by Gainsight PX. For any issues with the destinat
 
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/actions-gainsight-px-cloud) Gainsight PX Cloud Segment destination. There's also a page about the [non-Actions Gainsight PX Cloud destination](/docs/connections/destinations/catalog/gainsight-px-cloud-server). Both of these destinations receive data from Segment.
 
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Gainsight PX Cloud (Actions) vs Gainsight PX Cloud Classic
 
 Gainsight PX Cloud (Actions) provides the following benefits over the classic Gainsight PX Cloud destination:

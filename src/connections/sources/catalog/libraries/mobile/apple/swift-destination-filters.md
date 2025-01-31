@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Destination Filters
+title: Analytics-Swift Destination Filters
 strat: swift
 ---
 > info ""
@@ -21,6 +21,7 @@ To get started with destination filters using Swift:
 ```swift
 analytics.add(plugin: DestinationFilters())
 ```
+3. Enable the Destination Filters toggle in your Segment workspace: navigate to the iOS source, click Settings and select Advanced. 
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
@@ -89,7 +90,6 @@ The following examples illustrate common destinations filters use cases:
 Example: Remove email addresses from `context` and `properties`:
 
 Property-level allowlisting is available with Segment's API. Using destination filters, you can configure a rule that removes email addresses from `context` and `properties`. As a result, Segment only sends traits without PII to the destination.
-
 
 ![PII management example](images/destination-filters/pii_example.png)
 

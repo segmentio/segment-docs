@@ -7,7 +7,6 @@ id: 5c707b074876c300018c37ab
 
 This destination is maintained by Unwaffle. For any issues with the destination, [contact the Unwaffle Support team](mailto:info@unwaffle.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

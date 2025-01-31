@@ -91,7 +91,7 @@ You can see in this full page event, the `anonymousId` is populated, and the `us
       "title": "Home Page",
       "url": "https://somesite.com"
     },
-  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "receivedAt": "2020-04-23T22:38:48.55Z",
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "type": "page",
@@ -144,7 +144,7 @@ You'll notice the Identify call contains no `userId`. These traits will be assoc
       "title": "Home Page",
       "url": "https://somesite.com"
     },
-  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "receivedAt": "2020-04-23T22:38:48.55Z",
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "traits"{
@@ -210,7 +210,7 @@ After you fire the Identify call with the `userId`, you'll notice that the paylo
       "title": "Home Page",
       "url": "https://somesite.com"
     },
-  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "receivedAt": "2020-04-23T22:38:48.55Z",
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "traits"{
@@ -355,3 +355,9 @@ This is usually caused by the page redirecting or reloading before the tracking 
 This is usually only an issue in [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias), since it's the only destination that requires a call to [alias](/docs/connections/spec/alias) in the browser to link anonymous browsing history to a new identified user.
 
 Remember that for destinations that require aliasing, you must make the [Alias call](/docs/connections/spec/alias) before you make the [Identify call](/docs/connections/spec/identify) for that user. Even if you make an [Identify call](/docs/connections/spec/identify) from a server library, it can't happen before the client-side [alias](/docs/connections/spec/alias).
+
+#### Can you update a userId?
+
+Unfortunately, there is no way to change an existing `userId` within Segment. Historical data with an existing `userId` remains the same, and a new `userId` will not replace the existing `userId` in Segment event call logs. For downstream destinations, consult the corresponding docs about user profile behaviors when using a new `userId`.
+ 
+Changing a `userId` is incredibly hard to do, as that is a fundamental part of analytics. While some downstream analytics tools let you change a `userId` once set, others don't and the process will be different for each tool.

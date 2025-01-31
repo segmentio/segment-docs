@@ -1,17 +1,13 @@
 ---
 title: Amberflo Destination
-hidden: true
 id: 62274854b16140600b51d1cd
 ---
-## Amberflo Destination
 
 [Amberflo](https://www.amberflo.io/){:target="_blank”} provides cloud based usage metering, pricing, and billing. Meter any infrastructure, platform, application, custom resource, event, or feature. Amberflo provides an end-to-end usage platform engine that serves as the system of records and single source of truth. It's platform is built on top of the metering service, Amberflo Metering Cloud. It is built on cloud platform design principles of durability, availability, scalability, and cost-effectiveness with specialized logic built-in to ensure accuracy of the metering system - that is that each record is processed once, and once only, and that duplicate records sent are automatically de-duped. Amberflo Billing Cloud is a decoupled (yet integrated) application that is built on the Metering Cloud. It allows users to create, model, and manage usage-based pricing plans with full flexibility over modern sales artifacts such as prepaid credits, rewards, promotions, and custom currency creation.
 
 This destination is maintained by Amberflo. For any issues with the destination, [contact the Amberflo Support team](mailto:support@amberflo.io).
 
 ## Getting Started
-
-
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Amberflo" in the Destinations Catalog, and select the "Amberflo" destination.

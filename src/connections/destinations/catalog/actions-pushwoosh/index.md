@@ -1,7 +1,6 @@
 ---
 title: Pushwoosh (Actions) Destination
 id: 64e72af1eabf77368b877a51
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -9,8 +8,6 @@ beta: true
 [Pushwoosh](https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer engagement platform that lets you create personalized messaging campaigns combining multiple channels, like push notifications, in-app messages, emails, and SMS.
 
 Pushwoosh maintains this destination. For any issues with the destination, [contact the Pushwoosh support team](mailto:help@pushwoosh.com){:target="_blank"}.
-
-{% include content/ajs-upgrade.md %}
 
 ## Getting started
 

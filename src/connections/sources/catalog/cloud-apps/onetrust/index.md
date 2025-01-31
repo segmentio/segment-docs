@@ -1,7 +1,6 @@
 ---
 title: OneTrust Source
 id: QhEUZnE5uF
-beta: true
 ---
 
 OneTrust makes it easy for you to capture, centralize, govern, and sync consented first party data while keeping trust & transparency at the forefront of all consumer interactions. The OneTrust Integration provides data to Segment’s CDP and allows you to view & activate consented data in the appropriate way. 
@@ -10,16 +9,26 @@ This is an Event Cloud Source which can not only export data into your Segment w
 
 This source is maintained by OneTrust. For any issues with the source, [contact their support team](mailto:support@onetrust.com){:target="_blank”}.
 
+> warning "This page is about the OneTrust source, which lets you send details about end-user consent to Segment destinations"
+> To enforce end-user consent across your destinations, use Segment's [Consent Management](/docs/privacy/consent-management/) features.
+
 ## Getting Started 
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**. 
 
 2. Search for “OneTrust” in the Sources Catalog, select OneTrust, and click **Add Source**.
 
 3. On the next screen, give the Source **a nickname** configure any other settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `OneTrust_Prod`, `OneTrust_Staging`, or `OneTrust_Dev`).
 
-4. Copy the **Write key** from the Segment UI and log in to your OneTrust account - navigate to Settings > Integrations > Segment Integration and paste the key after encoding it.
+4. In OneTrust, go to **Integrations > Connections > Import** and upload the appropriate JSON file.  
+   - For US Segment workspaces (default), use [this JSON file](./OneTrust-Segment-Track-API-Integration.json).  
+   - If you're in an EU Segment workspace, use [this JSON file](./OneTrust-Segment-Track-API-Integration-EU.json).
+
+5. Copy the **Write key** from the Segment UI, and paste it in as the Auth header for the OneTrust integration. 
+
+6. Click **Save and Activate**. 
+
 
 ## Stream
 

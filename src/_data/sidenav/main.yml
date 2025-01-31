@@ -20,6 +20,17 @@ sections:
     title: Testing and Debugging
   - path: /getting-started/whats-next
     title: What's Next
+  - section_title: Use Cases
+    slug: getting-started/use-cases
+    section:
+    - path: /getting-started/use-cases/
+      title: Use Cases Overview
+    - path: /getting-started/use-cases/guide/
+      title: Choosing a Use Case
+    - path: /getting-started/use-cases/setup/
+      title: Use Cases Setup
+    - path: /getting-started/use-cases/reference/
+      title: Use Cases Reference
 
 - section_title: Guides
   section:
@@ -91,8 +102,6 @@ sections:
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/discounts-for-startups-npos
       title: Discounts or Coupons
-    - path: /guides/usage-and-billing/startup-program
-      title: Segment Startup Program
 - section_title: Connections
   section:
   - path: /connections
@@ -114,6 +123,8 @@ sections:
       title: 'Spec: Identify'
     - path: /connections/spec/alias
       title: 'Spec: Alias'
+    - path: /connections/spec/copilot
+      title: 'Spec: AI Copilot'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
     - path: /connections/spec/mobile
@@ -148,8 +159,10 @@ sections:
       title: Cloud Sources
     - path: /connections/sources/debugger
       title: Source Debugger
-    - path: /connections/sources/custom-domains
-      title: Set Up a Custom Domain Proxy in Segment
+    - path: /connections/sources/custom-domain
+      title: Segment-Managed Custom Domain
+    - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+      title: Self-Managed Custom Proxy
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - section_title: Schema
@@ -180,11 +193,19 @@ sections:
     section:
     - path: /connections/reverse-etl
       title: Reverse ETL Overview
+    - path: /connections/reverse-etl/setup
+      title: Set Up Reverse ETL
+    - path: /connections/reverse-etl/manage-retl
+      title: Manage Reverse ETL Syncs
+    - path: /connections/reverse-etl/system
+      title: Reverse ETL System
     - path: /connections/reverse-etl/reverse-etl-catalog
-      title: Reverse ETL Catalog
+      title: Reverse ETL Destination Catalog
     - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
       section:
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup
+        title: Azure Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
@@ -206,6 +227,10 @@ sections:
       title: Destination Functions
     - path: /connections/functions/insert-functions
       title: Destination Insert Functions
+    - path: /connections/functions/copilot
+      title: Functions Copilot
+    - path: /connections/functions/functions-copilot-nutrition-facts
+      title: Functions Copilot Nutrition Facts Label
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -260,8 +285,10 @@ sections:
         title: Speeding Up Redshift Queries
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
+  - path: /connections/regional-segment
+    title: Regional Segment
   - path: /connections/test-connections
-    title: Testing Connections
+    title: Event Tester
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -270,24 +297,18 @@ sections:
     title: Event Delivery
   - path: /connections/delivery-overview
     title: Delivery Overview
+  - path: /connections/alerting
+    title: Connections Alerting
   - path: /connections/find-writekey
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
-  - path: /connections/regional-segment
-    title: Regional Segment
-# - section_title: Reverse ETL
-#   section:
-#   - path: /reverse-etl
-#     title: Reverse ETL Overview
-#   - path: /reverse-etl/bigquery-setup
-#     title: BigQuery Reverse ETL Setup
-#   - path: /reverse-etl/redshift-setup
-#     title: Redshift Reverse ETL Setup
-#   - path: /reverse-etl/snowflake-setup
-#     title: Snowflake Reverse ETL Setup
+  - path: /connections/oauth
+    title: OAuth 2.0
+  - path: /connections/aws-privatelink
+    title: AWS PrivateLink Integration
 - section_title: Unify
   section:
   - path: /unify
@@ -316,26 +337,40 @@ sections:
     section:
     - path: /unify/profiles-sync/overview
       title: Profiles Sync Overview
-    - path: /unify/profiles-sync
-      title: Setup
+    - section_title: Profiles Sync Setup
+      slug: unify/profiles-sync/profiles-sync-setup
+      section:
+      - path: /unify/profiles-sync/profiles-sync-setup
+        title: Setup
+      - path: /unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync
+        title: Databricks for Profiles Sync
     - path: /unify/profiles-sync/sample-queries
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
-  - section_title: Linked Profiles 
-    slug: unify/linked-profiles
-    section: 
-    - path: /unify/linked-profiles/linked-events
-      title: Linked Events
+  - section_title: Data Graph
+    slug: unify/data-graph
+    section:
+    - path: /unify/data-graph/
+      title: Data Graph
     - section_title: Setup Guides
-      slug: unify/linked-profiles/setup-guides
+      slug: /unify/data-graph/setup-guides/
+      section:
+      - path: /unify/data-graph/setup-guides/bigquery-setup/
+        title: BigQuery Data Graph Setup
+      - path: /unify/data-graph/setup-guides/databricks-setup/
+        title: Databricks Data Graph Setup
+      - path: /unify/data-graph/setup-guides/redshift-setup/
+        title: Redshift Data Graph Setup
+      - path: /unify/data-graph/setup-guides/snowflake-setup/
+        title: Snowflake Data Graph Setup
+    - section_title: Linked Events 
+      slug: /unify/data-graph/linked-events/
       section: 
-        - path: /unify/linked-profiles/setup-guides/bigquery-setup
-          title: BigQuery Setup
-        - path: /unify/linked-profiles/setup-guides/snowflake-setup
-          title: Snowflake Setup
-        - path: /unify/linked-profiles/setup-guides/redshift-setup
-          title: Redshift Setup
+      - path: /unify/data-graph/linked-events/ 
+        title: Linked Events Overview
+      - path: /unify/data-graph/linked-events-limits/
+        title: Linked Events Limits
   - section_title: Traits
     slug: unify/traits
     section:
@@ -348,23 +383,31 @@ sections:
         title: Using Predictions
       - path: '/unify/traits/predictions/suggested-predictive-audiences'
         title: Suggested Predictive Audiences
+      - path: '/unify/traits/predictions/predictions-nutrition-facts'
+        title: Predictions Nutrition Facts Label
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
+    - path: '/unify/traits/custom-traits'
+      title: Custom Traits
     - path: '/unify/traits/sql-traits'
       title:  SQL Traits
+    - path: '/unify/traits/recommended-items'
+      title: Recommended Items
   - path: /unify/profile-api
     title: Profile API
   - path: /unify/debugger
     title: Profile Debugger
   - path: /unify/insights
     title: Profiles Insights
+  - path: /unify/csv-upload
+    title: CSV Upload
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
     title: Unify FAQs
   - path: /unify/product-limits
     title: Unify Limits
-
+ 
 - section_title: Engage
   section:
   - path: '/engage'
@@ -388,20 +431,39 @@ sections:
       title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
+    - path: /engage/user-subscriptions/csv-upload
+      title: Update Subscriptions with a CSV
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
     - path: '/engage/profiles/csv-upload'
-      title: CSV Uploader
+      title: Use Profiles and Traits with a CSV
   - section_title: Audiences
     description: "See how to create audiences based on data."
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
+    - section_title: Linked Audiences
+      slug: '/engage/audiences/linked-audiences'
+      section: 
+      - path: '/engage/audiences/linked-audiences'
+        title: Linked Audiences Overview
+      - path:  '/engage/audiences/linked-audiences-limits'
+        title: Linked Audiences Limits
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
+    - path: '/engage/audiences/generative-audiences'
+      title: Generative Audiences
+    - path: '/engage/audiences/generative-audiences-nutrition-facts'
+      title: Generative Audiences Nutrition Facts Label
+    - path: '/engage/audiences/product-based-audiences'
+      title: Product Based Audiences
+    - path: '/engage/audiences/product-based-audiences-nutrition-label'
+      title: Product Based Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
+    - path: '/engage/audiences/send-audience-data'
+      title: Send Audiences to Destinations
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -418,6 +480,15 @@ sections:
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
+    - section_title: Event-Triggered Journeys
+      slug: '/engage/journeys/event-triggered-journeys'
+      section: 
+      - path: /engage/journeys/event-triggered-journeys
+        title: Overview
+      - path: /engage/journeys/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
+      - path: /engage/journeys/journey-context
+        title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
     - path: '/engage/journeys/use-cases'
@@ -441,6 +512,8 @@ sections:
       title: WhatsApp Template
     - path: '/engage/content/mobile-push'
       title: Mobile Push Template
+    - path: '/engage/content/organization'
+      title: Organizing Your Templates
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -466,8 +539,6 @@ sections:
     section:
     - path: /engage/trait-activation
       title: Trait Activation Overview
-    - path: /engage/trait-activation/trait-activation-setup
-      title: Trait Activation Setup
     - path: /engage/trait-activation/trait-enrichment
       title: Trait Enrichment
     - path: /engage/trait-activation/id-sync
@@ -504,6 +575,22 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
+  - section_title: Consent Management
+    slug: privacy/consent-management
+    expanded: true
+    section:
+    - path: /privacy/consent-management
+      title: Consent Management Overview
+    - path: /privacy/consent-management/consent-in-segment-connections
+      title: Consent in Segment Connections
+    - path: /privacy/consent-management/configure-consent-management
+      title: Configure Consent Management
+    - path: /privacy/consent-management/consent-in-unify
+      title: Consent in Unify
+    - path: /privacy/consent-management/consent-in-retl
+      title: Consent in Reverse ETL
+    - path: /privacy/consent-management/consent-faq
+      title: Consent FAQs
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
@@ -577,8 +664,19 @@ sections:
       title: Audit Trail
     - path: /segment-app/iam/sso
       title: Single Sign On
+    - path: /segment-app/iam/scim
+      title: System for Cross-domain Identity Management (SCIM) Configuration Guide
     - path: /segment-app/iam/mfa
       title: Multi-Factor Authentication (MFA)
+  - section_title: Extensions
+    slug: segment-app/extensions
+    section:
+    - path: /segment-app/extensions
+      title: Extensions Overview
+    - path: /segment-app/extensions/dbt
+      title: dbt
+    - path: /segment-app/extensions/git
+      title: Git
   - path: /segment-app/iam/secure-password
     title: Picking a Secure Password
   - path: /segment-app/set-up-envs
@@ -596,6 +694,8 @@ sections:
         title: Public API
       - path: /api/public-api/fql
         title: Destination Filter Query Language
+      - path: '/api/public-api/query-language'
+        title: Segment Query Language
   - section_title: Config API
     slug: api/config-api
     section:

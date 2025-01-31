@@ -4,11 +4,9 @@ title: Experiments by Growthhackers Destination
 redirect_from: '/connections/destinations/catalog/northstar-by-growthhackers/'
 id: 5cc205876b9a830001432515
 ---
-[Experiments by Growthhackers](http://growthhackers.com/software){:target="_blank"} provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
+[Experiments by Growthhackers](https://growth.software/){:target="_blank"} provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 
 This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact the Growthhackers Support team](mailto:tech@growthhackers.com).
-
-{% include content/beta-note.md %}
 
 ## Getting Started
 

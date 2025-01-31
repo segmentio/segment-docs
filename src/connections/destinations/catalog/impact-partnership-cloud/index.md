@@ -17,6 +17,9 @@ This destination is maintained by Impact. For any issues with the destination, c
 4. Go to the [Impact Partnership Cloud Settings](https://app.impact.com){:target="_blank"}, find and copy the "Account SID", "Auth Token", and "Campaign ID".
 5. Back in the Impact Partnership Cloud destination settings in Segment, enter the "Account SID", "Auth Token", and "Campaign ID".
 
+> warning "Workspace owner required for OAuth setup"
+> Only a Segment workspace owner can enable OAuth between Impact and Segment. If you run into during setup, check your workspace settings to verify you have the required permissions.
+
 ## Page
 
 If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like:
@@ -30,7 +33,7 @@ Segment sends Page calls to Impact Partnership Cloud as a `Clicks` event, if the
 > success ""
 > **Tip!** To accurately track and attribute actions, send a Page call with every page load.
 
-Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdesk.com/en/support/solutions/articles/48001173251){:target="_blank"} to learn more about how Page properties are mapped.
+Read [Impact Partnership Cloud's documentation](https://integrations.impact.com/impact-brand/docs/integrate-with-segment#segment-spec-page-calls){:target="_blank"} to learn more about how Page properties are mapped.
 
 ## Screen
 
@@ -99,4 +102,4 @@ Segment sends Track calls to Impact Partnership Cloud as a `Conversion` or `Page
 
 `Page Load` events appear as `Clicks` on Impact Partnership Cloud's Dashboard if they fit the definition of a unique click.
 
-Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdesk.com/en/support/solutions/articles/48001173251){:target="_blank"} to learn more about how Track properties are mapped.
+Read [Impact Partnership Cloud's documentation](https://integrations.impact.com/impact-brand/docs/integrate-with-segment#track-events-parameter-mapping-reference){:target="_blank"} to learn more about how Track properties are mapped.

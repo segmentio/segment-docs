@@ -9,7 +9,7 @@ This page contains best practices and tips for setting up and testing Adobe Anal
 
 The following list contains tools you can use to validate data coming from Segment and going to each different Adobe Analytics component
 
-- **Analytics.js** - [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj){:target="_blank”} and Chrome Developer Tools
+- **Analytics.js** - [Adobe Experience Cloud Debugger](https://chromewebstore.google.com/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob){:target="_blank”} and Chrome Developer Tools
 - **Other Segment server libraries** - Segment's in-app [Event Tester Tool](/docs/connections/test-connections/)
 - **iOS Device mode** - Charles Proxy, DEBUG mode
 - **Android Device Mode** - Charles Proxy, VERBOSE logging

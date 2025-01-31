@@ -7,8 +7,6 @@ id: 5c412bc57526b50001622f52
 
 This destination is maintained by ClearBrain. For any issues with the destination, [contact the ClearBrain Support team](mailto:support@clearbrain.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

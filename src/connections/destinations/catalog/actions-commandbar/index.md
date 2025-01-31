@@ -9,9 +9,6 @@ id: 638f843c4520d424f63c9e51
 
 To configure CommandBar as an Event Source to get data into your warehouse or other downstream tools, see the [CommandBar Source](/docs/connections/sources/catalog/cloud-apps/commandbar/) documentation.
 
-{% include content/ajs-upgrade.md %}
-
-
 ## Getting started
 
 1. From the Segment web app, navigate to **Connections > Catalog**, then select the **Destinations** tab at the top of the catalog.

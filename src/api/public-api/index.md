@@ -30,6 +30,20 @@ The Public API includes the following benefits over the Config API:
 | Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                    |                                                               |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
 
+## Create a Public API token
+
+> info "Only Workspace Owners can create a Public API token"
+> Only users with the Workspace Owner role can create a Public API token. For more information about roles, see Segment's [Roles](/docs/segment-app/iam/roles/) documentation. 
+
+To create a Public API token in your Segment workspace:
+1. Navigate to Settings > Workspace settings > Access Management > Tokens.
+2.  Click the **+ Create Token** button. 
+3. Create a description for the token and assign it either Workspace Owner or Workspace Member access. 
+4. Click **Create**.
+5. Copy your workspace token somewhere secure and click **Done**.
+
+To begin sending requests to the Public API, make sure to include the Public API Token into your HTTP requests with the `Authorization` Header and configured with `Bearer Token` and the value of the newly generated Public API token.
+
 
 ## API Token Security
 
@@ -38,11 +52,6 @@ To enhance API token security, Segment partners with GitHub to prevent fraudulen
 Within seconds, GitHub scans each commit in public repositories for Public API tokens, and sends detected tokens to Segment. Valid tokens are automatically revoked and workspace owners are notified. 
 
 Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
-
-## OAuth 2.0
-
-> info ""
-> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
 
 ## FAQs
 #### What should I do if I see a notification that my token was exposed?
@@ -89,3 +98,5 @@ When you don't have a source to forward violations or blocked events to, then ex
     }
   }
 ```
+### What is the difference between a destination's Instance ID and Meta ID?
+The destination’s Instance ID is specific to a single destination within your workspace. The destination’s Meta ID, which is returned by the delivery metrics endpoint, identifies which integration you've set up. For example, if you had a `dev` Mixpanel (Actions) destination and a `prod` Mixpanel (Actions) destination, they would have the same Meta ID but two different Instance IDs.  

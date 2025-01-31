@@ -1,9 +1,12 @@
 ---
-title: "Testing Connections"
+title: "Event Tester"
 ---
 
 
 Segment has an Event Tester that enables you to test your connections between Segment and your destination. You can access the Event Tester from your Source Debugger, or from your destination settings.   
+
+> info "Available for server-side event streaming destinations only"
+> This feature is only available for server-side integrations (also known as cloud-mode destinations). You can't use this for client-side integrations (also known as device-mode destinations). 
 
 ## Use Cases
 
@@ -60,3 +63,7 @@ If you experience an error, [let Segment know](mailto:friends@segment.com) and t
 #### Is this feature available for Data Lakes?
 
 The Event Tester is not available for Data Lakes.
+
+#### Why are my destination filters being ignored?
+
+Events passed into the Event Tester bypass destination filters. Destination filters are applied to events as they are sent to specific destinations. However, the Event Tester is designed to help you troubleshoot your Sources, their configuration, and their downstream destinations by showing a sample of the data available. It allows you to check that data is being sent, and that it's in the correct format without the filters being applied. This means that when you use the Event Tester, you're seeing the data before any destination filters or other processing rules are applied, providing a clear view of the raw event data as it comes from the source.

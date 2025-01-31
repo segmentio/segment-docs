@@ -1,7 +1,6 @@
 ---
 title: Kable Destination
 id: 622786bfebadaf74178dfebe
-beta: true
 ---
 
 [Kable](https://kable.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps API companies launch and grow their business with easy-to-use billing infrastructure and analytics tools that work at any scale. 

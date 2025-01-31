@@ -2,6 +2,20 @@
 title: Drag and Drop Editor
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
+
 Use Twilio Engage to build email templates with a *what you see is what you get* (WYSIWYG) Drag and Drop Editor. Use drag and drop tools to design the template layout and include user profile traits to personalize the message for each recipient.
 
 You can navigate to the Drag and Drop Editor from the **Select Editor** screen:
@@ -153,6 +167,7 @@ To view more examples related to your use case, visit the [LiquidJS docs](https:
 
 For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect [liquid syntax](https://liquidjs.com/tags/overview.html){:target="blank"}. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
 
+
 ## Save the template
 
 After you design the email, click **Create Email Template**.
@@ -160,7 +175,7 @@ After you design the email, click **Create Email Template**.
 
 ## Next steps
 
-- Learn more about [building email templates](/docs/engage/content/template/) to include in your Engage campaigns. 
+- Learn more about [building email templates](/docs/engage/content/email/template/) to include in your Engage campaigns. 
 
 - You can learn about the [HTML Editor](/docs/engage/content/email/html-editor) for both code and visual editing capabilities from a single view.
 

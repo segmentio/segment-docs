@@ -10,8 +10,6 @@ When the Serenytics destination is enabled in Segment, messages from Segment wil
 This destination is maintained by the company Serenytics. For any issues with the destination, [contact the Serenytics Support team](mailto:support@serenytics.com).
 
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

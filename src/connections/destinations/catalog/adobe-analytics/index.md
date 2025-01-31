@@ -131,6 +131,9 @@ Segment's server-side integration is not open-source. Let's explore what happens
  - `userId`
  - `anonymousId`
 
+> info ""
+> Adobe Analytics timestamp options need to match in the Segment destination settings and Adobe setting. Otherwise, events might be silently dropped by Adobe despite sending a 200 success response to Segment
+
 5. Segment maps a number of other supported XML tags. For example, it sets `<ipAddress>` with the `ip` of the call.
 
    **Note**: For server side libraries, the `ip` is by default be the `ip` address of your company servers, NOT the customers' own. This means that for server side events, it is best practice to record the customer's `ip` from their requests, and manually send that to Segment as `context.ip`.

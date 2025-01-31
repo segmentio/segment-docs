@@ -184,7 +184,7 @@ Below is a simple query to get a table of a user's actions in rows. Just replace
 
 This above query for user whose `user_id` is `"46X8VF96G6"` returns the below table:
 
-![A table with two columns: event_or_page_viewed and recieved_at.](images/forecast_3N82oB4v.png)
+![A table with two columns: event_or_page_viewed and received_at.](images/forecast_3N82oB4v.png)
 
 At Toastmates, most of the highest forward-looking expected LTV customers share one thing in common: averaging two orders per month with an average purchase size of $20.
 

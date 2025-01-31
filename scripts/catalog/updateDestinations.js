@@ -14,6 +14,15 @@ require('dotenv').config();
 
 const PAPI_URL = "https://api.segmentapis.com";
 
+  // Function to remove hidden fields from action
+const removeHiddenFields=function (actions) {
+        return actions.map(action => ({
+            ...action,
+            fields: action.fields.filter(field => !field.hidden)
+        })
+        );
+      }
+
 
 const updateDestinations = async () => {
     let destinations = [];
@@ -88,9 +97,9 @@ const updateDestinations = async () => {
       settings.forEach(setting => {
         setting.description = sanitize(setting.description);
       });
-  
-      let actions = destination.actions;
-      let presets = destination.presets;
+
+     let actions = removeHiddenFields(destination.actions);
+     let presets = destination.presets;
   
       const clone = (obj) => Object.assign({}, obj);
       const renameKey = (object, key, newKey) => {
@@ -102,10 +111,11 @@ const updateDestinations = async () => {
         return clonedObj;
       };
   
-      // I honestly don't remember why I did this.
-      // I think someone wanted to mention support for the Screen method to whatever destination that is
+      // The screen method is not returned as a method from the public API, so if a destination wants to 
+      // show screen as a supported method in `destination-dossier.html` then add the destination id here
+      const destinationsThatSupportScreen = ['63e42b47479274407b671071', '65ccc6147108efc0cf5c6fe1']
       destination.supportedMethods.screen = false;
-      if (destination.id == '63e42b47479274407b671071') {
+      if (destinationsThatSupportScreen.includes(destination.id)) {
         destination.supportedMethods.screen = true;
       }
   
@@ -141,7 +151,8 @@ const updateDestinations = async () => {
         connection_modes,
         settings,
         actions,
-        presets
+        presets,
+        partnerOwned: destination.partnerOwned
       };
   
       // Add the updated destination to the destinationsUpdated array

@@ -1,7 +1,7 @@
 ---
 title: Account-level Audiences
 redirect_from:
-  - "/personas/account-audiences"
+  - "/personas/audiences/account-audiences"
 plan: engage-foundations
 ---
 
@@ -56,7 +56,7 @@ The three types of user-level conditions are:
 
 ## Account-level computed and SQL traits
 
-Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see [here](/docs/engage/audiences/computed-traits/#types-of-computed-traits) for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
+Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see the [Types of computed traits](/docs/engage/audiences/computed-traits/#types-of-computed-traits) docs for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
 
 Use-cases for account-level computed traits include:
 - Calculate the number of times users associated with an account logged in during the past month
@@ -65,6 +65,12 @@ Use-cases for account-level computed traits include:
 
 > info ""
 > Use SQL traits for complex calculations not supported by computed traits. For example, you would use SQL traits to calculate the number of unique users associated with an account who have logged in during the past month.
+
+### Use account-level SQL traits to associate users to an account
+
+To associate users to an account with SQL traits, you must return both the `group_id` and `user_id` in the account level SQL trait. This fires a Group call which Segment uses to add users to groups in destinations.
+
+When a group (account) contains more than one user, the query returns duplicate `group_id`s (mapped to unique `user_id`s). However, Segment doesn't return duplicate `group_id`s in the account-level SQL trait. As a result, you can't map users to accounts in a many-to-many situation.
 
 ### Use account-level computed and SQL traits as account-level audience conditions
 

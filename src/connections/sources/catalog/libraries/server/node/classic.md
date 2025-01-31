@@ -480,5 +480,5 @@ var appAnalytics = new Analytics('APP_WRITE_KEY');
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}
 

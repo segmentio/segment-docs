@@ -21,6 +21,21 @@ To enable blocking, go to the **Settings** tab for your source and click on **Sc
 >
 > To view all archived events, go to your **Source Schema** page, click **Filter** next to the search bar, and select **Archived**. To unarchive events that have been archived, click **Unarchive** in the event column. 
 
+## Order of Priority in Blocking Options
+
+When setting up Schema Configuration, note that Segment prioritizes blocking controls in the following order:
+
+1. **Standard Schema Controls**: Segment first evaluates incoming events against these controls and your Tracking Plan. Events, properties, or traits not blocked or omitted in this phase then flow to the next level of controls: the Advanced Blocking Controls/Common JSON Schema. 
+![A screenshot of the Uplanned Events, Properties and Values table, which contains unplanned events, unplanned properties/traits, and JSON schema violation columns.](../images/standard-schema-controls.png)
+
+2. **Advanced Blocking Controls/Common JSON Schema:** These controls act as a secondary layer, evaluating incoming events against the Common JSON schema included in your Tracking Plan.
+![A screenshot of the Advanced Blocking Controls table, which contains two columns: call type and common JSON schema violations.](../images/advanced-blocking-controls.png)
+
+> info "Using only the Common JSON Schema to block events"
+> If your Tracking Plan only has Common JSON Schema rules, you only need to use the Advanced Blocking Controls for your source. 
+>
+> If you use the Standard Schema Controls and omit properties or traits that do not exist, the Tracking Plan might not generate violations for the Common JSON Schema, as the entire Tracking Plan has nothing and everything is considered to be "unplanned". 
+
 ## Track Calls - Unplanned Events
 When you set this dropdown to Block Event, Segment drops any events that are not defined in your Tracking Plan. Only allowlisted `track` calls in your Tracking Plan flow through Segment to your Destinations.
 

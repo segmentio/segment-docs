@@ -1,12 +1,14 @@
 <div class="premonition warning">
   <div class="fa fa-exclamation-circle"></div>
   <div class="content">
-    <p class="header">Update your warehouse allowlist for with new IP addresses</p>
-    <p>Starting on November 14, 2023 all warehouse customers who use allowlists in their warehouses must update those lists to include the following ranges:</p>
+    <p class="header">Update your warehouse allowlist with new IP addresses</p>
+    <p>As of November 14, 2023, all Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:</p>
     <ul>
       <li><code class="language-plaintext highlighter-rouge">52.25.130.38/32</code></li>
       <li><code class="language-plaintext highlighter-rouge">34.223.203.0/28</code></li>
     </ul>
+
+    <p>Users with workspaces in the EU must allowlist <code class="language-plaintext highlighter-rouge">3.251.148.96/29</code>.</p>
 
     <p>These updates coincide with reliability improvements to Segment's underlying warehouse architecture.</p>
 

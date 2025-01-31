@@ -123,6 +123,22 @@ GROUP BY 1
 SELECT * FROM ps_materialize.profile_traits WHERE merged_to IS NULL
 ```
 
+### Pull the latest subscription status set for every profile identifier in the space
+
+Provides the latest subscription status set for all identifiers in the space. This query will not include identifiers that have no subscription status ever set. 
+
+```sql
+SELECT evt1.user_id,  evt1.channel, evt1._id id, evt1.status, evt1.received_at
+FROM ps_segment.CHANNEL_SUBSCRIPTION_UPDATED evt1
+JOIN (
+  SELECT _id, MAX(received_at) AS max_received_at
+  FROM ps_segment.CHANNEL_SUBSCRIPTION_UPDATED
+  GROUP BY _id
+) evt2
+ON evt1._id = evt2._id AND evt1.received_at = evt2.max_received_at
+ORDER BY 1
+```
+
 ### Show all pages visited by a user
 
 To get complete user histories, join event tables to the identity graph and aggregate or filter with `id_graph.canonical_segment_id`:

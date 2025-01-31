@@ -12,6 +12,8 @@ redirect_from:
 
 Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
 
+{% include content/trait-types.md %}
+
 ## Types of Computed Traits
 
 Segment currently supports the following types of computed traits:
@@ -23,6 +25,8 @@ Segment currently supports the following types of computed traits:
   - [Last](#last)
   - [Unique List](#unique-list)
   - [Unique List Count](#unique-list-count)
+  - [Predictions](/docs/unify/traits/predictions/)
+  - [Recommended Items](/docs/unify/traits/recommended-items/)
 - [Conditions](#conditions)
 - [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
 - [Editing Realtime Traits](#editing-realtime-traits)
@@ -186,7 +190,7 @@ Segment then processes your Trait edits. While the edit task runs, the trait rem
 
 
 > warning ""
-> It is not possible to edit a trait to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the trait with the appropiate conditions.
+> It is not possible to edit a trait to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the trait with the appropriate conditions.
 
 ## Accessing your Computed Traits using the Profiles API
 

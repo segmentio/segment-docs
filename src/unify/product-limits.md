@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 > info ""
-> Beginning August 18, 2023, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits [here](/docs/engage/product-limits/).
+> Beginning November 6, 2024, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits in the [Engage Default Limits](/docs/engage/product-limits/) documentation.
 
 
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Unify. Most customers do not exceed these limits.
@@ -16,9 +16,15 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Unify Plus limits
 
-Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits and five AI Traits. In addition, new users will receive the following depending on your Engage plan: 
-- **Engage Foundations**: 100 Audiences and 75 Journey Steps
-- **Engage Premier**: 125 Audiences and 100 Journey Steps
+Unify Plus customers receive the following based on their signup date:
+
+- **Unify Plus beginning November 6, 2024**: 50 Computed Traits, 10 Predictions, 3 Recommendation Traits
+- **Unify Plus before November 6, 2024**: 50 Computed Traits, 5 Predictions
+
+Unify Plus limits vary based on your Engage plan:
+
+- **Engage Plus**: 100 Audiences, 75 Journey Steps, 10 Recommendation Audiences
+- **Engage Foundations** (available for renewal only as of November 6, 2024): 100 Audiences, 75 Journey Steps
 
 Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more. 
 
@@ -49,16 +55,15 @@ Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} t
 
 ## SQL Traits
 
-
 | name                        | limit                      | Details                                                                                                      |
 | --------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| SQL Traits                  | 25                         | The number of SQL traits you can sync to your Space.                                                         |
-| SQL Traits - Sync Frequency | customizable, up to hourly | The frequency with which Segment runs your SQL traits. Contact your account team to customize your schedule. |
 | SQL Traits - Rows           | 25 million                 | The number of rows each SQL trait can return.                                                                |
 | SQL Traits - Columns        | 25                         | The number of columns each SQL trait can return.                                                             |
 
 
 ## Profile API
+
+These limits are set per each Unify/Engage Space.
 
 | Name                    | limit                   | Details                                                                                                                                                             |
 | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

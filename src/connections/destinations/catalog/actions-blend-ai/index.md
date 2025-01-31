@@ -10,8 +10,6 @@ id: 64244158b33d1380a79dc85c
 
 Blend-AI maintains this destination. For any issues with the destination, [contact their Support team](mailto:support@blnd.ai).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, navigate to **Connections > Catalog**, then select the **Destinations** tab in the catalog. 

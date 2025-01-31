@@ -5,6 +5,9 @@ strat: csharp
 
 If you’re currently using Analytics.NET or Analytics.Xamarin to send data to Segment, please follow the steps below to migrate to the [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/).  
 
+> success ""
+> Analytics-C# does not include `v1` as part of the `url` address. If you are using the Segment EU endpoint, you will have to pass it manually. For instance, `events.eu1.segmentapis.com/v1`
+
 You can update to Analytics-CSharp in 3 steps:
 1. Bundle Analytics-CSharp into your app and remove your previous SDK.
 2. Change the namespaces.

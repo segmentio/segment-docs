@@ -139,7 +139,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `active`    | Boolean | Whether a user is active. <br><br> This is usually used to flag an `.identify()` call to just update the traits but not "last seen."                                                                                                                                                                            |
 | `app`       | Object  | dictionary of information about the current application, containing `name`, `version`, and `build`. <br><br> This is collected automatically from the mobile libraries when possible.                                                                                                                           |
 | `campaign`  | Object  | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. <br><br> This maps directly to the common UTM campaign parameters.                                                                    |
-| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`.                                                                                                                                                                           |
+| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`. <br><br> **Note:** If you collect information about iOS devices, note that the `model` value set by Apple might not exactly correspond to an iPhone model number. For example, an `iPhone 15 Pro Max` has a `model` value of `iPhone16,2`.                                                                                                                                                                           |
 | `ip`        | String  | Current user's IP address.                                                                                                                                                                                                                                                                                      |
 | `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.                                                                                                                                                                                                    |
 | `locale`    | String  | Locale string for the current user, for example `en-US`.                                                                                                                                                                                                                                                        |
@@ -200,23 +200,32 @@ Other libraries only collect `context.library`, any other context variables must
 | traits                   |              | ✅             | ✅                 |
 | userAgent                | ✅            |               | ✅                 |
 | userAgentData*           | ✅           |                |                    |
-| timezone                 |              | ✅             | ✅                 |
+| timezone                 | ✅            | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
-> info "IPv6 Addresses are not Supported"
-> Segment does not support collection of IP addresses that are in the IPv6 format.
+> info "IPv6"
+> Segment doesn't support automatically collecting IPv6 addresses.
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 - userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
 
+- Segment doesn't collect or append to the context of subsequent calls in the new mobile libraries (Swift, Kotlin, and React Native). 
+
 To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
 ```js
-analytics.track("Report Submitted", {},
-    {"groupId": "1234"}
-);
+analytics.track("Report Submitted", {}, {
+  context: {
+    groupId: "1234"
+  }
+});
 ```
+
+To add fields to the context object in the new mobile libraries, you must utilize a custom plugin. Documentation for creating plugins for each library can be found here:
+- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/#plugin-architecture)
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/swift-plugin-architecture/)
+- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture/)
 
 
 ## Integrations
@@ -241,7 +250,7 @@ Sending data to the rest of Segment's destinations is opt-out so if you don't sp
 
 Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt`, and `receivedAt.`  They're used for very different purposes.
 
-**All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings.**
+**All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings, and are in the UTC timezone.** To see the user's timezone information, check the `timezone` field that's automatically collected by [client-side libraries](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 > info ""
 > You must use ISO-8601 date strings that include timezones when you use timestamps with [Engage](/docs/engage/). If you send custom traits without a timezone, Segment doesn't save the timestamp value.
@@ -269,6 +278,9 @@ The `sentAt` timestamp specifies the clock time for the client's device when the
 
 **Note:** The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
 
+> warning "Segment now adds `sentAt` to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
+> This update changes the value of the Segment-calculated `timestamp` to align closer with the `receivedAt` value rather than the `originalTimestamp` value. For most users who are online when events are sent, this does not significantly impact their data. However, if your application utilizes an offline mode where events are queued up for any period of time, the `timestamp` value for those users now more closely reflects when Segment received the events rather than the time they occurred on the users' devices. 
+
 
 ### receivedAt
 
@@ -288,3 +300,25 @@ Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTi
 
 > info ""
 > For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calculated `timestamp` value set in the future.
+>
+
+## FAQ
+
+### Why Are Events Received with Timestamps Set in the Past or Future?
+
+If you're using one of Segment's client-side libraries, please note that several factors can cause timestamp discrepancies in your event data.
+
+1. **Overriding Timestamp Value:**  
+   - When a manual timestamp is set in the payload with a date in the past, it can cause events to appear as if they were sent earlier than they actually were.
+
+2. **Analytics.js Source with Retries Enabled:**  
+   - The [Retries](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#retries) feature supports offline traffic by queuing events in Analytics.js. These events are sent or retried later when an internet connection is available, keeping the original timestamp intact.
+
+3. **Mobile App Backgrounded or Closed:**  
+   - If a user closes the app, events may be queued within the app. These queued events won't be sent until the app is re-opened, potentially in the future, leading to timestamp discrepancies.
+
+4. **Inaccurate Browser/Device Clock Settings:**  
+   - Timestamps can be incorrect if the client's device time is inaccurate, as the `originalTimestamp` relies on the client device's clock, which can be manually adjusted.
+
+5. **Traffic from Internet Bots:**  
+   - [Internet Bots](https://segment.com/docs/guides/ignore-bots/#whats-a-bot) can sometimes send requests with unusual timestamps, either intentionally or due to incorrect settings, leading to discrepancies.

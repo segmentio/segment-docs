@@ -27,6 +27,18 @@ The Google Sheets destination can be connected to **Reverse ETL warehouse source
 > info ""
 > The Google Sheets destination only supports sending new or updated rows to your spreadsheet. Deleting rows is not supported.
 
+## Actions v2
+
+Segment's v2 Action, [Post Sheet v2](/docs/connections/destinations/catalog/actions-hubspot-cloud/#custom-object-v2), supports **Sync modes**, which allow you to select a strategy for updating your data in Google Sheets.
+
+### Sync modes
+Sync modes allow users to define how Segment updates the data in your destination.
+
+Available sync modes for the Post Sheet v2 Action includes: 
+- **Update**: Update a record if a match with the specified identifier is found. Segment does nothing if the row doesn't exist.
+- **Upsert**: If a record with the specified identifier is found, it is updated. If not, a new row is created.
+- **Add**: Add a new record when the specified identifier doesn't exist. If it does, the record is skipped.
+
 {% include components/actions-fields.html settings="false"%}
 
 ## FAQ
@@ -37,4 +49,16 @@ The Record Identifier mapping is used to make a distinction between adding a new
 
 ### How do I define the columns in my spreadsheet?
 
-The Fields mapping controls which fields in your model will be written as columns. Input the desired column name(s) on the left, and select the data variable that will populate the value for that column on the right. Please note, at least one field must be configured to send data to Google Sheets otherwise no columns will be created or synced.
+The Fields mapping controls which fields in your model will be written as columns. Input the desired column name(s) on the right, and select the data variable that will populate the value for that column on the left. Please note, at least one field must be configured to send data to Google Sheets or no columns will be created or synced.
+
+### How are columns formatted when synced to my spreadsheet?
+
+When syncing data to Google Sheets, the columns will be arranged alphabetically, based on the names defined in the Fields mapping.
+
+### Can I add or remove columns after data has been synced?
+
+Once data has been synced to Google Sheets, any subsequent addition or removal of columns in the RETL Model and/or Mapping may lead to misalignment of existing data, as Segment does not retroactively adjust previously synced data. For updates involving column modifications, Segment recommends starting with a new Sheet to ensure data integrity.
+
+### Can I send objects to Google Sheets?
+
+You can't send JavaScript objects as they're not a supported data type in Google Sheets. You need to stringify the property first. Failure to do so results in a `400` error. Segment's Actions mapping framework supports encoding objects as strings through the `json(properties, encode)` method. Alternatively, you can use an Insert Function to modify the property. 

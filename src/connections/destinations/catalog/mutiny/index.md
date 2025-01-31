@@ -16,17 +16,6 @@ To set up Mutiny to receive Segment data:
 2. Search for "Mutiny" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your personal "API Key" into Segment's Mutiny integration settings panel UI, which you can find from your [Mutiny dashboard](https://app.mutinyhq.com/integrations/segment){:target="_blank"}.
 
-## Page
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
-
-```
-analytics.page()
-```
-
-Page calls will be sent to Mutiny as an `impression`.
-
-
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:

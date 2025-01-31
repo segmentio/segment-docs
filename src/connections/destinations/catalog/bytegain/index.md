@@ -7,8 +7,6 @@ id: 5c9c28081e78ca0001031b81
 
 This destination is maintained by ByteGain. For any issues with the destination, [contact the ByteGain Support team](mailto:support@bytegain.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

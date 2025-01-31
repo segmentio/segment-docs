@@ -4,7 +4,15 @@ rewrite: true
 strat: facebook
 id: 56fc7e4680412f644ff12fb9
 ---
-[Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"} or [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events){:target="_blank"}.
+
+> warning ""
+> For new implementations, [Facebook no longer recommends using App Events]([url](https://developers.facebook.com/docs/marketing-api/app-event-api/)). Instead, they suggest switching to [Facebook Conversions API (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-facebook-conversions-api/) for all server-side data tracking needs. 
+
+[Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"}, [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}, or [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. 
+
+The iOS device-mode connection for the Facebook App Events destination is open source and [available on GitHub](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events){:target="_blank"}. 
+
+Segment also has an [Analytics Swift Facebook App Events Plugin](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/) for the Facebook App Events device-mode connection available. You can view the [open-source integration code on GitHub](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}. 
 
 
 ## Other Facebook Destinations Supported by Segment
@@ -26,7 +34,7 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook App Events" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/){:target="_blank"}.
-4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
+4. After you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
 
 ## Screen
 
@@ -39,9 +47,9 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 
 Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
 
-To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
+To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. After enabling, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
-Note, the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this using the **Map your events to Standard FB App Events** setting. Be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
+Note: the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this using the **Map your events to Standard FB App Events** setting. Be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
 
 ## Track
 
@@ -238,14 +246,12 @@ The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-
 
 ### Not seeing events?
 
-You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
+You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [AdSupport and App Tracking Transparency frameworks](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa).
 
 Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
-Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
+After you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
-> note ""
-> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad){:target="_blank"} is not.
 
 Facebook requires that payloads include the following:
 - `context.device.id`

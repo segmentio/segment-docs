@@ -25,9 +25,13 @@ The Schema shows "Page Viewed" for all Page calls under the **Track** tab.
 
 The Source Schema UI changes slightly depending on whether you have a [Protocols Tracking Plan](https://segment.com/docs/protocols/tracking-plan/create/){:target='_blank’} connected to the source. If you have a Tracking Plan connected to your source, the UI displays a **Planned** column that will indicate if the event is planned or unplanned. This allows you to quickly identify unplanned events and take action to align your schema with your Tracking Plan. If there is no Tracking Plan connected to the source, the UI will display a toggle next to each event where, if you're a Business Tier customer, you can simply block or allow that event at the source level.  
 
+> info ""
+> Array properties are represented with an additional nested property representing the array's items. The nested property is the property's name with a `.$` suffix.
+> If an array property in the connected Tracking Plan does not include the `items` nested property, nested properties might be marked as unplanned in the Source Schema.
+
 ## Event filters
 
-If you no longer want to track a specific event, you can either remove it from your code or, if you're on the Business plan and don't have a Tracking Plan connected, you can block track calls from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event.
+If you no longer want to track a specific event, you can either remove it from your code or, if you're on the Business plan and don't have a Tracking Plan connected, you can block track calls from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event. 
 
 
 ![Event filters](images/event-filters.png "Event filters in Segment")
@@ -35,13 +39,13 @@ If you no longer want to track a specific event, you can either remove it from y
 > info ""
 > For sources with a connected Tracking Plan, use Protocols to block unplanned events.
 
-
 Once you block an event, Segment stops forwarding it to all of your Cloud and Device-mode Destinations, including your warehouses. You can remove the events from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties.
 
 When an event is blocked, the name of the event or property is added to your Schema page with a counter to show how many events have been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream Destinations. 
 
 In most cases, blocking an event immediately stops that event from sending to Destinations. In rare cases, it can take **up to six hours** to fully block an event from delivering to all Destinations.
 
+Blocked events appear in the debugger with a block symbol, adding visibility into events actively blocked by Segment.
 
 ## Identify and Group Trait Filters
 

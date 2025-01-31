@@ -1,6 +1,5 @@
 ---
 title: 'Google Ads (Gtag) Destination'
-beta: true
 redirect_from: '/connections/destinations/catalog/google-adwords-new/'
 strat: google
 name-override: true
@@ -15,6 +14,9 @@ The [Google global site tag (gtag.js)](https://support.google.com/google-ads/ans
 > info ""
 > If you're sending [enhancement data to Google Ads](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/) in parallel with Gtag, you must include the same Order ID (Transaction ID) on both sets of data. This is required to properly deduplicate conversions between Gtag conversions and enhanced conversions. To send Order ID (Transaction ID) to Gtag, include `order_id` as a property on your web events. 
 
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-ads-gtag/#consent-mode) and how to set it up. 
+
 ## Getting Started
 
 You can use this destination to map your `.page()` calls to **Page Load Conversions** or `.track()` calls to **Click Conversions**. Currently this is only supported on the browser.
@@ -27,6 +29,53 @@ You can use this destination to map your `.page()` calls to **Page Load Conversi
 4. Provide a meaningful name to this instance of the destination.
 5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
 6. Select the 'Click Conversion' setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Gtag) conversion label.
+
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+### Set up consent mode
+
+To enable consent mode for your Google Ads (Gtag) destination, you can choose from 2 implementation options. 
+
+* **Option 1:**
+    1. Set the consent defaults by implementing the `ready()` method to set consent defaults.
+
+          ```
+          analytics.ready(function() {
+            window.gtag('consent', 'default', {
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted',
+              'analytics_storage': 'granted'
+            });
+          });
+          ```
+
+    2. Use your Consent Management Platform to prompt the visitor. Ask the visitor to grant or deny consent for the applicable types (for example, analytics, advertising).
+
+    3. Pass the information to Gtag.js by calling `gtag` inside the Segment `ready`() method. 
+
+          ```
+          analytics.ready(function() {
+            window.gtag('consent', 'update', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'granted'
+            });
+          });
+          ```
+
+* **Option 2:** Create an instance of the [Google Analytics 4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/), to set up [consent in your GA4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#consent-mode), which loads a gtag with consent preferences. If you're already using Google Analytics 4 Web on the same page, you just need to configure the consent mode settings once. There's no need to create another instance of GA4 Web. 
+
+If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
 ## Page
 

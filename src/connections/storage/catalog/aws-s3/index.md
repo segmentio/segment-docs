@@ -11,13 +11,15 @@ The AWS S3 destination provides a more secure method of connecting to your S3 bu
 
 Functionally, the two destinations (Amazon S3 and AWS S3 with IAM Role Support) copy data in a similar manner.
 
-## Getting Started
+## Getting started
 
 The AWS S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
 
 AWS S3 works differently than most destinations. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) does not affect events with AWS S3.
 
 The Segment Tracking API processes data from your sources and collects the Events in batches. Segment then uploads the batches to a secure Segment S3 bucket, from which they're securely copied to your own S3 bucket in small bursts. Individual files won't exceed 100 MB in size.
+
+{% include content/storage-do-include.md %}
 
 {% comment %}
 
@@ -35,7 +37,7 @@ All three setup methods provide a base level of permissions to Segment. If you w
 
 To complete this section, you need access to your AWS dashboard.
 
-1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. 
+1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. For US-based Segment workspaces using an AWS S3 bucket hosted outside of US West (Oregon), ensure that the US West (Oregon) endpoint is enabled on IAM STS settings for the region(s). For EU-based Segment workspaces, ensure that the EU West (Dublin, Ireland) endpoint is enabled on IAM STS settings for the region(s).
 2. Create a new IAM role for Segment to assume. For more information, see Amazon's documentation, [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html){:target="_blank"}.
     1. Select the **AWS account** type from the list of trusted entities. 
     2. When prompted to enter an Account ID, enter `595280932656`. (You cannot enter an ARN in this step. In step 4, you can update the `Principal` to a specific role after you create an IAM role.)
@@ -487,5 +489,11 @@ You can send computed traits and audiences generated using [Engage](/docs/engage
 For user-property destinations, Segment sends an [identify](/docs/connections/spec/identify/) call to the destination for each user added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Engage sets that value to `false`.
 
 When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
+
+## FAQ
+
+### AWS S3 destination connection error “Multiple instance of AWS S3 are not allowed for this source"
+
+You might encounter this error if you already have a S3 destination connected to the source in question. Segment only supports one AWS S3 destination per source.
 
 {% include content/destination-footer.md %}
