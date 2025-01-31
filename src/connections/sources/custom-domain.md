@@ -50,7 +50,7 @@ To configure Custom Domain:
   - **Topic**: Select **Custom Domain**.
   - **Subject**: Enter a subject line for your support request.
   - **Domain Name**: Enter the subdomain that Segment should use for event request tracking.
-  - **Additional Domain Name**: If applicable, you can add an additional subdomain. This field is optional. You can have multiple domains within the same workspace; however, each source can only be associated with one domain. A single domain, however, can be associated with multiple sources.
+  - **Additional Domain Name**: (*Optional*) If applicable, you can add an additional subdomain. You can have multiple domains within the same workspace; however, each source can only be associated with one domain. A single domain can be associated with multiple sources.
   - **Source names**: Select the sources you would like to use for Custom Domain. Segment recommends starting with a stage or dev source. For initial setup, an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source is required. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
   - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you've enabled a Content Security Policy (CSP), you must add the new subdomains provided by Segment to your CSP once you've enabled the Custom Domain feature. This ensures that the CSP does not block the subdomains when you load Segment.
     
