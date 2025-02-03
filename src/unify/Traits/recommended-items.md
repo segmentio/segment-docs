@@ -44,11 +44,18 @@ To create a Recommended Item trait:
     - This is based on your product catalog.
 5. Choose how many item types you want to return onto each profile. 
     - You can select up to 5 item types.
-6. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
-7. (*Optional*) Select destinations you want to sync the trait to, then click **Next**.
-8. Give your trait a name, then click **Create Trait**.
+6. Set your Exclusion Rules (Optional)
+7. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
+8. (*Optional*) Select destinations you want to sync the trait to, then click **Next**.
+9. Give your trait a name, then click **Create Trait**.
+10. Segment begins creating your new trait. This process could take up to 48 hours.
 
-Segment begins creating your new trait. This process could take up to 48 hours.
+## Exclusion Rules   
+
+Exclusion rules are a way for you to manually override the ML recommendations. Let's say you want to remove certain items below a certain price threshold or specific categories from a recommendation, you can set this up using exclusion rules. There are 2 main types: Exclusion rules on item data and exclusion rules based based on user behavior. 
+- **Item Data Exclusion Rules**: This type of rule lets you remove items based on data about the item. For example, you can configure items to removed that cost less than $20, or build other rules based on any parameters mapped in your product catalog
+-  **User Behavior Exclusion Rules**: This type of rule lets you remove items based on user behavior. For example, you can remove items that a customer has purchased before, added to their cart, or any other user event that is mapped in your product catalog
+
 
 ## Example use case: personalized album recommendations
 
@@ -71,6 +78,6 @@ By setting up a trait like this, each user profile now includes personalized rec
 
 Keep the following in mind as you work with Recommended Items:
 
-- **Limit recommendations to key items**: Start with 5-7 items per profile. This keeps recommendations concise and tailored to each user's preferences.
+- **Limit recommendations to key items**: Start with 3-5 items per profile. This keeps recommendations concise and tailored to each user's preferences.
 - **Consider audience size**: Larger audiences can dilute engagement rates for each recommended item. Focusing on the top 20% of users keeps recommendations relevant and impactful.
 - **Give the system time to build the trait**: Recommended Item traits can take up to 48 hours to build, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
