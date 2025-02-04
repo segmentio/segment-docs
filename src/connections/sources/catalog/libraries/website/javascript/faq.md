@@ -9,7 +9,7 @@ Analytics.js doesn't automatically collect IPv6 addresses. If IPv6 is available 
 
 ## Is there a size limit on requests?
 
-Yes, the limit is 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js and Segment servers return a `200` response , but the event is silently dropped once it enters Segment's pipeline. 
+Yes, the limit is 32KB per event message. Events with a payload larger than 32KB are not accepted by Analytics.js, and Segment servers will return a 400 response with the error message: "Exceed payload limit".
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
