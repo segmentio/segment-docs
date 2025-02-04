@@ -88,7 +88,7 @@ For [`batch` requests](#batch), there's a limit of 500 KB per request.
 
 ## Max request size
 
-There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
+There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server or Analytics.js source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
 
 ## Regional configuration
 {% include content/regional-config.md %}
