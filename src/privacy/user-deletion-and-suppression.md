@@ -96,7 +96,7 @@ The deletion request can have one of the following statuses:
 4. `INVALID`
 5. `NOT_SUPPORTED`
 6. `PARTIAL_SUCCESS`
-7. `RUNNING`
+7. `IN_PROGRESS`
 
 When checking the status of deletion requests using Segment's API, the deletion will report an overall status of all of the deletion processes. As a result, Segment returns a `FAILED` status because of a failure on an unsupported destination, even if the deletion from the Segment Internal Systems and supported destinations were completed successfully.
 
