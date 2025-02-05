@@ -165,8 +165,6 @@ To configure your sync schedule:
    * **Interval**: Sync based on a by-the minute, hourly, or daily cycle. For example, once every 2 hours. 
    * **Day and time**: Sync at specific times on selected days of the week. For example, Mondays at 2PM. 
 
- Segment to sync your data under **Sync Schedule**. 
-
 ### Add entities
 
 After you load a sample event, you can add entities from the **Enrich events with entities** section. You’ll select an entity, then an entity match property. 
