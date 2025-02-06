@@ -163,7 +163,7 @@ To configure your sync schedule:
 4. Select the **Schedule type**. You can choose from: 
    * **Manual**: Trigger the sync manually or with Segment's API.
    * **Interval**: Sync based on a by-the minute, hourly, or daily cycle. For example, once every 2 hours. 
-   * **Day and time**: Sync at specific times on selected days of the week. For example, Mondays at 2PM. 
+   * **Day and time**: Sync at specific times on selected days of the week. For example, Mondays at 2:00PM. 
 
 ### Add entities
 
