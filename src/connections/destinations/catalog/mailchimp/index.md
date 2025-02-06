@@ -130,11 +130,15 @@ Again, this will **NOT** work for new users. New users will always have their su
 
 ## Troubleshooting
 
-### Why are my calls with trait arrays not showing up in Mailchimp?
+#### Why are my calls with trait arrays not showing up in Mailchimp?
 Mailchimp doesn't support arrays as traits values. This can cause calls to not show up.
 
-### Why are there frequent 404 Bad Requests from Identify events without an error message?
-If you send concurrent requests for the same userId, MailChimp blocks the events because MailChimp restricts each API key to a maximum of 10 concurrent requests. 
+#### Why am I seeing a `400 Bad Request` error?
+A **400 Bad Request** error can occur if the email address contains a misspelled domain name. For example, Mailchimp might reject`"joe@gmil.com"` because "gmail" is misspelled.
+
+#### Why am I seeing frequent `404 Bad Request` errors from Identify events with no error message?
+
+Mailchimp blocks concurrent requests for the same `userId` if they exceed its rate limit. Each Mailchimp API key allows a maximum of 10 concurrent requests, so sending multiple requests for the same user at the same time may result in `404 Bad Request` errors without a detailed error message.
 
 ## Engage
 

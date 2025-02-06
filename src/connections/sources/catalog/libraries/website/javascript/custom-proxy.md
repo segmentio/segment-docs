@@ -132,7 +132,7 @@ const analytics = AnalyticsBrowser.load(
 
 ## Custom Proxy CloudFront
 
-These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
+These instructions refer to Amazon CloudFront, but apply more generally to other providers as well. Before changing the Segment Tracking API or the Segment snippet (Segment CDN) to use your new proxy, complete the custom domain proxy setup on your side to avoid any unexpected behavior.
 
 ### CDN Proxy
 To set up your CDN Proxy:
