@@ -178,7 +178,7 @@ While Engage is computing, use the Audience Explorer to see users or accounts th
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
 
 > info "Real-time and batch computation"
-> By default, Segment creates all audiences as real-time computations. However, some conditions require batch computation. For example, [funnel audiences](#funnel-audiences) and audiences with time-window conditions can only be computed in batch mode. The Audience builder determines whether an audience is real-time or batch based on the conditions applied.
+> By default, Segment creates all audiences as real-time computations. However, some conditions require batch computation. For example, [funnel audiences](#funnel-audiences) can only be computed in batch mode. The Audience builder determines whether an audience is real-time or batch based on the conditions applied.
 
 ### Editing Realtime Audiences and Traits
 
