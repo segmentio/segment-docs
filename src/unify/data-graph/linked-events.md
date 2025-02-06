@@ -154,7 +154,7 @@ To enrich events with entities:
 6. Click **Load Sample Event**, then add your entities.
 
 ### Configure the sync schedule
-You can schedule how often you want Segment to cache the table data for Linked Events using the **Sync schedule**. 
+You can schedule how often you want Segment to cache the table data for Linked Events. 
 
 To configure your sync schedule:
 1. Navigate to **Unify > Data Graph > Entities** and select the entity you want to configure. 
