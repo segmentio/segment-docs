@@ -222,6 +222,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -323,6 +324,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -529,6 +531,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -549,6 +552,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -648,6 +652,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -673,6 +678,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -735,10 +741,8 @@ items:
     hidden: false
     regions:
       - us
-      - eu
     endpoints:
       - us
-      - eu
     source_type: cloud-app
     description: 'Engine Mobile SDK: location intelligence for your mobile app.'
     logo:
@@ -1044,6 +1048,7 @@ items:
     hidden: true
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1450,6 +1455,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1516,6 +1522,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1650,6 +1657,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1670,6 +1678,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1689,6 +1698,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1866,6 +1876,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1928,6 +1939,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -1966,6 +1978,7 @@ items:
     hidden: true
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2211,6 +2224,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2251,6 +2265,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2334,6 +2349,7 @@ items:
     hidden: true
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2354,6 +2370,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2459,6 +2476,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2521,6 +2539,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
@@ -2584,6 +2603,7 @@ items:
     hidden: false
     regions:
       - us
+      - eu
     endpoints:
       - us
     source_type: cloud-app
