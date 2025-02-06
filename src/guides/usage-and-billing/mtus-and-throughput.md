@@ -29,17 +29,13 @@ For example, if your workspace's throughput limit is set to 250, this means that
 
 These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans often have custom limits.
 
-
-
 #### Batching and throughput limits
 
 You can sometimes "batch" API calls to reduce send times, however batching doesn't reduce your throughput usage. Batched calls are unpacked as they are received, and the objects and calls the batch contains are counted individually. While batching does not reduce your throughput, it does reduce the possibility of rate limit errors.
 
-
 ## How does Segment calculate MTUs?
 
 Segment counts the number of **unique** `userId`s, and then adds the number of **unique** `anonymousId`s that were not associated with a `userId` during the billing period. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
-
 
 #### Example MTU counts
 
