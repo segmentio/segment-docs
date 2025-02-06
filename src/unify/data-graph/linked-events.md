@@ -153,6 +153,18 @@ To enrich events with entities:
 5. In the "Select Events to Map and Send", define the [conditions](/docs/connections/destinations/actions/#conditions) under which the action should run. 
 6. Click **Load Sample Event**, then add your entities.
 
+### Configure the sync schedule
+You can schedule how often you want Segment to cache the table data for Linked Events. 
+
+To configure your sync schedule:
+1. Navigate to **Unify > Data Graph > Entities** and select the entity you want to configure. 
+2. Select the **Enrichment syncs** tab. 
+3. Click **Edit** next to **Sync schedule**. 
+4. Select the **Schedule type**. You can choose from: 
+   * **Manual**: Trigger the sync manually or with Segment's API.
+   * **Interval**: Sync based on a by-the minute, hourly, or daily cycle. For example, once every 2 hours. 
+   * **Day and time**: Sync at specific times on selected days of the week. For example, Mondays at 2:00PM. 
+
 ### Add entities
 
 After you load a sample event, you can add entities from the **Enrich events with entities** section. You’ll select an entity, then an entity match property. 
