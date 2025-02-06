@@ -490,7 +490,7 @@ Segment's data pipeline applies destination filters before invoking insert funct
 
 ##### What destination types support Insert Functions?
 
-Only cloud-mode [Event destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list) support destination Insert Functions. [List destinations](/docs/engage/using-engage-data/#list-destinations) are not compatible. 
+Only cloud-mode [event destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list) support destination Insert Functions. [List destinations](/docs/engage/using-engage-data/#list-destinations) aren't compatible. 
 
 {% comment %}
 
