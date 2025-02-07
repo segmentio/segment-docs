@@ -50,7 +50,7 @@ In addition to your Raw Data destinations (Amazon S3 and data warehouses), Segme
 - tray.io
 - Appcues
 - Vero
-- Google Analytics
+- Google Universal Analytics
 - Customer.io
 - Optimizely Full Stack
 - Google Cloud PubSub
