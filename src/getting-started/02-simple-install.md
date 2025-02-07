@@ -308,8 +308,8 @@ Segment::identify(array(
 <br>
 This identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits.
 
-> note ""
-> **Note:** When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user. The easiest way in PHP is to keep a `$user` variable in memory.
+> info ""
+> When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user. The easiest way in PHP is to keep a `$user` variable in memory.
 
 ```php
 Segment::identify(array(
