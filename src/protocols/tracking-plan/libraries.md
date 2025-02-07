@@ -5,8 +5,8 @@ plan: protocols
 
 Tracking Plan Libraries make it easy to scale Tracking Plan creation within your workspace. You can create libraries for track events or track event properties. Editing Tracking Plan Libraries is identical to [editing Tracking Plans](/docs/protocols/tracking-plan/create/).
 
-> note ""
-> **Note**: Segment does support advanced JSON schema implementations and identify/group trait libraries.
+> info ""
+> Segment does support advanced JSON schema implementations and Identify/Group trait libraries.
 
 Once created, you can import event or property Libraries into a Tracking Plan using a simple wizard flow.
 

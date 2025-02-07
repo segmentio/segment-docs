@@ -19,7 +19,7 @@ You can use SQL queries for the following tasks:
   - [Historical Traits](#historical-traits-1)
   - [Converting the Groups Table into an Organizations Table](#converting-the-groups-table-into-an-organizations-table)
 
-> note " "
+> success " "
 > If you're looking for SQL queries for warehouses other than Redshift, check out some of Segment's [Analyzing with SQL guides](/docs/connections/storage/warehouses#analyzing-with-sql).
 
 ## Tracking events

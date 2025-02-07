@@ -173,8 +173,8 @@ Segment automatically calls a Page event whenever a web page loads. This might b
 
 If the presentation of user interface components don't substantially change the user's context (for example, if a menu is displayed, search results are sorted/filtered, or an information panel is displayed on the exiting UI) **measure the event with a Track call, not a Page call.**
 
-> note ""
-> **Note**: When you trigger a Page call manually, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn't be called as part of the click event that initiates it.
+> info ""
+> When you manually trigger a Page call, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn't be called as part of the click event that initiates it.
 
 For more info on Page calls, review [Page spec](/docs/connections/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
 
