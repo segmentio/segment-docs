@@ -1,0 +1,77 @@
+.release-note-card {
+  &--box {
+    $this: &;
+
+    position: relative;
+    padding: 5px;
+    background-color: color(white);
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: 200ms ease;
+  
+/* @include breakpoint(medium up)  {
+      padding: 30px;
+    }*/
+
+   /* &:hover {
+      border: 1px solid color(gray-100);
+      border-color: color(gray-500);
+      text-decoration: none;
+    }*/
+  }
+
+  &--note-header {
+    font-size: 24px;
+    font-weight: 600;
+    width: fit-content(40%);
+    text-wrap: balance;
+    color: color(gray-900);
+    margin-bottom: 20px;
+  }
+
+  &--badges {
+    padding: 2px;
+    display: inline-block;
+  }
+
+  &--content {
+    width: 100%;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @include breakpoint(medium up)  {
+      text-align: left;
+    }
+  }
+  
+  &--date {
+    font-size: 12px;
+    font-weight: 500;
+    color: color(gray-700);
+  }
+
+  &--read-more {
+    position: absolute;
+    bottom: 10;
+    right: 20;
+    padding: 5px;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  &--filter-button{
+    display: inline-block;
+    /*width: 50%;*/
+  }
+
+  hr {
+    padding: 2px;
+  }
+}
