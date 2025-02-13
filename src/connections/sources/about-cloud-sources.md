@@ -18,7 +18,7 @@ Event Cloud Sources can export their data both into Segment warehouses, and into
 Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you can analyze your data with SQL, use [Reverse ETL](/docs/connections/reverse-etl) to extract data, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
 > info ""
-> You can send data from website, mobile, and server sources to a warehouse **or** to destinations. You can only send object cloud app source data can **only** go to warehouses.
+> You can send data from website, mobile, and server sources to a warehouse **or** to destinations. You can only send object cloud app source data to warehouses.
 
 
 ## How do cloud sources work?

@@ -46,9 +46,9 @@ When you send an Alias call to CleverTap, CleverTap updates the user's profile w
 
 ## Track
 
-When you `track` an event, Segment sends that event to CleverTap as a custom event. CleverTap requires `identify` traits such as `userId` or `email` to record and associate the Track event. Without these traits, the Track event does not appear in CleverTap.
+When you `track` an event, Segment sends that event to CleverTap as a custom event. CleverTap requires Identify traits like `userId` or `email` to record and associate the Track event. Without these traits, the Track event does not appear in CleverTap.
 
-CleverTap does not support arrays or nested objects for custom track event properties.
+CleverTap does not support arrays or nested objects for custom Track event properties.
 
 The default logic for the cloud mode connection to CleverTap will lower case and snake_case any event properties passed from Segment's servers to CleverTap. The device mode connection will not lower case or snake_case any event properties passed directly to CleverTap from the client.
 

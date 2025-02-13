@@ -488,7 +488,7 @@ For HTTPS Web Push to work, you need to host two files in the `root` directory o
 * `serviceworker.js`
 
 > info "Serviceworker file naming convention"
-> The name of the serviceworker file must be `serviceworker.js`. Please contact MoEngage support at support@moengage.com if you want to give your serviceworker file a different filename.
+> The name of the serviceworker file must be `serviceworker.js`. Please contact MoEngage support at support@moengage.com if you want to give your serviceworker file a different name.
 
 #### 2.b Add link to manifest in HTML (HTTPS)
 Add the following line in the <head> tag of your page.

@@ -145,7 +145,7 @@ To create an IAM role:
 7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the External ID set in your AWS Lambda destination settings.
   * `arn:aws:iam::595280932656:role/customer-lambda-prod-destination-access` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.
 
-> success ""
+> info ""
 > You can find your Source ID by navigating to **Settings > API Keys** from your Segment source homepage.
 
     ```json

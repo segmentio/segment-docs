@@ -107,7 +107,7 @@ To configure a custom dimension:
 After you map your dimensions, Segment checks the user traits and properties in [Identify](/docs/connections/spec/identify), [Track](/docs/connections/spec/track) and [Page](/docs/connections/spec/page) calls to see if you defined them as a dimension. If you have defined them in your mapping, Segment sends that dimension to Google Analytics.
 
 > success ""
-> Segment sends traits in [Identify](/docs/connections/spec/identify) calls that map to Custom Dimensions in Google Analytics when the next [Track](/docs/connections/spec/track) or [Page call](/docs/connections/spec/page) call triggers from the browser.
+> Segment sends traits in [Identify](/docs/connections/spec/identify) calls that map to Custom Dimensions in Google Analytics when the next [Track](/docs/connections/spec/track) or [Page](/docs/connections/spec/page) call triggers from the browser.
 
 Continuing the example above, you can set the **Gender** trait with the value of **Male**, which maps to `dimension 1`. Segment passes this value to Google Analytics with **Viewed History** [Track](/docs/connections/spec/track) calls.
 
