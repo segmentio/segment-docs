@@ -1,16 +1,20 @@
 ---
-title: Connect an Existing Segment Workspace
+title: Create a New Segment Workspace
 hidden: true
 ---
 
-If you already have a Segment workspace, you can use a new or pre-existing [Segment Unify space](/docs/unify/quickstart/){:target="_blank"} to connect your customer data to Unified Profiles in Flex. 
+Flex customers without an existing Segment workspace can create a new Segment workspace and a Unify space to share customer data with Twilio. 
 
-Your Segment workspace must be on the Business Tier plan with a Unify Plus entitlement. To upgrade to the Business Tier plan, communicate with your sales contact or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team.
+Your new Segment workspace must be on the Business Tier plan with a Unify Plus entitlement. To upgrade to the Business Tier plan, communicate with your sales contact or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team.
 
-## Step 1: Set up your Unify space
+<!--- Oneclick not included in this release ## Sign up for a Unify space
+1. From the **Welcome to Segment Unify** page, click **Get Started**. 
+2. Sign up for a Segment account with your Twilio credentials by clicking **Sign up with my Twilio credentials**. On the Welcome to Segment popup, click **Continue**. 
+3. On the What would you like to do first? page, select either **Explore demo data in a test space** or **Setup a production space with my own data**. --->
 
-> success ""
-> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify). If your existing Unify space includes a Salesforce source, RETL source, and a Segment Profiles destination, proceed directly to [Step 3: Connect your Unify space to Flex](#step-3-connect-your-unify-space-to-flex).
+## Prerequisites
+
+## Step 1: Create a Unify space
 
 Segment recommends creating a development or sandbox Unify space, verifying that your profiles appear as you would expect, and then creating a production Unify space.
 
@@ -227,9 +231,9 @@ For more information about the Profile explorer, see the [Profile explorer](/doc
   %}
 
   {% include components/reference-button.html
-    href="/docs/unified-profiles/create-a-workspace"
-    icon="flex.svg"
-    title="Create a new Segment Workspace"
-    description="Flex customers without an existing Segment workspace that includes a Unify space should create a new workspace and Unify space."
+    href="/docs/unified-profiles/connect-a-workspace"
+    icon="api.svg"
+    title="Connect an Existing Workspace to Flex"
+    description="Flex customers with an existing Segment workspace that has a Unify space can connect their Unify space to Flex."
   %}
 </div>
