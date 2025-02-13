@@ -280,7 +280,7 @@ The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports 
 
 Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment handles errors differently depending on whether they affect the entire batch or individual events:
 
-### Handling partial batch failures
+#### Handling partial batch failures
 
 If your destination can process some events while rejecting others, you can return a structured response indicating the status of each event. Segment retries only the failed events.
 
