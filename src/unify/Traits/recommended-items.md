@@ -29,6 +29,14 @@ Once Segment attaches the recommendation array to a profile, you can use it to:
 - Build further segments based on Recommended Items
 - Trigger customized campaigns and experiences tailored to individual users
 
+### Exclusion rules
+
+Exclusion rules let you filter out specific items from recommendations, helping keep suggestions relevant and valuable. For example, you could use them to remove items a user has already purchased or exclude products above a certain price. 
+
+There are two types of exclusion rules:
+  - **Item information**: This filters out items based on product catalog metadata. For example, you can exclude items over a certain price, from a specific category, or by a particular brand.
+  - **Past user action**: This filters out items based on a user’s interaction history. For example, you can remove items a customer already purchased or previously added to their cart.
+
 ## Create a Recommended Items trait
 
 > info "Before you begin"
@@ -45,8 +53,9 @@ To create a Recommended Item trait:
 5. Choose how many item types you want to return onto each profile. 
     - You can select up to 5 item types.
 6. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
-7. (*Optional*) Select destinations you want to sync the trait to, then click **Next**.
-8. Give your trait a name, then click **Create Trait**.
+7. (*Optional*) Set exclusion rules to filter out specific items from recommendations.
+8. (*Optional*) Select destinations you want to sync the trait to, then click **Next**.
+9. Give your trait a name, then click **Create Trait**.
 
 Segment begins creating your new trait. This process could take up to 48 hours.
 
@@ -71,6 +80,6 @@ By setting up a trait like this, each user profile now includes personalized rec
 
 Keep the following in mind as you work with Recommended Items:
 
-- **Limit recommendations to key items**: Start with 5-7 items per profile. This keeps recommendations concise and tailored to each user's preferences.
+- **Limit recommendations to key items**: Start with 3-5 items per profile to keep recommendations concise and personalized.
 - **Consider audience size**: Larger audiences can dilute engagement rates for each recommended item. Focusing on the top 20% of users keeps recommendations relevant and impactful.
-- **Give the system time to build the trait**: Recommended Item traits can take up to 48 hours to build, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
+- **Give the system time to build the trait**: Recommended Items traits can take up to 48 hours to generate, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
