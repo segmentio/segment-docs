@@ -223,7 +223,7 @@ You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more
 
 ## Deleting Computed Traits
 
-When computed traits are deleted, any user that had a value for that trait will now have a custom traits on the Unify profile. 
+When computed traits are deleted, any user that had a value for that trait will now have a custom trait on the Unify profile. 
 
 ## Downloading your Computed Trait as a CSV file
 
