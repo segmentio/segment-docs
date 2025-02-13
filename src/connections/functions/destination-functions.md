@@ -366,13 +366,14 @@ Here's an example response from the `onBatch` handler:
 
 After receiving these responses from `onBatch`, Segment only retries **event_4** and **event_5**.
 
-| Event Status                 | Result  |
-| ---------------------------- | ------- |
-| 200 (Sucess)                 | Success |
-| 400 (ValidationError)        | Discard |
-| 200 (Sucess)                 | Success |
-| 500 (RetryError)             | Retry   |
-| 500 (Unsupported Event Type) | Retry   |
+| Event Status            | Result  |
+| ----------------------- | ------- |
+| `200` (Success)         | Success |
+| `400` (ValidationError) | Discard |
+| `200` (Success)         | Success |
+| `500` (`RetryError`)    | Retry   |
+| `500` (Internal Error)  | Retry   |
+
 
 This approach lets you handle errors at the event level while still benefiting from batching efficiency.
 
