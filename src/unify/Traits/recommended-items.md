@@ -80,6 +80,6 @@ By setting up a trait like this, each user profile now includes personalized rec
 
 Keep the following in mind as you work with Recommended Items:
 
-- **Limit recommendations to key items**: Start with 3-5 items per profile. This keeps recommendations concise and tailored to each user's preferences.
+- **Limit recommendations to key items**: Start with 3-5 items per profile to keep recommendations concise and personalized.
 - **Consider audience size**: Larger audiences can dilute engagement rates for each recommended item. Focusing on the top 20% of users keeps recommendations relevant and impactful.
-- **Give the system time to build the trait**: Recommended Item traits can take up to 48 hours to build, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
+- **Give the system time to build the trait**: Recommended Items traits can take up to 48 hours to generate, depending on data volume and complexity. Segment recommends waiting until 48 hours have passed before using the trait in campaigns.
