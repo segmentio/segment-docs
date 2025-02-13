@@ -366,6 +366,8 @@ Here's an example response from the `onBatch` handler:
 
 After receiving these responses from `onBatch`, Segment only retries **event_4** and **event_5**.
 
+The following table shows how Segment processes different event statuses. Segment retries events with a retryable error and discards others or marks them as successfully processed:
+
 | Event Status            | Result  |
 | ----------------------- | ------- |
 | `200` (Success)         | Success |
