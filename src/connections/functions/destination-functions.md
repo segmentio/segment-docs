@@ -278,11 +278,13 @@ The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports 
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the whole batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. 
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment handles errors differently depending on whether they affect the entire batch or individual events:
 
 ### Handling partial batch failures
 
-It's also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
+If your destination can process some events while rejecting others, you can return a structured response indicating the status of each event. Segment retries only the failed events.
+
+The following example shows how to process each event separately and return a structured response:
 
 ```js
 async function onBatch(events, settings) {
@@ -334,6 +336,8 @@ async function processEvent(event, settings) {
 }
 ```
 
+Here's an example response from the `onBatch` handler:
+
 ```json
 [
 	{
@@ -360,15 +364,17 @@ async function processEvent(event, settings) {
 ]
 ```
 
-For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
+After receiving these responses from `onBatch`, Segment only retries **event_4** and **event_5**.
 
-| Event Status           | Result  |
-| ---------------------- | ------- |
-| 200 (Sucess)           | Success |
-| 400 (ValidationError)  | Discard |
-| 200 (Sucess)           | Success |
-| 500 (RetryError)       | Retry   |
-| 500 (Unsupported Event Type) | Retry |
+| Event Status                 | Result  |
+| ---------------------------- | ------- |
+| 200 (Sucess)                 | Success |
+| 400 (ValidationError)        | Discard |
+| 200 (Sucess)                 | Success |
+| 500 (RetryError)             | Retry   |
+| 500 (Unsupported Event Type) | Retry   |
+
+This approach lets you handle errors at the event level while still benefiting from batching efficiency.
 
 ## Save and deploy the function
 
