@@ -51,12 +51,13 @@ To create a Recommended Item trait:
 
 Segment begins creating your new trait. This process could take up to 48 hours.
 
-## Exclusion Rules
+## Exclusion rules
 
-Exclusion rules are an optinal feature that let you manually exclude specific items from being recommended. For example, you could remove all items that users have previously purchased or you could remove items that cost more than $20
-  - **Item Information**: This type of exclusion rule removes products based on the item metadata mapped in the product catalog. For example, items that cost over a certain amount or items from a specific brand/category could be removed
-  - **Past User Action**: This type of exclusion rule removes products based on the any actions that a user has taken on the item. For example, you can remove items that a customer has purchased or have previously added to their cart. 
+Exclusion rules let you filter out specific items from recommendations, helping keep suggestions relevant and valuable. For example, you could use them to remove items a user has already purchased or exclude products above a certain price. 
 
+There are two types of exclusion rules:
+  - **Item information**: This filters out items based on product catalog metadata. For example, you can exclude items over a certain price, from a specific category, or by a particular brand.
+  - **Past user action**: This filters out items based on a user’s interaction history. For example, you can remove items a customer already purchased or previously added to their cart.
 
 ## Example use case: personalized album recommendations
 
