@@ -7,7 +7,7 @@ Segment Functions create reusable code that can be run in your Segment workspace
 
 When you create a function, write code for it, and save it, the function appears in the Catalog in your workspace _only_. You can then deploy that function in your workspace just as you would a conventional source or destination.
 
-> note ""
+> info ""
 > Access to Functions is controlled by specific [access management roles](#functions-permissions). You may need additional access to create and deploy functions.
 
 
@@ -50,7 +50,7 @@ Once the payload you want to test is ready, click **Run**.
 
 ## Deploying source functions
 
-> note ""
+> info ""
 > You must be a **Workspace Owner** or **Source Admin** to connect an instance of your function in your workspace.
 
 1. From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}, locate the source function you want to deploy.

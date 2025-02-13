@@ -248,7 +248,7 @@ Date: Mon, 01 Jul 2013 17:27:06 GMT
 Status: 200 OK
 Request-Id: 1111-2222-3333-4444
 ```
-> note ""
+> info ""
 > If you need to contact Segment regarding a specific API request, please capture and provide the `Request-Id`.
 
 

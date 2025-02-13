@@ -52,8 +52,8 @@ LaunchDarkly ingests that call as:
 }
 ```
 
-> note ""
-> **Note**: The LaunchDarkly Metric must be actively recording and have a Feature Flag attached for Segment events to appear in your LaunchDarkly Project.
+> warning ""
+> The LaunchDarkly Metric must be actively recording and have a Feature Flag attached for Segment events to appear in your LaunchDarkly Project.
 
 Segment sends Track calls to LaunchDarkly as a `track` event. It appears on your [Debugger page](https://app.launchdarkly.com/default/production/debugger/goals){:target="_blank"}.
 

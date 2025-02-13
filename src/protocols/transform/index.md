@@ -41,8 +41,10 @@ Transformations can be enabled and disabled directly from the list view using th
 
 Transformations can be deleted and edited by clicking on the overflow menu. When editing a Transformation, only the resulting event or property names, and Transformation name can be edited. If you want to select a different event or source, create a separate Transformation rule.
 
-> note "Transformations created using the Public API"
+> info "Transformations created using the Public API"
 > On the Transformations page in the Segment app, you can view and rename transformations that you created with the Public API. In some cases, you can edit these transformations in the UI.
+
+<!--- TODO: what does "some cases" entail?--->
 
 ## Create a Transformation
 

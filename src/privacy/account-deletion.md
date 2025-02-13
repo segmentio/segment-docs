@@ -15,7 +15,7 @@ To delete the data for an entire source, email the Customer Success team [(frien
 
 **Due to the way Segment stores data internally, source-level deletions can only be scoped to one day in granularity. Deletion requests for smaller time frames are not supported.*
 
-> note "Deleting source data"
+> info "Deleting source data"
 > When Segment deletes your data for a particular source, the deletion is not forwarded to sources or data storage providers associated with your account: your data is only removed from Segment's S3 archive buckets. To remove your data from external sources, reach out to the individual source about their deletion practices. 
 
 ## Delete the data from a Unify space

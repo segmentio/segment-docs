@@ -45,8 +45,8 @@ That will create a `client` that you can use to send data to Segment for your so
 
 ## Step 3: Identify Users
 
-> note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/server/go#identify).
 

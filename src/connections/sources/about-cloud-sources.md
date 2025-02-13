@@ -17,8 +17,8 @@ Event Cloud Sources can export their data both into Segment warehouses, and into
 
 Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you can analyze your data with SQL, use [Reverse ETL](/docs/connections/reverse-etl) to extract data, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
-> note ""
-> In the app, data from website, mobile, and server sources can go to a warehouse **or** to destinations. Object Cloud-App Source data can **only** go to Warehouses.
+> info ""
+> You can send data from website, mobile, and server sources to a warehouse **or** to destinations. You can only send object cloud app source data to warehouses.
 
 
 ## How do cloud sources work?
@@ -86,7 +86,7 @@ Sometimes, when the sync job fails due to an unhandled error or is mysteriously 
 
 In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
-[Contact Segment Product Support](https://segment.com/help/contact) if you need additional data collected, or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
+[Contact Segment Product Support](https://segment.com/help/contact){:target="_blank”}  if you need additional data collected, or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 
 ### What questions can you answer with data from cloud, web, and mobile sources combined in a single warehouse?
 
@@ -103,8 +103,8 @@ Generally, you need intermediate- to advanced SQL experience to explore and anal
 <!-- LR 4.20.2020 I think these have been missing for a long time. :(
 **Entity Relationship Diagrams** The links to the ER (entity relationship) diagrams [in the documentation](/docs/connections/sources/#cloud-app) will really help you fast track your queries. They show the relationship between each table in a particular source, and how each table can be joined based on particular keys. -->
 
-**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/guides/how-to-guides/join-user-profiles/) explains how to do this in detail.
+**Joining IDs**:  As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/guides/how-to-guides/join-user-profiles/) explains how to do this in detail.
 
 <!-- LR 7.8.2020 - Community shut down pending ??? so hiding this for now **Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).-->
 
-**Partner Dashboards** Our BI partners at Mode, Looker, BIME, Periscope, and Chartio have created out of the box dashboards that work on top of our source schemas.
+**Partner Dashboards**: Segment's BI partners at Mode, Looker, BIME, Periscope, and Chartio have created out of the box dashboards that work on top of our source schemas.

@@ -10,11 +10,8 @@ redirect_from:  '/connections/destinations/catalog/regal-voice'
 Regal.io maintains this destination. For any issues with the destination, contact their [Regal.io support team](mailto:support@regal.io).
 
 
-> note ""
-> Regal.io is available in the U.S only.
-
-> note ""
-> The Regal.io Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Regal.io Destination and its documentation, [contact the Regal.io support team](mailto:support@regal.io).
+> info "The Regal.io Destination is in beta"
+> The Regal.io team is still actively developing this destination. Regal.io is available in the U.S only. To join the beta program, or if you have any feedback to help improve the Regal.io Destination and its documentation, [contact the Regal.io support team](mailto:support@regal.io).
 
 
 

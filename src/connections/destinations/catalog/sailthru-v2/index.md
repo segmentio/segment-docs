@@ -71,18 +71,18 @@ analytics.identify("assigned-userId", {
 );
 ```
 
-> note ""
-> **NOTE:** Sailthru searches for the email address in the `identify` call under `context.traits` if it isn't provided at the top-level.
+> success ""
+> Sailthru searches for the email address in the Identify call's `context.traits` field if it isn't provided at the top-level.
 
 ### Track
 
 Send [Track](/docs/connections/spec/track) calls to:
 
-* record purchases via “Order Completed” events
-* record abandoned carts via “Product Added” and “Product Removed” events
-* subscribe users via “Subscribed” events
-* trigger Lifecycle Optimizer journeys with all other events
-* delete users via “User Deleted” events
+* Record purchases using “Order Completed” events
+* Record abandoned carts using “Product Added” and “Product Removed” events
+* Track subscription information with “Subscribed” events
+* Trigger Lifecycle Optimizer journeys with all other events
+* Delete users through “User Deleted” events
 
 Sailthru automatically creates and maps custom fields from Segment.
 

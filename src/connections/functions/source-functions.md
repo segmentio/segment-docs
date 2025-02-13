@@ -390,7 +390,7 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your sou
 
 ### Connecting source functions
 
-> note ""
+> info ""
 > You must be a **Workspace Owner** or **Source Admin** to connect an instance of your function in your workspace.
 
 From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}, click **Connect Source** and follow the prompts to set it up in your workspace.

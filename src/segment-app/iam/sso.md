@@ -95,7 +95,7 @@ In order to enable this, you'll need to verify your domain with Segment. To do t
 
 Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS text record that you can add through your DNS provider. After you do so and click verify, you can move to the next step.
 
-> note ""
+> warning ""
 > Domain tokens expire 14 days after they are verified.
 
 ## Configuring SSO to access multiple workspaces

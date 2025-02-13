@@ -40,7 +40,4 @@ HubSpot Web (Actions) provides the following benefits over the classic HubSpot d
 ## FAQ & Troubleshooting
 
 ### Why aren't my custom behavioral events appearing in HubSpot?
-HubSpot has several limits for custom behavioral events, including a limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, HubSpot will truncate to only update 50 properties per event completion. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.
-
-> note ""
-> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+You must have a HubSpot Enterprise Marketing Hub account to send custom behavioral events. If you have a HubSpot Enterprise Marketing Hub account and are still missing events, you might have exceeded the limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, HubSpot will truncate to only update 50 properties per event completion. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.

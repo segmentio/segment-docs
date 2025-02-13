@@ -29,7 +29,7 @@ To configure an email template, click **Create Template**.
 
 1. Select **Email**, and click **Configure**.
 
-> note ""
+> info ""
 > You must first connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment space to build email templates in Engage. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
 2. Configure the email template.

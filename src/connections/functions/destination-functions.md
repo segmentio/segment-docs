@@ -16,8 +16,8 @@ All functions are scoped to your workspace, so members of other workspaces can't
 ![An illustrative graphic showing information flowing from the Segment app, into code, and then into Slack](images/destination_functions_overview.png)
 
 
-> note ""
-> Destination functions doesn't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources). Destination functions don't support [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting).
+> warning ""
+> Destination functions don't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources) or support [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting).
 
 ## Create a destination function
 

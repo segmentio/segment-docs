@@ -4,10 +4,7 @@ strat: ios
 ---
 
 > warning ""
-> **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS 14 changes explained in this guide.
-
-> note ""
-> For information about iOS 14.5, see [What's new in iOS 14.5](#whats-new-with-ios-145) below.
+> You should update your `analytics-ios` and device-mode destinations to adapt to iOS 14 changes explained in this guide. For information about iOS 14.5, see [What's new in iOS 14.5](#whats-new-with-ios-145) below.
 
 In June 2020, Apple made several privacy-related announcements at WWDC20 about its upcoming iOS 14 release, including [changes to the collection and use of Identifier for Advertising (IDFA)](https://developer.apple.com/app-store/user-privacy-and-data-use/). These changes require developers to ask for user consent *before* collecting IDFA to track users across multiple applications.
 

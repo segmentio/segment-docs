@@ -51,15 +51,13 @@ Replace `YOUR_WRITE_KEY` with the actual **Write Key**, which you can find in Se
 You only need to call `init` once when your php file is requested. All of your files then have access to the same `Analytics` client.
 
 
-> note ""
-> **Note**: The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
-
-All set? Nice, the library's fully installed! We're now primed and ready to start recording our first analytics calls about our users.
+> info "PHP consumers"
+> The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
 ## Step 3: Identify Users
 
-> note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The [Identify method](/docs/connections/spec/identify) is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
 
