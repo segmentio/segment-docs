@@ -29,6 +29,14 @@ Once Segment attaches the recommendation array to a profile, you can use it to:
 - Build further segments based on Recommended Items
 - Trigger customized campaigns and experiences tailored to individual users
 
+### Exclusion rules
+
+Exclusion rules let you filter out specific items from recommendations, helping keep suggestions relevant and valuable. For example, you could use them to remove items a user has already purchased or exclude products above a certain price. 
+
+There are two types of exclusion rules:
+  - **Item information**: This filters out items based on product catalog metadata. For example, you can exclude items over a certain price, from a specific category, or by a particular brand.
+  - **Past user action**: This filters out items based on a user’s interaction history. For example, you can remove items a customer already purchased or previously added to their cart.
+
 ## Create a Recommended Items trait
 
 > info "Before you begin"
@@ -45,19 +53,11 @@ To create a Recommended Item trait:
 5. Choose how many item types you want to return onto each profile. 
     - You can select up to 5 item types.
 6. Click **Calculate** to get a preview of the number of users who will receive your recommendations, then click **Next**.
-7. (*Optional*) Set your exclusion rules to manually remove specific items from being recommended
+7. (*Optional*) Set exclusion rules to filter out specific items from recommendations.
 8. (*Optional*) Select destinations you want to sync the trait to, then click **Next**.
 9. Give your trait a name, then click **Create Trait**.
 
 Segment begins creating your new trait. This process could take up to 48 hours.
-
-## Exclusion rules
-
-Exclusion rules let you filter out specific items from recommendations, helping keep suggestions relevant and valuable. For example, you could use them to remove items a user has already purchased or exclude products above a certain price. 
-
-There are two types of exclusion rules:
-  - **Item information**: This filters out items based on product catalog metadata. For example, you can exclude items over a certain price, from a specific category, or by a particular brand.
-  - **Past user action**: This filters out items based on a user’s interaction history. For example, you can remove items a customer already purchased or previously added to their cart.
 
 ## Example use case: personalized album recommendations
 
