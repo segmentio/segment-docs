@@ -4,6 +4,7 @@ rewrite: true
 redirect_from: "/connections/destinations/catalog/customer.io/"
 hide-personas-partial: true
 maintenance: true
+maintenance-content: "A new version of this destination is available. See [Customer.io (Actions)](/docs/connections/destinations/catalog/actions-customerio/) for more information."
 id: 54521fd525e721e32a72eea8
 actions-slug: "customer-io-actions"
 ---
@@ -14,8 +15,6 @@ actions-slug: "customer-io-actions"
 
 
 ## Getting Started
-
-
 
 You can follow the setup guide through Segment using the steps below, or you can automatically sync your Customer.io connection settings to your Segment source using the flow in your Customer.io workspace's Integrations page.
 
