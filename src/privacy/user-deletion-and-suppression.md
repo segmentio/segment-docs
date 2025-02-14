@@ -4,7 +4,7 @@ title: User Deletion and Suppression
 
 Segment offers you the ability to delete and suppress data about your end-users when they are identifiable by a `userId` to support your compliance with privacy regulations like the GDPR and CCPA. For example, if your end-user invokes the Right to Object or Right to be Forgotten, you can block ongoing data collection about that user and delete all historical data about them from Segment’s systems, any of your connected warehouses or S3 buckets, and some supported downstream partners.
 
-> info "Business Plan Customers" 
+> info "Business Plan Customers"
 > If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that Segment replays data for you.
 
 ## Regulations
@@ -16,7 +16,7 @@ All deletion and suppression actions in Segment are asynchronous and categorized
 
 With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes Regulations to your workspace (which targets all sources within the workspace).
 
-> warning “Data sent to device-mode destinations cannot be suppressed”   
+> warning "Data sent to device-mode destinations cannot be suppressed"   
 > Destinations set up in device mode are sent directly to destinations and bypass the point in the pipeline where Segment suppresses events. 
 
 The following regulation types are available:
@@ -30,7 +30,7 @@ The following regulation types are available:
 
 *To send more than 110,000 SUPPRESS_ONLY, UNSUPRESS, DELETE_INTERNAL and/or SUPPRESS_WITH_DELETE_INTERNAL Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}. Segment can’t increase the limit for SUPPRESS_WITH_DELETE and DELETE_ONLY regulations. Regulations submitted after you’ve hit the 110,000 Regulations in a 30 day period are rate limited.
 
-> info "" 
+> info " "
 > Using **SUPPRESS_WITH_DELETE** or **DELETE_ONLY** regulation types might lead to additional charges levied by your destination providers.
 
 ## The Right to be Forgotten and Suppression Support
@@ -63,7 +63,7 @@ This creates an `UNSUPPRESS` regulation and removes the `userId` from your suppr
 
 The Suppressed Users tab in Segment App (**Settings > End User Privacy**) allows you to create new Suppression requests and also shows a list of `userId`s which are **actively** being suppressed. It can take a few hours/days for the suppression to become active, depending on the number of requests that are in the queue for your workspace. Once the request is active, Segment blocks data about these users across all sources.
 
-> info “`SUPPRESS_WITH_DELETE` requests”   
+> info "`SUPPRESS_WITH_DELETE` requests"
 > The Suppressed Users tab only includes `SUPPRESS_ONLY` regulations. If you created a User Deletion request using the UI, you will need to check the [**Deletion Requests**](#deletion-requests-tab) tab, as those are `SUPPRESS_WITH_DELETE` regulation types.
 
 ## Deletion Support
@@ -72,8 +72,8 @@ When you create a `SUPPRESS_WITH_DELETE` regulation, the user is actively suppre
 
 Segment deletes messages with this `userId` from connected raw data Destinations, including Redshift, BigQuery, Postgres, Snowflake, and Amazon S3. Warehouse deletions occur using a DML run against your cluster or instance, and Segment deletes from S3 by "recopying" clean versions of any files in your bucket that included data about that `userId`.
 
-> warning “Connected warehouses deletions”  
-> Segment will attempt to delete messages with the target `userId` from your connected warehouses for 7 days. If, after 7 days, Segment cannot delete all identified messages from your connected data warehouse, Segment displays a status of `unsuccessful`. If Segment is unable to delete all identified messages, you will be responsible for removing any 
+> warning "Connected warehouses deletions"
+> Segment will attempt to delete messages with the target `userId` from your connected warehouses for 7 days. If, after 7 days, Segment cannot delete all identified messages from your connected data warehouse, Segment displays a status of `unsuccessful`. If Segment is unable to delete all identified messages, you will be responsible for removing any remaining messages.
 
 #### Deletion request SLA
 
@@ -83,7 +83,7 @@ Segment has a 30-day SLA for completing deletion requests in Segment’s interna
 
 Segment forwards your deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to), but you should confirm that each partner fulfills the request. You will also need to contact any unsupported Destinations separately to manage user data deletion.
 
-> info “Users that you `UNSUPPRESS` after issuing a deletion request may have remaining data”  
+> info "Users that you `UNSUPPRESS` after issuing a deletion request may have remaining data"
 > If you **UNSUPPRESS** a user after issuing a deletion request for that user, Segment’s deletion functionality does not clean up data sent after removing the user from the suppression list.
 
 #### Deletion requests tab
@@ -116,8 +116,8 @@ To change your data retention settings, navigate to **Privacy > Settings > Data 
 
 Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
 
-> warning “7 day Retention Periods will be deprecated on March 6, 2025”  
-> After March 6, you will no longer be able to set your workspace’s retention period to 7 days. All workspaces with 7 day retention periods will be updated to have 14 day retention periods. 
+> warning "7 day Retention Periods will be deprecated on March 6, 2025"
+> After March 6, you will no longer be able to set your workspace’s retention period to 7 days. All workspaces with 7 day retention periods will be updated to have 14 day retention periods.
 
 You can select from the following Archive Retention time periods:
 
@@ -130,8 +130,8 @@ You can select from the following Archive Retention time periods:
 
 ### Source-Level Archive Retention Periods
 
-> warning “Source-Level Archive Retention Periods will be deprecated on April 15, 2025”  
-> After April 15, you will no longer be able to override your workspace’s default retention period on a source-by-source basis. 
+> warning "Source-Level Archive Retention Periods will be deprecated on April 15, 2025"
+> After April 15, you will no longer be able to override your workspace’s default retention period on a source-by-source basis.
 
 Override the workspace default retention period on a per-source level.
 
