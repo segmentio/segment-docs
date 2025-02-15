@@ -50,11 +50,16 @@ In addition to your Raw Data destinations (Amazon S3 and data warehouses), Segme
 - tray.io
 - Appcues
 - Vero
-- Google Universal Analytics
 - Customer.io
 - Optimizely Full Stack
+- Google Analytics
 - Google Cloud PubSub
+- Amplitude (Actions)
+- Customer.io (Actions)
+- Braze Cloud Mode (Actions)
 - Friendbuy (Cloud Destination)
+- Fullstory Cloud Mode (Actions)
+- Intercom Cloud Mode (Actions)
 
 Segment forwards deletion requests but cannot guarantee that data is deleted from downstream destinations. You must contact these destinations to confirm that they executed the request.
 
