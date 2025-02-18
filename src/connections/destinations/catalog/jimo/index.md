@@ -3,7 +3,23 @@ title: Jimo Destination
 id: 6294dd197382c750f0fe1e2d
 ---
 
-[Jimo](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} enables product teams to connect with end-users in any step of the product lifecycle from ideas, shaping to release, multiplying by 5 users’ engagement and loyalty over a product.
+[Jimo](https://usejimo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} is a Digital Adoption Platform (DAP) that helps B2B SaaS companies create seamless, interactive onboarding and engagement experiences—without writing a single line of code.
+
+With Jimo, product teams can:
+
+✅ Guide users effortlessly through key workflows with in-app tours and checklists.
+
+✅ Boost feature adoption with contextual tooltips and announcements.
+
+✅ Understand user behavior and optimize engagement with built-in analytics.
+
+
+**Why integrate Jimo with Segment?**
+
+By connecting Jimo to Segment, you can:
+- Leverage real-time user data to trigger personalized experiences.
+- Sync customer insights across your stack to enhance user journeys.
+- Measure the impact of your onboarding and feature adoption efforts.
 
 Jimo maintains this destination. For any issues with the destination, [contact the Jimo Support team](mailto:support@usejimo.com).
 
