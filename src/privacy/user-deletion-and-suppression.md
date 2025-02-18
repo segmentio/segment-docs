@@ -72,7 +72,7 @@ Segment has a 30-day SLA for completing deletion requests in Segment's internal 
 > warning "This 30-day SLA is limited to only Segment's internal stores"
 > Segment cannot guarantee that deletions in your Amazon S3 instance, your connected data warehouse, or other third-party destinations will be completed during that 30-day period.
 
-Segment forwards your deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to), but you should confirm that each partner fulfills the request. You will also need to contact any unsupported Destinations separately to manage user data deletion.
+Segment forwards your deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to), but you should confirm that each partner fulfills the request. You will also need to contact any unsupported destinations separately to manage user data deletion.
 
 > info "Users that you UNSUPPRESS after issuing a deletion request may have remaining data"
 > If you **UNSUPPRESS** a user after issuing a deletion request for that user, Segment's deletion functionality does not clean up data sent after removing the user from the suppression list.
@@ -93,7 +93,7 @@ To [remove a user from the suppression list](#remove-a-user-from-the-suppression
 
 ##### Suppress a new user
 
-The Suppressed Users tab in Segment App (Settings > End User Privacy) allows you to create new Suppression requests and also shows a list of `userId`s which are **actively** being suppressed.
+The Suppressed Users tab in Segment App (Settings > End User Privacy) allows you to create new Suppression requests and also shows a list of `userId`s that are **actively** being suppressed.
 
 To create a suppression regulation and add a `userId` to this list, click **Suppress New User**, and enter the `userId` in the field that appears. Then click **Request Suppression**.
 
