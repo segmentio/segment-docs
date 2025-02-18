@@ -13,7 +13,7 @@ Use Analytics-Kotlin (Android) to configure [destination filters](/docs/connecti
 
 To get started with destination filters on mobile device-mode destinations using Kotlin:
 
-1. Download and install the dependency.
+1. Download and install the dependency, replacing `latest_version` with the current version: 
   ```java
     implementation 'com.segment.analytics.kotlin:destination-filters:<latest_version>'
   ```
