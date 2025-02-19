@@ -3,6 +3,8 @@ title: Voucherify Destination
 rewrite: true
 id: 5e42baaecf559c535c8cbe97
 hide-personas-partial: true
+private: true
+hidden: true
 ---
 [Voucherify](https://voucherify.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team.
 
