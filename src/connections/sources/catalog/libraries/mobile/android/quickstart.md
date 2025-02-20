@@ -80,7 +80,7 @@ Ensure that the necessary permissions are declared in your application's `Androi
 > success ""
 > For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The `identify` method is one of Segment's core API methods. It's how you tie one of your users and their actions to a recognizable userId. It also lets you record traits about the user, like their email, name, account type, etc. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/android#identify).
+The Identify call is one of Segment's core API methods. It's how you tie one of your users and their actions to a recognizable `userId`. It also lets you record traits about the user, like their email, name, and account type. You can read more about it in the [Identify reference](/docs/connections/sources/catalog/libraries/mobile/android#identify).
 
 When and where you call `identify` depends on how your users are authenticated, but doing it in the `onCreate` method of your [Application](http://developer.android.com/reference/android/app/Application.html) class would be most common, as long as you know who your user is. If your user is still anonymous, you should skip this part and we'll attribute the subsequent events to an `anonymousId` instead.
 

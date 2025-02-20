@@ -642,7 +642,7 @@ Segment will need to be able to call ("invoke") your Lambda in order to process 
 To create an IAM policy:
 1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/){:target="_blank"}  and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html){:target="_blank"} to allow Segment permission to invoke your Lambda function.
 
-2. Select **Create Policy from JSON** and use the following template policy in the `Policy Document` field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. Here's example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`. You can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created.
+2. Select **Create Policy from JSON** and use the following template policy in the `Policy Document` field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. Here's an example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`. You can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created.
 
 ```json
 {

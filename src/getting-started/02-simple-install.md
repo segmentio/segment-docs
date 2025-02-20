@@ -112,7 +112,7 @@ analytics.identify(' {{user.id}} ', {
 <br>
 With that call in your page footer, you successfully identify every user that visits your site.
 <br><br>
-> info ""
+> success ""
 > You've completed a basic CRM set up. Return to the Segment app to enable Salesforce, Intercom, or your CRM system of choice and Segment starts sending all of your user data to it.
 
 <br>

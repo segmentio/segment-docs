@@ -836,7 +836,7 @@ The same value for IDFA will used across all (device and cloud-mode) integration
 
 
 > success ""
-> Analytics-ios can continue to collect events without the IDFA until a user is prompted and only upon user consent the `advertisingId` field is added to the event payload.
+> Analytics-iOS can continue to collect events without the IDFA until a user is prompted and only upon user consent the `advertisingId` field is added to the event payload.
 
 Ad-tracking affects two keys under the `context` object of every event:
 
