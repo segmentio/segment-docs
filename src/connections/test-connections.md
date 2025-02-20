@@ -3,54 +3,43 @@ title: "Event Tester"
 ---
 
 
-Segment has an Event Tester that enables you to test your connections between Segment and your destination. You can access the Event Tester from your Source Debugger, or from your destination settings.   
+Segment's Event Tester enables you to test your connections between Segment and your destination. You can inspect both the request sent from Segment and the response you receive back from the destination. You can use the Event Tester to: 
 
-> info "Available for server-side event streaming destinations only"
-> This feature is only available for server-side integrations (also known as cloud-mode destinations). You can't use this for client-side integrations (also known as device-mode destinations). 
+*   ensure an event successfully arrives to a specific destination
+*   ensure your new destination is configured correctly
 
-## Use Cases
-
-There are two scenarios where you might want to use the Event Tester:
-
-*   ensuring an event is successfully making it to a specific destination
-*   ensuring your new destination is configured correctly
+The Event Tester sends a real event that will appear in your end tool alongside your existing data. 
 
 
-## Ensuring an event is successfully making it to a specific destination
+> info ""
+> This feature is only available for server-side, [cloud-mode](/docs/connections/destinations/#connection-modes) integrations. It doesn't work for client-side, [device-mode](/docs/connections/destinations/#connection-modes) integrations. 
 
-**1. Choose an event from the Source Debugger that you want to debug and select "Validate"**
+## How it works
 
-Go to your Source Debugger, select an event and in the top right hand side of the debugger view, select "Validate".
+> info ""
+> You must have write access in your Segment workspace to use the Event Tester. 
 
-![Screenshot of the Debugger tab, with a Checkout Started event selected and an error pointing to the Validate button.](images/event-tester_GgyOswJA.png)
+> warning ""
+> Make sure you have mappings enabled for your destination. The event tester only tests the enabled mappings for the destination. 
 
-**2. Choose the destination you want to test with**
+To use the Event Tester: 
+1. Navigate to **Connections > Destinations** and select your destination.
+2. Click the **Event Tester** tab. 
+3. Select the type of test event. You can choose from: Track, Identify, Page, Screen, Group. 
+4. Enter your test event payload. You can type in your own event or choose from **Load event from source** or **Generate sample event**.
+   * **Load event from source**: Segment loads an event based on your source. 
+   * **Generate sample event**: Segment generates a sample event for you. 
+5. Click **Send test event to destination**. 
+  
+If your test event successfully sends to the destination, you can see in the **View test outcome** section:
+* The request and the response
+* How many of your mappings matched
+* The total number of API calls that were made as one test event can result in multiple API calls. 
+* Which mappings were successful and which ones failed
 
-Select the destination that you want to test this event with. At this time, you can only use the Event Tester for cloud-mode (server side) destinations.
+![Screenshot of the Event Tester with a Track test event that resulted in 4 API calls](images/event-tester2025.png)
 
-![A screenshot of the destination selection pop up modal](images/event-tester_2JfoKddf.png)
-
-**3. Send event to destination**
-
-The event payload from your debugger that you just selected will automatically load in the JSON view. You have the option to edit the payload if you want. Assuming it looks good, select "Send Event" at the bottom right of the screen. 
-
-![A screenshot of the Event Tester, with a track event selected](images/event-tester_J7TEDYvY.png)
-
-**4. Ensure you're happy to send the test event to the destination**
-
-This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
-
-![Screenshot of the popup that appears when you click the Send test event button.](/docs/guides/images/asset_Yxw1DJqb.png)
-
-**5. View the Partner API response**
-
-On the right hand side of the Event Tester you will see the response from the partner API. At the top, Segment provide of summary of the response. Below is the raw response payload Segment received that you can use for further debugging if necessary. 
-
-![A screenshot of the Event Tester with a successful response from the destination](images/event-tester_il6mvexS.png)
-
-If you are receiving an error and are unsure how to fix the issue, visit the partner docs (for example [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors){:target="_blank”}) or contact the partner support team. 
-
-## FAQ
+## FAQs
 
 #### Why can't I see the Event Tester when I log into my workspace?
 
