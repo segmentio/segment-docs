@@ -47,3 +47,8 @@ If a company is created without an attached user, the company does not appear on
 
 ### Why isn’t a user getting attached to a company?
 When you use the Identify Company action, Segment creates or updates a company's information. In the same action, Segment also attaches the user in your group call to that company. If the user doesn't exist in Intercom when the action runs, Segment creates or updates the company but can't attach the user. Ensure the user is created in Intercom first.
+
+### Why do I get a 404 Not Found error when sending Track events to Intercom?
+A `404 Not Found` error typically occurs when attempting to update a user in Intercom who does not yet exist in the system. This can happen if an Identify event, which includes the corresponding `userId`, was not sent before the Track event that resulted in the `404` error.
+
+To resolve this, ensure that Identify events are sent **before** Track events to guarantee proper processing and avoid errors.
