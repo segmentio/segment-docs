@@ -122,6 +122,9 @@ Yes. HubSpot will automatically redirect API requests directly to an EU data cen
 ### How do I attribute a custom behavioral event with a user token instead of Email?
 Event payloads should contain an email with either a valid format, empty string, or a `null` value. As a result, the user token takes precedence and is validated in a `Send custom behavioral event` mapping. Segment can't deliver the event to your destination if the email is invalid.
 
+### How can I update companies in HubSpot if they never were associated with a Segment `group_id`? 
+Records that were created from a pipeline outside of Segment won't be associated with a special field called `segment_group_id`. Segment uses `segment_group_id` to create companies in HubSpot that way we can easily use the same `segment_group_id` field to update those companies in the future if need be. If companies weren't created by Segment, you will need to use a different field to update existing companies through Segment. The identifier HubSpot sets per company (regardless of where it was created) is `hs_object_id` which you can use if you have it. You can provide the key/value pair in the Company Search fields section of the Upsert Company mapping. If you don't have that value, you can use a different field that can uniquely identify the company in HubSpot.
+
 ### How can I disable or delete a destination from Segment?
 Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.
 
