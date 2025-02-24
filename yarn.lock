@@ -14,7 +14,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-js@npm:1.5.1, @algolia/autocomplete-js@npm:^1.4.0":
+"@algolia/autocomplete-js@npm:^1.4.0":
   version: 1.5.1
   resolution: "@algolia/autocomplete-js@npm:1.5.1"
   dependencies:
@@ -28,15 +28,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-plugin-algolia-insights@npm:^1.4.0":
-  version: 1.5.1
-  resolution: "@algolia/autocomplete-plugin-algolia-insights@npm:1.5.1"
+"@algolia/autocomplete-plugin-algolia-insights@npm:^1.18.0":
+  version: 1.18.1
+  resolution: "@algolia/autocomplete-plugin-algolia-insights@npm:1.18.1"
   dependencies:
-    "@algolia/autocomplete-js": 1.5.1
-    "@algolia/autocomplete-shared": 1.5.1
+    "@algolia/autocomplete-shared": 1.18.1
   peerDependencies:
-    search-insights: ^1.0.0
-  checksum: dcbe88f822f91db2f9324f170fbdf5dbe103e1981af251dd400575e06c74caa399aa01f4bb6c6080bf8990647fb5ba4c5ff6f3673ce8e1674900bc9d32f8639f
+    search-insights: ">= 1 < 3"
+  checksum: 249bdf7d02a50ca0b6acf0de5412d5237603fdda9adb1a8a52b5d8a66bb44dfa06f43e2f7e2522277671e1a2d7464fa207fa20138659816362d4476a72587b35
   languageName: node
   linkType: hard
 
@@ -49,6 +48,16 @@ __metadata:
     "@algolia/client-search": ^4.9.1
     algoliasearch: ^4.9.1
   checksum: 717b5532cb2cd112c08fde0d62590d0a3eb7b51b0bcd62de6a86ddc15ecc13923b0bb6b8b3fa332c73422330b722714a99dbf0d09ec585ac60d80cb6546de5c9
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-shared@npm:1.18.1":
+  version: 1.18.1
+  resolution: "@algolia/autocomplete-shared@npm:1.18.1"
+  peerDependencies:
+    "@algolia/client-search": ">= 4.9.1 < 6"
+    algoliasearch: ">= 4.9.1 < 6"
+  checksum: 1f50466be0a1cc668366e9dff9a878117c5d9bc3886b20bbd7a7ff86c29a1d52ca19a9ec81360bd86a33f8efaa4a6c0ea56c3261a3cfdea13ec6f03fececc32a
   languageName: node
   linkType: hard
 
@@ -7673,7 +7682,7 @@ __metadata:
   resolution: "segment-docs@workspace:."
   dependencies:
     "@algolia/autocomplete-js": ^1.4.0
-    "@algolia/autocomplete-plugin-algolia-insights": ^1.4.0
+    "@algolia/autocomplete-plugin-algolia-insights": ^1.18.0
     "@algolia/client-search": ^4.10.5
     "@babel/cli": ^7.15.7
     "@babel/core": ^7.15.5
