@@ -54,8 +54,8 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 
 The SendGrid source's streaming component listens in real time for inbound webhooks from SendGrid's Event Notifications. The source batches these events for upload on your next warehouse flush. **These events only append to your warehouse.**
 
-> note ""
-> **NOTE:** If you don't use SendGrid's marketing features, this will be the only data that Segment receives from SendGrid. There isn't a way to retrieve email event history from SendGrid, so you will only have access to data that Segment collected after you successfully enable this component of the source destination.
+> info ""
+> If you don't use SendGrid's marketing features, this will be the only data that Segment receives from SendGrid. There isn't a way to retrieve email event history from SendGrid, so you will only have access to data that Segment collected after you successfully enabled this integration.
 
 
 ## Collections

@@ -430,7 +430,7 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
 ## Test your migrated source
 You can validate that you configured your migrated source correctly on the AWS S3 destination page in the Segment app. 
 
-> note "Source editing permissions required"
+> warning "Source editing permissions required"
 > In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/). 
 
 To verify that you migrated your source correctly: 

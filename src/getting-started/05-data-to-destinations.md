@@ -45,10 +45,10 @@ We also feel that it's really important to have a data warehouse, so you can get
 
 Warehouses are a special type of destination which receive streaming data from your Segment sources, and store it in a table [schema based on your Segment calls](/docs/connections/storage/warehouses/schema/). This allows you to do a lot of interesting analytics work to answer your own questions about what your users are doing and why.
 
-> note ""
-> All customers can connect a data warehouse to Segment. Free and Team customers can connect one, while Business customers can connect as many as needed.
+> success ""
+> All customers can connect a data warehouse to Segment. Free and Team customers can connect one warehouse, while Business customers can connect as many as needed.
 
-You should spend a bit of time [considering the benefits and tradeoffs of the warehouse options](https://segment.com/academy/choosing-stack/how-to-choose-the-right-data-warehouse/), and then choose one from our [warehouse catalog](/docs/connections/storage/catalog/).
+You should spend a bit of time [considering the benefits and tradeoffs of the warehouse options](https://segment.com/academy/choosing-stack/how-to-choose-the-right-data-warehouse/), and then choose one from Segment's [warehouse catalog](/docs/connections/storage/catalog/).
 
 When you choose a warehouse, you can then use the steps in the documentation to connect it. This may require that you create a new dedicated user (or "service user") to allow Segment to access the database.
 

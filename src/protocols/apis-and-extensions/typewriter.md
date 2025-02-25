@@ -506,7 +506,7 @@ $ npx typewriter development
 # To build a production client:
 $ npx typewriter production
 ```
-> note ""
+> info "Run-time validation support"
 > Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv){:target="_blank”} (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema. For languages that don't support run-time validation, the development and production clients are identical.
 
 Segment recommends you to use a development build when testing your application locally, or when running tests. Segment generally recommends _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.

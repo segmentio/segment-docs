@@ -49,8 +49,8 @@ Still hungry for more? Check out our list of [other Segment Resources](https://s
 
 If you're experiencing problems, have questions about implementing Segment, or want to report a bug, you can fill out our [support contact form here](https://segment.com/help/contact/) and our Product Support Engineers will get back to you.
 
-> note ""
-> You need a Segment.com account in order to file a support request. Don't worry! You can always sign up for a free workspace if you don't already have one.
+> info ""
+> You need a Segment account in order to file a support request. If you don't already have a Segment account, you can sign up for a free workspace.
 
 
 {% include components/reference-button.html  href="/getting-started/" newtab="false" icon="symbols/arrow-left.svg" title="Back to the index" description="Back to the Getting Started index" variant="related" %}

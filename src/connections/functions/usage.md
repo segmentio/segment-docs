@@ -31,8 +31,8 @@ Another way to provide a rough estimate is to use an expected source function ti
 - A source function receiving 1M requests and taking an average of 100 milliseconds will use 27.8 hours of execution time: `1,000,000 events * 100ms = 100,000,000ms = 28 hours`
 - A destination function receiving 1B requests and taking an average of 200 milliseconds will use 55,556 hours: `1,000,000,000 * 200ms = 200,000,000,000ms = 55,556 hours`
 
-> note ""
-> **Note:** Test runs are generally slower than the time it takes a function to run once it's deployed. For more accurate estimates, base your estimates on sending data into a production function, and not on timing the test runs.
+> info "Test runs are generally slower than the time it takes a function to run once it's deployed"
+> For more accurate estimates, base your estimates on sending data into a production function, and not on timing the test runs.
 
 You can (and should!) use [Destination Filters](/docs/connections/destinations/destination-filters/) to reduce the volume of events reaching your function. Filtering events with a Destination Filter prevents the Function from being invoked for that event entirely.
 

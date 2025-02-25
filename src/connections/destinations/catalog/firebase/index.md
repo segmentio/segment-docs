@@ -41,8 +41,8 @@ buildscript {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-> note ""
-> **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
+> warning "Use the `aar` package when adding the Segment-Firebase SDK"
+> The Firebase SDK requires Android resources which are available on `aar` packages.
 
 
 <ol style="counter-reset: none;"><li value="5" markdown=1>

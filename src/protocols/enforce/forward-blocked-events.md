@@ -11,8 +11,5 @@ Since forwarding happens server to server, Segment recommends creating a [HTTP T
 
 ![A screenshot of the blocked events and traits section on the Schema Configuration settings page](../images/blocked_event_forwarding.png)
 
-> note ""
-> Only blocked events are forwarded to the source. Events with omitted traits are not forwarded. Instead, Segment inserts a `context.protocols` object into the event payload which contains the omitted properties or traits.
-
-> note ""
-> Billing Note: Events forwarded to another Source count towards to your MTU counts. Blocking and discarding events does not contribute to your MTU counts.
+> info "Blocked events and MTUs"
+> Only blocked events are forwarded to the source, and count toward your MTU limits. Events with omitted traits are not forwarded, and do not contribute to your MTU counts. Instead, Segment inserts a `context.protocols` object into the event payload which contains the omitted properties or traits.

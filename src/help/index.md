@@ -9,7 +9,7 @@ hidden: true
 
 Email support is available for all [Segment support plans](https://segment.com/support-plans/). If you're experiencing problems, have questions about implementing Segment, or want to report a bug, you can fill out the [support contact form](https://segment.com/help/contact/) and the Success Engineering team will get back to you.
 
-> note ""
+> info ""
 > You need a Segment account to file a support request. If you don't have one, sign up for a free workspace and then send your request.
 
 ### Segment Support Business Hours

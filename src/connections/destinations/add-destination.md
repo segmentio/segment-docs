@@ -92,7 +92,7 @@ Each destination can also have destination settings. These control how Segment t
 
 ## Connecting one source to multiple instances of a destination
 
-> note ""
+> success ""
 > Multiple-destination support is available for all Segment customers on all plan tiers.
 
 Segment allows you to connect a source to multiple instances of a destination. You can use this to set up a single Segment source that sends data into different instances of your analytics and other tools.

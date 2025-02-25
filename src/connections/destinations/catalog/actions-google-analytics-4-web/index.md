@@ -162,7 +162,7 @@ For event data to be sent downstream to Google Analytics:
 
 Google has introduced a feature for collecting [user-provided data](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"}, which Segment doesn't support. If you’ve enabled this feature in your Google Analytics 4 account, it is irreversible and may cause issues with receiving data. If everything else is set up correctly but data is still not appearing, check if this feature is enabled. If it is, you’ll need to create a new GA4 space to resolve the issue.
 
- > note "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
+ > info "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
  > If you need to override this setting for your particular use case, see [Can I override my send_page_view selection that I declared in Settings?](#can-i-override-my-send_page_view-selection-that-i-declared-in-settings)
 
 If no events are flowing to your GA4 instance, use one of the Debugging Tools to check the sequence of GA4 events.

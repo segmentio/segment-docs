@@ -98,7 +98,7 @@ analytics.track("View Product", buildJsonObject {
 ```
 When you `track` an event, Segment sends that event to Braze as a custom event.
 
-> note ""
+> success ""
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 ### Order Completed
