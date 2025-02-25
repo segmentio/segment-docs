@@ -25,9 +25,6 @@ To use the Data Graph, you'll need the following:
 > warning ""
 > Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
 
-> info ""
-> Data Graph currently only supports workspaces in the United States.
-
 To get started with the Data Graph, set up the required permissions in your warehouse. Segment supports the following: 
 - Linked Audiences: [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), and [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) 
 - Linked Events: [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), and [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/) 
