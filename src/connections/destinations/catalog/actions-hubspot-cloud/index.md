@@ -125,7 +125,7 @@ Event payloads should contain an email with either a valid format, empty string,
 ### How can I update companies in HubSpot if they never were associated with a `segment_group_id`? 
 Segment uses the `segment_group_id` field to create and update companies in HubSpot. Records that were created from a pipeline outside of Segment won't have the `segment_group_id` field.  If your companies aren't associated with a `segment_group_id`, you must use another field that uniquely identifies the company in HubSpot, like the `hs_object_id` field, to make updates to your companies.
 
-To use your unique field to update companies, navigate to your Upsert Company mapping and provide the key/value pair assosciated with the `hs_object_id` field` in the Company Search fields section. 
+To use your unique field to update companies, navigate to your Upsert Company mapping and provide the key/value pair assosciated with the `hs_object_id` field in the Company Search fields section. 
 
 ### How can I disable or delete a destination from Segment?
 Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.
