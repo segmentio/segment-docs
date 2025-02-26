@@ -5,10 +5,10 @@ title: "Event Tester"
 
 Segment's Event Tester enables you to test your connections between Segment and your destination. You can inspect both the request sent from Segment and the response you receive back from the destination. You can use the Event Tester to: 
 
-*   ensure an event successfully arrives to a specific destination
-*   ensure your new destination is configured correctly
+*   An event successfully arrives to a specific destination
+*   Your new destination is configured correctly
 
-The Event Tester sends a real event that will appear in your end tool alongside your existing data. 
+The Event Tester sends a real event that appears in your end tool alongside your existing data. 
 
 
 > info ""

@@ -162,8 +162,8 @@ To test a destination action, follow the instructions in [Event Tester](/docs/co
 You can also test within the mapping itself. To test the mapping:
 1. Navigate to the **Mappings** tab of your destination. 
 2. Select a mapping and click the **...** and select **Edit Mapping**. 
-3. In step 2 of the mappings edit page, click **Load event from source** to add a test event from the source, or you can select **Generate sample event** for Segment to generate a sample event for you. Optionally, you can enter your own event instead. 
-4. Scroll to step 5 on the page, and click **Send test event** to test the mapping and view the response from the destination.
+3. In step 2 of the **Set up mappings** page, click **Load event from source** to add a test event from the source, select **Generate sample event** for Segment to generate a sample event for you, or enter your own event. 
+4. Scroll to step 5 on the page and click **Send test event** to test the mapping and view the response from the destination.
 
 > info "Test Mapping might not return the events you're looking for"
 > Segment only surfaces a small subset of events for the Test Mapping feature and might not always return the event you're looking for. If you'd like to test with a specific event, copy a specific event from your [Source Debugger](/docs/connections/sources/debugger/) and paste it into the **Add test event** interface.
