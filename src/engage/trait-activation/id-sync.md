@@ -57,7 +57,7 @@ With Customized setup, you can choose which identifiers you want to map downstre
 - ID Sync used on existing audience destinations or destination functions won't resync the entire audience. Only new data flowing into Segment follows your ID Sync configuration. 
 - Segment doesn't maintain ID Sync history, which means that any changes are irreversible. 
 - You can only select a maximum of three identifiers with an `All` strategy.
-- Segment recommends that you map Segment properties to destination properties using [Destination Actions](/docs/connections/destinations/actions/#components-of-a-destination-action) instead of ID Sync.
+- Segment recommends that you map Segment properties to destination properties using [Destination Actions](/docs/connections/destinations/actions/#components-of-a-destination-action) instead of ID Sync. If you use ID Sync to map properties, Segment adds the property values as traits and identifiers to your Profiles. 
 
 
 ## FAQs
