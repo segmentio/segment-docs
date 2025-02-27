@@ -35,9 +35,9 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 - **Sandbox support**. Test with a HubSpot sandbox account before implementing in your main production account to feel confident in your configuration.
 - **Support for custom behavioral events**. Send [custom behavioral events](https://developers.hubspot.com/docs/api/analytics/events){:target="_blank"} and event properties to HubSpot.
 - **Create records in custom objects**. Use your Segment events to create records in any standard or custom object in your HubSpot account.
-
-> note ""
-> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+  
+  > info ""
+  > A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 
 ## Getting started
 

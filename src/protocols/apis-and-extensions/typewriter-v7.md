@@ -38,8 +38,8 @@ To get started using Typewriter with iOS:
 2. Install `analytics-ios` in your app. You just need to complete [`Step 1: Install the SDK`](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-2-install-the-sdk) from the [`analytics-ios` Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart).
 3. Run `npx typewriter@7 init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
-> note ""
-> Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
+> info "Regenerate your Typewriter client"
+> Run `npx typewriter` to regenerate your Typewriter client. You must do this each time you update your Tracking Plan.
 
 You can now import your new Typewriter client into your project using XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
 
@@ -86,8 +86,8 @@ To get started using Typewriter with Android:
 2. Install `analytics-android` in your app, and configure the singleton analytics instance by following the first three steps in in the [Android Quickstart](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-2-install-the-library).
 3. Run `npx typewriter@7 init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
-> note ""
-> You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+> info "Regenerate your Typewriter client"
+> Run `npx typewriter` to regenerate your Typewriter client. You must do this each time you update your Tracking Plan.
 
 You can now use your Typewriter client in your Android Java application:
 
