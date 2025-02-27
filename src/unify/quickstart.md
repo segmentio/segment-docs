@@ -66,7 +66,7 @@ A good test is to look at _your own_ user profile, and maybe some colleagues' pr
 If your user profiles look wrong, or you aren't confident users are being accurately defined and merged, stop here and troubleshoot. It's important to have accurate identity resolution before you continue. See the [detailed Identity Resolution documentation](/docs/unify/identity-resolution/) to better understand how it works, and why you may be running into problems. (Still need help? [Contact Segment](https://segment.com/help/contact/){:target="_blank"} for assistance.)
 
 > info ""
-> Identify events triggered by a user don't appear in the Events tab of their profile. However, the traits from these events are still assigned to the profile and can be viewed under the Traits tab.
+> Identify events triggered by a user don't appear in the Events tab of their profile. However, the traits from these events are still assigned to the profile. You can view them under the Traits tab.
 
 
 
