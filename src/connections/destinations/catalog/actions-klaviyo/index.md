@@ -82,7 +82,7 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 ## FAQ
 
-#### Dealing with Error Responses from Klaviyo's API
+#### Dealing with error responses from Klaviyo's API
  
 ##### `429` Too Many Requests
 
