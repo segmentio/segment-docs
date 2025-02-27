@@ -7,10 +7,9 @@ redirect_from:
 
 {% include content/papi-ga.html %}
 
+This reference provides a comprehensive overview of the Segment Destination Filter query language. For information on the Destination Filters API (including information on migrating from the Config API), visit the [Destination Filters API reference](https://docs.segmentapis.com/tag/Destination-Filters){:target="_blank"}.
 
-Destination Filter Reference documentation can be found in the [main Config API reference docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
-
-The Transformations API uses Filter Query Language (FQL) to filter JSON objects and conditionally apply transformations. You can use FQL statements to:
+The [Transformations API](https://docs.segmentapis.com/tag/Transformations/){:target="_blank"} uses Filter Query Language (FQL) to filter JSON objects and conditionally apply transformations. You can use FQL statements to:
 - Apply filters that evaluate to `true` or `false` based on the contents of each Segment event. If the statement evaluates to `true`, the transformation is applied, and if it is `false` the transformation is not applied.
 - [Define new properties based on the result of an FQL statement](/docs/protocols/transform/#use-cases).
 

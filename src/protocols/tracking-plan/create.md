@@ -48,6 +48,12 @@ To download a Tracking Plan:
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
+The columns in the Tracking Plan CSV file corresponds to the Tracking Plan UI options. For example:
+
+* **Allowed Property Values**: In the Tracking Plan UI, when the property type is 'String', you have the option to add a list of permitted values.
+* **Enum Values**: When the property type is 'Enum', you have the option to add a list of permitted values.
+
+
 Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-plan) as a template for a new Tracking Plan or use it to make changes to an existing Tracking Plan.
 
 ## Upload a Tracking Plan

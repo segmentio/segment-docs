@@ -25,6 +25,8 @@ Segment currently supports the following types of computed traits:
   - [Last](#last)
   - [Unique List](#unique-list)
   - [Unique List Count](#unique-list-count)
+  - [Predictions](/docs/unify/traits/predictions/)
+  - [Recommended Items](/docs/unify/traits/recommended-items/)
 - [Conditions](#conditions)
 - [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
 - [Editing Realtime Traits](#editing-realtime-traits)
@@ -220,6 +222,10 @@ You can query a user's traits (such as `first_name`, `last_name`, and more):
 By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example, `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
 You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more.
+
+## Deleting Computed Traits
+
+When computed traits are deleted, any user that had a value for that trait will now have a custom trait on the Unify profile. 
 
 ## Downloading your Computed Trait as a CSV file
 

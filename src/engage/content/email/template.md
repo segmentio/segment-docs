@@ -2,6 +2,20 @@
 title: Email Template
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners:
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"} <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"} <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"} <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"} <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"} <br>
+>[Twilio Engage Foundations Documentation](/docs/engage/quickstart/) <br>
+
 Use Twilio Engage to build personalized email templates to store and use throughout marketing campaigns.  
 
 Build an email template from scratch using the [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [HTML Editor](/docs/engage/content/email/html-editor/). Include [personalized content](#personalize-with-merge-tags) in the subject line, preview text, and email body to engage with users based on their profile traits and actions.
@@ -15,7 +29,7 @@ To configure an email template, click **Create Template**.
 
 1. Select **Email**, and click **Configure**.
 
-> note ""
+> info ""
 > You must first connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment space to build email templates in Engage. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
 2. Configure the email template.
@@ -54,7 +68,6 @@ You can send test emails before you include a template in marketing campaigns.
 > - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
 
 {% endcomment %}
-
 
 > info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
@@ -121,9 +134,17 @@ The manage preference link lets your customers opt in and out of email groups on
 
 For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
+### Arrays and objects in Broadcasts
+Segment doesn't support profile traits in object and array datatypes in [Broadcasts](/docs/engage/campaigns/broadcasts/), but you cam use them in [Journeys](/docs/engage/journeys/).
+
 ## Next steps
 
 - View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 
 - You can also use the Templates screen in Engage to [build SMS templates](/docs/engage/content/sms/template/).
- 
+
+## FAQs
+
+### Do updates to an email template automatically apply to Journey steps using it?
+
+When you add a template to a Journey step, it becomes a copy specific to that step. Changes made to the original template won’t update the Journey version, and edits made in the Journey step won’t affect the original template. This keeps your Journey changes separate while preserving the original for reuse.

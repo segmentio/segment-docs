@@ -58,6 +58,7 @@ A user's `anonymousId` changes when any of the following conditions are met.
 - The user clears their cookies _and_ `localstorage`.
 - Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session.
 - Your site or app calls `analytics.identify()` with a userId that is different from the current userId.
+- Your site or app is setting `ajs_user_id` to an empty string or calling `analytics.user().id('')` before calling `analytics.identify()`. This sequence of events will result in a new anonymousId being set when `analytics.identify()` is called.
 
 
 ### Override the Anonymous ID from the Segment snippet
@@ -131,14 +132,14 @@ analytics.track('Email Clicked', {
 
 Traits are individual pieces of information that you know about a user or a group, and which can change over time.
 
-The `options` dictionary contains a sub-dictionary called `context` which automatically captures data depending on the event- and source-type. See the [Context documentation](https://segment.com/docs/connections/spec/common/#context) to learn more.
+The `options` dictionary contains a sub-dictionary called `context` which automatically captures data depending on the event- and source-type. See the [Context documentation](/docs/connections/spec/common/#context) to learn more.
 
 The `context` object contains an optional `traits` dictionary that contains traits about the current user. You can use this to store information about a user that you got from previous Identify calls, and that you want to add to Track or Page events.
 
 The information you pass in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, or Google Analytics); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
 
-> note ""
-> The `options` object described in the previous section behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause `anonymousId` to persist across different calls.
+> success ""
+> The `traits` object in `options.context.traits` does not cause `anonymousId` to persist across different calls.
 
 Consider this Identify event:
 

@@ -358,8 +358,10 @@ The Segment Adobe Analytics Merchandising setting runs as follows:
   If you don't include a value, Segment sends the event without one, and Adobe understands this as an increment of `1`. If you configure a value and the value is not present on the `track` or `page` call, Segment does not send the event to Adobe.
 - Map of product eVars to set on the products string. This is only supported at the product level, as expected by Adobe Analytics. <!-- TODO LR Note: this whole section could use work, but this part is especially confusing-->
 
-> note ""
-> **Note**: Some events in the Ecommerce spec do not use the "products" array and product information is located in the top level property object, for example the [Product Added Spec](/docs/connections/spec/ecommerce/v2/#product-added). Make sure you specify `properties.key` as the Segment key in the mapping when adding an eVar for **Product Added**, **Product Removed**, and **Product Viewed**.
+> info "Product Added, Product Removed, and Product Viewed events do not use the "products" array"
+> Product Added, Product Removed, and Product Viewed events store product information in the top level property object rather than in the "products" array. When adding an eVar to these events, specify `properties.key` as the Segment key in the mapping.
+> 
+> For more information, see the [Product Added Spec](/docs/connections/spec/ecommerce/v2/#product-added).
 
 Let's take the following example:
 
@@ -454,7 +456,7 @@ analytics.page({
 
 ## Custom Traffic Variables - props
 
-Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html){:target="_blank”}. You can map your Segment properties in your destination settings to any of your Adobe props.
+Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation on [Traffic variables (props) overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html){:target="_blank”}. You can map your Segment properties in your destination settings to any of your Adobe props.
 
 ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property mapping under the Props tab.](images/prop-mapping.png)
 
@@ -565,10 +567,7 @@ This option allows you to associate specific Adobe events with individual Segmen
 
 ### IMS Region
 
-This option allows you to associate events with IMS Regions.
-
-> note ""
-> **Note**: If you specify this you must also define a `Marketing Cloud Visitor Id`.
+This option allows you to associate events with IMS Regions. If you specify an IMS region, you must also define a `Marketing Cloud Visitor Id`.
 
 ```javascript
  analytics.track({

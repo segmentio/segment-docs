@@ -487,8 +487,8 @@ For HTTPS Web Push to work, you need to host two files in the `root` directory o
 * `manifest.json`
 * `serviceworker.js`
 
-> note ""
-> **Note**: Please make sure the name of the serviceworker file is `serviceworker.js`. Please contact MoEngage support at support@moengage.com if you wish to have some other name for the serviceworker file.
+> info "Serviceworker file naming convention"
+> The name of the serviceworker file must be `serviceworker.js`. Please contact MoEngage support at support@moengage.com if you want to give your serviceworker file a different name.
 
 #### 2.b Add link to manifest in HTML (HTTPS)
 Add the following line in the <head> tag of your page.
@@ -534,8 +534,8 @@ If your website supports the ability for a user to logout and login with a new i
 ### Test Mode and Debugging
 While updating the MoEngage settings on the Segment Dashboard, you can enable the logging functionality of the MoEngage SDK to see the SDK logs on the browser console. Just set `Enable Debug Logging` to `On` and the SDK loads in debug mode.
 
-> note ""
-> **Note**: When you enable debug mode, the events and attributes of the users send to the `TEST` environment of your MoEngage App.
+> success ""
+> When you enable debug mode, Segment sends the events and user attributes to the `TEST` environment of your MoEngage App.
 
 ## MoEngage Web SDK Features
 For information about optional features, see the documentation below:

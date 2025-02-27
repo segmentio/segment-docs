@@ -1,7 +1,6 @@
 ---
 title: Aggregations.io (Actions) Destination
 id: 659eb601f8f615dac18db564
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

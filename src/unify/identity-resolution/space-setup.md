@@ -10,7 +10,7 @@ When starting with Unify, begin by creating a *Dev* space. This will be your san
 
 ## Step two: Configure Identity settings
 
-Before you connect any source to the Dev space, Segment recommends that you first start by reviewing and configuring your Identity settings, as changes to the Identity rules will only be applied to new events received following any updates. Read more on those settings [here](/docs/unify/identity-resolution/identity-resolution-settings/).
+Before you connect any source to the Dev space, Segment recommends that you first start by reviewing and configuring your Identity settings, as changes to the Identity rules will only be applied to new events received following any updates. Read more on those settings in the [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings/) docs.
 
 ## Step three: Set up a connection policy
 
@@ -18,8 +18,8 @@ If you haven't already, Segment highly recommends labeling all your sources with
 
 [](images/connection-policy.png)
 
-> note ""
-> **Note:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
+> info ""
+> The Identity Resolution table can only be edited by Workspace Owners and users with the Identity Admin role.
 
 ## Step four: Connect sources and create test audiences
 

@@ -7,10 +7,19 @@ redirect_from:
 
 Set up Snowflake as your Reverse ETL source. 
 
-At a high level, when you set up Snowflake for Reverse ETL,  the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
+At a high level, when you set up Snowflake for Reverse ETL, the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema <br>(`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
+
+> success ""
+> Segment now supports key-pair authentication for Snowflake Reverse ETL sources. Key-pair authentication is available for Business Tier users only.
+
+> info "Snowflake Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
 
 ## Set up guide
-Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below.
+Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with an encrypted key pair.
+
+> info ""
+> Segment has a Terraform provider, powered by the Public API, that you can use to create a Snowflake Reverse ETL source. See the [segment_source (Resource)](https://registry.terraform.io/providers/segmentio/segment/latest/docs/resources/source){:target="_blank”} documentation for more information.
 
 1. Log in to your Snowflake account.
 2. Navigate to *Worksheets*.
@@ -47,10 +56,22 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    GRANT USAGE ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
    GRANT CREATE SCHEMA ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
    ```
-6. Enter and run the code below to create the username and password combination that will be used to execute queries. Make sure to enter your password where it says `my_strong_password`.
+6. Enter and run one of the following code snippets below to create the user Segment uses to run queries. For added security, Segment recommends creating a user that authenticates using a key pair.
 
+   To create a user that authenticates with a key pair, [create a key pair](https://docs.snowflake.com/en/user-guide/key-pair-auth#configuring-key-pair-authentication){:target="_blank”} and then execute the following SQL commands: 
+   ``` sql
+   -- create user (key-pair authentication)
+   CREATE USER segment_reverse_etl_user
+   DEFAULT_ROLE = segment_reverse_etl
+   RSA_PUBLIC_KEY = 'enter your public key';
+
+   -- role access
+   GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
+   ```
+
+   To create a user that authenticates with a password, execute the following SQL commands:
    ```sql
-   -- create user
+   -- create user (password authentication)
    CREATE USER segment_reverse_etl_user
     MUST_CHANGE_PASSWORD = FALSE
     DEFAULT_ROLE = segment_reverse_etl
@@ -59,4 +80,17 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    -- role access
    GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
    ```
-7. Follow the steps listed in the [Add a Source](/docs/connections/reverse-etl#step-1-add-a-source) section to finish adding Snowflake as a source.
+7. Add the account information for your source.  
+5. Click **Test Connection** to test to see if the connection works.
+6. Click **Add source** if the test connection is successful.
+
+
+Learn more about the Snowflake Account ID in Snowflake's [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"} documentation.
+
+After you've successfully added your Snowflake source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
+
+## Security
+### Allowlisting IPs
+If you create a network policy with Snowflake and are located in the US, add  `52.25.130.38/32` and `34.223.203.0/28` to the "Allowed IP Addresses" list.
+
+If you create a network policy with Snowflake and are located in the EU, add `3.251.148.96/29` to your "Allowed IP Addresses" list.

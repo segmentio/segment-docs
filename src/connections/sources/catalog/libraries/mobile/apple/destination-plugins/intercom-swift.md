@@ -228,4 +228,4 @@ The bundled mobile SDK `reset` method un-registers a user in Intercom. When user
 
 Intercom doesn't support custom arrays or objects. If you want to send a certain user `trait` or event `property` to Intercom, you must send them at the top level instead of in an array or object.
 
-This limitation doThis limitation does not apply if you are mapping custom traits or properties to `company` objects on [Identify calls](/docs/connections/spec/identify/). es not apply, however, for mapping `company` objects on [Identify calls](/docs/connections/spec/identify/). Segment continues to handle that in the same way as before. This is only applicable for any custom traits or properties.
+This limitation does not apply when you are mapping custom traits or properties to `company` objects on [Identify calls](/docs/connections/spec/identify/). Segment continues to handle this in the same way as before. This is only applicable for custom traits or properties.

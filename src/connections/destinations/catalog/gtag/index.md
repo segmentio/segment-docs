@@ -1,11 +1,10 @@
 ---
 title: 'Gtag Destination'
-beta: true
 hidden: true
 strat: google
 ---
 
-> note ""
+> info ""
 > The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/){:target="_blank"} or your CSM. The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/){:target="_blank"} and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target='_blank'}.
 
 
@@ -49,7 +48,7 @@ Pass UTM parameters in the `context` object in `context.campaign`. For Google An
 
 ## Identify
 
-Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en){:target="_blank"}.
+Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this in the [Best practices to avoid sending Personally Identifiable Information (PII)](https://support.google.com/analytics/answer/6366371?hl=en){:target="_blank"} documentation.
 
 ### User ID
 Google Analytics Universal tracking method allows you to set a user ID for your identified visitors. [Read more here](https://support.google.com/analytics/answer/3123663){:target="_blank"}.
@@ -87,7 +86,7 @@ Segment's device-mode Analytics.js library supports them all.
 
 To configure a custom dimension:
 
-1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [here](https://support.google.com/analytics/answer/2709829?hl=en){:target="_blank"}.
+1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [[UA] Create and edit custom dimensions and metrics](https://support.google.com/analytics/answer/2709829?hl=en){:target="_blank"}.
 2. After you've enabled Google Analytics in Segment, you can map traits and properties to your custom dimensions.
 3. From your Segment Workspace, open the destinations catalog and select the Gtag destination, then Settings. Locate Custom Dimensions and declare the mapping.
 
@@ -102,13 +101,13 @@ To configure a custom dimension:
     ![A screenshot of the Google Custom Dimensions page, with Gender mapped to index 1 and User Type mapped to dimension 2.](images/ga-dimension.png)
 
 
-> note ""
-> **Note:** You can map traits and properties to one Custom Dimension in Google Analytics.
+> success ""
+> You can map traits and properties to one Custom Dimension in Google Analytics.
 
 After you map your dimensions, Segment checks the user traits and properties in [Identify](/docs/connections/spec/identify), [Track](/docs/connections/spec/track) and [Page](/docs/connections/spec/page) calls to see if you defined them as a dimension. If you have defined them in your mapping, Segment sends that dimension to Google Analytics.
 
-> note ""
-> **Note:** Segment sends traits in [Identify](/docs/connections/spec/identify) calls that map to Custom Dimensions in Google Analytics when the next [Track](/docs/connections/spec/track) or [Page call](/docs/connections/spec/page) call triggers from the browser.
+> success ""
+> Segment sends traits in [Identify](/docs/connections/spec/identify) calls that map to Custom Dimensions in Google Analytics when the next [Track](/docs/connections/spec/track) or [Page](/docs/connections/spec/page) call triggers from the browser.
 
 Continuing the example above, you can set the **Gender** trait with the value of **Male**, which maps to `dimension 1`. Segment passes this value to Google Analytics with **Viewed History** [Track](/docs/connections/spec/track) calls.
 
@@ -261,8 +260,14 @@ Then you'll instrument your checkout flow with `Viewed Checkout Step` and `Compl
     });
 ```
 
-> note ""
-> ***Note**: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, please do so in this exact spelling!
+<!---- IG 01/2025 
+
+TODO: Semantic properties are not strictly defined at all in the docs (at least, not that I can find) and these properties do not appear in the Ecommerce spec docs. Need to investigate this further in a different ticket/PR/etc.
+
+> info "Semantic properties are case sensitive"
+> Two common properties, `shippingMethod` and `paymentMethod`, are [semantic properties](), are case sensitive. 
+
+--->
 
 You can have any number of steps in the checkout funnel as you'd like. The 4 steps above serve as an example. You'll still need to track the `Order Completed` event per the standard [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
@@ -433,8 +438,8 @@ analytics.ready(function(){
 })
 ```
 
-> note ""
-> **Important**: Keep in mind you will need to do the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics. See the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207){:target="_blank"} for more information.
+> info ""
+> The data translation/properties mapping must be set up in the `.on()` function before you send the event to Google Analytics. See the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207){:target="_blank"} for more information.
 
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your Google Analytics credentials for the second tracker.
 
@@ -507,8 +512,8 @@ If you'd like to integrate with Google Analytics' [Optimize plugin](https://supp
 
 You may want to deploy Google's [anti-flickering snippet](https://support.google.com/optimize/answer/7100284){:target="_blank"} to prevent the page from flashing / flickering when the A/B test loads, as recommended by Google. You must add this code manually, since it needs to load synchronously.
 
-> note ""
-> Include the Optimize container ID in this snippet.
+> success ""
+> Include the Optimize container ID in the anti-flickering snippet.
 
 
 ## Troubleshooting

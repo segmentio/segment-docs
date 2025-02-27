@@ -162,6 +162,9 @@ Analytics.track(
 - **Primary Field**. When creating a Custom Activity in Marketo, you have to set a Primary Field. If you are unsure which field was set as the primary field, when you are looking at the list of fields for your Custom Activity in Marketo, there will be a red star next to your Primary Field.
 ![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cZuvsHeaepX+.png)
 
+> info ""
+> You can't map fields nested in objects as Marketo Custom Activity property names. You must flatten any objects you may need to access data from either before you send it to Segment, or while using an [Insert Function](/docs/connections/functions/insert-functions/).
+
 ## Page
 
 When you call [`Page`](/docs/connections/spec/page/), Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage){:target="_blank"}. The URL is built from your `.page()` event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
@@ -250,8 +253,8 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 
 1. Your Marketo credentials in your Segment Destination settings need to be updated. Our Marketo Destination used Marketo's SOAP API and Marketo V2 uses Marketo's REST API which requires different credentials. Check out the [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#getting-started) guide for what credentials you'll need.
 2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo) for exact details on how to create these custom fields in Marketo.
-3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#track).
-4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must create custom fields in Marketo and add them in your Destination settings. In addition, if you are connecting Marketo V2 in Device-mode, an empty form must be created in Marketo to create and update leads. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
+3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [in the Track section of this page](/docs/connections/destinations/catalog/marketo-v2/#track).
+4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must create custom fields in Marketo and add them in your Destination settings. In addition, if you are connecting Marketo V2 in Device-mode, an empty form must be created in Marketo to create and update leads. Detailed instructions [in the Identify section of this page](/docs/connections/destinations/catalog/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
    ![A screenshot of the Smart List tab in Marketo.](images/cPD4kP65buG+.png)
 

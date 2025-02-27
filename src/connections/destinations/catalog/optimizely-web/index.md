@@ -50,7 +50,7 @@ Behind the scenes, Segment's Optimizely Web destination creates a global Optimiz
 Segment forwards the event to Optimizely:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (for example, `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -59,22 +59,20 @@ Segment also handles the following mapping:
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
-> note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags){:target="_blank"} in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however, they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export){:target="_blank"} report.
+> info "Custom Event Tags are not displayed on the Optimizely results page"
+> Optimizely's [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags){:target="_blank"}, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page. However, these tags are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export){:target="_blank"} report. Event Tags can be strings, integers, floating point numbers, or boolean values. Optimizely rejects events with any other data types (for example, arrays).
 
 ### Page
 
-Segment maps `page` calls to its own `track` events, i.e. invoking `analytics.page('Page Viewed')` using Segment's API maps the event to a `analytics.track('Page Viewed')` event. Segment maps the `track` event to other downstream destinations like a regular Segment `track` event.
+Segment maps `page` calls to its own `track` events. For example, invoking `analytics.page('Page Viewed')` using Segment's API maps the event to a `analytics.track('Page Viewed')` event. Segment maps the `track` event to other downstream destinations like a regular Segment `track` event.
 
 ### Experiment Listeners
 
-Upon activation of an Optimizely experiment, an "Experiment Viewed" `track` event is sent to Segment. The event includes Optimizely experiment metadata.
-
-Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
+Upon activation of an Optimizely experiment, an “Experiment Viewed” Track event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
 
 
-> note ""
-> **Note:** When an Optimizely Web experiment is activated, Optimizely automatically sends an "Experiment Viewed" `track` event to Segment. This makes the Optimizely Web integration act as both a Destination and a Source, because the `track` calls enrich and send Experiment Decisions and Exposure event data to Segment, which can be used by other platforms.
+> info "Activating a Web experiment sends 'Experiment Viewed' Track events to Segment"
+> When you activate an Optimizely Web experiment, Optimizely automatically sends an "Experiment Viewed" Track event to Segment. This makes the Optimizely Web integration act as both a Destination and a Source, because the Track calls enrich and send Experiment Decisions and Exposure event data to Segment, which you can then send to other platforms.
 
 #### Standard or Redirect Experiments
 
@@ -138,7 +136,7 @@ This appends an additional property in your "Experiment Viewed" events called `n
   
 If you're sending your experiment data to Google Analytics in the form of `track` calls, Segment recommends creating hit-scoped custom dimensions in Google Analytics with titles like "Experiment Name" and "Variation Name," and then map the properties to those Custom Dimensions accordingly. For example, if you set Custom Dimension 5 to "Experiment Name" and Custom Dimension 1 to "Variation Name," here's how you'd configure the mappings in your Segment<>GA settings:
 
-  ![A screenshot of the Custom Dimensions tab of Optimzely.](images/customdimensions.png)
+  ![A screenshot of the Custom Dimensions tab of Optimizely.](images/customdimensions.png)
 
 ## Optimizely Full Stack (JavaScript SDK)
 
@@ -151,19 +149,18 @@ If you're sending your experiment data to Google Analytics in the form of `track
 5. Now, paste your Segment snippet below the Optimizely implementation on every page where you'd like to include Segment's JavaScript. Or, if you've implemented Optimizely in a separate file, ensure Segment loads only after Optimizely has been initialized.
 6. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events){:target="_blank"} and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes){:target="_blank"} in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
 
-> note ""
-> **Note:** If you are using Optimizely SDKs v1.x or v2.x: if a visitor has any `activate` or `isFeatureEnabled` calls, their `attributes` object for these calls must match the `attributes` object passed to any `track` calls for that user id so that it can be correctly attributed on the Optimizely results page.
+> warning "Optimizely SDKs v1.x or v2.x require matching `attributes` objects for correct attribution"
+> If you use Optimizely SDKs v1.x or v2.x and use any `activate` or `isFeatureEnabled` calls, the `attributes` object for each user must match the `attributes` object passed to any Track calls for that user id so that it can be correctly attributed on the Optimizely results page.
 
 If you are using Optimizely SDKs v3+ or the React SDK, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/){:target="_blank"} is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, refer to their documentation [here](https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions){:target="_blank"}.
-
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [How Optimizely Experimentation counts conversions](https://support.optimizely.com/hc/en-us/articles/19888476989325-How-Optimizely-Experimentation-counts-conversions){:target="_blank"}.
 ### Track
 
 Upon invocation of a Segment `track` event, Segment maps the event to an Optimizely `track` event:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (for example, `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -177,7 +174,7 @@ Segment also handles the following mapping:
 
 ### Page
 
-Segment maps `page` calls to its own `track` events, i.e. invoking `analytics.page("Page Viewed")` using Segment's API maps the event to `analytics.track("Page Viewed")`. Segment maps the `track` event downstream to other destinations like a regular Segment `track` event.
+Segment maps `page` calls to its own `track` events. For example, invoking `analytics.page("Page Viewed")` using Segment's API maps the event to `analytics.track("Page Viewed")`. Segment maps the `track` event downstream to other destinations like a regular Segment `track` event.
 
 ### Experiment Listeners
 

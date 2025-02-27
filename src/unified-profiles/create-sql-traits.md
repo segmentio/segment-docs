@@ -56,9 +56,9 @@ The other phone fields for Salesforce Contacts are HomePhone, MobilePhone, & Oth
 SELECT 
     c.*,
     CASE 
-        WHEN c.PHONE REGEXP '^(\\([0-9]{3}\\) [0-9]{3}-[0-9]{4})$' AND c.BILLING_COUNTRY = 'US'
+        WHEN c.PHONE REGEXP '^(\\([0-9]{3}\\) [0-9]{3}-[0-9]{4})$' AND c.MAILING_COUNTRY = 'US'
         THEN CONCAT('+1', REGEXP_REPLACE(c.PHONE, '[^0-9]',''))
-        WHEN c.BILLING_COUNTRY != 'US'
+        WHEN c.MAILING_COUNTRY != 'US'
         THEN REGEXP_REPLACE(c.PHONE, '[^0-9]','') 
         ELSE c.PHONE
     END as phone,
@@ -66,7 +66,7 @@ FROM
     <database_name.contact_table> c
 WHERE 
     c.PHONE IS NOT NULL
-    AND c.BILLING_COUNTRY IS NOT NULL;
+    AND c.MAILING_COUNTRY IS NOT NULL;
 ```
 
 After running this query, you can use ‘phone’ for lookups in Unified Profiles.    
@@ -85,9 +85,9 @@ The other phone fields for Salesforce Leads are HomePhone, MobilePhone, & OtherP
 SELECT 
     l.*,
     CASE 
-        WHEN l.PHONE REGEXP '^(\\([0-9]{3}\\) [0-9]{3}-[0-9]{4})$' AND l.BILLING_COUNTRY = 'US'
+        WHEN l.PHONE REGEXP '^(\\([0-9]{3}\\) [0-9]{3}-[0-9]{4})$' AND l.COUNTRY = 'US'
         THEN CONCAT('+1', REGEXP_REPLACE(l.PHONE, '[^0-9]',''))
-        WHEN l.BILLING_COUNTRY != 'US'
+        WHEN l.COUNTRY != 'US'
         THEN REGEXP_REPLACE(l.PHONE, '[^0-9]','') 
         ELSE l.PHONE
     END as phone,
@@ -95,7 +95,7 @@ FROM
     <database_name.lead_table> l
 WHERE 
     l.PHONE IS NOT NULL
-    AND l.BILLING_COUNTRY IS NOT NULL;
+    AND l.COUNTRY IS NOT NULL;
 ```
 
 After running this query, you can use ‘phone’ for lookups in Unified Profiles.  

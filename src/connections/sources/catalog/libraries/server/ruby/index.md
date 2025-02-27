@@ -9,7 +9,7 @@ Segment's Ruby library lets you record analytics data from your ruby code. The r
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-ruby).
 
-All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make Identify and Track calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
 
  Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ruby/releases.atom).
 
@@ -50,12 +50,12 @@ If you're using Rails, you can stick that initialization logic in `config/initia
 
 ## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in the Spec](/docs/connections/spec/identify/).
+The Identify method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in the Spec](/docs/connections/spec/identify/).
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -100,7 +100,7 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-Example `identify`:
+Example Identify:
 
 ```ruby
 Analytics.identify(
@@ -108,13 +108,13 @@ Analytics.identify(
     traits: { email: "#{ user.email }", friends: 872 },
     context: {ip: '8.8.8.8'})
 ```
-This example call will identify your user by their unique User ID (the one you know him by in your database) and label them with `email` and `friends` traits.
+This example call identifies your user by their unique User ID (the one you know him by in your database) and labels them with `email` and `friends` traits.
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can find details on [the track method payload](/docs/connections/spec/track).
+The Track method lets you record any actions your users perform. You can find details on [the Track method payload](/docs/connections/spec/track).
 
-The `track` call has the following fields:
+The Track call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -135,7 +135,7 @@ The `track` call has the following fields:
   <tr>
     <td>`event`</td>
     <td>String</td>
-    <td>The name of the event you're tracking. We recommend human-readable names like <strong>Song Played</strong> or <strong>Status Updated</strong>.</td>
+    <td>The name of the event you're tracking. Segment recommends human-readable names like <strong>Song Played</strong> or <strong>Status Updated</strong>.</td>
   </tr>
   <tr>
     <td>`properties`, optional</td>
@@ -166,9 +166,9 @@ The `track` call has the following fields:
 
 You should track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
+To get started, Segment recommends tracking just a few important events. You can always add more later.
 
-Example `track` call:
+Example Track call:
 
 ```ruby
 Analytics.track(
@@ -177,9 +177,9 @@ Analytics.track(
     properties: { revenue: 39.95, shipping: '2-day' })
 ```
 
-This example `track` call tells us that your user just triggered the **Item Purchased** event with a revenue of $39.95 and chose your hypothetical '2-day' shipping.
+This example Track call tells you that your user just triggered the **Item Purchased** event with a revenue of $39.95 and chose your hypothetical '2-day' shipping.
 
-`track` event properties can be anything you want to record, for example:
+Track event properties can be anything you want to record, for example:
 
 ```ruby
 Analytics.track(
@@ -192,15 +192,15 @@ Analytics.track(
     })
 ```
 
-For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/)
+For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/).
 
 ## Page
 
-The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side set up in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using Segment's client-side set up in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using the client-side library, read on.
 
-The `page` call has the following fields:
+The Page call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -226,7 +226,7 @@ The `page` call has the following fields:
   <tr>
     <td>`category` optional</td>
     <td>String</td>
-    <td>The category of the page. Useful for things like ecommerce where many  pages might live under a larger category. _Note: if you only pass one string to `page` we assume it's a `name`, not a `category`. You **must** include a `name` if you want to send a `category`._</td>
+    <td>The category of the page. Useful for industries, like ecommerce, where many pages might live under a larger category. _Note: if you only pass one string to Page, Segment assumes it's a `name`, not a `category`. You **must** include a `name` if you want to send a `category`._</td>
   </tr>
   <tr>
     <td>`properties`, optional</td>
@@ -255,7 +255,7 @@ The `page` call has the following fields:
   </tr>
 </table>
 
-Example `page` call:
+Example Page call:
 
 ```ruby
 Analytics.page(
@@ -265,15 +265,15 @@ Analytics.page(
   properties: { url: 'https://segment.com/libraries/ruby/' })
 ```
 
-Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
+Find details on the **Page payload** in the [Segment Spec](/docs/connections/spec/page/).
 
 ## Group
 
-The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The Group method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -318,7 +318,7 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Example `group` call:
+Example Group call:
 
 ```ruby
 Analytics.group(
@@ -327,20 +327,20 @@ Analytics.group(
   traits: { name: 'Initech', description: 'Accounting Software'})
 ```
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
+Find more details about Group including the **Group payload** in the [Segment Spec](/docs/connections/spec/group/).
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use Alias to rename the 'userId'.
 
- `alias` method definition:
+ Alias method definition:
 
 ```ruby
 Analytics.alias(previous_id: 'previous id', user_id: 'new id')
 ```
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -355,7 +355,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-Here's a full example of how we might use the `alias` call:
+Here's a full example of how you might use the Alias call:
 
 ```ruby
 # the anonymous user does actions ...
@@ -368,7 +368,7 @@ Analytics.identify(user_id: 'user id', traits: { plan: 'Free' })
 Analytics.track(user_id: 'user id', event: 'Identified Action')
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
 ---
 ## Historical Import
@@ -377,13 +377,13 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
+**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment's servers will timestamp the requests for you.
 
 ## Selecting Destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
+The Alias, Group, Identify, Page, and Track calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
 
-Here's an example `track` call with the `integrations` object shown.
+Here's an example Track call with the `integrations` object shown.
 
 ```ruby
 Analytics.track({
@@ -393,23 +393,23 @@ Analytics.track({
 })
 ```
 
-In this case, we're specifying that we want this identify to only go to Kissmetrics. `all: false` says that no destination should be enabled unless otherwise specified. `Kissmetrics: true` turns on Kissmetrics, etc.
+In this case, you're specifying that you want this identify to only go to Kissmetrics. `All: false` says that no destination should be enabled unless otherwise specified, and `Kissmetrics: true` turns on Kissmetrics.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Business Tier users can filter Track calls right from the Segment UI on your source schema page. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
-- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
+- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard still count towards your API usage.
 
 ## Performance
 
-Our libraries are built to support high performance environments. That means it is safe to use analytics-ruby on a web server that's serving hundreds of requests per second.
+Segment's libraries are built to support high performance environments. That means it is safe to use analytics-ruby on a web server that's serving hundreds of requests per second.
 
 Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
-By default, our library will flush:
+By default, Segment's library will flush:
 
 + the very first time it gets a message
 + whenever messages are queued and there is no outstanding request
@@ -480,7 +480,7 @@ Instead of having the entire snippet in the `<head>` of your site, you need to m
 
 ## Serialization
 
-The Ruby library will automatically handle serializating your data into JSON for our servers. It uses [`JSON.generate`](http://ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html#method-i-generate) under the hood. Note that `BigDecimal` values are intentionally sent as Strings rather than floats so that our Node servers don't lose precision. If you'd prefer to use a float, you can coerce values to a float before sending the data to Segment.
+The Ruby library will automatically handle serializating your data into JSON for Segment's servers. It uses [`JSON.generate`](http://ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html#method-i-generate) under the hood. Note that `BigDecimal` values are intentionally sent as Strings rather than floats so that our Node servers don't lose precision. If you'd prefer to use a float, you can coerce values to a float before sending the data to Segment.
 
 ## Multiple Clients
 
@@ -500,4 +500,4 @@ MarketingAnalytics = Segment::Analytics.new({
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

@@ -1,7 +1,6 @@
 ---
 title: Pendo Web (Actions) Destination
 id: 6501a4325a8a629197cdd691
-beta: true
 hide-boilerplate: true
 hide-dossier: true
 ---
@@ -31,7 +30,7 @@ Pendo Web (Actions) provides the following benefits over the classic Pendo desti
 3. Click **Pendo Web (Actions)**.
 4. Click **Add destination ->**.
 5. Select an existing Source to connect to Pendo Web (Actions).
-6. In the destination settings, enter your Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin){:target="_blank"} > Basic Information > API Key.
+6. In the destination settings, enter your Pendo API Key, which a Pendo Admin can find in the Pendo UI by going to **Settings** > [Subscription Settings](https://app.pendo.io/admin){:target="_blank"} > **Applications**, opening the relevant app, then locating the **API Key** value.
 7. Select the correct region for your Pendo subscription.
 
 {% include components/actions-fields.html %}

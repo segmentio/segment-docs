@@ -1,5 +1,4 @@
 ---
-beta: true
 hidden: true
 title: Tealium AudienceStream Destination
 ---

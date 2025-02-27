@@ -3,7 +3,6 @@ title: LiveRamp Audiences Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 644ad6c6c4a87a3290450602
-beta: true
 ---
 
 [LiveRamp](https://liveramp.com/){:target="_blank"} gives companies and their partners the power to connect, control, and activate data to transform customer experiences and generate more valuable business outcomes. Segment's integration with LiveRamp lets you push user audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} into your LiveRamp account to execute various marketing use cases.
@@ -11,6 +10,9 @@ beta: true
 The LiveRamp Audiences destination allows users to connect their Engage Audiences to LiveRamp through their SFTP or a customer-managed S3 cloud storage bucket. Users will be able to configure their delivery preferences within Segment.
 
 The LiveRamp Audiences destination can be connected to **Twilio Engage sources only**. 
+
+> info "LiveRamp Audiences is not compatible with IP Allowlisting"
+> For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Getting started
 
@@ -39,15 +41,19 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 7. In the settings that appear in the side panel, toggle the Send Track option on and do not change the Audience Entered/Audience Exited event names. Click Save Settings
 8. File a [support case](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case){:target="_blank"} with the LiveRamp team to configure and enable ingestion.
 
+> info "Mapping tester availability"
+> The Mapping Tester isn't available for this destination. Since this destination requires batched events for activation, testing can only be performed end-to-end with a connected source.
+
 {% include components/actions-fields.html settings="false"%}
 
 ## Limitations 
 
-* Audience must have at least 25 unique members, otherwise the destination will fail and the data will not be synced.
-* Audience sync happens once per day.
-* Audience sync is a full sync.
+* Audience must have at least 25 unique members, otherwise the destination will fail and the data will not be synced. This means the Actions Mapping Event Tester does not work (only one test event can be configured).
+* Audience sync happens once per day. On a 24-hour cadence, but can take up to 30 hours.
+* Audience Sync is a full sync, including only users or accounts in the audience at the time of sync.
 * Files are created per audience.
 * After initial ingestion is complete, changing the mappings will cause the LiveRamp ingestion to start failing until ingestion setup is run again.
+* Time to first sync can be up to 3 days, please be patient.
 
 ## Trait Enrichment 
 

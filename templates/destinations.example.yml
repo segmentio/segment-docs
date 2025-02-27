@@ -11873,10 +11873,10 @@ destinations:
     required: false
     string_validators:
       regexp: ''
-    description: To find your API key, log into Pendo and navigate to "your user name"
-      > Site settings > Basic Information > API key. If your account has not fully
-      been set up yet, you can see the API key inside of the code snippet on the Pendo
-      setup page.
+    description: To find your API key, have a Pendo admin log into Pendo, navigate
+      to Settings > Subscription Settings > Applications, open the relevant app,
+      and locate the API key value. If your account has not fully been set up
+      yet, you can see the API key inside of the code snippet on the setup page.
     settings: []
 - name: catalog/destinations/perfect-audience
   display_name: Perfect Audience

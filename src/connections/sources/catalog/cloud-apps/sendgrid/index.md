@@ -54,8 +54,8 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 
 The SendGrid source's streaming component listens in real time for inbound webhooks from SendGrid's Event Notifications. The source batches these events for upload on your next warehouse flush. **These events only append to your warehouse.**
 
-> note ""
-> **NOTE:** If you don't use SendGrid's marketing features, this will be the only data that Segment receives from SendGrid. There isn't a way to retrieve email event history from SendGrid, so you will only have access to data that Segment collected after you successfully enable this component of the source destination.
+> info ""
+> If you don't use SendGrid's marketing features, this will be the only data that Segment receives from SendGrid. There isn't a way to retrieve email event history from SendGrid, so you will only have access to data that Segment collected after you successfully enabled this integration.
 
 
 ## Collections
@@ -89,8 +89,20 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 ## Troubleshooting
 
+### Invalid Credentials error
+
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”} to test if you're using the correct credentials.
 
 Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} for the list of IP addresses to allowlist.
 
+### Webhook configuration
+
 When you disable your SendGrid source, you'll need to also disable the webhook portion of your configuration.
+
+If you are only able to create one webhook, review your SendGrid [account plan details](https://sendgrid.com/en-us/pricing). On the Sendgrid free plan, you can only have 1 webhook.
+
+### Zero data or partial data syncs
+
+If you haven't subscribed to SendGrid’s marketing campaign features, the object collections do not sync. As a result, you might see “Zero data synced” in your runs on Source Overview page. If you have only selected a few objects to be synced, then only those objects are synced and show up in the Source Overview. 
+
+In both cases, the webhook still processes event data and syncs it to the warehouse. To view the data synced to the warehouse, navigate to **Connections > Destinations**, select the relevant Warehouse Destination, and then select the Source schema.

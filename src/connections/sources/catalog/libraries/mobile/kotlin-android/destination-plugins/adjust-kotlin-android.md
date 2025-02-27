@@ -2,7 +2,7 @@
 title: Analytics Kotlin Adjust Plugin
 strat: kotlin-android
 ---
-[Adjust](https://adjust.com){:target="_blank"} is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub [here](https://github.com/segmentio/analytics-kotlin).
+[Adjust](https://adjust.com){:target="_blank"} is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub in the [@segmentio/analytics-kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”} repository.
 
 
 ## Getting started

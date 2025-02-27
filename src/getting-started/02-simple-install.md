@@ -70,12 +70,10 @@ Click a tab below to see the tutorial content for the specific library you chose
 
 ### Step 1: Copy the Snippet
 <br>
-Navigate **Connections > Sources > JavaScript** in the Segment app and copy the snippet from the JavaScript Source overview page and paste it into the `<head>` tag of your site.
+Navigate to **Connections > Sources > JavaScript** in the Segment app, copy the snippet from the JavaScript Source overview page, and paste it into the `<head>` tag of your site.
 <br><br>
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet runs on your site, you can turn on destinations from the destinations page in your workspace and data starts loading on your site automatically.
 <br><br>
-> note ""
-> **Note:** If you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just toggle on Google Analytics from the Segment App.
 
 > info ""
 > The Segment snippet version history available on [GitHub](https://github.com/segmentio/snippet/blob/master/History.md){:target="_blank"}. Segment recommends that you use the latest snippet version whenever possible.
@@ -85,8 +83,8 @@ That snippet loads Analytics.js onto the page _asynchronously_, so it won't affe
 <br>
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
 <br><br>
-> note ""
-> **Note:** You don't need to call `identify` for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` works just fine without `identify`.
+> info "You don't need to call `identify` for anonymous visitors to your site"
+> Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` works just fine without `identify`.
 <br><br>
 Here's an example of what a basic call to `identify` might look like:
 
@@ -114,8 +112,8 @@ analytics.identify(' {{user.id}} ', {
 <br>
 With that call in your page footer, you successfully identify every user that visits your site.
 <br><br>
-> note ""
-> **Note:** If you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it.
+> success ""
+> You've completed a basic CRM set up. Return to the Segment app to enable Salesforce, Intercom, or your CRM system of choice and Segment starts sending all of your user data to it.
 
 <br>
 ### Step 3: Track Actions
@@ -160,7 +158,7 @@ Once you add a few `track` calls, you're done with setting up Segment. You succe
 
 ### Step 1: Install the SDK
 <br>
-To install Analytics for iOS, Segment recommends you to use [Cocoapods](http://cocoapods.org), because it allows you to create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
+To install Analytics-iOS, Segment recommends you to use [CocoaPods](http://cocoapods.org){:target="_blank"}, because it allows you to create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
 <br>
 1) Add the `Analytics` dependency to your `Podfile` by adding the following line:
 
@@ -209,8 +207,8 @@ Here's an example of what a basic call to `identify` might look like:
 <br>
 This call identifies Michael by his unique User ID (`f4ca124298`, which is the one you know him by in your database) and labels him with `name` and `email` traits.
 <br><br>
-> note ""
-> **Note:** When you put that code in your iOS app, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
+> info ""
+> When you put the above code in your iOS app, you would replace those hard-coded trait values with variables that represent the details of the user that's currently signed in.
 <br><br>
 ### Step 3: Track Actions
 <br>
@@ -288,8 +286,8 @@ Segment::init("YOUR_WRITE_KEY");
 You only need to call `init` once when your php file is requested. All of your files then have access to the same `Analytics` client.
 
 
-> note ""
-> **Note:** The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
+> info ""
+> Segment's default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
 <br>
 ### Step 2: Identify Users
@@ -310,8 +308,8 @@ Segment::identify(array(
 <br>
 This identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits.
 
-> note ""
-> **Note:** When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user. The easiest way in PHP is to keep a `$user` variable in memory.
+> info ""
+> When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user. The easiest way in PHP is to keep a `$user` variable in memory.
 
 ```php
 Segment::identify(array(

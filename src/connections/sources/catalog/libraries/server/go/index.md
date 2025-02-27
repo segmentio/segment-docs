@@ -41,21 +41,27 @@ That will create a `client` that you can use to send data to Segment for your so
 The default initialization settings are production-ready and queue 20 messages before sending a batch request, and a 5 second interval.
 
 ### Regional configuration
-For Business plans with access to Regional Segment, you can use the host configuration parameter to send data to the desired region:
+For Business plans with access to Regional Segment, you can use the endpoint configuration parameter to send data to the desired region:
 
-Oregon (Default) — api.segment.io/
-Dublin — events.eu1.segmentapis.com
+- Oregon (Default) — https://api.segment.io
+- Dublin — https://events.eu1.segmentapis.com
 
+Example configuration for EU region:
+```go
+client, err := analytics.NewWithConfig(writeKey, analytics.Config{
+    Endpoint: "https://events.eu1.segmentapis.com",
+})
+```
 ## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-`identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+Identify lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
+Segment recommends calling Identify a single time when the user's account is first created, and only identifying again later when their traits change.
 
-Example `identify` call:
+Example Identify call:
 
 ```go
 client.Enqueue(analytics.Identify{
@@ -68,9 +74,9 @@ client.Enqueue(analytics.Identify{
 })
 ```
 
-This call is identifying  Michael by his unique User ID (the one you know him by in your database) and label him with `name`, `email`, `plan` and `friends` traits.
+This call is identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name`, `email`, `plan` and `friends` traits.
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -83,17 +89,17 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
+Find details on the **identify method payload** in the [Segment Spec](/docs/connections/spec/identify/).
 
 ## Track
 
-`track` lets you record the actions your users perform.Every action triggers what we call an "event", which can also have associated properties.
+Track lets you record the actions your users perform.Every action triggers what Segment calls an "event", which can also have associated properties.
 
 You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
+To get started, Segment recommends tracking just a few important events. You can always add more later.
 
-Example `track` call:
+Example Track call:
 
 ```go
 client.Enqueue(analytics.Track{
@@ -104,16 +110,16 @@ client.Enqueue(analytics.Track{
 })
 ```
 
-This example `track` call tells us that your user just triggered the **Signed Up** event choosing the "Enterprise" plan.
+This example Track call tells you that your user just triggered the **Signed Up** event choosing the "Enterprise" plan.
 
-`track` event properties can be anything you want to record. In this case, plan type.
+Track event properties can be anything you want to record. In this case, plan type.
 
-The `track` call has the following fields:
+The Track call has the following fields:
 
 <table class="api-table">
   <tr>
     <td>`event` _String_</td>
-    <td>The name of the event you're tracking. We recommend human-readable names like **Song Played** or **Status Updated**.</td>
+    <td>The name of the event you're tracking. Segment recommends human-readable names like **Song Played** or **Status Updated**.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -121,15 +127,15 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
+Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Spec](/docs/connections/spec/track/).
 
 ## Page
 
-The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side set up in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using Segment's client-side set up in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using the client-side library, read on.
 
-Example `page` call:
+Example Page call:
 
 ```go
 client.Enqueue(analytics.Page{
@@ -140,12 +146,12 @@ client.Enqueue(analytics.Page{
 })
 ```
 
-The `page` call has the following fields:
+The Page call has the following fields:
 
 <table>
   <tr>
     <td>`name` _String_</td>
-    <td>The webpage name you're tracking. We recommend human-readable names like **Login** or **Register**.</td>
+    <td>The webpage name you're tracking. Segment recommends human-readable names like **Login** or **Register**.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -153,15 +159,15 @@ The `page` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
+Find details on the **Page payload** in the [Segment Spec](/docs/connections/spec/page/).
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+Group lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example `group` call:
+Example Group call:
 
 ```go
 client.Enqueue(analytics.Group{
@@ -174,7 +180,7 @@ client.Enqueue(analytics.Group{
 })
 ```
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -187,15 +193,15 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
+Find more details about Group, including the **Group payload**, in the [Segment Spec](/docs/connections/spec/group/).
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
-Example `alias` call:
+Example Alias call:
 
 ```go
 client.Enqueue(analytics.Alias{
@@ -204,7 +210,7 @@ client.Enqueue(analytics.Alias{
 })
 ```
 
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -217,7 +223,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-Here's a full example of how we might use the `alias` call:
+Here's a full example of how you might use the Alias call:
 
 ```go
 // the anonymous user does actions ...
@@ -253,7 +259,7 @@ client.Enqueue(analytics.Track{
 })
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **Alias call payload**, check out the Segment [Spec](/docs/connections/spec/alias/).
 
 ---
 
@@ -285,9 +291,9 @@ func main() {
 
 ## Selecting Destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `context.integrations` that lets you turn certain integrations on or off. By default all destinations are enabled.
+The Alias, Group, Identify, Page, and Track calls can all be passed an object of `context.integrations` that lets you turn certain integrations on or off. By default all destinations are enabled.
 
-Here's an example `track` call with the `context.integrations` object shown.
+Here's an example Track call with the `context.integrations` object shown.
 
 ```go
 client.Enqueue(analytics.Track{
@@ -300,15 +306,15 @@ client.Enqueue(analytics.Track{
 })
 ```
 
-In this case, we're specifying that we want this `Track` to only go to Vero. `All: false` says that no destination should be enabled unless otherwise specified. `Vero: true` turns on Vero, etc.
+In this case, you're specifying that you want this `Track` to only go to Mixpanel. `All: false` says that no destination should be enabled unless otherwise specified, and `Mixpanel: true` turns on Mixpanel.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Business Tier users can filter Track calls right from the Segment UI on your source schema page. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
-- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
+- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard still count towards your API usage.
 
 ## Historical Import
 
@@ -316,7 +322,7 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
+**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment's servers will timestamp the requests for you.
 
 
 ## Context
@@ -351,7 +357,7 @@ client.Enqueue(analytics.Identify{
 })
 ```
 
-Note that any custom fields must be set under the `Extra` field. They will automatically be inlined into the serialized `context` structure. For instance, the identify call above would be serialized to:
+Note that any custom fields must be set under the `Extra` field. They will automatically be inlined into the serialized `context` structure. For instance, the Identify call above would be serialized to:
 
 ```json
 {
@@ -372,11 +378,11 @@ Note that any custom fields must be set under the `Extra` field. They will autom
 
 ## Batching
 
-Our libraries are built to support high performance environments. That means it is safe to use analytics-go on a web server that's serving hundreds of requests per second.
+Segment's libraries are built to support high performance environments. That means it is safe to use analytics-go on a web server that's serving hundreds of requests per second.
 
-Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation. If batch messages are not arriving in your debugger and no error is being thrown you may want to slow the speed of your scipt down. This is because we run a message batching loop in a go-routine so if the script runs too fast it won't execute on the network calls before it exits the loop.
+Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation. If batch messages are not arriving in your debugger and no error is being thrown you may want to slow the speed of your script down. This is because Segment runs a message batching loop in a go-routine so if the script runs too fast it won't execute on the network calls before it exits the loop.
 
-By default, our library will flush:
+By default, Segment's library will flush:
 
 + every 20 messages (control with `FlushAt`)
 + if 5 seconds has passed since the last flush (control with `FlushAfter`)
@@ -390,27 +396,27 @@ Sometimes you might not want batching (eg. when debugging, or in short-lived pro
 
 ## Options
 
-If you hate defaults you can configure analytics-go has a lot of configuration options. You can read more in the [Godocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config).
+If you hate defaults you can configure analytics-go has a lot of configuration options. You can read more in the [Godocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config){:target="_blank”}.
 
 ## Version 2 (Deprecated)
 
-If you're looking for documentation for the v2 version of the library, [click here](/docs/connections/sources/catalog/libraries/server/go/v2/).
+If you're looking for documentation for the v2 version of the library, [see Segment's Go v2 documentation](/docs/connections/sources/catalog/libraries/server/go/v2/).
 
 ## Migrating from v2
 
-v3 is a rewrite of our v2 version of the Go Library. We recommend using v3 as it supports many new features, has significant design improvements and is better tested.
+v3 is a rewrite of the v2 version of the Go Library. Segment recommends using v3 as it supports many new features, has significant design improvements and is better tested.
 
 v3 is currently in the `v3.0` branch to minimize breaking changes for customers not using a package manager. You can refer to the documentation for your package manager to see how to use the `v3.0` branch.
 
-e.g. with [govendor](https://github.com/kardianos/govendor), you would run the command:
+for example, with [govendor](https://github.com/kardianos/govendor){:target="_blank”}, you would run the command:
 
 ```bash
 govendor fetch github.com/segmentio/analytics-go@v3.0
 ```
 
-Alternatively, you can also use [`gopkg.in`](http://labix.org/gopkg.in). First run `go get gopkg.in/segmentio/analytics-go.v3` and replace your imports with `import "gopkg.in/segmentio/analytics-go.v3"`.
+Alternatively, you can also use [`gopkg.in`](http://labix.org/gopkg.in){:target="_blank”}. First run `go get gopkg.in/segmentio/analytics-go.v3` and replace your imports with `import "gopkg.in/segmentio/analytics-go.v3"`.
 
-To help with migrating your code, we recommend checking out a simple example that we've written in [v2](https://github.com/segmentio/analytics-go/blob/v2.0/examples/track.go) and [v3](https://github.com/segmentio/analytics-go/blob/v3.0/examples/track.go) so you can easily see the differences.
+To help with migrating your code, Segment recommends checking out a simple example that is written in [v2](https://github.com/segmentio/analytics-go/blob/v2.0/examples/track.go) and [v3](https://github.com/segmentio/analytics-go/blob/v3.0/examples/track.go) so you can easily see the differences.
 
 The first difference you'll notice is that `Client` is now an interface. It has a single method - `Enqueue` that can accept messages of all types.
 
@@ -458,7 +464,7 @@ client.Enqueue(analytics.Track{
 })
 ```
 
-Lastly, you'll notice that configuration is provided during initialization and cannot be changed after initialization. The various configuration options are documented in the [GoDocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config).
+Lastly, you'll notice that configuration is provided during initialization and cannot be changed after initialization. The various configuration options are documented in the [GoDocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config){:target="_blank”}.
 
 These are examples of applying same configuration options in v2 and v3.
 
@@ -479,7 +485,7 @@ client, _ := analytics.NewWithConfig("h97jamjwbh", analytics.Config{
 
 ## What's new in v3
 
-v3 is a rewrite of our v2 version of the Go Library with many new features!
+v3 is a rewrite of Segment's v2 version of the Go Library with many new features.
 
 * New type safe API to set properties, traits and context fields. This is less error prone than using the `map[string]interface{}` type (though you can still do so).
 
@@ -494,9 +500,9 @@ client.Enqueue(analytics.Track{
 })
 ```
 
-* Dynamically split batches into appropriately sized chunks to meet our [API size limits](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#max-request-size). Previously you would have to calculate the batch size depending on this size of your data to figure out the appropriate size.
+* Dynamically split batches into appropriately sized chunks to meet Segment's [API size limits](/docs/connections/sources/catalog/libraries/server/http/#max-request-size). Previously you would have to calculate the batch size depending on this size of your data to figure out the appropriate size.
 
-* Improved logging abstraction. Previously we relied solely on the standard library `log.Logger` type which cannot distinguish between error and non-error logs. v3 has it's own [`Logger`](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Logger) interface that can be used to capture errors for your own reporting purposes. An adapter for the [standard library logger](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#StdLogger) is also included.
+* Improved logging abstraction. Previously Segment relied solely on the standard library `log.Logger` type which cannot distinguish between error and non-error logs. v3 has it's own [`Logger`](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Logger){:target="_blank”} interface that can be used to capture errors for your own reporting purposes. An adapter for the [standard library logger](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#StdLogger){:target="_blank”} is also included.
 
 * Ability to configure the retry policy based on the number of attempts.
 
@@ -525,4 +531,4 @@ client, _ := analytics.NewWithConfig("h97jamjwbh", analytics.Config{
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

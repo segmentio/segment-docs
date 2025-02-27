@@ -1,6 +1,5 @@
 ---
 title: Framed.io Destination
-beta: true
 ---
 
 ## Getting Started

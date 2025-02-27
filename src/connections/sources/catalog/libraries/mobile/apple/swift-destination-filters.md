@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Destination Filters
+title: Analytics-Swift Destination Filters
 strat: swift
 ---
 > info ""

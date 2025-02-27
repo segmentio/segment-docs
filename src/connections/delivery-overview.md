@@ -4,11 +4,12 @@ title: Delivery Overview
 
 Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any cloud-streaming destination receiving events from cloud-streaming sources. 
 
-> info "Delivery Overview for RETL destinations, Storage destinations, and Engage Audience Syncs currently in development"
-> This means that Segment is actively developing Delivery Overview features for RETL destinations, Storage destinations, and Engage Audience syncs. Some functionality may change before Delivery Overview for these integrations becomes generally available. 
+> info "Delivery Overview for RETL destinations and Engage Audience Syncs currently in development"
+> This means that Segment is actively developing Delivery Overview features for RETL destinations and Engage Audience syncs. Some functionality may change before Delivery Overview for these integrations becomes generally available. 
 > 
-> Delivery Overview is generally available for streaming connections (cloud-streaming sources and cloud-streaming destinations).
+> Delivery Overview is generally available for streaming connections (cloud-streaming sources and cloud-streaming destinations) and in public beta for storage destinations. Some metrics specific to storage destinations, like selective syncs, failed row counts, and total rows seen, are not yet available. 
 > All users of Delivery Overview have access to the Event Delivery tab, and can configure delivery alerts for their destinations.
+
 
 ## Key features
 
@@ -20,25 +21,52 @@ Delivery Overview has three core features:
 You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
 
 ### Pipeline view
-The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also shows a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
 
-The pipeline view shows the following steps:
+The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also includes a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
 
-- **Successfully received**: Events that Segment ingested from your source
-- **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
-- **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans
+> info "Lookback window"
+> Delivery Overview applies a 5-minute lookback period to provide stable, accurate metrics across all pipeline steps. This interval accounts for processing delays and ensures the data Segment displays reflects a reliable snapshot of recent events.
+
+#### Classic destinations
+The pipeline view for classic destinations includes the following steps:
+- **Successfully received**: Events that Segment ingested from your source.
+- **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
+- **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
 - **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
-- **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
-- **Successful delivery**: Events that were successfully delivered to the destination
+- **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements.
+- **Successful delivery**: Events that were successfully delivered to the destination.
 
-Actions destinations also include a mapping dropdown, which allows you to select a [mapping](/docs/connections/destinations/actions/#customize-mappings) to filter the events in the Filtered at destination, Failed delivery and Successful delivery pipeline steps. The following image shows an Actions destination filtered to include only Track Page View events in the last three pipeline steps:
+#### Actions destinations
+The pipeline view for Actions destination includes the following steps: 
+- **Successfully received**: Events that Segment ingested from your source. You can filter these events by event type, event name, app version, and [enrichment status](/docs/unify/data-graph/linked-events/).
+- **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
+- **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
+- **Mapping dropdown**: Select a [mapping](/docs/connections/destinations/actions/#customize-mappings) to filter the events in the Filtered at destination, Failed delivery and Successful delivery pipeline steps. 
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
+- **Retry count**: The number of events currently pending retry. 
+- **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements.
+- **Successful delivery**: Events that were successfully delivered to the destination.
 
 ![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
+
+#### Storage destinations
+The pipeline view for storage destination includes the following steps: 
+- **Successfully received**: Events that Segment ingested from your source.
+- **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules.
+- **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans.
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
+- **Events to warehouse rows**: A read-only box that shows the point in the delivery process where Segment converts events into warehouse rows.
+- **Failed to sync**: Syncs that either failed to sync or were partially successful. Selecting this step takes you to a table of all syncs with one or more failed collections. Select a sync from the table to view the discard reason, any collections that failed, the status, and the number of rows that synced for each collection. For information about common errors, see Ware
+- **Successfully synced**: A record of all successful or partially successful syncs made with your destination. To view the reason a partially successfully sync was not fully successful, see the Failed to sync step. 
+
+The following image shows a storage destination with 23 partially successful syncs: 
+
+![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
 
 ### Breakdown table
 The breakdown table provides you with greater detail about the selected events.
 
-To open the breakdown table, select either the first step in the pipeline view (Successfully received,) the last step in the pipeline view (Successful delivery,) or select a discard step and then click on a discard reason. 
+To open the breakdown table, select either the first step in the pipeline view, the last step in the pipeline view, or select a discard step and then click on a discard reason. 
 
 The breakdown table displays the following details:
 - **Event type**: The Segment spec event type (Track call vs. Identify call, for example)
@@ -96,12 +124,14 @@ You can use the Event Delivery alerting features (Delivery Alerts) by selecting 
 
 Note that this is dependent on your [notification settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
 
-You can also use Connections Alerting, a feature that allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection.
+You can also use [Connections Alerting](/docs/connections/alerting), a feature that allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection.
 
 Connections Alerting allows you to create two different alerts:
 - **Source volume alerts**: These alerts notify you if your source ingests an abnormally small or large amount of data. For example, if you set a change percentage of 4%, you would be notified when your source ingests less than 96% or more than 104% of the typical event volume.
 - **Successful delivery rate alerts**: These alerts notify you if your destination's successful delivery rate falls outside of a percentage that you set. For example, if you set a percentage of 99%, you would be notified if you destination had a successful delivery rate of 98% or below.
 
+## How "fresh" is the data in Delivery Overview?
+The data in Delivery Overview has an expected latency of approximately 30 seconds after event ingestion, but this may vary, depending on the features you’ve enabled in your workspace and spikes in volume. Segment delays the data visible in the Delivery Overview UI by 5 minutes to allow for more precise metric correlation. Segment does not impose the 5 minute delay if you access data using the Public API.
 
 ## Why is the Delivery Overview page only available for cloud-mode destinations? 
 Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature, the Delivery Overview page is only available for server-side integrations (also known as cloud-mode destinations). You won't be able to use the Delivery Overview page for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, data must be sent to destinations using a server-side connection. 
