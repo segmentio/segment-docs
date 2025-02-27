@@ -116,7 +116,7 @@ data_graph {
         name = "Premium Accounts"
         related_entity = "account-entity"
         # Join the profile entity with an identifier (e.g. email) on the related entity table
-        # Option to replace with the traits block below to join with a profile trait on the entity table instead
+        # Option to replace with the trait block below to join with a profile trait on the entity table instead
         external_id {
           type = "email"
           join_key = "EMAIL_ID"
@@ -247,7 +247,7 @@ To define a profile-to-entity relationship, reference your entity table and depe
   - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-external_id_mapping_updates-table): This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping_updates` table. 
 - `join_key`: This is the column on the entity table that you are matching to the external identifier.
 
-**Option 2 - Join on a profile trait:** Use the `traits` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits). 
+**Option 2 - Join on a profile trait:** Use the `trait` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits). 
 - `name`: Represents a trait name in your Unify profiles. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
   - [Materialized](/docs/unify/profiles-sync/tables/#the-profile_traits-table) (Recommended): The trait name corresponds to a unique value of the `name` column in your Profiles Sync `user_traits` table. 
   - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-profile_traits_updates-table): This corresponds to a column in the Profile Sync `profile_trait_updates` table.
