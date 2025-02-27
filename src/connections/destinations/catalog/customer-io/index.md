@@ -280,7 +280,7 @@ You can send computed traits and audiences generated using [Engage](/docs/engage
 
 For user-property destinations, an [identify](/docs/connections/spec/identify/) call sends to the destination for each user that's added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Engage sets that value to `false`.
 
-> note ""
+> success ""
 > Customer.io requires you to pass an identifier value (ID or email, depending on your workspace settings), when you sync Audiences or Computed Traits.
 
 When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.

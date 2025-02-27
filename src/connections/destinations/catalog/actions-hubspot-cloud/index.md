@@ -35,9 +35,9 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 - **Sandbox support**. Test with a HubSpot sandbox account before implementing in your main production account to feel confident in your configuration.
 - **Support for custom behavioral events**. Send [custom behavioral events](https://developers.hubspot.com/docs/api/analytics/events){:target="_blank"} and event properties to HubSpot.
 - **Create records in custom objects**. Use your Segment events to create records in any standard or custom object in your HubSpot account.
-
-> note ""
-> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+  
+  > info ""
+  > A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 
 ## Getting started
 
@@ -121,6 +121,11 @@ Yes. HubSpot will automatically redirect API requests directly to an EU data cen
 
 ### How do I attribute a custom behavioral event with a user token instead of Email?
 Event payloads should contain an email with either a valid format, empty string, or a `null` value. As a result, the user token takes precedence and is validated in a `Send custom behavioral event` mapping. Segment can't deliver the event to your destination if the email is invalid.
+
+### How can I update companies in HubSpot if they never were associated with a `segment_group_id`? 
+Segment uses the `segment_group_id` field to create and update companies in HubSpot. Records that were created from a pipeline outside of Segment won't have the `segment_group_id` field.  If your companies aren't associated with a `segment_group_id`, you must use another field that uniquely identifies the company in HubSpot, like the `hs_object_id` field, to make updates to your companies.
+
+To use your unique field to update companies, navigate to your Upsert Company mapping and provide the key/value pair assosciated with the `hs_object_id` field in the Company Search fields section. 
 
 ### How can I disable or delete a destination from Segment?
 Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.

@@ -66,8 +66,8 @@ Mobile plugins are loaded into:
 - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/)
 
-> note ""
-> **Note:** The [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins) and [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/) libraries were all built with the plugin architecture in mind. This makes adding custom destinations far simpler than the older mobile libraries.  
+> info "Mobile plugin architecture"
+> The [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins) and [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/) libraries were all built with the plugin architecture in mind. This makes adding custom destinations far simpler than the older mobile libraries.
 
 ## Streams
 

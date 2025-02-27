@@ -19,8 +19,8 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 You can navigate to the [Crazy Egg Dashboard](https://app.crazyegg.com/v2/dashboard){:target="_blank"} to track the data.
 
-> note ""
-> **Note**: It may take up to 24-48 hours for initial data to show up.
+> success ""
+> It may take up to 24-48 hours for Segment data to appear in Crazy Egg.
 
 
 

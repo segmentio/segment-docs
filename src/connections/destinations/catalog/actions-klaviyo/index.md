@@ -82,11 +82,19 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 ## FAQ
 
-#### Dealing with Error Responses from Klaviyo's API
+#### Dealing with error responses from Klaviyo's API
  
-##### 429 Too Many Requests
+##### `429` Too Many Requests
 
-If you're encountering rate limiting issues, consider enabling batching for the Action receiving these errors. To enable batching, navigate to the mapping configuration and set "Batch data to Klaviyo" to "Yes". This adjustment might help alleviate the rate limiting problem.
+If you're seeing `429` rate limit errors, try enabling batching for the impacted Action. In the mapping configuration, set "Batch data to Klaviyo" to `Yes` to help reduce rate limits.
+
+If `429` errors persist, Segment automatically adjusts the event delivery rate. There’s no fixed rate limit for the Klaviyo destination; Segment adapts based on Klaviyo’s capacity:
+
+- If Klaviyo allows more traffic, Segment increases the send rate.
+- If Klaviyo returns `429` or other retryable errors, Segment slows down.
+- As more events are successfully delivered, the system gradually speeds up.
+
+Retryable errors tell Segment to slow down, while successful deliveries let Segment send events faster.
 
 ##### 409 Conflict
 In most cases, you can safely ignore a `409` error code. 
