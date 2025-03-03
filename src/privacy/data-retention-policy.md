@@ -4,7 +4,7 @@ title: Data Retention and Deletion Policy
 
 Twilio Segment’s Data Retention and Deletion Policy provides clarity, consistency and compliance across all Segment services and brings Segment’s data retention policy in line with industry standards and regulations. By implementing and enforcing this policy, Segment aims to enhance data governance and ensure that Segment customers can manage their data accurately, efficiently and securely within clearly defined retention periods.
 
-Starting **15th April 2025**, Segment will enforce a strict data retention policy for all:
+Segment will enforce a strict data retention policy for all:
 
 1. **[Active customers](#active-customers):** A Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days.   
 2. **[Expired customers](#expired-customers):** A Business or Team Tier customer that hasn’t renewed their Segment contract and has their workspace downgraded to Free Tier.   
@@ -13,6 +13,11 @@ Starting **15th April 2025**, Segment will enforce a strict data retention polic
 5. **[Unused Free Tier workspace](#unused-free-tier-workspace)**: A workspace on the Free Tier that has not received any Segment event traffic or had any user activity in the last 30 days.   
 
 ![A flowchart depicting the progression of active and no longer active customers.](images/data-retention-policy-flowchart.png)
+
+## Effective Date
+Segment’s enforcement of this data retention policy will begin on:
+- **April 15, 2025** for Object Store data
+- **July 15, 2025** for Archive event and Profile events data stores
 
 ## Active customers
 
@@ -30,22 +35,19 @@ The following data types are subject to the 3 year retention period:
 4. **Audit Events**: Applicable to all customers. Segment generates and stores audit events from Segment app user actions.    
 5. **HIPAA Audit**: Applicable to all Business Tier customers with the “Segment for Healthcare” add-on. In addition to standard Audit events, Segment generates and stores more granular Segment app user actions events for customers with the “Segment for Healthcare" add-on. 
 
-### Data retention
+### Data retention period
 
 The default data retention period for each of the data types is as follows:
 
-| Tier         | Event Data Retention | Object Data Retention | Profile Event Data Retention <sup>*<sup> | Audit    | HIPAA Audit    |
-| ------------ | -------------------- | --------------------- | ---------------------------------------- | -------  | -------------- |
-| **Business** | 3 years              | 180 days              | 3 years                                  | 3 years  | 3 years        |
-| **Team**     | 365 days             | 90 days               | Not applicable                           | 365 days | Not applicable |
-| **Free**     | 180 days             | 60 days               | Not applicable                           | 180 days | Not applicable |
-
-
-<sup>*</sup>: _Segment will implement the Profile event data retention period in June 2025. Until this point, Unify users might see Profile Event Data that is more than 3 years old._ 
+| Tier         | Archive Event Data Retention | Profile Event Data Retention | Object Data Retention | Audit    | HIPAA Audit    |
+| ------------ | ---------------------------- | ---------------------------------------- | --------------------- | -------  | -------------- |
+| **Business** | 3 years                      | 3 years                      | 180 days                          | 3 years  | 3 years        |
+| **Team**     | 365 days                     | Not applicable               | 90 days                           | 365 days | Not applicable |
+| **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
 Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through “Workspace Default Archive Retention Period”.  
  
-### What is the impact of this policy?
+### What data is impacted?
 
 With this data retention policy, all data beyond the retention period will be unrecoverably deleted from all of Segment and will impact the following:
 
@@ -53,10 +55,10 @@ With this data retention policy, all data beyond the retention period will be un
 * Backfill Data will only be available for data within the retention period.  
 * [Data residency](/docs/guides/regional-segment/) migrations across regions (US and EU) will only be available for data within the retention period.  
 * Additional impacts  to Object data:  
-  * Cloud Object Data (using push) updated using the [Set API](/docs/connections/sources/catalog/libraries/server/object-api/#set) or [Bulk API](docs/connections/sources/catalog/libraries/server/object-bulk-api/): Any data older than 180 days is treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
+  * Cloud Object Data (using push) updated using the [Object API](/docs/connections/sources/catalog/libraries/server/object-api/#set), [Bulk API](docs/connections/sources/catalog/libraries/server/object-bulk-api/), or webhook cloud sources (for example, SendGrid or Mandrill): Any data older than 180 days is treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
   * Users and Accounts: Segment aggregates data from Identify and Group events for entities active within the last 180 days. Any data older than 180 days will be treated as a new record and will not have historic properties. To prevent loss of data properties, Segment advises customers to migrate to using Profile Sync.  
 * [Computed traits](/docs/unify/Traits/computed-traits/) will be built using the available data within the retention period. Recreating these traits may result in different values based on the available data.  
-* [Profiles](/docs/unify/), [Engage](/docs/engage/) [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/) that are built using Events will use available data within the retention period. Recreating these may result in different Profiles based on the available data. 
+* [Profiles](/docs/unify/), [Engage](/docs/engage/) [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/) that are built using Events will use available data within the retention period. Recreating these may result in different Profiles based on the available data. Further, depending on how the conditions are defined Profiles may or may not exit Computed traits, Engage Audiences, and Journeys due to the data retention policy, and this may result in mismatches in counts when comparing against a preview.
 
 ### What data is not impacted?
 
@@ -73,7 +75,7 @@ An expired customer is a Business or Team Tier customer that hasn’t renewed th
 
 Segment will enforce a maximum data retention period of 90 days for Unify data, unless customers explicitly request immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). Once on the Free Tier, the workspace will be subject to the Free Tier data retention policies. 
 
-### What is the impact of this policy?
+### What data is impacted?
 
 Expired customers will have:
 
@@ -86,7 +88,7 @@ A contracted customer is a Business Tier customer that elects to stop using add-
 
 Segment will enforce a maximum data retention period of up to 90 days for all contracted customers, unless they explicitly request immediate deletion through a [support ticket](/docs/privacy/account-deletion/). All data beyond the retention period will be deleted and unrecoverable as described below.
 
-### What is the impact of this policy?
+### What data is impacted?
 
 With this data retention policy, all data in all your Unify Spaces after the retention period will be deleted and unrecoverable. If you opt-in to Unify, Unify+, Engage, and/or Linked after the retention period, you will be starting with a brand new implementation with no previous data.
 
@@ -98,10 +100,7 @@ If contracting from Unify or Unify+, your Connection data will remain unaffected
 
 ## Churned customers 
 
-A churned customer is a Business or Team Tier customer that has:
-
-* Explicitly terminated the contract **OR**  
-* Has unpaid invoices and has their workspace fully locked out.
+A churned customer is a Business or Team Tier customer that has explicitly terminated the contract or has unpaid invoices and has their workspace fully locked out.
 
 Customers that have explicitly terminated their Segment contract will have their data unrecoverably deleted within 30 days of contract termination. 
 
@@ -118,6 +117,6 @@ An Unused Free Tier workspace is a workspace that has not received any Segment e
 
 Segment will unrecoverably delete the workspace after 30 days of inactivity, unless explicitly requested for immediate deletion through a [support ticket](/docs/privacy/account-deletion/#delete-your-workspace-data). 
 
-### Data deletion timeline
+### Data deletion delays
 
 When data reaches the end of its retention period, deletion will be scheduled in accordance with Segment’s data retention policy. While Segment aims to complete the deletion process promptly, there may be occasional delays due to processing times or technical constraints. Segment is committed to initiating data deletions as soon as possible and will strive to complete deletions within 7 days of the scheduled date.
