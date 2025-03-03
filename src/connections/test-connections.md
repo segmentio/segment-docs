@@ -15,7 +15,7 @@ The Event Tester sends a real event that appears in your end tool alongside your
 * Connections
 * Linked Audiences
 * Reverse ETL
-* Journeys
+* Journeys (only available for new event triggered journeys)
 
 ## How it works
 
@@ -43,12 +43,9 @@ You can use the filter to navigate to specific mappings.
 
 ![Screenshot of the Event Tester filter with dropdown of different mappings](images/event-tester-filter.png)
 
-### Mappings Tester
-The Mappings Tester only tests a single mapping. To test specific mappings for Linked Audiences and Reverse ETL:
-1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab. 
-2. Select the destination you want to test the mappings for. 
-3. Select the mapping and click **Edit mapping**.
-4. Click **Test Again** in the **Send test record** section.
+## Mappings Tester
+When you add a destination and create a mapping in Reverse ETL, Linked Audience, and Journeys, you can test the specific mapping you created using the Mappings Tester. The Mappings Tester only tests a single mapping, and you can edit values before initiating a test. 
+
 
 ## FAQs
 
