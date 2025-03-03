@@ -2,25 +2,25 @@
 title: "Event Tester"
 ---
 
+> info ""
+> This feature is only available for server-side, [cloud-mode](/docs/connections/destinations/#connection-modes) integrations. It doesn't work for client-side, [device-mode](/docs/connections/destinations/#connection-modes) integrations. 
+><br><br>You must have write access in your Segment workspace to use the Event Tester. 
 
 Segment's Event Tester enables you to test your connections between Segment and your destination. You can inspect both the request sent from Segment and the response you receive back from the destination. You can use the Event Tester to ensure: 
 
 *   An event successfully arrives to a specific destination
 *   Your new destination is configured correctly
 
-The Event Tester sends a real event that appears in your end tool alongside your existing data. 
-
-
-> info ""
-> This feature is only available for server-side, [cloud-mode](/docs/connections/destinations/#connection-modes) integrations. It doesn't work for client-side, [device-mode](/docs/connections/destinations/#connection-modes) integrations. 
+The Event Tester sends a real event that appears in your end tool alongside your existing data. You can use the Event Tester for these products: 
+* Connections
+* Linked Audiences
+* Reverse ETL
+* Journeys
 
 ## How it works
 
 > info ""
-> You must have write access in your Segment workspace to use the Event Tester. 
-
-> warning ""
-> Make sure you have mappings enabled for your destination. The event tester only tests the enabled mappings for the destination. 
+> The event tester only tests the enabled mappings for the destination. 
 
 To use the Event Tester: 
 1. Navigate to **Connections > Destinations** and select your destination.
@@ -37,13 +37,20 @@ If your test event successfully sends to the destination, you can see in the **V
 * The total number of API calls that were made as one test event can result in multiple API calls. 
 * Which mappings were successful and which ones failed
 
-![Screenshot of the Event Tester with a Track test event that resulted in 4 API calls](images/event-tester2025.png)
+![Screenshot of the Event Tester with a Track test event that resulted in 4 API calls](images/event-tester-2025.png)
+
+You can use the filter to navigate to specific mappings. 
+
+![Screenshot of the Event Tester filter with dropdown of different mappings](images/event-tester-filter.png)
+
+### Mappings Tester
+The Mappings Tester only tests a single mapping. To test specific mappings for Linked Audiences and Reverse ETL:
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab. 
+2. Select the destination you want to test the mappings for. 
+3. Select the mapping and click **Edit mapping**.
+4. Click **Test Again** in the **Send test record** section.
 
 ## FAQs
-
-#### Why can't I see the Event Tester when I log into my workspace?
-
-The Event Tester is only accessible to users with write access in their Segment workspace (read-only users will not see the Event Tester in their workspace). 
 
 #### The Event Tester experienced an error when sending my event. Why did this happen?
 
