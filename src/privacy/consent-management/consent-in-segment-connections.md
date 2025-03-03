@@ -41,7 +41,9 @@ Segment requires every event from all of your sources to include the end user co
 
 ```
 
-Events without the consent object will continue to flow to destinations without consent enforcement.
+Events without the consent object will continue to flow to destinations without consent enforcement. 
+
+Segment events without a context or consent object or that have an empty context or consent object do not impact [consent preferences on the Profile](/docs/privacy/consent-management/consent-in-unify) and these events will flow to all destinations.
 
 ## Reconcile consent conflicts
 
