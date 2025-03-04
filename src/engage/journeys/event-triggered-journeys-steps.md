@@ -107,6 +107,17 @@ Deleting a Hold Until step can impact downstream steps that rely on it. When you
 
 The **Delay** step holds profiles in a journey for a set period before they can proceed to the next step. This enables controlled timing for messages, actions, or other journey events.
 
+### How Delay works
+
+When a journey reaches the Delay step:
+
+1. Profiles enter the step and wait for the configured duration.
+2. Segment logs the profile's status in the observability timeline.
+3. If an exit condition is met during the hold period, the profile leaves the journey early.
+4. After the delay ends, the profile moves to the next step in the journey.
+
+
+
 ## Send to Destination
 
 The **Send to Destination** step lets you send journey data to one of your [configured Engage destinations](/docs/connections/destinations/), enabling real-time integration with tools like marketing platforms, analytics systems, or custom endpoints.
