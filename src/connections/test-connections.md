@@ -1,23 +1,34 @@
 ---
-title: "Event Tester"
+title: Testing Connections
 ---
 
+Segment provides these 2 testing tools to enable you to test your connections between Segment and your destination:
+* [Event Tester](#event-tester): Test all of your enabled mappings within a destination. 
+* [Mappings Tester](#mappings-tester): Test a single mapping configuration for your destination. 
+
+Both testing tools share the same underlying testing infrastructure, which ensures consistent results across your testing workflows. The results from both testers display API requests, responses, and success/failure status to help you diagnose any issues.
+
+You can use the Event and Mappings Tester for these products: 
+* [Connections](/docs/connections/)
+* [Linked Audiences](/docs/engage/audiences/linked-audiences/)
+* [Linked Events](/docs/unify/data-graph/linked-events/#testing-with-linked-events-enrichments)
+* [Reverse ETL](/docs/connections/reverse-etl/)
+* [Journeys](/docs/engage/journeys/)
+
+## Event Tester
+
 > info ""
-> This feature is only available for server-side, [cloud-mode](/docs/connections/destinations/#connection-modes) integrations. It doesn't work for client-side, [device-mode](/docs/connections/destinations/#connection-modes) integrations. 
+> The Event Tester is only available for server-side, [cloud-mode](/docs/connections/destinations/#connection-modes) integrations. It doesn't work for client-side, [device-mode](/docs/connections/destinations/#connection-modes) integrations. 
 ><br><br>You must have write access in your Segment workspace to use the Event Tester. 
 
-Segment's Event Tester enables you to test your connections between Segment and your destination. You can inspect both the request sent from Segment and the response you receive back from the destination. You can use the Event Tester to ensure: 
+The Event Tester enables you to test your connections between Segment and your destination. You can inspect both the request sent from Segment and the response you receive back from the destination. The tester provides a comprehensive view of how your event data flows through multiple mappings. You can use the Event Tester to ensure: 
 
 *   An event successfully arrives to a specific destination
 *   Your new destination is configured correctly
 
-The Event Tester sends a real event that appears in your end tool alongside your existing data. You can use the Event Tester for these products: 
-* [Connections](/docs/connections/)
-* [Linked Audiences](/docs/engage/audiences/linked-audiences/)
-* [Reverse ETL](/docs/connections/reverse-etl/)
-* [Journeys](/docs/engage/journeys/)
+The Event Tester sends a real event that appears in your end tool alongside your existing data. 
 
-## Using the Event Tester
+### Using the Event Tester
 
 > info ""
 > The event tester only tests the enabled mappings for the destination. 
@@ -31,20 +42,35 @@ To use the Event Tester:
    * **Generate sample event**: Segment generates a sample event for you. 
 5. Click **Send test event to destination**. 
   
+
 If your test event successfully sends to the destination, you can see in the **View test outcome** section:
-* The request and the response
+* The request, response, and status for each API call 
 * How many of your mappings matched
-* The total number of API calls that were made as one test event can result in multiple API calls. 
+* The total number of API calls that were made as one test event can result in multiple API calls
 * Which mappings were successful and which ones failed
+* The destination's API endpoint used to make the request
 
 ![Screenshot of the Event Tester with a Track test event that resulted in 4 API calls](images/event-tester-2025.png)
 
-You can use the filter to navigate to specific mappings. 
+You can navigate between the different API calls and can use the filter to navigate to specific mappings. 
 
 ![Screenshot of the Event Tester filter with dropdown of different mappings](images/event-tester-filter.png)
 
 ## Mappings Tester
-When you add a destination and create a mapping in Reverse ETL, Linked Audience, and Journeys, you can test the specific mapping you created using the Mappings Tester. The Mappings Tester only tests a single mapping, and you can edit values before initiating a test. 
+When you add a destination and create a mapping in Connections, Reverse ETL, Linked Audience, and Journeys, you can test the specific mapping using the Mappings Tester. The Mappings Tester only tests a single mapping at a time and you can edit field values before initiating a test. This helps you verify that your configured mapping works as expected.
+
+Use the Mappings Tester when you need to:
+* Verify a single mapping configuration
+* Edit field values before testing a mapping
+* Troubleshoot a specific mapping that isn't working as expected
+
+### Using the Mappings Tester
+To use the Mapppings Tester:
+1. Navigate to the product (Connections, Reverse ETL, Linked Audience, or Journeys) you want to test the mapping for. 
+2. Select the destination that has the mapping you want to test.
+3. Select **Edit mapping**. 
+4. Edit any values in the **Send test record** section.
+5. Click **Send test event**. 
 
 
 ## FAQs
