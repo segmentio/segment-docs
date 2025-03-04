@@ -107,6 +107,8 @@ Deleting a Hold Until step can impact downstream steps that rely on it. When you
 
 The **Delay** step holds profiles in a journey for a set period before they can proceed to the next step. This enables controlled timing for messages, actions, or other journey events.
 
+Unlike the Hold Until step, Delay doesn't depend on a user action: profiles always move down the journey after the time you set. This makes Delay useful for pacing interactions, like spacing out emails, without requiring user engagement.
+
 ### How Delay works
 
 When a journey reaches the Delay step:
@@ -116,7 +118,24 @@ When a journey reaches the Delay step:
 3. If an exit condition is met during the hold period, the profile leaves the journey early.
 4. After the delay ends, the profile moves to the next step in the journey.
 
+### Configurable parameters
 
+The following table explains the parameters you can configure for the Delay step:
+
+| Parameter     | Details                                                 |
+| ------------- | ------------------------------------------------------- |
+| Duration      | Set the delay period in minutes, hours, days, or weeks. |
+| Minimum delay | 5 minutes                                               |
+| Maximum delay | 182 days (approximately 6 months)                       |
+
+### Configure the Delay step
+
+1. Drag the Delay step onto the journey canvas, or click **+** to add it.
+2. (Optional:) Give the step a unique name.
+3. Enter a number for the duration and select a time unit (minutes, hours, days, weeks).
+4. Click **Save**.
+
+The Delay step helps control the timing of journey actions by pausing profiles for a set period before they continue. This regulates user interactions and prevents premature movement through the journey. If a profile exits the journey while in the Delay step, it does not proceed further.
 
 ## Send to Destination
 
