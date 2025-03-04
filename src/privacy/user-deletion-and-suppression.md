@@ -125,7 +125,7 @@ Select the default retention period for the workspace in this setting. This valu
 
 You can select from the following Archive Retention time periods:
 
-- 7 days   
+- 14 days   
 - 30 days  
 - 90 days  
 - 180 days  
