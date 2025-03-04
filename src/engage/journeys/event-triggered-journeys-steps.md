@@ -103,6 +103,10 @@ Segment creates these aliases automatically during setup, and they show up in th
 
 Deleting a Hold Until step can impact downstream steps that rely on it. When you delete a configured step, Segment displays a modal that summarizes the potential impact on related branches and steps. Review all dependencies carefully to avoid unintentionally disrupting the journey.
 
+## Fixed delays
+
+The **Delay** step holds profiles in a journey for a set period before they can proceed to the next step. This enables controlled timing for messages, actions, or other journey events.
+
 ## Send to Destination
 
 The **Send to Destination** step lets you send journey data to one of your [configured Engage destinations](/docs/connections/destinations/), enabling real-time integration with tools like marketing platforms, analytics systems, or custom endpoints.
