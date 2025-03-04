@@ -142,7 +142,7 @@ Override the workspace default retention period on a per-source level.
 You can select from the following Archive Retention time periods:
 
 - Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period))  
-- 7 days  
+- 14 days  
 - 30 days  
 - 90 days  
 - 180 days  
