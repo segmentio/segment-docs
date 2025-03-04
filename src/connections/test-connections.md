@@ -12,12 +12,12 @@ Segment's Event Tester enables you to test your connections between Segment and 
 *   Your new destination is configured correctly
 
 The Event Tester sends a real event that appears in your end tool alongside your existing data. You can use the Event Tester for these products: 
-* Connections
-* Linked Audiences
-* Reverse ETL
-* Journeys (only available for new event triggered journeys)
+* [Connections](/docs/connections/)
+* [Linked Audiences](/docs/engage/audiences/linked-audiences/)
+* [Reverse ETL](/docs/connections/reverse-etl/)
+* [Journeys](/docs/engage/journeys/)
 
-## How it works
+## Using the Event Tester
 
 > info ""
 > The event tester only tests the enabled mappings for the destination. 
