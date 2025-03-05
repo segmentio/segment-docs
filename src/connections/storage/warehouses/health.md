@@ -11,8 +11,8 @@ You can use this feature to answer questions such as:
 - *Anomaly detection* - How much data is being synced on a daily basis? Have there been anomalous spikes or dips that may indicate sudden changes in event volume, sync failures, or something else?
 - *Data composition* - Which sources are contributing the most (or least) amount of data in my warehouse? Which collections make up the majority of data within a source?
 
-> note ""
-> **Note**: Warehouse Health is available for all Warehouse customers.
+> success ""
+> Warehouse Health is available for all Warehouse customers.
 
 
 The Warehouse Health dashboards are available at both the [warehouse level](#warehouse-dashboards), and at the [warehouse-source connection level](#warehouse-source-dashboards), explained below.

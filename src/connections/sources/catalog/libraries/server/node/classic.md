@@ -49,8 +49,8 @@ var analytics = new Analytics('YOUR_WRITE_KEY', {
 
 ## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and/or anonymous ID, and any optional traits you know about them.
 

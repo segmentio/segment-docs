@@ -67,7 +67,7 @@ You can provide custom fields, but they won't be updated or visible until you cr
 
 ### Version 4
 
-> note ""
+> info ""
 > The Segment integration with v4 of the Pardot API is currently in beta, and is only available in cloud-mode.
 
 If you are using version 4, the functionaly is the same as version 3 except you will need to provide some kind of identifier to Segment that we can use to correctly handle either the creation of a new prospect *or* the update of an existing one. There are two options for this.
