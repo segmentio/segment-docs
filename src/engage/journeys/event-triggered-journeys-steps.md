@@ -128,7 +128,7 @@ The following table explains the parameters you can configure for the Delay step
 | Minimum delay      | 5 minutes                                               |
 | Maximum delay      | 182 days (around 6 months)                              |
 
-### Configure the Delay step
+To configure the Delay step:
 
 1. Drag the Delay step onto the journey canvas, or click **+** to add it.
 2. (*Optional*) Give the step a unique name.
