@@ -32,11 +32,15 @@ Segment requires every event from all of your sources to include the end user co
 
 ```
 
-Segment events without a context object or consent object or events that have an empty context or consent object do not impact consent preferences on the Profile and have the following behavior:  
-- Segment sets a value of `false` on a Profile for all consent categories for which consent has never collected. 
-- Segment sets a value of `false` on a Profile for each consent category in any events with an empty `context.consent.categoryPreferences` object.
-- Segment sets a value of `false` on a Profile for categories not addressed in an `context.consent.categoryPreferences` object.
-- Profiles that have consent categories which have never been collected are set to `false` during a Profile Merge. This might result in a [Profile level conflict](#profile-level-conflict). 
+Segment events without a context object or consent object or events that have an empty context or consent object do not impact consent preferences on the Profile.
+
+However, if you send events with consent categories that are set up in your CMP but not included in your consent object (a consent category is "missing" from your consent object) or if you have consent categories for which you haven't yet collected consent preferences, Segment sets consent preferences for those categories to `false`. 
+
+This behavior includes:  
+- Segment setting a value of `false` on a Profile for all consent categories for which consent has never collected. 
+- Segment setting a value of `false` on a Profile for each consent category in any events with an empty `context.consent.categoryPreferences` object.
+- Segment setting a value of `false` on a Profile for categories not addressed in an `context.consent.categoryPreferences` object.
+- Segment setting Profiles that have consent categories which have never been collected to `false` during a Profile Merge. This might result in a [Profile level conflict](#profile-level-conflict). 
 
 ## Segment Consent Preference Updated event
 
