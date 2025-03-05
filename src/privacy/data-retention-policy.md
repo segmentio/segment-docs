@@ -15,7 +15,7 @@ Segment will enforce a strict data retention policy for all:
 ![A flowchart depicting the progression of active and no longer active customers.](images/data-retention-policy-flowchart.png)
 
 ## Effective Date
-Segment’s enforcement of this data retention policy will begin on:
+Segment’s enforcement of this data retention policy for active customers will begin on:
 - **April 15, 2025** for Object Store data
 - **July 15, 2025** for Archive event and Profile events data stores
 
@@ -90,7 +90,9 @@ If contracting from Unify or Unify+, your Connection data will remain unaffected
 
 ## Churned customers 
 
-A churned customer is a Business or Team Tier customer that has explicitly terminated the contract or has unpaid invoices and has their workspace fully locked out.
+A churned customer is a Business or Team Tier customer that has either:
+- Explicitly terminated the contract
+- Has unpaid invoices and had their workspace fully locked out
 
 Customers that have explicitly terminated their Segment contract will have their data unrecoverably deleted within 30 days of contract termination. 
 
