@@ -93,7 +93,7 @@ Reverse ETL (Extract, Transform, Load) sources extract object and event data fro
 To extract customer data from your warehouse, you must: 
 
 1. [**Add a Reverse ETL source:**](#add-a-reverse-etl-source) You can use your Azure, BigQuery, Databricks, Postgres, Redshift, or Snowflake data warehouse as a data source.   
-2. [**Add a Segment Profiles destination**](#add-a-segment-profiles-destination): When you connect a Segment Profiles destination to your Reverse ETL source, you can send your warehouse data back to Segment to create and update [Profiles](https://segment.com/docs/profiles/) that can then be accessed through the [Profile API](https://segment.com/docs/profiles/profile-api/) and activated through [Unified Profiles](https://www.twilio.com/docs/unified-profiles).
+2. [**Add a Segment Profiles destination**](#add-a-segment-profiles-destination): When you connect a Segment Profiles destination to your Reverse ETL source, you can send your warehouse data back to Segment to create and update [Profiles](/docs/profiles/) that can then be accessed through the [Profile API](/docs/profiles/profile-api/) and activated through [Unified Profiles](https://www.twilio.com/docs/unified-profiles).
 
 #### Add a Reverse ETL source
 
@@ -132,8 +132,8 @@ To set up Profiles Sync, complete the instructions in the [Set up Profiles Sync]
 
 After linking your customer data to Twilio through a Unify space, you can set up [computed traits](#computed-traits) and [Predictions](#predictions) to better understand your users.
 
-warning "Flex customers must complete an interaction in Flex before creating computed traits in Segment"   
-Before you can create computed traits in Segment, you must connect your Unify space to Flex and then complete a customer interaction in Flex.
+> warning "Flex customers must complete an interaction in Flex before creating computed traits in Segment"
+> Before you can create computed traits in Segment, you must connect your Unify space to Flex and then complete a customer interaction in Flex.
 
 ### Computed traits
 
@@ -188,7 +188,7 @@ Add the following event property:
 - **Event property**: channelType  
 - **Value**: Text
 
-And add a Minimum frequency of 2\.
+And add a Minimum frequency of 2.
 
 #### Total outbounds
 

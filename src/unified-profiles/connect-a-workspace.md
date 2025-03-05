@@ -9,7 +9,7 @@ Your new Segment workspace must be on one of Segment’s [Customer Data Platform
 ## Step 1: Set up your Unify space
 
 > success ""
-> This section is about setting up a new Segment Unify space to link to Twilio. If you have an existing Segment Unify space you'd like to use, proceed directly to [Connect your Unify space to Twilio](#step-2:-connect-your-unify-space-to-twilio). 
+> This section is about setting up a new Segment Unify space to link to Twilio. If you have an existing Segment Unify space you'd like to use,proceed directly to [Connect your Unify space to Twilio](#step-2:-connect-your-unify-space-to-twilio).
 
 Your Unify space acts as a central location for your Profiles, or collated information that you have for each of your customers. 
 
@@ -101,8 +101,8 @@ To set up Profiles Sync, complete the instructions in the [Set up Profiles Sync]
 
 After linking your customer data to Twilio through a Unify space, you can set up [computed traits](#computed-traits) and [Predictions](#predictions) to better understand your users.
 
-warning "Flex customers must complete an interaction in Flex before creating computed traits in Segment"   
-Before you can create computed traits in Segment, you must connect your Unify space to Flex and then complete a customer interaction in Flex.
+> warning "Flex customers must complete an interaction in Flex before creating computed traits in Segment"
+> Before you can create computed traits in Segment, you must connect your Unify space to Flex and then complete a customer interaction in Flex.
 
 ### Computed traits
 
