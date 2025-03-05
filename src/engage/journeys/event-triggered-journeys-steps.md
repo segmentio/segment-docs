@@ -131,7 +131,7 @@ The following table explains the parameters you can configure for the Delay step
 ### Configure the Delay step
 
 1. Drag the Delay step onto the journey canvas, or click **+** to add it.
-2. (Optional:) Give the step a unique name.
+2. (*Optional*) Give the step a unique name.
 3. Enter a duration and select a time unit (minutes, hours, days, weeks).
 4. Click **Save**.
 
