@@ -12,7 +12,7 @@ To set up your Segment workspace and Unify space, you’ll complete the followin
 2. **Connect your Unify space to Twilio:** By connecting your Unify space to Twilio, you’ll start linking customer interaction history to your Profiles and begin enriching your customer profiles with information collected during customer interactions.   
 3. **Add an additional data source to your workspace**: Import data into your Segment workspace from a business tool like a CRM or data warehouse, further enriching your customer data. 
 
-Once you’ve connected your Unify space to Twilio, you can also add optional business tools that Segment will receive data from or forward data to, create computed traits, which allows you to quickly create user or account-level calculations that Segment keeps up-to-date over time, and generate [Predictions](/docs/unify/traits/predictions/), which let you predict the likelihood that users will perform any event tracked in Segment. 
+Once you’ve connected your Unify space to Twilio, you can also add optional [business tools that Segment will receive data from](/docs/connections/sources/) or [forward data to](/docs/connections/destinations/), create [Computed Traits](/docs/unify/Traits/computed-traits/), which allows you to quickly create user or account-level calculations that Segment keeps up-to-date over time, and generate [Predictions](/docs/unify/traits/predictions/), which let you predict the likelihood that users will perform any event tracked in Segment. 
 
 ## Step 1: Set up your Unify space
 
@@ -77,9 +77,9 @@ Once you’ve created a source, the source is automatically enabled and can imme
 
 ## Connect additional business tools to Unify
 
-After you've added a source of data, you can connect additional business tools to your Unify space. You can add data sources, or “sources” that flow data into Segment, and “destinations,” the business tools or apps that Segment forwards your data to. 
+After you've added a source of data, you can connect additional business tools to your Unify space. You can add data sources, or "sources" that flow data into Segment, and "destinations," the business tools or apps that Segment forwards your data to. 
 
-For example, you can [add a CRM](https://app.segment.com/goto-my-workspace/sources/catalog?category=CRM), like Salesforce or Hubspot, as a data source to create rich, personalized support interactions for your agents in Twilio Flex, implement the [Analytics.js library on your website](https://app.segment.com/goto-my-workspace/sources/catalog?category=Website) to collect more granular data about the way your customers interact with your web properties, or [link your helpdesk](https://app.segment.com/goto-my-workspace/sources/catalog?category=Helpdesk) to your IVR workflow with Twilio Studio to gather a complete view of the reasons your customers are reaching out for support. If a data warehouse is your single source of truth about your customers, use [Reverse ETL](#set-up-reverse-etl) to import that data into Twilio to facilitate personalized interactions across your customer touchpoints.
+For example, you can [add a CRM](https://app.segment.com/goto-my-workspace/sources/catalog?category=CRM), like Salesforce or Hubspot, as a data source to create rich, personalized support interactions for your agents in Twilio Flex, implement the [Analytics.js library on your website](https://app.segment.com/goto-my-workspace/sources/catalog?category=Website) to collect more granular data about the way your customers interact with your web properties, or [link your helpdesk](https://app.segment.com/goto-my-workspace/sources/catalog?category=Helpdesk) to your IVR workflow with Twilio Studio to gather a complete view of the reasons your customers are reaching out for support. If a data warehouse is your single source of truth about your customers, use [Reverse ETL](#set-up-reverse-etl) to import that data into Twilio to facilitate personalized interactions across your customer touchpoints, then use [Profiles Sync](#connect-a-warehouse-for-profiles-sync) to hydrate your Profiles with information gathered during customer interactions. 
 
 ### Connect a cloud app or library source
 
@@ -229,10 +229,10 @@ For example, you could personalize the marketing your customers receive by creat
 
 Segment recommends that you select the following Predictions for Unified Profiles:
 
-- [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn)  
-- [Predicted Lifetime value](/docs/unify/traits/predictions/#predicted-lifetime-value)
+- [Likelihood to Churn](/docs/unify/traits/predictions/#likelihood-to-churn)  
+- [Predicted Lifetime Value](/docs/unify/traits/predictions/#predicted-lifetime-value)
 
-For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs) and [Predictions Nutrition Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
+For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs) and [Predictions Nutrition Facts Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
 
 ## Troubleshooting
 

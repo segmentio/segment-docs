@@ -9,7 +9,7 @@ Your new Segment workspace must be on one of Segment’s [Customer Data Platform
 ## Step 1: Set up your Unify space
 
 > success ""
-> This section is about setting up a new Segment Unify space to link to Twilio. If you have an existing Segment Unify space you'd like to use,proceed directly to [Connect your Unify space to Twilio](#step-2:-connect-your-unify-space-to-twilio).
+> This section is about setting up a new Segment Unify space to link to Twilio. If you have an existing Segment Unify space you'd like to use,proceed directly to [Connect your Unify space to Twilio](#step-2-connect-your-unify-space-to-twilio).
 
 Your Unify space acts as a central location for your Profiles, or collated information that you have for each of your customers. 
 
@@ -45,7 +45,7 @@ Twilio Studio customers have profile read access through the [Search for a Profi
 
 ## Step 3: Connect additional customer data sources to Unify
 
-After you've connected your Unify space to Twilio, you can connect additional data sources to your Segment workspace. For example, you can [add a CRM](https://app.segment.com/goto-my-workspace/sources/catalog?category=CRM), like Salesforce or Hubspot, as a data source to create rich, personalized support interactions for your agents in Twilio Flex, implement the [Analytics.js library on your website](https://app.segment.com/goto-my-workspace/sources/catalog?category=Website) to collect more granular data about the way your customers interact with your web properties, or [link your helpdesk](https://app.segment.com/goto-my-workspace/sources/catalog?category=Helpdesk) to your IVR workflow with Twilio Studio to gather a complete view of the reasons your customers are reaching out for support. If a data warehouse is your single source of truth about your customers, use [Reverse ETL](#set-up-reverse-etl) to import that data into Twilio to facilitate personalized interactions across your customer touchpoints.  
+After you've connected your Unify space to Twilio, you can connect additional data sources to your Segment workspace. For example, you can [add a CRM](https://app.segment.com/goto-my-workspace/sources/catalog?category=CRM), like Salesforce or Hubspot, as a data source to create rich, personalized support interactions for your agents in Twilio Flex, implement the [Analytics.js library on your website](https://app.segment.com/goto-my-workspace/sources/catalog?category=Website) to collect more granular data about the way your customers interact with your web properties, or [link your helpdesk](https://app.segment.com/goto-my-workspace/sources/catalog?category=Helpdesk) to your IVR workflow with Twilio Studio to gather a complete view of the reasons your customers are reaching out for support. If a data warehouse is your single source of truth about your customers, use [Reverse ETL](#set-up-reverse-etl) to import that data into Twilio to facilitate personalized interactions across your customer touchpoints, then use [Profiles Sync](#connect-a-warehouse-for-profiles-sync) to hydrate your Profiles with information gathered during customer interactions.  
    
 > success ""
 > This section is about setting up sources and destinations to link to your Unify space. If you have an existing Segment Unify space with these connections that you'd like to use, proceed directly to [Optional: Create computed traits and Predictions](#optional-create-computed-traits-and-predictions).
@@ -85,8 +85,7 @@ Create a Segment Profiles destination to add a mapping to your Reverse ETL sourc
 4. On the Mappings tab, click **Add Mapping**.  
 5. Search for the model you created when you added your Reverse ETL source, select **Send Identify** and click **Create Mapping**.  
 6. You're redirected to the Edit Mapping page. Under the Select mappings section, map event fields from your data source to the pre-filled values that Segment expects to receive. Add additional traits by entering your properties and event names in the Traits section. Clicking into an event field lets you search your destination's record fields.  
-     
-   **(Optional)**: To test your mapping, click the **Test Mapping** button.  
+   **(Optional)**: To test your mapping, click the **Test Mapping** button.
      
 7. When you've finished mapping all relevant event fields and verified that your test record contains all of the relevant user information, click **Save Mapping.**  
 8. You're returned to the Mappings page for your Segment Profiles destination. Under the Mapping status column, enable the mapping you created in the previous step.
@@ -198,10 +197,10 @@ For example, you could personalize the marketing your customers receive by creat
 
 Segment recommends that you select the following Predictions for Unified Profiles:
 
-- [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn)  
-- [Predicted Lifetime value](/docs/unify/traits/predictions/#predicted-lifetime-value)
+- [Likelihood to Churn](/docs/unify/traits/predictions/#likelihood-to-churn)  
+- [Predicted Lifetime Value](/docs/unify/traits/predictions/#predicted-lifetime-value)
 
-For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs) and [Predictions Nutrition Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
+For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs) and [Predictions Nutrition Facts Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
 
 ## Troubleshooting
 
