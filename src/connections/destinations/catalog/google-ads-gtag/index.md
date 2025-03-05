@@ -95,8 +95,8 @@ analytics.page({}, {
 });
 ```
 
-> note ""
-> **NOTE:** The `'Google Adwords New'` is case sensitive. Segment prefers you to use `order_id` rather than  `transaction_id` to stay more consistent with the [ecommerce spec](/docs/connections/spec/ecommerce/v2). However, Segment will send it as `transaction_id` in the request itself to satisfy Google's specifications.
+> info "Formatting integration-specific options"
+> The property `'Google Adwords New'` is case sensitive. Segment prefers you use `order_id` rather than `transaction_id` to stay more consistent with the [Ecommerce spec](/docs/connections/spec/ecommerce/v2). However, Segment sends `transaction_id` in the request itself to satisfy Google's specifications.
 
 ## Track
 
