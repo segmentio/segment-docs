@@ -288,7 +288,7 @@ sections:
   - path: /connections/regional-segment
     title: Regional Segment
   - path: /connections/test-connections
-    title: Event Tester
+    title: Testing Connections
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
