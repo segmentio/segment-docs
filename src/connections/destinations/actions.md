@@ -157,14 +157,13 @@ To delete a destination action: click the action to select it, and click **Delet
 This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
 ## Test a destination action
-To test a destination action, follow the instructions in [Testing Connections](/docs/connections/test-connections/). You must enable a mapping in order to test the destination. Otherwise, this error occurs: *You may not have any subscriptions that match this event.*
+To test a destination action, follow the instructions in [Event Tester](/docs/connections/test-connections/). You must enable a mapping in order to test the destination. Otherwise, this error occurs: *You may not have any subscriptions that match this event.*
 
 You can also test within the mapping itself. To test the mapping:
 1. Navigate to the **Mappings** tab of your destination. 
 2. Select a mapping and click the **...** and select **Edit Mapping**. 
-3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source, or you can add your own sample event. 
-4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination.
-
+3. In step 2 of the **Set up mappings** page, click **Load event from source** to add a test event from the source, select **Generate sample event** for Segment to generate a sample event for you, or enter your own event. 
+4. Scroll to step 5 on the page and click **Send test event** to test the mapping and view the response from the destination.
 
 > info "Test Mapping might not return the events you're looking for"
 > Segment only surfaces a small subset of events for the Test Mapping feature and might not always return the event you're looking for. If you'd like to test with a specific event, copy a specific event from your [Source Debugger](/docs/connections/sources/debugger/) and paste it into the **Add test event** interface.
