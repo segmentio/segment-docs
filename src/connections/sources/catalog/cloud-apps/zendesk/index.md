@@ -69,7 +69,7 @@ Collections are the groupings of resources Segment pulls from your source.
 
 In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
 
-> note "Standard properties"
+> info "This list only includes standard properties"
 > The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse.)
 
 ### groups
