@@ -170,7 +170,7 @@ This appends the `plan_id` trait to this Track event. This does _not_ add the na
 
 By default, non-Identify events (like Track or Page) **don't automatically collect user traits** from previous Identify calls. To include traits from an `identify()` event in later events, you'll need to add them manually to the `context.traits` object within the `options` parameter.
 
-Each Analytics.js method has an `options` parameter where you can pass the `context.traits` object, but each method has a specific format. Follow the formats in the Segment Spec when adding traits, like in these examples:
+Each Analytics.js method has an `options` parameter where you can pass the `context.traits` object, but each method has a specific format. Follow the formats in the [Segment Spec](/docs/connections/spec/) when adding traits, like in these examples:
 
 - [Identify](/docs/connections/spec/identify/) - The [Analytics.js Identify](/docs/connections/sources/catalog/libraries/website/javascript/#identify) method follows this format : `analytics.identify([userId], [traits], [options], [callback])`;
 - [Track](/docs/connections/spec/track/) - The [Analytics.js Track](/docs/connections/sources/catalog/libraries/website/javascript/#track) method follows this format : `analytics.track(event, [properties], [options], [callback])`;
