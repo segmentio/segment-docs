@@ -21,6 +21,9 @@ To use the Data Graph, you'll need the following:
   - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
   - Under **Track event tables**, select **Sync all Track Call Tables** to enable filtering on event history for Linked Audiences conditions.
 
+> info ""
+>  To define entity relationships, you need to enable Linked Audiences. Contact your Customer Success Manager to get access to Linked Audiences. 
+
 ## Step 1: Set up Data Graph permissions in your data warehouse
 > warning ""
 > Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
