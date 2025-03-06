@@ -47,6 +47,32 @@ Identify events are mostly used to update user profiles in external systems, lik
 
 Since Identify events are designed to update profile data, they are commonly mapped to destinations that rely on persistent user records, such as customer databases, email platforms, and loyalty systems. 
 
+### Track events: logging user actions
+
+Track events, on the other hand, capture user actions and behaviors. These events are event-driven rather than profile-based, which makes them ideal for tracking audience membership changes or user activities.
+
+Here's an example of a Track event payload:
+
+```json
+{
+  "anonymousId": "anon-test-1",
+  "context": {
+    "traits": {
+      "email": "user-testing-1@gmail.com"
+    }
+  },
+  "event": "Audience Entered",
+  "properties": {
+    "audience_key": "your_audience_key",
+    "your_audience_key": true
+  },
+  "type": "track",
+  "userId": "user-testing-1"
+}
+```
+
+
+
 
 
 
