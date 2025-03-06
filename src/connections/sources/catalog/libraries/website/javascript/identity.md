@@ -177,7 +177,7 @@ Each Analytics.js method has an `options` parameter where you can pass the `cont
 - [Page](/docs/connections/spec/page/) - The [Analytics.js Page](/docs/connections/sources/catalog/libraries/website/javascript/#page) method follows this format : `analytics.page([category], [name], [properties], [options], [callback])`;
 - [Group](/docs/connections/spec/group/) - The [Analytics.js Group](/docs/connections/sources/catalog/libraries/website/javascript/#group) method follows this format : `analytics.group(groupId, [traits], [options], [callback])`;
 
-Adding traits to events is especially useful if you're using [Actions destination](/docs/connections/destinations/actions/), since it makes those traits available for mapping in the destination’s configuration.
+Adding traits to events is especially useful if you're using [Actions destinations](/docs/connections/destinations/actions/), since it makes those traits available for mapping in the destination’s configuration.
 
 
 ## Clearing Traits
