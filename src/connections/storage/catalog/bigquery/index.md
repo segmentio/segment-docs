@@ -40,7 +40,7 @@ To create a service account for Segment:
 2. Click **Create Service Account**.
 3. Enter a name for the service account (for example, `segment-warehouses`) and click **Create**.
 4. Assign the service account the following roles:
-    - `BigQuery Data Editor`
+    - `BigQuery Data Owner` or `BigQuery Data Editor` 
     - `BigQuery Job User`
 5. [Create a JSON key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys){:target="_blank"}.
 The downloaded file will be used to create your warehouse in the Segment app.
