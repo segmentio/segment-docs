@@ -35,7 +35,9 @@ The default data retention period for each of the data types is as follows:
 | **Team**     | 365 days                     | Not applicable               | 90 days                           | 365 days | Not applicable |
 | **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
-Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through “Workspace Default Archive Retention Period”.  
+Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through “Workspace Default Archive Retention Period”.
+
+Segment will unrecoverably delete a [Unify Space](/docs/unify/identity-resolution/space-setup/#step-one-create-a-new-dev-space) 90 days after it was disabled. 
  
 ### What data is impacted?
 
