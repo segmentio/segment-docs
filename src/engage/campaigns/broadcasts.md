@@ -99,7 +99,9 @@ For more on message segments, view [SMS character limits](https://www.twilio.com
 
 ### Email template limits
 
-The total size of your email, including attachments, must be less than 30MB.
+The total size of your email must be less than 30MB. 
+
+Attachments are not supported in email templates, but you can upload files to an external storage service and include a link within the email using a button or image.
 
 To learn more, view SendGrid's [email limits](https://docs.sendgrid.com/api-reference/mail-send/limitations#:~:text=The%20total%20size%20of%20your,must%20no%20more%20than%201000.){:target="_blank"}.
 

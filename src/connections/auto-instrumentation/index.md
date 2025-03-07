@@ -27,7 +27,7 @@ redirect_from:
 Auto-Instrumentation simplifies tracking in your websites and apps by eliminating the need for a traditional Segment instrumentation.
 
 > info "Auto-Instrumentation Pilot"
->  Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation in your workspace"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.

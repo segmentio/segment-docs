@@ -64,14 +64,13 @@ Your access token enables you to call the Profile API and access customer data.
 ### Query the user's event traits
 
 1. From the HTTP API testing application of your choice, configure the authentication as described above.
-2. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
+2. Identify the user’s external ID. 
+  - The Profile API requires both the ID type and value, separated by a colon (like `anonymous_id:eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092`). Learn more in [Find a user's external ID](#find-a-users-external-id).
+3. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
     `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
-
-
-    If you're using the Profile API in the EU, use the following URL for all requests:
-
-    `https://profiles.euw1.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
-3. Send a `GET` request to the URL.
+  - If you're using the Profile API in the EU, use the following URL for all requests:
+   `https://profiles.euw1.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
+4. Send a `GET` request to the URL.
 
 ### Explore the user's traits in the response
 
@@ -249,7 +248,7 @@ Date: Mon, 01 Jul 2013 17:27:06 GMT
 Status: 200 OK
 Request-Id: 1111-2222-3333-4444
 ```
-> note ""
+> info ""
 > If you need to contact Segment regarding a specific API request, please capture and provide the `Request-Id`.
 
 

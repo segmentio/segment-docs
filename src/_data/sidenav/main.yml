@@ -102,8 +102,6 @@ sections:
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/discounts-for-startups-npos
       title: Discounts or Coupons
-    - path: /guides/usage-and-billing/startup-program
-      title: Segment Startup Program
 - section_title: Connections
   section:
   - path: /connections
@@ -290,7 +288,7 @@ sections:
   - path: /connections/regional-segment
     title: Regional Segment
   - path: /connections/test-connections
-    title: Event Tester
+    title: Testing Connections
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -486,7 +484,9 @@ sections:
       slug: '/engage/journeys/event-triggered-journeys'
       section: 
       - path: /engage/journeys/event-triggered-journeys
-        title: Event-Triggered Journeys Overview
+        title: Overview
+      - path: /engage/journeys/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
       - path: /engage/journeys/journey-context
         title: Journey Context
     - path: '/engage/journeys/faq-best-practices'

@@ -28,10 +28,11 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ### Events
 
-You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. In the Audience builder, Page calls will appear as `Page Viewed` and Screen calls will be `Screen Viewed`. You can use the `property` button to refine the audience on specific event properties as well. 
+You can build an Audience from any events connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. In the Audience builder, Page calls appear as `Page Viewed` and Screen calls appear as `Screen Viewed`.
 
-> info ""
-> The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment displays a portion of values from the incoming data stream. However, if you don't see the value you're looking for, you can manually enter it.
+To refine the audience based on event properties, use the `+property` button:
+- The `name` property for Page and Screen calls appears in the Audience builder as `page_name` and `screen_name`, respectively. 
+- The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment shows a subset of values from the incoming data stream. If you don't see the value you're looking for, you can manually enter it.
 
 Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
@@ -159,7 +160,7 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
 > warning ""
-> Real-time Compute doesn't support time window conditions. Segment creates Audiences using time window conditions as batch computations. Additionally, Segment creates [Funnel Audiences](#funnel-audiences) as batch computations.
+> By default, Segment creates all Audiences as real-time computations. There are however, a few exceptions which can only be supported as batch computations, one example is [Funnel Audiences](#funnel-audiences). The Audience builder will determine and indicate whether the Audience is a real-time or batch computation. 
 
 To create a new Audience or Trait:
 
@@ -176,8 +177,8 @@ While Engage is computing, use the Audience Explorer to see users or accounts th
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
 
-> warning ""
-> Real-time computations connected to List destinations use a separate sync process that can take 12-15 hours to send changes present in the most recent computation.
+> info "Real-time and batch computation"
+> By default, Segment creates all audiences as real-time computations. However, some conditions require batch computation. For example, [funnel audiences](#funnel-audiences) can only be computed in batch mode. The Audience builder determines whether an audience is real-time or batch based on the conditions applied.
 
 ### Editing Realtime Audiences and Traits
 
@@ -260,7 +261,7 @@ Note the following limits for the CSV downloader:
 The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time.
 
 > info ""
-> The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.
+> The Identifier Breakdown doesn't show custom IDs included in the Identity resolution configuration unless those IDs are explicitly selected through [ID sync](/docs/engage/trait-activation/id-sync/). By default, Segment only displays external IDs in the breakdown.
 
 ## FAQ
 

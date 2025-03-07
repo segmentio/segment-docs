@@ -144,9 +144,13 @@ The schema functionality is a _reactive_ way to clean up your data, where the Tr
 
 That being said, there are plenty of scenarios where the reactive Schema functionality solves immediate needs for customers. Often times, customers will use both Schema Controls and Tracking Plan functionality across their Segment Sources. For smaller volume Sources with less important data, the Schema functionality often works perfectly.
 
-### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
+### If I enable blocking are events just blocked from specific Destinations or the entire Segment pipeline?
 
-Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+Segment can block events from all Segment Destinations except for mobile device mode destinations. 
+
+Events that are delivered from a mobile source in device mode bypass the point in the Segment pipeline where Segment blocks events, so mobile events sent using device mode are not blocked and are delivered to your Destinations. If you are a Business Tier customer using Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDKs, you can use [destination filters](/docs/connections/destinations/destination-filters/) to block events. 
+
+When an event is blocked using a Tracking Plan, it does not count towards your MTU limit. If you use [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/), blocked events forwarded to a new source will count toward your MTU limit.
 
 ### If I omit unplanned properties or properties that generate JSON schema violations, what happens to them?
 
@@ -176,6 +180,39 @@ Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [
 ### Do warehouse connectors use the data type definitions when creating a warehouse schema?
 
 Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
+
+### Why are unplanned properties not showing up as blocked in my Source Schema, even though I've set the Schema Configuration to omit them?
+
+Next to the Event Name column in your [Source Schema](/docs/connections/sources/schema/) are two columns:  Allowed and Blocked. If you configure your [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) to Block Unplanned Events and Omit Properties, the Source Schema only shows a property or trait as blocked when the _entire event is blocked_ because it’s unplanned and not part of the Tracking Plan. The Block Unplanned Events and Omit Properties settings are only be enforced if the property is an unplanned name, not an unplanned value.
+
+To show a blocked value for a property/trait in your Source Schema, you'll need to trigger a violation, which can only be done using the JSON Schema. Once you configure your Schema Configuration to Omit Properties, the property or trait is shown as blocked.
+
+See an example payload below: 
+
+```json
+"protocols": {
+      "omitted": [
+        "newProperty"
+      ],
+      "omitted_on_violation": [
+        "integer",
+        "string"
+      ],
+      "sourceId": "1234",
+      "violations": [
+        {
+          "type": "Invalid Type",
+          "field": "properties.integer",
+          "description": "Invalid type. Expected: integer, given: number"
+        },
+        {
+          "type": "Invalid Type",
+          "field": "properties.string",
+          "description": "Invalid type. Expected: string, given: integer"
+        }
+      ]
+```
+![A screenshot of the Source Schema page, with an event expanded to display a blocked property, newProperty.](images/protocols-faq-blocked-events.png)
 
 ### Can I use schema controls to block events forwarded to my source from another source?
 

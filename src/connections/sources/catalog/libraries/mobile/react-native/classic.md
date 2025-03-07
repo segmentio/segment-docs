@@ -196,8 +196,8 @@ Segment recommends that you make an Identify call when the user first creates an
 
 Analytics-React-Native works on its own background thread, so it never blocks the main thread for the UI or a calling thread.
 
-> note ""
-> **Note**: Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices.
+> success ""
+> Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices.
 
 The example Identify call below identifies a user by their unique User ID (the one you know them by in your database), and labels them with a `name` and `email` traits.
 

@@ -149,3 +149,7 @@ Failing to generate a `messageId` that complies with Mixpanel's `insert_id` stan
 ### Why is Boardman, Oregon appearing in my users' profile location field?
 
 If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.
+
+
+### Why is the Operating System field empty in Mixpanel?
+Mixpanel captures the `Operating System` field from the "OS Name" field in Segment. For Analytics.js sources, ensure that `context.userAgentData.platform` is correctly mapped to the "OS Name" field in your destination mappings. If this mapping is missing or misconfigured, the Operating System field may appear empty in Mixpanel.
