@@ -1,5 +1,6 @@
 ---
 title: Data Retention and Deletion Policy
+hidden: true
 ---
 
 Twilio Segment’s Data Retention and Deletion Policy provides clarity, consistency and compliance across all Segment services and brings Segment’s data retention policy in line with industry standards and regulations. By implementing and enforcing this policy, Segment aims to enhance data governance and ensure that Segment customers can manage their data accurately, efficiently and securely within clearly defined retention periods.
