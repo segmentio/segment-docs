@@ -597,6 +597,17 @@ sections:
     title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
+- section_title: Monitor
+  section: 
+  - path: /monitor
+    title: Monitor Overview
+  - section_title: Alerts
+    slug: /monitor/alerts
+    section:
+    - path: /monitor/alerts/connections-alerts
+      title: Connections Alerts
+  - path: /monitor/audit-trail
+    title: Audit Trail
 - section_title: Protocols
   section:
   - path: /protocols

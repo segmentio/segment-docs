@@ -1,6 +1,7 @@
 ---
 title: Audit Trail
 plan: audit-trail
+redirect_from: /docs/segment-app/iam/audit-trail/
 ---
 
 
