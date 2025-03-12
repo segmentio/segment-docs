@@ -6,14 +6,14 @@ Twilio customers without an existing Segment workspace can create a new Segment 
 
 Your new Segment workspace must be on one of Segment’s [Customer Data Platform (CDP) plans](https://segment.com/pricing/customer-data-platform/){:target="_blank"}. To upgrade to a CDP plan, communicate with your sales contact or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team.
 
-To set up your Segment workspace and Unify space, you’ll complete the following steps: 
+To set up your Segment workspace and Unify space, you need to: 
 
 1. **Set up your Unify space**: Your Unify space acts as a central location for your Profiles, or collated information that you have for each of your customers.   
 2. **Connect your Unify space to Twilio:** By connecting your Unify space to Twilio, you’ll start linking customer interaction history to your Profiles and begin enriching your customer profiles with information collected during customer interactions.   
 3. **Add an additional data source to your workspace**: Import data into your Segment workspace from a business tool like a CRM or data warehouse, further enriching your customer data. 
 
 Once you’ve connected your Unify space to Twilio, you can also:
-- Add optional [business tools that Segment will receive data from](/docs/connections/sources/) or [forward data to](/docs/connections/destinations/).
+- Add optional [business tools that Segment receives data from](/docs/connections/sources/) or [forwards data to](/docs/connections/destinations/).
 - Create [Computed Traits](/docs/unify/traits/computed-traits/), to quickly create user or account-level calculations that Segment keeps up to date over time.
 - Generate [Predictions](/docs/unify/traits/predictions/), to predict the likelihood that users will perform any event tracked in Segment.
 
@@ -43,7 +43,7 @@ Before leaving Segment, note the following information about your Segment worksp
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic) of your Segment workspace  
 - **Unify space slug**: Located in the address bar between `/spaces/` and `/explorer/`. For example: `app.segment.com/workspace-slug/unify/spaces/unify-space-slug/explorer`  
 - **Unify space ID**: Located in the API access settings for your Unify space (**Unify > Unify settings > API access**)  
-- **Profile API access token**: The access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space).
+- **Profile API access token**: The access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space)
 
 ## Step 3: Add a data source to your workspace
 
@@ -71,8 +71,8 @@ At a high level, Segment’s onboarding flow walks you through the following ste
 
 To add a data source to your workspace:
 
-1. Navigate to Connections and click **Add Source**.  
-2. Select the source you’d like to add from the Source Catalog.   
+1. Navigate to **Connections** and click **Add Source**.  
+2. Select the source you’d like to add from the **Source Catalog**.   
 3. Click **Add Source**.  
 4. Enter a name for your source and complete any source-specific setup steps, then click **Add Source**.
 
@@ -85,6 +85,8 @@ After you've added a source of data, you can connect additional business tools t
 For example, you can [add a CRM](https://app.segment.com/goto-my-workspace/sources/catalog?category=CRM), like Salesforce or HubSpot, as a data source to create rich, personalized support interactions for your agents in Twilio Flex, implement the [Analytics.js library on your website](https://app.segment.com/goto-my-workspace/sources/catalog?category=Website) to collect more granular data about the way your customers interact with your web properties, or [link your helpdesk](https://app.segment.com/goto-my-workspace/sources/catalog?category=Helpdesk) to your IVR workflow with Twilio Studio to gather a complete view of the reasons your customers are reaching out for support. If a data warehouse is your single source of truth about your customers, use [Reverse ETL](#set-up-reverse-etl) to import that data into Twilio to facilitate personalized interactions across your customer touchpoints, then use [Profiles Sync](#connect-a-warehouse-for-profiles-sync) to hydrate your Profiles with information gathered during customer interactions. 
 
 ### Connect a cloud app or library source
+
+To connect a cloud app or library source: 
 
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/sources/catalog/), select the business tool that you’re using as a source of data and click **Add Source**.  
 2. Enter a name for your source, fill in any additional settings, and click **Add Source**.
@@ -100,6 +102,8 @@ To extract customer data from your warehouse, you must:
 
 #### Add a Reverse ETL source
 
+To add a Reverse ETL source:
+
 1. In the [Reverse ETL section of the Sources catalog](https://app.segment.com/goto-my-workspace/sources/catalog?category=Reverse%20ETL), select your data warehouse and click **Add Source**.  
 2. Give your source a name and enter the credentials for a user with read and write access to your database.  
 3. Click **Test Connection**. If Segment can successfully connect to your warehouse, click **Add Source**.  
@@ -111,12 +115,12 @@ To extract customer data from your warehouse, you must:
 
 #### Add a Segment Profiles destination
 
-Create a Segment Profiles destination to add a mapping to your Reverse ETL source.
+Create a Segment Profiles destination to add a mapping to your Reverse ETL source. To add a Segment Profiles destination: 
 
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-segment-profiles), select the Segment Profiles destination and click **Add destination**.  
-2. On the Choose Data Source page, select your data source you set up in the previous steps and click **Next**.  
+2. On the **Choose Data Source** page, select your data source you set up in the previous steps and click **Next**.  
 3. Enter a name for your destination and click **Create destination**.  
-4. On the Mappings tab, click **Add Mapping**.  
+4. On the **Mappings** tab, click **Add Mapping**.  
 5. Search for the model you created when you added your Reverse ETL source, select **Send Identify** and click **Create Mapping**.  
 6. You're redirected to the Edit Mapping page. Under the Select mappings section, map event fields from your data source to the pre-filled values that Segment expects to receive. Add additional traits by entering your properties and event names in the Traits section. Clicking into an event field lets you search your destination's record fields.  
      
@@ -148,7 +152,7 @@ To create a computed trait:
 2. Click **Create computed trait**.  
 3. Select the type of event you'd like to create and click **Next**.  
 4. Select an event to be the base of your computed trait.  
-5. Add conditions and an optionally, an event property.  
+5. Add conditions and, optionally, an event property.  
 - **Conditions**: These restrict the messages considered when calculating the final value of a computed trait. For more information, see the [Conditions](/docs/unify/traits/computed-traits/#conditions) documentation.  
 - **Event properties**: These refine the computed traits to include only the specified properties.  
 6. Verify that your trait contains at least one member by clicking the **Preview Trait** button.  
@@ -222,7 +226,7 @@ Create a Last trait based on the "Flex - Engagement Completed" event and add the
 - **Event property**: sentiment  
 - **Value**: Text
 
-If you have the [Twilio Engage add on](https://segment.com/pricing/customer-data-platform/){:target="_blank”}, you can use [Audiences](/docs/engage/audiences/) to build a cohort of Profiles that all share a computed trait. 
+If you have the [Twilio Engage add-on](https://segment.com/pricing/customer-data-platform/){:target="_blank”}, you can use [Audiences](/docs/engage/audiences/) to build a cohort of Profiles that all share a computed trait. 
 
 For example, you could personalize the marketing your customers receive by creating an Audience of the Profiles that have a frequent inbound channel computed trait of `email` and sending those customers a promotion over email for your newest product. 
 
