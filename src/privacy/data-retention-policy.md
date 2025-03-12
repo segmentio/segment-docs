@@ -1,6 +1,5 @@
 ---
 title: Data Retention and Deletion Policy
-hidden: true
 ---
 
 Twilio Segment’s Data Retention and Deletion Policy provides clarity, consistency and compliance across all Segment services and brings Segment’s data retention policy in line with industry standards and regulations. By implementing and enforcing this policy, Segment aims to enhance data governance and ensure that Segment customers can manage their data accurately, efficiently and securely within clearly defined retention periods.
@@ -58,7 +57,7 @@ With this data retention policy, all data beyond the retention period is unrecov
 With this policy the following data is not impacted, but may be subject to other policies:
 
 * **Cloud Object Data (using pull)**: This involves Segment fetching object data from third party Cloud Sources. Since Segment always fetches the full objects, the retention policy will have no impact.  
-* **Profiles**: Unify Profiles created are not subject to this data retention policy.   
+* **Profiles**: Unify Profiles, Identifiers, and Traits created are not subject to this data retention policy.   
 * **Third Party Destinations**: Data in your third party destinations shared by Segment in the course of your implementation remains unaffected. Data stored in a third party system may be subject to the data retention policy of that system.    
 * Anything a user creates in the Segment App, like Audiences, Journeys, Data Graphs, Connections, and more, **are not subject to this data retention policy**.
 
