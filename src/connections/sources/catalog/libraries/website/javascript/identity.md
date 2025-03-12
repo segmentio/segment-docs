@@ -168,6 +168,17 @@ analytics.track('Clicked Email', {
 
 This appends the `plan_id` trait to this Track event. This does _not_ add the name or email, since those traits were not added to the `context` object. You must do this for every following event you want these traits to appear on, as the `traits` object does not persist between calls.
 
+By default, non-Identify events (like Track or Page) **don't automatically collect user traits** from previous Identify calls. To include traits from an `identify()` event in later events, you'll need to add them manually to the `context.traits` object within the `options` parameter.
+
+Each Analytics.js method has an `options` parameter where you can pass the `context.traits` object, but each method has a specific format. Follow the formats in the [Segment Spec](/docs/connections/spec/) when adding traits, like in these examples:
+
+- [Identify](/docs/connections/spec/identify/) - The [Analytics.js Identify](/docs/connections/sources/catalog/libraries/website/javascript/#identify) method follows this format : `analytics.identify([userId], [traits], [options], [callback])`;
+- [Track](/docs/connections/spec/track/) - The [Analytics.js Track](/docs/connections/sources/catalog/libraries/website/javascript/#track) method follows this format : `analytics.track(event, [properties], [options], [callback])`;
+- [Page](/docs/connections/spec/page/) - The [Analytics.js Page](/docs/connections/sources/catalog/libraries/website/javascript/#page) method follows this format : `analytics.page([category], [name], [properties], [options], [callback])`;
+- [Group](/docs/connections/spec/group/) - The [Analytics.js Group](/docs/connections/sources/catalog/libraries/website/javascript/#group) method follows this format : `analytics.group(groupId, [traits], [options], [callback])`;
+
+Adding traits to events is especially useful if you're using [Actions destinations](/docs/connections/destinations/actions/), since it makes those traits available for mapping in the destination’s configuration.
+
 
 ## Clearing Traits
 
