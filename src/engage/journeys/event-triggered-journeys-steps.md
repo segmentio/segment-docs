@@ -103,6 +103,38 @@ Segment creates these aliases automatically during setup, and they show up in th
 
 Deleting a Hold Until step can impact downstream steps that rely on it. When you delete a configured step, Segment displays a modal that summarizes the potential impact on related branches and steps. Review all dependencies carefully to avoid unintentionally disrupting the journey.
 
+## Fixed delays
+
+The **Delay** step helps you control the timing of journey actions by pausing profiles for a set period before they continue in the journey. This enables controlled timing for messages, actions, or other journey events.
+
+Unlike the Hold Until step, Delay doesn't depend on a user action: profiles always move down the journey after the time you set. This makes Delay useful for pacing interactions, like spacing out emails, without requiring user engagement.
+
+### How Delay works
+
+When a journey reaches the Delay step:
+
+1. Profiles enter the step and wait for the configured duration.
+2. Segment logs the profile's status in the observability timeline.
+3. If the profile meets an exit condition during the hold period, the profile leaves the journey early.
+4. After the delay ends, the profile moves to the next step in the journey.
+
+### Configurable parameters
+
+The following table explains the parameters you can configure for the Delay step:
+
+| Parameter          | Details                                                 |
+| ------------------ | ------------------------------------------------------- |
+| Duration time unit | Set the delay period in minutes, hours, days, or weeks. |
+| Minimum delay      | 5 minutes                                               |
+| Maximum delay      | 182 days (around 6 months)                              |
+
+To configure the Delay step:
+
+1. Drag the Delay step onto the journey canvas, or click **+** to add it.
+2. (*Optional*) Give the step a unique name.
+3. Enter a duration and select a time unit (minutes, hours, days, weeks).
+4. Click **Save**.
+
 ## Send to Destination
 
 The **Send to Destination** step lets you send journey data to one of your [configured Engage destinations](/docs/connections/destinations/), enabling real-time integration with tools like marketing platforms, analytics systems, or custom endpoints.

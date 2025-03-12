@@ -58,6 +58,9 @@ The Understand your prediction dashboard displays the following model metrics:
 - **Log Loss**; the more a predicted probability diverges from the actual value, the higher the log-loss value will be. Lower log loss indicates better predictions.
 - **Top contributing events**; this graph visually describes the events factored into the model, as well as the associated weights used to create the prediction.
 
+> info ""
+> The **Understand your prediction** tab isn't available for the Predicted LTV computed trait because it relies solely on `Order Completed` events for its calculation. Other predictive traits use multiple event types, which enables this feature.
+
 ## Predictions use cases
 
 Predictions offer more value in some situations than others. This sections covers common scenarios where predictions have high impact, as well as others where alternative approaches may be more appropriate.
@@ -147,6 +150,10 @@ Yes. Keep the following in mind when you work with Predictions:
 - **Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again."** Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
 Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.
 
+#### Why don't I see an events nested properties in the Predictions Builder?
+
+The Predictions Builder doesn't display nested properties.
+
 #### How is the average calculated?
 
-The probabilities for all users are added together and then divided by the total number of users. If a user's score in "Likelier to convert than average" is below 1, it means they are less likely than the average user to convert.
+Segment calculates the average by adding the probabilities for all users and dividing by the total number of users. If a user's score in **Likelier to convert than average** is below 1, they are less likely to convert compared to the average user.

@@ -57,8 +57,9 @@ When you call Identify, the user's information is passed to InMoment to check el
 ## Track
 
 When you call Track, the user's information is passed along with the event name to InMoment to check eligibility during survey responses.
-> note ""
-> **Note**: this only works if you enable Targeted Sampling in your InMoment account. The event name must be exactly the same as the one used in the Track call.
+
+> warning "Named Track calls require you to enable Targeted Sampling in your InMoment Account"
+> After enabling the Targeted Sampling feature in your InMoment account, you must ensure your InMoment event names are exactly the same as the one used in the Track call.
 
 ## Page
 

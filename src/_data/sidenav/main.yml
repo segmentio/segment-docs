@@ -288,7 +288,7 @@ sections:
   - path: /connections/regional-segment
     title: Regional Segment
   - path: /connections/test-connections
-    title: Event Tester
+    title: Testing Connections
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -591,6 +591,8 @@ sections:
       title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
+  - path: /privacy/data-retention-policy
+    title: Data Retention and Deletion Policy
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
