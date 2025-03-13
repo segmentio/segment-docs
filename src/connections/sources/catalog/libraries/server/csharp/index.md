@@ -2,6 +2,14 @@
 title: Analytics-CSharp (C#)
 strat: csharp
 support_type: flagship
+tags:
+  - C#
+  - C-sharp
+  - .NET
+  - NET
+  - Xamarin
+  - Unity
+  - ASP.NET
 id: 
 redirect_from:
    - '/connections/sources/catalog/libraries/mobile/unity'
