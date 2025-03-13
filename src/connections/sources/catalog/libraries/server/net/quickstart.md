@@ -1,5 +1,8 @@
 ---
 title: 'Quickstart: ASP.NET'
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and Analytics.js library. As soon as you're set up you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!

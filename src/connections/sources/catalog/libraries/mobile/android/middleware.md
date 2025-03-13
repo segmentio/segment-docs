@@ -1,6 +1,9 @@
 ---
 title: 'Middleware for Analytics-Android'
 strat: android
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and later. Destination Middleware are available on analytics-android 4.7.0 and later.

@@ -2,6 +2,9 @@
 title: 'Quickstart: Analytics-Android'
 hidden: true
 strat: android
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)

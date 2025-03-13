@@ -4,6 +4,9 @@ strat: ios
 repo: analytics-ios
 support_type: maintenance
 id: UBrsG9RVzw
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 With Analytics-iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
 <br />

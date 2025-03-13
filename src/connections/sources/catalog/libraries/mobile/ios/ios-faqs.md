@@ -1,6 +1,9 @@
 ---
 title: Analytics-iOS Frequently asked questions
 strat: ios
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 ## How big is the Segment SDK?

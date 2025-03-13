@@ -1,6 +1,9 @@
 ---
 title: iOS 14 Guide
 strat: ios
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 > warning ""

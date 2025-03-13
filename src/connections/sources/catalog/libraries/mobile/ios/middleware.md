@@ -1,6 +1,9 @@
 ---
 title: Middleware for iOS
 strat: ios
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 Middlewares are simple functions invoked by the Segment libraries, which give you a way to add information to the events you collect using the Segment SDKs. They can be used to monitor, modify, or reject events. Source Middlewares are available on `analytics-ios` 3.6.0 and later. 

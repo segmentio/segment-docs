@@ -1,6 +1,9 @@
 ---
 title: 'Analytics-Android frequently asked questions'
 strat: android
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 ## What is the latest version of the library?

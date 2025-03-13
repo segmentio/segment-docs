@@ -6,6 +6,9 @@ support_type: community
 tags:
   - C#
   - C-sharp
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 Segment's .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit Segment's servers, and then Segment routes your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
 

@@ -2,6 +2,9 @@
 title: 'Analytics-Android Wear'
 strat: android
 hidden: true
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 Analytics-Android Wear makes it simple to send your data to any tool without having to learn, test, or implement a new API every time.

@@ -1,6 +1,9 @@
 ---
 title: 'Troubleshooting Analytics-Android'
 strat: android
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 ## No events in my debugger

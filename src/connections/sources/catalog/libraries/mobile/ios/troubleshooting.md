@@ -1,6 +1,9 @@
 ---
 title: Troubleshooting Analytics-iOS
 strat: ios
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
 ## Target has transitive dependencies that include static binaries

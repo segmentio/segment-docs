@@ -4,6 +4,9 @@ strat: android
 repo: analytics-android
 support_type: maintenance
 id: wXNairW5xX
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 Analytics-Android makes it easier for you to send data to any tool without having to learn, test or implement a new API every time.
 
