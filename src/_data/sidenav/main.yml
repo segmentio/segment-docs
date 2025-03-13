@@ -714,3 +714,11 @@ sections:
     #   menu_icon: new-tab
   # - path: /config-api/tutorial-javascript-google-analytics
   #   title: Creating a Javascript web source and Google Analytics destination
+- section_title: Unified Profiles
+  section: 
+    - path: /unified-profiles
+      title: Overview
+    - path: /unified-profiles/create-a-workspace
+      title: Create a New Segment Workspace
+    - path: /unified-profiles/connect-a-workspace
+      title: Connect an Existing Workspace to Twilio
