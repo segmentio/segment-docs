@@ -31,12 +31,12 @@ The HubSpot source is built with a sync component, which means Segment makes req
 
 Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `deals` goes from `open` to `closed` between syncs, on its next sync that deal's status will be `closed`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse.  You can set the start date of the first sync and sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
 
 ## Collections
 
-Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
+Collections are the groupings of resources we pull from your source. You can select which collections will be included in your sync. In your warehouse, each collection gets its own table.
 
 ### Event History
 
