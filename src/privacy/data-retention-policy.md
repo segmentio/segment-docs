@@ -1,6 +1,5 @@
 ---
 title: Data Retention and Deletion Policy
-hidden: true
 ---
 
 Twilio Segment’s Data Retention and Deletion Policy provides clarity, consistency and compliance across all Segment services and brings Segment’s data retention policy in line with industry standards and regulations. By implementing and enforcing this policy, Segment aims to enhance data governance and ensure that Segment customers can manage their data accurately, efficiently and securely within clearly defined retention periods.
@@ -36,9 +35,45 @@ The default data retention period for each of the data types is as follows:
 | **Team**     | 365 days                     | Not applicable               | 90 days                           | 365 days | Not applicable |
 | **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
-Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through the **Workspace Default Archive Retention Period** setting.
+Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period) setting.
 
-Segment unrecoverably deletes a [Unify Space](/docs/unify/identity-resolution/space-setup/#step-one-create-a-new-dev-space) 90 days after it was disabled. 
+Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
+
+To change your data retention settings, open Segment and navigate to **Privacy > Settings > Data Retention**.
+
+### Workspace Default Archive Retention Period
+
+Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
+
+> warning "7 day Retention Periods will be deprecated on March 6, 2025"
+> After March 6, you will no longer be able to set your workspace's retention period to 7 days. All workspaces with 7 day retention periods will be updated to have 14 day retention periods. 
+
+You can select from the following Archive Retention time periods:
+
+- 14 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- Unlimited (**default**)
+
+### Source-Level Archive Retention Periods
+
+> warning "Source-Level Archive Retention Periods will be deprecated on April 15, 2025"
+> After April 15, you will no longer be able to override your workspace's default retention period on a source-by-source basis. 
+
+Override the workspace default retention period on a per-source level.
+
+You can select from the following Archive Retention time periods:
+
+- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period))  
+- 14 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- Unlimited
+
  
 ### What data is impacted?
 
@@ -48,7 +83,7 @@ With this data retention policy, all data beyond the retention period is unrecov
 * Backfill Data is only available for data within the retention period.  
 * [Data residency](/docs/guides/regional-segment/) migrations across regions (US and EU) is only available for data within the retention period.  
 * Additional impacts  to Object data:  
-  * Cloud Object Data (using push) updated using the [Object API](/docs/connections/sources/catalog/libraries/server/object-api/#set), [Bulk API](docs/connections/sources/catalog/libraries/server/object-bulk-api/), or webhook cloud sources (for example, [SendGrid](/docs/connections/sources/catalog/cloud-apps/sendgrid/#streaming) or [Mandrill](/docs/connections/sources/catalog/cloud-apps/mandrill/#streaming)): Any data older than 180 days is treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
+  * Cloud Object Data (using push) updated using the [Object API](/docs/connections/sources/catalog/libraries/server/object-api/#set), [Bulk API](/docs/connections/sources/catalog/libraries/server/object-bulk-api/), or webhook cloud sources (for example, [SendGrid](/docs/connections/sources/catalog/cloud-apps/sendgrid/#streaming) or [Mandrill](/docs/connections/sources/catalog/cloud-apps/mandrill/#streaming)): Any data older than 180 days is treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
   * Users and Accounts: Segment aggregates data from Identify and Group events for entities active within the last 180 days. Any data older than 180 days is treated as a new record and won't have historic properties. To prevent loss of data properties, Segment advises customers to migrate to using Profile Sync.  
 * [Computed traits](/docs/unify/Traits/computed-traits/) is built using the available data within the retention period. Recreating these traits may result in different values based on the available data.  
 * [Profiles](/docs/unify/), [Engage](/docs/engage/) [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/) that are built using Events will use available data within the retention period. Recreating these may result in different Profiles based on the available data. Depending on how the conditions are defined, Profiles may or may not exit Computed traits, Engage Audiences, and Journeys due to the data retention policy, and this may result in mismatches in counts when comparing against a preview.
@@ -58,7 +93,7 @@ With this data retention policy, all data beyond the retention period is unrecov
 With this policy the following data is not impacted, but may be subject to other policies:
 
 * **Cloud Object Data (using pull)**: This involves Segment fetching object data from third party Cloud Sources. Since Segment always fetches the full objects, the retention policy will have no impact.  
-* **Profiles**: Unify Profiles created are not subject to this data retention policy.   
+* **Profiles**: Unify Profiles, Identifiers, and Traits created are not subject to this data retention policy.   
 * **Third Party Destinations**: Data in your third party destinations shared by Segment in the course of your implementation remains unaffected. Data stored in a third party system may be subject to the data retention policy of that system.    
 * Anything a user creates in the Segment App, like Audiences, Journeys, Data Graphs, Connections, and more, **are not subject to this data retention policy**.
 
