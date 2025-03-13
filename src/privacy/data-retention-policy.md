@@ -35,9 +35,45 @@ The default data retention period for each of the data types is as follows:
 | **Team**     | 365 days                     | Not applicable               | 90 days                           | 365 days | Not applicable |
 | **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
-Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through the **Workspace Default Archive Retention Period** setting.
+Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period) setting.
 
-Segment unrecoverably deletes a [Unify Space](/docs/unify/identity-resolution/space-setup/#step-one-create-a-new-dev-space) 90 days after it was disabled. 
+Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
+
+To change your data retention settings, open Segment and navigate to **Privacy > Settings > Data Retention**.
+
+### Workspace Default Archive Retention Period
+
+Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
+
+> warning "7 day Retention Periods will be deprecated on March 6, 2025"
+> After March 6, you will no longer be able to set your workspace's retention period to 7 days. All workspaces with 7 day retention periods will be updated to have 14 day retention periods. 
+
+You can select from the following Archive Retention time periods:
+
+- 14 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- Unlimited (**default**)
+
+### Source-Level Archive Retention Periods
+
+> warning "Source-Level Archive Retention Periods will be deprecated on April 15, 2025"
+> After April 15, you will no longer be able to override your workspace's default retention period on a source-by-source basis. 
+
+Override the workspace default retention period on a per-source level.
+
+You can select from the following Archive Retention time periods:
+
+- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period))  
+- 14 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- Unlimited
+
  
 ### What data is impacted?
 
