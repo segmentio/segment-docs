@@ -223,7 +223,7 @@ When using any of Segment's server-side sources, a connector infers `traits.life
 
 ### Loading Forms SDK
 
-Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options){:target="_blank"} alongside their tracking library. Enable the **Load Forms SDK** setting when you your HubSpot integration.
+Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options){:target="_blank"} alongside their tracking library. Enable the **Load Forms SDK** setting for your HubSpot integration.
 
 > info ""
 > The Forms SDK expects to load synchronously but analytics.js loads asynchronously. To interact with the API, run code inside an [analytics.ready](/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. For example:

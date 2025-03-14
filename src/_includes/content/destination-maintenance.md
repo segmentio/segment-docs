@@ -11,5 +11,5 @@
 {% endif %}
 
 <div class="premonition warning"><div class="fa fa-check-square"></div><div class="content"><p class="header">{{page.title | replace: 'Destination', ''}} (Classic) is in Maintenance mode</p>
-<p markdown=1>The {{name}} (Classic) Destination has entered maintenance mode. Future updates are limited to security updates and bug fixes. {{blurb}}</p>
+<p markdown=1>The {{name}} Destination has entered maintenance mode. Future updates are limited to security updates and bug fixes. {{blurb}}</p>
 </div></div>
