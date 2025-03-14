@@ -80,6 +80,7 @@ To get started with the Analytics-CSharp library:
  | `storageProvider`           | The default is set to `DefaultStorageProvider`. <br>This sets how you want your data to be stored. `DefaultStorageProvider` is used by default which stores data to local storage. `InMemoryStorageProvider` is also provided in the library. You can also write your own storage solution by implementing `IStorageProvider` and `IStorage`. |
 | `httpClientProvider`        | The default is set to `DefaultHTTPClientProvider`. <br>This sets a http client provider for analytics use to do network activities. The default provider uses System.Net.Http for network activities.                                                                                                                                                 |
 | `flushPolicies`             | The default is set to `null`. <br>This sets custom flush policies to tell analytics when and how to flush. By default, it converts `flushAt` and `flushInterval` to `CountFlushPolicy` and `FrequencyFlushPolicy`. If a value is given, it overwrites `flushAt` and `flushInterval`.                                                                  |
+| `eventPipelineProvider`             | The default is `EventPipelineProvider`. <br>This sets a custom event pipeline to define how Analytics handles events. The default `EventPipelineProvider` processes events asynchronously. Use `SyncEventPipelineProvider` to make manual flush operations synchronous. |
 
 ## Tracking Methods
 
@@ -337,6 +338,21 @@ The `reset` method clears the SDK’s internal stores for the current user and g
 analytics.Reset()
 ```
 
+## Enrichment Closure
+To modify the properties of an event, you can either write an enrichment plugin that applies changes to all events or pass an enrichment closure to the analytics call to apply changes to a specific event.  
+
+```c#
+    analytics.Track("MyEvent", properties, @event =>
+    {
+        if (@event is TrackEvent trackEvent)
+        {
+            // update properties of this event
+            trackEvent.UserId = "foo";
+        }
+
+        return @event;
+    });
+```
 
 ## Flush policies
 To more granularly control when events are uploaded you can use `FlushPolicies`. 
@@ -386,7 +402,7 @@ For example, you might want to disable flushes if you detect the user has no net
 
 ###  Create your own flush policies
 
-You can create a custom FlushPolicy special for your application needs by implementing the  `IFlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
+You can create a custom FlushPolicy special for your application needs by implementing the  `IFlushPolicy` interface. You can also extend the `IFlushPolicy` class that already creates and handles the `shouldFlush` value reset.
 
 A `FlushPolicy` only needs to implement two of these methods:
 - `Schedule`: Executed when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, configure things before execution
