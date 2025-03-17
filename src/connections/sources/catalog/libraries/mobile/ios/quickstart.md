@@ -7,6 +7,9 @@ custom_ranking:
   position: 99999
 ---
 
+> warning "Analytics-iOS EoS (Q1 2026)"
+> The end of support (EOS) for the Analytics-iOS SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
+
 This tutorial gets you started sending data from your iOS app to Segment. When you're done you can turn on [any of Segment's destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
 If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/connections/sources/catalog/libraries/mobile/ios/).

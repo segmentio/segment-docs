@@ -6,6 +6,10 @@ custom_ranking:
   position: 99999
 ---
 
+> warning "Analytics-Android EoS (Q1 2026)"
+> The end of support (EOS) for the Analytics-Android SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new Analytics-Kotlin SDK. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
+> 
+
 ## What is the latest version of the library?
 
 Analytics-Android is published to [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.segment.analytics.android%22%20AND%20a%3A%22analytics%22) where you can see all published releases.

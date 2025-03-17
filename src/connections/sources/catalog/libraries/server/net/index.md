@@ -7,12 +7,13 @@ custom_ranking:
   heading: 0
   position: 99999
 ---
+
+> warning "Analytics.NET EoS (Q1 2026)"
+> The end of support (EOS) for the Analytics.NET SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/) SDK. If you'd like to migrate to Analytics-CSharp, see the [migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/).
+
 Segment's .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit Segment's servers, and then Segment routes your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make Identify and Track calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
-
-> info "Analytics-CSharp (C#)"
-> With [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/), you can add Segment analytics to your C# based app which includes .NET. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
 
 ## Getting Started
 

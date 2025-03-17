@@ -6,6 +6,9 @@ custom_ranking:
   position: 99999
 ---
 
+> warning "Analytics-iOS EoS (Q1 2026)"
+> The end of support (EOS) for the Analytics-iOS SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
+
 Middlewares are simple functions invoked by the Segment libraries, which give you a way to add information to the events you collect using the Segment SDKs. They can be used to monitor, modify, or reject events. Source Middlewares are available on `analytics-ios` 3.6.0 and later. 
 
 You can access the middleware API in both Objective-C and Swift.

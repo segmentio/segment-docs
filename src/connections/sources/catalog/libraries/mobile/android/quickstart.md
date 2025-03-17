@@ -7,6 +7,9 @@ custom_ranking:
   position: 99999
 ---
 
+> warning "Analytics-Android EoS (Q1 2026)"
+> The end of support (EOS) for the Analytics-Android SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new Analytics-Kotlin SDK. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
+
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
 This tutorial will help you start sending analytics data from your Android app to Segment and any of our destinations, using our Android library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
