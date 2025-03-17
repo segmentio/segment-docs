@@ -1,17 +1,14 @@
 ---
 title: Connect HubSpot to Segment Profiles
 plan: unify
-redirect_from:
-  - '/unify/hubspot-unify'
 ---
 
 This guide explains how to set up HubSpot as a source and connect it to Segment Profiles. 
 
 Once configured, this integration lets you send HubSpot data directly to Segment Profiles, eliminating the need for a data warehouse and enabling faster data synchronization and profile enrichment.
 
-> info "Sync date and collections"
-> - Changing the start date after the first sync has no effect unless you initiate a full manual sync.
-> - Changes to synced collections apply only to future syncs. Data already synced from removed collections remains in the warehouse.
+> info "Private beta"
+> The HubSpot/Segment Profiles integration is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Prerequisites
 
@@ -88,6 +85,8 @@ After connecting HubSpot to the Segment Profiles destination, the integration be
 - New or updated records in HubSpot get sent to Segment Profiles based on your mapping configuration.
 - The first sync includes historical data based on your selected start date.
 - Future syncs run at the default interval of every three hours.
+
+If you change the start date after the first sync, Segment doesn’t retroactively sync data unless you manually trigger a full sync. Changes to synced collections apply only to future syncs. Data you previously synced from removed collections stays in your workspace.
 
 ## Best practices
 
