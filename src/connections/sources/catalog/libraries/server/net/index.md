@@ -539,3 +539,4 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### .NET Core
 `Analytics.NET` has been tested and works with .NET Core 3.1 and 3.4.2 beta.
+
