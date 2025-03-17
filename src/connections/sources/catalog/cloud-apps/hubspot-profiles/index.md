@@ -19,7 +19,7 @@ Before you begin, make sure that you have the following:
 
 ## Integration steps
 
-Follow these steps to connect HubSpot to Segment Profiles.
+Follow the steps in this section to connect HubSpot to Segment Profiles.
 
 ### 1. Add HubSpot as a source
 
