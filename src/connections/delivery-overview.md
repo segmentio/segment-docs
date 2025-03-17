@@ -59,7 +59,7 @@ The following image shows a storage destination with 23 partially successful syn
 #### Destinations connected to Engage Destinations
 
 > info "Delivery Overview for Engage Destinations is in Public Beta"
-> During the Public Beta, you can filter your pipeline view by Audience. 
+> During the Public Beta, you can filter your pipeline view by audience. 
 
 Destinations connected to an Audience have the following steps in the pipeline view: 
 - **Events from audience**<sup>*</sup>: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.

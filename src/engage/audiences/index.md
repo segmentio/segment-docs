@@ -226,7 +226,7 @@ To view Delivery Overview for an Audience:
 
 By default, Segment displays Delivery Overview information for all Audiences connected to your destination. You can filter your Delivery Overview pipeline view by an individual Audience for more granular data. 
 
-You can also further refine the data displayed on the pipeline view using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, _85% of events_ or _an 133% increase in events_) or as counts (_13 events_ or _an increase of 145 events_.) Delivery Overview shows percentages by default.
+You can also further refine the data displayed on the pipeline view using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, _85% of events_ or _a 133% increase in events_) or as counts (_13 events_ or _an increase of 145 events_.) Delivery Overview shows percentages by default.
 
 > info "Linked Audiences have additional filtering functionality"
 > Linked Audiences users can filter the Delivery Overview event pipeline by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). For more information, see the [Linked Audiences](/docs/engage/audiences/linked-audiences/#delivery-overview-for-linked-audiences) documentation.
@@ -260,14 +260,14 @@ To create an Activation event health spikes or drops alert:
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
 2. Select the Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
 3. On the Create alert sidesheet, select the destination for which you'd like to monitor event health. 
-4. Enter a percentage of activation event health that you'd like to be notified for. 
+4. Enter a percentage threshold to trigger activation event health notifications. 
 5. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
   - **Slack**: Select this to send alerts to one or more channels in your workspace. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
 
-To make changes to a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
+To make changes to an Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
 
 To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
 
