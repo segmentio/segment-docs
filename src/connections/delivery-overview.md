@@ -56,7 +56,11 @@ The following image shows a storage destination with 23 partially successful syn
 
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
 
-#### Destinations connected to Audiences
+#### Destinations connected to Engage Destinations
+
+> info "Delivery Overview for Engage Destinations is in Public Beta"
+> During the Public Beta, you can filter your pipeline view by Audience. 
+
 Destinations connected to an Audience have the following steps in the pipeline view: 
 - **Events from audience**<sup>*</sup>: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
 - **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
