@@ -223,6 +223,10 @@ By default, the response includes 20 traits. You can return up to 200 traits by 
 
 You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more.
 
+## Deleting Computed Traits
+
+When computed traits are deleted, any user that had a value for that trait will now have a custom trait on the Unify profile. 
+
 ## Downloading your Computed Trait as a CSV file
 
 You can download a copy of your trait by visiting the the computed trait overview page.

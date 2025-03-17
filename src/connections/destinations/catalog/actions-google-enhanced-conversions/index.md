@@ -204,3 +204,26 @@ You may encounter this error if you use more than one identifier to update a con
 
 Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, double check that at least one of those fields is being passed to Google on each payload.
 
+#### What type of import should I select when creating a conversion in Google Ads?
+
+When setting up conversions in Google Ads to upload data through Segment, select **Manual Import using API or Uploads** as the import type. This option allows Segment to send server-side conversion data through the Google Ads API, ensuring offline conversions and adjustments are uploaded correctly.
+
+### What are the differences between the Upload Click Conversions and Click Conversion V2 Actions?
+The only difference between the Upload Click Conversions and Click Conversion V2 Actions is that the Click Conversion V2 Action has [sync modes](/docs/connections/destinations/#sync-modes).
+
+### Why am I getting a `USER_PERMISSION_DENIED` 403 error when my credentials are correct?
+
+If you're getting the following error:
+
+```
+"errors": [
+{
+"errorCode": {
+"authorizationError": "USER_PERMISSION_DENIED"
+},
+"message": "User doesn't have permission to access customer. Note: If you're accessing a client customer, the manager's customer id must be set in the 'login-customer-id' header. See https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid"
+}
+]
+```
+
+That generally means there is a conflict or problem between the account used for authorization through Segment and the Customer ID. You can read more about this in Google's [API Call Structure](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid:~:text=in%20the%20request%3A-,Authorization,must%20be%20set%20to%20the%20customer%20ID%20of%20the%20manager%20account.,-Key%20Term%3A){:target="_blank”} documentation. 

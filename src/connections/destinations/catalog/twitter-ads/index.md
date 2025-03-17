@@ -156,10 +156,7 @@ The following table show how the properties of Segment events would map to Twitt
 - While `properties.status` is not spec'd by Segment, you can still send that property through and we will map it to Twitter's `status` parameter, which is an optional free text field representing the state of the conversion event (eg. 'completed', 'in review', 'processed', etc.)
 - `value`, `currency`, `order_id` and `num_items` will not be mapped for any pre-purchase tags because it will attribute revenue, which is undesired behavior for ecommerce/retail businesses.
 
-The following code snippets represent the code we would fire under the hood on your webpage given an example Segment event.
-
-> note ""
-> The following assumes that the setting for* **Product Identifier** *is `product ID` (it can also be SKU).
+The following code snippets represent the code Twitter would fire under the hood on your webpage given an example Segment event, and assumes that the setting for* **Product Identifier** *is `product ID` (it can also be SKU):
 
 **Order Completed** -> **Purchase**
 

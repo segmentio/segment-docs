@@ -56,6 +56,9 @@ To get started with the Analytics-CSharp library:
     var analytics = new Analytics(configuration);
     ```
 
+> info ""
+> Segment's SDK is designed to be disposable, meaning Segment disposes of objects when the analytics instance is disposed. Segment avoids using singletons for configurations or HTTP clients to prevent memory management issues. If you want to use singletons, create your own HTTP client provider with a singleton HTTP client for better control and management.
+
 | Option Name                 | Description   |
 |-----------------------------|---------------|
  | `writeKey` *required*       | This is your Segment write key.                                                                                                                                                                                                                                                                                                               |

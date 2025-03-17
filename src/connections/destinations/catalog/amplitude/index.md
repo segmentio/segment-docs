@@ -15,7 +15,7 @@ Segment's Amplitude destination code is open source and available on GitHub. You
 
 In addition to Segment's Amplitude documentation, Amplitude provides a [Segment integration guide](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"}, as well.
 
-> note ""
+> info "Secret key required for GDPR deletions"
 > To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general){:target="_blank"}  of your Amplitude project.
 
 
@@ -447,8 +447,8 @@ By default, Segment does **NOT** send Alias events to Amplitude. To forward Alia
 
 Once enabled, Segment forwards Alias events from Segment's servers only. This means that Alias events reach Amplitude only when you're sending events from the client and have set your Amplitude instance's connection mode to "Cloud Mode", or are sending Alias events from a Segment server-side library (such as Node).
 
-> note ""
-> To use Alias, you must have the Amplitude Portfolio add-on enabled.
+> warning "Alias requires the Amplitude Porfolio add-on"
+> To use the Alias method, you must have the [Amplitude Portfolio](https://amplitude.com/docs/admin/account-management/portfolio){:target="_blank"} add-on.
 
 For more information, see the [Segment Spec page for the Alias method](/docs/connections/spec/alias/).
 

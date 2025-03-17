@@ -18,8 +18,8 @@ If you haven't already, Segment highly recommends labeling all your sources with
 
 [](images/connection-policy.png)
 
-> note ""
-> **Note:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
+> info ""
+> The Identity Resolution table can only be edited by Workspace Owners and users with the Identity Admin role.
 
 ## Step four: Connect sources and create test audiences
 

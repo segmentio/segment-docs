@@ -235,7 +235,7 @@ You can manually test your code from the functions editor:
 - Logs display any messages to console.log() from the function.
 
 > warning ""
-> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline. The Event Tester is not impacted by an Insert Function at all. Use the Function tester rather than the Event Tester to see how your Insert Function impacts your data.
+> The Event Tester and Mapping Tester don't support Insert Functions. They won't apply an Insert Function, show its impact on your data, or send data through the Insert Function pipeline. Use the Function Tester instead to evaluate how your Insert Function affects your data.
 
 ## Save and deploy the destination insert function
 
@@ -506,7 +506,11 @@ Insert Functions are only supported by Cloud Mode (server-side) destinations and
 
 ##### Can I connect an insert function to multiple destinations?
 
-Yes, an insert function can be connected to multiple destinations. 
+Yes, you can connect an insert function to multiple destinations.
+
+##### Can I connect multiple insert functions to one destination?
+
+No, you can only connect one insert function to a destination.
 
 ##### Can I have destination filters and a destination insert function in the same connection?
 

@@ -25,6 +25,12 @@ The AWS S3 (Actions) destination enhances this capability by introducing configu
 
 * **Enhanced Delivery Controls**. The destination provides advanced options for batch size controls and file naming conventions. These controls can help optimize efficiency and simplify data retrieval workflows.
 
+## Supported Integrations
+The AWS S3 (Actions) Destination supports the following Segment features as supported native Destination integration points: 
+* [Reverse ETL](/docs/connections/reverse-etl/)
+* [Classic and Linked Audiences](/docs/engage/audiences/)
+* [Connections](/docs/connections/)
+
 ## Getting started
 Setting up the AWS S3 (Actions) destination is a straightforward process designed to help you configure and deploy standardized event data to your Amazon S3 bucket. Follow these steps to get started:
 
@@ -69,7 +75,7 @@ To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) d
        "Effect": "Allow",
        "Principal": {
          "AWS":                      
-         	"arn:aws:iam::595280932656:role/customer-s3-prod-action-destination-access"
+            "arn:aws:iam::595280932656:role/customer-s3-prod-action-destination-access"
        },
        "Action": "sts:AssumeRole",
        "Condition": {
@@ -81,8 +87,9 @@ To set up the IAM role to properly authorize Segment with the AWS S3 (Actions) d
    ]
  }
 ```
-## Step 2: Add the AWS S3 (Actions) Destination in Segment
-To finish the configuration, enable the AWS S3 (Actions) Destination in your workspace. 
+
+### Step 2: Add the AWS S3 (Actions) Destination in Segment
+To finish the setup, enable the AWS S3 (Actions) Destination in your workspace:
 
 1. Add the **AWS S3 (Actions)** destination from the Destinations tab of the catalog.
 2. Select the data source you want to connect to the destination.
@@ -93,8 +100,15 @@ To finish the configuration, enable the AWS S3 (Actions) Destination in your wor
    * Enter the ARN of the IAM role you created above. The ARN should follow the format `arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME.`
    * Enter the IAM External ID, which is a value set in the Trust Relationship under your AWS IAM Role.
 5. Enable the destination.
-6. Verify the Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/` in the AWS console. 
 
 {% include components/actions-fields.html settings="true"%}
 
+### Step 3: Configure the AWS S3 (Actions) Destination mappings
+To finish the configuration, add mappings to your new AWS S3 (Actions) Destination:
 
+1. Add a new **Sync to S3** Action into the destination. 
+2. Define the Event Trigger. If multiple types are accepted in the Event Trigger, the generated files will automatically be split by type in S3 (for example, you might have a Track events file and an Identify events file).
+3. Configure the Column Mappings. If you don't need any of the default columns, leave the value blank. You can also choose to add new mapping fields to set up customized columns as needed. 
+4. Configure any additional settings as required.
+5. Enable the Mapping.
+6. Verify that Segment is sending data to your S3 bucket by navigating to `<your_S3_bucket>/` in the AWS console. 

@@ -41,15 +41,21 @@ That will create a `client` that you can use to send data to Segment for your so
 The default initialization settings are production-ready and queue 20 messages before sending a batch request, and a 5 second interval.
 
 ### Regional configuration
-For Business plans with access to Regional Segment, you can use the host configuration parameter to send data to the desired region:
+For Business plans with access to Regional Segment, you can use the endpoint configuration parameter to send data to the desired region:
 
-Oregon (Default) — api.segment.io/
-Dublin — events.eu1.segmentapis.com
+- Oregon (Default) — https://api.segment.io
+- Dublin — https://events.eu1.segmentapis.com
 
+Example configuration for EU region:
+```go
+client, err := analytics.NewWithConfig(writeKey, analytics.Config{
+    Endpoint: "https://events.eu1.segmentapis.com",
+})
+```
 ## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 Identify lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
