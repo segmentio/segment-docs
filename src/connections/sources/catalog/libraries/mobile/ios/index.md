@@ -2,7 +2,7 @@
 title: Analytics-iOS
 strat: ios
 repo: analytics-ios
-support_type: maintenance
+support_type: community
 id: UBrsG9RVzw
 custom_ranking:
   heading: 0

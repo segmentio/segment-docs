@@ -2,7 +2,7 @@
 title: 'Analytics-Android'
 strat: android
 repo: analytics-android
-support_type: maintenance
+support_type: community
 id: wXNairW5xX
 custom_ranking:
   heading: 0
