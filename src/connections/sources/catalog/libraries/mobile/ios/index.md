@@ -13,8 +13,8 @@ With Analytics-iOS, you can send your data to analytics or marketing tool, witho
 <br />
 <br />
 
-> warning "Analytics-iOS EoS (Q1 2026)"
-> The end of support (EOS) for the Analytics-iOS SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
+> warning "End-of-Support Announcement for Analytics-iOS - March 2026"
+> The end-of-support (EoS) for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
 
 > info "Watchkit extensions currently unsupported"
 > Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email Segment](https://segment.com/requests/integrations/){:target="_blank”}. if you're interested in a Watchkit SDK. For now Segment recommends tracking watch interactions using the iPhone app code.

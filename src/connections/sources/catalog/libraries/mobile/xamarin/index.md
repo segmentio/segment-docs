@@ -9,8 +9,8 @@ custom_ranking:
   position: 99999
 ---
 
-> warning "Analytics.Xamarin EoS (Q1 2026)"
-> The end of support (EOS) for the Analytics.Xamarin SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/) SDK. If you'd like to migrate to Analytics-CSharp, see the [migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/).
+> warning "End-of-Support Announcement for Analytics.Xamarin - March 2026"
+> The end-of-support (EoS) for the Analytics.Xamarin SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/) SDK. If you'd like to migrate to Analytics-CSharp, see the [migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/).
 
 Segment's [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/)) is the best way to integrate analytics into your Xamarin application. It lets you record analytics data from your C#, F#, and .NET code, and supports `PCL Profile 4.0 - Profile136`, which targets the following platforms:
 

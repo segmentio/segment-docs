@@ -13,8 +13,8 @@ Analytics-Android makes it easier for you to send data to any tool without havin
 
 Analytics-Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
-> warning "Analytics-Android EoS (Q1 2026)"
-> The end of support (EOS) for the Analytics-Android SDK is scheduled for Q1 2026. Segment's future development efforts concentrate on the new Analytics-Kotlin SDK. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
+> warning "End-of-Support Announcement for Analytics-Android - March 2026"
+> The end-of-support (EoS) for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
 
 > success ""
 > In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
