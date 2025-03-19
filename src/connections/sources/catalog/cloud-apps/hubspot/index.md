@@ -38,7 +38,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 
 ## Collections
 
-Collections are the groupings of resources we pull from your source. You can select which collections will be included in your sync. In your warehouse, each collection gets its own table.
+Collections are the groupings of resources we pull from your source. You can select which collections are included in your sync. In your warehouse, each collection gets its own table.
 
 ### Event History
 
