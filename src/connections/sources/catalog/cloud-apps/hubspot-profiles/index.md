@@ -71,7 +71,7 @@ Now, configure mappings to determine how HubSpot data updates Segment Profiles.
 
 ### 5. Enable destination mapping and finish setup
 
-Finish by enabling the destination mapping:
+Finish the setup process by enabling the destination mapping.
 
 1. From the **Overview** tab of the Segment Profiles destination, toggle **Mapping Status** to **Enabled**.
 2. Return to your HubSpot source and verify that **Settings > Basic settings** is enabled.
