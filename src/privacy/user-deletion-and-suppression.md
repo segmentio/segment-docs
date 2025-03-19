@@ -102,49 +102,8 @@ Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppressi
 > info "SUPPRESS_WITH_DELETE requests"
 > The Suppressed Users tab only includes `SUPPRESS_ONLY` regulations. If you created a User Deletion request using the UI, you will need to check the [**Deletion Requests**](#deletion-requests-tab) tab, as those are `SUPPRESS_WITH_DELETE` regulation types.
 
-##### Remove a user from the suppression list {#remove-a-user-from-the-suppression-list}
+##### Remove a user from the suppression list
 
 To remove a user from the suppression list, click the ellipses (**...**) icon on the `userId` row, and click **Remove**.
 
 This creates an `UNSUPPRESS` regulation and removes the `userId` from your suppression list. Segment processes most `UNSUPPRESS` regulations within 24 hours.
-
-## Data retention
-
-Segment stores a copy of all event data received in Segment's secure event archives on S3. By default, all workspaces store data for an unlimited period of time, but you can modify the lifecycle policies for the data stored internally. Segment uses this data for [data replays](/docs/guides/what-is-replay/) and for troubleshooting purposes.
-
-Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
-
-To change your data retention settings, open Segment and navigate to **Privacy > Settings > Data Retention**.
-
-### Workspace Default Archive Retention Period
-
-Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
-
-> warning "7 day Retention Periods will be deprecated on March 6, 2025"
-> After March 6, you will no longer be able to set your workspace's retention period to 7 days. All workspaces with 7 day retention periods will be updated to have 14 day retention periods. 
-
-You can select from the following Archive Retention time periods:
-
-- 14 days   
-- 30 days  
-- 90 days  
-- 180 days  
-- 365 days  
-- Unlimited (**default**)
-
-### Source-Level Archive Retention Periods
-
-> warning "Source-Level Archive Retention Periods will be deprecated on April 15, 2025"
-> After April 15, you will no longer be able to override your workspace's default retention period on a source-by-source basis. 
-
-Override the workspace default retention period on a per-source level.
-
-You can select from the following Archive Retention time periods:
-
-- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period))  
-- 14 days  
-- 30 days  
-- 90 days  
-- 180 days  
-- 365 days  
-- Unlimited
