@@ -35,6 +35,9 @@ The default data retention period for each of the data types is as follows:
 | **Team**     | 365 days                     | Not applicable               | 90 days                           | 365 days | Not applicable |
 | **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
+> info ""
+> Segment calculates your data retention period starting from the date Segment ingests an event, not from the date an event originally occurred.
+
 Through the self-serve Data Retention configuration in your workspace, you can configure a custom data retention period through the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period) setting.
 
 Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
