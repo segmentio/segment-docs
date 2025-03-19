@@ -138,10 +138,11 @@ The only required argument on Track calls in Analytics.js is an `event` name str
 
 #### Track link
 
-`trackLink` is a helper method that attaches the `track` call as a handler to a link.
-With `trackLink`, Analytics.js inserts a timeout of 300 ms to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
+`trackLink` is a helper method that attaches a Track call as a handler to a link. When a user clicks the link, `trackLink` delays the navigation event by 300ms before proceeding, ensuring the Track request has enough time to send before the page starts unloading.
 
-The `trackLink` method follows the format below.
+This is useful when a page redirects too quickly, preventing the Track method from completing all requests. By holding off navigation momentarily, `trackLink` increases the likelihood that tracking data reaches Segment and destinations successfully.
+
+The `trackLink` method follows the format below:
 
 ```js
 analytics.trackLink(element, event, [properties])
