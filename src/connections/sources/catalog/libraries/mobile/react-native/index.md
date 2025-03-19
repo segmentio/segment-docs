@@ -88,7 +88,7 @@ These are the options you can apply to configure the client:
 | `storePersistor`            | undefined | A custom persistor for the store that `analytics-react-native` uses. Must match [`Persistor`](https://github.com/segmentio/analytics-react-native/blob/master/packages/sovran/src/persistor/persistor.ts#L1-L18) interface exported from [sovran-react-native](https://github.com/segmentio/analytics-react-native/blob/master/packages/sovran). |
 | `proxy`                     | undefined | `proxy` is a batch url to post to instead of 'https://api.segment.io/v1/b'.                                                                                                                                                                                                                                                                           |
 | `errorHandler`              | undefined | Create custom actions when errors happen, see [Handling errors](#handling-errors)                                                                                                                                                                                                                                                                     |
-
+| `useSegmentEndpoints`       | false     | Set to `true` to automatically append the Segment endpoints when using `proxy` or `cdnProxy` to send or fetch settings. Otherwise, `proxy` or `cdnProxy` will be used as is      |
 
 ## Adding Plugins to the Client
 

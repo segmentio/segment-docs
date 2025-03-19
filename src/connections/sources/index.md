@@ -123,13 +123,11 @@ Each of these tabs displays an event count, which is the total number of events 
 Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app tracking. Try them over server-side sources as the default installation for any mobile app.
 
 - [AMP](/docs/connections/sources/catalog/libraries/mobile/amp)
-- [Android](/docs/connections/sources/catalog/libraries/mobile/android)
-- [Android Wear](/docs/connections/sources/catalog/libraries/mobile/android/wear)
-- [iOS](/docs/connections/sources/catalog/libraries/mobile/ios)
-- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/)
+- [Android (Kotlin)](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
-- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift/)
-- [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
+- [iOS (Swift)](/docs/connections/sources/catalog/libraries/mobile/swift/)
+- [Xamarin](/docs/connections/sources/catalog/libraries/server/csharp)
+- [Unity](/docs/connections/sources/catalog/libraries/server/csharp/)
 
 > info "Analytics-Flutter library"
 >  The Analytics-Flutter library is currently only available in pilot phase and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. If you'd like to try out this library, access the [Analytics-Flutter GitHub repository](https://github.com/segmentio/analytics_flutter){:target="_blank"}. 
@@ -146,7 +144,7 @@ Segment's server-side sources let you send analytics data directly from your ser
 - [PHP](/docs/connections/sources/catalog/libraries/server/php/)
 - [Python](/docs/connections/sources/catalog/libraries/server/python/)
 - [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/)
-- [.NET](/docs/connections/sources/catalog/libraries/server/net/)
+- [.NET](/docs/connections/sources/catalog/libraries/server/csharp/)
 
 > info "Cloud-mode tracking"
 > Server-side data management is when tag sends data to the Segment servers, which then passes that data to the destination system.
