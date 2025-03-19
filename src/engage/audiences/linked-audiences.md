@@ -242,12 +242,20 @@ With your Linked Audience activated, follow these steps to monitor your activati
 
 ### Delivery Overview for Linked Audiences
 
-Delivery Overview shows you four steps in your data activation pipeline:
+In addition to the standard Audience observability provided by [Delivery Overview](/docs/engage/audiences/#delivery-overview), Linked Audiences can filter Delivery Overview's pipeline view by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). 
 
-- **Events from Audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership. 
-- **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
-- **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
-- **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.
+To filter by events: 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**.
+2. Find an Audience, click the **(...)** menu, and select Delivery Overview. 
+3. On the Delivery Overview page, select the Linked audience event dropdown to filter by a specific event. 
+
+Linked Audiences have the following steps in Delivery Overview's pipeline view: 
+- **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
+- **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. Unlike the other steps, you cannot click into this step to view the breakdown table. 
+- **Failed delivery**: Events that Segment _attempted_ to deliver to your destination, but that ultimately _failed_ to be delivered. Failed delivery might indicate an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
 
 ## Maintaining Linked Audiences 
 
