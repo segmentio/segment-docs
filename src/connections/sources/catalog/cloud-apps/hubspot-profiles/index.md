@@ -64,7 +64,7 @@ Now, configure mappings to determine how HubSpot data updates Segment Profiles.
 3. Select your data model and define the mapping rules:
    - Choose the Profile Space to update.
    - Map HubSpot fields to Segment Profile fields.
-   - **You must map either a User ID, Anonymous ID, or Group ID.**
+   - **You must map either the User ID, Anonymous ID, or Group ID field.**
 4. Test the mapping with real HubSpot data.
 5. Save the configuration.
 
