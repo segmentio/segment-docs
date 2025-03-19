@@ -40,7 +40,7 @@ After adding the source, go to **Settings > Basic settings** and toggle **Enable
 
 ### 2. Add a Segment Profiles destination
 
-Next, add a Segment Profiles destination:
+Next, add a Segment Profiles destination.
 
 1. From your HubSpot source, go to the **Models** tab and click **Add destination**.
 2. Select **Segment Profiles**, then click **Add destination**.
