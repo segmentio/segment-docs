@@ -70,7 +70,7 @@ View a brief description of each alert type. 
 - **Storage Destination Modified**: A user in your workspace modified an existing storage destination. 
 - **Storage Destination Sync Failed**: Segment failed to sync any rows of data from your source to your storage destination. 
 - **Storage Destination Sync Partially Succeeded**: Segment encountered some notices and was only able to sync some of your data from your source to your storage destination. 
-- **Storage Destination Sync Skipped**: Segment skipped a scheduled sync to your storage destination. This might happen if there is no new data for Segment to sync with your storage destination. 
+- **Storage Destination Sync Skipped**: Segment skipped a scheduled sync to your storage destination. This might happen if the previous sync wasn't complete by the time the next sync was scheduled to begin. 
 
 
 ## Protocol alerts
