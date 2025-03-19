@@ -23,7 +23,7 @@ Follow the steps in this section to connect HubSpot to Segment Profiles.
 
 ### 1. Add HubSpot as a source
 
-To start syncing HubSpot data, first add it as a source:
+To start syncing HubSpot data, first add HubSpot as a source to your workspace.
 
 1. From your Segment workspace, go to **Connections > Catalog** and search for **HubSpot**.
 2. Select **HubSpot**, then click **Add Source**.
