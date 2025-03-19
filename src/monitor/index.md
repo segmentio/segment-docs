@@ -25,4 +25,3 @@ Select a product below to learn about its capabilities, supported destinations, 
     description="View, filter, and export the last 90 days of user and system activity."
   %}
 </div>
-
