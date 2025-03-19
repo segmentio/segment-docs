@@ -18,7 +18,9 @@ Are you trying to set up HubSpot as a destination to receive data from Segment? 
 
    **Note**: You can add multiple instances if you have multiple HubSpot accounts. That's why we allow you to customize the source's nickname and schema name!
 
-4. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key){:target="_blank"}.
+4. Next, configure the Selective Sync settings. You can specify a start date for the initial sync, adjust the default sync frequency, and select which collections to sync.
+
+5. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key){:target="_blank"}.
 
 Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
