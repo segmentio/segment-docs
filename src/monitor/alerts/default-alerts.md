@@ -4,7 +4,7 @@ title: Default Alerts
 
 Segment's default alerts have a preset trigger and are often used to detect changes users make to the integrations in your workspace.
 
-In the Monitor tab, you can see all of your alerts, separated by product area, in a tabular format.
+On the **Monitor** tab, you can see all of your alerts, separated by product area, in a tabular format.
 
 > info "Only Workspace Owners can view and edit all alerts"
 > Users with other roles can see all alerts in a workspace, but can only edit or see the configured details for alerts that they created.
