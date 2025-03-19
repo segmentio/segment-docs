@@ -13,14 +13,14 @@ Select a product below to learn about its capabilities, supported destinations, 
 <div class="double">
   {% include components/reference-button.html
     href="/docs/monitor/alerts"
-    icon="read-more.svg"
+    icon="megaphone.svg"
     title="Alerts"
-    description="Receive in-app, email, or Slack notifications related to the performance and throughput of a Segment connection."
+    description="Receive notifications related to the performance and throughput of a Segment connection."
   %}
   
   {% include components/reference-button.html
     href="/docs/monitor/audit-trail"
-    icon="connections.svg"
+    icon="glossary.svg"
     title="Audit Trail"
     description="View, filter, and export the last 90 days of user and system activity."
   %}

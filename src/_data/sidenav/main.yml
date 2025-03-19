@@ -604,12 +604,10 @@ sections:
   - section_title: Alerts
     slug: /monitor/alerts
     section:
-    - path: /monitor/alerts/connections-alerts
-      title: Connections Alerting
-    - path: /monitor/alerts/reverse-etl-alerts
-      title: Reverse ETL Alerting
-    - path: /monitor/alerts/connections/alerts
-      title: Audience Alerting
+    - path: /monitor/alerts
+      title: Alerts Overview
+    - path: /monitor/alerts/default-alerts
+      title: Default Alerts
   - path: /monitor/audit-trail
     title: Audit Trail
 - section_title: Protocols
