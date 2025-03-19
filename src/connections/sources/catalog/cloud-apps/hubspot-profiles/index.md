@@ -33,7 +33,7 @@ To start syncing HubSpot data, first add HubSpot as a source to your workspace.
 6. Verify the **Schema name**, then click **Next**.
 7. In the **Selective Sync** settings:
    - Set a start date for the initial sync (or leave it blank for a full historical sync).
-   - Keep the default sync frequency (every three hours) or adjust it.
+   - Keep the default sync frequency (every three hours) or adjust it by contacting friends@segment.com.
    - Choose the collections to sync.
 
 After adding the source, go to **Settings > Basic settings** and toggle **Enable source**. The first sync begins immediately.
