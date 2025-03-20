@@ -17,7 +17,7 @@ For Segment to compute the data changes within your warehouse, Segment needs to 
 > There may be cost implications to having Segment query your warehouse tables.
 
 ## Reverse ETL Schema
-When using Reverse ETL with Segment, several system tables are created within the `__segment_reverse_etl` schema in your Snowflake instance. These tables are crucial for managing the sync process efficiently and tracking state information. Below are the details of the system tables in this schema:
+When using Reverse ETL with Segment, several system tables are created within the `__segment_reverse_etl` schema in your warehouse. These tables are crucial for managing the sync process efficiently and tracking state information. Below are the details of the system tables in this schema:
 
 **1. Records Table**
 
