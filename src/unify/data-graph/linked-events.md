@@ -31,9 +31,6 @@ To use Linked Events, you'll need the following:
 3. Access to the actions-based destination you'll be using with Linked Events so that you can validate your data. 
 
 > info ""
-> Segment stores and processes all data in the United States.
-
-> info ""
 > Profiles Sync isn't required for Linked Events.
 
 ### Linked Events roles
