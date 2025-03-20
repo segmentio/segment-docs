@@ -8,7 +8,7 @@ plan: engage-foundations
 This page explains Journey context, which can help you dynamically adapt each journey to individual user interactions, creating highly relevant, real-time workflows.
 
 > info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Event-Triggered Journeys is not currently HIPAA eligible.
+> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Overview
 

@@ -10,7 +10,7 @@ Unlike traditional audience-based journeys that rely on pre-defined user segment
 On this page, you'll learn how to create an event-triggered journey, configure entry conditions, and work with published event-triggered journeys.
 
 > info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Event-Triggered Journeys is not currently HIPAA eligible.
+> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Overview
 
