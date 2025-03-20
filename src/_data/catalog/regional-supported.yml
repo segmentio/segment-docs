@@ -287,7 +287,7 @@ sources:
       - us
   - id: UYaQxaZO3a
     display_name: Editable Profile Source Metadata
-    hidden: true
+    hidden: false
     slug: editable-profile-source-metadata
     url: connections/sources/catalog/cloud-apps/editable-profile-source-metadata
     regions:
