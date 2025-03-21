@@ -79,6 +79,12 @@ To change which event type the handler listens to, you can rename it to the name
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
+### Variable scoping 
+
+When declaring settings variables, make sure to declare them in the function handler rather than globally in your Function. This prevents you leaking the settings values across other function instances. 
+
+The handler for Destination functions is event-specific, for example, `onTrack()`, `onIdentify()`, etc.
+
 ### Errors and error handling
 
 {% include content/functions/errors-and-error-handling.md %}
