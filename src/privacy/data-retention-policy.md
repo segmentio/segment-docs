@@ -36,7 +36,7 @@ The default data retention period for each of the data types is as follows:
 | **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
 > info ""
-> Segment calculates your data retention period starting from the date Segment ingests an event, not from the date an event originally occurred.
+> Segment calculates your data retention period starting from the date Segment ingests an event, not from the date an event originally occurred. Object stores not updated in the last 180 days will be deleted.
 
 Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
 
@@ -75,7 +75,7 @@ With this data retention policy, all data beyond the retention period is unrecov
 
 With this policy the following data is not impacted, but may be subject to other policies:
 
-* **Object Cloud Sources**: This involves Segment fetching object data from third party Cloud Sources. Since Segment always fetches the full objects, the retention policy will have no impact.  
+* **[Object Cloud Sources](/docs/connections/sources/#object-cloud-sources)**: This involves Segment fetching object data from third party Cloud Sources. Since Segment always fetches the full objects, the retention policy will have no impact.  
 * **Profiles**: Unify Profiles, Identifiers, and Traits created are not subject to this data retention policy.   
 * **Third Party Destinations**: Data in your third party destinations shared by Segment in the course of your implementation remains unaffected. Data stored in a third party system may be subject to the data retention policy of that system.    
 * Anything a user creates in the Segment App, like Audiences, Journeys, Data Graphs, Connections, and more, **are not subject to this data retention policy**.
