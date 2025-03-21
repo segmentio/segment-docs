@@ -16,31 +16,34 @@ For Segment to compute the data changes within your warehouse, Segment needs to 
 > warning ""
 > There may be cost implications to having Segment query your warehouse tables.
 
-## Reverse ETL Schema
+## Reverse ETL schema
 When using Reverse ETL with Segment, several system tables are created within the `__segment_reverse_etl` schema in your warehouse. These tables are crucial for managing the sync process efficiently and tracking state information. Below are the details of the system tables in this schema:
 
-**1. Records Table**
+### Records table
 
-`records_<subscription_id>` table is located within the` __segment_reverse_etl` schema, this table contains two key columns:
+`records_<subscription_id>` table is located within the ` __segment_reverse_etl` schema. 
 
-`record_id`: A unique identifier for each record.
+This table contains two key columns:
 
-`checksum`: A checksum value that is used to detect changes to a record since the last sync.
+- `record_id`: A unique identifier for each record.
+- `checksum`: A checksum value that is used to detect changes to a record since the last sync.
 The records table helps in determining new and updated rows by comparing the checksum values during each sync. If a record’s checksum changes, it indicates that the record has been modified and should be included in the next sync. This ensures that only the necessary updates are processed, reducing the amount of data transferred.
 
-**2. Checkpoint Table**
+### Checkpoint table
 
-The `checkpoints_<subscription_id>` tables are located within the __segment_reverse_etl schema, this table contains the following columns:
+The `checkpoints_<subscription_id>` tables are located within the __segment_reverse_etl schema.
 
-`source_id`: Identifies the source from which the data is being synced.
+This table contains the following columns:
 
-`model_id`: Identifies the specific model or query that is used to pull data.
-checkpoint: Stores a timestamp value that represents the last sync point for a particular model.
+- `source_id`: Identifies the source from which the data is being synced.
+- `model_id`: Identifies the specific model or query that is used to pull data.
+- `checkpoint`: Stores a timestamp value that represents the last sync point for a particular model.
+
 The checkpoints table is used for timestamp-based checkpointing between syncs. This enables Segment to track the last successful sync for each model and avoid duplicating data when syncing, ensuring incremental and efficient data updates.
 
 ### Important Considerations
 
-Do not modify or delete these tables: Altering or deleting the records and checkpoints tables can cause unpredictable behavior in the sync process. These tables are essential for maintaining the integrity of data during Reverse ETL operations.
+Do not modify or delete these tables. Altering or deleting the records and checkpoints tables can cause unpredictable behavior in the sync process. These tables are essential for maintaining the integrity of data during Reverse ETL operations.
 State management: The `__segment_reverse_etl` schema and its associated tables (records and checkpoints) manage the state of each sync, ensuring that only necessary data changes are synced and that the sync process can resume where it left off.
 
 
