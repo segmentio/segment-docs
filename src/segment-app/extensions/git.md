@@ -153,3 +153,4 @@ This error can occur if there are issues with your Git connection settings or pe
 - Your credentials have write access to the Git repository, as Segment requires this to sync changes.
 - Your repository is hosted by GitHub, GitLab, or Bitbucket (Segment doesn't support self-hosted repositories).
 - Branch protections are disabled on the repository.
+
