@@ -40,7 +40,7 @@ View a brief description of each alert type. 
 
 ### Source alerts
 - **New Event Blocked**: Segment blocked an event not previously specified in your [Source Schema](/docs/connections/sources/schema/) from entering a downstream destination. 
-- **New Forbidden Event Property**: 
+- **New Forbidden Event Property**: Segment blocked an event property that was not specified in your [Source Schema](/docs/connections/sources/schema/) from entering a downstream destination.
 - **Source Created**: A user in your workspace created a new source.
 - **Source Deleted**: A user in your workspace deleted a source. 
 - **Source Disabled**: A source was disabled, either by a user in your workspace or by Segment. Segment automatically disables a source after 14 days if the source isn't connected to an enabled destination. 
@@ -73,7 +73,7 @@ View a brief description of each alert type. 
 - **Storage Destination Sync Skipped**: Segment skipped a scheduled sync to your storage destination. This might happen if the previous sync wasn't complete by the time the next sync was scheduled to begin. 
 
 
-## Protocol alerts
+## Protocols alerts
 - **Source Connected To Tracking Plan**: A user in your workspace connected a source to one of your Tracking Plans. 
 - **Source Disconnected From Tracking Plan**: A user in your workspace disconnected a source from one of your Tracking Plans. 
 - **Tracking Plan Created**: A user in your workspace created a new Tracking Plan. 
