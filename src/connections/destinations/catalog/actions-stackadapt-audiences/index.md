@@ -11,13 +11,13 @@ hidden: true
 
 [StackAdapt](https://www.stackadapt.com/){:target="_blank"} is a programmatic advertising platform specializing in audience engagement. StackAdapt enables marketers to deliver high-performing advertising campaigns across channels through real-time bidding, detailed audience targeting, and data-driven insights. StackAdapt’s integration with Twilio Engage helps you sync user data to optimize targeting and improve your campaign outcomes.
 
-This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackFAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
+This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
 
 ## Getting started
 
 ### Getting your StackAdapt GraphQL Token
 
-If you do not have an existing StackAdapt API key, [reach out to the StackAdapt team for help](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
+If you do not have an existing StackAdapt read & write API key, [reach out to the StackAdapt team for help](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
 
 ### Setting up the StackAdapt Audience destination in Segment Engage
 
@@ -42,7 +42,9 @@ To sync an Engage audience with StackAdapt:
 4. On the Mappings tab, click **New Mapping** and select **Forward Audience Event**.
 5. Under Define event trigger, click **Add Condition** and add this condition: Event Type is `Track` or `Identify`.
 6. Under **Map fields**, select the advertiser you want to sync the audience with. You can identify a specific advertiser by finding its ID in StackAdapt.
-   ![Image showing sample map fields](images/map-fields-example.png)
+   > When you're on StackAdapt platform, navigate to `Execute` (or `Overview`), then click on `Advertiser`. Next, select an advertiser from the `Filter` section at the top. You can find the advertiser ID in the URL after `advertiser=`.
+
+![Image showing sample map fields](images/map-fields-example.png)
 
 On StackAdapt platform:
 
