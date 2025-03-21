@@ -36,11 +36,23 @@ The default data retention period for each of the data types is as follows:
 | **Free**     | 180 days                     | Not applicable               | 60 days                           | 180 days | Not applicable |
 
 > info ""
-> Segment calculates your data retention period starting from the date Segment ingests an event, not from the date an event originally occurred. Object stores not updated in the last 180 days will be deleted.
+> Segment calculates your data retention period for archive event and profile event data starting from the date Segment ingests an event, not from the date an event originally occurred. Object data retention periods are calculated from the date an object was last updated.
 
 Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
 
 To change your data retention settings, open Segment and navigate to **Privacy > Settings > Data Retention**.
+
+### Workspace Default Archive Retention Period
+
+Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
+
+- 14 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- 3 years (the default setting starting July 15, 2025)
+- Unlimited (deprecated July 15, 2025)
 
 ### Source-Level Archive Retention Periods
 
@@ -50,13 +62,12 @@ To change your data retention settings, open Segment and navigate to **Privacy >
 Override the workspace default retention period on a per-source level.
 
 You can select from the following Archive Retention time periods:
+- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period) setting)
 - 14 days
 - 30 days
 - 90 days
 - 180 days
 - 365 days
-- 3 years (the default setting starting July 15, 2025)
-- Unlimited (deprecated July 15, 2025)
  
 ### What data is impacted?
 
