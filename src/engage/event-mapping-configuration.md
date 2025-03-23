@@ -5,33 +5,36 @@ plan: engage-foundations
 
 This guide helps you configure mappings for Engage events in Actions Destinations. 
 
-
 ## Overview
 
-Engage Mappings let you transform and send user data to downstream destinations. When Engage events get sent to destinations, they may need to be formatted or adjusted to match the destination’s expected data structure. Without mapping, critical user information like audience membership or enriched traits may not sync correctly.
+Engage Mappings let you transform and send user data to downstream destinations. Engage events sent to destinations may need to be formatted or adjusted, though, to match the destination’s expected data structure. Without mapping, critical user information like audience membership or enriched traits may not sync correctly.
 
 This guide explains how to configure mappings for Engage events in Actions Destinations, including:
 
 - The differences between [Identify](/docs/connections/spec/identify/) and [Track](/docs/connections/spec/track/) events.
 - How to extract and map data from Engage event payloads.
 - A step-by-step walkthrough of mapping configurations.
-- Advanced features like Trait Enrichment to pass additional profile data.
+- Advanced features like Trait Enrichment that you can use to pass additional profile data.
 
 ## What are Engage events?
 
-Engage events let you sync audience membership data to your destinations. When a user enters or exits an audience in Engage, Segment generates events that you can use to trigger actions in your connected tools.
+Segment generates events whenever a user enters or exits an Engage audience. You can then use these Engage events to sync audience membership to your connected destinations.
 
-Engage generates Identify and Track events. These events carry critical information including:
+Engage events carry critical information, including:
 
 - User identifiers (like `userId` and `anonymousId`)
 - Audience membership status
-- Other user traits if you've enabled enrichment 
+- Other user traits, if you've enabled enrichment 
 
-Each event type has a specific structure that determines how you configure your mappings.
+### Engage event types and structure
 
-### Identify events: updating user traits
+Engage generates two types of events: Identify and Track. 
 
-Identify events are mostly used to update user profiles in external systems, like a CRM or marketing automation platform. Identify events send all user details in the `traits` object. The audience key appears in the object as a boolean that indicates whether the user is in the audience (`true`) or not (`false`), like in this example Identify payload:
+Each event serves a different purpose and has a specific structure that determines how you configure your mappings.
+
+#### Identify events: updating user traits
+
+Identify events update user profiles with audience membership status. Identify events send all user details in the `traits` object. The audience key appears in the object as a boolean that indicates whether the user is in the audience (`true`) or not (`false`), like in this example Identify payload:
 
 ```json
 {
