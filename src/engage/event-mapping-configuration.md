@@ -28,13 +28,15 @@ Engage events carry critical information, including:
 
 ### Engage event types and structure
 
-Engage generates two types of events: Identify and Track. 
+Engage generates two event types: Identify and Track. 
 
 Each event serves a different purpose and has a specific structure that determines how you configure your mappings.
 
 #### Identify events: updating user traits
 
-Identify events update user profiles with audience membership status. Identify events send all user details in the `traits` object. The audience key appears in the object as a boolean that indicates whether the user is in the audience (`true`) or not (`false`), like in this example Identify payload:
+Identify events in Engage update user profiles with audience membership status. Identify events send all user details in the `traits` object. 
+
+The audience key appears in the object as a boolean that indicates whether the user is in the audience (`true`) or not (`false`), like in this payload:
 
 ```json
 {
