@@ -18,7 +18,7 @@ This guide explains how to configure mappings for Engage events in Actions Desti
 
 ## Understanding Engage events
 
-Before you create a mapping, you need to understand how Segment structures Engage events. Where the data lives in each even affects how you map it.
+Before you create a mapping, you need to understand how Segment structures Engage events. Where the data lives in each event affects how you map it.
 
 Engage sends two types of events: Identify and Track. These two event types use different parts of the event payload to store user data. If you're mapping an email address, an audience membership, or a trait like `first_name`, you need to know where to look for that value in each event type.
 
@@ -26,9 +26,7 @@ If you map from the wrong part of the payload, your data might not reach the des
 
 This section breaks down the difference between Identify and Track events, shows you what each payload looks like, and explains where to find data you'll typically want to map so you can configure mappings correctly and avoid pitfalls.
 
-Segment generates events whenever a user enters or exits an Engage audience. You can then use these Engage events to sync audience membership to your connected destinations.
-
-Engage events carry critical information, including:
+<!-- Engage events carry critical information, including:
 
 - User identifiers (like `userId` and `anonymousId`)
 - Audience membership status
@@ -44,15 +42,16 @@ The following properties appear in Engage event payloads:
 | `anonymousId`    | String | The identifier for anonymous users before they log in.            |
 | `traits`         | Object | Stores user attributes (like `email` and audience status).        |
 | `context.traits` | Object | In Track events, this object stores user attributes like `email`. |
-| `properties`     | Object | Stores event-related data, including audience membership.         |
+| `properties`     | Object | Stores event-related data, including audience membership.         | 
 
-Understanding these fields will help you correctly set up mappings and send Engage data to external destinations.                                                            
+Understanding these fields will help you correctly set up mappings and send Engage data to external destinations. -->                                                   
 
 ### Engage event types and structure
 
-Engage generates two event types: Identify and Track. 
+Engage uses two event types to deliver data to downstream destinations: 
 
-Each event serves a different purpose and has a specific structure that determines how you configure your mappings.
+- **Identify** events, which send or update user traits like email, name, or audience membership status.
+- **Track** events, which capture actions or user behaviors, like when a user enters or exits an audience.
 
 #### Identify events: updating user traits
 
