@@ -13,7 +13,7 @@ You can create alerts for the following product areas:
 - [Sources](#source-alerts)
 - [Destinations](#destination-alerts)
 - [Storage Destinations](#storage-destination-alerts)
-- [Protocols](#protocol-alerts)
+- [Protocols](#protocols-alerts)
 - [Unify](#unify-alerts) 
 - [Engage](#engage-alerts)
 - [Functions](#functions-alerts)
