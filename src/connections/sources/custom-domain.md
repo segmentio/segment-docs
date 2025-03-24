@@ -37,6 +37,7 @@ Custom Domain supports the following sources:
 - [Python](/docs/connections/sources/catalog/libraries/server/python/)
 - [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/)
 - [.NET](/docs/connections/sources/catalog/libraries/server/net/)
+- [Pixel API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/)
 
 ## Getting started
 
@@ -73,6 +74,7 @@ For non-Analytics.js sources, you’ll need to update your implementation to use
 
 - **Server Sources**: When sending data from server-side implementations, use the `host` configuration parameter to send data to your subdomain instead of the default Segment domain.
 - **Mobile Sources**: When sending data from mobile implementations, use the `apiHost` configuration parameter to send data to your subdomain instead of the default Segment domain.
+- **Pixel API Sources**: When sending data from Pixel implementations, modify the endpoint from Segment's default domain (`https://api.segment.io/v1/pixel/track`) to your custom domain (`https://api.mysubdomain.mydomain.com/v1/pixel/track`).
 
 ### Is there a benefit in migrating server-side sources over to client-side with Custom Domain?
 Server-side tracking is generally more reliable than client-side tracking. For example, when tracking data client-side, you might lose data when users might block all cookies or use tools that interfere with network requests leaving the browser.
