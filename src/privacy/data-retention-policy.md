@@ -76,7 +76,7 @@ You can select from the following Archive Retention time periods:
 With this data retention policy, all data beyond the retention period is unrecoverably deleted from all of Segment and impacts the following:
 
 * [Data Replays](/docs/guides/what-is-replay/) will only be available for data within the retention period. Unify, Engage and Linked customers that replay data to recreate Unify Spaces or Profiles may encounter variations in the number of profiles, as well as in the identifiers, traits and properties associated with the profiles, depending on the data available.
-* Backfill Data is only available for data within the retention period when sources are connected to the your warehouse.   
+* Backfill Data is only available for data within the retention period when sources are connected to your warehouse.   
 * [Data residency](/docs/guides/regional-segment/) migrations across regions (US and EU) is only available for data within the retention period.  
 * Additional impacts to Object data:  
   * [Object API](/docs/connections/sources/catalog/libraries/server/object-api/#set), [Bulk API](/docs/connections/sources/catalog/libraries/server/object-bulk-api/), or [SendGrid](/docs/connections/sources/catalog/cloud-apps/sendgrid/#streaming) and [Mandrill](/docs/connections/sources/catalog/cloud-apps/mandrill/#streaming) streaming sources: Any data older than 180 days is treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
