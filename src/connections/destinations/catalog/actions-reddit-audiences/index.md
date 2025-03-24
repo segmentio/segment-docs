@@ -9,7 +9,6 @@ The Reddit Audiences destination allows advertisers to send Engage audiences fro
 
 This destination is maintained by Reddit. For any issues with the destination, [contact their Support team](mailto:adsapi-partner-support@reddit.com).
 
-> (delete after reading) The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination.
 
 ## Getting started
 
