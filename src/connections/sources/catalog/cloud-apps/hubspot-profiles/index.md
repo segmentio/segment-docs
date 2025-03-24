@@ -7,8 +7,8 @@ This guide explains how to set up HubSpot as a source and connect it to Segment 
 
 Once configured, this integration lets you send HubSpot data directly to Segment Profiles, eliminating the need for a data warehouse and enabling faster data synchronization and profile enrichment.
 
-> info "Private beta"
-> The HubSpot/Segment Profiles integration is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Public Beta"
+> The HubSpot/Segment Profiles integration is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Prerequisites
 

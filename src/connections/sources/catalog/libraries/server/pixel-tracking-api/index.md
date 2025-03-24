@@ -55,6 +55,12 @@ Each endpoint *always* responds with a `200 <empty-gif>`, even if an error occur
 eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJldmVudCI6ICJFbWFpbCBPcGVuZWQiLCAicHJvcGVydGllcyI6IHsgICAic3ViamVjdCI6ICJUaGUgRWxlY3RyaWMgRGFpbHkiLCAgICJlbWFpbCI6ICJwZWVrQXRNZUBlbWFpbC5wb2tlIiB9fQ
 ```
 
+##### If you choose not to encode your payload, send it like this instead:
+
+```
+https://api.segment.io/v1/pixel/track?userId=user_123&event=Email Opened&properties.subject=The Electric Daily&properties.email=jane.kim@example.com&writeKey=<YOUR_WRITE_KEY>
+```
+
 ##### Add an image tag to your email newsletter with `src` pointing to a Pixel API route:
 
 ```html
