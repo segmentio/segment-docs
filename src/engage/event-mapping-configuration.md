@@ -16,7 +16,15 @@ This guide explains how to configure mappings for Engage events in Actions Desti
 - A step-by-step walkthrough of mapping configurations.
 - Advanced features like Trait Enrichment that you can use to pass additional profile data.
 
-## What are Engage events?
+## Understanding Engage events
+
+Before you create a mapping, you need to understand how Segment structures Engage events. Where the data lives in each even affects how you map it.
+
+Engage sends two types of events: Identify and Track. These two event types use different parts of the event payload to store user data. If you're mapping an email address, an audience membership, or a trait like `first_name`, you need to know where to look for that value in each event type.
+
+If you map from the wrong part of the payload, your data might not reach the destination at all, or it might show up incorrectly. 
+
+This section breaks down the difference between Identify and Track events, shows you what each payload looks like, and explains where to find data you'll typically want to map so you can configure mappings correctly and avoid pitfalls.
 
 Segment generates events whenever a user enters or exits an Engage audience. You can then use these Engage events to sync audience membership to your connected destinations.
 
@@ -25,6 +33,20 @@ Engage events carry critical information, including:
 - User identifiers (like `userId` and `anonymousId`)
 - Audience membership status
 - Other user traits, if you've enabled enrichment 
+
+## Key Engage event fields
+
+The following properties appear in Engage event payloads:
+
+| Field            | Type   | Description                                                       |
+| ---------------- | ------ | ----------------------------------------------------------------- |
+| `userId`         | String | The unique identifier for a known user.                           |
+| `anonymousId`    | String | The identifier for anonymous users before they log in.            |
+| `traits`         | Object | Stores user attributes (like `email` and audience status).        |
+| `context.traits` | Object | In Track events, this object stores user attributes like `email`. |
+| `properties`     | Object | Stores event-related data, including audience membership.         |
+
+Understanding these fields will help you correctly set up mappings and send Engage data to external destinations.                                                            
 
 ### Engage event types and structure
 
@@ -50,11 +72,16 @@ The audience key appears in the object as a boolean that indicates whether the u
 }
 ```
 
-Since Identify events are designed to update profile data, they are commonly mapped to destinations that rely on persistent user records, such as customer databases, email platforms, and loyalty systems. 
+In this example:
+
+- `email` is included in the `traits` object.
+- The `your_audience_key` field indicates that the user is part of a specific audience. If the `value` is `false`, it means the user exited the audience.
+
+Because Identify events update profile data, they are commonly mapped to destinations that rely on persistent user records, like customer databases, email platforms, and loyalty systems. 
 
 ### Track events: logging user actions
 
-Track events, on the other hand, capture user actions and behaviors. These events are event-driven rather than profile-based, which makes them ideal for tracking audience membership changes or user activities.
+Track events, on the other hand, capture user actions and behaviors. These events are event-driven rather than profile-based, which makes them ideal for tracking audience membership changes or user activities. <!-- hm, does this make sense?  >
 
 Here's an example of a Track event payload:
 
@@ -75,6 +102,7 @@ Here's an example of a Track event payload:
   "userId": "user-testing-1"
 }
 ```
+
 
 
 
