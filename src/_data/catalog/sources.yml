@@ -5,7 +5,7 @@ items:
     display_name: .NET
     isCloudEventSource: false
     slug: net
-    url: connections/sources/catalog/libraries/server/csharp
+    url: connections/sources/catalog/libraries/server/net
     hidden: false
     regions:
       - us
@@ -2579,7 +2579,7 @@ items:
     display_name: Xamarin
     isCloudEventSource: false
     slug: xamarin
-    url: connections/sources/catalog/libraries/server/csharp
+    url: connections/sources/catalog/libraries/mobile/xamarin
     hidden: false
     regions:
       - us
