@@ -6,8 +6,8 @@ custom_ranking:
   position: 99999
 ---
 
-> warning "End-of-Support Announcement for Analytics-Android - March 2026"
-> The end-of-support (EoS) for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
+> warning "End-of-Support for Analytics-Android in March 2026"
+> End-of-support for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
 
 Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and later. Destination Middleware are available on analytics-android 4.7.0 and later.
 

@@ -5,8 +5,8 @@ custom_ranking:
   position: 99999
 ---
 
-> warning "End-of-Support Announcement for Analytics.NET - March 2026"
-> The end-of-support (EoS) for the Analytics.NET SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/) SDK. If you'd like to migrate to Analytics-CSharp, see the [migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/).
+> warning "End-of-Support for Analytics.NET in March 2026"
+> End-of-support for the Analytics.NET SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/) SDK. If you'd like to migrate to Analytics-CSharp, see the [migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/).
 
 This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and Analytics.js library. As soon as you're set up you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
 

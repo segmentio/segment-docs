@@ -6,8 +6,8 @@ custom_ranking:
   position: 99999
 ---
 
-> warning "End-of-Support Announcement for Analytics-iOS - March 2026"
-> The end-of-support (EoS) for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
+> warning "End-of-Support for Analytics-iOS in March 2026"
+> End-of-support for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
 
 ## Target has transitive dependencies that include static binaries
 

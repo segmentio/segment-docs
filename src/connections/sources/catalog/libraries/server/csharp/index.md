@@ -339,7 +339,7 @@ analytics.Reset()
 ```
 
 ## Enrichment Closure
-To modify the properties of an event, you can either write an enrichment plugin that applies changes to all events or pass an enrichment closure to the analytics call to apply changes to a specific event.  
+To modify the properties of an event, you can either write an enrichment plugin that applies changes to all events, or pass an enrichment closure to the analytics call to apply changes to a specific event.  
 
 ```c#
     analytics.Track("MyEvent", properties, @event =>
