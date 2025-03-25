@@ -6,7 +6,7 @@ Segment's Git extension lets you manage versioning by syncing changes you make i
 
 Git Sync supports synchronization from Segment to Git. When you sync data from Segment to Git, you capture the current state of your workspace through a full sync and includes all new records and changes for supported resources. 
 
-You can use [Bidirectional sync](#bidirectional-sync) to sync data from Git to Segment. After you enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes. 
+You can use [bidirectional sync](#bidirectional-sync) to sync data from Git to Segment. After you enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes. 
 
 ## Set up Git Sync
 
@@ -86,7 +86,7 @@ For more information on using Terraform, visit [Terraform's documentation](https
 
 ## Bidirectional Sync
 
-Bidirectional sync builds on top of the Git Sync extension and lets you manage your Segment workspace directly in GitHub. After you configure and enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes. Segment will not apply any changes unless the pull request has met all merge requirements and can be merged.
+Bidirectional sync builds on top of the Git Sync extension and lets you manage your Segment workspace directly in GitHub. After you configure and enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes. Segment only applies changes from pull requests that you successfully merge.
 
 Bidirectional sync only supports: 
 - Explicit values (secrets require additional configuration)
@@ -101,7 +101,7 @@ Bidirectional sync does not support variables, references to other resources, or
 
 To set up bidirectional sync in your workspace: 
 
-1. **Navigate to the Git Sync settings page to verify that your Git Sync integration is set up with Segment's GitHub App integration.** If it isn't, you can change the connection type under **Settings > Extensions > Git Sync > Manage Configuration**. If you were previously using the GitHub App integration, you might need to accept additional GitHub permissions that allow Segment t0 o listen for the relevant events. 
+1. **Navigate to the Git Sync settings page to verify that your Git Sync integration is set up with Segment's GitHub App integration.** If it isn't, you can change the connection type under **Settings > Extensions > Git Sync > Manage Configuration**. If you were previously using the GitHub App integration, you might need to accept additional GitHub permissions that allow Segment to listen for the relevant events. 
 2. **Add branch protection to your GitHub repository**. You can update your branch protections by opening GitHub and navigating to **Settings > Rules > Rulesets** and adding the Segment Extensions app to the **Bypass list**. 
 3. **Navigate to the Segment app and enable Git sync bidirectional sync.** From the Segment app, navigate to **Settings > Extentions > Git Sync** page and enabling the **Git sync bidirectional sync** setting. 
 
