@@ -49,7 +49,7 @@ You can update to Analytics-CSharp in 3 steps:
         using Segment.Analytics.Compat;
       ```
 
-3. **Required** for .NET, add `UserIdPlugin` to Analytics
+3. *(Required for .NET users)* Add `UserIdPlugin` to Analytics.
    
    Analytics-CSharp, by default, attaches an internal state `userId` to each event. The `UserIdPlugin`, instead, attaches the `userId` provided in analytics calls directly to the event.  
    
