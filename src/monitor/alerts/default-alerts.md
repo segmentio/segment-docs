@@ -111,6 +111,7 @@ your identity-resolved profiles to your data warehouse.
 - **Audience Destination Sync Failed**: Segment was unable to sync your Audience with a connected destination. 
 - **Audience Modified**: A user in your workspace modified an Audience.
 - **Audience Run Failed**: Segment was unable to compute your Audience. To resolve this error, please [contact Segment support](https://segment.com/help/contact/){:target="_blank”}.
+- **Audience Compute Run**: Segment finished calculating your Audience. 
 
 > info "Custom Engage alerts"
 > During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) alerts, but these alerts won't appear in the Monitor tab. 
