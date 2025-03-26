@@ -94,7 +94,7 @@ Bidirectional sync only supports:
 
 Bidirectional sync does not support variables, references to other resources, or resources from other providers.
 
-> warning "Bidirectional sync can lead to broad workspace changes, including data loss" 
+> warning "Bidirectional sync can lead to broad workspace changes, including data loss"
 > When using bidirectional sync to manage your Segment resources, verify that your specified plan matches the changes you expected. Unexpected changes can include data loss.
 
 ### Set up bidirectional sync
