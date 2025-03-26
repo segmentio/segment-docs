@@ -5,7 +5,7 @@ redirect_from:
   - '/personas/'
 ---
 
-Powered by real-time data, Twilio Engage is a customizable personalization platform with which you can build, enrich, and activate Audiences.
+Powered by real-time data, Twilio Engage is a customizable personalization platform with which you can build, enrich, and activate Audiences. 
 
 ## What can you do with Engage?
 
