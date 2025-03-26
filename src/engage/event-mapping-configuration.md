@@ -144,6 +144,30 @@ The following table summarizes the differences between Identify and Track events
 
 ## Configure mappings
 
+To send Engage event data to a destination, you’ll need to configure a mapping. Mappings define how Segment fields, like `traits.email` or `properties.browse_abandoners` are passed to the destination's API endpoint.
+
+When you add a mapping, you’ll choose the event type (Identify or Track) and then define which fields to send and where to send them. The structure of the event payload depends on the type of event, which is why mapping an Identify event differs from mapping a Track event.
+
+The following sections walk through each event type and show how to configure a mapping using example payloads.
+
+### Map an Identify event 
+
+Since Identify events send data in the `traits` object, you'll use `traits` in your mappings, like in this example:
+
+```json
+{
+  "type": "identify",
+  "userId": "user-123",
+  "anonymousId": "anon-test-1",
+  "traits": {
+    "email": "user@example.com",
+    "browse_abandoners": true,
+    "first_name": "Jane",
+    "last_name": "Doe"
+  }
+}
+```
+
 
 
 
