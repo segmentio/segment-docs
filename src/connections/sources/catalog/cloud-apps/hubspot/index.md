@@ -18,7 +18,9 @@ Are you trying to set up HubSpot as a destination to receive data from Segment? 
 
    **Note**: You can add multiple instances if you have multiple HubSpot accounts. That's why we allow you to customize the source's nickname and schema name!
 
-4. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key){:target="_blank"}.
+4. Configure the Selective Sync settings. You can specify a start date for the initial sync, adjust the default sync frequency, and select which collections to sync.
+
+5. Connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key){:target="_blank"}.
 
 Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
@@ -31,12 +33,12 @@ The HubSpot source is built with a sync component, which means Segment makes req
 
 Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `deals` goes from `open` to `closed` between syncs, on its next sync that deal's status will be `closed`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse.  You can set the start date of the first sync. After the first sync, sources sync with Segment every 3 hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
 
 ## Collections
 
-Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
+Collections are the groupings of resources we pull from your source. You can select which collections are included in your sync. In your warehouse, each collection gets its own table.
 
 ### Event History
 
