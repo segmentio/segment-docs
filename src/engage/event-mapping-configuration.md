@@ -144,13 +144,32 @@ The following table summarizes the differences between Identify and Track events
 
 ## Configure mappings
 
-To send Engage event data to a destination, you’ll need to configure a mapping. Mappings define how Segment fields, like `traits.email` or `properties.browse_abandoners` are passed to the destination's API endpoint.
+To send Engage event data to a destination, you’ll need to configure a mapping. Mappings define Segment passes fields like `traits.email` or `properties.browse_abandoners` to the destination's API endpoint.
 
 When you add a mapping, you’ll choose the event type (Identify or Track) and then define which fields to send and where to send them. The structure of the event payload depends on the type of event, which is why mapping an Identify event differs from mapping a Track event.
 
 The following sections walk through each event type and show how to configure a mapping using example payloads.
 
-### Map an Identify event 
+Before you begin, make sure you've done the following:
+
+- Created an audience in Engage
+- Connected an Actions destination
+- Confirmed whether the destination expects Identify or Track events
+- Located your audience key (you'll use it to configure the trigger)
+
+### Create a mapping
+
+To create a mapping, follow these steps:
+
+1. In your Segment workspace, go to **Connections > Destinations**.
+2. Select the destination where you want to send Engage data.
+3. On the destination overview page, click **Mappings > + New mapping**.
+4. Choose the event type you want to use: Identify or Track.
+
+After you select the event type, you'll configure a trigger to determine when the mapping fires (based on audience entry or exit), and then map the fields to the destination's expected format.
+
+
+Map an Identify event 
 
 Since Identify events send data in the `traits` object, you'll use `traits` in your mappings, like in this example:
 
@@ -168,6 +187,60 @@ Since Identify events send data in the `traits` object, you'll use `traits` in y
 }
 ```
 
+Here’s how you might configure your mapping for this Identify event:
+
+| Segment field              | Destination field | Details                           |
+| -------------------------- | ----------------- | --------------------------------- |
+| `traits.email`             | `email_address`   | User’s email                      |
+| `traits.browse_abandoners` | `audience_status` | True if user entered the audience |
+| `traits.first_name`        | `first_name`      | User’s first name                 |
+| `traits.last_name`         | `last_name`       | User’s last name                  |
+
+| Step | Who      | What happens                                                                   |
+| ---- | -------- | ------------------------------------------------------------------------------ |
+| 1    | Enginer  | Creates string key and wires it into the UI (like `settings.saveButton.label`) |
+| 2    | Engineer | Seeds initial content into the CMS during feature development                  |
+| 3    | Designer | Logs into the CMS and updates the content post-launch                          |
+| 4    | Console  | Loads content from the CMS at build time or runtime depending on use case      |
 
 
 
+<!-- Maybe add screenshot-->
+
+
+### Map a Track event
+
+Track events send data in the `properties` object, like in this example:
+
+```json
+{
+  "type": "track",
+  "event": "Audience Entered",
+  "userId": "user-123",
+  "anonymousId": "anon-test-1",
+  "context": {
+    "traits": {
+      "email": "user@example.com"
+    }
+  },
+  "properties": {
+    "audience_key": "browse_abandoners",
+    "browse_abandoners": true,
+    "first_name": "Jane",
+    "last_name": "Doe"
+  }
+}
+```
+
+This event logs the moment the user entered the `browse_abandoners` audience. Audience status and [enriched traits](#) show up in `properties`, while email is stored in `context.traits`.
+
+Here’s how you might configure your mapping for this Track event:
+
+| Segment field                  | Destination field | Details                           |
+| ------------------------------ | ----------------- | --------------------------------- |
+| `context.traits.email`         | `email_address`   | User’s email                      |
+| `properties.browse_abandoners` | `audience_status` | True if user entered the audience |
+| `properties.first_name`        | `first_name`      | User’s first name                 |
+| `properties.last_name`         | `last_name`       | User’s last name                  |
+
+<!-- Add screenshot>
