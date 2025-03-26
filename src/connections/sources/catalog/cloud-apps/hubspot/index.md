@@ -24,7 +24,6 @@ Are you trying to set up HubSpot as a destination to receive data from Segment? 
 
 Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
-
 ## Components
 
 ### Sync
