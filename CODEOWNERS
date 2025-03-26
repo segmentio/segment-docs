@@ -1,6 +1,12 @@
+# Global default: all files fall back to the Segment docs team unless overridden by a more specific rule.
 * @segmentio/segment-doc-team
-# The default owners for everything in
-# the repo. Unless a later match takes precedence.
+
+# The specific rules in this file still take precedence (for example, /src/protocols).
+# However, we've added @segmentio/segment-doc-team to each rule to make sure that
+# PRs can be reviewed by ANY member of the team. If the docs team member isn't available,
+# GitHub will assign reviewers randomly from the rest of the team.
+
+# CODEOWNERS file itself
 CODEOWNERS  @segmentio/segment-doc-team 
 
 
