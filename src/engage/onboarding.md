@@ -1,6 +1,7 @@
 ---
 title: Twilio Engage Premier Onboarding Guide
 plan: engage-premier
+hidden: true
 redirect_from:
   - '/engage/overview/onboarding'
 ---
