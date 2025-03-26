@@ -1,4 +1,5 @@
-# Global default: all files fall back to the Segment docs team unless overridden by a more specific rule.
+# Global default: all files fall back to the Segment docs team 
+# unless overridden by a more specific rule.
 * @segmentio/segment-doc-team
 
 # The specific rules in this file still take precedence (for example, /src/protocols).
@@ -9,7 +10,6 @@
 # CODEOWNERS file itself
 CODEOWNERS  @segmentio/segment-doc-team 
 
-
 # Utility scripts
 /scripts @segmentio/segment-doc-team
 
@@ -17,43 +17,23 @@ CODEOWNERS  @segmentio/segment-doc-team
 # /vale-styles @segmentio/segment-doc-team
 # .vale.ini @segmentio/segment-doc-team
 
-
-# Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
-# This team will receive review requests automatically when a PR is submitted modifying the files in
-# a given directory+subtree, or file type, etc. that matches below.  While Github won't enforce the
-# order names are listed in for the PR review, this file can provide insight on who should be contacted
-# if anything becomes time sensitive.  Names other than the PM can mostly ignore these review notifications
-# but are listed here as backup.
-
+# Content ownership by team member
 
 # Libraries owners
-/src/connections/catalog/libraries @stayseesong
+/src/connections/catalog/libraries @stayseesong @segmentio/segment-doc-team
 
-
-# Destinations owners
-# /src/connections/destinations  @stayseesong=
-
-# Stratconn
-## Adobe
-
-
-## Facebook
-
-
-## Google
-
-
-## Salesforce
-
+# Destinations owners; owned by the docs team only, 
+# so GitHub can assign a reviewer randomly. 
+/src/connections/destinations @segmentio/segment-doc-team
 
 # Engage
-/src/engage/ @pwseg 
+/src/engage/ @pwseg @segmentio/segment-doc-team
 
 # Unify
-/src/unify @pwseg 
+/src/unify @pwseg @segmentio/segment-doc-team
 
 # Protocols owners
-/src/protocols @forstisabella
+/src/protocols @forstisabella @segmentio/segment-doc-team
 
 # Storage owners
-/src/connections/storage @forstisabella
+/src/connections/storage @forstisabella @segmentio/segment-doc-team
