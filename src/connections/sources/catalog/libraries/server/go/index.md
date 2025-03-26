@@ -18,7 +18,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 Install `analytics-go` using `go get`:
 
 ```bash
-go get gopkg.in/segmentio/analytics-go.v3
+go get github.com/segmentio/analytics-go/v3
 ```
 
 Then import it and initialize an instance with your source's **Write Key**. Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your source settings.
@@ -26,7 +26,7 @@ Then import it and initialize an instance with your source's **Write Key**. Of c
 ```go
 package main
 
-import "gopkg.in/segmentio/analytics-go.v3"
+import "github.com/segmentio/analytics-go/v3"
 
 func main() {
   client := analytics.New("YOUR_WRITE_KEY")
@@ -413,8 +413,6 @@ for example, with [govendor](https://github.com/kardianos/govendor){:target="_bl
 ```bash
 govendor fetch github.com/segmentio/analytics-go@v3.0
 ```
-
-Alternatively, you can also use [`gopkg.in`](http://labix.org/gopkg.in){:target="_blank”}. First run `go get gopkg.in/segmentio/analytics-go.v3` and replace your imports with `import "gopkg.in/segmentio/analytics-go.v3"`.
 
 To help with migrating your code, Segment recommends checking out a simple example that is written in [v2](https://github.com/segmentio/analytics-go/blob/v2.0/examples/track.go) and [v3](https://github.com/segmentio/analytics-go/blob/v3.0/examples/track.go) so you can easily see the differences.
 
