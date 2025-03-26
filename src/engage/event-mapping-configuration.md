@@ -133,12 +133,16 @@ For example, you might use an Identify event to sync the current list of users i
 
 The following table summarizes the differences between Identify and Track events in Engage:
 
-| Attribute                  | Identify                                  | Track                                                 |
-| -------------------------- | ----------------------------------------- | ----------------------------------------------------- |
-| What it describes          | The user’s current traits and attributes  | A specific moment or action (e.g., audience entry)    |
+| Attribute              | Identify                                  | Track                                                 |
+| ---------------------- | ----------------------------------------- | ----------------------------------------------------- |
+| What it describes      | The user’s current traits and attributes  | A specific moment or action (like audience entry)     |
 | When to use it         | To update a user profile in a destination | To trigger an action based on something that happened |
-| **Audience data location** | `traits`                                  | `properties`                                          |
-| **Email location**         | `traits.email`                            | `context.traits.email`                                |
+| Audience data location | `traits`                                  | `properties`                                          |
+| Email location         | `traits.email`                            | `context.traits.email`                                |
+
+<!-- PW: maybe add a transition here -->
+
+## Configure mappings
 
 
 
