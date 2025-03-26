@@ -3,20 +3,20 @@ title: Engage Event Mapping
 plan: engage-foundations
 ---
 
-This guide helps you configure mappings for Engage events in Actions Destinations. 
+This guide explains how to configure mappings for Engage events in Actions Destinations, 
 
 ## Overview
 
 Engage Mappings let you transform and send user data to downstream destinations. Engage events sent to destinations may need to be formatted or adjusted, though, to match the destination’s expected data structure. Without mapping, critical user information like audience membership or enriched traits may not sync correctly.
 
-This guide explains how to configure mappings for Engage events in Actions Destinations, including:
+including:
 
 - The differences between [Identify](/docs/connections/spec/identify/) and [Track](/docs/connections/spec/track/) events.
 - How to extract and map data from Engage event payloads.
 - A step-by-step walkthrough of mapping configurations.
 - Advanced features like Trait Enrichment that you can use to pass additional profile data.
 
-## Understanding Engage events
+## About Engage events
 
 Before you create a mapping, you need to understand how Segment structures Engage events. Where the data lives in each event affects how you map it.
 
@@ -53,59 +53,92 @@ Engage uses two event types to deliver data to downstream destinations:
 - **Identify** events, which send or update user traits like email, name, or audience membership status.
 - **Track** events, which capture actions or user behaviors, like when a user enters or exits an audience.
 
+These events structure data differently, which directly affects how you should configure mappings.
+
 #### Identify events: updating user traits
 
-Identify events in Engage update user profiles with audience membership status. Identify events send all user details in the `traits` object. 
+Identify events represent who the user is. These events usually update or enrich profiles in destinations like CRMs and email tools.
 
-The audience key appears in the object as a boolean that indicates whether the user is in the audience (`true`) or not (`false`), like in this payload:
+Key characteristics:
+
+- Identify events store user details in the `traits` object. 
+- Audience membership (for example, `browse_abandoners = true`) is also included in `traits`.
+- Attributes like `email`, `first_name`, and any enriched traits all appear alongside audience flags.
+
+Here's an example of an Engage Identify event payload:
 
 ```json
 {
   "anonymousId": "anon-test-1",
   "traits": {
-    "email": "user-testing-1@gmail.com",
-    "your_audience_key": true
+    "email": "user@example.com",
+    "browse_abandoners": true,
+    "first_name": "Jane",
+    "last_name": "Doe"
   },
   "type": "identify",
-  "userId": "user-testing-1"
+  "userId": "user-123"
 }
 ```
 
-In this example:
+In this example, a user just entered the `browse_abandoners` audience. If the value for the audience were `false`, it would mean the user just **exited** the audience.
 
-- `email` is included in the `traits` object.
-- The `your_audience_key` field indicates that the user is part of a specific audience. If the `value` is `false`, it means the user exited the audience.
-
-Because Identify events update profile data, they are commonly mapped to destinations that rely on persistent user records, like customer databases, email platforms, and loyalty systems. 
+<!-- PW: hm should I change this from "alongside audience flags!-->
 
 ### Track events: logging user actions
 
-Track events, on the other hand, capture user actions and behaviors. These events are event-driven rather than profile-based, which makes them ideal for tracking audience membership changes or user activities. <!-- hm, does this make sense?  >
+Track events, on the other hand, represent something the user did. These events capture user actions and log events and behaviors.
 
-Here's an example of a Track event payload:
+Key characteristics:
+
+- Most event-specific data is stored in the `properties` object.
+- The user's `email` isn't in properties; it's nested under `context.traits`.
+- Audience entry and exit shows as a boolean, where `true` is an entry and `false` is an exit.
+
+Here's an example of an Engage Track event payload:
 
 ```json
 {
   "anonymousId": "anon-test-1",
   "context": {
     "traits": {
-      "email": "user-testing-1@gmail.com"
+      "email": "user@example.com"
     }
   },
   "event": "Audience Entered",
   "properties": {
-    "audience_key": "your_audience_key",
-    "your_audience_key": true
+    "audience_key": "browse_abandoners",
+    "browse_abandoners": true,
+    "first_name": "Jane",
+    "last_name": "Doe"
   },
   "type": "track",
-  "userId": "user-testing-1"
+  "userId": "user-123"
 }
 ```
 
+In this example, a user just entered the `browse_abandoners` audience. The audience flag and traits are nested in `properties`, and the email address is in `context.traits.email`.
 
+### Understanding the difference between Identify and Track in Engage
 
+Engage sends both Identify and Track events when a user enters or exits an audience. While these events can contain similar information, these events serve different purposes.
 
+Identify events answer the question, "Who is this user right now?" They update the user’s profile with traits like email, name, and audience membership. For example: “Jane’s email is `jane@example.com`. She’s in the `browse_abandoners` audience. Her first name is `jane`.”
 
+Track events capture a specific moment in time, like when a user joins or leaves an audience. For example: “Jane just entered the `browse_abandoners` audience.”
+
+Engage sends both types of events because different destinations rely on different types of data. Identify events are used to keep user profiles up to date, whereas Track events are useful for triggering time-sensitive actions based on audience entry or exit.
+
+For example, you might use an Identify event to sync the current list of users in an audience to your CRM. But if you want an ad platform to show an ad the moment someone enters an audience, you'd use a Track event.
+
+The following table summarizes the differences between Identify and Track events in Engage:
+
+| Attribute                  | Identify                                  | Track                                                 |
+| -------------------------- | ----------------------------------------- | ----------------------------------------------------- |
+| What it describes          | The user’s current traits and attributes  | A specific moment or action (e.g., audience entry)    |
+| When to use it         | To update a user profile in a destination | To trigger an action based on something that happened |
+| **Audience data location** | `traits`                                  | `properties`                                          |
+| **Email location**         | `traits.email`                            | `context.traits.email`                                |
 
 
 
