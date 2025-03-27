@@ -1,5 +1,4 @@
 ---
-beta: true
 title: Wishpond Destination
 id: 575f018380412f644ff139bf
 ---

@@ -63,5 +63,5 @@ Segment offers a Data Protection Addendum (DPA) and Standard Contractual (SCCs) 
 
 Segment offers a Data Protection Addendum (DPA) and Standard Contractual Clauses (SCCs) as a means of meeting the regulatory contractual requirements of GDPR in its role as processor and also to address international data transfers. 
 
-> note ""
-> **Note on Schrems II**: Despite the CJEU’s July 2020 ruling invalidating Privacy Shield as a means of validly transferring data to the USA from the EU, these developments are not expected to disrupt Segment’s ability to provide services to its EU customers as the European Court of Justice has reaffirmed that the Standard Contractual Clauses (SCC) remain valid as a method of transfer. Segment's standard Data Protection Addendum includes a provision whereby should Privacy Shield ever be invalidated (as is the case now) then the SCCs will automatically apply.
+> info "Schrems II"
+> Despite the CJEU’s July 2020 ruling invalidating Privacy Shield as a means of validly transferring data to the USA from the EU, these developments are not expected to disrupt Segment’s ability to provide services to its EU customers as the European Court of Justice has reaffirmed that the Standard Contractual Clauses (SCC) remain valid as a method of transfer. Segment's standard Data Protection Addendum includes a provision whereby should Privacy Shield ever be invalidated (as is the case now) then the SCCs will automatically apply.

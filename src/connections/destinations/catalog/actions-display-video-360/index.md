@@ -3,7 +3,9 @@ title: Display and Video 360 (Actions) Destination
 strat: google
 hide-settings: true
 id: 65302a3acb309a8a3d5593f2
-beta: true
+engage: true
+redirect_from:
+  - '/connections/destinations/catalog/personas-display-video-360/'
 ---
 
 > info ""
@@ -106,7 +108,7 @@ To configure DoubleClick Floodlight:
 7. Click **Save** and make sure you enable the mapping. 
 
 > info ""
-> The destination does not have configurable settings until you create an audience, described [here](#create-an-audience-and-finish-dv360-configuration).
+> The destination does not have configurable settings until you create an audience, described in the [Create an audience and finish DV360 configuration](#create-an-audience-and-finish-dv360-configuration) documentation.
 
 ### Create an audience and finish DV360 configuration
 
@@ -149,6 +151,8 @@ Consent mode in the Gtag library and Google Analytics is designed to help websit
 With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
 
 Segment automatically sends consent as `TRUE` for this destination.  Segment uses the [bulk-uploader workflow](https://developers.google.com/authorized-buyers/rtb/bulk-uploader#workflow){:target="_blank"} which requires consented data. Ensure all audiences and journeys are connected to consented audiences.  
+
+{% include components/actions-fields.html %}
 
 ## FAQ
 ### What is Segment's relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?

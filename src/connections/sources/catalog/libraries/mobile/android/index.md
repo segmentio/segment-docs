@@ -1,17 +1,20 @@
 ---
-title: 'Analytics for Android'
+title: 'Analytics-Android'
 strat: android
 repo: analytics-android
-support_type: maintenance
+support_type: community
 id: wXNairW5xX
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
-  Analytics for Android makes it easier for you to send data to any tool without having to learn, test or implement a new API every time.
+Analytics-Android makes it easier for you to send data to any tool without having to learn, test or implement a new API every time.
 
 
-Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
+Analytics-Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
-> info "Analytics-Kotlin"
-> The Analytics-Kotlin library is in General Availability. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). Segment's future development efforts concentrate on the new Analytics-Kotlin SDK, and will only ship security updates for the Analytics-Android SDK.
+> warning "End-of-Support for Analytics-Android in March 2026"
+> End-of-support for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
 
 > success ""
 > In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
@@ -216,8 +219,8 @@ The Segment API calls include:
 
 ### Identify
 
-> note ""
-> **Good to know**: For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 Identify calls let you tie a user to their actions, and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 

@@ -41,7 +41,7 @@ The language supports the following syntactic sugar adjustments:
 
 ### Definition type
 
-The definition type (audience or computed trait) determines whether the computation operates at the user or account level. For account-level audiences, you can apply addition functions, including `ANY` (to verify that all underlying users meet the defined conditions) and `ALL` (to check if any of the underlying users meet the defined conditions). 
+The definition type (`USERS` or `ACCOUNTS`) determines whether the computation operates at the user or account level. For account-level audiences, you can apply additional functions `ANY` (to verify that all underlying users meet the defined conditions) and `ALL` (to check if any of the underlying users meet the defined conditions).
 
 These functions use the association between accounts and users to determine audience membership.
 
@@ -62,6 +62,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `trait({s: String})` <br> `s` - the name of the the trait to reference                              |
 | Return Type | `ScalarExtractor`                                                                                   |
 | Description | Similar to the event operator, the trait operator is used to specify profile trait filter criteria. |
+| Notes       | You can reference other audiences by using the audience key as the trait name.                      |
 | Example     | `trait('total_spend')`                                                                              |
 
 | `property`  |                                                                                                                                                                                                                                 |
@@ -101,7 +102,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `sources({exclude: {a: Array}})`<br>`a` - an array of source `ids` to exclude         |
 | Return Type | `StreamFilter`                                                                        |
 | Description | Filters the stream to only items whose source `id` does not match the exclusion list. |
-| Example     | `sources({exclude: ['QgRHeujRJBM9j18yChyC', '/;hSBZDqGDPvXCKHbikPm']})`               |
+| Example     | `sources({exclude: 'QgRHeujRJBM9j18yChyC', '/;hSBZDqGDPvXCKHbikPm'})`               |
 
 | `within`    |                                                                                                                                                                                                                                        |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -139,24 +140,28 @@ The following tables list the query languages's available functions.
 | Return Type | `Scalar`                                                        |
 | Example     | `avg(property('spend'))`                                        |
 
-| `max`       |                                                                                |
-| ----------- | ------------------------------------------------------------------------------ |
-| Syntax      | `max({s: EventPropertyExtractor})`<br>`s` - property to get the maximum value of |
-| Return Type | `Scalar`                                                                       |
-| Example     | `max(property('spend'))`                                                       |
+| `max`       |                                                                                                                                                                                                                             |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `max({s: EventPropertyExtractor})` or `max({s: EventPropertyExtractor} as type)`<br>`s` - property to get the maximum value of <br>`type` - number, string                                                                  |
+| Return Type | `Scalar`                                                                                                                                                                                                                    |
+| Notes       | If no type is passed, Segment assumes `number` as the `type` and selects the greatest value. You can override the behavior to select the max based on lexicographical ordering by specifying `as string`.            |
+| Example     | `max(property('spend'))`<br>`max(property('spend') as string)`                                                                                                                                                              |
 
-| `min`       |                                                                                |
-| ----------- | ------------------------------------------------------------------------------ |
-| Syntax      | `min({s: EventPropertyExtractor})`<br>`s` - property to get the minimum value of |
-| Return Type | `Scalar`                                                                       |
-| Example     | `min(property('spend'))`                                                       |
+| `min`       |                                                                                                                                                                                                                             |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `min({s: EventPropertyExtractor})` or `min({s: EventPropertyExtractor} as type)`<br>`s` - property to get the minimum value of <br>`type` - number, string                                                                  |
+| Return Type | `Scalar`                                                                                                                                                                                  
+                                  |
+| Notes       | If no type is passed, Segment assumes `number` as the `type` and selects the smallest value. You can override the behavior to select the max based on lexicographical ordering by specifying `as string`.            |
+| Example     | `min(property('spend'))`<br>`min(property('spend') as string)`                                                                                                                                                              |
 
-| `mode`      |                                                                                                                                                |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax      | `mode({s: EventPropertyExtractor}, {d: Integer})`<br>`s` - the property to find the most frequent value of<br>`d` - minimum frequency expected |
-| Return Type | `Scalar`                                                                                                                                       |
-| Description | Find the most frequent value for a given property name.                                                                                        |
-| Example     | `mode(property('spend'), 2)`                                                                                                                   |
+| `mode`      |                                                                                                                                                                                                                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `mode({s: EventPropertyExtractor}, {d: Integer})` or `mode({s: EventPropertyExtractor} as type, {d: Integer})`<br>`s` - the property to find the most frequent value of <br>`d` - minimum frequency expected <br>`type` - number, string, array |
+| Return Type | `Scalar`                                                                                                                                                                                                                                        |
+| Description | Find the most frequent value for a given property name.                                                                                                                                                                                         |
+| Notes       | If no type is passed, Segment assumes `string` as the `type` and selects the most frequent value assuming all data is a string. `number` will behave the same as `string`. `array` will also behave the same way, except when used in combination with the `$` operator where instead of treating each individual value within the array separately Segment will instead treat the whole array as a string.                                               |
+| Example     | `mode(property('spend'), 2)`<br>`mode(property('spend') as array, 2)`                                                                                                                                                                           |
 
 | `first`     |                                                                                                  |
 | ----------- | ------------------------------------------------------------------------------------------------ |
@@ -238,7 +243,7 @@ The following tables list the query languages's available functions.
 | Syntax         | `contains({a: Array})`<br>`a` - array of possible values                                   |
 | Return Type    | `Comparator`                                                                               |
 | Description    | Matches when the value contains one of the elements of the parameter array as a substring. |
-| Example        | `contains(['shoes','shirts'])`                                                             |
+| Example        | `contains('shoes','shirts')`                                                             |
 
 | `omits`     |                                                                                                                                 |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -264,7 +269,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `one_of({a: Array})`<br>`a` - array of possible values                             |
 | Return Type | `Comparator`                                                                       |
 | Description | Matches when the value exactly matches one of the values from the parameter array. |
-| Example     | `one_of(['shoes','shirts'])`                                                       |
+| Example     | `one_of('shoes','shirts')`                                                       |
 
 | `before_date` |                                                           |
 | ------------- | --------------------------------------------------------- |
@@ -280,28 +285,28 @@ The following tables list the query languages's available functions.
 
 | `within_last` |                                                                                                                                                                                               |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `within_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s) day(s)                                                                                                       |
+| Syntax        | `within_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s), day(s)                                                                                                       |
 | Return Type   | `Comparator`                                                                                                                                                                                  |
 | Description   | Represents the date range between today and the past `d` days - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
 | Example       | `within_last(7 days)`                                                                                                                                                                         |
 
 | `within_next` |                                                                                                                                                                                               |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `within_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>`u` - hour(s) day(s)                                                                                                     |
+| Syntax        | `within_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>`u` - hour(s), day(s)                                                                                                     |
 | Return Type   | `Comparator`                                                                                                                                                                                  |
 | Description   | Represents the date range between today and the next `d` days - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
 | Example       | `within_next(7 days)`                                                                                                                                                                         |
 
 | `before_last` |                                                                                                                                                                                                                    |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Syntax        | `before_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s) day(s)                                                                                                                            |
+| Syntax        | `before_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s), day(s)                                                                                                                            |
 | Return Type   | `Comparator`                                                                                                                                                                                                       |
 | Description   | Represents the date range between today - `d` days and any past date prior to that - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
 | Example       | `before_last(7 days)`                                                                                                                                                                                              |
 
 | `after_next` |                                                                                                                                                                                                        |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Syntax       | `after_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s)  day(s)                                                                                                                |
+| Syntax       | `after_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s), day(s)                                                                                                                |
 | Return Type  | `Comparator`                                                                                                                                                                                           |
 | Description  | Represents the date range between today + `d` days and any future date - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
 | Example      | `after_next(7 days)`                                                                                                                                                                                   |
@@ -418,7 +423,7 @@ Another way to think of this scenario would be:
 Here's how you could do that in Segment's query language:
 
 ```sql
-event(‘Shoes Bought’).where( property(‘price’) >= 100 ).within(7 days).count() >= 1
+event('Shoes Bought').where( property('price') >= 100 ).within(7 days).count() >= 1
 ```
 
 #### Bought and returned
@@ -430,10 +435,10 @@ This example collects:
 - and the user performed the `Shoes Returned` event at least once, five days after the `Shoes Bought` event
 
 ```sql
-event(‘Shoes Bought’).where( 
-property(‘price’) >= trait(‘avg_spend’)
+event('Shoes Bought').where( 
+property('price') >= trait('avg_spend')
 AND 
-event(‘Shoes Returned’).within(parent: 5 days).count() >= 1 
+event('Shoes Returned').within(parent: 5 days).count() >= 1 
 ).within(30 days).count() >= 1
 ```
 
@@ -442,7 +447,7 @@ event(‘Shoes Returned’).within(parent: 5 days).count() >= 1
 This example collects all users who did not perform the `Shoes Bought` event at least once and don't have a `total_spend` trait with a value greater than `200`:
 
 ```sql
-NOT ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 )
+NOT ( event('Shoes Bought').count() >= 1 AND trait('total_spend') > 200 )
 ```
 
 #### Bought with minimum total spend
@@ -450,7 +455,7 @@ NOT ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 
 This example collects all accounts where all associated users performed the `Shoes Bought` event at least once and have a `total_spend` trait greater than `200`: 
 
 ```sql
-ALL ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 )
+ALL ( event('Shoes Bought').count() >= 1 AND trait('total_spend') > 200 )
 ```
 
 #### No users bought at least once
@@ -458,7 +463,7 @@ ALL ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 
 This example collects all accounts where no associated users performed the `Shoes Bought` event at least once:
 
 ```sql
-ALL NOT event(‘Shoes Bought’).count() >= 1
+ALL NOT event('Shoes Bought').count() >= 1
 ```
 
 #### Any users bought at least once
@@ -466,7 +471,7 @@ ALL NOT event(‘Shoes Bought’).count() >= 1
 This example collects all accounts where any associated users performed the `Shoes Bought` event at least once:
 
 ```sql
-ANY event(‘Shoes Bought’).count() >= 1
+ANY event('Shoes Bought').count() >= 1
 ```
 
 ### Computed Traits
@@ -482,7 +487,7 @@ Another way to think of this would be:
 Here's how you could do that in Segment's query language:
 
 ```sql
-event(‘Shoes Bought’).within(30 days).avg(property(‘spend’))
+event('Shoes Bought').within(30 days).avg(property('spend'))
 ```
 
 #### Calculate minimum spend 
@@ -490,7 +495,7 @@ event(‘Shoes Bought’).within(30 days).avg(property(‘spend’))
 This example calculates the minimum spend for each user, based on all `Shoes Bought` events, where the price was greater than `100` and the brand was `My_Brand`:
 
 ```sql
-event(‘Shoes Bought’).where( property(‘price’) > 100 AND property(“brand”) = ‘My Brand’ ).min(property(‘spend’))
+event('Shoes Bought').where( property('price') > 100 AND property('brand') = 'My Brand' ).min(property('spend'))
 ```
 
 #### Calculate first seen spend
@@ -498,7 +503,7 @@ event(‘Shoes Bought’).where( property(‘price’) > 100 AND property(“bra
 This example calculates the first-seen spend value for each user, based on all `Shoes Bought` events performed within the last 30 days:
 
 ```sql
-event(“Shoes Bought”).within(30 days).first(property(“spend”))
+event('Shoes Bought').within(30 days).first(property('spend'))
 ```
 
 #### Most frequent spend value
@@ -506,5 +511,5 @@ event(“Shoes Bought”).within(30 days).first(property(“spend”))
 This example calculates the most frequent spend value for each user, based on all `Shoes Bought` events performed within the last 30 days. It only considers spend values that have a minimum frequency of `2`:
 
 ```sql
-event(“Shoes Bought”).within(30 days).mode(property(“spend”), 2)
+event('Shoes Bought').within(30 days).mode(property('spend'), 2)
 ```

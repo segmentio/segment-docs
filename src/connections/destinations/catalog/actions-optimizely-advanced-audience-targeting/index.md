@@ -1,7 +1,6 @@
 ---
 title: Optimizely Advanced Audience Targeting Destination
 id: 64edeb2bee24614fe52ede34
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

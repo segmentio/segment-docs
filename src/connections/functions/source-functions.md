@@ -297,27 +297,39 @@ You can test your code directly from the editor in two ways: either by receiving
 
 The advantage of testing your source function with webhooks is that all incoming data is real, so you can test behavior while closely mimicking the production conditions.
 
-Note that Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function:
-- You must [generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
-- For POST calls, you'll need to use this API token in the header.
+Note: Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function, you must:
+- [Generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
+- [Create a Public API Token]([url](https://app.segment.com/goto-my-workspace/settings/access-management/tokens)), or follow these steps: 
+In your Segment Workspace, navigate to Settings → Workspace settings → Access Management → Token. Click `+ Create Token`. Create a description for the token and assign access. Click `Create` and save the access token before clicking `Done`.
+- For POST calls, use this Public API token in the Authorization Header, as `Bearer Token : public_api_token`
 
 ### Testing source functions with a webhook
 
-You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL or Insomnia) or by pasting the webhook into an external server that supports webhooks (such as Slack).
+You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL, Postman, or Insomnia), or by pasting the webhook into an external server that supports webhooks (such as Slack).
+_A common Segment use case is to connect a Segment [webhooks destination](https://segment.com/docs/connections/destinations/catalog/webhooks/) or [webhook actions destination](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) to a test source, where the Webhook URL/endpoint that is used corresponds to the provided source function's endpoint, then you can trigger test events to send directly to that source, which are routed through your Webhook destination and continue on to the source function: Source → Webhook destination → Source Function._
 
-From the source function editor, copy the webhook URL from the "Auto-fill via Webhook" dialog. To trigger the source function, send the request using the `POST` method, with the `Content-Type` header set to `application/json` or `application/x-www-form-urlencoded`.
+From the source function editor, copy the provided webhook URL (endpoint) from the "Auto-fill via Webhook" dialog. 
+_**Note** : When a new source is created that utilizes a source function, the new source's endpoint (webhook URL) will differ from the URL that is provided in the source function's test environment._
+
+To test the source function:
+1. Send a `POST` request to the source function's provided endpoint (webhook URL)
+2. Include an event `body`
+3. The request must include these Headers: 
+- `Content-Type : application/json` or  `Content-Type : application/x-www-form-urlencoded`
+- `Authorization : Bearer _your_public_api_token_`
 
 ### Testing source functions manually
 
-You can also manually construct the headers and body of an HTTPS request right inside the editor and test with this data without using webhooks.
+You can also manually construct the headers and body of an HTTPS request inside the editor and test with this data without using webhooks.
+The `Content-Type` Header is required when testing the function:
+- `Content-Type : application/json` or  `Content-Type : application/x-www-form-urlencoded`
 
 ![Test HTTPS Request](images/test-manual.png){:width="500"}
 
 ## Save and deploy the function
 
-Once you finish building your source function, click **Configure** to name it, then click **Create Function** to save it.
-
-Once you do that, the source function appears on the **Functions** page in your workspace's catalog.
+After you finish building your source function, click **Configure** to name it, then click **Create Function** to save it.
+The source function appears on the **Functions** page in your workspace's catalog.
 
 If you're editing an existing function, you can **Save** changes without updating instances of the function that are already deployed and running.
 
@@ -325,7 +337,7 @@ You can also choose to **Save & Deploy** to save the changes, and then choose wh
 
 ## Source functions logs and errors
 
-Your function might encounter errors that you missed during testing, or you might intentionally throw errors in your code (for example, if the incoming request is missing required fields).
+Your function may encounter errors that you missed during testing, or you might intentionally throw errors in your code (for example, if the incoming request is missing required fields).
 
 If your function throws an error, execution halts immediately. Segment captures the incoming request, any console logs the function printed, and the error, and displays this information in the function's **Errors** tab. You can use this tab to find and fix unexpected errors.
 
@@ -378,19 +390,14 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your sou
 
 ### Connecting source functions
 
-> note ""
+> info ""
 > You must be a **Workspace Owner** or **Source Admin** to connect an instance of your function in your workspace.
 
 From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}, click **Connect Source** and follow the prompts to set it up in your workspace.
 
-Once configured, find the webhook URL - either on the **Overview** or **Settings → Endpoint** page.
+After configuring, find the webhook URL - either on the **Overview** or **Settings → Endpoint** page.
 
 Copy and paste this URL into the upstream tool or service to send data to this source.
-
-## OAuth 2.0
-
-> info ""
-> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
 
 ## Source function FAQs
 
@@ -422,5 +429,18 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 
 #### Can I use a Source Function in place of adding a Tracking Pixel to my code?
 
-No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment.
- 
+No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment. 
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
+
+#### Can I send a custom response from my Source Function to an external tool?
+
+No, Source Functions can't send custom responses to the tool that triggered the Function's webhook. Source Functions can only send a success or failure response, not a custom one.
+
+#### Why am I seeing the error "Functions are unable to send data or events back to their originating source" when trying to save my Source Function?
+
+This error occurs because Segment prevents Source Functions from sending data back to their own webhook endpoint (`https://fn.segmentapis.com`). Allowing this could create an infinite loop where the function continuously triggers itself.
+
+To resolve this error, check your Function code and ensure the URL `https://fn.segmentapis.com` is not included. This URL is used to send data to a Source Function and shouldn't appear in your outgoing requests. Once you remove this URL from your code, you’ll be able to save the Function successfully.

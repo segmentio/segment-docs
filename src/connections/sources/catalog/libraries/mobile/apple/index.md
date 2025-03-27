@@ -130,7 +130,7 @@ See Segment's documentation for [device-mode destinations](/docs/connections/sou
 
 See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations/) for a full list of available cloud-mode destinations that Swift supports. 
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 <div class="double">
   {% include components/reference-button.html
@@ -152,7 +152,7 @@ See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/librar
 
 ## Tools and extensions
 
-Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.
+Analytics-Swift is built with extensibility in mind. Use the tools list below to improve data collection.
 
 - [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift/swift-typewriter)
@@ -164,6 +164,13 @@ If you proxy your events through the `apiHost` config option, you must forward t
 
 > warning ""
 > If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK.
+
+## Telemetry
+The Analytics-Swift SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
+
+You can disable telemetry at any time by setting `Telemetry.shared.enable = false`.
+
+When internal errors or errors from plugins occur, the write key may be included with error data to help Segment identify the issue(s).  You can disable this by setting `Telemetry.shared.sendWriteKeyOnError = false`.
 
 ## Timestamps in Swift
 Due to efficiency updates made to Segment's Swift library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).

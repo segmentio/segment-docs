@@ -1,6 +1,5 @@
 ---
 title: Frontleaf Destination
-beta: true
 ---
 
 ### Browser Tracking

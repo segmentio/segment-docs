@@ -14,7 +14,7 @@ perform, you can gain a better understanding to drive retention, engagement, and
 4. Click the "Amplitude" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
-Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 The Amplitude Kotlin plugin doesn't send events to Amplitude from the client side. It instead adds Amplitude session data and then sends it server side from the Amplitude Actions destination.
 

@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Implementation Guide
+title: Analytics-Swift Implementation Guide
 strat: swift
 tags:
   - apple
@@ -352,6 +352,25 @@ var body: some Scene {
 }
 ```
 If you call this method with a valid URL parameter, a Segment `Deep Link Opened` track event triggers. 
+
+## Configuration options
+
+### anonymousIdGenerator
+To generate custom anonymousIds instead of relying on the ones Segment creates, you can use the following configuration option:
+```swift
+class MyAnonymousIdGenerator: AnonymousIdGenerator {
+  func newAnonymousId -> String {
+    return UUID.uuidString
+  }
+}
+
+// in the apps config:
+let config = Configuration(writeKey: "WRITEKEY")
+  .anonymousIdGenerator(MyAnonymousIdGenerator())
+
+let analytics = Analytics(configuration: config)
+
+```
 
 ## Changelog
 [View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->

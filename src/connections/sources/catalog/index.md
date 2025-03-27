@@ -42,7 +42,7 @@ Below is a list of the available sources on the Segment platform.
                   </div>
                   <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ integration.display_name }}</h5>
                 </div>
-                {% if site.data.catalog.beta_sources contains integration.id %}
+                {% if integration.status == 'PUBLIC_BETA' %}
                   <p class="thumbnail-integration__label">Beta</p>
                 {% endif %}
               </div>

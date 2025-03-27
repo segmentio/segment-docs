@@ -5,11 +5,14 @@ redirect_from:
   - "/personas/debugger"
 ---
 
-The Profile Source Debugger enables you to inspect and monitor events that Segment sends downstream
+The Profile Source Debugger enables you to inspect and monitor events that Segment sends downstream.
 
 Because Segment generates a unique source for every destination connected to a Space, the Debugger gives you insight into how Segment sends events before they reach their destination. Even when a destination is removed, you can't delete and shouldn't disable this source for Segment to function as designed. The source will be reused by Segment as needed.
 
 The Debugger provides you with the payload information you need to troubleshoot potential formatting issues and ensure Segment sends events as your destinations expect.
+
+> warning "Modifying or disabling these system-generated sources could result in unforeseen issues and data loss."
+> Turning off these sources might impede profile updates, while removing them could compromise the stability of the Engage space, potentially making it irrecoverable. To ensure the system's integrity, Segment highly recommends leaving these sources enabled.
 
 ## Working with the Debugger
 

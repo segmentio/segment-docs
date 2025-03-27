@@ -23,9 +23,11 @@ You can use account-level audiences to accomplish the following use cases:
 
 ## Enable account-level audiences
 
-1. Contact [friends@segment.com](mailto:friends@segment.com) and provide your workspace ID to have account-level audiences enabled for your workspace. Navigate to **Settings > Workspace Settings > General Settings** to view your workspace ID.
-2. Ensure that `group_id` is configured as an identifier in Engage Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings/).
-3. Instrument [group](/docs/connections/spec/group/) calls to send account information to Segment.
+1. Contact [friends@segment.com](mailto:friends@segment.com) to request account-level audiences. Include:
+   - **Your Workspace ID** (which you can find in **Settings > Workspace Settings > General Settings**)
+   - **Your intended use cases** for account-level audiences
+2. If your workspace has account-level audiences enabled, ensure that `group_id` is configured as an identifier in Engage [Identity Resolution settings](/docs/unify/identity-resolution/identity-resolution-settings/).
+3. Instrument [Group calls](/docs/connections/spec/group/) to send account information to Segment.
 
 ## Account-level audience conditions
 
@@ -56,7 +58,7 @@ The three types of user-level conditions are:
 
 ## Account-level computed and SQL traits
 
-Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see [here](/docs/engage/audiences/computed-traits/#types-of-computed-traits) for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
+Workspaces with access to account-level audiences can create account-level [computed](/docs/engage/audiences/computed-traits/) and [SQL](/docs/engage/audiences/sql-traits/) traits. All user-level computed trait types are supported (see the [Types of computed traits](/docs/engage/audiences/computed-traits/#types-of-computed-traits) docs for a full list). Account-level computed traits operate on the set of events triggered by all users associated with a given account.
 
 Use-cases for account-level computed traits include:
 - Calculate the number of times users associated with an account logged in during the past month

@@ -1,10 +1,6 @@
 ---
 title: Consent in Segment Connections
 plan: consent-management
-related:
-  - "/privacy/consent-management/"
-  - "/privacy/consent-management/configure-consent-management/"
-  - "/privacy/consent-management/consent-in-unify/"
 redirect_from: "/privacy/consent-in-segment-connections"
 ---
 
@@ -24,7 +20,10 @@ If your sources also contain the integrations object, Segment will look at the c
 
 ## Consent object
 
-Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
+Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object nestled inside of the [context object](/docs/connections/spec/common/#context) with the following format:
+
+> success ""
+> The JSON keys in the consent object should represent the `categoryId` for each consent category. 
 
 ```json
 {
@@ -41,8 +40,6 @@ Segment requires every event from all of your sources to include the end user co
 }
 
 ```
-
-<!-- Not currently in scope: The categories consented to by a user and a flag if a [consent conflict](#reconcile-consent-conflicts) exists are pulled from the consent object and are visible as traits on a user's profile in Unify. For more information about Consent in Unify, see the [Consent in Unify](/docs/privacy/consent-management-in-unify) docs.-->
 
 Events without the consent object will continue to flow to destinations without consent enforcement.
 
@@ -62,9 +59,9 @@ If an event includes both an integrations and consent object, Segment will look 
 |  Consent Object                                                                                                  | Integration Object                          | Result |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------ |
 | Not provided or empty consent object <br><br> `"context": {` <br>`}` <br>OR<br> `"context": {`<br>`     "consent": {`<br>`     }`<br>`}` | Not provided or empty object | Data flows to all destinations. |
-| Empty categoryPreference object <br><br> `"context": {`<br>`     "consent": {`<br>`           "categoryPreference": {` <br>`           }`<br>`     }` <br> `}`| Not provided or empty object | Data does **NOT** flow to any mapped destinations - consent is considered to be `false` for all categories. <br> <br> Data flows to all destinations **NOT** mapped to a consent category. |
+| Empty categoryPreferences object <br><br> `"context": {`<br>`     "consent": {`<br>`           "categoryPreferences": {` <br>`           }`<br>`     }` <br> `}`| Not provided or empty object | Data does **NOT** flow to any mapped destinations - consent is considered to be `false` for all categories. <br> <br> Data flows to all destinations **NOT** mapped to a consent category. |
 | Not provided <br><br> `"context": {` <br>`}`                                                                   | `{facebook: true,`<br>`amplitude: false}`   | Data flows to the destinations that are `true` in the integrations object (Facebook). Any metadata provided in the integrations object also flows to your downstream destinations.  |
-| Empty consent object <br><br> `"context": {`<br>`     "consent": {`<br>`     }`<br>`}` <br> OR <br> `"context": {`<br>`     "consent": {`<br>`           "categoryPreference": {` <br>`           }`<br>`     }` <br> `}`| `{facebook: true,`<br>`amplitude: false}` | Data does **NOT** flow to any mapped destinations - consent is considered to be `false` for all categories. <br><br> Data flows to all destinations **NOT** mapped to a consent category, destinations set to `true` in the integrations object, and destinations not included in the integrations object.   |
+| Empty consent object <br><br> `"context": {`<br>`     "consent": {`<br>`     }`<br>`}` <br> OR <br> `"context": {`<br>`     "consent": {`<br>`           "categoryPreferences": {` <br>`           }`<br>`     }` <br> `}`| `{facebook: true,`<br>`amplitude: false}` | Data does **NOT** flow to any mapped destinations - consent is considered to be `false` for all categories. <br><br> Data flows to all destinations **NOT** mapped to a consent category, destinations set to `true` in the integrations object, and destinations not included in the integrations object.   |
 | `{ad: true,` <br>`analytics: false}`<br> <br>_Segment has no category-to-destination mapping for ad and analytics_ | Provided, not provided, or empty object | Data flows to all destinations, as all destinations are unmapped. If the integrations object is present, data flow may be impacted. |
 | `{ad: true,` <br>`analytics: false}`<br> <br>_ad = facebook, google-ads_ <br>                                   | Not provided or empty object                | Data flows to destinations that map to a consented purpose. In this case, data flows to all ad destinations (Facebook and Google Ads).<br><br> No data flows to analytics destinations. |
 | `{ad: true,` <br>`analytics: false}`<br><br>_ad = facebook, google-ads_ <br> _analytics = amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data flows to all ad destinations, even though Google Ads is not present in the integrations object.<br><br> Data does **NOT** flow to analytics destinations. |
@@ -79,6 +76,6 @@ If you have a category configured in your consent management tool (for example, 
 
 If there is a category configured in Segment (`functional`) that is not mapped in your CMP, data will not flow to destinations mapped to the `functional` category.
 
-## Content observability
+## Consent observability
 
 Events discarded due to consent preferences appear in [Delivery Overview](/docs/connections/delivery-overview/) at the "Filtered at destination" step with the discard reason *Filtered by end user consent*.

@@ -28,10 +28,12 @@ To create a source volume alert:
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 5. Click **Save**.
 
-To make changes to a source volume alert that you created, select the icon in the Actions column for the alert and click **Edit**. 
+To make changes to a source volume alert, select the icon in the Actions column for the alert and click **Edit**. 
 
-To delete a source volume alert that you created, select the icon in the Actions column for the alert and click **Delete**. 
+To delete a source volume alert, select the icon in the Actions column for the alert and click **Delete**.
 
+> info "Deleting alerts created by other users requires Workspace Owner permissions"
+> All users can delete source volume alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users. 
 ## Successful delivery rate alerts
 
 You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
@@ -48,6 +50,10 @@ To create a successful delivery rate alert:
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 5. Click **Save**.
 
-To make changes to a successful delivery rate alert that you created, select the icon in the Actions column for the alert and click **Edit**. 
+To make changes to a successful delivery rate alert, select the icon in the Actions column for the alert and click **Edit**. 
 
-To delete a successful delivery rate alert that you created, select the icon in the Actions column for the alert and click **Delete**. 
+To delete a successful delivery rate alert, select the icon in the Actions column for the alert and click **Delete**. 
+
+> info "Deleting alerts created by other users requires Workspace Owner permissions"
+> All users can delete successful delivery alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users.
+Segment generates delivery alerts for failed deliveries and successful deliveries, which are the last two stages of the delivery pipeline. As a result, alerts are based on Segment's attempts to send qualified events to your destination, excluding those filtered out by business rules (like protocols, destination filters, or mappings).

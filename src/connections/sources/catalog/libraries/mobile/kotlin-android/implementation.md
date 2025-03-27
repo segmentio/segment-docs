@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Implementation Guide
+title: Analytics-Kotlin Implementation Guide
 strat: kotlin-android
 tags:
   - android
@@ -69,7 +69,7 @@ fun <T> track(name: String, properties: T, serializationStrategy: KSerializer<T>
 ```java
 analytics.track("View Product", buildJsonObject {
     put("productId", 123)
-    put("productName" "Striped trousers")
+    put("productName", "Striped trousers")
 });
 ```
 {% endcodeexampletab %}

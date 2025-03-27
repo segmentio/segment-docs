@@ -1,60 +1,79 @@
 ---
-title: "Event Tester"
+title: Testing Connections
 ---
 
+Segment provides these 2 testing tools to enable you to test your connections between Segment and your destination:
+* [Event Tester](#event-tester): Test all of your enabled mappings within a destination. 
+* [Mappings Tester](#mappings-tester): Test a single mapping configuration for your destination. 
 
-Segment has an Event Tester that enables you to test your connections between Segment and your destination. You can access the Event Tester from your Source Debugger, or from your destination settings.   
+Both testing tools share the same underlying testing infrastructure, which ensures consistent results across your testing workflows. The results from both testers display API requests, responses, and success/failure status to help you diagnose any issues.
 
-> info "Available for server-side event streaming destinations only"
-> This feature is only available for server-side integrations (also known as cloud-mode destinations). You can't use this for client-side integrations (also known as device-mode destinations). 
+You can use the Event and Mappings Tester for these products: 
+* [Connections](/docs/connections/)
+* [Linked Audiences](/docs/engage/audiences/linked-audiences/)
+* [Linked Events](/docs/unify/data-graph/linked-events/#testing-with-linked-events-enrichments)
+* [Reverse ETL](/docs/connections/reverse-etl/)
+* [Journeys](/docs/engage/journeys/)
 
-## Use Cases
+## Event Tester
 
-There are two scenarios where you might want to use the Event Tester:
+> info ""
+> The Event Tester is only available for server-side, [cloud-mode](/docs/connections/destinations/#connection-modes) integrations. It doesn't work for client-side, [device-mode](/docs/connections/destinations/#connection-modes) integrations. 
+><br><br>You must have write access in your Segment workspace to use the Event Tester. 
 
-*   ensuring an event is successfully making it to a specific destination
-*   ensuring your new destination is configured correctly
+The Event Tester enables you to test your connections between Segment and your destination. You can inspect both the request sent from Segment and the response you receive back from the destination. The tester provides a comprehensive view of how your event data flows through multiple mappings. You can use the Event Tester to ensure: 
+
+*   An event successfully arrives to a specific destination
+*   Your new destination is configured correctly
+
+The Event Tester sends a real event that appears in your end tool alongside your existing data. 
+
+### Using the Event Tester
+
+> info ""
+> The event tester only tests the enabled mappings for the destination. 
+
+To use the Event Tester: 
+1. Navigate to **Connections > Destinations** and select your destination.
+2. Click the **Event Tester** tab. 
+3. Select the type of test event. You can choose from: Track, Identify, Page, Screen, Group. 
+4. Enter your test event payload. You can type in your own event or choose from **Load event from source** or **Generate sample event**.
+   * **Load event from source**: Segment loads an event based on your source. 
+   * **Generate sample event**: Segment generates a sample event for you. 
+5. Click **Send test event to destination**. 
+  
+
+If your test event successfully sends to the destination, you can see in the **View test outcome** section:
+* The request, response, and status for each API call 
+* How many of your mappings matched
+* The total number of API calls that were made as one test event can result in multiple API calls
+* Which mappings were successful and which ones failed
+* The destination's API endpoint used to make the request
+
+![Screenshot of the Event Tester with a Track test event that resulted in 4 API calls](images/event-tester-2025.png)
+
+You can navigate between the different API calls and can use the filter to navigate to specific mappings. 
+
+![Screenshot of the Event Tester filter with dropdown of different mappings](images/event-tester-filter.png)
+
+## Mappings Tester
+When you add a destination and create a mapping in Connections, Reverse ETL, Linked Audience, and Journeys, you can test the specific mapping using the Mappings Tester. The Mappings Tester only tests a single mapping at a time and you can edit field values before initiating a test. This helps you verify that your configured mapping works as expected.
+
+Use the Mappings Tester when you need to:
+* Verify a single mapping configuration
+* Edit field values before testing a mapping
+* Troubleshoot a specific mapping that isn't working as expected
+
+### Using the Mappings Tester
+To use the Mapppings Tester:
+1. Navigate to the product (Connections, Reverse ETL, Linked Audience, or Journeys) you want to test the mapping for. 
+2. Select the destination that has the mapping you want to test.
+3. Select **Edit mapping**. 
+4. Edit any values in the **Send test record** section.
+5. Click **Send test event**. 
 
 
-## Ensuring an event is successfully making it to a specific destination
-
-**1. Choose an event from the Source Debugger that you want to debug and select "Validate"**
-
-Go to your Source Debugger, select an event and in the top right hand side of the debugger view, select "Validate".
-
-![Screenshot of the Debugger tab, with a Checkout Started event selected and an error pointing to the Validate button.](images/event-tester_GgyOswJA.png)
-
-**2. Choose the destination you want to test with**
-
-Select the destination that you want to test this event with. At this time, you can only use the Event Tester for cloud-mode (server side) destinations.
-
-![A screenshot of the destination selection pop up modal](images/event-tester_2JfoKddf.png)
-
-**3. Send event to destination**
-
-The event payload from your debugger that you just selected will automatically load in the JSON view. You have the option to edit the payload if you want. Assuming it looks good, select "Send Event" at the bottom right of the screen. 
-
-![A screenshot of the Event Tester, with a track event selected](images/event-tester_J7TEDYvY.png)
-
-**4. Ensure you're happy to send the test event to the destination**
-
-This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
-
-![Screenshot of the popup that appears when you click the Send test event button.](/docs/guides/images/asset_Yxw1DJqb.png)
-
-**5. View the Partner API response**
-
-On the right hand side of the Event Tester you will see the response from the partner API. At the top, Segment provide of summary of the response. Below is the raw response payload Segment received that you can use for further debugging if necessary. 
-
-![A screenshot of the Event Tester with a successful response from the destination](images/event-tester_il6mvexS.png)
-
-If you are receiving an error and are unsure how to fix the issue, visit the partner docs (for example [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors){:target="_blank”}) or contact the partner support team. 
-
-## FAQ
-
-#### Why can't I see the Event Tester when I log into my workspace?
-
-The Event Tester is only accessible to users with write access in their Segment workspace (read-only users will not see the Event Tester in their workspace). 
+## FAQs
 
 #### The Event Tester experienced an error when sending my event. Why did this happen?
 
@@ -63,3 +82,7 @@ If you experience an error, [let Segment know](mailto:friends@segment.com) and t
 #### Is this feature available for Data Lakes?
 
 The Event Tester is not available for Data Lakes.
+
+#### Why are my destination filters being ignored?
+
+Events passed into the Event Tester bypass destination filters. Destination filters are applied to events as they are sent to specific destinations. However, the Event Tester is designed to help you troubleshoot your Sources, their configuration, and their downstream destinations by showing a sample of the data available. It allows you to check that data is being sent, and that it's in the correct format without the filters being applied. This means that when you use the Event Tester, you're seeing the data before any destination filters or other processing rules are applied, providing a clear view of the raw event data as it comes from the source.

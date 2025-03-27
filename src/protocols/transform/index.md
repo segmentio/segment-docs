@@ -27,6 +27,9 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
 - **Transformation order:** Segment processes source-scoped transformations before the events reach destination filters. Segment processes destination-scoped transformations after the events pass through destination filters.
+- **Multiple instances of the same destination:** If multiple instances of a destination are connected to a single source, then the same transformation applies across every instance.
+- **Transformation scope:** Transformations can be applied to event names, properties, and traits. However, it's important to note that transformations cannot be applied to top-level attributes like userId.
+
 
 ## View all Transformations
 
@@ -38,8 +41,10 @@ Transformations can be enabled and disabled directly from the list view using th
 
 Transformations can be deleted and edited by clicking on the overflow menu. When editing a Transformation, only the resulting event or property names, and Transformation name can be edited. If you want to select a different event or source, create a separate Transformation rule.
 
-> note "Transformations created using the Public API"
+> info "Transformations created using the Public API"
 > On the Transformations page in the Segment app, you can view and rename transformations that you created with the Public API. In some cases, you can edit these transformations in the UI.
+
+<!--- TODO: what does "some cases" entail?--->
 
 ## Create a Transformation
 

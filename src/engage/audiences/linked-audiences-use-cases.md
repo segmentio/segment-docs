@@ -5,57 +5,32 @@ beta: true
 hidden: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences-use-cases'
-hidden: false
 ---
+
+[Linked Audiences](/docs/engage/audiences/linked-audiences/) is a technical marketer’s go-to tool for creating data-driven audience segments on top of relational data in their warehouse. Built on top of Segment's [Data Graph](/docs/unify/linked-profiles/data-graph/) technology - the audience builder allows you to craft flexible segments for more targeted marketing efforts. 
+
+You gain direct access to your data, enabling you to create precise audience groups for activation in your marketing tools, without relying heavily on data teams. You can take object data (For example: products, bookings, accounts) and relate it back to the profile data that lives within your warehouse for activation across any channel supported by [Engage Foundations](/docs/engage/quickstart/).
 
 Below are some example use cases to help you learn more about Linked Audiences.
 
-## Use case 1: Build an audience of users who have a credit card with an outstanding balance
+## Drive accelerated onboarding 
 
-To build this audience, define a nested entity condition to relate a `Profile` to their:
-- `Account` entity
-- `Credit Card` entity where `credit_card.balance` is "Outstanding"
+An orchestrated process simplifies the onboarding experience and empowers customers to make the most of the product, turning them from first time users into loyal subscribers. With Linked Audiences, brands can create custom campaigns based on a customer’s specific account details from the warehouse and usage history from real-time event streams. 
 
-In the Data Graph, `Account` and `Credit Card` are defined as entities and represented as separate tables in your data warehouse. 
+**Example:** 
+Send a one-time onboarding email when a Business Tier account is opened, and include instructions on how to get started based on corporate policies.
 
-Relationships are defined between:
-- `Profile` and `Account`
-- `Account` and `Credit Card` 
+## Boost retention and upsell
 
-In the warehouse, `credit_card.balance` is a column in the `Credit Card` table. By filtering against the `credit_card.balance` column for the "Outstanding" value, marketers can return a list of users that have a credit card with an outstanding balance.
+Create targeted campaigns to drive retention, upsell, and cross-sell your products. With Linked Audiences, you can choose the granularity at which you trigger campaigns, based on your campaign goals. For example, a customer could have 2 cats in their household, one is a kitten that needs flea and tick medicine, while the other is a geriatric cat who needs regular checkups. With Linked Audiences, your customers can be part of a personalized pet parent journey related to each. 
 
-## Use case 2: Build an audience of cat owners who are also a part of the platinum membership tier
+**Example:** 
+Send an upsell email to customers who own cats, and are also part of the Platinum membership tier audience previously created. 
 
-To build this audience, define a nested entity condition to relate a `Profile` to their:
-- `Household` entity
-- `Pet` entity where `pet.type` is "Cat"
+## Personalized transaction send
 
-Define an audience membership condition to filter for users that are a member of the "Platinum membership tier" audience.
+Including personalized product information in transactional emails improves open rates over generic marketing messages. Linked Audiences allows you to set up campaign triggers based on the value of an entity (account, course, pets, and so on) and make it easy to enrich the message with any personalized content from the warehouse. 
 
-In the Data Graph, `Households` and `Pets` are defined as entities and are represented as separate tables in your data warehouse.
-
-Relationships are defined between:
-- `Profiles` and `Households`
-- `Households` and `Pets`
-
-In the warehouse, `pets.type` is a column in the `pets` table. By filtering against the `pets.type` column for the "cat" value, marketers can return a list of users that have a cat.
-
-Then, adding the audience membership condition allows marketers to further refine their audience to only include users who are part of the "Platinum membership tier" audience.
-
-## Use case 3: Build an audience of credit card holders with a certain number of transactions
-
-To build this audience, define a nested entity condition to relate a `Profile` to their:
-- `Accounts` entity
-- `Subscriptions` entity where `subscriptions.tier` is "Premium"
-- `Transactions` entity where `transactions.count` is greater than five
-
-This nested entity condition has four levels of relationship depth.
-
-In the Data Graph, `Accounts`, `Credit Cards`, and `Transactions` are defined as entities.
-
-Relationships are defined between:
-- `Profiles` and `Accounts`
-- `Accounts` and `Credit Cards`
-- `Credit Cards` and `Transactions`
-
-In the warehouse, `subscriptions.tier` is a column in the `Subscriptions` table, and `transactions.count` is a column in the `Transactions` table. By filtering against the `subscriptions.tier` column for the "Premium" value, and the `transactions.count` column for values greater than five, marketers can return a list of users that have a premium account where there are greater than five transactions.
+**Example:** 
+- Send a one-time Past Due email to customers whose accounts have just become overdue. Include the past due amount.
+- Send a weekly Course Completion Reminder email to any customer who hasn’t finished their Segment University course with details on course progress

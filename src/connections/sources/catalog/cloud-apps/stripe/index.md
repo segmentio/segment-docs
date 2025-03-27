@@ -11,7 +11,7 @@ id: 1bow82lmk
 1. In Segment go to **Connections** and click **Add Source**.
 2. Choose Stripe.
 3. Give the Source a nickname and click **Add Source**. The nickname is used to designate the source in the Segment interface, and Segment creates a related schema name. The schema name is the namespace you query against in your warehouse. The nickname can be whatever you like, but Segment recommends using a name that reflects the source itself and distinguishes amongst your environments.
-4. Click Connect, and authenticate with Stripe's OAuth.
+4. Click **Connect**, and authenticate with Stripe's OAuth. To use data from Stripe's test mode, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} with your test Secret Key. Segment's support team can then configure your source to use test mode data.
 
 ## Components
 

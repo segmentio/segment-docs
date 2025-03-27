@@ -79,7 +79,7 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
 14. Expand the EC2 security groups section and select the appropriate security groups for the Master and Core & Task types.
 15. Select **Create cluster**.
 
-> note ""
+> info ""
 > If you update the EMR cluster of existing Data Lakes instance, take note of the EMR cluster ID on the confirmation page.
 
 ## Step 3 - Create an Access Management role and policy
@@ -119,7 +119,7 @@ Attach the following trust relationship document to the role to create a `segmen
 }
 ```
 
-> note ""
+> info ""
 > Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
 
 ### IAM policy
@@ -137,7 +137,8 @@ Add a policy to the role created above to give Segment access to the relevant Gl
                 "elasticmapreduce:DescribeStep",
                 "elasticmapreduce:DescribeCluster",
                 "elasticmapreduce:CancelSteps",
-                "elasticmapreduce:AddJobFlowSteps"
+                "elasticmapreduce:AddJobFlowSteps",
+                "elasticmapreduce:AddTags"
             ],
             "Effect": "Allow",
             "Resource": "*",
@@ -209,7 +210,7 @@ Add a policy to the role created above to give Segment access to the relevant Gl
 }
 ```
 
-> note ""
+> warning ""
 > The policy above grants full access to Athena, but the individual Glue and S3 policies determine which table is queried. Segment queries for debugging purposes, and notifies you before running any queries.
 
 ## Debugging
@@ -229,7 +230,7 @@ When you update an EMR cluster to 5.33.0, you can participate in [AWS Lake Forma
 > Your Segment Data Lake does not need to be disabled during the update process, and any ongoing syncs will complete on the old cluster. Any syncs that fail while you are updating the cluster ID field will be restarted on the new cluster.
 
 ## Prerequisites
-* An EMR v5.33.0 cluster
+* An EMR cluster up to Version 7
 * An existing Segment Data Lakes destination
 
 ## Procedure

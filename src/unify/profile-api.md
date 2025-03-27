@@ -58,18 +58,19 @@ Your access token enables you to call the Profile API and access customer data.
 > warning ""
 > To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign.
 > For example, if a `phone_number` identifier has the value `+5555550123`, enter `phone_number:%2B5555550123` in your query.
+> 
+> If the field you're using within the Profile API endpoint contains a value with a non-alphanumeric character, then the Profile API may respond with `500` error. In this case, see [W3's ASCII Encoding Refernece](https://www.w3schools.com/tags/ref_urlencode.ASP#:~:text=ASCII%20Encoding%20Reference,%25C3%25BF){:target="_blank"}, which lists the escape characters you can use to replace the non-alphanumeric character in the Profile API endpoint so that the Profile API will respond with a `200 Success`.
 
 ### Query the user's event traits
 
 1. From the HTTP API testing application of your choice, configure the authentication as described above.
-2. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
+2. Identify the user’s external ID. 
+  - The Profile API requires both the ID type and value, separated by a colon (like `anonymous_id:eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092`). Learn more in [Find a user's external ID](#find-a-users-external-id).
+3. Prepare the request URL by replacing `<space_id>` and `<external_id>` in the request URL:
     `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
-
-
-    If you're using the Profile API in the EU, use the following URL for all requests:
-
-    `https://profiles.euw1.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
-3. Send a `GET` request to the URL.
+  - If you're using the Profile API in the EU, use the following URL for all requests:
+   `https://profiles.euw1.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
+4. Send a `GET` request to the URL.
 
 ### Explore the user's traits in the response
 
@@ -113,7 +114,7 @@ You can query a user's traits (such as `first_name`, `last_name`, and more):
 
 `https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits`
 
-By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
+By default, the response includes 10 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
 **Metadata**
 You can query all of a user's metadata (such as `created_at`, `updated_at`, and more):
@@ -241,13 +242,13 @@ All top-level API resources have support for bulk fetches using "list" API metho
 Each API request has an associated request identifier. You can find this value in the response headers, under `Request-Id`.
 
 ```bash
-curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
+curl -i https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles/<identifier>/metadata
 HTTP/1.1 200 OK
 Date: Mon, 01 Jul 2013 17:27:06 GMT
 Status: 200 OK
 Request-Id: 1111-2222-3333-4444
 ```
-> note ""
+> info ""
 > If you need to contact Segment regarding a specific API request, please capture and provide the `Request-Id`.
 
 
