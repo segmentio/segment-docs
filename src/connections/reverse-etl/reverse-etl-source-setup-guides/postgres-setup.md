@@ -42,8 +42,8 @@ To set up Postgres with Reverse ETL:
 
 After you've successfully added your Postgres source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
 
-### Using the Same User for a Postgres Destination and Reverse ETL?
-If you’re using the same database user for both a Segment Postgres warehouse destination (where Segment writes data into Postgres) and Reverse ETL (where Segment reads from Postgres), make sure the user has:
+### How to use the same user for a Postgres destination and Reverse ETL source
+If you’re using the same database user for both a Segment [Postgres warehouse destination](/docs/connections/storage/catalog/postgres/) (where Segment writes data into Postgres) and Reverse ETL source (where Segment reads data from Postgres), make sure the user has:
 - SELECT or READ access on all source tables for Reverse ETL
 - CREATE SCHEMA `__SEGMENT_REVERSE_ETL` permission (or ability to use an existing schema)
 - INSERT, UPDATE, and DELETE permissions on tables within `__SEGMENT_REVERSE_ETL`
