@@ -148,7 +148,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `page`      | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).                                                |
 | `referrer`  | Object  | Dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url`, and `link`.                                                                                                                                                                              |
 | `screen`    | Object  | Dictionary of information about the device's screen, containing `density`, `height`, and `width`.                                                                                                                                                                                                               |
-| `timezone`  | String  | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`.                                                                                                                                                               |
+| `timezone`  | String  | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`, but in some cases, this may be unavailable due to browser limitations, privacy settings, or missing API support.                                         |
 | `groupId`   | String  | Group / Account ID. <br><br> This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.                                                                                                               |
 | `traits`    | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous Identify call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits). |
 | `userAgent` | String  | User agent of the device making the request.                                                                                                                                                                                                                                                                    |
@@ -203,8 +203,8 @@ Other libraries only collect `context.library`, any other context variables must
 | timezone                 | ✅            | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
-> info "IPv6 Addresses are not Supported"
-> Segment does not support collection of IP addresses that are in the IPv6 format.
+> info "IPv6"
+> Segment doesn't support automatically collecting IPv6 addresses.
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 

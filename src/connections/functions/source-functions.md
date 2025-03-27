@@ -390,7 +390,7 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your sou
 
 ### Connecting source functions
 
-> note ""
+> info ""
 > You must be a **Workspace Owner** or **Source Admin** to connect an instance of your function in your workspace.
 
 From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}, click **Connect Source** and follow the prompts to set it up in your workspace.
@@ -434,3 +434,13 @@ No. Tracking Pixels operate client-side only and need to be loaded onto your web
 ##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
 
 The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
+
+#### Can I send a custom response from my Source Function to an external tool?
+
+No, Source Functions can't send custom responses to the tool that triggered the Function's webhook. Source Functions can only send a success or failure response, not a custom one.
+
+#### Why am I seeing the error "Functions are unable to send data or events back to their originating source" when trying to save my Source Function?
+
+This error occurs because Segment prevents Source Functions from sending data back to their own webhook endpoint (`https://fn.segmentapis.com`). Allowing this could create an infinite loop where the function continuously triggers itself.
+
+To resolve this error, check your Function code and ensure the URL `https://fn.segmentapis.com` is not included. This URL is used to send data to a Source Function and shouldn't appear in your outgoing requests. Once you remove this URL from your code, you’ll be able to save the Function successfully.

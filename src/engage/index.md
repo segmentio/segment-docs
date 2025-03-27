@@ -5,9 +5,7 @@ redirect_from:
   - '/personas/'
 ---
 
-Powered by real-time data, Twilio Engage is a customizable personalization platform with which you can build, enrich, and activate Audiences.
-
-Engage Channels builds on top of these Audiences, helping you connect with and market to your customers through email, SMS, and WhatsApp campaigns.
+Powered by real-time data, Twilio Engage is a customizable personalization platform with which you can build, enrich, and activate Audiences. 
 
 ## What can you do with Engage?
 

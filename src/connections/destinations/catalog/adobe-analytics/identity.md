@@ -42,12 +42,9 @@ This may be acceptable if your organization can handle slightly inflated user co
 
 Segment recommends that you accept the slightly inflated user count, and use the Segment `userId` as the `visitorId`. Yes, you'll have two user profiles if you have any anonymous client side events, but you can always set up custom `eVars` to connect the few anonymous events to the correct user.
 
-If you're using the Experience Cloud ID, you should accept this and use the Segment `userId`, and include a `marketingCloudVisitorId` in `context["Adobe Analytics"].marketingCloudVisitorId`. Segment sends both the `userId` (or `anonymousId`, if the call is anonymous) in the `<visitorId>` tag and the Experience Cloud ID in the `<marketingCloudVisitorID>` tag, and Adobe resolves the users from there.
+If you're using the Experience Cloud ID, you should accept this and use the Segment `userId`, and include a `marketingCloudVisitorId` in `context["Adobe Analytics"].marketingCloudVisitorId`. Segment sends both the `userId` (or `anonymousId`, if the call is anonymous) in the `<visitorId>` tag and the Experience Cloud ID in the `<marketingCloudVisitorID>` tag, and Adobe resolves the users from there. If you use the destination-specific `integration` object to pass the `visitorId` in your Segment `page` or `track` events, then the `visitorId` persists on Page or Track calls that occur after an Identify call. You can use this to override the Segment setting the `visitorId` variable to your `userId` after an `identify` call.
 
-> note ""
-> **Note**: If you use the destination-specific `integration` object to pass the `visitorId` in your Segment `page` or `track` events, then the `visitorId` persists on Page or Track calls that occur after an Identify call. You can use this to override the Segment setting the `visitorId` variable to your `userId` after an `identify` call.
-
-We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/){:target="_blank”}.
+If you experience issues with visitor counts when using Cloud Mode, [contact Segment support directly for guidance](https://segment.com/help/contact/){:target="_blank”}.
 
 
 ## No Fallbacks for VisitorId Setting - Cloud Mode Only

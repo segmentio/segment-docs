@@ -55,19 +55,14 @@ To build a Linked Audience:
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
-### Maintaining Linked Audiences 
-
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. On the Overview page, you can view relevant audience information, such as Profiles in audience, Run schedule, Latest run, and Next run. 
-
-You can also delete Linked Audiences from the menu options or edit your Linked Audience in the Builder tab. If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
-
-You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state.
 
 ### Linked Audience conditions 
 
 The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
-The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down so that you don’t need to type in the exact value that you want to filter on. If you don’t see the value you’re looking for, you can manually enter it into the input field. 
+The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
+
 Segment displays: 
 
 * the first 100 unique string entity property values from the data warehouse.
@@ -80,8 +75,8 @@ As you're building your Linked Audience, you can choose from the following condi
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.|
-| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.|
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
+| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
 | with [ trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
 | without [ trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|
 | part of [audience](/docs/glossary/#audience)    | Creates a condition that filters profiles that are part of an existing audience. |
@@ -95,6 +90,7 @@ exactly: supports 0 or greater,
 at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
+
 
 #### Operator selection
 
@@ -185,6 +181,13 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
+#### Copy personalization syntax
+Click **Copy to use in Braze Cloud Mode (Actions)** to copy the personalization syntax for the selected traits and properties to use in your destination messaging templates.
+
+> info ""
+> This feature is in beta for customers using Braze. Some functionality may change before it becomes generally available. This feature is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+
 #### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
@@ -239,9 +242,28 @@ With your Linked Audience activated, follow these steps to monitor your activati
 
 ### Delivery Overview for Linked Audiences
 
-Delivery Overview shows you four steps in your data activation pipeline:
+In addition to the standard Audience observability provided by [Delivery Overview](/docs/engage/audiences/#delivery-overview), Linked Audiences can filter Delivery Overview's pipeline view by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). 
 
-- **Events from Audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership. 
-- **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
-- **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
-- **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.
+To filter by events: 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**.
+2. Find an Audience, click the **(...)** menu, and select Delivery Overview. 
+3. On the Delivery Overview page, select the Linked audience event dropdown to filter by a specific event. 
+
+Linked Audiences have the following steps in Delivery Overview's pipeline view: 
+- **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
+- **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. Unlike the other steps, you cannot click into this step to view the breakdown table. 
+- **Failed delivery**: Events that Segment _attempted_ to deliver to your destination, but that ultimately _failed_ to be delivered. Failed delivery might indicate an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
+
+## Maintaining Linked Audiences 
+
+You can maintain your Linked Audience by accessing these tabs on the main page of your Linked Audience:
+
+Tab name | Information
+-------- | -----------
+Overview | On this tab you can: <br>* View relevant audience information, such as Profiles in audience count, run schedule, latest run, and next run. <br>* Enable or disable, manually run, clone and delete audiences. <br>&nbsp;&nbsp;- *Note:* Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that it was cloned from. <br> * View the list of profiles in the audience with the Audience Explorer. <br>* View connected destinations and configured activation events.
+Builder | On this tab you can: <br>* View or edit your linked audience conditions. <br>&nbsp;&nbsp; - *Note:* If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
+Runs | On this tab you can: <br>* View information about the last 50 audience runs, such as start time, run duration, run result, and change summary. You can also view granular run stats to help you understand the duration of each step in the run such as: <br> &nbsp;&nbsp; - Queueing run: The time spent in the queue waiting for other runs to finish before this one begins. <br>&nbsp;&nbsp; - Extracting from warehouse: The duration of the audience query and data transfer from the source warehouse. <br>&nbsp;&nbsp; - Preparing to deliver events: The time taken to process and ready events for delivery to connected destinations. <br>* If there are no changes associated with a run, there will be no values shown for the granular run stats.
+Settings | On this tab you can view or edit the linked audience name, description, and run schedule.

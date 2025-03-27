@@ -61,8 +61,8 @@ analytics.send = False
 
 ## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The Identify method lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 

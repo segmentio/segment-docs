@@ -4,7 +4,6 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/db2/'
 ---
-{% include content/warehouse-ip.html %}
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/){:target="_blank"} with Segment to get
 all of your event and Cloud Source data in a warehouse built by IBM. This
@@ -64,7 +63,11 @@ To set up an IBM Db2 destination in the Segment app:
 
 ### Allowlisting IPs
 
-If your Db2 Warehouse is in a private network, be sure to [allowlist Segment's IP address](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist) when creating the Db2 user Segment assumes. Otherwise, Segment won't be able to load your data.
+Segment recommends enabling IP allowlists for added security. All Segment users with workspaces hosted in the US who use allowlists in their warehouses must update those allowlists to include the following ranges:
+* `52.25.130.38/32`
+* `34.223.203.0/28`
+
+Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
 ### Unique User
 

@@ -78,6 +78,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: WXNgKpZMsd
+    display_name: Antavo
+    hidden: false
+    slug: antavo
+    url: connections/sources/catalog/cloud-apps/antavo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: dZeHygTSD4
     display_name: Apple
     hidden: false
@@ -94,6 +103,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/authvia
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: R7eWaTLYUs
@@ -140,6 +150,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/blip
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: lglFhNcZ9z
@@ -225,6 +236,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/configcat
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: sTypQz3Fd2
@@ -234,6 +246,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/customer-io
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: aSPS4yE0CZ
@@ -263,6 +276,24 @@ sources:
       - us
     endpoints:
       - us
+  - id: 1Z83r1kE0V
+    display_name: Dub
+    hidden: false
+    slug: dub
+    url: connections/sources/catalog/cloud-apps/dub
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: UYaQxaZO3a
+    display_name: Editable Profile Source Metadata
+    hidden: true
+    slug: editable-profile-source-metadata
+    url: connections/sources/catalog/cloud-apps/editable-profile-source-metadata
+    regions:
+      - us
+    endpoints:
+      - us
   - id: VETiUX9u66
     display_name: Elastic Path
     hidden: false
@@ -270,6 +301,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/elastic-path
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: NC2jsEkA8Y
@@ -279,6 +311,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/elastic-path-cx-studio
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: mazatB39IS
@@ -308,10 +341,8 @@ sources:
     url: connections/sources/catalog/cloud-apps/factual-engine
     regions:
       - us
-      - eu
     endpoints:
       - us
-      - eu
   - id: CvYws1p1ZA
     display_name: Flutter
     hidden: false
@@ -445,6 +476,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/inmoment-formerly-wootric
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: pNvQ9udVMy
@@ -621,6 +653,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/mailmodo
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: asdf76as89
@@ -652,6 +685,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/mixpanel-cohorts-source
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: kpDbTUR9oD
@@ -709,6 +743,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/one-creation
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: o9OyD6xsVJ
@@ -718,6 +753,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/onesignal
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: QhEUZnE5uF
@@ -727,6 +763,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/onetrust
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: Zd5BXedXsa
@@ -804,6 +841,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/pushwoosh-source
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: XRksQPCr7X
@@ -833,6 +871,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/quin-ai
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: bnpfpwKnhu
@@ -851,6 +890,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/ratehighly
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: B0X0QmvMny
@@ -962,6 +1002,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/sendgrid-marketing-campaigns
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: V8ji9rWzoS
@@ -980,6 +1021,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/shopify-fueled
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: BQp3zGUgjV
@@ -1018,6 +1060,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/surveysparrow
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: OyAdFUfMz9
@@ -1027,6 +1070,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/synap
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: 43bb279b7
@@ -1074,6 +1118,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/userguiding
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: FOkpxVzfJJ
@@ -1102,6 +1147,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/white-label-loyalty
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: 7GmYZcBQyw
@@ -1131,6 +1177,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/yotpo
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: 117eYCe9jH

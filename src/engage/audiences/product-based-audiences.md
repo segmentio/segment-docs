@@ -1,12 +1,13 @@
 ---
-title: Product Based Audiences
+title: Product Based Recommendation Audiences
 plan: engage-foundations
 redirect_from:
   - '/engage/audiences/recommendation-audiences'
 ---
-Product Based Audiences lets you select a product, article, song, or other piece of content from your catalog, and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Product Based Audiences for user-based commerce, media, and content affinity use cases. 
 
-You can use Product Based Audiences to power the following common marketing campaigns: 
+Product Based Recommendation Audiences lets you select a product, article, song, or other piece of content from your catalog, and then build an audience of the people that are most likely to engage with it. Segment optimized the personalized recommendations built by Product Based Recommendation Audiences for user-based commerce, media, and content affinity use cases. 
+
+You can use Product Based Recommendation Audiences to power the following common marketing campaigns: 
 
 - **Cross-selling**: Identify an audience of users who recently purchased a laptop and send those customers an email with a discount on items in the "laptop accessories" category. 
 - **Upselling**: Identify an audience of users who regularly interact with your free service and send them a promotion for your premium service. 
@@ -18,7 +19,7 @@ You can use Product Based Audiences to power the following common marketing camp
 ## Create a Product Based Audience
 
 ### Set up your Recommendation Catalog
-Segment utilizes your interaction events (order_completed, product_added, product_searched, song_played, article_saved) and the event metadata of those interaction events to power our CustomerAI Recommendations workflow.
+Segment uses your interaction events (`order_completed`, `product_added`, `product_searched`, `song_played`, `article_saved`) and the event metadata of those interaction events to power the Recommendations workflow.
 
 To create your Recommendation Catalog:
 1. Open your Engage space and navigate to **Engage** > **Engage Settings** > **Recommendation catalog**. 
@@ -50,5 +51,5 @@ To create a Product Based Audience:
 ## Best practices
 
 - When mapping events to the model column during the setup process for your [Recommendation catalog](#set-up-your-recommendation-catalog), select the event property that matches the model column. For example, if you are mapping to model column ‘Brand’, select the property that refers to ‘Brand’ for each of the selected interaction events.
-- Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others. As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
+- When you complete your audience creation, the status will display as "live" with 0 customers. This means the audience is still computing, and the model is determining which customers belong to it. **Segment recommends waiting at least 24 hours for the audience to finish computing.** Once the computation is complete, the audience size will update from 0 customers to reflect the finalized audience.
 - As the size of your audience increases, the propensity to purchase typically decreases. For example, an audience of a hundred thousand people that represents the top 5% of your customers might be more likely to purchase your product, but you might see a greater number of total sales if you expanded the audience to a million people that represent the top 50% of your customer base. 

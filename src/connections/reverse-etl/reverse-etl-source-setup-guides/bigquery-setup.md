@@ -3,7 +3,7 @@ title: BigQuery Reverse ETL Setup
 redirect_from:
   - '/reverse-etl/bigquery-setup/'
 ---
-To set up your BigQuery source with Reverse ETL, you must [construct a BigQuery role and service account](#constructing-your-own-role-or-policy] and [create a BigQuery source in the Segment app](#set-up-bigquery-as-your-reverse-etl-source). 
+To set up your BigQuery source with Reverse ETL, you must [construct a BigQuery role and service account](#constructing-your-own-role-or-policy) and [create a BigQuery source in the Segment app](#set-up-bigquery-as-your-reverse-etl-source). 
 
 > info "BigQuery Reverse ETL sources support Segment's dbt extension"
 > If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.

@@ -67,7 +67,16 @@ To download a Source Schema CSV file:
 6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer. If the file status column shows that the download has failed, return to the Source Schema page and try the download again.<br/> The Source Schema CSV name has the following format:<br/>`workspaceSlug-sourceSlug-schemaType--yyyy-mm-dd--hh-mm-utc`
 
 > info "All events and properties are now included in the CSV file"
-> When you export a Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
+> When you export a Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view.
+
+## Difference between Schema UI and CSV Export
+
+When exporting a CSV from the Schema UI, there are differences in how event data is structured:
+
+- In the Schema UI, all instances of a unique event name are grouped into a single row, regardless of the different properties associated with that event.
+- In the CSV file, each unique combination of an event name and its tracked properties appears as a separate row.
+
+This allows you to see how Segment tracks different properties for the same event.
 
 ### View download history
 
