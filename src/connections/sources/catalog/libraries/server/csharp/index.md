@@ -13,8 +13,11 @@ tags:
 id: 
 redirect_from:
    - '/connections/sources/catalog/libraries/mobile/unity/'
-   - '/connections/sources/catalog/libraries/mobile/csharp/'          
+   - '/connections/sources/catalog/libraries/mobile/csharp/' 
+   - '/connections/sources/catalog/libraries/mobile/xamarin/'
+   - '/connections/sources/catalog/libraries/server/net/'
 ---
+
 With Analytics-CSharp, you can add Segment analytics to your C# based app which includes Unity, Xamarin, .NET. Analytics-CSharp helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit. The Analytics-CSharp library is open-source [on GitHub](https://github.com/segmentio/analytics-csharp){:target="_blank"}. 
 
 ### Supported platforms 
@@ -30,7 +33,6 @@ These platforms support Analytics-CSharp:
    * iOS
    * Android
    * PC, Mac, Linux
-
 
 ## Getting started
 
