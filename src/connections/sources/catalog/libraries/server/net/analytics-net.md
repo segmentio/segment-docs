@@ -2,10 +2,8 @@
 title: Analytics for .NET
 repo: analytics.NET
 id: 8HWbgPTt3k
+hidden: true
 support_type: community
-custom_ranking:
-  heading: 0
-  position: 99999
 ---
 
 > warning "End-of-Support for Analytics.NET in March 2026"

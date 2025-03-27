@@ -2,20 +2,23 @@
 title: Analytics-iOS
 strat: ios
 repo: analytics-ios
-support_type: maintenance
+support_type: community
 id: UBrsG9RVzw
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 With Analytics-iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
 <br />
 <br />
 <br />
 
+> warning "End-of-Support for Analytics-iOS in March 2026"
+> End-of-support for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
+
 > info "Watchkit extensions currently unsupported"
 > Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email Segment](https://segment.com/requests/integrations/){:target="_blank”}. if you're interested in a Watchkit SDK. For now Segment recommends tracking watch interactions using the iPhone app code.
 
-
-> info "Analytics-Swift"
-> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”}. library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.. Segment's future development efforts concentrate on the new Analytics-Kotlin SDK, and will only ship security updates for the Analytics-Android SDK.
 
 ## Analytics-iOS and Unique Identifiers
 

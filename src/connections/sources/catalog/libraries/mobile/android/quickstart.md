@@ -2,7 +2,13 @@
 title: 'Quickstart: Analytics-Android'
 hidden: true
 strat: android
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
+
+> warning "End-of-Support for Analytics-Android in March 2026"
+> End-of-support for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 

@@ -104,7 +104,30 @@ See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more
 
 You can send audiences and computed traits to third-party services in Segment's [Destinations catalog](/docs/connections/destinations/).
 
+Segment's Connections pipeline first collects and sends events from your Source to your Destination. Built on top of Connections, Engage then uses the same Source events to let you create Audiences and computed traits within Segment. You can then send the Audience or computed trait you've built to your Destination(s).
+
+> info ""
+> Because Engage only sends Audiences and computed traits to Destinations, it doesn't replace a standard event pipeline. Connect a Source directly to a Destination if you want the Destination to receive all events that Segment gathers.
+
+### Connect your Audience to a Destination
+
+> warning "Audience Keys"
+> Avoid using the same Audience key twice, even if you've deleted the original Audience.
+
+Once you've previewed your Audience, you can choose to connect it to a Destination or keep the Audience in Segment and export it as a CSV file download.
+
+If you already have Destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one Destination configuration per Destination type.
+
+When you create an Audience, Segment starts syncing your Audience to the Destinations you selected. Audiences are either sent to Destinations as a boolean user-property or a user-list, depending on what the Destination supports. Read more about [supported Destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
+
+For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
+
+Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
+
 For step-by-step instructions on how to connect an audience to a destination, see [Send Audience Data to Destinations](/docs/engage/audiences/send-audience-data/).
+
+> info "Historical data behavior for new destinations"
+> When you connect a new destination to an existing audience, Engage backfills historical data if the **Include Historical Data** option is enabled in the audience settings. If this setting is disabled, only new data gets sent. To sync all historical data manually, [contact Support](mailto:friends@segment.com) to request a resync.
 
 ## Understanding compute times
 

@@ -414,8 +414,6 @@ sections:
     title: Introduction
   - path: '/engage/quickstart'
     title: Foundations Onboarding
-  - path: '/engage/onboarding'
-    title: Premier Onboarding
   - path: '/engage/use-cases'
     title: Use Cases
   - section_title: User Subscriptions
