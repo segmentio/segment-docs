@@ -31,7 +31,7 @@ The Source Schema UI changes slightly depending on whether you have a [Protocols
 
 ## Event filters
 
-If you no longer want to track a specific event, you can either remove it from your code or, if you're on the Business plan and don't have a Tracking Plan connected, you can block track calls from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event.
+If you no longer want to track a specific event, you can either remove it from your code or, if you're on the Business plan and don't have a Tracking Plan connected, you can block track calls from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event. 
 
 
 ![Event filters](images/event-filters.png "Event filters in Segment")
@@ -39,13 +39,13 @@ If you no longer want to track a specific event, you can either remove it from y
 > info ""
 > For sources with a connected Tracking Plan, use Protocols to block unplanned events.
 
-
 Once you block an event, Segment stops forwarding it to all of your Cloud and Device-mode Destinations, including your warehouses. You can remove the events from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties.
 
 When an event is blocked, the name of the event or property is added to your Schema page with a counter to show how many events have been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream Destinations. 
 
 In most cases, blocking an event immediately stops that event from sending to Destinations. In rare cases, it can take **up to six hours** to fully block an event from delivering to all Destinations.
 
+Blocked events appear in the debugger with a block symbol, adding visibility into events actively blocked by Segment.
 
 ## Identify and Group Trait Filters
 

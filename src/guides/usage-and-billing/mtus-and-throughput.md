@@ -29,17 +29,13 @@ For example, if your workspace's throughput limit is set to 250, this means that
 
 These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans often have custom limits.
 
-
-
 #### Batching and throughput limits
 
 You can sometimes "batch" API calls to reduce send times, however batching doesn't reduce your throughput usage. Batched calls are unpacked as they are received, and the objects and calls the batch contains are counted individually. While batching does not reduce your throughput, it does reduce the possibility of rate limit errors.
 
-
 ## How does Segment calculate MTUs?
 
 Segment counts the number of **unique** `userId`s, and then adds the number of **unique** `anonymousId`s that were not associated with a `userId` during the billing period. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
-
 
 #### Example MTU counts
 
@@ -121,8 +117,13 @@ All Engage data are omitted from billing MTU and API throughput calculations, in
 
 Replays only affect your MTU count if you are using a [Repeater](/docs/connections/destinations/catalog/repeater/) destination, which might send data that hasn't yet been seen this month back through a source.
 
-## MTUs and Reverse ETL 
-See the [Reverse ETL usage limits](/docs/connections/reverse-etl/#usage-limits) to see how MTUs affect your Reverse ETL usage limits. 
+## How Reverse ETL affects MTUs 
+
+Extracting data with Reverse ETL does **not** count toward your MTU usage. However, if you send that data through the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/), it **will** affect your MTUs.
+
+The Segment Connections destination is built for Reverse ETL and treats events as if they’re coming from a standard source, meaning they contribute to your MTU count.
+
+For more information, see [Reverse ETL usage limits](/docs/connections/reverse-etl/system/#usage-limits).
 
 ## Why is my MTU count different from what I see in my destinations and other tools?
 

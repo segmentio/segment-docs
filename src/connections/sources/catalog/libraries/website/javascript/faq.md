@@ -9,7 +9,7 @@ Analytics.js doesn't automatically collect IPv6 addresses. If IPv6 is available 
 
 ## Is there a size limit on requests?
 
-Yes, the limit is 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js and Segment servers return a `200` response , but the event is silently dropped once it enters Segment's pipeline. 
+Yes, the limit is 32KB per event message. Events with a payload larger than 32KB are not accepted by Analytics.js. Segment servers return a 400 response with the error message: `Exceed payload limit`.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
@@ -141,4 +141,5 @@ If you need this functionality, you have a couple of options:
 **Use downstream tools**: Many analytics platforms, like Google Analytics, can automatically handle IP-to-geolocation conversion.
 **Use a third-party API**: Alternatively, you can use third-party services like Geolocation API to convert IP addresses to geolocation data. Afterward, you can pass this information as a trait in Identify calls or as a property in Track calls to Segment. This allows you to manage geolocation data according to your specific needs, though it will likely require engineering resources.
 
-
+## Why is my payload populating incorrectly?
+Payload parameters aren't populated in a guaranteed order. Your payload should still be ingested as long as all necessary parameters are included.

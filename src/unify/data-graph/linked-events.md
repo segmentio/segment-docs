@@ -31,9 +31,6 @@ To use Linked Events, you'll need the following:
 3. Access to the actions-based destination you'll be using with Linked Events so that you can validate your data. 
 
 > info ""
-> Segment stores and processes all data in the United States.
-
-> info ""
 > Profiles Sync isn't required for Linked Events.
 
 ### Linked Events roles
@@ -153,6 +150,18 @@ To enrich events with entities:
 5. In the "Select Events to Map and Send", define the [conditions](/docs/connections/destinations/actions/#conditions) under which the action should run. 
 6. Click **Load Sample Event**, then add your entities.
 
+### Configure the sync schedule
+You can schedule how often you want Segment to cache the table data for Linked Events. 
+
+To configure your sync schedule:
+1. Navigate to **Unify > Data Graph > Entities** and select the entity you want to configure. 
+2. Select the **Enrichment syncs** tab. 
+3. Click **Edit** next to **Sync schedule**. 
+4. Select the **Schedule type**. You can choose from: 
+   * **Manual**: Trigger the sync manually or with Segment's API.
+   * **Interval**: Sync based on a by-the minute, hourly, or daily cycle. For example, once every 2 hours. 
+   * **Day and time**: Sync at specific times on selected days of the week. For example, Mondays at 2:00PM. 
+
 ### Add entities
 
 After you load a sample event, you can add entities from the **Enrich events with entities** section. You’ll select an entity, then an entity match property. 
@@ -168,18 +177,23 @@ In the Mappings tab, locate the **Select Mappings** section where you can enrich
 
 1. Select the property field that you'd like to enrich, then select the **Enrichments** tab. 
 2. Select the entity you want to send to your destination. 
-- You’ll have access to all rows/columns in your data warehouse associated with the property you've selected in the previous step.
+- You have access to all rows/columns in your data warehouse associated with the property you've selected in the previous step.
 3. Add the key name on the right side, which is what Segment sends to your destination. 
+4. Click **Save**.
 
-> warning ""
-> At this time, Linked Events doesn't support a preview of enriched payloads.
+#### Testing with Linked Events Enrichments
+The [Event Tester and Mappings Tester](/docs/connections/test-connections/#) support testing enrichments from Linked Events, allowing you to verify that entity data is correctly attached to your events before they reach destinations. When you have Linked Events configured, these enrichments appear in your test payload, showing you exactly how profile traits will add to your events.
 
-### Save your enrichments
+When you test mappings with Linked Events Enrichments:
+* You can view the enriched fields in the **Request** section of the test results. 
+* Verify that the correct entity traits are attaching to your events based on your entity matching configuration. 
+* The tester includes any configured Linked Events enrichments in the sample payload. 
 
-When you're satisfied with the mappings, click **Save**. Segment returns you to the Mappings table.
+This helps you confirm that the right information sends to your destinations when testing activation scenarios that rely on profile data enrichment
 
-> warning ""
-> At this time, when you select mappings or test events, you won’t see enrichment data. Enrichment data is only available with real events.
+> info ""
+> If an enriched field appears empty in your test results, this could indicate either that the entity matching failed to find a matching profile, or that the profile exists but does not have data for that specific trait.
+
 
 ## Enrichment observability
 

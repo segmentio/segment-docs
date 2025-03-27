@@ -37,6 +37,7 @@ Custom Domain supports the following sources:
 - [Python](/docs/connections/sources/catalog/libraries/server/python/)
 - [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/)
 - [.NET](/docs/connections/sources/catalog/libraries/server/net/)
+- [Pixel API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/)
 
 ## Getting started
 
@@ -50,7 +51,7 @@ To configure Custom Domain:
   - **Topic**: Select **Custom Domain**.
   - **Subject**: Enter a subject line for your support request.
   - **Domain Name**: Enter the subdomain that Segment should use for event request tracking.
-  - **Additional Domain Name**: If applicable, add an additional subdomain. This field is optional.
+  - **Additional Domain Name**: (*Optional*) If applicable, you can add an additional subdomain. You can have multiple domains within the same workspace; however, each source can only be associated with one domain. A single domain can be associated with multiple sources.
   - **Source names**: Select the sources you would like to use for Custom Domain. Segment recommends starting with a stage or dev source. For initial setup, an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source is required. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
   - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you've enabled a Content Security Policy (CSP), you must add the new subdomains provided by Segment to your CSP once you've enabled the Custom Domain feature. This ensures that the CSP does not block the subdomains when you load Segment.
     
@@ -73,6 +74,7 @@ For non-Analytics.js sources, you’ll need to update your implementation to use
 
 - **Server Sources**: When sending data from server-side implementations, use the `host` configuration parameter to send data to your subdomain instead of the default Segment domain.
 - **Mobile Sources**: When sending data from mobile implementations, use the `apiHost` configuration parameter to send data to your subdomain instead of the default Segment domain.
+- **Pixel API Sources**: When sending data from Pixel implementations, modify the endpoint from Segment's default domain (`https://api.segment.io/v1/pixel/track`) to your custom domain (`https://api.mysubdomain.mydomain.com/v1/pixel/track`).
 
 ### Is there a benefit in migrating server-side sources over to client-side with Custom Domain?
 Server-side tracking is generally more reliable than client-side tracking. For example, when tracking data client-side, you might lose data when users might block all cookies or use tools that interfere with network requests leaving the browser.

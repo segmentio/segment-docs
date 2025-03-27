@@ -29,7 +29,7 @@ To configure an email template, click **Create Template**.
 
 1. Select **Email**, and click **Configure**.
 
-> note ""
+> info ""
 > You must first connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment space to build email templates in Engage. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
 2. Configure the email template.
@@ -142,4 +142,9 @@ Segment doesn't support profile traits in object and array datatypes in [Broadca
 - View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 
 - You can also use the Templates screen in Engage to [build SMS templates](/docs/engage/content/sms/template/).
- 
+
+## FAQs
+
+### Do updates to an email template automatically apply to Journey steps using it?
+
+When you add a template to a Journey step, it becomes a copy specific to that step. Changes made to the original template won’t update the Journey version, and edits made in the Journey step won’t affect the original template. This keeps your Journey changes separate while preserving the original for reuse.

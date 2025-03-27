@@ -45,14 +45,14 @@ The basic tracking methods below serve as the building blocks of your Segment tr
 
 These methods correspond with those used in the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js.
 
-> note "Good to know"
+> success ""
 > For any of the methods described in this page, you can replace the properties in the code samples with variables that represent the data collected.
 
 ### Identify
 
 Use the `identify` method to link your users and their actions, to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
-> note "`identify` and anonymous visitors"
+> info "Identify calls and anonymous visitors"
 > Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from `localStorage` or assigns one for new visitors, and then attaches it to all `page` and `track` events both before and after an `identify`.
 
 The Identify method follows the format below:
@@ -138,10 +138,11 @@ The only required argument on Track calls in Analytics.js is an `event` name str
 
 #### Track link
 
-`trackLink` is a helper method that attaches the `track` call as a handler to a link.
-With `trackLink`, Analytics.js inserts a timeout of 300 ms to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
+`trackLink` is a helper method that attaches a Track call as a handler to a link. When a user clicks the link, `trackLink` delays the navigation event by 300ms before proceeding, ensuring the Track request has enough time to send before the page starts unloading.
 
-The `trackLink` method follows the format below.
+This is useful when a page redirects too quickly, preventing the Track method from completing all requests. By momentarily holding off navigation, `trackLink` increases the likelihood that tracking data reaches Segment and destinations successfully.
+
+The `trackLink` method follows the format below:
 
 ```js
 analytics.trackLink(element, event, [properties])
@@ -328,7 +329,6 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
 - [Reset (Logout)](#reset-or-log-out)
-- [Keepalive](#keepalive)
 
 ### Load
 
@@ -372,7 +372,7 @@ If you want to access end-tool library methods that do not match any Analytics.j
 
 
 ```js
-analytics.ready(function() {
+analytics.ready(() => {
   window.mixpanel.set_config({ verbose: true });
 });
 ```
@@ -422,7 +422,7 @@ analytics.on(method, callback);
 Example:
 
 ```js
-analytics.on('track', function(event, properties, options) {
+analytics.on('track', (event, properties, options) => {
 
   bigdataTool.push(['recordEvent', event]);
 
@@ -431,7 +431,7 @@ analytics.on('track', function(event, properties, options) {
 
 This method emits events _before_ they are processed by the Segment integration, and may not include some of the normalization Segment performs on the client before sending the data to the Segment servers.
 
-> note "Note"
+> info ""
 > Page event properties are stored in the `options` object.
 
 
@@ -460,11 +460,6 @@ analytics.reset();
 The `reset` method only clears the cookies and `localStorage` created by Segment. It doesn't clear data from other integrated tools, as those native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
 
 Segment doesn't share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
-
-### Keepalive
-
-You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. This is available for all events. You can read more about this in the [Github PR](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830){:target="_blank"}.
-
 
 ## Managing data flow with the Integrations object
 
@@ -530,7 +525,7 @@ analytics.load('writekey', { integrations: { All: false, 'Google Analytics': tru
 This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
 
 ```js
-onConsentDialogClosed(function(consentedTools){
+onConsentDialogClosed((consentedTools) => {
   analytics.load('writekey', { integrations: consentedTools })
 })
 ```
@@ -581,15 +576,71 @@ analytics.load('writekey', { disable: (cdnSettings) => true })
 
 ## Retries
 
-When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
+Analytics.js automatically retries sending events when there are network or server errors. This helps reduce data loss in cases where the user is offline or the Segment API is temporarily unavailable.
 
-- **Support offline tracking**. Analytics.js queues your events and delivers them when the user comes back online.
-- **Better handle network issues**. When your application can't connect to the Segment API, Segment continues to store the events on the browser to prevent data loss.
+When retries are enabled, Analytics.js can:
 
-Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
+- **Track users offline.** Events get stored locally and sent once the user comes back online.
+- **Handle intermittent network issues.** Events are queued and retried until they’re successfully delivered.
 
->info ""
-> The `_metadata` field is calculated on every retry. This is gives insight on if an event was sent to a device mode version of a destination. This could be inaccurate if the you changed your destination configurations for your source in between when the retries occurred.
+Here's how retries work:
+
+- Events are stored in `localStorage` when available, with an in-memory fallback.
+- Analytics.js retries up to 10 times, with increasing backoff intervals between attempts.
+- A maximum of 100 events can be queued to avoid using too much local storage.
+
+For more information, see the [destination retries documentation](/docs/connections/destinations/#retries).
+
+### About the `_metadata` field
+
+Each time an event is retried, Segment recalculates its `_metadata` field. This field helps indicate whether the event was sent to a device-mode destination. If you change your destination settings between retries, the updated `_metadata` may not reflect the original attempt, which could affect downstream debugging or delivery visibility.
+
+## Delivery strategy configuration
+
+The `deliveryStrategy.config` object lets you customize how data is delivered to Segment. This includes options like setting custom headers and enabling `keepalive` to capture events during hard redirects.
+
+### Adding custom headers
+
+You can override default headers by providing custom headers in your configuration. Use the `deliveryStrategy.config.headers` option to specify the headers, like in the following example:
+
+```ts
+analytics.load("<YOUR_WRITE_KEY>", {
+  integrations: {
+    'Segment.io': {
+      deliveryStrategy: {
+        config: {
+          headers: { 'x-api-key': 'foo' }
+        }
+      }
+    }
+  }
+});
+
+## Keepalive
+
+You can use the `keepalive` option to make sure that Segment captures API calls triggered during a hard redirect. When enabled, `keepalive` will try to fire events before the redirect occurs.
+
+By default, `keepalive` is set to false, because all fetch requests with the `keepalive` flag are subject to a 64kb size limit. Additionally, `keepalive` requests share this size limit with all other in-flight `keepalive` requests, regardless of whether they're related to Segment. This competition for resources can lead to data loss in some scenarios.
+
+Segment only uses `keepalive` by default if:
+- The browser detects that the page is unloading (like if the user closes the tab or navigates away).
+- You have batching enabled.
+
+To enable `keepalive`, use the following configuration:
+
+```ts
+analytics.load("<YOUR_WRITE_KEY>", {
+  integrations: {
+    'Segment.io': {
+      deliveryStrategy: {
+        config: {
+          keepalive: true
+        }
+      }
+    }
+  }
+});
+```
 
 ## Batching
 Batching is the ability to group multiple requests or calls into one request or API call. All requests sent within the same batch have the same `receivedAt` time. With Analytics.js, you can send events to Segment in batches. Sending events in batches enables you to have:
@@ -825,20 +876,42 @@ Because Segment tracks across subdomains, you can either use the same Segment so
 
 UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives using a link containing UTM parameters, Segment's analytics.js library will parse the URL query string and add the information to the event payload. For more information about UTM tracking, see the [Tracking Customers Across Channels and Devices](/docs/guides/how-to-guides/cross-channel-tracking/) documentation.
 
-UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, if you include the following three parameters in your URL: ?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in the raw view of your Source Debugger.)
+UTM parameters contain three essential components (utm_source, utm_medium, utm_campaign) and two optional (utm_content, utm_term). For example, if you include the following three parameters in your URL: `?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign`, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the 'context' object (visible in the raw view of your Source Debugger.)
 
 So, for example, if somebody follows the link with above query string to your site, the subsequent 'page' call in your Debugger should contain the below and will be passed to any enabled destinations:
 
-
+```js
 "context": {
  "campaign": {
  "medium": "email",
  "name": "mytestcampaign",
  "source": "mysource",
  },
-
+```
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
+
+Segment doesn't validate UTM parameter names. This design supports the flexibility to track both standard parameters (for example, utm_source, utm_medium) and custom parameters defined by users. As a result, all parameters present in the URL collected as is, and are added to the context field without checks for naming conventions or validity.
+
+If you want to ensure that only standard UTM parameters (such as, utm_source, utm_medium, utm_campaign, utm_content, utm_term) are included in the context.campaign object, you can implement [Source middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/) in your Analytics.js setup. 
+
+For example:
+
+```js
+window.analytics.addSourceMiddleware(({ payload, next }) => {
+  if (payload.obj.context?.campaign) {
+    const allowedFields = ["source", "medium", "term", "campaign", "content"];
+    const campaign = payload.obj.context.campaign;
+    Object.keys(campaign).forEach(key => {
+      if (!allowedFields.includes(key)) {
+        delete campaign[key];
+      }
+    });
+  }
+  next(payload);
+});
+```
+This middleware filters out any non-standard parameters from the `context.campaign` object before they're sent to Segment or forwarded to your enabled destinations.
 
 ## Analytics.js performance
 

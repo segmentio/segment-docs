@@ -51,7 +51,12 @@ To set up dbt Cloud:
 3. Add your dbt Cloud API key or dbt Personal Access Token and an optional custom subdomain, then click **Save**. 
 
 > info "Adding a custom subdomain"
-> By default, dbt sets the subdomain to cloud. To identify your custom subdomain, open your URL and copy the portion before `.getdbt.com`. For example, if your domain was `https://subdomain.getdbt.com/`, your subdomain would be `subdomain`. 
+> By default, dbt sets the subdomain to cloud. To identify your custom subdomain, open your URL and copy the portion before `.getdbt.com`. For example, if your domain was `https://subdomain.getdbt.com/`, your subdomain would be `subdomain`.
+
+### dbt Cloud Webhooks
+The dbt Cloud integration allows you to schedule Reverse ETL syncs based on a dbt Cloud job.  When a dbt Cloud job is selected under the Reverse ETL scheduling section, Segment creates a webhook in the dbt Cloud account that will initiate to run the Reverse ETL sync when the job is scheduled.
+
+In order to create the webhook, ensure that you have webhook permissions associated with the dbt Cloud token in the previous step.
 
 ### Model syncs
 

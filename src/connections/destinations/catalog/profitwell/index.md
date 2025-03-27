@@ -27,9 +27,9 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will start the ProfitWell service using the customer's email to track them. If no email is provided it will start the service anonymously.
+Identify calls will start the ProfitWell service using the customer's email to track them. If no email is provided, it will start the service anonymously.
 
-[Customers](https://www2.profitwell.com/app/customers){:target="_blank"} need to be created first within ProfitWell in order for the indentify calls to trigger their engagements.
+[Customers](https://www2.profitwell.com/app/customers){:target="_blank"} need to be created first within ProfitWell in order for the Identify calls to trigger their engagements.
 
-> note ""
-> **Note**: The data doesn't sync into the ProfitWell UI in real time. It can take up to 24 hours to reflect.
+> success ""
+> Segment doesn't sync data into ProfitWell in real time. User data can take up to 24 hours to appear in ProfitWell.

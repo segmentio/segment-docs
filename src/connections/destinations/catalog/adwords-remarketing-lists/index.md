@@ -52,8 +52,8 @@ Create an audience of users that signed up, purchased a product, or otherwise pe
 
 You can use Engage to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Google. In Google, you can then use Google's [Similar Audience](https://support.google.com/google-ads/answer/7151628?hl=en-AU){:target="_blank”} features to find similar users to target. For example, you might want to create a group of high-value users who have spent a certain amount of money on your product, and then use Similar Audiences to find users who might also spend that much.
 
-> note ""
-> A “seed audience” must have at least 100 members for Google's Similar Audience feature to function.
+> warning ""
+> A “seed audience” must have at least 100 members.
 
 
 ### Remarketing audiences

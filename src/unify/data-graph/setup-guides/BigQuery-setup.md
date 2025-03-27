@@ -30,7 +30,19 @@ To set the roles and permissions:
 11. Copy all the content in the JSON file you created in the previous step, and save it for Step 5. 
 
 
-## Step 2: Grant read-only access for the Data Graph 
+## Step 2: Create a dataset for Segment to store checkpoint tables
+Create a new dataset as Segment requires write access to the dataset for internal bookkeeping and to store checkpoint tables for the queries that are executed. 
+
+Segment recommends you to create a new dataset for the Data Graph. If you choose to use an existing dataset that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](/docs/unify/data-graph/setup-guides/bigquery-setup/#update-user-access-for-segment-reverse-etl-dataset) to update user access for the Segment Reverse ETL catalog.
+
+To create your dataset, navigate to the BigQuery SQL editor and create a dataset that will be used by Segment. 
+
+```
+CREATE SCHEMA IF NOT EXISTS `__segment_reverse_etl`;
+GRANT `roles/bigquery.dataEditor` ON SCHEMA `__segment_reverse_etl` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
+```
+
+## Step 3: Grant read-only access for the Data Graph 
 Grant the [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer){:target="_blank"} role to the service account at the project level. Make sure to grant read-only access to the Profiles Sync project in case you have a separate project.
 
 To grant read-only access for the Data Graph: 
@@ -41,7 +53,7 @@ To grant read-only access for the Data Graph:
 5. Select the **BigQuery Data Viewer role**.
 6. Click **Save**.
 
-## *(Optional)* Step 3: Restrict read-only access
+## *(Optional)* Step 4: Restrict read-only access
 If you want to restrict access to specific datasets, grant the BigQuery Data Viewer role on datasets to the service account. Make sure to grant read-only access to the Profiles Sync dataset.
 
 To restrict read-only access:
@@ -58,7 +70,7 @@ You can also run the following command:
 GRANT `roles/bigquery.dataViewer` ON SCHEMA `YOUR_DATASET_NAME` TO "serviceAccount:<YOUR SERVICE ACCOUNT EMAIL>";
 ```
 
-## Step 4: Validate permissions
+## Step 5: Validate permissions
 1. Navigate to **IAM & Admin > Service Accounts** in BigQuery.
 2. Search for the service account you’ve just created.
 3. From your service account, click the three dots under **Actions** and select **Manage permissions**.
@@ -66,7 +78,7 @@ GRANT `roles/bigquery.dataViewer` ON SCHEMA `YOUR_DATASET_NAME` TO "serviceAccou
 5. Select a box with List resources within resource(s) matching your query.
 6. Click **Analyze**, then click **Run query**.
 
-## Step 5: Connect your warehouse to Segment
+## Step 6: Connect your warehouse to Segment
 1. Navigate to **Unify > Data Graph** in Segment. This should be a Unify space with Profiles Sync already set up.
 2. Click **Connect warehouse**.
 3. Select *BigQuery* as your warehouse type.

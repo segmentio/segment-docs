@@ -26,8 +26,8 @@ Visual Tagger is a tool that enables you to collect data about what your custome
 
 The Visual Tagger has two main views: the **Visual Tagger Home** and the **Event Editor**, which shows your website in an iframe.
 
-> note ""
-> **Note**: The website you're tagging must include the Segment analytics.js snippet before you can use the Visual Tagger.
+> info "Analytics.js snippet required for the Visual Tagger" 
+> The website you're tagging must include the Segment analytics.js snippet before you can use the Visual Tagger.
 
 
 ## Setting up Visual Tagger
