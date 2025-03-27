@@ -576,12 +576,24 @@ analytics.load('writekey', { disable: (cdnSettings) => true })
 
 ## Retries
 
-When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
+Analytics.js automatically retries sending events when there are network or server errors. This helps reduce data loss in cases where the user is offline or the Segment API is temporarily unavailable.
 
-- **Support offline tracking**. Analytics.js queues your events and delivers them when the user comes back online.
-- **Better handle network issues**. When your application can't connect to the Segment API, Segment continues to store the events on the browser to prevent data loss.
+When retries are enabled, Analytics.js can:
 
-Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
+- **Track users offline.** Events get stored locally and sent once the user comes back online.
+- **Handle intermittent network issues.** Events are queued and retried until they’re successfully delivered.
+
+Here's how retries work:
+
+- Events are stored in `localStorage` when available, with an in-memory fallback.
+- Analytics.js retries up to 10 times, with increasing backoff intervals between attempts.
+- A maximum of 100 events can be queued to avoid using too much local storage.
+
+For more information, see the [destination retries documentation](/docs/connections/destinations/#retries).
+
+### About the `_metadata` field
+
+Each time an event is retried, Segment recalculates its `_metadata` field. This field helps indicate whether the event was sent to a device-mode destination. If you change your destination settings between retries, the updated `_metadata` may not reflect the original attempt, which could affect downstream debugging or delivery visibility.
 
 ## Delivery strategy configuration
 
