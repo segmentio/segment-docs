@@ -1,17 +1,18 @@
 ---
-title: Connections Alerting
-beta: true
-hidden: true
+title: Custom Alerts
 ---
 
-Connections Alerting allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection. 
+Segment's custom alerts allow you to customize the sensitivity of the trigger that activates an alert so you can more accurately detect event volume fluctuations in your integrations.
 
-To access Connections Alerting, select an event-streaming connection (like a web library source or cloud mode destination) and click the **Alerts** tab. 
+> info "Public beta"
+> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available. During the public beta, only default alerts are located in the Monitor tab. 
 
-On the Alerts tab, you can create alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create.
+You can create alerts for the following product areas: 
+- [Sources](#source-volume-alert)
+- [Destinations](#successful-delivery-rate-alert)
+- [Twilio Engage](#activation-event-health-spikes-or-drops)
 
-## Source volume alerts
-
+## Source volume alert
 You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a percentage you set. For example, if you set a change percentage of 4% and your source received 100 events over the first 24 hours, Segment would notify you the following day if your source ingested fewer than 96 or more than 104 events.
 
 To receive a source volume alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
@@ -36,8 +37,7 @@ To delete a source volume alert, select the icon in the Actions column for the a
 > info "Deleting alerts created by other users requires Workspace Owner permissions"
 > All users can delete source volume alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users. 
 
-
-## Successful delivery rate alerts
+## Successful delivery rate alert
 
 You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
 
@@ -57,6 +57,21 @@ To make changes to a successful delivery rate alert, select the icon in the Acti
 
 To delete a successful delivery rate alert, select the icon in the Actions column for the alert and click **Delete**. 
 
-> info "Deleting alerts created by other users requires Workspace Owner permissions"
-> All users can delete successful delivery alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users.
-Segment generates delivery alerts for failed deliveries and successful deliveries, which are the last two stages of the delivery pipeline. As a result, alerts are based on Segment's attempts to send qualified events to your destination, excluding those filtered out by business rules (like protocols, destination filters, or mappings).
+## Activation event health spikes or drops
+
+You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your Audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
+
+To create an Activation event health spikes or drops alert: 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
+2. Select the Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
+3. On the Create alert sidesheet, select the destination for which you'd like to monitor event health. 
+4. Enter a percentage threshold to trigger activation event health notifications. 
+5. Select one or more of the following alert channels:
+  - **Email**: Select this to receive notifications at the provided email address. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. 
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+6. Click **Save**.
+
+To make changes to an Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
+
+To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
