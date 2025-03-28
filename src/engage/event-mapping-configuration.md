@@ -157,7 +157,7 @@ Before you begin, make sure you've done the following:
 - Confirmed whether the destination expects Identify or Track events
 - Located your audience key (you'll use it to configure the trigger)
 
-### Create a mapping
+### 1. Create a mapping
 
 To create a mapping, follow these steps:
 
@@ -168,8 +168,31 @@ To create a mapping, follow these steps:
 
 After you select the event type, you'll configure a trigger to determine when the mapping fires (based on audience entry or exit), and then map the fields to the destination's expected format.
 
+### 2. Define the event trigger
 
-Map an Identify event 
+Before mapping fields, you’ll define a trigger that determines when the mapping executes. For Engage events, triggers typically use the audience key's boolean value. 
+
+So to trigger the mapping when a user enters or exits an audience, you'd use the audience key and its boolean value:
+
+When a user enters the audience, configure the trigger like this:
+
+- Trigger type: `Event Trait`
+- Field: `browse_abandoners`
+- Condition: `is true`
+
+When a user exits the audience, set the trigger like this:
+
+- Trigger type: `Event Trait`
+- Field: `browse_abandoners`
+- Condition: `is false`
+
+This tells Segment to execute the mapping only when the value of the audience key changes in the appropriate direction.
+
+### 3. Map event fields
+
+The fields you map depend on whether you selected Identify or Track. 
+
+#### Map an Identify event 
 
 Since Identify events send data in the `traits` object, you'll use `traits` in your mappings, like in this example:
 
@@ -196,19 +219,10 @@ Here’s how you might configure your mapping for this Identify event:
 | `traits.first_name`        | `first_name`      | User’s first name                 |
 | `traits.last_name`         | `last_name`       | User’s last name                  |
 
-| Step | Who      | What happens                                                                   |
-| ---- | -------- | ------------------------------------------------------------------------------ |
-| 1    | Enginer  | Creates string key and wires it into the UI (like `settings.saveButton.label`) |
-| 2    | Engineer | Seeds initial content into the CMS during feature development                  |
-| 3    | Designer | Logs into the CMS and updates the content post-launch                          |
-| 4    | Console  | Loads content from the CMS at build time or runtime depending on use case      |
-
-
 
 <!-- Maybe add screenshot-->
 
-
-### Map a Track event
+#### Map a Track event
 
 Track events send data in the `properties` object, like in this example:
 
@@ -231,7 +245,6 @@ Track events send data in the `properties` object, like in this example:
   }
 }
 ```
-
 This event logs the moment the user entered the `browse_abandoners` audience. Audience status and [enriched traits](#) show up in `properties`, while email is stored in `context.traits`.
 
 Here’s how you might configure your mapping for this Track event:
@@ -243,4 +256,19 @@ Here’s how you might configure your mapping for this Track event:
 | `properties.first_name`        | `first_name`      | User’s first name                 |
 | `properties.last_name`         | `last_name`       | User’s last name                  |
 
-<!-- Add screenshot>
+
+Once you've decided whether to map a Track or Identify event, finish by following these steps:
+
+1. Load a test event or paste the event JSON into the mapping interface.
+2. For each field you want to send:
+  - Select the source field from the left panel.
+  - Enter the destination field on the right.
+
+## Trait enrichment
+
+Trait Enrichment lets you pull Segment profile traits into mappings when syncing audiences or journeys to destinations and [Destination functions](/docs/connections/functions/destination-functions/).
+
+To enable trait enrichment:
+
+1. From your Segment workspace, go to **Engage > Audiences**.
+2. 
