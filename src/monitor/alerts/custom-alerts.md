@@ -5,11 +5,12 @@ title: Custom Alerts
 Segment's custom alerts allow you to customize the sensitivity of the trigger that activates an alert so you can more accurately detect event volume fluctuations in your integrations.
 
 > info "Public beta"
-> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available. During the public beta, only default alerts are located in the Monitor tab. 
+> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available. During the public beta, custom alerts are not located in the Monitor tab. 
 
 You can create alerts for the following product areas: 
 - [Sources](#source-volume-alert)
 - [Destinations](#successful-delivery-rate-alert)
+- [Reverse ETL](#mapping-level-successful-delivery-rate-fluctuations)
 - [Twilio Engage](#activation-event-health-spikes-or-drops)
 
 ## Source volume alert
@@ -17,7 +18,7 @@ You can create an alert that notifies you when the volume of events received by 
 
 To receive a source volume alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
-<img src="images/alerting-source-alert.png" alt="A screenshot of the Source Volume alert creation sidesheet." width="470px" height="540px">
+<img src="/docs/connections/images/alerting-source-alert.png" alt="A screenshot of the Source Volume alert creation sidesheet." width="470px" height="540px">
 
 To create a source volume alert: 
 1. In your workspace, navigate to Connections, select Sources, and select the Event streams tab. 
@@ -56,6 +57,26 @@ To create a successful delivery rate alert:
 To make changes to a successful delivery rate alert, select the icon in the Actions column for the alert and click **Edit**. 
 
 To delete a successful delivery rate alert, select the icon in the Actions column for the alert and click **Delete**. 
+
+## Mapping-level successful delivery rate fluctuations
+
+You can create an alert that notifies you when the volume of events successfully received by your mapping in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
+
+To receive a successful delivery rate fluctuation alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+
+![A screenshot of the Alerts tab for a Mapping, with the new mapping sidesheet partially filled out.](/docs/connections/reverse-etl/images/mapping-alerting.jpeg)
+
+To subscribe to alerts for successful delivery fluctuations at the mapping level: 
+1. Navigate to your intended mapping and select the **Alerts** tab. 
+2. Click **Create alert**. 
+3. Set an *alert threshold*, or the percentage of successfully delivered events that would prompt an alert. 
+4. Select one or more of the following notification channels: 
+    - **Email**: Enter an email address or alias that should receive alerts.
+    - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
+    - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
+5. Toggle the **Enable alert** setting on and click **Create**. 
+
+To edit or disable your alert, navigate to your mapping's Alerts tab and select the Actions menu for the alert you'd like to edit.  
 
 ## Activation event health spikes or drops
 
