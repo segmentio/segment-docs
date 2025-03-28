@@ -9,7 +9,7 @@ This guide explains how to configure mappings for Engage events in Actions Desti
 
 Engage Mappings let you transform and send user data to downstream destinations. Engage events sent to destinations may need to be formatted or adjusted, though, to match the destination’s expected data structure. Without mapping, critical user information like audience membership or enriched traits may not sync correctly.
 
-including:
+This guide covers:
 
 - The differences between [Identify](/docs/connections/spec/identify/) and [Track](/docs/connections/spec/track/) events.
 - How to extract and map data from Engage event payloads.
@@ -63,7 +63,7 @@ Key characteristics:
 
 - Identify events store user details in the `traits` object. 
 - Audience membership (for example, `browse_abandoners = true`) is also included in `traits`.
-- Attributes like `email`, `first_name`, and any enriched traits all appear alongside audience flags.
+- Attributes like `email`, `first_name`, and any enriched traits appear together with audience membership information.
 
 Here's an example of an Engage Identify event payload:
 
@@ -82,8 +82,6 @@ Here's an example of an Engage Identify event payload:
 ```
 
 In this example, a user just entered the `browse_abandoners` audience. If the value for the audience were `false`, it would mean the user just **exited** the audience.
-
-<!-- PW: hm should I change this from "alongside audience flags!-->
 
 ### Track events: logging user actions
 
@@ -144,7 +142,7 @@ The following table summarizes the differences between Identify and Track events
 
 ## Configure mappings
 
-To send Engage event data to a destination, you’ll need to configure a mapping. Mappings define Segment passes fields like `traits.email` or `properties.browse_abandoners` to the destination's API endpoint.
+To send Engage event data to a destination, you’ll need to configure a mapping. A mapping defines how Segment passes fields from Engage events (like `traits.email` or `properties.browse_abandoners`) to the format your destination expects.
 
 When you add a mapping, you’ll choose the event type (Identify or Track) and then define which fields to send and where to send them. The structure of the event payload depends on the type of event, which is why mapping an Identify event differs from mapping a Track event.
 
@@ -271,4 +269,62 @@ Trait Enrichment lets you pull Segment profile traits into mappings when syncing
 To enable trait enrichment:
 
 1. From your Segment workspace, go to **Engage > Audiences**.
-2. 
+2. Choose an audience, then select a destination from the audience overview tab.
+3. In the destination side panel, click **Traits and identifiers**.
+4. Add identifiers and/or traits, then click **Save**.
+
+Enriched Identify events include traits in the `traits` object, and enriched Track events include traits in the `properties` object, like in these examples:
+
+{% codeexample %}
+{% codeexampletab Enriched Identify event payload%}
+```json
+{
+  "anonymousId": "anon-test-1",
+  "traits": {
+    "email": "user-testing-1@gmail.com",
+    "browse_abandoners": true,
+    "enriched_trait_1": "value_1",
+    "enriched_trait_2": "value_2"
+  },
+  "type": "identify",
+  "userId": "user-testing-1"
+}
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Enriched Track event payload %}
+```json
+{
+ "anonymousId": "anon-test-1",
+ "context": {
+   "traits": {
+     "email": "user-testing-1@gmailx.com"
+   }
+ },
+ "event": "Audience Entered",
+ "properties": {
+   "browse_abandoners": true, 
+   "enriched_trait_1": "enriched_trait_value_1",
+   "enriched_trait_2": "enriched_trait_value_2"
+ },
+ "type": "track",
+ "userId": "user-testing-1"
+}
+
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+## Troubleshooting
+
+#### Why can't I find the email in my Track event properties?
+
+For Track events, `email` is located in context.traits.email, not in the `properties` object. Make sure to map `context.traits.email` to your destination's email field.
+
+#### How do I know whether to use an Identify or Track event?
+
+The event type you use depends on your destination. Some destinations work better with Identify events for updating user profiles, while others prefer Track events to trigger actions. Read the destination's documentation to learn more about what event types will work best for your use case.
+
+#### My destination fields aren't being populated correctly. What should I check?
+
+Verify that you're mapping from the correct location in the event. For Identify events, look in the `traits` object. For Track events, most fields are in the `properties` object, except for `email`, which is in `context.traits`.
