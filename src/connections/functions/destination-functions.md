@@ -83,7 +83,7 @@ To change which event type the handler listens to, you can rename it to the name
 
 When declaring settings variables, make sure to declare them in the function handler rather than globally in your Function. This prevents you leaking the settings values across other function instances. 
 
-The handler for Destination functions is event-specific, for example, `onTrack()`, `onIdentify()`, etc.
+The handler for destination functions is event-specific. For example, you might have an `onTrack()`or `onIdentify()` function handler.
 
 ### Errors and error handling
 
