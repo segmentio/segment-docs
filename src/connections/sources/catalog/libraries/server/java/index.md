@@ -372,7 +372,7 @@ You can also flush on demand. For example, at the end of your program, you'll wa
 analytics.flush()
 ```
 
-Calling this method will notify the client to upload any events in the queue.
+Calling this method will notify the client to upload any events in the queue. If you would like a blocking flush, an [example is available](https://github.com/segmentio/analytics-java/blob/master/analytics-sample/src/main/java/sample/BlockingFlush.java).
 
 ## How do I gzip requests?
 
