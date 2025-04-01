@@ -66,7 +66,7 @@ With SQL Traits, you can use data in your warehouse to build an audience. By run
 
 When you build an audience based on audience membership, you use existing audiences as criteria for creating new audiences. You can include or exclude profiles based on their membership in other audiences, allowing you to generate more specific audience segments.
 
-To see which audiences reference a particular audience in their definitions, visit the Consumers tab when viewing a classic or linked audience. This tab lists all dependent audiences, making it easy to understand and manage relationships between your audience segments.
+To see which audiences reference a particular audience in their definitions, select the **Consumers** tab when viewing a classic or linked audience. This tab lists all dependent audiences, to help you understand and manage relationships between your audience segments.
 
 ### Time comparison
 
