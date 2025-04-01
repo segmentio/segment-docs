@@ -220,6 +220,18 @@ The following destinations support bulk batching:
 > info "You must manually configure bulk batches for Actions destinations"
 > To support bulk batching for the Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
 
+### Smart hashing 
+Segment automatically hashes personally identifiable information (PII). This simplifies implementation for teams with data privacy requirements and eliminates issues with double-hashing that can result in failed matching at destinations. 
+
+These are the 2 types of data that Segment handles for hashing:
+* **Plain text data:** When you send plain text values to destinations that require hashed values, Segment automatically normalizes and hashes these values. 
+* **Pre-hashed data:** If you already hash your data before sending it to Segment, Segment is able to detect that the data is hashed, and will pass your pre-hashed data directly to the destination, avoiding double-hashing. 
+
+> info ""
+> When pre-hashing data yourself, ensure you follow each destination's specific hashing requirements. Fields that support automatic hashing detection will have a tooltip indicating *"If not hashed, Segment will hash this value."*
+
+For destination-specific hashing requirements, refer to the destination's API documentation. 
+
 ## IP Allowlisting
 
 IP Allowlisting uses a NAT gateway to route traffic from Segment's servers to your destination through a limited range of IP addresses, which can prevent malicious actors from establishing TCP and UDP connections with your integrations.
