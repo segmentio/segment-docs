@@ -220,7 +220,7 @@ The following destinations support bulk batching:
 > info "You must manually configure bulk batches for Actions destinations"
 > To support bulk batching for the Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
 
-### Smart hashing 
+### Hashing 
 Segment automatically hashes personally identifiable information (PII). This simplifies implementation for teams with data privacy requirements and eliminates issues with double-hashing that can result in failed matching at destinations. 
 
 These are the 2 types of data that Segment handles for hashing:
