@@ -81,7 +81,7 @@ To change which event type the handler listens to, you can rename it to the name
 
 ### Variable scoping
 
-When declaring settings variables, declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
+When declaring settings variables, declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances.
 
 The handler for destination functions is event-specific. For example, you might have an `onTrack()`or `onIdentify()` function handler.
 
