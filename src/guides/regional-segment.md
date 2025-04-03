@@ -9,9 +9,13 @@ redirect_from:
 
 On July 10, 2023, the European Commission adopted the Adequacy Decision for the EU-US Data Privacy Framework ([DPF](https://commission.europa.eu/document/fa09cbad-dd7d-4684-ae60-be03fcb0fddf_en){:target="_blank"}). This concludes that EU personal data transferred to the United States under the DPF is adequately protected when compared to the protection in the EU. With this adequacy decision in place, personal data can safely flow from the EU to US companies participating in the DPF without additional safeguards in place.
 
-Twilio is certified under the DPF and relies on the DPF as its primary personal data transfer mechanism for EU-US personal data transfer. Twilio will rely on the DPF for any Swiss-US personal data transfers as soon as a corresponding Swiss adequacy decision is made. Twilio understands that interpretations of data residency are multi-faceted and some customers might still want their data to reside in the EU. Twilio Segment therefore offers a data residency solution outside of the DPF.
+Twilio is certified under the DPF and relies on it as the primary mechanism for EU–US personal data transfers. Twilio will also rely on the DPF for Swiss–US transfers once a corresponding Swiss adequacy decision is in place. Twilio understands that interpretations of data residency are multi-faceted and some customers might still want their data to reside in the EU. Twilio Segment therefore offers a data residency solution outside of the DPF.
 
-Segment offers customers the option to lead on data residency by providing regional infrastructure in both Europe and the United States. The default region for all users is in Oregon, United States. You can configure workspaces to use the EU West Data Processing Region to ingest (for supported sources), process, filter, deduplicate, and archive data through Segment-managed archives hosted in AWS S3 buckets located in Dublin, Ireland. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
+While the DPF enables compliant transfers, some customers may still require that their data remain within the EU. For those cases, Twilio Segment offers a data residency solution outside of the DPF.
+
+Segment provides regional infrastructure in both the United States and Europe. By default, new workspaces use U.S. infrastructure (based in Oregon). 
+
+If you need EU data residency, you must either create a workspace in the EU or request a migration for an existing workspace. Only EU workspaces store data exclusively in the EU.
 
 ## Regional Data Ingestion
 
@@ -30,7 +34,7 @@ To route data from your client-side sources to the correct region, you'll need t
 
 #### Update your SDK configuration
 
-Segment client-side SDKs (like Analytics.js, iOS, and Android) typically fetch updated settings, including the right ingestion endpoint. Mobile apps, though, may not always pick up these changes right away.
+Segment client-side SDKs (like Analytics.js, iOS, and Android) typically fetch updated settings, including the right ingestion endpoint. However, mobile apps may not always apply these changes right away.
 
 To avoid data being sent to the wrong region, **you must add the correct endpoint configuration directly in your SDK setup.**
 
@@ -66,7 +70,7 @@ const analytics = new Analytics({
 
 #### 2. Update source settings in Segment
 
-After making the required changes in your code, update the source configuration in the Segment app:
+After making the required changes in your code, update the source's settings in the Segment UI:
 
 1. Go to your source.
 2. Select the **Settings** tab.
