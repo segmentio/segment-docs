@@ -46,7 +46,7 @@ Use this table as a quick reference to determine how to configure your source or
 To send data from mobile apps to the correct region, you have to update your SDK configuration to use the right endpoint. You must do this even if your source settings are already configured in Segment itself.
 
 > warning "Use the correct endpoint"
-> Starting in Q2 2025, Segment will reject data sent to the wrong region. Make sure your mobile SDK is configured to send data to the correct endpoint for your workspace region.
+> Beginning April 3, 2025, Segment will reject data sent to the wrong region. Make sure your mobile SDK is configured to send data to the correct endpoint for your workspace region.
 
 Segment's EU instance only accepts data through its Dublin-based endpoint:
 
@@ -92,7 +92,7 @@ Once you finish updating your SDK(s), make sure your [source settings in Segment
 If you're using Segment’s server-side SDKs (like Node.js, Python, and Java) or making direct HTTP API requests, you’ll need to update the endpoint your data is sent to. This is required to match your workspace’s region and avoid rejected traffic.
 
 > warning "Use the correct endpoint"
-> Starting in Q2 2025, Segment will reject data sent to the wrong region. Make sure your server-side SDKs and custom integrations are configured to send data to the correct endpoint for your workspace region.
+> Beginning April 3, 2025, Segment will reject data sent to the wrong region. Make sure your server-side SDKs and custom integrations are configured to send data to the correct endpoint for your workspace region.
 
 #### Server-side SDK configuration examples
 
