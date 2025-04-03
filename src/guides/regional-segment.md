@@ -22,12 +22,51 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 {% include content/eu-cloud-event-sources.html %}
 
 ### Client-side sources
-You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint. If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `events.eu1.segmentapis.com/v1`.
 
-> info ""
-> For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
+To route data from your client-side sources to the correct region, you'll need to make two updates:
 
-To set your Data Ingestion Region:
+1. Update your SDK configuration (in code).
+2. Update your source settings (in Segment).
+
+#### Update your SDK configuration
+
+Segment client-side SDKs (like Analytics.js, iOS, and Android) typically fetch updated settings, including the right ingestion endpoint. Mobile apps, though, may not always pick up these changes right away.
+
+To avoid data being sent to the wrong region, **you must add the correct endpoint configuration directly in your SDK setup.**
+
+> warning "Use the correct endpoint"
+> Starting in Q2 2025, Segment will reject data sent to the wrong region. Your SDK must be configured to send data to the correct regional endpoint to prevent dropped events.
+
+Use the following code examples to point your SDK to the EU endpoint:
+
+{% codeexample %}
+{% codeexampletab iOS/Android/Xamarin/Flutter %}
+```js
+// Pseudocode example — set these options using your platform's syntax
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  apiHost: "events.eu1.segmentapis.com/v1",
+  // other options...
+})
+```
+{% endcodeexampletab %}
+
+{% codeexampletab React Native %}
+```js
+// Pseudocode example — set these options using your platform's syntax
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  proxy: "https://events.eu1.segmentapis.com/v1",
+  useSegmentEndpoints: true,
+  // other options...
+})
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+#### 2. Update source settings in Segment
+
+After making the required changes in your code, update the source configuration in the Segment app:
 
 1. Go to your source.
 2. Select the **Settings** tab.
@@ -36,9 +75,10 @@ To set your Data Ingestion Region:
     - If you're in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
     - If you're in the *EU West* data processing region, Segment's EU instance only supports data ingestion from Dublin with the `events.eu1.segmentapis.com/` endpoint.
 
-All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
+All regions are configured on a **per-source** basis. You’ll need to set the region for each source individually if you don’t want to rely on the default.
 
-All Segment client-side SDKs read this setting and update themselves automatically to send data to new endpoints when the app reloads. You don't need to change code when you switch regions.
+> info ""
+> For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
 
 ### Server-side and project sources
 When you send data from a server-side or project source, you can use the `host` configuration parameter to send data to the desired region:
