@@ -63,7 +63,6 @@ Use the examples in this section to configure mobile SDKs to point to the EU end
 {% codeexample %}
 {% codeexampletab iOS/Android/Xamarin/Flutter %}
 ```js
-// Example configuration — refer to your platform's SDK docs for full option list
 const analytics = new Analytics({
   writeKey: '<YOUR_WRITE_KEY>', // Required: your source's write key from Segment
   apiHost: "events.eu1.segmentapis.com/v1", // Routes data through EU endpoint
@@ -74,7 +73,6 @@ const analytics = new Analytics({
 
 {% codeexampletab React Native %}
 ```js
-// Example configuration — refer to your platform's SDK docs for full option list
 const analytics = new Analytics({
   writeKey: '<YOUR_WRITE_KEY>', // Required: must belong to an EU workspace
   proxy: "https://events.eu1.segmentapis.com/v1", // Required for EU data routing
