@@ -25,7 +25,49 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 
 {% include content/eu-cloud-event-sources.html %}
 
-### Client-side sources
+### Configuring Segment Sources
+
+To send data from mobile apps to the correct region, you must update your SDK configuration to use the right endpoint. You must do this even if your source settings are already configured in Segment itself.
+
+> warning "Use the correct endpoint"
+> Starting in Q2 2025, Segment will reject data sent to the wrong region. Your SDK must be configured to send data to the correct regional endpoint to prevent dropped events.
+
+Segment's EU instance only supports data ingestion through the Dublin region, using this endpoint:
+
+`https://events.eu1.segmentapis.com/v1`
+
+#### SDK configuration examples
+
+Use the examples in this section to configure mobile SDKs to point to the EU endpoint. These examples use JavaScript-style syntax for clarity. Refer to your platform's documentation for exact implementation.
+
+{% codeexample %}
+{% codeexampletab iOS/Android/Xamarin/Flutter %}
+```js
+// Pseudocode example — set these options using your platform's syntax
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  apiHost: "events.eu1.segmentapis.com/v1",
+  // other options...
+})
+```
+{% endcodeexampletab %}
+
+{% codeexampletab React Native %}
+```js
+// Pseudocode example — set these options using your platform's syntax
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  proxy: "https://events.eu1.segmentapis.com/v1",
+  useSegmentEndpoints: true,
+  // other options...
+})
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+If you're using the Segment EU endpoint with Analytics-C# source, you must manually append `/v1` to the URL (like `events.eu1.segmentapis.com/v1`).
+
+For workspaces using the `EU WEST` data processing region, the Dublin ingestion region is preselected for all sources.
 
 To route data from your client-side sources to the correct region, you'll need to make two updates:
 
@@ -38,8 +80,7 @@ Segment client-side SDKs (like Analytics.js, iOS, and Android) typically fetch u
 
 To avoid data being sent to the wrong region, **you must add the correct endpoint configuration directly in your SDK setup.**
 
-> warning "Use the correct endpoint"
-> Starting in Q2 2025, Segment will reject data sent to the wrong region. Your SDK must be configured to send data to the correct regional endpoint to prevent dropped events.
+
 
 Use the following code examples to point your SDK to the EU endpoint:
 
