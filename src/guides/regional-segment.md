@@ -59,7 +59,7 @@ https://events.eu1.segmentapis.com/v1
 Use the examples in this section to configure mobile SDKs to point to the EU endpoint. These examples use JavaScript-style syntax for clarity. Refer to your platform's documentation for exact implementation.
 
 {% codeexample %}
-{% codeexampletab iOS/Android/Xamarin/Flutter etc %}
+{% codeexampletab iOS/Android/Xamarin/Flutter %}
 ```js
 const analytics = new Analytics({
   writeKey: '<YOUR_WRITE_KEY>', // Required: your source's write key from Segment
