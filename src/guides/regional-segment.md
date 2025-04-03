@@ -103,15 +103,17 @@ Analytics.Initialize("<YOUR WRITEKEY HERE>", new Config().SetHost("https://event
 > info ""
 > Use [this form](https://segment.typeform.com/to/k5ADnN5e#user_id=xxxxx){:target="_blank"} if you need to transition from your existing US-based workspace to an EU workspace.
 
-To create a workspace with a different data processing region, reach out your Segment account executive, and they will assist you with enabling the feature. Once the feature has been enabled, you'll be able to self-serve and create a new workspace in a different data processing region by following these steps:
+Segment workspaces use US data residency by default. If you need EU data residency, reach out to your Segment account executive to enable EU workspace creation. Once the feature is enabled, you can create a new EU workspace by following these steps:
 
 1. Log in to your Segment account.
 2. Click **New Workspace**.
-3. Select your **Data processing region**. This determines the location in which Segment collects, processes, and stores data that's sent to and from your workspace. You can choose from *US West* or *EU West*.
+3. Select your **Data processing region**. This determines where Segment collects, processes, and stores the data sent to and from your workspace. You can choose between US West and EU West.
 4. Click **Create workspace**.
 
 > info ""
-> Once you create a workspace with a specified data processing region, you can't change the region. You must create a new workspace to change the region.
+> Once you create a workspace, you can't change its data processing region. You’ll need to create a new workspace if you want to switch regions.
+
+Sources within EU workspaces deliver Segment data to EU-based AWS storage. Follow the instructions in that sections that follow to make sure your sources are configured correctly.
 
 ## EU Storage Updates
 ### Segment Data Lakes (AWS)
