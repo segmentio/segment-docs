@@ -98,10 +98,8 @@ If you're using Segment’s server-side SDKs (like Node.js, Python, and Java) or
 
 #### Server-side SDK configuration examples
 
-Use this example to configure your SDK:
+Use this example to configure server-side SDKs like Node.js, Python, and Java:
 
-{% codeexample %}
-{% codeexampletab Node.js/Python/Java SDKs %}
 ```js
 // Example configuration — adjust for your SDK's syntax
 const analytics = new Analytics({
@@ -110,8 +108,6 @@ const analytics = new Analytics({
   // You can configure other options like flushInterval or request retries
 })
 ```
-{% endcodeexampletab %}
-{% endcodeexample %}
 
 > info "Endpoint format for server-side SDKs"
 > Most SDKs handle the `/v1` path internally. However, only the C# SDK and custom HTTP requests require you to add `/v1` manually. like `https://events.eu1.segmentapis.com/v1`.
