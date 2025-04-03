@@ -492,8 +492,8 @@ client.Enqueue(analytics.Track{
   UserId: "f4ca124298",
   Event:  "Signed Up",
   Properties: analytics.NewProperties().
-    SetCategory("Enterprise"),
-    SetCoupon("synapse"),
+    SetCategory("Enterprise").
+    SetCoupon("synapse").
     SetDiscount(10),
 })
 ```
