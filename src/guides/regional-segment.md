@@ -17,22 +17,46 @@ Segment provides regional infrastructure in both the United States and Europe. B
 
 If you need EU data residency, you must either create a workspace in the EU or request a migration for an existing workspace. Only EU workspaces store data exclusively in the EU.
 
-## Regional Data Ingestion
+## Ingestion behavior and failover
 
 Regional Data Ingestion enables you to send data to Segment from both Device-mode and Cloud-mode sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
 
-## Configuring Segment sources for mobile SDKs
+## Set up your sources for EU or US workspaces
+
+Some Segment SDKs require specific endpoint configuration to send data to the correct regional infrastructure. This section provides setup details for mobile SDKs, server-side SDKs, custom integrations, and supported cloud sources.
+
+> info "Using Analytics.js?"
+> Segment's Analytics.js SDK for web automatically uses the latest source settings, including the correct ingestion endpoint. You don't need to configure a regional endpoint manually for this SDK.
+
+### SDK configuration summary
+
+Use the following table as a quick reference for configuring each type of SDK or integration to point to the correct endpoint:
+
+Before diving into the specific setup instructions below, use this table as a quick reference to determine how to configure your source or SDK to send data to the correct endpoint.
+
+| Integration                       | Endpoint configuration                                                          | Notes                                                                                                                                                        |
+| --------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| iOS / Android / Flutter / Xamarin | `apiHost: "events.eu1.segmentapis.com/v1"`                                      | Set directly in SDK config                                                                                                                                   |
+| React Native                      | `proxy: "https://events.eu1.segmentapis.com/v1"`<br>`useSegmentEndpoints: true` | Both values are required for proper routing                                                                                                                  |
+| Node.js / Python / Java           | `host: "https://events.eu1.segmentapis.com"`                                    | Do **not** include `/v1` in host for these SDKs                                                                                                              |
+| C# SDK                            | `host: "https://events.eu1.segmentapis.com/v1"`                                 | Manually append `/v1` to the host URL                                                                                                                        |
+| Custom HTTP requests              | `https://events.eu1.segmentapis.com/v1`                                         | Write key must belong to an EU workspace                                                                                                                     |
+| Cloud sources                     | No config required                                                              | Only [Amazon S3](/docs/connections/sources/catalog/cloud-apps/amazon-s3) and [Iterable](/docs/connections/sources/catalog/cloud-apps/iterable) are supported |
+
+### Configuring Segment sources for mobile SDKs
 
 To send data from mobile apps to the correct region, you must update your SDK configuration to use the right endpoint. You must do this even if your source settings are already configured in Segment itself.
 
 > warning "Use the correct endpoint"
 > Starting in Q2 2025, Segment will reject data sent to the wrong region. Make sure your mobile SDK is configured to send data to the correct endpoint for your workspace region.
 
-Segment's EU instance only supports data ingestion through the Dublin region, using this endpoint:
+Segment's EU instance only accepts data through its Dublin-based endpoint:
 
-`https://events.eu1.segmentapis.com/v1`
+```
+https://events.eu1.segmentapis.com/v1
+```
 
-### SDK configuration examples
+#### Mobile SDK configuration examples
 
 Use the examples in this section to configure mobile SDKs to point to the EU endpoint. These examples use JavaScript-style syntax for clarity. Refer to your platform's documentation for exact implementation.
 
@@ -65,14 +89,16 @@ If you're using the Segment EU endpoint with Analytics-C# source, you must manua
 
 For workspaces using the `EU WEST` data processing region, the Dublin ingestion region is preselected for all sources.
 
-## Configure server-side and custom Segment sources 
+Once you finish updating your SDK(s), make sure your [source settings in Segment](#updating-source-settings-in-segment) also reflect the correct region. 
+
+### Configure server-side and custom Segment sources 
 
 If you're using Segment’s server-side SDKs (like Node.js, Python, and Java) or making direct HTTP API requests, you’ll need to update the endpoint your data is sent to. This is required to match your workspace’s region and avoid rejected traffic.
 
 > warning "Use the correct endpoint"
 > Starting in Q2 2025, Segment will reject data sent to the wrong region. Make sure your server-side SDKs and custom integrations are configured to send data to the correct endpoint for your workspace region.
 
-### SDK configuration examples
+#### Server-side SDK configuration examples
 
 Use this example to configure your SDK:
 
@@ -92,7 +118,7 @@ const analytics = new Analytics({
 > info "C# SDK"
 > If you're using the C# SDK, you must manually append /v1 to the host URL: `https://events.eu1.segmentapis.com/v1`.
 
-### Custom HTTP requests
+#### Custom HTTP requests
 
 If you're sending data using custom HTTP requests or through a proxy and you’ve reused a write key originally issued for a US-based workspace, you’ll need to do the following:
 
@@ -106,6 +132,23 @@ If you're sending data using custom HTTP requests or through a proxy and you’v
 {% include content/eu-cloud-event-sources.html %}
 
 Segment maintains and hosts these sources, and they don't require SDK-level configuration. If you're using other cloud sources not listed here, they may only be available in US-based workspaces. Reach out to Segment Support if you're unsure whether a cloud source is supported in the EU.
+
+## Updating source settings in Segment
+
+After you’ve configured your SDKs or custom integrations, double-check that your source settings in Segment are using the correct regional endpoint.
+
+To set your data ingestion region:
+
+1. Go to your source's **Settings** tab.
+2. Click **Regional Settings**.
+3. Choose your **Data Ingestion Region**.
+    - If your workspace is in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, or Sydney.
+    - If your workspace is in the *EU West* data processing region, Segment only supports ingestion from Dublin, using the `events.eu1.segmentapis.com/` endpoint.
+4. Save your changes.
+
+All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
+
+Segment’s client-side SDKs automatically fetch this setting and update themselves the next time the app reloads. However, for mobile apps and critical regional routing, Segment recommends also [setting the endpoint manually in your SDK configuration](#set-up-your-sources-for-EU-or-US-workspaces).
 
 ## Create a new workspace with a different region
 
@@ -122,7 +165,7 @@ Segment workspaces use US data residency by default. If you need EU data residen
 > info ""
 > Once you create a workspace, you can't change its data processing region. You’ll need to create a new workspace if you want to switch regions.
 
-Sources within EU workspaces deliver Segment data to EU-based AWS storage. Follow the instructions in that sections that follow to make sure your sources are configured correctly.
+Sources within EU workspaces deliver Segment data to EU-based AWS storage. 
 
 ## EU Storage Updates
 ### Segment Data Lakes (AWS)
