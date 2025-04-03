@@ -63,23 +63,23 @@ Use the examples in this section to configure mobile SDKs to point to the EU end
 {% codeexample %}
 {% codeexampletab iOS/Android/Xamarin/Flutter %}
 ```js
-// Pseudocode example — set these options using your platform's syntax
+// Example configuration — refer to your platform's SDK docs for full option list
 const analytics = new Analytics({
-  writeKey: '<YOUR_WRITE_KEY>',
-  apiHost: "events.eu1.segmentapis.com/v1",
-  // other options...
+  writeKey: '<YOUR_WRITE_KEY>', // Required: your source's write key from Segment
+  apiHost: "events.eu1.segmentapis.com/v1", // Routes data through EU endpoint
+  // You can also configure options like flushInterval, debug, or storage providers
 })
 ```
 {% endcodeexampletab %}
 
 {% codeexampletab React Native %}
 ```js
-// Pseudocode example — set these options using your platform's syntax
+// Example configuration — refer to your platform's SDK docs for full option list
 const analytics = new Analytics({
-  writeKey: '<YOUR_WRITE_KEY>',
-  proxy: "https://events.eu1.segmentapis.com/v1",
-  useSegmentEndpoints: true,
-  // other options...
+  writeKey: '<YOUR_WRITE_KEY>', // Required: must belong to an EU workspace
+  proxy: "https://events.eu1.segmentapis.com/v1", // Required for EU data routing
+  useSegmentEndpoints: true, // Ensures proxy is used instead of default US host
+  // You can also set options like flushInterval or trackAppLifecycleEvents
 })
 ```
 {% endcodeexampletab %}
@@ -105,18 +105,18 @@ Use this example to configure your SDK:
 {% codeexample %}
 {% codeexampletab Node.js/Python/Java SDKs %}
 ```js
-// Pseudocode — set these options using your platform's syntax
+// Example configuration — adjust for your SDK's syntax
 const analytics = new Analytics({
-  writeKey: '<YOUR_WRITE_KEY>',
-  host: "https://events.eu1.segmentapis.com",
-  // other options...
+  writeKey: '<YOUR_WRITE_KEY>', // Required: must belong to an EU workspace
+  host: "https://events.eu1.segmentapis.com", // EU endpoint — do not include /v1 for these SDKs
+  // You can configure other options like flushInterval or request retries
 })
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-> info "C# SDK"
-> If you're using the C# SDK, you must manually append /v1 to the host URL: `https://events.eu1.segmentapis.com/v1`.
+> info "Endpoint format for server-side SDKs"
+> Most SDKs handle the `/v1` path internally. However, only the C# SDK and custom HTTP requests require you to add `/v1` manually. like `https://events.eu1.segmentapis.com/v1`.
 
 #### Custom HTTP requests
 
