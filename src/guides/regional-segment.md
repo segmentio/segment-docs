@@ -30,7 +30,7 @@ Some Segment SDKs require specific endpoint configuration to send data to the co
 
 ### SDK configuration summary
 
-Use this table as a quick reference to determine how to configure your source or SDK to send data to the correct endpoint:
+Use this table as a reference to determine how to configure your source or SDK to send data to the correct endpoint:
 
 | Integration                       | Endpoint configuration                                                          | Notes                                                                                                                                                        |
 | --------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
