@@ -9,7 +9,7 @@ redirect_from:
 
 On July 10, 2023, the European Commission adopted the Adequacy Decision for the EU-US Data Privacy Framework ([DPF](https://commission.europa.eu/document/fa09cbad-dd7d-4684-ae60-be03fcb0fddf_en){:target="_blank"}). This concludes that EU personal data transferred to the United States under the DPF is adequately protected when compared to the protection in the EU. With this adequacy decision in place, personal data can safely flow from the EU to US companies participating in the DPF without additional safeguards in place.
 
-Twilio is certified under the DPF and relies on it as the primary mechanism for EU–US personal data transfers. Twilio will also rely on the DPF for Swiss–US transfers once a corresponding Swiss adequacy decision is in place. Twilio understands that interpretations of data residency are multi-faceted and some customers might still want their data to reside in the EU. Twilio Segment therefore offers a data residency solution outside of the DPF.
+Twilio is certified under the DPF and relies on it as the primary mechanism for EU–US personal data transfers. Twilio will also rely on the DPF for Swiss–US transfers once a corresponding Swiss adequacy decision is in place. Twilio understands that interpretations of data residency are multi-faceted and some customers might still want their data to reside in the EU.
 
 While the DPF enables compliant transfers, some customers may still require that their data remain within the EU. For those cases, Twilio Segment offers a data residency solution outside of the DPF.
 
