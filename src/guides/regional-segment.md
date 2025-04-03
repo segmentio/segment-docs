@@ -26,13 +26,11 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 Some Segment SDKs require specific endpoint configuration to send data to the correct regional infrastructure. This section provides setup details for mobile SDKs, server-side SDKs, custom integrations, and supported cloud sources.
 
 > info "Using Analytics.js?"
-> Segment's Analytics.js SDK for web automatically uses the latest source settings, including the correct ingestion endpoint. You don't need to configure a regional endpoint manually for this SDK.
+> Segment's Analytics.js SDK automatically uses the latest source settings, including the correct ingestion endpoint. You don't need to configure a regional endpoint manually for this SDK.
 
 ### SDK configuration summary
 
-Use the following table as a quick reference for configuring each type of SDK or integration to point to the correct endpoint:
-
-Before diving into the specific setup instructions below, use this table as a quick reference to determine how to configure your source or SDK to send data to the correct endpoint.
+Use this table as a quick reference to determine how to configure your source or SDK to send data to the correct endpoint:
 
 | Integration                       | Endpoint configuration                                                          | Notes                                                                                                                                                        |
 | --------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -41,11 +39,11 @@ Before diving into the specific setup instructions below, use this table as a qu
 | Node.js / Python / Java           | `host: "https://events.eu1.segmentapis.com"`                                    | Do **not** include `/v1` in host for these SDKs                                                                                                              |
 | C# SDK                            | `host: "https://events.eu1.segmentapis.com/v1"`                                 | Manually append `/v1` to the host URL                                                                                                                        |
 | Custom HTTP requests              | `https://events.eu1.segmentapis.com/v1`                                         | Write key must belong to an EU workspace                                                                                                                     |
-| Cloud sources                     | No config required                                                              | Only [Amazon S3](/docs/connections/sources/catalog/cloud-apps/amazon-s3) and [Iterable](/docs/connections/sources/catalog/cloud-apps/iterable) are supported |
+| Cloud sources                     | No configuration required                                                       | Only [Amazon S3](/docs/connections/sources/catalog/cloud-apps/amazon-s3) and [Iterable](/docs/connections/sources/catalog/cloud-apps/iterable) are supported |
 
 ### Configuring Segment sources for mobile SDKs
 
-To send data from mobile apps to the correct region, you must update your SDK configuration to use the right endpoint. You must do this even if your source settings are already configured in Segment itself.
+To send data from mobile apps to the correct region, you have to update your SDK configuration to use the right endpoint. You must do this even if your source settings are already configured in Segment itself.
 
 > warning "Use the correct endpoint"
 > Starting in Q2 2025, Segment will reject data sent to the wrong region. Make sure your mobile SDK is configured to send data to the correct endpoint for your workspace region.
@@ -83,7 +81,7 @@ const analytics = new Analytics({
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-If you're using the Segment EU endpoint with Analytics-C# source, you must manually append `/v1` to the URL (like `events.eu1.segmentapis.com/v1`).
+If you're using the Segment EU endpoint with the [Analytics-C# source](/docs/connections/sources/catalog/libraries/server/csharp/), you must manually append `/v1` to the URL (like `events.eu1.segmentapis.com/v1`).
 
 For workspaces using the `EU WEST` data processing region, the Dublin ingestion region is preselected for all sources.
 
@@ -110,7 +108,7 @@ const analytics = new Analytics({
 ```
 
 > info "Endpoint format for server-side SDKs"
-> Most SDKs handle the `/v1` path internally. However, only the C# SDK and custom HTTP requests require you to add `/v1` manually. like `https://events.eu1.segmentapis.com/v1`.
+> Most SDKs handle the `/v1` path internally. However, only the C# SDK and custom HTTP requests require you to add `/v1` manually, like `https://events.eu1.segmentapis.com/v1`.
 
 #### Custom HTTP requests
 
@@ -125,7 +123,9 @@ If you're sending data using custom HTTP requests or through a proxy and you’v
 
 {% include content/eu-cloud-event-sources.html %}
 
-Segment maintains and hosts these sources, and they don't require SDK-level configuration. If you're using other cloud sources not listed here, they may only be available in US-based workspaces. Reach out to Segment Support if you're unsure whether a cloud source is supported in the EU.
+Segment maintains and hosts these sources, and they don't require SDK-level configuration. 
+
+If you're using other cloud sources not listed here, they may only be available in US-based workspaces. Reach out to Segment Support if you're unsure whether a cloud source is supported in the EU.
 
 ## Updating source settings in Segment
 
@@ -142,7 +142,7 @@ To set your data ingestion region:
 
 All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
 
-Segment’s client-side SDKs automatically fetch this setting and update themselves the next time the app reloads. However, for mobile apps and critical regional routing, Segment recommends also [setting the endpoint manually in your SDK configuration](#set-up-your-sources-for-EU-or-US-workspaces).
+Segment’s client-side SDKs automatically fetch this setting and update themselves the next time the app reloads. However, for mobile apps and critical regional routing, Segment recommends also [setting the endpoint manually in your SDK configuration](#set-up-your-sources-for-eu-or-us-workspaces.
 
 ## Create a new workspace with a different region
 
