@@ -68,6 +68,9 @@ For more, view SendGrid's [email deliverability best practices](https://support.
 
 ### Test your email campaign
 
+> info "Email Template size"
+> We currently support an email size of 64KB
+
 At this point, you can send a test email before publishing your campaign. Test emails confirm that your design, unsubscribe links, and merge tags appear as expected.
 
 As part of the test send, you can enter custom values to populate the profile traits in your message.
