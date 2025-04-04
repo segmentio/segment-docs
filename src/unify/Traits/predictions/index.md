@@ -88,7 +88,7 @@ This table lists the requirements for a trait to compute successfully:
 | Event Types                  | Track at least 5 different event types in the Feature Window.                               |
 | Historical Data              | Ensure these 5 events have data spanning 1.5 times the length of the Target Window. For example, to predict a purchase propensity over the next 60 days, at least 90 days of historical data is required. |
 | Subset Audience (if applicable) | Ensure the audience contains more than 1 non-anonymous user.                                 |
-| User Limit                   | Ensure that you are making a prediction for fewer than 20 million users. If you track more than 20 million users in your space, define a smaller audience in the **Make a Prediction For** section of the custom predictions builder. |
+| User Limit                   | Ensure that you are making a prediction for fewer than 10 million users. If you track more than 10 million users in your space, define a smaller audience in the **Make a Prediction For** section of the custom predictions builder. |
 | User Activity                | At least 100 users performing the Target Event and at least 100 users not performing the Target Event. |
 
 #### Selecting events (optional)
