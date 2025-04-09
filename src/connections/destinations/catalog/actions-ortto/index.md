@@ -1,5 +1,4 @@
 ---
-# The end name should be similar to `Slack (Actions) Destination`
 title: Ortto (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
@@ -11,10 +10,8 @@ hide-dossier: true
 
 Once Segment is connected to Ortto, you can take advantage of Ortto's powerful [campaign](https://help.ortto.com/user/latest/campaigns/){:target="_blank"} features on your Segment customer data.
 
-This destination is maintained by Ortto. For support or questions,[contact the Ortto Support team](mailto:help@ortto.com).
+This destination is maintained by Ortto. For support or questions, [contact](mailto:help@ortto.com) the Ortto Support team.
 
-
-<!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Ortto Segment destination. There's also a page about the [non-Actions Ortto destination](/docs/connections/destinations/catalog/autopilotapp/). Both of these destinations receives data from Segment.
@@ -25,7 +22,7 @@ This destination is maintained by Ortto. For support or questions,[contact the O
 
 - **Granular control and flexibility**. Map any Segment event type to specific Ortto actions with full control over field mappings. This lets you tailor how and when customer data is sent to Ortto, ensuring more accurate and relevant automations.
 - **Audience syncing**. Ortto (Actions) lets you sync computed audiences from Segment Engage directly into Ortto, enabling precise activation of rich, behavior-based audiences—ideal for lifecycle marketing, retargeting, and personalization at scale. You can also manually create or select existing audiences in Ortto and dynamically add or remove contacts as part of profile upserts or activity tracking, giving you full control over audience membership in real time.
-- **Improved transparency and debugging**.Because Ortto (Actions) uses direct API calls to Ortto’s endpoints, it provides clearer delivery status and error messages to help teams troubleshoot faster and ensure data integrity.
+- **Improved transparency and debugging**. Because Ortto (Actions) uses direct API calls to Ortto’s endpoints, it provides clearer delivery status and error messages to help teams troubleshoot faster and ensure data integrity.
 - **Future-proofed**. Built on Segment’s modern Destination Actions framework, Ortto (Actions) will receive ongoing updates and support for new features, while the classic destination remains static.
 
 
