@@ -6,6 +6,10 @@ redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 id: 5a4d24dcc5836400017188f6
 engage: true
 ---
+> warning "Deprecation Notice"
+> The Facebook Offline Conversions API that backs this destination will be discontinued on May 14, 2025. [Ref](https://developers.facebook.com/docs/marketing-api/offline-conversions/#upload-events). This destination will be deprecated and locked down at the same time.
+> Please use [Facebook Conversions API (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-facebook-conversions-api/#purchase) instead.
+
 ## Overview
 
 The Facebook Custom Audiences Destination is one of the most popular Engage Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
@@ -78,7 +82,7 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 ### 1. Authorize Facebook Custom Audiences
 
 - Go to your Space in your Segment Workspace and click Engage Settings.
-- Go to the Destinations tab and click “Add Destination”. 
+- Go to the Destinations tab and click “Add Destination”.
 - Select the Facebook Custom Audiences option, and click **Configure Facebook Custom Audiences**.
 - Authorize Facebook Ads and select a Facebook account ID to sync to.
 
