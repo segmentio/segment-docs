@@ -5,7 +5,7 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/snowflake-setup'
 ---
 > warning ""
-> Data Graph, Reverse ETL, Profiles Sync require different warehouse permissions.
+> Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/). 
 

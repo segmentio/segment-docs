@@ -261,6 +261,12 @@ The `Segment.set()` method accepts an object with the following fields:
 > warning ""
 > When you use the `set()` method, you won't see events in the Source Debugger. Segment only sends events to connected warehouses.
 
+### Variable scoping
+
+Declare settings variables in the function handler, rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
+
+The handler for Source functions is `onRequest()`.
+
 ### Runtime and dependencies
 
 {% include content/functions/runtime.md %}
