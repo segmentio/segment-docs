@@ -6,6 +6,9 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/redshift-setup'
 ---
 
+> warning ""
+> Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
+
 Set up your Redshift data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/).
 
 ## Prerequisite

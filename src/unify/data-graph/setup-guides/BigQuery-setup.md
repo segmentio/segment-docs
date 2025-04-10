@@ -6,6 +6,9 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/BigQuery-setup'
 ---
 
+> warning ""
+> Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
+
 Set up your BigQuery data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/).  
 
 ## Step 1: Roles and permissions
