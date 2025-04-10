@@ -46,7 +46,7 @@ To get the best performance from Linked Audiences at scale, Segment recommends s
 
 Most workloads running on a dedicated cluster should complete within 60 minutes per sync cycle. Staying under this threshold helps keep audiences fresh and aligned with downstream activation schedules.
 
-Segment has tested Linked Audiences at enterprise scale with over 30 audiences running concurrently, each targeting millions of entities. However, actual performance and cost will vary based on how your Data Graph is structured, how many audiences you run at once, and how frequently they sync. Complex joins, deep relationships, and high concurrency can all increase query time and warehouse usage.
+Segment has tested Linked Audiences at enterprise scale with over 30 audiences running concurrently, each targeting millions of entities. However, actual performance and cost varies based on how your Data Graph is structured, how many audiences you run at once, and how frequently they sync. Complex joins, deep relationships, and high concurrency can all increase query time and warehouse usage.
 
 To improve performance and manage compute costs, follow these best practices:
 
