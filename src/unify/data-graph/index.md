@@ -13,6 +13,9 @@ The Data Graph acts as a semantic layer that allows businesses to define relatio
 
 ## Prerequisites
 
+> info "Segment recommends materialized views, but selection requirements apply"
+> Segment recommends using materialized views for Profiles Sync to optimize performance and reduce query costs with Linked Audiences. However, due to schema inference requirements, you must also select the corresponding **unmaterialized** tables when you configure Profiles Sync. Segment references these tables during setup, even if materialized views are used for computation.
+
 To use the Data Graph, you'll need the following:
 
 - A supported data warehouse with the appropriate Data Graph permissions
