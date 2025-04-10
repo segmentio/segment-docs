@@ -111,8 +111,8 @@ data_graph {
       primary_key = "SUB_ID"
     }
   
-    # Define the profile entity, which corresponds to Segment Profiles tables synced via Profiles Sync
-    # Recommend setting up Profiles Sync materialized views to optimize warehouse compute costs
+    # Define the profile entity, which corresponds to Segment Profiles tables synced with Profiles Sync
+    # Use materialized views in Profiles Sync to reduce query costs and speed things up
     profile {
       profile_folder = "PRODUCTION.SEGMENT"
       type = "segment:materialized"
@@ -122,7 +122,7 @@ data_graph {
       relationship "user-accounts" {
         name = "Premium Accounts"
         related_entity = "account-entity"
-        # Join the profile entity with an identifier (e.g. email) on the related entity table
+        # Join the profile entity with an identifier (like email) on the related entity table
         # Option to replace with the trait block below to join with a profile trait on the entity table instead
         external_id {
           type = "email"
