@@ -130,14 +130,14 @@ data_graph {
         }
   
         # Define 1:many relationship between accounts and carts
-        # e.g. an account can be associated with many carts
+        # for example, an account can be associated with many carts
         relationship "user-carts" {
           name = "Shopping Carts"
           related_entity = "cart-entity"
           join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
     
           # Define many:many relationship between carts and products
-          # e.g. there can be multiple carts, and each cart can be associated with multiple products
+          # for example, there can be multiple carts, and each cart can be associated with multiple products
           relationship "products" { 
             name = "Purchased Products"
             related_entity = "product-entity"
@@ -161,7 +161,7 @@ data_graph {
         }
   
         # Define 1:many relationship between households and subscriptions
-        # e.g. a household can be associated with multiple subscriptions
+        # for example, a household can be associated with multiple subscriptions
         relationship "user-subscriptions" {
           name = "Subscriptions"
           related_entity = "subscription-entity"
@@ -242,7 +242,7 @@ This is the first level of relationships and a unique type of relationship betwe
 
 | Parameters       | Definition                                                                                                                                                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`) |
+| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`) |
 | `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                                                                            |
 | `related_entity` | References your already defined entity                                                                                                                                                                     |
 
@@ -282,7 +282,7 @@ data_graph {
         name = "Premium Accounts"
         related_entity = "account-entity"
   
-        # Option 1: Join the profile entity with an identifier (e.g. email) on the related entity table
+        # Option 1: Join the profile entity with an identifier (like email) on the related entity table
         external_id {
           type = "email"
           join_key = "EMAIL_ID"
@@ -303,7 +303,7 @@ For 1:many relationships, define the join on between the two entity tables using
 
 | Parameters       | Definition                                                                                                                                                                                                                                         |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`)                                         |
+| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`)                                         |
 | `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                                                              |
 | `related_entity` | References your already defined entity                                                                                                                                                                                                             |
 | `join_on`        | Defines relationship between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
@@ -348,7 +348,7 @@ For many:many relationships, define the join on between the two entity tables wi
 
 | Parameters       | Definition                                                                                                                                                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g. `user-account` or `user_account`) |
+| `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`) |
 | `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                      |
 | `related_entity` | References your already defined entity                                                                                                                                                                     |
 
