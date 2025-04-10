@@ -6,11 +6,7 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/BigQuery-setup'
 ---
 
-> info ""
-> BigQuery for Data Graph is in beta and Segment is actively working on this feature. Some functionality may change before it becomes generally available. This feature is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
-
 Set up your BigQuery data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/).  
-
 
 ## Step 1: Roles and permissions
 > warning ""
