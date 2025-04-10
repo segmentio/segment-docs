@@ -6,14 +6,9 @@ redirect_from:
   - '/unify/linked-profiles/setup-guides/redshift-setup'
 ---
 
-> info ""
-> Redshift for Data Graph is in beta and Segment is actively working on this feature. Some functionality may change before it becomes generally available. This feature is governed by Twilio Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
-
 Set up your Redshift data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/).
 
 ## Prerequisite
-
-To use Linked Audiences with Redshift, the Data Graph only supports [materialized views](/docs/unify/profiles-sync/tables/#tables-segment-materializes). 
 
 If you're setting up Profiles Sync for the first time in the Unify space, go through the setup flow for Selective sync. If Profiles Sync is already set up for your Unify space, follow these steps to configure Profiles Sync for your Unify space:
 
