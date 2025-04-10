@@ -28,7 +28,7 @@ To set up the dbt extension, you'll need:
 
 - an existing dbt account with a Git repository
 - for job syncs, dbt cloud with jobs already created
-- a user with "Workspace Owner" permissions in Segment
+- a user with Workspace Owner permissions in Segment
 
 ### Git repository and dbt Models setup
 
