@@ -30,7 +30,7 @@ Next, you'll need to add the Signals SDKs to your Swift applicatiion.
 1. Use Swift Package Manager to add the Signals SDK from the following repository:
 
     ```zsh
-    https://github.com/segmentio/Signals-swift.git
+    https://github.com/segment-integrations/analytics-swift-live.git
     ```
 
 2. Add the initialization code and configuration options:
