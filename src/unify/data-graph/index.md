@@ -13,8 +13,8 @@ The Data Graph acts as a semantic layer that allows businesses to define relatio
 
 ## Prerequisites
 
-> info "Segment recommends materialized views, but selection requirements apply"
-> Segment recommends using materialized views for Profiles Sync to optimize performance and reduce query costs with Linked Audiences. However, due to schema inference requirements, you must also select the corresponding **unmaterialized** tables when you configure Profiles Sync. Segment references these tables during setup, even if materialized views are used for computation.
+> info "Why you need both materialized and unmaterialized tables right now"
+> Segment recommends using materialized views for Profiles Sync to optimize performance and reduce query costs with Linked Audiences. However, due to schema inference requirements, you'll still need to select the matching **unmaterialized tables**, too. Segment relies on them during setup, even if they’re not used when queries actually run.
 
 To use the Data Graph, you'll need the following:
 
@@ -22,6 +22,7 @@ To use the Data Graph, you'll need the following:
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions
 - For Linked Audiences, set up [Profiles Sync](/docs/unify/profiles-sync/) in a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings: 
   - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
+  - **Make sure to include the unmaterialized tables, too**. Segment needs them during setup to understand your schema.
   - Under **Track event tables**, select **Sync all Track Call Tables** to enable filtering on event history for Linked Audiences conditions.
 
 > info ""
