@@ -22,7 +22,7 @@ To use the Data Graph, you'll need the following:
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions
 - For Linked Audiences, set up [Profiles Sync](/docs/unify/profiles-sync/) in a Unify space with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse. When setting up selective sync, Segment recommends the following settings: 
   - Under **Profile materialized tables**, select all the tables (`user_identifier`, `user_traits`, `profile_merges`) for faster and more cost-efficient Linked Audiences computations in your data warehouse.
-  - **Make sure to include the unmaterialized tables, too**. Segment needs them during setup to understand your schema.
+  - **Make sure to include the unmaterialized tables as well**. Segment needs them during setup to understand your schema.
   - Under **Track event tables**, select **Sync all Track Call Tables** to enable filtering on event history for Linked Audiences conditions.
 
 > info ""
