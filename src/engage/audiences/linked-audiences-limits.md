@@ -40,3 +40,20 @@ Entity columns | Up to 1000 unique values | The maximum number of entity propert
 Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Run Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse.
 Destination Mappings | Up to 100 mappings | You can set up to 100 action destination mappings per destination instance.
 
+## Warehouse setup and performance guidance
+
+To get the best performance from Linked Audiences at scale, Segment recommends setting up a dedicated warehouse cluster. This helps avoid resource contention and makes query performance more predictable, especially when running frequent or complex audience syncs.
+
+Most workloads running on a dedicated cluster should complete within 60 minutes per sync cycle. Staying under this threshold helps keep audiences fresh and aligned with downstream activation schedules.
+
+Segment has tested Linked Audiences at enterprise scale with over 30 audiences running concurrently, each targeting millions of entities. However, actual performance and cost will vary based on how your Data Graph is structured, how many audiences you run at once, and how frequently they sync. Complex joins, deep relationships, and high concurrency can all increase query time and warehouse usage.
+
+To improve performance and manage compute costs, follow these best practices:
+
+- Use materialized views when configuring Data Graph to reduce compute overhead.
+- Keep your Data Graph focused by avoiding unused entities or overly deep relationship chains.
+- Simplify audience conditions and avoid high-cardinality joins when possible.
+- Run on a dedicated warehouse cluster if you're operating at enterprise scale.
+- Stagger audience sync schedules to reduce concurrency and avoid bottlenecks.
+
+Following this guidance will help you keep audience syncs running efficiently even as your scale grows.
