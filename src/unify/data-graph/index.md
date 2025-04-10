@@ -14,7 +14,7 @@ The Data Graph acts as a semantic layer that allows businesses to define relatio
 ## Prerequisites
 
 > info "Why you need both materialized and unmaterialized tables"
-> Segment recommends using materialized views for Profiles Sync to optimize performance and reduce query costs with Linked Audiences. However, due to schema inference requirements, you'll still need to select the matching **unmaterialized tables**, too. Segment relies on them during setup, even if they’re not used when queries actually run.
+> Segment recommends using materialized views for Profiles Sync to optimize performance and reduce query costs with Linked Audiences. However, due to schema inference requirements, you still need to select the matching **unmaterialized tables** as well. Segment relies on the unmaterialized tables during setup, even if they’re not used when queries run.
 
 To use the Data Graph, you'll need the following:
 
