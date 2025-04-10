@@ -207,10 +207,10 @@ data_graph {
 
 Next, define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
 
-| Parameters     | Definition                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `profile_folder`      | Define the fully qualified path of the folder or schema location for the profile tables.     |
-| `type`     | Identify the materialization method of the profile tables defined in your Profiles Sync configuration under [Selective Sync settings](/docs/unify/profiles-sync/profiles-sync-setup/#step-3-set-up-selective-sync): `segment:unmaterialized` or `segment:materialized`.|
+| Parameters       | Definition                                                                                                                                                                                                                                                                                          |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `profile_folder` | Define the fully qualified path of the folder or schema location for the profile tables.                                                                                                                                                                                                            |
+| `type`           | Use `segment:materialized` to sync materialized views with Profiles Sync. Segment recommends this configuration for all Linked Audiences and Data Graph setups. If you can't sync materialized views, [reach out to Segment support](https://segment.com/help/contact/){:target="_blank"} for help. |
 
 **Example:**
 
@@ -248,17 +248,18 @@ This is the first level of relationships and a unique type of relationship betwe
 
 To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following: 
 
-**Option 1 (Most common) - Join on an external ID:** Use the `external_id` block to join the profile entity with an entity table using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are  `user_id`, `email`, or `phone` depending on the column in the entity table that you want to join with.
-- `type`: Represents the [external ID type](/docs/unify/identity-resolution/externalids/#default-externalids) (`email`, `phone`, `user_id`) in your id-res settings. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
-  - [Materialized](/docs/unify/profiles-sync/tables/#the-user_identifiers-table) (Recommended): This corresponds to the `type` column in your Profiles Sync `user_identifiers` table.
-  - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-external_id_mapping_updates-table): This corresponds to the `external_id_type` column in your Profiles Sync `external_id_mapping_updates` table. 
-- `join_key`: This is the column on the entity table that you are matching to the external identifier.
+**Option 1 (Most common) - Join on an external ID:** Use the `external_id` block to join the profile entity with an entity table using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are  `user_id`, `email`, or `phone` depending on the structure of your entity table.
+- `type`: Represents the [external ID type](/docs/unify/identity-resolution/externalids/#default-externalids) (`email`, `phone`, `user_id`) in your ID resolution settings.
+  - This maps to the `type` column in the `user_identifiers` table when using materialized views.
+- `join_key`: The column on the entity table that matches the external ID.
+
+> note ""
+> Segment recommends using materialized views with Profiles Sync. However, Segment may still reference unmaterialized tables during setup for schema detection.
 
 **Option 2 - Join on a profile trait:** Use the `trait` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits). 
-- `name`: Represents a trait name in your Unify profiles. Depending on if you are using materialized or unmaterialized profiles, these correspond to different columns in your Profiles Sync warehouse tables:
-  - [Materialized](/docs/unify/profiles-sync/tables/#the-profile_traits-table) (Recommended): The trait name corresponds to a unique value of the `name` column in your Profiles Sync `user_traits` table. 
-  - [Unmaterialized](/docs/unify/profiles-sync/tables/#the-profile_traits_updates-table): This corresponds to a column in the Profile Sync `profile_trait_updates` table.
-- `join_key`: This is the column on the entity table that you are matching to the trait.
+- `name`: Represents a trait name in your Unify profiles. 
+   - This maps to the `name` column in the `user_traits` table when using materialized views.
+- `join_key`: The column on the entity table that you're matching to the trait.
 
 **Example:**
 ```python
