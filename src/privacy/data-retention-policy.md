@@ -55,21 +55,6 @@ Select the default retention period for the workspace in this setting. This valu
 - 365 days
 - 3 years (the default setting starting July 15, 2025)
 - Unlimited (deprecated July 15, 2025)
-
-### Source-Level Archive Retention Periods
-
-> warning "Source-Level Archive Retention Periods will be deprecated on April 15, 2025"
-> After April 15, you will no longer be able to override your workspace's default retention period on a source-by-source basis. 
-
-Override the workspace default retention period on a per-source level.
-
-You can select from the following Archive Retention time periods:
-- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period) setting)
-- 14 days
-- 30 days
-- 90 days
-- 180 days
-- 365 days
  
 ### What data is impacted?
 
