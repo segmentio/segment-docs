@@ -46,7 +46,7 @@ To change your data retention settings, open Segment and navigate to **Privacy >
 
 ### Workspace Default Archive Retention Period
 
-Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
+Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace.
 
 - 14 days
 - 30 days
