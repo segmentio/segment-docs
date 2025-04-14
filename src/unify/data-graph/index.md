@@ -354,8 +354,12 @@ For many:many relationships, define the join on between the two entity tables wi
 
 **Junction table spec**
 
-| Parameters      | Definition                                                                                                                                                                                                                                                             |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+> info ""
+> When used in junctions tables, `left join` is the column on the junction table to link with the parent (left) entity and `right join` is the column on the junction table to join with the child (right) entity. These values don’t actually manipulate the type of join - they are currently always `INNER JOINS`.
+
+
+| Parameters      |Definition  |
+| --------------- | --------------------------------- |
 | `table_ref`     | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views                                                                                             |
 | `primary_key`   | The unique identifier for the given table. Must be a column with unique values per row                                                                                                                                                                                 |
 | `left_join_on`  | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again   |
