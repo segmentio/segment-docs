@@ -12,24 +12,26 @@ At a high level, when you set up Databricks for Reverse ETL, the configured serv
 ## Required permissions
 * Make sure the service principal you use to connect to Segment has permissions to use that warehouse. In the Databricks console go to **SQL warehouses** and select the warehouse you're using. Navigate to **Overview > Permissions** and make sure the service principal you use to connect to Segment has *can use* permissions.
 
+* Note the Service Principal UUID from (https://accounts.cloud.databricks.com/user-management/serviceprincipals/) for the following SQL operations.
+
 * To grant access to read data from the tables used in the model query, run: 
 
     ```
-    GRANT USAGE ON SCHEMA <schema_name> TO `<service principal you are using to connect to Segment>`; 
-    GRANT SELECT, READ_METADATA ON SCHEMA <schema_name> TO `<service principal you are using to connect to Segment>`; 
+    GRANT USAGE ON SCHEMA <schema_name> TO `<service principal ID you are using to connect to Segment>`; 
+    GRANT SELECT, READ_METADATA ON SCHEMA <schema_name> TO `<service principal ID you are using to connect to Segment>`; 
     ```
 
 * To grant Segment access to create a schema to keep track of the running syncs, run: 
 
     ```
-    GRANT CREATE on catalog <name of the catalog, usually hive_metastore or main if using unity-catalog> TO `<service principal you are using to connect to Segment>`;
+    GRANT CREATE on catalog <name of the catalog, usually hive_metastore or main if using unity-catalog> TO `<service principal ID you are using to connect to Segment>`;
     ```
 
 * If you want to create the schema yourself instead and then give Segment access to it, run:
 
     ```
     CREATE SCHEMA IF NOT EXISTS __segment_reverse_etl; 
-    GRANT ALL PRIVILEGES ON SCHEMA __segment_reverse_etl TO `<service principal you are using to connect to Segment>`;
+    GRANT ALL PRIVILEGES ON SCHEMA __segment_reverse_etl TO `<service principal ID you are using to connect to Segment>`;
     ```
 
 ## Set up guide
