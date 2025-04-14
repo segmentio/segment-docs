@@ -23,7 +23,7 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 
 ### Prerequisites
 
-Before connecting to the TikTok Audiences destination, you must have a [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account, with either Admin or Operator permissions. These roles are required to create and manage campaigns in TikTok.
+Before connecting to the TikTok Audiences destination, you must have a [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account, with either Admin or Operator permissions to create and manage campaigns in TikTok.
 
 For more detail on account and access level permissions, refer to [TikTok's documentation](https://ads.tiktok.com/help/article/how-to-assign-asset-level-permissions?lang=en){:target="_blank"}.
 
