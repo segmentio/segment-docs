@@ -44,7 +44,7 @@ Segment recommends keeping your data for at least 30 days to enable [replays](/d
 
 To change your data retention settings, open Segment and navigate to **Privacy > Settings > Data Retention**.
 
-### Workspace Default Archive Retention Period
+### Workspace default archive retention period
 
 Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace.
 
