@@ -12,7 +12,7 @@ At a high level, when you set up Databricks for Reverse ETL, the configured serv
 ## Required permissions
 * Make sure the service principal you use to connect to Segment has permissions to use that warehouse. In the Databricks console go to **SQL warehouses** and select the warehouse you're using. Navigate to **Overview > Permissions** and make sure the service principal you use to connect to Segment has *can use* permissions.
 
-* Note the Service Principal UUID from (https://accounts.cloud.databricks.com/user-management/serviceprincipals/) for the following SQL operations.
+Note the Service Principal UUID from the [User Management Page](https://accounts.cloud.databricks.com/user-management/serviceprincipals/){:target="_blank”} (under Service Principals) for the following SQL operations.
 
 * To grant access to read data from the tables used in the model query, run: 
 
