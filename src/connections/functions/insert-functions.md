@@ -182,8 +182,7 @@ async function onIdentify(event) {
 ```
 If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
-
-You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
+See [errors and error handling](#errors-and-error-handling) for more information on supported error types and how to troubleshoot them.
 
 ## Runtime and dependencies
 
