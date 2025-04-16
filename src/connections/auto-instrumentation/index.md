@@ -24,7 +24,7 @@ redirect_from:
   - '/docs/connections/auto-instrumentation/setup/'
 ---
 
-Auto-Instrumentation simplifies tracking in your websites and apps by eliminating the need for a traditional Segment instrumentation.
+Auto-Instrumentation simplifies tracking in your websites and apps by removing the need for a traditional Segment instrumentation.
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
@@ -40,11 +40,14 @@ Collecting high-quality analytics data is essential, but traditional tracking se
 
 With just a few lines of code, Auto-Instrumentation handles device tracking for you, helping you focus on collecting the data that's essential to your business and letting your marketers and data analysts gather and update data without relying on engineering teams.
 
-Key Auto-Instrumentation include:
+Key Auto-Instrumentation benefits include:
 
-- **No-code event creation**: Define events based on user activity without writing JavaScript.
-- **Rapid iteration**: Update your instrumentation logic at any time, without deploying new app versions.
-- **Bypass update delays**: Avoid the typical delays associated with app update cycles and app store approvals. Auto-Instrumentation lets you update your tracking setups or fix errors immediately, ensuring your data collection remains accurate and timely.
+- **No-code event creation**: Use the Event Builder tab to define events based on user activity; no JavaScript required.
+- **Fast iteration**: Update your tracking configuration at any time, without deploying new app versions.
+- **Fewer dependencies**: Reduce the need for engineering support while still maintaining reliable event tracking.
+
+> info "Event Builder during Private Beta"
+> During the Auto-Instrumentation Private Beta, both the Event Builder and the legacy Auto-Instrumentation tab appear in the Segment UI. Segment will remove the legacy tab once all customers have migrated to the Event Builder experience.
 
 ## How it works
 
