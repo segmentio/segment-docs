@@ -13,9 +13,6 @@ The Data Graph acts as a semantic layer that allows businesses to define relatio
 
 ## Prerequisites
 
-> info "Why you need both materialized and unmaterialized tables"
-> Segment recommends using materialized views for Profiles Sync to optimize performance and reduce query costs with Linked Audiences. However, due to schema inference requirements, you still need to select the matching **unmaterialized tables** as well. Segment relies on the unmaterialized tables during setup, even if they’re not used when queries run.
-
 To use the Data Graph, you'll need the following:
 
 - A supported data warehouse with the appropriate Data Graph permissions
@@ -354,12 +351,24 @@ For many:many relationships, define the join on between the two entity tables wi
 
 **Junction table spec**
 
-| Parameters      | Definition                                                                                                                                                                                                                                                             |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameters      |Definition  |
+| --------------- | --------------------------------- |
 | `table_ref`     | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views                                                                                             |
 | `primary_key`   | The unique identifier for the given table. Must be a column with unique values per row                                                                                                                                                                                 |
 | `left_join_on`  | Define the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again   |
 | `right_join_on` | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again |
+
+
+When you define a many-to-many relationship using a junction table, `left_join_on` and `right_join_on` tell Data Graph how to connect each entity to the junction table:
+
+* Use `left_join_on` to specify which column in the junction table links to the parent (left) entity.
+
+* Use `right_join_on` to specify which column links to the child (right) entity.
+
+These fields define the join conditions, but they don’t control how the join is executed. Data Graph always performs inner joins, even if you specify a `left_join_on`.
+
+If you need behavior similar to a left join (like including unmatched rows), create a view in your warehouse with the logic you’re targeting and reference that view as an entity in your graph.
+
 
 **Example:**
 

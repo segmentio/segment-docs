@@ -110,7 +110,7 @@ In addition, Segment sends the following event types as Standard events:
 - `Products Searched`, which Segment sends as `Search`
 - `Checkout Started`, which Segment sends as `InitiateCheckout`
 
-Facebook requires a currency for `Purchase` events. If you leave it out a currency, Segment will set a default value of `USD`.
+Facebook requires a currency for `Purchase` events. If you leave out a currency, Segment will set a default value of `USD`.
 
 You can set custom properties for the events listed above. Use the setting "Standard Events custom properties" to list all the properties you want to send.
 
@@ -193,7 +193,7 @@ If you're using real estate, travel, or automotive [Dynamic Ads](https://www.fac
 
 For most implementations, Segment recommends leaving these mappings blank. By default, Segment sets `content_type` to "product".
 
-The same mapping can be used to change the `content_id` from the default value (product_id or the sku) to anything specific for Meta Pixel. For more information about required Meta Pixel events, see Meta's [Required Meta Pixel events and parameters for Advantage+ catalog ads](https://www.facebook.com/business/help/606577526529702?id=1205376682832142){:target="_blank”} documentation.
+The same mapping can be used to change the `content_ids` from the default value (product_id or the sku) to anything specific for Meta Pixel. For more information about required Meta Pixel events, see Meta's [Required Meta Pixel events and parameters for Advantage+ catalog ads](https://www.facebook.com/business/help/606577526529702?id=1205376682832142){:target="_blank”} documentation.
 
 ## Troubleshooting
 
