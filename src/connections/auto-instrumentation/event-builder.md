@@ -38,3 +38,20 @@ Segment separates signal collection from event creation. Signals represent raw u
 
 Signal detection is active for 24 hours after you generate activity. Detected signals are available in the Event Builder for 72 hours.
 
+## Create an event
+
+You can create events by selecting individual signals or combining multiple signals in sequence.
+
+Follow these steps to create an event:
+
+1. Find the signal you want to use and click **Configure event**.
+2. Add one or more conditions. The order matters; Segment evaluates them in the order you add them.
+   - For example, to track a successful login, first select a **button click** signal, then the **network response** signal.
+3. Select properties from the signal(s) to include in your event.
+4. Map those properties to your targeted Segment event fields.
+5. Name your event. This name will appear in the Debugger and downstream tools.
+6. Click **Publish event rules** to activate the event in your workspace.
+    - You must publish each rule before Segment starts collecting data for the event.
+
+For example, suppose a user taps an "Add to Cart" button. You can define an `Add to Cart` event by combining the button click signal with a network response signal that includes product details. You can then map properties like product name, ID, and price directly from the network response to your event.
+
