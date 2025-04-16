@@ -111,6 +111,12 @@ To ensure the Destination processes an event payload modified by the function, r
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
+### Variable scoping 
+
+When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you leaking the settings values across other function instances. 
+
+The handler for insert functions is event-specific, for example, `onTrack()`, `onIdentify()`, and so on.
+
 ### Errors and error handling
 
 Segment considers a function's execution successful if it finishes without error. You can `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it to ensure the function works as expected.
