@@ -355,7 +355,7 @@ For many:many relationships, define the join on between the two entity tables wi
 **Junction table spec**
 
 > info ""
-> When used in junctions tables, `left join` is the column on the junction table to link with the parent (left) entity and `right join` is the column on the junction table to join with the child (right) entity. These values don’t actually manipulate the type of join - they are currently always `INNER JOINS`.
+> When used in junctions tables, `left join` is the column on the junction table to link with the parent (left) entity, and `right join` is the column on the junction table to join with the child (right) entity. These values don’t manipulate the type of join - they are always `INNER JOINS`.
 
 
 | Parameters      |Definition  |
