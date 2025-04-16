@@ -55,3 +55,4 @@ Follow these steps to create an event:
 
 For example, suppose a user taps an "Add to Cart" button. You can define an `Add to Cart` event by combining the button click signal with a network response signal that includes product details. You can then map properties like product name, ID, and price directly from the network response to your event.
 
+Once published, your event rules appear in the **Event Rules** tab of the Event Builder.  From this tab, you can view all of your published rules and delete rules you no longer need.
