@@ -6,6 +6,9 @@ id: 58ae54dc70a3e552b95415f6
 ---
 [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
 
+> info "Offline Conversions API deprecation"
+> Meta will [discontinue the Offline Conversions API](https://developers.facebook.com/docs/graph-api/changelog/version17.0#offline-conversions-api){:target="_blank"} in May 2025. As a result, this destination will stop accepting data at that time and will no longer be available for use. To continue sending offline conversion events to Meta, migrate to the [Facebook Conversions API (Actions)](/docs/connections/destinations/catalog/actions-facebook-conversions-api/#purchase) destination, which supports offline event tracking. 
+
 > info "Customer Information Parameters Requirements"
 > As of Facebook Marketing API v13.0+, Facebook began enforcing new requirements for customer information parameters (match keys). To ensure your events don't throw an error, Segment recommends that you review [Facebook’s new requirements](https://developers.facebook.com/docs/graph-api/changelog/version13.0#conversions-api){:target="_blank"}.
 
