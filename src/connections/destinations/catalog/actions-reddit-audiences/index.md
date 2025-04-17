@@ -9,18 +9,22 @@ The Reddit Audiences destination allows advertisers to send Engage audiences fro
 
 This destination is maintained by Reddit. For any issues with the destination, [contact their Support team](mailto:adsapi-partner-support@reddit.com).
 
+### Reddit Requirements 
+* Create a Reddit Ads account. * Find your ad account ID in [Accounts](https://ads.reddit.com/accounts). 
+
+### Connect Reddit Ads to your workspace
 
 ## Getting started
 
-1. In your Segment workspace, click Engage in the left navigation bar, and select your Space.
+1. In your Segment workspace, click **Engage** in the left navigation bar, then select your space.
 2. Click **Engage Settings** and select the **Destinations** tab.
 3. Search for `Reddit Audiences`.
 4. Click **Add Destination**.
-5. Confirm the Source. The default value is the source connected to the Space to which you’re adding the destination.
-6. On the Settings tab, click on the **Connect to Reddit Audiences** and follow the steps to log into your Reddit account to authenticate the connection between your Segment and Reddit accounts.
-7. In the **Ad Account ID** section, enter in the Reddit Ad Account ID that you want for the audiences to be created under. This account must be one that your Reddit account has access to. You can find this ID in your Reddit Ads Manager under **Business > Assets > Ad Accounts**. It will start with a t2_ or a2_ prefix.
+5. Confirm the source. By default, this is the source connected to the space to which you’re adding the destination.
+6. In the **Settings** tab, click **Connect to Reddit Audiences** and authenticate the connection between Segment and Reddit.
+7. Provide your ad account ID for **Ad Account ID**.
 8. Toggle **Enable Destination** on and click **Save Changes**.
-9. Navigate to the Engage Space that contains the audience, and select it from the Audiences tab.
+9. Navigate to the engage space that contains the audience, and select it in the **Audiences** tab.
 10. Click **Add Destination**.
 
 {% include components/actions-fields.html %}
