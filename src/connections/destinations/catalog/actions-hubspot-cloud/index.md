@@ -24,13 +24,14 @@ When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your da
 > warning ""
 > **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
 
-> warning ""
-> After April 29, 2025, HubSpot will no longer support referrals to custom object types by their base name.
-> If you use **Upsert Custom Object Record** ensure you have selected **Object Type** and **ObjectType to associate** field from dropdown.
-> If you use **Custom Event V2** , ensure you have selected **Object Type** field from dropdown. 
-> If you use **Custom Object V2** , ensure you have selected **Object Type** and **To Object Type** field from dropdown. 
-> For More information, refer to hubspot documentation [here](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name)
-
+> As of April 29, 2025, HubSpot will no longer support referencing custom object types by their  > base names. HubSpot mandates that custom objects should be referenced by shorthand name, fully > qualified name, or object type ID. To avoid issues, ensure the following fields are updated 
+> accordingly:
+>
+>- **Object Type** and **ObjectType to associate** in **Upsert Custom Object Record** action
+>- **Object Type** field in **Custom Event V2** action
+>- **Object Type** and **To Object Type** fields in **Custom Object V2** action
+>
+> For further details, please refer to the official HubSpot documentation [here](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name).
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
 HubSpot Cloud Mode (Actions) provides the following benefits over the classic HubSpot destination:
