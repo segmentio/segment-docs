@@ -12,9 +12,11 @@ You can use it to create Track, Identify, Page, and other event types directly f
 
 ## Access the Event Builder
 
-The Event Builder appears as a tab within each source, next to the Debugger. If you don't see the Event Builder tab, first confirm that you've installed the required Auto-Instrumentation SDK. If you've installed the SDK but still don't see the Event Builder tab, reach out to your Segment account manager to verify your workspace is included in the Auto-Instrumentation Private Beta.
+The Event Builder appears as a tab within each source, next to the Debugger. If you don't see the Event Builder tab, first confirm that you've installed the required Auto-Instrumentation SDK. 
 
-![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment source](images/autoinstrumentation_signals.png)
+If you've installed the SDK but still don't see the Event Builder tab, reach out to your Segment account manager to verify your workspace is included in the Auto-Instrumentation Private Beta.
+
+![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment source](images/event_builder_tab.png)
 
 > info "Event Builder during Private Beta"
 > During Private Beta beta, both the Event Builder and the legacy Auto-Instrumentation tab appear in the navigation. Segment will remove the legacy tab once all customers have migrated to the Event Builder experience.
