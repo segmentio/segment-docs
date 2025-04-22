@@ -65,18 +65,15 @@ Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in S
 
 ## Step 3: Verify and deploy events
 
-Next, you'll need to verify signal emission and [create rules](/docs/connections/auto-instrumentation/configuration/#example-rule-implementations) to convert those signals into events:
+After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Auto-Instrumentation** and click on the new source you created. 
-2. Verify that signals appear as expected on the dashboard.
+1. In your Segment workspace, return to **Connections > Sources**, then select the Source you created for Auto-Instrumentation.
+2. In the Source header, look for the **Event Builder** tab. If the tab does not appear, make sure you’ve installed the SDK correctly and are triggering signal activity using the debug URL.
+    ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](/images/event-builder-tab.png)
+3. Open the **Event Builder** and follow the on-screen instructions to trigger signal detection. You’ll need to open your app in a browser using the custom debug URL Segment provides (for example,`?segment_signals_debug=true`).
+4. Interact with your app to trigger signals: click buttons, navigate pages, or submit forms. Segment collects and displays these as signals in the Event Builder.
+5. From the signals list, click **Configure event** to define a new event based on one or more signals. After configuring the event, click **Publish event rules**.
 
-    ![Signals successfully appearing in the Segment UI](images/autoinstrumentation_signals.png "Signals successfully appearing in the Segment UI")
-
-3. Click **Create Rules**.
-4. In the Rules Editor, add a rule that converts signal data into an event.
-5. Click **Preview**, then click **Save & Deploy**.
-
-Segment displays `Rule updated successfully` to verify that it saved your rule.
 
 ### Debugging
 #### Enable debug mode
