@@ -58,3 +58,22 @@ Follow these steps to create an event:
 For example, suppose a user taps an "Add to Cart" button. You can define an `Add to Cart` event by combining the button click signal with a network response signal that includes product details. You can then map properties like product name, ID, and price directly from the network response to your event.
 
 Once published, your event rules appear in the **Event Rules** tab of the Event Builder.  From this tab, you can view all of your published rules and delete rules you no longer need.
+
+![The Event Rules tab shown in the Event Builder, showing six custom rules, categorized by event type](images/event_rules.png)
+
+## Choose an event type
+
+When you define a new event in the Event Builder, you assign it an event type. This determines how Segment and your downstream tools interpret the data.
+
+Each type has a specific role in the Segment event model:
+
+| Event type | Description                                                                                                 |
+| ---------- | ----------------------------------------------------------------------------------------------------------- |
+| `track`    | Custom event tracking. Use this for actions like `Product Viewed`, `Add to Cart`, or `Signup Started`.      |
+| `identify` | User identification. Use this to associate traits like `email`, `userId`, or `plan type` with a known user. |
+| `page`     | Web page view tracking. Use this to log visits to specific pages on your website.                           |
+| `screen`   | Mobile screen view tracking. Use this to log navigation events in native mobile apps.                       |
+
+For example, if you're capturing a login flow, you might create an `identify` event that maps traits such as `userId` and `email` from a network response signal. For actions like clicking a checkout button, you’d define a `track` event (e.g., `Checkout Started`) that includes cart value, item count, and currency.
+
+Segment uses the event name and any mapped properties to send real-time analytics events through your configured destinations.
