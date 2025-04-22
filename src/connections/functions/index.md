@@ -15,8 +15,8 @@ Functions can help you bring external data into Segment ([Source functions](/doc
 ### Variable scoping in Functions
 Functions are powered by AWS Lambda functions on the backend. This means you will need to declare any settings variables you create in the function handler rather than globally in your function.
 
-- For Source functions, the handler is onRequest().
-- For Destination functions and Insert functions, the handler is event-specfic. For example, onTrack() or onIdentify().
+- For source functions, the handler is `onRequest()`.
+- For destination and insert functions, the handler is event-specfic. For example, `onTrack()` or `onIdentify()`.
 
 If you declare functions globally in your function code, you risk leaking those settings values across function instances if you have more than one per function codebase. Make sure that you scope settings to the handler functions and pass those settings values as arguments to any helper functions that may need them to ensure context remains scoped to each function instance.
 
