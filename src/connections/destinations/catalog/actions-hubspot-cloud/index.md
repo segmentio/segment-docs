@@ -17,6 +17,15 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > warning ""
+> As of April 29, 2025, HubSpot will no longer support referencing custom object types by their base names. HubSpot mandates that custom objects should be referenced by short-hand custom object type name, fullyQualifiedName, or objectTypeId. To avoid issues, ensure the following fields are updated accordingly:
+>
+>- **Object Type** and **ObjectType to associate** in **Upsert Custom Object Record** action
+>- **Object Type** field in **Custom Event V2** action
+>- **Object Type** and **To Object Type** fields in **Custom Object V2** action
+>
+> For further details, please refer to the official HubSpot documentation [here](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name).
+
+> warning ""
 > The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. 
 >
 > Note that for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action. Contacts created with batch endpoint can not be associated to a Company from the Upsert Company Action.
@@ -24,14 +33,6 @@ When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your da
 > warning ""
 > **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
 
-> As of April 29, 2025, HubSpot will no longer support referencing custom object types by their  > base names. HubSpot mandates that custom objects should be referenced by shorthand name, fully > qualified name, or object type ID. To avoid issues, ensure the following fields are updated 
-> accordingly:
->
->- **Object Type** and **ObjectType to associate** in **Upsert Custom Object Record** action
->- **Object Type** field in **Custom Event V2** action
->- **Object Type** and **To Object Type** fields in **Custom Object V2** action
->
-> For further details, please refer to the official HubSpot documentation [here](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name).
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
 HubSpot Cloud Mode (Actions) provides the following benefits over the classic HubSpot destination:
