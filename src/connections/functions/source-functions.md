@@ -265,7 +265,7 @@ The `Segment.set()` method accepts an object with the following fields:
 
 Declare settings variables in the function handler, rather than globally in your function. This prevents you from leaking the settings values across other function instances.
 
-The handler for Source functions is `onRequest()`.
+The handler for source functions is `onRequest()`.
 
 ### Runtime and dependencies
 
