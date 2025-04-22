@@ -111,11 +111,11 @@ To ensure the Destination processes an event payload modified by the function, r
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
-### Variable scoping
+### Variable scoping 
 
-When declaring settings variables, make sure to declare them in the function handler rather than globally in your Function. This prevents you leaking the settings values across other function instances.
+When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
 
-The handler for insert functions is event-specific. For example, you might have an `onTrack()`or `onIdentify()` function handler.
+The handler for insert functions is event-specific. For example, `onTrack()`, `onIdentify()`, and so on.
 
 ### Errors and error handling
 
@@ -182,8 +182,7 @@ async function onIdentify(event) {
 ```
 If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
-
-You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
+See [errors and error handling](#errors-and-error-handling) for more information on supported error types and how to troubleshoot them.
 
 ## Runtime and dependencies
 

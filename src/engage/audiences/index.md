@@ -66,6 +66,8 @@ With SQL Traits, you can use data in your warehouse to build an audience. By run
 
 When you build an audience based on audience membership, you use existing audiences as criteria for creating new audiences. You can include or exclude profiles based on their membership in other audiences, allowing you to generate more specific audience segments.
 
+To see which audiences reference a particular audience in their definitions, select the **Consumers** tab when viewing a classic or linked audience. This tab lists all dependent audiences, to help you understand and manage relationships between your audience segments.
+
 ### Time comparison
 
 You can use the following time comparison operators in your audience definition: 
@@ -191,7 +193,7 @@ To create a new Audience or Trait:
 
 2. Configure and preview your Audience or Trait.
 - A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
-- By default, Segment queries all historical data to set the current value of the computed trait and Audience. Backfill computes historical data up to the point of audience creation. You can uncheck **Include Historical Data** to compute values for the Audience or trait without historical data. With backfill disabled, the trait or Audience only uses the data that arrives after you create it.
+- Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). Unchecking **Include Historical Event Data** computes values without historical event data, using only data arriving after audience creation.
 
 3. Select destinations to connect, then review and create your Audience or Trait.
 
@@ -373,4 +375,4 @@ The audience builder accepts CSV and TSV lists.
 This error occurs when creating audiences that reference each other, meaning audience X refers to audience Y in its trigger condition, and later you attempt to modify audience Y's trigger condition to refer back to audience X. To avoid this error, ensure that the audiences do not reference each other in their conditions.
 
 ### How does the historical data flag work?
-Including historical data lets you take past information into account. You can only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
+The **Include Historical Event Data** option lets you take past event data into account and control how much of it is considered when creating real-time audiences. You can set a lookback window (for example, the “last 90 days”) to limit the processed event data, or disable it entirely to use only data arriving after creation. For batch audiences, Segment includes historical data by default.

@@ -55,6 +55,7 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    -- database access
    GRANT USAGE ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
    GRANT CREATE SCHEMA ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
+   GRANT CREATE TABLE ON SCHEMA __segment_reverse_etl TO ROLE segment_reverse_etl;
    ```
 6. Enter and run one of the following code snippets below to create the user Segment uses to run queries. For added security, Segment recommends creating a user that authenticates using a key pair.
 

@@ -53,7 +53,10 @@ Once you save the API integration and add permissions, you will see a Summary pa
 3. Click **Configure Salesforce Marketing Cloud (Actions)** in the top-right corner of the screen.
 4. Select the source that will send data to SFMC and follow the steps to name your destination.
 5. On the **Settings** tab, input your SFMC Account ID (MID). In the Installed Package you created above, locate your Subdomain, Client ID, and Client Secret and input these settings. Your Subdomain can be found under "REST Base URI." Your Subdomain should be a 28-character string starting with the letters `mc`. Do not include the `.rest.marketingcloudapis.com` part of the URL.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
+6. Go to the **Mappings** tab and selelct **+ New Mapping**. 
+7. Follow the mapping setup flow to create your mappings. 
+   * If you select one of the V2 actions involving data extensions, you can create a new data extension or connect to an existing one within Segment.  
+8. (*Optional*) Follow the steps in the Destinations Actions documentation on [customizing mappings](/docs/connections/destinations/actions/#customize-mappings) to customize your mappings.
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
@@ -77,10 +80,12 @@ The batch feature is only compatible with the "Send Contact to Data Extension" a
 
 To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension.
 
-Data extensions and attributes must be created **before** sending data. You can create a data extension in your SFMC account by navigating to **Audience Builder > Contact Builder > Data Extensions > Create**. Segment recommends creating a single data extension to store all contact data, and individual data extensions for each event type you plan to send. Once a data extension is created, you can add attributes for any traits or properties you plan to send. You must include at least one Primary Key attribute that will be used to uniquely identify each row.
+If you're using an action that isn't labeled with **(V2)**, data extensions and attributes must be created **before** sending data. You can create a data extension in your SFMC account by navigating to **Audience Builder > Contact Builder > Data Extensions > Create**. Segment recommends creating a single data extension to store all contact data, and individual data extensions for each event type you plan to send. Once a data extension is created, you can add attributes for any traits or properties you plan to send. You must include at least one Primary Key attribute that will be used to uniquely identify each row.
 
 > info ""
 > You can include more than one Data Extension Primary Key if needed. For example, you might use more than one primary key if you want to track which store locations a user visited, but you don't care how many times the users visited each location. In this case, you could use `Contact Key` and `Store Location` as Primary Keys. Then, SFMC only deduplicates if *both* Contact Key (the user) and Store Location are the same. This means you would record the stores individual users visited, but not how many times they visited each one.
+
+If you select an action labeled with **(V2)**, you can create new data extensions directly within Segment. You can define a name, folder, description, and customize your fields by setting the type, length, nullable, and primary key options. You can also search and select existing data extensions by searching for the ID within Segment to map fields more seamlessly. 
 
 API events are another way to send your Segment events to SFMC. API events can trigger an email or push notification campaign immediately when they receive data from Segment. You can create an API event in your SFMC account by navigating to **Journey Builder > Events > + New Event > API Event**.
 

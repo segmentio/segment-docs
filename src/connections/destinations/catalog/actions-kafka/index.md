@@ -30,9 +30,6 @@ The way you've configured your Kafka Cluster informs the authentication and encr
       <li>
         <b>Plain</b> or <b>SCRAM-SHA-256 / 512</b> authentication: provide values for <b>Username</b> and <b>Password</b> fields.
       </li>
-      <li> 
-        <b>AWS</b> authentication: provide values for <b>AWS Access Key ID</b> and <b>AWS Secret Key</b> fields, and optionally for the <b>AWS Authorization Identity</b> field. 
-      </li>
       <li>
         <b>Client Certificate</b> authentication: provide values for the <b>SSL Client Key</b> and <b>SSL Client Certificate</b> fields. 
       </li>
