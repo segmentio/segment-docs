@@ -21,11 +21,16 @@ The Event Builder appears as a tab within each source, next to the Debugger. If 
 
 ## Generate activity
 
-To see activity in the Event Builder, you need to trigger signals using a custom debug link that Segment provides:
+To populate the Event Builder with signals, you first need to visit your site or app using a special debug link that Segment provides.
 
-1. In the Event Builder, copy the custom URL shown at the top of the page.
-2. Open your website or app using that URL in a browser or mobile device.
-3. Try out some typical user actions (like clicking buttons, navigate screens, and triggering network calls).
+1. In the Event Builder, copy the URL labeled **Start detecting activity**. It includes a required query parameter (for example, `?segment_signals_debug=true`).
+2. Open your site or app in a browser or device using that exact link.
+3. Interact with your app as a user would: click buttons, navigate between pages or screens, submit forms, and so on.
+
+![Prompt in the Event Builder showing how to start detecting activity by visiting the website with a debug query parameter and interacting with the app](images/detecting_activity.png)
+
+> info "Use the exact link shown"
+> Segment can only detect activity if you use the debug link show in the Event Builder. Without it, no signals will show up.
 
 Segment collects and displays activity as signals. These signals are grouped into types, like:
 
@@ -63,17 +68,18 @@ Once published, your event rules appear in the **Event Rules** tab of the Event 
 
 ## Choose an event type
 
-When you define a new event in the Event Builder, you assign it an event type. This determines how Segment and your downstream tools interpret the data.
-
-Each type has a specific role in the Segment event model:
+When you define an event in the Event Builder, you assign it a type that determines how Segment and your connected destinations process it. These event types (Track, Identify, Page, and Screen) follow the same structure and behavior defined in the [Segment Spec](/docs/connections/spec/).
 
 | Event type | Description                                                                                                 |
 | ---------- | ----------------------------------------------------------------------------------------------------------- |
-| `track`    | Custom event tracking. Use this for actions like `Product Viewed`, `Add to Cart`, or `Signup Started`.      |
-| `identify` | User identification. Use this to associate traits like `email`, `userId`, or `plan type` with a known user. |
-| `page`     | Web page view tracking. Use this to log visits to specific pages on your website.                           |
-| `screen`   | Mobile screen view tracking. Use this to log navigation events in native mobile apps.                       |
+| Track      | Custom event tracking. Use this for user actions like `Product Viewed`, `Add to Cart`, or `Signup Started`. |
+| Identify   | User identification. Use this to associate traits (like `email`, `userId`, or `plan`) with a known user.    |
+| Page       | Web page view tracking. Use this to record visits to pages on your website.                                 |
+| Screen     | Mobile screen view tracking. Use this to record views of screens in your mobile app.                        |
 
-For example, if you're capturing a login flow, you might create an `identify` event that maps traits such as `userId` and `email` from a network response signal. For actions like clicking a checkout button, you’d define a `track` event (e.g., `Checkout Started`) that includes cart value, item count, and currency.
+For example, to track a login flow, you might define an Identify event that maps traits like `userId` and `email` from a network response signal. To track cart activity, you could define a Track event like `Checkout Started` with properties like cart value, item count, and currency.
 
-Segment uses the event name and any mapped properties to send real-time analytics events through your configured destinations.
+Segment uses the event name and any mapped properties to format each event according to the Segment Spec. Events you create in the Event Builder behave the same way as events sent through Segment SDKs or APIs.
+
+> info "Event type behavior in destinations"
+> While Segment handles these event types consistently, downstream tools may treat them differently. For example, Identify events often update user profiles, while Page or Screen events may be handled as pageviews instead of custom events.
