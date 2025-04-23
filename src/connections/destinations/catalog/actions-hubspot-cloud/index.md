@@ -23,7 +23,7 @@ When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your da
 >- **Object Type** field in **Custom Event V2** action
 >- **Object Type** and **To Object Type** fields in **Custom Object V2** action
 >
-> For further details, please refer to the official HubSpot documentation [here](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name).
+> For further details, refer to the [HubSpot documentation](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name){:target="_blank"}.
 
 > warning ""
 > The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. 
