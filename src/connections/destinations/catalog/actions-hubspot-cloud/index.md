@@ -19,9 +19,9 @@ When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your da
 > warning ""
 > As of April 29, 2025, HubSpot no longer supports referencing custom object types by their base names. Instead, you must reference all custom objects by using their short-hand custom object type name, `fullyQualifiedName`, or `objectTypeId`. To avoid issues, update the following fields:
 >
->- **Object Type** and **ObjectType to associate** in **Upsert Custom Object Record** action
->- **Object Type** field in **Custom Event V2** action
->- **Object Type** and **To Object Type** fields in **Custom Object V2** action
+>- **Object Type** and **ObjectType to associate** in the **Upsert Custom Object Record** action
+>- **Object Type** field in the **Custom Event V2** action
+>- **Object Type** and **To Object Type** fields in the **Custom Object V2** action
 >
 > For further details, refer to the [HubSpot documentation](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name){:target="_blank"}.
 
