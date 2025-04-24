@@ -83,8 +83,8 @@ After integrating the SDK and running your app, verify that Segment is collectin
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
   - Make sure you've installed the SDK correctly.
   - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
-3. Launch your app in debug mode. This enables signal collection so you can see activity in the Event Builder.
-4. Use the app as a user would—navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
+3. Launch your app [in debug mode](https://github.com/segmentio/analytics-next/tree/master/packages/signals/signals#sending-and-viewing-signals-on-segmentcom-debug-mode){:target="_blank"}. This enables signal collection so you can see activity in the Event Builder.
+4. Use the app as a user would: navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
 5. In the Event Builder, find a signal and click **Configure event** to define a new event. After configuring the event, click **Publish event rules**.
 
 ## Configuration Options
