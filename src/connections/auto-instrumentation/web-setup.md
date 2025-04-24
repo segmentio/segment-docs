@@ -67,11 +67,14 @@ Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in S
 
 After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Sources**, then select the Source you created for Auto-Instrumentation.
-2. In the Source header, look for the **Event Builder** tab. If the tab does not appear, make sure you’ve installed the SDK correctly and are triggering signal activity using the debug URL.
-    ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
-3. Open the **Event Builder** and follow the on-screen instructions to trigger signal detection. You’ll need to open your app in a browser using the custom debug URL Segment provides (for example,`?segment_signals_debug=true`).
-4. Interact with your app to trigger signals: click buttons, navigate pages, or submit forms. Segment collects and displays these as signals in the Event Builder.
+1. In your Segment workspace, return to **Connections > Sources**, then select the source you created for Auto-Instrumentation.
+2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
+  - Make sure you've installed the SDK correctly.
+  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+  ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
+3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.  
+  - To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
+4. Interact with your app to trigger signals: click buttons, navigate pages, submit forms, and so on. Segment collects and displays these as signals in real time.
 5. From the signals list, click **Configure event** to define a new event based on one or more signals. After configuring the event, click **Publish event rules**.
 
 
