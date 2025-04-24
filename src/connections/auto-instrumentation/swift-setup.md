@@ -77,18 +77,15 @@ typealias SecureField = SignalSecureField
 ```
 ## Step 3: Verify and deploy events
 
-Next, you'll need to verify signal emission and [create rules](/docs/connections/auto-instrumentation/configuration/#example-rule-implementations) to convert those signals into events:
+After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Auto-Instrumentation** and click on the new source you created. 
-2. Verify that signals appear as expected on the dashboard.
-
-    ![Signals successfully appearing in the Segment UI](images/autoinstrumentation_signals.png "Signals successfully appearing in the Segment UI")
-
-3. Click **Create Rules**.
-4. In the Rules Editor, add a rule that converts signal data into an event.
-5. Click **Preview**, then click **Save & Deploy**.
-
-Segment displays `Rule updated successfully` to verify that it saved your rule.
+1. In your Segment workspace, go to **Connections > Sources** and select the source you created for Auto-Instrumentation.
+2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
+  - Make sure you've installed the SDK correctly.
+  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+3. Launch your app in debug mode. This enables signal collection so you can see activity in the Event Builder.
+4. Use the app as a user would—navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
+5. In the Event Builder, find a signal and click **Configure event** to define a new event. After configuring the event, click **Publish event rules**.
 
 ## Configuration Options
 
