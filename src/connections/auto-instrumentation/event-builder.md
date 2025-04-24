@@ -23,16 +23,18 @@ If you've installed the SDK but still don't see the Event Builder tab, reach out
 
 ## Generate activity
 
-To populate the Event Builder with signals, you first need to visit your site or app using a special debug link that Segment provides.
+To populate the Event Builder with signals, you first need to open your website or app with a special query parameter that enables signal detection.
 
-1. In the Event Builder, copy the URL labeled **Start detecting activity**. It includes a required query parameter (for example, `?segment_signals_debug=true`).
-2. Open your site or app in a browser or device using that exact link.
-3. Interact with your app as a user would: click buttons, navigate between pages or screens, submit forms, and so on.
+1. Visit your site or app in a browser, and add `?segment_signals_debug=true` to the end of the URL.  
+   For example: `https://www.your-website.com?segment_signals_debug=true`.
+2. Interact with your app as a user would: click buttons, navigate between pages or screens, submit forms, and so on.
+3. Return to the Event Builder tab in Segment to view the signals being collected in real time.
+
 
 ![Prompt in the Event Builder showing how to start detecting activity by visiting the website with a debug query parameter and interacting with the app](images/detecting_activity.png)
 
-> info "Use the exact link shown"
-> Segment can only detect activity if you use the debug link show in the Event Builder. Without it, no signals will show up.
+> info "Enable signal detection"
+> Segment only detects signals when you access your site using the `?segment_signals_debug=true` query parameter. If you visit your site without it, signals won't show up in the Event Builder.
 
 Segment collects and displays activity as signals. These signals are grouped into types, like:
 
