@@ -194,7 +194,7 @@ Segment's S3 destination contains a copy of all of the source data you configure
 
 Note that this step is not required unless you plan to do batch data extraction from S3.
 
-Your Glue ETL job will need to crawl each source folder to extract the backup data that forms your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Segment's event structure is described in detail [here](/docs/connections/sources/catalog/libraries/server/http/).
+Your Glue ETL job will need to crawl each source folder to extract the backup data that forms your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Segment's event structure is described in detail on Segment's [HTTP source](/docs/connections/sources/catalog/libraries/server/http/) documentation.
 
 The following examples show how to configure an AWS Glue job to convert Segment historical data into the Apache Avro format that Personalize wants to consume for training data sets.
 
@@ -596,7 +596,7 @@ Once Segment's event CSV is finished importing into a user-item interaction data
     ![A screenshot of the Dataset groups dashboard, with a box around the Start button in the Create solutions column.](images/PersonalizeCreateSolution.png)
 
 2. On the **Create solution** page, enter a **Solution name**.
-  * For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html){:target="_blank"}.
+  * For a discussion on the different recipes you can use with Personalize, see Amazon's [Choosing a recipe](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html){:target="_blank"} documentation.
 
     ![A screenshot of the Create solution page, with a solution name entered in the Solution name field.](images/PersonalizeSolutionConfig.png)
 
@@ -642,10 +642,7 @@ Segment will need to be able to call ("invoke") your Lambda in order to process 
 To create an IAM policy:
 1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/){:target="_blank"}  and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html){:target="_blank"} to allow Segment permission to invoke your Lambda function.
 
-2. Select **Create Policy from JSON** and use the following template policy in the `Policy Document` field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. Here's example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`.
-
-> note ""
-> **NOTE:** You can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created.
+2. Select **Create Policy from JSON** and use the following template policy in the `Policy Document` field. Be sure to change the `{region}`, `{account-id}` and `{function-names}` with the applicable values. Here's an example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`. You can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created.
 
 ```json
 {
@@ -679,8 +676,8 @@ To create an IAM role:
 
 6. Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the custom external ID you set in your Amazon Lambda destination settings.
 
-> note ""
-> **NOTE:** Your Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
+> info ""
+> You can find your Source ID by navigating to **Settings > API Keys** from your Segment source homepage.
 >
 > For security purposes, Segment will set your Workspace ID as your External ID. If you are currently using an External ID different from your Workspace ID, reach out to Segment support so they can change it and make your account more secure.
 

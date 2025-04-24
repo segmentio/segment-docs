@@ -35,7 +35,7 @@ To link your Qualtrics destination in Segment to your Qualtrics workspace, [Qual
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure Qualtrics**.
 4. Select an existing Source to connect to Qualtrics (Actions).
-5. To authenticate, enter your API key & Datacenter ID. To locate your API key & Datacenter ID, follow in the instructions found [here](https://api.qualtrics.com/ZG9jOjg3NjYzNQ-finding-your-qualtrics-i-ds){:target="_blank”}.
+5. To authenticate, enter your API key & Datacenter ID. To locate your API key & Datacenter ID, follow in the instructions in the [Finding your Qualtrics IDs](https://api.qualtrics.com/ZG9jOjg3NjYzNQ-finding-your-qualtrics-i-ds){:target="_blank”} documentation.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 

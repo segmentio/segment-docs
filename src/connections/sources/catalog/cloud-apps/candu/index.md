@@ -1,6 +1,5 @@
 ---
 title: Candu Source
-beta: true
 source-type: event
 id: nmb56PunPc
 ---

@@ -58,7 +58,7 @@ A user's `anonymousId` changes when any of the following conditions are met.
 - The user clears their cookies _and_ `localstorage`.
 - Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session.
 - Your site or app calls `analytics.identify()` with a userId that is different from the current userId.
-- Your site or app is setting ajs_user_id to an empty string or calling `analytics.user().id('')`.
+- Your site or app is setting `ajs_user_id` to an empty string or calling `analytics.user().id('')` before calling `analytics.identify()`. This sequence of events will result in a new anonymousId being set when `analytics.identify()` is called.
 
 
 ### Override the Anonymous ID from the Segment snippet
@@ -132,14 +132,14 @@ analytics.track('Email Clicked', {
 
 Traits are individual pieces of information that you know about a user or a group, and which can change over time.
 
-The `options` dictionary contains a sub-dictionary called `context` which automatically captures data depending on the event- and source-type. See the [Context documentation](https://segment.com/docs/connections/spec/common/#context) to learn more.
+The `options` dictionary contains a sub-dictionary called `context` which automatically captures data depending on the event- and source-type. See the [Context documentation](/docs/connections/spec/common/#context) to learn more.
 
 The `context` object contains an optional `traits` dictionary that contains traits about the current user. You can use this to store information about a user that you got from previous Identify calls, and that you want to add to Track or Page events.
 
 The information you pass in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, or Google Analytics); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
 
-> note ""
-> The `options` object described in the previous section behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause `anonymousId` to persist across different calls.
+> success ""
+> The `traits` object in `options.context.traits` does not cause `anonymousId` to persist across different calls.
 
 Consider this Identify event:
 
@@ -167,6 +167,17 @@ analytics.track('Clicked Email', {
 ```
 
 This appends the `plan_id` trait to this Track event. This does _not_ add the name or email, since those traits were not added to the `context` object. You must do this for every following event you want these traits to appear on, as the `traits` object does not persist between calls.
+
+By default, non-Identify events (like Track or Page) **don't automatically collect user traits** from previous Identify calls. To include traits from an `identify()` event in later events, you'll need to add them manually to the `context.traits` object within the `options` parameter.
+
+Each Analytics.js method has an `options` parameter where you can pass the `context.traits` object, but each method has a specific format. Follow the formats in the [Segment Spec](/docs/connections/spec/) when adding traits, like in these examples:
+
+- [Identify](/docs/connections/spec/identify/) - The [Analytics.js Identify](/docs/connections/sources/catalog/libraries/website/javascript/#identify) method follows this format : `analytics.identify([userId], [traits], [options], [callback])`;
+- [Track](/docs/connections/spec/track/) - The [Analytics.js Track](/docs/connections/sources/catalog/libraries/website/javascript/#track) method follows this format : `analytics.track(event, [properties], [options], [callback])`;
+- [Page](/docs/connections/spec/page/) - The [Analytics.js Page](/docs/connections/sources/catalog/libraries/website/javascript/#page) method follows this format : `analytics.page([category], [name], [properties], [options], [callback])`;
+- [Group](/docs/connections/spec/group/) - The [Analytics.js Group](/docs/connections/sources/catalog/libraries/website/javascript/#group) method follows this format : `analytics.group(groupId, [traits], [options], [callback])`;
+
+Adding traits to events is especially useful if you're using [Actions destinations](/docs/connections/destinations/actions/), since it makes those traits available for mapping in the destination’s configuration.
 
 
 ## Clearing Traits

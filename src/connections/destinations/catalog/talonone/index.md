@@ -39,8 +39,9 @@ analytics.identify('userId123', {
 
 Identify calls are sent to Talon.One as an identify event. The `userId` has a 1-1 mapping to Talon.One's `integrationId`. The `traits` in Segment are mapped with Talon.One's Customer's `custom attributes`.
 
-> note "Note:"
-> This app only supports logged in users.
+> info ""
+> Talon.One only supports logged in users.
+
 
 ## Custom Attributes
 
@@ -74,13 +75,13 @@ becomes `address_city`.
 
 ## Audience & Computed Traits
 
-`Computed traits` and `audiences` data can be communicated to the Talon.One destination as a customer's `custom attribute`. .
+`Computed traits` and `audiences` data can be communicated to the Talon.One destination as a customer's `custom attribute`.
 
 An **identify** call is sent to the destination for each user being added and removed from an Audience. The trait name is the snake_cased version of the audience name you provide, with a  boolean (`true`/`false`) value.
 
 For example, when a user first completes an order which falls in a time window of the last 30 days, an identify call is sent to Talon.One with the trait `order_completed_last_30days: true`. When this user no longer satisfies this condition, the value is updated to `false` and automatically transmitted to Talon.One.
 
-> note "Note:"
-> Similar to `traits/custom traits`, `audiences` and `computed traits` need to be added as `custom attributes` on the Talon.One Campaign Manager. Although unlike `traits/custom traits`, they do not have to be added to the `custom attributes` of this destination application.
+> info "You must add audiences and computed traits as Custom Attributes in Talon.One's Campaign Manager"
+> Like `traits/custom traits`, `audiences` and `computed traits` need to be added as `custom attributes` on the Talon.One Campaign Manager. You do not have to add these traits to the `custom attributes` setting in Segment.
 
 When the audience is first created, an identify call is sent for every user in the audience. Subsequent syncs only send updates for those users which were added or removed since the last sync.

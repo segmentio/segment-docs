@@ -8,8 +8,8 @@ id: 5fb411aeff3f6d1023f2ae8d
 
 This destination is maintained by EnjoyHQ. For any issues with the destination, [contact the EnjoyHQ support team](mailto:support@getenjoyhq.com).
 
-> note "Note:"
-> The EnjoyHQ Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the EnjoyHQ Destination and its documentation, [contact the EnjoyHQ support team](mailto:support@getenjoyhq.com)!
+> info "The EnjoyHQ destination is currently in beta"
+> The EnjoyHQ Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the EnjoyHQ Destination and its documentation, [contact the EnjoyHQ support team](mailto:support@getenjoyhq.com).
 
 
 ## Getting Started
@@ -43,5 +43,5 @@ Segment sends Identify calls to EnjoyHQ as an `identify` event. These events can
 
 You can find profiles connected to at least one document in the **People tab** using the global search. You can also find any profile (connected or not) when you [associate a customer with a piece of feedback](https://documentation.getenjoyhq.com/article/v9liiusghf-customer-profiles#assigning_customers_to_documents){:target="_blank”}.
 
-> note "Note:"
+> warning "Identify calls require an email field"
 > The EnjoyHQ destination only accepts Identify calls if they contain a correctly formed email address in the "email" field. Otherwise, the event is ignored and is not forwarded to EnjoyHQ.

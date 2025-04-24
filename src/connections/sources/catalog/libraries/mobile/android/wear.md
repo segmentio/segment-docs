@@ -1,16 +1,22 @@
 ---
-title: 'Analytics for Android Wear'
+title: 'Analytics-Android Wear'
 strat: android
 hidden: true
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
-Analytics for Android Wear makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+> warning "End-of-Support for Analytics-Android in March 2026"
+> End-of-support for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
 
-All of Segment's client libraries are open-source, so you can [view Analytics for Android on GitHub](https://github.com/segmentio/analytics-android), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
+Analytics-Android Wear makes it simple to send your data to any tool without having to learn, test, or implement a new API every time.
+
+All of Segment's client libraries are open-source, so you can [view Analytics-Android on GitHub](https://github.com/segmentio/analytics-android), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 ## Getting Started
 
-To get started with Analytics for Android Wear check out our [quickstart guide](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/) which will help you install analytics tracking in your mobile app in just a few minutes. Once you've installed the SDK, read on for setting it up the wear part of your App. Note that you can only use the Android SDK v2 or later with wear, and that any Beta APIs below are subject to change.
+To get started with Analytics-Android Wear check out our [quickstart guide](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/) which will help you install analytics tracking in your mobile app in just a few minutes. Once you've installed the SDK, read on for setting it up the wear part of your App. Note that you can only use the Android SDK v2 or later with wear, and that any Beta APIs below are subject to change.
 
 ## Adding the Wear dependency
 

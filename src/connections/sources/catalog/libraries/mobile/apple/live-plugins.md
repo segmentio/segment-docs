@@ -100,7 +100,7 @@ Next, you'll authenticate with Segment to give the CLI access to your workspace:
 7. Use your source ID and live plugin file name to upload your live plugin:
 
     ```shell
-    $ segmentcli upload <SourceID> <FileName>
+    $ segmentcli liveplugins upload <SourceID> <FileName>
     ```
 
 You've now successfully attached your live plugin(s) to your mobile source. The next time your users launch your app, their Segment SDK will download the latest live plugins, which will run every time new events are generated.

@@ -179,4 +179,4 @@ Firebase is Google's recommended method for reporting conversions to Adwords. To
 
 ### Troubleshooting
 
-Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://firebase.google.com/docs/analytics/debugview).
+Firebase has great logging. If you are having any issues, you can enable debug mode as outlined in Google's [Debug events](https://firebase.google.com/docs/analytics/debugview){:target="_blank”} docs.

@@ -10,7 +10,7 @@ Segment's Java library lets you record analytics data from your Java code. The r
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-java).
 
-All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-java/releases.atom).
 
@@ -49,7 +49,7 @@ Analytics analytics = Analytics.builder(writeKey).build();
 
 Of course, you'll want to replace writeKey with your actual **Write Key** which you can find in Segment under your source settings.
 
-The Builder can also be used to customize behaviour of the Analytics instance.
+The Builder can also be used to customize behavior of the Analytics instance.
 
 **Note:** There is an internal `AnalyticsClient` class. Do not confuse this class with the public `Analytics` class and do not use this class directly.
 
@@ -73,11 +73,11 @@ The basic tracking methods below serve as the building blocks of your Segment tr
 
 ### Identify
 
-`identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+Identify lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
+Segment recommends calling Identify a single time when the user's account is first created, and only identifying again later when their traits change.
 
-Example `identify` call:
+Example Identify call:
 
 ```java
 Map<String, String> map = new HashMap();
@@ -89,9 +89,9 @@ analytics.enqueue(IdentifyMessage.builder()
         .traits(map));
 ```
 
-This call is identifying  Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
+This call identifies Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -104,20 +104,19 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this section, commenting out.
-Read more in our [transformer reference section](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this section, commenting out. Read more in our [transformer reference section](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
 
-Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
+Find details on the **identify method payload** in the [Segment Spec](/docs/connections/spec/identify/).
 
 ### Track
 
-`track` lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
+Track lets you record the actions your users perform.  Every action triggers what Segment calls an "event", which can also have associated properties.
 
 You'll want to track events that you're interested in, such as **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
+To get started, Segment recommends tracking just a few important events. You can always add more later.
 
-Example `track` call:
+Example Track call:
 
 ```java
 analytics.enqueue(TrackMessage.builder("Item Purchased")
@@ -129,11 +128,11 @@ analytics.enqueue(TrackMessage.builder("Item Purchased")
     )
 );
 ```
-This example `track` call tells us that your user just triggered the **Item Purchased** event with a revenue of $39.95 and chose your hypothetical '2-day' shipping.
+This example Track call tells you that your user just triggered the **Item Purchased** event with a revenue of $39.95 and chose your hypothetical '2-day' shipping.
 
-`track` event properties can be anything you want to record. In this case, revenue and shipping.
+Track event properties can be anything you want to record. In this case, revenue and shipping.
 
-The `track` call has the following fields:
+The Track call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -142,7 +141,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`event` _String_</td>
-    <td>The name of the event you're tracking. We recommend human-readable names like **Song Played** or **Status Updated**.</td>
+    <td>The name of the event you're tracking. Segment recommends human-readable names like **Song Played** or **Status Updated**.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -150,17 +149,17 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
+Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Spec](/docs/connections/spec/track/).
 
 ### Screen
 
-The [`screen`](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen of your mobile app, along with optional extra information about the screen being viewed.
+The [Screen](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen of your mobile app, along with optional extra information about the screen being viewed.
 
 You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
 Not all services support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
-Example `screen` call:
+Example Screen call:
 
 ```java
 analytics.enqueue(ScreenMessage.builder("Schedule")
@@ -173,7 +172,7 @@ analytics.enqueue(ScreenMessage.builder("Schedule")
 );
 ```
 
-The `screen` call has the following fields:
+The Screen call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -182,7 +181,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`name` _String_</td>
-    <td>The webpage name you're tracking. We recommend human-readable names like **Login** or **Register**.</td>
+    <td>The webpage name you're tracking. Segment recommends human-readable names like **Login** or **Register**.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -190,15 +189,15 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
+Find details on the **Screen payload** in the [Segment Spec](/docs/connections/spec/screen/).
 
 ### Page
 
-The [`page`](/docs/connections/spec/page/) method lets you record whenever a user sees a page of your website, along with optional extra information about the page being viewed.
+The [Page](/docs/connections/spec/page/) method lets you record whenever a user sees a page of your website, along with optional extra information about the page being viewed.
 
-Not all services support page, so when it's not supported explicitly, the page method typically tracks as an event with the same parameters.
+Not all services support page, so when it's not supported explicitly, the Page method typically tracks as an event with the same parameters.
 
-Example `page` call:
+Example Page call:
 
 ```java
 analytics.enqueue(PageMessage.builder("Schedule")
@@ -211,7 +210,7 @@ analytics.enqueue(PageMessage.builder("Schedule")
 );
 ```
 
-The `page` call has the following fields:
+The Page call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -220,7 +219,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`name` _String_</td>
-    <td>The webpage name you're tracking. We recommend human-readable names like **Login** or **Register**.</td>
+    <td>The webpage name you're tracking. Segment recommends human-readable names like **Login** or **Register**.</td>
   </tr>
   <tr>
     <td>`properties` _Properties, optional_</td>
@@ -228,15 +227,15 @@ The `page` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
+Find details on the **Page payload** in the [Segment Spec](/docs/connections/spec/page/).
 
 ### Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+Group lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example `group` call:
+Example Group call:
 
 ```java
 analytics.enqueue(GroupMessage.builder("some-group-id")
@@ -249,7 +248,7 @@ analytics.enqueue(GroupMessage.builder("some-group-id")
 );
 ```
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -266,15 +265,15 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group`, including the **`group` payload**, in our [Spec](/docs/connections/spec/group/).
+Find more details about Group, including the **Group payload**, in the [Segment Spec](/docs/connections/spec/group/).
 
 ### Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
-Example `alias` call:
+Example Alias call:
 
 ```java
 analytics.enqueue(AliasMessage.builder("previousId")
@@ -282,7 +281,7 @@ analytics.enqueue(AliasMessage.builder("previousId")
 );
 ```
 
-Here's a full example of how we might use the `alias` call:
+Here's a full example of how you might use the Alias call:
 
 ```java
 // the anonymous user does actions ...
@@ -295,7 +294,7 @@ identify("identified@example.com", new Traits("plan", "Free"));
 track("identified@example.com", "Identified Action");
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
 ---
 
@@ -305,7 +304,7 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
+**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment's servers will timestamp the requests for you.
 
 ```java
 Date historicalDate = ...;
@@ -317,7 +316,7 @@ analytics.enqueue(TrackMessage.builder("Button Clicked")
 
 ## Selecting Destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
+The Alias, Group, Identify, Page, and Track calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
 
 Similar to timestamp, the builders take a map of destinations that control which analytics destinations you want each message to go to.
 
@@ -329,15 +328,15 @@ analytics.enqueue(TrackMessage.builder("Button Clicked")
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to Amplitude. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Amplitude", true }` turns on Amplitude.
+In this case, you're specifying that you want this identify to only go to Amplitude. `"All", false` says that no destination should be enabled unless otherwise specified, and `{ "Amplitude", true }` turns on Amplitude.
 
-destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Business Tier users can filter Track calls right from the Segment UI on your source schema page. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
-- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
+- If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard still count towards your API usage.
 
 ## Context
 
@@ -356,7 +355,7 @@ analytics.enqueue(TrackMessage.builder("Button Clicked")
 
 ## Batching
 
-Our libraries are built to support high performance environments. That means it is safe to use analytics-java on a web server that's serving hundreds of requests per second. For more information, check out the [java benchmark](https://github.com/segmentio/analytics-java-benchmark).
+Segment's libraries are built to support high performance environments. That means it is safe to use analytics-java on a web server that's serving hundreds of requests per second. For more information, check out the [java benchmark](https://github.com/segmentio/analytics-java-benchmark).
 
 Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
@@ -373,11 +372,11 @@ You can also flush on demand. For example, at the end of your program, you'll wa
 analytics.flush()
 ```
 
-Calling this method will notify the client to upload any events in the queue.
+Calling this method notifies the client to upload any events in the queue. If you need a blocking flush implementation, see the [`BlockingFlush` example on GitHub](https://github.com/segmentio/analytics-java/blob/master/analytics-sample/src/main/java/sample/BlockingFlush.java){:target="_blank"}.
 
 ## How do I gzip requests?
 
-The Java library does not automatically gzip requests, but allows you to do so if you desire using interceptors in [OkHttp](https://github.com/square/okhttp/wiki/Interceptors#rewriting-requests). See the [sample app](https://github.com/segmentio/analytics-java/blob/master/analytics-sample/src/main/java/sample/Main.java) in our repo for a working example.
+The Java library does not automatically gzip requests, but allows you to do so if you desire using interceptors in [OkHttp](https://github.com/square/okhttp/wiki/Interceptors#rewriting-requests). See the [sample app](https://github.com/segmentio/analytics-java/blob/master/analytics-sample/src/main/java/sample/Main.java) in Segment's `analytics-java` repository for a working example.
 
 
 ## Multiple Clients
@@ -413,11 +412,11 @@ Analytics analytics = Analytics.builder("<writeKey>")
         .build();
 ```
 
-For more advance logging, you can check out the [sample code](https://github.com/segmentio/analytics-java/tree/master/analytics-sample/src/main/java/sample) in our open-source library.
+For more advance logging, you can check out the [sample code](https://github.com/segmentio/analytics-java/tree/master/analytics-sample/src/main/java/sample) in Segment's open-source library.
 
 ## Java Support
 
-Segment supports Java 8, 9, 10, and 11. The library may work on other versions of Java as well, however we don't test for compatibility on unsupported versions.
+Segment supports Java 8, 9, 10, and 11. The library may work on other versions of Java as well, however Segment doesn't test for compatibility on unsupported versions.
 
 ## Snapshots
 
@@ -450,4 +449,4 @@ repositories {
 
 {% include content/troubleshooting-intro.md %}
 {% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

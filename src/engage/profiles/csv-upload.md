@@ -1,8 +1,11 @@
 ---
 title: Add or Update Profiles and Traits with a CSV
-plan: engage-premier
+plan: engage-foundations
 ---
 You can use the Profiles CSV Uploader to add or update user profiles and traits. This page contains guidelines for your CSV upload and explains how to upload a CSV file to Engage.
+
+> info ""
+> When you upload a CSV file, Engage generates internal Identify calls using Segment's Tracking API and sends them into the [Engage output source](/docs/unify/debugger/). 
 
 ## CSV file upload guidelines
 

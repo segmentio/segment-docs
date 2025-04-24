@@ -1,5 +1,5 @@
 ---
-title: Analytics for Kotlin Plugin Architecture
+title: Analytics-Kotlin Plugin Architecture
 strat: kotlin-android
 ---
 

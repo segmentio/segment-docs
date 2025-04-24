@@ -4,9 +4,9 @@ redirect_from: '/protocols/typewriter/'
 ---
 
 > warning ""
-> Typewriter for analytics.js and analytics-node will receive no new features and only critical maintenance updates from Segment. Typewriter for other libraries and SDKs are not actively maintained by Segment. Typewriter is available on [Github](https://github.com/segmentio/typewriter/){:target="_blank”} under the MIT license for the open-source community to fork and contribute.
+> Typewriter for analytics.js and analytics-node will receive no new features and only critical maintenance updates from Segment. Typewriter for other libraries and SDKs are not actively maintained by Segment. Typewriter is available on [GitHub](https://github.com/segmentio/typewriter/){:target="_blank”} under the MIT license for the open-source community to fork and contribute.
 
-[Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
+[Typewriter](https://github.com/segmentio/typewriter){:target="_blank”} is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
 
 At a high-level, Typewriter can take an event from your Tracking Plan like this `"Order Completed"` event:
 
@@ -60,13 +60,13 @@ To get started, check out one of the quickstart guides below:
 - [Swift Quickstart](#swift-quickstart)
 
 > info ""
-> For use with the Analytics-iOS and Analytics-Android SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7).
+> For use with the Analytics-iOS and Analytics-Android SDK, use [Typewriter v7](/docs/protocols/apis-and-extensions/typewriter-v7){:target="_blank”}.
 
-Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
+Have feedback on Typewriter? Consider opening a [GitHub Issue in the @segmentio/typewriter](https://github.com/segmentio/typewriter/issues/new){:target="_blank”} repository.
 
 ## Prerequisites
 
-Typewriter is built using [Node.js](https://nodejs.org/en/), and requires node >= 14.x
+Typewriter is built using [Node.js](https://nodejs.org/en/){:target="_blank”}, and requires node >= 14.x
 
 You can check if you have Node and NPM installed by running the following commands in your command-line window:
 
@@ -75,7 +75,7 @@ $ node --version
 v14.x
 ```
 
-If you don't have these, [you'll need to install `node`](https://nodejs.org/en/download/package-manager). Installing `node` also installs `npm` and `npx` for you. If you're on macOS, you can install it with [Homebrew](https://brew.sh/):
+If you don't have these, [you'll need to install `node`](https://nodejs.org/en/download/package-manager){:target="_blank”}. Installing `node` also installs `npm` and `npx` for you. If you're on macOS, you can install it with [Homebrew](https://brew.sh/){:target="_blank”}:
 
 ```sh
 $ brew install node
@@ -89,7 +89,7 @@ To get started with Typewriter in your browser:
 1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 2. Install `analytics.js` in your app. There are two methods.
   - **Snippet method (most common)**: Paste the snippet in the[`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
-  - **NPM method**: Load analytics.js with the npm library. Learn more about using the npm method [here](https://github.com/segmentio/analytics-next/tree/master/packages/browser#readme). 
+  - **NPM method**: Load analytics.js with the npm library. Learn more about using the npm method in the [@segmentio/analytics-next](https://github.com/segmentio/analytics-next/tree/master/packages/browser#readme){:target="_blank”} repository. 
 
 3. Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 
@@ -191,7 +191,7 @@ To get started with Node.js:
 > info ""
 > Run `npx typewriter` to regenerate your Typewriter client. You need to do this each time you update your Tracking Plan.
 
-Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. This helps to prevent regressions when you migrate JavaScript projects to Typewriter in bulk. Keep in mind that proxying doesn't work with named exports.
+Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy){:target="_blank”}, which helps protect your application from crashing if you make analytics calls with a generated function that doesn't exist. For example, if an `Order Completed` event didn't exist in your Tracking Plan in the first example above, then your app would crash with a `TypeError: typewriter.orderCompleted is not a function`. However, since `typewriter` dynamically proxies the underlying function calls, it can detect if a function does not exist, and handle it for you. Typewriter logs a warning message, then fires an `Unknown Analytics Call Fired` event into your source. This helps to prevent regressions when you migrate JavaScript projects to Typewriter in bulk. Keep in mind that proxying doesn't work with named exports.
 
 ## Swift Quickstart
 
@@ -332,13 +332,13 @@ $ npx typewriter
 
 ## API Token Configuration
 
-Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://docs.segmentapis.com/).
+Typewriter requires a Segment API token to fetch Tracking Plans from the [Segment Public API](https://docs.segmentapis.com/){:target="_blank”}.
 
 
 You must be a workspace owner to create Segment API tokens.
 
 To create an API token:
-1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click **Create Token**.
+1. Click on the **Tokens** tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank”} page and click **Create Token**.
 2. Choose Segment's Public API.
 3. Add a description for the token and assign access. If you choose *Workspace Member*, you only need to select **Tracking Plan Read-Only** for the Resource Role, as Typewriter only needs the *Tracking Plan Read-Only* role.
 4. Click **Create**.
@@ -363,19 +363,19 @@ To make the most of Typewriter, Segment recommends installing a few extensions:
 
 **JavaScript**
 
-Typewriter clients include function documentation adhering to the [JSDoc](https://jsdoc.app/) specification. Install the relevant extension below for JSDoc support in your editor:
+Typewriter clients include function documentation adhering to the [JSDoc](https://jsdoc.app/){:target="_blank”} specification. Install the relevant extension below for JSDoc support in your editor:
 
 - *VSCode*: Supports JSDoc out-of-the-box.
-- *Atom*: Install the official [atom-ide-ui](https://atom.io/packages/atom-ide-ui) and [ide-typescript](https://atom.io/packages/ide-typescript) plugins (the latter provides JavaScript support).
-- *Sublime Text*: Install [`tern_for_sublime`](https://packagecontrol.io/packages/tern_for_sublime). And then [follow this guide's advice](https://medium.com/@nicklee1/configuring-sublime-text-3-for-modern-es6-js-projects-6f3fd69e95de) on configuring Tern.
+- *Atom*: Install the official [atom-ide-ui](https://atom.io/packages/atom-ide-ui){:target="_blank”} and [ide-typescript](https://atom.io/packages/ide-typescript){:target="_blank”} plugins (the latter provides JavaScript support).
+- *Sublime Text*: Install [`tern_for_sublime`](https://packagecontrol.io/packages/tern_for_sublime){:target="_blank”}. And then [follow this guide's advice](https://medium.com/@nicklee1/configuring-sublime-text-3-for-modern-es6-js-projects-6f3fd69e95de){:target="_blank”} on configuring Tern.
 
 **TypeScript**
 
 For intellisense in TypeScript clients, install the relevant extension below for TypeScript support in your editor. If your project is a mix between JavaScript and TypeScript, then you should also install the plugins in the JavaScript section above so that your editor will also support JSDoc intellisense.
 
 - *VSCode*: Supports TypeScript out-of-the-box.
-- *Atom*: Install the official [atom-ide-ui](https://atom.io/packages/atom-ide-ui) and [ide-typescript](https://atom.io/packages/ide-typescript) plugins.
-- *Sublime Text*: Install the [TypeScript](https://packagecontrol.io/packages/TypeScript) plugin from [Package Control](https://packagecontrol.io/installation).
+- *Atom*: Install the official [atom-ide-ui](https://atom.io/packages/atom-ide-ui){:target="_blank”} and [ide-typescript](https://atom.io/packages/ide-typescript){:target="_blank”} plugins.
+- *Sublime Text*: Install the [TypeScript](https://packagecontrol.io/packages/TypeScript){:target="_blank”} plugin from [Package Control](https://packagecontrol.io/installation){:target="_blank”}.
 
 **iOS**
 
@@ -454,7 +454,7 @@ scripts:
   token: echo "OIEGO$*hf83hfh034fnosnfiOEfowienfownfnoweunfoiwenf..."
 ```
 
-To give a real example, Segment stores secrets in [`segmentio/chamber`](http://github.com/segmentio/chamber) which is backed by [AWS Parameter Store](https://aws.amazon.com/blogs/mt/the-right-way-to-store-secrets-using-parameter-store/){:target="_blank"}. Providing access to a token in `chamber` looks like this:
+To give a real example, Segment stores secrets in [`segmentio/chamber`](http://github.com/segmentio/chamber){:target="_blank”} which is backed by [AWS Parameter Store](https://aws.amazon.com/blogs/mt/the-right-way-to-store-secrets-using-parameter-store/){:target="_blank"}. Providing access to a token in `chamber` looks like this:
 
 ```yaml
 scripts:
@@ -467,7 +467,7 @@ To learn more about the `typewriter.yml` configuration format, see the [Configur
 
 In your `typewriter.yml`, you can configure a script (`scripts.after`) that fires after generating a Typewriter client. You can use this to apply your team's style guide to any of Typewriter's auto-generated files.
 
-For example, if you want to apply your [`prettier`](https://prettier.io/) formatting to `plan.json` (the local snapshot of your Tracking Plan), you can use an `after` script like this:
+For example, if you want to apply your [`prettier`](https://prettier.io/){:target="_blank”} formatting to `plan.json` (the local snapshot of your Tracking Plan), you can use an `after` script like this:
 
 ```yaml
 scripts:
@@ -506,8 +506,8 @@ $ npx typewriter development
 # To build a production client:
 $ npx typewriter production
 ```
-> note ""
-> Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv) (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema. For languages that don't support run-time validation, the development and production clients are identical.
+> info "Run-time validation support"
+> Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv){:target="_blank”} (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema. For languages that don't support run-time validation, the development and production clients are identical.
 
 Segment recommends you to use a development build when testing your application locally, or when running tests. Segment generally recommends _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.
 
@@ -572,8 +572,8 @@ Not all languages support run-time validation. Currently, `analytics.js` and `an
 
 ## Contributing
 
-If you're interested in contributing, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new) and Segment can help provide you pointers to get started.
+If you're interested in contributing, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new){:target="_blank”} and Segment can help provide you pointers to get started.
 
 ## Feedback
 
-Segment welcomes feedback you may have on your experience with Typewriter. To contact Segment, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).
+Segment welcomes feedback you may have on your experience with Typewriter. To contact Segment, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new){:target="_blank”}.

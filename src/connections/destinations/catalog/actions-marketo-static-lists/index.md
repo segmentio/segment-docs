@@ -5,12 +5,12 @@ strat: adobe
 id: 65302a514ce4a2f0f14cd426
 ---
 > info "Marketo Static Lists vs Marketo Static Lists (Actions) Destinations"
-
-Marketo Static Lists (Actions) is a rebuild of the classic destination that provides the following benefits:
-
-- **Streamlined setup process** - Marketo Static Lists (Actions) has a streamlined default setup process, making it faster to get started in a way that "just works".
-- **More control** - Actions-based destinations allow you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Marketo.
-- **Default property mappings** - Default mappings from the Segment like event, timestamp, and more allows data to be mapped correctly without any setup required.
+>
+> Marketo Static Lists (Actions) is a rebuild of the classic destination that provides the following benefits:
+> 
+> - **Streamlined setup process** - Marketo Static Lists (Actions) has a streamlined default setup process, making it faster to get started in a way that "just works".
+> - **More control** - Actions-based destinations allow you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Marketo.
+> - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more allows data to be mapped correctly without any setup required.
 
 ## Overview
 
@@ -27,7 +27,8 @@ The Marketo Static Lists (Actions) destination lets you sync users into Marketo 
 - **Lookback window allowed**: Yes
 - **Client or Server-Side Connection**: Server-side
 
-{% include content/sync-frequency-note.md %}
+> info "Real-time to batch destination sync frequency"
+> You can expect a sync frequency of 15 to 18 hours for real-time audience connections to Marketo Static Lists (Actions).
 
 ## Configuring Marketo Static Lists
 
@@ -55,6 +56,9 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
 > warning "Warning:"
 > Do not create a list in the folder for the audience. Segment creates the list for you!
+
+### Using Marketo Static Lists (Actions) with the Event Tester
+This destination keeps track of a `List Id` field for you on the backend. That field is added to payloads as Segment processes them. This means that the Event Tester can't be used out-of-the-box as it can with most destinations. To test an event using the Event Tester for Marketo Static Lists (Actions), you need to add a valid `List Id` to the payload at the `context.personas.external_audience_id` key.
 
 ### Using Marketo Static Lists (Actions) destination with Engage
 
@@ -85,6 +89,8 @@ When you save the mapping, a list is created in Marketo. You can update the list
 > Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
 
 You can view the audience in Marketo by going to **Lead Database→ Group Lists→Name of folder you created in Step 3 → Audience name**
+
+{% include components/actions-fields.html %}
 
 ## Troubleshooting
 

@@ -1,6 +1,5 @@
 ---
 title: WorkRamp Source
-beta: true
 id: 7GmYZcBQyw
 ---
 {% include content/source-region-unsupported.md %}
@@ -10,11 +9,6 @@ id: 7GmYZcBQyw
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but also federate data into other enabled Segment Destinations.
 
 This source is maintained by WorkRamp. For any issues with the source, [contact the WorkRamp support team](mailto:support@workramp.com).
-
-> info "The WorkRamp source is in Beta"
-> WorkRamp are actively developing the source. This doc was last updated on July 8, 2022. If you are interested in joining their beta program or have any feedback to help improve the WorkRamp Source and its documentation, contact [support@workramp.com](mailto:support@workramp.com)
-
-
 
 ## Getting started
 

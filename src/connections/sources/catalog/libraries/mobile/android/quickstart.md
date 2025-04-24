@@ -2,7 +2,13 @@
 title: 'Quickstart: Analytics-Android'
 hidden: true
 strat: android
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
+
+> warning "End-of-Support for Analytics-Android in March 2026"
+> End-of-support for the Analytics-Android SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDK. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). 
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
@@ -77,10 +83,10 @@ Ensure that the necessary permissions are declared in your application's `Androi
 
 ## Step 5. Identify Users
 
-> note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The `identify` method is one of our core API methods. It's how you tie one of your users and their actions to a recognizable userId. It also lets you record traits about the user, like their email, name, account type, etc. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/android#identify).
+The Identify call is one of Segment's core API methods. It's how you tie one of your users and their actions to a recognizable `userId`. It also lets you record traits about the user, like their email, name, and account type. You can read more about it in the [Identify reference](/docs/connections/sources/catalog/libraries/mobile/android#identify).
 
 When and where you call `identify` depends on how your users are authenticated, but doing it in the `onCreate` method of your [Application](http://developer.android.com/reference/android/app/Application.html) class would be most common, as long as you know who your user is. If your user is still anonymous, you should skip this part and we'll attribute the subsequent events to an `anonymousId` instead.
 
@@ -135,4 +141,4 @@ Once you've added a few `track` calls, **you're done!** You successfully instrum
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics for Android. You might also want to check out our full [Analytics for Android reference](/docs/connections/sources/catalog/libraries/mobile/android) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics-Android. You might also want to check out Segment's full [Analytics-Android reference](/docs/connections/sources/catalog/libraries/mobile/android) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.

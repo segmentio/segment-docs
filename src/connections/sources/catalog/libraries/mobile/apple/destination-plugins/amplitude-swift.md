@@ -13,7 +13,7 @@ strat: swift
 4. Click the "Amplitude" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
-Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 The Amplitude Swift plugin doesn't send events to Amplitude from the client side. It instead adds Amplitude session data and then sends it server side from the Amplitude Actions destination.
 
@@ -57,6 +57,9 @@ analytics.add(plugin: AmplitudeSession())
 ```
 
 Your events receive session data and start flowing to Amplitude in Cloud Mode.
+
+### Native Amplitude events
+Newer versions of the Swift Amplitude Plugin (V 1.4.1 and up) will send the native Amplitude `Session Start` and `Session End` events in addition to tracking `session_id`. These versions of the plugin also support sending native Amplitude lifecycle events in lieu of the Segment lifecycle events to Amplitude. These will appear in your Amplitude dashboard with the `[Amplitude]` prefix but will not be sent to Segment. 
 
 ### Log Purchases in existing destination instances
 

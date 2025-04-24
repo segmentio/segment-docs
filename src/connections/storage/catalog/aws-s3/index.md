@@ -11,13 +11,15 @@ The AWS S3 destination provides a more secure method of connecting to your S3 bu
 
 Functionally, the two destinations (Amazon S3 and AWS S3 with IAM Role Support) copy data in a similar manner.
 
-## Getting Started
+## Getting started
 
 The AWS S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
 
 AWS S3 works differently than most destinations. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) does not affect events with AWS S3.
 
 The Segment Tracking API processes data from your sources and collects the Events in batches. Segment then uploads the batches to a secure Segment S3 bucket, from which they're securely copied to your own S3 bucket in small bursts. Individual files won't exceed 100 MB in size.
+
+{% include content/storage-do-include.md %}
 
 {% comment %}
 
@@ -428,7 +430,7 @@ curl -vvv --location --request PATCH https://api.segmentapis.com/destinations/$D
 ## Test your migrated source
 You can validate that you configured your migrated source correctly on the AWS S3 destination page in the Segment app. 
 
-> note "Source editing permissions required"
+> warning "Source editing permissions required"
 > In-app source validation is restricted to users with source editing permissions (for example, users with Workspace Owner, Source Admin, or Workspace Admin roles). For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/). 
 
 To verify that you migrated your source correctly: 

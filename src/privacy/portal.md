@@ -89,6 +89,8 @@ When Segment detects data that meets the criteria for one of the default
 matchers (in the list above) in properties in your Web, Mobile, Server, or Cloud
 Event Sources, we display it in the [Privacy Portal Inbox](#privacy-inbox).
 
+Default PII matchers are currently uneditable. If you want to change the behavior of a default matcher, you can create a custom PII matcher that replicates and overwrites the default matcher.
+
 ### Custom PII Matchers
 
 This is where you can create your very own matchers to tell Segment what to scan
@@ -225,7 +227,7 @@ Fields that are classified as 'Red' are masked for users that do not have PII Ac
 Keep in mind that if you have set Standard Controls to block fields from any of your sources, any new classifications you create in the Inbox will start to take affect immediately. For example, if you have a Privacy Control set up to block **Red** data from your Android source, any new fields you classify in the Inbox as **Red** will be blocked from entering Segment from your Android source.
 
 **Yellow Classification**:
-Fields that are classified as 'Yellow' are masked for users that do not have PII Access enabled. 
+Fields that are classified as *Yellow* are masked for users that do not have PII Access enabled. You need a Custom Matcher to mask fields other than those in the Default PII Matchers list.
 
 **Green Classification**:
 Classifying a field as 'Green' does not have any impact on the behavior of masking of fields within the Segment App, it is only available for the housekeeping purposes.

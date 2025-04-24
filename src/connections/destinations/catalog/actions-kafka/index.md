@@ -1,14 +1,11 @@
 ---
 title: Kafka Destination
-beta: true
 id: 65dde5755698cb0dab09b489
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
 [Kafka](https://kafka.apache.org/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a highly scalable and fault-tolerant messaging system that enables real-time data processing and stream processing at scale. When integrated with Segment, Kafka serves as a powerful backbone for managing and processing event data collected by Segment, allowing businesses to efficiently ingest, route, and analyze data across various applications and systems in real time.
-
-This destination is maintained by Segment. For any issues with the destination, [contact the Segment Support team](mailto:friends@segment.com).
 
 ## Getting started
 
@@ -32,9 +29,6 @@ The way you've configured your Kafka Cluster informs the authentication and encr
     <ul>
       <li>
         <b>Plain</b> or <b>SCRAM-SHA-256 / 512</b> authentication: provide values for <b>Username</b> and <b>Password</b> fields.
-      </li>
-      <li> 
-        <b>AWS</b> authentication: provide values for <b>AWS Access Key ID</b> and <b>AWS Secret Key</b> fields, and optionally for the <b>AWS Authorization Identity</b> field. 
       </li>
       <li>
         <b>Client Certificate</b> authentication: provide values for the <b>SSL Client Key</b> and <b>SSL Client Certificate</b> fields. 

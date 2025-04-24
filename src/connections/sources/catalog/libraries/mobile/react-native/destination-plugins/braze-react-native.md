@@ -118,7 +118,7 @@ The endpoint returns:
 ```
 
 > info "Tip"
-> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
+> If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
@@ -150,19 +150,13 @@ track('View Product', {
 });
 ```
 
-When you `track` an event, Segment sends that event to Braze as a custom event.
-
-> note ""
-> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
-
-> note ""
-> Segment removes the following custom properties reserved by Braze:
->
->  - `time`
->  - `quantity`
->  - `event_name`
->  - `price`
->  - `currency`
+When you `track` an event, Segment sends that event to Braze as a custom event. If you're sending Track events in Cloud Mode, Braze requires that you include a `userId` or `braze_id`. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
+Segment removes the following custom properties reserved by Braze when sending data in Cloud mode:
+- `time`
+- `quantity`
+- `event_name`
+- `price`
+- `currency`
 
 ### Order Completed
 

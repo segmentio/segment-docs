@@ -24,7 +24,7 @@ The Snapchat Conversions API destination provides the following benefits:
 5. On the **Settings** tab, authenticate with Snap using OAuth. Click **Connect to Snapchat Conversions API**. Follow the prompts to authenticate using OAuth, with a Snapchat login that is a member of the Snapchat Ads account you want to connect.
 6. Add your [Snap Pixel ID](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} *if you plan to send web or offline events*. *If you plan to send app events,* add your [Snap App ID](https://businesshelp.snapchat.com/s/article/snap-app-id?language=en_US​){:target="_blank"} and App ID.
 7. Enable the destination and click **Save**.
-8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 > warning ""
 > To send events to Snap, you **must** add a Pixel ID for web and offline conversions or a Snap App ID and App ID for mobile conversions. If missing, events will fail.

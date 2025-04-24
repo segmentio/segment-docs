@@ -1,6 +1,5 @@
 ---
 title: Set Up Segment Data Lakes
-redirect_from: '/connections/destinations/catalog/data-lakes/'
 redirect_from:
   - '/connections/destinations/catalog/data-lakes/'
   - '/connections/destinations/catalog/azure-data-lakes/'
@@ -12,7 +11,7 @@ Segment supports two type of data-lakes:
 - [AWS Data Lakes](/docs/connections/storage/catalog/data-lakes/#set-up-segment-data-lakes)
 - [Segment Data Lakes (Azure)](/docs/connections/storage/catalog/data-lakes/#set-up-segment-data-lakes-azure)
 
-> note "Lake Formation"
+> success ""
 > You can also set up your Segment Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
 
 ## Set up Segment Data Lakes (AWS)
@@ -73,7 +72,7 @@ You will see event data and [sync reports](/docs/connections/storage/data-lakes/
 To receive sync failure alerts by email, subscribe to the `Storage Destination Sync Failed` activity email notification within the **App Settings > User Preferences > [Notification Settings](https://app.segment.com/goto-my-workspace/settings/notifications){:target="_blank”}**.
 
 
-`Sync Failed` emails are sent on the 1st, 5th, and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
+`Sync Failed` emails are sent on the 1st, 5th, and 20th sync failure. Learn more about the types of errors which can cause sync failures in Segment's [Sync errors](/docs/connections/storage/data-lakes/sync-reports/#sync-errors) docs.
 
 
 ### (Optional) Step 4 - Replay historical data
@@ -168,7 +167,7 @@ Before you can configure your Azure resources, you must complete the following p
 
 ### Step 4 - Set up Databricks
 
-> note "Databricks pricing tier"
+> info "Databricks pricing tier"
 > If you create a Databricks instance only for Segment Data Lakes (Azure) usage, only the standard pricing tier is required. However, if you use your Databricks instance for other applications, you may require premium pricing.
 
 1. From the [home page of your Azure portal](https://portal.azure.com/#home){:target="_blank”}, select **Create a resource**.
@@ -347,7 +346,7 @@ After you set up the necessary resources in Azure, the next step is to set up th
 
 Instead of manually configuring your Data Lake, you can create it using the script in the [`terraform-segment-data-lakes`](https://github.com/segmentio/terraform-segment-data-lakes){:target="_blank”} GitHub repository.
 
-> note " "
+> warning ""
 > This script requires Terraform versions 0.12+.
 
 Before you can run the Terraform script, create a Databricks workspace in the Azure UI using the instructions in [Step 4 - Set up Databricks](#step-4---set-up-databricks). Note the **Workspace URL**, as you will need it to run the script.

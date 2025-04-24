@@ -21,14 +21,14 @@ you fill out your company info and have a Nielsen representative before getting
 started.
 
 You must also go through the pre-certification process as outlined
-[here](https://engineeringportal.nielsen.com/docs/DCR_Pre-Certification_Checklist){:target="_blank"}
+in Nielsen's [App Pre-Certification Checklist](https://engineeringportal.nielsen.com/docs/DCR_Pre-Certification_Checklist){:target="_blank"}
 with your Nielsen representative before shipping this implementation to
 production.
 
 ## Mobile
 
 To get started with Nielsen-DTVR and Segment, you'll want to first integrate
-your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or
+your mobile app with Segment's [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or
 [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources.
 
 ### iOS

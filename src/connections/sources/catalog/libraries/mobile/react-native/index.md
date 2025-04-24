@@ -88,11 +88,11 @@ These are the options you can apply to configure the client:
 | `storePersistor`            | undefined | A custom persistor for the store that `analytics-react-native` uses. Must match [`Persistor`](https://github.com/segmentio/analytics-react-native/blob/master/packages/sovran/src/persistor/persistor.ts#L1-L18) interface exported from [sovran-react-native](https://github.com/segmentio/analytics-react-native/blob/master/packages/sovran). |
 | `proxy`                     | undefined | `proxy` is a batch url to post to instead of 'https://api.segment.io/v1/b'.                                                                                                                                                                                                                                                                           |
 | `errorHandler`              | undefined | Create custom actions when errors happen, see [Handling errors](#handling-errors)                                                                                                                                                                                                                                                                     |
-
+| `useSegmentEndpoints`       | false     | Set to `true` to automatically append the Segment endpoints when using `proxy` or `cdnProxy` to send or fetch settings. Otherwise, `proxy` or `cdnProxy` will be used as is.      |
 
 ## Adding Plugins to the Client
 
-You can add a plugin at any time through the `segmentClient.add()` method. More information about plugins, including a detailed architecture overview and a guide to creating your own can be found [here](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-plugin-architecture/).
+You can add a plugin at any time through the `segmentClient.add()` method. More information about plugins, including a detailed architecture overview and a guide to creating your own can be found in the [Analytics React Native Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-plugin-architecture/) docs.
 
 ```js
 import { createClient } from '@segment/analytics-react-native';
@@ -203,7 +203,7 @@ Once you've installed the Analytics React Native library, you can start collecti
 ## Destinations
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+<br>Segment offers support for two different types of destination connection modes: Cloud-mode and Device-mode. learn more about the differences between the two in the Segment [Destination docs](/docs/connections/destinations/#connection-modes).
 
 <div class="double">
   {% include components/reference-button.html

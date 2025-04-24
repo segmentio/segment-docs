@@ -1,7 +1,6 @@
 ---
 title: RateHighly Source
 id: P1kUrzj9pv
-beta: true
 hidden: true
 ---
 

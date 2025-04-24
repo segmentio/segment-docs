@@ -1,6 +1,5 @@
 ---
 rewrite: true
-beta: true
 title: Azure Function Destination
 id: 5cbf95e258453600011d6d8f
 ---

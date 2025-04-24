@@ -1,7 +1,6 @@
 ---
 title: White Label Loyalty Source
 id: xeZMgSrtAQ
-beta: true
 ---
 
 [White Label Loyalty](https://whitelabel-loyalty.com/){:target="_blank”} is an event-powered loyalty solution to drive customer retention.

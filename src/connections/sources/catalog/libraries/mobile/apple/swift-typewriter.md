@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Typewriter
+title: Analytics-Swift Typewriter
 strat: swift
 ---
 [Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.

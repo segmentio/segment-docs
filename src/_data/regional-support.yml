@@ -8,26 +8,41 @@
 sources:
   region:
     - amp
+    - airship
+    - authvia
     - android
+    - blip
     - clojure
-    - factual-engine
+    - configcat
+    - customer-io
+    - elastic-path
+    - elastic-path-cx-studio
     - go
     - http-api
     - ios
+    - inmoment-formerly-wootric
     - java
     - javascript
     - kotlin
     - kotlin-android
     - net
-    - mixpanel-cohorts
+    - mailmodo
+    - mixpanel-cohorts-source
     - node-js
+    - one-creation
+    - onesignal
+    - onetrust
     - php
     - pixel-tracking-api
     - project
+    - pushwoosh-source
     - python
+    - quin-ai
+    - ratehighly
     - react-native
     - roku
     - ruby
+    - sendgrid-marketing-campaigns
     - swift-ios
     - twilio-event-streams-beta
     - xamarin
@@ -37,7 +52,13 @@ sources:
     - salesforce-marketing-cloud
     - salesforce
     - stripe
+    - shopify-fueled
+    - surveysparrow
+    - synap
     - twilio
+    - userguiding
+    - white-label-loyalty
+    - yotpo
     - hubspot
     - sendgrid
     - mandrill
@@ -54,7 +75,6 @@ sources:
     - clevertap
     - braze
     - beamer
-    - airship
     - adwords
     - amazon-s3
   endpoint:
@@ -62,7 +82,6 @@ sources:
     - amp
     - android
     - clojure
-    - factual-engine
     - go
     - http-api
     - ios
@@ -304,7 +323,6 @@ destinations:
     - perfect-audience
     - perkville
     - persistiq
-    - personas-display-video-360
     - personas-facebook-custom-audiences
     - personyze
     - pingdom
@@ -435,7 +453,7 @@ destinations:
     - repeater
     - slack
     - stitch-data
-  
+
 warehouses:
   region:
     - azuresqldb
@@ -445,7 +463,7 @@ warehouses:
     - postgres
     - redshift
     - snowflake
-  endpoint: 
+  endpoint:
     - azuresqldb
     - azuresqldw
     - bigquery

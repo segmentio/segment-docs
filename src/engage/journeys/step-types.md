@@ -111,7 +111,7 @@ The **Send an email**, **Send an SMS**, and **Send a WhatsApp** steps are only a
 
 Use Twilio Engage to send email as a step in a Journey.
 
-> note ""
+> info ""
 > To send email in Engage, you must connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment space. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
 1. From the **Add step** window, **Send an email**.
@@ -132,7 +132,7 @@ Use Twilio Engage to send email as a step in a Journey.
 
 Use Twilio Engage to send an SMS message as a step in a Journey.
 
-> note ""
+> info ""
 > To send SMS in Engage, you must connect a Twilio messaging service to your Segment workspace. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
 1. From the **Add step** window, click **Send an SMS**.

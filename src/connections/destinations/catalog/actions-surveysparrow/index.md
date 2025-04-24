@@ -1,7 +1,6 @@
 ---
 title: SurveySparrow (Actions) Destination
 hidden: true
-beta: true
 ---
 {% include content/plan-grid.md name="actions" %}
 

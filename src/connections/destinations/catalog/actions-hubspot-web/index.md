@@ -32,7 +32,7 @@ HubSpot Web (Actions) provides the following benefits over the classic HubSpot d
 3. Click **Configure HubSpot Web (Actions)**.
 4. Select the web source that will send data to HubSpot Web (Actions) and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/).
 5. On the **Settings** tab, input your HubSpot Hub ID and configure the other destination settings.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
@@ -40,7 +40,4 @@ HubSpot Web (Actions) provides the following benefits over the classic HubSpot d
 ## FAQ & Troubleshooting
 
 ### Why aren't my custom behavioral events appearing in HubSpot?
-HubSpot has several limits for custom behavioral events, including a limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, HubSpot will truncate to only update 50 properties per event completion. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.
-
-> note ""
-> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+You must have a HubSpot Enterprise Marketing Hub account to send custom behavioral events. If you have a HubSpot Enterprise Marketing Hub account and are still missing events, you might have exceeded the limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, HubSpot will truncate to only update 50 properties per event completion. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.

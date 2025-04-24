@@ -41,7 +41,7 @@ The default behavior is for Klaviyo to pass the `userId` associated with the ema
 
 ## Collections
 
-Collections are the groupings of data we pull from your Source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
+Collections are the groupings of data Segment receives from your Klaviyo source. In your warehouse, each collection gets its own table and a `tracks` table that aggregates all the events into a single table. 
 
 <table>
   <tr>
@@ -106,4 +106,4 @@ As noted in the Overview, this integration now supports the ability to pass info
 
 To help avoid this duplication of profiles in Segment, you can check the box above, which will limit the profiles Klaviyo syncs with Segment to only the profiles originally created in Segment.
 
-Once you've selected the settings you would like to enable, click Update Segment Settings to complete the integration.
+Once you've selected the settings you would like to enable, click **Update Segment Settings** to complete the integration.

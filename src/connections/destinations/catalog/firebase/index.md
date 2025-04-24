@@ -41,8 +41,8 @@ buildscript {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-> note ""
-> **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
+> warning "Use the `aar` package when adding the Segment-Firebase SDK"
+> The Firebase SDK requires Android resources which are available on `aar` packages.
 
 
 <ol style="counter-reset: none;"><li value="5" markdown=1>
@@ -269,23 +269,23 @@ Firebase is Google's recommended method for reporting conversions to Adwords. To
 
 ### Troubleshooting
 
-Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://firebase.google.com/docs/analytics/debugview){:target="_blank"}.
+Firebase has great logging. If you are having any issues, you can enable debug mode as outlined in Google's [Debug events](https://firebase.google.com/docs/analytics/debugview){:target="_blank"} documentation.
 
 ### Changes from iOS v1 to v2 Beta
 
-We have been working hard bringing our Firebase iOS beta integration up to date with the native Firebase SDK. The new version 2.0.0-beta has a number of changes that you should be aware of before you upgrade.
+Segment has been working hard bringing the Firebase iOS beta integration up to date with the native Firebase SDK. The new version 2.0.0-beta has a number of changes that you should be aware of before you upgrade.
 
-- Bumps to Firebase version 4.0. (we were a major version behind)
+- Bumps to Firebase version 4.0. (Segment's integration was a major version behind)
 - Removes `subspec` which pulls in the deprecated `pod appIndexing` .
 - Fixes a crash when passing a non NSString value through `traits` on `Identify`.
 - Fixes Mapping to Firebase `logEvent` and Firebase reserved Params and Constants.
 
-The last point is important, as the mappings are different in this new version and will change which events you seen in your Firebase dash. We suggest you make this upgrade, as this new naming convention coincides with Firebase's semantic [Constants and Params](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Constants#/){:target="_blank"}.
+The last point is important, as the mappings are different in this new version and will change which events you seen in your Firebase dash. Segment recommends that you make this upgrade, as this new naming convention coincides with Firebase's semantic [Constants and Params](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Constants#/){:target="_blank"}.
 
 Even more exciting is that this new iOS SDK will have parity with the new Segment-Firebase Android SDK.
 
-As a current user of Segment-Firebase iOS, you will be able to pull in the latest version by pinning `pod 'Segment-Firebase', '~>2.0`. While we don't suggest this, if you are not ready to upgrade you can pin the old beta version at `pod 'Segment-Firebase', '~>1.0.0``'`
+As a current user of Segment-Firebase iOS, you will be able to pull in the latest version by pinning `pod 'Segment-Firebase', '~>2.0`. While this is not recommended, if you are not ready to upgrade you can pin the old beta version at `pod 'Segment-Firebase', '~>1.0.0``'`
 
-For details on the new mapping, you can check out our documentation [here](/docs/connections/destinations/catalog/firebase/#event-mappings).
+For details on the new mapping, you can check out [Segment's Event mappings documentation](/docs/connections/destinations/catalog/firebase/#event-mappings).
 
-Let us know if you have any questions. We recommend upgrading as soon as possible, and [let us know](https://segment.com/help/contact/){:target="_blank"} if you have any feedback about both the Firebase iOS and Android betas.
+Segment recommend upgrading as soon as possible. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} if you have any feedback about both the Firebase iOS and Android betas.

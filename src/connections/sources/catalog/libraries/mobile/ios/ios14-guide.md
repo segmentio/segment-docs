@@ -1,13 +1,16 @@
 ---
 title: iOS 14 Guide
 strat: ios
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 
-> warning ""
-> **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS 14 changes explained in this guide.
+> warning "End-of-Support for Analytics-iOS in March 2026"
+> End-of-support for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
 
-> note ""
-> For information about iOS 14.5, see [What's new in iOS 14.5](#whats-new-with-ios-145) below.
+> warning ""
+> You should update your `analytics-ios` and device-mode destinations to adapt to iOS 14 changes explained in this guide. For information about iOS 14.5, see [What's new in iOS 14.5](#whats-new-with-ios-145) below.
 
 In June 2020, Apple made several privacy-related announcements at WWDC20 about its upcoming iOS 14 release, including [changes to the collection and use of Identifier for Advertising (IDFA)](https://developer.apple.com/app-store/user-privacy-and-data-use/). These changes require developers to ask for user consent *before* collecting IDFA to track users across multiple applications.
 

@@ -5,7 +5,7 @@ strat: google
 
 Firebase is Google's platform for mobile apps. The Segment Firebase destination requires that you bundle the Firebase SDK with your project. The Segment-wrapped destination code then runs on the user's device, and sends its tracking calls to the Firebase API endpoints, and a copy to Segment for archiving.
 
-Firebase’s destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-firebase)
+Firebase’s destination plugin code is open source and available [on GitHub](https://github.com/segment-integrations/analytics-kotlin-firebase).
 
 ## Adding the dependency
 
@@ -148,4 +148,4 @@ Firebase is Google's recommended method for reporting conversions to Adwords. To
 
 ### Troubleshooting
 
-Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://firebase.google.com/docs/analytics/debugview).
+Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [in Google'd Debug view](https://firebase.google.com/docs/analytics/debugview){:target="_blank”} documentation.
