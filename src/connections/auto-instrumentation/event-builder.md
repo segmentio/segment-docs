@@ -19,7 +19,7 @@ If you've installed the SDK but still don't see the Event Builder tab, reach out
 ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment source](images/event_builder_tab.png)
 
 > info "Event Builder during Private Beta"
-> During Private Beta beta, both the Event Builder and the legacy Auto-Instrumentation tab appear in the navigation. Segment will remove the legacy tab once all customers have migrated to the Event Builder experience.
+> During Private Beta, both the Event Builder and the legacy Auto-Instrumentation tab appear in the navigation. Segment will remove the legacy tab once all customers have migrated to the Event Builder experience.
 
 ## Generate activity
 
