@@ -374,5 +374,8 @@ The audience builder accepts CSV and TSV lists.
 
 This error occurs when creating audiences that reference each other, meaning audience X refers to audience Y in its trigger condition, and later you attempt to modify audience Y's trigger condition to refer back to audience X. To avoid this error, ensure that the audiences do not reference each other in their conditions.
 
+### Can I build an audience based on `context.traits` in a Track event?
+No. Traits located in the `context.traits` object of a Track event aren’t available in the Event Properties section of the Audience Builder. You can only use top-level event properties to define event-based audience conditions.
+
 ### How does the historical data flag work?
 The **Include Historical Event Data** option lets you take past event data into account and control how much of it is considered when creating real-time audiences. You can set a lookback window (for example, the “last 90 days”) to limit the processed event data, or disable it entirely to use only data arriving after creation. For batch audiences, Segment includes historical data by default.
