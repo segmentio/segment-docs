@@ -156,7 +156,7 @@ To connect your warehouse to the Data Graph:
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below
 - **Authentication**: There are 2 supported authentication methods:
   - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created
-  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
+  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below
  
 5. Test your connection, then click Save.
 
