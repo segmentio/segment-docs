@@ -97,15 +97,17 @@ To obtain the access token:
     }
     ```
 
+    Unless otherwise specified, all fields are mandatory. 
+
     Field | Description 
     ------------ | -------------
-    KID | The key ID of the public key in the OAuth application. You can find this value in the Overview tab of the OAuth app you created in the Segment app. 
-    ISS | The identifier of the JWT issuer. This value is `https://oauth2.segment.io` if you're located in the US, or `https://oauth2.eu1.segmentapis.com` if you're located in the EU. 
-    SUB | The OAuth application ID. You can find this value in the Overview tab of the OAuth app you created in the Segment app.
+    KID | The key ID of the public key in the OAuth application. You can find this value in the Segment app by navigating to the Access Management tab and selecting the OAuth app you created. On the Overview tab for your OAuth app, you'll find your Key ID.  
+    ISS | _(Optional)_  The identifier of the JWT issuer. This value is `https://oauth2.segment.io` if you're located in the US, or `https://oauth2.eu1.segmentapis.com` if you're located in the EU. 
+    SUB | The OAuth application ID. You can find this value in the Segment app by navigating to the Access Management tab and selecting the OAuth app you created. On the Overview tab for your OAuth app, you'll find your application ID under **App ID**.
     AUD | The intended recipient of the token. This value is `https://oauth2.segment.io` if you're located in the US, or `https://oauth2.eu1.segmentapis.com` if you're located in the EU. 
-    IAT | (_Optional_) The epoch time in seconds when the token was issued. This is typically set to the current time using `math.floor(Date.now() / 1000)`.
+    IAT | The epoch time in seconds when the token was issued. This is typically set using `math.floor(Date.now() / 1000)`.
     EXP | The expiry time of a token, measured in seconds. Tokens are expected to be valid for less than sixty seconds. You can set the expiry of a token using `math.floor(Date.now() / 1000) + 60`. 
-    JTI | (_Optional_) A case-sensitive string that acts as a [unique identifer for the token](https://www.rfc-editor.org/rfc/rfc7519#section-4.1.7){:target="_blank”}.
+    JTI | A case-sensitive string that acts as a [unique identifer for the token](https://www.rfc-editor.org/rfc/rfc7519#section-4.1.7){:target="_blank”}. Segment recommends setting this value with a UUID format to avoid duplicate values between tokens. 
 
 2. Send a form-url-encoded `POST` request to the regional authorization server's `\token` route with the following parameters:
     
