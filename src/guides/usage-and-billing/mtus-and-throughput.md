@@ -182,7 +182,7 @@ Check to see if you changed how you call `analytics.reset()`. This utility metho
 
 #### Overwriting an existing identity
 
-Segment's analytics libraries include methods that allow you to overwrite both the `userId` (using `identify(xxx)`) and `anonymousId` (using `analytics.user().anonymousId(xxx)`). Using these methods on a user whose tracking information already includes an ID can cause the user to be counted more than once.
+Segment’s analytics libraries include methods that allow you to overwrite both the `userId` (using `identify(xxx)` or `analytics.instance.user().id(xxx)`) and `anonymousId` (using `analytics.user().anonymousId(xxx)`).Using these methods on a user whose tracking information already includes an ID can cause the user to be counted more than once.
 
 If you find you need to use one of these overwrite methods, you should check to make sure that the field you are changing is `null` first. If the field is _not_ null, you probably don't want to overwrite it and lose the user's original tracked identity.
 

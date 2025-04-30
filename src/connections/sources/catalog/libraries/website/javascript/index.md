@@ -65,10 +65,13 @@ The Identify call has the following fields:
 
 | Field      |          | Type     | Description                                                                                                                                                                                                                                       |
 | ---------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `userId`   | optional | String   | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).                         |
+| `userId`   | optional | String   | The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).                     |
 | `traits`   | optional | Object   | A dictionary of traits you know about the user, like `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).                                                                             |
 | `options`  | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `traits` object, pass an empty object (as an '{}') before `options`._ |
-| `callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.                                                                                                                                           |
+| `callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.  |
+
+
+If you want to set the `userId` without sending an identify call, you can use `analytics.user().id('123')`. On the NPM package, use `analytics.instance.user().id(xxx)`. This method updates the stored `userId` locally without triggering a network request. This is helpful if you want to associate a user ID silently, without sending additional data to Segment or connected destinations. Be cautious when changing the `userId` mid-session to avoid double-counting users or splitting their identity history.    
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
@@ -100,6 +103,7 @@ analytics.identify('12091906-01011992', function(){
   // Note: site-critical functionality should not depend on your analytics provider
 });
 ```
+
 
 ### Track
 
