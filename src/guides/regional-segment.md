@@ -127,23 +127,6 @@ Segment maintains and hosts these sources, and they don't require SDK-level conf
 
 If you're using other cloud sources not listed here, they may only be available in US-based workspaces. Reach out to Segment Support if you're unsure whether a cloud source is supported in the EU.
 
-## Updating source settings in Segment
-
-After you’ve configured your SDKs or custom integrations, double-check that your source settings in Segment are using the correct regional endpoint.
-
-To set your data ingestion region:
-
-1. Go to your source's **Settings** tab.
-2. Click **Regional Settings**.
-3. Choose your **Data Ingestion Region**.
-    - If your workspace is in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, or Sydney.
-    - If your workspace is in the *EU West* data processing region, Segment only supports ingestion from Dublin, using the `events.eu1.segmentapis.com/` endpoint.
-4. Save your changes.
-
-All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
-
-Segment’s client-side SDKs automatically fetch this setting and update themselves the next time the app reloads. However, for mobile apps and critical regional routing, Segment recommends also [setting the endpoint manually in your SDK configuration](#set-up-your-sources-for-eu-or-us-workspaces.
-
 ## Create a new workspace with a different region
 
 > info ""
