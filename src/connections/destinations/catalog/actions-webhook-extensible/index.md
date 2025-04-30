@@ -11,8 +11,8 @@ Segment's Extensible Webhooks destination lets you send custom data payloads to 
 
 Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com).
 
-> info "Private beta"
-> Extensible Webhooks is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Public Beta"
+> Extensible Webhooks is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Overview
 
