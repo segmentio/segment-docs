@@ -106,9 +106,9 @@ To send these consent signals via Microsoft Bing Ads destination:
 
 1. Navigate to **Settings** page of the destination.
 2. Turn on the `Enable Consent` mode setting. If not turned on, Microsoft Bing Ads destination won't send consent signal.
-3. Select `ALLOWED` or `DENIED` as the `Default Ads Storage Consent State`. This will be the default consent signal state when the page loads. You can then toggle consent state by passing consent signals via track event.
+3. Select `ALLOWED` or `DENIED` as the `Default Ads Storage Consent State`. This will be the default consent signal state when the page loads. You can then toggle consent state by passing consent signals via track or page event.
 4. If you are a Segment [Consent Management](https://segment.com/docs/privacy/consent-management/) user, specify the consent category to lookup `ad_storage` consent state using the `Ad Storage Consent Category` setting.
-5. If you are not a Segment consent management user, specify the properties field through which you want toggle consent setting with in `Ad Storage Consent Property Mapping` setting. For example, if you wish to toggle `ad_storage` consent state based `properties.ad_storage`, set the value to `ad_storage` and make sure you are `properties.ad_storage` in your track event is set to `granted` or `denied`.
+5. If you are not a Segment consent management user, specify the properties field through which you want toggle consent setting with in `Ad Storage Consent Property Mapping` setting. For example, if you wish to toggle `ad_storage` consent state based `properties.ad_storage`, set the value to `ad_storage` and make sure you are `properties.ad_storage` in your track or page event is set to `granted` or `denied`.
 
 
 ## Troubleshooting
