@@ -31,6 +31,17 @@ You can also use the Slack Actions destination to set event triggers for context
 
 To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
+### Why aren't my changes to the Tracking Plan showing up immediately?
+
+When you update a Tracking Plan (for example, adding or removing a new property or editing the event or data type) the changes are typically applied within a few minutes. However, there can occasionally be a short delay, especially during periods of high usage across the platform.
+
+If you still see events flagged or properties omitted shortly after making changes, try the following:
+
+- Wait a few minutes and then send the event again.
+- Make sure the updates are saved and published properly.
+
+If the changes still aren't reflected after 10 - 15 minutes, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}. 
+
 ### How can I see who made changes to my Tracking Plan?
 
 Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**. 
