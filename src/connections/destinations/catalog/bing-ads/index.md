@@ -98,17 +98,18 @@ analytics.track('Order Completed', {
 | Category | `category` property                           |
 | Action   | Always set to `track`                         |
 
-## Implementing consent mode
+## Consent mode
 
-Starting May 5, 2025, Microsoft is enforcing consent mode for clients with end users in European Economic Area (EEA), the United Kingdom, and Switzerland. To learn more about setting consent mode and FAQ, refer Microsoft docs [here](https://help.ads.microsoft.com/?FromAdsEmail=1#apex/ads/en/60341/1). Microsoft currently is enforcing only the `ad_storage` consent signal [docs](https://help.ads.microsoft.com/?FromAdsEmail=1#apex/ads/en/60341/1/#exp46).
+Starting May 5, 2025, Microsoft is enforcing the use of consent mode for clients with end users in the European Economic Area (EEA), the United Kingdom, and Switzerland. To learn more about setting consent mode, refer to the [Microsoft docs](https://help.ads.microsoft.com/?FromAdsEmail=1#apex/ads/en/60341/1){:target="_blank"}. Microsoft is currently only enforcing the [`ad_storage` value](https://help.ads.microsoft.com/?FromAdsEmail=1#apex/ads/en/60341/1/#exp46){:target="_blank"}.
 
-To send these consent signals via Microsoft Bing Ads destination:
+To send consent signals using the Microsoft Bing Ads destination:
 
-1. Navigate to **Settings** page of the destination.
-2. Turn on the `Enable Consent` mode setting. If not turned on, Microsoft Bing Ads destination won't send consent signal.
-3. Select `ALLOWED` or `DENIED` as the `Default Ads Storage Consent State`. This will be the default consent signal state when the page loads. You can then toggle consent state by passing consent signals via track or page event.
-4. If you are a Segment [Consent Management](https://segment.com/docs/privacy/consent-management/) user, specify the consent category to lookup `ad_storage` consent state using the `Ad Storage Consent Category` setting.
-5. If you are not a Segment consent management user, specify the properties field through which you want toggle consent setting with in `Ad Storage Consent Property Mapping` setting. For example, if you wish to toggle `ad_storage` consent state based `properties.ad_storage`, set the value to `ad_storage` and make sure you are `properties.ad_storage` in your track or page event is set to `granted` or `denied`.
+1. Navigate to **Connections > Destinations** and select the Microsoft Bing Ads destination. 
+2. Select the **Settings** tab for the destination. 
+3. Turn on the **Enable Consent** mode setting. If it is turned off, the Microsoft Bing Ads destination won't send the consent signal.
+4. Select **ALLOWED** or **DENIED** as the **Default Ads Storage Consent State**. This will be the default consent signal state when the page loads. You can toggle the consent state by passing consent signals using the Track or Page event.
+5. If you're using Segment [Consent Management](/docs/privacy/consent-management/), specify the consent category to look up the `ad_storage` consent state using the **Ad Storage Consent Category** setting.
+6. If you're not a Segment consent management user, specify the properties field through which you want to toggle the consent setting with the `Ad Storage Consent Property Mapping` setting. For example, if you wish to toggle `ad_storage` consent state based `properties.ad_storage`, set the value to `ad_storage` and make sure the `properties.ad_storage` in your track or page event is set to `granted` or `denied`.
 
 
 ## Troubleshooting
