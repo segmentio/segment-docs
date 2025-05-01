@@ -6,7 +6,10 @@ Segment's Git extension lets you manage versioning by syncing changes you make i
 
 Git Sync supports synchronization from Segment to Git. When you sync data from Segment to Git, you capture the current state of your workspace through a full sync and includes all new records and changes for supported resources. 
 
-You can use [bidirectional sync](#bidirectional-sync) to sync data from Git to Segment. After you enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes. 
+You can use [bidirectional sync](#bidirectional-sync) to sync data from Git to Segment. After you enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes.
+
+> info "Bidirectional sync is in Private Beta"
+> Bidirectional sync is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Set up Git Sync
 
@@ -87,6 +90,9 @@ For more information on using Terraform, visit [Terraform's documentation](https
 ## Bidirectional Sync
 
 Bidirectional sync builds on top of the Git Sync extension and lets you manage your Segment workspace directly in GitHub. After you configure and enable bidirectional sync, Segment automatically listens for pull requests in your repository and manages all related workspace changes. Segment only applies changes when you comment `segment apply` on pull requests that can be successfully merged.
+
+> info "Bidirectional sync is in Private Beta"
+> Bidirectional sync is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 Bidirectional sync only supports: 
 - Explicit values ([secrets](#use-secrets-with-bidirectional-sync) require additional configuration)

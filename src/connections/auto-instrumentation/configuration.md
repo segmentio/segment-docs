@@ -26,6 +26,9 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 1. In your Segment workspace, go to to **Connections > Auto-Instrumentation** and click on a source. 
 2. Click **Create Rules**.
 
+> info "Where's the Event Builder tab?"
+> The Event Builder tab only appears after you've installed the Auto-Instrumentation snippet in your site or app. If you don’t see the tab, double check your implementation or reach out to your Segment CSM.
+
 ### Using the Rules Editor
 
 The Rules Editor is where you define rules that transform raw signal data into analytics events. In the editor, you write functions that convert signals into events and then call them in the `processSignal()` function. 

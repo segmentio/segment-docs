@@ -159,7 +159,7 @@ To configure your sync schedule:
 3. Click **Edit** next to **Sync schedule**. 
 4. Select the **Schedule type**. You can choose from: 
    * **Manual**: Trigger the sync manually or with Segment's API.
-   * **Interval**: Sync based on a by-the minute, hourly, or daily cycle. For example, once every 2 hours. 
+   * **Interval**: Sync at predefined intervals: 15 min, 30 min, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, or 1 day
    * **Day and time**: Sync at specific times on selected days of the week. For example, Mondays at 2:00PM. 
 
 ### Add entities
@@ -213,7 +213,7 @@ To use Linked Events, be sure that you have proper permissions for the Data Ware
 
 #### How often do syncs occur? 
 
-Segment currently syncs once every hour.
+You can configure your syncs to occur at predefined intervals: 15 min, 30 min, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, or 1 day. See the section on [configuring the sync schedule](#configure-the-sync-schedule) to learn more. 
 
 #### Which Destinations does Linked Events support? 
 
