@@ -71,7 +71,7 @@ The Identify call has the following fields:
 | `callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.  |
 
 
-If you want to set the `userId` without sending an identify call, you can use `analytics.user().id('123')`. In the NPM package, use `analytics.instance.user().id(xxx)`. This method updates the stored `userId` locally without triggering a network request. This is helpful if you want to associate a user ID silently, without sending additional data to Segment or connected destinations. Be cautious when changing the `userId` mid-session to avoid double-counting users or splitting their identity history.    
+If you want to set the `userId` without sending an Identify call, you can use `analytics.user().id('123')`. In the NPM package, use `analytics.instance.user().id(xxx)`. This method updates the stored `userId` locally without triggering a network request. This is helpful if you want to associate a user ID silently, without sending additional data to Segment or connected destinations. Be cautious when changing the `userId` mid-session to avoid double-counting users or splitting their identity history.    
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
