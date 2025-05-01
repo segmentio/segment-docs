@@ -110,6 +110,7 @@ your identity-resolved profiles to your data warehouse.
 - **Audience Deleted**: A user in your workspace deleted an Audience.
 - **Audience Destination Sync Failed**: Segment was unable to sync your Audience with a connected destination. 
 - **Audience Modified**: A user in your workspace modified an Audience.
+- **Audience Run Complete**: Segment computed your Audience. For more information about how long it takes Segment to compute an Audience, see the [Engage Audiences Overview](/docs/engage/audiences/#understanding-compute-times) docs. 
 - **Audience Run Failed**: Segment was unable to compute your Audience. To resolve this error, please [contact Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
 > info "Custom Engage alerts"
