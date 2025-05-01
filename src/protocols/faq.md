@@ -33,7 +33,7 @@ To consolidate the views in the Schema tab, Segment automatically converts `page
 
 ### Why aren't my changes to the Tracking Plan showing up immediately?
 
-When you update a Tracking Plan, for example, adding or removing a new property or editing the event or data type, the changes are typically applied within a few minutes. However, there can occasionally be a short delay, especially during periods of high usage across the platform.
+When you update a Tracking Plan (for example, adding or removing a new property or editing the event or data type) the changes are typically applied within a few minutes. However, there can occasionally be a short delay, especially during periods of high usage across the platform.
 
 If you still see events flagged or properties omitted shortly after making changes, try the following:
 
