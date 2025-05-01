@@ -312,7 +312,7 @@ The Segment ID cookie is set with a one year expiration. However, there are some
 - If you invoke any call before you set an `anonymousId`, Segment automatically sets the `anonymousId` first. This means if you explicitly set an `anonymousId`, you might give the user two `anonymousId`s or overwrite an existing one.
 - If you fetch the `anonymousId` using `analytics.user().anonymousId()` before one is set, Segment generates and sets an `anonymousId` rather than returning `null`.
 - If you call `analytics.identify()` with a `userId` that is different from the currently cached `userId`, this can overwrite the existing one and cause attribution problems.
-- If you call `analytics.identify(xxx)` or `analytics.instance.user().id(xxx)`(On the NPM package, use `analytics.instance.user().id(xxx)`) with a `userId` that is different from the currently cached `userId`, this can overwrite the existing one and cause attribution problems.
+- If you call `analytics.identify(xxx)` or `analytics.instance.user().id(xxx)`(In the NPM package, use `analytics.instance.user().id(xxx)`) with a `userId` that is different from the currently cached `userId`, this can overwrite the existing one and cause attribution problems.
 - If you generate a new `anonymousId` on a server library, and pass it from the server to the browser, this could overwrite the user's existing `anonymousId`.
 
 
