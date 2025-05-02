@@ -174,6 +174,7 @@ The first step in creating a Data Graph is to define your entities. An entity co
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `entity`      | An immutable slug for the entity, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g `account-entity` or `account_entity`).    |
+| (Optional) `description` | An optional descriptor used to add additional context to the entity |
 | `name`        | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time.                           |
 | `table_ref`   | Defines the fully qualified table reference: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views. |
 | `primary_key` | The unique identifier for the given table. Must be a column with unique values per row. |
@@ -185,6 +186,7 @@ The first step in creating a Data Graph is to define your entities. An entity co
 data_graph {
     entity "account-entity" {
       name = "account"
+      description = "An entity representing user accounts"
       table_ref = "PRODUCTION.CUST.ACCOUNT"
       primary_key = "ID"
     }
@@ -241,6 +243,7 @@ This is the first level of relationships and a unique type of relationship betwe
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`) |
 | `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                                                                            |
+| (Optional) `description` | An optional descriptor used to add additional context to the relationship |
 | `related_entity` | References your already defined entity                                                                                                                                                                     |
 
 To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following: 
@@ -277,6 +280,7 @@ data_graph {
       # Relate accounts table to the profile 
       relationship "user-accounts" {
         name = "Premium Accounts"
+        description = "A relationship linking segment profiles to user accounts"
         related_entity = "account-entity"
   
         # Option 1: Join the profile entity with an identifier (like email) on the related entity table
@@ -302,6 +306,7 @@ For 1:many relationships, define the join on between the two entity tables using
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`)                                         |
 | `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                                                              |
+| (Optional) `description` | An optional descriptor used to add additional context to the relationship |
 | `related_entity` | References your already defined entity                                                                                                                                                                                                             |
 | `join_on`        | Defines relationship between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
 
@@ -328,6 +333,7 @@ data_graph {
         # Define 1:many relationship between accounts and carts
         relationship "user-carts" {
           name = "Shopping Carts"
+          description = "A relationship linking user accounts to carts"
           related_entity = "carts-entity"
           join_on = "account-entity.ID = cart-entity.ACCOUNT_ID"
         }
@@ -347,6 +353,7 @@ For many:many relationships, define the join on between the two entity tables wi
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `relationship`   | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`) |
 | `name`           | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                      |
+| (Optional) `description` | An optional descriptor used to add additional context to the relationship |
 | `related_entity` | References your already defined entity                                                                                                                                                                     |
 
 **Junction table spec**
@@ -390,6 +397,7 @@ data_graph {
           # Define many:many relationship between carts and products
           relationship "products" {
             name = "Purchased Products"
+            description = "A relationship linking user carts to products via the CART_PRODUCT junction table"
             related_entity = "product-entity"
             junction_table {
               table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
