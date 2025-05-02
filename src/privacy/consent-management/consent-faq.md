@@ -19,7 +19,15 @@ You can use the [Destination Actions framework](/docs/connections/destinations/a
 
 For more information, see the [Sharing consent with Actions destinations](/docs/privacy/consent-management/consent-in-unify/#sharing-consent-with-actions-destinations) documentation. 
 
-## Can I use a Consent Management Platform (CMP) other than OneTrust to collect consent from my end users?
+## Why is my event failing ingestion with the error "context.consent.categoryPreferences object is required"?
+
+An `context.consent.categoryPreferences object is required` error occurs when you send the Segment Consent Preference Updated event without the `context.consent.categoryPreferences` object. Segment performs a validation on the Segment Consent Preference Updated event to ensure that you've correctly structured your end users' consent preferences. If the required object is missing, Segment won't ingest the event and the event won't appear in downstream tools.
+
+Other events, like Track, Identify, or Group, are not subject to the same consent validation and do not require the `context.consent.categoryPreferences` object. 
+
+If you're using a Consent Management Platform (CMP) integration other than [Segment's Analytics.js OneTrust wrapper](/docs/privacy/consent-management/onetrust-wrapper/), you must ensure your Segment Consent Preference Updated events contain the `context.consent.categoryPreferences` object.
+
+## Can I use a CMP other than OneTrust to collect consent from my end users?
 
 Yes, you can use any commercially available CMP or custom solution to collect consent from your end users. If you use a CMP other than OneTrust, you must generate your own wrapper or other mechanism to add the following objects to the events collected from your sources:
 - Includes the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) on every event
