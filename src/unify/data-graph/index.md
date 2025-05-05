@@ -2,8 +2,8 @@
 title: Data Graph
 plan: unify
 redirect_from:
-  - "/unify/linked-profiles/data-graph"
-  - "/unify/data-graph/data-graph"
+  - '/unify/linked-profiles/data-graph'
+  - '/unify/data-graph/data-graph'
 ---
 
 The Data Graph acts as a semantic layer that allows businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements.
@@ -178,7 +178,7 @@ The first step in creating a Data Graph is to define your entities. An entity co
 | Parameters                                  | Definition                                                                                                                                                                                               |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `entity`                                    | An immutable slug for the entity, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (e.g `account-entity` or `account_entity`). |
-| (Optional) `description`                    | An optional descriptor used to add additional context to the entity                                                                                                                                      |
+| `description` (*Optional*)                  | An optional descriptor used to add additional context to the entity.                                                                                                                                     |
 | `name`                                      | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time.                                                                         |
 | `table_ref`                                 | Defines the fully qualified table reference: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views.                                               |
 | `primary_key`                               | The unique identifier for the given table. Must be a column with unique values per row.                                                                                                                  |
@@ -246,12 +246,12 @@ Now define your relationships between your entities. Similar to the concept of [
 
 This is the first level of relationships and a unique type of relationship between the Segment profile entity and a related entity.
 
-| Parameters               | Definition                                                                                                                                                                                                 |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `relationship`           | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`) |
-| `name`                   | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                                                                            |
-| (Optional) `description` | An optional descriptor used to add additional context to the relationship                                                                                                                                  |
-| `related_entity`         | References your already defined entity                                                                                                                                                                     |
+| Parameters                 | Definition                                                                                                                                                                                                 |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `relationship`             | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`) |
+| `name`                     | A label displayed throughout your Segment space for Linked Events, Linked Audiences, etc. This name can be modified at any time                                                                            |
+| `description` (*Optional*) | An optional descriptor used to add additional context to the relationship.                                                                                                                                 |
+| `related_entity`           | References your already defined entity                                                                                                                                                                     |
 
 To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following:
 
@@ -313,13 +313,13 @@ data_graph {
 
 For 1:many relationships, define the join on between the two entity tables using the spec below.
 
-| Parameters               | Definition                                                                                                                                                                                                                                         |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `relationship`           | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`)                                         |
-| `name`                   | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                                                              |
-| (Optional) `description` | An optional descriptor used to add additional context to the relationship                                                                                                                                                                          |
-| `related_entity`         | References your already defined entity                                                                                                                                                                                                             |
-| `join_on`                | Defines relationship between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
+| Parameters                 | Definition                                                                                                                                                                                                                                         |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `relationship`             | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`)                                         |
+| `name`                     | A label displayed throughout your Segment space for Linked Events, Linked Audiences, and so on. This name can be modified at any time                                                                                                              |
+| `description` (*Optional*) | An optional descriptor used to add additional context to the relationship.                                                                                                                                                                         |
+| `related_entity`           | References your already defined entity                                                                                                                                                                                                             |
+| `join_on`                  | Defines relationship between the two entity tables `[lefty entity slug].[column name] = [right entity slug].[column name]`. Note that since you’re referencing the entity slug for the join on, you do not need to define the full table reference |
 
 **Example:**
 
