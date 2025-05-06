@@ -43,6 +43,22 @@ analytics.load('writeKey', {
   }
 })
 ```
+
+To set cookie values using the [NPM package](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank"}, use the following code snippet:
+
+```js
+    analytics = AnalyticsBrowser.load({
+        writeKey: 'writeKey'
+    }, {
+        cookie: {
+          domain: 'sub.site.example',
+          maxage: 7, // 7 days
+          path: '/',
+          sameSite: 'Lax',
+          secure: true
+        }
+    })
+```
 > info ""
 > Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
 

@@ -85,13 +85,10 @@ If possible, you should enable batching for your SFMC destination before you sen
 
 ## Set up to send Identify calls to SFMC
 
-To use the Journey Builder to send campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment [Identify](/docs/connections/spec/identify/) calls to an SFMC Data Extension which you specify. When you call `identify`, Segment creates a Salesforce Marketing Cloud Contact, and upserts (updates) the user's `traits` in the Data Extension.
+To use the Journey Builder to send campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment [Identify](/docs/connections/spec/identify/) calls to an SFMC Data Extension which you specify. When you call `identify`, Segment creates a Salesforce Marketing Cloud Contact, and upserts (updates) the user's `traits` in the Data Extension. During this set up process, you will create one Data Extension for Identify calls ("the Identify Data Extension"), and one for each unique Track call ("the Track Data Extensions").
 
-> note ""
-> **Note**: By default, `identify` events create or update contacts in SFMC. To prevent Identify calls from creating or updating a Contact when they update a Data Extension, enable the "Do Not Create or Update Contacts" option in the Destination Settings.
-
-> info ""
-> During this set up process, you will create one Data Extension for Identify calls ("the Identify Data Extension"), and one for each unique Track call ("the Track Data Extensions").
+> info "Identify events create or update contacts in SFMC by default"
+> To prevent Identify calls from creating or updating a Contact when they update a Data Extension, enable the "Do Not Create or Update Contacts" option in the Destination Settings.
 
 ### Create a Data Extension in SFMC to store Identify calls
 You must create a Data Extension in SFMC to store the Identify calls coming from Segment. For each trait you want to send to SFMC, you must manually create an attribute on the Data Extension in SFMC. When you create a Data Extension in SFMC, you can set up as many (or as few) attributes as you need.

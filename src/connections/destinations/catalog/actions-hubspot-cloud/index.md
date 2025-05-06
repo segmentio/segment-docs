@@ -16,13 +16,18 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
-> warning ""
-> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. 
->
-> Note that for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action. Contacts created with batch endpoint can not be associated to a Company from the Upsert Company Action.
+Keep in mind that:
+* The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. For the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action. Contacts created with batch endpoint can not be associated to a Company from the Upsert Company Action.
+* **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
 
 > warning ""
-> **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
+> As of April 29, 2025, HubSpot no longer supports referencing custom object types by their base names. Instead, you must reference all custom objects by using their short-hand custom object type name, `fullyQualifiedName`, or `objectTypeId`. To avoid issues, update the following fields:
+>
+>- **Object Type** and **ObjectType to associate** in the **Upsert Custom Object Record** action
+>- **Object Type** in the **Custom Event V2** action
+>- **Object Type** and **To Object Type** in the **Custom Object V2** action
+>
+> For further details, refer to the [HubSpot documentation](https://developers.hubspot.com/changelog/breaking-change-removed-support-for-referencing-custom-object-types-by-base-name){:target="_blank"}.
 
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
@@ -35,9 +40,9 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 - **Sandbox support**. Test with a HubSpot sandbox account before implementing in your main production account to feel confident in your configuration.
 - **Support for custom behavioral events**. Send [custom behavioral events](https://developers.hubspot.com/docs/api/analytics/events){:target="_blank"} and event properties to HubSpot.
 - **Create records in custom objects**. Use your Segment events to create records in any standard or custom object in your HubSpot account.
-
-> note ""
-> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+  
+  > info ""
+  > A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 
 ## Getting started
 
@@ -95,7 +100,10 @@ Search Fields to associate |  This finds a unique record of custom object based 
 ObjectType to associate | To associate the newly created and updated custom object record with another object type, select the object type you want it to be associated with.
 Association Label | Select an association label between both the object types. From the HubSpot Dashboard, you can create associations between any type of object. To create an association label: <br>1. Log in to the [HubSpot Dashboard](https://app.hubspot.com/){:target="_blank"}. <br>2. Go to **Data Management > Objects > Custom Objects**. <br>3. Go to the **Associations** tab and click **Create association label**. 
 
-## FAQ and troubleshooting
+## FAQs and troubleshooting
+
+### Why am I receiving a `Contact already exists` error?
+This error only applies to integrations with 2 mappings that can create profiles in HubSpot. Initially, the Upsert Contact action seeks to update an existing contact. If no contact is found, a subsequent attempt is made to create a new contact, potentially leading to 3 separate HubSpot API requests. For example, an `Expired Authentication` error may occur if the token expires on the initial request, prompting a token refresh and a subsequent request. If the next error indicates `resource not found`, it means the contact wasn't located, leading to a second attempt to create the contact. However, this attempt might fail due to a `Conflict` error, suggesting the contact already exists. This situation can arise if you activate another mapping, which causes the contact to be created by the time the Upsert Contact Action attempts its final contact creation request, due to the Custom Behavioral Event Action being triggered as well.
 
 ### How do I send other standard objects to HubSpot?
 Segment provides prebuilt mappings for contacts and companies. If there are other standard objects you would like to create records in, please use the **Create Custom Object Record** action. For example, to create a deal in HubSpot, add a mapping for Create Custom Object Record, set up your Event Trigger criteria, and input a literal string of "deals" as the Object Type. You can use the Properties object to add fields that are in the [deals object](https://developers.hubspot.com/docs/api/crm/deals){:target="_blank"}, such as `dealname` and `dealstage`. The same can be done with other object types (for example, tickets, quotes, etc). Ending fields that are to go to HubSpot outside of the properties object isn't supported. This includes sending [associations](https://developers.hubspot.com/docs/api/crm/associations){:target="_blank"}.  Please note, Segment only supports creating new records in these cases; updates to existing records are only supported for contacts and companies. 
@@ -118,6 +126,11 @@ Yes. HubSpot will automatically redirect API requests directly to an EU data cen
 
 ### How do I attribute a custom behavioral event with a user token instead of Email?
 Event payloads should contain an email with either a valid format, empty string, or a `null` value. As a result, the user token takes precedence and is validated in a `Send custom behavioral event` mapping. Segment can't deliver the event to your destination if the email is invalid.
+
+### How can I update companies in HubSpot if they never were associated with a `segment_group_id`? 
+Segment uses the `segment_group_id` field to create and update companies in HubSpot. Records that were created from a pipeline outside of Segment won't have the `segment_group_id` field.  If your companies aren't associated with a `segment_group_id`, you must use another field that uniquely identifies the company in HubSpot, like the `hs_object_id` field, to make updates to your companies.
+
+To use your unique field to update companies, navigate to your Upsert Company mapping and provide the key/value pair assosciated with the `hs_object_id` field in the Company Search fields section. 
 
 ### How can I disable or delete a destination from Segment?
 Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.

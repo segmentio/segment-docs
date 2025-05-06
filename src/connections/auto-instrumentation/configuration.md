@@ -10,8 +10,8 @@ This guide details how to use signals, and their associated data, generated in o
 
 This guide assumes that you've already added the Signals SDK to your application. If you haven't yet, see the [Auto-Instrumentation Setup](/docs/connections/auto-instrumentation/) guide for initial setup.
 
-> info "Auto-Instrumentation Pilot"
-> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+> info "Auto-Instrumentation Private Beta"
+> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.                     
@@ -25,6 +25,9 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 1. In your Segment workspace, go to to **Connections > Auto-Instrumentation** and click on a source. 
 2. Click **Create Rules**.
+
+> info "Where's the Event Builder tab?"
+> The Event Builder tab only appears after you've installed the Auto-Instrumentation snippet in your site or app. If you don’t see the tab, double check your implementation or reach out to your Segment CSM.
 
 ### Using the Rules Editor
 

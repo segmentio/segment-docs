@@ -4,13 +4,6 @@ title: Delivery Overview
 
 Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any cloud-streaming destination receiving events from cloud-streaming sources. 
 
-> info "Delivery Overview for RETL destinations and Engage Audience Syncs currently in development"
-> This means that Segment is actively developing Delivery Overview features for RETL destinations and Engage Audience syncs. Some functionality may change before Delivery Overview for these integrations becomes generally available. 
-> 
-> Delivery Overview is generally available for streaming connections (cloud-streaming sources and cloud-streaming destinations) and in public beta for storage destinations. Some metrics specific to storage destinations, like selective syncs, failed row counts, and total rows seen, are not yet available. 
-> All users of Delivery Overview have access to the Event Delivery tab, and can configure delivery alerts for their destinations.
-
-
 ## Key features
 
 Delivery Overview has three core features:
@@ -21,7 +14,11 @@ Delivery Overview has three core features:
 You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
 
 ### Pipeline view
+
 The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also includes a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
+
+> info "Lookback window"
+> Delivery Overview applies a 5-minute lookback period to provide stable, accurate metrics across all pipeline steps. This interval accounts for processing delays and ensures the data Segment displays reflects a reliable snapshot of recent events.
 
 #### Classic destinations
 The pipeline view for classic destinations includes the following steps:
@@ -43,8 +40,6 @@ The pipeline view for Actions destination includes the following steps:
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements.
 - **Successful delivery**: Events that were successfully delivered to the destination.
 
-The following image shows an Actions destination filtered to include only Track Page View events in the last three pipeline steps:
-
 ![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
 
 #### Storage destinations
@@ -60,6 +55,21 @@ The pipeline view for storage destination includes the following steps:
 The following image shows a storage destination with 23 partially successful syncs: 
 
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
+
+#### Destinations connected to Engage Destinations
+
+> info "Delivery Overview for Engage Destinations is in Public Beta"
+> During the Public Beta, you can filter your pipeline view by audience. 
+
+Destinations connected to an Audience have the following steps in the pipeline view: 
+- **Events from audience**<sup>*</sup>: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
+- **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. Unlike the other steps, you cannot click into this step to view the breakdown table. 
+- **Failed delivery**: Events that Segment _attempted_ to deliver to your destination, but that ultimately _failed_ to be delivered. Failed delivery might indicate an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
+
+<sup>*</sup>_The "Events from audience" step is currently only available for Linked Audiences._
 
 ### Breakdown table
 The breakdown table provides you with greater detail about the selected events.

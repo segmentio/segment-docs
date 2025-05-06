@@ -1,9 +1,12 @@
 ---
-title: Databricks Setup
+title: Databricks Data Graph Setup
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/setup-guides/databricks-setup'
 ---
+
+> warning ""
+> Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
 
 On this page, you'll learn how to connect your Databricks data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/). 
 

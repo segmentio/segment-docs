@@ -144,7 +144,7 @@ To let users re-enter a Journey they've exited, you'll need to enable two Journe
 
 Journeys exits users based off of the exit time you configure. Users can re-enter the Journey once they meet the Journey's entry condition again and your defined re-entry time has passed. You can configure re-entry time by hour, day, or week. Re-entry time begins once a user exits the Journey.
 
-Suppose, for example, you enable re-entry for an abandoned cart campaign. You set exit to seven days and re-entry to 30 days. A user who abandons their cart will progress through the Journey and exit no later than seven days after entering. Once 30 days after exit have passed, the user can re-enter the Journey.
+Suppose, for example, you enable re-entry for an abandoned cart campaign. You set exit to seven days and re-entry to 30 days. A user who abandons their cart will progress through the journey and exit no later than seven days after entering. Once 30 days after exit have passed, the user will immediately re-enter the journey if the user still satisfies the journey's entry condition.
 
 > info "Ad-based exit settings"
 > Exit settings you configure for the [Show an ad step](/docs/engage/journeys/step-types/#show-an-ad) don't impact other Journey steps. Users can exit an ad step but remain in the Journey.

@@ -102,8 +102,6 @@ sections:
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/discounts-for-startups-npos
       title: Discounts or Coupons
-    - path: /guides/usage-and-billing/startup-program
-      title: Segment Startup Program
 - section_title: Connections
   section:
   - path: /connections
@@ -290,7 +288,7 @@ sections:
   - path: /connections/regional-segment
     title: Regional Segment
   - path: /connections/test-connections
-    title: Event Tester
+    title: Testing Connections
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -362,6 +360,8 @@ sections:
         title: BigQuery Data Graph Setup
       - path: /unify/data-graph/setup-guides/databricks-setup/
         title: Databricks Data Graph Setup
+      - path: /unify/data-graph/setup-guides/redshift-setup/
+        title: Redshift Data Graph Setup
       - path: /unify/data-graph/setup-guides/snowflake-setup/
         title: Snowflake Data Graph Setup
     - section_title: Linked Events 
@@ -414,8 +414,6 @@ sections:
     title: Introduction
   - path: '/engage/quickstart'
     title: Foundations Onboarding
-  - path: '/engage/onboarding'
-    title: Premier Onboarding
   - path: '/engage/use-cases'
     title: Use Cases
   - section_title: User Subscriptions
@@ -480,6 +478,15 @@ sections:
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
+    - section_title: Event-Triggered Journeys
+      slug: '/engage/journeys/event-triggered-journeys'
+      section: 
+      - path: /engage/journeys/event-triggered-journeys
+        title: Overview
+      - path: /engage/journeys/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
+      - path: /engage/journeys/journey-context
+        title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
     - path: '/engage/journeys/use-cases'
@@ -582,12 +589,25 @@ sections:
       title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
+  - path: /privacy/data-retention-policy
+    title: Data Retention and Deletion Policy
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
     title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
+- section_title: Monitor
+  section: 
+  - path: /monitor
+    title: Monitor Overview
+  - section_title: Alerts
+    slug: /monitor/alerts
+    section:
+    - path: /monitor/alerts
+      title: Alerts Overview
+    - path: /monitor/alerts/default-alerts
+      title: Default Alerts
 - section_title: Protocols
   section:
   - path: /protocols
@@ -703,3 +723,11 @@ sections:
     #   menu_icon: new-tab
   # - path: /config-api/tutorial-javascript-google-analytics
   #   title: Creating a Javascript web source and Google Analytics destination
+- section_title: Unified Profiles
+  section: 
+    - path: /unified-profiles
+      title: Overview
+    - path: /unified-profiles/create-a-workspace
+      title: Create a New Segment Workspace
+    - path: /unified-profiles/connect-a-workspace
+      title: Connect an Existing Workspace to Twilio

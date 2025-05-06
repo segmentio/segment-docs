@@ -7,8 +7,8 @@ This guide outlines the steps required to set up the Signals SDK in your JavaScr
 
 You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
 
-> info "Auto-Instrumentation Pilot"
-> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+> info "Auto-Instrumentation Private Beta"
+> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
@@ -65,18 +65,18 @@ Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in S
 
 ## Step 3: Verify and deploy events
 
-Next, you'll need to verify signal emission and [create rules](/docs/connections/auto-instrumentation/configuration/#example-rule-implementations) to convert those signals into events:
+After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Auto-Instrumentation** and click on the new source you created. 
-2. Verify that signals appear as expected on the dashboard.
+1. In your Segment workspace, return to **Connections > Sources**, then select the source you created for Auto-Instrumentation.
+2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
+  - Make sure you've installed the SDK correctly.
+  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+  ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
+3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.  
+  - To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
+4. Interact with your app to trigger signals: click buttons, navigate pages, submit forms, and so on. Segment collects and displays these as signals in real time.
+5. From the signals list, click **Configure event** to define a new event based on one or more signals. After configuring the event, click **Publish event rules**.
 
-    ![Signals successfully appearing in the Segment UI](images/autoinstrumentation_signals.png "Signals successfully appearing in the Segment UI")
-
-3. Click **Create Rules**.
-4. In the Rules Editor, add a rule that converts signal data into an event.
-5. Click **Preview**, then click **Save & Deploy**.
-
-Segment displays `Rule updated successfully` to verify that it saved your rule.
 
 ### Debugging
 #### Enable debug mode

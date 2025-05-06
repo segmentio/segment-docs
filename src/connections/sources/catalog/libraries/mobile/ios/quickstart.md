@@ -2,14 +2,20 @@
 title: 'Quickstart: iOS'
 hidden: true
 strat: ios
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
+
+> warning "End-of-Support for Analytics-iOS in March 2026"
+> End-of-support for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
 
 This tutorial gets you started sending data from your iOS app to Segment. When you're done you can turn on [any of Segment's destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
 If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/connections/sources/catalog/libraries/mobile/ios/).
 
-> note ""
-> **Note:** Segment does not support tracking watchkit extensions for the Apple watch. [Contact us](https://segment.com/help/contact) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the native iPhone app code.
+> info "Watchkit extensions currently unsupported"
+> Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email Segment](https://segment.com/requests/integrations/){:target="_blank”}. if you're interested in a Watchkit SDK. For now, Segment recommends tracking watch interactions using the iPhone app code.
 
 ## Step 1: Create a Source in the Segment app
 
@@ -98,8 +104,8 @@ Now that the SDK is installed and set up, you're ready to start making calls.
 
 ## Step 3: Identify Users
 
-> note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` method informs Segment who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/ios#identify).
 
@@ -194,8 +200,8 @@ Once you've added a few `track` calls, **you're set up!** You successfully instr
 
 By default, Segment sends (“flushes”) events from the iOS library in batches of `20`, however this is configurable. You can set the `flushAt` value to change the batch size, or you can set it to `1` to disable batching completely.
 
-> note ""
-> **Note**: When you disable batching, Segment sends events as they occur. This increases battery use.
+> warning ""
+> If you disable batching, Segment sends events as they occur. This increases battery use.
 
 {% codeexample %}
 {% codeexampletab Swift %}

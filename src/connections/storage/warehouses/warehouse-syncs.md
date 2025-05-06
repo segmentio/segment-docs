@@ -23,8 +23,8 @@ Your plan determines how frequently data is synced to your warehouse.
 
 *If you're a Business plan member and would like to adjust your sync frequency, you can do so using the Selective Sync feature. To enable Selective Sync, please go to **Warehouse** > **Settings** > **Sync Schedule**. 
 
-> note "Why can't I sync more than 24 times per day?"
-> We do not set syncs to happen more than once per hour (24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
+> info "Why can't I sync more than 24 times per day?"
+> Segment does not set syncs to happen more than once per hour (24 times per day). The warehouse product is not designed for real-time data, so more frequent syncs would not necessarily be helpful.
 
 ## Sync History
 You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, “Has the data from a specific source been updated recently?” “Did a sync completely fail, or only partially fail?” and “Why wasn't this sync successful?”
@@ -61,8 +61,8 @@ Warehouse Selective Sync allows you to manage the data that you send to your war
 
 With Selective Sync, you can customize which collections and properties from a source are sent to each warehouse. This helps you control the data that is sent to each warehouse, allowing you to sync different sets of data from the same source to different warehouses.
 
-> note ""
-> **NOTE:** This feature only affects [warehouses](/docs/connections/storage/warehouses/), and doesn't prevent data from going to any other [destinations](/docs/connections/destinations/).
+> info ""
+> This feature only affects [warehouses](/docs/connections/storage/warehouses/), and doesn't prevent data from going to any other [destinations](/docs/connections/destinations/).
 
 When you disable a source, collection or property, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When you re-enable a source, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
 

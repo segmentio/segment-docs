@@ -7,8 +7,8 @@ This guide outlines the steps required to set up the Signals SDK in your Apple O
 
 You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
 
-> info "Auto-Instrumentation Pilot"
-> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+> info "Auto-Instrumentation Private Beta"
+> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
@@ -30,7 +30,7 @@ Next, you'll need to add the Signals SDKs to your Swift applicatiion.
 1. Use Swift Package Manager to add the Signals SDK from the following repository:
 
     ```zsh
-    https://github.com/segmentio/Signals-swift.git
+    https://github.com/segment-integrations/analytics-swift-live.git
     ```
 
 2. Add the initialization code and configuration options:
@@ -77,18 +77,15 @@ typealias SecureField = SignalSecureField
 ```
 ## Step 3: Verify and deploy events
 
-Next, you'll need to verify signal emission and [create rules](/docs/connections/auto-instrumentation/configuration/#example-rule-implementations) to convert those signals into events:
+After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Auto-Instrumentation** and click on the new source you created. 
-2. Verify that signals appear as expected on the dashboard.
-
-    ![Signals successfully appearing in the Segment UI](images/autoinstrumentation_signals.png "Signals successfully appearing in the Segment UI")
-
-3. Click **Create Rules**.
-4. In the Rules Editor, add a rule that converts signal data into an event.
-5. Click **Preview**, then click **Save & Deploy**.
-
-Segment displays `Rule updated successfully` to verify that it saved your rule.
+1. In your Segment workspace, go to **Connections > Sources** and select the source you created for Auto-Instrumentation.
+2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
+  - Make sure you've installed the SDK correctly.
+  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+3. Launch your app [in debug mode](https://github.com/segmentio/analytics-next/tree/master/packages/signals/signals#sending-and-viewing-signals-on-segmentcom-debug-mode){:target="_blank"}. This enables signal collection so you can see activity in the Event Builder.
+4. Use the app as a user would: navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
+5. In the Event Builder, find a signal and click **Configure event** to define a new event. After configuring the event, click **Publish event rules**.
 
 ## Configuration Options
 

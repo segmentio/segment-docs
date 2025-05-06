@@ -30,17 +30,17 @@ To create a project and enable BigQuery:
   - If you have an existing project, [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui){:target="_blank"}. Once you've done so, you should see BigQuery in the "Resources" section of Cloud Platform.
 3. Copy the project ID. You'll need it when you create a warehouse source in the Segment app.
 
-> note "Enable billing"
+> info "Enable billing"
 > When you create your project, you must [enable billing](https://support.google.com/cloud/answer/6293499#enable-billing){:target="_blank"} so Segment can write into the cluster.
 
 ### Create a service account for Segment
 
 To create a service account for Segment: 
-1. From the Navigation panel on the left, select **IAM & admin** > **Service accounts**.
+1. Open the Google Developer Console, select the Navigation panel and navigate to **IAM & admin** > **Service accounts**.
 2. Click **Create Service Account**.
 3. Enter a name for the service account (for example, `segment-warehouses`) and click **Create**.
 4. Assign the service account the following roles:
-    - `BigQuery Data Owner`
+    - `BigQuery Data Owner` or `BigQuery Data Editor` 
     - `BigQuery Job User`
 5. [Create a JSON key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys){:target="_blank"}.
 The downloaded file will be used to create your warehouse in the Segment app.
@@ -155,7 +155,7 @@ Therefore, Segment recommends you query a specific view whenever possible to avo
 duplicate events and historical objects. It's important to note that BigQuery
 views aren't cached.
   
-> note "Understanding BigQuery views"
+> info "Understanding BigQuery views"
 > BigQuery's views are logical views, not materialized views, which means that the query that defines the view is re-executed every time the view is queried. Queries are billed according to the total amount of data in all table fields referenced directly or indirectly by the top-level query.
 
 To save money, you can query the view and set a [destination
