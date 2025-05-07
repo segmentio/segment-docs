@@ -5,6 +5,9 @@ plan: unify
 
 Unify Event Filtering lets you control which events reach your Unify space. 
 
+> info "Public Beta"
+> Unify Event Filtering is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+
 ## Overview
 
 With Unify Event Filtering, you can use block events that aren’t useful for [identity resolution](/docs/unify/identity-resolution/) or downstream activation, keeping your space cleaner and more efficient.
