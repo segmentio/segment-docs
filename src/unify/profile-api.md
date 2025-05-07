@@ -74,6 +74,11 @@ Your access token enables you to call the Profile API and access customer data.
 
 ### Explore the user's traits in the response
 
+
+> warning "Consent preferences not returned in the response"
+> Segment does not return a user's consent preferences in a Profile API response. For more information about consent stored on your Profiles, see the [Consent on the Profile](/docs/privacy/consent-management/consent-in-unify/) docs.  
+
+
 The response is returned as a JSON object which contains the queried user's assigned traits.
 
 ```json
