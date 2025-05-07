@@ -17,13 +17,13 @@ Event Filtering is useful when you’re sending a lot of different event types i
 
 Unify Event Filtering works differently from [Destination Filters](/docs/connections/destinations/destination-filters/) in a few important ways:
 
-|                  | Unify Event Filtering                    | Destination Filters                     |
-| ---------------- | ---------------------------------------- | --------------------------------------- |
-| Where it applies | Unify space                              | Individual destinations                 |
-| Filter scope     | All sources connected to the space       | One source for each destination         |
-| Filter action    | Drops entire events                      | Can drop or modify events and fields    |
-| Setup            | Created through API, visible in Unify UI | Created in UI or API                    |
-| Timing           | Before identity resolution               | Before events get sent to a destination |
+|                  | Unify Event Filtering                                            | Destination Filters                     |
+| ---------------- | ---------------------------------------------------------------- | --------------------------------------- |
+| Where it applies | Unify space                                                      | Individual destinations                 |
+| Filter scope     | All [sources](/docs/connections/sources/) connected to the space | One source for each destination         |
+| Filter action    | Drops entire events                                              | Can drop or modify events and fields    |
+| Setup            | Created through API, visible in Unify UI                         | Created in UI or API                    |
+| Timing           | Before identity resolution                                       | Before events get sent to a destination |
 
 This helps simplify your setup and reduce noise in profile data without needing repeaters, webhooks, or custom logic.
 
@@ -42,7 +42,7 @@ As a result, Unify Event Filtering helps you keep profile data clean from the st
 
 ## Creating and managing filters
 
-During public beta, managing filters requires a mix of API and Segment UI actions. You'll define and create filters using the Space Filter API, then manage their status and visibility in the Segment app.
+During public beta, managing filters requires a mix of API and Segment UI actions. You'll define and create filters using the [Space Filter API](https://docs.segmentapis.com/tag/Space-Filters/){:target="_blank"}, then manage their status and visibility in the Segment app.
 
 To create a filter, use the Space Filter API to write a filtering rule using FQL. The API lets you name the filter, enable or disable it, and delete it. You can create up to 10 filters per space, and any event that matches a filter gets dropped before it reaches Unify.
 
@@ -73,7 +73,7 @@ Unify Event Filtering is most useful when you want to keep noisy, irrelevant, or
 | Drop obvious noise       | Start with telemetry, test data, or internal events.                                                                                                               |
 | Keep it simple           | A few targeted filters are easier to manage than multiple, complex filters.                                                                                        |
 | Think at the space level | Filters apply to all sources. Write conditions accordingly.                                                                                                        |
-| Test before enabling     | Use the [preview endpoint](https://docs.segmentapis.com/tag/Destination-Filters#operation/previewDestinationFilter) to check filter behavior before turning it on. |
+| Test before enabling     | Use the [preview endpoint](https://docs.segmentapis.com/tag/Destination-Filters#operation/previewDestinationFilter){:target="_blank"} to check filter behavior before turning it on. |
 
 
 Unify Event Filtering gives you an early control point for managing the quality of data entering your space. It helps reduce noise, control costs, and improve the accuracy of profile data before any identity resolution takes place.
