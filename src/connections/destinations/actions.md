@@ -236,6 +236,7 @@ Mapping fields are case-sensitive. The following type filters and operators are 
     You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
 {% comment %}
+    However, ou cannot specify properties that are nested within an array. For example, this notation - `products[0].category` - would not yield any results. 
 
 > info "Valid property and trait values"
 > Property and trait names must begin with the characters: [a-z], [A-Z] or '_'. Property and trait names don't support special characters in the first character. If you save a property or trait with a special character in the first character, you'll get an Invalid Trigger error. 
@@ -263,9 +264,6 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 
 > info "Unsupported Special Characters"
 > Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields. In mapping fields, the . character is not supported unless it's being used to access an object key. If a string has a . in it, that is not supported.
-
-> info "Limitations"
-> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
 
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
