@@ -10,7 +10,7 @@ Unify Event Filtering lets you control which events reach your Unify space.
 
 ## Overview
 
-With Unify Event Filtering, you can use block events that aren’t useful for [identity resolution](/docs/unify/identity-resolution/) or downstream activation, keeping your space cleaner and more efficient.
+With Unify Event Filtering, you can use block events that aren’t useful for [Identity Resolution](/docs/unify/identity-resolution/) or downstream activation, keeping your space cleaner and more efficient.
 
 Event Filtering is useful when you’re sending a lot of different event types into Segment but only some of them are relevant to Unify. For example, you might want to:
 
@@ -26,7 +26,7 @@ Unify Event Filtering works differently from [Destination Filters](/docs/connect
 | Filter scope     | All [sources](/docs/connections/sources/) connected to the space | One source for each destination         |
 | Filter action    | Drops entire events                                              | Can drop or modify events and fields    |
 | Setup            | Created through API, visible in Unify UI                         | Created in UI or API                    |
-| Timing           | Before identity resolution                                       | Before events get sent to a destination |
+| Timing           | Before Identity Resolution                                       | Before events get sent to a destination |
 
 This helps simplify your setup and reduce noise in profile data without needing repeaters, webhooks, or custom logic.
 
@@ -39,7 +39,7 @@ Keep the following in mind as you work with Unify Event Filtering:
 - Filters are configured at the space level. You don’t create filters per source. Instead, one set of filters applies to all sources connected to the space.
 - The filtering logic is based on [Filter Query Language](/docs/api/public-api/fql/). If you’ve used Destination Filters before, it works the same way. You can write expressions to match events based on type, name, traits, properties, or values.
 - Matching is inclusive: if an event matches any filter, Segment drops it.
-- Filtering happens **before** identity resolution; dropped events never reach the profile graph and won’t affect trait updates or [computed traits](/docs/unify/traits/computed-traits/).
+- Filtering happens **before** Identity Resolution; dropped events never reach the profile graph and won’t affect trait updates or [computed traits](/docs/unify/traits/computed-traits/).
 
 As a result, Unify Event Filtering helps you keep profile data clean from the start, without having to preprocess or transform events outside of Segment.
 
@@ -79,6 +79,6 @@ Unify Event Filtering is most useful when you want to keep noisy, irrelevant, or
 | Test before enabling     | Use the [preview endpoint](https://docs.segmentapis.com/tag/Destination-Filters#operation/previewDestinationFilter){:target="_blank"} to check filter behavior before turning it on. |
 
 
-Unify Event Filtering gives you an early control point for managing the quality of data entering your space. It helps reduce noise, control costs, and improve the accuracy of profile data before any identity resolution takes place.
+Unify Event Filtering gives you an early control point for managing the quality of data entering your space. It helps reduce noise, control costs, and improve the accuracy of profile data before any Identity Resolution takes place.
 
 To learn more about how Unify spaces work and how Segment processes events after filtering, see the [Unify documentation](/docs/unify/).
