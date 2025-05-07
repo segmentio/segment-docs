@@ -64,3 +64,18 @@ The following table compares what you can do with Event Filtering with the API c
 > To update a filter’s logic, you’ll need to delete the existing filter through the Space Filter API and create a new one with the updated expression.
 
 ## Best practices
+
+Unify Event Filtering is most useful when you want to keep noisy, irrelevant, or duplicate data out of your Unify space. The following table lists best practices to help you get the most value out of filtering:
+
+| Tip                      | Why it matters                                                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Filter early             | Keeps profiles clean and reduces unnecessary MTU usage.                                                                                                            |
+| Drop obvious noise       | Start with telemetry, test data, or internal events.                                                                                                               |
+| Keep it simple           | A few targeted filters are easier to manage than multiple, complex filters.                                                                                        |
+| Think at the space level | Filters apply to all sources. Write conditions accordingly.                                                                                                        |
+| Test before enabling     | Use the [preview endpoint](https://docs.segmentapis.com/tag/Destination-Filters#operation/previewDestinationFilter) to check filter behavior before turning it on. |
+
+
+Unify Event Filtering gives you an early control point for managing the quality of data entering your space. It helps reduce noise, control costs, and improve the accuracy of profile data before any identity resolution takes place.
+
+To learn more about how Unify spaces work and how Segment processes events after filtering, see the [Unify documentation](/docs/unify/).
