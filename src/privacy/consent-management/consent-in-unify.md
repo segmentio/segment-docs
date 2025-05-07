@@ -6,9 +6,6 @@ redirect_from: "/privacy/consent-in-unify"
 
 Segment uses the [consent object](#consent-object) on Segment events, including the [Segment Consent Preference Updated](#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on the Profile. Consent on the Profiles serves as the source of truth of an end user’s consent preference when enforcing consent in Twilio Engage or Linked Audiences.
 
-> info "Consent on the Profile is in private beta"
-> Storing consent preferences on the Profile is actively in development and some functionality may change before it becomes generally available.
-
 ## Consent object
 
 Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object nestled inside of the [context object](/docs/connections/spec/common/#context) with the following format:
@@ -34,7 +31,9 @@ Segment requires every event from all of your sources to include the end user co
 
 Segment events without a context object or consent object or events that have an empty context or consent object do not impact consent preferences on the Profile.
 
-However, if you send events with consent categories that are set up in your CMP but not included in your consent object (a consent category is "missing" from your consent object) or if you have consent categories for which you haven't yet collected consent preferences, Segment sets consent preferences for those categories to `false`. 
+Segment considers consent preferences for a category to be "missing" when events are sent without consent data to categories that already exist on the profile. 
+
+Segment considers consent preferences for a category to be "never collected" when events are sent without consent data to categories that do not yet exist on the profile. 
 
 This behavior includes:  
 - Segment setting a value of `false` on a Profile for all consent categories for which consent has never collected. 
