@@ -42,4 +42,25 @@ As a result, Unify Event Filtering helps you keep profile data clean from the st
 
 ## Creating and managing filters
 
+During public beta, managing filters requires a mix of API and Segment UI actions. You'll define and create filters using the Space Filter API, then manage their status and visibility in the Segment app.
+
+To create a filter, use the Space Filter API to write a filtering rule using FQL. The API lets you name the filter, enable or disable it, and delete it. You can create up to 10 filters per space, and any event that matches a filter gets dropped before it reaches Unify.
+
+After you create a filter, it shows up in your Segment workspace in **Unify > Unify settings > Filters**. From there, you can view existing filters, turn them on or off, rename them, or delete them. However, you can’t edit the filtering logic from within Segment. If you want to edit filtering logic, you'll need to managed it through the API.
+
+The following table compares what you can do with Event Filtering with the API compared your Segment workspace:
+
+| Action                    | Where it happens    |
+| ------------------------- | ------------------- |
+| Create a filter           | API only            |
+| Define filter logic (FQL) | API only            |
+| Enable or disable filters | API or workspace    |
+| Rename a filter           | API or workspace    |
+| Delete a filter           | API or workspace    |
+| View filters              | Workspace only      |
+| Edit filter logic         | Replace in API only |
+
+> info "Updating filter logic"
+> To update a filter’s logic, you’ll need to delete the existing filter through the Space Filter API and create a new one with the updated expression.
+
 ## Best practices
