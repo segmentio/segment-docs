@@ -1,5 +1,5 @@
 ---
-title: Consent Stored on the Profile
+title: Consent on the Profile
 plan: consent-management
 redirect_from: "/privacy/consent-in-unify"
 ---
@@ -36,10 +36,10 @@ Segment considers consent preferences for a category to be "missing" when events
 Segment considers consent preferences for a category to be "never collected" when events are sent without consent data to categories that do not yet exist on the profile. 
 
 This behavior includes:  
-- Segment setting a value of `false` on a Profile for all consent categories for which consent has never collected. 
 - Segment setting a value of `false` on a Profile for each consent category in any events with an empty `context.consent.categoryPreferences` object.
-- Segment setting a value of `false` on a Profile for categories not addressed in an `context.consent.categoryPreferences` object.
-- Segment setting Profiles that have consent categories which have never been collected to `false` during a Profile Merge. This might result in a [Profile level conflict](#profile-level-conflict). 
+- Segment assumes a value of `false` for all “missing” categories in an `context.consent.categoryPreferences` object.
+- Segment assumes a value of `false` for all “missing” and “never collected” categories during a Profile Merge. This might result in a [Profile level conflict](#profile-level-conflict).
+- Segment assumes a value of `false` for all "missing" and "never collected" categories when used in Engage Audiences.   
 
 ## Segment Consent Preference Updated event
 
@@ -128,10 +128,7 @@ To avoid Profile-level conflicts, Segment recommends that you take the following
 > Profile conflicts only impact Profiles used in Engage spaces.
 
 ## Enforcing consent in Twilio Engage
-Consent enforcement in Twilio Engage and Linked is currently unavailable during the public beta. Segment stores consent preferences as traits on the Profile. 
-
-> warning ""
-> Consent stored on the Profile does not automatically enforce consent in Twilio Engage or Linked Audiences.
+Segment stores consent preferences as traits on the Profile, which you can use to [build Audiences](/docs/engage/audiences/#building-an-audience).
 
 ## Validating consent preferences stored on a Profile
 You can validate consent is present on the Profile by looking for the consent trait provided for a Profile on the consent tab.
