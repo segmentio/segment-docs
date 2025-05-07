@@ -39,3 +39,7 @@ Keep the following in mind as you work with Unify Event Filtering:
 - Filtering happens **before** identity resolution; dropped events never reach the profile graph and won’t affect trait updates or [computed traits](/docs/unify/traits/computed-traits/).
 
 As a result, Unify Event Filtering helps you keep profile data clean from the start, without having to preprocess or transform events outside of Segment.
+
+## Creating and managing filters
+
+## Best practices
