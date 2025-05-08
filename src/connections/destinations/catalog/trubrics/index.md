@@ -7,7 +7,7 @@ hidden: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Trubrics](https://trubrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve product analytics for AI product teams. On top of regular product analytics to understand user behavior, Trubrics helps you understand how your AI is performing, and how to improve it.
+[Trubrics](https://trubrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve product analytics for AI product teams. On top of regular product analytics to understand user behavior, Trubrics helps you understand how your AI is performing and how to improve it.
 
 This destination is maintained by Trubrics. For any issues with the destination, [contact their Support team](mailto:jeff.kayne@trubrics.com).
 
