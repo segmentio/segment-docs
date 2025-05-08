@@ -16,6 +16,7 @@ You can create alerts for the following product areas:
 - [Protocols](#protocols-alerts)
 - [Unify](#unify-alerts) 
 - [Engage](#engage-alerts)
+- [Users](#users-alerts)
 - [Functions](#functions-alerts)
 - [Reverse ETL](#reverse-etl-alerts)
 - [Data Graph](#data-graph-alerts)
@@ -115,6 +116,11 @@ your identity-resolved profiles to your data warehouse.
 
 > info "Custom Engage alerts"
 > During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) alerts, but these alerts won't appear in the Monitor tab. 
+
+## Users alerts
+- **Access Request Created**: A user in your workspace requested access to a resource that they don't currently have permission to view. For more information, see the [Request Access](/docs/segment-app/iam/membership/#request-access) documentation. 
+- **Public API Tokens Without Owners Detected**: Segment detected that the user that created one of your Public API tokens is no longer in your workspace. Workspace Owners receive the alert on the day that Segment detects the token's owner is no longer in the workspace and then again 30 days after the last alert. 
+- **Users Invited**: Someone [invited a new Team Member](/docs/segment-app/iam/membership/#invite-a-new-team-member) to your workspace. 
 
 ## Functions alerts
 - **Destination Filter Created**: A user in your workspace created a [destination filter](/docs/connections/destinations/destination-filters/). 
