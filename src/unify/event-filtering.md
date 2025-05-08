@@ -45,11 +45,9 @@ As a result, Unify Event Filtering helps you keep profile data clean from the st
 
 ## Creating and managing filters
 
-During public beta, managing filters requires a mix of API and Segment UI actions. You'll define and create filters using the [Space Filter API](https://docs.segmentapis.com/tag/Space-Filters/){:target="_blank"}, then manage their status and visibility in the Segment app.
+During public beta, you'll use the [Space Filter API](https://docs.segmentapis.com/tag/Space-Filters/){:target="_blank"} to create and manage all Unify event filters. The API lets you define filters using FQL, name them, enable or disable them, and delete them. Each Unify space can have up to 10 filters. Any event that matches one of those filters gets dropped before it reaches Unify.
 
-To create a filter, use the Space Filter API to write a filtering rule using FQL. The API lets you name the filter, enable or disable it, and delete it. You can create up to 10 filters per space, and any event that matches a filter gets dropped before it reaches Unify.
-
-After you create a filter, it shows up in your Segment workspace in **Unify > Unify settings > Filters**. From there, you can view existing filters, turn them on or off, rename them, or delete them. However, you can’t edit the filtering logic from within Segment. If you want to edit filtering logic, you'll need to managed it through the API.
+After you create a filter through the API, it shows up in your Segment workspace in **Unify > Unify settings > Filters**. From there, you can view existing filters, turn them on or off, rename them, or delete them. However, you can’t edit the filtering logic from within your workspace. If you want to edit filtering logic, you'll need to managed it through the API.
 
 The following table compares what you can do with Event Filtering with the API compared your Segment workspace:
 
@@ -60,7 +58,7 @@ The following table compares what you can do with Event Filtering with the API c
 | Enable or disable filters | API or workspace    |
 | Rename a filter           | API or workspace    |
 | Delete a filter           | API or workspace    |
-| View filters              | Workspace only      |
+| View filters              | API or workspace    |
 | Edit filter logic         | Replace in API only |
 
 > info "Updating filter logic"
@@ -70,12 +68,12 @@ The following table compares what you can do with Event Filtering with the API c
 
 Unify Event Filtering is most useful when you want to keep noisy, irrelevant, or duplicate data out of your Unify space. The following table lists best practices to help you get the most value out of filtering:
 
-| Tip                      | Why it matters                                                                                                                                                     |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Filter early             | Keeps profiles clean and reduces unnecessary MTU usage.                                                                                                            |
-| Drop obvious noise       | Start with telemetry, test data, or internal events.                                                                                                               |
-| Keep it simple           | A few targeted filters are easier to manage than multiple, complex filters.                                                                                        |
-| Think at the space level | Filters apply to all sources. Write conditions accordingly.                                                                                                        |
+| Tip                      | Why it matters                                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Filter early             | Prevents irrelevant events from affecting profile data or identity resolution.                                                                                                       |
+| Drop obvious noise       | Start with telemetry, test data, or internal events.                                                                                                                                 |
+| Keep it simple           | A few targeted filters are easier to manage than multiple, complex filters.                                                                                                          |
+| Think at the space level | Filters apply to all sources. Write conditions accordingly.                                                                                                                          |
 | Test before enabling     | Use the [preview endpoint](https://docs.segmentapis.com/tag/Destination-Filters#operation/previewDestinationFilter){:target="_blank"} to check filter behavior before turning it on. |
 
 
