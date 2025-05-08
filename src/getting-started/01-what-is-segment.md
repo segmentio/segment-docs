@@ -12,8 +12,8 @@ In a nutshell, the Segment libraries ([Sources](/docs/connections/sources/catalo
 [Segment Spec methods](/docs/connections/spec/) are how you collect interaction data from your interfaces, and the [Sources](/docs/connections/sources/) are what you package with your interfaces to collect and route the data.
 
 Once you've collected your interaction data, there are several different actions you can take:
-- Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
-- Send it to [Warehouses](/docs/connections/storage/) and other bulk storage tools, which hold your raw event schemas and update on regular intervals
+- Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time.
+- Send it to [Warehouses](/docs/connections/storage/) and other bulk storage tools, which hold your raw event schemas and update on regular intervals.
 - Enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse to monitor performance, inform decision-making processes, and create uniquely customized user experiences.
 - Use [Engage](/docs/engage/), Twilio's marketing automation tool, to build marketing campaigns personalized to your audience.
 
@@ -53,7 +53,7 @@ Although there are some tradeoffs between the two approaches, neither is better 
 TODO: Image removed, didn't work with formatting. need a better version of this flowchart or else to just omit?-->
 
 
-## The Segment Methods
+## The Segment methods
 
 The Segment libraries generate messages about what happens on your interface, translate those messages into different formats for use by destinations, and transmit the messages to those tools.
 

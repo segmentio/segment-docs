@@ -288,7 +288,7 @@ To create an Activation event health spikes or drops alert:
 4. Enter a percentage threshold to trigger activation event health notifications. 
 5. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
-  - **Slack**: Select this to send alerts to one or more channels in your workspace. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
 
