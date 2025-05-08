@@ -10,7 +10,7 @@ Unify Event Filtering lets you control which events reach your Unify space.
 
 ## Overview
 
-With Unify Event Filtering, you can use block events that aren’t useful for [Identity Resolution](/docs/unify/identity-resolution/) or downstream activation, keeping your space cleaner and more efficient.
+With Unify Event Filtering, you can use block events that aren’t useful for [Identity Resolution](/docs/unify/identity-resolution/) or downstream activation, which keeps your space cleaner and more efficient.
 
 Event Filtering is useful when you’re sending a lot of different event types into Segment but only some of them are relevant to Unify. For example, you might want to:
 
