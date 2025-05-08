@@ -23,9 +23,9 @@ You can create alerts for the following product areas:
 
 The Alerting table includes the following information about each event: 
 - **Alert name**: The type of alert, for example, "Audience created" or "Audience deleted".
-- **Last triggered**: The most recent date and time, in your local time zone, that the alert was triggered. 
+- **Last triggered**: The most recent date and time, in your local time zone, that the alert was triggered. Some alerts, like **Violations Detected**, trigger only once per day. 
 - **Status**: Either **enabled**, if the alert is currently configured in your workspace, or **disabled**, if you're not configured to receive alerts for an event.
-- **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, email, or in-app notification.
+- **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, Slack workflow, email, or in-app notification.
 - **Actions**: By selecting the menu icon for an individual alert, you can edit or delete it from the Alerting page.
 
 ## Create a new alert
