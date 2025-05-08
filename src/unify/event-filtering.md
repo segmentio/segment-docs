@@ -39,7 +39,7 @@ Keep the following in mind as you work with Unify Event Filtering:
 - Filters are configured at the space level. You don’t create filters per source. Instead, one set of filters applies to all sources connected to the space.
 - The filtering logic is based on [Filter Query Language](/docs/api/public-api/fql/). If you’ve used Destination Filters before, it works the same way. You can write expressions to match events based on type, name, traits, properties, or values.
 - Matching is inclusive: if an event matches any filter, Segment drops it.
-- Filtering happens **before** Identity Resolution; dropped events never reach the profile graph and won’t affect trait updates or [computed traits](/docs/unify/traits/computed-traits/).
+- Filtering happens **before** Identity Resolution: dropped events never reach the profile graph and won’t affect trait updates or [computed traits](/docs/unify/traits/computed-traits/).
 
 As a result, Unify Event Filtering helps you keep profile data clean from the start, without having to preprocess or transform events outside of Segment.
 
