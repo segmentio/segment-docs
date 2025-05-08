@@ -45,7 +45,7 @@ As a result, Unify Event Filtering helps you keep profile data clean from the st
 
 ## Creating and managing filters
 
-During public beta, you'll use the [Space Filter API](https://docs.segmentapis.com/tag/Space-Filters/){:target="_blank"} to create and manage all Unify event filters. The API lets you define filters using FQL, name them, enable or disable them, and delete them. Each Unify space can have up to 10 filters. Any event that matches one of those filters gets dropped before it reaches Unify.
+During public beta, you'll use the [Space Filter API](https://docs.segmentapis.com/tag/Space-Filters/){:target="_blank"} to create and manage all Unify event filters. The API lets you define filters using FQL, name them, enable or disable them, and delete them. Each Unify space can have up to 10 filters. Any event that matches 1 of those filters gets dropped before it reaches Unify.
 
 After you create a filter through the API, it shows up in your Segment workspace in **Unify > Unify settings > Filters**. From there, you can view existing filters, turn them on or off, rename them, or delete them. However, you can’t edit the filtering logic from within your workspace. If you want to edit filtering logic, you'll need to managed it through the API.
 
