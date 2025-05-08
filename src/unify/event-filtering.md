@@ -72,7 +72,7 @@ Unify Event Filtering is most useful when you want to keep noisy, irrelevant, or
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Filter early             | Prevents irrelevant events from affecting profile data or identity resolution.                                                                                                       |
 | Drop obvious noise       | Start with telemetry, test data, or internal events.                                                                                                                                 |
-| Keep it simple           | A few targeted filters are easier to manage than multiple, complex filters.                                                                                                          |
+| Keep it simple           | A few targeted filters are easier to manage than multiple complex filters.                                                                                                          |
 | Think at the space level | Filters apply to all sources. Write conditions accordingly.                                                                                                                          |
 | Test before enabling     | Use the [preview endpoint](https://docs.segmentapis.com/tag/Destination-Filters#operation/previewDestinationFilter){:target="_blank"} to check filter behavior before turning it on. |
 
