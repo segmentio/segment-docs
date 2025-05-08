@@ -1,11 +1,11 @@
 ---
 title: Reddit Audiences
+id: 66f2b0f961bb2128729079bb
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-The Reddit Audiences destination allows advertisers to send Engage audiences from Segment to Reddit to use as [Custom Audiences](https://business.reddithelp.com/s/article/custom-audiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} which can be used for Reddit Ads features such as audience targeting, retargeting, creating lookalike audiences, and engagement retargeting.
-
+The Reddit Audiences destination allows advertisers to send Engage audiences from Segment to Reddit to use as [Custom Audiences](https://business.reddithelp.com/s/article/custom-audiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}, which can be used for Reddit Ads features like audience targeting, retargeting, creating lookalike audiences, and engagement retargeting.
 
 This destination is maintained by Reddit. For any issues with the destination, [contact their Support team](mailto:adsapi-partner-support@reddit.com).
 
