@@ -139,6 +139,29 @@ To configure the Delay step:
 
 The **Data split** step sends profiles down different branches based on audience membership or profile traits. This lets you personalize how users move through a journey, like sending different messages to new users instead of returning customers, or targeting re-engagement campaigns based on inactivity.
 
+Data split is useful when you want to take different actions based on what you already know about the user, rather than waiting for a new event. For example, you might use it to separate users who haven’t purchased in 30 days from those who lapsed 90 days ago, or from users who are still actively engaged.
+
+### How Data split works
+
+When a profile reaches a Data split step:
+
+1. Segment checks whether the profile matches the first branch’s conditions.
+2. If not, it checks the next branch, and so on, in the order shown in the journey.
+3. The profile moves down the first branch it qualifies for. Each profile can only follow one branch.
+
+### Configuration options
+
+You can configure up to five branches in a Data Split step. Each branch can have one or more conditions:
+
+| Condition type       | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| With trait           | The profile includes a specific trait and value.                          |
+| Without trait        | The profile does not include a specific trait.                            |
+| Part of audience     | The profile is a member of a selected audience at the time of evaluation. |
+| Not part of audience | The profile is not a member of a selected audience.                        |
+
+
+### Example: Lapsed purchase campaign
 
 
 
