@@ -151,7 +151,7 @@ When a profile reaches a Data split step:
 
 ### Configuration options
 
-You can configure up to five branches in a Data Split step. Each branch can have one or more conditions:
+You can configure up to five branches in a Data split step. Each branch can have one or more conditions:
 
 | Condition type       | Description                                                               |
 | -------------------- | ------------------------------------------------------------------------- |
