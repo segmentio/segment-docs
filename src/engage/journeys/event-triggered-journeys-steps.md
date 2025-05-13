@@ -158,14 +158,22 @@ You can configure up to five branches in a Data Split step. Each branch can have
 | With trait           | The profile includes a specific trait and value.                          |
 | Without trait        | The profile does not include a specific trait.                            |
 | Part of audience     | The profile is a member of a selected audience at the time of evaluation. |
-| Not part of audience | The profile is not a member of a selected audience.                        |
+| Not part of audience | The profile is not a member of a selected audience.                       |
 
+You can also give branches uniques name to differentiate them from each other on the journey canvas.
+
+> info "Evaluation is sequential"
+> Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step.
 
 ### Example: Lapsed purchase campaign
 
+In the following below, a journey begins when a user modifies their cart. The Data split step checks how long it’s been since their last purchase:
 
+- Profiles in the `30 days lapsed` audience receive a short-term win-back message.
+- Profiles in the `90 days lapsed` audience receive a different message with a stronger offer.
+- Everyone else continues down the `Everyone else` branch.
 
-
+This setup helps you tailor re-engagement efforts based on how recently a user was active, without needing to wait for a new event or trigger.
 
 ## Send to Destination
 
