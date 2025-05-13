@@ -135,6 +135,15 @@ To configure the Delay step:
 3. Enter a duration and select a time unit (minutes, hours, days, weeks).
 4. Click **Save**.
 
+## Data split
+
+The **Data split** step sends profiles down different branches based on audience membership or profile traits. This lets you personalize how users move through a journey, like sending different messages to new users instead of returning customers, or targeting re-engagement campaigns based on inactivity.
+
+
+
+
+
+
 ## Send to Destination
 
 The **Send to Destination** step lets you send journey data to one of your [configured Engage destinations](/docs/connections/destinations/), enabling real-time integration with tools like marketing platforms, analytics systems, or custom endpoints.
