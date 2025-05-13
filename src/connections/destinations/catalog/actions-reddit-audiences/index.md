@@ -20,10 +20,11 @@ This destination is maintained by Reddit. For any issues with the destination, [
 2. Click **Engage Settings** and select the **Destinations** tab.
 3. Search for `Reddit Audiences`.
 4. Click **Add Destination**.
-5. Confirm the source. By default, this is the source connected to the space to which you’re adding the destination.
+5. Confirm the source. By default, this is the source connected to the Enage Space to which you’re adding the destination.
 6. In the **Settings** tab, click **Connect to Reddit Audiences** and authenticate the connection between Segment and Reddit.
 7. Provide your ad account ID for **Ad Account ID**.
 8. Toggle **Enable Destination** on and click **Save Changes**.
+9. Add a **Sync Audience** Mapping via the Mapping tab in the `Redit Audiences` Destination you just created. Enable the Mapping. 
 9. Navigate to the engage space that contains the audience, and select it in the **Audiences** tab.
 10. Click **Add Destination**.
 
