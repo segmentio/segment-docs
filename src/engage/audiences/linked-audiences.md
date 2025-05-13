@@ -71,7 +71,7 @@ Segment displays:
 
 You can duplicate your conditions in the audience builder into the same condition group. You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
 
-When building your Linked Audience, you may add multiple conditions to a single condition group, or create multiple condition groups. Segment evaluates each condition group indepdently to determine which profiles meet each condition group, and we "bring along" the associated entities that allowed each profile to meet the criteria of each condition group. We then union the matched profiles based on whether the operator between the condition groups are using the AND or OR operators to combine the resultset. You may choose from the following conditions as you're building your Linked Audience:
+When building your Linked Audience, you can add multiple conditions to a single condition group, or create multiple condition groups. Segment evaluates each condition group indepdently to determine which profiles meet each condition group, and we "bring along" the associated entities that allowed each profile to meet the criteria of each condition group. We then union the matched profiles based on whether the operator between the condition groups are using the AND or OR operators to combine the resultset. You can choose from the following conditions as you're building your Linked Audience:
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
