@@ -12,6 +12,9 @@ redirect_from:
 
 Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
 
+> warning "Disabled batch computations don't automatically backfill data when re-enabled"
+> If you disable and re-enable a batch computation, Segment does not automatically create a backfill. Any data Segment recieves during the disabled period is not sent to your Destination after you re-enable your batch computation. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
+
 {% include content/trait-types.md %}
 
 ## Types of Computed Traits

@@ -166,6 +166,9 @@ Engage displays the following compute statuses for Audiences and Traits.
 
 #### Batch computations
 
+> warning "Disabled batch computations don't automatically backfill data when re-enabled"
+> If you disable and re-enable a batch computation, Segment does not automatically create a backfill. Any data Segment recieves during the disabled period is not sent to your Destination after you re-enable your batch computation. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
+
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the computation.  |
