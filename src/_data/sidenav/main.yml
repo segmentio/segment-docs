@@ -362,6 +362,8 @@ sections:
         title: Databricks Data Graph Setup
       - path: /unify/data-graph/setup-guides/redshift-setup/
         title: Redshift Data Graph Setup
+      - path: /unify/data-graph/setup-guides/redshift-access-permissions/
+        title: Redshift Data Graph User Access Permissions
       - path: /unify/data-graph/setup-guides/snowflake-setup/
         title: Snowflake Data Graph Setup
     - section_title: Linked Events 
