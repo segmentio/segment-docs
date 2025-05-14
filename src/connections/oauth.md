@@ -73,7 +73,6 @@ Access tokens are only valid within a region. The supported regional authorizati
 
 To obtain the access token:
 
-1. Create a node or shell script
 1. Create a JWT token with the header and payload as below:
 
     Header
