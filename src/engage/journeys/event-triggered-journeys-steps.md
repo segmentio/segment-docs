@@ -5,7 +5,7 @@ plan: engage-foundations
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 
-Steps are the building blocks of a journey. This page explains the **Hold Until** and **Send to Destination** steps, which enable precise control over journey progression and data delivery. 
+Steps are the building blocks of a journey. This page explains the **Hold Until**, **Send to Destination**, and **Data split** steps, which enable precise control over journey progression and data delivery. 
 
 > info "Public Beta"
 > Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
@@ -134,6 +134,47 @@ To configure the Delay step:
 2. (*Optional*) Give the step a unique name.
 3. Enter a duration and select a time unit (minutes, hours, days, weeks).
 4. Click **Save**.
+
+## Data split
+
+The **Data split** step sends profiles down different branches based on audience membership or profile traits. This lets you personalize how users move through a journey, like sending different messages to new users instead of returning customers, or targeting re-engagement campaigns based on inactivity.
+
+Data split is useful when you want to take different actions based on what you already know about the user, rather than waiting for a new event. For example, you might use it to separate users who haven’t purchased in 30 days from those who lapsed 90 days ago, or from users who are still actively engaged.
+
+### How Data split works
+
+When a profile reaches a Data split step:
+
+1. Segment checks whether the profile matches the first branch’s conditions.
+2. If not, it checks the next branch, and so on, in the order shown in the journey.
+3. The profile moves down the first branch it qualifies for. Each profile can only follow one branch.
+
+### Configuration options
+
+You can configure up to five branches in a Data split step. Each branch can have one or more conditions:
+
+| Condition type       | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| With trait           | The profile includes a specific trait and value.                          |
+| Without trait        | The profile does not include a specific trait.                            |
+| Part of audience     | The profile is a member of a selected audience at the time of evaluation. |
+| Not part of audience | The profile is not a member of a selected audience.                       |
+
+You can also give branches uniques name to differentiate them from each other on the journey canvas.
+
+> info "Evaluation is sequential"
+> Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step.
+
+### Example: Target different customer types
+
+You can use a Data split to branch profiles based on traits or audience membership that already exist on the profile when it reaches this step. For example:
+
+- Profiles with a known `email_subscription_status` trait get treated as existing customers.
+- Profiles that belong to a `VIP` audience are routed down a separate path for high-value users.
+- Profiles with a specific set of traits (like favorite color and a known name) can receive personalized messaging.
+- Everyone else continues through a general branch with default messaging.
+
+This setup helps tailor journey experiences using reliable, preexisting data. Because the Data split step evaluates conditions instantly, it works best with traits or audience membership that Segment has already computed before the profile enters the step.
 
 ## Send to Destination
 
