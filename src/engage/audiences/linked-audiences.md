@@ -17,6 +17,9 @@ With Linked Audiences, you can:
 
 To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/).
 
+
+See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can utilize Linked Audiences for your destinations.  
+
 ## Prerequisites
 
 Before you begin setting up your Linked Audience, ensure you have:
@@ -59,9 +62,9 @@ After creating your Linked Audience, you will be brought to the Overview page wi
 
 ### Linked Audience conditions 
 
-The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
+The Linked Audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
-The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
+The Linked Audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
 
 Segment displays: 
 

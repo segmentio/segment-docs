@@ -360,6 +360,7 @@ For many:many relationships, define the join on between the two entity tables wi
 > warning ""
 > Attributes from a junction table are not referenceable via the Linked Audience builder. If a marketer would like to filter upon a column on the junction table, you must define the junction as an entity and define a relationship.
 
+
 | Parameters               | Definition                                                                                                                                                                                                 |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `relationship`           | An immutable slug for the relationship, and will be treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (like `user-account` or `user_account`). |
