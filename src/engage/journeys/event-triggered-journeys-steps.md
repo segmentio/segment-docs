@@ -165,15 +165,16 @@ You can also give branches uniques name to differentiate them from each other on
 > info "Evaluation is sequential"
 > Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step.
 
-### Example: Lapsed purchase campaign
+### Example: Target different customer types
 
-In the following below, a journey begins when a user modifies their cart. The Data split step checks how long it’s been since their last purchase:
+You can use a Data split to branch profiles based on traits or audience membership that already exist on the profile when it reaches this step. For example:
 
-- Profiles in the `30 days lapsed` audience receive a short-term win-back message.
-- Profiles in the `90 days lapsed` audience receive a different message with a stronger offer.
-- Everyone else continues down the `Everyone else` branch.
+- Profiles with a known `email_subscription_status` trait get treated as existing customers.
+- Profiles that belong to a `VIP` audience are routed down a separate path for high-value users.
+- Profiles with a specific set of traits (like favorite color and a known name) can receive personalized messaging.
+- Everyone else continues through a general branch with default messaging.
 
-This setup helps you tailor re-engagement efforts based on how recently a user was active, without needing to wait for a new event or trigger.
+This setup helps tailor journey experiences using reliable, preexisting data. Because the Data split step evaluates conditions instantly, it works best with traits or audience membership that Segment has already computed before the profile enters the step.
 
 ## Send to Destination
 
