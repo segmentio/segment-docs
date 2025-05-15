@@ -25,7 +25,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
     # yarn
     yarn add @segment/analytics-node
     # pnpm
-    pnpm install @segment/analytics-node
+    pnpm add @segment/analytics-node
     ```
 
 2. Initialize the `Analytics` constructor the module exposes with your Segment source **Write Key**, like so:
