@@ -69,13 +69,13 @@ Segment displays:
 * the top 65 event property and context key values.
 * the top 65 profile trait key values.
 
-You can duplicate your conditions in the audience builder into the same condition group.You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
+You can duplicate your conditions in the audience builder into the same condition group. You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
 
-As you're building your Linked Audience, you can choose from the following conditions:
+When building your Linked Audience, you can add multiple conditions to a single condition group, or create multiple condition groups. Segment evaluates each condition group independently to determine which profiles meet each condition group, and Segment includes the associated entities that allowed each profile to meet the criteria of each condition group. Segment then unions the matched profiles based on whether the operator between the condition groups are using the AND or OR operators to combine the result set. You can choose from the following conditions as you're building your Linked Audience:
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch. |
 | without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
 | with [ trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
 | without [ trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|
