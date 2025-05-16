@@ -2,11 +2,12 @@
 title:  Redshift Data Graph User Access Permissions
 ---
 
+Set up your Redshift Data Graph. You can choose from two different permissions options depending on your use case. 
+
+## Permissions Option 1
 You can set up the Data Graph in such a way that Segment has access to 2 databases:
 * The first database has write access for storing Reverse ETL checkpoints databases
 * The second database has read access
-
-## Permissions Option 1
 
 ### Database
 Create a separate databse for Segment usage (for example, `segment_workspace`). This will have the following schemas:
@@ -32,6 +33,7 @@ This role has the following permissions:
 * Read access to full user data schema (for example, devices schema), or read access to specific tables in the user data schema (for example, `user_devices` table or `device_locations` table)
 
 ## Permissions Option 2
+Set up the Data Graph so that Segment has access to a single database. 
 
 ### Database
 Create a single database for Profiles Sync & Linked usage (for example, `segment_workspace`). This has the following schemas:
