@@ -68,12 +68,12 @@ Trait Enrichment setup
 
 1. Confirm that **Send Track** is toggled on and select **Customized Setup**. Select **Add Trait**, select the traits you want to sync, and click **Save**. 
 
-![Alt text](traitEnrichment-EngageSettings.png)
+![Add traits using the Customized Setup option.](traitEnrichment-EngageSettings.png)
 
 2. Update the **Identifier Data** field in your destination **Audience Entered** mapping (either SFTP or S3). 
 - To update a trait field mapping, click on the **Select event variable** section and in the dropdown search for `properties`, followed by your trait. For example, `properties.firstName`. If no matches are found, use `properties.TRAIT` as an event variable. 
 
-![Alt text](traitEnrichment-Mappings.png)
+![Update the identifier data in your Audience Entered mapping.](traitEnrichment-Mappings.png)
 
 For best results with Trait Enrichment, Segment recommends the following:
 
