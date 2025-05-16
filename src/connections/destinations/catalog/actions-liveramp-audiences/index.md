@@ -54,6 +54,8 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 * Files are created per audience.
 * After initial ingestion is complete, changing the mappings will cause the LiveRamp ingestion to start failing until ingestion setup is run again.
 * Time to first sync can be up to 3 days, please be patient.
+* Currently, sFTP transfer is not supported in EMEA Region. Only US region is supported for sFTP file transfer.
+* At this moment, the Delivery Overviews/Event Delivery tabs does not reflect the correct status of the file transfers to either S3 or sFTP. 
 
 ## Trait Enrichment 
 
