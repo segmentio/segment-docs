@@ -2,17 +2,16 @@
 title: Using Linked Audiences with Braze
 plan: engage-foundations
 beta: true
-hidden: true
+hidden: false
 ---
 
 
 Linked Audiences allows you [dynamically personalize email messages](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} in Braze using the predefined traits of any Linked Audience profile and the attributes of any entities used to match the profile into the audience. 
 
-The following topic is intended for a Technical Marketer and Data Engineer to complete together while setting up their Linked Audience. 
 
 ## Supported Braze Engagement Tools
 
-The following engagement tools are available for use with Linked Audiences in Segment:
+The following engagement tool is available for use with Linked Audiences in Segment:
 
 | Type                                                                                                                                             | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |

@@ -74,10 +74,6 @@ For Segment to compute data changes in your warehouse, Segment requires both rea
 > warning ""
 > Only sync what you need for enrichment. There may be cost implications to having Segment query your warehouse tables.
 
-> info ""
-> Linked Events syncs data from your warehouse approximately once every hour. 
-
-
 ### Supported data warehouses
 
 The table below shows the data warehouses Linked Events supports. View the Segment docs for your warehouse, then carry out the corresponding steps. 

@@ -4,6 +4,9 @@ plan: unify
 ---
 You can use the Profiles CSV Uploader to add or update user profiles and traits. This page contains guidelines for your CSV upload and explains how to upload a CSV file to Unify.
 
+> warning "Consent preferences cannot be updated using the Profiles CSV Uploader"
+> If you need to update consent preferences for your profiles, you must generate a [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event. For more information, see the [Consent on the Profile](/docs/privacy/consent-management/consent-in-unify/) documentation. 
+
 ## CSV file upload guidelines
 
 Keep the following guidelines in mind as you upload CSV files:

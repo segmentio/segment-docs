@@ -84,7 +84,7 @@ To subscribe to alerts for a failed or partially successful sync:
     - **Reverse ETL sync partial success**: Receive a notification when your Reverse ETL sync is partially successful.
 4. Select one or more of the following alert options: 
     - **Enable email notifications**: Enter an email address or alias that should receive alerts.
-    - **Enable Slack notifications**: Enter a webhook URL and Slack channel name.
+    - **Enable Slack notifications**: Enter a webhook URL and Slack channel name. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}.
     - **Enable in-app notifications**: Select this option to see an in-app notification.
 5. Click **Create alert**.
 
@@ -124,7 +124,7 @@ To subscribe to alerts for successful delivery fluctuations at the mapping level
 3. Set an *alert threshold*, or the percentage of successfully delivered events that would prompt an alert. 
 4. Select one or more of the following notification channels: 
     - **Email**: Enter an email address or alias that should receive alerts.
-    - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. 
+    - **Slack notification**: Enter a Webhook URL and a Slack channel name to receive alerts in a Slack channel. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}.
     - **In-app notifications**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
 5. Toggle the **Enable alert** setting on and click **Create**. 
 

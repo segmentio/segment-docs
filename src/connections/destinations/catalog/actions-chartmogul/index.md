@@ -29,7 +29,7 @@ This destination is maintained by ChartMogul. For any issues with the destinatio
 
 ## Supported event calls
 ChartMogul (Actions) accepts two types of event calls:
-- [Track](https://segment.com/docs/connections/spec/track/){:target="_blank"} — used for contact details and custom attributes
-- [Group](https://segment.com/docs/connections/spec/group/){:target="_blank"} — used for customer details and custom attributes
+- [Identify](https://segment.com/docs/connections/spec/identify/){:target="_blank"} — used for contact details
+- [Group](https://segment.com/docs/connections/spec/group/){:target="_blank"} — used for customer details
   
 ChartMogul uses attributes from these calls to create new or update existing [custom attributes](https://help.chartmogul.com/hc/en-us/articles/206120219){:target="_blank"} for contacts or customers, or to update customers' select [standard attributes](https://help.chartmogul.com/hc/en-us/articles/5321255006364#standard-attributes){:target="_blank"}.
