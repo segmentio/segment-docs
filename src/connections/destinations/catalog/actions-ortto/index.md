@@ -21,8 +21,7 @@ This destination is maintained by Ortto. For support or questions, [contact](mai
 ## Ortto (Actions) provides the following benefits over the classic Ortto destination:
 
 - **Granular control and flexibility**. Map any Segment event type to specific Ortto actions with full control over field mappings. This lets you tailor how and when customer data is sent to Ortto, ensuring more accurate and relevant automations.
-- **Audience syncing**. Ortto (Actions) lets you sync computed audiences from Segment Engage directly into Ortto, enabling precise activation of rich, behavior-based audiences—ideal for lifecycle marketing, retargeting, and personalization at scale. You can also manually create or select existing audiences in Ortto and dynamically add or remove contacts as part of profile upserts or activity tracking, giving you full control over audience membership in real time.
-- **Improved transparency and debugging**. Because Ortto (Actions) uses direct API calls to Ortto’s endpoints, it provides clearer delivery status and error messages to help teams troubleshoot faster and ensure data integrity.
+- **Improved transparency and debugging**. Because Ortto (Actions) uses direct API calls to Ortto’s endpoints, it provides clearer delivery status and error messages to help teams troubleshoot faster and ensure data integrity. It also supports HTTP [multi-status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/207) responses, allowing multiple outcomes to be returned in a single response—this means partial successes or failures can be clearly identified, making debugging more efficient and reducing the risk of silent data loss.
 - **Future-proofed**. Built on Segment’s modern Destination Actions framework, Ortto (Actions) will receive ongoing updates and support for new features, while the classic destination remains static.
 
 
@@ -35,10 +34,21 @@ This destination is maintained by Ortto. For support or questions, [contact](mai
 5. [Log in](https://ortto.app/login){:target="_blank"} to your Ortto account and add a new **Segment (Actions)** data source, or use an existing one.
 6. Copy the API key from the data source and paste it into the destination **Settings** in Segment.
 
-
 {% include components/actions-fields.html %}
 
-## Notes
+> [!IMPORTANT]
+> All events sent through the supported actions must include either the `User ID` or `Anonymous ID` fields, regardless of whether these are set as [Unique Identifiers](https://help.ortto.com/a-55-unique-identifiers){:target="_blank"} in Ortto.
 
-- All events sent through the supported actions must include either the `User ID` or `Anonymous ID` fields, regardless of whether these are set as [Unique Identifiers](https://help.ortto.com/a-55-unique-identifiers){:target="_blank"} in Ortto.
-- Ortto (Actions) and Ortto Classic are subject to the same [rate limits](https://help.ortto.com/segment-integration#Rate-limits){:target="_blank"}. Profile upserts, audience entry requests, and activity tracking events that include contact traits are all treated as identify events.
+> [!IMPORTANT]
+> Ortto (Actions) and Ortto Classic are subject to the same [rate limits](https://help.ortto.com/segment-integration#Rate-limits){:target="_blank"}. Profile upserts, audience entry requests, and activity tracking events that include contact traits are all treated as identify events.
+
+## Audience Membership
+
+**Ortto (Actions)** allows you to sync your Segment users with an Ortto Audience, enabling precise activation of rich, behavior-based segments—perfect for lifecycle marketing, retargeting, and large-scale personalization. You can manually create new audiences or use existing ones in Ortto, and dynamically add or remove contacts through profile upserts or activity tracking. This gives you real-time control over audience membership.
+
+To prevent excessive churn, audience membership in Ortto is protected from frequent updates. When too many enter/exit events are received from Segment, Ortto aggregates these changes and updates the contact’s final audience state once per day.
+
+> [!NOTE]
+> Segment audience names in Ortto are case-sensitive and must be unique. If you enter the name of an existing audience during action setup, contacts will be synced to that existing audience in Ortto.
+
+
