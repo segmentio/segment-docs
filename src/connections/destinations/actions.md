@@ -231,7 +231,7 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
-- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
+- **Event property** (`is`, `is equals to`, `is not`, `is not equals to`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
 
     You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
@@ -244,8 +244,8 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 > Operators support matching on values with a **string** data type:
 > - `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`
 > 
-> Operators that support matching on values with either a **string** or **numeric** data type:
-> - `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
+> Operators that support matching on values with **numeric** data type:
+> - `is equals to`, `is not equals to`, `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
 > 
 > Operators that support matching on values with a **boolean** data type:
 > - `is true`, `is false`
