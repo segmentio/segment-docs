@@ -48,7 +48,7 @@ You can configure a single destination to receive data when a user exits due to 
 
 1. Enable **Send to destination before exit** in the exit rule setup.
 2. Choose which exit events should trigger the send.
-3. Define the payload using data from the entry event, exit event, and journy context (if available).
+3. Define the payload using data from the entry event, exit event, and journey context (if available).
 
 Segment only includes journey context collected before the exit event. The payload preview shows all possible fields, but the actual send includes only the data available at the time of exit.
 
