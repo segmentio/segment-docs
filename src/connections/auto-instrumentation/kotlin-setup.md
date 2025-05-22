@@ -26,39 +26,48 @@ Signals supports [Jetpack Compose](https://developer.android.com/compose){:targe
 
 Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#debug-mode).
 
+## Step 1: Install dependencies
+
+To install Signals, add the following dependencies to your app-level Gradle build file.
+
+```groovy
+dependencies {
+  // Core Analytics Kotlin library
+  implementation("com.segment.analytics.kotlin:android:1.19.1")
+
+  // Live plugin for real-time analytics
+  implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.1.0")
+
+  // Signals core library
+  implementation("com.segment.analytics.kotlin.signals:core:0.5.0")
+
+  // Optional: Jetpack Compose UI tracking
+  implementation("com.segment.analytics.kotlin.signals:compose:0.5.0")
+
+  // Optional: OkHttp3 network request tracking
+  implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+
+  // Optional: Screen and route tracking for Navigation components
+  implementation("com.segment.analytics.kotlin.signals:navigation:0.5.0")
+
+  // Optional: HttpURLConnection tracking
+  implementation("com.segment.analytics.kotlin.signals:java-net:0.5.0")
+}
+```
+
+The core libraries are required to enable Signals and real-time analytics. Use the optional plugins to track additional activity based on your app's architecture:
+
+- Compose plugin, which tracks user interface events in Jetpack Compose.
+- OkHttp3 plugin, which captures requests sent through OkHttp3 or Retrofit.
+- Navigation plugin, which tracks route changes when using Jetpack Navigation.
+- JavaNet plugin, which tracks network activity sent through `HttpURLConnection`.
+
+Only add the plugins you plan to use. You can add or remove them later without reinitializing your source.
+
+
+
 
 <!-->
-## Step 1: Add a source and get its write key
-
-You'll first need to add a source and copy its write key: 
-
-1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation** and click **Add source**.
-2. Select a source, give the source a name, and click **Save**.
-3. Return to **Connections > Sources** to view your sources. 
-4. In the **My sources** table, find and click the new source you just set up.
-5. In the **Initialize the Client** section, look for and copy the `writeKey` displayed in the code block. 
-
-## Step 2: Add dependencies and initialization code
-
-Next, you'll need to add the Signals SDKs to your Kotlin application.
-
-1. Update your module’s Gradle build file to add the right dependencies:
-
-    ```kotlin
-    dependencies {
-        // Add the Analytics Kotlin library
-        implementation("com.segment.analytics.kotlin:android:1.15.0")
-        // Add a live plugin for real-time data handling
-        implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.0.0")
-        // Add the core Signals library
-        implementation("com.segment.analytics.kotlin.signals:core:0.0.1")
-        // Compose plugin for Jetpack Compose UI tracking
-        implementation("com.segment.analytics.kotlin.signals:compose:0.0.1")
-        // OkHttp3 plugin for network activity tracking
-        implementation("com.segment.analytics.kotlin.signals:okhttp3:0.0.1")
-    }
-    ```
-
 2. Add the initialization code and configuration options:
 
 > success ""
