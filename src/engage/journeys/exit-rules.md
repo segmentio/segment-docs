@@ -3,9 +3,9 @@ title: Event-Triggered Journeys Exit Rules
 plan: engage-foundations
 ---
 
-Journey Exit Rules automatically remove users from a journey when certain conditions are met, helping you avoid sending irrelevant messages after a user takes actions like making a purchase or canceling a subscription. 
+Journey exit rules automatically remove users from a journey when they meet specific conditions, like completing a purchase or canceling a subscription.
 
-Exit Rules also reduce the need for complex branching by letting you define clear endpoints.
+This page explains how exit rules work, how to configure them, when to use them, and how to track exits in your journey analytics. You'll also find example use cases, best practices, and key behavior notes to help you get started.
 
 > info "Public Beta"
 > Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
@@ -39,6 +39,9 @@ You can optionally require that the exit event matches the same identifier used 
 
 Each exit rule must be mutually exclusive. 
 
+> success "Exit rules Analytics"
+> You can track how exit rules are performing from the journey overview, which shows total exits per rule, and from individual step details, which show where users exited.
+
 ### Destination sends (optional)
 
 You can configure a single destination to receive data when a user exits due to an exit rule. To do this:
@@ -48,6 +51,9 @@ You can configure a single destination to receive data when a user exits due to 
 3. Define the payload using data from the entry event, exit event, and journy context (if available).
 
 Segment only includes journey context collected before the exit event. The payload preview shows all possible fields, but the actual send includes only the data available at the time of exit.
+
+> info "Customize messages based on the exit event"
+> You can only configure one destination send for all exit events, but the payload includes the exit event details. This means your destination can still adjust messaging based on which event triggered the exit.
 
 ## Use cases
 
@@ -71,3 +77,9 @@ Follow these tips to make sure your exit rules behave as expected:
 - Review your rules before publishing. You can’t edit exit rules after the journey goes live.
 - Check your analytics. Exit data can help you understand where users are dropping off and why.
 
+As you work with exit rules, keep the following in mind:
+
+- You can configure up to 5 exit events per journey.
+- Journeys support only one destination send for exit events.
+- You can’t edit exit rules after publishing the journey, so double-check them first.
+- If an exit rule is triggered, it overrides all other steps. The user exits immediately, even if they’re mid-delay or hold.
