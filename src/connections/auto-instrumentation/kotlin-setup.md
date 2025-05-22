@@ -3,9 +3,9 @@ title: Auto-Instrumentation Setup
 hidden: true
 ---
 
-This guide outlines the steps required to set up the Signals SDK in your Android OS applications using Kotlin.
+Segment’s Signals library powers [Auto-Instrumentation](/docs/connections/auto-instrumentation/) in Android apps, capturing user interactions and behavior without manual event tracking.
 
-You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
+This guide shows how to install and configure the library, as well as how to enable optional plugins for screen views, network activity, and more.
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
@@ -13,94 +13,241 @@ You'll learn how to add Auto-Instrumentation sources, integrate dependencies, an
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
 
-## Step 1: Add a source and get its write key
+## Before you begin
 
-You'll first need to add a source and copy its write key: 
+To use Signals with Android, you need:
 
-1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation** and click **Add source**.
-2. Select a source, give the source a name, and click **Save**.
-3. Return to **Connections > Sources** to view your sources. 
-4. In the **My sources** table, find and click the new source you just set up.
-5. In the **Initialize the Client** section, look for and copy the `writeKey` displayed in the code block. 
+- An active Segment workspace with Auto-Instrumentation enabled
+- A Kotlin-based Android project
+- Android Gradle Plugin version 7.0 or later
+- A minimum compile SDK version of 21
 
-## Step 2: Add dependencies and initialization code
+Signals supports [Jetpack Compose](https://developer.android.com/compose){:target="_blank"} and traditional Android UI frameworks. It also includes optional plugins for network tracking using [OkHttp3](https://square.github.io/okhttp/){:target="_blank"}, [Retrofit](https://square.github.io/retrofit/){:target="_blank"}, or `HttpURLConnection`](https://developer.android.com/reference/java/net/HttpURLConnection){:target="_blank"}.
 
-Next, you'll need to add the Signals SDKs to your Kotlin application.
+Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#step-4-enable-debug-mode).
 
-1. Update your module’s Gradle build file to add the right dependencies:
+## Step 1: Install dependencies
 
-    ```kotlin
-    dependencies {
-        // Add the Analytics Kotlin library
-        implementation("com.segment.analytics.kotlin:android:1.15.0")
-        // Add a live plugin for real-time data handling
-        implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.0.0")
-        // Add the core Signals library
-        implementation("com.segment.analytics.kotlin.signals:core:0.0.1")
-        // Compose plugin for Jetpack Compose UI tracking
-        implementation("com.segment.analytics.kotlin.signals:compose:0.0.1")
-        // OkHttp3 plugin for network activity tracking
-        implementation("com.segment.analytics.kotlin.signals:okhttp3:0.0.1")
-    }
+To install Signals, add the following dependencies to your app-level Gradle build file.
+
+```groovy
+dependencies {
+  // Core Analytics Kotlin library
+  implementation("com.segment.analytics.kotlin:android:1.19.1")
+
+  // Live plugin for real-time analytics
+  implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.1.0")
+
+  // Signals core library
+  implementation("com.segment.analytics.kotlin.signals:core:0.5.0")
+
+  // Optional: Jetpack Compose UI tracking
+  implementation("com.segment.analytics.kotlin.signals:compose:0.5.0")
+
+  // Optional: OkHttp3 network request tracking
+  implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+
+  // Optional: Screen and route tracking for Navigation components
+  implementation("com.segment.analytics.kotlin.signals:navigation:0.5.0")
+
+  // Optional: HttpURLConnection tracking
+  implementation("com.segment.analytics.kotlin.signals:java-net:0.5.0")
+}
+```
+
+The core libraries are required to enable Signals and real-time analytics. Use the following optional plugins to track additional activity based on your app's architecture:
+
+- **Compose**: Tracks user interface events in Jetpack Compose.
+- **OkHttp3**: Captures requests sent through OkHttp3 or Retrofit.
+- **Navigation**: Tracks route changes when using Jetpack Navigation.
+- **JavaNet**: Tracks network activity sent through `HttpURLConnection`.
+
+Only add the plugins you plan to use. You can add or remove them later without reinitializing your source.
+
+## Step 2: Initialize the SDK
+
+After you add dependencies, you'll need to initialize the Analytics client and configure the Signals plugin. 
+
+Start by creating the `Analytics` instance using your source's write key. Then add the Signals plugin and configure its settings separately.
+
+```kotlin
+// Create the Analytics instance with your configuration
+val analytics = Analytics(Configuration(writeKey = "<WRITE_KEY>"))
+
+// Add the live plugin for real-time event handling
+analytics.add(LivePlugins())
+
+// Add the Signals plugin
+analytics.add(Signals)
+
+// Configure Signals settings
+Signals.configuration = Configuration(
+  maximumBufferSize = 1000, // Number of signals to keep in memory
+  broadcastInterval = 60, // Send signals every 60 seconds
+  broadcasters = listOf(WebhookBroadcaster("YOUR_WEBHOOK")), // Optional
+  debugMode = true // For development use only
+)
+
+// Optional: Add the Compose plugin to track UI events and interactions
+analytics.add(SignalsComposeTrackingPlugin())
+
+// Optional: Track screen transitions using Navigation
+analytics.add(SignalsActivityTrackingPlugin())
+navController.turnOnScreenTracking()
+```
+
+When you run this code, keep the following in mind:
+
+- You'll need to replace <WRITE_KEY> with the key from your Android Source in Segment.
+- `debugMode` sends signals to Segment for use in the Event Builder. Only enable it in development environments.
+- If your app doesn't use Jetpack Compose or Navigation, you can skip those plugin lines.
+
+For more options, see [Configuration options reference](#configuration-options).
+
+## Step 3: Track network requests
+
+Signals supports automatic tracking of network activity for apps that use OkHttp3, Retrofit, or `HttpURLConnection`.
+
+Add the relevant plugin based on your network stack.
+
+### OkHttp3
+
+1. Add the dependency to your Gradle file:
+
+    ```groovy
+    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
     ```
 
-2. Add the initialization code and configuration options:
-
-> success ""
-> see [configuration options](#configuration-options) for a complete list.
+2. Add the tracking plugin to your `OkHttpClient`:
 
     ```kotlin
-    // Configure Analytics with your settings
-    {... <analytics config>....} 
-
-    // Add live plugins for real-time analytics
-    analytics.add(LivePlugins())
-
-    // Configure and add the Signals plugin
-    Signals.configuration = Configuration(
-        writeKey = "<WRITE_KEY>",  // Replace <WRITE_KEY> with the write key you previously copied
-        maximumBufferSize = 1000,
-        broadcasters = listOf(SegmentBroadcaster(analytics))
-    )
-
-    // Add the Compose plugin for UI events and screen tracking
-    analytics.add(SignalsComposeTrackingPlugin())
-    ```
-
-3. (Optional:) If you want to track network activity, configure your OkHttpClient to use the Signals OkHttp3 plugin:
-
-    ```kotlin
-    private val okHttpClient = OkHttpClient.Builder()
+    val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(SignalsOkHttp3TrackingPlugin())
         .build()
     ```
 
-4. Build and run your app.
+### Retrofit
 
-## Step 3: Verify and deploy events
+Retrofit is built on top of OkHttp, so the setup is similar.
 
-After integrating the SDK and running your app, verify that Segment is collecting signals:
+1. Add the same OkHttp3 plugin shown in the previous sectiion:
 
-1. In your Segment workspace, go to **Connections > Sources** and select the source you created for Auto-Instrumentation.
-2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
-  - Make sure you've installed the SDK correctly.
-  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
-3. Launch your app [in debug mode](https://github.com/segmentio/analytics-next/tree/master/packages/signals/signals#sending-and-viewing-signals-on-segmentcom-debug-mode){:target="_blank"}, for example, by running the app from Android Studio on a simulator or test device. This enables signal collection so you can see activity in the Event Builder.
-4. Use the app as a user would: navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
-5. In the Event Builder, find a signal and click **Configure event** to define a new event. After configuring the event, click **Publish event rules**.
+    ```groovy
+    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+    ```
 
-## Configuration Options
+2. Attach the plugin through your Retrofit client configuration:
 
-Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Kotlin.
+    ```kotlin
+    val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor(SignalsOkHttp3TrackingPlugin())
+        .build()
 
-| `Option`            | Required | Value                     | Description                                                                                                                                                                                           |
-| ------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `writeKey`          | Yes      | String                    | Source write key                                                                                                                                                                                      |
-| `maximumBufferSize` | No       | Integer                   | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                    |
-| `broadcastInterval` | No       | Integer                   | Broadcasts signals to Segment every X event. Default is `60`.                                                                                                                                         |
-| `broadcasters`      | No       | `List<SignalBroadcaster>` | An array of broadcasters. These objects forward signal data to their destinations, like `WebhookBroadcaster` or `DebugBroadcaster` writing to the developer console. Default is `SegmentBroadcaster`. |
+    val retrofit = Retrofit.Builder()
+        .client(okHttpClient)
+        .baseUrl("https://your.api.endpoint")
+        .build()
+    ```
 
+### HttpURLConnection
+
+1. Add the JavaNet plugin dependency:
+
+    ```groovy
+    implementation("com.segment.analytics.kotlin.signals:java-net:0.5.0")
+    ```
+
+2. Install the plugin at runtime:
+
+    ```kotlin
+    JavaNetTrackingPlugin.install()
+    ```
+
+Depending on your app’s network stack, you may only need one plugin. If your app uses multiple clients, you can install more than one plugin.
+
+## Step 4: Enable debug mode
+
+By default, Signals stores captured data on the device and doesn't forward it to Segment. This process prevents unnecessary bandwidth use and helps support privacy compliance requirements.
+
+To view captured signals in the Event Builder and create event generation rules, you need to enable `debugMode`. This setting temporarily lets the SDK send signal data to Segment while you're testing.
+
+> warning ""
+> Only enable `debugMode` in development environments. Avoid using `debugMode` in production apps.
+
+You can enable `debugMode` in one of two ways.
+
+### Option 1: Use build flavors
+
+Configure `debugMode` at build time using [Android product flavors](https://developer.android.com/build/build-variants#product-flavors){:target="_blank"}.
+
+1. In your `build.gradle` file, define two flavors:
+
+    ```groovy
+    android {
+      ...
+      productFlavors {
+        prod {
+          buildConfigField "boolean", "DEBUG_MODE", "false"
+        }
+        dev {
+          buildConfigField "boolean", "DEBUG_MODE", "true"
+        }
+      }
+    }
+    ```
+
+2. Update the Signals configuration to use the flag:
+
+    ```kotlin
+    Signals.configuration = Configuration(
+      ...
+      debugMode = BuildConfig.DEBUG_MODE
+    )
+    ```
+
+### Option 2: Use a feature flag
+
+If your app uses [Firebase Remote Config](https://firebase.google.com/docs/remote-config){:target="_blank"} or a similar system, you can control `debugMode` remotely.
+
+```kotlin
+Signals.configuration = Configuration(
+  ...
+  debugMode = remoteConfig.getBoolean("debug_mode")
+)
+```
+
+## Step 5: Verify event collection
+
+After you build and run your app, use the [Event Builder](/docs/connections/auto-instrumentation/event-builder/) to confirm that Signals are being collected correctly.
+
+1. In your Segment workspace, go to **Connections > Sources** and select the Android Source you configured.
+2. Open the **Event Builder** tab.
+3. Interact with your app on a simulator or test device:
+   - Navigate between screens.
+   - Tap buttons and UI elements.
+   - Trigger network requests.
+
+If `debugMode` is enabled, Signals appear in real time as you interact with the app.
+
+4. In the Event Builder, select a signal and click **Configure event** to define a new event.
+5. After you add any event mappings, click **Publish event rules** to save them.
+
+> info "What if I don't see the Event Builder tab?"
+> If you don't see the Event Builder tab, confirm that the SDK is installed correctly and make sure `debugMode` is enabled. If you still don't see it, reach out to your CSM to verify that your workspace has Auto-Instrumentation enabled.
+
+## Configuration options
+
+Use the `Signals.configuration` object to control how captured signals are stored, relayed, and displayed.
+
+The following table lists the available options:
+
+| Option              | Required | Type                      | Default | Description                                                                                                                                                                                         |
+| ------------------- | -------- | ------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `maximumBufferSize` | No       | `Int`                     | `1000`  | The number of captured signals to keep in memory before relaying them. Signals get stored in a first-in, first-out buffer.                                                                          |
+| `broadcastInterval` | No       | `Int` (seconds)           | `60`    | The interval, in seconds, at which buffered signals are sent to broadcasters.                                                                                                                       |
+| `broadcasters`      | No       | `List<SignalBroadcaster>` | N/A     | A list of broadcasters that forward signal data to external destinations. `SegmentBroadcaster` is included by default, and you can add others like `WebhookBroadcaster` or a custom implementation. |
+| `debugMode`         | No       | `Boolean`                 | `false` | When `true`, relays signals to Segment so they appear in the Event Builder. Only enable this in development environments.                                                                           |
 
 ## Next steps
 
-This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers example rules. 
+After you've confirmed that signals show up in the Event Builder, use the [Generate Events from Signals](/docs/connections/auto-instrumentation/configuration/) guide to configure how signals get translated into analytics events.
