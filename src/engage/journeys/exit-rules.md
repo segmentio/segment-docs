@@ -24,12 +24,9 @@ You'll set up exit rules in the journey’s settings panel. By default, journeys
 
 ## Basic setup
 
-To get started, open your journey settings and look for the Exit Rules section. You’ll see two options:
+You’ll configure exit rules directly from the journey canvas. By default, journeys don’t have any exit conditions; users stay in the journey unless you explicitly define an exit rule.
 
-- **Users don't exit early** (default)
-- **Exit when user performs events**
-
-Choose the second option to begin defining exit conditions.
+To add an exit rule, click **Exit rules** on the journey canvas. From there, you can select the event(s) that should trigger an exit and define optional property filters or matching conditions.
 
 ### Adding exit events
 
@@ -48,7 +45,7 @@ You can configure a single destination to receive data when a user exits due to 
 
 1. Enable **Send to destination before exit** in the exit rule setup.
 2. Choose which exit events should trigger the send.
-3. Define the payload using data from the entry event, exit event, and journey context (if available).
+3. Define the payload using data from the entry event, exit event, and journey context.
 
 Segment only includes journey context collected before the exit event. The payload preview shows all possible fields, but the actual send includes only the data available at the time of exit.
 
@@ -59,12 +56,12 @@ Segment only includes journey context collected before the exit event. The paylo
 
 Exit rules are helpful in journeys where a user might complete their goal before reaching the end. The following table shows some common scenarios where exit rules would be helpful:
 
-| Use case              | Exit event                                | Notes                                                                |
-| --------------------- | ----------------------------------------- | -------------------------------------------------------------------- |
-| Cart abandonment      | `Order_Purchased` with matching `cart_id` | Confirms the user completed checkout before follow-up messages       |
-| Trial conversion      | `Subscription_Upgraded` with `account_id` | Ends the trial flow once the user becomes a paid customer            |
-| Appointment reminders | `Appointment_Cancelled`                   | Prevents reminders from going out after the appointment is canceled  |
-| Subscription renewal  | `Renewal_Successful` with `user_id`       | Exits the renewal reminder journey after the subscription is renewed |
+| Use case              | Exit event                                    | Notes                                                                |
+| --------------------- | --------------------------------------------- | -------------------------------------------------------------------- |
+| Cart abandonment      | `Order_Purchased` with matching `cart_id`     | Confirms the user completed checkout before follow-up messages       |
+| Trial conversion      | `Subscription_Upgraded` with `account_id`     | Ends the trial flow once the user becomes a paid customer            |
+| Appointment reminders | `Appointment_Cancelled` with `appointment_id` | Prevents reminders from going out after the appointment is canceled  |
+| Subscription renewal  | `Renewal_Successful`                          | Exits the renewal reminder journey after the subscription is renewed |
 
 
 ## Best practices
@@ -81,5 +78,4 @@ As you work with exit rules, keep the following in mind:
 
 - You can configure up to 5 exit events per journey.
 - Journeys support only one destination send for exit events.
-- You can’t edit exit rules after publishing the journey, so double-check them first.
 - If an exit rule is triggered, it overrides all other steps. The user exits immediately, even if they’re mid-delay or hold.
