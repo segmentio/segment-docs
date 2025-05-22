@@ -163,7 +163,7 @@ You can configure up to five branches in a Data split step. Each branch can have
 You can also give branches uniques name to differentiate them from each other on the journey canvas.
 
 > info "Evaluation is sequential"
-> Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step.
+> Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step. You can change the evaluation order by dragging branches up or down in the configuration side sheet.
 
 ### Example: Target different customer types
 
