@@ -10,7 +10,7 @@ This destination is maintained by Dub. For any issues with the destination, [con
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Dub (Actions)".
+1. From your Segment workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Dub (Actions)".
 2. Select Dub (Actions) and click **Add Destination**.
 3. Select an existing Source to connect to Dub (Actions).
 4. Open your [Dub workspace](https://app.dub.co){:target="_blank"}.
