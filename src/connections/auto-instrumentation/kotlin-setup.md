@@ -3,9 +3,9 @@ title: Auto-Instrumentation Setup
 hidden: true
 ---
 
-This guide outlines the steps required to set up the Signals SDK in your Android OS applications using Kotlin.
+This guide explains how to set up Auto-Instrumentation for Android apps using Segment’s Signals library. 
 
-You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
+This page covers the installation steps, configuration options, and how to use optional plugins to extend tracking.
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
