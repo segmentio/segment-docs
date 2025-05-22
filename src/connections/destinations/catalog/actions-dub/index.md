@@ -19,4 +19,4 @@ This destination is maintained by Dub. For any issues with the destination, [con
 
 {% include components/actions-fields.html %}
 
-For more information about developing with Dub, check out their [documentation](https://dub.co/docs/integrations){:target="_blank”}.
+For more information about developing with Dub, check out Dub's [Integrations documentation](https://dub.co/docs/integrations){:target="_blank”}.
