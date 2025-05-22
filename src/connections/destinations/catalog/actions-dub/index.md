@@ -15,7 +15,7 @@ This destination is maintained by Dub. For any issues with the destination, [con
 3. Select an existing Source to connect to Dub (Actions).
 4. Open your [Dub workspace](https://app.dub.co){:target="_blank"}.
 5. Go to Settings > [API Keys](https://app.dub.co/settings/tokens){:target="_blank"} in your workspace and create a new API key.
-6. Enter the **API Key** in the Dub (Actions) destination settings in Segment.
+6. Return to your Segment workspace and enter the **API Key** in the Dub (Actions) destination settings page.
 
 {% include components/actions-fields.html %}
 
