@@ -17,7 +17,7 @@ This guide shows how to install and configure the library, as well as how to ena
 
 To use Signals with Android, you need:
 
-- An active Segment workspace with auto-instrumentation enabled
+- An active Segment workspace with Auto-Instrumentation enabled
 - A Kotlin-based Android project
 - Android Gradle Plugin version 7.0 or later
 - A minimum compile SDK version of 21
@@ -102,7 +102,7 @@ When you run this code, keep the following in mind:
 - `debugMode` sends signals to Segment for use in the Event Builder. Only enable it in development environments.
 - If your app doesn't use Jetpack Compose or Navigation, you can skip those plugin lines.
 
-For more options, see [Configuration options reference](#tbd).
+For more options, see [Configuration options reference](#configuration-options).
 
 ## Step 3: Track network requests
 
