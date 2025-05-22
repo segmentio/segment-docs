@@ -1,5 +1,7 @@
 ---
 title: Dub (Actions) Destination
+beta: true
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
