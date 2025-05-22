@@ -64,8 +64,45 @@ The core libraries are required to enable Signals and real-time analytics. Use t
 
 Only add the plugins you plan to use. You can add or remove them later without reinitializing your source.
 
+## Step 2: Initialize the SDK
 
+After you add dependencies, you'll need to initialize the Analytics client and configure the Signals plugin. 
 
+Start by creating the `Analytics` instance using your source's write key. Then add the Signals plugin and configure its settings separately.
+
+```kotlin
+// Create the Analytics instance with your configuration
+val analytics = Analytics(Configuration(writeKey = "<WRITE_KEY>"))
+
+// Add the live plugin for real-time event handling
+analytics.add(LivePlugins())
+
+// Add the Signals plugin
+analytics.add(Signals)
+
+// Configure Signals settings
+Signals.configuration = Configuration(
+  maximumBufferSize = 1000, // Number of signals to keep in memory
+  broadcastInterval = 60, // Send signals every 60 seconds
+  broadcasters = listOf(WebhookBroadcaster("YOUR_WEBHOOK")), // Optional
+  debugMode = true // For development use only
+)
+
+// Optional: Add the Compose plugin to track UI events and interactions
+analytics.add(SignalsComposeTrackingPlugin())
+
+// Optional: Track screen transitions using Navigation
+analytics.add(SignalsActivityTrackingPlugin())
+navController.turnOnScreenTracking()
+```
+
+When you run this code, keep the following in mind:
+
+- You'll need to replace <WRITE_KEY> with the key from your Android Source in Segment.
+- `debugMode` sends signals to Segment for use in the Event Builder. Only enable it in development environments.
+- If your app doesn't use Jetpack Compose or Navigation, you can skip those plugin lines.
+
+For more options, see [Configuration options reference].
 
 <!-->
 2. Add the initialization code and configuration options:
