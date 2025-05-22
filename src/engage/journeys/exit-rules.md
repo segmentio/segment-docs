@@ -27,7 +27,7 @@ You'll set up exit rules in the journey’s settings panel. By default, journeys
 To get started, open your journey settings and look for the Exit Rules section. You’ll see two options:
 
 - **Users don't exit early** (default)
-- **Exit when user performs events
+- **Exit when user performs events**
 
 Choose the second option to begin defining exit conditions.
 
