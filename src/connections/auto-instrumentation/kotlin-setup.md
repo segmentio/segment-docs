@@ -55,7 +55,7 @@ dependencies {
 }
 ```
 
-The core libraries are required to enable Signals and real-time analytics. Use the optional plugins to track additional activity based on your app's architecture:
+The core libraries are required to enable Signals and real-time analytics. Use the following optional plugins to track additional activity based on your app's architecture:
 
 - **Compose**: Tracks user interface events in Jetpack Compose.
 - **OkHttp3**: Captures requests sent through OkHttp3 or Retrofit.
