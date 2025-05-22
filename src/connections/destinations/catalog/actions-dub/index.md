@@ -13,7 +13,7 @@ This destination is maintained by Dub. For any issues with the destination, [con
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Dub (Actions)".
 2. Select Dub (Actions) and click **Add Destination**.
 3. Select an existing Source to connect to Dub (Actions).
-4. Go to the [Dub workspace](https://app.dub.co){:target="_blank"}
+4. Open your [Dub workspace](https://app.dub.co){:target="_blank"}.
 5. Go to Settings > [API Keys](https://app.dub.co/settings/tokens){:target="_blank"} in your workspace and create a new API key.
 6. Enter the **API Key** in the Dub (Actions) destination settings in Segment.
 
