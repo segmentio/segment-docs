@@ -22,7 +22,7 @@ To use Signals with Android, you need:
 - Android Gradle Plugin version 7.0 or later
 - A minimum compile SDK version of 21
 
-Signals supports Jetpack Compose and traditional Android UI frameworks. It also includes optional plugins for network tracking using OkHttp3, Retrofit, or `HttpURLConnection`.
+Signals supports [Jetpack Compose](https://developer.android.com/compose){:target="_blank"} and traditional Android UI frameworks. It also includes optional plugins for network tracking using OkHttp3, Retrofit, or `HttpURLConnection`.
 
 Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#debug-mode).
 
