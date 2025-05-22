@@ -47,4 +47,27 @@ You can configure a single destination to receive data when a user exits due to 
 2. Choose which exit events should trigger the send.
 3. Define the payload using data from the entry event, exit event, and journy context (if available).
 
-Keep in mind that Segment only includes journey context collected before the exit event. The payload preview shows all possible fields, but the actual send includes only the data available at the time of exit.
+Segment only includes journey context collected before the exit event. The payload preview shows all possible fields, but the actual send includes only the data available at the time of exit.
+
+## Use cases
+
+Exit rules are helpful in journeys where a user might complete their goal before reaching the end. The following table shows some common scenarios where exit rules would be helpful:
+
+| Use case              | Exit event                                | Notes                                                                |
+| --------------------- | ----------------------------------------- | -------------------------------------------------------------------- |
+| Cart abandonment      | `Order_Purchased` with matching `cart_id` | Confirms the user completed checkout before follow-up messages       |
+| Trial conversion      | `Subscription_Upgraded` with `account_id` | Ends the trial flow once the user becomes a paid customer            |
+| Appointment reminders | `Appointment_Cancelled`                   | Prevents reminders from going out after the appointment is canceled  |
+| Subscription renewal  | `Renewal_Successful` with `user_id`       | Exits the renewal reminder journey after the subscription is renewed |
+
+
+## Best practices
+
+Follow these tips to make sure your exit rules behave as expected:
+
+- Make exit conditions specific. Use event property filters to avoid accidental exits.
+- Match identifiers when needed. Tie entry and exit events together using a shared ID like `cart_id` or `account_id`.
+- Use exit sends to notify other systems. This is helpful for syncing user state across tools.
+- Review your rules before publishing. You can’t edit exit rules after the journey goes live.
+- Check your analytics. Exit data can help you understand where users are dropping off and why.
+
