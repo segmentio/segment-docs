@@ -102,43 +102,122 @@ When you run this code, keep the following in mind:
 - `debugMode` sends signals to Segment for use in the Event Builder. Only enable it in development environments.
 - If your app doesn't use Jetpack Compose or Navigation, you can skip those plugin lines.
 
-For more options, see [Configuration options reference].
+For more options, see [Configuration options reference](#tbd).
 
-<!-->
-2. Add the initialization code and configuration options:
+## Step 3: Track network requests
 
-> success ""
-> see [configuration options](#configuration-options) for a complete list.
+Signals supports automatic tracking of network activity for apps that use OkHttp3, Retrofit, or `HttpURLConnection`.
 
-    ```kotlin
-    // Configure Analytics with your settings
-    {... <analytics config>....} 
+Add the relevant plugin based on your network stack.
 
-    // Add live plugins for real-time analytics
-    analytics.add(LivePlugins())
+### OkHttp3
 
-    // Configure and add the Signals plugin
-    Signals.configuration = Configuration(
-        writeKey = "<WRITE_KEY>",  // Replace <WRITE_KEY> with the write key you previously copied
-        maximumBufferSize = 1000,
-        broadcasters = listOf(SegmentBroadcaster(analytics))
-    )
+1. Add the dependency to your Gradle file:
 
-    // Add the Compose plugin for UI events and screen tracking
-    analytics.add(SignalsComposeTrackingPlugin())
+    ```groovy
+    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
     ```
 
-3. (Optional:) If you want to track network activity, configure your OkHttpClient to use the Signals OkHttp3 plugin:
+2. Add the tracking plugin to your `OkHttpClient`:
 
     ```kotlin
-    private val okHttpClient = OkHttpClient.Builder()
+    val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(SignalsOkHttp3TrackingPlugin())
         .build()
     ```
 
-4. Build and run your app.
+### Retrofit
 
-## Step 3: Verify and deploy events
+Retrofit is built on top of OkHttp, so the setup is similar.
+
+1. Add the same OkHttp3 plugin shown in the previous sectiion:
+
+    ```groovy
+    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+    ```
+
+2. Attach the plugin through your Retrofit client configuration:
+
+    ```kotlin
+    val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor(SignalsOkHttp3TrackingPlugin())
+        .build()
+
+    val retrofit = Retrofit.Builder()
+        .client(okHttpClient)
+        .baseUrl("https://your.api.endpoint")
+        .build()
+    ```
+
+### HttpURLConnection
+
+1. Add the JavaNet plugin dependency:
+
+    ```groovy
+    implementation("com.segment.analytics.kotlin.signals:java-net:0.5.0")
+    ```
+
+2. Install the plugin at runtime:
+
+    ```kotlin
+    JavaNetTrackingPlugin.install()
+    ```
+
+---
+
+ Depending on your app’s network stack, you may only need one plugin. If your app uses multiple clients, you can install more than one.
+
+## Step 4: Enable debug mode
+
+By default, Signals stores captured data on the device and doesn't forward it to Segment. This process prevents unnecessary bandwidth use and helps support privacy compliance requirements.
+
+To view captured signals in the Event Builder and create event generation rules, you need to enable `debugMode`. This setting temporarily lets the SDK send signal data to Segment while you're testing.
+
+> warning ""
+> Only enable `debugMode` in development environments. Avoid using `debugMode` in production apps.
+
+You can enable `debugMode` in one of two ways.
+
+### Option 1: Use build flavors
+
+Configure `debugMode` at build time using [Android product flavors](https://developer.android.com/build/build-variants#product-flavors){:target="_blank"}.
+
+1. In your `build.gradle` file, define two flavors:
+
+    ```groovy
+    android {
+      ...
+      productFlavors {
+        prod {
+          buildConfigField "boolean", "DEBUG_MODE", "false"
+        }
+        dev {
+          buildConfigField "boolean", "DEBUG_MODE", "true"
+        }
+      }
+    }
+    ```
+
+2. Update the Signals configuration to use the flag:
+
+    ```kotlin
+    Signals.configuration = Configuration(
+      ...
+      debugMode = BuildConfig.DEBUG_MODE
+    )
+    ```
+
+### Option 2: Use a feature flag
+
+If your app uses [Firebase Remote Config](https://firebase.google.com/docs/remote-config){:target="_blank"} or a similar system, you can control `debugMode` remotely.
+
+```kotlin
+Signals.configuration = Configuration(
+  ...
+  debugMode = remoteConfig.getBoolean("debug_mode")
+)
+
+<!--## Step 3: Verify and deploy events
 
 After integrating the SDK and running your app, verify that Segment is collecting signals:
 
