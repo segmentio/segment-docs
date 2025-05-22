@@ -4,7 +4,7 @@ title: Dub (Actions) Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-[Dub](https://dub.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the all-in-one link attribution platform for businesses to understand how their marketing spend are converting to sales.
+[Dub](https://dub.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the all-in-one link attribution platform for businesses to understand how their marketing spend is converting to sales.
 
 This destination is maintained by Dub. For any issues with the destination, [contact the Dub Support team](mailto:support@dub.co).
 
