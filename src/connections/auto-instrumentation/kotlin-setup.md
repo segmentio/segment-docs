@@ -13,6 +13,21 @@ This page covers the installation steps, configuration options, and how to use o
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
 
+## Before you begin
+
+To use Signals with Android, you need:
+
+- An active Segment workspace with auto-instrumentation enabled
+- A Kotlin-based Android project
+- Android Gradle Plugin version 7.0 or later
+- A minimum compile SDK version of 21
+
+Signals supports Jetpack Compose and traditional Android UI frameworks. It also includes optional plugins for network tracking using OkHttp3, Retrofit, or `HttpURLConnection`.
+
+Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#debug-mode).
+
+
+<!-->
 ## Step 1: Add a source and get its write key
 
 You'll first need to add a source and copy its write key: 
