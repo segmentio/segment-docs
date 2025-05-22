@@ -57,10 +57,10 @@ dependencies {
 
 The core libraries are required to enable Signals and real-time analytics. Use the optional plugins to track additional activity based on your app's architecture:
 
-- Compose plugin, which tracks user interface events in Jetpack Compose.
-- OkHttp3 plugin, which captures requests sent through OkHttp3 or Retrofit.
-- Navigation plugin, which tracks route changes when using Jetpack Navigation.
-- JavaNet plugin, which tracks network activity sent through `HttpURLConnection`.
+- **Compose**: Tracks user interface events in Jetpack Compose.
+- **OkHttp3**: Captures requests sent through OkHttp3 or Retrofit.
+- **Navigation**: Tracks route changes when using Jetpack Navigation.
+- **JavaNet**: Tracks network activity sent through `HttpURLConnection`.
 
 Only add the plugins you plan to use. You can add or remove them later without reinitializing your source.
 
