@@ -163,9 +163,7 @@ Retrofit is built on top of OkHttp, so the setup is similar.
     JavaNetTrackingPlugin.install()
     ```
 
----
-
- Depending on your app’s network stack, you may only need one plugin. If your app uses multiple clients, you can install more than one.
+Depending on your app’s network stack, you may only need one plugin. If your app uses multiple clients, you can install more than one.
 
 ## Step 4: Enable debug mode
 
@@ -216,31 +214,40 @@ Signals.configuration = Configuration(
   ...
   debugMode = remoteConfig.getBoolean("debug_mode")
 )
+```
 
-<!--## Step 3: Verify and deploy events
+## Step 5: Verify event collection
 
-After integrating the SDK and running your app, verify that Segment is collecting signals:
+After you build and run your app, use the [Event Builder](/docs/connections/auto-instrumentation/event-builder/) to confirm that Signals are being collected correctly.
 
-1. In your Segment workspace, go to **Connections > Sources** and select the source you created for Auto-Instrumentation.
-2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
-  - Make sure you've installed the SDK correctly.
-  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
-3. Launch your app [in debug mode](https://github.com/segmentio/analytics-next/tree/master/packages/signals/signals#sending-and-viewing-signals-on-segmentcom-debug-mode){:target="_blank"}, for example, by running the app from Android Studio on a simulator or test device. This enables signal collection so you can see activity in the Event Builder.
-4. Use the app as a user would: navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
-5. In the Event Builder, find a signal and click **Configure event** to define a new event. After configuring the event, click **Publish event rules**.
+1. In your Segment workspace, go to **Connections > Sources** and select the Android Source you configured.
+2. Open the **Event Builder** tab.
+3. Interact with your app on a simulator or test device:
+   - Navigate between screens.
+   - Tap buttons and UI elements.
+   - Trigger network requests.
 
-## Configuration Options
+If `debugMode` is enabled, Signals appear in real time as you interact with the app.
 
-Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Kotlin.
+4. In the Event Builder, select a signal and click **Configure event** to define a new event.
+5. After you add any event mappings, click **Publish event rules** to save them.
 
-| `Option`            | Required | Value                     | Description                                                                                                                                                                                           |
-| ------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `writeKey`          | Yes      | String                    | Source write key                                                                                                                                                                                      |
-| `maximumBufferSize` | No       | Integer                   | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                    |
-| `broadcastInterval` | No       | Integer                   | Broadcasts signals to Segment every X event. Default is `60`.                                                                                                                                         |
-| `broadcasters`      | No       | `List<SignalBroadcaster>` | An array of broadcasters. These objects forward signal data to their destinations, like `WebhookBroadcaster` or `DebugBroadcaster` writing to the developer console. Default is `SegmentBroadcaster`. |
+> info "What if I don't see the Event Builder tab?"
+> If you don't see the Event Builder tab, confirm that the SDK is installed correctly and make sure `debugMode` is enabled. If you still don't see it, reach out to your CSM to verify that your workspace has Auto-Instrumentation enabled.
 
+## Configuration options
+
+Use the `Signals.configuration` object to control how captured signals are stored, relayed, and displayed.
+
+The following table lists the available options:
+
+| Option              | Required | Type                      | Default | Description                                                                                                                                                                                         |
+| ------------------- | -------- | ------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `maximumBufferSize` | No       | `Int`                     | `1000`  | The number of captured signals to keep in memory before relaying them. Signals get stored in a first-in, first-out buffer.                                                                          |
+| `broadcastInterval` | No       | `Int` (seconds)           | `60`    | The interval, in seconds, at which buffered signals are sent to broadcasters.                                                                                                                       |
+| `broadcasters`      | No       | `List<SignalBroadcaster>` | N/A     | A list of broadcasters that forward signal data to external destinations. `SegmentBroadcaster` is included by default, and you can add others like `WebhookBroadcaster` or a custom implementation. |
+| `debugMode`         | No       | `Boolean`                 | `false` | When `true`, relays signals to Segment so they appear in the Event Builder. Only enable this in development environments.                                                                           |
 
 ## Next steps
 
-This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers example rules. 
+After you've confirmed that signals show up in the Event Builder, use the [Generate Events from Signals](/docs/connections/auto-instrumentation/configuration/) guide to configure how signals get translated into analytics events.
