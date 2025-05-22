@@ -3,9 +3,9 @@ title: Auto-Instrumentation Setup
 hidden: true
 ---
 
-This guide explains how to set up Auto-Instrumentation for Android apps using Segment’s Signals library. 
+Segment’s Signals library powers [Auto-Instrumentation](/docs/connections/auto-instrumentation/) in Android apps, capturing user interactions and behavior without manual event tracking.
 
-This page covers the installation steps, configuration options, and how to use optional plugins to extend tracking.
+This guide shows how to install and configure the library, as well as how to enable optional plugins for screen views, network activity, and more.
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
