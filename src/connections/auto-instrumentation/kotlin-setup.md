@@ -163,7 +163,7 @@ Retrofit is built on top of OkHttp, so the setup is similar.
     JavaNetTrackingPlugin.install()
     ```
 
-Depending on your app’s network stack, you may only need one plugin. If your app uses multiple clients, you can install more than one.
+Depending on your app’s network stack, you may only need one plugin. If your app uses multiple clients, you can install more than one plugin.
 
 ## Step 4: Enable debug mode
 
