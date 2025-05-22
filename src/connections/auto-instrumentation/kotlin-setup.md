@@ -24,7 +24,7 @@ To use Signals with Android, you need:
 
 Signals supports [Jetpack Compose](https://developer.android.com/compose){:target="_blank"} and traditional Android UI frameworks. It also includes optional plugins for network tracking using [OkHttp3](https://square.github.io/okhttp/){:target="_blank"}, [Retrofit](https://square.github.io/retrofit/){:target="_blank"}, or `HttpURLConnection`.
 
-Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#debug-mode).
+Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#step-4-enable-debug-mode).
 
 ## Step 1: Install dependencies
 
