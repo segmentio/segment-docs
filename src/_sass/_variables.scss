@@ -139,22 +139,22 @@ $font-color: map-get($color-values, gray-800) !default;
 /// Default font family.
 ///
 /// @type {Value|Values}
-$font-family-primary: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$font-family-primary: "Twilio Sans Text", "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
 /// Monospace font family.
 ///
 /// @type {Value|Values}
-$font-family-monospace: "Droid Sans Mono", "Lucida Console", "Monaco", monospace !default;
+$font-family-monospace: "Twilio Sans Mono", "Droid Sans Mono", "Lucida Console", "Monaco", monospace !default;
 
 /// Font weight of headings.
 ///
 /// @type {Number|Keyword}
-$heading-font-weight: 600 !default;
+$heading-font-weight: 500 !default;
 
 /// Font family of headings.
 ///
 /// @type {Keyword|Values}
-$heading-font-family: $font-family-primary !default;
+$heading-font-family: "Twilio Sans Display", "SF Pro Text", sans-serif !default;
 
 /// Color of headings.
 ///
