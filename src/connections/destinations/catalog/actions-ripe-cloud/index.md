@@ -3,6 +3,8 @@ title: Ripe Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63cade592992cf7052ce2e3e
+deprecated: true
+hidden: true
 ---
 
 [Ripe](https://www.getripe.com/){:target="_blank"} is a sales conversion tool that enables B2B revenue teams to surface and meet their best leads at the best possible time - when they are using your product.

@@ -3,6 +3,8 @@ title: Ripe Device Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63913b2bf906ea939f153851
+hidden: true
+deprecated: true
 ---
 
 [Ripe](https://www.getripe.com/){:target="_blank"} is a sales conversion tool that enables B2B revenue teams to surface and meet their best leads at the best possible time - when they are using your product.
