@@ -105,3 +105,7 @@ It may take up to five minutes for a user profile to enter each step of a Journe
 When you publish a journey, the entry step begins evaluating users in real time while the historical data backfill runs separately. If a user's events or traits span both real-time and historical data, they might qualify for the journey immediately, even if their full historical data would have disqualified them.
 
 To prevent inconsistencies, you can manually create an audience that includes the same conditions as the journey's entry step. This ensures that it evaluates both real-time and historical data. You can then use this pre-built audience as the journey's entry condition. This approach guarantees that Segment evaluates users consistently across both data sources.
+
+### Why am I seeing more users in the audience than in the Journey’s entry condition, even though the Journey is based on the same audience?
+
+If the "include anonymous users" option is enabled for an audience, anonymous users will be allowed to enter the audience. However, Journeys do not support this option, and therefore, anonymous users will not be included in the Journey's entry condition. This discrepancy can lead to a situation where the audience count is higher than the number of users entering the Journey, as the Journey will only include identified users.
