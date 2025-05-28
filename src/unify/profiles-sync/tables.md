@@ -277,6 +277,9 @@ Segment's Identity Resolution has processed these events, which contain a `segme
 > info ""
 > To view and select individual track tables, edit your sync settings after you enable Profiles Sync, and wait for the initial sync to complete.
 
+> warning ""
+> These tables may have null segment_id in rare cases where ID resolution has failed, which could happen due to multiple reasons.
+
 
 
 ## Tables Segment materializes
