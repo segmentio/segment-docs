@@ -71,7 +71,7 @@
     }
 
     &--back {
-      font-weight: 600;
+      font-weight: 500;
       font-size: 12px;
       color: color(gray-700);
 
@@ -84,7 +84,7 @@
 
     &--highlight {
       color: color(gray-800);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 14px;
       padding: 12px 16px;
       
@@ -174,7 +174,7 @@
       }
 
       &--highlight {
-        font-weight: 600;
+        font-weight: 500;
         
         &::before {
           content: "";
