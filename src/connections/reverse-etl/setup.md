@@ -172,6 +172,18 @@ Select array | This enables you to send all nested properties within the array.
 
 Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property.
 
+### Handling Nested Objects and Arrays
+Segment's warehouse pipeline flattens nested fields in context, traits, and properties. As part of this process, any nested arrays or objects within these fields are automatically stringified when sent to downstream destinations via Reverse ETL.
+
+If your destination expects specific fields to be formatted as arrays or objects rather than strings, you'll need to convert the data back to its original structure before mapping.
+
+For example, in Snowflake, you can use the PARSE_JSON function to convert a stringified object or array back to proper JSON format:
+```json 
+SELECT PARSE_JSON(your_column) AS parsed_data
+FROM your_table;
+Reverse ETL supports reading data in JSON format and can properly convert it to objects or arrays for mapping. This ensures compatibility with destination schemas that require structured data.
+```
+
 ### Null value management
 You can choose to exclude null values from optional mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an optional field may overwrite an existing value in your downstream tool.
 
