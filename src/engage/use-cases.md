@@ -1,6 +1,7 @@
 ---
 title: Use Cases for Twilio Engage Premier
 plan: engage-premier
+hidden: true
 ---
 Use Twilio Engage to build personalized marketing campaigns and improve:
 - Acquisition through lookalike audience targeting or promo campaigns.
@@ -8,6 +9,9 @@ Use Twilio Engage to build personalized marketing campaigns and improve:
 - Retention through customer loyalty and reactivation campaigns.
 
 To help you get started with Engage, here are a few example campaigns.
+
+> info "Engage Premier End of Sale"
+> Engage Premier entered an End of Sale (EOS) period effective June 10, 2024 and is no longer available for new customers. Existing Segment customers have access to and support for Engage Premier until Segment announces an end-of-life (EOL) date. Segment recommends exploring [Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns){:target="_blank"}, as well as Segment's preferred ISV partners, including [Airship](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"}, [Braze](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"}, [Klaviyo](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"}, [Bloomreach](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"}, and [Insider](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"}.
 
 ## Customer loyalty email campaign
 
