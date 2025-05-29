@@ -71,25 +71,22 @@ Once you cancel a sync, the record count under **Extraction Results** reflects t
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
 ## Alerting
-You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and fluctuations in the volume of events successfully delivered to your mapping. 
+You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and fluctuations in the volume of events successfully delivered to your mapping. Segment sends notifications for every sync failure, even if the failures happen consecutively. 
 
 The notification channels that you select for one alert will apply to all alerts in your workspace. 
 
 ### Failed or partially successful syncs
-To subscribe to alerts for a failed or partially successful sync: 
-1. Navigate to **Settings > User Preferences**. 
-2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Click the Reverse ETL sync status that you'd like to receive notifications for. You can select one or more of the following sync statuses:
-    - **Reverse ETL sync failed**: Receive a notification when your Reverse ETL sync fails.
-    - **Reverse ETL sync partial success**: Receive a notification when your Reverse ETL sync is partially successful.
-4. Select one or more of the following alert options: 
-    - **Enable email notifications**: Enter an email address or alias that should receive alerts.
-    - **Enable Slack notifications**: Enter a webhook URL and Slack channel name. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}.
-    - **Enable in-app notifications**: Select this option to see an in-app notification.
-5. Click **Create alert**.
 
-> success ""
-> If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
+To receive notifications for failed or partially successful syncs: 
+1. From your workspace's homepage, navigate to the Monitor tab and select **Alerts**. 
+2. On the **Default** tab, select **Reverse ETL**.
+3. Identify the event you'd like to be alerted for and select the menu icon under the **Actions** tab. 
+4. Click **Enable alert** and select the notification channels for which you'd like to receive alerts. 
+5. Click **Save**. 
+
+<!--- IG 5/2025 - alerting still not consolidated. When it is I'll add this back 
+For more information about Reverse ETL alerting, refer to the [Monitor documentation](/docs/monitor/alerts/default-alerts/#reverse-etl-alerts). 
+--->
 
 <!--- IG 9/2024 - not yet working
 ### Model-level volume spike alerts
