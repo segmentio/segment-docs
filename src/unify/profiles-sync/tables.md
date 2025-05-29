@@ -265,22 +265,11 @@ Follow the steps below to change your schema name:
 
 ## Track event tables
 
-Track event tables provide a complete event history, with one table for each unique named Track event. Segment syncs events based on the event sources you've connected to Unify. 
+Track event tables provide a complete event history, with one table for each unique Track event name. Segment syncs events based on the sources you’ve connected to Unify, and includes a column for each event property.
 
-These tables include a full set of Track event properties, with one column for each property.
+Each row also includes a `segment_id`, assigned by Identity Resolution, which you can use to join events to profile records. In rare cases where Identity Resolution fails, the `segment_id` may be `null`.
 
-Segment's Identity Resolution has processed these events, which contain a `segment_id`, enabling the data to be joined into a single profile record. 
-
-> success ""
-> These tables will have two months of historical data on backfill.
-
-> info ""
-> To view and select individual track tables, edit your sync settings after you enable Profiles Sync, and wait for the initial sync to complete.
-
-> warning ""
-> These tables may have null segment_id in situations where ID resolution has failed, which is a rare but possible occurrence.
-
-
+By default, Segment backfills these tables with two months of historical data. After the initial sync completes, you can view and manage individual track tables by editing your sync settings.
 
 ## Tables Segment materializes
 
