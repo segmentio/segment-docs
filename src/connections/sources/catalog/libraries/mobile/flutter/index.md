@@ -65,7 +65,7 @@ These are the options you can apply to configure the client:
 | ----------- | --------- | --------|
 | `writeKey` *(required)*  | ''        | Your Segment API key. |
 | `debug`                    | false     | When this is set to `false`, it won't generate any info logs. |
-| `collectDeviceId`          | false     | Set this to `true` to automatically collect the device ID from the DRM API on Android devices. On Apple platforms it will collect the `idenfierForVendor` value if available. |
+| `collectDeviceId`          | false     | Set this to `true` to automatically collect the device ID from the DRM API on Android devices. On Apple platforms it will collect the `identifierForVendor` value if available. |
 | `flushPolicies`            | count=30, time=20s | List of flush policies controlling when to send batches of events to the plugins |
 | `apiHost`                  | api.segment.io/v1 | Used to specify the regional Segment event endpoint. |
 | `cdnHost`            | cdn-settings.segment.com/v1 | Used to specify the regional Segment settings endpoint. |
