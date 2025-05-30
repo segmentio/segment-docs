@@ -14,7 +14,7 @@ This destination is maintained by Ortto. For support or questions, [contact the 
 
 
 > success ""
-> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Ortto Segment destination. There's also a page about the [non-Actions Ortto destination](/docs/connections/destinations/catalog/autopilotapp/). Both of these destinations receives data from Segment.
+> **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Ortto Segment destination. There's also a page about the [non-Actions Ortto destination](/docs/connections/destinations/catalog/autopilotapp/). Both of these destinations receives data from Segment. Ortto (Actions) and Ortto Classic are subject to the same [rate limits](https://help.ortto.com/segment-integration#Rate-limits){:target="_blank"}. Profile upserts, audience entry requests, and activity tracking events that include contact traits are all treated as identify events.
 
 
 
