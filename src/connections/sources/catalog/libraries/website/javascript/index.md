@@ -53,7 +53,7 @@ These methods correspond with those used in the [Segment Spec](/docs/connections
 Use the Identify method to link your users and their actions to a recognizable `userId` and `traits`. You can see [an Identify call example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 > info "Identify calls and anonymous visitors"
-> Segment recommends _against_ using Identify call for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from `localStorage` or assigns one for new visitors, and then attaches it to all Page and Track events both before and after an Identify call.
+> Segment recommends _against_ using an Identify call for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from `localStorage` or assigns one for new visitors, and then attaches it to all Page and Track events both before and after an Identify call.
 
 The Identify method follows the format below:
 
