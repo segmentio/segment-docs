@@ -50,10 +50,10 @@ These methods correspond with those used in the [Segment Spec](/docs/connections
 
 ### Identify
 
-Use the Identify method to link your users and their actions, to a recognizable `userId` and `traits`. You can see [an Identify call example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+Use the Identify method to link your users and their actions to a recognizable `userId` and `traits`. You can see [an Identify call example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 > info "Identify calls and anonymous visitors"
-> Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from `localStorage` or assigns one for new visitors, and then attaches it to all `page` and `track` events both before and after an `identify`.
+> Segment recommends _against_ using Identify call for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from `localStorage` or assigns one for new visitors, and then attaches it to all Page and Track events both before and after an Identify call.
 
 The Identify method follows the format below:
 
@@ -84,7 +84,7 @@ analytics.identify({
 });
 ```
 
-Then, when the user completes the sign up process, you might see the following:
+Then, when the user completes the sign-up process, you might see the following:
 
 ```js
 analytics.identify('12091906-01011992', {
@@ -144,7 +144,7 @@ The only required argument on Track calls in Analytics.js is an `event` name str
 
 `trackLink` is a helper method that attaches a Track call as a handler to a link. When a user clicks the link, `trackLink` delays the navigation event by 300 ms before proceeding, ensuring the Track request has enough time to send before the page starts unloading.
 
-This is useful when a page redirects too quickly, preventing the Track method from completing all requests. By momentarily holding off navigation, `trackLink` increases the likelihood that tracking data reaches Segment and destinations successfully.
+This is useful when a page redirects too quickly, preventing the Track method from completing all requests. By momentarily delaying navigation, `trackLink` increases the likelihood that tracking data reaches Segment and destinations successfully.
 
 The `trackLink` method follows the format below:
 
@@ -354,7 +354,7 @@ if (userConsentsToBeingTracked) {
 }
 ```
 
-You can also use `load` if you fetch some settings asynchronously.
+You can also use the Load method if you fetch some settings asynchronously.
 ```js
 const analytics = new AnalyticsBrowser()
 fetchWriteKey().then(writeKey => analytics.load({ writeKey }))
@@ -366,7 +366,7 @@ analytics.identify("hello world")
 
 The Ready method lets you pass in a method that gets called after Analytics.js finishes initializing and after all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for destinations. Because it doesn't fire until all enabled device-mode destinations are loaded, it can't be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
 
-The Ready method isn't invoked if any destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a destination is blocked by the browser) during initialization. If you want to check when Analytics.js has loaded, you can look at the value of `window.analytics.initialized`. When it’s true, the library has successfully initialized, even if some destinations are blocked.
+The Ready method isn't invoked if any destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a destination is blocked by the browser) during initialization. If you want to check when Analytics.js has loaded, you can look at the value of `window.analytics.initialized`. When this value is `true`, the library has successfully initialized, even if some destinations are blocked.
 
 **Note**: `window.analytics.initialized` is a simple boolean, not an event or a pub/sub system. This means you can't subscribe to changes in its value. If you need to detect when it changes from `false` to `true`, you must set up a polling mechanism to monitor the value.
 
@@ -381,7 +381,7 @@ analytics.ready(() => {
 });
 ```
 
-The `ready` method uses the following format:
+The Ready method uses the following format:
 
 ```js
 analytics.ready(callback);
@@ -748,11 +748,11 @@ For advanced modification to the event pipeline.
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added via `addSourceMiddleware` is treated as a `before` plugin. |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added using `addSourceMiddleware` is treated as a `before` plugin. |
 | `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. |
 | `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
-| `utility`     | Executes _only once_ during the analytics.js bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This doesn't allow you to modify events. |
+| `utility`     | Executes _only once_ during the analytics.js bootstrap. Gives you access to the analytics instance using the plugin's `load()` method. This doesn't allow you to modify events. |
 
 ### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
@@ -875,7 +875,7 @@ To track activity on your subdomains, include the Segment Analytics.js snippet o
 Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain.
 
 > info ""
-> Segment doesn't offer tracking across top-level domains out of the box. If you want to track across top-level domains, you can use Segment's [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/) to pass the anonymousId from Website A to Website B in the query string. When a user moves from Website A to Website B with the anonymousId in the query string, Analytics.js reads that value and sets the anonymousId to it, rather than generating a new one.  
+> Segment doesn't offer tracking across top-level domains out of the box. If you want to track across top-level domains, you can use Segment's [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/) to pass the `anonymousId` from Website A to Website B in the query string. When a user moves from Website A to Website B with the `anonymousId` in the query string, Analytics.js reads that value and sets the `anonymousId` to it, rather than generating a new one.  
 
 ## UTM tracking
 
@@ -920,11 +920,11 @@ This middleware filters out any non-standard parameters from the `context.campai
 
 ## Analytics.js performance
 
-The Analytics.js library and all Destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
+The Analytics.js library and all destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async){:target="_blank"}. This also means that Segment fires methods asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
 
 While many tools require access to the DOM or cookies, for the Zendesk, Salesforce, and Mailchimp destinations, Segment doesn't need to load a native JavaScript library. Instead, Segment's servers send data to the end-tools.
 
-Segment loads the libraries required for your **enabled** Destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
+Segment loads the libraries required for your **enabled** destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
 
 Using Analytics.js doesn't offer a large performance benefit, but is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
 
@@ -987,7 +987,7 @@ To minimize client-side data loss, Segment provides a few workarounds. However, 
 
 - Create a [custom proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). This changes the URL that Segment loads from (cdn.segment.com) and the outgoing requests generated when events are triggered (api.segment.io).
 
-- Consider implementing the [Segment Edge SDK](https://segment.com/blog/twilio-segment-edge-sdk/){:target="_blank”}. The Segment Edge SDK leverages Cloudflare Workers to facilitate first-party data collection and real-time user profiling for app personalization. It integrates Segment's library into web apps, manages user identity via HttpOnly cookies, and employs an internal router for efficient data processing and user experience customization. This innovative approach simplifies tracking and personalization for Segment customers. More information is available in the [Edge SDK README](https://github.com/segmentio/analytics-edge/blob/main/packages/edge-sdk/README.md){:target="_blank”}.
+- Consider implementing the [Segment Edge SDK](https://segment.com/blog/twilio-segment-edge-sdk/){:target="_blank”}. The Segment Edge SDK uses Cloudflare Workers to facilitate first-party data collection and real-time user profiling for app personalization. It integrates Segment's library into web apps, manages user identity using HTTPOnly cookies, and employs an internal router for efficient data processing and user experience customization. This innovative approach simplifies tracking and personalization for Segment customers. More information is available in the [Edge SDK README](https://github.com/segmentio/analytics-edge/blob/main/packages/edge-sdk/README.md){:target="_blank”}.
 
 * Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). Using a server-side library eliminates concerns about tracking blockers and privacy browsers that can prevent Segment from loading. This option may require additional code to track actions like a Page call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, like `url`, `path`, and `referrer`. Note that some destinations are device-mode only.
 
@@ -1006,7 +1006,7 @@ Change the global variable in the beginning of your snippet code as shown below.
 
 Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from a remote CDN. This enables you to have fewer network requests when adding destinations.
 
-* To add actions-based destinations from npm: 
+- To add actions-based destinations from npm: 
 
   ```js
   import vwo from '@segment/analytics-browser-actions-vwo'
@@ -1021,7 +1021,7 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   Pass in the destination plugin to the added config option called `plugins`.  A list of all action destination packages can be found on GitHub in the [@segmentio/action-destinations](https://github.com/segmentio/action-destinations/blob/main/packages/destinations-manifest/package.json){:target="_blank"} repository.
 
 
-* To add classic destinations from npm: 
+- To add classic destinations from npm: 
 
   ```js
   import { AnalyticsBrowser } from '@segment/analytics-next'
@@ -1067,11 +1067,11 @@ The Segment Inspector is composed of these three components:
 ## Example uses 
 Here are some examples of using Analytics.js. Note that the examples assume Analytics.js is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank”}.
 
-* **Next.js**
-   * [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
-   * [with-segment-analytics-pages-router](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics-pages-router){:target="_blank”}
-* **Vanilla React, Vue**
-   * See [Usage in Common Frameworks and SPAs](https://github.com/segmentio/analytics-next/tree/master/packages/browser#examples--usage-in-common-frameworks-and-spas){:target="_blank”}
+- **Next.js**
+   - [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
+   - [with-segment-analytics-pages-router](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics-pages-router){:target="_blank”}
+- **Vanilla React, Vue**
+   - See [Usage in Common Frameworks and SPAs](https://github.com/segmentio/analytics-next/tree/master/packages/browser#examples--usage-in-common-frameworks-and-spas){:target="_blank”}
 
 ## External dependencies
 
