@@ -10,7 +10,7 @@ hide-dossier: true
 
 Once Segment is connected to Ortto, you can take advantage of Ortto's powerful [campaign](https://help.ortto.com/user/latest/campaigns/){:target="_blank"} features on your Segment customer data.
 
-This destination is maintained by Ortto. For support or questions, [contact](mailto:help@ortto.com) the Ortto Support team.
+This destination is maintained by Ortto. For support or questions, [contact the Ortto Support team](mailto:help@ortto.com).
 
 
 > success ""
