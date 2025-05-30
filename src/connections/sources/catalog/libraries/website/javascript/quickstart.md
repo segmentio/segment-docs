@@ -10,15 +10,15 @@ Want to learn more? Check out the [Analytics.js reference](/docs/connections/sou
 
 ## Step 1: Create a source in the Segment app
 
-Before you begin, you need a Workspace (which is a container that holds all of the Sources and Destinations that are billed together for an organization). You can sign up for a free Segment account and create a workspace.
+Before you begin, you need a workspace (which is a container that holds all of the Sources and Destinations that are billed together for an organization). You can sign up for a free Segment account and create a workspace.
 
-To create an Analytics.js source source in the Segment app: 
+To create an Analytics.js source in the Segment app: 
 1. Click **Add Source**.
 2. From the source catalog page, click **JavaScript**.
 3. Click **Add Source** again from the informational panel that appears to the right.
 4. Give the source a display name, and enter the URL the source will collect data from.
 
-When you create a source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change) a source in the Segment app, Segment generates a new write key for that source. You use the write key in your website code to tell Segment servers where the data is coming from, so Segment can route it to your Destinations and other tools.
+When you create a source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change) a source in the Segment app, Segment generates a new write key for that source. You use the write key in your website code to tell Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
 
 
 ## Step 2: Install Segment to your site
@@ -28,12 +28,12 @@ You can choose to install Segment to your site in 1 of 2 ways:
 [a. Add the Segment snippet to your app](#step-2a-add-the-segment-snippet)
 
 
-[b. Install Segment as a NPM package](#step-2b-install-segment-as-a-npm-package)
+[b. Install Segment as an NPM package](#step-2b-install-segment-as-a-npm-package)
 
 ### Step 2a: Add the Segment Snippet
 
 > info ""
-> You can find the latest version of the Segment snippet in the **Overview** tab of your Javascript source.
+> You can find the latest version of the Segment snippet in the **Overview** tab of your JavaScript source.
 
 To add the Segment snippet to your app: 
 
@@ -53,11 +53,11 @@ Note that you should remove other native third-party destination code that you m
 > info ""
 > If you only want the most basic Google Analytics setup, there's no need to continue with the setup. Just toggle on Google Analytics in the Segment interface.
 
-A lot of analytics and marketing tools need to record who each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the Identify method.
+Many analytics and marketing tools need to record who each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the Identify method.
 
-### Step 2b: Install Segment as a npm package
+### Step 2b: Install Segment as an npm package
 
-To install Segment as a npm package: 
+To install Segment as an npm package: 
 
 1. Install the analytics package.
 
@@ -92,11 +92,11 @@ For more initialization patterns and general information on `@segment/analytics-
 > info ""
 > For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The Identify method is how you tell Segment who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
+The Identify method is how you tell Segment who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [Identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
 
 You don't need to call Identify for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` works just fine without Identify.
 
-Here's what a basic call to Identify might look like:
+Here's what a basic Identify call might look like:
 
 ```js
 analytics.identify('f4ca124298', {
@@ -125,12 +125,12 @@ With that call in your page footer, you successfully identify every user that vi
 
 If you only want to use a basic CRM setup, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it.
 
-A lot of analytics tools record more than just _identities_ as they record the actions each user performs too. If you're looking for a complete event tracking analytics setup, keep reading...
+A lot of analytics tools record more than just _identities_ as they record the actions each user performs too. If you're looking for a complete event tracking analytics setup, keep reading.
 
 
 ## Step 4: Track actions
 
-The Track method is how you tell Segment about the actions your users are performing on your site. Every action triggers what's called an "event", which can also have associated properties. You can read more about Track in the [track method reference](/docs/connections/sources/catalog/libraries/website/javascript#track).
+The Track method is how you tell Segment about the actions your users are performing on your site. Every action triggers what's called an "event", which can also have associated properties. You can read more about Track in the [Track method reference](/docs/connections/sources/catalog/libraries/website/javascript#track).
 
 Here's what a call to a Track call might look like when a user signs up:
 
@@ -150,7 +150,7 @@ analytics.track('Article Bookmarked', {
 });
 ```
 
-If you're just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
+If you're just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased**, or **Article Bookmarked**.
 
 To get started, Segment recommends that you track just a few important events. You can always add more later.
 

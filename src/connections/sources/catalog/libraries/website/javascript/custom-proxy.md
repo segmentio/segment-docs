@@ -13,16 +13,16 @@ You cannot use custom proxy setup for Analytics.js CDN or Tracking API with devi
 
 {% include content/domain-delegation-solutions.md %}
 
-## Custom Proxy prerequisites
+## Custom proxy prerequisites
 
 To set up a custom proxy, you need:
 
-- Access to your site DNS settings
+- Access to your site's DNS settings
 - A CDN you can serve assets from
 - Access to the CDN settings
 - A security certificate for the proxy domain
 
-> info "Custom Proxy Troubleshooting"
+> info "Custom proxy troubleshooting"
 > If you experience issues configuring a custom proxy, contact your organization's IT department for help. Segment does not have access to the resources you need to configure a custom proxy.
 
 This guide explains how to set up a custom proxy in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
@@ -30,10 +30,10 @@ This guide explains how to set up a custom proxy in CloudFront. You can apply th
 You need to set up two important parts, regardless of the CDN provider you use:
 
 - Proxy to Segment CDN (`cdn.segment.com`)
-- Proxy to Segment tracking API (`api.segment.io`)
+- Proxy to Segment Tracking API (`api.segment.io`)
 
 > warning ""
-> If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`
+> If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`.
 
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
@@ -41,13 +41,13 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info "Segment loads most integrations through the proxy, except for third-party SDKs"
 > Third-party SDKs are loaded by a partner's CDN, even with a Segment proxy configured. For example, if you have  a Segment custom proxy enabled and send data to a FullStory destination, FullStory's CDN would load the FullStory SDK. 
 
-## Custom Proxy setup
+## Custom proxy setup
 
-There are two options you can choose from when you set up your custom domain proxy.
+There are two options you can choose from when you set up your custom domain proxy:
 1. [CloudFront](#custom-proxy-cloudfront)
 2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
 
-Follow the directions listed for [CloudFront](#custom-proxy-cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
+Follow the directions listed for [CloudFront](#custom-proxy-cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/){:target="_blank"} with the following template email:
 
 ```text
 Hi,
@@ -61,7 +61,7 @@ This is {person} from {company}. I would like to configure a proxy for the follo
 
 Double-check the Source URL and the Source ID.
 
-A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to Settings > Analytics.js. Update the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
+A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to **Settings > Analytics.js**. Update the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
@@ -130,12 +130,12 @@ const analytics = AnalyticsBrowser.load(
   )
 ```
 
-## Custom Proxy CloudFront
+## Custom proxy CloudFront
 
 These instructions refer to Amazon CloudFront, but apply more generally to other providers as well. Before changing the Segment Tracking API or the Segment snippet (Segment CDN) to use your new proxy, complete the custom domain proxy setup on your side to avoid any unexpected behavior.
 
-### CDN Proxy
-To set up your CDN Proxy:
+### CDN proxy
+To set up your CDN proxy:
 1. Log in to the AWS console and navigate to CloudFront.
 2. Click **Create Distribution**.
 3. Configure the distribution settings. In the Origin section, update the following values:
@@ -164,7 +164,7 @@ To add a CNAME record for the Segment proxy to your organizations DNS settings:
 
 
 
-### Tracking API Proxy
+### Tracking API proxy
 
 As events travel through the proxy before reaching the tracking API, set up a proxy for the tracking API so that all calls proxy through your domain. To do this, set up a CloudFront distribution that's similar to the one in the previous section, with the exception of the Origin Domain Name:
 
@@ -188,7 +188,7 @@ These are some common issues that occur for customers implementing a custom prox
 
 #### Cloudflare returning a 403 error
 
-A 403 error can mean that you've misconfigured your Cloudflare CDN distribution. Try one of the following options to fix the error: 
+A `403` error can mean that you've misconfigured your Cloudflare CDN distribution. Try one of the following options to fix the error: 
 
 1. If you have a Cloudflare enterprise plan, create a Page Rule in Cloudflare so that Segment's CDN doesn't refuse the requests made through the Cloudflare Proxy. If `cdn.segment.com` is another CNAME that resolves to `xxx.cloudfront.net`, you will need to use a Page Rule in Cloudflare to override the host header to match the hostname for proxy requests. For more information about overriding the host header, see Cloudflare’s [Rewrite Host headers](https://developers.cloudflare.com/rules/page-rules/how-to/rewrite-host-headers/){:target="_blank”} docs. 
 
@@ -209,7 +209,7 @@ In order to resolve a CORS OPTIONS pre-request fetch error, you must specify "St
 
 #### CloudFront Proxy returning a 403 error
 
-If your CloudFront Proxy is returing a 403 error, the following change in CloudFront might resolve the issue:
+If your CloudFront Proxy is returning a `403` error, the following change in CloudFront might resolve the issue:
 
 ```ts
 Before:
@@ -254,9 +254,9 @@ analytics.load({
 
 ## Restore the API host to the Segment default
 
-If you wish to restore the proxied API host to it's original value:
-1. Navigate to the **Source > Settings > Analytis.js tab**
+If you wish to restore the proxied API host to its original value:
+1. Navigate to the **Source > Settings > Analytics.js tab**
 2. Scroll down until you see the Host address field. 
 3. Under the field, there is a small blue text that says 'Restore to a default value'. Click **Restore** and then **Save**. 
 
-Any changes made to the CDN host must be update manually in your code. 
+Any changes made to the CDN host must be updated manually in your code. 
