@@ -40,7 +40,6 @@ This destination is maintained by Ortto. For support or questions, [contact the 
 > All events sent through the supported actions must include either the `User ID` or `Anonymous ID` fields, regardless of whether these are set as [Unique Identifiers](https://help.ortto.com/a-55-unique-identifiers){:target="_blank"} in Ortto.
 
 > [!IMPORTANT]
-> Ortto (Actions) and Ortto Classic are subject to the same [rate limits](https://help.ortto.com/segment-integration#Rate-limits){:target="_blank"}. Profile upserts, audience entry requests, and activity tracking events that include contact traits are all treated as identify events.
 
 ## Audience Membership
 
