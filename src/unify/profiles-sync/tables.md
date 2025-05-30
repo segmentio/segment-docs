@@ -105,7 +105,9 @@ Profile raw tables contain records of changes to your Segment profiles and Ident
 
 With raw tables, you have full control over the materialization of Profiles in your warehouse, as well as increased observibility.
 
-Raw tables contain complete historical data when using historical backfill.
+Raw tables contain complete historical data when using historical backfill. 
+
+Note: `Timestamp` column will be empty for backfilled data. This is because reverse engineer historical profile changes from the current state of the profile.
 
 ### The id_graph_updates table
 
@@ -296,7 +298,7 @@ If you're not using materialized views for Profile Sync and would like to switch
 2. **Request a Full Profiles and Events Backfill**
    - After enabling the materialized views, you'll need to ensure historical data is populated in the materialized tables.
    - Write to [friends@segment.com](mailto:friends@segment.com) and request:
-     - A full **Profiles Backfill** to populate historical profiles data.
+     - A full **Profiles Backfill** to populate historical profiles data. Materialized views will have nil `Timestamp` for the same reason as Profile events table, discussed above.
      - An **Events Backfill** to include any relevant historical events, including a date range for Segment to pull data in for the events backfill. 
 
 3. **Verify Your Data**
