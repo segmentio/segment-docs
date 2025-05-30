@@ -39,7 +39,6 @@ This destination is maintained by Ortto. For support or questions, [contact the 
 > warning "All events must contain an identifier"
 > All events sent through the supported actions must include either the `User ID` or `Anonymous ID` fields, regardless of whether these are set as [Unique Identifiers](https://help.ortto.com/a-55-unique-identifiers){:target="_blank"} in Ortto.
 
-> [!IMPORTANT]
 
 ## Audience Membership
 
