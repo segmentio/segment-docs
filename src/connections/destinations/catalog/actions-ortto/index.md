@@ -47,7 +47,7 @@ This destination is maintained by Ortto. For support or questions, [contact the 
 
 To prevent excessive churn, audience membership in Ortto is protected from frequent updates. When too many enter/exit events are received from Segment, Ortto aggregates these changes and updates the contact’s final audience state once per day.
 
-> [!NOTE]
-> Segment audience names in Ortto are case-sensitive and must be unique. If you enter the name of an existing audience during action setup, contacts will be synced to that existing audience in Ortto.
+> info "Ortto audience names must be unique"
+> Segment audience names in Ortto are case-sensitive and must be unique. If you enter the name of an existing audience during action setup, contacts will be synced to the existing audience in Ortto.
 
 
