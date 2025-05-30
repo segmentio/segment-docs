@@ -107,7 +107,7 @@ With raw tables, you have full control over the materialization of Profiles in y
 
 Raw tables contain complete historical data when using historical backfill. 
 
-Note: `Timestamp` column will be empty for backfilled data. This is because we reverse engineer historical profile changes from the current state of the profile, and do not use the actual change timestamps.
+Note: `Timestamp` column will be empty for backfilled data. This is because we reverse engineer historical profile changes from the current state of the profile, and do not refer to the actual change history.
 
 ### The id_graph_updates table
 
