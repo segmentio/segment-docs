@@ -21,7 +21,7 @@ This destination is maintained by Ortto. For support or questions, [contact the 
 ## Ortto (Actions) provides the following benefits over the classic Ortto destination:
 
 - **Granular control and flexibility**: Map any Segment event type to specific Ortto actions with full control over field mappings. This lets you tailor how and when customer data is sent to Ortto, ensuring more accurate and relevant automations.
-- **Improved transparency and debugging**. Because Ortto (Actions) uses direct API calls to Ortto’s endpoints, it provides clearer delivery status and error messages to help teams troubleshoot faster and ensure data integrity. It also supports HTTP [multi-status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/207) responses, allowing multiple outcomes to be returned in a single response—this means partial successes or failures can be clearly identified, making debugging more efficient and reducing the risk of silent data loss.
+- **Improved transparency and debugging**: Because Ortto (Actions) uses direct API calls to Ortto’s endpoints, it provides clearer delivery status and error messages to help teams troubleshoot faster and ensure data integrity. It also supports HTTP [multi-status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/207){:target="_blank"} responses, allowing multiple outcomes to be returned in a single response—this means partial successes or failures can be clearly identified, reducing the risk of silent data loss and making debugging more efficient.
 - **Future-proofed**. Built on Segment’s modern Destination Actions framework, Ortto (Actions) will receive ongoing updates and support for new features, while the classic destination remains static.
 
 
