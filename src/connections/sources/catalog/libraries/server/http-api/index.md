@@ -3,7 +3,7 @@ title: HTTP API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
 id: iUM16Md8P2
 ---
-The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment servers then Segment routes your data to any destination you want.
+The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment servers then Segment routes your data to your destination.
 
 Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are open-source and built for high-performance. But for unsupported use cases, [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) or when you're using [Segment-Managed Custom Domain](/docs/connections/sources/custom-domain/), you may want to send data to Segment's HTTP API directly.
 
@@ -12,11 +12,12 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 
 ## Headers
 
+> warning "HTTP API public IP addresses are subject to change"
+> The public IP addresses of the HTTP API service are not static and may change without notice. If you are caching the resolved IP address or directly using the IP for submission, you must implement a DNS refresh at least once every 24 hours. Failing to do so may result in submission failures if the underlying IPs change. To ensure long-term reliability, Segment **strongly recommends** using the DNS hostname rather than hardcoding IPs. 
+
 ### Authentication
 
 Choose between [writeKey authentication](#writeKey-authentication), [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate requests. 
-
-When authenticating with the HTTP API, don't hard code the IP addresses used to invoke the API. You should refresh this IP address at least once a day or when you experience [5xx errors](#experiencing-5xx-errors). 
 
 #### writeKey authentication
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
