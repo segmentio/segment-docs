@@ -20,7 +20,7 @@ Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/librar
 
 ## Benefits of Analytics.js
 
-Analytics.js provides two key benefits over the previous version.
+Analytics.js provides 2 key benefits over the previous version.
 
 ### Performance
 
@@ -301,7 +301,7 @@ Find more details about the Group method, including the payload, in [the Group S
 
 ### Alias
 
-The Alias method combines two unassociated user identities. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit Alias call.
+The Alias method combines 2 unassociated user identities. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit Alias call.
 
 This is an advanced method, but it's required to manage user identities successfully in *some* Segment destinations like [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
 
@@ -883,7 +883,7 @@ Because Segment tracks across subdomains, you can either use the same Segment so
 
 UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives using a link containing UTM parameters, Segment's Analytics.js library will parse the URL query string and add the information to the event payload. For more information about UTM tracking, see the [Tracking Customers Across Channels and Devices](/docs/guides/how-to-guides/cross-channel-tracking/) documentation.
 
-UTM parameters contain three essential components (utm_source, utm_medium, and utm_campaign) and two optional (utm_content and utm_term). For example, if you include the following three parameters in your URL: `?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign`, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the `context` object (visible in the raw view of your Source Debugger.)
+UTM parameters contain 3 essential components (utm_source, utm_medium, and utm_campaign) and 2 optional (utm_content and utm_term). For example, if you include the following 3 parameters in your URL: `?utm_source=mysource&utm_medium=email&utm_campaign=mytestcampaign`, once a visitor arrives using a link containing the above, Segment automatically grabs the UTM parameters and subsequent events will contain these parameters within the `context` object (visible in the raw view of your Source Debugger.)
 
 So, for example, if somebody follows the link with above query string to your site, the subsequent Page call in your Debugger should contain the below and will be passed to any enabled destinations:
 
@@ -945,7 +945,7 @@ Without any destinations enabled, the `analytics.min.js` file is about 62 KB. Ea
 
 ### Cookies set by Analytics.js
 
-Segment sets three cookies in general:
+Segment sets 3 cookies in general:
 
 | Cookie             | Description                                                                       |
 | ------------------ | --------------------------------------------------------------------------------- |
@@ -1053,7 +1053,7 @@ Once installed, use the Inspect Elements developer tool in Chrome to use the Seg
 - Identify users  
 
 ### Components of the Segment Inspector 
-The Segment Inspector is composed of these three components:
+The Segment Inspector is composed of these 3 components:
 1. The **Diagnostics** tab 
    - This tab shows the library versions and the list of active integrations that are running. 
    - When you select an integration, you can see the options that passed while the integration loads. If you made any local overrides within the integration or on the page itself, they appear highlighted in the code. 
