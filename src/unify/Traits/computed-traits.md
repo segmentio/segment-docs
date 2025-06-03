@@ -11,8 +11,10 @@ redirect_from:
 
 Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
 
-> warning "Disabled computed traits don't automatically backfill data when re-enabled"
-> If you disable and re-enable a computed trait, Segment does not automatically create a backfill. Any data Segment recieves during the disabled period is not sent to your Destination after you re-enable your computed trait. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
+> warning "Starting June 2nd, 2025, disabled computed traits don't automatically backfill data when re-enabled"
+> If you disable and re-enable a computed trait, Segment does not automatically create a backfill. Any data Segment receives during the disabled period is not sent to your Destination after you re-enable your trait. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
+>
+> Segment is releasing this feature on a phased rollout plan, and expects this to be available to all customers by July 18, 2025.
 
 {% include content/trait-types.md %}
 
