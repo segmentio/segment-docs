@@ -2,6 +2,8 @@
 title: Ortto (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
+id: 682db7017819e7e055f55cb4
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
