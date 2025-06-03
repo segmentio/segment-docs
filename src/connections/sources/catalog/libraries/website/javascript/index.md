@@ -71,7 +71,7 @@ The Identify call has the following fields:
 | `callback` | optional | Function | A function executed after a timeout of 300 ms, giving the browser time to make outbound requests first.  |
 
 
-If you want to set the `userId` without sending an Identify call, you can use `analytics.user().id('123')`. In the NPM package, use `analytics.instance.user().id(xxx)`. This method updates the stored `userId` locally without triggering a network request. This is helpful if you want to associate a user ID silently, without sending additional data to Segment or connected destinations. Be cautious when changing the `userId` mid-session to avoid double-counting users or splitting their identity history.    
+If you want to set the `userId` without sending an Identify call, you can use `analytics.user().id('123')`. In the npm package, use `analytics.instance.user().id(xxx)`. This method updates the stored `userId` locally without triggering a network request. This is helpful if you want to associate a user ID silently, without sending additional data to Segment or connected destinations. Be cautious when changing the `userId` mid-session to avoid double-counting users or splitting their identity history.    
 
 By default, Analytics.js caches traits in the browser's `localStorage` and attaches them to each Identify call.
 
@@ -297,7 +297,7 @@ analytics.group('UNIVAC Working Group', {
 
 By default, Analytics.js caches group `traits` in the browser's local storage and attaches them to each Group call, similar to how the Identify method works.
 
-Find more details about `group`, including the `group` payload, in [the Group Spec](/docs/connections/spec/group/).
+Find more details about the Group method, including the payload, in [the Group Spec](/docs/connections/spec/group/).
 
 ### Alias
 
@@ -337,7 +337,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 ### Load
 
 > info ""
-> The Load method is also available when you load analytics.js through the [NPM package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.
+> The Load method is also available when you load analytics.js through the [npm package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.
 
 You can load a buffered version of analytics.js that requires you to call `load` explicitly before analytics.js initiates any network activity. This is useful if you want to, for example, wait for user consent before you fetch tracking destinations or send buffered events to Segment.
 
@@ -410,7 +410,7 @@ analytics.debug(false);
 
 ### Emitter
 
-The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track`, or `page`.
+The global `analytics` object emits events whenever you call Alias, Group, Identify, Track, or Page.
 
 Use the On method to set listeners for these events and run your own custom code. This can be useful if you want to send data to a service for which Segment doesn't have a destination.
 
@@ -421,7 +421,7 @@ analytics.on(method, callback);
 | Field      | Type     | Description                                                                                                |
 | ---------- | -------- | ---------------------------------------------------------------------------------------------------------- |
 | `method`   | String   | Name of the method to listen for.                                                                          |
-| `callback` | Function | A function to execute after each emitted method, taking three arguments: `event`, `properties`, and  `options`. |
+| `callback` | Function | A function to execute after each emitted method, taking 3 arguments: `event`, `properties`, and  `options`. |
 
 Example:
 
@@ -516,14 +516,16 @@ Destination flags are **case sensitive** and match [the destination's name in th
 > info ""
 > To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet from the [Analytics.js Quickstart](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
-You can modify the Load method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary, then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
+You can modify the Load method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary, then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`. 
 
 You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it doesn't have any effect until the page is reloaded.
+
+Note that if you add `All: false` to your Load call, you must also add `Segment.io: true` to the integrations object to pass data to enabled destinations.
 
 For example:
 
 ```js
-analytics.load('writekey', { integrations: { All: false, 'Google Analytics': true, 'Segment.io': true } })
+analytics.load('writekey', { integrations: { All: false, 'Segment.io': true, 'Google Analytics': true } })
 ```
 
 This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
@@ -653,7 +655,7 @@ Batching is the ability to group multiple requests or calls into one request or 
 - Fewer errors if a connection is lost because an entire batch will retry at once rather than multiple calls retrying at random times.
 
 ### Setup
-You can start batching by changing the `strategy` to `"batching"` and the parameters for `size` and `timeout` within the `load` method in the analytics object. Batching requires both parameters.
+You can start batching by changing the `strategy` to `"batching"` and the parameters for `size` and `timeout` within the Load method in the analytics object. Batching requires both parameters.
 
 ```js
 analytics.load("<write_key>", {
