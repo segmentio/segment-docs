@@ -6,10 +6,10 @@ redirect_from:
   - '/unify/data-graph/data-graph'
 ---
 
-The Data Graph acts as a semantic layer that allows businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets easily accessible to business teams for targeted and personalized customer engagements.
+The Data Graph acts as a semantic layer that allows businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets accessible to business teams for targeted and personalized customer engagements. The Data Graph helps power Linked Audiences and Linked Events. 
 
-- **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support.
-- **[Linked Events](/docs/unify/data-graph/linked-events/)**: Allows data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions.
+  - **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support. The Data Graph is used in Linked Audiences for defining relationships between warehouse tables and views, which are then used to build audiences of Segment Profiles.
+  - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Allows data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions. The Data Graph is used in Linked Events to specify which tables to use in enrichments.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ To get started with the Data Graph, set up the required permissions in your ware
 - Linked Audiences: [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), and [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)
 - Linked Events: [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), and [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/)
 
-To track the data sent to Segment on previous syncs, Segment uses [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store diffs in tables within a dedicated schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in.
+To track the data sent to Segment on previous syncs, Segment uses [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to store changes between audience computes in tables within a dedicated schema called `_segment_reverse_etl` in your data warehouse. You can choose which database or project in your warehouse this data lives in.
 
 ## Step 2: Connect your warehouse to the Data Graph
 
@@ -53,13 +53,13 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 1. [Using the visual (no-code) builder](#using-the-visual-builder)
 2. [Using the code editor](#using-the-code-editor)
 
-Segment recommends using the visual builder for most use cases because it helps to explore, understand, and update entities and relationships interactively. However, some teams may prefer the code editor to quickly bulk edit entities or relationships, or to copy the raw configuration into version control systems. The visual builder is the default experience, and you can switch between the two editors as needed by selecting the toggle for **Code editor (advanced)**.  
+Segment recommends you to use the visual builder for most use cases because it helps to explore, understand, and update entities and relationships interactively. However, some teams may prefer the code editor for advanced use cases to quickly bulk edit entities or relationships, or to copy the raw configuration into version control systems. The visual builder is the default experience, and you can switch between the two editors as needed by selecting the toggle for **Code editor (advanced)**.  
 
 ### Key steps to build your Data Graph
 
 Follow these key steps to build your Data Graph: 
 
-1. Define your entities. An entity corresponds to a table, view, or materialized view in your warehouse. If you're just using Linked Events, this is the only step you need to do. If you're using Linked Audiences, you'll need to perform steps 2 and 3 as well. 
+1. Define your entities. An entity corresponds to a table, view, or materialized view in your warehouse. If you're only using Linked Events, this is the only step you need to do. If you're using Linked Audiences, you'll need to perform steps 2 and 3 as well. 
 2. Define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, and so on. Based on your Profiles Sync settings, the Data Graph attempts to define the profile block. 
 3. Define how your datasets are related to each other. The Data Graph preserves these relationships and carries this rich context to the destinations to unlock personalization.
 
@@ -67,7 +67,7 @@ Follow these key steps to build your Data Graph:
 
 Similar to the concept of [cardinality in data modeling](https://w.wiki/Ay$u){:target="\_blank"}, the Data Graph supports 3 types of relationships:
 
-- **Profile-to-entity relationship:** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
+- **Profile-to-entity relationship:** This is the first level of relationship, and is the relationship between your entity table and the Segment Profiles tables. This relationship is required for Linked Audiences because it connects Segment Profiles data with all the entity data you have in your warehouse.
 - **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
 - **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
 
@@ -199,9 +199,9 @@ To define your entities:
 > info ""
 > Segments recommends that you select materialized views under the Profiles [Selective Sync settings](/docs/unify/profiles-sync/profiles-sync-setup/#step-3-set-up-selective-sync) to optimize warehouse compute costs.
 
-To define the profile, navigate to the **Relationships** tab. You'll see a **Profile** node which is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
+To define the profile, navigate to the **Relationships** tab. You'll see a **Profile** node which is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this enables marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
 
-Segment creates default settings for your profile that are based on your Profiles Sync configuration. If you wish to update these settings, you may select the node and select **View / Edit profile**. Otherwise, you may proceed to Step 3C.
+Segment creates default settings for your profile that are based on your [Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/) configuration. If you wish to update these settings, you may select the node and select **View / Edit profile**. Otherwise, you may proceed to Step 3C.
 
 
 Profile parameters include:
@@ -230,7 +230,7 @@ Parameter | Definition
 `Select related entity` | The left-hand-side entity represents the Segment profile. On the right-hand-side, you can select which entity to relate it to. <br><br>Note: you can select the preview icon to preview both the Segment profile and the associated table or view representing the entity.
 `Relationship name` | A label displayed throughout your Segment space for Linked Audiences. This name can be modified at any time.
 `Description` (**Optional**) | An optional descriptor used to add additional context to the relationship.
-`Join on external ID or trait` | The Segment external ID or trait you’ll use to join to your entity. To define a profile-to-entity relationship, reference your entity table and depending on your table columns. You can select either an [external identifier](/docs/unify/identity-resolution/externalids/) such as `user_id`, `email`, or `phone` or a [trait](/docs/unify/#enrich-profiles-with-traits) in your Unify Profiles.
+`Join on external ID or trait` | The Segment external ID or trait you’ll use to join to your entity. To define a profile-to-entity relationship, reference your entity table. Depending on the column in it that you would like to link to your Segment profile, you can select either an [external identifier](/docs/unify/identity-resolution/externalids/) such as `user_id`, `email`, or `phone` or a [trait](/docs/unify/#enrich-profiles-with-traits) in your Unify Profiles.
 `Join key` | The column on the entity table that matches the external ID or trait selected directly above.
 
 > info ""
