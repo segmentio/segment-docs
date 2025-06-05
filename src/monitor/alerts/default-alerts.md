@@ -135,7 +135,7 @@ your identity-resolved profiles to your data warehouse.
 - **Reverse ETL Sync Partial Success**: Segment was able to sync some, but not all, of your records from your data warehouse with your downstream destination. 
 
 > info "Custom Reverse ETL alerts"
-> During the Monitor public beta, you can configure custom Reverse ETL alerts for [failed or partially successful syncs](/docs/connections/reverse-etl/manage-retl/#failed-or-partially-successful-syncs) and [mapping-level successful delivery rate fluctuations](/docs/connections/reverse-etl/manage-retl/#mapping-level-successful-delivery-rate-fluctuations), but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can configure custom Reverse ETL alerts for [mapping-level successful delivery rate fluctuations](/docs/connections/reverse-etl/manage-retl/#mapping-level-successful-delivery-rate-fluctuations), but these alerts won't appear in the Monitor tab. 
 
 ## Data Graph alerts
 - **Data Graph Breaking Change**: A change in your warehouse broke components of your Data Graph. For more information about breaking changes, see the [Data Graph docs](/docs/unify/data-graph/#detect-warehouse-breaking-changes). 

@@ -450,7 +450,7 @@ All four timestamps pass through to your Warehouse for every ETL'd event. In mos
 
 `original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabeled as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
 
-`sent_at` is the UTC timestamp set by library when the Segment API call was sent.  This timestamp can also be affected by device clock skew.
+`sent_at` is the UTC timestamp set by library when the Segment API call was sent.  This timestamp can also be affected by device clock skew. Segment adjusts the `sent_at` timestamp when loading events into your data warehouse to better account for batch scenarios where events are queued over a period of time. For more information about how Segment adjusts this timestamp, refer to the [Spec: Common](/docs/connections/spec/common/#sentat) documentation. 
 
 `received_at` is UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
 
