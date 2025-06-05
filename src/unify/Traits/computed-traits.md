@@ -9,7 +9,7 @@ redirect_from:
 > info ""
 > Beginning August 18, 2023, new Unify Plus users can access Computed Traits in Unify. 
 
-Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
+Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [Page](/docs/connections/spec/page/) and [Track](/docs/connections/spec/track) calls.
 
 > warning "Starting June 2nd, 2025, disabled batch computed traits don't automatically backfill data when re-enabled"
 > If you disable and re-enable a batch computed trait, Segment does not automatically create a backfill. Any data Segment receives during the disabled period is not sent to your Destination after you re-enable your trait. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
@@ -164,13 +164,13 @@ The following operators are available.
 
 ## Connecting your Computed Trait to a Destination
 
-Segment sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
+Segment sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the Identify and Track calls.
 
-For example, the name of a computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. Segment sends an identify or track call when the trait is computed, depending on the destination configuration. If a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
+For example, the name of a computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. Segment sends an Identify or Track call when the trait is computed, depending on the destination configuration. If a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment sends an Identify call with the property `pricing_page_visits: 5`.
 
 Learn more about [Computed trait generated events here](/docs/engage/using-engage-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Engage-compatible destinations](/docs/engage/using-engage-data/#compatible-engage-destinations)
 
-For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
+For account-level computed traits, you have the option to send either a [Group](/docs/connections/spec/group/) call and/or [Identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 ## View compute status
 
