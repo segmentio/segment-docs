@@ -34,7 +34,7 @@ sections:
     description: "Remove all data from a source, a Unify space, or a workspace."
     path: /privacy/account-deletion/
   - name: Data Deletion and Retention Policy
-    description: "Manage your data accurately, efficiently and securely within clearly defined retention periods."
+    description: "Manage your data accurately, efficiently, and securely within clearly defined retention periods."
     path: /privacy/data-retention-policy/
 
 - section_title: Tools to comply with privacy regulations
