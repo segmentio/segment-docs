@@ -24,26 +24,27 @@ sections:
     description: "Create Audiences of users that consent to receive marketing communications."
     path: /docs/privacy/consent-management/consent-in-unify/
 
-- section_title: Delete and suppress user information
-  section_col: 6
+- section_title: Delete user and workspace data
+  section_col: 4
   section:
-  - name: Delete and suppress data about end users
+  - name: Comply with GDPR and CCPA by deleting information about your company's end users from Segment
     description: "Remove your company's end users from Segment and supported connections."
     path: /privacy/user-deletion-and-suppression/
-    icon: media/detect.svg
   - name: Delete data from sources, a Unify space, or your entire workspace
     description: "Remove all data from a source, a Unify space, or a workspace."
     path: /privacy/account-deletion/
-    icon: media/delete.svg
-
-- section_title: Comply with privacy regulations
-  section_col: 12
-  section:
   - name: Data Deletion and Retention Policy
-    icon: media/comply.svg
     description: "Manage your data accurately, efficiently and securely within clearly defined retention periods."
     path: /privacy/data-retention-policy/
+
+- section_title: Tools to comply with privacy regulations
+  section_col: 6
+  section:
   - name: HIPAA-Eligible Segment
     icon: media/database-star.svg
     description: "Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders."
+    path: /privacy/hipaa-eligible-segment/
+  - name: Complying with the GDPR
+    icon: media/comply.svg
+    description: "Learn more about the tools and strategies you can use to maintain GDPR compliance."
     path: /privacy/hipaa-eligible-segment/
