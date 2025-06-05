@@ -45,6 +45,9 @@ To create a Product Based Audience:
 6. On the Select Destinations page, select any destinations you'd like to sync your audience to and click **Next**.
 7. Enter a name for your destination, update any optional fields, and click **Create Audience** to create your audience. 
 
+> info ""
+> Recommendation Audiences are a one-time snapshot. Once a profile enters the audience, it stays there. Segment doesn't recalculate or remove profiles based on future behavior.
+
 > warning ""
 > Segment can take up to a day to calculate your Product Based Audience.
 
