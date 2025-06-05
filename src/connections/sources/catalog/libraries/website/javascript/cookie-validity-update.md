@@ -4,15 +4,15 @@ redirect_from: '/connections/sources/catalog/libraries/website/javascript/persis
 strat: ajs
 ---
 
-This page explains what data Analytics.js stores on the client and how to override and change what and how this data is stored.
+This page explains what data Analytics.js stores on the client and shows you how to modify or override that storage behavior.
 
 ## Segment ID persistence
 
 <!-- Note: 1st 2 paragraphs copied from identity.md -->
 
-To ensure high fidelity, first-party customer data, Segment writes the user's IDs to the user's local storage and uses that as the Segment ID on the cookie whenever possible. Local storage is for storing this type of first-party customer information.
+To ensure high-fidelity, first-party customer data, Segment writes the user's IDs to the user's local storage and uses them as the Segment ID in the cookie whenever possible. Local storage is intended for storing first-party customer information.
 
-If a user returns to your site after the cookie expires, Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, it sets as the user's ID again in the new cookie. If a user clears their cookies _and_ `localStorage`, all of the IDs are removed, and the user gets a completely new [`anonymousID`](/docs/connections/sources/catalog/libraries/website/javascript/identity/#anonymous-ids) when they next visit the page.
+If a user returns to your site after the cookie expires, Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, it sets it as the user's ID again in the new cookie. If a user clears their cookies _and_ `localStorage`, all of the IDs are removed, and the user gets a completely new [`anonymousID`](/docs/connections/sources/catalog/libraries/website/javascript/identity/#anonymous-ids) when they next visit the page.
 
 ### Cookie settings
 
@@ -26,7 +26,7 @@ Here is the full list of available parameters with their default values:
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `domain` | The domain to set the cookie to. This must match the domain of the JavaScript origin. If an Analytics.js cookie already exists at the top-level domain, Segment carries the same cookie value to any subdomains, despite `domain` configuration. | Top-level domain |
-| `maxage` | The maximum amount of time in days before the cookie expires. Browsers may clear cookies before this elapses. | 1 year |
+| `maxage` | The maximum amount of time in days before the cookie expires. Browsers may clear cookies before this time elapses. | 1 year |
 | `path` | The path the cookie is valid for. | `"/"` |
 | `sameSite` | This prevents the browser from sending the cookie along with cross-site requests. | `Lax` |
 | `secure` | This determines whether cookies can only be transmitted over secure protocols such as https. | `false` |
@@ -60,7 +60,7 @@ To set cookie values using the [NPM package](https://github.com/segmentio/analyt
     })
 ```
 > info ""
-> Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
+> Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit [Chrome's docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
 
 ### Device-mode destination cookies
 
@@ -144,13 +144,13 @@ You can still manually track identity by calling `analytics.identify()` with the
 
 ### Event retries
 
-Analytics.js tries to detect when a page is about to be closed and saves pending events to `localStorage`. When the user navigates to another page within the same domain, Analytics.js attempts to send any events it finds in localStorage.
+Analytics.js tries to detect when a page is about to be closed and saves pending events to `localStorage`. When the user navigates to another page within the same domain, Analytics.js attempts to send any events it finds in `localStorage`.
 
 When `disableClientPersistence` is set to `true`, Analytics.js won't store any pending events into `localStorage`.
 
 ## Client-side cookie methods (get, set, clear)
 
-To access or assign a value to a cookie outside of the standard Segment methods (track/identify/page/group), you can use the following methods. To access the cookie's value, pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis, for example, `('123-abc')`. To clear or remove the value for a specific field, pass in an empty value of its type. For example, for string `('')`, or for object `({})`.
+To access or assign a value to a cookie outside of the standard Segment methods (Track, Identify, Page, and Group), you can use the following methods. To access the cookie's value, pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis, for example, `('123-abc')`. To clear or remove the value for a specific field, pass in an empty value of its type. For example, for string `('')`, or for object `({})`.
 
 <table class="horizontal-scroll">
   <tr style="background-color: #fafbff; font-size: 10px;">
@@ -203,17 +203,17 @@ To access or assign a value to a cookie outside of the standard Segment methods 
   </tr>
 </table>
 
-To retrieve a specific user trait using the Analytics.js Get method, you can access the trait by invoking `analytics.user().traits().firstName`. This returns the firstName trait of the user.
+To retrieve a specific user trait using the Analytics.js Get method, you can access the trait by invoking `analytics.user().traits().firstName`. This returns the `firstName` trait of the user.
 
-To retrieve a specific group trait, you can use the method `analytics.group().traits().companyName`. This returns the companyName trait of the group.
+To retrieve a specific group trait, you can use the method `analytics.group().traits().companyName`. This returns the `companyName` trait of the group.
 
-When you access specific traits stored in the browser's localStorage, you need to utilize the [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse){:target="_blank"} method because the stored data is typically in string format.
+When you access specific traits stored in the browser's `localStorage`, you need to use the [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse){:target="_blank"} method because the stored data is typically in string format.
 
-## Storage Priority
+## Storage priority
 
 By default, Analytics.js uses `localStorage` as its preferred storage location, with Cookies as a fallback when `localStorage` is not available or not populated. An in-memory storage is used as a last fallback if all the previous ones are disabled.
 
-Default Storage Priority:
+Default storage priority:
 
 ```md
 LocalStorage -> Cookie -> InMemory
