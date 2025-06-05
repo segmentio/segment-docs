@@ -194,7 +194,7 @@ Event type tables provide a complete history for each type of event. Segment syn
 Identity Resolution processes these events, and includes a `segment_id`, enabling the data to be joined into a single Profile record. 
 
 > success ""
-> Event type tables will have 2 months of historical data on backfill.
+> Event type tables have 2 months of historical data on backfill. Contact support if you need access to data beyond this period.
 
 Event type tables includes the following tables:
 
