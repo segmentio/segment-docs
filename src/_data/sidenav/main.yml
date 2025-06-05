@@ -561,23 +561,20 @@ sections:
     title: Privacy Overview
   - section_title: Privacy Portal
     slug: protocols/portal
-    expanded: true
     section:
     - path: /privacy/portal
       title: Detect PII
     - path: /privacy/data-controls
       title: Data Controls and Alerts
-  - section_title: GDPR
-    slug: protocols/complying-with-the-gdpr
-    expanded: true
+  - section_title: Deletion and Suppression
+    slug: privacy/user-deletion-and-suppression
     section:
-    - path: /privacy/complying-with-the-gdpr
-      title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
+    - path: /privacy/account-deletion
+      title: Account & Data Deletion
   - section_title: Consent Management
     slug: privacy/consent-management
-    expanded: true
     section:
     - path: /privacy/consent-management
       title: Consent Management Overview
@@ -593,8 +590,8 @@ sections:
       title: Consent FAQs
   - path: /privacy/data-retention-policy
     title: Data Retention and Deletion Policy
-  - path: /privacy/account-deletion
-    title: Account & Data Deletion
+  - path: /privacy/complying-with-the-gdpr
+    title: Complying With GDPR
   - path: /privacy/hipaa-eligible-segment
     title: HIPAA Eligible Segment
   - path: /privacy/faq
