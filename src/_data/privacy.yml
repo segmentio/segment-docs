@@ -27,8 +27,8 @@ sections:
 - section_title: Delete user and workspace data
   section_col: 4
   section:
-  - name: Comply with GDPR and CCPA by deleting information about your company's end users from Segment
-    description: "Remove your company's end users from Segment and supported connections."
+  - name: Delete and suppress data about end usersDelete and suppress data about end users
+    description: "Comply with GDPR and CCPA by deleting information from Segment about your company's end users."
     path: /privacy/user-deletion-and-suppression/
   - name: Delete data from sources, a Unify space, or your entire workspace
     description: "Remove all data from a source, a Unify space, or a workspace."
