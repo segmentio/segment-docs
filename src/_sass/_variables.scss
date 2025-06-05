@@ -9,6 +9,8 @@ $color-values: (
   secondary-light: #dcf2ea,
   secondary: #52bd94,
   secondary-dark: #317159,
+  twilio-red: #ef373c,
+  twilio-secondary: #000434,
 
   gray-900: #101840,
   gray-800: #474d66,
@@ -137,22 +139,22 @@ $font-color: map-get($color-values, gray-800) !default;
 /// Default font family.
 ///
 /// @type {Value|Values}
-$font-family-primary: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$font-family-primary: "Twilio Sans Text", "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
 /// Monospace font family.
 ///
 /// @type {Value|Values}
-$font-family-monospace: "Droid Sans Mono", "Lucida Console", "Monaco", monospace !default;
+$font-family-monospace: "Twilio Sans Mono", "Droid Sans Mono", "Lucida Console", "Monaco", monospace !default;
 
 /// Font weight of headings.
 ///
 /// @type {Number|Keyword}
-$heading-font-weight: 600 !default;
+$heading-font-weight: 500 !default;
 
 /// Font family of headings.
 ///
 /// @type {Keyword|Values}
-$heading-font-family: $font-family-primary !default;
+$heading-font-family: "Twilio Sans Text", "SF Pro Text", sans-serif !default;
 
 /// Color of headings.
 ///
