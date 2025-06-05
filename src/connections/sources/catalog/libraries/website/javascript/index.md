@@ -1053,7 +1053,7 @@ Once installed, use the Inspect Elements developer tool in Chrome to use the Seg
 - Identify users  
 
 ### Components of the Segment Inspector 
-The Segment Inspector is composed of these 3 components:
+The Segment Inspector has 3 components:
 1. The **Diagnostics** tab 
    - This tab shows the library versions and the list of active integrations that are running. 
    - When you select an integration, you can see the options that passed while the integration loads. If you made any local overrides within the integration or on the page itself, they appear highlighted in the code. 
