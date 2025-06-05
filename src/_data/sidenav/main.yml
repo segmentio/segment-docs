@@ -566,13 +566,6 @@ sections:
       title: Detect PII
     - path: /privacy/data-controls
       title: Data Controls and Alerts
-  - section_title: Deletion and Suppression
-    slug: privacy/user-deletion-and-suppression
-    section:
-    - path: /privacy/user-deletion-and-suppression
-      title: User Deletion and Suppression
-    - path: /privacy/account-deletion
-      title: Account & Data Deletion
   - section_title: Consent Management
     slug: privacy/consent-management
     section:
@@ -588,6 +581,13 @@ sections:
       title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
+  - section_title: Deletion and Suppression
+    slug: privacy/user-deletion-and-suppression
+    section:
+    - path: /privacy/user-deletion-and-suppression
+      title: User Deletion and Suppression
+    - path: /privacy/account-deletion
+      title: Account & Data Deletion
   - path: /privacy/data-retention-policy
     title: Data Retention and Deletion Policy
   - path: /privacy/complying-with-the-gdpr

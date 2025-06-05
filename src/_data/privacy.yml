@@ -3,22 +3,47 @@ sections:
   section_col: 6
   section:
   - name: Detect and classify customer data
-    description: "The Privacy Portal helps automate preparing for new privacy regulations."
+    description: "The Privacy Portal helps streamline your response to new privacy regulations."
     path: /privacy/portal/
     icon: media/classify.svg
   - name: Control what data you collect
-    description: "Take control over whether specific data is allowed to enter Segment"
+    description: "Take control of the data that comes into your workspace."
     path: /privacy/data-controls/
     icon: media/control.svg
 
-- section_title: Prepare for GDPR & CCPA
+- section_title: Respect your end user's consent preferences
+  section_col: 4
+  section:
+  - name: Consent in Segment Connections
+    description: "Manage end user consent in your downstream tools with Consent Management."
+    path: /privacy/consent-management/consent-in-segment-connections/
+  - name: Consent in Reverse ETL
+    description: "Enforce consent preferences stored in your data warehouse."
+    path: /privacy/consent-management/consent-in-retl/
+  - name: Consent stored on the Profile
+    description: "Create Audiences of users that consent to receive marketing communications."
+    path: /docs/privacy/consent-management/consent-in-unify/
+
+- section_title: Delete and suppress user information
   section_col: 6
   section:
-  - name: Understand and Comply with regulations
-    description: "Segment is committed to making it easier for you to comply with the GDPR."
-    path: /privacy/complying-with-the-gdpr/
-    icon: media/comply.svg
-  - name: Delete and suppress data about end-users
-    description: "Easily remove your company's end-users from Segment and supported connections."
+  - name: Delete and suppress data about end users
+    description: "Remove your company's end users from Segment and supported connections."
     path: /privacy/user-deletion-and-suppression/
+    icon: media/detect.svg
+  - name: Delete data from sources, a Unify space, or your entire workspace
+    description: "Remove all data from a source, a Unify space, or a workspace."
+    path: /privacy/account-deletion/
     icon: media/delete.svg
+
+- section_title: Comply with privacy regulations
+  section_col: 12
+  section:
+  - name: Data Deletion and Retention Policy
+    icon: media/comply.svg
+    description: "Manage your data accurately, efficiently and securely within clearly defined retention periods."
+    path: /privacy/data-retention-policy/
+  - name: HIPAA-Eligible Segment
+    icon: media/database-star.svg
+    description: "Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders."
+    path: /privacy/hipaa-eligible-segment/
