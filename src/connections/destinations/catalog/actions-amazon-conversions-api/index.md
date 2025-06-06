@@ -1,5 +1,5 @@
 ---
-title: Amazon Conversions API
+title: Amazon Conversions API (Actions) Destination
 id: 683ef14a3f9aac157e3a3446
 hide-personas-partial: true
 hide-boilerplate: false
@@ -8,9 +8,9 @@ private: false
 hidden: false
 
 ---
-The Amazon Conversions API destination is a server-to-server integration with the Amazon Events API. This destination allows advertisers to send real-time or offline conversion events data from Segment directly to Amazon without needing Amazon Ad Tag (AAT) setup. 
+The Amazon Conversions API (Actions) destination is a server-to-server integration with the Amazon Events API. This destination allows advertisers to send real-time or offline conversion events data from Segment directly to Amazon without needing Amazon Ad Tag (AAT) setup. 
 
-This enables advertisers to evaluate the effectiveness of their Amazon marketing campaigns regardless of the location of the conversion and utilize this information to drive campaign optimization. Events API can help strengthen performance and decrease cost per action with more complete attribution, improved data reliability, and better optimized delivery.
+This enables advertisers to evaluate the effectiveness of their Amazon marketing campaigns regardless of the location of the conversion and utilize this information to drive campaign optimization. The Events API can help strengthen performance and decrease cost per action with more complete attribution, improved data reliability, and better optimized delivery.
 
 ## Benefits of Amazon Conversions API (Actions)
 
@@ -21,9 +21,9 @@ The Amazon Conversions API destination provides the following benefits:
 - **Prebuilt event mappings**. Standard events like `Add to Shopping Cart` and `Checkout` come preconfigured with recommended parameters.
 - **Multiple event types**. Support for various conversion event types including purchases, sign-ups, leads, and more.
 - **Multi-platform support**. Send events from websites, Android apps, iOS apps, Fire TV, or offline sources.
-- **Comprehensive user matching**. Multiple matching keys available including email, phone, name, address, and mobile advertising IDs.
+- **Comprehensive user matching**. Multiple matching keys are available including email, phone, name, address, and mobile advertising IDs.
 - **Data normalization**. Data is normalized before it's hashed to send to Amazon Conversions.
-- **Custom attributes**. Include additional context with event-specific attributes.
+- **Custom attributes**. Includes additional context with event-specific attributes.
 - **Consent management**. Built-in support for various privacy frameworks including Amazon consent options, TCF, and GPP.
 
 ## Getting started
@@ -34,13 +34,13 @@ To connect the Amazon Conversions API Destination:
 
 1. From the Segment web app, go to **Connections > Catalog**.
 2. Search for **Amazon Conversions Api** in the top right corner.
-3. From the search results under **Destinations**, click on **Amazon Conversions Api** destination and then click on **Add destination**
-4. Select the source that will send data to Amazon Conversions API and follow the prompts to name your destination.
+3. From the search results under **Destinations**, select the **Amazon Conversions Api** destination and then click **Add destination**
+4. Select the source that will send data to the Amazon Conversions API destination and follow the prompts to name your destination.
 5. On the **Basic Settings** page, enter:
    - Destination name
-   - **Region** - Select North America (NA), Europe (EU), or Far East (FE) based on your Amazon Advertising account
-   - **Amazon Advertiser ID** - Your Amazon Advertising Account ID
-6. Authenticate via OAuth when prompted.
+   - **Region:** - Select North America (NA), Europe (EU), or Far East (FE) based on your Amazon Advertising account
+   - **Amazon Advertiser ID:** - Your Amazon Advertising Account ID
+6. Authenticate using OAuth when prompted.
 7. Go to the **Mappings** tab. Prebuilt mappings, like `Checkout`, `Search`, and `Add to Shopping Cart`, include predefined parameters.
 8. To create a new mapping:
    - Click **New Mapping** and select **Track Conversion**.
@@ -74,18 +74,18 @@ Amazon Conversions API supports the following standard event types:
 
 ## Match keys for user identification
 
-Amazon requires at least one match key to identify the user associated with each conversion event. The following match keys are supported:
+Amazon requires at least one match key to identify the user associated with each conversion event. Amazon Conversions API supports the following match keys:
 
 | Match Key | Description |
 | --------- | ----------- |
-| email | User's email address (will be hashed) |
-| phone | User's phone number (will be hashed) |
-| firstName | User's first name (will be hashed) |
-| lastName | User's last name (will be hashed) |
-| address | User's street address (will be hashed) |
-| city | User's city (will be hashed) |
-| state | User's state (will be hashed) |
-| postalCode | User's postal code (will be hashed) |
+| email | User's email address (is hashed) |
+| phone | User's phone number (is hashed) |
+| firstName | User's first name (is hashed) |
+| lastName | User's last name (is hashed) |
+| address | User's street address (is hashed) |
+| city | User's city (is hashed) |
+| state | User's state (is hashed) |
+| postalCode | User's postal code (is hashed) |
 | maid | Mobile advertising ID (ADID, IDFA, or FIREADID) |
 | rampId | RAMP ID for attribution to traffic events |
 | matchId | Custom match ID for the user |
@@ -94,7 +94,7 @@ Segment automatically maps these fields from standard identity traits when avail
 
 ## Consent management
 
-For EU advertisers and users, Amazon requires consent information to be included with conversion events. The Amazon Conversions API supports several consent mechanisms:
+For EU advertisers and users, Amazon requires consent information to be included with conversion events. The Amazon Conversions API supports several consent mechanisms.
 
 ### Geographic consent (IP Address)
 
@@ -124,7 +124,7 @@ The Amazon Conversions API supports data processing options to control how event
 
 | Option | Description |
 | ------ | ----------- |
-| LIMITED_DATA_USE | Signals that an event should be processed with limited data use restrictions. Events marked with this option will not be used for advertising purposes. |
+| LIMITED_DATA_USE | Signals that an event should be processed with limited data use restrictions. Events marked with this option won't be used for advertising purposes. |
 
 ## Custom attributes
 
