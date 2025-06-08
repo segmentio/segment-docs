@@ -21,7 +21,7 @@ In order to run a Reverse-ETL sync in a DB2 warehouse, Segment needs the followi
 
 1. Open the Db2 warehouse and navigate to  **Administration > User management**.
 2. Click **Add**.
-3. Create a new user account with *user* privileges. Make sure you save the username and password, as these are required to set up the Segment configuration in a later step.
+3. Create a new user with *user* privileges. Make sure you save the username and password, as these are required to set up the Segment configuration in a later step.
 
 
 > info ""
@@ -55,16 +55,12 @@ To set up DB2 as your Reverse ETL source:
 5. Select **DB2** and click **Add Source**.
 6. Enter the configuration settings for your DB2 source:
   * Hostname: `<hostname>`
-  * Port: `<port>` (default)
+  * Port: `<port>`
   * Database: `<db_name>`
   * Username: `<segment_db2_user>`
   * Password: `<password>`
   * Schema [optional]: If not specified, Segment will use the user’s default schema
 7. Click **Test Connection** to validate the setup.
 8. If the connection is successful, click **Add source**.
-
-> warning ""
-> Segment only supports user/password authentication for DB2.
-> Ensure that your DB2 instance is configured to allow remote connections and the user has the necessary permissions.
 
 After you've successfully added your DB2 source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
