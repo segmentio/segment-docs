@@ -6,10 +6,10 @@ redirect_from:
   - '/unify/data-graph/data-graph'
 ---
 
-The Data Graph acts as a semantic layer that allows businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets accessible to business teams for targeted and personalized customer engagements. The Data Graph helps power Linked Audiences and Linked Events. 
+The Data Graph acts as a semantic layer that enables businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets accessible to business teams for targeted and personalized customer engagements. The Data Graph powers both Linked Audiences and Linked Events. 
 
   - **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support. The Data Graph is used in Linked Audiences for defining relationships between warehouse tables and views, which are then used to build audiences of Segment Profiles.
-  - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Allows data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions. The Data Graph is used in Linked Events to specify which tables to use in enrichments.
+  - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions. The Data Graph is used in Linked Events to specify which tables to use in enrichments.
 
 ## Prerequisites
 
@@ -552,7 +552,7 @@ A data consumer refers to a Segment feature like Linked Events and Linked Audien
 
 Upon editing and saving changes to your Data Graph, a modal will pop up to warn of breaking and/or potential breaking changes to your data consumers. You must acknowledge and click **Confirm and save** in order to proceed.
 
-- **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship slug are immutable and treated as a delete if you make changes. You can modify the label.
+- **Definite breaking change**: Occurs when deleting an entity or relationship that is being referenced by a data consumer. Data consumers affected by breaking changes will fail on the next run. Note: The entity and relationship slug are immutable and treated as a delete if you make changes. You can modify the name.
 - **Potential breaking change**: Some changes such as updating the entity `table_ref` or `primary_key`, may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work.
 
 ### Detect warehouse breaking changes
