@@ -4,6 +4,7 @@ redirect_from:
   - '/connections/destinations/catalog/amazon-s3/'
   - '/connections/waser/catalog/amazon-s3/'
 hide-personas-partial: true
+hidden: true
 ---
 
 > warning "The Amazon S3 destination will enter Limited Access on February 8, 2022"
