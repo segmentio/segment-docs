@@ -25,7 +25,7 @@ See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-
 Before you begin setting up your Linked Audience, ensure you have:
 
 - [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
-- Set up your warehouse permissions using [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
+- Set up your warehouse permissions using either [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), or [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/data-graph/data-graph/).
 - Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
