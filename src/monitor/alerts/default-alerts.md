@@ -69,9 +69,11 @@ View a brief description of each alert type. 
 - **Storage Destination Deleted**: A user in your workspace deleted a storage destination. 
 - **Storage Destination Disabled**: A user in your workspace disabled a storage destination. 
 - **Storage Destination Modified**: A user in your workspace modified an existing storage destination. 
-- **Storage Destination Sync Failed**: Segment failed to sync any rows of data from your source to your storage destination. 
-- **Storage Destination Sync Partially Succeeded**: Segment encountered some notices and was only able to sync some of your data from your source to your storage destination. 
-- **Storage Destination Sync Skipped**: Segment skipped a scheduled sync to your storage destination. This might happen if the previous sync wasn't complete by the time the next sync was scheduled to begin. 
+- **Storage Destination Sync Failed**<sup>*</sup>: Segment failed to sync any rows of data from your source to your storage destination. 
+- **Storage Destination Sync Partially Succeeded**<sup>*</sup>: Segment encountered some notices and was only able to sync some of your data from your source to your storage destination. 
+- **Storage Destination Sync Skipped**<sup>*</sup>: Segment skipped a scheduled sync to your storage destination. This might happen if the previous sync wasn't complete by the time the next sync was scheduled to begin. 
+
+_<sup>*</sup>The alerts for skipped, partially successful, or failed syncs apply across all storage destinations in your workspace and allow you to set a threshold after which you'd be notified. For example, you could choose to be notified after 1 failed sync, 5 skipped syncs, or 10 partially successful syncs across all storage destinations in your workspace. You can view the threshold you set in the **Sync threshold** column in the Storage Destinations tab of the Default alerts table._ 
 
 
 ## Protocols alerts
