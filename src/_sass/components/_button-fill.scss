@@ -32,12 +32,12 @@
 
   &--secondary {
     color: color(white);
-    background-color: color(secondary);
+    background-color: color(twilio-secondary);
 
     &:hover,
     &:focus {
       color: color(white);
-      background-color: color(secondary-dark);
+      background-color: color(twilio-secondary);
     }
   }
 
