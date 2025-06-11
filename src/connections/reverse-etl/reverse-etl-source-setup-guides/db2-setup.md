@@ -20,7 +20,7 @@ In order to run a Reverse ETL sync in your Db2 warehouse, you'll create a user w
 > info "Create a dedicated user for Segment's Reverse ETL connection"
 > Segment recommends that you create a dedicated Db2 user for when setting up Reverse ETL. This user should only have access to the relevant schemas and tables you'll need to access during syncs between Segment and your warehouse. 
 
-1. In IBM Cloud, go to your DB2 instance and navigate to **Administration > User management**.
+1. In IBM Cloud, go to your Db2 instance and navigate to **Administration > User management**.
 2. Click **Add**.
 3. Create a new user with *user* privileges. Make sure to save the username and password—these are needed to configure the Segment
    source connection later.
