@@ -66,4 +66,4 @@ To set up Db2 as your Reverse ETL source:
 7. Click **Test Connection** to validate the setup.
 8. If the connection is successful, click **Add source**.
 
-After successfully adding your DB2 source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
+After successfully adding your Db2 source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
