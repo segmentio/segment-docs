@@ -7,7 +7,7 @@ beta: true
 
 [Dotdigital](https://dotdigital.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an all-in-one customer experience and data platform (CXDP) that empowers marketing teams to exceed customer expectations with highly personalized cross-channel journeys.
 
-This destination is maintained by Dotdigital. For any issues with the destination, [contact their Support team](mailto:support@dotdigital.com).
+This destination is maintained by Dotdigital. For any issues with the destination, [contact the Dotdigital Support team](mailto:support@dotdigital.com).
 
 ## Getting started
 
