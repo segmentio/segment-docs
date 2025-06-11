@@ -13,8 +13,9 @@ This destination is maintained by Dotdigital. For any issues with the destinatio
 2. Select Dotdigital and click **Add Destination**.
 3. Select an existing Source to connect to Dotdigital (Actions).
 4. Log in to your [Dotdigital account](https://login.dotdigital.com/){:target="_blank"}. Expand the User menu in the bottom left and go to Settings > Access > API users.
-5. Create a [new API user](https://developer.dotdigital.com/docs/setting-up-an-api-user). 
-6. In Segment, select your Dotdigital account region and paste the **API user** and **API password** in the Dotdigital destination settings.
+5. Note your API region (r1, r2 or r3) for step 7.
+6. Create a [new API user](https://developer.dotdigital.com/docs/setting-up-an-api-user). 
+7. In Segment, select your Dotdigital account region and paste the **API user** and **API password** in the Dotdigital destination settings.
 
 {% include components/actions-fields.html %}
 
