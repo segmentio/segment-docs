@@ -48,7 +48,7 @@ GRANT SELECT ON TABLE <schema_name>.<table_name> TO USER <username>;
 ```
 
 
-## Set Up Guide
+## Set up guide
 
 To set up DB2 as your Reverse ETL source:
 
