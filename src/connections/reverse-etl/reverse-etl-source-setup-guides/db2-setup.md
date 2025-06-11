@@ -56,7 +56,7 @@ To set up Db2 as your Reverse ETL source:
 2. Open [your Segment workspace](https://app.segment.com/workspaces){:target="_blank"}.
 3. Navigate to **Connections > Sources** then select the **Reverse ETL** tab.
 4. Click **+ Add Reverse ETL source**.
-5. Select **DB2** and click **Add Source**.
+5. Select **Db2** and click **Add Source**.
 6. Fill in the DB2 connection settings:
   * Hostname: `<hostname>`
   * Port: `<port>`
