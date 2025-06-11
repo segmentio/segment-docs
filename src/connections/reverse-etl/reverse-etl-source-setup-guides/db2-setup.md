@@ -14,7 +14,7 @@ In order to run a Reverse ETL sync in your Db2 warehouse, you'll create a user w
 
 * **Permission to read from all tables used in the model**: The user must be able to access all tables included in your SELECT query.
 * **Permission to create and manage a schema**: Segment creates and manages a schema in your warehouse to track sync metadata.
-* **Permission to create tables in the database**, needed for internal metadata tables.
+* **Permission to create tables in the database**: Segment creates metadata tables in your warehouse. 
 
 
 > info "Use a dedicated user for Segment"
