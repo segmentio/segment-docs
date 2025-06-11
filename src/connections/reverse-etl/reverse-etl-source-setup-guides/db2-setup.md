@@ -57,7 +57,7 @@ To set up Db2 as your Reverse ETL source:
 3. Navigate to **Connections > Sources** then select the **Reverse ETL** tab.
 4. Click **+ Add Reverse ETL source**.
 5. Select **Db2** and click **Add Source**.
-6. Fill in the DB2 connection settings:
+6. Fill in the following Db2 connection settings:
   * Hostname: `<hostname>`
   * Port: `<port>`
   * Database: `<db_name>`
