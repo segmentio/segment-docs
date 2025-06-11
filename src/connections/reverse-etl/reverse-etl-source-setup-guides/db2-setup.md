@@ -1,5 +1,5 @@
 ---
-title: DB2 Reverse ETL Setup
+title: Db2 Reverse ETL Setup
 ---
 
 Set up DB2 as your Reverse ETL source.
