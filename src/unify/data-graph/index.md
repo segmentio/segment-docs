@@ -181,6 +181,9 @@ The first step in creating a Data Graph is to define your entities. An entity co
 
 To define your entities:
 1. Navigate to the **Entities** tab and select **Add Entity**.
+
+    <img src="/docs/unify/images/data-graph-entities-tab.png" alt="The Entities tab when creating the Data Graph" width="5888"/>
+
 2. Provide the following information: 
   
     Parameter | Definition
@@ -200,6 +203,8 @@ To define your entities:
 > Segments recommends that you select materialized views under the Profiles [Selective Sync settings](/docs/unify/profiles-sync/profiles-sync-setup/#step-3-set-up-selective-sync) to optimize warehouse compute costs.
 
 To define the profile, navigate to the **Relationships** tab. You'll see a **Profile** node which is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this enables marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
+
+<img src="/docs/unify/images/relationships-tab-data-graph.png" alt="The Relationships tab when creating the Data Graph" width="5888"/>
 
 Segment creates default settings for your profile that are based on your [Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/) configuration. If you wish to update these settings, you may select the node and select **View / Edit profile**. Otherwise, you may proceed to Step 3C.
 
