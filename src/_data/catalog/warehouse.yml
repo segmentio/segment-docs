@@ -7,7 +7,7 @@ items:
     Our Amazon S3 copies our log files of your raw API calls from our S3 bucket
     to yours, where you can then perform custom analysis on them.
   url: connections/storage/catalog/amazon-s3
-  status: PUBLIC
+  status: DEPRECATED
   endpoints:
   - us
   - eu
