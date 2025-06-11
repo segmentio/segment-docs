@@ -52,7 +52,7 @@ GRANT SELECT ON TABLE <schema_name>.<table_name> TO USER <username>;
 
 To set up Db2 as your Reverse ETL source:
 
-1. Make sure your DB2 database is network-accessible from [Segment's IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
+1. Confirm that your Db2 database is network-accessible from the [IP address that Segment uses to connect to your warehouse](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
 2. Open [your Segment workspace](https://app.segment.com/workspaces){:target="_blank"}.
 3. Navigate to **Connections > Sources** then select the **Reverse ETL** tab.
 4. Click **+ Add Reverse ETL source**.
