@@ -4,7 +4,7 @@ title: Db2 Reverse ETL Setup
 
 Set up Db2 as your Reverse ETL source.
 
-At a high level, when you set up DB2 for Reverse ETL, the configured database user must have read permissions on any tables involved in the query, and write permissions on a managed schema (`SEGMENT_REVERSE_ETL`) that Segment uses to track sync progress. Authentication is handled through username and password credentials configured in the Segment app.
+At a high level, when you set up Db2 for Reverse ETL, the configured database user must have read permissions on any tables involved in the query and write permissions on a managed schema (`SEGMENT_REVERSE_ETL`) that Segment uses to track sync progress. Segment authenticates with your Db2 instance through a username and password. 
 
 
 
