@@ -50,7 +50,7 @@ GRANT SELECT ON TABLE <schema_name>.<table_name> TO USER <username>;
 
 ## Set up guide
 
-To set up DB2 as your Reverse ETL source:
+To set up Db2 as your Reverse ETL source:
 
 1. Make sure your DB2 database is network-accessible from [Segment's IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
 2. Open [your Segment workspace](https://app.segment.com/workspaces){:target="_blank"}.
