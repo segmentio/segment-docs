@@ -26,10 +26,10 @@ In order to run a Reverse ETL sync in your Db2 warehouse, you'll create a user w
 
 
 > info ""
-> The `SEGMENT_REVERSE_ETL` schema will be created and managed by Segment to track the status of each sync. 
+> Segment creates and manages the `SEGMENT_REVERSE_ETL` schema to track the status of each sync. 
 > You can also choose to create this schema yourself by running: 
 > `CREATE SCHEMA SEGMENT_REVERSE_ETL` 
-> Then grant Segment the appropriate privileges.
+> After you've created the schema, grant Segment the appropriate privileges.
 
 
 
