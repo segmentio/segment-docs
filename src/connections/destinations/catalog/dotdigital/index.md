@@ -21,17 +21,14 @@ This destination is maintained by Dotdigital. For any issues with the destinatio
 
 {% include components/actions-fields.html %}
 
-## Action notes
+## Additional context
 
 ### Add Contact to List
+Before using the Add Context to List Action, complete the following prerequisites: 
 
-_Lists_
-- [Create a contact list in Dotdigital](https://support.dotdigital.com/en/articles/8198769-create-a-contact-list).
-- Select your list from the dropdown in the Segment event mapping.
+- **Lists**: [Create a contact list in Dotdigital](https://support.dotdigital.com/en/articles/8198769-create-a-contact-list). After you've created a list in Dotdigital, return to the Segment app and select your list from the dropdown in the Segment event mapping.
+- Data Fields: [Create or edit your data fields in Dotdigital](https://support.dotdigital.com/en/articles/8198833-create-delete-and-edit-custom-data-fields), then return to the Segment app, open the event mapping, and map Segment properties to Dotdigital data fields.
 
-_Data Fields_
-- [Create or edit your data fields in Dotdigital](https://support.dotdigital.com/en/articles/8198833-create-delete-and-edit-custom-data-fields).
-- Map Segment properties to Dotdigital data fields in the Segment event mapping.
+### Enroll Contact to Program
+When you use the Enroll Contact to Program action, Dotdigital creates a contact for the identifier you provide, if they don't exist already.
 
-### Enrol Contact to Program
-- The action will create a contact in Dotdigital for the identifier you provide, if they don't exist already.
