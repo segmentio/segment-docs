@@ -261,11 +261,11 @@ The available operators depend on the property's data type:
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 
-> info "Unsupported Special Characters"
-> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields. In mapping fields, the . character is not supported unless it's being used to access an object key. If a string has a . in it, that is not supported.
+> info "Unsupported special characters in trigger fields"
+> Trigger fields don't support double quotes (`"`) or the tilde (`~`) character.
 
-> info "Limitations"
-> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
+> info "Mapping field limitations"
+> In **destination** fields, you can use dot notation to create nested objects and arrays (for example, `info.name` or `info[0].email`), unless the field is enclosed in double quotes (for example, `"user.email"` creates a literal key, not a nested structure). In **source**, dots are only supported for accessing object keys. Literal strings that include a dot (like `user.email`) aren't supported as property names.
 
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
