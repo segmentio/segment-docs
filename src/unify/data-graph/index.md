@@ -6,7 +6,7 @@ redirect_from:
   - '/unify/data-graph/data-graph'
 ---
 
-The Data Graph acts as a semantic layer that enables businesses to define relationships between various entity datasets in the warehouse — such as accounts, subscriptions, households, and products — with the Segment Profile. It makes these relational datasets accessible to business teams for targeted and personalized customer engagements. The Data Graph powers both Linked Audiences and Linked Events. 
+The Data Graph acts as a semantic layer that enables businesses to define relationships between the Segment Profile and various entity datasets in the warehouse — such as accounts, subscriptions, households, and products. It makes these relational warehouse datasets accessible to business teams for targeted and personalized customer engagements. The Data Graph powers both Linked Audiences and Linked Events. 
 
   - **[Linked Audiences](/docs/engage/audiences/linked-audiences/)**: Empowers marketers to effortlessly create targeted audiences by combining behavioral data from the Segment Profile and warehouse entity data within a self-serve, no-code interface. This tool accelerates audience creation, enabling precise targeting, enhanced customer personalization, and optimized marketing spend without the need for constant data team support. The Data Graph is used in Linked Audiences for defining relationships between warehouse tables and views, which are then used to build audiences of Segment Profiles.
   - **[Linked Events](/docs/unify/data-graph/linked-events/)**: Enables data teams to enrich event streams in real time using datasets from data warehouses or lakes, and send these enriched events to any destination. Linked Events is available for both Destination Actions and Functions. The Data Graph is used in Linked Events to specify which tables to use in enrichments.
@@ -60,7 +60,7 @@ Segment recommends you to use the visual builder for most use cases because it h
 Follow these key steps to build your Data Graph: 
 
 1. Define your entities. An entity corresponds to a table, view, or materialized view in your warehouse. If you're only using Linked Events, this is the only step you need to do. If you're using Linked Audiences, you'll need to perform steps 2 and 3 as well. 
-2. Define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, and so on. Based on your Profiles Sync settings, the Data Graph attempts to define the profile block. 
+2. Define the profile. This is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this allows marketers to filter on profile traits, event history, and so on. Based on your Profiles Sync settings, the Data Graph automatically attempts to define the profile block. 
 3. Define how your datasets are related to each other. The Data Graph preserves these relationships and carries this rich context to the destinations to unlock personalization.
 
 **Defining Relationships**
@@ -68,7 +68,7 @@ Follow these key steps to build your Data Graph:
 Similar to the concept of [cardinality in data modeling](https://w.wiki/Ay$u){:target="\_blank"}, the Data Graph supports 3 types of relationships:
 
 - **Profile-to-entity relationship:** This is the first level of relationship, and is the relationship between your entity table and the Segment Profiles tables. This relationship is required for Linked Audiences because it connects Segment Profiles data with all the entity data you have in your warehouse.
-- **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
+- **1:many relationship:** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`. A 1:many relationship can also be a 1:1 relationship.  
 - **many:many relationship:** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
 
 The Data Graph supports 6 levels of depth (or nodes) starting from the profile. For example, relating the `profile` to the `accounts` table to the `carts` table is 3 levels of depth. There are no limits on the width of your Data Graph or the number of entities. Relationships are nested under the profile. Refer to the example below.
@@ -222,7 +222,7 @@ Parameter | Defintion
 Now define the relationships between your entities. Similar to the concept of [cardinality in data modeling](<en.wikipedia.org/wiki/Cardinality_(data_modeling)>), the Data Graph supports 3 types of relationships below. All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions.
 
 - **[Profile-to-entity relationship](#define-profile-to-entity-relationship):** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
-- **[1:many relationship](#define-a-1many-relationship):** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
+- **[1:many relationship](#define-a-1many-relationship):** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`. A 1:many relationship can also be a 1:1 relationship. 
 - **[many:many relationship](#define-manymany-relationship):** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
   * **Note:** To add many:many relationships, you need to use the [code editor](#using-the-code-editor). 
 
@@ -235,8 +235,8 @@ Parameter | Definition
 `Select related entity` | The left-hand-side entity represents the Segment profile. On the right-hand-side, you can select which entity to relate it to. <br><br>Note: you can select the preview icon to preview both the Segment profile and the associated table or view representing the entity.
 `Relationship name` | A label displayed throughout your Segment space for Linked Audiences. This name can be modified at any time.
 `Description` (**Optional**) | An optional descriptor used to add additional context to the relationship.
-`Join on external ID or trait` | The Segment external ID or trait you’ll use to join to your entity. To define a profile-to-entity relationship, reference your entity table. Depending on the column in it that you would like to link to your Segment profile, you can select either an [external identifier](/docs/unify/identity-resolution/externalids/) such as `user_id`, `email`, or `phone` or a [trait](/docs/unify/#enrich-profiles-with-traits) in your Unify Profiles.
-`Join key` | The column on the entity table that matches the external ID or trait selected directly above.
+`Join on external ID or trait` | The Segment external ID or trait you’ll use to join to your entity. To define a profile-to-entity relationship, reference your entity table or view. Depending on the column in it that you would like to link to your Segment profile, you can select either an [external identifier](/docs/unify/identity-resolution/externalids/) such as `user_id`, `email`, or `phone` or a [trait](/docs/unify/#enrich-profiles-with-traits) in your Unify Profiles.
+`Join key` | The column on the entity table or view that matches the external ID or trait selected directly above.
 
 > info ""
 > Segment recommends using materialized views with Profiles Sync. However, Segment may still reference unmaterialized tables during setup for schema detection.
@@ -250,7 +250,7 @@ For 1:many relationships, select the relationship node you’d like to add a new
 Parameters | Definition
 ---------- | ------------
 `Select related entity` | The left-hand-side entity represents the entity referenced in the relationship you had previously defined. This is immutable. On the right-hand-side, you can select which entity to relate it to. <br><br>Note: you can select the preview icon to preview both associated tables or views.
-`Join keys` | Defines relationship between the two entity tables – i.e. how they should be joined together.
+`Join keys` | Defines relationship between the two entity tables or views, in other words, how they should be joined together.
 `Relationship name` | A label displayed throughout your Segment space for Linked Audiences. This name can be modified at any time
 
 By selecting **Compute count**, you can check the number of rows returned when joining the two entity tables or views together based on the join keys you provided. This is a good way to ensure results are as expected.
@@ -333,7 +333,7 @@ data_graph {
 Now define the relationships between your entities. Similar to the concept of [cardinality in data modeling](<en.wikipedia.org/wiki/Cardinality_(data_modeling)>), the Data Graph supports 3 types of relationships below. All relationship types require you to define the relationship slug, name, and related entity. Each type of relationship has unique join on conditions.
 
 - **[Profile-to-entity relationship](#define-profile-to-entity-relationship):** This is a relationship between your entity table and the Segment Profiles tables, and is the first level of relationship.
-- **[1:many relationship](#define-a-1many-relationship):** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`.
+- **[1:many relationship](#define-a-1many-relationship):** For example, an `account` can have many `carts`, but each `cart` can only be associated with one `account`. A 1:many relationship can also be a 1:1 relationship. 
 - **[many:many relationship](#define-manymany-relationship):** For example, a user can have many `carts`, and each `cart` can have many `products`. However, these `products` can also belong to many `carts`.
   * **Note:** To add many:many relationships, you need to use the [code editor](#using-the-code-editor). 
 
@@ -349,9 +349,9 @@ Parameter | Definition
 
 To define a profile-to-entity relationship, reference your entity table and depending on your table columns, choose to join on one of the following:
 
-* **Option 1 - Join on an external ID (*most common*):** Use the `external_id` block to join the profile entity with an entity table using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are `user_id`, `email`, or `phone` depending on the structure of your entity table.
+* **Option 1 - Join on an external ID (*most common*):** Use the `external_id` block to join the profile entity with an entity table or view using external IDs from your [Unify ID resolution](/docs/unify/identity-resolution/externalids/) settings. Typically these identifiers are `user_id`, `email`, or `phone` depending on the structure of your entity table.
   - `type`: Represents the [external ID type](/docs/unify/identity-resolution/externalids/#default-externalids) (`email`, `phone`, `user_id`) in your ID resolution settings.
-    - This maps to the `type` column in the `user_identifiers` table when using materialized views.
+    - This maps to the `type` column in the `user_identifiers` table when using Profiles Sync materialized views.
   - `join_key`: The column on the entity table that matches the external ID.
 
 > info ""
@@ -359,7 +359,7 @@ To define a profile-to-entity relationship, reference your entity table and depe
 
 * **Option 2 - Join on a profile trait:** Use the `trait` block to join the profile entity with an entity table using [Profile Traits](/docs/unify/#enrich-profiles-with-traits).
 
-  - `name`: Represents a trait name in your Unify profiles. This maps to the `name` column in the `user_traits` table when using materialized views.
+  - `name`: Represents a trait name in your Unify profiles. This maps to the `name` column in the `user_traits` table when using Profiles Sync materialized views.
   - `join_key`: The column on the entity table that you're matching to the trait.
 
 **Example:**
@@ -403,7 +403,7 @@ data_graph {
 
 Select a Data Graph node to see an overview of the relationship and to also confirm what data is in your entity tables or views by previewing the first 10 rows.
 
-Click **Compute count** to check the number of rows returned when joining the profile and entity together based on the join keys you provide. This enables you to make sure that entity joins occur correctly while setting up the Data Graph by returning the number of rows produced when joining two associated tables or view.
+Click **Compute count** to check the number of rows returned when joining the profile and entity together based on the join keys you provide. This enables you to make sure that entity joins occur correctly while setting up the Data Graph.
 
 ##### Define 1:many relationship
 Define the join between the two entity tables using the spec below.
@@ -451,7 +451,7 @@ data_graph {
 
 Select a Data Graph node to see an overview of the relationship and to also confirm what data is in your entity tables or views by previewing the first 10 rows.
 
-Click **Compute count** to check the number of rows returned when joining the profile and entity together based on the join keys you provide. This enables you to make sure that entity joins occur correctly while you’re setting up the Data Graph by returning the number of rows produced when joining two associated tables or view.
+Click **Compute count** to check the number of rows returned when joining 2 entities together based on the join keys you provide. This enables you to make sure that entity joins occur correctly while you’re setting up the Data Graph.
 
 
 ##### Define many:many relationship
@@ -476,8 +476,8 @@ Parameter | Definition
 --------- | -----------
 `table_ref` | Defines the fully qualified table reference to the join table: `[database name].[schema name].[table name]`. Segment flexibly supports tables, views and materialized views.
 `primary_key` | The unique identifier for the given table. Must be a column with unique values per row.
-`left_join_on` | Defines the relationship between the left entity table and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again.
-`right_join_on` | Define the relationship between the junction table and the right entity table: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again.
+`left_join_on` | Defines the relationship between the left entity table or view and the junction table: `[left entity slug].[column name] = [junction table column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again.
+`right_join_on` | Define the relationship between the junction table and the right entity table or view: `[junction table column name] = [right entity slug].[column name]`. Note that schema and table are implied within the junction table column name, so you do not need to define it again.
 
 
 When you define a many-to-many relationship using a junction table, `left_join_on` and `right_join_on` tell Data Graph how to connect each entity to the junction table:
@@ -526,7 +526,7 @@ data_graph {
 
 Select a Data Graph node to see an overview of the entity and to also confirm what data is in your entity tables or views by previewing the first 10 rows.
 
-Click **Compute count** to check the number of rows returned when joining the profile and entity together based on the join keys you provide. This enables you to make sure that entity joins occur correctly while you’re setting up the Data Graph by returning the number of rows produced when joining two associated tables or view.
+Click **Compute count** to check the number of rows returned when joining when joining 2 entities together based on the join keys you provide. This enables you to make sure that entity joins occur correctly while you’re setting up the Data Graph.
 
 
 ## Step 4: Validate your Data Graph
