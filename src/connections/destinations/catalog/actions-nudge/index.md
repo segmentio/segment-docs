@@ -1,4 +1,6 @@
-Nudge (Actions) Destination
+---
+title: Nudge (Actions) Destination
+id: 
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -30,8 +32,7 @@ The Identify method lets you create or update a user in Nudge’s backend. Every
 
 ```js
 analytics.identify('user123', {
-  firstName: 'Alice',
-  lastName: 'Smith',
+  name: 'Alice Smith',
   email: 'alice.smith@example.com',
   company: 'Acme Corp',
   employees: 150
