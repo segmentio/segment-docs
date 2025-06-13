@@ -1,6 +1,7 @@
 ---
 title: Reddit Conversions API
 id: 66cc766ef4b1c152177239a0
+redirect_from: '/connections/destinations/catalog/reddit-conversions-api/' 
 ---
 
 {% include content/plan-grid.md name="actions" %}
