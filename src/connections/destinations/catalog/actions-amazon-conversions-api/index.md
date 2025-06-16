@@ -4,8 +4,9 @@ id: 683ef14a3f9aac157e3a3446
 hide-personas-partial: true
 hide-boilerplate: false
 hide-dossier: true
-private: false
-hidden: false
+private: true
+hidden: true
+beta: true
 
 ---
 The Amazon Conversions API (Actions) destination is a server-to-server integration with the Amazon Events API. This destination allows advertisers to send real-time or offline conversion events data from Segment directly to Amazon without needing Amazon Ad Tag (AAT) setup. 
