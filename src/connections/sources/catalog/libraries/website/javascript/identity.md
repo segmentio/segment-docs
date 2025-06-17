@@ -103,7 +103,7 @@ For example, after a Track call sets the `anonymousID` to `ABC-123-XYZ`, any add
 
 #### Override anonymousId in an Identify call
 
-You can override an `anonymousID` with an Identify call. For example:
+You can override `anonymousID` with an Identify call. For example:
 
 ```js
 analytics.identify('user_123', {
@@ -115,7 +115,7 @@ analytics.identify('user_123', {
 
 #### Override anonymousId on a Page call
 
-You can override an `anonymousID` with a Page call. For example:
+You can override `anonymousID` with a Page call. For example:
 
 ```js
 analytics.page({}, { anonymousId: 'ABC-123-XYZ' });
@@ -123,7 +123,7 @@ analytics.page({}, { anonymousId: 'ABC-123-XYZ' });
 
 #### Override anonymousId on a Track call
 
-You can override an `anonymousID` with a Track call. For example:
+You can override `anonymousID` with a Track call. For example:
 
 ```js
 analytics.track('Email Clicked', {
