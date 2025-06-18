@@ -15,7 +15,7 @@ Here are the *optional* query parameters to use:
 | `ajs_prop_<property>` | A property to pass to the Track call.    | This won't implicitly trigger an event and is dependent on you also passing `ajs_event`. This property is included in the resulting Track call. |
 | `ajs_trait_<trait>`   | A trait to pass to the Identify call.    | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid`. This trait is included in the resulting Identify call.   |
 
-For example, this URL would create the following events on the page:
+For example, this URL creates the following events on the page:
 
 ```text
 http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.

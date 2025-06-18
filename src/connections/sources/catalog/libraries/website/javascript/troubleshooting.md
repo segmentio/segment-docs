@@ -137,6 +137,6 @@ You may see events with timestamp discrepancies due to manual overriding of the 
 
 ## View additional known issues
 
-You can review other known issues in [GitHub](https://github.com/segmentio/analytics.js/issues).
+You can review other known Analytics.js issues on [GitHub](https://github.com/segmentio/analytics.js/issues).
 
 
