@@ -1,6 +1,5 @@
 ---
 title: Source Insert Functions
-
 ---
 
 > info "Source Insert Function is in Public Beta"
