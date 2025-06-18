@@ -53,6 +53,7 @@ To build a Linked Audience:
 **Note:** If you cannot select **Linked audience**, ensure you’ve [set up your Data Graph](/docs/unify/linked-profiles/data-graph/) in Unify.
 4. Select the [conditions](#Linked-Audience-conditions) on which to build your audience.
 5. Click **Preview** to view your audience selection and see a count and list of audience members who meet the criteria.
+6. Select the **Entities** tab on the preview side sheet to select an entity tied to your audience definition. You can view a preview of the entity count and a sample list of the selected entity 
 6. When your audience is complete and accurate, click **Next**.
 7. Enter an audience name and description to identify this configuration.
 Optionally, select a folder to add this audience.
