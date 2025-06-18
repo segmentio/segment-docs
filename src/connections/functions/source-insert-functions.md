@@ -72,23 +72,23 @@ The errors listed are all permanent errors, except `RetryError`. When a `RetryEr
 
 ### Source insert functions FAQs
 
-**The Delivery Overview tab does not display any errors that occur within the source insert function.**
+##### The Delivery Overview tab does not display any errors that occur within the source insert function.
 
 If errors arise or events are dropped, they will appear as if the events never flowed from the source.
 
-**Can I test the function with different event types?**
+##### Can I test the function with different event types?
 
 You can test the function with different event types from the **Test** tab in the code editor, similar to other functions.
 
-**Can I use source insert functions for all types of Source?**
+##### Can I use source insert functions for all types of Source?
 
 Source insert functions only work for event sources, not object sources or rETL.
 
-**What is the expected latency for a source insert function?**
+##### What is the expected latency for a source insert function?
 
 Typically, it takes a source insert function between 200 milliseconds to 5 seconds to complete, based on the complexity of the function. The default timeout is 5 seconds but can be increased to 60 seconds. 
 
-**What is the runtime environment?**
+##### What is the runtime environment?
 
 Segment supports Node.js V18. The dependencies listed [here](https://segment.com/docs/connections/functions/insert-functions/#runtime-and-dependencies){:target=”_blank”} are installed in the function. The following dependencies are also installed: 
 - `@azure/identity` exposed as `azure.identity`
