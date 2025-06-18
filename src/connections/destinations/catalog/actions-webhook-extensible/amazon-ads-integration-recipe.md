@@ -1,5 +1,6 @@
 ---
 title: Amazon Ads Audience Sync Integration Recipe
+
 ---
 
 This recipe will guide you through how to set up a custom destination for Amazon Ads using Twilio Segment's Extensible Webhooks feature and how to sync customer data into an Audience list. By following these steps, you can integrate your data source with Amazon Ads.
