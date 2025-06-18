@@ -117,7 +117,7 @@ your identity-resolved profiles to your data warehouse.
 - **Audience Run Failed**: Segment was unable to compute your Audience. To resolve this error, please [contact Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
 > info "Custom Engage alerts"
-> During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) and [Audience size change alerts](/docs/engage/audiences/#audience-size-change) alerts, but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) and [Audience size change](/docs/engage/audiences/#audience-size-change) alerts, but these alerts won't appear in the Monitor tab. 
 
 ## Users alerts
 - **Access Request Created**: A user in your workspace requested access to a resource that they don't currently have permission to view. For more information, see the [Request Access](/docs/segment-app/iam/membership/#request-access) documentation. 
