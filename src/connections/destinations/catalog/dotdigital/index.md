@@ -30,5 +30,5 @@ Before using the Add Context to List Action, complete the following prerequisite
 - Data Fields: [Create or edit your data fields in Dotdigital](https://support.dotdigital.com/en/articles/8198833-create-delete-and-edit-custom-data-fields), then return to the Segment app, open the event mapping, and map Segment properties to Dotdigital data fields.
 
 ### Enroll Contact to Program
-When you use the Enroll Contact to Program action, Dotdigital creates a contact for the identifier you provide, if they don't exist already.
+When you use the Enroll Contact to Program action, Dotdigital creates a contact for the identifier you provide, if the contact doesn't already exist. 
 
