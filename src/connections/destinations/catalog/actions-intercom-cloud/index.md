@@ -51,4 +51,4 @@ When you use the Identify Company action, Segment creates or updates a company's
 ### Why do I get a 404 Not Found error when sending Track events to Intercom?
 A `404 Not Found` error typically occurs when attempting to update a user in Intercom who does not yet exist in the system. This can happen if an Identify event, which includes the corresponding `userId`, was not sent before the Track event that resulted in the `404` error.
 
-To resolve this, ensure that Identify events are sent **before** Track events to guarantee proper processing and avoid errors.
+To resolve this, ensure that Identify events are sent **before** Track events to ensure proper processing and avoid errors.
