@@ -86,7 +86,7 @@ Source insert functions only work for event sources, not object sources or rETL.
 
 ##### What is the expected latency for a source insert function?
 
-Typically, it takes a source insert function between 200 milliseconds to 5 seconds to complete, based on the complexity of the function. The default timeout is 5 seconds but can be increased to 60 seconds. 
+The source insert function typically completes in 200 milliseconds to 5 seconds, depending on its complexity. The default timeout is 5 seconds but can be increased to 60 seconds. 
 
 ##### What is the runtime environment?
 
