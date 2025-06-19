@@ -6,7 +6,7 @@ title: Eagle Eye (Actions) Destination
 
 [Eagle Eye](https://eagleeye.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} delivers real-time loyalty and promotions solutions for enterprise brands, enabling seamless integration with leading customer data platforms and marketing activation tools. Their platform connects digital and in-store experiences, accelerating personalization and campaign delivery through extensible APIs and pre-built connectors.
 
-This destination is maintained by Eagle Eye. For any issues with the destination, [contact their Support team](mailto:platform-integrations@eagleeye.com).
+This destination is maintained by Eagle Eye. For any issues with the destination, [contact their Support team](mailto:support@eagleeye.com).
 
 ## Getting started
 
