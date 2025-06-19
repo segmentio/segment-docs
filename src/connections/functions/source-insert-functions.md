@@ -36,7 +36,7 @@ Insert functions can define handlers for the following message types:
 - `onAlias`
 - `onDelete`
 
-The default source code template includes handlers for all event types. Just implement the types you need and skip the ones you don’t. For event types you want to send through, return the event in the respective event handler.
+The default source code template includes handlers for all event types. Implement the types you need. For event types you want to send through, return the event in the respective event handler.
 
 ### Using the Sources tab
 
