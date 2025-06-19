@@ -23,7 +23,7 @@ To create a source insert function from Segment’s catalog:
 
 4. Click **Next: Configure & Create** to add a function name, description (optional), and function logo (optional).
 
-5. Click **Create Function** to save your insert function. The new source insert function will be displayed in the Functions tab. 
+5. Click **Create Function** to save your insert function. The new source insert function displays in the Functions tab. 
 
 #### Coding the source insert function
 
