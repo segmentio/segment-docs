@@ -70,7 +70,7 @@ This is similar to Source, Destination, and Insert Functions.
 
 The errors listed are all permanent errors, except `RetryError`. When a `RetryError` is thrown, Segment will reattempt to run the function a set number of times before permanently erroring out.
 
-### Source insert functions FAQs
+### FAQs
 
 ##### Why does the Delivery Overview tab not display any errors that occur within the source insert function?
 
