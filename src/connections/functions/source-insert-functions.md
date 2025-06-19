@@ -74,7 +74,7 @@ The errors listed are all permanent errors, except `RetryError`. When a `RetryEr
 
 ##### Why does the Delivery Overview tab not display any errors that occur within the source insert function?
 
-If errors arise or events are dropped, they will appear as if the events never flowed from the source.
+If errors arise or events are dropped, they appear as if the events never flowed from the source.
 
 ##### Can I test the function with different event types?
 
