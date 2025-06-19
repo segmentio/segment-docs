@@ -90,7 +90,7 @@ The source insert function typically completes in 200 milliseconds to 5 seconds,
 
 ##### What is the runtime environment?
 
-Segment supports Node.js V18. The dependencies listed [here](https://segment.com/docs/connections/functions/insert-functions/#runtime-and-dependencies){:target=”_blank”} are installed in the function. The following dependencies are also installed: 
+Segment supports Node.js V18 and installs the dependencies listed [here](https://segment.com/docs/connections/functions/insert-functions/#runtime-and-dependencies){:target=”_blank”} in the function.  Segment also installs the following dependencies: 
 - `@azure/identity` exposed as `azure.identity`
 - `@azure/event-hubs` exposed as `azure.eventHubs`
 - `@azure/synapse` exposed as `azure.synapse`  
