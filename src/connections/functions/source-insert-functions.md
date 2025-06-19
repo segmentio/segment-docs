@@ -72,7 +72,7 @@ The errors listed are all permanent errors, except `RetryError`. When a `RetryEr
 
 ### Source insert functions FAQs
 
-##### The Delivery Overview tab does not display any errors that occur within the source insert function.
+##### Why does the Delivery Overview tab not display any errors that occur within the source insert function?
 
 If errors arise or events are dropped, they will appear as if the events never flowed from the source.
 
