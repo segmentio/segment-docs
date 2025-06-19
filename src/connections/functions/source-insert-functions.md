@@ -80,7 +80,7 @@ If errors arise or events are dropped, they will appear as if the events never f
 
 You can test the function with different event types from the **Test** tab in the code editor, similar to other functions.
 
-##### Can I use source insert functions for all types of Source?
+##### Can I use source insert functions for all types of sources?
 
 Source insert functions only work for event sources, not object sources or rETL.
 
