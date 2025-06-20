@@ -15,7 +15,7 @@ There are two ways you can access source insert functions from your Segment work
 
 To create a source insert function from Segment’s catalog:
 
-1. Navigate to **Connections** > **Catalog** > **Functions** and click **New Function**.
+1. Navigate to **Connections > Catalog > Functions** and click **New Function**.
 
 2. In the Select Function Type screen, select **Source Insert** and click **Next: Build Function**.
 
