@@ -60,7 +60,7 @@ You can test your source insert function with sample events or a manual configur
 Test results appear under **Output**, showing whether the function ran successfully or failed.
 
 
-### Connecting a source insert function to a source
+### Connect a source insert function to a source
 
 For data to flow downstream after transformation, connect your source insert function to a source. To do this:
 
