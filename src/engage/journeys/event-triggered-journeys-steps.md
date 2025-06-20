@@ -173,7 +173,7 @@ You can use a Data split to branch profiles based on traits or audience membersh
 
 This setup helps tailor journey experiences using reliable, preexisting data. Because the Data split step evaluates conditions instantly, it works best with traits or audience membership that Segment has already computed before the profile enters the step.
 
-## Randomized Split
+## Randomized Split (V2)
 
 The **Randomized Split** step lets you experiment with and test the performance of different journey paths. You can add up to five branches, assign each one a percentage, and Segment will randomly send users down one of the branches based on the configured distribution.
 
@@ -181,7 +181,7 @@ This step is useful for A/B testing, holdout groups, and comparing different cha
 
 For example, you might create a randomized split that sends 40% of users to an email campaign, 40% to an SMS campaign, and 20% to a control group. Once users move through the split, you can evaluate which approach performed best.
 
-### How randomized split works
+### How Randomized Split works
 
 When a profile reaches the Randomized Split step:
 
@@ -189,18 +189,18 @@ When a profile reaches the Randomized Split step:
 2. The profile immediately moves down the assigned path.
 3. By default, if a user re-enters the journey later, they’re assigned a new random branch. You can optionally choose to keep them in the same branch each time they re-enter.
 
-Each journey instance (epoch) is evaluated independently. This means a user could be assigned to different branches across multiple entries, unless you enable consistent assignment.
+Segment evaluates each journey instance independently. This means a user could be assigned to different branches across multiple entries, unless you enable consistent assignment.
 
 ### Configuration options
 
 You can configure a Randomized Split step with the following options:
 
-| Setting                         | Description                                                                 |
-|---------------------------------|-----------------------------------------------------------------------------|
-| Branches                        | Add up to five branches. Each branch must be assigned a percentage.        |
-| Distribution percentages        | Define what portion of users should go down each branch. Total must be 100%. |
-| Branch naming                   | Branches are labeled alphabetically (e.g., Branch A, Branch B).            |
-| Consistent branch assignment    | Optionally ensure a user always enters the same branch on re-entry.        |
+| Setting                      | Description                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------- |
+| Branches                     | Add up to five branches. Each branch must be assigned a percentage.          |
+| Distribution percentages     | Define what portion of users should go down each branch. Total must be 100%. |
+| Branch naming                | Branches are labeled alphabetically (for example, Branch A, Branch B).       |
+| Consistent branch assignment | Optionally ensure a user always enters the same branch on re-entry.          |
 
 Segment blocks publishing if the percentages don’t add up to 100%, or if any percentage is left blank.
 
