@@ -24,8 +24,12 @@ Run `pod install` after the installation to autolink the Firebase SDK.
 
 See [React Native Firebase](https://rnfirebase.io) and [React Native Firebase Analytics](https://rnfirebase.io/analytics/usage) for more details of Firebase packages.
 
+
+(Change this)
 > info "rnfirebase dependency"
 > You will need to follow the [install guide](/docs/connections/sources/catalog/libraries/mobile/react-native/classic) for the rnfirebase dependency too. This may include adding the `GoogleService-Info.plist` and the `google-services.json` file.
+
+(I recommend getting rid of this as the old RN library is not longer supported or just mention that they will need to install `GoogleService-Info.plist` and the `google-services.json` file. which is shown in the above link: https://rnfirebase.io/ )
 
 
 ## Using the Plugin in your App
