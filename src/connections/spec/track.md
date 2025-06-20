@@ -121,6 +121,9 @@ _For instructions on how to pass fields to the context object for a specific lib
 
 Segment's Actions destinations allows your team to build individual actions that are triggered based on a set of configured conditions. By adding the user's latest traits to the Track event's `context.traits` object, its possible to build two separate Actions to be triggered by this single event. For example, if your team would like to send an Identify event anytime the specific Track event "Button Clicked" is triggered, simply add the available traits into the Track event's payload, then build a destination Actions for the Track event : `Event Name is Button Clicked`, and a destination Action for the Identify event : `All of the following conditions are true: Event Name is Button Clicked, Event Context traits exists`, and then both Actions will have access to reference the `context.traits` fields within its mappings.
 
+> info "Unify profiles require Identify calls"
+> Adding user traits to a Track or Page call using `context.traits` lets you send that data to Actions destinations, but it won’t update the user's profile in Unify. To update traits in Unify, use an Identify call instead.
+
 For more information on the context object, please see the [Spec: Common Fields](https://segment.com/docs/connections/spec/common/#context) documentation.
 
 <table>
