@@ -7,9 +7,6 @@ Journey exit rules automatically remove users from a journey when they meet spec
 
 This page explains how exit rules work, how to configure them, when to use them, and how to track exits in your journey analytics. You'll also find example use cases, best practices, and key behavior notes to help you get started.
 
-> info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 ## How exit rules work
 
 Segment continuously evaluates exit rules as users move through a journey. If a user performs an event that matches one of the configured rules, they exit immediately from their current step.

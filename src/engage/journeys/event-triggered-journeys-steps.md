@@ -7,9 +7,6 @@ plan: engage-foundations
 
 Steps are the building blocks of a journey. This page explains the **Hold Until**, **Send to Destination**, and **Data split** steps, which enable precise control over journey progression and data delivery. 
 
-> info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
-
 ## Hold Until: smart pauses in journeys
 
 The **Hold Until** step adds a deliberate pause in a journey, waiting for specific user actions or a predefined time limit before progressing. This lets you create highly personalized experiences by responding to user behavior (or the lack thereof) at the right moment.
