@@ -11,7 +11,7 @@ There are two ways you can access source insert functions from your Segment work
 - From the Connections catalog.
 - From the Sources tab. 
 
-## Creating a Source Insert Function
+## Create a Source Insert Function
 
 To create a source insert function from Segment’s catalog:
 
