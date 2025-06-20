@@ -2,16 +2,16 @@
 title: Source Insert Functions
 ---
 
-> info "Source Insert Function is in Public Beta"
+Use Source Insert Functions to enrich, transform, or filter your data before it flows downstream to destinations.
+
+> info "Source Insert Function is in public beta"
 > Source Insert Function is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-## Create source insert functions 
-
 There are two ways you can access source insert functions from your Segment workspace:
-- From the [Connections catalog](#using-the-catalog).
-- From the [Sources tab](#using-the-sources-tab). 
+- From the Connections catalog.
+- From the Sources tab. 
 
-### Using the catalog
+## Creating a Source Insert Function
 
 To create a source insert function from Segment’s catalog:
 
@@ -23,9 +23,11 @@ To create a source insert function from Segment’s catalog:
 
 4. Click **Next: Configure & Create** to add a function name, description (optional), and function logo (optional).
 
-5. Click **Create Function** to save your insert function. The new source insert function displays in the Functions tab. 
+5. Click **Create Function** to save your insert function. The new source insert function displays in the Functions tab.
 
-#### Coding the source insert function
+You can also go to **Conections** > **Sources** to create a source insert function.
+
+### Coding the source insert function
 
 Insert functions can define handlers for the following message types:
 - `onIdentity`
@@ -36,15 +38,7 @@ Insert functions can define handlers for the following message types:
 - `onAlias`
 - `onDelete`
 
-The default source code template includes handlers for all event types. Implement the types you need. For event types you want to send through, return the event in the respective event handler.
-
-### Using the Sources tab
-
-You can also create a source insert function from Sources.
-
-1. Navigate to **Connections** > **Sources**.
-2. Select your source and go to the **Functions** tab.
-3. Click **Create insert function** to create your insert function from scratch. 
+The default source code template includes handlers for all event types. Implement the types you need. For event types you want to send through, return the event in the respective event handler. 
 
 ### Connecting a source insert function to a source
 
@@ -68,9 +62,9 @@ You can `throw` the following pre-defined error types to indicate that the funct
 
 This is similar to Source, Destination, and Insert Functions. 
 
-The errors listed are all permanent errors, except `RetryError`. When a `RetryError` is thrown, Segment will reattempt to run the function a set number of times before permanently erroring out.
+The errors listed are all permanent errors, except `RetryError`. When a `RetryError` is thrown, Segment reattempts to run the function a set number of times before permanently erroring out.
 
-### FAQs
+## FAQs
 
 ##### Why does the Delivery Overview tab not display any errors that occur within the source insert function?
 
