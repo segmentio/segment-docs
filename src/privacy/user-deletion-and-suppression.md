@@ -14,22 +14,32 @@ All deletion and suppression actions in Segment are asynchronous and categorized
 - Your Segment Workspace (Settings > End User Privacy)  
 - [Segment's Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"}. You can delete up to 5000 `userId`s per call using the Public API. 
 
-With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes Regulations to all sources in your workspace.
+With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes Regulations to all sources in your workspace. 
 
 > warning "Data sent to device-mode destinations cannot be suppressed"
-> Destinations set up in device mode are sent directly to destinations and bypass the point in the pipeline where Segment suppresses events. 
+> Destinations set up in device mode are sent directly to destinations and bypass the point in the pipeline where Segment suppresses events.
 
-The following regulation types are available:
+Segment has 2 types of Regulations - Segment-only Regulations, or those that only impact data from Segment systems, and Segment & destination Regulations, or Regulations that Segment completes on internal systems and then forwards to your connected destinations. 
+
+While both Regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only regulations. 
+
+To send more than 110,000 Segment-only Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
+
+### Segment-only Regulations
+The following Segment-only Regulation types are available:
 
 - **SUPPRESS_WITH_DELETE_INTERNAL*:** Suppress new data and delete from Segment internal systems only  
 - **DELETE_INTERNAL*:** Delete data from Segment internal systems only  
 - **SUPPRESS_ONLY***: Suppress new data without deleting existing data  
 - **UNSUPPRESS*:** Stop an ongoing suppression  
+
+### Segment & destination Regulations
+
+The following Segment & destination Regulations are available:
+
 - **SUPPRESS_WITH_DELETE:** Suppress new data and delete existing data  
 - **DELETE_ONLY:** Delete existing data without suppressing any new data
 
-> info "All regulations are rate limited to 110,000 users within a 30-day period"
-> To send more than 110,000 `SUPPRESS_ONLY`, `UNSUPRESS`, `DELETE_INTERNAL` and/or `SUPPRESS_WITH_DELETE_INTERNAL` Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Deletion Support
 
@@ -47,13 +57,23 @@ Warehouse deletions occur using a DML run against your cluster or instance. Segm
 <!--- not supported yet > warning "Connected warehouses deletions"
 > Segment will attempt to delete messages with the target `userId` from your connected warehouses for 7 days. If, after 7 days, Segment cannot delete all identified messages from your connected data warehouse, Segment displays a status of `unsuccessful`. If Segment is unable to delete all identified messages, you will be responsible for removing any --->
 
-#### Deletion requests tab
+### Deletion requests tab
 
-The deletion requests tab shows a log of all regulations and their status.
+The deletion requests tab shows a 30-day overview of your deletions pipeline, including a regulations usage tracker and a deletion requests status table. 
 
-In the Segment App (Settings > End User Privacy > Deletion Requests), you can click a `userId` to view its status in Segment internal systems and in the connected destinations.
+To navigate to the deletion requests tab, open the Segment app and navigate to **Settings** > **End-user Privacy** > **Deletion Requests**.
 
-The deletion request can have one of the following statuses:
+#### Regulations usage tracker
+
+The usage tracker on the deletion requests tab shows you how many Segment & destination regulations and how many Segment-only regulations you have remaining for the calendar month. 
+
+#### Deletion requests status 
+
+The deletion requests status table allows you to see the status of each of the regulations that you've submitted, including if the regulation was forwarded to your destinations, the deletion type, the date the regulation was received, and the date the regulation was completed. 
+
+If you need to verify that a information about a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in the connected destinations.
+
+A deletion request can have one of the following statuses:
 
 1. `INITIALIZED`  
 2. `INVALID`  
@@ -65,9 +85,9 @@ The deletion request can have one of the following statuses:
 
 When checking the status of deletion requests using Segment's API, the deletion will report an overall status of all of the deletion processes. As a result, Segment returns a `FAILED` status because of a failure on an unsupported destination, even if the deletion from the Segment Internal Systems and supported destinations were completed successfully.
 
-#### Deletion request SLA
+### Deletion request SLA
 
-Segment has a 30-day SLA for completing deletion requests in Segment's internal stores for deletion requests of fewer than 110,000 users made over 30 days. Your requests will be rate limited if you submit more than 110,000 deletion requests within 30 days.
+Segment has a 30-day SLA for completing deletion requests in Segment's internal stores for deletion requests of fewer than 110,000 users made over a calendar month. Your requests will be rate limited if you submit more than 110,000 deletion requests in a calendar month. 
 
 > warning "This 30-day SLA is limited to only Segment's internal stores"
 > Segment cannot guarantee that deletions in your Amazon S3 instance, your connected data warehouse, or other third-party destinations will be completed during that 30-day period.
