@@ -46,7 +46,7 @@ For data to flow downstream after transformation, connect your source insert fun
 
 1. Select the insert function you want to connect to the source. You can edit, delete, and connect the insert function on the side pane. 
 2. Click *Connect a source**.
-3. Select the source you want to connect from the dropdown and click **Connect to Source** to connect. 
+3. Select the source you want to connect to and click **Connect to Source**. 
 
 ### Errors and error handling
 
