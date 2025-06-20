@@ -231,6 +231,14 @@ The destination will automatically recognize the spec'd `orderId` property, and 
 
 If you're using Adjust's iOS SDK, it will automatically takes care of duplicate purchase events. Segment uses Adjust's default deduplication (using `transactionId`) when you send an `orderId` (see the [ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed)).
 
+### Sending in-app events from Adjust to Segment
+
+Customers can forward in-app events from Adjust to Segment by following the steps below:
+
+1. Navigate to the Segment module within the Adjust dashboard.
+2. Go to the **Data sharing** section.
+3. Use the **Map your events** option to select and map the in-app events you'd like to forward to Segment. 
+
 ### In-app purchase receipts
 
 The destination does not currently support in-app purchase receipts. If this is important to you, [reach out to support](https://segment.com/help/contact/){:target="_blank”}.
@@ -246,3 +254,4 @@ By default, our destination enables event buffering for Adjust. This saves your 
 ### Deep linking
 
 The destination does not automatically support deep linking out of the box (you'd need to write code here regardless). This means you can use [Adjust's deep-linking](https://github.com/adjust/ios_sdk#7-set-up-deep-link-reattributions){:target="_blank"} by accessing [the Adjust SDK directly](/docs/connections/sources/catalog/libraries/mobile/ios/#faq).
+
