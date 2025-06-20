@@ -202,18 +202,16 @@ You can configure a Randomized Split step with the following options:
 | Branch naming                | Branches are labeled alphabetically (for example, Branch A, Branch B).       |
 | Consistent branch assignment | Optionally ensure a user always enters the same branch on re-entry.          |
 
-Segment blocks publishing if the percentages don’t add up to 100%, or if any percentage is left blank.
+Segment won't publish your journey if the percentages don’t add up to 100%, or if any percentage is left blank.
 
 > info "Branch assignment is random"  
 > The Randomized Split step uses probabilistic logic to assign users to branches. At lower volumes, actual distribution may not exactly match your configured percentages, but it tends to even out at scale.
 
-### Add a Randomized Split
-
-To add a Randomized Split step:
+To add a Randomized Split to your journey:
 
 1. From the journey canvas, click **+** to add a new step.
 2. Select **Randomized Split**.
-3. Give the step a name.
+3. Give the step a unique name.
 4. Add up to five branches and assign a percentage to each one.
 5. (Optional) Enable **Keep branch assignment consistent** if you want users to always go down the same branch on re-entry.
 6. Click **Save**.
@@ -222,13 +220,9 @@ Once configured, Segment routes profiles through this step based on your distrib
 
 ### Analyze performance
 
-After users pass through the Randomized Split step, you can view historical and in-progress counts for each branch in the **Journey Overview**.
+After users pass through the Randomized Split step, you can view historical and in-progress counts for each branch in the Journey Overview.
 
-You can measure results by:
-
-- Total journey instances (epochs)
-- Unique profiles
-- Funnel view or in-progress view
+You can measure results by total journey instances, unique profiles, funnel view, and in-progress view.
 
 This helps you evaluate which branch is performing best and informs how you might structure future journeys.
 
