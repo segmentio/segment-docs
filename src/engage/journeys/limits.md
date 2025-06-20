@@ -1,9 +1,9 @@
 ---
-title: Journeys Product Limits
+title: Journeys (V2) Product Limits
 plan: engage-foundations
 ---
 
-This page outlines the current limitations for Event-Triggered (V2) Journeys.
+This page outlines product limitations for Event-Triggered (V2) Journeys.
 
 ## General limits
 
@@ -66,12 +66,10 @@ This page outlines the current limitations for Event-Triggered (V2) Journeys.
 
 ## Privacy and compliance
 
-| Topic             | Details                                                                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| PII access        | See [PII access](docs/segment-app/iam/roles/#pii-access) for more information.                                                 |
-| HIPAA eligibility | [HIPAA-Eligible Services](https://www.twilio.com/content/dam/twilio-com/global/en/other/hipaa/pdf/HIPAA-Eligible-Services.pdf) |
-| GDPR & BCR        | [Complying with the GDPR](https://segment.com/docs/privacy/complying-with-the-gdpr/)                                           |
+| Topic             | Details                                                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PII access        | See [PII access](docs/segment-app/iam/roles/#pii-access) for more information.                                                                   |
+| HIPAA eligibility | [HIPAA-Eligible Services](https://www.twilio.com/content/dam/twilio-com/global/en/other/hipaa/pdf/HIPAA-Eligible-Services.pdf){:target="_blank"} |
+| GDPR & BCR        | See [Complying with the GDPR](/docs/privacy/complying-with-the-gdpr/) for more information.                                   |
 
-Segment complies with GDPR through Binding Corporate Rules (BCR). When a customer churns, BCR-initiated deletion removes the customer’s workspace and data. Customers can request access to, correction of, or deletion of personal data.
-
----
+Segment complies with GDPR through Binding Corporate Rules (BCR). When a customer churns, BCR-initiated deletion removes the customer’s workspace and data. To request access to, correction of, or deletion of personal data, reach out to [Segment support](mailto:friends@segment.com).
