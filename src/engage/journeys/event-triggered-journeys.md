@@ -160,7 +160,7 @@ Follow these steps to access Profile activity:
 2. Select a journey and click the **Profile activity** tab.
 3. Use the filters to narrow down the results by user, time range, event type, or step name.
 
-## Use Cases
+## Use cases
 
 Event-Triggered Journeys can power a variety of real-time, personalized experiences. This section details some common scenarios to help you see how they might work in practice.
 
