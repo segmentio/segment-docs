@@ -25,7 +25,7 @@ To create a source insert function from Segment’s catalog:
 
 5. Click **Create Function** to save your insert function. The new source insert function displays in the Functions tab.
 
-You can also go to **Conections** > **Sources** to create a source insert function.
+You can also go to **Conections** > **Sources** to create a source insert function in the Sources tab.
 
 ### Coding the source insert function
 
@@ -40,13 +40,33 @@ Insert functions can define handlers for the following message types:
 
 The default source code template includes handlers for all event types. Implement the types you need. For event types you want to send through, return the event in the respective event handler. 
 
+### Settings
+
+You can add and edit settings for source insert functions in the code editor. Settings allow you to configure the behavior of your source insert function, which changes how it is displayed to anyone using your function. To set up:
+
+1. Go to the **Settings** tab in the code editor and click **Add Setting**.
+2. Add the details about this setting.
+3. Click **Add Setting** to save the configuration.
+
+As you change values, such as **Label**, **Name**, **Type**, and **Description**, a preview updates showing how your setting will look and work. Once saved, the new setting appears in the **Settings** tab of the function. Here, you can edit or delete the setting.
+
+### Testing
+
+You can test your source insert function with sample events or a manual configuration in the code editor. This allows you to test the functions behavior with real incoming data. To do this:
+
+1. Go to the **Test** tab in the code editor and click **Use Sample Event** or **customize the event yourself** to set up your test data.
+2. Click **Run** to execute the test.
+
+Test results appear under **Output**, showing whether the function ran successfully or failed.
+
+
 ### Connecting a source insert function to a source
 
 For data to flow downstream after transformation, connect your source insert function to a source. To do this:
 
 1. Select the insert function you want to connect to the source. You can edit, delete, and connect the insert function on the side pane. 
-2. Click *Connect a source**.
-3. Select the source you want to connect to and click **Connect to Source**. 
+2. Click **Connect a source**.
+3. Select the source you want to connect to and click **Connect to Source**.
 
 ### Errors and error handling
 
@@ -68,7 +88,7 @@ The errors listed are all permanent errors, except `RetryError`. When a `RetryEr
 
 ##### Why does the Delivery Overview tab not display any errors that occur within the source insert function?
 
-If errors arise or events are dropped, they appear as if the events never flowed from the source.
+Errors in the Delivery Overview tab are not yet visible and is a work in progress. 
 
 ##### Can I test the function with different event types?
 
