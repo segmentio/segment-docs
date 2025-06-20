@@ -418,6 +418,15 @@ For more advance logging, you can check out the [sample code](https://github.com
 
 Segment supports Java 8, 9, 10, and 11. The library may work on other versions of Java as well, however Segment doesn't test for compatibility on unsupported versions.
 
+### Scala
+
+Segment's Java Analytics library is also compatible with Scala, however, some Maven dependencies may cause conflicts with the library resulting in no data reaching the source in your workspace.
+
+Notable dependencies:
+- `com.squareup.okhttp3`
+- `com.google.code.gson`
+ 
+
 ## Snapshots
 
 To add a snapshot dependency to your builds, make sure you add the snapshot repository so your build system can look up the dependency.
