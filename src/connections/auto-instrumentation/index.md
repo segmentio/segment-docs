@@ -83,3 +83,7 @@ You can group signals into complete analytics events, assign names, and map cust
 ## Privacy
 
 Auto-Instrumentation removes personally identifiable information (PII) from breadcrumbs before they get sent to Segment. No user data is visible to Segment.
+
+## Known Limitations
+
+-   Currently, we do not recommend using auto-instrumentation in [EU-based Segment workspaces](https://segment.com/docs/guides/regional-segment/){:target="_blank"}. This functionality is not supported at this time, but we may offer support in the future.
