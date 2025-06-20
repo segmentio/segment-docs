@@ -7,9 +7,6 @@ plan: engage-foundations
 
 This page explains Journey context, which can help you dynamically adapt each journey to individual user interactions, creating highly relevant, real-time workflows.
 
-> info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 ## Overview
 
 Unlike traditional audience-based journeys, which rely solely on user progress through predefined steps, event-triggered journeys capture and store the details of user-triggered events. This shift allows you to access the data that caused users to reach a specific step and use it to make more precise decisions throughout the journey. 
