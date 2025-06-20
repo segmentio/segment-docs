@@ -44,7 +44,7 @@ The default source code template includes handlers for all event types. Implemen
 
 For data to flow downstream after transformation, connect your source insert function to a source. To do this:
 
-1. Select the insert function you want to connect to the source. You can edit, delete, and connect the insert function in the side pane. 
+1. Select the insert function you want to connect to the source. You can edit, delete, and connect the insert function on the side pane. 
 2. Click *Connect a source**.
 3. Select the source you want to connect from the dropdown and click **Connect to Source** to connect. 
 
