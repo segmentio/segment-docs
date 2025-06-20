@@ -411,7 +411,7 @@ POST https://api.segment.io/v1/batch
   </tr>
   <tr>
     <td>`integrations` _Object, optional_</td>
-    <td>The same as [Destinations](/docs/connections/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch.</td>
+    <td>The same as [Integrations](/docs/connections/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch. The top-level integrations settings set global destination rules for all events within the batch, while individual events within the batch can have their own integrations settings, overriding global preferences to route to specific destinations.</td>
   </tr>
 </table>
 
