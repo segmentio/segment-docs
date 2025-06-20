@@ -1,6 +1,8 @@
 ---
 title: Attentive (Actions) Destination
 id: 674f2453916dadbd36d899dc
+beta: true
+hidden: true
 ---
 
 [Attentive](https://www.attentive.com/?utm_source=partner-generated&utm_medium=partner-marketing-&utm_campaign=partner-generated-4.15.22-segment.io){:target="_blank"} with Segment makes it easy to sync customer and event data from Segment to Attentive so that you can send highly personalized and timely messages.
