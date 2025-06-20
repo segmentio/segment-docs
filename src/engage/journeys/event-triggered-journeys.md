@@ -127,13 +127,13 @@ Segment built Event-Triggered Journeys to respond instantly to events, offering 
 
 Segment provides built-in tools to help you understand how users move through your journeys. These features let you debug issues, verify behavior, and review step-by-step activity for individual users.
 
-### Profile Explorer: Journeys tab
+### Profile explorer: Journeys tab
 
-From the **Profile Explorer**, you can view the journeys a user entered. For Event-Triggered Journeys (V2), you’ll see the total number of times the user has entered each journey. V1 journeys display only the current step.
+From Profile explorer, you can view the journeys a user entered. For Event-Triggered Journeys (V2), you’ll see the total number of times the user has entered each journey; V1 journeys display only the current step.
 
-To access Profile Explorer:
+To access Profile explorer:
 
-1. Go to **Profiles** and open a user profile.
+1. From your Segment workspace, go to **Unify > Profile explorer** and open a user profile.
 2. Click the **Journeys** tab.
 
 ### Journey instance timeline
@@ -143,10 +143,10 @@ When you need to understand how a specific user moved through a journey, the Jou
 This view is useful for troubleshooting, testing, or verifying behavior after launch. You’ll see the exact sequence of events and timing for a single journey instance. Follow these steps to access the instance timeline:
 
 - **Option 1**:
-  1. Open a user profile from the Profile Explorer.
+  1. Open a user profile from the Profile explorer.
   2. Click the **Journeys** tab, then click the name of the journey.
 - **Option 2**:
-  1. Go to **Engage > Journeys**, then open the **Overview** tab.
+  1. From your Segment workspace, go to **Engage > Journeys**, then open the **Overview** tab.
   2. Use the **Search for a profile** field to look up the user by email or ID.
   3. Select a journey instance to view its full timeline.
 
@@ -157,7 +157,7 @@ Use the **Profile activity** tab on the journey overview page to see a high-leve
 Follow these steps to access Profile activity:
 
 1. Go to **Engage > Journeys**.
-2. Select a journey and open the **Profile activity** tab.
+2. Select a journey and click the **Profile activity** tab.
 3. Use the filters to narrow down the results by user, time range, event type, or step name.
 
 ## Use Cases
