@@ -105,7 +105,9 @@ Profile raw tables contain records of changes to your Segment profiles and Ident
 
 With raw tables, you have full control over the materialization of Profiles in your warehouse, as well as increased observibility.
 
-Raw tables contain complete historical data when using historical backfill.
+Raw tables contain complete historical data when using historical backfill. 
+
+The `Timestamp` column will be empty for backfilled data because, during backfill, historical profile changes are inferred from the current state of the profile and do not reflect the actual change history.
 
 ### The id_graph_updates table
 

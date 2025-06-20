@@ -1,6 +1,7 @@
 ---
 title: Reddit Audiences
 id: 66f2b0f961bb2128729079bb
+redirect_from: '/connections/destinations/catalog/reddit-audiences/' 
 ---
 
 {% include content/plan-grid.md name="actions" %}
