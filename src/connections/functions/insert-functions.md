@@ -239,8 +239,8 @@ You can manually test your code from the functions editor:
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
 
-> info ""
-> Insert Functions are supported in both the Event Tester and Mapping Tester.
+> success ""
+> Segment supports Insert Functions in both the Event Tester and Mapping Tester.
 
 ## Save and deploy the destination insert function
 
