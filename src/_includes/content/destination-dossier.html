@@ -59,6 +59,9 @@
       <li>This destination is not compatible with <a href="/docs/connections/functions/insert-functions/">Destination Insert Functions.</a></li>
       {% endunless %}    
     {% endif %}
+  {% if destinationInfo.partnerOwned == true %}
+    <li>This integration is <strong>partner owned</strong>. Please reach out to the partner's support for any issues.</li>
+    {% endif %}
   {% if thisDestination == '64c031541451bb784943f809' or thisDestination == '63e42d44b0a59908dc4cacc6' or thisDestination == '642440d46b66b3eeac42b581' %} <li>This destination is <b>not</b> supported in EU workspaces. For more information, see the <a href="/docs/guides/regional-segment/">Regional Segment</a> documentation.</li> {% endif %}
   {% if destinationInfo.status == "PUBLIC_BETA" %}<li>This destination is in <span class="release-pill">Beta</span></li>{% endif %}
   {% if page.engage == true %}<li>This destination is <b>only</b> compatible with <a href="/docs/engage">Twilio Engage</a>.</li>{% endif %}
@@ -105,6 +108,7 @@
 </div>
 {% endunless %}
 {% endif %}
+
 {% unless page.id == '66b1f528d26440823fb27af9' %}
 {% if destinationInfo.partnerOwned == true %}
 <div>
@@ -116,4 +120,5 @@
 {% endif %}
 {% endunless %}
 </div>
+
 {% endif %}

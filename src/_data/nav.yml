@@ -1,13 +1,17 @@
 ---
 sections:
-- section_title: Product
+- section_title: Products
   section:
   - path: "https://segment.com/product/connections/"
     title: Connections
   - path: "https://segment.com/product/protocols/"
     title: Protocols
+  - path: "https://segment.com/product/unify/"
+    title: Unify
   - path: "https://segment.com/product/twilio-engage/"
     title: Twilio Engage
+  - path: "https://segment.com/customer-data-platform/"
+    title: Customer Data Platform 
   - path: "https://segment.com/catalog/"
     title: Integrations Catalog
   - path: "https://segment.com/pricing/"
@@ -36,10 +40,14 @@ sections:
     title: Blog
   - path: "https://segment.com/press/"
     title: Press
-  - path: "https://segment.com/podcast/"
-    title: FTFY Podcast
   - path: "https://segment.com/events/"
     title: Events
+  - path: "https://segment.com/podcast/"
+    title: Podcast
+  - path: "https://segment.com/growth-center/"
+    title: Growth Center
+  - path: "https://segment.com/data-hub/"
+    title: Data Hub
 - section_title: Support
   section:
   - path: "https://segment.com/help/"
@@ -50,7 +58,15 @@ sections:
     title: Resources
   - path: "https://segment.com/recipes/"
     title: Recipes
+  - path: "https://segment.com/services/"
+    title: Professional Services
   - path: "https://segment.com/security/bulletins/"
     title: Security Bulletins
+  - path: "https://segment.com/docs/"
+    title: Documentation
+  - path: "https://community.segment.com/product-updates"
+    title: Release Notes
   - path: "https://segment.com/partners/"
     title: Become a Partner
+  - path: "https://segment.com/resources/cdp/"
+    title: Guide to Customer Data Platforms

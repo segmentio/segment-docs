@@ -55,6 +55,8 @@ The following table shows descriptions of the time frames you can select:
 
 Displayed with each step of your Journey, Step-Level Analytics shows you how many users made it to the step you’re viewing. You can use this data to gain context for how users flow through your Journey.
 
+With a date range filter applied you'll see counts of entries into that step within that date range.
+
 ### Changing the calculation percentage
 
 With Step-Level Analytics, you can configure two settings that give you granular insight into each step’s performance:  

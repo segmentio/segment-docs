@@ -105,7 +105,9 @@ Profile raw tables contain records of changes to your Segment profiles and Ident
 
 With raw tables, you have full control over the materialization of Profiles in your warehouse, as well as increased observibility.
 
-Raw tables contain complete historical data when using historical backfill.
+Raw tables contain complete historical data when using historical backfill. 
+
+The `Timestamp` column will be empty for backfilled data because, during backfill, historical profile changes are inferred from the current state of the profile and do not reflect the actual change history.
 
 ### The id_graph_updates table
 
@@ -194,7 +196,7 @@ Event type tables provide a complete history for each type of event. Segment syn
 Identity Resolution processes these events, and includes a `segment_id`, enabling the data to be joined into a single Profile record. 
 
 > success ""
-> Event type tables will have 2 months of historical data on backfill.
+> Event type tables have 2 months of historical data on backfill. Contact support if you need access to data beyond this period.
 
 Event type tables includes the following tables:
 
@@ -265,19 +267,11 @@ Follow the steps below to change your schema name:
 
 ## Track event tables
 
-Track event tables provide a complete event history, with one table for each unique named Track event. Segment syncs events based on the event sources you've connected to Unify. 
+Track event tables provide a complete event history, with one table for each unique Track event name. Segment syncs events based on the sources you’ve connected to Unify, and includes a column for each event property.
 
-These tables include a full set of Track event properties, with one column for each property.
+Each row also includes a `segment_id`, assigned by Identity Resolution, which you can use to join events to profile records. In rare cases where Identity Resolution fails, the `segment_id` may be `null`.
 
-Segment's Identity Resolution has processed these events, which contain a `segment_id`, enabling the data to be joined into a single profile record. 
-
-> success ""
-> These tables will have two months of historical data on backfill.
-
-> info ""
-> To view and select individual track tables, edit your sync settings after you enable Profiles Sync, and wait for the initial sync to complete.
-
-
+By default, Segment backfills these tables with two months of historical data. After the initial sync completes, you can view and manage individual track tables by editing your sync settings.
 
 ## Tables Segment materializes
 

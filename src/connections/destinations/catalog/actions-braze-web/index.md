@@ -28,6 +28,8 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
 3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
+After setting up your Braze Web Mode (Action) destination in the Segment app, Segment's Analytics.js library starts asynchronously loading the Braze SDK on your page and sending data. Data appears in the Segment CDN in about 45 minutes.  
+
 > info ""
 > If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
 

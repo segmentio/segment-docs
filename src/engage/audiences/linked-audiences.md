@@ -17,12 +17,15 @@ With Linked Audiences, you can:
 
 To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/).
 
+
+See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can utilize Linked Audiences for your destinations.  
+
 ## Prerequisites
 
 Before you begin setting up your Linked Audience, ensure you have:
 
 - [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
-- Set up your warehouse permissions using [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
+- Set up your warehouse permissions using either [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), or [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/data-graph/data-graph/).
 - Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
@@ -59,9 +62,9 @@ After creating your Linked Audience, you will be brought to the Overview page wi
 
 ### Linked Audience conditions 
 
-The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
+The Linked Audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
-The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
+The Linked Audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
 
 Segment displays: 
 
@@ -69,13 +72,13 @@ Segment displays:
 * the top 65 event property and context key values.
 * the top 65 profile trait key values.
 
-You can duplicate your conditions in the audience builder into the same condition group.You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
+You can duplicate your conditions in the audience builder into the same condition group. You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
 
-As you're building your Linked Audience, you can choose from the following conditions:
+When building your Linked Audience, you can add multiple conditions to a single condition group, or create multiple condition groups. Segment evaluates each condition group independently to determine which profiles meet each condition group, and Segment includes the associated entities that allowed each profile to meet the criteria of each condition group. Segment then unions the matched profiles based on whether the operator between the condition groups are using the AND or OR operators to combine the result set. You can choose from the following conditions as you're building your Linked Audience:
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch. |
 | without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
 | with [ trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
 | without [ trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|

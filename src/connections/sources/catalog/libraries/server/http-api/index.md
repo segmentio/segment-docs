@@ -3,14 +3,17 @@ title: HTTP API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
 id: iUM16Md8P2
 ---
-The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment servers, Segment routes your data to any destination you want.
+The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment servers then Segment routes your data to your destination.
 
-Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
+Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are open-source and built for high-performance. But for unsupported use cases, [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) or when you're using [Segment-Managed Custom Domain](/docs/connections/sources/custom-domain/), you may want to send data to Segment's HTTP API directly.
 
 > info "HTTP API sources in EU workspaces should use the `events.eu1.segmentapis.com` endpoint"
 > If you are located in the EU and use the `https://api.segment.io/v1/` endpoint, you might not see any errors, but your events will not appear in the Segment app. For more information about regional support, see the [Source Regional support](/docs/guides/regional-segment/#source-regional-support) documentation. 
 
 ## Headers
+
+> warning "HTTP API public IP addresses are subject to change"
+> The public IP addresses of the HTTP API service are not static and may change without notice. If you are caching the resolved IP address or directly using the IP for submission, you must implement a DNS refresh at least once every 24 hours. Failing to do so may result in submission failures if the underlying IPs change. To ensure long-term reliability, Segment **strongly recommends** using the DNS hostname rather than hardcoding IPs. 
 
 ### Authentication
 
@@ -284,7 +287,7 @@ Find more details about Group including the **Group payload** in the [Segment Sp
 
 ## Alias
 
-`Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of Segment's destinations.
+Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of Segment's destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
@@ -481,4 +484,8 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
+2. Make sure that you're calling a Segment API method after the library is successfully installed: [Identify](#identify), [Track](#track), and so on.
+
+### Experiencing `5xx` errors
+
+If you're experiencing `5xx` errors, refresh the IP address you use to invoke Segment's HTTP API. 

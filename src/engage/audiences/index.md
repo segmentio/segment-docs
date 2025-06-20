@@ -83,7 +83,7 @@ If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is mi
 
 **Note**: Timezones seen in the UI are based on your local timezone, but are converted to UTC on the backend.
 
-### Funnel Audiences
+### Funnel audiences
 
 Funnel audiences allow you to specify strict ordering between two events. This might be the case if you want an event to happen or not happen within a specific time window, as in the following example:
 
@@ -106,21 +106,23 @@ See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more
 
 You can send audiences and computed traits to third-party services in Segment's [Destinations catalog](/docs/connections/destinations/).
 
-Segment's Connections pipeline first collects and sends events from your Source to your Destination. Built on top of Connections, Engage then uses the same Source events to let you create Audiences and computed traits within Segment. You can then send the Audience or computed trait you've built to your Destination(s).
+Segment's Connections pipeline first collects and sends events from your Source to your destination. Built on top of Connections, Engage then uses the same source events to let you create Audiences and computed traits within Segment. You can then send the audience or computed trait you've built to your destinations.
+
+See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can utilize Linked Audiences for your destinations.  
 
 > info ""
-> Because Engage only sends Audiences and computed traits to Destinations, it doesn't replace a standard event pipeline. Connect a Source directly to a Destination if you want the Destination to receive all events that Segment gathers.
+> Because Engage only sends audiences and computed traits to destinations, it doesn't replace a standard event pipeline. Connect a source directly to a destination if you want the destination to receive all events that Segment gathers.
 
-### Connect your Audience to a Destination
+### Connect your audience to a destination
 
 > warning "Audience Keys"
-> Avoid using the same Audience key twice, even if you've deleted the original Audience.
+> Avoid using the same audience key twice, even if you've deleted the original audience.
 
-Once you've previewed your Audience, you can choose to connect it to a Destination or keep the Audience in Segment and export it as a CSV file download.
+Once you've previewed your audience, you can choose to connect it to a destination or keep the audience in Segment and export it as a CSV file download.
 
-If you already have Destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one Destination configuration per Destination type.
+If you already have destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one destination configuration per destination type.
 
-When you create an Audience, Segment starts syncing your Audience to the Destinations you selected. Audiences are either sent to Destinations as a boolean user-property or a user-list, depending on what the Destination supports. Read more about [supported Destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
+When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences are either sent to Destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [supported destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
 
 For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
 
@@ -133,11 +135,11 @@ For step-by-step instructions on how to connect an audience to a destination, se
 
 ## Understanding compute times
 
-Because a number of factors (like system load, backfills, or user bases) determine the complexity of an Audience, some compute times take longer than others.
+Because a number of factors (like system load, backfills, or user bases) determine the complexity of an audience, some compute times take longer than others.
 
-As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
+As a result, **Segment recommends waiting at least 24 hours for an audience to finish computing** before you resume working with the audience.
 
-From the Overview page, you can view Audience details including the current compute status and a progress bar for real-time and batch Audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
+From the Overview page, you can view audience details including the current compute status and a progress bar for real-time and batch audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
 
 > info "Viewing compute progress"
 > When you create a real-time Audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
@@ -166,28 +168,35 @@ Engage displays the following compute statuses for Audiences and Traits.
 
 #### Batch computations
 
+> warning "Starting June 2nd, 2025, disabled batch computations don't automatically backfill data when re-enabled"
+> If you disable and re-enable a batch computation, Segment does not automatically create a backfill. Any data Segment receives during the disabled period is not sent to your Destination after you re-enable your batch computation. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
+>
+> Segment is releasing this feature on a phased rollout plan, and expects this to be available to all customers by July 18, 2025.
+
+
+
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
 | Preparing                 | Engage is preparing the computation.  |
-| Computing                 | Engage is computing the Audience or Trait.  |
+| Computing                 | Engage is computing the audience or trait.  |
 | Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence. When you edit a batch Audience or Trait, Engage displays the compute status as `Live` and incorporates your edits in the next scheduled sync.                 |
 | Not Computing             | Engage displays this status when there are no destinations connected or `Compute without connected destinations` isn't selected.         |
-| Disabled                  | The Audience or Trait is disabled.    |
+| Disabled                  | The audience or trait is disabled.    |
 | Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.    |
 
 
 ## Real-time compute compared to batch
 
-Real-time Compute allows you to update traits and Audiences as Segment receives new events. Real-time Compute unlocks exciting use cases:
+Real-time Compute allows you to update traits and audiences as Segment receives new events. Real-time Compute unlocks these use cases:
 
 - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
 - **Instant Messaging:** Trigger messages in email, live chat, and push notifications instantly, to deliver immediate experiences across channels.
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
 > warning ""
-> By default, Segment creates all Audiences as real-time computations. There are however, a few exceptions which can only be supported as batch computations, one example is [Funnel Audiences](#funnel-audiences). The Audience builder will determine and indicate whether the Audience is a real-time or batch computation. 
+> By default, Segment creates all audiences as real-time computations. There are however, a few exceptions which can only be supported as batch computations, one example is [Funnel Audiences](#funnel-audiences). The audience builder will determine and indicate whether the audience is a real-time or batch computation. 
 
-To create a new Audience or Trait:
+To create a new audience or trait:
 
 1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **Create**.
 
@@ -195,9 +204,9 @@ To create a new Audience or Trait:
 - A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
 - Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). Unchecking **Include Historical Event Data** computes values without historical event data, using only data arriving after audience creation.
 
-3. Select destinations to connect, then review and create your Audience or Trait.
+3. Select destinations to connect, then review and create your audience or trait.
 
-While Engage is computing, use the Audience Explorer to see users or accounts that enter your Audience. Engage displays the Audience as computing in the Explorer until at least one user or account enters.
+While Engage is computing, use the Audience Explorer to see users or accounts that enter your Audience. Engage displays the audience as computing in the Explorer until at least one user or account enters.
 
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
@@ -205,31 +214,31 @@ While Engage is computing, use the Audience Explorer to see users or accounts th
 > info "Real-time and batch computation"
 > By default, Segment creates all audiences as real-time computations. However, some conditions require batch computation. For example, [funnel audiences](#funnel-audiences) can only be computed in batch mode. The Audience builder determines whether an audience is real-time or batch based on the conditions applied.
 
-### Editing Realtime Audiences and Traits
+### Editing realtime audiences and traits
 
 Engage supports the editing of realtime Audiences and Traits, which allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
 
-To edit a realtime Trait or Audience, follow these steps:
+To edit a realtime trait or audience:
 
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
-2. Select the realtime Audience or Trait you want to edit.
+2. Select the realtime audience or trait you want to edit.
 3. Select the **Builder** tab and make your edits.
 4. Preview the results, then select **Create Audience** to confirm your edits.
 
-Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait.
+Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 
 > warning ""
 > If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
 
 > warning ""
-> It is not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
+> It's not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
 
 > warning ""
 > You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions
 
-## Monitor the health of your Audience syncs
+## Monitor the health of your audience syncs
 
-Use Segment's [Delivery Overview](#delivery-overview) and [Alerting](#alerting) features to monitor the health of your Audience syncs and get notifications when event volume spikes or drops. 
+Use Segment's [Delivery Overview](#delivery-overview) and [Alerting](#alerting) features to monitor the health of your audience syncs and get notifications when event volume spikes or drops. 
 
 ### Delivery Overview
 
@@ -242,14 +251,14 @@ Delivery Overview has three core features:
 
 For more information about the breakdown and discard tables, see the [Delivery Overview](/docs/connections/delivery-overview/) documentation.
 
-To view Delivery Overview for an Audience:
+To view Delivery Overview for an audience:
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**.
-2. Find an Audience, click the **(...)** menu, and select Delivery Overview. 
+2. Find an audience, click the **(...)** menu, and select **Delivery Overview**. 
 3. On the Delivery Overview page, select the Audience dropdown to filter by a specific Audience, select the Date range dropdown to filter by a specific time period, or use the Show metrics toggle to view your metrics as percentages.
 
 #### Steps in the pipeline view
 
-By default, Segment displays Delivery Overview information for all Audiences connected to your destination. You can filter your Delivery Overview pipeline view by an individual Audience for more granular data. 
+By default, Segment displays Delivery Overview information for all audiences connected to your destination. You can filter your Delivery Overview pipeline view by an individual audience for more granular data. 
 
 You can also further refine the data displayed on the pipeline view using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, _85% of events_ or _a 133% increase in events_) or as counts (_13 events_ or _an increase of 145 events_.) Delivery Overview shows percentages by default.
 
@@ -268,18 +277,18 @@ Audiences have the following steps in the pipeline view:
 
 ### Alerting
 
-Create alerts related to the performance and throughput of Audience syncs and receive in-app, email, and Slack notifications when event volume fluctuations occur.
+Create alerts related to the performance and throughput of audience syncs and receive in-app, email, and Slack notifications when event volume fluctuations occur.
 
 > info "Generate a Slack webhook to receive Slack notifications"
 > To receive an alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
-To access Audience alerting, navigate to **Engage > Audiences**, select an Audience, and click the Alerts tab.
+To access audience alerting, navigate to **Engage > Audiences**, select an audience, and click the **Alerts** tab.
 
-On the Alerts tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
+On the **Alerts** tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
 
 #### Activation event health spikes or drops
 
-You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your Audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
+You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
 
 To create an Activation event health spikes or drops alert: 
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
@@ -288,7 +297,7 @@ To create an Activation event health spikes or drops alert:
 4. Enter a percentage threshold to trigger activation event health notifications. 
 5. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
-  - **Slack**: Select this to send alerts to one or more channels in your workspace. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
 

@@ -3,11 +3,11 @@ title: Managing identity in Analytics.js
 strat: ajs
 ---
 
-This page explains how Analytics.js identifies users, and passes userID and anonymousID data, and how to override and change this information.
+This page explains how Analytics.js identifies users, passes `userID` and `anonymousID` data, and how to override and change this information.
 
-## Segment ID Persistence
+## Segment ID persistence
 
-To ensure high fidelity, first-party customer data, Segment writes the user's IDs to the user's local storage, and uses that as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
+To ensure high fidelity, first-party customer data, Segment writes the user's IDs to the user's local storage, and uses that as the Segment ID on the cookie whenever possible. Local storage is meant for storing this type of first-party customer information.
 
 If a user returns to your site after the cookie expires, Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, sets it as the user's ID again in the new cookie. If a user clears their cookies _and_ `localstorage`, all of the IDs are removed, and the user gets a completely new `anonymousID` when they next visit the page.
 
@@ -30,8 +30,8 @@ Example:
 ajs_anonymous_id=%2239ee7ea5-b6d8-4174-b612-04e1ef3fa952
 ```
 
-You can override the default-generated anonymousID in code using the methods described below:
-- [Set anonymousId from the Segment snippet](#override-the-anonymous-id-from-the-segment-snippet) (before the `ready` method returns)
+You can override the default-generated `anonymousID` in code using the methods described below:
+- [Set anonymousId from the Segment snippet](#override-the-anonymous-id-from-the-segment-snippet) (before the Ready method returns)
 - [Use a call to override the anonymousID](#override-the-default-anonymous-id-with-a-call)
 - [Set `anonymousId` in the `options` object of a call](#override-the-anonymous-id-using-the-options-object)
 
@@ -43,9 +43,9 @@ You can get the user's current `anonymousId` using the following call:
 analytics.user().anonymousId();
 ```
 
-If the user's `anonymousId` is `null` (meaning not set) when you call this function, Analytics.js automatically generated and sets a new `anonymousId` for the user.
+If the user's `anonymousId` is `null` (meaning not set) when you call this function, Analytics.js automatically generates and sets a new `anonymousId` for the user.
 
-If you are using the npm library, the previous call returns a promise for `user()`. As a workaround, you'll need to grab the user's current `anonymousId` in the following way: 
+If you're using the npm library, the previous call returns a promise for `user()`. As a workaround, you'll need to grab the user's current `anonymousId` in the following way: 
 
 ```js
 analytics.instance?.user().anonymousId()
@@ -57,13 +57,13 @@ A user's `anonymousId` changes when any of the following conditions are met.
 
 - The user clears their cookies _and_ `localstorage`.
 - Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session.
-- Your site or app calls `analytics.identify()` with a userId that is different from the current userId.
-- Your site or app is setting `ajs_user_id` to an empty string or calling `analytics.user().id('')` before calling `analytics.identify()`. This sequence of events will result in a new anonymousId being set when `analytics.identify()` is called.
+- Your site or app calls `analytics.identify()` with a `userId` that is different from the current `userId`.
+- Your site or app is setting `ajs_user_id` to an empty string or calling `analytics.user().id('')` before calling `analytics.identify()`. This sequence of events will result in a new `anonymousId` being set when `analytics.identify()` is called.
 
 
 ### Override the Anonymous ID from the Segment snippet
 
-You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method returns.
+You can also set the `anonymousId` immediately inside your Segment snippet, even before the Ready method returns.
 
  ```js
   analytics.load('writekey');
@@ -71,14 +71,14 @@ You can also set the `anonymousId` immediately inside your Segment snippet, even
   analytics.setAnonymousId('ABC-123-XYZ');
 ```
 
-Use this method if you are queueing calls before `ready` returns and they require a custom `anonymousId`. Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
+Use this method if you are queueing calls before Ready returns and they require a custom `anonymousId`. Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
 
 > info ""
-> Device-mode destinations that load their code on your site _might_ also set their own anonymous ID for the user that is separate and different from the Segment generated one. Some destinations use the Segment `anonymousId`. Read the documentation for each Destination to find out if a Destination sets its own ID.
+> Device-mode destinations that load their code on your site _might_ also set their own anonymous ID for the user that is separate and different from the Segment generated one. Some destinations use the Segment `anonymousId`. Read the documentation for each destination to find out if a destination sets its own ID.
 
 ### Override the default Anonymous ID with a call
 
-If the default generated UUID does not meet your needs, you can override it `anonymousId` for the current user using either of the following methods.
+If the default generated UUID does not meet your needs, you can override the `anonymousId` for the current user with either of the following methods:
 
 ```js
 analytics.user().anonymousId('ABC-123-XYZ');
@@ -92,16 +92,18 @@ These methods behave exactly the same.
 
 ### Override the Anonymous ID using the options object
 
-Or in the `options` object of [`identify`](/docs/connections/spec/identify/), [`page`](/docs/connections/spec/page/), or [`track`](/docs/connections/spec/track/) calls, like this:
+You can override the `anonymousID` in the `options` object of [Identify](/docs/connections/spec/identify/), [Page](/docs/connections/spec/page/), or [Track](/docs/connections/spec/track/) calls, like this:
 
 
-Set the anonymousId in the Options object using the format in the following examples.
+Set the `anonymousId` in the `options` object using the format in the following examples.
 
-The custom anonymousId persists when you use these methods, even if you do not explicitly specify the anonymousId in the calls.
+The custom `anonymousId` persists when you use these methods, even if you do not explicitly specify the `anonymousId` in the calls.
 
-For example, after the Track call below sets the anonId, any later track calls from this user will have the anonymousId of `ABC-123-XYZ`, even if it is not explicitly specified in the track call.
+For example, after a Track call sets the `anonymousID` to `ABC-123-XYZ`, any additional Track calls from this user will have the same `anonymousId`, even if it's not explicitly specified in the Track call.
 
 #### Override anonymousId in an Identify call
+
+You can override `anonymousID` with an Identify call. For example:
 
 ```js
 analytics.identify('user_123', {
@@ -113,11 +115,15 @@ analytics.identify('user_123', {
 
 #### Override anonymousId on a Page call
 
+You can override `anonymousID` with a Page call. For example:
+
 ```js
 analytics.page({}, { anonymousId: 'ABC-123-XYZ' });
 ```
 
 #### Override anonymousId on a Track call
+
+You can override `anonymousID` with a Track call. For example:
 
 ```js
 analytics.track('Email Clicked', {
@@ -146,7 +152,7 @@ Consider this Identify event:
 ```js
 analytics.identify('12091906-01011992', {
     plan_id: 'Paid, Tier 2',
-    email: 'grace@usnavy.gov'
+    email: 'grace@example.com'
 });
 ```
 
@@ -166,7 +172,7 @@ analytics.track('Clicked Email', {
 );
 ```
 
-This appends the `plan_id` trait to this Track event. This does _not_ add the name or email, since those traits were not added to the `context` object. You must do this for every following event you want these traits to appear on, as the `traits` object does not persist between calls.
+This appends the `plan_id` trait to the Track event. This does _not_ add the name or email, since those traits were not added to the `context` object. You must do this for every following event you want these traits to appear on, as the `traits` object does not persist between calls.
 
 By default, non-Identify events (like Track or Page) **don't automatically collect user traits** from previous Identify calls. To include traits from an `identify()` event in later events, you'll need to add them manually to the `context.traits` object within the `options` parameter.
 
@@ -180,9 +186,9 @@ Each Analytics.js method has an `options` parameter where you can pass the `cont
 Adding traits to events is especially useful if you're using [Actions destinations](/docs/connections/destinations/actions/), since it makes those traits available for mapping in the destination’s configuration.
 
 
-## Clearing Traits
+## Clearing traits
 
-You can pass an empty object to the `traits` object to clear _all_ cached traits for a User or Group.
+You can pass an empty object to the `traits` object to clear _all_ cached traits for a user or group.
 
 Traits are cached by default when you call the Identify and Group methods. You can clear the `traits` object for the user or group by passing `traits` an empty object:
 
@@ -195,13 +201,13 @@ analytics.group().traits({});
 
 ## Using analytics.user() and analytics.group() 
 
-You can use the `user` or `group` method as soon as the Analytics.js library loads, to return information about the currently identified user or group. This information is retrieved from the user's cookie.
+You can use the User or Group method as soon as the Analytics.js library loads, to return information about the currently identified user or group. This information is retrieved from the user's cookie.
 
 <!-- TODO: retrieves info from cookie, if they have any info - maybe link to the top section-->
 
 
 > success ""
-> **Tip:** You can wrap any reference to `user()` or `group()` in a [ready function block](/docs/connections/sources/catalog/libraries/website/javascript#ready) to ensure that Analytics.js has fully loaded so these methods are available.
+> You can wrap any reference to `user()` or `group()` in a [ready function block](/docs/connections/sources/catalog/libraries/website/javascript#ready) to ensure that Analytics.js has fully loaded so these methods are available.
 
 Examples:
 
@@ -228,7 +234,7 @@ analytics.ready(function() {
 
 ## Anonymizing IP
 
-Segment automatically collects the user's IP address for device-based (iOS, Android, Analytics.js and Xamarin) events.
+Segment automatically collects the user's IP address for device-based (iOS, Android, Analytics.js, and Xamarin) events.
 
 > info "IPv6"
 > At the moment, Segment doesn't support automatically collecting IPv6 addresses.

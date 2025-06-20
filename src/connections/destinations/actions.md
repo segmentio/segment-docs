@@ -231,7 +231,7 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
-- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
+- **Event property** (`is`, `is equals to`, `is not`, `is not equals to`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
 
     You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
@@ -244,8 +244,8 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 > Operators support matching on values with a **string** data type:
 > - `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`
 > 
-> Operators that support matching on values with either a **string** or **numeric** data type:
-> - `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
+> Operators that support matching on values with **numeric** data type:
+> - `is equals to`, `is not equals to`, `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
 > 
 > Operators that support matching on values with a **boolean** data type:
 > - `is true`, `is false`
@@ -261,11 +261,11 @@ The available operators depend on the property's data type:
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 
-> info "Unsupported Special Characters"
-> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields. In mapping fields, the . character is not supported unless it's being used to access an object key. If a string has a . in it, that is not supported.
+> info "Unsupported special characters in trigger fields"
+> Trigger fields don't support double quotes (`"`) or the tilde (`~`) character.
 
-> info "Limitations"
-> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
+> info "Mapping field limitations"
+> In **destination** fields, you can use dot notation to create nested objects and arrays (for example, `info.name` or `info[0].email`), unless the field is enclosed in double quotes (for example, `"user.email"` creates a literal key, not a nested structure). In **source**, dots are only supported for accessing object keys. Literal strings that include a dot (like `user.email`) aren't supported as property names.
 
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:

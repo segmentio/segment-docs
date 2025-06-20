@@ -24,20 +24,20 @@ Now that you've seen Segment in action, step back and think through what a full 
 
 Be prepared to invest time deciding with stakeholders how to track your data, and planning how you'll analyze it. The time you spend here will save you lots of time in the future, as following Segment's best practices allows you to easily change your tracking later.
 
-## Define Business Objectives
+## Define business objectives
 
 <!-- Source: /docs/protocols/data-quality/ (modified)
 -->
 
 Tracking is about learning and taking action. Think about what you want to know about your product or customers. Think about what assumptions need to be tested and what theories need to be proven true or false. Think about the unknowns. Here are some helpful questions to get started:
 
-- What kind of events or data best illustrate or explain how your customers use your product?
+- What kinds of events or data best illustrate or explain how your customers use your product?
 - How do people discover, start using, and paying for your product?
 - What are the most important steps in a customer's journey?
 
-While it may seem obvious, we highly recommend documenting your high-level business objectives. More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base?
+While it may seem obvious, we highly recommend documenting your high-level business objectives. More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups? Drive more incremental revenue among your current customer base?
 
-The best way to answer this question is to interview stakeholders in your organization who will consume the data.
+The best way to answer these questions is to interview stakeholders in your organization who will consume the data.
 
 With your business goals documented, the next step is to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take _before_ signing up? Do specific actions predict a user signing up?
 
@@ -55,7 +55,7 @@ While this list represents a tiny fraction of the user actions you _could_ track
 
 ## Decide what to collect
 
-With your business objectives documented and mapped to user actions, it's time to build standards that you can use when deciding what to track. With your stakeholders, make a list of the actual events (page or screen views, and user actions) that you want to track. Think about all of the ways your users can interact with your site or app
+With your business objectives documented and mapped to user actions, it's time to build standards that you can use when deciding what to track. With your stakeholders, make a list of the actual events (page or screen views, and user actions) that you want to track. Think about all of the ways your users can interact with your site or app.
 
 When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company's needs.
 
@@ -95,7 +95,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Don't create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called "Read Blog Post - Best Tracking Plans Ever", create a "Blog Post Read" event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
 
-- **Don't create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
+- **Don't create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze.
 
 ![An image comparing good and bad naming and collection standards](/docs/protocols/images/asset_nVdJ3ZyA.png)
 
@@ -141,11 +141,11 @@ At Segment, we started out tracking these events:
 - **Source Data Sent**
 - **Subscription Started**
 
-Then we added some peripheral events to to better understand how we're performing, for the following reasons:
+Then we added some peripheral events to better understand how we're performing, for the following reasons:
 
 - **User Invited** When users invite more people to their organization, it's a good indicator that they're engaged and serious about using the product. This helps us measure growth in organizations.
 - **Destination Enabled** Turning on a destination is a key value driver for our customers.
-- **Debugger Call Expanded** When we see that a certain customer has used the live event stream feature a number of times, we can contact see if we can help them debug.
+- **Debugger Call Expanded** When we see that a customer has used the live event stream feature multiple times, we can contact them to see if we can help them debug.
 
 For an Ecommerce company, however, the main events might be something like:
 

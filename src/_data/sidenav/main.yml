@@ -414,8 +414,6 @@ sections:
     title: Introduction
   - path: '/engage/quickstart'
     title: Foundations Onboarding
-  - path: '/engage/use-cases'
-    title: Use Cases
   - section_title: User Subscriptions
     slug: profiles/user-subscriptions
     section:
@@ -448,6 +446,10 @@ sections:
         title: Linked Audiences Overview
       - path:  '/engage/audiences/linked-audiences-limits'
         title: Linked Audiences Limits
+      - path: '/engage/audiences/linked-audiences-braze'
+        title: Linked Audiences with Braze
+      - path : '/engage/audiences/linked-audiences-iterable'
+        title: Linked Audiences with Iterable
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
@@ -584,7 +586,7 @@ sections:
     - path: /privacy/consent-management/configure-consent-management
       title: Configure Consent Management
     - path: /privacy/consent-management/consent-in-unify
-      title: Consent in Unify
+      title: Consent Stored on the Profile
     - path: /privacy/consent-management/consent-in-retl
       title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
