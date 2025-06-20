@@ -173,6 +173,59 @@ You can use a Data split to branch profiles based on traits or audience membersh
 
 This setup helps tailor journey experiences using reliable, preexisting data. Because the Data split step evaluates conditions instantly, it works best with traits or audience membership that Segment has already computed before the profile enters the step.
 
+## Randomized Split (V2)
+
+The **Randomized Split** step lets you experiment with and test the performance of different journey paths. You can add up to five branches, assign each one a percentage, and Segment will randomly send users down one of the branches based on the configured distribution.
+
+This step is useful for A/B testing, holdout groups, and comparing different channels or messaging strategies within a single journey.
+
+For example, you might create a randomized split that sends 40% of users to an email campaign, 40% to an SMS campaign, and 20% to a control group. Once users move through the split, you can evaluate which approach performed best.
+
+### How Randomized Split works
+
+When a profile reaches the Randomized Split step:
+
+1. Segment randomly assigns the profile to one of the branches based on the defined percentages.
+2. The profile immediately moves down the assigned path.
+3. By default, if a user re-enters the journey later, they’re assigned a new random branch. You can optionally choose to keep them in the same branch each time they re-enter.
+
+Segment evaluates each journey instance independently. This means a user could be assigned to different branches across multiple entries, unless you enable consistent assignment.
+
+### Configuration options
+
+You can configure a Randomized Split step with the following options:
+
+| Setting                      | Description                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------- |
+| Branches                     | Add up to five branches. Each branch must be assigned a percentage.          |
+| Distribution percentages     | Define what portion of users should go down each branch. Total must be 100%. |
+| Branch naming                | Branches are labeled alphabetically (for example, Branch A, Branch B).       |
+| Consistent branch assignment | Optionally ensure a user always enters the same branch on re-entry.          |
+
+Segment won't publish your journey if the percentages don’t add up to 100%, or if any percentage is left blank.
+
+> info "Branch assignment is random"  
+> The Randomized Split step uses probabilistic logic to assign users to branches. At lower volumes, actual distribution may not exactly match your configured percentages, but it tends to even out at scale.
+
+To add a Randomized Split to your journey:
+
+1. From the journey canvas, click **+** to add a new step.
+2. Select **Randomized Split**.
+3. Give the step a unique name.
+4. Add up to five branches and assign a percentage to each one.
+5. (Optional) Enable **Keep branch assignment consistent** if you want users to always go down the same branch on re-entry.
+6. Click **Save**.
+
+Once configured, Segment routes profiles through this step based on your distribution settings.
+
+### Analyze performance
+
+After users pass through the Randomized Split step, you can view historical and in-progress counts for each branch in the Journey Overview.
+
+You can measure results by total journey instances, unique profiles, funnel view, and in-progress view.
+
+This helps you evaluate which branch is performing best and informs how you might structure future journeys.
+
 ## Send to Destination
 
 The **Send to Destination** step lets you send journey data to one of your [configured Engage destinations](/docs/connections/destinations/), enabling real-time integration with tools like marketing platforms, analytics systems, or custom endpoints.
