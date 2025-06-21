@@ -210,6 +210,8 @@ sections:
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
         title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/db2-setup
+        title: Db2 Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
         title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
