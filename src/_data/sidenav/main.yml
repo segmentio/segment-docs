@@ -489,6 +489,8 @@ sections:
         title: Event-Triggered Journeys Steps
       - path: /engage/journeys/v2/journey-context
         title: Journey Context
+      - path: /engage/journeys/v2/limits
+        title: Product Limits
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
     - path: '/engage/journeys/use-cases'

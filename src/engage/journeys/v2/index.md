@@ -1,6 +1,8 @@
 ---
 title: Event-Triggered Journeys
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/event-triggered-journeys"
 ---
 
 With Event-Triggered Journeys, you can build real-time, event-based marketing workflows to automate and personalize customer journeys. 
