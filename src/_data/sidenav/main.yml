@@ -470,8 +470,6 @@ sections:
     section:
     - path: '/engage/journeys'
       title: Journeys Overview
-    - path: '/engage/journeys/build-journey'
-      title: 'Build a Journey'
     - path: '/engage/journeys/step-types'
       title: 'Journey Step Types'
     - path: '/engage/journeys/journeys-edits'
@@ -480,6 +478,17 @@ sections:
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
+    - section_title: Journeys V1
+      slug: '/engage/journeys/v1'
+      section: 
+      - path: '/engage/journeys/v1/build-journey'
+        title: 'Build a Journey'
+      - path: '/engage/journeys/v1/step-types'
+        title: 'Journey Step Types'
+      - path: '/engage/journeys/v1/send-data'
+        title: Send Data to Destinations
+      - path: /engage/journeys/v2/limits
+        title: Product Limits
     - section_title: Journeys V2
       slug: '/engage/journeys/v2'
       section: 
@@ -487,6 +496,8 @@ sections:
         title: Overview
       - path: /engage/journeys/v2/event-triggered-journeys-steps
         title: Event-Triggered Journeys Steps
+      - path: /engage/journeys/v2/exit-rules
+        title: Exit Rules
       - path: /engage/journeys/v2/journey-context
         title: Journey Context
       - path: /engage/journeys/v2/limits

@@ -3,6 +3,7 @@ title: Build a Journey
 plan: engage-foundations
 redirect_from:
   - "/personas/journeys/build-journey"
+  - "/engage/journeys/build-journey"
 ---
 
 ## Before you begin
