@@ -5,8 +5,6 @@ redirect_from:
   - "/engage/journeys/event-triggered-journeys-steps"
 ---
 
-
-
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 
 Steps are the building blocks of a journey. This page explains the **Hold Until**, **Send to Destination**, and **Data split** steps, which enable precise control over journey progression and data delivery. 
