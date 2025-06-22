@@ -1,7 +1,11 @@
 ---
 title: Event-Triggered Journeys Steps
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/event-triggered-journeys-steps"
 ---
+
+
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 

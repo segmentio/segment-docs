@@ -480,14 +480,14 @@ sections:
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
-    - section_title: Event-Triggered Journeys
-      slug: '/engage/journeys/event-triggered-journeys'
+    - section_title: Journeys V2
+      slug: '/engage/journeys/v2'
       section: 
-      - path: /engage/journeys/event-triggered-journeys
+      - path: /engage/journeys/v2/
         title: Overview
-      - path: /engage/journeys/event-triggered-journeys-steps
+      - path: /engage/journeys/v2/event-triggered-journeys-steps
         title: Event-Triggered Journeys Steps
-      - path: /engage/journeys/journey-context
+      - path: /engage/journeys/v2/journey-context
         title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
@@ -497,6 +497,9 @@ sections:
       title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
       title: Journeys Glossary
+    - section_title: Journeys V1
+      slug: '/engage/journeys/event-triggered-journeys'
+      section: 
   - section_title: Content
     description: "Design brand-specific templates for your email and SMS campaigns."
     section:
