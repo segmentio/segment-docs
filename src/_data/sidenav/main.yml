@@ -470,14 +470,6 @@ sections:
     section:
     - path: '/engage/journeys'
       title: Journeys Overview
-    - path: '/engage/journeys/step-types'
-      title: 'Journey Step Types'
-    - path: '/engage/journeys/journeys-edits'
-      title: 'Journey Edits and Versioning'
-    - path: '/engage/journeys/send-data'
-      title: Send Data to Destinations
-    - path: '/engage/journeys/journeys-analytics'
-      title: Journeys Analytics
     - section_title: Journeys V1
       slug: '/engage/journeys/v1'
       section: 
@@ -487,8 +479,6 @@ sections:
         title: 'Journey Step Types'
       - path: '/engage/journeys/v1/send-data'
         title: Send Data to Destinations
-      - path: /engage/journeys/v2/limits
-        title: Product Limits
     - section_title: Journeys V2
       slug: '/engage/journeys/v2'
       section: 
@@ -502,6 +492,10 @@ sections:
         title: Journey Context
       - path: /engage/journeys/v2/limits
         title: Product Limits
+    - path: '/engage/journeys/journeys-edits'
+      title: 'Journey Edits and Versioning'
+    - path: '/engage/journeys/journeys-analytics'
+      title: Journeys Analytics
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
     - path: '/engage/journeys/use-cases'
@@ -510,9 +504,6 @@ sections:
       title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
       title: Journeys Glossary
-    - section_title: Journeys V1
-      slug: '/engage/journeys/event-triggered-journeys'
-      section: 
   - section_title: Content
     description: "Design brand-specific templates for your email and SMS campaigns."
     section:
