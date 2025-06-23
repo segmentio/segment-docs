@@ -490,6 +490,8 @@ sections:
         title: Exit Rules
       - path: /engage/journeys/v2/journey-context
         title: Journey Context
+      - path: /engage/journeys/v2/use-cases
+        title: Use Cases
       - path: /engage/journeys/v2/limits
         title: Product Limits
     - path: '/engage/journeys/journeys-edits'
