@@ -500,8 +500,6 @@ sections:
       title: Journeys Analytics
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
-    - path: '/engage/journeys/use-cases'
-      title: Example Journeys Use Cases
     - path: '/engage/journeys/journeys-logic'
       title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
