@@ -25,7 +25,7 @@ Follow these steps to build a prediction:
 - (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
 - Select the event and (optional) property that you want to use to make a prediction.
 5. Select a time period for the prediction. 
-6. (Optional) In **Include all events**, uncheck any events you don't want Segment to factor into the prediction.
+6. (Optional) In **Include all events** and **Include all new traits** uncheck any events or traits you don't want Segment to factor into the prediction.
 7. Click **Calculate**. If you're satisfied with the available data, click **Next**.
 5. (Optional) Connect a Destination, then click **Next**.
 6. Add a name and description for the Trait, then click **Create Trait**.
@@ -34,7 +34,7 @@ Keep the following in mind when you build a prediction:
 
 - Segment lets you predict the likelihood of a customer performing multiple events. 
 - You can choose a time period of 15, 30, 60, 90, or 120 days. 
-- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events sent to Engage. Segment lets you exclude events you don't want included by unselecting **Include all events**, then filtering out any events you want excluded from the model.
+- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events and custom traits sent to Engage. Segment lets you exclude events or traits you don't want included by unselecting **Include all events** or **Include all new traits**. 
 
 In the next section, you'll learn more about the four available predictions.
 
@@ -94,6 +94,9 @@ This table lists the requirements for a trait to compute successfully:
 #### Selecting events (optional)
 
 Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU storefront compared to a US storefront and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is optional, Segment only recommends using it if you have a clear reason in mind for removing events from becoming a factor in the model.
+
+#### Selecting traits (optional)
+Some customers want to specifically include or exclude certain traits that get fed into the model. Today, we only utilize numerical or boolean custom traits found in your space. You have the ability to exclude specific traits from your model. We will attempt to build a model with the traits you selected, but selecting it in the UI does not guarantee that the trait will be factored in. If you keep **Include all new traits** selected, this make sure any new trait that you start tracking will be factored into the model. If you unselect this option, any new traits that you create will not be factored into the model's calculation. 
 
 > info "Predictive Traits and anonymous events"
 > Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.
