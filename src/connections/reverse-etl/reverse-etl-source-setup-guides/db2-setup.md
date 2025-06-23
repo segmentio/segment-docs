@@ -2,6 +2,9 @@
 title: Db2 Reverse ETL Setup
 ---
 
+> info "Db2 Reverse ETL Private Beta"
+> Db2 Reverse ETL is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
 Set up Db2 as your Reverse ETL source.
 
 At a high level, when you set up Db2 for Reverse ETL, the configured database user must have read permissions on any tables involved in the query and write permissions on a managed schema (`SEGMENT_REVERSE_ETL`) that Segment uses to track sync progress. Segment authenticates with your Db2 instance through a username and password. 
