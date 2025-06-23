@@ -70,3 +70,19 @@ To set up Db2 as your Reverse ETL source:
 8. If the connection is successful, click **Add source**.
 
 After successfully adding your Db2 source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
+
+> info "Array and JSON Support"
+> Db2 does not have native `ARRAY` or `JSON` data types. Segment provides a simple convention-based workaround:
+>
+> **JSON columns**  
+> JSON values can be stored as `VARCHAR` or `CLOB`. Segment will detect them as JSON if the column name (or column alias) ends with `_JSON`.
+>
+> Example:  
+> `SELECT data AS data_JSON FROM my_table;`
+>
+>
+> **Array columns**  
+> Arrays can be represented as `VARCHAR` columns with names ending in `_ARRAY`.  
+> The value should be either:
+> - a JSON-encoded array (e.g. `'["a","b","c"]'`), or
+> - a comma-separated string (e.g. `'a,b,c'`).
