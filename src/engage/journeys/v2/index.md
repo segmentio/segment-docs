@@ -1,6 +1,8 @@
 ---
 title: Event-Triggered Journeys
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/event-triggered-journeys"
 ---
 
 With Event-Triggered Journeys, you can build real-time, event-based marketing workflows to automate and personalize customer journeys. 
@@ -96,6 +98,44 @@ For example, in an abandonment journey, suppose a user starts two applications (
 - **Supported destinations:** Only Actions Destinations in the Segment catalog are supported.  
 - **Data mapping:** Ensure all required keys for the destination are properly mapped to avoid errors.
 
+## Duplicate a journey
+
+To save time and avoid recreating steps from scratch, you can duplicate any existing journey.
+
+Duplicating a journey creates a copy of the configuration and opens it in **Draft** mode. You can duplicate both draft and published journeys, but journey names must be unique.
+
+### What gets copied
+
+When you duplicate a journey, Segment copies the following:
+
+- Entry conditions and filters  
+- All journey steps and structure  
+- Destination actions, including:
+  - Event names
+  - Payload configuration
+  - Trait and context enrichment
+  - Attribute mappings
+
+Segment **doesn't** copy the following:
+
+- Journey name (you must enter a new, unique name)
+- Activation destination keys (Segment will regenerate these)
+
+> warning ""
+> If a destination action was disabled in the original journey, it will be enabled by default in the duplicated version.
+
+### How to duplicate a journey
+
+1. Go to **Engage > Journeys** and find the journey you want to duplicate.
+2. Click the **•••** (Options menu), either in the list view or from within the journey.
+3. Select **Duplicate**.
+4. Enter a new name when prompted.
+5. Review the duplicated journey and make any needed changes.
+6. If your journey includes destination sends, be sure to copy the new destination keys into your destination system.
+
+> warning
+> Currently, you can only duplicate journeys within the same Engage space. Duplicating across spaces or workspaces is not supported.
+
 ## Best practices
 
 Follow the best practices in this table to optimize your event-triggered journeys:
@@ -115,9 +155,8 @@ Segment built Event-Triggered Journeys to respond instantly to events, offering 
 - **Entry event requirements**: The entry event you use must already exist in your Segment workspace for it to appear as a selection in journey setup. Make sure that you've already created the event before setting up your journey.
 - **Event property filters**: You can filter event properties using the `equals` or `equals any of` operators. When you apply multiple conditions, filters operate with `AND` logic, meaning all conditions must be true for the event to trigger entry into the journey.
 - **Audience filtering**: You can only use active, pre-existing audience records as filters. For more complex filtering, like specific profile traits or multiple audiences, first [create the audience](/docs/engage/audiences/#building-an-audience) in **Engage > Audiences**, then apply it as a filter once it’s live.
-- **Destination options**: While Event-Triggered Journeys support all [actions-based destinations](/docs/connections/destinations/actions/) and Destination Functions, you can only add one destination per Send to Destination step. If you need to send to multiple destinations, you can use multiple Send to Destination steps.
+- **Destination options**: Event-Triggered Journeys support all [actions-based destinations](/docs/connections/destinations/actions/) and Destination Functions.
 - **Event payload structure**: Each payload sent to a destination includes a unique key to identify the specific send step within the journey, rather than the journey instance itself. You can also set a custom event name to make it easier to identify the specific event instance you want to track in your destination.
-- **Editing and versioning**: After you publish an event-triggered journey, you won't be able to edit it. To modify a journey, create a new journey. 
 - **Real-time delivery**: Event-Triggered Journeys aim for an expected delivery time of under 5 minutes from the moment an event is performed to when the payload reaches the destination, assuming there is no delay step in the journey. However, external factors outside of Segment's control may occasionally introduce latency.
 
 ## Observability
@@ -176,3 +215,5 @@ Start by setting the `checkout_started` event as the trigger and specify a uniqu
 Say you want to follow up with users after they engage with specific content, like downloading an e-book or watching a demo video. Event-Triggered Journeys can help you send timely, personalized messages based on these interactions.
 
 To do this, set the entry event to `content_downloaded` or `video_watched` and configure the journey to send a follow-up email. You could even personalize the email with details from the triggering event, like the content title or timestamp, by configuring your destination payload to enrich the message with event-specific context.
+
+For detailed instructions on setting up journeys for these use cases, see [Journeys (V2) Use Cases](/docs/engage/journeys/v2/use-cases)

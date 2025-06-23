@@ -1,6 +1,8 @@
 ---
 title: Journeys Step Types
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/step-types"
 ---
 
 On this page, you'll find information about the steps you can add to a Journey.

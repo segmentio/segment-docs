@@ -3,6 +3,7 @@ title: Send Journeys data to a Destination
 plan: engage-foundations
 redirect_from:
   - '/personas/journeys/send-data'
+  - '/engage/journeys/send-data'
 ---
 
 When you send data to destinations, you send a series of events or user lists, depending on the destination type.
