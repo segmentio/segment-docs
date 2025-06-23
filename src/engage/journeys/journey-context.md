@@ -11,11 +11,11 @@ This page explains Journey context, which can help you dynamically adapt each jo
 
 Unlike traditional audience-based journeys, which rely solely on user progress through predefined steps, event-triggered journeys capture and store the details of user-triggered events. This shift allows you to access the data that caused users to reach a specific step and use it to make more precise decisions throughout the journey. 
 
-With journey context, you can:
+With journey context you can personalize customer experiences using real-time event data.
 
 <!-- Split journeys based on event attributes or outcomes.-->
-- Personalize customer experiences using real-time event data.
-- Enable advanced use cases like abandonment recovery, dynamic delays, and more.
+<!-- Personalize customer experiences using real-time event data. -->
+<!-- Enable advanced use cases like abandonment recovery, dynamic delays, and more. -->
 
 For example:
 
