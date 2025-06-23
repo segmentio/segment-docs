@@ -98,6 +98,44 @@ For example, in an abandonment journey, suppose a user starts two applications (
 - **Supported destinations:** Only Actions Destinations in the Segment catalog are supported.  
 - **Data mapping:** Ensure all required keys for the destination are properly mapped to avoid errors.
 
+## Duplicate a journey
+
+To save time and avoid recreating steps from scratch, you can duplicate any existing journey.
+
+Duplicating a journey creates a copy of the configuration and opens it in **Draft** mode. You can duplicate both draft and published journeys, but journey names must be unique.
+
+### What gets copied
+
+When you duplicate a journey, Segment copies the following:
+
+- Entry conditions and filters  
+- All journey steps and structure  
+- Destination actions, including:
+  - Event names
+  - Payload configuration
+  - Trait and context enrichment
+  - Attribute mappings
+
+Segment **doesn't** copy the following:
+
+- Journey name (you must enter a new, unique name)
+- Activation destination keys (Segment will regenerate these)
+
+> warning ""
+> If a destination action was disabled in the original journey, it will be enabled by default in the duplicated version.
+
+### How to duplicate a journey
+
+1. Go to **Engage > Journeys** and find the journey you want to duplicate.
+2. Click the **•••** (Options menu), either in the list view or from within the journey.
+3. Select **Duplicate**.
+4. Enter a new name when prompted.
+5. Review the duplicated journey and make any needed changes.
+6. If your journey includes destination sends, be sure to copy the new destination keys into your destination system.
+
+> warning
+> Currently, you can only duplicate journeys within the same Engage space. Duplicating across spaces or workspaces is not supported.
+
 ## Best practices
 
 Follow the best practices in this table to optimize your event-triggered journeys:
