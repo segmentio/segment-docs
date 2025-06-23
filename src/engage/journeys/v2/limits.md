@@ -14,7 +14,7 @@ This page outlines product limitations for Event-Triggered (V2) Journeys.
 | Step name           | 73 characters                           | Maximum length for step names.                                                                                             |
 | Branch name         | 73 characters                           | Maximum length for branch names within a split step. Branch names must be unique across the journey.                       |
 | Additional branches | 5                                       | Maximum number of branches supported in a split or Hold Until step.                                                        |
-| Delay duration      | Minimum: 5 minutes<br>Maximum: 6 months | Allowed time range for Delay and Hold Until steps.                                                                         |
+| Delay duration      | Minimum: 5 minutes<br>Maximum: 182 days | Allowed time range for Delay and Hold Until steps.                                                                         |
 | Unique identifier   | 500 characters                          | For “Re-enter every time event occurs” rules, you must define a unique identifier. The value is limited to 500 characters. |
 
 
@@ -24,7 +24,7 @@ This page outlines product limitations for Event-Triggered (V2) Journeys.
 | ------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Requests per second (RPS) | 25 events/sec/profile              | Maximum events per second per Segment ID. Timer events are excluded. Excess events get dropped.                             |
 | Instances per profile     | 25 concurrent instances            | Maximum concurrent Journey instances per profile.                                                                           |
-| Loop back branch          | 100 instances                      | Maximum instances that can pass through a Wait Until loop-back.                                                             |
+| 'Send profiles back' branch          | 100 instances                      | Maximum count a single journey instance can pass through a Wait Until 'Send profiles back to the beginning of this step' branch.                                                             |
 
 ## Journey context
 
