@@ -1,6 +1,8 @@
 ---
 title: Event-Triggered Journeys Steps
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/event-triggered-journeys-steps"
 ---
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
@@ -195,17 +197,17 @@ Segment evaluates each journey instance independently. This means a user could b
 
 You can configure a Randomized Split step with the following options:
 
-| Setting                      | Description                                                                  |
-| ---------------------------- | ---------------------------------------------------------------------------- |
-| Branches                     | Add up to five branches. Each branch must be assigned a percentage.          |
-| Distribution percentages     | Define what portion of users should go down each branch. Total must be 100%. |
-| Branch naming                | Branches are labeled alphabetically (for example, Branch A, Branch B).       |
-| Consistent branch assignment | Optionally ensure a user always enters the same branch on re-entry.          |
+| Setting                  | Description                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| Branches                 | Add up to five branches. Each branch must be assigned a percentage.          |
+| Distribution percentages | Define what portion of users should go down each branch. Total must be 100%. |
+| Branch naming            | Branches are labeled alphabetically (for example, Branch A, Branch B).       |
+| Assign same branch       | Optionally ensure a user always enters the same branch on re-entry.          |
 
-Segment won't publish your journey if the percentages don’t add up to 100%, or if any percentage is left blank.
+Segment won't let you save or publish your journey if the percentages don’t add up to 100%, or if any percentage is left blank.
 
-> info "Branch assignment is random"  
-> The Randomized Split step uses probabilistic logic to assign users to branches. At lower volumes, actual distribution may not exactly match your configured percentages, but it tends to even out at scale.
+> info "Actual branch counts may differ from percentages"  
+> The Randomized Split step assigns users to branches based on probability, not fixed rules. At lower volumes, the actual distribution may not match your configured percentages exactly, but results typically even out with more traffic.
 
 To add a Randomized Split to your journey:
 
@@ -213,7 +215,7 @@ To add a Randomized Split to your journey:
 2. Select **Randomized Split**.
 3. Give the step a unique name.
 4. Add up to five branches and assign a percentage to each one.
-5. (Optional) Enable **Keep branch assignment consistent** if you want users to always go down the same branch on re-entry.
+5. (Optional) Enable **Assign same branch** if you want users to always go down the same branch on re-entry.
 6. Click **Save**.
 
 Once configured, Segment routes profiles through this step based on your distribution settings.
