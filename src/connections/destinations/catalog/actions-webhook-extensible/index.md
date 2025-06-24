@@ -1,7 +1,6 @@
 ---
 title: Extensible Webhooks Destination
 id: 66b1f528d26440823fb27af9
-beta: true
 hidden: true
 redirect_from: '/connections/destinations/catalog/extensible-webhook/' 
 ---
@@ -13,9 +12,6 @@ Segment's Extensible Webhooks destination lets you send custom data payloads to 
 This destination is not currently available in EU regions. 
 
 Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com). 
-
-> info "Public beta"
-> Extensible Webhooks is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Overview
 
