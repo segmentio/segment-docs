@@ -58,6 +58,9 @@ serve: package
 catalog:
 	@node scripts/catalog/index.js
 
+destination-status: 
+	@node scripts/destination-status.js
+
 # make the list of beta connections
 .PHONY: beta
 beta:
