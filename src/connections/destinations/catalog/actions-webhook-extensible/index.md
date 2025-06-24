@@ -1,7 +1,6 @@
 ---
 title: Extensible Webhooks Destination
 id: 66b1f528d26440823fb27af9
-beta: false
 hidden: true
 redirect_from: '/connections/destinations/catalog/extensible-webhook/' 
 ---
