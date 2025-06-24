@@ -7,7 +7,7 @@ redirect_from:
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 
-Steps are the building blocks of a journey. This page explains the **Hold Until**, **Send to Destination**, and **Data split** steps, which enable precise control over journey progression and data delivery. 
+Steps are the building blocks of a journey. This page explains the **Hold until**, **Delay**, **Data split**, **Randomized split**, and **Send to Destination** steps, which enable precise control over journey progression and data delivery.
 
 ## Hold Until: smart pauses in journeys
 
@@ -51,7 +51,7 @@ Enable this feature by selecting **Send profiles back to the beginning of this s
 
 Segment recommends putting branches for recurring events at the top of the list to improve readability.
 
-![Flow diagram of an Event-Triggered Journey for an abandoned cart scenario. The journey starts with a trigger event labeled 'Cart_Modified,' followed by a 'Hold Until' step checking if the user buys within two hours. The Hold Until step includes three branches: 'User updated cart, reset timer' for additional cart modifications, 'User purchased' triggered by an 'Order_Confirmation' event, and a 'Maximum hold duration' fallback set to two hours, which leads to a 'Send Abandonment Nudge' step. The flow ends with a 'Completed' state.](images/hold_until.png)
+![Flow diagram of an Event-Triggered Journey for an abandoned cart scenario. The journey starts with a trigger event labeled 'Cart_Modified,' followed by a 'Hold Until' step checking if the user buys within two hours. The Hold Until step includes three branches: 'User updated cart, reset timer' for additional cart modifications, 'User purchased' triggered by an 'Order_Confirmation' event, and a 'Maximum hold duration' fallback set to two hours, which leads to a 'Send Abandonment Nudge' step. The flow ends with a 'Completed' state.](../images/hold_until.png)
 
 In this example, users enter the journey when they modify their cart and wait for either a purchase or two hours to pass. If the user modifies their cart again during those two hours, the cart contents are updated, and the two-hour timer resets. As a result, follow-ups reflect the latest information.
 
