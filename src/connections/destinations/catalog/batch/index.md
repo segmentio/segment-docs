@@ -5,7 +5,7 @@ title: Batch Destination
 {% include content/plan-grid.md name="actions" %}   
 
 
-Batch is a powerful customer engagement platform that helps businesses deliver personalized, timely notifications and messages to boost user retention and drive growth. Discover how Batch can transform your communication strategy at Batch.
+Batch is a powerful customer engagement platform that helps businesses deliver personalized, timely notifications and messages to boost user retention and drive growth. For details on how Batch can transform your communication strategy, see [Batch.com](https://batch.com/platform){:target=_"blank"}.
 
 This destination is maintained by Batch. For any issues with the destination, [contact their Support team](mailto:support@batch.com).
 
