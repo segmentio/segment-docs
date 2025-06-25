@@ -71,18 +71,30 @@ To set up Db2 as your Reverse ETL source:
 
 After successfully adding your Db2 source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
 
-> info "Array and JSON Support"
-> Db2 does not have native `ARRAY` or `JSON` data types. Segment provides a simple convention-based workaround:
->
-> **JSON columns**  
-> JSON values can be stored as `VARCHAR` or `CLOB`. Segment will detect them as JSON if the column name (or column alias) ends with `_JSON`.
->
-> Example:  
-> `SELECT data AS data_JSON FROM my_table;`
->
->
-> **Array columns**  
-> Arrays can be represented as `VARCHAR` columns with names ending in `_ARRAY`.  
-> The value should be either:
-> - a JSON-encoded array (e.g. `'["a","b","c"]'`), or
-> - a comma-separated string (e.g. `'a,b,c'`).
+## Array and JSON support
+
+Db2 doesn't have native `ARRAY` or `JSON` data types, but Segment supports a naming-based convention to work around this limitation.
+
+### JSON columns
+
+Store JSON values in `VARCHAR` or `CLOB` columns. Segment detects them as JSON if the column name or alias ends with `_JSON`, like in this example:
+
+```sql
+SELECT data AS data_JSON FROM my_table;
+```
+
+### Array columns
+
+Use `VARCHAR` columns with names ending in `_ARRAY` to represent arrays. The values can be either:
+
+- JSON-encoded arrays, like '["red", "green", "blue"]'
+- Comma-separated strings, like 'red,green,blue'
+
+Here’s how you might format array values in a query:
+
+```sql
+SELECT colors AS colors_ARRAY FROM items;
+```
+
+> info ""
+> Segment uses column names to infer data types. For best results, follow the `_JSON` and `_ARRAY` naming conventions exactly.
