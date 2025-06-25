@@ -96,7 +96,11 @@ This table lists the requirements for a trait to compute successfully:
 Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU storefront compared to a US storefront and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is optional, Segment only recommends using it if you have a clear reason in mind for removing events from becoming a factor in the model.
 
 #### Selecting traits (optional)
-Some customers want to specifically include or exclude certain traits that get fed into the model. Today, we only utilize numerical or boolean custom traits found in your space. You have the ability to exclude specific traits from your model. We will attempt to build a model with the traits you selected, but selecting it in the UI does not guarantee that the trait will be factored in. If you keep **Include all new traits** selected, this make sure any new trait that you start tracking will be factored into the model. If you unselect this option, any new traits that you create will not be factored into the model's calculation. 
+You can choose which traits to include or exclude from your prediction model. Segment supports only numerical and boolean custom traits.
+
+In the UI, you can deselect traits you don’t want the model to use. Selecting a trait means Segment will attempt to include it in the model, but it may be excluded during training if it doesn’t improve model performance.
+
+If you keep Include all new traits selected, Segment will automatically consider any new traits you start tracking. If you deselect this option, new traits won’t be included in future model calculations unless you manually add them.
 
 > info "Predictive Traits and anonymous events"
 > Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.
