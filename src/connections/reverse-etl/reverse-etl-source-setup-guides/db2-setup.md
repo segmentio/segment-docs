@@ -2,6 +2,9 @@
 title: Db2 Reverse ETL Setup
 ---
 
+> info "Db2 Reverse ETL Private Beta"
+> Db2 Reverse ETL is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
 Set up Db2 as your Reverse ETL source.
 
 At a high level, when you set up Db2 for Reverse ETL, the configured database user must have read permissions on any tables involved in the query and write permissions on a managed schema (`SEGMENT_REVERSE_ETL`) that Segment uses to track sync progress. Segment authenticates with your Db2 instance through a username and password. 
@@ -67,3 +70,31 @@ To set up Db2 as your Reverse ETL source:
 8. If the connection is successful, click **Add source**.
 
 After successfully adding your Db2 source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
+
+## Array and JSON support
+
+Db2 doesn't have native `ARRAY` or `JSON` data types, but Segment supports a naming-based convention to work around this limitation.
+
+### JSON columns
+
+Store JSON values in `VARCHAR` or `CLOB` columns. Segment detects them as JSON if the column name or alias ends with `_JSON`, like in this example:
+
+```sql
+SELECT data AS data_JSON FROM my_table;
+```
+
+### Array columns
+
+Use `VARCHAR` columns with names ending in `_ARRAY` to represent arrays. The values can be either:
+
+- JSON-encoded arrays, like '["red", "green", "blue"]'
+- Comma-separated strings, like 'red,green,blue'
+
+Here’s how you might format array values in a query:
+
+```sql
+SELECT colors AS colors_ARRAY FROM items;
+```
+
+> info ""
+> Segment uses column names to infer data types. For best results, follow the `_JSON` and `_ARRAY` naming conventions exactly.
