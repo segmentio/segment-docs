@@ -18,7 +18,7 @@ To integrate Search Ads 360 with Twilio Segment, ensure you have the following:
 ### 1. Configure Extensible Webhook as a destination 
 
 1. In your Segment workspace, navigate to **Connections** > **Catalog** > **Destinations**.
-2. Use the search bar to search for **Extensible Webhook**  and select **Add destination**.
+2. Use the search bar to search for "Extensible Webhook"  and select **Add destination**.
 
 ### 2. Select the data source
 
@@ -77,13 +77,13 @@ You will need to write an insert function that appends a property, for example o
 ```
 
 The Google Search Ads 360 Conversion API's required fields are:
-- `kind` which is `doubleclicksearch#conversionList`. Conversion is an array. For the beta, Segment doesn’t support batching to iterate over this.
+- `kind` which is `doubleclicksearch#conversionList`. Conversion is an array. While in beta, Segment doesn’t support batching to iterate over this.
 - `clickId` which is the ID of a specific click on an ad that the customer clicked on.
 - `conversionId` is a unique ID that tracks the particular conversion.
 - `conversionTimestamp` is date and time in epoch milliseconds on when the conversion took place.
 - `segmentationType` should be `FLOODLIGHT`.
 - `segmentationName` is the floodlight activity to report this conversion to.
-- `type` which can be `Action` or `Transaction` to indicate whether the conversion had a monetary value or not.
+- `type` which can be `action` or `transaction` to indicate whether the conversion had a monetary value or not.
 
 #### Data mapping
 
