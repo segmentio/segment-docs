@@ -30,7 +30,7 @@ To set up your destination in Segment:
 
 ### 3. Specify the instance details
 
-1. Enter a recognizable name for your webhook instance (e.g., "Segment to Amazon Integration").
+1. Enter a recognizable name for your webhook instance (like "Segment to Amazon Integration").
 2. (Optional) Add a brief description of the integration.
 
 ### 4. Select the authentication type
