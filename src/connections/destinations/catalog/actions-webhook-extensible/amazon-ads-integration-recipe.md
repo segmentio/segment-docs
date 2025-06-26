@@ -115,7 +115,7 @@ The Amazon Ads Audience API's expected fields are:
     - `action`: Can be “CREATE” or “DELETE” based on whether you want to add or remove the user from the list.
 - `audienceID` is the ID of the Audience list to which the data should be either added or deleted. You can get the audienceID from within the Amazon Ads console or when creating an Audience from the API.
 
-#### Data Mapping
+#### Data mapping
 
 1. Create a new Mapping in the Mappings tab and select the **Send** HTTP action.
 2. Choose which events you want to send to Amazon Ads Audience API using the Event filters.
