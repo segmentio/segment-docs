@@ -33,7 +33,7 @@ To integrate Microsoft Dynamics 365 with Twilio Segment, ensure you have the fol
 
 ### 4. Select the authentication type
 
-For authentication, you need to first create an Azure application that can authenticate users to provide access to Microsoft Dynamics API. See [Microsoft documentation](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret){:target="_blank"} for details on how to create an application and how to get the client secret that will later be used for authentication.
+For authentication, you need to first create an Azure application that can authenticate users to provide access to Microsoft Dynamics API. See [Microsoft's documentation](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret){:target="_blank"} for details on how to create an application and how to get the client secret that will later be used for authentication.
 
 The redirect URI for your application is https://app.segment.com/oauth-service/webhook/callback.
 
