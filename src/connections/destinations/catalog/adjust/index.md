@@ -233,7 +233,7 @@ If you're using Adjust's iOS SDK, it will automatically takes care of duplicate 
 
 ### Sending in-app events from Adjust to Segment
 
-Customers can forward in-app events from Adjust to Segment by following the steps below:
+Customers can forward in-app events from Adjust to Segment by following these steps:
 
 1. Navigate to the Segment module within the Adjust dashboard.
 2. Go to the **Data sharing** section.
