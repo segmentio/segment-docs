@@ -101,7 +101,7 @@ In this recipe, as an example, users are added to the existing audience but you 
     1. Specify the URL and method.
     - For example, using the following URL: `https://ads-api.reddit.com/api/v3/custom_audiences/{audience_id}/users`
       1. Replace `audience_id` with the actual audience ID you want to edit. You can find the ID below the name of the Audience List to be modified on Audience Manager.
-      2. Select `PATCH` as the HTTP method. The API expects a `PATCH` operation on the endpoint.
+      2. Select **`PATCH`** as the HTTP method. The API expects a `PATCH` operation on the endpoint.
 4. Use the mapping interface and search for the “body” parameter that was created in the insert function to select the transformed object that can be sent as the event body.
 5. Turn off batching for this operation.
 
