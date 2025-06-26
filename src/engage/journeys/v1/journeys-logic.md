@@ -3,6 +3,7 @@ title: Understanding Journeys Logic
 plan: engage-foundations
 redirect_from:
   - "/personas/journeys/journeys-logic"
+  - "/engage/journeys/journeys-logic"
 ---
 
 
