@@ -31,7 +31,7 @@ Podsights needs additional context for attribution, including certain fields ins
 
 Here’s the minimum required structure for a Page call:
 
-```js
+```json
 {
   "type": "page",
   "context": {
@@ -80,7 +80,7 @@ Track calls must include:
 
 These fields are required whether they're sent through Analytics.js or server-side. Here’s a minimum working example:
 
-```js
+```json
 {
   "type": "track",
   "context": {
