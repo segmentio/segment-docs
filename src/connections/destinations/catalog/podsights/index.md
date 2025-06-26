@@ -3,18 +3,17 @@ rewrite: true
 title: Podsights Destination
 id: 5d25eddde3ff660001b3adda
 ---
-[Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
+[Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, Podsights matches podcast downloads with on-site actions to provide household-level attribution.
 
-This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](mailto:hello@podights.com).
+This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](https://adshelp.spotify.com/HelpCenter/s/contactsupport?language=en_US){:target="_blank”}.
 
 
 ## Getting started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Podsights" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Visit your [Podsights dashboard](https://analytics.podsights.com){:target="_blank"} and navigate to Manage > Pixels. Copy your Pixel ID which will be your Segment "API Key".
-4. Drop the Pixel ID in the "API Key" field in your Segment Settings UI.
-
+2. Search for "Podsights", select it, and choose the source you'd like to connect.
+3. Visit your [Podsights dashboard](https://analytics.podsights.com){:target="_blank"}, go to **Manage > Pixels**, then copy your Pixel ID. This is your Segment API Key.
+4. Paste the Pixel ID into the **API Key** field in your Segment destination settings.
 
 Once you start sending data to the Podsights' Destination it will take up to 20 minutes to appear in the Podsights pixel debugger.
 
@@ -26,7 +25,7 @@ If you're not familiar with the Segment Spec, take a look to understand what the
 analytics.page()
 ```
 
-Page calls will be sent to Podsights as a `view` event.
+Segment sends Page events to Podsights as `view` events.
 
 Podsights is an attribution platform, and as such, we need more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields and properties for page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
 
