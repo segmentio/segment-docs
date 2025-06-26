@@ -15,7 +15,7 @@ To integrate Reddit Ads Conversion with Segment, ensure you have the following:
 
 ## Getting started 
 
-### 1. Navigate to the Extensible Webhooks destination
+### 1. Configure Extensible Webhook as a destination
 
 1. In your Segment workspace, go to **Catalog** > **Destinations**.
 2. Use the search bar to search for "Extensible Webhook" and select **Add destination**.
@@ -48,7 +48,7 @@ The conversion access token provides a bearer token that can be added to the hea
 2. Select **Conversions API**.
 3. Click **Generate Access Token** to generate your token. Copy and make a note of it. 
 
-Once you have the conversion token, go back to your destination in your Segment workspace. In Settings, go to Authorization Settings and select **No Auth** as the authentication method.
+Once you have the conversion token, go back to your destination in your Segment workspace. In Settings, go to **Authorization Settings** and select **No Auth** as the authentication method.
 
 ### 5. Perform data mapping
 
