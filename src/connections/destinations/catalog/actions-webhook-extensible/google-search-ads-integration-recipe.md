@@ -2,7 +2,7 @@
 title: Google Search Ads 360 Conversion API Integration Recipe
 ---
 
-This recipe will guide you through how to set up a custom destination for Google Search Ads 360 conversions using Twilio Segment’s Extensible Webhooks feature.
+This recipe will guide you through how to set up a custom destination for [Google Search Ads 360](https://marketingplatform.google.com/intl/en_uk/about/search-ads-360/){:target="_blank"} conversions using Twilio Segment’s [Extensible Webhooks](https://segment.com/docs/connections/destinations/catalog/actions-webhook-extensible/){:target="_blank"} feature.
 
 ## Prerequisites 
 
@@ -35,7 +35,7 @@ To integrate Search Ads 360 with Twilio Segment, ensure you have the following:
 
 As a prerequisite to authenticate APIs, you need to create OAuth credentials. Once generated, note down the Client ID and Secret. They are required to set up authentication between Segment and Google Search Ads.
 
-You will also need to add the following redirect URI to the list of allowed return URLs: https://app.segment.com/oauth-service/webhook/callback. 
+You will also need to add the following redirect URI to the list of allowed return URLs: `https://app.segment.com/oauth-service/webhook/callback`. 
 
 #### Authentication 
 
@@ -43,10 +43,10 @@ You will also need to add the following redirect URI to the list of allowed retu
 2. Enter the following credentials details from your project:
     - Client ID
     - Client secret
-    - Authorize URL: https://accounts.google.com/o/oauth2/v2/auth
-    - Token URL: https://oauth2.googleapis.com/token
-    - Refresh URL: https://oauth2.googleapis.com/token
-    - Scope: https://www.googleapis.com/auth/doubleclicksearch
+    - Authorize URL: `https://accounts.google.com/o/oauth2/v2/auth`
+    - Token URL: `https://oauth2.googleapis.com/token`
+    - Refresh URL: `https://oauth2.googleapis.com/token`
+    - Scope: `https://www.googleapis.com/auth/doubleclicksearch`
 3. Once you have created the destination instance, you will be redirected to the Settings section. Click **Connect** to set up the OAuth connection with Google Search Ads 360.
 4. Log in to your Google Search Ads account and click **Allow** to complete authentication.
 
@@ -77,11 +77,11 @@ You will need to write an insert function that appends a property, for example o
 ```
 
 The Google Search Ads 360 Conversion API's required fields are:
-- `kind` which is "doubleclicksearch#conversionList". Conversion is an array. For the beta, Segment doesn’t support batching to iterate over this.
+- `kind` which is `doubleclicksearch#conversionList`. Conversion is an array. For the beta, Segment doesn’t support batching to iterate over this.
 - `clickId` which is the ID of a specific click on an ad that the customer clicked on.
 - `conversionId` is a unique ID that tracks the particular conversion.
 - `conversionTimestamp` is date and time in epoch milliseconds on when the conversion took place.
-- `segmentationType` should be floodlight.
+- `segmentationType` should be `FLOODLIGHT`.
 - `segmentationName` is the floodlight activity to report this conversion to.
 - `type` which can be `Action` or `Transaction` to indicate whether the conversion had a monetary value or not.
 
@@ -90,7 +90,7 @@ The Google Search Ads 360 Conversion API's required fields are:
 1. Create a new Mapping in the Mappings tab and select the **Send** HTTP action.
 2. Choose which events you want to send to Google Search Ads 360 API using the Event filters.
 3. Fill out mapping fields:
-    - Specify the URL: https://www.googleapis.com/doubleclicksearch/v2/conversion
+    - Specify the URL: `https://www.googleapis.com/doubleclicksearch/v2/conversion`
 4. Use the mapping interface and search for the “body” parameter that was created in the insert function to select the transformed object that can be sent as the event body.
 5. Turn off batching for this operation.
 
@@ -102,8 +102,8 @@ The Google Search Ads 360 Conversion API's required fields are:
 #### Troubleshooting
 
 If the test fails:
-- review the authentication details and data mappings.
-- check for error messages in Segment and Search Ads.
+- Review the authentication details and data mappings.
+- Check for error messages in Segment and Search Ads.
 
 ### 7. Save and enable the destination
 
