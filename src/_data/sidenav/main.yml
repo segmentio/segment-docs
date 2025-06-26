@@ -483,6 +483,8 @@ sections:
         title: 'Journey Step Types'
       - path: '/engage/journeys/v1/send-data'
         title: Send Data to Destinations
+      - path: '/engage/journeys/v1/journeys-logic'
+        title: Understand Journeys Logic
     - section_title: Journeys V2
       slug: '/engage/journeys/v2'
       section: 
@@ -504,8 +506,6 @@ sections:
       title: Journeys Analytics
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
-    - path: '/engage/journeys/journeys-logic'
-      title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
       title: Journeys Glossary
   - section_title: Content
