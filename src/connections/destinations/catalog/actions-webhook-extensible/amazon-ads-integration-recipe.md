@@ -20,7 +20,7 @@ To integrate Amazon Ads with Segment, ensure you have the following:
 
 To set up your destination in Segment: 
 
-1. In your Segment workspace go to **Catalog** > **Destinations**.
+1. In your Segment workspace, go to **Catalog** > **Destinations**.
 2. Search for Extensible Webhook and select **Add destination**.
 
 ### 2. Select the data source
