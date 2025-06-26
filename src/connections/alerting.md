@@ -1,6 +1,7 @@
 ---
 title: Connections Alerting
 beta: true
+hidden: true
 ---
 
 Connections Alerting allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection. 
@@ -34,6 +35,8 @@ To delete a source volume alert, select the icon in the Actions column for the a
 
 > info "Deleting alerts created by other users requires Workspace Owner permissions"
 > All users can delete source volume alerts that they created, but only those with Workspace Owner permissions can delete alerts created by other users. 
+
+
 ## Successful delivery rate alerts
 
 You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
