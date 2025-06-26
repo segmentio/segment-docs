@@ -230,9 +230,9 @@ The replace function allows you to replace a string, integer, or boolean with a 
 
 ### Concatenate function
 
-To combine two values in the event variable field, you can concatenate them using plain text and variables together. For example, to prepend the country code to a phone number, enter `+1{{Phone Number}}`.
+To combine two values in the event variable field, you can concatenate them using plain text and variables together. For example, to prepend the country code to a phone number, enter `+1{{Phone Number}}`. Segment evaluates this field as a string, so placing text next to a variable automatically concatenates them.
 
-Segment evaluates this field as a string, so placing text next to a variable automatically concatenates them.
+You cannot concatenate event variables and plain text with static values and functions. Adding a static value or function into an input field replaces any previously added event variables and plain text.
 
 ![Mapping UI showing two concatenated fields: "+1 phone" and "context.page.url context.page.path"](images/mapping-concatenation.png)
 
