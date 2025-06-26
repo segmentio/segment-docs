@@ -93,7 +93,7 @@ The required parameters are:
 
 #### Data mapping
 
-In this recipe, as an example, users are added to the existing audience but you can use one or multiple mappings to perform any `Put`, `Patch` or `Post` action types.
+In this recipe, as an example, users are added to the existing audience but you can use one or multiple mappings to perform any `PUT`, `PATCH` or `POST` action types.
 
 1. Create a new mapping from the **Mappings** tab, click on **Add Mapping** and select the “Send” HTTP action.
 2. Select events to send. Define the event triggers to send to Reddit Ads (Audiences) using the event filters.
