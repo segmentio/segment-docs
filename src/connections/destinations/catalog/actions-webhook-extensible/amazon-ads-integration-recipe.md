@@ -39,7 +39,7 @@ An Amazon Client Application has to be created which requires approval. For step
 
 The LwA (Login with Amazon) application that you create should have `advertising::audiences` as the scope. For Campaign management, like marking conversions, the scope should be `advertising::campaign_management`. 
 
-Once a LwA app has been created, you will need to add the redirect URI “https://app.segment.com/oauth-service/webhook/callback” to the list of Allowed Return URLs. For more detail on this, see the [Amazon documentation](https://advertising.amazon.com/API/docs/en-us/guides/get-started/create-authorization-grant#allow-a-return-url){:target="_blank"}.
+Once a LwA app has been created, you will need to add the redirect URI `https://app.segment.com/oauth-service/webhook/callback` to the list of Allowed Return URLs. For more detail on this, see the [Amazon documentation](https://advertising.amazon.com/API/docs/en-us/guides/get-started/create-authorization-grant#allow-a-return-url){:target="_blank"}.
 
 Note down the Client ID and Secret, available in the Login with Amazon section on the [Amazon Developer site](https://developer.amazon.com/){:target="_blank"}. These will be used to set up authentication with Segment.
 
