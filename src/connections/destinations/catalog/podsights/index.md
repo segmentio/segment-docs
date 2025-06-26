@@ -5,7 +5,7 @@ id: 5d25eddde3ff660001b3adda
 ---
 [Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, Podsights matches podcast downloads with on-site actions to provide household-level attribution.
 
-This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](https://adshelp.spotify.com/HelpCenter/s/contactsupport?language=en_US){:target="_blank”}.
+This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights/Spotify support team](https://adshelp.spotify.com/HelpCenter/s/contactsupport?language=en_US){:target="_blank”}.
 
 
 ## Getting started
@@ -27,7 +27,7 @@ analytics.page()
 
 Segment sends Page events to Podsights as `view` events.
 
-Podsights needs additional context for attribution, including certain fields inside the `context` and `properties`  objects. Analytics.js [automatically collects these fields](/docs/connections/spec/common/#context-fields-automatically-collected), but you must provide them manually when sending events server-side.
+Podsights needs additional context for attribution, including certain fields inside the `context` and `properties` objects. Analytics.js [automatically collects these fields](/docs/connections/spec/common/#context-fields-automatically-collected), but you must provide them manually when sending events server-side.
 
 Here’s the minimum required structure for a Page call:
 
@@ -50,7 +50,7 @@ Here’s the minimum required structure for a Page call:
 For page events, Podsights requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
 As you can see in the page event's raw JSON payload.
 
-If any of these required fields are missing (especially if you're sending events server-side), Podsights may return a `400` HTTP error.
+If any of these required fields are missing (especially if you're sending events server-side), Podsights will return a `400` HTTP error.
 
 ## Track
 
@@ -98,7 +98,7 @@ These fields are required whether they're sent through Analytics.js or server-si
 }
 ```
 
-The `context` and `page` object are required, along with the fields in them. If you're using Segment server-side, you must send these attributes. Otherwise Podsights will return a `400 HTTP Error`.
+If you're using Segment server-side, you must send these attributes. Otherwise, Podsights will return a `400` HTTP error.
 
 ## Server
-Podsights doesn't support server-side events out of the box, but you can send server-side events if you follow the requirements of Page and Track events outlined in the sections for each call.
+Podsights doesn’t support server-side events by default. However, you can send server-side events as long as you include all the required context and page fields described in the Page and Track sections on this page.
