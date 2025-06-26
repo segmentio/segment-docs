@@ -31,6 +31,12 @@ After you've created a Stream Conversion Event mapping, Segment displays the con
 
 {% include components/actions-fields.html %}
 
+> info "Tip"
+> Associating a campaign to a conversion is optional.
+> If the intended campaigns do not appear in the UI when selecting the value for the `Add Campaigns to Conversion` field, you can either :
+> - manually enter the LinkedIn Conversion Rule ID in the `Existing Conversion Rule ID` field. This Conversion Rule ID must already exist and be configured within LinkedIn to be associated with the intended campaigns.
+> - skip adding Conversion Rule ID in the `Existing Conversion Rule ID` field, and Segment will create a new conversion rule that will become visible within the LinkedIn campaign manager, which can then associated with the intended campaigns within LinkedIn.
+
 ## FAQ and troubleshooting
 
 ### Why are my inputs failing?
@@ -46,3 +52,5 @@ Your inputs must meet the following criteria:
 - `conversionHappenedAt` must be a valid timestamp (milliseconds since epoch) and must have happened in the past 90 days
 
 Any deviations from this specification might lead to failed inputs.
+
+
