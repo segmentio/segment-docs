@@ -2,7 +2,7 @@
 title: Microsoft Dynamics 365 (Sales Hub) Integration Recipe
 ---
 
-This recipe will guide you through how to set up a custom destination for Microsoft Dynamics 365 (Sales) using Twilio Segment’s Extensible Webhook feature.
+This recipe will guide you through how to set up a custom destination for [Microsoft Dynamics 365 (Sales)](https://www.microsoft.com/en-us/dynamics-365/products/sales){:target="_blank"} using Twilio Segment’s [Extensible Webhooks](https://segment.com/docs/connections/destinations/catalog/actions-webhook-extensible/){:target="_blank"} feature.
 
 ## Prerequisites
 
@@ -35,20 +35,21 @@ To integrate Microsoft Dynamics 365 with Twilio Segment, ensure you have the fol
 
 For authentication, you need to first create an Azure application that can authenticate users to provide access to Microsoft Dynamics API. See [Microsoft's documentation](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret){:target="_blank"} for details on how to create an application and how to get the client secret that will later be used for authentication.
 
-The redirect URI for your application is https://app.segment.com/oauth-service/webhook/callback.
+The redirect URI for your application is `https://app.segment.com/oauth-service/webhook/callback`.
 
-To connect the Azure app with the Dynamics instance, go to the Power Platform Admin Center.
-Here you will need to create new app users associated with a business unit, and provide security roles.
+To connect the Azure app with the Dynamics instance, go to the Power Platform Admin Center. Here you will need to create new app users associated with a business unit, and provide security roles.
 
 Once you have successfully created an Azure web application and associated it with a Dynamics environment, you can proceed to authentication in Segment.
 
 1. Navigate to the settings page of the webhook destination in Segment.
-2. Select OAuth 2.0 and select Authorization Code.
+2. Select **OAuth 2.0** and select **Authorization Code**.
 3. Enter the following credential details from your web app or as listed below:
     - Client ID
     - Client secret
-    - Access Token URL: https://login.microsoftonline.com/<directory id>/oauth2/v2.0/token
-    - Scope: https://<dynamics>/.default
+    - Access Token URL: `https://login.microsoftonline.com/<directory_id>/oauth2/v2.0/token`. Replace `<directory_id>` with your Azure AD tenant ID. You can be find this in the Entra admin center. For detailed steps, see [Microsoft's guide](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant){:target="_blank"}.
+      - Example URL with a sample directory UUID: `https://login.microsoftonline.com/861e4762-e528-4faf-ad95-70847a9efbe7/oauth2/v2.0/token`
+    - Scope: `https://<dynamics>/.default`. Replace `<dynamics>` with the domain of your Dynamics 365 instance. This appears in your web browser's address bar when using your app.
+      - Example URL for a Dynamics 365 instance: `https://org2fd4b414.crm.dynamics.com/.default`.
 4. Click **Connect** to set up the OAuth connection with Microsoft.
 
 Authentication will take place if the configurations are correct and the access token will automatically be generated without the need for user login.
@@ -91,7 +92,7 @@ To create or update the Account entity only, you can skip this step and directly
 1. Create a new Mapping in the Mappings tab and select the **Send** HTTP action.
 2. Choose which events you want to send to Google Search Ads 360 API using the Event filters.
 3. Fill out mapping fields:
-        - Specify the URL:  [Organization URI]/api/data/v9.2/accounts (this is for creating new accounts)
+        - Specify the URL:  `[Organization URI]/api/data/v9.2/accounts` (this is for creating new accounts)
 4. Use the mapping interface and search for the “body” parameter that was created in the insert function to select the transformed object that can be sent as the event body.
 5. Turn off batching for this operation.
 
@@ -103,8 +104,8 @@ To create or update the Account entity only, you can skip this step and directly
 #### Troubleshooting
 
 If the test fails:
-- review the authentication details and data mappings.
-- check for error messages in Segment and Search Ads.
+- Review the authentication details and data mappings.
+- Check for error messages in Segment and Search Ads.
 
 ### 7. Save and enable the destination
 
