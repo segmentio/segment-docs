@@ -27,7 +27,9 @@ analytics.page()
 
 Segment sends Page events to Podsights as `view` events.
 
-Podsights is an attribution platform, and as such, we need more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields and properties for page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Podsights needs additional context for attribution, including certain fields inside the `context` and `properties`  objects. Analytics.js [automatically collects these fields](/docs/connections/spec/common/#context-fields-automatically-collected), but you must provide them manually when sending events server-side.
+
+Here’s the minimum required structure for a Page call:
 
 ```js
 {
@@ -46,9 +48,9 @@ Podsights is an attribution platform, and as such, we need more context about th
 ```
 
 For page events, Podsights requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
-As you can see in the page event's raw JSON payload above.
+As you can see in the page event's raw JSON payload.
 
-The `context` and `properties` object are required, along with the fields in them. If you're using Segment server-side, you must send these attributes. Otherwise, Podsights will return a `400 HTTP Error`.
+If any of these required fields are missing (especially if you're sending events server-side), Podsights may return a `400` HTTP error.
 
 ## Track
 
@@ -65,15 +67,18 @@ analytics.track('Order Completed', {
 
 Track calls will be mapped to Podsights events. Podsights supports the following from the Segment Spec:
 
-
 * [Signed Up](/docs/connections/spec/b2b-saas/#signed-up) as `lead`
 * [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) as `product`
 * [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) as `addtocart`
 * [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started) as `checkout`
 * [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) as `purchase`
 
-For track events Podsights requires a `context` object that contains a `userAgent` and an `ip` Podsights also requires a `page` object that contains a `referrer` and a `url` field.
-Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields for track calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Track calls must include:
+
+- a `context` object with `userAgent` and `ip`
+- a `context.page` object with `referrer` and `url`
+
+These fields are required whether they're sent through Analytics.js or server-side. Here’s a minimum working example:
 
 ```js
 {
