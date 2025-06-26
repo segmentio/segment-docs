@@ -3,7 +3,7 @@ title: Amazon Ads Audience Sync Integration Recipe
 
 ---
 
-This recipe will guide you through how to set up a custom destination for Amazon Ads using Twilio Segment's Extensible Webhooks feature and how to sync customer data into an Audience list. By following these steps, you can integrate your data source with Amazon Ads.
+This recipe will guide you through how to set up a custom destination for [Amazon Ads](https://advertising.amazon.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} using Twilio Segment's [Extensible Webhooks](https://segment.com/docs/connections/destinations/catalog/actions-webhook-extensible/){:target="_blank"} feature and how to sync customer data into an Audience list. By following these steps, you can integrate your data source with Amazon Ads.
 
 ## Prerequisites
 
@@ -50,12 +50,12 @@ To set up authentication:
 2. Enter the following credential details as listed below or given in the web app:
     - Client ID
     - Client secret
-    - Authorize URL: https://www.amazon.com/ap/oa
-    - Token URL: https://api.amazon.com/auth/o2/token
-    - Refresh URL: https://api.amazon.com/auth/o2/token
+    - Authorize URL: `https://www.amazon.com/ap/oa`
+    - Token URL: `https://api.amazon.com/auth/o2/token`
+    - Refresh URL: `https://api.amazon.com/auth/o2/token`
     - Scope: `advertising::audiences`
 
-    The authorization URL can be found [here](https://advertising.amazon.com/API/docs/en-us/guides/get-started/create-authorization-grant#determine-the-url-prefix-for-your-region){:target="_blank"} and the access/refresh token URL can be found [here](https://advertising.amazon.com/API/docs/en-us/guides/get-started/retrieve-access-token#call-the-authorization-url-to-request-access-and-refresh-tokens){:target="_blank"}, depending on your region.
+    The authorization URL is available in [Amazon's authorization guide](https://advertising.amazon.com/API/docs/en-us/guides/get-started/create-authorization-grant#determine-the-url-prefix-for-your-region){:target="_blank"}, and the access/refresh token URL can also be found in [Amazon's guide on access tokens](https://advertising.amazon.com/API/docs/en-us/guides/get-started/retrieve-access-token#call-the-authorization-url-to-request-access-and-refresh-tokens){:target="_blank"}, depending on your region.
 
 3. Once you create the destination instance, you will then be redirected to the Settings section. Click **Connect** to set up the OAuth connection with Amazon Ads. 
 4. You will be redirected to Amazon Ads. Log in and click **Allow** to complete the authentication flow.
@@ -111,7 +111,7 @@ The Amazon Ads Audience API's expected fields are:
       - `state`
       - `postal`
       - `email`
-    - `externalUserId`: The id used by external systems to identify customers.
+    - `externalUserId`: The ID used by external systems to identify customers.
     - `action`: Can be “CREATE” or “DELETE” based on whether you want to add or remove the user from the list.
 - `audienceID` is the ID of the Audience list to which the data should be either added or deleted. You can get the audienceID from within the Amazon Ads console or when creating an Audience from the API.
 
@@ -122,8 +122,8 @@ The Amazon Ads Audience API's expected fields are:
 3. Fill out mapping fields:
     - Specify the URL:
       - The API endpoint is based on region.
-      - Include the suffix with the Audience API Endpoint: /amc/audiences/records
-    - Specify the headers:
+      - Include the suffix with the Audience API Endpoint: `/amc/audiences/records`
+    - Specify the header:
       - `Amazon-Advertising-API-ClientId`: The Client ID from Login with Amazon Account. 
 4. Use the mapping interface and search for the “body” parameter that was created in the insert function to select the transformed object that can be sent as the event body.
 5. Turn off batching for this operation.
@@ -136,8 +136,8 @@ The Amazon Ads Audience API's expected fields are:
 #### Troubleshooting
 
 If the test fails:
-- review the authentication details and data mappings.
-- check for error messages in Segment and Amazon Ads.
+- Review the authentication details and data mappings.
+- Check for error messages in Segment and Amazon Ads.
 
 ### 7. Save and enable the destination
 
