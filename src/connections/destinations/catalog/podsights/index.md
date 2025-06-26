@@ -8,10 +8,7 @@ id: 5d25eddde3ff660001b3adda
 This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](mailto:hello@podights.com).
 
 
-## Getting Started
-
-
-
+## Getting started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Podsights" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -23,7 +20,7 @@ Once you start sending data to the Podsights' Destination it will take up to 20 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -49,14 +46,14 @@ Podsights is an attribution platform, and as such, we need more context about th
 }
 ```
 
-For page events Podsights requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
+For page events, Podsights requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
 As you can see in the page event's raw JSON payload above.
 
-The `context` and `properties` object are required, along with the fields in them. If you're using Segment server-side you must send these attributes. Otherwise Podsights will return a `400 HTTP Error`.
+The `context` and `properties` object are required, along with the fields in them. If you're using Segment server-side, you must send these attributes. Otherwise, Podsights will return a `400 HTTP Error`.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Order Completed', {
@@ -67,7 +64,7 @@ analytics.track('Order Completed', {
 });
 ```
 
-Track calls will be mapped to Podsights events. Podsights' support the following from the Segment Spec:
+Track calls will be mapped to Podsights events. Podsights supports the following from the Segment Spec:
 
 
 * [Signed Up](/docs/connections/spec/b2b-saas/#signed-up) as `lead`
@@ -97,7 +94,7 @@ Analytics.js [automatically collects context fields](/docs/connections/spec/comm
 }
 ```
 
-The `context` and `page` object are required, along with the fields in them. If you're using Segment server-side you must send these attributes. Otherwise Podsights will return a `400 HTTP Error`.
+The `context` and `page` object are required, along with the fields in them. If you're using Segment server-side, you must send these attributes. Otherwise Podsights will return a `400 HTTP Error`.
 
 ## Server
-Podsights does not support server-side events out of the box, but you can send server-side events if you follow the requirements of page and track events outlined in the sections for each call.
+Podsights doesn't support server-side events out of the box, but you can send server-side events if you follow the requirements of Page and Track events outlined in the sections for each call.
