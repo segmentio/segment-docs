@@ -83,13 +83,13 @@ In addition to enforcing consent in Connections, you may want these preferences 
 
 If you use Destination Actions to send consent information to your destinations, the Segment Consent Preference Updated event should **only** include information about a user's consent preferences because this event is sent regardless of an end-user's consent preferences. 
 
-> info "Sharing consent with Classic Destinations is not available"
+> info "Sharing consent with Classic Destinations isn't available"
 > Segment only supports sharing consent with Actions Destinations. 
 
 ## Storing consent preferences on the Profile
 Segment stamps consent preference on every Segment event from streaming and Reverse ETL sources to store them on the Profile. 
 
-If you're using Consent Management and Profiles, you should not give your customers a Custom Trait value that matches one of the consent categories that you set up in the Segment app, as this can lead to unexpected Audience behavior. For example, if your end user consented to the "Marketing" destination category, you should not give them a custom trait of `segment_consent_preference.categories.marketing`, as this can lead your user to unexpectedly enter or leave an Audience. 
+If you're using Consent Management and Profiles, you shouldn't give your customers a Custom Trait value that matches one of the consent categories that you set up in the Segment app, as this can lead to unexpected Audience behavior. For example, if your end user consented to the "Marketing" destination category, you shouldn't give them a custom trait of `segment_consent_preference.categories.marketing.<value>`, as this can lead your user to unexpectedly enter or leave an Audience. 
 
 > warning "Storing consent on the Profile is in private beta"
 > Reach out to your sales contact or [request a demo](https://segment.com/contact/demo){:target="_blank"} to participate in the private beta.
