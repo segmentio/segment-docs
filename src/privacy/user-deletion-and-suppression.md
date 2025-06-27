@@ -61,7 +61,7 @@ Warehouse deletions occur using a DML run against your cluster or instance. Segm
 
 The deletion requests tab shows a 30-day overview of your deletions pipeline, including a regulations usage tracker and a deletion requests status table. 
 
-To navigate to the deletion requests tab, open the Segment app and navigate to **Settings** > **End-user Privacy** > **Deletion Requests**.
+To navigate to the deletion requests tab, open the Segment app and navigate to **Privacy > Deletion and Suppression > Deletion**.
 
 #### Regulations usage tracker
 
