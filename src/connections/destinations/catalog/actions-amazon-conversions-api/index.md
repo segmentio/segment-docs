@@ -89,7 +89,7 @@ Amazon requires at least one match key to identify the user associated with each
 | postalCode | User's postal code (is hashed) |
 | maid | Mobile advertising ID (ADID, IDFA, or FIREADID) |
 | rampId | RAMP ID for attribution to traffic events |
-| matchId | Custom match ID for the user |
+| matchId | Match ID is an anonymous opaque unique identifier that represents a user on an advertiser’s system, like loyalty membership ID and order ID. With Match ID, advertisers can accurately track campaign performance without sharing customer data to Amazon like hashed email/phone while navigating complex customer journeys that spans multiple channels and devices. The advertisers implementing Amazon Advertising Tag (AAT) on their website can send match_id as an attribute along with the online events. Amazon matches this to users via cookies or hashed PII. When these users convert offline, advertisers can report it through Conversions API (CAPI) using the same match_id |
 
 Segment automatically maps these fields from standard identity traits when available.
 
@@ -139,7 +139,7 @@ You can include custom attributes with your events to provide additional context
 
 #### How does deduplication work?
 
-Amazon Conversions API uses the `clientDedupeId` field to prevent duplicate events. By default, Segment maps the messageId to this field. For events with the same clientDedupeId, only the latest event will be processed.
+Amazon Conversions API uses the `clientDedupeId` field to prevent duplicate events. By default, Segment maps the messageId to this field. For events with the same clientDedupeId, only the latest event will be processed. Please be advised that deduplication occurs across all event types, rather than being limited to individual event types.
 
 #### What regions are supported?
 
@@ -163,3 +163,16 @@ Personally identifiable information (PII) fields like email, phone, name, and ad
 #### How can I verify events in Amazon?
 
 After you start sending events, you should see them in your Amazon Advertising dashboard under conversion tracking reports. Allow some time for the events to be processed and attributed.
+
+#### Which advertising accounts can access Amazon Conversions API?
+
+- Self-Service (SS) Accounts: Yes
+- Managed Service (MS) Accounts: No
+- Manager Accounts (MA): Not yet, but we can add if there is enough demand
+
+#### I am an advertiser on Amazon Demand Side Platform. My agency cannot provide access to their entity as they manage other clients. How do I get access to a specific advertiser account?
+
+- **Option 1**: 
+1. Ask the agency to provide access to the specific advertiser account (where they wish to run your campaigns) within their agency. Events Manager must be given ‘View and Edit’ permission. Please see help article [here](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
+2. Use the Amazon Conversions API to send data to the specific account they have been given access to in step #1.
+- **Option 2**: [Not a supported pattern via Segment yet] Upload your data directly to Manager Account. You will see the data in Data Manager. You can then share the data from Data Manager to other advertiser accounts linked to the Manager Account. Learn more [here](https://advertising.amazon.com/API/docs/en-us/adm/1_ads-data-manager-console-overview){:target="_blank"}.
