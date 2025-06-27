@@ -257,6 +257,7 @@ By selecting **Compute count**, you can check the number of rows returned when j
 
 Select **Add relationship** and repeat as needed.
 
+<img src="/docs/unify/images/data-graph-add-relationship.png" alt="The Customer Accounts Relationship side screen when adding a relationship in the Data Graph" width="5888"/>
 
 ### Using the code editor
 Use the configuration language spec and the following features to build your Data Graph:
