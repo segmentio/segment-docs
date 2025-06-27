@@ -37283,7 +37283,7 @@ items:
   previous_names:
   - Extensible Webhook
   website: http://www.segment.com
-  status: PUBLIC_BETA
+  status: PUBLIC
   categories:
   - Raw Data
   logo:
@@ -37423,7 +37423,7 @@ items:
       dynamic: false
       allowNull: false
   presets: []
-  partnerOwned: true
+  partnerOwned: false
 - id: 5e79ef31929aef3bdfbc53a5
   display_name: Extole Platform
   name: Extole Platform
