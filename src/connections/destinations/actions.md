@@ -183,7 +183,7 @@ If necessary, click **New Mapping** to create a new, blank action.
     This step looks for events that match the criteria in the [debugger queue](/docs/connections/sources/debugger/), so you might need to Trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
 3. Select data models to [enrich your events](/docs/unify/linked-profiles/linked-events/) with.
 4. Set up the data mapping from the Segment format to the destination tool format.
-- You can click the Source field, then select the **Enrichments** tab to view and select Enrichments to use.
+- You can click the Source field, then select previously configured Enrichments from the Event Properties tab.
 5. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. The **Select Object** option sends the entire object from the event, while the **Edit Object** option lets you map each individual property. You can change your mapping as needed and re-test.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
@@ -200,11 +200,31 @@ If necessary, click **New Mapping** to create a new, blank action.
 Segment offers suggested mappings that automatically propose relevant destination fields for both model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the setup. For more information, see [Segment's suggested mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
 
 > warning ""
-> Review the suggested mappings for accuracy before finalizing them as the suggestions aren't guaranteed to be 100% accurate. 
+> Review the suggested mappings for accuracy before finalizing them as the suggestions aren't guaranteed to be 100% accurate.
+
+## Static values
+Segment supports 4 static value types in Destination Actions mappings: string, boolean, number, and null. 
+* To create a string static value, type the string directly into the input field. 
+* To create boolean, number, and null values, use the **Static values** tab to create the appropriate static value based on its type.
+
+## Functions
+In Destination Actions mappings, functions transform event data before it sends to the destination. This enables custom data handling, such as selecting non-null values or formatting fields.
 
 ### Coalesce function
 
 The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
+
+### Case function
+
+The case function allows you to change the casing of a given string value.
+
+### JSON function
+
+The JSON function allows you to convert an object or array to a JSON encoded string, or to convert from JSON to objects.
+
+### Flatten function
+
+The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
 
 ### Replace function
 
@@ -212,17 +232,13 @@ The replace function allows you to replace a string, integer, or boolean with a 
 
 ### Concatenate function
 
-To combine two values in the event variable field, you can concatenate them using plain text and variables together. For example, to prepend the country code to a phone number, enter `+1{{Phone Number}}`.
+To combine 2 values in the event variable field, you can concatenate them using plain text and variables together. For example, to prepend the country code to a phone number, enter `+1{{Phone Number}}`. Segment evaluates this field as a string, so placing text next to a variable automatically concatenates them.
 
-Segment evaluates this field as a string, so placing text next to a variable automatically concatenates them.
+You can't concatenate event variables and plain text with static values and functions. Adding a static value or function into an input field replaces any previously added event variables and plain text.
 
 ![Mapping UI showing two concatenated fields: "+1 phone" and "context.page.url context.page.path"](images/mapping-concatenation.png)
 
-### Flatten function
-
-The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
-
-### Conditions
+## Conditions
 
 > info ""
 > Self-service users can add a maximum of two conditions per Trigger.
