@@ -19,11 +19,11 @@ With Regulations, you can issue a single request to delete and suppress data abo
 > warning "Data sent to device-mode destinations cannot be suppressed"
 > Destinations set up in device mode are sent directly to destinations and bypass the point in the pipeline where Segment suppresses events.
 
-Segment has 2 types of Regulations - Segment-only Regulations, or those that only impact data from Segment systems, and Segment & destination Regulations, or Regulations that Segment completes on internal systems and then forwards to your connected destinations. 
+Segment has 2 types of Regulations:
+- **Segment-only Regulations**: These Regulations *only* delete or suppress data about your user from internal Segment systems.
+- **Segment & Destination Regulations**: These Regulations delete user data from internal Segment systems and then forward a deletion request to any connected destinations that support programmatic deletion. For a list of destination that support programmatic deletion, see [Which destinations can I send deletion requests to?](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to). 
 
-While both Regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only regulations. 
-
-To send more than 110,000 Segment-only Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
+While both Regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only regulations. To send more than 110,000 Segment-only Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
 ### Segment-only Regulations
 The following Segment-only Regulation types are available:
@@ -33,9 +33,9 @@ The following Segment-only Regulation types are available:
 - **SUPPRESS_ONLY***: Suppress new data without deleting existing data  
 - **UNSUPPRESS*:** Stop an ongoing suppression  
 
-### Segment & destination Regulations
+### Segment & Destination Regulations
 
-The following Segment & destination Regulations are available:
+The following Segment & Destination Regulations are available:
 
 - **SUPPRESS_WITH_DELETE:** Suppress new data and delete existing data  
 - **DELETE_ONLY:** Delete existing data without suppressing any new data
