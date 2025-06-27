@@ -173,6 +173,6 @@ After you start sending events, you should see them in your Amazon Advertising d
 #### I am an advertiser on Amazon Demand Side Platform. My agency cannot provide access to their entity as they manage other clients. How do I get access to a specific advertiser account?
 
 - **Option 1**: 
-1. Ask the agency to provide access to the specific advertiser account (where they wish to run your campaigns) within their agency. Events Manager must be given ‘View and Edit’ permission. Please see help article [here](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
-2. Use the Amazon Conversions API to send data to the specific account they have been given access to in step #1.
+  1. Ask the agency to provide access to the specific advertiser account (where they wish to run your campaigns) within their agency. Events Manager must be given ‘View and Edit’ permission. Please see help article [here](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
+  2. Use the Amazon Conversions API to send data to the specific account they have been given access to in step #1.
 - **Option 2**: [Not a supported pattern via Segment yet] Upload your data directly to Manager Account. You will see the data in Data Manager. You can then share the data from Data Manager to other advertiser accounts linked to the Manager Account. Learn more [here](https://advertising.amazon.com/API/docs/en-us/adm/1_ads-data-manager-console-overview){:target="_blank"}.
