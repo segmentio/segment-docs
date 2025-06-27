@@ -78,6 +78,7 @@ To see which audiences reference a particular audience in their definitions, sel
 | greater than               | Value is greater than specified. |
 | less than or equal to      | Value is less than or equal to specified. |
 | grater than or equal to    | Value is greater than or equal to specified. |
+| equals any of              | Matches any of specified values. |
 | contains any of            | Includes any of specified values. |
 | contains                   | Includes specified substring or value. |
 | does not contain           | Excludes specified substring or value. |
