@@ -171,8 +171,6 @@ After you start sending events, you should see them in your Amazon Advertising d
 - Manager Accounts (MA): At present, this functionality is not available. However, we are actively monitoring market demand and user requirements. Should sufficient interest emerge from our user base, we will evaluate the possibility of implementing this feature in a future release.
 
 #### I am an advertiser on Amazon Demand Side Platform. My agency can't provide access to their entity as they manage other clients. How do I get access to a specific advertiser account?
-There are 2 options you can choose from: 
-- **Option 1**: 
-      1. Request your agency to grant access to the specific advertiser account intended for campaign execution. Specifically, **View and Edit** permissions must be assigned for the Events Manager. Please see the [help article](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
-      2. Utilize the Amazon Conversions API (CAPI) to transmit data to the advertiser account for which access was granted in the previous step.
-- **Option 2**: (*This is not a supported pattern using Segment*) Upload your data directly to the Manager Account where it will be visible in the Ads Data Manager. After it's uploaded, you can share this data with other advertiser accounts that are linked to your Manager Account. Learn more [here](https://advertising.amazon.com/API/docs/en-us/adm/1_ads-data-manager-console-overview){:target="_blank"}.
+
+1. Request your agency to grant access to the specific advertiser account intended for campaign execution. Specifically, **View and Edit** permissions must be assigned for the Events Manager. Please see the [help article](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
+2. Utilize the Amazon Conversions API (CAPI) to transmit data to the advertiser account for which access was granted in the previous step.
