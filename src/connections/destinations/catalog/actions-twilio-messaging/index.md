@@ -66,4 +66,4 @@ Three types of Sender types are supported:
 3. Twilio Messaging Service - This is supported for all channels. 
 
 ### Variables
-Variables can be used in both Content Templates and for inline messages and can be included in the message body as well as Media URLs. Variables referenced when using Content Templates must be pre-defined in Twilio.  
+Variables can be used in both Content Templates and for inline messages and can be included in the message body as well as Media URLs. Variables referenced when using Content Templates must be pre-defined in Twilio.
