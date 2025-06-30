@@ -22,3 +22,15 @@ This destination supports two ways to send messages:
 - **Inline messages**: Messages created directly in Segment, with dynamic fields and variables.
 
 Twilio Messaging integrates tightly with Segment's data and audience tools, so you can deliver timely, personalized messages without building custom integrations.
+
+## Getting started
+
+To start sending messages through Twilio Messaging, you'll set up your Twilio account credentials and connect the destination in Segment.
+
+At a high level, you will:
+
+1. Create a Twilio API Key and Secret.
+2. Add the Twilio Messaging destination in Segment.
+3. Configure message mappings to define what messages to send and when.
+
+The following sections walk through each step in detail.
