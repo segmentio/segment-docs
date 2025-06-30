@@ -22,15 +22,29 @@ Segment also provides a Chrome web extension, [Segment Inspector](/docs/connecti
 
 To learn more, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
-## Are you loading two instances of Analytics.js?
+## Loading multiple instances of Analytics.js
 
-Note that you *cannot* load Analytics.js twice on the same page, even if you're using different write keys. If you do, you might encounter `Uncaught RangeError: Maximum call stack size exceeded`. Instead, you can conditionally set the write key based on an environment variable.
+
+### Analytics.js snippet loaded more than once
+
+You cannot load the Analytics.js snippet twice on the same page, even if different write keys are used. Doing so might result in errors like `Uncaught RangeError: Maximum call stack size exceeded`. 
+
+However, you can conditionally set the write key based on an environment variable:
 
 Example:
 ```js
 var writeKey;
 ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 ```
+
+### Multiple Versions of Analytics.js
+
+You can load multiple versions of Analytics.js in the same environment. For example, you could have both a snippet version and an npm version on one page, each with different write keys. This allows the npm library and the browser snippet to coexist without conflicting. 
+
+Keep the following limitations in mind:
+
+- **Device-Mode Destination Conflicts**: If you are using the same device-mode destination in both instances (for example, across different write keys), conflicts may occur. This is due to third-party scripts that don't support global instances. To avoid issues, ensure you are not using the same device-mode destination with different write keys.
+- **CDN URL Customization:** Segment does not support overriding the CDNURL when using multiple instances of Analytics.js.
 
 ## How do I resolve the 'Failed to Load Analytics.js ChunkLoadError'?
 
@@ -43,6 +57,7 @@ The error can occur for different reasons:
 - Browser cache: Clear the browser cache, as this is a common cause for `ChunkLoadError`.
 
 - Cloudflare caching: If you use Cloudflare to proxy Segment, disable caching for the Segment JS file.
+
 
 ## Do you see events appear in your debugger?
 
