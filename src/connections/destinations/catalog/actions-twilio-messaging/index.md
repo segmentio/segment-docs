@@ -7,7 +7,7 @@ beta: true
 
 Twilio Messaging gives businesses a way to reach customers on SMS, MMS, and WhatsApp for transactional notifications and personalized campaigns.
 
-The Twilio Messaging destination connects Segment to Twilio, so teams can send messages automatically based on real-time events, audience segments, or journeys without managing complex integrations.
+The Twilio Messaging destination connects Segment to Twilio, letting you send messages automatically based on real-time events, audience segments, or journeys without managing complex integrations.
 
 With the Twilio Messaging destination, you can:
 
@@ -30,7 +30,7 @@ Twilio Messaging integrates tightly with Segment's data and audience tools, so y
 
 To start sending messages through Twilio Messaging, you'll set up your Twilio account credentials and connect the destination in Segment.
 
-You'll set up the Twilio Messaing destination in three stages:
+You'll set up the Twilio Messaging destination in three stages:
 
 1. Create a Twilio API Key and Secret.
 2. Add the Twilio Messaging destination in Segment.
