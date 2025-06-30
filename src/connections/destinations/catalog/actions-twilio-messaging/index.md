@@ -26,12 +26,11 @@ Twilio Messaging integrates tightly with Segment's data and audience tools, so y
 > info "Twilio Messaging Destination Private Beta"
 > Bidirectional sync is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-
 ## Getting started
 
 To start sending messages through Twilio Messaging, you'll set up your Twilio account credentials and connect the destination in Segment.
 
-At a high level, you will:
+You'll set up the Twilio Messaing destination in three stages:
 
 1. Create a Twilio API Key and Secret.
 2. Add the Twilio Messaging destination in Segment.
@@ -54,3 +53,22 @@ To create your API Key and Secret:
 7. Click **Done** to finish creating the API Key.
 
 You now have your **Account SID**, **API Key SID**, and **API Key Secret**, which are required to connect Twilio Messaging in Segment.
+
+## Add the Twilio Messaging destination
+
+After setting up your Twilio credentials, add the Twilio Messaging destination to your Segment workspace.
+
+To add the destination:
+
+1. From the Twilio Messaging destination page, click **Add destination**.
+2. On the Setup screen, give the destination a name and select **Fill in settings manually.**
+3. On your new destination page, click the **Settings** tab.
+4. On the Settings tab, enter your **Twilio Account SID**, **Twilio API Key SID**, and **Twilio API Key Secret**.
+6. To finish setting up the destination, click **Save Changes**.
+
+The destination is now connected and ready to configure message mappings.
+
+<!-- PW, 6/29/25; during private beta, there's no way to search for the destination in the catalog. 
+Users can only access the destination through the specific URL. I'll update these instructions once
+it's publicly available and searchable in the workspace catalog. -->
+
