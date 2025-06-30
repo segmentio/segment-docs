@@ -23,6 +23,10 @@ This destination supports two ways to send messages:
 
 Twilio Messaging integrates tightly with Segment's data and audience tools, so you can deliver timely, personalized messages without building custom integrations.
 
+> info "Twilio Messaging Destination Private Beta"
+> Bidirectional sync is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
+
 ## Getting started
 
 To start sending messages through Twilio Messaging, you'll set up your Twilio account credentials and connect the destination in Segment.
