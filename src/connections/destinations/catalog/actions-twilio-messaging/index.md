@@ -104,20 +104,21 @@ To configure the mapping:
 
 ### Mapping fields reference
 
-| Field                 | Description                                                       | Notes                                                                                                                                             |
-| --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Channel               | The channel to send the message on.                               | Options: SMS, MMS, WhatsApp.                                                                                                                      |
-| Sender Type           | The sender to use for the message.                                | Options: Phone number or Messaging Service. Phone numbers must be approved in Twilio.                                                             |
-| Content Template Type | The type of content template to use.                              | Options include Inline or pre-built templates in Twilio. Only compatible templates show based on your selected Channel and Content Template Type. |
-| To Phone Number       | The recipient's phone number.                                     | Must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164){:target="_blank"}.                                                      |
-| From Phone Number     | The sending phone number.                                         | Must be approved in Twilio and support the selected Channel.                                                                                      |
-| Messaging Service SID | The messaging service SID to use.                                 | Required if Sender Type is Messaging Service.                                                                                                     |
-| Content Template SID  | The SID of the content template to use.                           | Required unless Content Template Type is Inline.                                                                                                  |
-| Content Variables     | Variables used in the content template.                           | Variables must be pre-defined in Twilio.                                                                                                          |
-| Inline Template       | The message body for inline messages.                             | Supports variables (for example, `Hello {{first_name}}`). Shown only if Content Template Type is Inline.                                          |
-| Inline Media URLs     | URLs of any media you want to include with inline messages.       | URLs must be publicly accessible. Shown only if Content Template Type is Inline.                                                                  |
-| Validity Period       | How long Twilio keeps trying to deliver the message (in seconds). | Optional. Default is 14400 seconds (4 hours). Range: 1–14400.                                                                                     |
-| Send At               | Time to send the message.                                         | Optional. Must be in [ISO 8601 format]{:target="_blank"}. Messages won't send before this time and will expire after it passes.                   |
+| Field                     | Description                                                                 | Notes                                                                                                                                                                   |
+| ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Channel**               | Choose which channel to send the message on.                                | Options: SMS, MMS, and WhatsApp.                                                                                                                                        |
+| **Sender Type**           | Pick how you want to send the message.                                      | Options: Phone number or Messaging Service. Phone numbers must be approved in Twilio.                                                                                   |
+| **Content Template Type** | Select the type of content template.                                        | Options include Inline or templates you’ve built in Twilio. Segment only shows templates that match your selected Channel and Template Type.                            |
+| **To Phone Number**       | Enter the recipient’s phone number.                                         | Must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164){:target="_blank"}.                                                                            |
+| **From Phone Number**     | Choose the phone number to send from.                                       | Must be approved in Twilio and support the channel you’re using.                                                                                                        |
+| **Messaging Service SID** | Enter the messaging service SID if you’re using a messaging service.        | Required if Sender Type is Messaging Service.                                                                                                                           |
+| **Content Template SID**  | Choose which content template to use.                                       | Required unless you’re using Inline.                                                                                                                                    |
+| **Content Variables**     | Map variables used in your content template.                                | These variables need to be defined in Twilio first.                                                                                                                     |
+| **Inline Template**       | Write your message body if you’re using Inline.                             | Supports variables (for example, `Hello {{first_name}}`). Shown only if Content Template Type is Inline.                                                                |
+| **Inline Media URLs**     | Add any media URLs for your inline message.                                 | URLs must be publicly accessible. Shown only if Content Template Type is Inline.                                                                                        |
+| **Validity Period**       | Set how long Twilio should keep trying to deliver the message (in seconds). | Optional. Default is 14400 seconds (4 hours). Can be between 1 and 14400.                                                                                               |
+| **Send At**               | Schedule when Twilio should send the message.                               | Optional. Must be in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601){:target="_blank"}. Messages won’t send before this time and will expire after it passes. |
+
 
 ## Message composition options
 
@@ -128,3 +129,43 @@ The Twilio Messaging destination gives you two ways to create and send messages.
 **Inline messages** let you write your message directly in Segment mappings. You can include dynamic variables like `Hello {{first_name}}` to personalize messages. Inline messages also support adding media URLs if you’re sending MMS or WhatsApp messages. They’re useful for quick tests or simple notifications, but they don’t support all the advanced features that Content Templates do.
 
 Choose the option that fits what you’re trying to send. For most customer-facing messages, Content Templates will give you the most reliable and feature-rich experience.
+
+## Message setup options
+
+When you’re configuring your message mapping, there are a few key settings to choose from.
+
+### Content template types
+
+The template types you can use depend on the channel you select. Segment only shows templates that are compatible with your chosen channel.
+
+| Template type | Available channels | Description                                            |
+| ------------- | ------------------ | ------------------------------------------------------ |
+| Text          | SMS, WhatsApp      | Standard text-only templates.                          |
+| Media         | MMS, WhatsApp      | Templates that include images, videos, or other media. |
+| Quick reply   | WhatsApp           | Messages with quick reply buttons for users to tap.    |
+
+If you’re sending messages on WhatsApp, all messages must use approved Content Templates.
+
+### Sender types
+
+For the **Sender Type** field, you can choose either a phone number or a messaging service.
+
+If you select **phone number**, Twilio sends the message from a specific number you own. The number must be approved in your Twilio account and support the channel you’re using.
+
+If you select **messaging service**, Twilio uses a Messaging Service SID to send the message. Messaging Services group multiple senders under one ID, and Twilio decides which sender to use based on your setup. This option is helpful if you’re sending high volumes or managing multiple numbers.
+
+### Using variables
+
+Variables let you personalize messages with details from your event data or user traits.
+
+If you’re using a **Content Template**:
+- Variables must be defined in Twilio when you create the template.
+- In Segment, map each variable to the event property it should pull from. For example, if your template says `Hello {{first_name}}`, map `first_name` to the user’s first name property.
+
+If you’re writing an **inline message**:
+- Add variables directly in your message body using handlebars, like `Hello {{first_name}}`.
+- Define each variable in your mapping so Segment knows what value to insert.
+
+You can also use variables in Inline Media URLs to dynamically include different media based on event data.
+
+Make sure all variables you reference in your message are included in your mapping configuration.
