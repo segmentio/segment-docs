@@ -44,7 +44,7 @@ To add the Google Analytics 4 Cloud destination:
 3. Click **Configure Google Analytics 4 Cloud** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 
 {% include components/actions-fields.html %}
@@ -102,7 +102,7 @@ Google Analytics 4 has different out-of-the-box reports. Google Analytics 4’s 
 Segment’s Google Analytics 4 Cloud integration is a server-side integration with the GA4 Measurement Protocol API. This is similar to Segment’s Google Universal Analytics cloud-mode integration in that all data is sent directly to Google’s servers. Please note that this means client-side functionality, such as [Enhanced Measurement](https://support.google.com/analytics/answer/9216061){:target='_blank'}, may not be available through Segment. In addition, as Google continues to develop the GA4 Measurement Protocol API ahead of general availability of the API, there may be limitations that impact what can be seen in the Google Analytics 4 reports.
 
 #### Recommended events
-Google Analytics 4 requires the use of [recommended events and properties](https://support.google.com/analytics/answer/9267735){:target='_blank'} to power certain built-in reports. Segment’s Google Analytics 4 Cloud destination provides prebuilt mappings to automatically map your [Segment spec](/docs/connections/spec/ecommerce/v2)events to the corresponding Google Analytics 4 events and properties. If your Segment events don't follow the Segment spec exactly, you can modify the mappings. For example, Segment maps "Order Completed" events to the Google Analytics 4 “Purchase” event by default. If your company uses “Products Purchase” to indicate a purchase, this can be mapped in the Purchase action’s Event Trigger instead.
+Google Analytics 4 requires the use of [recommended events and properties](https://support.google.com/analytics/answer/9267735){:target='_blank'} to power certain built-in reports. Segment’s Google Analytics 4 Cloud destination provides prebuilt mappings to automatically map your [Segment spec](/docs/connections/spec/ecommerce/v2) events to the corresponding Google Analytics 4 events and properties. If your Segment events don't follow the Segment spec exactly, you can modify the mappings. For example, Segment maps "Order Completed" events to the Google Analytics 4 “Purchase” event by default. If your company uses “Products Purchase” to indicate a purchase, this can be mapped in the Purchase action’s Event Trigger instead.
 
 Segment recommends using the prebuilt mappings when possible, however the Segment spec doesn't have an equivalent event for every Google Analytics 4 recommended event. If there are other recommended events you would like to send, please use the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-event). For example, to send a `spend_virtual_currency` event, create a mapping for Custom Event, set up your Event Trigger criteria, and input a literal string of "spend_virtual_currency" as the Event Name. You can use the Event Parameters object to add fields that are in the `spend_virtual_currency` event such as `value` and `virtual_currency_name`.
 
@@ -214,6 +214,7 @@ Google reserves certain event names, parameters, and user properties. Google sil
 - fields or events with reserved names
 - fields with a number as the key
 - fields or events with a dash (-) character in the name
+- property names with capital letters
  
 ### Verifying Event Meet GA4's Measurement Protocol API
 **Why are the events returning an error _Param [PARAM] has unsupported value._?**
@@ -232,5 +233,9 @@ Because [Google's Measurement Protocol API](https://developers.google.com/analyt
 The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
 
 ### Client/server-side event deduplication 
+
 Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you don't send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
 
+### User-provided data collection
+
+Google offers a beta feature called [User-provided data collection](https://support.google.com/analytics/answer/14077171?hl=en&utm_id=ad){:target="_blank"} that collects data directly from users. Segment doesn't support this feature. Acknowledging the feature policy in your Google Analytics 4 account is permanent, even though you can later disable the data collection itself.

@@ -31,6 +31,17 @@ You can also use the Slack Actions destination to set event triggers for context
 
 To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
+### Why aren't my changes to the Tracking Plan showing up immediately?
+
+When you update a Tracking Plan (for example, adding or removing a new property or editing the event or data type) the changes are typically applied within a few minutes. However, there can occasionally be a short delay, especially during periods of high usage across the platform.
+
+If you still see events flagged or properties omitted shortly after making changes, try the following:
+
+- Wait a few minutes and then send the event again.
+- Make sure the updates are saved and published properly.
+
+If the changes still aren't reflected after 10 - 15 minutes, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}. 
+
 ### How can I see who made changes to my Tracking Plan?
 
 Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**. 
@@ -144,9 +155,19 @@ The schema functionality is a _reactive_ way to clean up your data, where the Tr
 
 That being said, there are plenty of scenarios where the reactive Schema functionality solves immediate needs for customers. Often times, customers will use both Schema Controls and Tracking Plan functionality across their Segment Sources. For smaller volume Sources with less important data, the Schema functionality often works perfectly.
 
-### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
+### If I enable blocking are events just blocked from specific Destinations or the entire Segment pipeline?
 
-Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+Segment can block events from all Segment Destinations except for mobile device mode destinations. 
+
+Events that are delivered from a mobile source in device mode bypass the point in the Segment pipeline where Segment blocks events, so mobile events sent using device mode are not blocked and are delivered to your Destinations. If you are a Business Tier customer using Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) SDKs, you can use [destination filters](/docs/connections/destinations/destination-filters/) to block events. 
+
+When an event is blocked using a Tracking Plan, it does not count towards your MTU limit. If you use [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/), blocked events forwarded to a new source will count toward your MTU limit.
+
+### If I omit unplanned properties or properties that generate JSON schema violations, what happens to them?
+
+Segment doesn't store unplanned properties and properties omitted due to JSON Schema Violations in Segment logs. Segment drops omitted properties from the events. You can find the omitted properties in the `context.violations` object of an event payload. If you forward Violations to a new source, then you can also see the omitted properties in the Violation Generated event under `violationField` in the `properties` object. 
+
+Segment only stores fully blocked events for 30 days. 
 
 ### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
 
@@ -158,6 +179,11 @@ Segment's [Schema Controls](docs/connections/sources/schema/destination-data-con
 2. **Standard Schema Controls/"JSON Schema Violations"**: Segment checks the names and evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
 3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: Segment evaluates incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
 
+
+### Why am I still seeing unplanned properties in my Source Schema when I've added the properties to a new version of my Tracking Plan?
+
+The source schema only validates events against the oldest event version in a Tracking Plan. If, for example, you have a version 1 and version 2 of your Tracking Plan, the schema only checks against version 1 of your Tracking Plan.
+
 ### Do blocked and discarded events count towards my MTU counts?
 
 Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
@@ -165,6 +191,43 @@ Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [
 ### Do warehouse connectors use the data type definitions when creating a warehouse schema?
 
 Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
+
+### Why are unplanned properties not showing up as blocked in my Source Schema, even though I've set the Schema Configuration to omit them?
+
+Next to the Event Name column in your [Source Schema](/docs/connections/sources/schema/) are two columns:  Allowed and Blocked. If you configure your [Schema Configuration](https://segment.com/docs/protocols/enforce/schema-configuration/) to Block Unplanned Events and Omit Properties, the Source Schema only shows a property or trait as blocked when the _entire event is blocked_ because it’s unplanned and not part of the Tracking Plan. The Block Unplanned Events and Omit Properties settings are only be enforced if the property is an unplanned name, not an unplanned value.
+
+To show a blocked value for a property/trait in your Source Schema, you'll need to trigger a violation, which can only be done using the JSON Schema. Once you configure your Schema Configuration to Omit Properties, the property or trait is shown as blocked.
+
+See an example payload below: 
+
+```json
+"protocols": {
+      "omitted": [
+        "newProperty"
+      ],
+      "omitted_on_violation": [
+        "integer",
+        "string"
+      ],
+      "sourceId": "1234",
+      "violations": [
+        {
+          "type": "Invalid Type",
+          "field": "properties.integer",
+          "description": "Invalid type. Expected: integer, given: number"
+        },
+        {
+          "type": "Invalid Type",
+          "field": "properties.string",
+          "description": "Invalid type. Expected: string, given: integer"
+        }
+      ]
+```
+![A screenshot of the Source Schema page, with an event expanded to display a blocked property, newProperty.](images/protocols-faq-blocked-events.png)
+
+### Can I use schema controls to block events forwarded to my source from another source?
+
+You can only use schema controls to block events at the point that they are ingested into Segment. When you forward an event that Segment has previously ingested from another source, that event bypasses the pipeline that Segment uses to block events and cannot be blocked a second time. 
 
 ## Protocols Transformations
 
@@ -203,3 +266,7 @@ Transformations are but one tool among many to help you improve data quality. Se
 ### Are transformations applied when using the Event Tester?
 
 Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
+
+### Why am I getting the error "rules must contain less than or equal to 200 items" when using the Public API? Can I increase this limit?
+
+This error occurs because there is a limit of 200 rules per API update. This restriction is by design to ensure stable API performance. Segment is not able to increase this limit on your behalf. To work around this, split your update into smaller batches, each with 200 or fewer rules.

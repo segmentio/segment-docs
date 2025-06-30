@@ -20,6 +20,17 @@ sections:
     title: Testing and Debugging
   - path: /getting-started/whats-next
     title: What's Next
+  - section_title: Use Cases
+    slug: getting-started/use-cases
+    section:
+    - path: /getting-started/use-cases/
+      title: Use Cases Overview
+    - path: /getting-started/use-cases/guide/
+      title: Choosing a Use Case
+    - path: /getting-started/use-cases/setup/
+      title: Use Cases Setup
+    - path: /getting-started/use-cases/reference/
+      title: Use Cases Reference
 
 - section_title: Guides
   section:
@@ -91,8 +102,6 @@ sections:
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/discounts-for-startups-npos
       title: Discounts or Coupons
-    - path: /guides/usage-and-billing/startup-program
-      title: Segment Startup Program
 - section_title: Connections
   section:
   - path: /connections
@@ -201,6 +210,8 @@ sections:
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
         title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/db2-setup
+        title: Db2 Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
         title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
@@ -214,6 +225,8 @@ sections:
       title: Functions Overview
     - path: /connections/functions/source-functions
       title: Source Functions
+    - path: /connections/functions/source-insert-functions
+      title: Source Insert Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
     - path: /connections/functions/insert-functions
@@ -279,7 +292,7 @@ sections:
   - path: /connections/regional-segment
     title: Regional Segment
   - path: /connections/test-connections
-    title: Event Tester
+    title: Testing Connections
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -347,10 +360,21 @@ sections:
     - section_title: Setup Guides
       slug: /unify/data-graph/setup-guides/
       section:
-      - path: /unify/data-graph/setup-guides/snowflake-setup/
-        title: Snowflake Setup
+      - path: /unify/data-graph/setup-guides/bigquery-setup/
+        title: BigQuery Data Graph Setup
       - path: /unify/data-graph/setup-guides/databricks-setup/
-        title: Databricks Setup
+        title: Databricks Data Graph Setup
+      - path: /unify/data-graph/setup-guides/redshift-setup/
+        title: Redshift Data Graph Setup
+      - path: /unify/data-graph/setup-guides/snowflake-setup/
+        title: Snowflake Data Graph Setup
+    - section_title: Linked Events 
+      slug: /unify/data-graph/linked-events/
+      section: 
+      - path: /unify/data-graph/linked-events/ 
+        title: Linked Events Overview
+      - path: /unify/data-graph/linked-events-limits/
+        title: Linked Events Limits
   - section_title: Traits
     slug: unify/traits
     section:
@@ -371,6 +395,8 @@ sections:
       title: Custom Traits
     - path: '/unify/traits/sql-traits'
       title:  SQL Traits
+    - path: '/unify/traits/recommended-items'
+      title: Recommended Items
   - path: /unify/profile-api
     title: Profile API
   - path: /unify/debugger
@@ -392,10 +418,6 @@ sections:
     title: Introduction
   - path: '/engage/quickstart'
     title: Foundations Onboarding
-  - path: '/engage/onboarding'
-    title: Premier Onboarding
-  - path: '/engage/use-cases'
-    title: Use Cases
   - section_title: User Subscriptions
     slug: profiles/user-subscriptions
     section:
@@ -421,18 +443,27 @@ sections:
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
-    - path: '/engage/audiences/linked-audiences'
-      title: Linked Audiences
+    - section_title: Linked Audiences
+      slug: '/engage/audiences/linked-audiences'
+      section: 
+      - path: '/engage/audiences/linked-audiences'
+        title: Linked Audiences Overview
+      - path:  '/engage/audiences/linked-audiences-limits'
+        title: Linked Audiences Limits
+      - path: '/engage/audiences/linked-audiences-braze'
+        title: Linked Audiences with Braze
+      - path : '/engage/audiences/linked-audiences-iterable'
+        title: Linked Audiences with Iterable
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
       title: Generative Audiences
     - path: '/engage/audiences/generative-audiences-nutrition-facts'
       title: Generative Audiences Nutrition Facts Label
-    - path: '/engage/audiences/recommendation-audiences'
-      title: Recommendation Audiences
-    - path: '/engage/audiences/recommendation-audiences-nutrition-label'
-      title: Recommendation Audiences Nutrition Facts Label
+    - path: '/engage/audiences/product-based-audiences'
+      title: Product Based Audiences
+    - path: '/engage/audiences/product-based-audiences-nutrition-label'
+      title: Product Based Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
     - path: '/engage/audiences/send-audience-data'
@@ -443,22 +474,38 @@ sections:
     section:
     - path: '/engage/journeys'
       title: Journeys Overview
-    - path: '/engage/journeys/build-journey'
-      title: 'Build a Journey'
-    - path: '/engage/journeys/step-types'
-      title: 'Journey Step Types'
+    - section_title: Journeys V1
+      slug: '/engage/journeys/v1'
+      section: 
+      - path: '/engage/journeys/v1/build-journey'
+        title: 'Build a Journey'
+      - path: '/engage/journeys/v1/step-types'
+        title: 'Journey Step Types'
+      - path: '/engage/journeys/v1/send-data'
+        title: Send Data to Destinations
+      - path: '/engage/journeys/v1/journeys-logic'
+        title: Understand Journeys Logic
+    - section_title: Journeys V2
+      slug: '/engage/journeys/v2'
+      section: 
+      - path: /engage/journeys/v2/
+        title: Overview
+      - path: /engage/journeys/v2/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
+      - path: /engage/journeys/v2/exit-rules
+        title: Exit Rules
+      - path: /engage/journeys/v2/journey-context
+        title: Journey Context
+      - path: /engage/journeys/v2/use-cases
+        title: Use Cases
+      - path: /engage/journeys/v2/limits
+        title: Product Limits
     - path: '/engage/journeys/journeys-edits'
       title: 'Journey Edits and Versioning'
-    - path: '/engage/journeys/send-data'
-      title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
-    - path: '/engage/journeys/use-cases'
-      title: Example Journeys Use Cases
-    - path: '/engage/journeys/journeys-logic'
-      title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
       title: Journeys Glossary
   - section_title: Content
@@ -550,17 +597,30 @@ sections:
     - path: /privacy/consent-management/configure-consent-management
       title: Configure Consent Management
     - path: /privacy/consent-management/consent-in-unify
-      title: Consent in Unify
+      title: Consent Stored on the Profile
     - path: /privacy/consent-management/consent-in-retl
       title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
+  - path: /privacy/data-retention-policy
+    title: Data Retention and Deletion Policy
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
     title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
+- section_title: Monitor
+  section: 
+  - path: /monitor
+    title: Monitor Overview
+  - section_title: Alerts
+    slug: /monitor/alerts
+    section:
+    - path: /monitor/alerts
+      title: Alerts Overview
+    - path: /monitor/alerts/default-alerts
+      title: Default Alerts
 - section_title: Protocols
   section:
   - path: /protocols
@@ -676,3 +736,11 @@ sections:
     #   menu_icon: new-tab
   # - path: /config-api/tutorial-javascript-google-analytics
   #   title: Creating a Javascript web source and Google Analytics destination
+- section_title: Unified Profiles
+  section: 
+    - path: /unified-profiles
+      title: Overview
+    - path: /unified-profiles/create-a-workspace
+      title: Create a New Segment Workspace
+    - path: /unified-profiles/connect-a-workspace
+      title: Connect an Existing Workspace to Twilio

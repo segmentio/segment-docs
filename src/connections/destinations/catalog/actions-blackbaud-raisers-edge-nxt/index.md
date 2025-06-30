@@ -20,7 +20,7 @@ your Blackbaud Developer account.
 6. Visit the Blackbaud ["My subscriptions"](https://developer.blackbaud.com/subscriptions/){:target="_blank"}
 page, copy your **Primary access key**, and paste the value into the **Blackbaud API Subscription Key** field.
 7. Follow the steps in the Destinations Actions documentation on
-[Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings). You must select which
+[Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). You must select which
 Event Types and/or Event Names will trigger each mapping.
 8. Enable the destination and configured mappings.
 

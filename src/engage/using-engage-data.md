@@ -215,7 +215,7 @@ _See [this doc](/docs/engage/journeys/send-data/#what-do-i-send-to-destinations)
 Engage has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, or `mobile advertisingId`. However, different destinations may require different keys, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
 Engage includes logic to automatically enrich payloads going to these destinations with the required keys.
 
-If you send events to a destination that requires specific enrichment Segment doesn't already include, [contact Segment](https://segment.com/help/contact/){:target="_blank"}, and we‘ll do our best to address it.
+If you send events to a destination that requires specific enrichment Segment doesn't already include, you can use [ID Sync](/docs/engage/trait-activation/id-sync/) or [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to send additional data points to the destination.
 
 > info ""
 > Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
@@ -227,7 +227,7 @@ If you send events to a destination that requires specific enrichment Segment do
 
 You might also see that profiles that have multiple values for the same `external_id` type, for example a profile might have multiple email addresses. When this happens, Engage sends one event per email for each audience or computed trait event. This ensures that all downstream email-based profiles receive the complete audience or computed trait.
 
-In some situations this behavior might cause an unexpected volume of API calls. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if you have a use case which calls for an exemption from this default behavior.
+In some situations, this behavior might cause an unexpected volume of API calls. You can use [ID Sync](/docs/engage/trait-activation/id-sync/) to establish a strategy and control the number of events sent.
 
 ## New external identifiers added to a profile
 
@@ -237,7 +237,7 @@ The first is when the value of the trait or audience changes.
 
 The second, less common case is that Engage re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value hasn't changed. When that email address is added to the profile, Engage re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizing the user's experience from a more complete profile.
 
-[Contact Segment](https://segment.com/help/contact/){:target="_blank"} if you don't want computed traits or audiences to re-sync when the underlying trait or value hasn't changed.
+For more granular control that lets you specify which external IDs Segment sends to a destination, see the [ID Sync documentation](/docs/engage/trait-activation/id-sync/). 
 
 
 ## Rate limits on Engage Event Destinations
@@ -296,3 +296,4 @@ Connect any Cloud-mode destination that supports Identify or Track calls to Enga
 - [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
 - [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
+- [TikTok Audiences](/docs/connections/destinations/catalog/actions-tiktok-audiences/)

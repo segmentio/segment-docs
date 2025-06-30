@@ -16,6 +16,13 @@ This destination is maintained by Dynamic Yield by Mastercard. For any issues wi
 
 **Dynamic Yield by Mastercard Audiences** is an Audience Destination which must be first connected to an Engage Space before it can be connected to individual Engage Audiences. The steps below outline how to connect the Destination to an Engage Space and then to an Audience.
 
+### Enable IP allowlisting
+Dynamic Yield requires that data sent by Segment originate from a fixed IP range. As a prerequisite to using the **Dynamic Yield by Mastercard Audiences** Destination, Segment Business Tier customers must enable the **IP Allowlisting** feature on their workspace. This feature is only available for Segment Business Tier customers. 
+
+To enable IP allowlisting:
+1. Navigate to **Settings > Workspace Settings > Destination IP Settings** in your Segment workspace.
+2. Click **Enable IP allowlisting** to enable the feature. 
+
 ### Create an instance of the Dynamic Yield Destination
 
 1. From your Segment workspace, navigate to **Connections > Catalog**.

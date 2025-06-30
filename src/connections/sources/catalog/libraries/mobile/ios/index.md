@@ -2,20 +2,23 @@
 title: Analytics-iOS
 strat: ios
 repo: analytics-ios
-support_type: maintenance
+support_type: community
 id: UBrsG9RVzw
+custom_ranking:
+  heading: 0
+  position: 99999
 ---
 With Analytics-iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
 <br />
 <br />
 <br />
 
-> note ""
-> **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
+> warning "End-of-Support for Analytics-iOS in March 2026"
+> End-of-support for the Analytics-iOS SDK is scheduled for March 2026. Segment's future development efforts concentrate on the new [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/){:target="_blank”} SDK. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/){:target="_blank”}.
 
+> info "Watchkit extensions currently unsupported"
+> Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email Segment](https://segment.com/requests/integrations/){:target="_blank”}. if you're interested in a Watchkit SDK. For now Segment recommends tracking watch interactions using the iPhone app code.
 
-> info "Analytics-Swift"
-> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/). Segment's future development efforts concentrate on the new Analytics-Kotlin SDK, and will only ship security updates for the Analytics-Android SDK.
 
 ## Analytics-iOS and Unique Identifiers
 
@@ -23,7 +26,7 @@ One of the most important parts of any analytics platform is the ability to cons
 
 Naturally the Analytics SDK needs a unique ID for each user. To protect end-users' privacy, Apple places restrictions on how these IDs can be generated and used. This section explains Apple's policies, and how Segment generates IDs in compliance with these policies.
 
-Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
+Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a){:target="_blank”}.. In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/){:target="_blank”}., which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
 
 Segment's iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple's required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
 
@@ -86,8 +89,8 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-> note ""
-> **Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-4-track-actions) for more info!
+> info "Lifecycle event tracking optional, but recommended"
+> Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events. See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-4-track-actions) for more info.
 
 And of course, import the SDK in the files that you use it with:
 {% codeexample %}
@@ -222,12 +225,12 @@ configuration.trackDeepLinks = YES;
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-> note ""
-> **Note:** You still need to call the `continueUserActivity` and `openURL` methods on the analytics client.
+> info ""
+> Even with `trackDeepLinks` set to `YES`, you still must call the `continueUserActivity` and `openURL` methods on the analytics client.
 
 ### Flushing
 
-You can set the number of events that should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
+You can set the number of events that should queue before flushing. Setting this to `1` will send events as they come in (for example, not send batched events) and will use more battery. `20` by default.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -268,8 +271,8 @@ Analytics.shared().flush()
 
 Now that the Segment SDK and any accompanying packaged SDKs are installed, you're ready to collect some data!
 
-> note ""
-> **Good to know**: For any of the methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 ### Identify
 
@@ -278,8 +281,8 @@ Segment's Identify method lets you tie a user to their actions and record traits
 Segment recommends that you call Identify once when you first create the user's account, and only call it again later when they update their traits or you change them.
 
 
-> note ""
-> **Note:** Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices (for example, iPhone and iPad).
+> success ""
+> Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices (for example, iPhone and iPad).
 
 Example `identify` call:
 
@@ -672,8 +675,8 @@ Analytics.shared().track("Product Rated", properties: nil, options: ["integratio
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 
-> note ""
-> **Note:** Business level customers can filter track calls from the Segment App from the source schema page. Segment recommends that you use this method when possible, because simpler, and can be updated without any code changes in your app.
+> success ""
+> Business Tier customers can filter Track calls from the Segment App from the source schema page. Segment recommends that you use this method when possible, because it is simpler and can be updated without making any code changes in your app.
 
 
 ### Disabled destinations in the debugger
@@ -835,8 +838,8 @@ configuration.enableAdvertisingTracking = YES;
 The same value for IDFA will used across all (device and cloud-mode) integrations.
 
 
-> note ""
-> **Note:** analytics-ios can continue to collect events without the IDFA until user is prompted and only upon user consent the `advertisingId` field is added to the event payload
+> success ""
+> Analytics-iOS can continue to collect events without the IDFA until a user is prompted and only upon user consent the `advertisingId` field is added to the event payload.
 
 Ad-tracking affects two keys under the `context` object of every event:
 

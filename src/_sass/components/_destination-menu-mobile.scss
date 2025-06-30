@@ -92,7 +92,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    color: color(secondary-dark);
+    color: color(twilio-secondary);
     font-size: 15px;
     line-height: 1.73;
     transition: 0.3s color, 0.3s font-weight;
@@ -103,7 +103,7 @@
     &--active,
     &:hover,
     &:focus {
-      color: color(secondary-dark);
+      color: color(twilio-secondary);
       border: 1px solid color(primary);
       background-color: rgba(color(success), 0.1);
       text-decoration: none;

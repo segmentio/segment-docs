@@ -19,7 +19,7 @@ When you use the 1Flow Web (Actions) Destination, Segment loads the [1Flow SDK](
 2. Search for and select **1Flow  Web (Actions) Destination**.
 3. Select the web source that will send data to 1Flow web (Actions) and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/source/catalog/libraries/website/javascript).
 4. On the **Settings** tab, input your 1Flow **PROJECT API KEY** and other destinations settings.
-5. Follow the step in the Destinations Actions docs to [customizing mappings](/docs/connections/destinations/action/#customizing-mappings).
+5. Follow the step in the Destinations Actions docs to [customize your mappings](/docs/connections/destinations/action/#customize-mappings).
 6. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html %}

@@ -16,7 +16,7 @@ Klaviyo lets you send personalized newsletters, automates triggered emails, prod
 Klaviyo (Actions) provides the following benefits:
 
 - **Simple setup** - Klaviyo (Actions) has a streamlined default setup process making it easier to get started in a way that "just works".
-- **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Klaviyo.
+- **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources and the data Segment sends to Klaviyo.
 - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
 
 > info ""
@@ -35,9 +35,9 @@ Klaviyo (Actions) provides the following benefits:
 
 {% include components/actions-fields.html %}
 
-## Using Klaviyo with RETL
+## Using Klaviyo with Reverse ETL
 
-Klaviyo (Actions) Destination can accept [RETL](/docs/connections/reverse-etl/) data. You can send the models you created in your data warehouse source. Follow [the steps](/docs/connections/reverse-etl/#step-1-add-a-source) to create your data warehouse source and set up models.
+Klaviyo (Actions) Destination can accept [Reverse ETL](/docs/connections/reverse-etl/) data from your data warehouse sources. Follow the steps in Segment's [Reverse ETL setup guide](/docs/connections/reverse-etl/setup/#step-1-add-a-source) to create your data warehouse source and set up models.
 
 | Action              | Added                                                   | Updated                                                   | Deleted                                                        |
 | ------------------- | ------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------- |
@@ -49,11 +49,9 @@ Klaviyo (Actions) Destination can accept [RETL](/docs/connections/reverse-etl/) 
 | Unsubscribe Profile | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />        |
 
 > info ""
-> **\*** Though technically possible, it may not be the most intuitive approach to using RETL.
->
-> **e.g.,** Triggering a **Subscribe Profile** action when a user is **deleted** from a Model that queries unsubscribed users.
+> **\***Though technically possible, this may not be the most intuitive approach to using Reverse ETL.
 
-In order to add users to a list, use the **Upsert Profile** Action and fill out the **List** field with the Klaviyo list to add the profile to.
+In order to add users to a list, use the **Upsert Profile** Action and fill out the **List** field with the Klaviyo list you'd like to add the profile to.
 
 Follow these steps to create a list in Klaviyo:
 
@@ -65,7 +63,7 @@ Follow these steps to create a list in Klaviyo:
 
 ## Using Klaviyo with Engage
 
-Klaviyo (Actions) Destination can accept your [Engage](/docs/engage/) data. If you wish to add a profile to a list associated with the Engage audienceId, you **don't** need to create a list in Klaviyo. During the first sync with the **Add Profile To List (Engage)** Mapping, Segment creates a list with the same ID as your audience.
+Klaviyo (Actions) Destination can accept your [Engage](/docs/engage/) data. If you want to add a profile to a list associated with an Engage `audienceId`, you **don't** need to create a list in Klaviyo. During the first sync with the **Add Profile To List (Engage)** Mapping, Segment creates a list with the same ID as your audience.
 
 To add and remove profiles in Klaviyo with Engage Audience data:
 
@@ -84,23 +82,51 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 ## FAQ
 
-### Dealing with Error Responses from Klaviyo's API
+#### Dealing with error responses from Klaviyo's API
  
-#### 429 Too Many Requests
+##### `429` Too Many Requests
 
-If you're encountering rate limiting issues, consider enabling batching for the Action receiving these errors. To enable mapping, navigate to the mapping configuration and set "Batch data to Klaviyo" to "Yes". This adjustment might help alleviate the rate limiting problem.
+If you're seeing `429` rate limit errors, try enabling batching for the impacted Action. In the mapping configuration, set "Batch data to Klaviyo" to `Yes` to help reduce rate limits.
 
-#### 409 Conflict
+If `429` errors persist, Segment automatically adjusts the event delivery rate. There’s no fixed rate limit for the Klaviyo destination; Segment adapts based on Klaviyo’s capacity:
+
+- If Klaviyo allows more traffic, Segment increases the send rate.
+- If Klaviyo returns `429` or other retryable errors, Segment slows down.
+- As more events are successfully delivered, the system gradually speeds up.
+
+Retryable errors tell Segment to slow down, while successful deliveries let Segment send events faster.
+
+##### 409 Conflict
 In most cases, you can safely ignore a `409` error code. 
 
-When you use the [Upsert Profile](/docs/connections/destinations/catalog/actions-klaviyo/#upsert-profile) mapping to send Identify events, Segment first attempts to [create a new profile in Klaviyo](https://developers.klaviyo.com/en/reference/create_profile){:target="_blank”}. If the first request returns with a `409` error code, Segment sends a second request to [update the existing profile with the given profile ID](https://developers.klaviyo.com/en/reference/update_profile){:target="_blank”}. 
+When you use the [Upsert Profile](/docs/connections/destinations/catalog/actions-klaviyo/#upsert-profile) mapping to send Identify events, Segment first attempts to [create a new profile in Klaviyo](https://developers.klaviyo.com/en/reference/create_profile){:target="_blank”}. If the first request returns with a `409` error code, Segment sends a second request to [update the existing profile with the given profile ID](https://developers.klaviyo.com/en/reference/update_profile){:target="_blank”}.
 
-### Can I send Engage Audiences to a pre-created Klaviyo List?
+#### 403 Forbidden
 
-No. Engage audiences are designed to initiate the creation of new lists in Klaviyo when you use the "Add Profile to List - Engage" mapping. You cannot link Engage lists to existing Klaviyo lists and cannot edit the List ID for Engage audiences.
+Some customers experience 403 errors when sending audience data to Klaviyo through Segment. This occurs due to Klaviyo's security measures blocking requests from shared IPs, which are common when using cloud-hosted platforms, like Segment, that use dynamically generated IP addresses.
 
-### How can I unsuppress a profile when adding it to a list?
+To reduce the number of `403` errors that you encounter, enable [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) for your workspace. For more information the range of IP addresses Klaviyo uses for integration traffic, see Klaviyo's [How to allowlist Klaviyo integration traffic IP addresses](https://help.klaviyo.com/hc/en-us/articles/19143781289115){:target="_blank”} documentation. 
 
-When adding a user to a list, our action make use of the [Bulk Profile Import](https://developers.klaviyo.com/en/reference/spawn_bulk_profile_import_job){target="_blank"} endpoint (when batching is enabled), and the [Add Profile To List](https://developers.klaviyo.com/en/reference/create_list_relationships){target="_blank"} endpoint for non-batched requests. Both of which will not update a users suppression status if they were previously suppressed. 
+#### How can I unsuppress a profile when adding it to a list?
 
-To ensure a suppressed profile gets unsuppressed, you can use the "Subscribe Profile" action. When a profile is subscribed in Klaviyo, it automatically unsuppresses any previously suppressed user. You can combine this action with other actions to achieve your goal. If this solution does not fully address your use case, please contact us at friends@segment.com so we can consider your specific requirements.
+When adding a user to a list, our action make use of the [Bulk Profile Import](https://developers.klaviyo.com/en/reference/spawn_bulk_profile_import_job){:target="_blank”} endpoint (when batching is enabled), and the [Add Profile To List](https://developers.klaviyo.com/en/reference/create_list_relationships){:target="_blank”} endpoint for non-batched requests. Both of which will not update a users suppression status if they were previously suppressed. 
+
+To unsuppress a previously suppressed profile in Klaviyo, use the **Subscribe Profile** action. This action automatically removes the suppression status for the user when they are subscribed. You can also pair this action with other mappings to suit your workflow.
+
+If this approach doesn't address your use case, [reach out to Segment](mailto:friends@segment.com) to discuss your specific requirements.
+
+#### Can batching be enabled for the entire Klaviyo (Actions) destination?
+
+Batching is only available for events sent through the Upsert Profile action mapping. Other actions in the Klaviyo (Actions) destination don't support batching.
+
+####  Do I need to configure these event names in Klaviyo?
+
+Yes. Event names, including Event Name, Metric Name, and Product Event Name, must be preconfigured in Klaviyo. If an event name isn't set up in Klaviyo, it won’t be processed or linked to user profiles.
+
+####  How do I configure event names in Klaviyo?
+
+To configure event names in Klaviyo:
+1. Log in to your Klaviyo account.
+2. Go to **Analytics > Metrics**.
+3. Add or verify the event names (Event Name, Metric Name and Product Event Name) you plan to use in Segment.
+4. Event names are case-sensitive. Ensure the names exactly match the ones used in your Segment integration.

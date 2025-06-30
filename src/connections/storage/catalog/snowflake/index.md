@@ -5,8 +5,6 @@ redirect_from:
   - '/connections/warehouses/catalog/snowflake/'
 ---
 
-{% include content/warehouse-ip.html %}
-
 [Snowflake](https://docs.snowflake.net/manuals/index.html){:target="_blank"} is a data warehouse, built for the cloud, that delivers performance, simplicity, concurrency and affordability.
 
 > info ""
@@ -92,9 +90,6 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 ### Step 4: Create a user for Segment
 
 Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. For enhanced security, Segment recommends creating a user that authenticates with an encrypted key pair.
-
-> info "Key-pair authentication restricted to Business Tier users only"
-> Users on other plans can authenticate with Snowflake using a [username and password](#create-a-user-that-authenticates-with-a-username-and-password).
 
 #### Create a user that authenticates with a key pair
 If you are creating a user that will use a key pair to authenticate, you first must create a public key and then can create a new user. 
@@ -266,7 +261,7 @@ At this time, the Segment Snowflake destination is not compatible with Snowflake
 
 Segment recommends that you authenticate with your Snowflake warehouse using an encrypted key pair. Key-pair authentication uses PKCS#8 private keys, which are typically exchanged in the PEM base64-encoded format. 
 
-Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.
+Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that's used to authenticate with Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.
 
 ### Auto Suspend and Auto Resume
 

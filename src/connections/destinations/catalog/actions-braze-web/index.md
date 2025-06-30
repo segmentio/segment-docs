@@ -4,10 +4,11 @@ hide-boilerplate: true
 hide-dossier: false
 redirect_from:
   - '/connections/destinations/catalog/vendor-braze/'
+  - '/connections/destinations/catalog/braze-web-device-mode-actions/'
 id: 60fb01aec459242d3b6f20c1
 versions:
   - name: 'Braze Cloud Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-cloud-mode-actions'
+    link: '/docs/connections/destinations/catalog/actions-braze-cloud'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---
@@ -26,6 +27,8 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
 3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
+
+After setting up your Braze Web Mode (Action) destination in the Segment app, Segment's Analytics.js library starts asynchronously loading the Braze SDK on your page and sending data. Data appears in the Segment CDN in about 45 minutes.  
 
 > info ""
 > If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
@@ -159,6 +162,10 @@ For more details on this snippet, see Braze's [Soft push prompt](https://www.bra
  });
 ```
 
+### Enable SDK Authentication
+
+When "Enable SDK Authentication" is enabled, Segment will set Braze's `enableSdkAuthentication` to `true`. When this feature is enabled, the Braze SDK will append the current user’s last known JWT to network requests made to Braze Servers.
+
 
 ## Important differences from the classic Braze destination
 - Braze Web Mode (Actions) supports the Braze [Web](https://github.com/segment-integrations/analytics.js-integration-appboy){:target="_blank"} integration. [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-braze-cloud) supports server and mobile sources, but to use mobile sources in device-mode, use the Braze Classic destination.
@@ -168,3 +175,15 @@ For more details on this snippet, see Braze's [Soft push prompt](https://www.bra
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
+
+
+## FAQ
+
+### How does the Debounce Middleware Action work? 
+
+The following [Debounce Middleware](/docs/connections/destinations/catalog/actions-braze-web/#debounce-middleware) logic is executed at the source-level:
+
+When an Identify call is fired on a website, Segment first caches and compares the user traits object. 
+
+- If the user traits differ from what was previously cached, the data flows through destination filters, insert functions, and then through destination mappings. 
+- If user traits are the same as what's cached, Segment assumes that that data was already sent to Braze and a does not make a new request to Braze. 

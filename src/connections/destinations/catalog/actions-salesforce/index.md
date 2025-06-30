@@ -33,7 +33,7 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 3. Click **Configure Salesforce** in the top-right corner of the screen.
 4. Select the source that will send data to Salesforce, follow the steps to name your destination, and select **Actions** as the destination framework.
 5. On the **Settings** tab, authenticate with Salesforce using OAuth.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings). You must select which Event Types and/or Event Names will trigger each mapping.
+6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). You must select which Event Types and/or Event Names will trigger each mapping.
 7. Enable the destination and configured mappings.
 
 > info "Salesforce (Actions) authentication limitations"
@@ -41,6 +41,33 @@ Before you connect Segment to Salesforce, please ensure you have a Salesforce ac
 > 
 > _For additional information on these limitations, see the Salesforce [Manage OAuth-Enabled Connected Apps Access to Your Data](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_request_manage.htm&type=5#:~:text=Each%20connected%20app%20allows%20five%20unique%20approvals%20per%20user.){:target="_blank”}  documentation._
 
+
+## Actions v2
+
+Segment's Actions v2 provide you with access to the following features: 
+  - **Sync modes**: Control how Segment updates Salesforce by selecting a [sync mode](#sync-modes), or a strategy for updating your downstream data.
+  - **Dynamic dropdowns**: When creating or updating a mapping in the Segment app, the dropdown auto-populates all of the available properties directly from Salesforce.
+  - **Create and modify data**: Use Sync modes to create objects in your downstream destination without having to leave the Segment app.
+
+> warning ""
+> You might need to reauthorize your Salesforce account to use all of the features associated with Actions v2.
+
+The following Actions support the Actions v2 functionality: 
+  - [Account v2](#account-v2)
+  - [Custom Object v2](#custom-object-v2)
+  - [Case v2](#case-v2)
+  - [Opportunity v2](#opportunity-v2)
+  - [Lead v2](#lead-v2)
+  - [Contact v2](#contact-v2)
+
+### Sync modes
+Sync modes allow users to define how Segment should update the data in your destination.
+
+Available sync modes for the Salesforce (Actions) destination include: 
+- **Add**: Add a new record when the specified identifier doesn't exist. If it does exist, Segment skips the record.
+- **Update**: Update a record if a match with the specified identifier is found. Segment does nothing if the record doesn't exist.
+- **Upsert**: If a record with the specified identifier is found, it is updated. If not, Segment creates a new record
+- **Delete**: Remove the record associated with a specified identifier. Not available when using batching.
 
 {% include components/actions-fields.html %}
 
@@ -159,6 +186,9 @@ When using the `create` operation, it's possible for duplicate records to be cre
 
 Please note this is only a concern when using the `create` operation. You can use the `upsert` operation instead to avoid duplicates if `upsert` meets your needs.
 
+### Why do I see "undefined traits" error?
+This error happens when you use the `update` operation, but no value is provided for the field defined as the Record Matcher. To fix this, make sure your payload includes a value for the Record Matcher field.
+
 ### How does Salesforce Bulk API work?
 When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 5000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
 
@@ -174,3 +204,4 @@ For "Bulk Upsert External ID", see [Salesforce’s help documentation](https://h
 
 > warning ""
 > The field mapped to Bulk Upsert External Id should **not** be included in the Other Fields mapping. Including it as a custom field will cause an error in Salesforce. Although the Bulk API may return successful responses, the [Bulk Data Load Jobs](https://help.salesforce.com/s/articleView?id=sf.monitoring_async_api_jobs.htm&type=5) page in Salesforce will display error messages for failed operations.
+

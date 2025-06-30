@@ -16,8 +16,8 @@ All functions are scoped to your workspace, so members of other workspaces can't
 ![An illustrative graphic showing information flowing from the Segment app, into code, and then into Slack](images/destination_functions_overview.png)
 
 
-> note ""
-> Destination functions doesn't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources). Destination functions don't support [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting).
+> warning ""
+> Destination functions don't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources) or support [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting).
 
 ## Create a destination function
 
@@ -79,9 +79,17 @@ To change which event type the handler listens to, you can rename it to the name
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
+### Variable scoping 
+
+When declaring settings variables, declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
+
+The handler for destination functions is event-specific. For example, you might have an `onTrack()`or `onIdentify()` function handler.
+
 ### Errors and error handling
 
 {% include content/functions/errors-and-error-handling.md %}
+
+You can incorporate a a `try-catch` block to ensure smooth operation of functions even when fetch calls fail. This allows for the interception of any errors during the API call, enabling the application of specific error handling procedures, such as error logging for future debugging, or the assignment of fallback values when the API call is unsuccessful. By positioning the continuation logic either outside the `try-catch` block or within a `finally` block, the function is guaranteed to proceed with its execution, maintaining its workflow irrespective of the outcome of the API call.
 
 You can read more about [error handling](#destination-functions-logs-and-errors) below.
 

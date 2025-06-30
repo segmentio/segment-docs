@@ -38,6 +38,9 @@ For data to flow to your downstream destinations, you'll need to connect your in
 2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
+> warning "Storage destinations are not compatible with Destination Insert Functions"
+> You cannot connect an Insert Function to a storage destination at this time.
+
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
@@ -108,6 +111,12 @@ To ensure the Destination processes an event payload modified by the function, r
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
+### Variable scoping 
+
+When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you leaking the settings values across other function instances. 
+
+The handler for insert functions is event-specific, for example, `onTrack()`, `onIdentify()`, and so on.
+
 ### Errors and error handling
 
 Segment considers a function's execution successful if it finishes without error. You can `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it to ensure the function works as expected.
@@ -173,8 +182,7 @@ async function onIdentify(event) {
 ```
 If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
-
-You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
+See [errors and error handling](#errors-and-error-handling) for more information on supported error types and how to troubleshoot them.
 
 ## Runtime and dependencies
 
@@ -231,8 +239,8 @@ You can manually test your code from the functions editor:
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
 
-> warning ""
-> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline. The Event Tester is not impacted by an Insert Function at all. Use the Function tester rather than the Event Tester to see how your Insert Function impacts your data.
+> success ""
+> Segment supports Insert Functions in both the Event Tester and Mapping Tester.
 
 ## Save and deploy the destination insert function
 
@@ -497,9 +505,17 @@ However, if your function aims to enrich event data by fetching additional infor
 
 No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
 
+##### Can I use Insert Functions with Storage destinations?
+
+Insert Functions are only supported by Cloud Mode (server-side) destinations and aren't compatible with Storage destinations.
+
 ##### Can I connect an insert function to multiple destinations?
 
-Yes, an insert function can be connected to multiple destinations. 
+Yes, you can connect an insert function to multiple destinations.
+
+##### Can I connect multiple insert functions to one destination?
+
+No, you can only connect one insert function to a destination.
 
 ##### Can I have destination filters and a destination insert function in the same connection?
 
@@ -602,3 +618,7 @@ DELETE deleteInsertFunction(fn_id)
 For more information, visit Segment's [Public API docs](https://docs.segmentapis.com/tag/Functions){:target="_blank"}.
 
 {% endcomment %}
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit won't be visible in the user interface.

@@ -4,6 +4,9 @@ plan: engage-foundations
 ---
 You can use the Profiles CSV Uploader to add or update user profiles and traits. This page contains guidelines for your CSV upload and explains how to upload a CSV file to Engage.
 
+> info ""
+> When you upload a CSV file, Engage generates internal Identify calls using Segment's Tracking API and sends them into the [Engage output source](/docs/unify/debugger/). If you need to update consent preferences for your profiles, you must generate a [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event. For more information, see the [Consent on the Profile](/docs/privacy/consent-management/consent-in-unify/) documentation. 
+
 ## CSV file upload guidelines
 
 Keep the following guidelines in mind as you upload CSV files to Twilio Engage:

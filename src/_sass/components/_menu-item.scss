@@ -57,12 +57,12 @@
     padding: 5px 20px;
 
     &:focus-visible {
-      border: 2px solid color(secondary);
-      color: color(secondary);
+      border: 2px solid color(twilio-secondary);
+      color: color(twilio-secondary);
     }
 
     &:hover {
-      color: color(secondary);
+      color: color(twilio-secondary);
       text-decoration: none;
     }
 
@@ -71,7 +71,7 @@
     }
 
     &--back {
-      font-weight: 600;
+      font-weight: 500;
       font-size: 12px;
       color: color(gray-700);
 
@@ -84,7 +84,7 @@
 
     &--highlight {
       color: color(gray-800);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 14px;
       padding: 12px 16px;
       
@@ -135,7 +135,7 @@
         left: -12px;
         height: 100%;
         width: 2px;
-        background-color: color(secondary);
+        background-color: color(twilio-secondary);
       }
     }
 
@@ -151,7 +151,7 @@
         left: -7px;
         height: 100%;
         width: 2px;
-        background-color: color(secondary);
+        background-color: color(twilio-secondary);
       }
     }
   }
@@ -162,7 +162,7 @@
     }
 
     & > #{$this}__link {
-      color: color(secondary);
+      color: color(twilio-secondary);
       font-weight: 500;
 
       #{$this}__icon {
@@ -174,7 +174,7 @@
       }
 
       &--highlight {
-        font-weight: 600;
+        font-weight: 500;
         
         &::before {
           content: "";
@@ -184,7 +184,7 @@
           position: absolute;
           top: 0;
           left: 0;
-          background-color: color(secondary);
+          background-color: color(twilio-secondary);
         }
       }
     }
@@ -198,7 +198,7 @@
 
     &#{$this}--green {
       & > #{$this}__link {
-        color: color(secondary);
+        color: color(twilio-secondary);
         font-weight: 500;
       }
     }

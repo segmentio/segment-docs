@@ -61,8 +61,8 @@ analytics.send = False
 
 ## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> success ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The Identify method lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 
@@ -404,9 +404,9 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 
 If the module detects that it can't flush faster than it's receiving messages, it'll simply stop accepting messages. This means your program will never crash because of a backed up analytics queue. The default `max_queue_size` is `10000`.
 
-### How do I flush right now?!
+### Flush
 
-You can also flush on demand. For example, at the end of your program, you'll want to flush to make sure there's nothing left in the queue. Just call the `flush` method:
+You can call the `flush` method at the end of your program to make sure there's nothing left in the queue:
 
 ```python
 analytics.flush()

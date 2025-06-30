@@ -3,48 +3,18 @@ title: Generate Events from Signals
 hidden: true
 ---
 
-This guide is a reference to configuring, generating, and using signals in the Signals SDK with Auto-Instrumentation. On this page, you'll find details on:
+This guide details how to use signals, and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, you'll find details on:
 
-- Setting up and managing signal types in the Signals SDK
 - Creating custom rules to capture and translate signals into actionable analytics events
 - Example rules that you can use as a basis for further customization
 
-This guide assumes that you've already added the Signals SDK to your application. If you haven't yet, see the [Auto-Instrumentation Setup](/docs/connections/auto-instrumentation/setup/) guide for initial setup.
+This guide assumes that you've already added the Signals SDK to your application. If you haven't yet, see the [Auto-Instrumentation Setup](/docs/connections/auto-instrumentation/) guide for initial setup.
 
-> info "Auto-Instrumentation Pilot"
-> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+> info "Auto-Instrumentation Private Beta"
+> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
-
-## Signals configuration
-
-Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following tables detail the configuration options for both Signals-Swift and Signals-Kotlin.
-
-### Signals-Swift
-
-| `Option`               | Required | Value                      | Description                                                                                                                                                                                            |
-| ---------------------- | -------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `writeKey`             | Yes      | String                     | Source write key                                                                                                                                                                                       |
-| `maximumBufferSize`    | No       | Integer                    | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                     |
-| `relayCount`           | No       | Integer                    | Relays signals to Segment every Xth event. Default is `20`.                                                                                                                                            |
-| `relayInterval`        | No       | TimeInterval  | Relays signals to segment every X seconds. Default is `60`.                                                                                                                                            |
-| `broadcasters`         | No       | `SignalBroadcaster`        | An array of broadcasters. These objects forward signal data to their destinations, like `WebhookBroadcaster` or  `DebugBroadcaster` writing to the developer console. Default is `SegmentBroadcaster`. |
-| `useUIKitAutoSignal`   | No       | Bool                       | Tracks UIKit component interactions automatically. Default is `false`.                                                                                                                                 |
-| `useSwiftUIAutoSignal` | No       | Bool                       | Tracks SwiftUI component interactions automatically. Default is `false`.                                                                                                                               |
-| `useNetworkAutoSignal` | No       | Bool                       | Tracks network events automatically. Default is `false`.                                                                                                                                               |
-| `allowedNetworkHosts`  | No       | Array                      | An array of allowed network hosts.                                                                                                                                                                     |
-| `blockedNetworkHosts`  | No       | Array                      | An array of blocked network hosts.                                                                                                                                                                     |
-
-
-### Signals-Kotlin
-
-| `Option`            | Required | Value                     | Description                                                                                                                                                                                           |
-| ------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `writeKey`          | Yes      | String                    | Source write key                                                                                                                                                                                      |
-| `maximumBufferSize` | No       | Integer                   | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                    |
-| `broadcastInterval` | No       | Integer                   | Broadcasts signals to Segment every X event. Default is `60`.                                                                                                                                         |
-| `broadcasters`      | No       | `List<SignalBroadcaster>` | An array of broadcasters. These objects forward signal data to their destinations, like `WebhookBroadcaster` or `DebugBroadcaster` writing to the developer console. Default is `SegmentBroadcaster`. |
+> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.                     
 
 
 ## Converting signals to events
@@ -55,6 +25,9 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 1. In your Segment workspace, go to to **Connections > Auto-Instrumentation** and click on a source. 
 2. Click **Create Rules**.
+
+> info "Where's the Event Builder tab?"
+> The Event Builder tab only appears after you've installed the Auto-Instrumentation snippet in your site or app. If you don’t see the tab, double check your implementation or reach out to your Segment CSM.
 
 ### Using the Rules Editor
 

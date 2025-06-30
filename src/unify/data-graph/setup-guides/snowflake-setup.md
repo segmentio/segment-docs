@@ -1,11 +1,11 @@
 ---
-title: Snowflake Setup
+title: Snowflake Data Graph Setup
 plan: unify
 redirect_from:
   - '/unify/linked-profiles/setup-guides/snowflake-setup'
 ---
 > warning ""
-> Data Graph, Reverse ETL, Profiles Sync require different warehouse permissions.
+> Data Graph, Reverse ETL, and Profiles Sync require different warehouse permissions.
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/). 
 
@@ -23,7 +23,7 @@ Segment recommends setting up a new Snowflake user and only giving this user per
 
 > info ""
 > Segment recommends creating a new database for the Data Graph.
-> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema)to update user access for the Segment Reverse ETL schema.
+> If you choose to use an existing database that has also been used for [Segment Reverse ETL](/docs/connections/reverse-etl/), you must follow the [additional instructions](#update-user-access-for-segment-reverse-etl-schema) to update user access for the Segment Reverse ETL schema.
 
 
 ```sql
@@ -156,11 +156,11 @@ To connect your warehouse to the Data Graph:
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below
 - **Authentication**: There are 2 supported authentication methods:
   - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created
-  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
+  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below
  
 5. Test your connection, then click Save.
 
-## Update user acccess for Segment Reverse ETL schema 
+## Update user access for Segment Reverse ETL schema 
 If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient privileges on an existing `_segment_reverse_etl` schema.
 
 ```sql

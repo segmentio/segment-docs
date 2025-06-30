@@ -107,6 +107,18 @@ The first place to look is the individual destination documentation. Each one in
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
+## Sync modes
+
+Sync modes allow users to define how changes in the source should send downstream to your destination. Depending on which destinations you set up in Segment, you may need to choose a sync mode for your data. This configuration determines how Segment updates your destination based on the source data. 
+
+The available sync modes can vary based on the destination, integration type, and actions within the destination. For example, if you sync customer data, you might have the option to Insert, Update, or Upsert records.
+
+Available sync modes include: 
+- **Update**: Modify existing records in the destination without adding new ones.
+- **Upsert**: Update existing records and add new ones, if necessary.
+- **Add**: Add records to a list, segment, or journey.
+- **Remove**: Remove records from a list, audience, or journey.
+
 ## Add a destination
 To add a Destination:
 
@@ -120,7 +132,8 @@ To add a Destination:
 8. Configure the settings and enable your destination on the destination settings page.
 
 [Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
-> note "Disabled destinations do not receive data"
+
+> warning "Disabled destinations do not receive data"
 > If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay](/docs/guides/what-is-replay/), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
 >
 > Some destinations are not compatible with Replays after a certain period of time, for example, 14 days. Check with Segment’s support team [friends@segment.com](mailto:friends@segment.com) to confirm that your intended destination allows historical timestamps. 
@@ -207,6 +220,18 @@ The following destinations support bulk batching:
 > info "You must manually configure bulk batches for Actions destinations"
 > To support bulk batching for the Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
 
+### Hashing 
+Segment automatically hashes personally identifiable information (PII). This simplifies implementation for teams with data privacy requirements and eliminates issues with double-hashing that can result in failed matching at destinations. 
+
+Segment supports these 2 types of data for hashing:
+* **Plain text data:** When you send plain text values to destinations that require hashed values, Segment automatically normalizes and hashes these values. 
+* **Pre-hashed data:** If you already hash your data before sending it to Segment, Segment is able to detect that the data is hashed, and will pass your pre-hashed data directly to the destination, avoiding double-hashing. 
+
+> info ""
+> If you choose to hash data yourself, ensure you follow each destination's specific hashing requirements. Fields that support automatic hashing detection will display a tooltip indicating *"If not hashed, Segment will hash this value."*
+
+For destination-specific hashing requirements, refer to the destination's API documentation. 
+
 ## IP Allowlisting
 
 IP Allowlisting uses a NAT gateway to route traffic from Segment's servers to your destination through a limited range of IP addresses, which can prevent malicious actors from establishing TCP and UDP connections with your integrations.
@@ -218,7 +243,6 @@ Segment supports IP Allowlisting in [all destinations](/docs/connections/destina
 - [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
 - [TradeDesk](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
-- [Destination Functions](/docs/connections/functions/destination-functions/)
 
 Destinations that are not supported receive traffic from randomly assigned IP addresses. 
 

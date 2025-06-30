@@ -1,10 +1,9 @@
 ---
 title: 'One Creation Source'
 id: IB9M67ZWaA
-hidden: true
 ---
 
-[One Creation](https://www.one-creation.com/){:target="_blank”} provides brands with a Digital Preference Wallet to confirm, collect, and digitize consumer preference data. By seamlessly integrating into every customer touchpoint, the platform enhances services while enforcing consent (including Time-Based Consent) and data sharing rules. 
+[One Creation](https://www.one-creation.com/){:target="_blank”} provides brands with a Digital Preference Wallet to collect, digitize, and refresh consumer preference data. By seamlessly integrating into every customer touchpoint, the platform enhances services while enforcing consent (including Time-Based Consent) and data sharing rules. 
 
 This is an Event Cloud Source that can not only export data into your Segment warehouse but also federate the exported data into your other enabled Segment Destinations.
 
@@ -34,22 +33,41 @@ The following table lists events that One Creation sends to Segment. These event
 
 | Event Name       | Description               |
 |------------------|---------------------------|
-| Submitted preferences | User responded to a data request campaign  |
-| Expired data | Data associated with a campaign has expired |
-| Extended preferences | User agrees to extending the data associated with a campaign |
+| Submitted Preferences | User responded to a data request campaign  |
+| Expired Data | Data associated with a campaign has expired |
+| Extended Preferences | User agrees to extending the data associated with a campaign |
 
-1. When a user responds to an One Creation data request campaign, One Creation sends the user's response to Segment. This is achieved by triggering an Identify call to create the traits and a Track call to record the **Submitted preferences** action. Each trait is suffixed with the associated One Creation campaign ID. 
-2. When a user agrees to extend data usage through an One Creation extension campaign, One Creation triggers an Identify call to create extended traits suffixed with the associated One Creation campaign ID. Additionally, a Track call is triggered to record the **Extended preferences** action. 
-3. When data associated with a campaign expires, One Creation triggers an Identify call to update traits with the **Expired_** prefix and a Track call to record the **Expired data** action.
+1. When a user responds to an One Creation data request campaign, One Creation sends the user's response to Segment. This is achieved by triggering an Identify call to create the traits and a Track call to record the **Submitted Preferences** event.
+2. When a user agrees to extend data usage through an One Creation extension campaign, One Creation triggers an Identify call to update the user's extended traits with the latest values. Additionally, a Track call is triggered to record the **Extended Preferences** event. 
+3. When data associated with a campaign expires, One Creation triggers an Identify call to update traits with the value **Expired** and a Track call to record the **Expired Data** event.
 
 ## Event properties
 
-The following table lists the properties included in the events listed above.
+All One Creation events contain the associated One Creation campaign name, campaign ID, user ID of the individual who responded to the campaign, and the list of traits or properties that the user provided through this campaign. Here's a sample payload:
 
-| Property Name	| Description |
-|---------------|-------------|
-| `campaign.campaignId` | ID of the campaign the user responded to |
-| `campaign.name` | name of the campaign the user responded to |
+    {
+        "properties": {
+            "fav_color": "blue",
+            "fav_pet": "dog",
+            "response_at": "2024-09-10T14:38:57.524122374Z[GMT]"
+        },
+        "context": {
+            "integration": {
+                "name": "one-creation",
+                "version": "1.0.0"
+            },
+            "campaign": {
+                "name": "One Creation Demo Campaign",
+                "id": "e17a2a8e-4b0c-46f6-a193-77d72108edf4"
+            }
+        },
+        "integrations": {
+            "All": true
+        },
+        "event": "Submitted Preferences",
+        "userId": "75720996-3c82-4cc4-b0e5-67bd441fa9f3",
+        "type": "track"
+    }
 
 ## Adding destinations
 

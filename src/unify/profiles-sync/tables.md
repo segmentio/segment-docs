@@ -3,15 +3,38 @@ title: Profiles Sync Tables and Materialized Views
 plan: unify
 ---
 
-Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
+Through Profiles Sync, Segment provides data sets and models to help you enrich customer profiles using your warehouse data.
 
-Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
+This page compares raw tables and materialized views, explaining their roles and use cases. It also outlines the tables Segment lands and the tables you can materialize as part of Profiles Sync.
+
+## Understanding raw tables and materialized views
+
+Profiles Sync creates two types of tables in your data warehouse: raw tables and materialized views. These tables help you work with profile and event data at different levels of detail.
+
+- Raw tables store unprocessed event-level data and capture all updates and changes as they occur.
+- Materialized views take data from raw tables and organize it into a streamlined view of profile traits, identifiers, and merges.
+
+The following table shows how raw tables map to their corresponding materialized views:
+
+| Raw table                     | Materialized view  | Description                                                   |
+| ----------------------------- | ------------------ | ------------------------------------------------------------- |
+| `id_graph_updates`            | `profile_merges`   | Tracks changes in profile merges across the Identity Graph.   |
+| `external_id_mapping_updates` | `user_identifiers` | Tracks external IDs associated with user profiles.            |
+| `profile_traits_updates`      | `user_traits`      | Tracks changes to user profile traits (like names or emails). |
+
+Raw tables are best for detailed, event-level analysis or debugging specific updates in the Identity Graph. They show every single change and event in your Profiles Sync pipeline.
+
+Materialized views are better for reporting, analytics, and when you need an up-to-date view of profile traits or identifiers. Materialized views reduce complexity by summarizing data from the raw tables.
+
+For example, if you want to debug why a specific profile trait was updated, you'd look at the `profile_traits_updates` raw table. But if you want to see the current profile data for a marketing campaign, you'd probably opt for the `user_traits` materialized view.
 
 ## Case study: anonymous site visits lead to profile merge
-  
-To help illustrate the possible entries and values populated into Profiles Sync tables, view the event tabs below and consider the following scenario.
 
-Suppose the following four events lead to the creation of two separate profiles:
+This section uses a practical example of how Segment connects and merges anonymous profiles to illustrate how Profiles Sync populates and updates its tables. 
+  
+Explore the following event tabs to learn how these examples result in profile creation and merging.
+
+Suppose these four events lead to the creation of two separate profiles:
 
 {% codeexample %}
 {% codeexampletab Event 1 %}
@@ -75,14 +98,16 @@ Initially, Segment generates two profiles for the first three calls. In the fina
 Profiles Sync tracks and provides information about these events through a set of tables, which you’ll learn about in the next section.
 
 
+
 ## Profile raw tables 
 
 Profile raw tables contain records of changes to your Segment profiles and Identity Graph over time. 
 
 With raw tables, you have full control over the materialization of Profiles in your warehouse, as well as increased observibility.
 
-Raw tables contain complete historical data when using historical backfill.
+Raw tables contain complete historical data when using historical backfill. 
 
+The `Timestamp` column will be empty for backfilled data because, during backfill, historical profile changes are inferred from the current state of the profile and do not reflect the actual change history.
 
 ### The id_graph_updates table
 
@@ -171,7 +196,7 @@ Event type tables provide a complete history for each type of event. Segment syn
 Identity Resolution processes these events, and includes a `segment_id`, enabling the data to be joined into a single Profile record. 
 
 > success ""
-> Event type tables will have 2 months of historical data on backfill.
+> Event type tables have 2 months of historical data on backfill. Contact support if you need access to data beyond this period.
 
 Event type tables includes the following tables:
 
@@ -242,35 +267,52 @@ Follow the steps below to change your schema name:
 
 ## Track event tables
 
-Track event tables provide a complete event history, with one table for each unique named Track event. Segment syncs events based on the event sources you've connected to Unify. 
+Track event tables provide a complete event history, with one table for each unique Track event name. Segment syncs events based on the sources you’ve connected to Unify, and includes a column for each event property.
 
-These tables include a full set of Track event properties, with one column for each property.
+Each row also includes a `segment_id`, assigned by Identity Resolution, which you can use to join events to profile records. In rare cases where Identity Resolution fails, the `segment_id` may be `null`.
 
-Segment's Identity Resolution has processed these events, which contain a `segment_id`, enabling the data to be joined into a single profile record. 
-
-> success ""
-> These tables will have two months of historical data on backfill.
-
-> info ""
-> To view and select individual track tables, edit your sync settings after you enable Profiles Sync, and wait for the initial sync to complete.
-
-
+By default, Segment backfills these tables with two months of historical data. After the initial sync completes, you can view and manage individual track tables by editing your sync settings.
 
 ## Tables Segment materializes
 
 With Profiles Sync, you can access the following three tables that Segment materializes for a more complete view of your profile:
+
 - [`user_traits`](#the-user_traits-table)
 - [`user_identifiers`](#the-user_identifiers-table)
 - [`profile_merges`](#the-profile_merges-table)
 
-These materialized tables provide a snapshot of your Segment profiles, batch updated according to your sync schedule. 
+These materialized tables provide a snapshot of your Segment profiles, batch updated according to your sync schedule.
 
-Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
+### Switching to materialized Profile Sync
 
-You can also use [historical backfill](/docs/unify/profiles-sync/profiles-sync-setup/#using-historical-backfill) with tables Segment materializes.
+If you're not using materialized views for Profile Sync and would like to switch, follow these steps:
+
+1. Enable Materialized Views through Selective Sync:
+   - Navigate to **Unify** on the sidebar and select **Profiles Sync**.
+   - Ensure you are viewing the Engage space you would like to enable materialized views for.
+   - Go to **Settings** → **Selective Sync** and enable the following tables:
+     - `user_traits`
+     - `user_identifiers`
+     - `profile_merges`
+
+2. **Request a Full Profiles and Events Backfill**
+   - After enabling the materialized views, you'll need to ensure historical data is populated in the materialized tables.
+   - Write to [friends@segment.com](mailto:friends@segment.com) and request:
+     - A full **Profiles Backfill** to populate historical profiles data.
+     - An **Events Backfill** to include any relevant historical events, including a date range for Segment to pull data in for the events backfill. 
+
+3. **Verify Your Data**
+   - Once the backfill is complete, review the data in your warehouse to confirm all necessary historical information has been included.
 
 > warning ""
 > For materialized view tables, you must have delete permissions for your data warehouse. 
+
+### Why materialized views?
+
+Materialized views offer several advantages:
+- **Faster queries:** Pre-aggregated data reduces query complexity.
+- **Improved performance:** Access enriched profiles and historical events directly without manual joins.
+- **Data consistency:** Automatically updated views ensure your data stays in sync with real-time changes.
 
 
 ### The user_traits table

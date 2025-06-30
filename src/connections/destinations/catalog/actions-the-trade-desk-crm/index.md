@@ -37,7 +37,7 @@ Before you begin, generate a [long-lived token](https://partner.thetradedesk.com
 8. Navigate to the **Mappings** tab, click **New Mapping**, and choose **Sync Audience to CRM Data Segment**.
 9. In the **Select mappings** section, input the PII Type and maintain other defaults. Click **Save** and toggle to enable the mapping.
    - **Create only one mapping for every instance.**
-   - If any of the emails stored in your Engage audience are already in a hashed format, please specify the PII type as `Hashed Email.` Failure to do so results in The Trade Desk categorizing the hashed records as invalid during the ingestion process. 
+   - If any of the emails stored in your Engage audience are already in a hashed format, please specify the [PII type](#what-pii-format-should-i-send) as `Hashed Email.` Failure to do so results in The Trade Desk categorizing the hashed records as invalid during the ingestion process. 
 10. Return to **Engage > Audiences** and select the audience from Step 1.
 11. Click **Add Destinations** and choose The Trade Desk CRM destination you just created. In the settings that appear in the side panel, enable the **Send Track** option and **do not** alter the Audience Entered/Audience Exited event names. Fill out the audience settings, specifically the region field, with the geographical region of the CRM data segment based on the origin of the PII (US, EU, or APAC). Click **Save Settings**.
 
@@ -45,12 +45,15 @@ Setup is now complete, and the audience starts syncing to The Trade Desk.
 
 To sync additional Audiences from your Engage space, create a separate instance of The Trade Desk CRM Destination.
 
+> info "Mapping tester availability"
+> The Mapping Tester isn't available for this destination. Since this destination requires batched events for activation, testing can only be performed end-to-end with a connected source.
+
 {% include components/actions-fields.html settings="true"%}
 
 
 ## Limitations
 
-* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync.
+* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync. 
 * Audience attempts to sync once per day.
 * Audience sync is a full sync.
 
@@ -66,4 +69,15 @@ The CRM endpoint maps email addresses into UID2s. If it's a valid email address,
 
 #### What PII format should I send?
 
-The Trade Desk recommends transmitting personally identifiable information (PII) in its original, non-hashed format. TTD's preference is to handle the hashing of any PII, like emails, on their end. However, if your data already contains any hashed emails, please ensure you are normalizing and hashing the emails by designating the PII type as `Hashed Email`, in line with TTD's [PII Normalization and Hash Encoding](https://api.thetradedesk.com/v3/portal/data/doc/DataPiiNormalization){:target="_blank”} documentation.
+The Trade Desk recommends transferring Personally Identifiable Information (PII), like email addresses, in their original, non-hashed format, as The Trade Desk normalizes and hashes any PII in their program. 
+
+If you store your emails in plain text, select a "PII Type" of `Email`.
+
+If your data contains hashed email addresses, select a "PII Type" of `Hashed Email`. 
+
+When you select `Hashed Email` as your PII Type, Segment completes the following steps on your behalf: 
+- Plain text email addresses are normalized and hashed as needed for The Trade Desk.
+- SHA256 hashed email addresses are hex base64 encoded. 
+- Base64 encoded emails are sent directly to The Trade Desk without additional processing.
+
+For more information about The Trade Desk's recommendations for PII, see the [PII Normalization and Hash Encoding](https://partner.thetradedesk.com/v3/portal/data/doc/DataPiiNormalization){:target="_blank”} documentation.

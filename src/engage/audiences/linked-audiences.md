@@ -17,12 +17,15 @@ With Linked Audiences, you can:
 
 To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/).
 
+
+See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can utilize Linked Audiences for your destinations.  
+
 ## Prerequisites
 
 Before you begin setting up your Linked Audience, ensure you have:
 
 - [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
-- Set up your warehouse permissions using [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
+- Set up your warehouse permissions using either [BigQuery](/docs/unify/data-graph/setup-guides/BigQuery-setup/), [Databricks](/docs/unify/data-graph/setup-guides/databricks-setup/), [Redshift](/docs/unify/data-graph/setup-guides/redshift-setup/), or [Snowflake](/docs/unify/data-graph/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/data-graph/data-graph/).
 - Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
@@ -50,38 +53,34 @@ To build a Linked Audience:
 **Note:** If you cannot select **Linked audience**, ensure you’ve [set up your Data Graph](/docs/unify/linked-profiles/data-graph/) in Unify.
 4. Select the [conditions](#Linked-Audience-conditions) on which to build your audience.
 5. Click **Preview** to view your audience selection and see a count and list of audience members who meet the criteria.
+6. Select the **Entities** tab on the preview side sheet to select an entity tied to your audience definition. You can view a preview of the entity count and a sample list of the selected entity. 
 6. When your audience is complete and accurate, click **Next**.
 7. Enter an audience name and description to identify this configuration.
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
-### Maintaining Linked Audiences 
-
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state. On the Overview page, you can view relevant audience information, such as Profiles in audience, Run schedule, Latest run, and Next run. 
-
-You can also delete Linked Audiences from the menu options or edit your Linked Audience in the Builder tab. If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
-
-You can also clone your linked audience to the same space from the List and Overview pages. Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that was cloned.
+After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state.
 
 ### Linked Audience conditions 
 
-The linked audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
+The Linked Audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
-The linked audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down so that you don’t need to type in the exact value that you want to filter on. If you don’t see the value you’re looking for, you can manually enter it into the input field. 
+The Linked Audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
+
 Segment displays: 
 
 * the first 100 unique string entity property values from the data warehouse.
 * the top 65 event property and context key values.
 * the top 65 profile trait key values.
 
-You can duplicate your conditions in the audience builder into the same condition group.You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
+You can duplicate your conditions in the audience builder into the same condition group. You can only create nested entity conditions up to six levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.
 
-As you're building your Linked Audience, you can choose from the following conditions:
+When building your Linked Audience, you can add multiple conditions to a single condition group, or create multiple condition groups. Segment evaluates each condition group independently to determine which profiles meet each condition group, and Segment includes the associated entities that allowed each profile to meet the criteria of each condition group. Segment then unions the matched profiles based on whether the operator between the condition groups are using the AND or OR operators to combine the result set. You can choose from the following conditions as you're building your Linked Audience:
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.|
-| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values.|
+| with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch. |
+| without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
 | with [ trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
 | without [ trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|
 | part of [audience](/docs/glossary/#audience)    | Creates a condition that filters profiles that are part of an existing audience. |
@@ -96,7 +95,8 @@ at most: supports 0 or greater.
 
 *When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
 
-#### Operator Selection
+
+#### Operator selection
 
 You can create audience definitions using either `AND` or `OR` operators across all condition levels. You can switch between these operators when filtering on multiple entity or event properties, between conditions within a condition group, and between condition groups.
 
@@ -112,18 +112,24 @@ This information appears when you click the user profile generated from the audi
 
 ![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
-#### Dynamic References
+#### Dynamic references
 
-**Event Conditions**
+**Event conditions**
 
 When filtering on event properties, you can dynamically reference the value of another profile trait, or enter a constant value. These operators support dynamic references: equals, not equals, less than, greater than, less than or equal, greater than or equal, contains, does not contain, starts with, ends with.
 
-**Entity Conditions**
+**Entity conditions**
 
-When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value.You can only dynamically reference properties of the same data type. Dynamic references are only supported for certain operators depending on the data type:
-NUMBER data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
-STRING data type: equals, not equals, contains, does not contain, starts with, ends with
-TIMESTAMP data type: equals, not equals, less than, greater than, less than or equal, greater than or equal
+When filtering on entity properties, you can dynamically reference the value of another entity column (from the same entity branch at the same level or above it), profile trait, or enter a constant value. You can only dynamically reference properties of the same data type. Dynamic references are supported for specific operators depending on the data type, as in the following table:
+
+| Data Type | Supported Operators                                                                    |
+| --------- | -------------------------------------------------------------------------------------- |
+| NUMBER    | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| STRING    | equals, not equals, contains, does not contain, starts with, ends with                 |
+| DATE      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIME      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+| TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
+
 
 ## Step 2: Activate your Linked Audience
 
@@ -141,7 +147,7 @@ To activate your Linked Audience:
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
 
 > info "Linked Audiences destinations"
-> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
+> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
 
 **Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
@@ -179,7 +185,14 @@ After you select an action, Segment attempts to automatically configure the data
 
 Select additional traits and properties to include when the event is sent.
 
-#### Show/Hide preview 
+#### Copy personalization syntax
+Click **Copy to use in Braze Cloud Mode (Actions)** to copy the personalization syntax for the selected traits and properties to use in your destination messaging templates.
+
+> info ""
+> This feature is in beta for customers using Braze. Some functionality may change before it becomes generally available. This feature is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+
+#### Show/hide preview 
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 
@@ -233,9 +246,83 @@ With your Linked Audience activated, follow these steps to monitor your activati
 
 ### Delivery Overview for Linked Audiences
 
-Delivery Overview shows you four steps in your data activation pipeline:
+In addition to the standard Audience observability provided by [Delivery Overview](/docs/engage/audiences/#delivery-overview), Linked Audiences can filter Delivery Overview's pipeline view by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). 
 
-- **Events from Audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership. 
-- **Filtered at Destination**: The activation pipeline is rich with features that let you control which events make it to the destination. If any events aren't eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment will show them in Filtered at Destination.
-- **Failed Delivery**: Events that Segment attempted but failed to deliver to your destination. Failed Delivery indicates an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
-- **Successful Delivery**: Events that Segment successfully delivered to your destination. You'll see these events in your downstream integration.
+To filter by events: 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**.
+2. Find an Audience, click the **(...)** menu, and select Delivery Overview. 
+3. On the Delivery Overview page, select the Linked audience event dropdown to filter by a specific event. 
+
+Linked Audiences have the following steps in Delivery Overview's pipeline view: 
+- **Events from audience**: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
+- **Filtered at destination**: If any events aren’t eligible to be sent (for example, due to destination filters, insert function logic, and so on), Segment displays them at this step.
+- **Events pending retry**: A step that reveals the number of events that are awaiting retry. Unlike the other steps, you cannot click into this step to view the breakdown table. 
+- **Failed delivery**: Events that Segment _attempted_ to deliver to your destination, but that ultimately _failed_ to be delivered. Failed delivery might indicate an issue with the destination, like invalid credentials, rate limits, or other error statuses received during delivery.
+- **Successful delivery**: Events that Segment successfully delivered to your destination. You’ll see these events in your downstream integrations.
+
+## Linked Audience Alerts
+
+You can create alerts related to the performance and throughput of Linked Audience syncs and receive in-app, email, and Slack notifications when event volume fluctuations occur.
+
+> info "Generate a Slack webhook to receive Slack notifications"
+> To receive an alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+
+To access Linked Audience alerting, navigate to **Engage > Audiences**, select a Linked Audience, and click the **Alerts** tab.
+
+On the **Alerts** tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
+
+> info "Deleting alerts created by other users requires Workspace Owner role"
+> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users. 
+
+#### Activation event health spikes or drops
+
+You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
+
+To create an Activation event health spikes or drops alert: 
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
+2. Select the Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
+3. On the Create alert sidesheet, select the **Activation event health spikes or drops** alert and pick a destination for which you'd like to monitor event health. 
+4. Enter a percentage threshold to trigger activation event health notifications. 
+5. Select one or more of the following alert channels:
+  - **Email**: Select this to receive notifications at the provided email address. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+6. Click **Save**.
+
+To make changes to an Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
+
+To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
+
+#### Audience size change
+
+You can create an Audience size change alert that notifies you when your audience increases or decreases by a certain threshold. For example, if you set a change percentage of 4% and your destination had 100 members over the first 24 hours, Segment would notify you the following day if your audience had fewer than 96 or more than 104 members.
+
+> info "Audience size change alerts are currently in Public Beta"
+> Audience size change alerts are in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
+To create an Audience size change alert:
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
+2. Select the Linked Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
+3. On the Create alert sidesheet, select the **Audience size change alert** and pick a destination for which you'd like to monitor event health. 
+4. Enter a percentage threshold to trigger audience size change notifications. 
+5. Select one or more of the following alert channels:
+  - **Email**: Select this to receive notifications at the provided email address. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+6. Click **Save**.
+
+To make changes to an Audience size change alert, select the icon in the Actions column for the alert and click **Edit**. 
+
+To delete a Audience size change alert, select the icon in the Actions column for the alert and click **Delete**.
+
+## Maintaining Linked Audiences 
+
+You can maintain your Linked Audience by accessing these tabs on the main page of your Linked Audience:
+
+Tab name | Information
+-------- | -----------
+Overview | On this tab you can: <br>* View relevant audience information, such as Profiles in audience count, run schedule, latest run, and next run. <br>* Enable or disable, manually run, clone and delete audiences. <br>&nbsp;&nbsp;- *Note:* Cloning a linked audience creates a new linked audience in the builder create flow with the same conditions as the linked audience that it was cloned from. <br> * View the list of profiles in the audience with the Audience Explorer. <br>* View connected destinations and configured activation events.
+Builder | On this tab you can: <br>* View or edit your linked audience conditions. <br>&nbsp;&nbsp; - *Note:* If you edit an audience with configured activation events, you should disable or delete impacted events for your audience to successfully compute. Events are impacted if they reference entities that are edited or removed from the audience definition.
+Runs | On this tab you can: <br>* View information about the last 50 audience runs, such as start time, run duration, run result, and change summary. You can also view granular run stats to help you understand the duration of each step in the run such as: <br> &nbsp;&nbsp; - Queueing run: The time spent in the queue waiting for other runs to finish before this one begins. <br>&nbsp;&nbsp; - Extracting from warehouse: The duration of the audience query and data transfer from the source warehouse. <br>&nbsp;&nbsp; - Preparing to deliver events: The time taken to process and ready events for delivery to connected destinations. <br>* If there are no changes associated with a run, there will be no values shown for the granular run stats.
+Settings | On this tab you can view or edit the linked audience name, description, and run schedule.
