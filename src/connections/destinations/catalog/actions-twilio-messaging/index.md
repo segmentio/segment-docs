@@ -40,19 +40,19 @@ The following sections walk through each step in detail.
 
 ## Authentication and setup
 
-Before adding the Twilio Messaging to Segment, create an API Key and Secret in your Twilio account.
+Before you add the Twilio Messaging destination to Segment, you'll first need to create an API Key and Secret in your Twilio account.
 
 To create your API Key and Secret:
 
 1. Sign in to your [Twilio Console](https://console.twilio.com/){:target="_blank"}.
-2. From your Account Dashboard, copy and save your **Account SID**. You'll this in Segment later.
+2. From your Account Dashboard, copy and save your **Account SID**. You'll enter it in Segment later.
 3. In the **Account Info** tab, click **Go to API keys**.
 4. On the **API keys & tokens** page, click **Create API Key**.
 5. Enter a name for your API key, select the **Standard** key type, then click **Create**.
 6. On the **Copy secret key** page, copy the **SID** and **Secret** values. Store them securely. You'll enter both in Segment later.
 7. Click **Done** to finish creating the API Key.
 
-You now have your **Account SID**, **API Key SID**, and **API Key Secret**, which are required to connect Twilio Messaging in Segment.
+You now have your Account SID, API Key SID, and API Key Secret, which are required to connect Twilio Messaging in Segment.
 
 ## Add the Twilio Messaging destination
 
@@ -61,7 +61,7 @@ After setting up your Twilio credentials, add the Twilio Messaging destination t
 To add the destination:
 
 1. From the Twilio Messaging destination page, click **Add destination**.
-2. On the Setup screen, give the destination a name and select **Fill in settings manually.**
+2. On the Setup screen, give the destination a name and select **Fill in settings manually**.
 3. On your new destination page, click the **Settings** tab.
 4. On the Settings tab, enter your **Twilio Account SID**, **Twilio API Key SID**, and **Twilio API Key Secret**.
 6. To finish setting up the destination, click **Save Changes**.
