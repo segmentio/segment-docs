@@ -34,3 +34,19 @@ At a high level, you will:
 3. Configure message mappings to define what messages to send and when.
 
 The following sections walk through each step in detail.
+
+## Authentication and setup
+
+Before adding the Twilio Messaging to Segment, create an API Key and Secret in your Twilio account.
+
+To create your API Key and Secret:
+
+1. Sign in to your [Twilio Console](https://console.twilio.com/){:target="_blank"}.
+2. From your Account Dashboard, copy and save your **Account SID**. You'll this in Segment later.
+3. In the **Account Info** tab, click **Go to API keys**.
+4. On the **API keys & tokens** page, click **Create API Key**.
+5. Enter a name for your API key, select the **Standard** key type, then click **Create**.
+6. On the **Copy secret key** page, copy the **SID** and **Secret** values. Store them securely. You'll enter both in Segment later.
+7. Click **Done** to finish creating the API Key.
+
+You now have your **Account SID**, **API Key SID**, and **API Key Secret**, which are required to connect Twilio Messaging in Segment.
