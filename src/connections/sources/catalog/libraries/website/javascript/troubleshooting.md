@@ -20,11 +20,13 @@ Segment also provides a Chrome web extension, [Segment Inspector](/docs/connecti
 
 Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
-## Loading Multiple Instances of Analytics.js
+## Loading multiple instances of Analytics.js
 
-### Analytics.js Snippet Loaded More Than Once
+### Analytics.js snippet loaded more than once
 
-It is not possible to load the Analytics.js snippet twice on the same page, even if different write keys are used. Doing so often results in errors like `Uncaught RangeError: Maximum call stack size exceeded`. However, you can conditionally set the write key based on an environment variable:
+You cannot load the Analytics.js snippet twice on the same page, even if different write keys are used. Doing so might result in errors like `Uncaught RangeError: Maximum call stack size exceeded`. 
+
+However, you can conditionally set the write key based on an environment variable:
 
 Example:
 ```js
@@ -34,11 +36,12 @@ ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 
 ### Multiple Versions of Analytics.js
 
-It is possible to load multiple versions of Analytics.js, such as a snippet version and an npm version (with different writekeys), in the same environment without them interfering with each other. This allows the npm library and the browser snippet to coexist without conflicting.Just keep in mind the following limitations with this approach:
+You can load multiple versions of Analytics.js in the same environment. For example, you could have both a snippet version and an npm version on one page, each with different write keys. This allows the npm library and the browser snippet to coexist without conflicting. 
 
-**1. Device-Mode Destination Conflicts**: If you are using the same device-mode destination in both instances (i.e., across different writekeys), conflicts may occur. This is due to third-party scripts that don't support global instances. To avoid issues, ensure you are not using the same device-mode destination between different write keys.
+Keep the following limitations in mind:
 
-**2. CDN URL Customization:** We currently do not support overriding the CDNURL when using multiple instances of Analytics.js.
+- **Device-Mode Destination Conflicts**: If you are using the same device-mode destination in both instances (for example, across different write keys), conflicts may occur. This is due to third-party scripts that don't support global instances. To avoid issues, ensure you are not using the same device-mode destination with different write keys.
+- **CDN URL Customization:** Segment does not support overriding the CDNURL when using multiple instances of Analytics.js.
 
 ## Do you see events appear in your debugger?
 
