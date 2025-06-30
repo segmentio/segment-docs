@@ -21,10 +21,10 @@ This destination supports two ways to send messages:
 - **Content templates**: Messages pre-built and managed in Twilio.
 - **Inline messages**: Messages created directly in Segment, with dynamic fields and variables.
 
-Twilio Messaging integrates tightly with Segment's data and audience tools, so you can deliver timely, personalized messages without building custom integrations.
+Twilio Messaging works with Segment's data and audience tools to send timely, personalized messages without extra integration work.
 
 > info "Twilio Messaging Destination Private Beta"
-> Bidirectional sync is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> The Twilio Messaging Destination is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Getting started
 
@@ -74,21 +74,7 @@ it's publicly available and searchable in the workspace catalog. -->
 
 ## Configuring message mappings
 
-The Twilio Messaging destination supports one mapping: **Send message**. Use this mapping to define when messages get sent and what content they include.
-
-To configure the Send message mapping:
-
-1. From the destination page, go to **Mappings**.
-2. Click **New Mapping**.
-3. Select the **Send message** action.
-4. Choose the trigger event and map the required fields. For example, specify the recipient's phone number and message content.
-5. Configure any additional fields, such as variables or media URLs.
-6. Click **Save** to create the mapping.
-7. Enable the mapping to start sending messages.
-
-## Configuring message mappings
-
-The Twilio Messaging destination supports one mapping action: **Send message**. Use this mapping to define when messages are sent and what content they include.
+The Twilio Messaging destination supports one mapping action: **Send message**. Use this mapping to define when messages get sent and what content they include.
 
 ### Set up the Send message mapping
 
@@ -163,9 +149,34 @@ If you’re using a **Content Template**:
 - In Segment, map each variable to the event property it should pull from. For example, if your template says `Hello {{first_name}}`, map `first_name` to the user’s first name property.
 
 If you’re writing an **inline message**:
-- Add variables directly in your message body using handlebars, like `Hello {{first_name}}`.
+- Add variables directly in your message body using Handlebars, like `Hello {{first_name}}`.
 - Define each variable in your mapping so Segment knows what value to insert.
 
 You can also use variables in Inline Media URLs to dynamically include different media based on event data.
 
 Make sure all variables you reference in your message are included in your mapping configuration.
+
+## Additional features
+
+Twilio Messaging also supports a few optional settings you can use in your mappings.
+
+### Validity period
+
+The **Validity Period** controls how long Twilio keeps trying to deliver your message. It’s set in seconds, with a minimum of 1 and a maximum of 14400 (4 hours). If the message isn’t delivered within this time, it won’t be sent. The default is 14400 seconds.
+
+### Send At
+
+The **Send At** field lets you schedule a message to be sent at a specific time. Enter the time in ISO 8601 format. Messages won’t send before this time, and if the scheduled time passes, new messages triggered after that time won’t send either. Also, keep in mind that Twilio processes scheduled messages as they come in, so delivery might not be exactly at the time you set.
+
+Use these settings if you need to control delivery timing for things like appointment reminders or time-sensitive notifications.
+
+## Important considerations
+
+Here are a few things to keep in mind when using the Twilio Messaging destination:
+
+- **Content Templates must be created in Twilio**. You can’t create or edit Content Templates directly in Segment. Make sure your templates are built and approved in your Twilio account before selecting them in your mappings.
+- **WhatsApp messages require approved templates**. WhatsApp doesn’t allow freeform messages unless it’s part of an active conversation window. For outbound messages, you’ll need to use approved Content Templates.
+- **Phone numbers must be approved**. Any phone number you use to send messages must be approved in your Twilio account and support the channel you’re sending on.
+- **Message logs and errors**. If a message fails to send, you can view details in your Twilio Console message logs. Common issues include invalid phone number formats or missing required template fields.
+
+Understanding these details will help you set up your messaging flows smoothly and avoid unexpected errors.
