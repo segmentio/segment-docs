@@ -17,7 +17,7 @@ You can configure the details about this setting, which change how it's displaye
 - **Type** - Type of the setting's value.
 - **Description** - Optional description, which appears below the setting name.
 - **Required** - Enable this to ensure that the setting cannot be saved without a value.
-- **Encrypted** - Enable to encrypt the value of this setting. Use this setting for sensitive data, like API keys.
+- **Secret** - Enable this to ensure that sensitive data, like API key values, are kept a secret (?)
 
 As you change the values, a preview to the right updates to show how your setting will look and work.
 
