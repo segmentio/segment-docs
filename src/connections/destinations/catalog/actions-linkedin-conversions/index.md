@@ -49,4 +49,4 @@ Any deviations from this specification might lead to failed inputs.
 
 ### Why does LinkedIn show "no integration data" after I successfully sent the data?
 
-One reason may be that your events are missing currency and amount fields. LinkdedIn’s API itself won't reject events due to the lack of currency and amount data, but their platform will silently drop these events later in LinkedIn’s processing. Please ensure your payload has those fields with valid values.
+One possible reason is that your events are missing the **currency** and **amount** fields. LinkedIn’s API won't reject events due to the lack of currency and amount data, but their platform will silently drop these events later during processing. Please ensure your payload includes those fields with valid values.
