@@ -118,3 +118,13 @@ To configure the mapping:
 | Inline Media URLs     | URLs of any media you want to include with inline messages.       | URLs must be publicly accessible. Shown only if Content Template Type is Inline.                                                                  |
 | Validity Period       | How long Twilio keeps trying to deliver the message (in seconds). | Optional. Default is 14400 seconds (4 hours). Range: 1–14400.                                                                                     |
 | Send At               | Time to send the message.                                         | Optional. Must be in [ISO 8601 format]{:target="_blank"}. Messages won't send before this time and will expire after it passes.                   |
+
+## Message composition options
+
+The Twilio Messaging destination gives you two ways to create and send messages.
+
+**Content templates** are templates you’ve already set up in Twilio. They can include text, media, buttons, and other elements, depending on what you’ve built. When you choose a Channel and Content Template Type in Segment, you’ll only see templates that are compatible with those choices. If you’re sending messages to WhatsApp, you’ll need to use Content Templates, since WhatsApp requires pre-approved templates. For most use cases, templates are the way to go because they support richer formatting and keep you compliant.
+
+**Inline messages** let you write your message directly in Segment mappings. You can include dynamic variables like `Hello {{first_name}}` to personalize messages. Inline messages also support adding media URLs if you’re sending MMS or WhatsApp messages. They’re useful for quick tests or simple notifications, but they don’t support all the advanced features that Content Templates do.
+
+Choose the option that fits what you’re trying to send. For most customer-facing messages, Content Templates will give you the most reliable and feature-rich experience.
