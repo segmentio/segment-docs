@@ -46,7 +46,7 @@ To verify that you've configured Lake Formation, open the [AWS Lake Formation se
 
 ### Configure Lake Formation using IAM policies
 
-> note "Granting Super permission to IAM roles"
+> info "Granting Super permission to IAM roles"
 > If you manually configured your database, assign the `EMR_EC2_DefaultRole` Super permissions in step 8. If you configured your database using Terraform, assign the `segment_emr_instance_profile` Super permissions in step 8.
 
 #### Existing databases

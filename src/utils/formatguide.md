@@ -239,11 +239,8 @@ console.log('example');
 
 ## Notes
 
-> note ""
-> **NOTE:** Our [browser and mobile libraries](https://segment.com) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
-
-> note "Server-side tracking"
-> Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server. [Find out more](https://segment.com)
+> note "Note deprecated"
+> Please use an info message instead for information that is useful, but doesn't require immediate action. 
 
 ---
 

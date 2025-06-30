@@ -70,8 +70,8 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Registration Viewed   | A user has viewed the /account/register page                        |
 | Thank you Page Viewed | A user has viewed the thank you page after completing an order\*    |
 
-> note ""
-> \*This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
+> warning " "
+> These events are less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use this destination in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with these event.
 
 You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
 
@@ -205,7 +205,8 @@ The list below outlines the properties included in most events. See the 'Track (
 | `total`                                 | The total value of the order.                                                                  | Float         |
 | `userId`                                | Chosen user identifier, defaulting to Shopify Customer ID                                      | String        |
 
-> note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in overrides the `total` property sent to Google Analytics.
+> info "The `revenue` property is available only with the Order Completed event"
+> The `revenue` property is only available with the Order Completed event and requires you to opt in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in overrides the `total` property sent to Google Analytics.
 
 ## Product properties
 

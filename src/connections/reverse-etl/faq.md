@@ -9,14 +9,16 @@ Get answers to some frequently asked Reverse ETL questions.
 It's expected that when you select **Updated records**, the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
 
 ## Can I be notified when Reverse ETL syncs fail?
-Yes, you can sign up for Reverse ETL sync notifications.
+Yes, you can sign up for Reverse ETL sync notifications for failed or partially successful syncs. Segment sends notifications for every sync failure. 
 
 To receive Reverse ETL sync notifications: 
-1. Navigate to **Settings > User Preferences**.
-2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Enable the toggle for **Reverse ETL Sync Failed**.
+1. From your workspace's homepage, navigate to the Monitor tab and select **Alerts**. 
+2. On the **Default** tab, select **Reverse ETL**.
+3. Identify the event you'd like to be alerted for and select the menu icon under the **Actions** tab. 
+4. Click **Enable alert** and select the notification channels for which you'd like to receive alerts. 
+5. Click **Save**. 
 
-In case of consecutive failures, Segment sends notifications for every sync failure. Segment doesn't send notifications for partial failures.
+For more information about Reverse ETL alerting, refer to the [Monitor documentation](/docs/monitor/alerts/default-alerts/#reverse-etl-alerts). 
 
 ## Does Segment use Transport Layer Security (TLS) for the connection between Snowflake and Segment?
 Segment uses the [gosnowflake library](https://pkg.go.dev/github.com/snowflakedb/gosnowflake#pkg-variables){:target="_blank"} to connect with Snowflake, which internally uses TLS for the HTTP transport.

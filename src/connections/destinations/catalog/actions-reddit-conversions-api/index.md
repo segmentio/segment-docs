@@ -1,11 +1,12 @@
 ---
 title: Reddit Conversions API
 id: 66cc766ef4b1c152177239a0
+redirect_from: '/connections/destinations/catalog/reddit-conversions-api/' 
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-The [Reddit Conversions API](https://business.reddithelp.com/helpcenter/s/article/Conversions-API/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows advertisers to send conversion events from Segment directly to Reddit, without needing website code. By building a sustainable server-side connection more resilient to signal loss, you can gain stronger campaign performance with improved measurement, targeting, and optimization. 
+The [Reddit Conversions API](https://ads-api.reddit.com/docs/v2/#tag/Conversions-API){:target="_blank"} allows advertisers to send conversion events from Segment directly to Reddit, without needing website code. By building a sustainable server-side connection more resilient to signal loss, you can gain stronger campaign performance with improved measurement, targeting, and optimization. 
 
 ### Benefits of Reddit Conversions API
 

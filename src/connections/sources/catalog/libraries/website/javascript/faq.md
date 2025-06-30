@@ -9,16 +9,16 @@ Analytics.js doesn't automatically collect IPv6 addresses. If IPv6 is available 
 
 ## Is there a size limit on requests?
 
-Yes, the limit is 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js and Segment servers return a `200` response , but the event is silently dropped once it enters Segment's pipeline. 
+Yes, the limit is 32 KB per event message. Events with a payload larger than 32 KB are not accepted by Analytics.js. Segment servers return a 400 response with the error message: `Exceed payload limit`.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
-In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
+In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is by design, because the purpose of a callback is to provide an indication that the event was delivered. If the library never loads, the events won't be delivered.
 
 ## Is there an updated version of the Segment snippet?
 Segment released an updated version of the Analytics.js snippet, which introduces several enhancements and fixes that might improve your setup. For a full list of version updates, see the Analytics.js snippet's [Releases](https://github.com/segmentio/snippet/releases){:target="_blank”}.
 
-You can find the latest version of the Segment snippet in your JavaScript source's Overview tab or in the [Quickstart: Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet) documentation.
+You can find the latest version of the Segment snippet in your JavaScript source's **Overview** tab or in the [Quickstart: Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet) documentation.
  
 While there is no deadline to upgrade your snippet to the latest version, upgrading lets you use the latest improvements in the Segment library.
 
@@ -27,16 +27,16 @@ While there is no deadline to upgrade your snippet to the latest version, upgrad
 
 In May 2018, Segment began collecting client-side performance metrics in Analytics.js. This includes metrics like:
 
-- When client side integrations are initialized and when they fail
-- When messages are sent to client side integrations and when they fail
+- When client-side integrations are initialized and when they fail
+- When messages are sent to client-side integrations and when they fail
 
-Segment added these metrics to proactively identify and resolve issues with individual client-side integrations. These metrics are connected to alerts that notify Segment's on-call engineers to take action on these quickly.
+Segment added these metrics to proactively identify and resolve issues with individual client-side integrations. These metrics trigger alerts that notify Segment's on-call engineers to take action promptly.
 
 There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to Segment's servers. This extra network request is not made frequently, since the data is sampled and batched every 30 seconds.
 
 ## How are properties with `null` and `undefined` values treated?
 
-Segment treats property values set to `null` as null values and drops events set to`undefined`.
+Segment treats property values set to `null` as null values and drops events set to `undefined`.
 
 For example:
 
@@ -48,6 +48,7 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 // expected output: "{"y":6}"
 ```
 Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify){:target="blank"} method under the hood. 
+
 ## Can I overwrite the context fields?
 
 Yes. This can be useful if some of these fields contain information you don't want to collect.
@@ -65,7 +66,7 @@ analytics.track("Receipt Viewed", {}, {
 ```
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
 
-When working with Page calls, you can overwrite context fields by following the above instructions. However, because the `context.page` fields are also available in the `properties` parameter for page calls, you must also prevent the same fields in the `properties` parameter from being included in your Page call. Use the code in the following example to overwrite `url` available in context field `page.url` and properties parameter:
+When working with Page calls, you can overwrite context fields by following the above instructions. However, because the `context.page` fields are also available in the `properties` parameter for Page calls, you must also prevent the same fields in the `properties` parameter from being included in your Page call. Use the code in the following example to overwrite `url` available in context field `page.url` and properties parameter:
 
 ```js
 analytics.page("Receipt Page", {
@@ -79,7 +80,7 @@ analytics.page("Receipt Page", {
 
 ## Can I add context fields that do not already exist?
 
-Yes. You can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information, but you can add it to the context object. To add location information into the context object, pass it into the third argument as in the following example:
+Yes. You can add context fields by passing them into the options object as the third argument of the event call. For example, the Analytics.js library does not automatically collect location information, but you can add it to the context object. To add location information into the context object, pass it into the third argument as in the following example:
 
 ```js
 analytics.track("Order Completed", {}, {
@@ -97,7 +98,7 @@ Some destinations accept properties only. As a result, custom context fields you
 
 ## What is the impact of exposing the source's write keys?
 
-Segment's library architecture requires you to expose the write key for client-side tracking to work. Other major tools, like Google Analytics, Mixpanel, Kissmetrics, Hubspot, and Marketo, also require you to expose your write key.
+Segment's library architecture requires you to expose the write key for client-side tracking to work. Other major tools, like Google Analytics, Mixpanel, Kissmetrics, HubSpot, and Marketo, also require you to expose your write key.
 
 If you see any unusual behavior associated with your write key, generate a new key immediately. To generate a new key, navigate to **Connections > Sources** and select your source. On the **Settings** tab, go to the **API Keys** section and click **Generate New Key**.
 
@@ -126,7 +127,7 @@ You'll also need to modify the Segment script with your `nonce` tag, which shoul
 
 ## How is the referrer value set?
 
-The Analytics.js library sets the `context.page.referrer` value from the [`window.document.referrer` property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} set in the browser. If you notice unexpected referrer values reaching Segment, check how this value is being set on your website.
+The Analytics.js library sets the `context.page.referrer` value from the [`window.document.referrer` property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} set in the browser. If you notice unexpected referrer values reaching Segment, check how this value is set on your website.
 
 ## Are there any rate limits in place for the CDN settings endpoint?
 
@@ -142,4 +143,4 @@ If you need this functionality, you have a couple of options:
 **Use a third-party API**: Alternatively, you can use third-party services like Geolocation API to convert IP addresses to geolocation data. Afterward, you can pass this information as a trait in Identify calls or as a property in Track calls to Segment. This allows you to manage geolocation data according to your specific needs, though it will likely require engineering resources.
 
 ## Why is my payload populating incorrectly?
-Payload parameters aren't populated in a guaranteed order. Your payload should still be ingested as long as all necessary parameters are included.
+Payload parameters aren't populated in a guaranteed order. Your payload will still be ingested as long as all necessary parameters are included.

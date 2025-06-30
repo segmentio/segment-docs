@@ -9,7 +9,9 @@ Yes. Customers on Segment's [Business plan](https://segment.com/pricing) can cho
 
 Selective Sync helps manage the data Segment sends to each warehouse, allowing you to sync different sets of data from the same source to different warehouses.
 
-When you disable a source, collection or property, Segment no longer syncs data from that source. Segment won't delete any historical data from your warehouse. When you re-enable a source, Segment syncs all events since the last sync. This doesn't apply when a collection or property is re-enabled. Only new data generated after re-enabling a collection or property will sync to your warehouse.
+When you disable a source, Segment no longer syncs data from that source. The historical data from the source remains in your warehouse, even after you disable a source. When you re-enable a source, Segment will automatically sync all events since the last successful data warehouse sync.
+
+When you disable and then re-enable a collection or a property, Segment does not automatically backfill the events since the last successful sync. The only data in the first sync following the re-enabling of a collection or property is any data generated after you re-enabled the collection or property. To recover any data generated while a collection or property was disabled, please reach out to [friends@segment.com](mailto:friends@segment.com).
 
 You can also use the [Integration Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) to control whether or not data is sent to a specific warehouse.
 

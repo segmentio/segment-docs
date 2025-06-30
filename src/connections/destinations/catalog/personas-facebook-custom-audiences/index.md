@@ -151,4 +151,4 @@ Most likely, this is due to your Facebook account needing to be reauthorized, so
 Note, emails must be in a plain text format. Facebook also provides these guidelines for the emails that you send to them: trim leading, trail whitespace, and convert all characters to lowercase.
 
 ### Do you support LTV audiences?
-Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/){:target="_blank"} where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value. 
+Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/){:target="_blank"} where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer's value. The Facebook Custom Audiences destination does not support value based audiences. If you're interested in this feature, [contact Segment support](https://segment.com/help/contact/){:target="_blank"}.

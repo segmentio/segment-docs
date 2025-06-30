@@ -132,7 +132,8 @@ To add a Destination:
 8. Configure the settings and enable your destination on the destination settings page.
 
 [Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
-> note "Disabled destinations do not receive data"
+
+> warning "Disabled destinations do not receive data"
 > If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay](/docs/guides/what-is-replay/), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
 >
 > Some destinations are not compatible with Replays after a certain period of time, for example, 14 days. Check with Segment’s support team [friends@segment.com](mailto:friends@segment.com) to confirm that your intended destination allows historical timestamps. 
@@ -218,6 +219,18 @@ The following destinations support bulk batching:
 
 > info "You must manually configure bulk batches for Actions destinations"
 > To support bulk batching for the Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
+
+### Hashing 
+Segment automatically hashes personally identifiable information (PII). This simplifies implementation for teams with data privacy requirements and eliminates issues with double-hashing that can result in failed matching at destinations. 
+
+Segment supports these 2 types of data for hashing:
+* **Plain text data:** When you send plain text values to destinations that require hashed values, Segment automatically normalizes and hashes these values. 
+* **Pre-hashed data:** If you already hash your data before sending it to Segment, Segment is able to detect that the data is hashed, and will pass your pre-hashed data directly to the destination, avoiding double-hashing. 
+
+> info ""
+> If you choose to hash data yourself, ensure you follow each destination's specific hashing requirements. Fields that support automatic hashing detection will display a tooltip indicating *"If not hashed, Segment will hash this value."*
+
+For destination-specific hashing requirements, refer to the destination's API documentation. 
 
 ## IP Allowlisting
 

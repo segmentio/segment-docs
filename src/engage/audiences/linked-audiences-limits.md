@@ -31,11 +31,29 @@ Name | Limit | Details
 ---- | ----- | --------
 RETL row limit | 150 million | The audience compute fails if the total output exceeds the limit. 
 RETL column limit | 500 columns | The audience compute fails if the number of columns exceeds the limit. 
-Global concurrent audience runs | 5 total within any given space | New audience runs are queued once the limit is reached and will start execution once prior audience runs complete.
+Global concurrent audience runs | 5 total within any given space | New audience runs are queued once the limit is reached and will start execution once prior audience runs complete. If you need a higher global concurrent audience runs limit, contact [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
 Event Size | 32 KB | Segment doesn’t emit messages for profiles whose total related entities and enrichments exceed the limit.
 Data Graph depth | 6 | You can't save a Data Graph if you exceed the limit. 
 Preview size | 3K rows | The maximum number of rows you can have to generate a preview. The preview fails if you bring back too many entities. 
 Entity value type ahead cache | Up to 100 unique values | The maximum number of entity values Segment stores in cache. 
 Entity columns | Up to 1000 unique values | The maximum number of entity property columns Segment surfaces in the condition builder.
-Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Run Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse. 
+Run frequency | 15 minutes (this is the fastest time) | You can’t configure more frequency syncs. You can select **Run Now** to trigger runs, but you’re limited by Profiles Sync for when new data syncs back to the data warehouse.
+Destination Mappings | Up to 100 mappings | You can set up to 100 action destination mappings per destination instance.
 
+## Warehouse setup and performance guidance
+
+To get the best performance from Linked Audiences at scale, Segment recommends setting up a dedicated warehouse cluster. This helps avoid resource contention and makes query performance more predictable, especially when running frequent or complex audience syncs.
+
+Most workloads running on a dedicated cluster should complete within 60 minutes per sync cycle. Staying under this threshold helps keep audiences fresh and aligned with downstream activation schedules.
+
+Segment has tested Linked Audiences at enterprise scale with over 30 audiences running concurrently, each targeting millions of entities. However, actual performance and cost varies based on how your Data Graph is structured, how many audiences you run at once, and how frequently they sync. Complex joins, deep relationships, and high concurrency can all increase query time and warehouse usage.
+
+To improve performance and manage compute costs, follow these best practices:
+
+- Use materialized views when configuring Data Graph to reduce compute overhead.
+- Keep your Data Graph focused by avoiding unused entities or overly deep relationship chains.
+- Simplify audience conditions and avoid high-cardinality joins when possible.
+- Run on a dedicated warehouse cluster if you're operating at enterprise scale.
+- Stagger audience sync schedules to reduce concurrency and avoid bottlenecks.
+
+Following this guidance will help you keep audience syncs running efficiently even as your scale grows.

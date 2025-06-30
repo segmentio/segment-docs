@@ -16,6 +16,37 @@ For Segment to compute the data changes within your warehouse, Segment needs to 
 > warning ""
 > There may be cost implications to having Segment query your warehouse tables.
 
+## Reverse ETL schema
+When using Reverse ETL with Segment, several system tables are created within the `__segment_reverse_etl` schema in your warehouse. These tables are crucial for managing the sync process efficiently and tracking state information. Below are the details of the system tables in this schema:
+
+### Records table
+
+`records_<subscription_id>` table is located within the ` __segment_reverse_etl` schema. 
+
+This table contains two key columns:
+
+- `record_id`: A unique identifier for each record.
+- `checksum`: A checksum value that is used to detect changes to a record since the last sync.
+The records table helps in determining new and updated rows by comparing the checksum values during each sync. If a record’s checksum changes, it indicates that the record has been modified and should be included in the next sync. This ensures that only the necessary updates are processed, reducing the amount of data transferred.
+
+### Checkpoint table
+
+The `checkpoints_<subscription_id>` tables are located within the __segment_reverse_etl schema.
+
+This table contains the following columns:
+
+- `source_id`: Identifies the source from which the data is being synced.
+- `model_id`: Identifies the specific model or query that is used to pull data.
+- `checkpoint`: Stores a timestamp value that represents the last sync point for a particular model.
+
+The checkpoints table is used for timestamp-based checkpointing between syncs. This enables Segment to track the last successful sync for each model and avoid duplicating data when syncing, ensuring incremental and efficient data updates.
+
+### Important Considerations
+
+Do not modify or delete these tables. Altering or deleting the records and checkpoints tables can cause unpredictable behavior in the sync process. These tables are essential for maintaining the integrity of data during Reverse ETL operations.
+State management: The `__segment_reverse_etl` schema and its associated tables (records and checkpoints) manage the state of each sync, ensuring that only necessary data changes are synced and that the sync process can resume where it left off.
+
+
 ## Limits
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits for Reverse ETL.
 
@@ -24,7 +55,7 @@ Reverse ETL usage limits are measured based on the number of records processed t
 
 Processed records represents the number of records Segment attempts to send to each destination. Keep in mind that not all processed records are successfully delivered, for example, such as when the destination experiences an issue.
 
-Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. When your limit is reached before the end of your billing period, your syncs will pause and then resume on your next billing cycle. To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab.
+Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. If you've reached your Reverse ETL limit, contact your sales representative to discuss an add-on that increases your Reverse ETL record allotment. To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab.
 
 Plan | Number of Reverse ETL records you can process to destinations per month | How to increase your number of Reverse ETL records
 ---- | --------------------------------------------------------------------------- | ---------------------------------------------------

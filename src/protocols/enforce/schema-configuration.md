@@ -45,7 +45,7 @@ For example, if you include a `Subscription Cancelled` event in your Tracking Pl
     analytics.track('subscription_cancelled')
 ```
 
-**IMPORTANT: Unplanned event blocking is supported across all device-mode and cloud-mode Destinations.**
+**IMPORTANT: Unplanned event blocking is supported for all device-mode and cloud-mode Analytics.js destinations and Mobile libraries in cloud-mode.**
 
 ## Track Calls - Unplanned Properties
 
