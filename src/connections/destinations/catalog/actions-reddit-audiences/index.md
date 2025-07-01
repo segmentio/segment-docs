@@ -11,7 +11,7 @@ The Reddit Audiences destination allows advertisers to send Engage audiences fro
 This destination is maintained by Reddit. For any issues with the destination, [contact their Support team](mailto:adsapi-partner-support@reddit.com).
 
 ### Reddit Requirements 
-- **Create a Reddit Ads account.** Find your ad account ID in [Accounts](https://ads.reddit.com/accounts). 
+- **Create a Reddit Ads account.** Find your ad account ID in [Accounts](https://ads.reddit.com/accounts){:target="_blank"}. 
 
 ### Connect Reddit Ads to your workspace
 
