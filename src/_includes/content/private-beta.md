@@ -1,0 +1,1 @@
+<div class="premonition info"><div class="fa fa-info-circle"></div><div class="content"><p class="header">{{title}} is in private beta</p><p markdown=1>Reach out to your sales contact or [request a demo](https://segment.com/demo/?utm=docs) to participate in the private beta.</p></div></div>
