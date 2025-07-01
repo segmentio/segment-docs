@@ -2,10 +2,11 @@
 title: Twilio Messaging Destination
 id: 674f23ece330374dc1ecc874
 hidden: true
+hide-dossier: true
 beta: true
 ---
 
-Twilio Messaging gives businesses a way to reach customers on SMS, MMS, and WhatsApp for transactional notifications and personalized campaigns.
+[Twilio Messaging](https://www.twilio.com/en-us/messaging/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} gives businesses a way to reach customers on SMS, MMS, and WhatsApp for transactional notifications and personalized campaigns.
 
 The Twilio Messaging destination connects Segment to Twilio, letting you send messages automatically based on real-time events, audience segments, or journeys without managing complex integrations.
 
@@ -32,9 +33,9 @@ To start sending messages through Twilio Messaging, you'll set up your Twilio ac
 
 You'll set up the Twilio Messaging destination in three stages:
 
-1. Create a Twilio API Key and Secret.
-2. Add the Twilio Messaging destination in Segment.
-3. Configure message mappings to define what messages to send and when.
+1. [Create a Twilio API Key and Secret](#authentication-and-setup).
+2. [Add the Twilio Messaging destination in Segment](#add-the-twilio-messaging-destination).
+3. [Configure message mappings](#configuring-message-mappings) to define what messages to send and when.
 
 The following sections walk through each step in detail.
 
@@ -110,9 +111,9 @@ To configure the mapping:
 
 The Twilio Messaging destination gives you two ways to create and send messages.
 
-**Content templates** are templates you’ve already set up in Twilio. They can include text, media, buttons, and other elements, depending on what you’ve built. When you choose a Channel and Content Template Type in Segment, you’ll only see templates that are compatible with those choices. If you’re sending messages to WhatsApp, you’ll need to use Content Templates, since WhatsApp requires pre-approved templates. For most use cases, templates are the way to go because they support richer formatting and keep you compliant.
+**Content templates** are [templates you’ve already set up in Twilio](https://www.twilio.com/docs/content/create-templates-with-the-content-template-builder){:target="_blank”}. They can include text, media, buttons, and other elements, depending on what you’ve built. When you choose a Channel and Content Template Type in Segment, you’ll only see templates that are compatible with those choices. If you’re sending messages to WhatsApp, you’ll need to use Content Templates, since WhatsApp requires pre-approved templates. For most use cases, templates are the way to go because they support richer formatting and keep you compliant.
 
-**Inline messages** let you write your message directly in Segment mappings. You can include dynamic variables like `Hello {{first_name}}` to personalize messages. Inline messages also support adding media URLs if you’re sending MMS or WhatsApp messages. They’re useful for quick tests or simple notifications, but they don’t support all the advanced features that Content Templates do.
+**Inline messages** let you write your message directly in Segment mappings. You can include [dynamic variables](#using-variables) to personalize messages. Inline messages also support adding media URLs if you’re sending MMS or WhatsApp messages. They’re useful for quick tests or simple notifications, but they don’t support all the advanced features that Content Templates do.
 
 In Segment, map each variable to the event property it should pull from. For example, if your template says {% raw %}`Hello {{first_name}}`{% endraw %}, map `first_name` to the user’s first name property.
 
@@ -148,10 +149,10 @@ Variables let you personalize messages with details from your event data or user
 
 If you’re using a **Content Template**:
 - Variables must be defined in Twilio when you create the template.
-- In Segment, map each variable to the event property it should pull from. For example, if your template says `Hello {{first_name}}`, map `first_name` to the user’s first name property.
+- In Segment, map each variable to the event property it should pull from. For example, if your template says {% raw %}`Hello {{first_name}}`{% endraw %}, map `first_name` to the user’s first name property.
 
 If you’re writing an **inline message**:
-- Add variables directly in your message body using Handlebars, like `Hello {{first_name}}`.
+- Add variables directly in your message body using Handlebars.
 - Define each variable in your mapping so Segment knows what value to insert.
 
 You can also use variables in Inline Media URLs to dynamically include different media based on event data.
