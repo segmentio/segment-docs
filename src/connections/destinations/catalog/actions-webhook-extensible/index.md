@@ -87,7 +87,7 @@ Follow these steps to enable your new destination:
 
 Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
 
-## Integrations with Extensible Webhooks
+## Integrations with Extensible Webhook destination
 
 The following recipes show how to integrate external tools with your Segment workspace using the Extensible Webhook destination. Each guide walks you through configuring your extensible webhook destination and how to set up your custom destinations.
 
