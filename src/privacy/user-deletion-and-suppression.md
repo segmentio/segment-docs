@@ -23,7 +23,7 @@ Segment has 2 types of Regulations:
 - **Segment-only Regulations**: These Regulations *only* delete or suppress data about your user from internal Segment systems.
 - **Segment & Destination Regulations**: These Regulations delete user data from internal Segment systems and then forward a deletion request to any connected destinations that support programmatic deletion. For a list of destination that support programmatic deletion, see [Which destinations can I send deletion requests to?](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to). 
 
-While both Regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only regulations. To send more than 110,000 Segment-only Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
+While both Regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only Regulations. To send more than 110,000 Segment-only Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
 ### Segment-only Regulations
 The following Segment-only Regulation types are available:
@@ -59,17 +59,17 @@ Warehouse deletions occur using a DML run against your cluster or instance. Segm
 
 ### Deletion requests tab
 
-The deletion requests tab shows a 30-day overview of your deletions pipeline, including a regulations usage tracker and a deletion requests status table. 
+The deletion requests tab shows a 30-day overview of your deletions pipeline, including a Regulations usage tracker and a deletion requests status table. 
 
 To navigate to the deletion requests tab, open the Segment app and navigate to **Privacy > Deletion and Suppression > Deletion**.
 
 #### Regulations usage tracker
 
-The usage tracker on the deletion requests tab shows you how many Segment & destination regulations and how many Segment-only regulations you have remaining for the calendar month. 
+The usage tracker on the deletion requests tab shows you how many Segment & destination Regulations and how many Segment-only Regulations you have remaining for the calendar month. 
 
 #### Deletion requests status 
 
-The deletion requests status table allows you to see the status of each of the regulations that you've submitted, including if the regulation was forwarded to your destinations, the deletion type, the date the regulation was received, and the date the regulation was completed. 
+The deletion requests status table allows you to see the status of each of the Regulations that you've submitted, including if the Regulation was forwarded to your destinations, the deletion type, the date the Regulation was received, and the date the Regulation was completed. 
 
 If you need to verify that a information about a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in the connected destinations.
 
