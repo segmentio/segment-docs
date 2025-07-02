@@ -1,12 +1,12 @@
 ---
-title: Extensible Webhooks Destination
+title: Extensible Webhook Destination
 id: 66b1f528d26440823fb27af9
 redirect_from: '/connections/destinations/catalog/extensible-webhook/' 
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-Segment's Extensible Webhooks destination lets you send custom data payloads to any webhook endpoint. With support for flexible payload configuration, multiple authentication methods, and real-time data flow, Extensible Webhooks can help you integrate with internal systems or tools not covered by Segment’s standard destinations.
+Segment's Extensible Webhook destination lets you send custom data payloads to any webhook endpoint. With support for flexible payload configuration, multiple authentication methods, and real-time data flow, Extensible Webhooks can help you integrate with internal systems or tools not covered by Segment’s standard destinations.
 
 This destination is not currently available in EU regions. 
 
@@ -16,14 +16,14 @@ Segment maintains this destination. For any issues, [contact Segment Support](fr
 
 To set up and use Extensible Webhooks, you'll follow these four main stages:
 
-1. **Create the new destination**: Add the Extensible Webhooks destination to your workspace and link it to a source.
+1. **Create the new destination**: Add the Extensible Webhook destination to your workspace and link it to a source.
 2. **Set up authentication**: Configure the required authentication settings to activate the destination.
 3. **Map and configure data**: Define how data flows from Segment to your webhook endpoints by mapping fields and customizing the payload.
 4. **Enable the destination**: Complete the setup by enabling the destination to start sending data.
 
 ## 1. Create a new Extensible Webhooks destination
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Extensible Webhooks."
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Extensible Webhook."
 2. Select **Extensible Webhook** and Click **Add destination**.
 3. Select an existing source to connect to the destination.
 4. Enter a name for the destination and click **Create destination.**
@@ -84,7 +84,7 @@ Follow these steps to enable your new destination:
 1. Return to **Basic Settings** in your destination's **Settings** tab.
 2. Toggle **Enable Destination** to on, then click **Save Changes**.
 
-Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
+Your Extensible Webhook destination is now set up and ready to send data to your webhook endpoints.
 
 ## Integrations with Extensible Webhook destination
 
