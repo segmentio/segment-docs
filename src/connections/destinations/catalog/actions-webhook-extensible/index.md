@@ -2,7 +2,6 @@
 title: Extensible Webhooks Destination
 id: 66b1f528d26440823fb27af9
 beta: true
-hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -87,3 +86,13 @@ Follow these steps to enable your new destination:
 2. Toggle **Enable Destination** to on, then click **Save Changes**.
 
 Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
+
+## Integrations with Extensible Webhooks
+
+The following recipes show how to integrate external tools with your Segment workspace using the Extensible Webhook destination. Each guide walks you through configuring your extensible webhook destination and how to set up your custom destinations.
+
+- [Amazon Ads Audience Sync](/docs/connections/destinations/catalog/actions-webhook-extensible/amazon-ads-integration-recipe/)
+- [Google Search Ads 360 Conversion API](/docs/connections/destinations/catalog/actions-webhook-extensible/google-search-ads-integration-recipe/)
+- [Microsoft Dynamics 365 (Sales Hub)](/docs/connections/destinations/catalog/actions-webhook-extensible/microsoft-integration-recipe/)
+- [Reddit Ads (Audiences)](/docs/connections/destinations/catalog/actions-webhook-extensible/reddit-ads-audience-integration-recipe/)
+- [Reddit Ads Conversion API](/docs/connections/destinations/catalog/actions-webhook-extensible/reddit-ads-conversion-api-integration-recipe/)
