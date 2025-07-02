@@ -553,5 +553,5 @@ event('Shoes Bought').within(30 days).first(property('spend'))
 This example calculates the most frequent spend value for each user, based on all `Shoes Bought` events performed within the last 30 days. It only considers spend values that have a minimum frequency of `2`:
 
 ```sql
-('Shoes Bought').within(30 days).mode(property('spend'), 2)
+event('Shoes Bought').within(30 days).mode(property('spend'), 2)
 ```
