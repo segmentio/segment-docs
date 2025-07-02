@@ -241,10 +241,10 @@ You can't concatenate event variables and plain text with static values and func
 ### Liquid syntax
 The liquid syntax function allows you to transform event data with fine-grain control before it reaches cloud-mode destinations using the LiquidJS templating language. Use Liquid templates to clean, format, or conditionally transform data such as user properties, timestamps, or event metadata to meet the requirements of your downstream tools. Liquid templates are applied in the Mappings tab of your Segment workspace, ensuring seamless integration with your event pipeline.
 
-### Supported liquid tags and filters
+#### Supported liquid tags and filters
 The following LiquidJS tags and filters are supported for Segment mappings. These are carefully selected to ensure performance, security, and compatibility with real-time event processing. Unsupported tags and filters are disabled to prevent performance degradation or security risks.
 
-### Supported tags
+#### Supported tags
 | Tag Name          | Description |
 |-------------------|-------------|
 | `assign`          | Assigns a value to a variable for reuse in the template. |
@@ -262,7 +262,7 @@ The following LiquidJS tags and filters are supported for Segment mappings. Thes
 | `unless`          | Executes logic if a condition is not true (negation of `if`). |
 | `when`            | Part of `case` statements for matching specific values. |
 
-### Supported filters
+#### Supported filters
 | Filter Name                    | Description |
 |--------------------------------|-------------|
 | `abs`                          | Returns the absolute value of a number. |
@@ -329,10 +329,10 @@ The following LiquidJS tags and filters are supported for Segment mappings. Thes
 | `where`                        | Filters an array based on a property and value. |
 | `xml_escape`                   | Escapes characters for XML compatibility. |
 
-### Examples
+#### Examples
 Below are two examples demonstrating how to use Liquid templates in Segment mappings to transform event data for cloud-mode destinations. These examples showcase common use cases like string manipulation and conditional logic.
 
-#### Example 1: Standardize email addresses
+##### Example 1: Standardize email addresses
 This example converts an email address to lowercase and removes extra whitespace, ensuring consistency for a destination.
 
 ```json
@@ -351,7 +351,7 @@ Explanation:
 * The `strip` filter removes leading/trailing whitespace.
 * The `default` filter provides a fallback email if the input is missing.
 
-#### Example 2: Transform phone number with conditional logic
+##### Example 2: Transform phone number with conditional logic
 This example formats a phone number by removing non-digit characters, adding a country code, and prepending a plus sign.
 
 ```json
