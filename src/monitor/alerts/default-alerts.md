@@ -16,15 +16,16 @@ You can create alerts for the following product areas:
 - [Protocols](#protocols-alerts)
 - [Unify](#unify-alerts) 
 - [Engage](#engage-alerts)
+- [Users](#users-alerts)
 - [Functions](#functions-alerts)
 - [Reverse ETL](#reverse-etl-alerts)
 - [Data Graph](#data-graph-alerts)
 
 The Alerting table includes the following information about each event: 
 - **Alert name**: The type of alert, for example, "Audience created" or "Audience deleted".
-- **Last triggered**: The most recent date and time, in your local time zone, that the alert was triggered. 
+- **Last triggered**: The most recent date and time, in your local time zone, that the alert was triggered. Some alerts, like **Violations Detected**, trigger only once per day. 
 - **Status**: Either **enabled**, if the alert is currently configured in your workspace, or **disabled**, if you're not configured to receive alerts for an event.
-- **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, email, or in-app notification.
+- **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, Slack workflow, email, or in-app notification.
 - **Actions**: By selecting the menu icon for an individual alert, you can edit or delete it from the Alerting page.
 
 ## Create a new alert
@@ -68,9 +69,11 @@ View a brief description of each alert type. 
 - **Storage Destination Deleted**: A user in your workspace deleted a storage destination. 
 - **Storage Destination Disabled**: A user in your workspace disabled a storage destination. 
 - **Storage Destination Modified**: A user in your workspace modified an existing storage destination. 
-- **Storage Destination Sync Failed**: Segment failed to sync any rows of data from your source to your storage destination. 
-- **Storage Destination Sync Partially Succeeded**: Segment encountered some notices and was only able to sync some of your data from your source to your storage destination. 
-- **Storage Destination Sync Skipped**: Segment skipped a scheduled sync to your storage destination. This might happen if the previous sync wasn't complete by the time the next sync was scheduled to begin. 
+- **Storage Destination Sync Failed**<sup>*</sup>: Segment failed to sync any rows of data from your source to your storage destination. 
+- **Storage Destination Sync Partially Succeeded**<sup>*</sup>: Segment encountered some notices and was only able to sync some of your data from your source to your storage destination. 
+- **Storage Destination Sync Skipped**<sup>*</sup>: Segment skipped a scheduled sync to your storage destination. This might happen if the previous sync wasn't complete by the time the next sync was scheduled to begin. 
+
+_<sup>*</sup>The alerts for skipped, partially successful, or failed syncs apply across all storage destinations in your workspace and allow you to set a threshold after which you'd be notified. For example, you could choose to be notified after 1 failed sync, 5 skipped syncs, or 10 partially successful syncs across all storage destinations in your workspace. You can view the threshold you set in the **Sync threshold** column in the Storage Destinations tab of the Default alerts table._ 
 
 
 ## Protocols alerts
@@ -114,7 +117,12 @@ your identity-resolved profiles to your data warehouse.
 - **Audience Run Failed**: Segment was unable to compute your Audience. To resolve this error, please [contact Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
 > info "Custom Engage alerts"
-> During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) alerts, but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) and [Audience size change](/docs/engage/audiences/#audience-size-change) alerts, but these alerts won't appear in the Monitor tab. 
+
+## Users alerts
+- **Access Request Created**: A user in your workspace requested access to a resource that they don't currently have permission to view. For more information, see the [Request Access](/docs/segment-app/iam/membership/#request-access) documentation. 
+- **Public API Tokens Without Owners Detected**: Segment detected that the user that created one of your Public API tokens is no longer in your workspace. Workspace Owners receive the alert on the day that Segment detects the token's owner is no longer in the workspace and then again 30 days after the last alert. 
+- **Users Invited**: Someone [invited a new Team Member](/docs/segment-app/iam/membership/#invite-a-new-team-member) to your workspace. 
 
 ## Functions alerts
 - **Destination Filter Created**: A user in your workspace created a [destination filter](/docs/connections/destinations/destination-filters/). 
@@ -129,7 +137,7 @@ your identity-resolved profiles to your data warehouse.
 - **Reverse ETL Sync Partial Success**: Segment was able to sync some, but not all, of your records from your data warehouse with your downstream destination. 
 
 > info "Custom Reverse ETL alerts"
-> During the Monitor public beta, you can configure custom Reverse ETL alerts for [failed or partially successful syncs](/docs/connections/reverse-etl/manage-retl/#failed-or-partially-successful-syncs) and [mapping-level successful delivery rate fluctuations](/docs/connections/reverse-etl/manage-retl/#mapping-level-successful-delivery-rate-fluctuations), but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can configure custom Reverse ETL alerts for [mapping-level successful delivery rate fluctuations](/docs/connections/reverse-etl/manage-retl/#mapping-level-successful-delivery-rate-fluctuations), but these alerts won't appear in the Monitor tab. 
 
 ## Data Graph alerts
 - **Data Graph Breaking Change**: A change in your warehouse broke components of your Data Graph. For more information about breaking changes, see the [Data Graph docs](/docs/unify/data-graph/#detect-warehouse-breaking-changes). 

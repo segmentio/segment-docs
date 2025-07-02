@@ -2,16 +2,16 @@
 title: Extensible Webhooks Destination
 id: 66b1f528d26440823fb27af9
 beta: true
+redirect_from: '/connections/destinations/catalog/extensible-webhook/' 
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
 Segment's Extensible Webhooks destination lets you send custom data payloads to any webhook endpoint. With support for flexible payload configuration, multiple authentication methods, and real-time data flow, Extensible Webhooks can help you integrate with internal systems or tools not covered by Segment’s standard destinations.
 
-Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com).
+This destination is not currently available in EU regions. 
 
-> info "Private beta"
-> Extensible Webhooks is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com). 
 
 ## Overview
 

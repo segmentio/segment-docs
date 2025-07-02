@@ -24,7 +24,7 @@ To create a source volume alert:
 3. On the Create alert sidesheet, enter a percentage of source volume change that you'd like to be notified for. 
 4. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
-  - **Slack**: Select this to send alerts to one or more channels in your workspace. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 5. Click **Save**.
 
@@ -46,7 +46,7 @@ To create a successful delivery rate alert:
 3. On the Create alert sidesheet, enter a percentage. You will receive events if your successful delivery rate falls below this percentage. 
 4. Select one of the following alert channels:
   - **Email**: Select this to receive notifications at either the email address associated with your account or another email address that you enter into this field. 
-  - **Slack**: Select this and enter a Slack webhook URL and channel name to send alerts to a channel in your Slack workspace.
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}.
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 5. Click **Save**.
 

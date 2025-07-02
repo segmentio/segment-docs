@@ -183,7 +183,7 @@ If necessary, click **New Mapping** to create a new, blank action.
     This step looks for events that match the criteria in the [debugger queue](/docs/connections/sources/debugger/), so you might need to Trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
 3. Select data models to [enrich your events](/docs/unify/linked-profiles/linked-events/) with.
 4. Set up the data mapping from the Segment format to the destination tool format.
-- You can click the Source field, then select the **Enrichments** tab to view and select Enrichments to use.
+- You can click the Source field, then select previously configured Enrichments from the Event Properties tab.
 5. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. The **Select Object** option sends the entire object from the event, while the **Edit Object** option lets you map each individual property. You can change your mapping as needed and re-test.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
@@ -200,11 +200,31 @@ If necessary, click **New Mapping** to create a new, blank action.
 Segment offers suggested mappings that automatically propose relevant destination fields for both model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the setup. For more information, see [Segment's suggested mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
 
 > warning ""
-> Review the suggested mappings for accuracy before finalizing them as the suggestions aren't guaranteed to be 100% accurate. 
+> Review the suggested mappings for accuracy before finalizing them as the suggestions aren't guaranteed to be 100% accurate.
+
+## Static values
+Segment supports 4 static value types in Destination Actions mappings: string, boolean, number, and null. 
+* To create a string static value, type the string directly into the input field. 
+* To create boolean, number, and null values, use the **Static values** tab to create the appropriate static value based on its type.
+
+## Functions
+In Destination Actions mappings, functions transform event data before it sends to the destination. This enables custom data handling, such as selecting non-null values or formatting fields.
 
 ### Coalesce function
 
 The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
+
+### Case function
+
+The case function allows you to change the casing of a given string value.
+
+### JSON function
+
+The JSON function allows you to convert an object or array to a JSON encoded string, or to convert from JSON to objects.
+
+### Flatten function
+
+The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
 
 ### Replace function
 
@@ -212,17 +232,13 @@ The replace function allows you to replace a string, integer, or boolean with a 
 
 ### Concatenate function
 
-To combine two values in the event variable field, you can concatenate them using plain text and variables together. For example, to prepend the country code to a phone number, enter `+1{{Phone Number}}`.
+To combine 2 values in the event variable field, you can concatenate them using plain text and variables together. For example, to prepend the country code to a phone number, enter `+1{{Phone Number}}`. Segment evaluates this field as a string, so placing text next to a variable automatically concatenates them.
 
-Segment evaluates this field as a string, so placing text next to a variable automatically concatenates them.
+You can't concatenate event variables and plain text with static values and functions. Adding a static value or function into an input field replaces any previously added event variables and plain text.
 
 ![Mapping UI showing two concatenated fields: "+1 phone" and "context.page.url context.page.path"](images/mapping-concatenation.png)
 
-### Flatten function
-
-The flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
-
-### Conditions
+## Conditions
 
 > info ""
 > Self-service users can add a maximum of two conditions per Trigger.
@@ -231,7 +247,7 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
-- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
+- **Event property** (`is`, `is equals to`, `is not`, `is not equals to`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
 
     You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
@@ -244,8 +260,8 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 > Operators support matching on values with a **string** data type:
 > - `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`
 > 
-> Operators that support matching on values with either a **string** or **numeric** data type:
-> - `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
+> Operators that support matching on values with **numeric** data type:
+> - `is equals to`, `is not equals to`, `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
 > 
 > Operators that support matching on values with a **boolean** data type:
 > - `is true`, `is false`
@@ -261,11 +277,11 @@ The available operators depend on the property's data type:
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 
-> info "Unsupported Special Characters"
-> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields. In mapping fields, the . character is not supported unless it's being used to access an object key. If a string has a . in it, that is not supported.
+> info "Unsupported special characters in trigger fields"
+> Trigger fields don't support double quotes (`"`) or the tilde (`~`) character.
 
-> info "Limitations"
-> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
+> info "Mapping field limitations"
+> In **destination** fields, you can use dot notation to create nested objects and arrays (for example, `info.name` or `info[0].email`), unless the field is enclosed in double quotes (for example, `"user.email"` creates a literal key, not a nested structure). In **source**, dots are only supported for accessing object keys. Literal strings that include a dot (like `user.email`) aren't supported as property names.
 
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:

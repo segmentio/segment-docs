@@ -1,24 +1,23 @@
 ---
 title: Journey Context
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/journey-context"
 ---
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) redefine how you orchestrate and personalize customer experiences.
 
 This page explains Journey context, which can help you dynamically adapt each journey to individual user interactions, creating highly relevant, real-time workflows.
 
-> info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 ## Overview
 
 Unlike traditional audience-based journeys, which rely solely on user progress through predefined steps, event-triggered journeys capture and store the details of user-triggered events. This shift allows you to access the data that caused users to reach a specific step and use it to make more precise decisions throughout the journey. 
 
-With journey context, you can:
+With journey context you can personalize customer experiences using real-time event data.
 
-<!-- Split journeys based on event attributes or outcomes.-->
+<!-- Split journeys based on event attributes or outcomes.
 - Personalize customer experiences using real-time event data.
-- Enable advanced use cases like abandonment recovery, dynamic delays, and more.
+- Enable advanced use cases like abandonment recovery, dynamic delays, and more. -->
 
 For example:
 

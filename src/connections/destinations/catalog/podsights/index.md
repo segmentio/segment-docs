@@ -3,37 +3,35 @@ rewrite: true
 title: Podsights Destination
 id: 5d25eddde3ff660001b3adda
 ---
-[Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
+[Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, Podsights matches podcast downloads with on-site actions to provide household-level attribution.
 
-This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](mailto:hello@podights.com).
-
-
-## Getting Started
+This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights/Spotify support team](https://adshelp.spotify.com/HelpCenter/s/contactsupport?language=en_US){:target="_blank”}.
 
 
-
+## Getting started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Podsights" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Visit your [Podsights dashboard](https://analytics.podsights.com){:target="_blank"} and navigate to Manage > Pixels. Copy your Pixel ID which will be your Segment "API Key".
-4. Drop the Pixel ID in the "API Key" field in your Segment Settings UI.
-
+2. Search for "Podsights", select it, and choose the source you'd like to connect.
+3. Visit your [Podsights dashboard](https://analytics.podsights.com){:target="_blank"}, go to **Manage > Pixels**, then copy your Pixel ID. This is your Segment API Key.
+4. Paste the Pixel ID into the **API Key** field in your Segment destination settings.
 
 Once you start sending data to the Podsights' Destination it will take up to 20 minutes to appear in the Podsights pixel debugger.
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
 ```
 
-Page calls will be sent to Podsights as a `view` event.
+Segment sends Page events to Podsights as `view` events.
 
-Podsights is an attribution platform, and as such, we need more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields and properties for page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Podsights needs additional context for attribution, including certain fields inside the `context` and `properties` objects. Analytics.js [automatically collects these fields](/docs/connections/spec/common/#context-fields-automatically-collected), but you must provide them manually when sending events server-side.
 
-```js
+Here’s the minimum required structure for a Page call:
+
+```json
 {
   "type": "page",
   "context": {
@@ -49,14 +47,14 @@ Podsights is an attribution platform, and as such, we need more context about th
 }
 ```
 
-For page events Podsights requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
-As you can see in the page event's raw JSON payload above.
+For page events, Podsights requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
+As you can see in the page event's raw JSON payload.
 
-The `context` and `properties` object are required, along with the fields in them. If you're using Segment server-side you must send these attributes. Otherwise Podsights will return a `400 HTTP Error`.
+If any of these required fields are missing (especially if you're sending events server-side), Podsights will return a `400` HTTP error.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Order Completed', {
@@ -67,8 +65,7 @@ analytics.track('Order Completed', {
 });
 ```
 
-Track calls will be mapped to Podsights events. Podsights' support the following from the Segment Spec:
-
+Track calls will be mapped to Podsights events. Podsights supports the following from the Segment Spec:
 
 * [Signed Up](/docs/connections/spec/b2b-saas/#signed-up) as `lead`
 * [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) as `product`
@@ -76,10 +73,14 @@ Track calls will be mapped to Podsights events. Podsights' support the following
 * [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started) as `checkout`
 * [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) as `purchase`
 
-For track events Podsights requires a `context` object that contains a `userAgent` and an `ip` Podsights also requires a `page` object that contains a `referrer` and a `url` field.
-Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podsights requires certain context fields for track calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Track calls must include:
 
-```js
+- a `context` object with `userAgent` and `ip`
+- a `context.page` object with `referrer` and `url`
+
+These fields are required whether they're sent through Analytics.js or server-side. Here’s a minimum working example:
+
+```json
 {
   "type": "track",
   "context": {
@@ -97,7 +98,7 @@ Analytics.js [automatically collects context fields](/docs/connections/spec/comm
 }
 ```
 
-The `context` and `page` object are required, along with the fields in them. If you're using Segment server-side you must send these attributes. Otherwise Podsights will return a `400 HTTP Error`.
+If you're using Segment server-side, you must send these attributes. Otherwise, Podsights will return a `400` HTTP error.
 
 ## Server
-Podsights does not support server-side events out of the box, but you can send server-side events if you follow the requirements of page and track events outlined in the sections for each call.
+Podsights doesn’t support server-side events by default. However, you can send server-side events as long as you include all the required context and page fields described in the Page and Track sections on this page.

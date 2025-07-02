@@ -1,14 +1,13 @@
 ---
 title: Event-Triggered Journeys Steps
 plan: engage-foundations
+redirect_from:
+  - "/engage/journeys/event-triggered-journeys-steps"
 ---
 
 [Event-Triggered Journeys](/docs/engage/journeys/event-triggered-journeys/) in Engage use steps to control how users move through a journey based on their actions or predefined conditions.
 
-Steps are the building blocks of a journey. This page explains the **Hold Until** and **Send to Destination** steps, which enable precise control over journey progression and data delivery. 
-
-> info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+Steps are the building blocks of a journey. This page explains the **Hold until**, **Delay**, **Data split**, **Randomized split**, and **Send to Destination** steps, which enable precise control over journey progression and data delivery.
 
 ## Hold Until: smart pauses in journeys
 
@@ -52,7 +51,7 @@ Enable this feature by selecting **Send profiles back to the beginning of this s
 
 Segment recommends putting branches for recurring events at the top of the list to improve readability.
 
-![Flow diagram of an Event-Triggered Journey for an abandoned cart scenario. The journey starts with a trigger event labeled 'Cart_Modified,' followed by a 'Hold Until' step checking if the user buys within two hours. The Hold Until step includes three branches: 'User updated cart, reset timer' for additional cart modifications, 'User purchased' triggered by an 'Order_Confirmation' event, and a 'Maximum hold duration' fallback set to two hours, which leads to a 'Send Abandonment Nudge' step. The flow ends with a 'Completed' state.](images/hold_until.png)
+![Flow diagram of an Event-Triggered Journey for an abandoned cart scenario. The journey starts with a trigger event labeled 'Cart_Modified,' followed by a 'Hold Until' step checking if the user buys within two hours. The Hold Until step includes three branches: 'User updated cart, reset timer' for additional cart modifications, 'User purchased' triggered by an 'Order_Confirmation' event, and a 'Maximum hold duration' fallback set to two hours, which leads to a 'Send Abandonment Nudge' step. The flow ends with a 'Completed' state.](../images/hold_until.png)
 
 In this example, users enter the journey when they modify their cart and wait for either a purchase or two hours to pass. If the user modifies their cart again during those two hours, the cart contents are updated, and the two-hour timer resets. As a result, follow-ups reflect the latest information.
 
@@ -134,6 +133,100 @@ To configure the Delay step:
 2. (*Optional*) Give the step a unique name.
 3. Enter a duration and select a time unit (minutes, hours, days, weeks).
 4. Click **Save**.
+
+## Data split
+
+The **Data split** step sends profiles down different branches based on audience membership or profile traits. This lets you personalize how users move through a journey, like sending different messages to new users instead of returning customers, or targeting re-engagement campaigns based on inactivity.
+
+Data split is useful when you want to take different actions based on what you already know about the user, rather than waiting for a new event. For example, you might use it to separate users who haven’t purchased in 30 days from those who lapsed 90 days ago, or from users who are still actively engaged.
+
+### How Data split works
+
+When a profile reaches a Data split step:
+
+1. Segment checks whether the profile matches the first branch’s conditions.
+2. If not, it checks the next branch, and so on, in the order shown in the journey.
+3. The profile moves down the first branch it qualifies for. Each profile can only follow one branch.
+
+### Configuration options
+
+You can configure up to five branches in a Data split step. Each branch can have one or more conditions:
+
+| Condition type       | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| With trait           | The profile includes a specific trait and value.                          |
+| Without trait        | The profile does not include a specific trait.                            |
+| Part of audience     | The profile is a member of a selected audience at the time of evaluation. |
+| Not part of audience | The profile is not a member of a selected audience.                       |
+
+You can also give branches uniques name to differentiate them from each other on the journey canvas.
+
+> info "Evaluation is sequential"
+> Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step. You can change the evaluation order by dragging branches up or down in the configuration side sheet.
+
+### Example: Target different customer types
+
+You can use a Data split to branch profiles based on traits or audience membership that already exist on the profile when it reaches this step. For example:
+
+- Profiles with a known `email_subscription_status` trait get treated as existing customers.
+- Profiles that belong to a `VIP` audience are routed down a separate path for high-value users.
+- Profiles with a specific set of traits (like favorite color and a known name) can receive personalized messaging.
+- Everyone else continues through a general branch with default messaging.
+
+This setup helps tailor journey experiences using reliable, preexisting data. Because the Data split step evaluates conditions instantly, it works best with traits or audience membership that Segment has already computed before the profile enters the step.
+
+## Randomized Split (V2)
+
+The **Randomized Split** step lets you experiment with and test the performance of different journey paths. You can add up to five branches, assign each one a percentage, and Segment will randomly send users down one of the branches based on the configured distribution.
+
+This step is useful for A/B testing, holdout groups, and comparing different channels or messaging strategies within a single journey.
+
+For example, you might create a randomized split that sends 40% of users to an email campaign, 40% to an SMS campaign, and 20% to a control group. Once users move through the split, you can evaluate which approach performed best.
+
+### How Randomized Split works
+
+When a profile reaches the Randomized Split step:
+
+1. Segment randomly assigns the profile to one of the branches based on the defined percentages.
+2. The profile immediately moves down the assigned path.
+3. By default, if a user re-enters the journey later, they’re assigned a new random branch. You can optionally choose to keep them in the same branch each time they re-enter.
+
+Segment evaluates each journey instance independently. This means a user could be assigned to different branches across multiple entries, unless you enable consistent assignment.
+
+### Configuration options
+
+You can configure a Randomized Split step with the following options:
+
+| Setting                  | Description                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| Branches                 | Add up to five branches. Each branch must be assigned a percentage.          |
+| Distribution percentages | Define what portion of users should go down each branch. Total must be 100%. |
+| Branch naming            | Branches are labeled alphabetically (for example, Branch A, Branch B).       |
+| Assign same branch       | Optionally ensure a user always enters the same branch on re-entry.          |
+
+Segment won't let you save or publish your journey if the percentages don’t add up to 100%, or if any percentage is left blank.
+
+> info "Actual branch counts may differ from percentages"  
+> The Randomized Split step assigns users to branches based on probability, not fixed rules. At lower volumes, the actual distribution may not match your configured percentages exactly, but results typically even out with more traffic.
+
+To add a Randomized Split to your journey:
+
+1. From the journey canvas, click **+** to add a new step.
+2. Select **Randomized Split**.
+3. Give the step a unique name.
+4. Add up to five branches and assign a percentage to each one.
+5. (Optional) Enable **Assign same branch** if you want users to always go down the same branch on re-entry.
+6. Click **Save**.
+
+Once configured, Segment routes profiles through this step based on your distribution settings.
+
+### Analyze performance
+
+After users pass through the Randomized Split step, you can view historical and in-progress counts for each branch in the Journey Overview.
+
+You can measure results by total journey instances, unique profiles, funnel view, and in-progress view.
+
+This helps you evaluate which branch is performing best and informs how you might structure future journeys.
 
 ## Send to Destination
 

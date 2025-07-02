@@ -25,7 +25,7 @@ Follow these steps to build a prediction:
 - (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
 - Select the event and (optional) property that you want to use to make a prediction.
 5. Select a time period for the prediction. 
-6. (Optional) In **Include all events**, uncheck any events you don't want Segment to factor into the prediction.
+6. (Optional) In **Include all events** and **Include all new traits** uncheck any events or traits you don't want Segment to factor into the prediction.
 7. Click **Calculate**. If you're satisfied with the available data, click **Next**.
 5. (Optional) Connect a Destination, then click **Next**.
 6. Add a name and description for the Trait, then click **Create Trait**.
@@ -34,7 +34,7 @@ Keep the following in mind when you build a prediction:
 
 - Segment lets you predict the likelihood of a customer performing multiple events. 
 - You can choose a time period of 15, 30, 60, 90, or 120 days. 
-- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events sent to Engage. Segment lets you exclude events you don't want included by unselecting **Include all events**, then filtering out any events you want excluded from the model.
+- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events and custom traits sent to Engage. Segment lets you exclude events or traits you don't want included by unselecting **Include all events** or **Include all new traits**. 
 
 In the next section, you'll learn more about the four available predictions.
 
@@ -83,17 +83,24 @@ To access Predictions, you must:
 
 This table lists the requirements for a trait to compute successfully:
 
-| Requirement                      | Details                                                                                     |
-|----------------------------------|---------------------------------------------------------------------------------------------|
-| Event Types                  | Track at least 5 different event types in the Feature Window.                               |
-| Historical Data              | Ensure these 5 events have data spanning 1.5 times the length of the Target Window. For example, to predict a purchase propensity over the next 60 days, at least 90 days of historical data is required. |
-| Subset Audience (if applicable) | Ensure the audience contains more than 1 non-anonymous user.                                 |
-| User Limit                   | Ensure that you are making a prediction for fewer than 10 million users. If you track more than 10 million users in your space, define a smaller audience in the **Make a Prediction For** section of the custom predictions builder. |
-| User Activity                | At least 100 users performing the Target Event and at least 100 users not performing the Target Event. |
+| Requirement                     | Details                                                                                                                                                                                                                               |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Event Types                     | Track at least 5 different event types in the Feature Window.                                                                                                                                                                         |
+| Historical Data                 | Segment requires historical data spanning at least 3 times the length of the target window. For example, a 30-day window requires 90 days of past data.                                                                               |
+| Subset Audience (if applicable) | Ensure the audience contains more than 1 non-anonymous user.                                                                                                                                                                          |
+| User Limit                      | Ensure that you are making a prediction for fewer than 10 million users. If you track more than 10 million users in your space, define a smaller audience in the **Make a Prediction For** section of the custom predictions builder. |
+| User Activity                   | At least 100 users performing the Target Event and at least 100 users not performing the Target Event.                                                                                                                                |
 
 #### Selecting events (optional)
 
 Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU storefront compared to a US storefront and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is optional, Segment only recommends using it if you have a clear reason in mind for removing events from becoming a factor in the model.
+
+#### Selecting traits (optional)
+You can choose which traits to include or exclude from your prediction model. Segment supports only numerical and boolean custom traits.
+
+In the UI, you can deselect traits you don’t want the model to use. Selecting a trait means Segment will attempt to include it in the model, but it may be excluded during training if it doesn’t improve model performance.
+
+If you keep Include all new traits selected, Segment will automatically consider any new traits you start tracking. If you deselect this option, new traits won’t be included in future model calculations unless you manually add them.
 
 > info "Predictive Traits and anonymous events"
 > Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.

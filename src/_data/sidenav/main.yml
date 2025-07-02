@@ -210,6 +210,8 @@ sections:
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
         title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/db2-setup
+        title: Db2 Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
         title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
@@ -223,6 +225,8 @@ sections:
       title: Functions Overview
     - path: /connections/functions/source-functions
       title: Source Functions
+    - path: /connections/functions/source-insert-functions
+      title: Source Insert Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
     - path: /connections/functions/insert-functions
@@ -414,8 +418,6 @@ sections:
     title: Introduction
   - path: '/engage/quickstart'
     title: Foundations Onboarding
-  - path: '/engage/use-cases'
-    title: Use Cases
   - section_title: User Subscriptions
     slug: profiles/user-subscriptions
     section:
@@ -448,6 +450,10 @@ sections:
         title: Linked Audiences Overview
       - path:  '/engage/audiences/linked-audiences-limits'
         title: Linked Audiences Limits
+      - path: '/engage/audiences/linked-audiences-braze'
+        title: Linked Audiences with Braze
+      - path : '/engage/audiences/linked-audiences-iterable'
+        title: Linked Audiences with Iterable
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
@@ -468,31 +474,38 @@ sections:
     section:
     - path: '/engage/journeys'
       title: Journeys Overview
-    - path: '/engage/journeys/build-journey'
-      title: 'Build a Journey'
-    - path: '/engage/journeys/step-types'
-      title: 'Journey Step Types'
+    - section_title: Journeys V1
+      slug: '/engage/journeys/v1'
+      section: 
+      - path: '/engage/journeys/v1/build-journey'
+        title: 'Build a Journey'
+      - path: '/engage/journeys/v1/step-types'
+        title: 'Journey Step Types'
+      - path: '/engage/journeys/v1/send-data'
+        title: Send Data to Destinations
+      - path: '/engage/journeys/v1/journeys-logic'
+        title: Understand Journeys Logic
+    - section_title: Journeys V2
+      slug: '/engage/journeys/v2'
+      section: 
+      - path: /engage/journeys/v2/
+        title: Overview
+      - path: /engage/journeys/v2/event-triggered-journeys-steps
+        title: Event-Triggered Journeys Steps
+      - path: /engage/journeys/v2/exit-rules
+        title: Exit Rules
+      - path: /engage/journeys/v2/journey-context
+        title: Journey Context
+      - path: /engage/journeys/v2/use-cases
+        title: Use Cases
+      - path: /engage/journeys/v2/limits
+        title: Product Limits
     - path: '/engage/journeys/journeys-edits'
       title: 'Journey Edits and Versioning'
-    - path: '/engage/journeys/send-data'
-      title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
       title: Journeys Analytics
-    - section_title: Event-Triggered Journeys
-      slug: '/engage/journeys/event-triggered-journeys'
-      section: 
-      - path: /engage/journeys/event-triggered-journeys
-        title: Overview
-      - path: /engage/journeys/event-triggered-journeys-steps
-        title: Event-Triggered Journeys Steps
-      - path: /engage/journeys/journey-context
-        title: Journey Context
     - path: '/engage/journeys/faq-best-practices'
       title: Journeys Best Practices and FAQ
-    - path: '/engage/journeys/use-cases'
-      title: Example Journeys Use Cases
-    - path: '/engage/journeys/journeys-logic'
-      title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
       title: Journeys Glossary
   - section_title: Content
@@ -584,7 +597,7 @@ sections:
     - path: /privacy/consent-management/configure-consent-management
       title: Configure Consent Management
     - path: /privacy/consent-management/consent-in-unify
-      title: Consent in Unify
+      title: Consent Stored on the Profile
     - path: /privacy/consent-management/consent-in-retl
       title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq

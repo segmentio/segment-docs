@@ -3,7 +3,7 @@ title: Set up Reverse ETL
 beta: false 
 ---
 
-There are four components to Reverse ETL: Sources, Models, Destinations, and Mappings.
+There are 4 components to Reverse ETL: Sources, Models, Destinations, and Mappings.
 
 ![Reverse ETL overview image](images/RETL_Doc_Illustration.png)
 
@@ -28,6 +28,7 @@ To add your warehouse as a source:
   - [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup)
   - [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup)
   - [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup)
+  - [Db2 Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/db2-setup)
   - [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup)
   - [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup)
   - [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup)
@@ -172,6 +173,18 @@ Select array | This enables you to send all nested properties within the array.
 
 Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property.
 
+### Handling nested objects and arrays
+Segment's warehouse pipeline flattens nested fields in context, traits, and properties. As part of this process, any nested arrays or objects within these fields are stringified when sent to downstream destinations with Reverse ETL.
+
+If your destination expects specific fields to be formatted as arrays or objects rather than strings, you'll need to convert the data back to its original structure before mapping.
+
+For example, in Snowflake, you can use the PARSE_JSON function to convert a stringified object or array back to proper JSON format:
+```json 
+SELECT PARSE_JSON(your_column) AS parsed_data
+FROM your_table;
+Reverse ETL supports reading data in JSON format and can properly convert it to objects or arrays for mapping. This ensures compatibility with destination schemas that require structured data.
+```
+
 ### Null value management
 You can choose to exclude null values from optional mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an optional field may overwrite an existing value in your downstream tool.
 
@@ -180,9 +193,9 @@ For example, if you opt to sync null values with your destination and an end use
 By default, Segment syncs null values from mapped fields to your downstream destinations. Some destinations do not allow the syncing of null values, and will reject requests that contain them. Segment disables the option to opt out of syncing null values for these destinations.
 
 To opt out of including null values in your downstream syncs:
-1. Navigate to Connections > Destinations and select the Reverse ETL tab.
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination and the mapping you want to edit.
-3. Click Edit mapping.
+3. Click **Edit mapping**.
 4. Under **Optional fields**, select the field you want to edit.
 5. In the field dropdown selection, disable the **Sync null values** toggle.
 

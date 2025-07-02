@@ -183,7 +183,7 @@
       &::before {
         content: counter(list-items) ". ";
         color: color(primary);
-        font-weight: 600;
+        font-weight: 500;
         transform: translate(-23px, 0);
       }
     }
@@ -227,7 +227,7 @@
 
     th {
       color: color(gray-700);
-      font-weight: 600;
+      font-weight: 500;
       padding: 12px;
 
       @include breakpoint(medium up) {
@@ -240,7 +240,7 @@
     }
     th > code {
       color: #696f8c;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 10px;
       background-color: inherit;
     }
@@ -392,7 +392,7 @@ tr.show {
   padding: 0px 6px;
   border-radius: 4px;
   height: 16px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   color: rgb(71, 77, 102);
   opacity: 0.65;
@@ -409,8 +409,8 @@ tr.show {
 }
 
 .skiplink:focus-visible {
-  outline: 2px solid color(secondary);
-  color: color(secondary);
+  outline: 2px solid color(twilio-secondary);
+  color: color(twilio-secondary);
   position: static;
   width: 400px;
   height: auto;

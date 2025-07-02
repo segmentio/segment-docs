@@ -38,7 +38,7 @@ With Engage, you can create unified customer profiles, enrich those profiles wit
 
 ##### Recipes
 
-Need ideas or prior art? [Segment Recipes](https://segment.com/recipes/?utm=docs) are some cool things you can do by hooking your Segment workspace up to different Destination tools. Everything from sending tailored onboarding emails, to joining and cleaning your data with third party tools
+Need ideas or prior art? [Segment Recipes](https://segment.com/recipes/?utm=docs) are some cool things you can do by hooking your Segment workspace up to different Destination tools. Everything from sending tailored onboarding emails, to joining and cleaning your data with third party tools.
 
 ### Other Resources
 
