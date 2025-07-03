@@ -89,10 +89,10 @@ To create or update the Account entity only, you can skip this step and directly
 
 #### Data mapping
 
-1. Create a new Mapping in the Mappings tab and select the **Send** HTTP action.
+1. Create a new mapping in the Mappings tab and select the **Send** HTTP action.
 2. Choose which events you want to send to Google Search Ads 360 API using the Event filters.
 3. Fill out mapping fields:
-        - Specify the URL:  `[Organization URI]/api/data/v9.2/accounts` (this is for creating new accounts)
+    - Specify the URL:  `[Organization URI]/api/data/v9.2/accounts` (this is for creating new accounts)
 4. Use the mapping interface and search for the “body” parameter that was created in the insert function to select the transformed object that can be sent as the event body.
 5. Turn off batching for this operation.
 

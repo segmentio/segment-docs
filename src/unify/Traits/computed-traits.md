@@ -172,6 +172,10 @@ Learn more about [Computed trait generated events here](/docs/engage/using-engag
 
 For account-level computed traits, you have the option to send either a [Group](/docs/connections/spec/group/) call and/or [Identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
+> warning "Computed Traits can only be sent to Event destinations"
+> When Engage sends a computed trait to an [Event destinations](/docs/engage/using-engage-data/#event-destinations), it uses an Identify call to send user traits and a Group call to send account-level computed traits.
+
+
 ## View compute status
 
 After you create a computed trait, use the Overview page to view a compute progress bar, current [status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  

@@ -276,7 +276,7 @@ The handler for Source functions is `onRequest()`.
 
 ## Create settings and secrets
 
-{% include content/functions/settings.md %}
+{% include content/functions/source-settings.md %}
 
 Next, fill out this setting's value in **Test** tab, so that you can run the function and check the setting values being passed.
 

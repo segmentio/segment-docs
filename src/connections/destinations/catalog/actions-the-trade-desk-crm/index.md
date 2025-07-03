@@ -53,6 +53,7 @@ To sync additional Audiences from your Engage space, create a separate instance 
 
 ## Limitations
 
+* Audiences up to 100 million profiles in size will be synced.
 * An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync. 
 * Audience attempts to sync once per day.
 * Audience sync is a full sync.

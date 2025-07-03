@@ -68,18 +68,32 @@ When you build an audience based on audience membership, you use existing audien
 
 To see which audiences reference a particular audience in their definitions, select the **Consumers** tab when viewing a classic or linked audience. This tab lists all dependent audiences, to help you understand and manage relationships between your audience segments.
 
-### Time comparison
+### Trait operators
 
-You can use the following time comparison operators in your audience definition: 
-- `before date`
-- `after date`
-- `within last`
-- `within next` 
-- `before last`
-- `after next` 
+| Operator                   | Description                           |
+|--------------------------- |---------------------------------------|
+| equals                     | Matches exact value. |
+| not equals                 | Does not match exact value. |
+| less than                  | Value is less than specified. |
+| greater than               | Value is greater than specified. |
+| less than or equal to      | Value is less than or equal to specified. |
+| greater than or equal to    | Value is greater than or equal to specified. |
+| equals any of              | Matches any of specified values. |
+| contains any of            | Includes any of specified values. |
+| contains                   | Includes specified substring or value. |
+| does not contain           | Excludes specified substring or value. |
+| starts with                | Begins with specified substring. |
+| ends with                  | Ends with specified substring. |
+| exists                     | Value is present (not null). |
+| not exists                 | Value is absent (null). |
+| before date                | Dates before specified date. |
+| after date                 | Dates after specified date. |
+| within last                | Dates between X days ago and today. |
+| within next                | Dates between today and X days from now. |
+| before last                | All dates older than X days from today. |
+| after next                 | All dates beyond X days from today. |
 
-Only ISO timestamps can be used with these operators. Additionally, these time comparison operators exclusively apply to custom traits.
-If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch). 
+Only ISO timestamps can be used with time comparison operators. If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch). 
 
 **Note**: Timezones seen in the UI are based on your local timezone, but are converted to UTC on the backend.
 
