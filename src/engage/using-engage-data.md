@@ -297,3 +297,4 @@ Connect any Cloud-mode destination that supports Identify or Track calls to Enga
 - [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/)
 - [Responsys](/docs/connections/destinations/catalog/responsys/)
 - [TikTok Audiences](/docs/connections/destinations/catalog/actions-tiktok-audiences/)
+- [Klaviyo (Actions)](/docs/connections/destinations/catalog/actions-klaviyo/)
