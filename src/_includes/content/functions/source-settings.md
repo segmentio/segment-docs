@@ -8,7 +8,7 @@ First, add a setting in **Settings** tab in the code editor:
 
 Click **Add Setting** to add your new setting.
 
-![A screenshot of the "Add Setting" section of the functions settings tab, with apiKey settings included](/docs/connections/functions/images/add-setting-dialog.png)
+![A screenshot of the "Add Setting" section of the functions settings tab, with apiKey settings included](/docs/connections/functions/images/add-source-setting-dialog.png)
 
 You can configure the details about this setting, which change how it's displayed to anyone using your function:
 
@@ -17,7 +17,7 @@ You can configure the details about this setting, which change how it's displaye
 - **Type** - Type of the setting's value.
 - **Description** - Optional description, which appears below the setting name.
 - **Required** - Enable this to ensure that the setting cannot be saved without a value.
-- **Secret** - Enable this to ensure that sensitive data, like API key values or passwords, are not displayed in the Segment UI. 
+- **Encrypted** - Enable to encrypt the value of this setting. Use this setting for sensitive data, like API keys.
 
 As you change the values, a preview to the right updates to show how your setting will look and work.
 
