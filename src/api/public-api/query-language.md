@@ -87,12 +87,12 @@ The following tables list the query languages's available functions.
 | Notes       | Only valid within a `where` function or a Reducer.                                  |
 | Example     | `context('page.url')`                                                               |
 
-| `literal`                        |                                                                                                                                                                                                                                            |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Syntax                           | `literal({a: Any})`  <br> `a` - the value to treat as a literal expression                                                                                                                                                                     |
+| `literal`                        |                                                                                                                                                                                                                                                 |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax                           | `literal({a: Any})`  <br> `a` - the value to treat as a literal expression                                                                                                                                                                      |
 | Operations allowed in call-chain | None allowed; typically used within another function, like a comparison (with syntactic sugar, this would appear on the right side of the comparison). The outer function or comparison dictates the operations allowed in the call-chain. |
-| Notes                            | Literals can be `int`s, `float`s, `string`s, or `timestamp`s, where `timestamp`s follow ISO 8601 format. Note that in general `string` is interchangeable with all other formats, except when used in a `property` chained to an `entity`. In this case, we recommend using `timestamp` over `string` based on the datatype you're targeting.                                                                                                          |
-| Example                          | `literal(100)` or `literal('value')` or `literal(2022-10-17T00:00:00)`                                                                                                                                                                         |
+| Notes                            | Literals can be `int`s, `float`s, `string`s, `date`s or `timestamp`s, where `date`s use the format `yyyy-mm-dd` and `timestamp`s follow ISO 8601 format. Note that in general `string` is interchangeable with all other formats, except when used in a `property` chained to an `entity`. In this case, we recommend matching the data type of the entity property being targeted.                                             |
+| Example                          | `literal(100)` or `literal('value')` or `literal(2022-10-17T00:00:00)`                                                                                                                                                                          |
 
 
 
@@ -287,19 +287,19 @@ The following tables list the query languages's available functions.
 | Description | Matches when the value does not exactly match one of the values from the parameter array. |
 | Example     | `none_of('shoes','shirts')`                                                               |
 
-| `before_date` |                                                           |
-| ------------- | --------------------------------------------------------- |
-| Syntax        | `before_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp |
-| Return Type   | `Comparator`                                              |
-| Notes         | `string` format can also be use                           |
-| Example       | `before_date('2023-12-07T18:50:00Z')`                     |
+| `before_date` |                                                                              |
+| ------------- | ---------------------------------------------------------------------------- |
+| Syntax        | `before_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp                    |
+| Return Type   | `Comparator`                                                                 |
+| Notes         | `string` format can also be use                                              |
+| Example       | `before_date(2023-12-07T18:50:00Z)` or `before_date('2023-12-07T18:50:00Z')` |
 
-| `after_date` |                                                          |
-| ------------ | -------------------------------------------------------- |
-| Syntax       | `after_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp |
-| Return Type  | `Comparator`                                             |
-| Notes        | `string` format can also be use                          |
-| Example      | `after_date('2023-12-07T18:50:00Z')`                     |
+| `after_date` |                                                                            |
+| ------------ | -------------------------------------------------------------------------- |
+| Syntax       | `after_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp                   |
+| Return Type  | `Comparator`                                                               |
+| Notes        | `string` format can also be use                                            |
+| Example      | `after_date(2023-12-07T18:50:00Z)` or `after_date('2023-12-07T18:50:00Z')` |
 
 | `within_last` |                                                                                                                                                                                               |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
