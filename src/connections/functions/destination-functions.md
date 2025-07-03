@@ -28,7 +28,7 @@ All functions are scoped to your workspace, so members of other workspaces can't
 After you click **Next: Build Function**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
 > success ""
-> **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}. (Contributions welcome!)
+> **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}.
 
 
 ## Code the destination function
