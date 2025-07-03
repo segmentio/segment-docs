@@ -21,15 +21,15 @@ sections:
         title: Extensible Webhooks Destination
         section:
           slug: connections/destinations/catalog/actions-webhook-extensible
-        - path: /connections/destinations/catalog/actions-webhook-extensible/amazon-ads-integration-recipe/
+        - path: /connections/destinations/catalog/actions-webhook-extensible/amazon-ads-integration-recipe
           title: Amazon Ads Audience Sync integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/google-search-ads-integration-recipe/
+        - path: /connections/destinations/catalog/actions-webhook-extensible/google-search-ads-integration-recipe
           title: Google Search Ads 360 Conversion API integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/microsoft-integration-recipe/
+        - path: /connections/destinations/catalog/actions-webhook-extensible/microsoft-integration-recipe
           title: Microsoft Dynamics 365 (Sales Hub) integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-audience-integration-recipe/
+        - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-audience-integration-recipe
           title: Reddit Ads (Audiences) integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-conversion-api-integration-recipe/
+        - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-conversion-api-integration-recipe
           title: Reddit Ads Conversion API integration recipe
   - path: /connections/event-delivery
     title: How do I check if data is reaching a destination?
