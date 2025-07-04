@@ -185,7 +185,8 @@ If necessary, click **New Mapping** to create a new, blank action.
 4. Set up the data mapping from the Segment format to the destination tool format.
 - You can click the Source field, then select previously configured Enrichments from the Event Properties tab.
 5. Test the mapping with data from a sample event.
-    The edit panel shows you the mapping output in the format for the destination tool. The **Select Object** option sends the entire object from the event, while the **Edit Object** option lets you map each individual property. You can change your mapping as needed and re-test.
+- This tool can automatically populate values based on a cached sample event for all workspaces, in addition to the sample event you've selected. When it doesn't show the JSON field you need, you can get around it by manually adding the needed data to the sample event.
+- The edit panel shows you the mapping output in the format for the destination tool. The **Select Object** option sends the entire object from the event, while the **Edit Object** option lets you map each individual property. You can change your mapping as needed and re-test.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 7. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
