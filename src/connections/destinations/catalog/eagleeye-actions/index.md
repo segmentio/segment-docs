@@ -37,7 +37,7 @@ To map incoming event data and trigger behavioral actions in the Eagle Eye AIR d
 1. In the Eagle Eye (Actions) destination, go to the Mappings tab and click **New Mapping**.
 2. From the action list, select **Trigger Behavioral Action**.
 3. Define your event trigger conditions. For example, if you want to trigger an action only for customers who just joined the program, select "Event Type is Track" and "Event Name is EE Loyalty Program Joined" (or any other event that contains the information you need).
-4. Under **Map fields**, ensure that at least "User identity value" and "Behavioral Action trigger reference" are mapped. The trigger reference will be the same as the one set within the Eagle Eye AIR dashboard when creating the behavioral action.
+4. Under **Map fields**, ensure that at least "User identity value" and "Behavioral Action trigger reference" are mapped. The trigger reference will be the same as the one set within the Eagle Eye AIR dashboard when creating the behavioral action. 
 5. (Optional) If your behavioral action requires a "Wallet transaction reference", you can pull it from one of the event fields. For example, an event property that may contain the transaction reference, such as `properties.order_id`.
 6. Click **Next**, give the mapping a name and hit **Save** or **Save and enable**.
 
