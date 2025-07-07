@@ -7,9 +7,9 @@ id: 682db61f6c600fdb90251392
 
 [Eagle Eye](https://eagleeye.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} delivers real-time loyalty and promotions solutions for enterprise brands, enabling seamless integration with leading customer data platforms and marketing activation tools. The platform connects digital and in-store experiences, accelerating personalization and campaign delivery through extensible APIs and pre-built connectors.
 
-This integration requires both an Eagle Eye Source and Destination. The source sends events into Segment, and the destination processes those events to trigger specific behavioral actions in Eagle Eye. 
+This integration requires both an Eagle Eye Source and Destination. The source sends events into Segment, and the destination processes those events to trigger specific behavioral actions in Eagle Eye.
 
-> warning "Required Source Integration" 
+> warning "Required Source Integration"
 > This destination must be used in tandem with a corresponding Eagle Eye Source to trigger behavioral actions in Eagle Eye.
 
 This destination is maintained by Eagle Eye. For any issues with the destination, [contact their Support team](mailto:support@eagleeye.com).
