@@ -23,7 +23,7 @@ Follow these steps to set up the Ortto (Audiences) destination in your Segment w
 6. Copy the API key from your Ortto data source.
 7. In Segment, open the destination's **Settings** tab and paste the API key.
 8. Toggle **Enable Destination** to **ON** and click **Save Changes**.
-9. Go to the **Mappings** tab in the *Ortto (Audiences)* destination and add a **Sync Audience** mapping.
+9. Go to the **Mappings** tab in your Ortto (Audiences) destination and add a **Sync Audience** mapping.
 10. Enable the mapping.
 11. Navigate to the **Audiences** tab in your Engage space and select the audience you want to sync.
 12. Click **Add Destination**.
