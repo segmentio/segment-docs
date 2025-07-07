@@ -5,7 +5,7 @@ id: 686799c65fcebef2a98c8141
 
 {% include content/plan-grid.md name="actions" %}
 
-The **Ortto (Audiences)** destination allows you to send Engage audiences from Segment to Ortto, where they can be used as [Audiences](https://help.ortto.com/a-115-working-with-audiences){:target="_blank"} for marketing automation, personalization, and reporting.
+The **Ortto (Audiences)** destination allows you to send Engage Audiences from Segment to Ortto, where they can be used as [Audiences](https://help.ortto.com/a-115-working-with-audiences){:target="_blank"} for marketing automation, personalization, and reporting.
 
 This destination is maintained by **Ortto**. For support or questions, please [contact the Ortto Support team](mailto:help@ortto.com).
 
