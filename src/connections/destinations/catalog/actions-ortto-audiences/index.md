@@ -16,7 +16,7 @@ Follow these steps to set up the Ortto (Audiences) destination in your Segment w
 1. In your Segment workspace, click **Engage** in the left navigation bar, then select your space.
 2. Click **Engage Settings** and open the **Destinations** tab.
 3. Search for `Ortto (Audiences)` and click **Add Destination**.
-4. Confirm the source. By default, this will be the source connected to the Engage space you're working in.
+4. Confirm the source. This is typically the source connected to the Engage space you're working in.
 5. [Log in to your Ortto account](https://ortto.app/login){:target="_blank"} and either:
    - Create a new **Segment (Actions)** data source, or
    - Use an existing one.
