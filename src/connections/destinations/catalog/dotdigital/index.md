@@ -34,7 +34,7 @@ Before using the Add Context to List Action, complete the following prerequisite
 When you use the Enroll Contact to Program action, Dotdigital creates a contact for the identifier you provide, if the contact doesn't already exist. 
 
 ### Send SMS
-- Only valid mobile numbers with an international dialling prefix (E.164 format) will be accepted.
+Only valid mobile numbers with an international dialing prefix in E.164 format will be accepted. This format is a combination of `+[country code][phone number]`. For example: `+12133734253`.
 
 ### Send Transactional SMS
 - Only valid mobile numbers with an international dialing prefix in E.164 format will be accepted. This format is a combination of `+[country code][phone number]`. For example: `+12133734253`.
