@@ -14,23 +14,6 @@ sections:
       title: Destinations Overview
     - path: /connections/destinations/destination-filters
       title: Destination Filters
-    - section_title: Catalog
-      slug: connections/destinations/catalog
-      section: 
-      - path: /connections/destinations/catalog/actions-webhhook-extensible
-        title: Extensible Webhooks Destination
-        section:
-          slug: connections/destinations/catalog/actions-webhook-extensible
-        - path: /connections/destinations/catalog/actions-webhook-extensible/amazon-ads-integration-recipe
-          title: Amazon Ads Audience Sync integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/google-search-ads-integration-recipe
-          title: Google Search Ads 360 Conversion API integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/microsoft-integration-recipe
-          title: Microsoft Dynamics 365 (Sales Hub) integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-audience-integration-recipe
-          title: Reddit Ads (Audiences) integration recipe
-        - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-conversion-api-integration-recipe
-          title: Reddit Ads Conversion API integration recipe
   - path: /connections/event-delivery
     title: How do I check if data is reaching a destination?
   - path: /connections/find-writekey
