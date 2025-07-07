@@ -37,5 +37,5 @@ When you use the Enroll Contact to Program action, Dotdigital creates a contact 
 - Only valid mobile numbers with an international dialling prefix (E.164 format) will be accepted.
 
 ### Send Transactional SMS
-- Only valid mobile numbers with an international dialling prefix (E.164 format) will be accepted.
+- Only valid mobile numbers with an international dialing prefix in E.164 format will be accepted. This format is a combination of `+[country code][phone number]`. For example: `+12133734253`.
 - You must have SMS pay-as-you-go enabled to use this action. Learn more about [how to enable SMS pay-as-you-go](https://support.dotdigital.com/en/articles/8199154-understand-sms-pay-as-you-go-and-spend-limit) {:target="_blank"}.
