@@ -89,7 +89,7 @@ Amazon requires at least one match key to identify the user associated with each
 | postalCode | User's postal code (is hashed) |
 | maid | Mobile advertising ID (ADID, IDFA, or FIREADID) |
 | rampId | RAMP ID for attribution to traffic events |
-| matchId | Custom match ID for the user |
+| matchId | Match ID serves as an anonymous, opaque unique identifier that corresponds to individual users within an advertiser's system, such as loyalty membership identifications and order references. This functionality enables advertisers to precisely monitor campaign effectiveness while maintaining customer data privacy, eliminating the need to share sensitive information like hashed email addresses or phone numbers with Amazon, particularly when analyzing complex customer journeys across multiple channels and devices. The advertisers who implement the Amazon Advertising Tag (AAT) on their websites can transmit match_id as a parameter in conjunction with online event tracking. Amazon's system subsequently correlates these identifiers with users through cookies or hashed Personally Identifiable Information (PII). In instances where users complete offline conversions, advertisers can report these activities through the Conversions API (CAPI) utilizing the corresponding match_id, ensuring seamless cross-channel attribution. |
 
 Segment automatically maps these fields from standard identity traits when available.
 
@@ -139,7 +139,7 @@ You can include custom attributes with your events to provide additional context
 
 #### How does deduplication work?
 
-Amazon Conversions API uses the `clientDedupeId` field to prevent duplicate events. By default, Segment maps the messageId to this field. For events with the same clientDedupeId, only the latest event will be processed.
+Amazon Conversions API uses the `clientDedupeId` field to prevent duplicate events. By default, Segment maps the messageId to this field. For events with the same clientDedupeId, only the latest event will be processed. Deduplication occurs across all event types, rather than being limited to individual event types.
 
 #### What regions are supported?
 
@@ -163,3 +163,14 @@ Personally identifiable information (PII) fields like email, phone, name, and ad
 #### How can I verify events in Amazon?
 
 After you start sending events, you should see them in your Amazon Advertising dashboard under conversion tracking reports. Allow some time for the events to be processed and attributed.
+
+#### Which advertising accounts can access Amazon Conversions API through Segment?
+
+- Self-Service (SS) Accounts: Yes
+- Managed Service (MS) Accounts: No
+- Manager Accounts (MA): At present, this functionality is not available. However, we are actively monitoring market demand and user requirements. Should sufficient interest emerge from our user base, we will evaluate the possibility of implementing this feature in a future release.
+
+#### I am an advertiser on Amazon Demand Side Platform. My agency can't provide access to their entity as they manage other clients. How do I get access to a specific advertiser account?
+
+1. Request your agency to grant access to the specific advertiser account intended for campaign execution. Specifically, **View and Edit** permissions must be assigned for the Events Manager. Please see the [help article](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
+2. Utilize the Amazon Conversions API (CAPI) to transmit data to the advertiser account for which access was granted in the previous step.
