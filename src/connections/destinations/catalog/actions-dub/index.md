@@ -1,7 +1,6 @@
 ---
 title: Dub (Actions) Destination
-beta: true
-hidden: true
+id: 682db6914f35aafb2757ef24
 ---
 
 {% include content/plan-grid.md name="actions" %}
