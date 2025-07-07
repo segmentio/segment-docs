@@ -32,3 +32,10 @@ Before using the Add Context to List Action, complete the following prerequisite
 
 ### Enroll Contact to Program
 When you use the Enroll Contact to Program action, Dotdigital creates a contact for the identifier you provide, if the contact doesn't already exist. 
+
+### Send SMS
+- Only valid mobile numbers with an international dialling prefix (E.164 format) will be accepted.
+
+### Send Transactional SMS
+- Only valid mobile numbers with an international dialling prefix (E.164 format) will be accepted.
+- You must have SMS pay-as-you-go enabled to use this action. Learn more about [how to enable SMS pay-as-you-go](https://support.dotdigital.com/en/articles/8199154-understand-sms-pay-as-you-go-and-spend-limit) {:target="_blank"}.
