@@ -256,7 +256,7 @@ sections:
     title: Analytics-CSharp Migration Guide
 
 - slug: actions-webhook-extensible
-  section_title: Extensible Webhooks Documentation
+  section_title: Extensible Webhooks
   section:
   - path: /connections/destinations/catalog/actions-webhook-extensible/
     title: Extensible Webhooks Destination

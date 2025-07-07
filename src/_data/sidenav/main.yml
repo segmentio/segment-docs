@@ -188,6 +188,21 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
+    - section_title: Extensible Webhooks
+      slug: connections/destinations/catalog/actions-webhook-extensible/
+      section:
+      - path: /connections/destinations/catalog/actions-webhook-extensible/
+        title: Extensible Webhooks Destination
+      - path: /connections/destinations/catalog/actions-webhook-extensible/amazon-ads-integration-recipe
+        title: Amazon Ads Audience Sync Integration Recipe
+      - path: /connections/destinations/catalog/actions-webhook-extensible/google-search-ads-integration-recipe
+        title: Google Search Ads 360 Conversion API Integration Recipe
+      - path: /connections/destinations/catalog/actions-webhook-extensible/microsoft-integration-recipe
+        title: Microsoft Dynamics 365 (Sales Hub) Integration Recipe
+      - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-audience-integration-recipe
+        title: Reddit Ads (Audiences) Integration Recipe
+      - path: /connections/destinations/catalog/actions-webhook-extensible/reddit-ads-conversion-api-integration-recipe
+        title: Reddit Ads Conversion API Integration Recipe
   - section_title: Reverse ETL
     slug: connections/reverse-etl
     section:
@@ -475,7 +490,7 @@ sections:
     - path: '/engage/journeys'
       title: Journeys Overview
     - section_title: Journeys V1
-      slug: '/engage/journeys/v1'
+      slug: 'engage/journeys/v1'
       section: 
       - path: '/engage/journeys/v1/build-journey'
         title: 'Build a Journey'
@@ -486,7 +501,7 @@ sections:
       - path: '/engage/journeys/v1/journeys-logic'
         title: Understand Journeys Logic
     - section_title: Journeys V2
-      slug: '/engage/journeys/v2'
+      slug: 'engage/journeys/v2'
       section: 
       - path: /engage/journeys/v2/
         title: Overview
