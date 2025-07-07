@@ -12,7 +12,7 @@ This integration requires both an Eagle Eye Source and Destination. The source s
 > warning "Required Source Integration"
 > This destination must be used in tandem with a corresponding Eagle Eye Source to trigger behavioral actions in Eagle Eye.
 
-This destination is maintained by Eagle Eye. For any issues with the destination, [contact their Support team](mailto:support@eagleeye.com).
+This destination is maintained by Eagle Eye. For any issues with the destination, [contact their Support team](mailto:support@eagleeye.com){:target="_blank"}.
 
 ## Getting started
 
