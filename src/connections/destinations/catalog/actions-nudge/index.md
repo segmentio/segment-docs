@@ -1,6 +1,6 @@
 ---
 title: Nudge (Actions) Destination
-id: 
+id: 6863e71f2a1e1ddc4b4612bf
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -22,11 +22,11 @@ This destination is maintained by the Nudge Developer Team. For any issues with 
 
 ## Supported methods
 
-The Nudge (Actions) Destination currently supports the Identify and Track methods listed below in accordance to the core Segment Specs. Reference: [Spec Overview](https://segment.com/docs/connections/spec/)
+The Nudge (Actions) Destination currently supports the Identify and Track methods listed below in accordance to the core Segment Specs. Reference: [Spec Overview](/docs/connections/spec/)
 
 ### Identify
 
-The Identify method lets you create or update a user in Nudge’s backend. Every Identify call should include a `userId`. See Segment's Spec for Identify for any reference: [Identify Spec](https://segment.com/docs/connections/spec/identify/)
+The Identify method lets you create or update a user in Nudge’s backend. Every Identify call should include a `userId`. See Segment's Spec for Identify for any reference: [Identify Spec](/docs/connections/spec/identify/)
 
 Example (using Segment's Analytics.js SDK):
 
@@ -49,7 +49,7 @@ How Nudge handles Identify calls:
 
 ### Track
 
-The Track method sends custom events and their properties into Nudge. You must include `event` name in every Track call so events can be associated with the correct user. See Segment's Spec for Track for any reference: [Track Spec](https://segment.com/docs/connections/spec/track/)
+The Track method sends custom events and their properties into Nudge. You must include `event` name in every Track call so events can be associated with the correct user. See Segment's Spec for Track for any reference: [Track Spec](/docs/connections/spec/track/)
 
 Example (using Segment's Analytics.js SDK):
 
