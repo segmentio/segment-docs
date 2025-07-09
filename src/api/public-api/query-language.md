@@ -77,7 +77,7 @@ The following tables list the query languages's available functions.
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Syntax      | `property({s: String})` <br> `s` - the name of the property to build an extractor for  <br> In the context of funnel audiences, you can add a parent prefix to reference the parent event. <br> `property(parent: {s: String})` |
 | Return Type | `ScalarExtractor`                                                                                                                                                                                                               |
-| Notes       | Only valid within a `where` function or a Reducer. Also note that inclusion of a `.` signifies traversal through nested structures. If the property name contains a literal dot, it must be escaped using `\\\\`                |
+| Notes       | Only valid within a `where` function or a Reducer. The `.` character indicates traversal through nested structures. If the trait name contains a literal period (`.`), it must be escaped using `\\\\`.                 |
 | Example     | `property('total')`                                                                                                                                                                                                             |
 
 | `context`   |                                                                                     |
