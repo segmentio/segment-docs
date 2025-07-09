@@ -502,7 +502,7 @@ entity('orders').where(entity('order-products').count() >= 1).count() >= 1
 
 #### Associated to Orders or is a VIP user
 
-This example collects all users which have at least 1 association to an `order` entity or have a `VIP` trait equal to true:
+This example collects all users who have at least 1 association to an `order` entity or have a `VIP` trait equal to true:
 
 ```sql
 entity('orders').count() >= 1 OR trait('VIP') = 'true'
