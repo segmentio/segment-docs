@@ -19,11 +19,11 @@ This means you can send a limited sample of your data to a new tool to test it o
 
 With Replays, you're protected from outages and errors. If a destination which you rely on experiences an outage, or is temporarily unable to accept incoming data, you can use Replays to re-send data to that tool once the service recovers. You can also use Replays to recover from errors caused by misconfigurations in your Segment systems. For example, if you send data in the wrong format, or want to apply [destination filters](/docs/connections/destinations/destination-filters/). In this case, you can change your mapping using a destination filter, clear out the bad data, and replay it to that destination. You can also use this to update the schema in your data warehouse when it changes.
 
-For more information, [Contact us](https://segment.com/help/contact/) and our Success Engineers will walk you through the process.
+For more information, [contact Segment support](https://segment.com/help/contact/).
 
 ## Replays considerations
 
-Replays are currently only available for Business Tier customers, and due to their complex nature are not self-serve. [Contact us](https://segment.com/help/contact/) to learn more, or to request a replay for your workspace. When requesting a replay, include the workspace, the source to replay from, the destination tool or tools, and the time period.
+Replays are currently only available for Business Tier customers, and due to their complex nature are not self-serve. [Contact Segment support](https://segment.com/help/contact/) to learn more, or to request a replay for your workspace. When requesting a replay, include the workspace, the source to replay from, the destination tool or tools, and the time period.
 
 Replays can process unlimited data, but they're rate limited to respect limitations in downstream partner tools. If you're also sending data to the destination being replayed to in real time, then, when determining your replay's limit, you'll want to take into account the rate limit being used by real-time events. You should also account for a small margin of your rate limit to allow events to be retried. 
 
@@ -38,13 +38,19 @@ You can initiate replays for some or all events, but you can't apply conditional
 The destination is not required to be enabled in order for a replay to be successful, including Destination Functions.
 - The destination must be connected to the source, but can remain disabled while the replay is running.
 - Destination filters are still considered when you run replays on disabled destinations.
-- There are a few exceptions for destinations that must be enabled for the replay to be successful : Amazon S3 and Google Cloud Source (GCS).
+- There are a few exceptions for destinations that must be enabled for the replay to be successful: Amazon S3 and Google Cloud Source (GCS).
 
 ### Replay-eligible destinations
 
 Replays are available for any destinations which support cloud-mode data (meaning data routed through Segment) and which also process timestamps. Destinations that are only available in device-mode (meaning where data is sent directly from the users' devices to the destination tool) cannot receive Replays.
 
-Not all destinations support data deduplication, so you may need to delete, archive, or remove any older versions of the data before initiating a replay. [contact Segment support](https://segment.com/help/contact/){:target="_blank"} if you have questions or want help.
+Not all destinations support data deduplication, so you may need to delete, archive, or remove any older versions of the data before initiating a replay. [Contact Segment support](https://segment.com/help/contact/){:target="_blank"} if you have questions or want help.
+
+#### What happens to `integrations` and `consent` objects during a replay?
+
+When Segment replays events, it does not retain the original `integrations` object flag, but it does preserve the `consent` object. 
+
+During replays, Segment replaces the `integrations` object with a structure that includes `All:false` and `[integration name]:true`. As a result, the original 'integrations' flag is removed during replay. However, the replay tool does not overwrite the original `consent` object. If an event was previously dropped for a specific destination due to the `consent` object, the event is dropped within Segment again during replay. 
 
 ### Replays & Destination Filters
 
