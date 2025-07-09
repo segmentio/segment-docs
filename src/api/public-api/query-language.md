@@ -298,7 +298,7 @@ The following tables list the query languages's available functions.
 | ------------ | -------------------------------------------------------------------------- |
 | Syntax       | `after_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp                   |
 | Return Type  | `Comparator`                                                               |
-| Notes        | `string` format can also be use                                            |
+| Notes        | `string` format can also be used                                           |
 | Example      | `after_date(2023-12-07T18:50:00Z)` or `after_date('2023-12-07T18:50:00Z')` |
 
 | `within_last` |                                                                                                                                                                                               |
