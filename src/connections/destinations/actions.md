@@ -339,7 +339,7 @@ The underlying systems for these flows have their own copy of the token, which c
 
 No. Segment integrations process events through mappings individially. This means that no context is held that would allow you to map a value from one event to the field of a subsequent event.
 
-Each event must include all of the data you'd like to send downstream. For example, you can't send `email` field in an Identify call and then access it later on a Track unless that Track call also includes the `email` field. 
+Each event must include all of the data you'd like to send downstream. For example, you can't send an `email` field in an Identify call and then access it later on a Track call unless that Track call also includes the `email` field. 
 
 #### Why do I get a "Couldn't load page" error when viewing or editing a mapping?
 
