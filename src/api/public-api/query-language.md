@@ -494,7 +494,7 @@ ANY event('Shoes Bought').count() >= 1
 
 #### Associated with Orders that have an association to Order Products
 
-This example collects all users which have at least 1 association to an `orders` entity where the `orders` entity has at least 1 association to an  `order-products` entity:
+This example collects all users who have at least 1 association to an `orders` entity where the `orders` entity has at least 1 association to an  `order-products` entity:
 
 ```sql
 entity('orders').where(entity('order-products').count() >= 1).count() >= 1
