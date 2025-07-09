@@ -62,7 +62,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `trait({s: String})` <br> `s` - the name of the trait to reference                                  |
 | Return Type | `ScalarExtractor`                                                                                   |
 | Description | Similar to the event operator, the trait operator is used to specify profile trait filter criteria. |
-| Notes       | You can reference other audiences by using the audience key as the trait name. Also note that inclusion of a `.` signifies traversal through nested structures. If the trait name contains a literal dot, it must be escaped using `\\\\`                                              |
+| Notes       | You can reference other audiences by using the audience key as the trait name. The `.` character indicates traversal through nested structures. If the trait name contains a literal period (`.`), it must be escaped using `\\\\`.                                              |
 | Example     | `trait('total_spend')`                                                                              |
 
 | `entity`     |                                                                                                    |
