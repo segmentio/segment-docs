@@ -1,6 +1,8 @@
 ---
 title: Ortto (Audiences) Destination
 id: 686799c65fcebef2a98c8141
+beta: true
+private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
