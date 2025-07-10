@@ -325,4 +325,6 @@ destinations:
     override: "ninetailed"
   - original: "topsort"
     override: "actions-topsort"
+  - original: "ortto-actions"
+    override: "actions-ortto"
 
