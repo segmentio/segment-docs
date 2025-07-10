@@ -14,7 +14,7 @@ Before you start sending data from your mobile application to Adobe Analytics, y
 
 - First, enable the Segment-Adobe Analytics destination from in your Segment workspace.
 - From your Adobe Mobile Services dashboard, check and customize the settings on the "Manage App Settings" tab.
-- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's documentation [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html){:target="_blank”} and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html){:target="_blank”}.
+- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's [Configuration documentation](https://developer.adobe.com/client-sdks/home/base/mobile-core/configuration/){:target="_blank”}.
 - Finally, follow the instructions below for each mobile environment to bundle Segment's Adobe Analytics SDK in your project.
 
 > success ""
