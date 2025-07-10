@@ -50,7 +50,7 @@ Not all destinations support data deduplication, so you may need to delete, arch
 
 When Segment replays events, it does not retain the original `integrations` object flag, but it does preserve the `consent` object. 
 
-During replays, Segment replaces the `integrations` object with a structure that includes `All:false` and `[integration name]:true`. As a result, the original 'integrations' flag is removed during replay. However, the replay tool does not overwrite the original `consent` object. If an event was previously dropped for a specific destination due to the `consent` object, the event is dropped within Segment again during replay. 
+During replays, Segment replaces the `integrations` object with a structure that includes `All:false` and `[integration name]:true`. As a result, Segment removes the original `integrations` flag during replay. The replay tool doesn't overwrite the original `consent` object. If an event was previously dropped for a specific destination due to the `consent` object, the event drops within Segment again during replay. 
 
 ### Replays & Destination Filters
 
