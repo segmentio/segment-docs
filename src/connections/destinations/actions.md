@@ -226,7 +226,7 @@ The JSON function allows you to convert an object or array to a JSON encoded str
 
 ### Flatten function
 
-The Flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like {a: { b: { c: 1 }, d: 2 } } will be converted to { 'a.b.c': 1, 'a.d': 2 }.
+The Flatten function allows you to flatten a nested object to an object with a depth of 1. Keys are delimited by the configured separator. For example, an object like `{a: { b: { c: 1 }, d: 2 } }` will be converted to `{ 'a.b.c': 1, 'a.d': 2 }`.
 
 ### Replace function
 
