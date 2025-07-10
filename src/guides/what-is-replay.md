@@ -46,11 +46,11 @@ Replays are available for any destinations which support cloud-mode data (meanin
 
 Not all destinations support data deduplication, so you may need to delete, archive, or remove any older versions of the data before initiating a replay. [Contact Segment support](https://segment.com/help/contact/){:target="_blank"} if you have questions or want help.
 
-#### What happens to `integrations` and `consent` objects during a replay?
+#### What happens to integrations and `consent` objects during a replay?
 
-When Segment replays events, it does not retain the original `integrations` object flag, but it does preserve the `consent` object. 
+When Segment replays events, it does not retain the original integrations object flag, but it does preserve the `consent` object. 
 
-During replays, Segment replaces the `integrations` object with a structure that includes `All:false` and `[integration name]:true`. As a result, Segment removes the original `integrations` flag during replay. The replay tool doesn't overwrite the original `consent` object. If an event was previously dropped for a specific destination due to the `consent` object, the event drops within Segment again during replay. 
+During replays, Segment replaces the 'integrations' object with a structure that includes `All:false` and `[integration name]:true`. As a result, Segment removes the original integrations flag during replay. The replay tool doesn't overwrite the original `consent` object. If an event was previously dropped for a specific destination due to the `consent` object, the event drops within Segment again during replay. 
 
 ### Replays & Destination Filters
 
