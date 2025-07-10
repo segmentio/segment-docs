@@ -23,7 +23,7 @@ For more information, [contact Segment support](https://segment.com/help/contact
 
 ## Replays considerations
 
-Replays are currently only available for Business Tier customers, and due to their complex nature are not self-serve. [Contact Segment support](https://segment.com/help/contact/) to learn more, or to request a replay for your workspace. When requesting a replay, include the workspace, the source to replay from, the destination tool or tools, and the time period.
+Replays are currently only available for Business Tier customers, and due to their complex nature are not self-serve. [Contact Segment support](https://segment.com/help/contact/){:target="_blank"} to learn more, or to request a replay for your workspace. When requesting a replay, include the workspace, the source to replay from, the destination tool or tools, and the time period.
 
 Replays can process unlimited data, but they're rate limited to respect limitations in downstream partner tools. If you're also sending data to the destination being replayed to in real time, then, when determining your replay's limit, you'll want to take into account the rate limit being used by real-time events. You should also account for a small margin of your rate limit to allow events to be retried. 
 
