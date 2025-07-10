@@ -59,17 +59,25 @@ The following tables list the query languages's available functions.
 
 | `trait`     |                                                                                                     |
 | ----------- | --------------------------------------------------------------------------------------------------- |
-| Syntax      | `trait({s: String})` <br> `s` - the name of the the trait to reference                              |
+| Syntax      | `trait({s: String})` <br> `s` - the name of the trait to reference                                  |
 | Return Type | `ScalarExtractor`                                                                                   |
 | Description | Similar to the event operator, the trait operator is used to specify profile trait filter criteria. |
-| Notes       | You can reference other audiences by using the audience key as the trait name.                      |
+| Notes       | You can reference other audiences by using the audience key as the trait name. The `.` character indicates traversal through nested structures. If the trait name contains a literal period (`.`), it must be escaped using `\\\\`.                                              |
 | Example     | `trait('total_spend')`                                                                              |
+
+| `entity`     |                                                                                                    |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| Syntax      | `entity({s: String})` <br> `s` - the relationship slug of the entity to build an extractor for      |
+| Return Type | `VectorExtractor`                                                                                   |
+| Description | Similar to the event operator, the entity operator is used to specify entity filter criteria.       |
+| Notes       | Entity is only used with Linked Audiences.                                                          |
+| Example     | `entity('accounts')`                                                                                |
 
 | `property`  |                                                                                                                                                                                                                                 |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Syntax      | `property({s: String})` <br> `s` - the name of the property to build an extractor for  <br> In the context of funnel audiences, you can add a parent prefix to reference the parent event. <br> `property(parent: {s: String})` |
 | Return Type | `ScalarExtractor`                                                                                                                                                                                                               |
-| Notes       | Only valid within a `where` function or a Reducer.                                                                                                                                                                              |
+| Notes       | Only valid within a `where` function or a Reducer. The `.` character indicates traversal through nested structures. If the trait name contains a literal period (`.`), it must be escaped using `\\\\`.                 |
 | Example     | `property('total')`                                                                                                                                                                                                             |
 
 | `context`   |                                                                                     |
@@ -79,11 +87,12 @@ The following tables list the query languages's available functions.
 | Notes       | Only valid within a `where` function or a Reducer.                                  |
 | Example     | `context('page.url')`                                                               |
 
-| `literal`                        |                                                                                                                                                                                                                                            |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Syntax                           | `literal({a: Any})`  <br> `a` - the value to treat as a literal expression                                                                                                                                                                 |
+| `literal`                        |                                                                                                                                                                                                                                                 |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax                           | `literal({a: Any})`  <br> `a` - the value to treat as a literal expression                                                                                                                                                                      |
 | Operations allowed in call-chain | None allowed; typically used within another function, like a comparison (with syntactic sugar, this would appear on the right side of the comparison). The outer function or comparison dictates the operations allowed in the call-chain. |
-| Example                          | `literal(100)` <br>                                                                                                                                                                                                                        |
+| Notes                            | Literals can be `int`, `float`, `string`, `date` or `timestamp`, where `date` uses the format `yyyy-mm-dd` and `timestamp` follows the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} format. `string` is generally interchangeable with all other formats, except when used in a `property` chained to an `entity`. In this case, Segment recommends matching the data type of the entity property being targeted.                                             |
+| Example                          | `literal(100)`, `literal('value')`, or `literal(2022-10-17T00:00:00)`                                                                                                                                                                          |
 
 
 
@@ -269,19 +278,28 @@ The following tables list the query languages's available functions.
 | Syntax      | `one_of({a: Array})`<br>`a` - array of possible values                             |
 | Return Type | `Comparator`                                                                       |
 | Description | Matches when the value exactly matches one of the values from the parameter array. |
-| Example     | `one_of('shoes','shirts')`                                                       |
+| Example     | `one_of('shoes','shirts')`                                                         |
 
-| `before_date` |                                                           |
-| ------------- | --------------------------------------------------------- |
-| Syntax        | `before_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp |
-| Return Type   | `Comparator`                                              |
-| Example       | `before_date('2023-12-07T18:50:00Z')`                     |
+| `none_of`    |                                                                                          |
+| ----------- | ----------------------------------------------------------------------------------------- |
+| Syntax      | `none_of({a: Array})`<br>`a` - array of possible values                                   |
+| Return Type | `Comparator`                                                                              |
+| Description | Matches when the value does not exactly match one of the values from the parameter array. |
+| Example     | `none_of('shoes','shirts')`                                                               |
 
-| `after_date` |                                                          |
-| ------------ | -------------------------------------------------------- |
-| Syntax       | `after_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp |
-| Return Type  | `Comparator`                                             |
-| Example      | `after_date('2023-12-07T18:50:00Z')`                     |
+| `before_date` |                                                                              |
+| ------------- | ---------------------------------------------------------------------------- |
+| Syntax        | `before_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp                    |
+| Return Type   | `Comparator`                                                                 |
+| Notes         | `string` format can also be used                                              |
+| Example       | `before_date(2023-12-07T18:50:00Z)` or `before_date('2023-12-07T18:50:00Z')` |
+
+| `after_date` |                                                                            |
+| ------------ | -------------------------------------------------------------------------- |
+| Syntax       | `after_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp                   |
+| Return Type  | `Comparator`                                                               |
+| Notes        | `string` format can also be used                                           |
+| Example      | `after_date(2023-12-07T18:50:00Z)` or `after_date('2023-12-07T18:50:00Z')` |
 
 | `within_last` |                                                                                                                                                                                               |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -366,7 +384,7 @@ The following tables list the query languages's available functions.
 | `ScalarExtractor` (extends `Extractor`, `Scalar`) |                                                                                                                                                                                                                                          |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Base Type                                         | `Extractor`, `Scalar`                                                                                                                                                                                                                    |
-| Operations allowed in call-chain                  | `equals`, `differs`, `absent`, `exists`, `greater_than`, `at_least`, `less_than`, `at_most`, `contains`, `omits`, `starts_with`, `ends_with`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next` (inherited from `Scalar`) |
+| Operations allowed in call-chain                  | `equals`, `differs`, `absent`, `exists`, `greater_than`, `at_least`, `less_than`, `at_most`, `contains`, `omits`, `starts_with`, `ends_with`, `one_of`, `none_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next` (inherited from `Scalar`) |
 | Notes                                             | A `ScalarExtractor` represents extractions of a single data element, like a field value or a trait value.                                                                                                                                |
 
 | `EventPropertyExtractor` (extends `Extractor`) |                                                      |
@@ -391,7 +409,7 @@ The following tables list the query languages's available functions.
 
 | `Scalar`                         |                                                                                                                                                                                                                               |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Operations allowed in call-chain | `equals`, `differs`, `absent`, `exists`, `greater_than`, `at_least`, `less_than`, `at_most`, `contains`, `omits`, `starts_with`, `ends_with`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next`, `within_next` |
+| Operations allowed in call-chain | `equals`, `differs`, `absent`, `exists`, `greater_than`, `at_least`, `less_than`, `at_most`, `contains`, `omits`, `starts_with`, `ends_with`, `one_of`, `none_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next`, `within_next` |
 
 | `ListScalar`                     |         |
 | -------------------------------- | ------- |
@@ -472,6 +490,30 @@ This example collects all accounts where any associated users performed the `Sho
 
 ```sql
 ANY event('Shoes Bought').count() >= 1
+```
+
+#### Associated with Orders that have an association to Order Products
+
+This example collects all users who have at least 1 association to an `orders` entity where the `orders` entity has at least 1 association to an  `order-products` entity:
+
+```sql
+entity('orders').where(entity('order-products').count() >= 1).count() >= 1
+```
+
+#### Associated to Orders or is a VIP user
+
+This example collects all users who have at least 1 association to an `order` entity or have a `VIP` trait equal to true:
+
+```sql
+entity('orders').count() >= 1 OR trait('VIP') = 'true'
+```
+
+#### Associated with orders that have a total greater than 500
+
+This example collects all users with at least 1 association to an `orders` entity where the `orders` entity has a `total` property greater than 500:
+
+```sql
+entity('orders').where(property('total') > 500).count() >= 1
 ```
 
 ### Computed Traits
