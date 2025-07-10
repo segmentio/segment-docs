@@ -19,16 +19,16 @@ Data lakes typically have four layers:
 
 ![A graphic showing the information flowing from the metadata into the query, compute, and metadata layers, and then into the storage layer](images/data_lakes_overview_graphic.png)
 
-Segment Data Lakes sends Segment data to a cloud data store, either AWS S3 or Azure Data Lake Storage Gen2 (ADLS), in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes reduces the amount of processing required to get real value out of your data.
+Segment Data Lakes sends Segment data to a cloud data store, AWS S3, in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. Data Lakes reduces the amount of processing required to get real value out of your data.
 
 > warning "Segment Data Lakes deletion policies"
-> Segment Data Lakes (AWS) and Segment Data Lakes (Azure) do not support Segment's [user deletion and suppression](/docs/privacy/user-deletion-and-suppression/) capabilities, as you retain your data in systems that you manage.
+> Segment Data Lakes (AWS) does not support Segment's [user deletion and suppression](/docs/privacy/user-deletion-and-suppression/) capabilities, as you retain your data in systems that you manage.
 
 To learn more about Segment Data Lakes, check out the Segment blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
 
 ## How Data Lakes work
 
-Segment supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options.
+Segment supports Data Lakes hosted on Amazon Web Services (AWS). Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options.
 
 ### How Segment Data Lakes (AWS) works
 
@@ -39,16 +39,6 @@ Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet
 Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapReduce) cluster within your AWS account using an assumed role. Customers using Data Lakes own and pay AWS directly for these AWS services.
 
 ![A diagram visualizing data flowing from a Segment user into your account and into a Glue catalog/S3 bucket](images/dl_vpc.png)
-
-### How Segment Data Lakes (Azure) works
-
-Data Lakes store Segment data in ADLS in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, like the Hive Metastore. The resulting data set is optimized for use with systems like Power BI and Azure HDInsight or machine learning vendors like Azure Databricks or Azure Synapse Analytics.
-
-![A diagram showing data flowing from Segment, through DataBricks, Parquet and Azure Data Lake Storage Gen2 into the Hive Metastore, and then into your post-processing systems](images/Azure_DL_setup.png)
-
-## Set up Segment Data Lakes (Azure)
-
-For detailed Segment Data Lakes (Azure) setup instructions, see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
 ### Set up Segment Data Lakes (AWS)
 
@@ -64,18 +54,6 @@ Data Lakes uses an IAM role to grant Segment secure access to your AWS account. 
 - **external_ids**: External IDs are the part of the IAM role which Segment uses to assume the role providing access to your AWS account. You will define the external ID in the IAM role as the Segment Workspace ID in which you want to connect to Data Lakes. The Segment Workspace ID can be retrieved from the [Segment app](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} by navigating to **Settings > General Settings > ID**.
 - **s3_bucket**: Name of the S3 bucket used by the Data Lake.
 
-### Set up Segment Data Lakes (Azure)
-
-To connect Segment Data Lakes (Azure), you must set up the following components in your Azure environment:
-
-- [Azure Storage Account](/docs/connections/storage/catalog/data-lakes/#step-1---create-an-alds-enabled-storage-account): An Azure storage account contains all of your Azure Storage data objects, including blobs, file shares, queues, tables, and disks.
-- [Azure KeyVault Instance](/docs/connections/storage/catalog/data-lakes/#step-2---set-up-key-vault): Azure KeyVault provides a secure store for your keys, secrets, and certificates.
-- [Azure MySQL Database](/docs/connections/storage/catalog/data-lakes/#step-3---set-up-azure-mysql-database): The MySQL database is a relational database service based on the MySQL Community Edition, versions 5.6, 5.7, and 8.0.
-- [Databricks Instance](/docs/connections/storage/catalog/data-lakes/#step-4---set-up-databricks): Azure Databricks is a data analytics cluster that offers multiple environments (Databricks SQL, Databricks Data Science and Engineering, and Databricks Machine Learning) for you to develop data-intensive applications.
-- [Databricks Cluster](/docs/connections/storage/catalog/data-lakes/#step-6---configure-databricks-cluster): The Databricks cluster is a cluster of computation resources that you can use to run data science and analytics workloads.
-- [Service Principal](/docs/connections/storage/catalog/data-lakes/#step-5---set-up-a-service-principal): Service principals are identities used to access specific resources.
-
-For more information about configuring Segment Data Lakes (Azure), see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/#set-up-segment-data-lakes-azure).
 
 ## Data Lakes schema
 
@@ -128,15 +106,6 @@ The schema inferred by Segment is stored in a Glue database within Glue Data Cat
 > info ""
 > The recommended IAM role permissions grant Segment access to create the Glue databases on your behalf. If you do not grant Segment these permissions, you must manually create the Glue databases for Segment to write to.
 
-### Segment Data Lakes (Azure) schema
-
-Segment Data Lakes (Azure) applies a consistent schema to make raw data accessible for queries. A transformer automatically calculates the desired schema and uploads a schema JSON file for each event type to your Azure Data Lake Storage (ADLS) in the `/staging/` directory.
-
-Segment partitions the data in ALDS by the Segment source, event type, then the day and hour an event was received by Segment, to ensure that the data is actionable and accessible.
-
-The file path looks like this:
-`<storage-account-name>/<container-name>/staging/<source-id>/`
-
 ### Data types
 
 Data Lakes infers the data type for an event it receives. Groups of events are polled every hour to infer the data type for that each event.
@@ -181,7 +150,7 @@ Segment doesn't support User deletions in Data Lakes, but supports [user suppres
 
 
 ### How does Data Lakes handle schema evolution?
-As the data schema evolves, both Segment Data Lakes (AWS) and Segment Data Lakes (Azure) can detect new columns and add them to Glue Data Catalog or Azure Data Lake Storage (ADLS). However, Segment can't update existing data types. To update Segment-created data types, please reach out to [AWS Support](https://aws.amazon.com/contact-us/){:target="_blank"} or [Azure Support](https://support.microsoft.com/en-us/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4){:target="_blank"}. 
+As the data schema evolves, Segment Data Lakes (AWS) can detect new columns and add them to Glue Data Catalog. However, Segment can't update existing data types. To update Segment-created data types, please reach out to [AWS Support](https://aws.amazon.com/contact-us/){:target="_blank"}. 
 
 
 ### How does Data Lakes work with Protocols?
@@ -206,9 +175,6 @@ Data Lakes offers 12 syncs in a 24 hour period and doesn't offer a custom sync s
 ### What is the cost to use AWS Glue?
 You can find details on Amazon's [pricing for Glue](https://aws.amazon.com/glue/pricing/){:target="_blank"} page. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
 
-### What is the cost to use Microsoft Azure?
-You can find details on Microsoft's [pricing for Azure](https://azure.microsoft.com/en-us/pricing/){:target="_blank"} page. For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
-
 
 ### What limits does AWS Glue have?
 AWS Glue has limits across various factors, such as number of databases per account, tables per account, and so on. See the [full list of Glue limits](https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue){:target="_blank"} for more information.
@@ -222,9 +188,3 @@ Segment stops creating new tables for the events after you exceed this limit. Ho
 
 You should also read the [additional considerations in Amazon's documentation](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html){:target="_blank"} when using AWS Glue Data Catalog.
 
-### What analytics tools are available to use with Segment Data Lakes (Azure)?
-Segment Data Lakes (Azure) supports the following analytics tools:
-  - PowerBI
-  - Azure HDInsight
-  - Azure Synapse Analytics
-  - Databricks
