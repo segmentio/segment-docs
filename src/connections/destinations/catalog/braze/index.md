@@ -38,6 +38,7 @@ For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze
   - Select the `users.track` endpoint in the **User Data** section.
 5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup){:target="_blank"}. Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
+{% include components/actions-fields.html settings="true"%}
 
 ### iOS
 
