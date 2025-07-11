@@ -77,20 +77,26 @@ If you use Protocols, the Segment app automatically adds the Segment Consent Pre
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
 
-### Sharing consent with Actions destinations
+### Share consent with Actions destinations
 
 In addition to enforcing consent in Connections, you may want these preferences to flow to each destination so your destinations can be aware when an end-user revokes their consent. You can use the [Destination Actions framework](/docs/connections/destinations/actions) to edit the destination's mapping and copy the consent preferences from the Segment Consent Preference Updated event to a destination-specified consent field. 
 
 If you use Destination Actions to send consent information to your destinations, the Segment Consent Preference Updated event should **only** include information about a user's consent preferences because this event is sent regardless of an end-user's consent preferences. 
 
-> info "Sharing consent with Classic Destinations is not available"
+> warning "Sharing consent with Classic Destinations isn't available"
 > Segment only supports sharing consent with Actions Destinations. 
 
-## Storing consent preferences on the Profile
-Segment stamps consent preference on every Segment event from streaming and Reverse ETL sources to store them on the Profile. 
+## Store consent preferences on the Profile
+Segment stamps consent preference on every Segment event from streaming and Reverse ETL sources as a trait to store them on the Profile. 
 
-> warning "Storing consent on the Profile is in private beta"
-> Reach out to your sales contact or [request a demo](https://segment.com/contact/demo){:target="_blank"} to participate in the private beta.
+> info "Storing consent on the Profile is in public beta"
+> Consent in Unify is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
+If you're using Consent Management and Profiles, you shouldn't give your customers a Custom Trait value that matches one of the consent categories that you set up in the Segment app, as this can lead to unexpected Audience behavior. For example, if your end user consented to the "Marketing" destination category, you shouldn't give them a custom trait of `segment_consent_preference.categories.marketing.<value>`, as this can lead your user to unexpectedly enter or leave an Audience. 
+
+## Consent preference conflicts
+
+When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user, for example, from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflict)) or when two distinct Unify profiles are merged together (called a [profile-level conflict](#profile-level-conflict)). 
 
 ### Device-level conflicts
 A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices.
@@ -128,7 +134,7 @@ To avoid Profile-level conflicts, Segment recommends that you take the following
 > Profile conflicts only impact Profiles used in Engage spaces.
 
 ## Enforcing consent in Twilio Engage
-Segment stores consent preferences as traits on the Profile, which you can use to [build Audiences](/docs/engage/audiences/#building-an-audience).
+Segment stores consent preferences as traits on the Profile, which you can use to [build Audiences](/docs/privacy/consent-management/consent-in-engage).
 
 ## Validating consent preferences stored on a Profile
 You can validate consent is present on the Profile by looking for the consent trait provided for a Profile on the consent tab.
