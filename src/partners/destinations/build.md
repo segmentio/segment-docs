@@ -11,7 +11,7 @@ Before you begin, consider the following prerequisites.
 
 ### Security
 
-The security of customers and partners is a top priority at Segment. Before you begin building, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/), and keep in mind:
+The security of customers and partners is a top priority at Segment. Before you begin building, review the [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target="_blank}, and keep in mind:
 
 - Follow a secure software-development lifecycle, which enables you to both create code that is safe for Segment customers and their end users, and maintain and raise the security of that code over time.
 - If you or your code comes into contact with Segment customer or end-user data for any reason, protect it with commercially reasonable methods throughout the data lifecycle, including creating, handling, transporting, and destruction.
@@ -23,9 +23,11 @@ The security of customers and partners is a top priority at Segment. Before you 
 You don't need to access a Segment dev environment to build an integration. You’ll test it locally on your machine. Destinations are written in TypeScript. For more information about TypeScript, see TypeScript's [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
 
 To work with Segment's actions repository, download and install the following:
-  - [node](https://nodejs.org/en/){:target="_blank"}
+  - [node](https://nodejs.org/en/){:target="_blank"} (_version 18.7+. Segment recommends managing Node versions with `nvm`._)
   - [nvm](https://github.com/nvm-sh/nvm){:target="_blank"}
-  - [yarn](https://yarnpkg.com/){:target="_blank"}
+  - [yarn](https://yarnpkg.com/){:target="_blank"} (_version 1.x_)
+
+If you encounter errors when setting up your development environment, ensure you're running the correct version of Node by running `nvm use`. 
 
 ### Fork the repository
 
@@ -37,16 +39,26 @@ Fork the `segmentio/action-destinations` repository, connect to NPM and Yarn, an
 Run the test suite to ensure the environment is properly configured.
 
 ```sh
-git clone https://github.com/<your_gh_org>/action-destinations.git
+# Clone the repo locally
+git clone <your fork or https://github.com/segmentio/action-destinations.git>
 cd action-destinations
+
 npm login
 yarn login
-# Requires node 14.17, optionally: nvm use 14.17
-yarn --ignore-engines --ignore-optional
-yarn bootstrap
-yarn build
+
+# Requires node 18.17.1, optionally: nvm use 18.17.1
+yarn --ignore-optional
 yarn install
+yarn build
+
+# Run unit tests to ensure things are working! For partners who don't have access to internal packages, you can run:
+yarn test-partners
+
+# For segment employees, you can run:
 yarn test
+
+# to reset all caches and rebuild again
+yarn clean-build
 ```
 
 ## Create a destination
