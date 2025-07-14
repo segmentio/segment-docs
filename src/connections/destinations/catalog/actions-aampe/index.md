@@ -15,7 +15,7 @@ This destination is maintained by Aampe. For any issues with the destination, [c
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Aampe (Actions)" in the Destinations Catalog, and select the **Aampe (Actions)** destination.
 3. Choose which Source should send data to the Aampe destination.
-4. Open Aampe Composer and navigate to the [Data Integrations page](https://compose.aampe.com/configure/integrations), click **Add Integration**, select Segment and click **Next**.
+4. Open Aampe Composer and navigate to the [Data Integrations page](https://compose.aampe.com/configure/integrations){:target="_blank”}, click **Add Integration**, select Segment and click **Next**.
 5. Copy the Segment API Key from Aampe Composer, then return to the Segment app.
 6. On your Aampe destination's settings page, enter the API key that you copied from Aampe Composer.
 7. Select the appropriate data region as per the privacy policy and click **Save**. 
