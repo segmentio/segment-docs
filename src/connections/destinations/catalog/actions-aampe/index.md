@@ -9,8 +9,6 @@ By assigning a dedicated agent for each user, Aampe conducts controlled, paralle
 This destination is maintained by Aampe. For any issues with the destination, [contact the Aampe Support team](mailto:developer@aampe.com).
 
 ## Getting Started
-
-
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Aampe (Actions)" in the Destinations Catalog, and select the "Aampe (Actions)" destination.
 3. Choose which Source should send data to the "Aampe" destination.
