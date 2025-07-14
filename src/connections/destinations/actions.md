@@ -242,7 +242,7 @@ You can't concatenate event variables and plain text with static values and func
 The liquid syntax function enables you to transform event data with fine-grain control before it reaches cloud-mode destinations using the LiquidJS templating language. Use Liquid templates to clean, format, or conditionally transform data such as user properties, timestamps, or event metadata to meet the requirements of your downstream tools. Liquid templates are applied in the **Mappings** tab of your Segment workspace to enable you to integrate with your event pipeline. 
 
 #### Supported liquid tags and filters
-The following LiquidJS tags and filters are supported for Segment mappings. These are carefully selected to ensure performance, security, and compatibility with real-time event processing. Unsupported tags and filters are disabled to prevent performance degradation or security risks.
+Segment supports the following LiquidJS tags and filters for mappings. Segment selected these to ensure performance, security, and compatibility with real-time event processing. Segment disabled unsupported tags and filters to prevent performance degradation or security risks.
 
 #### Supported tags
 | Tag Name          | Description |
