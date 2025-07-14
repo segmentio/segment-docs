@@ -7,7 +7,7 @@ sections:
     path: /privacy/portal/
     icon: media/classify.svg
   - name: Control what data you collect
-    description: "Take control of the data that comes into your workspace."
+    description: "Take control of the data that enters your workspace."
     path: /privacy/data-controls/
     icon: media/control.svg
 
