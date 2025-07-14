@@ -273,7 +273,7 @@ Segment supports the following LiquidJS tags and filters for mappings. Segment s
 | `ceil`                         | Rounds a number up to the next integer. |
 | `cgi_escape`                   | Escapes strings for CGI contexts. |
 | `compact`                      | Removes null values from an array. |
-| `date`                         | Formats a date using a specified format (e.g., `%s` for Unix timestamp). |
+| `date`                         | Formats a date using a specified format (for example, `%s` for Unix timestamp). |
 | `date_to_long_string`          | Formats a date into a long string (e.g., `01 July 2025`). |
 | `date_to_rfc822`               | Formats a date in RFC822 format. |
 | `date_to_string`               | Converts a date to a short string format. |
