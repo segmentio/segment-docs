@@ -369,7 +369,7 @@ Input: `event.properties.phone` = "(123) 456-7890"
 Output: +11234567890
 
 Explanation:
-* The `assign` tag stores the cleaned phone number after applying `strip` and `remove` filters to eliminate whitespace and non-digit characters (e.g., `-`, `(`, `)`).
+* The `assign` tag stores the cleaned phone number after applying `strip` and `remove` filters to eliminate whitespace and non-digit characters (for example, `-`, `(`, `)`).
 * The `slice: 0, 1` filter checks if the phone number starts with `1`; if not, `prepend: "1"` adds the country code.
 * The `prepend: "+"` filter adds the `+` prefix.
 * The `default` filter outputs an empty string if the phone number is missing.
