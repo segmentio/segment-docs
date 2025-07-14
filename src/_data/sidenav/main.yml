@@ -614,7 +614,7 @@ sections:
     - path: /privacy/consent-management/consent-in-unify
       title: Consent Stored on the Profile
     - path: /privacy/consent-management/consent-in-retl
-      title: Consent in Reverse 
+      title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-in-engage
       title: Consent in Engage Audiences
     - path: /privacy/consent-management/consent-faq
