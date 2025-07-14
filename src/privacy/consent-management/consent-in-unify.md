@@ -4,7 +4,7 @@ plan: consent-management
 redirect_from: "/privacy/consent-in-unify"
 ---
 
-Segment uses the [consent object](#consent-object) on Segment events, including the [Segment Consent Preference Updated](#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on the Profile. Consent on the Profiles serves as the source of truth of an end user’s consent preference when enforcing consent in Twilio Engage or Linked Audiences.
+Segment uses the [consent object](#consent-object) on Segment events, including the [Segment Consent Preference Updated](#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on the Profile. Consent on the Profiles serves as the source of truth of an end user’s consent preference when enforcing consent in Twilio Engage.
 
 ## Consent object
 
@@ -90,7 +90,7 @@ If you use Destination Actions to send consent information to your destinations,
 Segment stamps consent preference on every Segment event from streaming and Reverse ETL sources as a trait to store them on the Profile. 
 
 > info "Storing consent on the Profile is in public beta"
-> Consent in Unify is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> Storing consent preferences on a Unify Profile is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 If you're using Consent Management and Profiles, you shouldn't give your customers a Custom Trait value that matches one of the consent categories that you set up in the Segment app, as this can lead to unexpected Audience behavior. For example, if your end user consented to the "Marketing" destination category, you shouldn't give them a custom trait of `segment_consent_preference.categories.marketing.<value>`, as this can lead your user to unexpectedly enter or leave an Audience. 
 
