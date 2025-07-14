@@ -348,7 +348,7 @@ Output: user@example.com
 Explanation:
 * The `if` tag checks if `event.properties.email` exists.
 * The `downcase` filter converts the email to lowercase.
-* The `strip` filter removes leading/trailing whitespace.
+* The `strip` filter removes leading or trailing whitespace.
 * The `default` filter provides a fallback email if the input is missing.
 
 ##### Example 2: Transform phone number with conditional logic
