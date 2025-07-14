@@ -17,7 +17,15 @@ All event streams destinations, with the exception of AWS S3 and Engage destinat
 
 You can use the [Destination Actions framework](/docs/connections/destinations/actions/) to share the current status of your end-users' consent with your Actions destinations. 
 
-For more information, see the [Sharing consent with Actions destinations](/docs/privacy/consent-management/consent-in-unify/#sharing-consent-with-actions-destinations) documentation. 
+For more information, see the [Sharing consent with Actions destinations](/docs/privacy/consent-management/consent-in-unify/#sharing-consent-with-actions-destinations) documentation.
+
+## Why shouldn't I use Consent Management for managing communication preferences? 
+
+Segment designed Consent Management for cookie and data collection consent use cases, not communication preferences. Segment doesn't recommend using Consent Management for managing communication preferences, as multiple data use categories attached to one destination can block legitimate communication to your users and might limit your ability to handle user communication preferences at a more granular level.
+
+For example, if you create 3 separate consent categories for "Product Newsletter," "News Updates," and "Promotional Emails" and all of these are sent through the same destination (like SendGrid,) then Consent Management only forwards data to SendGrid if the user has **opted-in to all 3 categories**. This behavior can block legitimate communication the user might have opted into, making it less flexible for nuanced email preference enforcement. 
+
+For managing communication preferences, Segment recommends using [custom traits](/docs/unify/Traits/custom-traits/) and then acting on these traits in [Twilio Engage](/docs/engage/) or a third-party tool.
 
 ## Why is my event failing ingestion with the error "context.consent.categoryPreferences object is required"?
 

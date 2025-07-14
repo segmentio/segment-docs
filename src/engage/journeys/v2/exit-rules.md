@@ -7,9 +7,6 @@ Journey exit rules automatically remove users from a journey when they meet spec
 
 This page explains how exit rules work, how to configure them, when to use them, and how to track exits in your journey analytics. You'll also find example use cases, best practices, and key behavior notes to help you get started.
 
-> info "Public Beta"
-> Event-Triggered Journeys is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
-
 ## How exit rules work
 
 Segment continuously evaluates exit rules as users move through a journey. If a user performs an event that matches one of the configured rules, they exit immediately from their current step.
@@ -20,7 +17,7 @@ Exit rules don't wait for a profile to reach a specific step; they apply globall
 
 ## Configuring exit rules
 
-You'll set up exit rules in the journey’s settings panel. By default, journeys don’t have any exit conditions, but you can choose to add up to five exit events.
+You'll set up exit rules in the journey’s settings panel. By default, journeys don’t have any exit conditions, but you can choose to add up ten five exit events.
 
 ## Basic setup
 
@@ -33,8 +30,6 @@ To add an exit rule, click **Exit rules** on the journey canvas. From there, you
 For each exit rule, choose the event that should trigger the exit. You can also apply filters to narrow down which versions of the event qualify. For example, you might exit only when a `Subscription_Cancelled` event includes `reason = churn`.
 
 You can optionally require that the exit event matches the same identifier used in the entry event. This helps tie the two together, like if a journey starts with a `Cart_Modified` event and should exit only when `Order_Purchased.cart_id` matches the same cart.
-
-Each exit rule must be mutually exclusive. 
 
 > success "Exit rules Analytics"
 > You can track how exit rules are performing from the journey overview, which shows total exits per rule, and from individual step details, which show where users exited.
@@ -76,6 +71,6 @@ Follow these tips to make sure your exit rules behave as expected:
 
 As you work with exit rules, keep the following in mind:
 
-- You can configure up to 5 exit events per journey.
+- You can configure up to 10 exit events per journey.
 - Journeys support only one destination send for exit events.
 - If an exit rule is triggered, it overrides all other steps. The user exits immediately, even if they’re mid-delay or hold.

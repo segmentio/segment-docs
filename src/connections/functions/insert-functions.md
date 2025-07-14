@@ -239,8 +239,8 @@ You can manually test your code from the functions editor:
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
 
-> warning ""
-> The Event Tester and Mapping Tester don't support Insert Functions. They won't apply an Insert Function, show its impact on your data, or send data through the Insert Function pipeline. Use the Function Tester instead to evaluate how your Insert Function affects your data.
+> success ""
+> Segment supports Insert Functions in both the Event Tester and Mapping Tester.
 
 ## Save and deploy the destination insert function
 

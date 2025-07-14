@@ -1,9 +1,15 @@
 ---
 title: Consent Management Overview
 plan: consent-management
+hide-toc: true
 ---
 
-When an end user visits your web or mobile app, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Some common categories include personalization, advertising, and site performance.
+When an end user visits your web or mobile app, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Some common categories include personalization, advertising, and site performance. 
+
+> info "Segment recommends using Consent Management to enforce end-user preferences related to cookies and data collection consent"
+> Segment doesn't recommend using Consent Management for managing communication opt-ins and opt-outs, as using it for this purpose might limit your ability to handle user preferences at a more granular level. For more information, see [Why shouldn’t I use Consent Management for managing communication preferences?](/docs/privacy/consent-management/consent-faq/#why-shouldnt-i-use-consent-management-for-managing-communication-preferences).
+>
+> To manage your end users' communication preferences, Segment recommends using [custom traits](/docs/unify/Traits/custom-traits/) and then acting on these traits in [Twilio Engage](/docs/engage/) or a third-party tool.
 
 Segment integrates with your commercial third-party or bespoke consent management platform (CMP) that captures an end user's consent preferences and enforces those preferences by only routing events to the categories consented to by an end user.
 

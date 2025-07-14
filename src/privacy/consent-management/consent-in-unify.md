@@ -83,8 +83,8 @@ In addition to enforcing consent in Connections, you may want these preferences 
 
 If you use Destination Actions to send consent information to your destinations, the Segment Consent Preference Updated event should **only** include information about a user's consent preferences because this event is sent regardless of an end-user's consent preferences. 
 
-> warning "Sharing consent with Classic Destinations isn't available"
-> Segment only supports sharing consent with Actions Destinations. 
+> info "Sharing consent with Classic Destinations isn't available"
+> Segment only supports sharing consent with Actions Destinations.
 
 ## Store consent preferences on the Profile
 Segment stamps consent preference on every Segment event from streaming and Reverse ETL sources as a trait to store them on the Profile. 
@@ -97,6 +97,7 @@ If you're using Consent Management and Profiles, you shouldn't give your custome
 ## Consent preference conflicts
 
 When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user, for example, from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflict)) or when two distinct Unify profiles are merged together (called a [profile-level conflict](#profile-level-conflict)). 
+
 
 ### Device-level conflicts
 A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices.

@@ -258,6 +258,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: fUGdCkAF8f
+    display_name: DB2
+    hidden: false
+    slug: db2
+    url: connections/sources/catalog/cloud-apps/db2
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 3yeoUP8E3Y
     display_name: Delighted
     hidden: false

@@ -8,9 +8,7 @@ id: 57da359580412f644ff33fb9
 > info "Amazon Kinesis is not compatible with IP Allowlisting"
 > For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
-## Getting Started
-
-
+## Getting started
 
 To get started:
 1. Create a Kinesis stream. Follow these [instructions](http://docs.aws.amazon.com/streams/latest/dev/learning-kinesis-module-one-create-stream.html){:target="_blank"} in order to create a new AWS Kinesis Stream.
@@ -53,15 +51,18 @@ To get started:
    2. Enter the **Role Address**, **Stream Region**, **Stream Name**, and **Secret ID**.
    * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 
+> success ""
+> Segment's Amazon Kinesis destination only transmits data in JSON format. 
+
 ## Page
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
   analytics.page();
 ```
 
 ## Identify
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.  An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.  An example call would look like:
 
 ```js
 analytics.identify('97980cfea0085', {
@@ -71,7 +72,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("User Registered", {
@@ -80,8 +81,8 @@ analytics.track("User Registered", {
 });
 ```
 
-### Data Model
-Let's say you're connecting your Segment customer data stream to Kinesis Stream `arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}`. If you send Segment the following in a `track` call:
+### Data model
+Let's say you're connecting your Segment customer data stream to Kinesis Stream `arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}`. If you send Segment the following in a Track call:
 ```json
 {
   "userId": "user_1",
@@ -106,9 +107,9 @@ const request = kinesis.putRecord(payload)
 Segment uses the `messageId` or the `userId || anonymousId` as the `PartitionKey`. The partition key is used by Amazon Kinesis to distribute data across shards. Amazon Kinesis segregates the data records that belong to a stream into multiple shards, using the partition key associated with each data record to determine which shard a given data record belongs to.
 
 ## Group
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Spec, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
 
-An example group call is shown below:
+An example Group call is shown below:
 ```js
 analytics.group("0e8c78ea9d9dsasahjg", {
   name: "group_name",
@@ -121,7 +122,9 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 ## Troubleshooting
 When you get started, Segment recommends using any of the open source [Kinesis tailing utility](https://github.com/search?utf8=%E2%9C%93&q=kinesis-tail){:target="_blank"} to validate that data is flowing correctly.
 
-## Best Practices
+## Best practices
+
+The following best practices help you implement additional Amazon Kinesis functionality like encryption, the use of multiple data sources, and more efficient data transmission. 
 
 ### Updating IAM role permissions for encryption
 Extra permissions need to be added to the IAM role if using at-rest encryption on the Kinesis stream. An updated role policy like below resolves issues when submitting PutRecords into Kinesis stream using encryption:
@@ -141,7 +144,7 @@ Extra permissions need to be added to the IAM role if using at-rest encryption o
 }
 ```
 
-### Multiple Sources
+### Multiple sources
 If you have multiple sources using Kinesis/Firehose, you have two options:
 
 ### Attach multiple sources to your IAM role

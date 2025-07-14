@@ -46,6 +46,8 @@ This destination is maintained by Ortto. For support or questions, [contact the 
 
 **Ortto (Actions)** allows you to sync your Segment users with an Ortto Audience, enabling precise activation of rich, behavior-based segments—perfect for lifecycle marketing, retargeting, and large-scale personalization. You can manually create new audiences or use existing ones in Ortto, and dynamically add or remove contacts through profile upserts or activity tracking. This gives you real-time control over audience membership.
 
+To define which audience the contact should be linked to, enter the **Audience Name** in the "**Associate Audience**" section.
+
 Ortto blocks rapid audience re-entry to avoid undesirable side-effects from asynchronous updates. If a contact exits an audience and then re-enters the audience within 1 minute, Ortto blocks the update that causes them to rejoin the audience. Ortto uses a daily synchronization to make sure the result of any rapid updates is correctly applied.
 Ortto updates the Segment member audience field as normal, and any audience re-entries throughout the day that are longer than 1 minute after the last exit are processed in real time.
 

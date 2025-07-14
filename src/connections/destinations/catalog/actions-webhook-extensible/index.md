@@ -1,32 +1,27 @@
 ---
-title: Extensible Webhooks Destination
+title: Extensible Webhook Destination
 id: 66b1f528d26440823fb27af9
-beta: true
-hidden: true
 redirect_from: '/connections/destinations/catalog/extensible-webhook/' 
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-Segment's Extensible Webhooks destination lets you send custom data payloads to any webhook endpoint. With support for flexible payload configuration, multiple authentication methods, and real-time data flow, Extensible Webhooks can help you integrate with internal systems or tools not covered by Segment’s standard destinations.
+Segment's Extensible Webhook destination lets you send custom data payloads to any webhook endpoint. With support for flexible payload configuration, multiple authentication methods, and real-time data flow, Extensible Webhooks can help you integrate with internal systems or tools not covered by Segment’s standard destinations.
 
-Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com).
-
-> info "Public beta"
-> Extensible Webhooks is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+Segment maintains this destination. For any issues, [contact Segment Support](friends@segment.com). 
 
 ## Overview
 
 To set up and use Extensible Webhooks, you'll follow these four main stages:
 
-1. **Create the new destination**: Add the Extensible Webhooks destination to your workspace and link it to a source.
+1. **Create the new destination**: Add the Extensible Webhook destination to your workspace and link it to a source.
 2. **Set up authentication**: Configure the required authentication settings to activate the destination.
 3. **Map and configure data**: Define how data flows from Segment to your webhook endpoints by mapping fields and customizing the payload.
 4. **Enable the destination**: Complete the setup by enabling the destination to start sending data.
 
 ## 1. Create a new Extensible Webhooks destination
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Extensible Webhooks."
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Extensible Webhook."
 2. Select **Extensible Webhook** and Click **Add destination**.
 3. Select an existing source to connect to the destination.
 4. Enter a name for the destination and click **Create destination.**
@@ -87,4 +82,14 @@ Follow these steps to enable your new destination:
 1. Return to **Basic Settings** in your destination's **Settings** tab.
 2. Toggle **Enable Destination** to on, then click **Save Changes**.
 
-Your Extensible Webhooks destination is now set up and ready to send data to your webhook endpoints.
+Your Extensible Webhook destination is now set up and ready to send data to your webhook endpoints.
+
+## Integrations with Extensible Webhook destination
+
+The following recipes show how to integrate external tools with your Segment workspace using the Extensible Webhook destination. Each guide walks you through configuring your extensible webhook destination and how to set up your custom destinations.
+
+- [Amazon Ads Audience Sync](/docs/connections/destinations/catalog/actions-webhook-extensible/amazon-ads-integration-recipe/)
+- [Google Search Ads 360 Conversion API](/docs/connections/destinations/catalog/actions-webhook-extensible/google-search-ads-integration-recipe/)
+- [Microsoft Dynamics 365 (Sales Hub)](/docs/connections/destinations/catalog/actions-webhook-extensible/microsoft-integration-recipe/)
+- [Reddit Ads (Audiences)](/docs/connections/destinations/catalog/actions-webhook-extensible/reddit-ads-audience-integration-recipe/)
+- [Reddit Ads Conversion API](/docs/connections/destinations/catalog/actions-webhook-extensible/reddit-ads-conversion-api-integration-recipe/)

@@ -68,18 +68,32 @@ When you build an audience based on audience membership, you use existing audien
 
 To see which audiences reference a particular audience in their definitions, select the **Consumers** tab when viewing a classic or linked audience. This tab lists all dependent audiences, to help you understand and manage relationships between your audience segments.
 
-### Time comparison
+### Trait operators
 
-You can use the following time comparison operators in your audience definition: 
-- `before date`
-- `after date`
-- `within last`
-- `within next` 
-- `before last`
-- `after next` 
+| Operator                   | Description                           |
+|--------------------------- |---------------------------------------|
+| equals                     | Matches exact value. |
+| not equals                 | Does not match exact value. |
+| less than                  | Value is less than specified. |
+| greater than               | Value is greater than specified. |
+| less than or equal to      | Value is less than or equal to specified. |
+| greater than or equal to    | Value is greater than or equal to specified. |
+| equals any of              | Matches any of specified values. |
+| contains any of            | Includes any of specified values. |
+| contains                   | Includes specified substring or value. |
+| does not contain           | Excludes specified substring or value. |
+| starts with                | Begins with specified substring. |
+| ends with                  | Ends with specified substring. |
+| exists                     | Value is present (not null). |
+| not exists                 | Value is absent (null). |
+| before date                | Dates before specified date. |
+| after date                 | Dates after specified date. |
+| within last                | Dates between X days ago and today. |
+| within next                | Dates between today and X days from now. |
+| before last                | All dates older than X days from today. |
+| after next                 | All dates beyond X days from today. |
 
-Only ISO timestamps can be used with these operators. Additionally, these time comparison operators exclusively apply to custom traits.
-If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch). 
+Only ISO timestamps can be used with time comparison operators. If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch). 
 
 **Note**: Timezones seen in the UI are based on your local timezone, but are converted to UTC on the backend.
 
@@ -286,6 +300,9 @@ To access audience alerting, navigate to **Engage > Audiences**, select an audie
 
 On the **Alerts** tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
 
+> info "Deleting alerts created by other users requires Workspace Owner role"
+> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users. 
+
 #### Activation event health spikes or drops
 
 You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
@@ -293,7 +310,7 @@ You can create an Activation event health spikes or drops alert that notifies yo
 To create an Activation event health spikes or drops alert: 
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
 2. Select the Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
-3. On the Create alert sidesheet, select the destination for which you'd like to monitor event health. 
+3. On the Create alert sidesheet, select the **Activation event health spikes or drops** alert and pick a destination for which you'd like to monitor event health. 
 4. Enter a percentage threshold to trigger activation event health notifications. 
 5. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
@@ -305,8 +322,27 @@ To make changes to an Activation event health spikes or drops alert, select the 
 
 To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
 
-> info "Deleting alerts created by other users requires Workspace Owner role"
-> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users. 
+#### Audience size change
+
+You can create an Audience size change alert that notifies you when your audience increases or decreases by a certain threshold. For example, if you set a change percentage of 4% and your destination had 100 members over the first 24 hours, Segment would notify you the following day if your audience had fewer than 96 or more than 104 members.
+
+> info "Audience size change alerts currently only support Linked Audiences"
+> Audience size change alerts are in public beta, and Segment is actively working on this feature. During the public beta, Audience size change alerts only support Linked Audiences. Some functionality may change before it becomes generally available.  
+
+To create an Audience size change alert:
+1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
+2. Select the Linked Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
+3. On the Create alert sidesheet, select the **Audience size change alert** and pick a destination for which you'd like to monitor event health. 
+4. Enter a percentage threshold to trigger audience size change notifications. 
+5. Select one or more of the following alert channels:
+  - **Email**: Select this to receive notifications at the provided email address. 
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+6. Click **Save**.
+
+To make changes to an Audience size change alert, select the icon in the Actions column for the alert and click **Edit**. 
+
+To delete a Audience size change alert, select the icon in the Actions column for the alert and click **Delete**.
 
 ## Access your Audiences using the Profiles API
 
