@@ -87,7 +87,7 @@ If you use Destination Actions to send consent information to your destinations,
 > Segment only supports sharing consent with Actions Destinations.
 
 ## Store consent preferences on the Profile
-Segment stamps consent preference on every Segment event from streaming and Reverse ETL sources as a trait to store them on the Profile. 
+Segment stamps consent preferences on every Segment event from streaming and Reverse ETL sources as a trait to store them on the Profile. 
 
 > info "Storing consent on the Profile is in public beta"
 > Storing consent preferences on a Unify Profile is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.

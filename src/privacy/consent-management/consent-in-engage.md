@@ -7,7 +7,7 @@ Segment uses the [consent object](/docs/privacy/consent-in-unify/#segment-consen
 
 Once an end user's consent preferences are stored on their Profile, you can create Engage Audiences that respect end user consent preferences to better comply with privacy regulations. 
 
-> warning "Consent in Engage Audiences is in public beta"
+> info "Consent in Engage Audiences is in public beta"
 > Consent in Engage Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 >
 > During the public beta, only Profiles Audiences are supported by Consent in Engage Audiences.  
@@ -20,20 +20,20 @@ Before using an end user's consent preferences to create your Audiences, you mus
 
 ### Step 1: Enable consent in your Unify space
 
-Once your consent categories are set up and mapped and each of your Profiles is stamped with the Segment Consent Preference Updated event, you're ready to enable Consent Management in your Unify space. You must enable Consent Management in each Unify space that you'd like to enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but you've previously set up Consent Management for Reverse ETL or Segment Connections, Segment will continue to stamp consent preferences on your Profiles. 
+Once your consent categories are set up and mapped and each of your Profiles is stamped with the Segment Consent Preference Updated event, you're ready to enable Consent Management in your Unify space. You must enable Consent Management in each Unify space that you'd like to enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but you've previously set up Consent Management for Reverse ETL or Segment Connections, Segment continues to stamp consent preferences on your Profiles. 
 
 > info ""
 > In order to enable Consent Management in your Unify space, you must have a [Workspace Owner role](/docs/segment-app/iam/roles/).  
 
 To enable Consent Management in your Unify space: 
-1. Navigate to Unify and select the space where you'd like to enable Consent Management. 
+1. Navigate to **Unify** and select the space where you'd like to enable Consent Management. 
 2. Select **Unify settings** and navigate to the **Space management** tab. 
 3. Select the **Consent management** setting and enable the toggle to turn on Consent Management for your Unify space. 
 4. On the **Enable consent enforcement for [Space Name]?** popup, enter the name of your Unify space and click **Enable enforcement**. 
 
 After you've enabled Consent Management in your Unify space, you can create an Audience that only includes users that have consented to the use of their data for a particular purpose. 
 
-> warning "Consent enforcement is not automatically applied to Audiences that existed prior to the enablement of Consent Management in your Unify space"
+> warning "Consent enforcement does not automatically apply to Audiences that existed prior to the enablement of Consent Management in your Unify space"
 > Audiences that existed before you enabled Consent Management in a Unify space only enforce consent preferences for new Profiles that enter the Audience after you enabled Consent Management. If you want to ensure each of your Audiences only includes consenting Profiles, request a resync: only Profiles that consented to the category mapped to your destination will re-enter the Audience and be sent downstream to your destination. All Audiences created after you enable Consent Management for a space only contain Profiles that consented to the use of their data for the mapped destination(s). 
 
 
@@ -51,11 +51,15 @@ To create a Profiles Audience that includes consent traits:
 4. Continue building your Audience, adding additional conditions as you see fit. When you're satisfied with your Audience conditions, click **Next**. 
 5. Select one or more destinations that you'd like to receive your Audience.  
 
-Destinations mapped to a consent category only receive the Profiles of users that have consented to that category. Destinations not mapped to a consent category receive all Profiles in an Audience, regardless of the Profile's consent preferences. If opt to send your Audience to multiple destinations belonging to multiple categories, then each destination receives data for the Profiles that have consent to the destination’s mapped category. For example, if you have an audience mapped to Google Ads (mapped to the Advertising consent category) and Snowflake (mapped to the Analytics consent category), then Google Ads receives all profiles that have consented to Advertising consent category, independent of users' who consented to Analytics, and Snowflake receives all profiles that have consented to Analytics, independent of their Advertising preferences.
+Destinations mapped to a consent category only receive the Profiles of users who have given consent to that category. Destinations not mapped to a consent category receive all Profiles in an Audience, regardless of the Profile's consent preferences. 
+
+If you opt to send your Audience to multiple destinations belonging to multiple categories, then each destination receives data for the Profiles that have consent to the destination’s mapped category. For example, if you have an audience mapped to Google Ads (mapped to the Advertising consent category) and Snowflake (mapped to the Analytics consent category), then:
+* Google Ads receives all profiles that have consented to Advertising consent category, independent of users' who consented to Analytics
+* Snowflake receives all profiles that have consented to Analytics, independent of their Advertising preferences.
 
 ## Verify that your Audiences respect consent preferences
 
-After you've enabled consent management in your Unify space and created a new audience with a consent trait, Segment automatically filters out data from end users that have not consented to the category that you mapped to your connected destination. 
+After you enable consent management in your Unify space and create a new audience with a consent trait, Segment automatically filters out data from end users that have not consented to the category that you mapped to your connected destination. 
 
 However, if you'd like to confirm that this behavior is working as intended, you can either [compare an end user profile against your mapped categories](#compare-an-end-user-profile-to-your-mapped-categories) or verify that [Delivery Overview](#use-delivery-overview) contains a `FILTERED_BY_END_USER_CONSENT` event. 
 
@@ -75,4 +79,4 @@ To verify that your events are being filtered by end user consent:
 2. On the Delivery Overview page, select **Filtered at destination**. 
 3. Search through the table of discarded events until you find an event with a discard reason of `FILTERED_BY_END_USER_CONSENT`.
 
-If the discard reason `FILTERED_BY_END_USER_CONSENT` is present in the point where your destination discards events, your destination is enforcing your end users' consent preferences appropriately. If you cannot find a `FILTERED_BY_END_USER_CONSENT` discard reason, either wait a few minutes for more events to flow to your destination before reviewing the discard reasons again or revisit the conditions that you used to generate your Audience. 
+If the discard reason `FILTERED_BY_END_USER_CONSENT` is present in the point where your destination discards events, your destination is enforcing your end users' consent preferences appropriately. If you can't find a `FILTERED_BY_END_USER_CONSENT` discard reason, either wait a few minutes for more events to flow to your destination before reviewing the discard reasons again or revisit the conditions that you used to generate your Audience. 
