@@ -3,35 +3,36 @@ title: Consent in Engage Audiences
 plan: consent-management
 ---
 
-Segment uses the [consent object](/docs/privacy/consent-in-unify/#segment-consent-preference-event) on Segment events, including the [Segment Consent Preference Updated](/docs/privacy/consent-in-unify/#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on an end user's Profile. 
+Segment uses the [consent object](/docs/privacy/consent-in-unify/#segment-consent-preference-event) on Segment events, including the [Segment Consent Preference Updated](/docs/privacy/consent-in-unify/#segment-consent-preference-updated-event) Track event, to evaluate and store consent preferences on an [end user's Profile](/docs/privacy/consent-management/consent-in-unify#segment-consent-preference-updated-event). 
 
 Once an end user's consent preferences are stored on their Profile, you can create Engage Audiences that respect end user consent preferences to better comply with privacy regulations. 
 
 > info "Consent in Engage Audiences is in public beta"
 > Consent in Engage Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 >
-> During the public beta, only Profiles Audiences are supported by Consent in Engage Audiences.  
+> Only Profiles Audiences are supported by Consent in Engage Audiences. Consent in Engage Audiences does **not** support Engage Accounts Audiences, Linked Audiences, Predictions, and Journeys.
 
 ## Enforce consent preferences in your Audiences
 
 Before using an end user's consent preferences to create your Audiences, you must complete the following prerequisites: 
-- You've previously set up [Consent in Segment Connections](/docs/privacy/consent-management/consent-in-segment-connections) or [Consent in Reverse ETL](/docs/privacy/consent-management/consent-in-retl) and have events stamped with the [consent object](/docs/privacy/consent-management/consent-in-segment-connections#consent-object) streaming from your source or available in your data warehouse.
+- You've previously set up [Consent in Segment Connections](/docs/privacy/consent-management/configure-consent-management) or [Consent in Reverse ETL](/docs/privacy/consent-management/consent-in-retl) and have events stamped with the [consent object](/docs/privacy/consent-management/consent-in-segment-connections#consent-object) streaming from your source or available in your data warehouse.
 - You generate the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify#segment-consent-preference-updated-event) Track event each time a user updates their consent preferences. This event stamps each Profile with a user's consent preferences. 
 
 ### Step 1: Enable consent in your Unify space
 
-Once your consent categories are set up and mapped and each of your Profiles is stamped with the Segment Consent Preference Updated event, you're ready to enable Consent Management in your Unify space. You must enable Consent Management in each Unify space that you'd like to enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but you've previously set up Consent Management for Reverse ETL or Segment Connections, Segment continues to stamp consent preferences on your Profiles. 
+Once your consent categories are set up and mapped and each of your Profiles is stamped with your end user's consent preferences, you're ready to enable Consent Management in your Unify space. You must enable Consent Management in each Unify space that you'd like Segment to automatically enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but you've previously set up Consent Management for Reverse ETL or Segment Connections, Segment continues to stamp consent preferences on your Profiles. If you enable or disable a Unify space, Segment doesn't automatically enforce consent in your Audiences, but continues to store consent preferences on your Profiles.
 
 > info ""
 > In order to enable Consent Management in your Unify space, you must have a [Workspace Owner role](/docs/segment-app/iam/roles/).  
 
 To enable Consent Management in your Unify space: 
-1. Navigate to **Unify** and select the space where you'd like to enable Consent Management. 
-2. Select **Unify settings** and navigate to the **Space management** tab. 
-3. Select the **Consent management** setting and enable the toggle to turn on Consent Management for your Unify space. 
-4. On the **Enable consent enforcement for [Space Name]?** popup, enter the name of your Unify space and click **Enable enforcement**. 
+1. Navigate to **Privacy > Consent Management** and select the Settings tab.  
+2. Enable the toggle under the Status column to turn on Consent Management for your Unify space. 
+3. On the **Enable consent enforcement for [Space Name]?** popup, enter the name of your Unify space and click **Enable enforcement**. 
 
-After you've enabled Consent Management in your Unify space, you can create an Audience that only includes users that have consented to the use of their data for a particular purpose. 
+After you’ve enabled Consent Management in your Unify space, you can create an Audience as you normally would and Segment automatically enforces your end users' consent preferences. When Segment enforces consent preferences, allow or block profiles from being sent to downstream Engage destinations based on end-user consent preference for that category.
+
+<!--- todo - rewrite above sentence --->
 
 > warning "Consent enforcement does not automatically apply to Audiences that existed prior to the enablement of Consent Management in your Unify space"
 > Audiences that existed before you enabled Consent Management in a Unify space only enforce consent preferences for new Profiles that enter the Audience after you enabled Consent Management. If you want to ensure each of your Audiences only includes consenting Profiles, request a resync: only Profiles that consented to the category mapped to your destination will re-enter the Audience and be sent downstream to your destination. All Audiences created after you enable Consent Management for a space only contain Profiles that consented to the use of their data for the mapped destination(s). 
