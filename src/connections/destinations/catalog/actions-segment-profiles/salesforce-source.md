@@ -1,8 +1,8 @@
 ---
 title: Salesforce Unify Direct Integration Guide
-plan: unify
 redirect_from:
   - '/unify/salesforce-unify'
+  - '/sources/catalog/cloud-apps/salesforce-unify/
 ---
 
 This guide outlines the process for setting up Salesforce as a data source with Segment Profiles. 
