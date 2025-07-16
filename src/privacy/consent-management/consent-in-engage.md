@@ -10,7 +10,7 @@ Once an end user's consent preferences are stored on their Profile, you can crea
 > info "Consent in Engage Audiences is in public beta"
 > Consent in Engage Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 >
-> Only Profiles Audiences are supported by Consent in Engage Audiences. Consent in Engage Audiences does **not** support Engage Accounts Audiences, Linked Audiences, Predictions, and Journeys.
+> Only Profiles Audiences are supported by Consent in Engage Audiences. Consent in Engage Audiences does **not** support Engage Accounts Audiences, Linked Audiences, Predictions, and Journeys. Segment does not automatically enforce consent for the [LiveRamp Audiences](/docs/connections/destinations/catalog/actions-liveramp-audiences/) and [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/) destinations. 
 
 ## Enforce consent preferences in your Audiences
 
