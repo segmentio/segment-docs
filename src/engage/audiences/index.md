@@ -424,3 +424,6 @@ No. Traits located in the `context.traits` object of a Track event aren’t avai
 
 ### How does the historical data flag work?
 The **Include Historical Event Data** option lets you take past event data into account and control how much of it is considered when creating real-time audiences. You can set a lookback window (for example, the “last 90 days”) to limit the processed event data, or disable it entirely to use only data arriving after creation. For batch audiences, Segment includes historical data by default.
+
+### Can non-Latin characters be used when creating Audiences or Computed Traits?
+The Audience and Computed Trait builders only accept Latin characters.
