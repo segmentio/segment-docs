@@ -17,7 +17,7 @@ Segment enforces a strict data retention policy for all:
 ## Effective Date
 Segment’s enforcement of this data retention policy for active customers begins on:
 - **April 15, 2025** for Object Store data
-- **July 15, 2025** for Archive event and Profile events data stores
+- **August 15, 2025** for Archive event and Profile events data stores
 
 ## Active customers
 
@@ -53,8 +53,8 @@ Select the default retention period for the workspace in this setting. This valu
 - 90 days
 - 180 days
 - 365 days
-- 3 years (the default setting starting July 15, 2025)
-- Unlimited (deprecated July 15, 2025)
+- 3 years (the default setting starting August 15, 2025)
+- Unlimited (deprecated August 15, 2025)
  
 ### What data is impacted?
 
