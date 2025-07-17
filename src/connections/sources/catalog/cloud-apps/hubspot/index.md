@@ -8,6 +8,9 @@ id: 2baks93o
 
 Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](/docs/connections/destinations/catalog/hubspot/).
 
+> success ""
+> Want to connect your HubSpot source directly to the Segment Profiles destination? See the [Connect HubSpot to Segment Profiles](/docs/connections/destinations/catalog/actions-segment-profiles/hubspot-source/) documentation. 
+
 ## Getting Started
 
 1. From your workspace's `/sources` page, click `add source`.

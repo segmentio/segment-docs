@@ -1,6 +1,7 @@
 ---
 title: Connect HubSpot to Segment Profiles
-plan: unify
+redirect_from: 
+   - '/connections/sources/catalog/cloud-apps/hubspot-profiles/'
 ---
 
 This guide explains how to set up HubSpot as a source and connect it to Segment Profiles. 

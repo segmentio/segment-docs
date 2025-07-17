@@ -8,6 +8,9 @@ id: 2baks93n
 
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 
 
+> success ""
+> Want to connect your Salesforce source directly to the Segment Profiles destination? See the [Salesforce Unify Direct Integration Guide](/docs/connections/destinations/catalog/actions-segment-profiles/salesforce-source/) documentation.
+
 > info "Salesforce version upgrade to 58.0"
 > On March 25, 2024, the Salesforce source upgraded to use Salesforce's API version 58.0. See the [version upgrade changes](#version-upgrade-changes) to learn more.
 
