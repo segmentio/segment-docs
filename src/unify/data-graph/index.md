@@ -204,8 +204,6 @@ To define your entities:
 
 To define the profile, navigate to the **Relationships** tab. You'll see a **Profile** node which is a special class of entity that represents Segment Profiles, which corresponds to the Profiles Sync tables and models. For Linked Audiences, this enables marketers to filter on profile traits, event history, etc. There can only be one profile for a Data Graph. 
 
-<img src="/docs/unify/images/relationships-tab-data-graph.png" alt="The Relationships tab when creating the Data Graph" width="5888"/>
-
 Segment creates default settings for your profile that are based on your [Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/) configuration. If you wish to update these settings, you may select the node and select **View / Edit profile**. Otherwise, you may proceed to Step 3C.
 
 
@@ -229,6 +227,9 @@ Now define the relationships between your entities. Similar to the concept of [c
 ##### Define profile-to-entity relationship
 
 This is the first level of relationships and a unique type of relationship between the Segment profile entity and a related entity.
+
+<img src="/docs/unify/images/data-graph-profile-to-entity.png" alt="The side window that opens when adding a profile to entity relationship" width="5888"/>
+
 
 Parameter | Definition
 --------- | -----------
@@ -257,6 +258,7 @@ By selecting **Compute count**, you can check the number of rows returned when j
 
 Select **Add relationship** and repeat as needed.
 
+<img src="/docs/unify/images/data-graph-add-relationship.png" alt="The Customer Accounts Relationship side screen when adding a relationship in the Data Graph" width="5888"/>
 
 ### Using the code editor
 Use the configuration language spec and the following features to build your Data Graph:
