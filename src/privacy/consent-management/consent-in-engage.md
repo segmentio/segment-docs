@@ -10,7 +10,7 @@ Once an end user's consent preferences are stored on their Profile, you can crea
 > info "Consent in Engage Audiences is in public beta"
 > Consent in Engage Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 >
-> Only Profiles Audiences are supported by Consent in Engage Audiences. Consent in Engage Audiences does **not** support Engage Accounts Audiences, Linked Audiences, Predictions, and Journeys. Segment does not automatically enforce consent for the [LiveRamp Audiences](/docs/connections/destinations/catalog/actions-liveramp-audiences/) and [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/) destinations. 
+> Only Profiles Audiences are supported by Consent in Engage Audiences. Consent in Engage Audiences does **not** support Engage Accounts Audiences, Linked Audiences, Predictions, Computed Traits, and Journeys. Segment does not automatically enforce consent for the [LiveRamp Audiences](/docs/connections/destinations/catalog/actions-liveramp-audiences/) and [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/) destinations. 
 
 ## Enforce consent preferences in your Audiences
 
@@ -20,7 +20,7 @@ Before using an end user's consent preferences to create your Audiences, you mus
 
 ### Step 1: Enable consent in your Unify space
 
-Once your consent categories are set up and mapped and each of your Profiles is stamped with your end user's consent preferences, you're ready to enable Consent Management in your Unify space. You must enable Consent Management in each Unify space that you'd like Segment to automatically enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but you've previously set up Consent Management for Reverse ETL or Segment Connections, Segment continues to stamp consent preferences on your Profiles. If you enable or disable a Unify space, Segment doesn't automatically enforce consent in your Audiences, but continues to store consent preferences on your Profiles.
+Once your consent categories are set up, you've mapped your destinations to a consent category, and each of your Profiles is stamped with your end user's consent preferences, you're ready to enable Consent Management in your Unify space. You must enable Consent Management in each Unify space that you'd like Segment to automatically enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but you've previously set up Consent Management for Reverse ETL or Segment Connections, Segment continues to stamp consent preferences on your Profiles. If you enable or disable consent enforcement in your Unify space, you are only enabling or disabling automatic consent enforcement in Engage Audiences: Segment will continue to store consent preferences on your Profiles even if you've disabled consent enforcement in your Unify space. 
 
 > info ""
 > In order to enable Consent Management in your Unify space, you must have a [Workspace Owner role](/docs/segment-app/iam/roles/).  
