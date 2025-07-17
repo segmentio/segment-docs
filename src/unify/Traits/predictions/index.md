@@ -135,4 +135,24 @@ Segment then uses this criteria to build the prediction and create specific perc
 
 ## Use cases
 
-For use cases and information on how Segment builds prediction, read [Using Predictions](/docs/unify/traits/predictions/using-predictions/).
+Once a trait successfully computes, you can send them downstream to some destinations, or use them in an audience. Predictive Traits support destinations that support this list of identifiers:
+
+    ANONYMOUS = "anonymous_id"
+    USER = "user_id"
+    EMAIL = "email"
+    PHONE = "phone"
+    IOS_IDFA = "ios.idfa"
+    ANDROID_IDFA = "android.idfa"
+    GROUP = "group_id"
+    NAME = "name"
+    GA_CLIENT = "ga_client_id"
+    GOOGLE = "google_gid"
+    BRAZE = "braze_id"
+    SEGMENT = "segment_id"
+
+Other destinations may drop events published by Predictive Traits
+
+For use additional cases and information on how Segment builds prediction, read [Using Predictions](/docs/unify/traits/predictions/using-predictions/). 
+
+
+
