@@ -1,7 +1,6 @@
 ---
 title: Aampe (Actions) Destination
 id: 6874c64e5eda096bf3850ee0
-private: true
 beta: true
 ---
 
@@ -9,7 +8,7 @@ beta: true
 
 By assigning a dedicated agent for each user, Aampe conducts controlled, parallelized experiments to learn user preferences and optimizes engagement for them. It’s a dynamic, self-improving system that fine-tunes every interaction, ensuring your messaging evolves as fast as your audience does.
 
-This destination is maintained by Aampe. For any issues with the destination, [contact the Aampe Support team](mailto:developer@aampe.com).
+This destination is maintained by Aampe. For any issues with the destination, [contact the Aampe Support team](mailto:developer@aampe.com){:target="_blank”}.
 
 ## Getting Started
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
