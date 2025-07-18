@@ -458,14 +458,14 @@ items:
 - id: 6874c64e5eda096bf3850ee0
   display_name: Aampe (Actions)
   name: Aampe (Actions)
-  slug: aampe-actions
+  slug: actions-aampe
   hidden: false
   endpoints:
   - US
   regions:
   - us-west-2
   - eu-west-1
-  url: connections/destinations/catalog/aampe-actions
+  url: connections/destinations/catalog/actions-aampe
   previous_names:
   - Aampe (Actions)
   website: https://aampe.com/
