@@ -8,7 +8,7 @@ beta: true
 
 [Roadway](https://roadwayai.com/){:target="_blank"} is AI built for growth marketers, operating from marketing attribution from your source-of-truth data sources. Roadway ingests and organizes your visit, user, and billing data to provide end-to-end attribution and AI automation.
 
-This destination is maintained by Roadway. For any issues with the destination, [contact their Support team](mailto:contact@roadwayai.com).
+This destination is maintained by Roadway. For any issues with the destination, [contact the Roadway Support team](mailto:contact@roadwayai.com){:target="_blank"}.
 
 ## Getting started
 
