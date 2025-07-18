@@ -60,7 +60,7 @@ Segment creates a SHA-256 hash of the following fields before sending to Reddit.
 
 If you implement both the [Reddit Pixel](https://business.reddithelp.com/helpcenter/s/article/reddit-pixel){:target="_blank"} and [Conversions API (CAPI)](https://business.reddithelp.com/helpcenter/s/article/Conversions-API){:target="_blank"} and the same events are shared across both sources, deduplication is necessary to ensure those events aren’t double-counted.
 
-You can pass a unique conversion ID for every distinct event to its corresponding Reddit Pixel and CAPI event. Reddit will determine which events are duplicates based on the conversion ID and the conversion event name. This is the best and most accurate way to ensure proper deduplication, and Reddit recommends this method since there’s less risk of incorrect integration, which can impact attribution accuracy.
+The integration automatically pre-maps the Segment `messageId` to the Reddit Conversion ID. If you wish to change this, you can pass a unique conversion ID for every distinct event to its corresponding Reddit Pixel and CAPI event. Reddit will determine which events are duplicates based on the conversion ID and the conversion event name. This is the best and most accurate way to ensure proper deduplication, and Reddit recommends this method since there’s less risk of incorrect integration, which can impact attribution accuracy.
 
 To ensure your events are deduplicated:
 - Create a unique conversion ID for every distinct event. You can set this as a random number or ID. Similarly, you could set this to the order number when tracking purchase events.
