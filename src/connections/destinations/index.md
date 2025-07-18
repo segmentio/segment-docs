@@ -227,6 +227,9 @@ Segment supports these 2 types of data for hashing:
 * **Plain text data:** When you send plain text values to destinations that require hashed values, Segment automatically normalizes and hashes these values. 
 * **Pre-hashed data:** If you already hash your data before sending it to Segment, Segment is able to detect that the data is hashed, and will pass your pre-hashed data directly to the destination, avoiding double-hashing. 
 
+> warning ""
+> The hashing detection feature applies only to **Action Destinations**. 
+
 > info ""
 > If you choose to hash data yourself, ensure you follow each destination's specific hashing requirements. Fields that support automatic hashing detection will display a tooltip indicating *"If not hashed, Segment will hash this value."*
 
