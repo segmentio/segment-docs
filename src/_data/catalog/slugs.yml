@@ -327,4 +327,6 @@ destinations:
     override: "actions-topsort"
   - original: "ortto-actions"
     override: "actions-ortto"
+  - original: "aampe-actions"
+    override: "actions-aampe"
 
