@@ -1,7 +1,6 @@
 ---
 title: Reddit Pixel
 id: 68383577d2c19626da376944
-private: true
 beta: true
 ---
 
