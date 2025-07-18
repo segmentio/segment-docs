@@ -61,10 +61,7 @@ However, if you'd like to confirm that this behavior is working as intended, you
 
 ### Compare an end user Profile to your mapped categories
 
-To verify that your end user's consent preferences match the category that you mapped to your destination:
-1. Navigate to the connected destination and select a Profile. 
-2. Return to Segment and compare the consent preferences of that Profile against the consent category of the connected destination. 
-3. Verify that the consent preferences of your selected user match the consent category that you mapped to your destination.
+You can verify that your Audiences are respecting consent preferences by selecting a user Profile, identifying one category they consented to, and confirming that the user's Profile appears in one of the destinations mapped to that category. 
 
 ### Use Delivery Overview
 
