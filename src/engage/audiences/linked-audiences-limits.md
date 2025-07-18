@@ -29,7 +29,7 @@ If you have a non-standard or high volume usage plan, you have unique Linked Aud
 
 Name | Limit | Details 
 ---- | ----- | --------
-RETL row limit | 150 million | The audience compute fails if the total output exceeds the limit. 
+RETL row limit | 150 million | The audience compute fails if the total output exceeds the limit. This limit is approximately the sum of the total linked audience profile membership count and the total number of entity relationships for the profiles in the audience.
 RETL column limit | 500 columns | The audience compute fails if the number of columns exceeds the limit. 
 Global concurrent audience runs | 5 total within any given space | New audience runs are queued once the limit is reached and will start execution once prior audience runs complete. If you need a higher global concurrent audience runs limit, contact [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
 Event Size | 32 KB | Segment doesn’t emit messages for profiles whose total related entities and enrichments exceed the limit.
