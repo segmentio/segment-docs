@@ -17,9 +17,6 @@ Before enforcing consent preferences in your Profiles Audiences, you must comple
 - Map your Engage Destinations to consent categories. Segment assumes all Engage Destinations not mapped to a consent category do not require consent and will recieve all events containing a consent object. 
 - Verify that your Profiles have consent preferences by creating an Audience with a consent trait condition. If the majority of Profiles have consent preferences on them, you're ready to enable consent enforcement in your Unify space. 
 
-> info "How does Segment handle Profiles with missing consent preferences?"
-> If you have Profiles with consent preferences for some, but not all consent categories, Segment adds all categories to a `categoryPreferences` object on an Identify or Track call and considers consent categories without current consent preferences to be `false`. If you have Profiles with no consent preferences, Segment automatically adds an empty `categoryPreferences` object on an Identify or Track call and prevents those Profiles from flowing downstream to your destination. 
-
 ### Step 1: Enable consent in your Unify space
 
 You can enable Consent Management in each Unify space that you'd like Segment to automatically enforce consent preferences. If you've chosen not to enable Consent Management for a Unify space but have set up Consent Management for Reverse ETL or Segment Connections, Segment continues to stamp consent preferences on your Profiles. 
