@@ -19,7 +19,7 @@ You can select a user in the table to see their [roles](/docs/segment-app/iam/ro
 
 With Twilio Unified Login, Twilio users can use their Twilio email, password, and authentication settings to access several Twilio products, including Twilio Messaging, SendGrid, and Segment. You can also use Sign up With Google to create your Twilio account. Once you link your Segment account to your Twilio credentials, you can access Segment directly from the Twilio console using the [Twilio Product Switcher](#twilio-product-switcher).
 
-To delete your Twilio Unified Login account, refer to [How to Close My Twilio Account and Refund the Balance](https://help.twilio.com/articles/223183548){:target="_blank”}
+To delete your Twilio Unified Login account, refer to [How to Close My Twilio Account and Refund the Balance](https://help.twilio.com/articles/223183548){:target="_blank”}.
 
 ### Twilio Sign Up
 
