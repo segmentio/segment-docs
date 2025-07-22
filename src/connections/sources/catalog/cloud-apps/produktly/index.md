@@ -61,87 +61,87 @@ The table below list the properties included in the events listed above.
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `tourId`          | Id of the tour           |
+| `tour_id`          | Id of the tour           |
 
 #### tour_start
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `tourId`          | Id of the tour           |
+| `tour_id`          | Id of the tour           |
 
 #### tour_auto_start
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `tourId`          | Id of the tour           |
+| `tour_id`          | Id of the tour           |
 
 #### tour_continue
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `tourId`          | Id of the tour           |
+| `tour_id`          | Id of the tour           |
 
 #### tour_finish
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `tourId`          | Id of the tour           |
+| `tour_id`          | Id of the tour           |
 
 #### tour_step
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `tourId`          | Id of the tour           |
+| `tour_id`          | Id of the tour           |
 | `metadata`        | Object that contains `stepIndex` of the tour that was viewed, and `type` either "next" or "previous" telling whether the user moved forward or backwards | 
 
 #### checklist_step_completed
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `checklistId`     | Id of the checklist      |
+| `checklist_id`     | Id of the checklist      |
 | `metadata`        | Object that contains `stepId` of the checklist that was completed | 
 
 #### checklist_finished
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `checklistId`     | Id of the checklist      |
+| `checklist_id`     | Id of the checklist      |
 
 #### smart_tip_available
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `smartTipId`      | Id of the smart tip      |
+| `smart_tip_id`      | Id of the smart tip      |
 
 #### smart_tip_open
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `smartTipId`      | Id of the smart tip      |
+| `smart_tip_id`      | Id of the smart tip      |
 
 #### announcement_shown
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `announcementId`  | Id of the announcement   |
+| `announcement_id`  | Id of the announcement   |
 
 #### announcement_action_clicked
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `announcementId`  | Id of the announcement   |
+| `announcement_id`  | Id of the announcement   |
 
 #### announcement_closed
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `announcementId`  | Id of the announcement   |
+| `announcement_id`  | Id of the announcement   |
 
 #### nps_widget_shown
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
-| `npsWidgetId`     | Id of the NPS widget     |
+| `nps_widget_id`     | Id of the NPS widget     |
 
 
 
