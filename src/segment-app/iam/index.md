@@ -19,6 +19,8 @@ You can select a user in the table to see their [roles](/docs/segment-app/iam/ro
 
 With Twilio Unified Login, Twilio users can use their Twilio email, password, and authentication settings to access several Twilio products, including Twilio Messaging, SendGrid, and Segment. You can also use Sign up With Google to create your Twilio account. Once you link your Segment account to your Twilio credentials, you can access Segment directly from the Twilio console using the [Twilio Product Switcher](#twilio-product-switcher).
 
+To delete your Twilio Unified Login account, refer to [How to Close My Twilio Account and Refund the Balance](https://help.twilio.com/articles/223183548){:target="_blank”}
+
 ### Twilio Sign Up
 
 Segment invitations and sign ups that are redirected to Twilio's sign up page must adhere to Twilio's [minimum password and 2FA requirements](https://help.twilio.com/articles/115012261968){:target="_blank”}. To learn more, view Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management?_gl=1*1xa50pg*_ga*OTUyMjQ4OTU5LjE2NjM2ODQzMDE.*_ga_3JKYB4GBBY*MTcwNzc2ODE1OC4xNDkuMS4xNzA3NzY4MjUzLjAuMC4w){:target="_blank”} documentation.
@@ -45,6 +47,7 @@ Segment continues to support [SSO](/docs/segment-app/iam/sso/) and SCIM, as user
 - [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access)
 - [Remove a team member from a workspace](/docs/segment-app/iam/membership/#remove-a-team-member-from-your-workspace)
 - [Add a new user with Single Sign On](/docs/segment-app/iam/membership/#team-management-with-single-sign-on)
+- [Delete Twilio Unified Login](https://help.twilio.com/articles/223183548){:target="_blank”}
 
 <div class="double">
   {% include components/reference-button.html href="/segment-app/iam/membership/" icon="media/academy.svg" title="Invite and manage workspace members" description="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
