@@ -57,87 +57,87 @@ The table below lists events that Produktly sends to Segment. These events appea
 
 The table below list the properties included in the events listed above.
 
-#### tour_available
+#### Tour Available
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
 
-#### tour_start
+#### Tour Start
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
 
-#### tour_auto_start
+#### Tour Auto Start
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
 
-#### tour_continue
+#### Tour Continue
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
 
-#### tour_finish
+#### Tour Finish
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
 
-#### tour_step
+#### Tour Step
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
 | `metadata`        | Object that contains `stepIndex` of the tour that was viewed, and `type` either "next" or "previous" telling whether the user moved forward or backwards | 
 
-#### checklist_step_completed
+#### Checklist Step Completed
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `checklist_id`     | Id of the checklist      |
 | `metadata`        | Object that contains `stepId` of the checklist that was completed | 
 
-#### checklist_finished
+#### Checklist Finished
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `checklist_id`     | Id of the checklist      |
 
-#### smart_tip_available
+#### Smart Tip Available
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `smart_tip_id`      | Id of the smart tip      |
 
-#### smart_tip_open
+#### Smart Tip Open
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `smart_tip_id`      | Id of the smart tip      |
 
-#### announcement_shown
+#### Announcement Shown
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `announcement_id`  | Id of the announcement   |
 
-#### announcement_action_clicked
+#### Announcement Action Clicked
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `announcement_id`  | Id of the announcement   |
 
-#### announcement_closed
+#### Announcement Closed
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `announcement_id`  | Id of the announcement   |
 
-#### nps_widget_shown
+#### Nps Widget Shown
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
