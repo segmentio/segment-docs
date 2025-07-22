@@ -36,20 +36,20 @@ The table below lists events that Produktly sends to Segment. These events appea
 
 | Event Name                    | Description                                 |
 | ----------------------------- | ------------------------------------------- |
-| `tour_available`              | Tour was available for user                 |     
-| `tour_start`                  | Tour was started by user                    | 
-| `tour_auto_start`             | Tour was automatically started              |       
-| `tour_continue`               | Tour was continued by user                  |     
-| `tour_finish`                 | Tour was finished by user                   |   
-| `tour_step`                   | User saw a specific step of a tour          | 
-| `checklist_step_completed`    | User completed a step of a checklist        |               
-| `checklist_finished`          | User completed all the steps in a checklist |         
-| `smart_tip_available`         | Smart tip was available for user            |           
-| `smart_tip_open`              | Smart tip was opened                        |     
-| `announcement_shown`          | Announcement was shown to user              |         
-| `announcement_action_clicked` | User clicked on announcement action         |                   
-| `announcement_closed`         | Announcement was closed by user             |           
-| `nps_widget_shown`            | NPS widget was shown to user                |       
+| `Tour Available`              | Tour was available for user                 |     
+| `Tour Start`                  | Tour was started by user                    | 
+| `Tour Auto Start`             | Tour was automatically started              |       
+| `Tour Continue`               | Tour was continued by user                  |     
+| `Tour Finish`                 | Tour was finished by user                   |   
+| `Tour Step`                   | User saw a specific step of a tour          | 
+| `Checklist Step Completed`    | User completed a step of a checklist        |               
+| `Checklist Finished`          | User completed all the steps in a checklist |         
+| `Smart Tip Available`         | Smart tip was available for user            |           
+| `Smart Tip Open`              | Smart tip was opened                        |     
+| `Announcement Shown`          | Announcement was shown to user              |         
+| `Announcement Action Clicked` | User clicked on announcement action         |                   
+| `Announcement Closed`         | Announcement was closed by user             |           
+| `Nps Widget Shown`            | NPS widget was shown to user                |       
 
 
 
