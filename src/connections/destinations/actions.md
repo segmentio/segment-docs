@@ -291,7 +291,7 @@ Destination Filters are compatible with Destination Actions. Consider a Destinat
 - You need to remove properties from the data sent to the destination.
 - You need to filter data from multiple call types, for example, Track, Page, and Identify calls.
 
-If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
+If your use case doesn't match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
 
 ## Duplicate Mappings
 
