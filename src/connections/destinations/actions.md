@@ -98,7 +98,7 @@ This approach involves configuring a destination filter on both the Classic and 
 1. Configure the classic destination filter to block events by the `received_at` field with a certain value.
 2. Set up the Actions destination to drop events until the `received_at` timestamp field reaches that same value.
 
-While Destination Filters within the UI cannot access any top-level fields, such as `received_at`, this is not a limitation for [Destination Filters](https://docs.segmentapis.com/tag/Destination-Filters/){:target="_blank”} created by the [Public API](/docs/api/public-api/) using [Filter Query Language (FQL)](/docs/api/public-api/fql/). Since `received_at` is a top-level field in the payload, you need to create a destination filter with the Public API and submit the request with that FQL information described below.
+While Destination Filters within the UI cannot access any top-level fields, like `received_at`, this is not a limitation for [Destination Filters](https://docs.segmentapis.com/tag/Destination-Filters/){:target="_blank”} created by the [Public API](/docs/api/public-api/) using [Filter Query Language (FQL)](/docs/api/public-api/fql/). Since `received_at` is a top-level field in the payload, you need to create a destination filter with the Public API and submit the request with that FQL information described below.
 
 By combining these Filters, Segment sends events through the Classic integration up until a specified time and then blocks events after that. The Actions integration then blocks events until that specified time and only allows events beginning at that specified time.
 
