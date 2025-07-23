@@ -240,6 +240,142 @@ You can't concatenate event variables and plain text with static values and func
 
 ![Mapping UI showing two concatenated fields: "+1 phone" and "context.page.url context.page.path"](images/mapping-concatenation.png)
 
+### Liquid syntax
+The liquid syntax function enables you to transform event data with fine-grain control before it reaches cloud-mode destinations using the LiquidJS templating language. Use Liquid templates to clean, format, or conditionally transform data such as user properties, timestamps, or event metadata to meet the requirements of your downstream tools. Liquid templates are applied in the **Mappings** tab of your Segment workspace to enable you to integrate with your event pipeline. 
+
+#### Supported liquid tags and filters
+Segment supports the following LiquidJS tags and filters for mappings. Segment selected these to ensure performance, security, and compatibility with real-time event processing. Segment disabled unsupported tags and filters to prevent performance degradation or security risks.
+
+#### Supported tags
+| Tag Name          | Description |
+|-------------------|-------------|
+| `assign`          | Assigns a value to a variable for reuse in the template. |
+| `capture`         | Captures output into a variable for complex transformations. |
+| `case`            | Implements switch-like logic for conditional processing. |
+| `comment`         | Ignores content during rendering; useful for documentation. |
+| `decrement`       | Decrements a counter variable; useful for simple counting. |
+| `echo`            | Outputs variable values; operates on provided event data. |
+| `else`            | Provides an alternative branch in `if` or `case` statements. |
+| `elsif`           | Adds additional conditions in `if` statements. |
+| `if`              | Enables conditional logic based on event data. |
+| `increment`       | Increments a counter variable; useful for simple counting. |
+| `liquid`          | Allows nested Liquid code execution in a sandboxed environment. |
+| `raw`             | Outputs content verbatim without escaping. |
+| `unless`          | Executes logic if a condition is not true (negation of `if`). |
+| `when`            | Part of `case` statements for matching specific values. |
+
+#### Supported filters
+| Filter Name                    | Description |
+|--------------------------------|-------------|
+| `abs`                          | Returns the absolute value of a number. |
+| `append`                       | Concatenates a string to the end of another string. |
+| `at_least`                     | Returns the greater of two numbers. |
+| `at_most`                      | Returns the lesser of two numbers. |
+| `capitalize`                   | Capitalizes the first letter of a string. |
+| `ceil`                         | Rounds a number up to the next integer. |
+| `cgi_escape`                   | Escapes strings for CGI contexts. |
+| `compact`                      | Removes null values from an array. |
+| `date`                         | Formats a date using a specified format (for example, `%s` for Unix timestamp). |
+| `date_to_long_string`          | Formats a date into a long string (for example, `01 July 2025`). |
+| `date_to_rfc822`               | Formats a date in RFC822 format. |
+| `date_to_string`               | Converts a date to a short string format. |
+| `date_to_xmlschema`            | Formats a date in XML schema format. |
+| `default`                      | Provides a default value for null inputs. |
+| `divided_by`                   | Divides a number by another number. |
+| `downcase`                     | Converts a string to lowercase. |
+| `escape`                       | Escapes HTML characters in a string. |
+| `escape_once`                  | Escapes HTML characters only once. |
+| `first`                        | Retrieves the first element of an array. |
+| `floor`                        | Rounds a number down to the previous integer. |
+| `inspect`                      | Converts an object to a JSON string. |
+| `join`                         | Joins array elements into a string with a separator. |
+| `json`                         | Converts an object to a JSON string. |
+| `jsonify`                      | Similar to `json`; converts an object to a JSON string. |
+| `last`                         | Retrieves the last element of an array. |
+| `lstrip`                       | Removes leading whitespace from a string. |
+| `minus`                        | Subtracts a number from another number. |
+| `modulo`                       | Returns the remainder of a division operation. |
+| `normalize_whitespace`         | Normalizes whitespace in a string. |
+| `number_of_words`              | Counts the number of words in a string. |
+| `plus`                         | Adds two numbers. |
+| `pop`                          | Removes the last element from an array. |
+| `push`                         | Adds an element to the end of an array. |
+| `prepend`                      | Adds a string to the start of another string. |
+| `raw`                          | Outputs content verbatim without escaping. |
+| `remove`                       | Removes all occurrences of a substring. |
+| `remove_first`                 | Removes the first occurrence of a substring. |
+| `remove_last`                  | Removes the last occurrence of a substring. |
+| `replace`                      | Replaces all occurrences of a substring with another string. |
+| `replace_first`                | Replaces the first occurrence of a substring. |
+| `replace_last`                 | Replaces the last occurrence of a substring. |
+| `round`                        | Rounds a number to a specified number of decimal places. |
+| `rstrip`                       | Removes trailing whitespace from a string. |
+| `shift`                        | Removes the first element from an array. |
+| `size`                         | Returns the length of a string or array. |
+| `slice`                        | Extracts a portion of a string or array. |
+| `slugify`                      | Converts a string into a URL-friendly format. |
+| `split`                        | Splits a string into an array based on a delimiter. |
+| `strip`                        | Removes whitespace from both ends of a string. |
+| `strip_html`                   | Removes HTML tags from a string. |
+| `strip_newlines`               | Removes newline characters from a string. |
+| `sum`                          | Sums numeric values in an array. |
+| `times`                        | Multiplies a number by another number. |
+| `to_integer`                   | Converts a value to an integer. |
+| `truncate`                     | Truncates a string to a specified length. |
+| `truncatewords`                | Truncates a string to a specified word count. |
+| `unshift`                      | Adds an element to the start of an array. |
+| `upcase`                       | Converts a string to uppercase. |
+| `uri_escape`                   | Escapes a string for use in a URI. |
+| `url_decode`                   | Decodes a URL-encoded string. |
+| `url_encode`                   | Encodes a string for use in a URL. |
+| `where`                        | Filters an array based on a property and value. |
+| `xml_escape`                   | Escapes characters for XML compatibility. |
+
+#### Examples
+Below are two examples demonstrating how to use Liquid templates in Segment mappings to transform event data for cloud-mode destinations. These examples showcase common use cases like string manipulation and conditional logic.
+
+##### Example 1: Standardize email addresses
+This example converts an email address to lowercase and removes extra whitespace, ensuring consistency for a destination.
+
+```json
+{% if event.properties.email %}
+  {{ event.properties.email | downcase | strip }}
+{% else %}
+  {{ event.properties.email | default: "unknown@example.com" }}
+{% endif %}
+```
+Input: `event.properties.email` = "user@example.com"
+Output: user@example.com
+
+Explanation:
+* The `if` tag checks if `event.properties.email` exists.
+* The `downcase` filter converts the email to lowercase.
+* The `strip` filter removes leading or trailing whitespace.
+* The `default` filter provides a fallback email if the input is missing.
+
+##### Example 2: Transform phone number with conditional logic
+This example formats a phone number by removing non-digit characters, adding a country code, and prepending a plus sign.
+
+```json
+{% if event.properties.phone %}
+  {% assign phone = event.properties.phone | strip | remove: "-" | remove: "(" | remove: ")" | remove: " " %}
+  {% if phone | slice: 0, 1 != "1" %}
+    {% assign phone = phone | prepend: "1" %}
+  {% endif %}
+  {{ phone | prepend: "+" }}
+{% else %}
+  {{ event.properties.phone | default: "" }}
+{% endif %}
+```
+Input: `event.properties.phone` = "(123) 456-7890"
+Output: +11234567890
+
+Explanation:
+* The `assign` tag stores the cleaned phone number after applying `strip` and `remove` filters to eliminate whitespace and non-digit characters (for example, `-`, `(`, `)`).
+* The `slice: 0, 1` filter checks if the phone number starts with `1`; if not, `prepend: "1"` adds the country code.
+* The `prepend: "+"` filter adds the `+` prefix.
+* The `default` filter outputs an empty string if the phone number is missing.
+
 ## Conditions
 
 > info ""
