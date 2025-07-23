@@ -329,7 +329,7 @@ When an event triggers multiple mappings, a request is generated for each mappin
 #### Why is an OAuth "access token expired" message appearing in Segment?
 Access tokens generated during initial authorization are short-lived, for example, when you connect a destination via OAuth. The token typically remains valid for 30 minutes to 1 hour. When Segment receives a `401 error` response from a destination after a token expires, it will automatically request the destination for a new token and will then retry the event. Therefore, `401` responses are sometimes expected and do not indicate an event failure. There are 3 event flows when events are received and sent to a destination:
 
-- through source.
+- Through a source
 - through event tester.
 - through actions tester in mapping screen.
 
