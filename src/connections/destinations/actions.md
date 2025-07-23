@@ -7,7 +7,7 @@ The Destination Actions framework improves on classic destinations by enabling y
 
 You can also choose which event types, event names, or event property values trigger an Action. These Triggers and Mappings make it possible to send different versions of the Action, depending on the context from which it is triggered.
 
-Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires and which data is optional. For example, [Amplitude](/docs/connections/destinations/catalog/actions-amplitude) requires that you always send a  `LogEvent` and [Slack](/docs/connections/destinations/catalog/actions-slack) always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
+Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events is required and which is optional. For example, [Amplitude](/docs/connections/destinations/catalog/actions-amplitude) requires that you always send a  `LogEvent` and [Slack](/docs/connections/destinations/catalog/actions-slack) always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
 
 ## Benefits of Destination Actions
 
