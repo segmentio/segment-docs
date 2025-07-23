@@ -162,7 +162,7 @@ To delete a destination action, select the action, click **...** and select **De
 This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
 ## Test a destination action
-To test a destination action, follow the instructions outlined in [Event Tester](/docs/connections/test-connections/). You must enable a mapping to test the destination. If a mapping is not enabled, the following error message will appear: `You may not have any subscriptions that match this event.`
+To test a destination action, follow the instructions outlined in the [Event Tester](/docs/connections/test-connections/) documentation. You must enable a mapping to test the destination. If a mapping is not enabled, the following error message will appear: `You may not have any subscriptions that match this event.`
 
 You can also test within the mapping itself. To test the mapping:
 1. Navigate to the **Mappings** tab of your destination. 
