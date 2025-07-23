@@ -247,6 +247,7 @@ The liquid syntax function enables you to transform event data with fine-grain c
 Segment supports the following LiquidJS tags and filters for mappings. Segment selected these to ensure performance, security, and compatibility with real-time event processing. Segment disabled unsupported tags and filters to prevent performance degradation or security risks.
 
 #### Supported tags
+
 | Tag Name          | Description |
 |-------------------|-------------|
 | `assign`          | Assigns a value to a variable for reuse in the template. |
@@ -265,6 +266,7 @@ Segment supports the following LiquidJS tags and filters for mappings. Segment s
 | `when`            | Part of `case` statements for matching specific values. |
 
 #### Supported filters
+
 | Filter Name                    | Description |
 |--------------------------------|-------------|
 | `abs`                          | Returns the absolute value of a number. |
