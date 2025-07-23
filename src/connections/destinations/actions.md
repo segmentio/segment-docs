@@ -200,7 +200,7 @@ The required fields for a destination mapping appear automatically. Click **+** 
 
 Segment offers suggested mappings that automatically propose relevant destination fields for both model columns and payload elements. For example, if your model includes a column or payload field named `transaction_amount`, the feature might suggest mapping it to a destination field like `Amount` or `TransactionValue`. This automation, powered by intelligent autocompletion, matches and identifies near-matching field names to streamline the setup. 
 
-To use Suggested Mappings, the workspace owner must first accept the Customer AI Terms and Conditions. Ensure that you review the suggested mappings for accuracy before finalizing them as the suggestions are not guaranteed to be 100% accurate.
+To use Suggested Mappings, a user with the [Workspace Owner role](/docs/segment-app/iam/roles/) must first accept the Customer AI Terms and Conditions. Ensure that you review the suggested mappings for accuracy before finalizing them as the suggestions are not guaranteed to be 100% accurate.
 
 For more information, see [Segment's Suggested Mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
 
