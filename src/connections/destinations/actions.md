@@ -311,7 +311,7 @@ Segment creates a disabled mapping with the name "Original Mapping Name (Copy)".
 
 #### Why does a validation error appears when using the Event Tester?
 
-When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, an error message that states `You may not have any subscriptions that match this event` will appear. 
+When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states `You may not have any subscriptions that match this event`. 
 
 To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
 
