@@ -16,7 +16,7 @@ The advantages of using Destination Actions include:
 - **Easier setup**: Destination Actions have fewer initial settings, which can decrease the time spent configuring the destination.
 - **Increased transparency**: You can see the exact data that is sent to the destination and when Segment sends it. For example, users can see exactly when Segment sends an IP address to [FullStory](https://www.fullstory.com/){:target="_blank"} or an AnonymousId to [Amplitude](https://amplitude.com/){:target="_blank"}.
 - **Improved customization**: You can determine which events from your sources trigger actions, and map the events to destination-supported actions. For example, you can define exactly which events are considered purchases by [Braze](https://www.braze.com/){:target="_blank"}.
-- **Partner ownership**: Partners can own and contribute to any Actions-based destination that use cloud and device mode (web).
+- **Partner ownership**: Partners can own and contribute to any Actions-based destination that uses [cloud or device (web) connection modes](/docs/connections/destinations/#connection-modes).
 
 
 ## Available Actions-based Destinations
