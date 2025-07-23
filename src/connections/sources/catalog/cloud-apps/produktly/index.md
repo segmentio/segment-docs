@@ -57,90 +57,15 @@ The table below lists events that Produktly sends to Segment. These events appea
 
 See the list of event properties.
 
-#### Tour Available
 
 | Property Name     | Description              |
 | ----------------- | ------------------------ |
 | `tour_id`          | Id of the tour           |
-
-#### Tour Start
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `tour_id`          | Id of the tour           |
-
-#### Tour Auto Start
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `tour_id`          | Id of the tour           |
-
-#### Tour Continue
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `tour_id`          | Id of the tour           |
-
-#### Tour Finish
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `tour_id`          | Id of the tour           |
-
-#### Tour Step
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `tour_id`          | Id of the tour           |
-| `metadata`        | Object that contains `stepIndex` of the tour that was viewed, and `type` either "next" or "previous" telling whether the user moved forward or backwards | 
-
-#### Checklist Step Completed
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
+| `metadata`        | (For the `Tour Step` event) Object that contains `stepIndex` of the tour that was viewed, and `type` either "next" or "previous" telling whether the user moved forward or backwards | 
 | `checklist_id`     | Id of the checklist      |
-| `metadata`        | Object that contains `stepId` of the checklist that was completed | 
-
-#### Checklist Finished
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `checklist_id`     | Id of the checklist      |
-
-#### Smart Tip Available
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
+| `metadata`        | (For the `Checklist Step Completed` event) Object that contains `stepId` of the checklist that was completed | 
 | `smart_tip_id`      | Id of the smart tip      |
-
-#### Smart Tip Open
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `smart_tip_id`      | Id of the smart tip      |
-
-#### Announcement Shown
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
 | `announcement_id`  | Id of the announcement   |
-
-#### Announcement Action Clicked
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `announcement_id`  | Id of the announcement   |
-
-#### Announcement Closed
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
-| `announcement_id`  | Id of the announcement   |
-
-#### Nps Widget Shown
-
-| Property Name     | Description              |
-| ----------------- | ------------------------ |
 | `nps_widget_id`     | Id of the NPS widget     |
 
 
