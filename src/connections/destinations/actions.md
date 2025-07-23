@@ -73,7 +73,7 @@ Moving from a classic destination to an actions-based destination is a manual pr
 1. Create the actions-based destination with your development or test source.
 2. Copy API keys, connection details, and other settings from the classic destination to the actions-based destination.
 3. Refer to the actions-based destination's documentation for information about how to migrate specific settings.
-4. Disable the classic version of the destinatio  and enable the actions-based version.
+4. Disable the classic version of the destination and enable the actions-based version.
 5. Verify that data is flowing from the development or test source to the partner tool.
 6. Repeat steps 1-5 with your production source.
 
