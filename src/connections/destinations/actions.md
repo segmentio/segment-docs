@@ -289,7 +289,7 @@ In **source** fields, dots are only supported for accessing object keys. Literal
 ## Destination Filters
 Destination Filters are compatible with Destination Actions. Consider a Destination Filter when:
 - You need to remove properties from the data sent to the destination.
-- You need to filter data from multiple types of call, for example, Track, Page, and Identify calls.
+- You need to filter data from multiple call types, for example, Track, Page, and Identify calls.
 
 If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
 
