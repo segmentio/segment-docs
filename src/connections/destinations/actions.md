@@ -330,7 +330,7 @@ When an event triggers multiple mappings, a request is generated for each mappin
 Access tokens generated during initial authorization are short-lived, for example, when you connect a destination via OAuth. The token typically remains valid for 30 minutes to 1 hour. When Segment receives a `401 error` response from a destination after a token expires, it will automatically request the destination for a new token and will then retry the event. Therefore, `401` responses are sometimes expected and do not indicate an event failure. There are 3 event flows when events are received and sent to a destination:
 
 - Through a source
-- through event tester.
+- Through the event tester
 - Through the actions tester on the mapping screen
 
 The underlying systems for these flows have their own copy of the token, which can expire at different points in time. If you see a `401` error in a sample response, it is likely that another request was made afterward to fetch a new token. Then one more request was made to actually send the data in your payload to the downstream destination.
