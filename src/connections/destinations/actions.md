@@ -317,7 +317,7 @@ To resolve the error, create a mapping with a trigger to handle the event being 
 
 #### Why is the data not sending downstream?
 
-If no mappings are enabled to trigger on an event that has been received from the connected source, the destination will not send any events. Ensure that at least 1 mapping has been configured and enabled in the destination mappings for an event that you would like to reach downstream. 
+If no mappings are enabled to trigger on an event that has been received from the connected source, the destination won't send any events. Ensure that you've configured and enabled at least 1 mapping in the destination mappings for an event that you'd like to reach downstream. 
 
 > info ""
 > Events without mappings enabled to handle them display as being discarded due to "No matching mapping" in a destination's Delivery Overview.
