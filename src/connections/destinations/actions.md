@@ -324,7 +324,7 @@ If no mappings are enabled to trigger on an event that has been received from th
 
 #### Why are multiple mappings triggered by the same event?
 
-When an event triggers multiple mappings, a request is generated for each mapping configured to trigger on the event. For example, if two mappings are enabled for the `Subscription Updated` event and both mappings have conditions defined to trigger on the 'Subscription Updated' event, two requests will be generated and sent to the destination for each event - one for each mapping.
+When an event triggers multiple mappings, a request is generated for each mapping configured to trigger on the event. For example, if two mappings are enabled for the `Subscription Updated` event and both mappings have conditions defined to trigger on the 'Subscription Updated' event, 2 requests are generated and sent to the destination for each event - 1 for each mapping.
 
 #### Why is an OAuth "access token expired" message appearing in Segment?
 Access tokens generated during initial authorization are short-lived, for example, when you connect a destination via OAuth. The token typically remains valid for 30 minutes to 1 hour. When Segment receives a `401 error` response from a destination after a token expires, it will automatically request the destination for a new token and will then retry the event. Therefore, `401` responses are sometimes expected and do not indicate an event failure. There are 3 event flows when events are received and sent to a destination:
