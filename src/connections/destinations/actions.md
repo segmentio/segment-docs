@@ -331,7 +331,7 @@ Access tokens generated during initial authorization are short-lived, for exampl
 
 - Through a source
 - through event tester.
-- through actions tester in mapping screen.
+- Through the actions tester on the mapping screen
 
 The underlying systems for these flows have their own copy of the token, which can expire at different points in time. If you see a `401` error in a sample response, it is likely that another request was made afterward to fetch a new token. Then one more request was made to actually send the data in your payload to the downstream destination.
 
