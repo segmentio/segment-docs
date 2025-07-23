@@ -80,7 +80,7 @@ Moving from a classic destination to an actions-based destination is a manual pr
 ### Migrate your destination filters from the classic destination to the actions destination
 
 > warning ""
-> You can only migrate your destination filters using the Public API if you are on the Segment Business Tier plan. This functionality isn't available in the Segment app. 
+> You can only migrate your destination filters using the Public API if you're on the Segment Business Tier plan. This functionality isn't available in the Segment app. 
 
 To migrate your destination filters to your actions destination from the classic destination: 
 1. Send a request to the Public API endpoint. 
