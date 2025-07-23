@@ -282,7 +282,7 @@ You can combine criteria in a single group using **`ALL`** or **`ANY`**.  Use an
 > Trigger fields don't support double quotes (`"`) or the tilde (`~`) character.
 
 ## Mapping field limitations
-In **destination** fields, you can use dot notation to create nested objects and arrays, such as `info.name` or `info[0].email`. This is not the case if the field is enclosed in double quotes. For example, `"user.email"` creates a literal key, not a nested structure. 
+In **destination** fields, you can use dot notation to create nested objects and arrays, like `info.name` or `info[0].email`. This isn't the case if the field is enclosed in double quotes. For example, `"user.email"` creates a literal key, not a nested structure. 
 
 In **source** fields, dots are only supported for accessing object keys. Literal strings that include a dot, like `user.email`, aren't supported as property names.
 
