@@ -344,5 +344,5 @@ Each event must include all of the data you'd like to send downstream. For examp
 #### Why do I get a "Couldn't load page" error when viewing or editing a mapping?
 
 This error might occur due to a browser cache conflict or if an event property name includes a `/` character. To fix this:
-- Try clearing your browser cache or opening the mapping page in an incognito/ private window.
+- Try clearing your browser cache or opening the mapping page in an incognito or private window.
 - Check whether the mapped property name contains a `/`. If it does, rename the property to remove the `/` and update the mapping.
