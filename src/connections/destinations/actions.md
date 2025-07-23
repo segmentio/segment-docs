@@ -32,7 +32,7 @@ Destination Actions are available to all customers on all Segment plans. You do 
 - You can use the [Event Tester](/docs/connections/test-connections) with Destination Actions. Event delivery metrics are collected and available in the destination information pages.
 - If you are using [Protocols](/docs/protocols/), Destination Actions actions are applied **after** [schema filters](/docs/protocols/enforce/schema-configuration/) and [transformations](/docs/protocols/transform/). 
 - If you are using [Destination Filters](/docs/connections/destinations/destination-filters/), Actions are applied after the filters. They are not applied to data that is filtered out.
-- Destination Actions can not be accessed or modified using the Segment APIs yet.
+- Destination Actions can't be accessed or modified using the Segment APIs.
 
 ## Components of a Destination Action
 
