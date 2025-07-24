@@ -35,7 +35,7 @@ To set up the dbt extension, you'll need:
 To connect Segment to your dbt models, you’ll first need to configure a Git connection. This allows Segment to pull dbt models directly from your repository.
 
 1. In your Segment workspace, navigate to **Settings > Extensions**.
-2. Click either **Set up dbt model syncs** or **Set up integration**.
+2. Click either **Set up dbt model syncs**.
 3. On the **Configure service credentials** page, select a credential and protocol, add your key or token, then click **Next**.
 4. In the **Connect source** window, select an existing Reverse ETL warehouse source from the dropdown, then click **Save**.
 
