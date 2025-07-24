@@ -32,14 +32,14 @@ To set up the dbt extension, you'll need:
 
 ### Git repository and dbt Models setup
 
-Follow these steps to connect the Git repository that stores your dbt Models:
+To connect Segment to your dbt models, you’ll first need to configure a Git connection. This allows Segment to pull dbt models directly from your repository.
 
 1. In your Segment workspace, navigate to **Settings > Extensions**.
-2. Click **Set up Git sync**.
-3. On the **Configure service credentials** page, select a service and protocol, add your GitHub App, SSH private key or GitHub token, then click **Next**.
+2. Click either **Set up dbt model syncs**.
+3. On the **Configure service credentials** page, select a credential and protocol, add your key or token, then click **Next**.
 4. In the **Connect source** window, select an existing Reverse ETL warehouse source from the dropdown, then click **Save**.
 
-After you've saved your setup, you can configure your Git repository's settings to your needs by changing the repository, branch, dbt version, default schema, and project path.
+After you've saved your setup, you can configure your settings to your needs by changing the repository, branch, dbt version, default schema, and project path.
 
 ### dbt Cloud setup
 
@@ -112,7 +112,7 @@ To enable CI Checks, authorize a GitHub App credential for your Git connection. 
 
 The following table lists common dbt Extension errors, as well as their solutions:
 
-| Error       | Error message                                                              | Solution                                                                                                                                                                                                      |
-| ----------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Failed sync | `Sync Failed: Incorrect dbt Project File Path: dbt project file not found` | Verify that the path to your `dbt_project.yml` file is relative to the repository root, excluding the root branch. <br> For example, use `project/dbt_project.yml` instead of `main/project/dbt_project.yml`. |
-| Failed sync | `Sync Failed: remote: Write access to repository not granted`              | Verify that the account associated with the token has a write role in the repository settings. Fine-grained tokens may require specific roles, depending on your Git provider.                                |
+| Error       | Error message                                                            | Solution                                                                                                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Failed sync | Sync Failed: Incorrect dbt Project File Path: dbt project file not found | Verify that the path to your `dbt_project.yml` file is relative to the repository root, excluding the root branch. <br> For example, use `project/dbt_project.yml` instead of `main/project/dbt_project.yml`. |
+| Failed sync | Sync Failed: remote: Write access to repository not granted              | Verify that the account associated with the token has a write role in the repository settings. Fine-grained tokens may require specific roles, depending on your Git provider.                                |
