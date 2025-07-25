@@ -339,14 +339,19 @@ Below are two examples demonstrating how to use Liquid templates in Segment mapp
 ##### Example 1: Standardize email addresses
 This example converts an email address to lowercase and removes extra whitespace, ensuring consistency for a destination.
 
-```json
-{% if event.properties.email %}
-  {{ event.properties.email | downcase | strip }}
-{% else %}
-  {{ event.properties.email | default: "unknown@example.com" }}
-{% endif %}
+
 ```
+  {% raw %}
+  {% if event.properties.email %}
+    {{ event.properties.email | downcase | strip }}
+  {% else %}
+    {{ event.properties.email | default: "unknown@example.com" }}
+  {% endif %}
+  {% endraw %}
+```
+
 Input: `event.properties.email` = "user@example.com"
+
 Output: user@example.com
 
 Explanation:
@@ -358,18 +363,23 @@ Explanation:
 ##### Example 2: Transform phone number with conditional logic
 This example formats a phone number by removing non-digit characters, adding a country code, and prepending a plus sign.
 
-```json
-{% if event.properties.phone %}
-  {% assign phone = event.properties.phone | strip | remove: "-" | remove: "(" | remove: ")" | remove: " " %}
-  {% if phone | slice: 0, 1 != "1" %}
-    {% assign phone = phone | prepend: "1" %}
-  {% endif %}
-  {{ phone | prepend: "+" }}
-{% else %}
-  {{ event.properties.phone | default: "" }}
-{% endif %}
+
 ```
+  {% raw %}
+  {% if event.properties.phone %}
+    {% assign phone = event.properties.phone | strip | remove: "-" | remove: "(" | remove: ")" | remove: " " %}
+    {% if phone | slice: 0, 1 != "1" %}
+      {% assign phone = phone | prepend: "1" %}
+    {% endif %}
+    {{ phone | prepend: "+" }}
+  {% else %}
+    {{ event.properties.phone | default: "" }}
+  {% endif %}
+  {% endraw %}
+```
+
 Input: `event.properties.phone` = "(123) 456-7890"
+
 Output: +11234567890
 
 Explanation:
