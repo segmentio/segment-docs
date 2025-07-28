@@ -16,22 +16,23 @@ hide_action:
 
 Deliver effective Facebook Ads campaigns by defining and syncing [custom audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences){:target="_blank”} to power ad suppression, acquisition (using lookalikes), retargeting, and more.
 
-This destination sends audiences, or lists of users, from your data warehouse to Facebook Custom Audiences using Reverse ETL. Syncs can add or remove users from your Facebook Custom Audiences as records are created, updated, or deleted in your warehouse. 
-
-> info "This destination only supports Reverse ETL sources"
-> This destination only supports [Reverse ETL sources](/docs/connections/reverse-etl/#what-warehouse-data-sources-does-segment-support). To connect Facebook Custom Audiences to Twilio Engage, use the [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) destination. 
+This destination sends audiences, or lists of users, to Facebook Custom Audiences. You can connect this destination to Reverse ETL sources to sync data from your warehouse, or to Engage Audiences to sync computed audiences.
 
 ## Getting started
 
 ### Prerequisites
-- A Reverse ETL source already set up. If you don't yet have a Reverse ETL source, follow the instructions in Segment's [Reverse ETL documentation](/docs/connections/reverse-etl/#getting-started). Segment recommends setting an [External ID](#sync-audience) as the primary key for your Reverse ETL model, as you'll need an External ID to remove users from your custom audiences. 
+
+- A source already set up:
+  - For Reverse ETL: If you don't yet have a Reverse ETL source, follow the instructions in Segment's [Reverse ETL documentation](/docs/connections/reverse-etl/#getting-started). Segment recommends setting an [External ID](#sync-audience) as the primary key for your Reverse ETL model, as you'll need an External ID to remove users from your custom audiences.
+  - For Engage Audiences: An [Engage Audience](/docs/engage/audiences/) configured which you can connect to this destination. 
 - A Facebook account with [ads_management](https://developers.facebook.com/docs/permissions#ads_management){:target="_blank”} permissions for the target Facebook Ad Account(s). The Facebook Ad Account(s) must also be associated with a [Facebook Business Account](https://www.facebook.com/business/help/407323696966570?id=649869995454285){:target="_blank”}.
 - Ensure that the user connecting to the destination using OAuth has at least an *Advertiser* or *Admin* role on the ad account. To manage permissions and roles for an ad account, reference [Facebook's documentation](https://www.facebook.com/business/help/186007118118684?id=829106167281625){:target="_blank"}.
 
 ### Connect to Facebook Custom Audiences
+
 1. From your Segment app, navigate to **Catalog > Destinations** and search for "Facebook Custom Audiences (Actions)". 
 2. Select the Facebook Custom Audiences (Actions) destination and click **Add destination**. 
-3. Select the Reverse ETL source you'd like to connect to your Facebook Custom Audiences (Actions) Destination and click **Next**. 
+3. Select the source you'd like to connect to your Facebook Custom Audiences (Actions) Destination and click **Next**. 
 4. Enter a name for your destination and click **Create destination**. 
 5. Navigate to your destination's settings page and click **Connect to...** to authenticate with Facebook.
 6. Return to the Segment app and enter your Advertiser Account ID. See Facebook's [Find your Facebook ad account ID number](https://www.facebook.com/business/help/1492627900875762){:target="_blank”} documentation for more information.
@@ -121,6 +122,33 @@ Segment automatically hashes any of the following fields that are not already SH
 * Month of birth
 * Day of birth
 * Gender
+
+
+## Additional Traits Matching
+
+> info ""
+> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
+
+Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, the Facebook Custom Audiences (Actions) can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise Segment can't send it to Facebook.
+
+> success ""
+> Visit Segment's [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to learn more.
+
+
+| **Name**        | **Trait Key formats supported**                             | **Facebook Keys**    | **FB Hashing Required** | **FB Guidelines**                                                                                                                                          |
+| Email           | email                                                        | EMAIL                | Yes (Segment does the hashing for you. In case you are *already* hashing emails, emails will get sent to Facebook double-hashed. Facebook will still match on double-hashed emails, but this is *not* recommended.) | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
+| Mobile ID       | mobile_id                                                    | MADID                | No                       | Use all lowercase, keep hyphens.                                                                                                                          |
+| First Name      | first_name<br>firstname<br>firstName<br>first               | FN                   | Yes                      | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
+| Last Name       | last_name<br>lastname<br>lastName<br>last                   | LN                   | Yes                      | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
+| Phone           | phone<br>phone_number<br>phonenumber<br>phoneNumber         | PHONE (+12023095976) | Yes                      | Remove symbols, letters, and any leading zeroes. You should prefix the country code if `COUNTRY` field is not specified.                                  |
+| Gender          | gender<br>gen                                                | GEN                  | Yes                      | Use these values: `m` for male and `f` for female.                                                                                                        |
+| Birth Year      | birth_year                                                   | DOBY                 | Yes                      | Use the YYYY format from 1900 to current year.                                                                                                            |
+| Birth Month     | birth_month                                                  | DOBM                 | Yes                      | Use the MM format: `01` to `12`.                                                                                                                          |
+| Birth Day       | birthday<br>birth_day<br>date_of_birth<br>DOB<br>dateOfBirth | DOBD                 | Yes                      | Use the DD format: `01` to `31`.                                                                                                                          |
+| State           | state<br>address_state                                       | ST                   | Yes                      | Use the 2-character ANSI abbreviation code, lowercase. Normalize states outside U.S. in lowercase, no punctuation, no special characters, no white space. |
+| City            | city<br>address_city                                         | CT                   | Yes                      | Use `a`-`z` only. Lowercase only, no punctuation, no special characters, no white space.                                                                  |
+| Zipcode         | zip<br>zip_code<br>zipCode                                   | ZIP                  | Yes                      | Use lowercase, no white space. Use only the first 5 digits for U.S. Use Area/District/Sector format for the UK.                                           |
+| Country         | country_code<br>countryCode                                  | COUNTRY              | Yes                      | Use 2-letter country codes (lowercase) in ISO 3166-1 alpha-2.                                                                                             |
 
 
 ## FAQs and troubleshooting
