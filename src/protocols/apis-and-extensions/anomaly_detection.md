@@ -87,9 +87,9 @@ total_violations as (
     group by  event_sent_at::date
 )
 
-      select  v.date,
-              t.total_event_count "Total Violation Count",
-              nvl(v.violation_count, 0) "Total Event Count",
+      select  t.date,
+              t.total_event_count "Total Event Count",
+              nvl(v.violation_count, 0) "Total Violation Count",
               nvl(v.violation_count, 0)::float/t.total_event_count::float as "Violations Per Event"
         from  total_track_event_volume t
    left join  total_violations v
