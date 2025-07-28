@@ -7,13 +7,13 @@ id: 63e52bea7747fbc311d5b872
 ---
 With the Algolia Insights (Actions) destination, you can send [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/){:target="_blank"}. Insight Events are required to use these Algolia features: 
 
-- [Click and conversion analytics](https://www.algolia.com/doc/guides/search-analytics/overview/)
-- [Algolia Recommend](https://www.algolia.com/doc/guides/algolia-recommend/overview/)
-- [Personalization](https://www.algolia.com/doc/guides/personalization/classic-personalization/what-is-personalization/)
-- [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking/)
-- [A/B Testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing/)
-- [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/)
-- [NeuralSearch](https://www.algolia.com/doc/guides/getting-started/neuralsearch/)
+- [Click and conversion analytics](https://www.algolia.com/doc/guides/search-analytics/overview/){:target="_blank"}
+- [Algolia Recommend](https://www.algolia.com/doc/guides/algolia-recommend/overview/){:target="_blank"}
+- [Personalization](https://www.algolia.com/doc/guides/personalization/classic-personalization/what-is-personalization/){:target="_blank"}
+- [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking/){:target="_blank"}
+- [A/B Testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing/){:target="_blank"}
+- [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/){:target="_blank"}
+- [NeuralSearch](https://www.algolia.com/doc/guides/getting-started/neuralsearch/){:target="_blank"}
 
 This destination is maintained by [Algolia](https://www.algolia.com/){:target="_blank”}. For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
@@ -39,7 +39,7 @@ Your app ID and API key can be found in the **API Keys** section of your account
 
 The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to add additional Algolia-related data like an index name and a query ID.
 
-To access your query ID, make sure [`clickAnalytics`](https://www.algolia.com/doc/api-reference/api-parameters/clickAnalytics/) is enabled in your searches. If you're using our [JavaScript v5 search API client](https://www.algolia.com/doc/libraries/javascript/v5/methods/search/search-single-index/?client=javascript), this looks like:
+To access your query ID, make sure [`clickAnalytics`](https://www.algolia.com/doc/api-reference/api-parameters/clickAnalytics/){:target="_blank"} is enabled in your searches. If you're using the [JavaScript v5 search API client](https://www.algolia.com/doc/libraries/javascript/v5/methods/search/search-single-index/?client=javascript){:target="_blank"}, this looks like:
 
 ```js
 import { algoliasearch } from 'algoliasearch';
