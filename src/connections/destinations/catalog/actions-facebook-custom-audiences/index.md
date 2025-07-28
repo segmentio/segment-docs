@@ -126,30 +126,7 @@ Segment automatically hashes any of the following fields that are not already SH
 
 ## Additional Traits Matching
 
-> info ""
-> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
-
-Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, the Facebook Custom Audiences (Actions) can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise Segment can't send it to Facebook.
-
-> success ""
-> Visit Segment's [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to learn more.
-
-
-| **Name**        | **Trait Key formats supported**                             | **Facebook Keys**    | **FB Hashing Required** | **FB Guidelines**                                                                                                                                          |
-| Email           | email                                                        | EMAIL                | Yes (Segment does the hashing for you. In case you are *already* hashing emails, emails will get sent to Facebook double-hashed. Facebook will still match on double-hashed emails, but this is *not* recommended.) | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
-| Mobile ID       | mobile_id                                                    | MADID                | No                       | Use all lowercase, keep hyphens.                                                                                                                          |
-| First Name      | first_name<br>firstname<br>firstName<br>first               | FN                   | Yes                      | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
-| Last Name       | last_name<br>lastname<br>lastName<br>last                   | LN                   | Yes                      | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
-| Phone           | phone<br>phone_number<br>phonenumber<br>phoneNumber         | PHONE (+12023095976) | Yes                      | Remove symbols, letters, and any leading zeroes. You should prefix the country code if `COUNTRY` field is not specified.                                  |
-| Gender          | gender<br>gen                                                | GEN                  | Yes                      | Use these values: `m` for male and `f` for female.                                                                                                        |
-| Birth Year      | birth_year                                                   | DOBY                 | Yes                      | Use the YYYY format from 1900 to current year.                                                                                                            |
-| Birth Month     | birth_month                                                  | DOBM                 | Yes                      | Use the MM format: `01` to `12`.                                                                                                                          |
-| Birth Day       | birthday<br>birth_day<br>date_of_birth<br>DOB<br>dateOfBirth | DOBD                 | Yes                      | Use the DD format: `01` to `31`.                                                                                                                          |
-| State           | state<br>address_state                                       | ST                   | Yes                      | Use the 2-character ANSI abbreviation code, lowercase. Normalize states outside U.S. in lowercase, no punctuation, no special characters, no white space. |
-| City            | city<br>address_city                                         | CT                   | Yes                      | Use `a`-`z` only. Lowercase only, no punctuation, no special characters, no white space.                                                                  |
-| Zipcode         | zip<br>zip_code<br>zipCode                                   | ZIP                  | Yes                      | Use lowercase, no white space. Use only the first 5 digits for U.S. Use Area/District/Sector format for the UK.                                           |
-| Country         | country_code<br>countryCode                                  | COUNTRY              | Yes                      | Use 2-letter country codes (lowercase) in ISO 3166-1 alpha-2.                                                                                             |
-
+Segment [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) allows you to send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, the Facebook Custom Audiences (Actions) can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required as described in [Hashing](#hashing)section.
 
 ## FAQs and troubleshooting
 
