@@ -29,7 +29,8 @@ For more details on account and access level permissions, refer to [TikTok's doc
 
 #### Additional requirements
 
-- If you update the events names from the default Audience Entered or Audience Exited, ensure that you also update them in the "Add to Audience" and "Remove from Audience" mappings. - The Email ID or Advertising ID of the user must be provided.
+- If you update the events names from the default Audience Entered or Audience Exited, ensure that you also update them in the "Add to Audience" and "Remove from Audience" mappings.
+- The Email ID or Advertising ID of the user must be provided.
 - TikTok [requires](https://business-api.tiktok.com/portal/docs?id=1739940585975809){:target="_blank"} `phone` number to be formatted in E.164 form, for example `+1231234567`. If your phone number is missing country code, you can prepend `+1` in the Action Mapping.
 
 ### TikTok Audience Segments
