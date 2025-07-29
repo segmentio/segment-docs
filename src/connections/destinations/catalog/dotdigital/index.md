@@ -27,7 +27,7 @@ This destination is maintained by Dotdigital. For any issues with the destinatio
 ### Add Contact to List
 Before using the Add Context to List Action, complete the following prerequisites: 
 
-- **Lists**: [Create a contact list in Dotdigital](https://support.dotdigital.com/en/articles/8198769-create-a-contact-list) {:target="_blank"}. After you've created a list in Dotdigital, return to the Segment app and select your list from the dropdown in the Segment event mapping.
+- **Lists**: [Create a contact list in Dotdigital](https://support.dotdigital.com/en/articles/8198769-create-a-contact-list){:target="_blank"}. After you've created a list in Dotdigital, return to the Segment app and select your list from the dropdown in the Segment event mapping.
 - **Data Fields**: [Create or edit your data fields in Dotdigital](https://support.dotdigital.com/en/articles/8198833-create-delete-and-edit-custom-data-fields){:target="_blank"}, then return to the Segment app, open the event mapping, and map Segment properties to Dotdigital data fields.
 
 ### Enroll Contact to Program
