@@ -112,6 +112,9 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 ### Audience previews
 After configuring your audience definition, use the **Preview** button to review your audience setup. It shows the total number of profiles that match your criteria and a sample list of those profiles, helping you confirm the audience is correct before launching campaigns. Previews are only available if your audience uses historical data, displaying the current size based on past data. To learn more about the Include Historical Data option, see here https://segment.com/docs/engage/audiences/#how-does-the-historical-data-flag-work. The audience will grow as new profiles meet your criteria. Click any profile in the sample list to view a detailed side sheet with their attributes, making it easy to verify membership. This feature simplifies campaign planning and ensures your audience targets the right profiles.
 
+> info ""
+> Audience preview membership is calculated using data that may be slightly delayed from real-time processing, which can lead to temporary discrepancies between the preview results and the profile information shown in the profile side sheet or via the Profile API.
+
 #### Identifier breakdown
 To check how profiles in your audience are identified, first click **Preview** to view your audience configuration. In the Preview results, navigate to the **Insights** tab (next to the **Users** tab) to see a breakdown of the percentage of profiles associated with each external_id in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time. 
 
