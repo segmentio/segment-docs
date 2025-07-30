@@ -5,7 +5,7 @@ title: Segment for Developers
 This guide explains all you need to know to get started with your Segment implementation, and directs you to more resources depending on your specific needs.
 
 > info ""
-> If you haven't already, you should read the [detailed explanation of Segment](/docs/guides/) on the previous page!
+> If you haven't already, you should read the [detailed explanation of Segment](/docs/guides/) on the previous page.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324262?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Segment in Action" description="See a quick example of Segment working on an ecommerce website. (Must be logged in to access.)" %}
 
@@ -15,7 +15,7 @@ Segment sends messages about activities in your mobile apps, websites or servers
 
 ## Types of Segment messages
 
-Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. We also provide recommended JSON structure (also known as a schema, or 'Spec') that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
+Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. Segment also provides recommended JSON structure (also known as a schema, or Spec) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
 
 There are six calls in the basic tracking API, which answer specific questions:
 
@@ -33,7 +33,7 @@ The other three, Track, Page, and Screen, can be considered as increasingly spec
 A Track call is the most basic type of call, and can represent any type of event. Page and Screen are similar and are triggered by a user viewing a page or screen, however Page calls can come from both web and mobile-web views, while Screen calls *only* occur on mobile devices. Because of the difference in platform, the context information collected is very different between the two types of calls.
 
 > success ""
-> **Tip**! Segment recommends that you always use the Page and Screen calls when recording a page-view, rather than creating a "Page Viewed" event, because the Page/Screen calls automatically collect much better context information.
+> Segment recommends that you always use the Page and Screen calls when recording a page-view, rather than creating a "Page Viewed" event, because the Page/Screen calls automatically collect much better context information.
 
 ## Anatomy of a Segment message
 
