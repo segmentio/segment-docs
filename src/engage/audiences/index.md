@@ -109,6 +109,18 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 
 ![Using dynamic property references with an Audience funnel](/docs/engage/images/dynamic_property_audiences1.png)
 
+### Audience previews
+After configuring your audience definition, use the **Preview** button to review your audience setup. It shows the total number of profiles that match your criteria and a sample list of those profiles, helping you confirm the audience is correct before launching campaigns. Previews are only available if your audience uses historical data, displaying the current size based on past data. To learn more about the Include Historical Data option, see here https://segment.com/docs/engage/audiences/#how-does-the-historical-data-flag-work. The audience will grow as new profiles meet your criteria. Click any profile in the sample list to view a detailed side sheet with their attributes, making it easy to verify membership. This feature simplifies campaign planning and ensures your audience targets the right profiles.
+
+#### Identifier breakdown
+To check how profiles in your audience are identified, first click **Preview** to view your audience configuration. In the Preview results, navigate to the **Insights** tab (next to the **Users** tab) to see a breakdown of the percentage of profiles associated with each external_id in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time. 
+
+> info ""
+> The Identifier Breakdown doesn't show custom IDs included in the Identity resolution configuration unless those IDs are explicitly selected through [ID sync](/docs/engage/trait-activation/id-sync/). By default, Segment only displays external IDs in the breakdown.
+
+#### Audience overlap
+To check how your audience intersects with others in your Segment space, first click **Preview** to view your audience configuration. In the Preview results, navigate to the **Insights** tab (next to the **Users** tab). In the Insights tab, select an existing audience from the dropdown menu and click **Compute overlap** to see the number of shared profiles. This feature optimizes campaign targeting by identifying redundant audiences and refining segmentation.
+
 ### Account-level audiences
 
 If you have a B2B business, you might want to build an Audience of accounts. You can use both account-level traits that you've sent through the [Group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
@@ -397,13 +409,6 @@ Note the following limits for the CSV downloader:
 
 > warning ""
 > You can't add account traits and identifiers using the CSV downloader with account level audiences. This is because every row listed in the CSV file is a user, and since account traits and identifiers only exist on accounts, they wouldn't exist as a user's custom trait and appear on the CSV.
-
-## Identifier Breakdown
-
-The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time.
-
-> info ""
-> The Identifier Breakdown doesn't show custom IDs included in the Identity resolution configuration unless those IDs are explicitly selected through [ID sync](/docs/engage/trait-activation/id-sync/). By default, Segment only displays external IDs in the breakdown.
 
 ## FAQ
 
