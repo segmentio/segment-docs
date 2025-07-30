@@ -39,13 +39,16 @@ A Track call is the most basic type of call, and can represent any type of event
 
 {% include content/message-anatomy.md %}
 
-## Message schemas, Blocks, and Specs
+## Segment Spec and event schemas
 
-The Segment "Specs" provide recommended message schemas - the information we recommend that you collect - for each type of call. These are recommendations not requirements, but if you follow these schema guidelines the Segment servers can more easily identify parts of your messages, and translate them to downstream tools.
+The Segment Spec provides recommended message schemas for each type of event call (like Identify, Track, Page, and Scren). These schemas help you structure your events in a consistent, predictable format, making them easier to understand, maintain, and map to downstream tools.
 
-In addition to the recommended message schemas, Segment also provides "blocks": recommendations on what information to collect and how to format it, for different industries and use cases. These are recommendations only, but by collecting all of the information in these blocks, you can ensure that common tools used in that use-case have the information they need to function.
+The Spec contains two kinds of guidance:
 
-A third section of the Spec is the "industry specs" which provide recommendations that include an explicit translation or mapping in the Segment servers, to best power the downstream Destinations commonly used in these industries.
+- Mapped events, like `Order Completed` and `Product Viewed`, are event names and properties that Segment recognizes and transforms automatically for supported destinations. For example, events like `Order Completed` or `Product Viewed` are mapped to standard ecommerce fields.
+- Recommended events, on the other hand, are suggestions for structuring common event types, but Segment doesn't apply automatic transformations. They serve as best practices to help you maintain clean, useful data, especially if you're designing events for custom or internal use cases.
+
+Segment also offers industry-specific recommendations, which are collections of events and traits commonly used in verticals like ecommerce or B2B SaaS. Segment designed these recommendations to help you collect the right data to power tools typically used in your industry.
 
 ## Sources and Destinations
 
