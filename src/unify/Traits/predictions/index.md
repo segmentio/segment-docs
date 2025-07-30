@@ -81,7 +81,7 @@ To access Predictions, you must:
 
 #### Successful trait computation
 
-This table lists the requirements for a trait to compute successfully:
+This table lists the requirements for a trait to compute successfully: Please note that for the events below, there cannot be any days where the event was not seen or performed in the entire workspace
 
 | Requirement                     | Details                                                                                                                                                                                                                               |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
