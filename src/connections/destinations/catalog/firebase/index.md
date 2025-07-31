@@ -19,6 +19,9 @@ Segment's Firebase destination code is open source and available on GitHub. You 
 
 ## Getting Started on Android
 
+> warning "Firebase doesn't natively support arrays for Realtime Database implementations"
+> If you are using Google's [Realtime Database](https://firebase.google.com/docs/firestore/rtdb-vs-firestore){:target="_blank"} to store Segment event data, see the [Best Practices: Arrays in Firebase](https://firebase.blog/posts/2014/04/best-practices-arrays-in-firebase/){:target="_blank"} blog post for some array best practices.
+
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:
 
 1. Register your mobile app with Firebase at `https://console.firebase.google.com`
@@ -120,7 +123,7 @@ Consent mode may involve updates to your sources outside of Segment, such as inc
 
 To set up consent mode for Google Firebase:
 1. Update your app's SDK to a version that supports consent mode v2. 
-  * Android apps must use F[irebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
+  * Android apps must use [Firebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
   * iOS apps must use [Firebase Apple SDK version 10.17.0 or later](https://firebase.google.com/support/release-notes/ios#analytics){:target="_blank"}.
 
 2. Set up consent mode for your app if you haven't already set it up.
