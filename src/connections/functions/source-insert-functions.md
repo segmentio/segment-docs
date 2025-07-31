@@ -88,11 +88,15 @@ The errors listed are all permanent errors, except `RetryError`. When a `RetryEr
 
 ##### Why does the Delivery Overview tab not display any errors that occur within the source insert function?
 
-Errors in the Delivery Overview tab are not yet visible and is a work in progress. 
+Errors in the Delivery Overview tab are not yet visible and is a work in progress.
 
 ##### Can I test the function with different event types?
 
 You can test the function with different event types from the **Test** tab in the code editor, similar to other functions.
+
+##### Can I replay events that were dropped because of errors?
+
+Segment doesn't allow you to replay events, regardless of the error status. 
 
 ##### Can I use source insert functions for all types of sources?
 
@@ -117,5 +121,6 @@ Segment supports Node.js V18 and installs the dependencies listed [here](https:/
 - `snowflake-sdk` exposed as `snowflakesdk.snowflakesdk`  
 - `@clickhouse/client` exposed as `clickHouseClient.clickHouseClient`  
 - `aws4` exposed as `aws4.aws4`  
-- `@sentry/node` exposed as `sentrylib.sentry` 
+- `@sentry/node` exposed as `sentrylib.sentry`
+
 

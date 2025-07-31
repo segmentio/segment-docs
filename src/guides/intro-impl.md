@@ -5,7 +5,7 @@ title: Segment for Developers
 This guide explains all you need to know to get started with your Segment implementation, and directs you to more resources depending on your specific needs.
 
 > info ""
-> If you haven't already, you should read the [detailed explanation of Segment](/docs/guides/) on the previous page!
+> If you haven't already, you should read the [detailed explanation of Segment](/docs/guides/) on the previous page.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324262?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Segment in Action" description="See a quick example of Segment working on an ecommerce website. (Must be logged in to access.)" %}
 
@@ -15,7 +15,7 @@ Segment sends messages about activities in your mobile apps, websites or servers
 
 ## Types of Segment messages
 
-Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. We also provide recommended JSON structure (also known as a schema, or 'Spec') that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
+Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. Segment also provides recommended JSON structure (also known as a schema, or Spec) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
 
 There are six calls in the basic tracking API, which answer specific questions:
 
@@ -33,19 +33,22 @@ The other three, Track, Page, and Screen, can be considered as increasingly spec
 A Track call is the most basic type of call, and can represent any type of event. Page and Screen are similar and are triggered by a user viewing a page or screen, however Page calls can come from both web and mobile-web views, while Screen calls *only* occur on mobile devices. Because of the difference in platform, the context information collected is very different between the two types of calls.
 
 > success ""
-> **Tip**! Segment recommends that you always use the Page and Screen calls when recording a page-view, rather than creating a "Page Viewed" event, because the Page/Screen calls automatically collect much better context information.
+> Segment recommends that you always use the Page and Screen calls when recording a page-view, rather than creating a "Page Viewed" event, because the Page/Screen calls automatically collect much better contextual information.
 
 ## Anatomy of a Segment message
 
 {% include content/message-anatomy.md %}
 
-## Message schemas, Blocks, and Specs
+## Segment Spec and event schemas
 
-The Segment "Specs" provide recommended message schemas - the information we recommend that you collect - for each type of call. These are recommendations not requirements, but if you follow these schema guidelines the Segment servers can more easily identify parts of your messages, and translate them to downstream tools.
+The Segment Spec provides recommended message schemas for each type of event call (like Identify, Track, Page, and Scren). These schemas help you structure your events in a consistent, predictable format, making them easier to understand, maintain, and map to downstream tools.
 
-In addition to the recommended message schemas, Segment also provides "blocks": recommendations on what information to collect and how to format it, for different industries and use cases. These are recommendations only, but by collecting all of the information in these blocks, you can ensure that common tools used in that use-case have the information they need to function.
+The Spec contains two kinds of guidance:
 
-A third section of the Spec is the "industry specs" which provide recommendations that include an explicit translation or mapping in the Segment servers, to best power the downstream Destinations commonly used in these industries.
+- Mapped events, like `Order Completed` and `Product Viewed`, are event names and properties that Segment recognizes and transforms automatically for supported destinations. For example, events like `Order Completed` or `Product Viewed` are mapped to standard ecommerce fields.
+- Recommended events, on the other hand, are suggestions for structuring common event types, but Segment doesn't apply automatic transformations. They serve as best practices to help you maintain clean, useful data, especially if you're designing events for custom or internal use cases.
+
+Segment also offers industry-specific recommendations, which are collections of events and traits commonly used in verticals like ecommerce or B2B SaaS. Segment designed these recommendations to help you collect the right data to power tools typically used in your industry.
 
 ## Sources and Destinations
 

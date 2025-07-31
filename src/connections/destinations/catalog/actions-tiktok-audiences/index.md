@@ -78,23 +78,25 @@ The setup is complete and the audience will start syncing to TikTok. The audienc
 5. On the Destination **Settings** tab, name your destination and authenticate with TikTok Audiences using OAuth.
 
 6. Once authenticated, toggle “Enable Destination” on and click  **Save Changes**.
+   
+7. Follow the steps in the [Create a TikTok Audience](#create-a-tiktok-audience) section to create an audience. Once complete, make sure to note the `audience_id` obtained during this process, then proceed to Step 8.
 
-7. Navigate to the **Mappings** tab, click **New Mapping**, and select **Add Users**.
+8. Navigate to the **Mappings** tab, click **New Mapping**, and select **Add Users**.
 
-8. Under Select mappings, select the TikTok "Advertiser ID" of the audience segment you want to add users to. Input the `audience_id` of that audience segment under "Audience ID."
+9. Under Select mappings, select the TikTok "Advertiser ID" of the audience segment you want to add users to. Input the `audience_id` of that audience segment under "Audience ID."
    **A separate mapping must be created for each audience segment you plan to send Engage audiences to.** Once you've created the audience using the name of Segment's audience key, you can get the Audience ID from TikTok's Assets>Audiences page. You'll also find the Advertised ID, noted by `aadvid`, over the TikTok URL.
 
-9. Repeat steps 7 and 8 to also set up a **Remove Users** mapping.
+10. Repeat steps 7 and 8 to also set up a **Remove Users** mapping.
      
-10.  Navigate back to **Engage > Audiences** and click on the audience from Step 1. 
+11.  Navigate back to **Engage > Audiences** and click on the audience from Step 1. 
 
-11.  Click **Add Destinations** and select the TikTok Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and do **not** change the Audience Entered/Audience Exited event names. Click **Save Settings**.
+12.  Click **Add Destinations** and select the TikTok Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and do **not** change the Audience Entered/Audience Exited event names. Click **Save Settings**.
 
 The setup is complete and the audience will start syncing to TikTok. The audience will appear in your [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account under **Assets > Audiences**. It can take 24-48 hours for users to appear in TikTok.
 
 To sync additional audiences from your Engage space, create a separate mapping in the TikTok Audiences destination. Navigate to **Connections > Destinations**, search and select the TikTok Audiences destination, and follow steps 7-11 above.
 
-### Create a TikTok Audience
+### Create a TikTok Audience (_Legacy_)
 
 To create an audience in Segment: 
 
