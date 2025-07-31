@@ -120,7 +120,7 @@ Consent mode may involve updates to your sources outside of Segment, such as inc
 
 To set up consent mode for Google Firebase:
 1. Update your app's SDK to a version that supports consent mode v2. 
-  * Android apps must use F[irebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
+  * Android apps must use [Firebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
   * iOS apps must use [Firebase Apple SDK version 10.17.0 or later](https://firebase.google.com/support/release-notes/ios#analytics){:target="_blank"}.
 
 2. Set up consent mode for your app if you haven't already set it up.
