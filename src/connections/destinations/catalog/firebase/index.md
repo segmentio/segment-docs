@@ -19,6 +19,9 @@ Segment's Firebase destination code is open source and available on GitHub. You 
 
 ## Getting Started on Android
 
+> warning "Firebase doesn't natively support arrays for Realtime Database implementations"
+> If you are using Google's [Realtime Database](https://firebase.google.com/docs/firestore/rtdb-vs-firestore){:target="_blank"} to store Segment event data, see the [Best Practices: Arrays in Firebase](https://firebase.blog/posts/2014/04/best-practices-arrays-in-firebase/){:target="_blank"} blog post for some array best practices.
+
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:
 
 1. Register your mobile app with Firebase at `https://console.firebase.google.com`
