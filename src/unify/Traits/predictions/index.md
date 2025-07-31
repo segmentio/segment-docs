@@ -81,7 +81,7 @@ To access Predictions, you must:
 
 #### Successful trait computation
 
-This table lists the requirements for a trait to compute successfully:
+To compute a prediction successfully, the model must meet the following requirements. In particular, the target event must occur at least once per day across your workspace during the entire Feature Window. If there are days with no activity, the model may not train successfully.
 
 | Requirement                     | Details                                                                                                                                                                                                                               |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
