@@ -1,5 +1,6 @@
 ---
 title: Userpilot Mobile (Device Mode) Destination
+id: 68207e064c022255721ec2d3
 ---
 
 Userpilot helps product teams deliver personalized in-app experiences to increase growth metrics at every stage of the user journey. When you integrate Userpilot with Segment, you can send your Segment events to Userpilot, enabling you to create more personalized experiences for your users across the product lifecycle.
