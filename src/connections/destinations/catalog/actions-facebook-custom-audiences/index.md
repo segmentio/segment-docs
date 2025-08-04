@@ -22,9 +22,9 @@ This destination sends audiences, or lists of users, to Facebook Custom Audience
 
 ### Prerequisites
 
-- A source already set up:
+- A source already set up.
   - For Reverse ETL: If you don't yet have a Reverse ETL source, follow the instructions in Segment's [Reverse ETL documentation](/docs/connections/reverse-etl/#getting-started). Segment recommends setting an [External ID](#sync-audience) as the primary key for your Reverse ETL model, as you'll need an External ID to remove users from your custom audiences.
-  - For Engage Audiences: An [Engage Audience](/docs/engage/audiences/) configured which you can connect to this destination. 
+  - For Engage Audiences: An [Engage Audience](/docs/engage/audiences/) that you can connect to this destination. 
 - A Facebook account with [ads_management](https://developers.facebook.com/docs/permissions#ads_management){:target="_blank”} permissions for the target Facebook Ad Account(s). The Facebook Ad Account(s) must also be associated with a [Facebook Business Account](https://www.facebook.com/business/help/407323696966570?id=649869995454285){:target="_blank”}.
 - Ensure that the user connecting to the destination using OAuth has at least an *Advertiser* or *Admin* role on the ad account. To manage permissions and roles for an ad account, reference [Facebook's documentation](https://www.facebook.com/business/help/186007118118684?id=829106167281625){:target="_blank"}.
 
