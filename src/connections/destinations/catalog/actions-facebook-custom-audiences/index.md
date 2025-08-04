@@ -126,7 +126,7 @@ Segment automatically hashes any of the following fields that are not already SH
 
 ## Additional trait matching
 
-Segment [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) allows you to send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, the Facebook Custom Audiences (Actions) can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required as described in [Hashing](#hashing)section.
+Segment [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) allows you to send an expanded list of identifiers or traits to Facebook so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, the Facebook Custom Audiences (Actions) destination can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook as described in the [Hashing](#hashing) section.
 
 ## FAQs and troubleshooting
 
