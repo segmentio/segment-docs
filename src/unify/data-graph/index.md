@@ -25,6 +25,10 @@ To use the Data Graph, you need the following:
 > info ""
 > To define entity relationships, you need to enable Linked Audiences. Contact your Customer Success Manager to get access to Linked Audiences.
 
+## Overview
+
+<iframe width="100%" height="385" src="https://www.youtube.com/embed/HwSQcr9mCYQ?si=gInQpMc0FFGxXIE3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Step 1: Set up Data Graph permissions in your data warehouse
 
 > warning ""
