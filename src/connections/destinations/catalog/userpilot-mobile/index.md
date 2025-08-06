@@ -1,5 +1,5 @@
 ---
-title: Userpilot Mobile (Device Mode) Destination
+title: Userpilot Mobile Device Mode Destination
 id: 68207e064c022255721ec2d3
 ---
 
