@@ -64,12 +64,13 @@ Segment also handles the following mapping:
 
 ### Page
 
-Segment maps `page` calls to its own `track` events. For example, invoking `analytics.page('Page Viewed')` using Segment's API maps the event to a `analytics.track('Page Viewed')` event. Segment maps the `track` event to other downstream destinations like a regular Segment `track` event.
+Segment maps `page` calls to its own `track` events. When you call `analytics.page('<name>')`, Segment automatically converts it into a track call with the formatted event name `Viewed <name> Page`. For example, `analytics.page('Home');` becomes `analytics.track('Viewed Home Page');`. This event is then forwarded to Optimizely as a custom event named `Viewed Home Page`. 
+
+Segment maps the `page` event to other downstream destinations like a regular Segment `page` event. 
 
 ### Experiment Listeners
 
 Upon activation of an Optimizely experiment, an “Experiment Viewed” Track event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
-
 
 > info "Activating a Web experiment sends 'Experiment Viewed' Track events to Segment"
 > When you activate an Optimizely Web experiment, Optimizely automatically sends an "Experiment Viewed" Track event to Segment. This makes the Optimizely Web integration act as both a Destination and a Source, because the Track calls enrich and send Experiment Decisions and Exposure event data to Segment, which you can then send to other platforms.
