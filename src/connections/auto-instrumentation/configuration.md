@@ -31,7 +31,22 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 ### Using the Rules Editor
 
-The Rules Editor is where you define rules that transform raw signal data into analytics events. In the editor, you write functions that convert signals into events and then call them in the `processSignal()` function. 
+The Rules Editor is where you define rules that transform raw signal data into analytics events. Using the dropdown-based editor, you can:
+
+- Combine multiple signals into a single event (for example, a click followed by a navigation)
+- Set conditions to control when events should be triggered
+- Assign custom event names
+
+#### Adding event properties
+
+You can enrich your events by adding properties based on signal metadata. For example:
+
+- Capture `product.price` in your **Add to Cart** event
+- Add a boolean field like `couponApplied` to your **Order Completed** event
+
+These properties are sent alongside your event, giving your team deeper insights without requiring any manual instrumentation.
+
+<!-- PW, 6 August 2025: Commenting this section out for now
 
 The Rules Editor also lets you test your rules with recent signals to verify that they produce the data you need before you deploy. 
 
@@ -49,6 +64,9 @@ function processSignal(signal) {
 }
 ```
 
+-->
+
+<!-- PW, 6 August 2025: Also commenting the Signal definitions page out on PM request
 ## Signal definitions
 
 Signals come in various types, each associated with specific data that you can use to create analytics events. This section contains code samples that detail each signal type. Because Segment has standardized these definitions across both the Signals-Swift and Signals-Kotlin libraries, they're useful when you create rules in your Segment workspace.
@@ -209,9 +227,12 @@ class MyCustomSignal extends RawSignal<MyCustomData> {
 }
 ```
 
+
+
+-->
 ## Example rule implementations
 
-You can use the Signals data definitions on this page to create tracking rules. 
+You can use Signals to create tracking rules using the event builder. 
 
 ### Example: Identify users
 
