@@ -1,5 +1,7 @@
 ---
 title: Nextdoor Conversions API Destination
+id: 66cc76e29693c9e5591bf029
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -23,4 +25,3 @@ This destination is maintained by Nextdoor. For any issues with the destination,
 
 ## Nextdoor Browser Plugin Action
 When the **Nextdoor Conversions API** destination receives website data from a Segment JavaScript source, the **Nextdoor Browser Plugin** automatically grabs the **Nextdoor click ID** / **ndclid** from the querystirng in the page URL, and passes it to the **Send Conversion** Action. Supplying the **ndclid** boosts attribution accuracy and is strongly recommended for website tracking. The plugin is enabled by default as soon as the destination is created.
-
