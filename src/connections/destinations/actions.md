@@ -350,7 +350,7 @@ This example converts an email address to lowercase and removes extra whitespace
   {% endraw %}
 ```
 
-Input: `event.properties.email` = "user@example.com"
+Input: `event.properties.email` = " User@Example.com "
 
 Output: user@example.com
 
@@ -378,9 +378,9 @@ This example formats a phone number by removing non-digit characters, adding a c
   {% endraw %}
 ```
 
-Input: `event.properties.phone` = "(123) 456-7890"
+Input: `event.properties.phone` = "(234) 567-8901"
 
-Output: +11234567890
+Output: +12345678901
 
 Explanation:
 * The `assign` tag stores the cleaned phone number after applying `strip` and `remove` filters to eliminate whitespace and non-digit characters (for example, `-`, `(`, `)`).

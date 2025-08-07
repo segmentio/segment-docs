@@ -33,7 +33,7 @@ const updateSources = async () => {
     while (nextPageToken !== undefined) {
       const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken);
       sources = sources.concat(res.data.sourcesCatalog);
-      nextPageToken = res.data.pagination.next;
+      nextPageToken = res.data.pagination?.next;
     }
 
     // Sort the sources alphabetically

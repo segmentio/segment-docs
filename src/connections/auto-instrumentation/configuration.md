@@ -23,15 +23,30 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 ### Getting started with rule creation
 
-1. In your Segment workspace, go to to **Connections > Auto-Instrumentation** and click on a source. 
-2. Click **Create Rules**.
+1. In your Segment workspace, go to **Sources** and select a source.
+2. Open the **Event Builder**, then click **Create Rules**.
 
 > info "Where's the Event Builder tab?"
 > The Event Builder tab only appears after you've installed the Auto-Instrumentation snippet in your site or app. If you don’t see the tab, double check your implementation or reach out to your Segment CSM.
 
 ### Using the Rules Editor
 
-The Rules Editor is where you define rules that transform raw signal data into analytics events. In the editor, you write functions that convert signals into events and then call them in the `processSignal()` function. 
+The Rules Editor is where you define rules that transform raw signal data into analytics events. Using the dropdown-based editor, you can:
+
+- Combine multiple signals into a single event (for example, a click followed by a navigation)
+- Set conditions to control when events should be triggered
+- Assign custom event names
+
+#### Adding event properties
+
+You can enrich your events by adding properties based on signal metadata. For example:
+
+- Capture `product.price` in your **Add to Cart** event
+- Add a boolean field like `couponApplied` to your **Order Completed** event
+
+These properties are sent alongside your event, giving your team deeper insights without requiring any manual instrumentation.
+
+<!-- PW, 6 August 2025: Commenting this section out for now
 
 The Rules Editor also lets you test your rules with recent signals to verify that they produce the data you need before you deploy. 
 
@@ -49,6 +64,9 @@ function processSignal(signal) {
 }
 ```
 
+-->
+
+<!-- PW, 6 August 2025: Also commenting the Signal definitions page out on PM request
 ## Signal definitions
 
 Signals come in various types, each associated with specific data that you can use to create analytics events. This section contains code samples that detail each signal type. Because Segment has standardized these definitions across both the Signals-Swift and Signals-Kotlin libraries, they're useful when you create rules in your Segment workspace.
@@ -209,11 +227,22 @@ class MyCustomSignal extends RawSignal<MyCustomData> {
 }
 ```
 
+
+
+-->
 ## Example rule implementations
 
-You can use the Signals data definitions on this page to create tracking rules. 
+You can use Signals to create tracking rules using the event builder. 
 
 ### Example: Identify users
+
+The following screenshot shows an Identify event rule that combines a button click with a successful network response to extract user data and trigger an identify call.
+
+![Identify event rule combining UI and network triggers](images/signals_identify_event.png)
+
+
+
+<!-- PW: more commenting out>
 
 Building off of the screen tracking example, you could create a rule that identifies users:
 
@@ -247,11 +276,15 @@ function processSignal(signal) {
 	detectIdentify(signal); // Process the Identify call based on incoming signals
 }
 ```
-
+-->
 
 ### Example: Track `Add to Cart` events
 
-This rule shows how you could implement the core ordering events from [the e-commerce Spec](/docs/connections/spec/ecommerce/v2/#core-ordering-overview):
+This rule implements a core ordering event from [the e-commerce Spec](/docs/connections/spec/ecommerce/v2/#core-ordering-overview). It shows a Track event triggered by a button click and a network response, with product details from the response mapped to event properties.
+
+![Track event rule for Add to Cart using button click and network response](images/signals_track_event.png)
+
+<!-- PW: even more commenting out
 
 ```javascript
 function trackAddToCart(currentSignal) {
@@ -284,3 +317,4 @@ function ProcessSignals(signal) {
     trackAddToCart(signal); // Process the "Add To Cart" tracking based on incoming signals
 }
 ```
+-->

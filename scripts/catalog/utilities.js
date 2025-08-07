@@ -47,17 +47,19 @@ const getCatalog = async (url, page_token = "MA==") => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.PAPI_TOKEN}`
       },
-      data: {
-        "pagination": {
-          "count": 200,
-          "cursor": page_token
-        }
+      params: {
+        "pagination.count": 200,
+        "pagination.cursor": page_token
       }
     });
 
     return res.data;
   } catch (error) {
-    console.log("Something went wrong with the request to the Public API.\nIf you're updating a private destination, ensure the ID is correct.");
+    console.log("Something went wrong with the request to the Public API.");
+    console.log("Error:", error.message);
+    console.log("Status:", error.response?.status);
+    console.log("Data:", error.response?.data);
+    throw error;
   }
 };
 
