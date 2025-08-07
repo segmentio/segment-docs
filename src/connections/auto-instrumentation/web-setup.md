@@ -31,14 +31,16 @@ Choose one of the following installation methods based on your setup:
 
 ### Option A: Snippet Users (HTML)
 
-For websites using the Segment snippet, add the SignalsPlugin using a CDN:
+For websites using the Segment snippet, please REPLACE the regular Segment snippet with the following code, which includes the Signals SDK:
+
+> warning ""
+> If you are currently using Segment, replace the existing Segment snippet that loads analytics.js with the modified code below. You should not have two segment snippets that call analytics.load() in your html.
 
 ```html
 <head>
   <title>My Website</title>
-
-  <!-- Load Segment (find and replace '<YOUR_WRITE_KEY>')  -->
-  <script>
+  <!-- Replace <YOUR_WRITE_KEY> in 'data-segment-write-key' -->
+  <script data-segment-write-key="<YOUR_WRITE_KEY>">
     !(function () {
       var i = "analytics",
         analytics = (window[i] = window[i] || []);
@@ -121,20 +123,23 @@ For websites using the Segment snippet, add the SignalsPlugin using a CDN:
             r.parentNode.insertBefore(t, r);
             analytics._loadOptions = n;
           };
-          // Replace with your Segment write key.
-          analytics._writeKey = "<YOUR_WRITE_KEY>";
+
+          analytics._writeKey = script.getAttribute("data-segment-write-key");
           analytics.SNIPPET_VERSION = "5.2.0";
-          analytics.page();
+
+          // Load analytics + signals
+          var signalsScript = document.createElement("script");
+          signalsScript.src =
+            "https://cdn.jsdelivr.net/npm/@segment/analytics-signals@latest/dist/umd/analytics-signals.umd.js";
+          signalsScript.async = true;
+          signalsScript.onload = function () {
+            var signalsPlugin = new SignalsPlugin();
+            analytics.register(signalsPlugin);
+            analytics.load(analytics._writeKey);
+          };
+          document.head.appendChild(signalsScript);
         }
     })();
-  </script>
-
-  <!-- Register SignalsPlugin -->
-  <script src="https://cdn.jsdelivr.net/npm/@segment/analytics-signals@latest/dist/umd/analytics-signals.umd.js"></script>
-  <script>
-    var signalsPlugin = new SignalsPlugin()
-    analytics.register);
-    analytics.load(analytics._writeKey);
   </script>
 </head>
 ```
@@ -183,23 +188,31 @@ After integrating the SDK and running your app, verify that Segment is collectin
 
 1. In your Segment workspace, return to **Connections > Sources**, then select the source you created for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
-  - Make sure you've installed the SDK correctly.
-  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+
+- Make sure you've installed the SDK correctly.
+- Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
   ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
-3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.  
-  - To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
+
+3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.
+
+- To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
+
 4. Interact with your app to trigger signals: click buttons, navigate pages, submit forms, and so on. Segment collects and displays these as signals in real time.
 5. From the signals list, click **Configure event** to define a new event based on one or more signals. After configuring the event, click **Publish event rules**.
 
-
 ### Debugging
+
 #### Enable debug mode
+
 Values sent to the signals API are redacted by default.
-This adds a local storage key.  To disable redaction, add a magic query string:
+This adds a local storage key. To disable redaction, add a magic query string:
+
 ```
 https://my-website.com?segment_signals_debug=true
 ```
-You can *turn off debugging* by doing:
+
+You can _turn off debugging_ by doing:
+
 ```
 https://my-website.com?segment_signals_debug=false
 ```
@@ -305,4 +318,4 @@ Network signals emit when an HTTP Request is made, or an HTTP Response is receiv
 
 ## Next steps
 
-This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers example rules. 
+This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers example rules.
