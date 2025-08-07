@@ -5,11 +5,11 @@ id: GNLT5OQ45P
 ---
 {% include content/source-region-unsupported.md %}
 
-This document contains a procedure that enables you to upload a CSV file containing data to [Amazon S3](https://aws.amazon.com/s3/){:target="_blank”}, where it uses [Lambda](https://aws.amazon.com/lambda/){:target="_blank”} to automatically parse, format, and upload the data to Segment.
+This document outlines how to upload a CSV file containing data to [Amazon S3](https://aws.amazon.com/s3/){:target="_blank”}, which uses [Lambda](https://aws.amazon.com/lambda/){:target="_blank”} to automatically parse, format, and upload the data to Segment.
 
 You might have sources of data where you can't instrument Segment's SDKs, including other SaaS tools for which a Segment integration is not yet available. In many of these cases, you can extract data from these sources in CSV format, and then use Segment's server-side SDKs or HTTP tracking API to push the data to Segment.
 
-The goal of this walkthrough is to make this process easier by providing an automated process that ingests this data. Once you complete this walkthrough, you will have the following Segment, Amazon S3, Lambda, and IAM resources deployed:
+The goal of this walkthrough is to make this process easier by providing an automated process that ingests this data. Once you complete this walkthrough, you will have the following Segment, Amazon S3, Lambda, and [IAM](https://aws.amazon.com/iam/){:target="_blank"} resources deployed:
 
 - a Segment S3 source
 - an AWS Lambda function
