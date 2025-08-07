@@ -64,11 +64,9 @@ Segment also handles the following mapping:
 
 ### Page
 
-Segment maps Page calls to it `track` events. When you call `analytics.page('<name>')`, Segment automatically converts it into a Track call with the formatted event name `Viewed <name> Page`. For example, `analytics.page('Home');` becomes `analytics.track('Viewed Home Page');`. 
+Segment maps Page calls to its `track` events. When you call `analytics.page('<name>')`, Segment automatically converts it into a Track call with the formatted event name `Viewed <name> Page`. For example, `analytics.page('Home');` becomes `analytics.track('Viewed Home Page');`. 
 
 This event is then forwarded to Optimizely as a custom event named `Viewed Home Page`. To capture this event in Optimizely, you’ll need to define a Custom Event with the matching API name.
-
-Segment maps the `page` event to other downstream destinations like a regular Segment `page` event. 
 
 ### Experiment Listeners
 
