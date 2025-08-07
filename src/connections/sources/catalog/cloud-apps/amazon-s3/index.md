@@ -5,7 +5,7 @@ id: GNLT5OQ45P
 ---
 {% include content/source-region-unsupported.md %}
 
-This document contains a procedure that enables you to upload a CSV file containing data to Amazon S3, where it uses Lambda to automatically parse, format, and upload the data to Segment.
+This document contains a procedure that enables you to upload a CSV file containing data to [Amazon S3](https://aws.amazon.com/s3/){:target="_blank”}, where it uses [Lambda](https://aws.amazon.com/lambda/){:target="_blank”} to automatically parse, format, and upload the data to Segment.
 
 You might have sources of data where you can't instrument Segment's SDKs, including other SaaS tools for which a Segment integration is not yet available. In many of these cases, you can extract data from these sources in CSV format, and then use Segment's server-side SDKs or HTTP tracking API to push the data to Segment.
 
@@ -17,10 +17,11 @@ The goal of this walkthrough is to make this process easier by providing an auto
 - an AWS IAM execution role that grants the permissions your Lambda function needs through the permissions policy associated with this role
 - an AWS S3 source bucket with a notification configuration that invokes the Lambda function
 
+This source is maintained by Amazon. For any issues with the source, contact [the Amazon S3 Support team](https://aws.amazon.com/contact-us/sales-support-s3/){:target="_blank"}.
 
 ## Prerequisites
 
-This tutorial assumes that you have some basic understanding of S3, Lambda and the `aws cli` tool. If you haven't already, follow the instructions in  [Getting Started with AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html){:target="_blank"} to create your first Lambda function. If you're unfamiliar with `aws cli`, follow the instructions in [Setting up the AWS Command Line Interface](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html){:target="_blank"} before you proceed.
+This tutorial assumes that you have some basic understanding of S3, Lambda and the `aws cli` tool. If you haven't already, follow the instructions in [Getting Started with AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html){:target="_blank"} to create your first Lambda function. If you're unfamiliar with `aws cli`, follow the instructions in [Setting up the AWS Command Line Interface](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html){:target="_blank"} before you proceed.
 
 This tutorial uses a command line terminal or shell to run commands. Commands appear preceded by a prompt symbol (`$`) and the name of the current directory, when appropriate.
 
@@ -35,11 +36,11 @@ Remember the write key for this source, you'll need it in a later step.
 
 ### 2. Create the Execution Role
 
-Create the  [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html){:target="_blank"} that gives your function permission to access AWS resources.
+Create the [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html){:target="_blank"} that gives your function permission to access AWS resources.
 
 **To create an execution role**
 
-1. Open the  [roles page](https://console.aws.amazon.com/iam/home#/roles){:target="_blank"}  in the IAM console.
+1. Open the [roles page](https://console.aws.amazon.com/iam/home#/roles){:target="_blank"} in the IAM console.
 2. Choose  **Create role**.
 3. Create a role with the following properties:
     - Set the **Trusted entity** to **AWS Lambda**.
