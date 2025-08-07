@@ -23,8 +23,8 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 ### Getting started with rule creation
 
-1. In your Segment workspace, go to to **Connections > Auto-Instrumentation** and click on a source. 
-2. Click **Create Rules**.
+1. In your Segment workspace, go to **Sources** and select a source.
+2. Open the **Event Builder**, then click **Create Rules**.
 
 > info "Where's the Event Builder tab?"
 > The Event Builder tab only appears after you've installed the Auto-Instrumentation snippet in your site or app. If you don’t see the tab, double check your implementation or reach out to your Segment CSM.
