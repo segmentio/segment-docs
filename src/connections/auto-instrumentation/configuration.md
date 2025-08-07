@@ -236,6 +236,14 @@ You can use Signals to create tracking rules using the event builder.
 
 ### Example: Identify users
 
+The following screenshot shows an Identify event rule that combines a button click with a successful network response to extract user data and trigger an identify call.
+
+![Identify event rule combining UI and network triggers](images/signals_identify_event.png)
+
+
+
+<!-- PW: more commenting out>
+
 Building off of the screen tracking example, you could create a rule that identifies users:
 
 ```javascript
@@ -268,11 +276,15 @@ function processSignal(signal) {
 	detectIdentify(signal); // Process the Identify call based on incoming signals
 }
 ```
-
+-->
 
 ### Example: Track `Add to Cart` events
 
-This rule shows how you could implement the core ordering events from [the e-commerce Spec](/docs/connections/spec/ecommerce/v2/#core-ordering-overview):
+This rule implements a core ordering event from [the e-commerce Spec](/docs/connections/spec/ecommerce/v2/#core-ordering-overview). It shows a Track event triggered by a button click and a network response, with product details from the response mapped to event properties.
+
+![Track event rule for Add to Cart using button click and network response](images/signals_track_event.png)
+
+<!-- PW: even more commenting out
 
 ```javascript
 function trackAddToCart(currentSignal) {
@@ -305,3 +317,4 @@ function ProcessSignals(signal) {
     trackAddToCart(signal); // Process the "Add To Cart" tracking based on incoming signals
 }
 ```
+-->
