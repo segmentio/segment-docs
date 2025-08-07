@@ -5,39 +5,151 @@ hidden: true
 
 This guide outlines the steps required to set up the Signals SDK in your JavaScript website.
 
-You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
+You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.
 
 > info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
+> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="\_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
 
 ## Step 1: Add a source and get its write key
 
-You'll first need to add a source and copy its write key: 
+You'll first need to add a source and copy its write key:
 
 1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation** and click **Add source**.
 2. Select a source, give the source a name, and click **Save**.
-3. Return to **Connections > Sources** to view your sources. 
+3. Return to **Connections > Sources** to view your sources.
 4. In the **My sources** table, find and click the new source you just set up.
-5. In the **Initialize the Client** section, look for and copy the `writeKey` displayed in the code block. 
+5. In the **Initialize the Client** section, look for and copy the `writeKey` displayed in the code block.
 
 ## Step 2: Add dependencies and initialization code
 
-Next, you'll need to add the Signals SDKs to your web environment. 
+Next, you'll need to add the Signals SDKs to your web environment.
 
-Follow these steps to integrate the Signals SDK into your website:
+Choose one of the following installation methods based on your setup:
 
-1. Add the Signals SDK to your project: 
+### Option A: Snippet Users (HTML)
+
+For websites using the Segment snippet, add the SignalsPlugin using a CDN:
+
+```html
+<head>
+  <title>My Website</title>
+
+  <!-- Load Segment (find and replace '<YOUR_WRITE_KEY>')  -->
+  <script>
+    !(function () {
+      var i = "analytics",
+        analytics = (window[i] = window[i] || []);
+      if (!analytics.initialize)
+        if (analytics.invoked)
+          window.console &&
+            console.error &&
+            console.error("Segment snippet included twice.");
+        else {
+          analytics.invoked = !0;
+          analytics.methods = [
+            "trackSubmit",
+            "trackClick",
+            "trackLink",
+            "trackForm",
+            "pageview",
+            "identify",
+            "reset",
+            "group",
+            "track",
+            "ready",
+            "alias",
+            "debug",
+            "page",
+            "screen",
+            "once",
+            "off",
+            "on",
+            "addSourceMiddleware",
+            "addIntegrationMiddleware",
+            "setAnonymousId",
+            "addDestinationMiddleware",
+            "register",
+          ];
+          analytics.factory = function (e) {
+            return function () {
+              if (window[i].initialized)
+                return window[i][e].apply(window[i], arguments);
+              var n = Array.prototype.slice.call(arguments);
+              if (
+                [
+                  "track",
+                  "screen",
+                  "alias",
+                  "group",
+                  "page",
+                  "identify",
+                ].indexOf(e) > -1
+              ) {
+                var c = document.querySelector("link[rel='canonical']");
+                n.push({
+                  __t: "bpc",
+                  c: (c && c.getAttribute("href")) || void 0,
+                  p: location.pathname,
+                  u: location.href,
+                  s: location.search,
+                  t: document.title,
+                  r: document.referrer,
+                });
+              }
+              n.unshift(e);
+              analytics.push(n);
+              return analytics;
+            };
+          };
+          for (var n = 0; n < analytics.methods.length; n++) {
+            var key = analytics.methods[n];
+            analytics[key] = analytics.factory(key);
+          }
+          analytics.load = function (key, n) {
+            var t = document.createElement("script");
+            t.type = "text/javascript";
+            t.async = !0;
+            t.setAttribute("data-global-segment-analytics-key", i);
+            t.src =
+              "https://cdn.segment.com/analytics.js/v1/" +
+              key +
+              "/analytics.min.js";
+            var r = document.getElementsByTagName("script")[0];
+            r.parentNode.insertBefore(t, r);
+            analytics._loadOptions = n;
+          };
+          // Replace with your Segment write key.
+          analytics._writeKey = "<YOUR_WRITE_KEY>";
+          analytics.SNIPPET_VERSION = "5.2.0";
+          analytics.page();
+        }
+    })();
+  </script>
+
+  <!-- Register SignalsPlugin -->
+  <script src="https://cdn.jsdelivr.net/npm/@segment/analytics-signals@latest/dist/umd/analytics-signals.umd.js"></script>
+  <script>
+    var signalsPlugin = new SignalsPlugin()
+    analytics.register);
+    analytics.load(analytics._writeKey);
+  </script>
+</head>
+```
+
+### Option B: NPM Users
+
+1. Add the Signals SDK to your project:
 
 ```bash
-    # npm
-    npm install @segment/analytics-signals
-    # yarn
-    yarn add @segment/analytics-signals
-    # pnpm
-    pnpm install @segment/analytics-signals 
+# npm
+npm install @segment/analytics-signals
+# yarn
+yarn add @segment/analytics-signals
+# pnpm
+pnpm install @segment/analytics-signals
 ```
 
 2. Add the initialization code and configuration options:
@@ -47,21 +159,23 @@ Follow these steps to integrate the Signals SDK into your website:
 
 ```ts
 // analytics.js/ts
-import { AnalyticsBrowser } from '@segment/analytics-next'
-import { SignalsPlugin } from '@segment/analytics-signals'
+import { AnalyticsBrowser } from "@segment/analytics-next";
+import { SignalsPlugin } from "@segment/analytics-signals";
 
-const analytics = new AnalyticsBrowser()
-const signalsPlugin = new SignalsPlugin()
-analytics.register(signalsPlugin)
+export const analytics = new AnalyticsBrowser();
+
+const signalsPlugin = new SignalsPlugin();
+
+analytics.register(signalsPlugin);
 
 analytics.load({
-  writeKey: '<YOUR_WRITE_KEY>'
-})
+  writeKey: "<YOUR_WRITE_KEY>",
+});
 ```
 
-Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in Step 1.
+Verify that you replaced `<YOUR_WRITE_KEY>` with the actual write key you copied in Step 1.
 
-4. Build and run your app.
+3. Build and run your app.
 
 ## Step 3: Verify and deploy events
 
@@ -92,48 +206,102 @@ https://my-website.com?segment_signals_debug=false
 
 ### Advanced
 
-#### Emitting custom signals 
+#### Emitting custom signals
+
 If you need to listen for data that is unavailable to the Signals plugin by default, you can create and emit a custom signal:
 
 ```ts
-import { signalsPlugin } from './analytics' // assuming you exported your plugin instance.
+var signalsPlugin = new SignalsPlugin(); // or use the global variable if you registered it globally
+signalsPlugin.addSignal({ someData: 'foo' })
 
-signalsPlugin.addSignal({
-  type: 'userDefined',
-  data: { foo: 'bar' }
-})
+
+// emits a signal with the following shape
+{
+  type: 'userDefined'
+  data: { someData: 'foo', ...  }
+}
 ```
 
 #### Listening to signals
+
 ```ts
-const signalsPlugin = new SignalsPlugin()
-signalsPlugin.onSignal((signal) => console.log(signal))
+const signalsPlugin = new SignalsPlugin();
+signalsPlugin.onSignal((signal) => console.log(signal));
 ```
 
-### Emitting Signals
+#### Middleware / Plugins
+
+You can drop or modify signals using middleware:
+
 ```ts
-const signalsPlugin = new SignalsPlugin()
-signalsPlugin.addSignal({
-  type: 'userDefined',
-  data: { foo: 'bar' }
-})
+import { SignalsPlugin, SignalsMiddleware } from "@segment/analytics-signals";
+
+class MyMiddleware implements SignalsMiddleware {
+  process(signal: Signal) {
+    // drop all instrumentation signals
+    if (signal.type === "instrumentation") {
+      return null;
+    } else {
+      return signal;
+    }
+  }
+}
+
+const signalsPlugin = new SignalsPlugin({
+  middleware: [new MyMiddleware()],
+});
+analytics.register(signalsPlugin);
+```
+
+#### Sandbox Strategies
+
+If getting CSP errors, you can use the experimental 'global' sandbox strategy:
+
+```ts
+new SignalsPlugin({ sandboxStrategy: "global" });
 ```
 
 ## Configuration Options
 
-Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Kotlin.
+Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals Web.
 
-| `Option`            | Required | Value                     | Description                                                                                                                                                                                           |
-| ------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `writeKey`          | Yes      | string                    | Source write key                                                                                                                                                                                      |
-| `maxBufferSize` | No       | number                  | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`.                                                                                    |
-| `processSignal` | No       | string                  | Override the default signal processing function from the edge function. If this is set, the edge function will not be used.
-| `enableDebugLogging` | No       | boolean                  | Enable debug logs.
-| `disableSignalRedaction` | No       | boolean                  | Disable default Signal data redaction.
-| `apiHost` | No       | string                 | Override the default signals API host. Default is `signals.segment.io/v1`.
-| `functionHost` | No       | string                 | Override the default edge host. Default is `cdn.edgefn.segment.com`
-| `flushAt` | No       | number                   | How many signals to flush at once when sending to the signals API. Default is `5` .                                                                                                                                         |
-| `flushInterval`      | No       | number | How many ms to wait before flushing signals to the API. The default is `2000`. |
+| `Option`                 | Required | Value                | Description                                                                                                        |
+| ------------------------ | -------- | -------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `maxBufferSize`          | No       | number               | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is `1000`. |
+| `enableDebugLogging`     | No       | boolean              | Enable debug logs.                                                                                                 |
+| `disableSignalRedaction` | No       | boolean              | Disable default Signal data redaction.                                                                             |
+| `apiHost`                | No       | string               | Override the default signals API host. Default is `signals.segment.io/v1`.                                         |
+| `functionHost`           | No       | string               | Override the default edge host. Default is `cdn.edgefn.segment.com`                                                |
+| `flushAt`                | No       | number               | How many signals to flush at once when sending to the signals API. Default is `5` .                                |
+| `flushInterval`          | No       | number               | How many ms to wait before flushing signals to the API. The default is `2000`.                                     |
+| `middleware`             | No       | SignalsMiddleware[]  | Array of middleware to process signals before they are sent.                                                       |
+| `sandboxStrategy`        | No       | 'global' \| 'iframe' | Sandbox strategy for signal collection. Use 'global' if getting CSP errors. Default is 'iframe'.                   |
+
+## Core Signal Types
+
+Auto-Instrumentation collects different types of signals automatically:
+
+### `interaction`
+
+Interaction signals emit in response to a user interaction (clicks, form submissions, etc.)
+
+### `instrumentation`
+
+Instrumentation signals emit whenever a Segment event is emitted.
+
+### `navigation`
+
+Navigation signals emit whenever the URL changes.
+
+> Note: you can also rely on the initial analytics.page() call, which you can access as an Instrumentation signal.
+
+### `network`
+
+Network signals emit when an HTTP Request is made, or an HTTP Response is received. To emit a network signal, the network activity must have the following requirements:
+
+- Initiated using the `fetch` API
+- First party domain (e.g if on `foo.com`, then `foo.com/api/products`, but not `bar.com/api/products`)
+- Contains the content-type: `application/json`
 
 ## Next steps
 
