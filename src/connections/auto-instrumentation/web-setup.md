@@ -8,7 +8,7 @@ This guide outlines the steps required to set up the Signals SDK in your JavaScr
 You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.
 
 > info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="\_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
+> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
@@ -139,7 +139,6 @@ For websites using the Segment snippet, please REPLACE the regular Segment snipp
         analytics._writeKey = document.currentScript.getAttribute("data-segment-write-key");
         analytics.load(analytics._writeKey)
         analytics.page()
-        analytics.SNIPPET_VERSION = "5.2.0";
       }
   })();
   </script>
