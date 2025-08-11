@@ -94,6 +94,17 @@ If you're using Consent Management and Profiles, you shouldn't give your custome
 > warning "Storing consent on the Profile is in private beta"
 > Reach out to your sales contact or [request a demo](https://segment.com/contact/demo){:target="_blank"} to participate in the private beta.
 
+### Backfill consent preferences on your Profiles
+
+If you've stored end-user consent preferences in your warehouse and would like to make them available to your Profiles, you can use [Reverse ETL](/docs/privacy/consent-management/consent-in-retl/) and [Segment Profiles](/docs/connections/destinations/catalog/actions-segment-profiles/) to extract the consent information from your warehouse and load the information into Segment. 
+
+If you want to use end-user consent coming directly from your single source of truth, you can generate an Identify, Track, or [Segment Consent Preferences Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) Track event to add [consent information to the `context` object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object). For more information about the requirements for data collection, see the [Configure Consent Management](/docs/privacy/consent-management/configure-consent-management/#step-2-integrating-your-cmp-with-segment) documentation. 
+
+## Consent preference conflicts
+
+When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user, for example, from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflict)) or when two distinct Unify profiles are merged together (called a [profile-level conflict](#profile-level-conflict)). 
+
+
 ### Device-level conflicts
 A device-level conflict occurs when conflicting consent preferences linked to one user ID are collected from two distinct devices.
 
