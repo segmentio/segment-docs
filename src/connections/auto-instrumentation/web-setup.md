@@ -31,7 +31,7 @@ Choose one of the following installation methods based on your setup:
 
 ### Option A: Snippet Users (HTML)
 
-For websites using the Segment snippet, please REPLACE the regular Segment snippet with the following code, which includes the Signals SDK:
+For websites using the Segment snippet, you'll need to replace the regular Segment snippet with the following code, which includes the Signals SDK:
 
 > warning ""
 > If you are currently using Segment, replace the existing Segment snippet that loads analytics.js with the modified code below. You should not have two segment snippets that call analytics.load() in your html.
