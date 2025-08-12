@@ -17,7 +17,10 @@ The goal of this walkthrough is to make this process easier by providing an auto
 - an AWS IAM execution role that grants the permissions your Lambda function needs through the permissions policy associated with this role
 - an AWS S3 source bucket with a notification configuration that invokes the Lambda function
 
-This source is maintained by Amazon. For any issues with the source, contact [the Amazon S3 Support team](https://aws.amazon.com/contact-us/sales-support-s3/){:target="_blank"}.
+> warning ""
+>
+> This source is not covered by Segment Support. For issues with the source, contact [Segment Professional Services](https://segment.com/services/){:target="_blank"}. 
+
 
 ## Prerequisites
 
