@@ -28,7 +28,6 @@ On Linux and macOS, use your preferred shell and package manager. On macOS, you 
 [Install NPM](https://www.npmjs.com/get-npm){:target="_blank"} to manage the function's dependencies.
 
 ## Getting started
-
 ### 1. Create an S3 source in Segment
 
 Remember the write key for this source, you'll need it in a later step.
