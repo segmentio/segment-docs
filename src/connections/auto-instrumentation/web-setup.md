@@ -196,15 +196,12 @@ After integrating the SDK and running your app, verify that Segment is collectin
 
 1. In your Segment workspace, return to **Connections > Sources**, then select the source you created for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
-
-- Make sure you've installed the SDK correctly.
-- Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
-  ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
+  - Make sure you've installed the SDK correctly.
+  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+    ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
 
 3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.
-
-- To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
-
+  - To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
 4. Interact with your app to trigger signals: click buttons, navigate pages, submit forms, and so on. Segment collects and displays these as signals in real time.
 5. From the signals list, click **Configure event** to define a new event based on one or more signals. After configuring the event, click **Publish event rules**.
 
@@ -276,7 +273,7 @@ analytics.register(signalsPlugin);
 
 #### Sandbox Strategies
 
-If getting CSP errors, you can use the experimental 'global' sandbox strategy:
+If you get CSP errors, you can use the experimental 'global' sandbox strategy:
 
 ```ts
 new SignalsPlugin({ sandboxStrategy: "global" });
@@ -304,7 +301,7 @@ Auto-Instrumentation collects different types of signals automatically:
 
 ### `interaction`
 
-Interaction signals emit in response to a user interaction (clicks, form submissions, etc.)
+Interaction signals emit in response to a user interaction (like clicks or form submissions)
 
 ### `instrumentation`
 
@@ -321,7 +318,7 @@ Navigation signals emit whenever the URL changes.
 Network signals emit when an HTTP Request is made, or an HTTP Response is received. To emit a network signal, the network activity must have the following requirements:
 
 - Initiated using the `fetch` API
-- First party domain (e.g if on `foo.com`, then `foo.com/api/products`, but not `bar.com/api/products`)
+- First party domain (for example, if on `foo.com`, then `foo.com/api/products`, but not `bar.com/api/products`)
 - Contains the content-type: `application/json`
 
 ## Next steps
