@@ -19,8 +19,7 @@ The goal of this walkthrough is to make this process easier by providing an auto
 
 > warning ""
 >
-> This source is not covered by Segment Support. For issues with the source, contact [Segment Professional Services](https://segment.com/services/){:target="_blank"}. 
-
+> Implementing a production-grade solution with this tutorial can be complex. Segment recommends you submit feature requests for Segment reverse ETL to have CSV support. 
 
 ## Prerequisites
 
