@@ -17,9 +17,9 @@ The goal of this walkthrough is to make this process easier by providing an auto
 - an AWS IAM execution role that grants the permissions your Lambda function needs through the permissions policy associated with this role
 - an AWS S3 source bucket with a notification configuration that invokes the Lambda function
 
-> warning ""
+> warning "CSV support recommendation"
 >
-> Implementing a production-grade solution with this tutorial can be complex. Segment recommends you submit feature requests for Segment reverse ETL to have CSV support. 
+> Implementing a production-grade solution with this tutorial can be complex. Segment recommends that you submit feature requests for Segment reverse ETL for CSV support. 
 
 ## Prerequisites
 
