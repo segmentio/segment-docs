@@ -34,6 +34,7 @@ On Linux and macOS, use your preferred shell and package manager. On macOS, you 
 ## Getting Started
 
 ### 1. Create an S3 source in Segment
+
 Remember the write key for this source, you'll need it in a later step.
 
 ### 2. Create the Execution Role
