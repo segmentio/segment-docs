@@ -151,7 +151,7 @@ If your site uses the standard Segment snippet, **replace it** with the followin
 </head>
 ```
 
-Verify that you only have **one snippet** in your site, then move to 
+Verify that you only have **one snippet** in your site, then move to [Step 3: Verify and deploy events](#step-3-verify-and-deploy-events).
 
 ### Option B: Install with a package manager 
 
