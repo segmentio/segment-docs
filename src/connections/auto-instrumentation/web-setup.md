@@ -27,14 +27,17 @@ You'll first need to add a source and copy its write key:
 
 Next, you'll need to add the Signals SDKs to your web environment.
 
-Choose one of the following installation methods based on your setup:
+Choose the installation method that matches your setup:  
 
-### Option A: Snippet Users (HTML)
+- **Option A:** For websites loading Segment through the HTML snippet.  
+- **Option B:** For projects using npm, yarn, or pnpm.
 
-For websites using the Segment snippet, you'll need to replace the regular Segment snippet with the following code, which includes the Signals SDK:
+### Option A: Websites using the Segment snippet (HTML)
 
 > warning ""
-> If you are currently using Segment, replace the existing Segment snippet that loads analytics.js with the modified code below. You should not have two segment snippets that call analytics.load() in your html.
+> Include only one Segment snippet per page. Replacing your existing snippet prevents duplicate `analytics.load()` calls.
+
+If your site uses the standard Segment snippet, **replace it** with the following version, which includes the Signals SDK:
 
 ```html
 <head>
@@ -148,41 +151,42 @@ For websites using the Segment snippet, you'll need to replace the regular Segme
 </head>
 ```
 
-### Option B: NPM Users
+Verify that you only have **one snippet** in your site, then move to 
+
+### Option B: Install with a package manager 
 
 1. Add the Signals SDK to your project:
-
-```bash
-# npm
-npm install @segment/analytics-signals
-# yarn
-yarn add @segment/analytics-signals
-# pnpm
-pnpm install @segment/analytics-signals
-```
+  ```bash
+  # npm
+  npm install @segment/analytics-signals
+  # yarn
+  yarn add @segment/analytics-signals
+  # pnpm
+  pnpm install @segment/analytics-signals
+  ```
 
 2. Add the initialization code and configuration options:
 
-> success ""
-> see [configuration options](#configuration-options) for a complete list.
+  > success ""
+  > see [configuration options](#configuration-options) for a complete list.
 
-```ts
-// analytics.js/ts
-import { AnalyticsBrowser } from "@segment/analytics-next";
-import { SignalsPlugin } from "@segment/analytics-signals";
+  ```ts
+  // analytics.js/ts
+  import { AnalyticsBrowser } from "@segment/analytics-next";
+  import { SignalsPlugin } from "@segment/analytics-signals";
 
-export const analytics = new AnalyticsBrowser();
+  export const analytics = new AnalyticsBrowser();
 
-const signalsPlugin = new SignalsPlugin();
+  const signalsPlugin = new SignalsPlugin();
 
-analytics.register(signalsPlugin);
+  analytics.register(signalsPlugin);
 
-analytics.load({
-  writeKey: "<YOUR_WRITE_KEY>",
-});
-```
+  analytics.load({
+    writeKey: "<YOUR_WRITE_KEY>",
+  });
+  ```
 
-Verify that you replaced `<YOUR_WRITE_KEY>` with the actual write key you copied in Step 1.
+  Verify that you replaced `<YOUR_WRITE_KEY>` with the actual write key you copied in Step 1.
 
 3. Build and run your app.
 
