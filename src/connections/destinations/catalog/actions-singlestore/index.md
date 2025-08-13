@@ -59,14 +59,15 @@ Segment writes data to your specified table in SingleStore (by default, this is 
 | `context` |	JSON |	The context of the event. Contains user environment information. |
 
 
-### Accessing data
-To query specific data from the Segment event within SingleStore, you can select columns directly. For example, to retrieve the `properties` object:
+### Accessing nested data
+To query nested information from the `traits`, `context`, or `properties` JSON columns, use the `::` operator to access nested properties within the JSON column. For example:
 
+To extract a property1 from the `properties` column:
 ```sql
-SELECT properties FROM your_table_name;
+SELECT properties::property1 AS property_1 FROM <your_table_name>;
 ```
 
-This query retrieves the `properties` object from the specified table, allowing you to work with event data.
+This query allows you to extract specific nested properties from the JSON column for analysis.
 
 ## Troubleshooting
 
