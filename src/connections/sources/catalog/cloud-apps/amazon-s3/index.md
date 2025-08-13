@@ -17,10 +17,6 @@ The goal of this walkthrough is to make this process easier by providing an auto
 - an AWS IAM execution role that grants the permissions your Lambda function needs through the permissions policy associated with this role
 - an AWS S3 source bucket with a notification configuration that invokes the Lambda function
 
-> warning "CSV support recommendation"
->
-> Implementing a production-grade solution with this tutorial can be complex. Segment recommends that you submit feature requests for Segment reverse ETL for CSV support. 
-
 ## Prerequisites
 
 This tutorial assumes that you have some basic understanding of S3, Lambda and the `aws cli` tool. If you haven't already, follow the instructions in [Getting Started with AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html){:target="_blank"} to create your first Lambda function. If you're unfamiliar with `aws cli`, follow the instructions in [Setting up the AWS Command Line Interface](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html){:target="_blank"} before you proceed.
@@ -31,13 +27,13 @@ On Linux and macOS, use your preferred shell and package manager. On macOS, you 
 
 [Install NPM](https://www.npmjs.com/get-npm){:target="_blank"} to manage the function's dependencies.
 
-## Getting Started
+## Getting started
 
 ### 1. Create an S3 source in Segment
 
 Remember the write key for this source, you'll need it in a later step.
 
-### 2. Create the Execution Role
+### 2. Create the execution role
 
 Create the [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html){:target="_blank"} that gives your function permission to access AWS resources.
 
@@ -57,7 +53,7 @@ Create the [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-
 
 The **AWSLambdaExecute** policy has the permissions that the function needs to manage objects in Amazon S3, and write logs to CloudWatch Logs.
 
-### 3. Create Local Files, an S3 Bucket and Upload a Sample Object
+### 3. Create local files, an S3 bucket and upload a sample object
 
 Follow these steps to create your local files, S3 bucket and upload an object.
 
@@ -77,7 +73,7 @@ Follow these steps to create your local files, S3 bucket and upload an object.
 3.  Create your bucket. **Record your bucket name** - you'll need it later!
 4.  In the source bucket, upload `track_1.csv`.
 
-### 4. Create the Function
+### 4. Create the function
 
 Next, create the Lambda function, install dependencies, and zip everything up so it can be deployed to AWS.
 
@@ -264,11 +260,11 @@ The command above sets a 90-second timeout value as the function configuration. 
 S3-Lambda-Segment$ aws lambda update-function-configuration --function-name <!Your Lambda Name!> --timeout 180
 ```
 
-### 5. Test the Lambda Function
+### 5. Test the lambda function
 
 In this step, you invoke the Lambda function manually using sample Amazon S3 event data.
 
-**To test the Lambda function**
+**To test the lambda function**
 
 1. Create an empty file named `output.txt` in the `S3-Lambda-Segment` folder - the aws cli complains if it's not there.
    ```bash
@@ -285,7 +281,7 @@ In this step, you invoke the Lambda function manually using sample Amazon S3 eve
 
 **Note**: Calls to Segment's Object API don't show up the Segment debugger.
 
-### Configure Amazon S3 to Publish Events
+### Configure Amazon S3 to publish events
 
 In this step, you add the remaining configuration so that Amazon S3 can publish object-created events to AWS Lambda and invoke your Lambda function.
 You'll do the following:
@@ -352,11 +348,15 @@ Last, test your system to make sure it's working as expected:
 ### Timestamps
 This script automatically transforms all CSV timestamp columns named `createdAt` and `timestamp` to timestamp objects, regardless of nesting, preparation for Segment ingestion. If your timestamps have a different name, search the example `index.js` code for the `colParser` function, and add your column names there for automatic transformation. If you make this modification, re-zip the package (using `zip -r function.zip .`) and upload the new zip to Lambda.
 
-## CSV Formats
+## CSV formats
 
 Define your CSV file structure based on the method you want to execute.
 
-#### Identify Structure
+> warning "CSV support recommendation"
+>
+> Implementing a production-grade solution with this tutorial can be complex. Segment recommends that you submit feature requests for Segment reverse ETL for CSV support. 
+
+#### Identify structure
 
 An `identify_XXXXX` .csv file uses the following field names:
 
@@ -371,7 +371,7 @@ An `identify_XXXXX` .csv file uses the following field names:
 In the above structure, the `userId` is required, but all other items are optional. Start all traits with `traits.` and then the trait name, for example `traits.account_type`. Similarly, start context fields with `context.` followed by the canonical structure. The same structure applies to `integrations.` too.
 
 
-#### Page/Screen Structure
+#### Page/Screen structure
 
 For example a `screen_XXXXX` or `page_YYYY` file has the following field names:
 
@@ -384,7 +384,7 @@ For example a `screen_XXXXX` or `page_YYYY` file has the following field names:
 7. `timestamp` (Unix time) - Optional
 8. `integrations.<integration>` - Optional
 
-#### Track Structure
+#### Track structure
 
 For example a `track_XXXXX` file has the following field names:
 
@@ -413,7 +413,7 @@ For any of these methods, you might need to pass nested JSON to the tracking or 
 
 The example `index.js` sample code above does not support ingestion of arrays. If you need this functionality you can modify the sample code as needed.
 
-#### Object Structure
+#### Object structure
 
 There are cases when Segment's tracking API is not suitable for datasets that you might want to move to a warehouse. This could be e-commerce product data, media content metadata, campaign performance, and so on.
 
