@@ -93,7 +93,7 @@ The `Context` type is defined as follows:
 }
 ```
 
-#### Web-Specific Properties
+#### Web-specific properties
 
 Web signals include additional page context:
 
