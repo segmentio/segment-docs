@@ -29,6 +29,10 @@ Before you begin setting up your Linked Audience, ensure you have:
 - [Ensure someone has set up your data graph](/docs/unify/data-graph/data-graph/).
 - Workspace Owner or Unify Read-only, Engage User, Entities Read-only, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
+## Overview
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Cb7aa6meIo?si=7ABvulIHMUXnQSjT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Setting up Linked Audiences
 
 To set up your Linked Audience, complete the following steps:
