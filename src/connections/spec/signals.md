@@ -2,18 +2,19 @@
 title: 'Spec: Signals'
 ---
 
-This page is a guide for developers who want to track events with Segment's Auto-Instrumentation. It explains structure and definition of Signals.
-
+This is a guide for developers who want to track events with Segment's Auto-Instrumentation. It explains the structure and definitions of Signals.
 
 ## Overview
 
-Signals provides automated user activity tracking through a sophisticated breadcrumb system. It captures crucial user interactions and allows you to transform them into meaningful analytics events using JavaScript.
+Signals provide automated user activity tracking through a sophisticated breadcrumb system. They capture crucial user interactions and allows you to transform them into meaningful analytics events using JavaScript.
 
-### Key Features
+### Key features
+
+The key features of signals include:
 
 - **Comprehensive Activity Tracking**
   - User interface interactions
-  - Network activity monitoring (inbound/outbound)
+  - Network activity monitoring (inbound and outbound)
   - Local data access patterns
   - Integration with existing analytics events
 - **Enterprise-Grade Privacy**
@@ -25,18 +26,18 @@ Signals provides automated user activity tracking through a sophisticated breadc
   - Create custom event generation rules
   - Process and filter data in real-time
 
-## Signal Types
+## Signal types
 
 There are 6 different types of Signals:
 
-- **Interaction Signal** - Captures user interactions with interface elements such as clicks, form submissions, and input changes
-- **Navigation Signal** - Tracks navigation events and screen/page transitions in web and mobile applications
-- **Network Signal** - Monitors HTTP requests and responses, including API calls and data fetching operations
-- **Local Data Signal** - Records local data storage operations like creating, reading, updating, or deleting data
-- **Instrumentation Signal** - Captures existing analytics events and instrumentation data from Segment Analytics
-- **User Defined Signal** - Allows for custom signal types with application-specific data and properties
+- **Interaction Signal** - Captures user interactions with interface elements such as clicks, form submissions, and input changes.
+- **Navigation Signal** - Tracks navigation events and [Screen](/docs/connections/spec/screen) or [Page](/docs/connections/spec/page) transitions in web and mobile applications.
+- **Network Signal** - Monitors HTTP requests and responses, including API calls and data fetching operations.
+- **Local Data Signal** - Records local data storage operations like creating, reading, updating, or deleting data.
+- **Instrumentation Signal** - Captures existing analytics events and instrumentation data from Segment Analytics.
+- **User-defined Signal** - Allows for custom signal types with application-specific data and properties.
 
-### Base Signal Properties
+### Base signal properties
 
 All signals include these base properties:
 
@@ -61,9 +62,9 @@ All signals include these base properties:
 }
 ```
 
-#### Content Properties
+#### Content properties
 
-The `Context` type is defined as follow:
+The `Context` type is defined as follows:
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -91,7 +92,6 @@ The `Context` type is defined as follow:
   "signalsRuntime": "1.0.0"
 }
 ```
-
 
 #### Web-Specific Properties
 
@@ -122,10 +122,10 @@ Web signals include additional page context:
 }
 ```
 
-### Specific Signal Properties
-#### Interaction Signals
+### Specific signal properties
+#### Interaction signals
 
-Capture user interactions with interface elements.
+Interaction signals capture user interactions with interface elements.
 
 ##### Web
 
@@ -175,9 +175,9 @@ Capture user interactions with interface elements.
 }
 ```
 
-#### Navigation Signals
+#### Navigation signals
 
-Track navigation and screen changes.
+Navigation signals track navigation and screen changes.
 
 ##### Web
 
@@ -217,9 +217,9 @@ Track navigation and screen changes.
 }
 ```
 
-#### Network Signals
+#### Network signals
 
-Monitor network requests and responses.
+Network signals monitor network requests and responses.
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -244,7 +244,7 @@ Monitor network requests and responses.
 }
 ```
 
-#### Local Data Signals
+#### Local data signals
 
 Track local data storage operations.
 
@@ -263,9 +263,9 @@ Track local data storage operations.
 }
 ```
 
-#### Instrumentation Signals
+#### Instrumentation signals
 
-Capture analytics events and instrumentation data.
+Instrumentation signals capture analytics events and instrumentation data.
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -288,9 +288,9 @@ Capture analytics events and instrumentation data.
 }
 ```
 
-#### User Defined Signals
+#### User-defined signals
 
-Allow for custom signal types with arbitrary data.
+User-defined signals allow for custom signal types with arbitrary data.
 
 | Property | Type | Description |
 |----------|------|-------------|
