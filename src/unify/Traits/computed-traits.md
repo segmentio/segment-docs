@@ -128,6 +128,7 @@ Example use cases:
 ### Unique List Count
 
 Unique list count computed traits will output a **count of the unique list of values** for an **event property**. Customers are creating traits like `unique_product_categories_viewed_count` to understand the variety of products that a customer is viewing. At the account-level, customers are creating traits like `unique_visitors_count` to calculate the number of unique visitors by ip address.
+The Unique List array can contain up to 50 items. Once this limit is reached, additional items will not be added.
 
 User-level examples:
 - Unique products viewed count
