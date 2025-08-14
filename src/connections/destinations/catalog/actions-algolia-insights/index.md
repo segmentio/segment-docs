@@ -64,6 +64,10 @@ By default, Algolia has set up mappings for `Product List Filtered`, `Product Li
 
 ![Mappings Tab](images/mappings_tab.png)
 
+### User identifiers
+
+When mapping user identifiers, Algolia recommends using the **Authenticated User Token** field to map authenticated user IDs and the **User Token** field for anonymous user IDs. Read more in the [Algolia documentation](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken/#persistent-user-token).
+
 ## Track
 
 If you're not familiar with the Segment spec, take a look to understand what the [Track](/docs/connections/spec/track/) method does.
