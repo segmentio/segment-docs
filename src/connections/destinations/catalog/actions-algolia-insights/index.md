@@ -66,7 +66,7 @@ By default, Algolia has set up mappings for `Product List Filtered`, `Product Li
 
 ### User identifiers
 
-When mapping user identifiers, Algolia recommends using the **Authenticated User Token** field to map authenticated user IDs and the **User Token** field for anonymous user IDs. Read more in the [Algolia documentation](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken/#persistent-user-token).
+When mapping user identifiers, Algolia recommends using the **Authenticated User Token** field to map authenticated user IDs and the **User Token** field for anonymous user IDs. For more detail, see the [Algolia documentation](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken/#persistent-user-token){:target="_blank"}.
 
 ## Track
 
