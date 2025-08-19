@@ -231,7 +231,7 @@ To create a new audience or trait:
 
 2. Configure and preview your Audience or Trait.
 - A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
-- Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). When the **Include Historical Event Data** is unchecked, only event data received after audience creation is used. However, trait data is always included as part of the filtering criteria whenever it is defined in the audience, regardless of the **Include Historical Event Data** setting, as lookback windows do not apply to trait data since it represents a snapshot of profile attributes at a given time.
+- Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). When the **Include Historical Event Data** option is unchecked, only event data received after audience creation is used. However, trait data is always included as part of the filtering criteria whenever it is defined in the audience, regardless of the **Include Historical Event Data** setting, as lookback windows do not apply to trait data since it represents a snapshot of profile attributes at a given time.
 
 3. Select destinations to connect, then review and create your audience or trait.
 
@@ -257,7 +257,7 @@ To edit a realtime trait or audience:
 Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 
 > warning ""
-> If your audience includes historical event data (**Include Historical Event Data** is enabled), editing an audience creates a new backfill task (you may also change this setting after creation). The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
+> If your audience includes historical event data (the **Include Historical Event Data** option is enabled), editing an audience creates a new backfill task (you may also change this setting after creation). The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
 
 > warning ""
 > It's not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
