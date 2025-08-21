@@ -231,7 +231,7 @@ To create a new audience or trait:
 
 2. Configure and preview your Audience or Trait.
 - A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
-- Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). When the **Include Historical Event Data** option is unchecked, only event data received after audience creation is used. However, trait data is always included as part of the filtering criteria whenever it is defined in the audience, regardless of the **Include Historical Event Data** setting, as lookback windows do not apply to trait data since it represents a snapshot of profile attributes at a given time.
+- Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). When the **Include Historical Event Data** option is unchecked, Segment only uses event data received after audience creation. However, trait data is always included as part of the filtering criteria whenever it is defined in the audience as lookback windows don't apply to trait data since it represents a snapshot of profile attributes at a given time.
 
 3. Select destinations to connect, then review and create your audience or trait.
 
