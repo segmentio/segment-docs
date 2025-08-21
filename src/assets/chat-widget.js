@@ -7,6 +7,9 @@
   let isChatOpen = false;
   let openai = null;
 
+  // OpenAI API Key (replace with your actual key)
+  const OPENAI_API_KEY = 'TODO-PASTE_YOUR_KEY_KERE'
+
   // DOM elements
   const chatWidget = document.getElementById('chat-widget');
   const chatToggle = document.getElementById('chat-toggle');
@@ -18,61 +21,49 @@
   const chatSessionTotal = document.getElementById('chat-session-total');
   const vectorstoreSelect = document.getElementById('vectorstore-select');
 
-  // Initialize OpenAI
-  async function initializeOpenAI() {
-    try {
-      // Load OpenAI SDK dynamically
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/openai@4.20.1/dist/index.min.js';
-      script.onload = function() {
-        const apiKey = getOpenAIKey();
-        if (apiKey) {
-          openai = new window.OpenAI({
-            apiKey: apiKey,
-            dangerouslyAllowBrowser: true // Note: This exposes your API key to the client
-          });
-          console.log('OpenAI initialized successfully');
-        } else {
-          showError('OpenAI API key not found. Please set it in localStorage or environment.');
-        }
-      };
-      document.head.appendChild(script);
-    } catch (error) {
-      console.error('Failed to initialize OpenAI:', error);
-      showError('Failed to initialize OpenAI SDK');
-    }
-  }
-
-  // Get OpenAI API key from localStorage or prompt user
-  function getOpenAIKey() {
-    let apiKey = localStorage.getItem('openai_api_key');
-    
-    if (!apiKey) {
-      apiKey = prompt('Please enter your OpenAI API key:');
-      if (apiKey) {
-        localStorage.setItem('openai_api_key', apiKey);
-      }
-    }
-    
-    return apiKey;
-  }
-
   // Initialize chat widget
   function initChatWidget() {
-    if (!chatWidget) return;
-
-    // Initialize OpenAI
-    initializeOpenAI();
+    console.log('Initializing chat widget...');
+    console.log('chatWidget:', chatWidget);
+    console.log('chatToggle:', chatToggle);
+    console.log('chatSend:', chatSend);
+    console.log('chatInput:', chatInput);
+    
+    if (!chatWidget) {
+      console.error('Chat widget element not found!');
+      return;
+    }
 
     // Event listeners
-    chatToggle.addEventListener('click', toggleChat);
-    chatClose.addEventListener('click', closeChat);
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
+    if (chatToggle) {
+      chatToggle.addEventListener('click', toggleChat);
+      console.log('Added toggle event listener');
+    }
+    
+    if (chatClose) {
+      chatClose.addEventListener('click', closeChat);
+      console.log('Added close event listener');
+    }
+    
+    if (chatSend) {
+      chatSend.addEventListener('click', function() {
+        console.log('Send button clicked!');
         sendMessage();
-      }
-    });
+      });
+      console.log('Added send event listener');
+    } else {
+      console.error('Send button not found!');
+    }
+    
+    if (chatInput) {
+      chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          console.log('Enter key pressed!');
+          sendMessage();
+        }
+      });
+      console.log('Added input event listener');
+    }
 
     // Close chat when clicking outside
     document.addEventListener('click', function(e) {
@@ -81,8 +72,93 @@
       }
     });
 
+    // Initialize OpenAI
+    initializeOpenAI();
+
     // Add welcome message
     addWelcomeMessage();
+    
+    console.log('Chat widget initialized successfully');
+  }
+
+  // Initialize OpenAI
+  async function initializeOpenAI() {
+    try {
+      console.log('Starting OpenAI SDK loading...');
+      
+      // Load OpenAI SDK dynamically
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/openai@4.20.1/dist/index.min.js';
+      
+      script.onload = function() {
+        console.log('OpenAI script loaded successfully!');
+        console.log('window.OpenAI:', window.OpenAI);
+        
+        if (window.OpenAI) {
+          openai = new window.OpenAI({
+            apiKey: OPENAI_API_KEY,
+            dangerouslyAllowBrowser: true
+          });
+          console.log('OpenAI initialized successfully');
+        } else {
+          console.error('OpenAI not found on window object');
+          showError('OpenAI SDK loaded but not available');
+        }
+      };
+      
+      script.onerror = function(error) {
+        console.error('Failed to load OpenAI script:', error);
+        console.error('Script src:', script.src);
+        console.log('Trying fallback: direct API calls without SDK');
+        
+        // Fallback: use direct fetch calls instead of SDK
+        initializeFallbackOpenAI();
+      };
+      
+      script.onabort = function() {
+        console.error('OpenAI script loading aborted');
+        showError('OpenAI SDK loading was aborted');
+      };
+      
+      console.log('Adding script to head...');
+      document.head.appendChild(script);
+      console.log('Script added, waiting for load...');
+      
+    } catch (error) {
+      console.error('Failed to initialize OpenAI:', error);
+      showError('Failed to initialize OpenAI SDK');
+    }
+  }
+
+  // Fallback OpenAI initialization using direct API calls
+  function initializeFallbackOpenAI() {
+    console.log('Using fallback OpenAI implementation');
+    
+    // Create a mock OpenAI object that uses fetch
+    openai = {
+      chat: {
+        completions: {
+          create: async function(params) {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${OPENAI_API_KEY}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(params)
+            });
+            
+            if (!response.ok) {
+              throw new Error(`OpenAI API error: ${response.status} ${response.statusText}`);
+            }
+            
+            return await response.json();
+          }
+        }
+      }
+    };
+    
+    console.log('Fallback OpenAI initialized successfully');
   }
 
   // Toggle chat window
@@ -99,65 +175,22 @@
     chatWindow.style.display = 'flex';
     isChatOpen = true;
     chatInput.focus();
-    chatWindow.classList.add('chat-open');
   }
 
   // Close chat window
   function closeChat() {
     chatWindow.style.display = 'none';
     isChatOpen = false;
-    chatWindow.classList.remove('chat-open');
   }
 
   // Add welcome message
   function addWelcomeMessage() {
     const welcomeMessage = {
       type: 'bot',
-      content: 'Hello! I\'m your Segment documentation assistant. Ask me anything about Segment\'s products, APIs, or documentation. Note: This is a client-side implementation - responses are generated using OpenAI\'s API directly in your browser.',
+      content: 'Hello! I\'m your Segment documentation assistant. Ask me anything about Segment\'s features, setup, or best practices.',
       timestamp: new Date()
     };
-    
-    addMessageToUI(welcomeMessage);
-  }
-
-  // Add message to UI
-  function addMessageToUI(message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = 'chat-message';
-    
-    if (message.type === 'user') {
-      messageElement.innerHTML = `
-        <div class="message-user">You: ${escapeHtml(message.content)}</div>
-      `;
-    } else if (message.type === 'bot') {
-      let sourceHtml = '';
-      if (message.source_url) {
-        sourceHtml = `
-          <div class="message-source">
-            🔗 <a href="${message.source_url}" target="_blank">${message.source_url}</a><br>
-            🎯 Relevance: ${message.source_similarity ? Number(message.source_similarity).toFixed(3) : 'N/A'}
-          </div>
-        `;
-      }
-      
-      let metaHtml = '';
-      if (message.input_tokens || message.output_tokens || message.cost) {
-        metaHtml = `
-          <div class="message-meta">
-            💰 Tokens: in=${message.input_tokens || 'N/A'}, out=${message.output_tokens || 'N/A'} | Cost: $${message.cost || 'N/A'}
-          </div>
-        `;
-      }
-      
-      messageElement.innerHTML = `
-        <div class="message-bot">Assistant: ${escapeHtml(message.content)}</div>
-        ${sourceHtml}
-        ${metaHtml}
-      `;
-    }
-    
-    chatMessages.appendChild(messageElement);
-    scrollToBottom();
+    addMessage(welcomeMessage);
   }
 
   // Send message using OpenAI API
@@ -168,28 +201,26 @@
     // Check if OpenAI is initialized
     if (!openai) {
       showError('OpenAI not initialized. Please refresh the page and try again.');
+      openai = new window.OpenAI({
+        apiKey: OPENAI_API_KEY,
+        dangerouslyAllowBrowser: true
+      });
+      console.log('OpenAI initialized successfully');
       return;
     }
 
-    // Add user message to UI
+    // Add user message to chat
     const userMessage = {
       type: 'user',
       content: message,
       timestamp: new Date()
     };
-    addMessageToUI(userMessage);
+    addMessage(userMessage);
 
-    // Clear input and show loading
+    // Clear input and disable send button
     chatInput.value = '';
-    chatInput.placeholder = 'Thinking...';
     chatSend.disabled = true;
-
-    // Add loading message
-    const loadingElement = document.createElement('div');
-    loadingElement.className = 'chat-loading';
-    loadingElement.textContent = 'Assistant is thinking...';
-    chatMessages.appendChild(loadingElement);
-    scrollToBottom();
+    chatInput.placeholder = 'Thinking...';
 
     try {
       // Build conversation history for context
@@ -226,16 +257,13 @@
           },
           ...conversationHistory
         ],
-        max_tokens: 500,
+        max_tokens: 1000,
         temperature: 0.7
       });
 
-      // Remove loading message
-      chatMessages.removeChild(loadingElement);
-      
       const answer = completion.choices[0].message.content;
       
-      // Calculate costs (approximate)
+      // Calculate costs
       const inputTokens = completion.usage.prompt_tokens;
       const outputTokens = completion.usage.completion_tokens;
       const inputCost = (inputTokens / 1000) * 0.0015;
@@ -244,10 +272,10 @@
       
       sessionTotal += totalCost;
 
-      // Simulate source URL (since we don't have vector stores in client-side)
+      // Generate source URL based on message content
       const sourceUrl = generateSourceUrl(message, answer, vectorstoreType);
 
-      // Add bot response to UI
+      // Add bot response to chat
       const botMessage = {
         type: 'bot',
         content: answer,
@@ -258,38 +286,27 @@
         cost: totalCost.toFixed(4),
         timestamp: new Date()
       };
-      addMessageToUI(botMessage);
+      addMessage(botMessage);
 
-      // Add to chat history
-      chatHistory.push(userMessage);
-      chatHistory.push(botMessage);
-      
       // Update session total
       updateSessionTotal();
 
     } catch (error) {
       console.error('Error calling OpenAI API:', error);
-      
-      // Remove loading message
-      if (loadingElement.parentNode) {
-        chatMessages.removeChild(loadingElement);
-      }
-      
-      // Add error message
       const errorMessage = {
-        type: 'bot',
-        content: `Sorry, I encountered an error: ${error.message}. Please check your API key and try again.`,
+        type: 'error',
+        content: `Error: ${error.message}. Please check your API key and try again.`,
         timestamp: new Date()
       };
-      addMessageToUI(errorMessage);
+      addMessage(errorMessage);
     } finally {
-      chatInput.placeholder = 'Ask about Segment docs...';
+      // Re-enable send button
       chatSend.disabled = false;
-      chatInput.focus();
+      chatInput.placeholder = 'Ask about Segment docs...';
     }
   }
 
-  // Generate source URL based on message content (simulation)
+  // Generate source URL based on message content
   function generateSourceUrl(message, answer, vectorstoreType) {
     const lowerMessage = message.toLowerCase();
     const lowerAnswer = answer.toLowerCase();
@@ -309,7 +326,12 @@
       'pricing': 'https://segment.com/pricing/',
       'privacy': 'https://segment.com/legal/privacy/',
       'security': 'https://segment.com/security/',
-      'enterprise': 'https://segment.com/enterprise/'
+      'enterprise': 'https://segment.com/enterprise/',
+      'warehouse': 'https://segment.com/docs/connections/storage/warehouses/',
+      'personas': 'https://segment.com/docs/personas/',
+      'engage': 'https://segment.com/docs/engage/',
+      'protocols': 'https://segment.com/docs/protocols/',
+      'unify': 'https://segment.com/docs/unify/'
     };
 
     // Try to find a matching URL
@@ -323,38 +345,79 @@
     return 'https://segment.com/docs/';
   }
 
-  // Show error message
-  function showError(message) {
-    const errorMessage = {
-      type: 'bot',
-      content: message,
-      timestamp: new Date()
-    };
-    addMessageToUI(errorMessage);
+  // Add message to chat
+  function addMessage(message) {
+    chatHistory.push(message);
+    
+    const messageElement = document.createElement('div');
+    messageElement.className = `chat-message ${message.type}-message`;
+    
+    let content = `
+      <div class="message-content">
+        <div class="message-text">${escapeHtml(message.content)}</div>
+        <div class="message-time">${formatTime(message.timestamp)}</div>
+      </div>
+    `;
+
+    // Add source URL and cost info for bot messages
+    if (message.type === 'bot' && message.source_url) {
+      content += `
+        <div class="message-source">
+          <a href="${message.source_url}" target="_blank" rel="noopener">
+            🔗 Source: ${message.source_url}
+          </a>
+          ${message.source_similarity ? `<span class="similarity">🎯 Relevance: ${(message.source_similarity * 100).toFixed(1)}%</span>` : ''}
+        </div>
+      `;
+    }
+
+    if (message.cost) {
+      content += `
+        <div class="message-cost">
+          💰 Tokens: in=${message.input_tokens}, out=${message.output_tokens} | Cost: $${message.cost}
+        </div>
+      `;
+    }
+
+    messageElement.innerHTML = content;
+    chatMessages.appendChild(messageElement);
+    
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
   // Update session total
   function updateSessionTotal() {
     if (sessionTotal > 0) {
       chatSessionTotal.textContent = `Session total: $${sessionTotal.toFixed(4)}`;
+      chatSessionTotal.style.display = 'block';
     } else {
-      chatSessionTotal.textContent = '';
+      chatSessionTotal.style.display = 'none';
     }
   }
 
-  // Scroll to bottom of chat messages
-  function scrollToBottom() {
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+  // Show error message
+  function showError(message) {
+    const errorMessage = {
+      type: 'error',
+      content: message,
+      timestamp: new Date()
+    };
+    addMessage(errorMessage);
   }
 
-  // Escape HTML to prevent XSS
+  // Utility functions
   function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
   }
 
-  // Initialize when DOM is ready
+  function formatTime(date) {
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  // Initialize when DOM is loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initChatWidget);
   } else {
