@@ -10,8 +10,6 @@ Segment makes it easy to send your data to AWS Lambda (and lots of other destina
 
 With Lambda, you can run code for any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app.
 
-[Read more about AWS Lambda on the Segment blog](https://segment.com/blog/unleashing-the-power-of-raw-data-with-amazon-lambda/){:target="_blank"}.
-
 ## Getting started
 
 
@@ -187,7 +185,7 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
-Due to how the event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/){:target="_blank”}, works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.
+Due to how the event delivery system, [Centrifuge](https://www.twilio.com/en-us/blog/archive/2018/introducing-centrifuge){:target="_blank”}, works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.
 
 **Handling Common Errors**
 You can find delivery logs in Destination > [Event Delivery](/docs/connections/event-delivery/).

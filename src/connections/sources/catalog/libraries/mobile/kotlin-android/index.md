@@ -27,8 +27,7 @@ Analytics Kotlin uses thread-safety strategies to isolate Plugins, Device-Mode D
 
 ### Performance
 
-Analytics Kotlin is a huge leap forward in terms of performance when compared to Analytics Android (Classic). For a more detailed overview, you can reference our [blog post](https://segment.com/blog/sdk-performance-improvements/). 
-
+Analytics Kotlin is a leap forward in terms of performance when compared to Analytics Android (Classic):
 - Faster event processing and delivery
 - Significantly lower CPU usage
 - Small memory & disk usage footprint

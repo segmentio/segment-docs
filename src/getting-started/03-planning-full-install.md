@@ -71,7 +71,7 @@ If your organization sells a product or services to other businesses, you might 
 
 #### Ecommerce Spec
 
-If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [why companies need an Ecommerce Spec](https://segment.com/blog/2014-08-28-ecommerce-analytics-story/), read more about [Ecommerce tracking plans](/docs/connections/spec/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [Twilio's retail solutions](https://www.twilio.com/en-us/solutions/retail){:target="_blank”}, read more about [Ecommerce tracking plans](/docs/connections/spec/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
 
 #### Mobile Spec
 
@@ -106,7 +106,7 @@ Got all that? Great. You're now ready to develop a Tracking Plan.
 
 ## Develop a tracking plan
 
-A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/){:target="_blank"} clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
+A [tracking plan](https://www.twilio.com/en-us/blog/insights/what-is-a-tracking-plan){:target="_blank"} clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
 
 Your tracking plan is probably maintained in a spreadsheet (unless you use Segment's tracking-plan tool, [Protocols](/docs/protocols/)), and serves as a project management tool to get your organization in agreement about what data to use to make decisions. A tracking plan helps build a shared understanding of the data among marketers, product managers, engineers, analysts, and any other data users.
 
@@ -164,7 +164,7 @@ An online community, on the other hand, has an entirely different set of actions
 - **Content Produced**
 - **Content Curated**
 
-With these actions tracked, the community can develop metrics around engagement, and understand how users move towards their ultimate conversion events. You can read more in [this article from the online community GrowthHackers](https://segment.com/blog/growthhackers-community-metrics/){:target="_blank"} about the events they track and why.
+With these actions tracked, the community can develop metrics around engagement, and understand how users move towards their ultimate conversion events.
 
 ### Define your Track event properties
 

@@ -32,7 +32,6 @@ Destination Actions are available to all customers on all Segment plans. You do 
 - You can use the [Event Tester](/docs/connections/test-connections) with Destination Actions. Event delivery metrics are collected and available in the destination information pages.
 - If you are using [Protocols](/docs/protocols/), Destination Actions actions are applied **after** [schema filters](/docs/protocols/enforce/schema-configuration/) and [transformations](/docs/protocols/transform/). 
 - If you are using [Destination Filters](/docs/connections/destinations/destination-filters/), Actions are applied after the filters. They are not applied to data that is filtered out.
-- Destination Actions can't be accessed or modified using the Segment APIs.
 
 ## Components of a Destination Action
 
@@ -202,7 +201,7 @@ Segment offers suggested mappings that automatically propose relevant destinatio
 
 To use Suggested Mappings, a user with the [Workspace Owner role](/docs/segment-app/iam/roles/) must first accept the Customer AI Terms and Conditions. Ensure that you review the suggested mappings for accuracy before finalizing them as the suggestions are not guaranteed to be 100% accurate.
 
-For more information, see [Segment's Suggested Mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
+For more information, see [Segment's Suggested Mappings blog post](https://www.twilio.com/en-us/blog/developers/best-practices/ai-assisted-magical-mappings){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
 
 ## Static values
 Segment supports 4 static value types in Destination Actions mappings: `string`, `boolean`, `number`, and `null`. 

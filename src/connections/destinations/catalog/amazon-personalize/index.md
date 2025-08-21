@@ -1006,4 +1006,4 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
-Due to how Segment's event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/){:target="_blank”}, works, your Lambda can't take more than five seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.
+Due to how Segment's event delivery system, [Centrifuge](https://www.twilio.com/en-us/blog/archive/2018/introducing-centrifuge){:target="_blank”}, works, your Lambda can't take more than five seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.

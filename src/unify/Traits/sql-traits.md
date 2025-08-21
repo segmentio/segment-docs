@@ -22,8 +22,6 @@ This unlocks some interesting possibilities to help you meet your business goals
 - To predict a customer's lifetime value (LTV), generate a complex query based on demographic and customer data in your warehouse. You can then use that information in an Engage audience to send personalized offers or recommend specific products.
 - To inform your outreach efforts, use complex queries to build churn or product adoption models.
 
-Check out Segment's [SQL Traits blog post](https://segment.com/blog/sql-traits){:target="_blank"} for more customer case studies.
-
 > info ""
 > To view SQL Traits in a user profile, you must have [PII access](/docs/segment-app/iam/roles/#pii-access). Without this access, Segment redacts all SQL traits in a profile.
 

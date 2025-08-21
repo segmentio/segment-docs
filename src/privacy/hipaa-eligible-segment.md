@@ -3,7 +3,7 @@ title: HIPAA Eligible Segment
 plan: hipaa-eligible
 ---
 
-Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see the [announcement blog post](http://segment.com/blog/segment-for-healthcare){:target="_blank"}.
+Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see Twilio's [Leverage real-time data to deliver personalized care to patients, at scale, and uncover critical moments in the care journey](https://www.twilio.com/en-us/blog/insights/segment-for-healthcare){:target="_blank"}.
 
 ## Business Associate Addendum
 

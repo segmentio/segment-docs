@@ -24,8 +24,6 @@ Segment Data Lakes sends Segment data to a cloud data store, AWS S3, in a format
 > warning "Segment Data Lakes deletion policies"
 > Segment Data Lakes (AWS) does not support Segment's [user deletion and suppression](/docs/privacy/user-deletion-and-suppression/) capabilities, as you retain your data in systems that you manage.
 
-To learn more about Segment Data Lakes, check out the Segment blog post [Introducing Segment Data Lakes](https://segment.com/blog/introducing-segment-data-lakes/){:target="_blank"}.
-
 ## How Data Lakes work
 
 Segment supports Data Lakes hosted on Amazon Web Services (AWS). Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options.

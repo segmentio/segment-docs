@@ -329,4 +329,5 @@ destinations:
     override: "actions-ortto"
   - original: "aampe-actions"
     override: "actions-aampe"
-
+  - original: "nudge-actions"
+    override: "actions-nudge"

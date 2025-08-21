@@ -56,7 +56,7 @@ Regardless of your approach, keep the following tips in mind:
 
 ## Create a tracking plan
 
-A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/){:target="_blank”} clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, and analysts get on the same page.
+A [tracking plan](https://www.twilio.com/en-us/blog/insights/what-is-a-tracking-plan){:target="_blank”} clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, and analysts get on the same page.
 
 The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that Segment invested years of product development to create [Protocols](/docs/protocols/). Whatever tool you choose to build your tracking plan, make sure that it represents a single source of truth for your data collection efforts.
 
@@ -113,7 +113,7 @@ For a community, on the other hand, an entirely different set of actions indicat
 - **Content Produced**
 - **Content Curated**
 
-With this, they're able to measure key metrics around engagement and understand how users are moving towards their ultimate conversion event: curation content for others. For more information, check out [this article](https://segment.com/blog/growthhackers-community-metrics/){:target="_blank"} from GrowthHackers about the events they track and why.
+With this, they're able to measure key metrics around engagement and understand how users are moving towards their ultimate conversion event: curation content for others.
 
 ## Define your Track event properties
 
