@@ -105,6 +105,9 @@
     {% include_cached components/feedback-templates.html %}
   {% endunless %}
 
+  <!-- Chat Widget -->
+  {% include components/chat-widget.html %}
+
   {%- comment -%}
     A.JS
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
@@ -119,6 +122,8 @@
     JS for site
   {%- endcomment -%}
   <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
+  <!-- Chat Widget JavaScript -->
+  <script src="{{ '/assets/chat-widget.js' | relative_url }}"></script>
   {%- comment -%}
     Google Search Results Metadata
   {%- endcomment -%}

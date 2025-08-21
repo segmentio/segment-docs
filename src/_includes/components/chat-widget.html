@@ -1,0 +1,47 @@
+<!-- Chat Widget Component -->
+<div id="chat-widget" class="chat-widget">
+  <!-- Chat Toggle Button -->
+  <div id="chat-toggle" class="chat-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z" fill="currentColor"/>
+    </svg>
+  </div>
+
+  <!-- Chat Window -->
+  <div id="chat-window" class="chat-window" style="display: none;">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <h3>Segment Docs Assistant</h3>
+      <button id="chat-close" class="chat-close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Vector Store Selector -->
+    <div class="chat-selector">
+      <label for="vectorstore-select">Data Source:</label>
+      <select id="vectorstore-select">
+        <option value="docs_and_website">Documentation and Website</option>
+        <option value="docs_only">Documentation Only</option>
+      </select>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="chat-messages" class="chat-messages"></div>
+
+    <!-- Chat Input -->
+    <div class="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Ask about Segment docs..." autocomplete="off">
+      <button id="chat-send" class="chat-send-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Session Total -->
+    <div id="chat-session-total" class="chat-session-total"></div>
+  </div>
+</div>
