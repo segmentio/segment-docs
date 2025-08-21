@@ -201,7 +201,7 @@ Segment offers suggested mappings that automatically propose relevant destinatio
 
 To use Suggested Mappings, a user with the [Workspace Owner role](/docs/segment-app/iam/roles/) must first accept the Customer AI Terms and Conditions. Ensure that you review the suggested mappings for accuracy before finalizing them as the suggestions are not guaranteed to be 100% accurate.
 
-For more information, see [Segment's Suggested Mappings blogpost](https://segment.com/blog/ai-assisted-magical-mappings/){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
+For more information, see [Segment's Suggested Mappings blog post](https://www.twilio.com/en-us/blog/developers/best-practices/ai-assisted-magical-mappings){:target="_blank”} and the [Suggested Mappings Nutrition Label](/docs/connections/reverse-etl/suggested-mappings-nutrition-facts). 
 
 ## Static values
 Segment supports 4 static value types in Destination Actions mappings: `string`, `boolean`, `number`, and `null`. 

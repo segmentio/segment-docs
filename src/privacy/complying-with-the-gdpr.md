@@ -13,7 +13,7 @@ Specifically, here is how Segment supports its customers:
 *   New product capabilities to help you be compliant when users request you delete or suppress their data.
 
 
-Check out Segment's [GDPR blog post](https://segment.com/blog/segment-and-the-gdpr){:target="_blank"} to learn about Segment's plan for GDPR readiness.
+Check out Twilio's [GDPR blog post](https://www.twilio.com/en-us/blog/insights/compliance/recent-gdpr-changes-your-business-needs-to-know-about){:target="_blank"} to learn about recent changes to the GDPR and how Segment is responding.
 
 ## How does the GDPR impact your business?
 

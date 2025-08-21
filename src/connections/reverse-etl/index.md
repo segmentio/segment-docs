@@ -70,8 +70,8 @@ Learn more about the system that powers Reverse ETL, supported destinations, and
 
 {% include components/reference-button.html
   icon="guides.svg"
-  href="https://segment.com/blog/reverse-etl/"
-  title="What is Reverse ETL? A complete guide"
+  href="https://www.twilio.com/en-us/blog/activate-data-with-api-managed-reverse-etl"
+  title="Activate Data with API-managed Reverse ETL"
   description="In this blog from Segment, learn how Reverse ETL helps businesses activate their data to drive better decision-making and greater operational efficiency."
 %}
 

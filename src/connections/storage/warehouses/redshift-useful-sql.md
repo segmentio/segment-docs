@@ -105,10 +105,10 @@ Segment's API does not impose any restrictions on your data with regard to user 
 
 Sessions aren't fundamental facts about the user experience. They're stories Segment builds around the data to understand how customers actually use the product in their day-to-day lives. And since Segment's API is about collecting raw, factual data, there's no API for collecting sessions. Segment leaves session interpretation to SQL partners, which let you design how you measure sessions based on how customers use your product.
 
-For more on why Segment doesn't collect session data at the API level, [check out a blog post here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank"}.
+For more on why Segment doesn't collect session data at the API level, check out Twilio's [Facts vs. Stories: Why Segment has no Sessions API](https://www.twilio.com/en-us/blog/developers/best-practices/facts-vs-stories-why-segment-has-no-sessions-api){:target="_blank"} blog.
 
 ### How to define user sessions using SQL
-Each of Segment's SQL partners allow you to define sessions based on your specific business needs. With [Looker](https://looker.com){:target="_blank"}, for example, you can take advantage of their persistent derived tables and LookML modeling language to layer sessionization on top of your Segment SQL data. Segment recommends [checking out Looker's approach here](https://segment.com/blog/using-sql-to-define-measure-and-analyze-user-sessions/).
+Each of Segment's SQL partners allow you to define sessions based on your specific business needs. With [Looker](https://looker.com){:target="_blank"}, for example, you can take advantage of their persistent derived tables and LookML modeling language to layer sessionization on top of your Segment SQL data.
 
 To define sessions with raw SQL, a great query and explanation comes from [Mode Analytics](https://mode.com).
 

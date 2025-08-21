@@ -21,8 +21,7 @@ With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 Analytics-Swift provides several key benefits including improvements in stability, performance, and developer experience when compared to Analytics iOS (Classic). 
 ### Performance
 
-Analytics-Swift offers improved performance when compared to Analytics iOS. For a more detailed overview, you can reference the [blog post](https://segment.com/blog/sdk-performance-improvements/). 
-
+Analytics-Swift offers improved performance when compared to Analytics iOS: 
 - Faster event processing and delivery
 - Significantly lower CPU usage
 - Small memory & disk usage footprint

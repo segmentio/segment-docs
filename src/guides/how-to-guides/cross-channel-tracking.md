@@ -217,9 +217,6 @@ For Facebook advertisers, [Facebook Offline Conversions](https://www.facebook.co
 
 *   Enable and configure [Segment's Facebook Offline Conversions destination](/docs/connections/destinations/catalog/facebook-offline-conversions/), which automates attributing offline events to your Facebook ads in real-time
 
-
-[Learn more about the benefits of Segment's Facebook Offline Conversions destination](https://segment.com/blog/facebook-offline-conversions-integration/){:target="_blank"}.
-
 Most other advertising networks provide some functionality of manually uploading offline data to match with their online advertising data. Here is a short list of other services:
 
 *   [Google Adwords](https://adwords.google.com/home/){:target="_blank"} provides the functionality to [attribute offline conversions to your ads](https://support.google.com/adwords/answer/2998031?hl=en){:target="_blank"}.
