@@ -257,7 +257,7 @@ To edit a realtime trait or audience:
 Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 
 > warning ""
-> If your audience includes historical event data (the **Include Historical Event Data** option is enabled), editing an audience creates a new backfill task (you may also change this setting after creation). The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
+> If your audience includes historical event data (the **Include Historical Event Data** option is enabled), editing an audience creates a new backfill task. The backfill task and the edit task take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
 
 > warning ""
 > It's not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
