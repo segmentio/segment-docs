@@ -288,9 +288,6 @@
       };
       addMessage(botMessage);
 
-      // Update session total
-      updateSessionTotal();
-
     } catch (error) {
       console.error('Error calling OpenAI API:', error);
       const errorMessage = {
@@ -354,8 +351,7 @@
     
     let content = `
       <div class="message-content">
-        <div class="message-text">${escapeHtml(message.content)}</div>
-        <div class="message-time">${formatTime(message.timestamp)}</div>
+        <div class="message-text">${message.type === 'bot' ? '🤖' : '👤'} ${escapeHtml(message.content)}</div>
       </div>
     `;
 
@@ -371,14 +367,6 @@
       `;
     }
 
-    if (message.cost) {
-      content += `
-        <div class="message-cost">
-          💰 Tokens: in=${message.input_tokens}, out=${message.output_tokens} | Cost: $${message.cost}
-        </div>
-      `;
-    }
-
     messageElement.innerHTML = content;
     chatMessages.appendChild(messageElement);
     
@@ -386,15 +374,6 @@
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
-  // Update session total
-  function updateSessionTotal() {
-    if (sessionTotal > 0) {
-      chatSessionTotal.textContent = `Session total: $${sessionTotal.toFixed(4)}`;
-      chatSessionTotal.style.display = 'block';
-    } else {
-      chatSessionTotal.style.display = 'none';
-    }
-  }
 
   // Show error message
   function showError(message) {
