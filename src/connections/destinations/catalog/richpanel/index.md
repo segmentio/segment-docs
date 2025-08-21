@@ -57,7 +57,7 @@ analytics.page('Pricing', {
 
 Page calls are sent as a tracking event to Richpanel on the timeline of the customer who was tracked. If the `richpanel_session_id` is included, it clusters this tracking event into a single “session” on the customer's timeline.
 
-If no `richpanel_session_id` is supplied, Richpanel will automatically generate sessionIDs based on time between tracking events. (Read why [Segment doesn't have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank"} for more details). `page` calls can only update `email` traits, not create them.
+If no `richpanel_session_id` is supplied, Richpanel will automatically generate sessionIDs based on time between tracking events. (Read why [Segment doesn't have session tracking](https://www.twilio.com/en-us/blog/developers/best-practices/facts-vs-stories-why-segment-has-no-sessions-api){:target="_blank"} for more details). `page` calls can only update `email` traits, not create them.
 
 ## Track
 

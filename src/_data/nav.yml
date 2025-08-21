@@ -36,7 +36,7 @@ sections:
   section:
   - path: "https://segment.com/jobs/"
     title: Careers
-  - path: "https://segment.com/blog/"
+  - path: "https://twilio.com/blog/"
     title: Blog
   - path: "https://segment.com/press/"
     title: Press
