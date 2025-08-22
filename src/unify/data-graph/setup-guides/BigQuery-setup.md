@@ -11,6 +11,8 @@ redirect_from:
 
 Set up your BigQuery data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/).  
 
+As long as the service account has been granted permissions to read tables from both projects, the customer should be good to go.
+
 ## Step 1: Roles and permissions
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset.
@@ -51,6 +53,9 @@ To grant read-only access for the Data Graph:
 4. Click **ADD ANOTHER ROLE**.
 5. Select the **BigQuery Data Viewer role**.
 6. Click **Save**.
+
+> info ""
+> You can grant permissions to access data from multiple projects for the BigQuery service account you use. 
 
 ## *(Optional)* Step 4: Restrict read-only access
 If you want to restrict access to specific datasets, grant the BigQuery Data Viewer role on datasets to the service account. Make sure to grant read-only access to the Profiles Sync dataset.
