@@ -11,8 +11,6 @@ redirect_from:
 
 Set up your BigQuery data warehouse to Segment for the [Data Graph](/docs/unify/data-graph/data-graph/).  
 
-As long as the service account has been granted permissions to read tables from both projects, the customer should be good to go.
-
 ## Step 1: Roles and permissions
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset.
