@@ -11,9 +11,9 @@ This destination is maintained by Batch. For any issues, [contact Batch Support]
 
 ## Getting started
 
-1. From your workspace’s [Destinations catalog](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"}, search for **Batch**.
+1. From your workspace’s [destinations catalog](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"}, search for **Batch**.
 2. Select **Batch (Actions)** and click **Add Destination**.
-3. Choose the **Source** you want to connect to **Batch (Actions)**.
+3. Choose the **source** you want to connect to **Batch (Actions)**.
 4. In the [Batch dashboard](https://dashboard.batch.com/){:target="_blank"}, copy your **Project Key** and **REST API Key**.
 5. Paste the **Project Key** and **REST API Key** into the Batch destination settings in Segment.
 6. Toggle **Enable Destination**. Segment will start sending data to Batch according to your **Mappings**.
