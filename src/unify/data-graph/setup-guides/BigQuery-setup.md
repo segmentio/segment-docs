@@ -52,6 +52,10 @@ To grant read-only access for the Data Graph:
 5. Select the **BigQuery Data Viewer role**.
 6. Click **Save**.
 
+> info ""
+> You can grant permissions to access data from multiple projects for the BigQuery service account you use. 
+
+
 ## *(Optional)* Step 4: Restrict read-only access
 If you want to restrict access to specific datasets, grant the BigQuery Data Viewer role on datasets to the service account. Make sure to grant read-only access to the Profiles Sync dataset.
 
