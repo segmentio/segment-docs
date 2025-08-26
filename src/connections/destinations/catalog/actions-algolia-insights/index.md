@@ -5,13 +5,15 @@ redirect_from:
   - '/connections/destinations/catalog/algolia/'
 id: 63e52bea7747fbc311d5b872
 ---
-With the [Algolia Insights (Actions)](https://www.algolia.com/products/analytics/){:target="_blank"}  destination, you can send [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/){:target="_blank"}. It's required to send Insight Events to use these Algolia features: 
+With the Algolia Insights (Actions) destination, you can send [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/){:target="_blank"}. Insight Events are required to use these Algolia features: 
 
-- Click and conversion analytics
-- A/B Testing
-- AI Re-Ranking
-- Personalization
-- Algolia Recommend
+- [Click and conversion analytics](https://www.algolia.com/doc/guides/search-analytics/overview/){:target="_blank"}
+- [Algolia Recommend](https://www.algolia.com/doc/guides/algolia-recommend/overview/){:target="_blank"}
+- [Personalization](https://www.algolia.com/doc/guides/personalization/classic-personalization/what-is-personalization/){:target="_blank"}
+- [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking/){:target="_blank"}
+- [A/B Testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing/){:target="_blank"}
+- [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/){:target="_blank"}
+- [NeuralSearch](https://www.algolia.com/doc/guides/getting-started/neuralsearch/){:target="_blank"}
 
 This destination is maintained by [Algolia](https://www.algolia.com/){:target="_blank”}. For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
@@ -25,7 +27,7 @@ This destination is maintained by [Algolia](https://www.algolia.com/){:target="_
 
 ### Getting your Algolia credentials
 
-Your app ID and API key can be found in the **API Keys** section of your account settings in the Algolia dashboard. You will need a **search** API key to set up the destination.
+Your app ID and API key can be found in the **API Keys** section of your account settings in the Algolia dashboard. You need a **search** API key to set up the destination.
 
 ![Dashboard Settings](images/algolia_dashboard_settings.png)
 
@@ -37,13 +39,19 @@ Your app ID and API key can be found in the **API Keys** section of your account
 
 The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to add additional Algolia-related data like an index name and a query ID.
 
-To access your query ID, make sure [`clickAnalytics`](https://www.algolia.com/doc/api-reference/api-parameters/clickAnalytics/) is enabled in your searches. If you're using our JavaScript search API client, this will look like:
+To access your query ID, make sure [`clickAnalytics`](https://www.algolia.com/doc/api-reference/api-parameters/clickAnalytics/){:target="_blank"} is enabled in your searches. If you're using the [JavaScript v5 search API client](https://www.algolia.com/doc/libraries/javascript/v5/methods/search/search-single-index/?client=javascript){:target="_blank"}, this looks like:
 
 ```js
-index.search('query', {
+import { algoliasearch } from 'algoliasearch';
+
+const client = algoliasearch('ALGOLIA_APPLICATION_ID', 'ALGOLIA_API_KEY');
+
+const response = await client.searchSingleIndex({
+  indexName: '<INDEX_NAME>',
+  query: '<QUERY>',
   userToken: 'user-1',
   clickAnalytics: true
-})
+});
 ``` 
 
 Once this is enabled, you will be able to access `queryID` in your search response, which you can then use in your Segment events.
@@ -52,9 +60,13 @@ You can read more about how to send Algolia-related data to Segment in the [Algo
 
 ## Mapping Events
 
-By default, Algolia has set up mappings for `Product List Filtered`, `Product Clicked`, `Product Viewed`, `Product Added` and `Order Completed` events. If your event structure doesn't match Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/), you can update this in the destination mappings section of the Segment app.
+By default, Algolia has set up mappings for `Product List Filtered`, `Product List Viewed`, `Product Viewed`, `Product Clicked`, `Product Added` and `Order Completed` events. If your event structure doesn't match Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/), you can update this in the destination mappings section of the Segment app.
 
 ![Mappings Tab](images/mappings_tab.png)
+
+### User identifiers
+
+When mapping user identifiers, Algolia recommends using the **Authenticated User Token** field to map authenticated user IDs and the **User Token** field for anonymous user IDs. For more detail, see the [Algolia documentation](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken/#persistent-user-token){:target="_blank"}.
 
 ## Track
 
@@ -72,12 +84,16 @@ Algolia supports the following Segment events out of the box:
     <td>Send this event when a visitor filters a product list or category.</td>
   </tr>
   <tr>
-    <td><code>Product Clicked</code></td>
-    <td>Fire this event when a visitor clicks a product.</td>
+    <td><code>Product List Viewed</code></td>
+    <td>Send this event when a visitor views a product list or category.</td>
   </tr>
   <tr>
     <td><code>Product Viewed</code></td>
     <td>Fire this event when a visitor views a product.</td>
+  </tr>
+  <tr>
+    <td><code>Product Clicked</code></td>
+    <td>Fire this event when a visitor clicks a product.</td>
   </tr>
   <tr>
     <td><code>Product Added</code></td>
@@ -104,10 +120,16 @@ analytics.track('Product List Filtered', {
   // ... other required properties from the spec
 })
 
-analytics.track('Product Clicked', {
+analytics.track('Product List Viewed', {
   search_index: "my-index-name",
-  product_id: "hit objectID",
-  position: hitPositionOnIndex, // number
+  products: [
+    {
+      product_id: "hit objectID",
+    },
+    {
+      product_id: "hit objectID 2",
+    },
+  ],
   query_id: "Algolia queryID", // required only for Click Analytics,
   // ... other required properties from the spec
 })
@@ -119,6 +141,15 @@ analytics.track('Product Viewed', {
   // ... other required properties from the spec
 })
 
+analytics.track('Product Clicked', {
+  search_index: "my-index-name",
+  product_id: "hit objectID",
+  position: hitPositionOnIndex, // number
+  query_id: "Algolia queryID", // required only for Click Analytics,
+  // ... other required properties from the spec
+})
+
+// This 
 analytics.track('Product Added', {
   search_index: "my-index-name",
   product_id: "hit objectID",
