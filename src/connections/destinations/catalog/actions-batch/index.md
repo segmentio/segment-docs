@@ -7,7 +7,7 @@ id: 596d11f870a3e552b957e6d9
 
 [Batch](https://batch.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer engagement platform for personalized, timely notifications and messages that boost retention and drive growth.
 
-This destination is maintained by Batch. For any issues, [contact Batch Support](mailto:support@batch.com).
+This destination is maintained by Batch. For any issues, [contact Batch Support](mailto:support@batch.com){:target="_blank"}.
 
 ## Getting started
 
@@ -22,11 +22,10 @@ This destination is maintained by Batch. For any issues, [contact Batch Support]
 
 {% include components/actions-fields.html %}
 
----
-
 ## Profile attributes mapping
 
-If you’re new to the Identify call, see the [Segment spec](/docs/connections/spec/identify/) for more details.
+> info ""
+> If you’re new to the Identify call, see the [Segment spec](/docs/connections/spec/identify/) for more details.
 
 When you call **Identify**, Segment maps `userId` to **`identifiers.custom_id`** and writes traits into **`attributes`**.
 
@@ -59,8 +58,8 @@ analytics.identify("97980cfea0067", {
 | `traits.email_marketing`               | `attributes.$email_marketing`   |
 | `traits.sms_marketing`                 | `attributes.$sms_marketing`     |
 | `context.timezone`                     | `attributes.$timezone`          |
-| `context.locale` → language (for example, `fr`)| `attributes.$language`          |
-| `context.locale` → region (for example, `FR`)  | `attributes.$region`            |
+| `context.locale` → language *(for example: `fr`)*| `attributes.$language`          |
+| `context.locale` → region *(for example: `FR`)*  | `attributes.$region`            |
 
 **Notes**
 
@@ -70,7 +69,6 @@ analytics.identify("97980cfea0067", {
 
 > info ""
 > For more details on the fields to be included, refer to the Batch [API Profile documentation](https://doc.batch.com/developer/api/cep/profiles/update){:target="_blank"}.
-
 
 ### Resulting Batch profile payload (output)
 
@@ -108,9 +106,8 @@ To map additional traits into Batch profile attributes:
 5. **Save** and enable the mapping.
 
 > info "Supported types"
-> Strings, numbers, booleans, arrays of strings are supported. Avoid arbitrary nested objects.
-
----
+> Strings, numbers, booleans, arrays of strings are supported.
+> Avoid arbitrary nested objects.
 
 ## Historical backfill request
 
@@ -118,7 +115,7 @@ If you want to integrate your entire Segment userbase into Batch using the **Ide
 
 To do this:
 
-1. **Contact Segment Support** → [friends@segment.com](mailto:friends@segment.com).
+1. **Contact Segment Support** at [friends@segment.com](mailto:friends@segment.com).
 2. **Request a historical replay** of your data.  
 3. Provide Segment with the following details:  
    - **Start date and time**  
@@ -129,13 +126,12 @@ To do this:
 
 Segment will then replay your historical data so Batch can import your full userbase.
 
----
-
 ## Profile events mapping
 
 When you call **Track**, Segment uses your `userId` as Batch’s **`identifiers.custom_id`**. A **userId is required** to attribute the event to a profile.
 
-For more details on the Track call, see the [Track spec](/docs/connections/spec/track).
+> info ""
+> For more details on the Track call, see the [Track spec](/docs/connections/spec/track).
 
 ### Example Track call (Segment input)
 
@@ -177,22 +173,19 @@ Events are sent to Batch in near real time according to your destination mapping
 
 ![Events mapping](./images/events_mapping.png "Events mapping")
 
----
-
 ## Validation checklist
 
 - Always send a stable `userId` → becomes `identifiers.custom_id`.  
-- Native profile fields in `attributes`: `$email_address`, `$email_marketing`, `$phone_number`, `$sms_marketing`, `$language`, `$region`, `$timezone`.  
-- Everything else → **custom attributes** under `attributes`.  
-- Dates: use **ISO‑8601 UTC** (for example, `1989-07-20T00:00:00Z`).  
+- Place native profile fields under `attributes`: `$email_address`, `$email_marketing`, `$phone_number`, `$sms_marketing`, `$language`, `$region`, `$timezone`.  
+- Put everything else under **custom attributes** in `attributes`.  
+- Format dates using **ISO‑8601 UTC** (for example: `1989-07-20T00:00:00Z`).  
 - Configure additional mappings in **Mappings → Edit Mapping**.  
-- Test with a read-back/export to verify types, encodings, and timezones.
-
----
+- Test with a read-back or export to verify types, encodings, and timezones.
 
 ## Integrating a computed trait
 
-For more details on computed traits, see the [Segment spec](/docs/unify/Traits/computed-traits).
+> info ""
+> For more details on computed traits, see the [Segment spec](/docs/unify/Traits/computed-traits).
 
 To integrate a computed trait with Batch:
 
@@ -202,7 +195,7 @@ To integrate a computed trait with Batch:
    - Otherwise, click **Add destination** and select **Batch (Actions)**.  
 3. Open the **Engage** tab → **Audiences** → **Computed traits**.
 4. Click **Create computed trait**.  
-5. Configure your **calculation method** (for example, count, aggregation, last value).  
+5. Configure your **calculation method** (for example: count, aggregation, last value).  
 6. Click **Preview**, then **Next**.  
 7. Select your **Batch destination**.  
 8. Choose how to send the data:  
