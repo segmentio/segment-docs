@@ -1,5 +1,5 @@
 ---
-title: Batch Destination
+title: Batch (Actions) Destination
 id: 596d11f870a3e552b957e6d9
 ---
 
