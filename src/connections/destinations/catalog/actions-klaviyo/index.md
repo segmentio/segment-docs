@@ -80,6 +80,14 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 11. In the settings that appear in the side panel, toggle the **Send Track** option on, and don't change the **Audience Entered/Audience Exited** event names.
 12. Click **Save Settings**.
 
+
+#### Update opt-in settings
+
+Double opt-in is a process through which a new subscriber must confirm their subscription before being subscribed to a given list in Klaviyo.
+
+You can select the `single opt in` and `double opt in` through Klaviyo UI for particular list [Understanding opt-in process](https://help.klaviyo.com/hc/en-us/articles/115005251108#h_01HZ5G5ZQB825T0HDN5E2FA80G){:target="_blank"}
+
+
 ## FAQ
 
 #### Dealing with error responses from Klaviyo's API
