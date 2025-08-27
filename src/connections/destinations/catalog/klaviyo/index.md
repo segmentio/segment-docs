@@ -176,6 +176,14 @@ analytics.identify({
 
 You can also choose whether you want to force users to confirm the opt in to your list. This flag determines whether someone is sent an email with a confirmation link before they are added to the list. The default settings will be `true`. However, you can uncheck this option in the Klaviyo settings inside Segment or override it per Identify call using code in the `integration.Klaviyo.confirmOptin` parameter.
 
+
+#### Update opt-in settings
+
+Double opt-in is a process through which a new subscriber must confirm their subscription before being subscribed to a given list in Klaviyo.
+
+You can select the `single opt in` and `double opt in` through Klaviyo UI for particular list [Understanding opt-in process](https://help.klaviyo.com/hc/en-us/articles/115005251108#h_01HZ5G5ZQB825T0HDN5E2FA80G){:target="_blank"}
+
+
 > warning ""
 > This setting should only be set to `false` or unchecked if you have already received explicit permission to add a user to the list. Setting `Klaviyo.confirmOptin` to `false` without explicit user permission can result in your Klaviyo account being suspended and/or terminated by Klaviyo.
 
