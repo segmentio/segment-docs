@@ -2,9 +2,9 @@
 title: 'Spec: Identify'
 ---
 
-The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email, name, and more.
+The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email and name.
 
-{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Identify Method" description="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Identify Method" description="Check out the high-level overview of the Identify method in Segment University. (You must be logged in to access.)" %}
 
 Segment recommends that you make an Identify call:
 
@@ -12,11 +12,9 @@ Segment recommends that you make an Identify call:
 - After a user logs in
 - When a user updates their info (for example, they change or add a new address)
 
-The first three examples are pretty self-explanatory, but many might ask: why you would call Identify on every page load if you're storing the `userId` in the cookie/local storage?
+Calling Identify in one of Segment's [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. You can refer to library-specific documentation for more details.
 
-Calling Identify in one of Segment's [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
-
-Here's the payload of a typical Identify call with most [common fields](/docs/connections/spec/common/) removed:
+For example, here's the payload of a typical Identify call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -31,7 +29,7 @@ Here's the payload of a typical Identify call with most [common fields](/docs/co
 }
 ```
 
-And here's the corresponding JavaScript event that would generate the above payload:
+Here's the corresponding JavaScript event that would generate the above payload:
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -105,14 +103,12 @@ The Identify call specifies a customer identity that you can reference across th
 
 ### Anonymous ID
 
-There are certain cases where you don't actually know who the user is according to your database, but you still want to be able to tie them to traits, events, or page views. For example, you may not know who a user is when tracking newsletter signups or anonymous page views.
+There are certain cases where you don't actually know who the user is according to your database, but you still want to be able to tie them to traits, events, or page views. For example, you may not know who a user is when tracking newsletter signups or anonymous page views. In these cases, you should use an Anonymous ID.
 
-In these cases, you should use an Anonymous ID.
-
-The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one — Segment recommends [UUIDv4 format](/docs/guides/working-with-ids/#segments-guidance-on-identifier-formats).
+The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session ID. If you don't have any readily available identifier, you can always generate a new random one — Segment recommends [UUIDv4 format](/docs/guides/working-with-ids/#segments-guidance-on-identifier-formats).
 
 > info ""
-> Segment's [browser and mobile libraries](/docs/connections/sources/) automatically use Anonymous IDs to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
+> Segment's [website and mobile libraries](/docs/connections/sources/) automatically use Anonymous IDs to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
 Here's an example of a JavaScript event for an anonymous user:
 
@@ -128,7 +124,7 @@ User IDs are a more permanent and robust identifier, like a database ID. Since t
 
 A User ID is usually the unique identifier that you recognize a user by in your own database. For example, if you're using MongoDB, User IDs might look something like this: `507f191e810c19729de860ea`.
 
-Segment recommends using database IDs, [in `uuidv4` format](/docs/guides/working-with-ids/#segments-guidance-on-identifier-formats), instead of email addresses or usernames because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools, and you'll be able to correlate analytics data with your own internal database.
+Segment recommends using database IDs, [in `uuidv4` format](/docs/guides/working-with-ids/#segments-guidance-on-identifier-formats), instead of email addresses or usernames because database IDs _never_ change. This guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools, and you'll be able to correlate analytics data with your own internal database.
 
 > success ""
 > Instead of using an email address or a username as a User ID, send them along as [custom traits](/docs/unify/traits/custom-traits/).
@@ -147,24 +143,24 @@ Reserved custom traits Segment has standardized:
 | **Trait**     | **Type** | **Description**          |
 |---------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `address`     | Object   | Street address of a user optionally containing:  `city`, `country`, `postalCode`, `state`, or `street`   |
-| `age`         | Number   | Age of a user           |
-| `avatar`      | String   | URL to an avatar image for the user  |
-| `birthday`    | Date     | User's birthday         |
-| `company`     | Object   | Company the user represents, optionally containing: `name` (String), `id` (String or Number), `industry` (String), `employee_count` (Number) or `plan` (String) |
+| `age`         | Number   | Age of a user.           |
+| `avatar`      | String   | URL to an avatar image for the user.  |
+| `birthday`    | Date     | The user's birthday.         |
+| `company`     | Object   | The company the user represents, optionally containing: `name` (String), `id` (String or Number), `industry` (String), `employee_count` (Number) or `plan` (String) |
 | `createdAt`   | Date     | Date the user's account was first created. Segment recommends using [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings.       |
-| `description` | String   | Description of the user |
-| `email`       | String   | Email address of a user |
-| `firstName`   | String   | First name of a user    |
-| `gender`      | String   | Gender of a user        |
-| `id`          | String   | Unique ID in your database for a user      |
-| `lastName`    | String   | Last name of a user     |
-| `name`        | String   | Full name of a user. If you only pass a first and last name Segment automatically fills in the full name for you.      |
-| `phone`       | String   | Phone number of a user  |
+| `description` | String   | Description of the user. |
+| `email`       | String   | Email address of a user. |
+| `firstName`   | String   | First name of a user.    |
+| `gender`      | String   | Gender of a user.        |
+| `id`          | String   | Unique ID in your database for a user.      |
+| `lastName`    | String   | Last name of a user.     |
+| `name`        | String   | Full name of a user. If you only pass a first and last name, Segment automatically fills in the full name for you.      |
+| `phone`       | String   | Phone number of a user.  |
 | `title`       | String   | Title of a user, usually related to their position at a specific company. Example: "VP of Engineering"                                  |
 | `username`    | String   | User's username. This should be unique to each user, like the usernames of Twitter or GitHub.             |
-| `website`     | String   | Website of a user       |
+| `website`     | String   | Website of a user.       |
 
 > info ""
 > You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead. Segment attempts to handle all the destination-specific conversions for you automatically. If you need help understanding if a specific field will be converted to a destination, take a look at Segment's [open source integration code](https://github.com/segment-integrations?q=&type=all&language=&sort=){:target="_blank"}, view the destination's documentation, or [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"}.
 
-**You can pass these reserved traits using camelCase or snake_case**, so in JavaScript you can match the rest of your camelCase code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
+You can pass these reserved traits using camelCase or snake_case. For example, in JavaScript you can match the rest of your camelCase code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. This keeps the API consistent to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
