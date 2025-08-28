@@ -55,24 +55,24 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Prof
 
 **Unify and Engage admin**: Grants full access to view and edit Profiles Sync, including sync history and configuration settings.
 
-### Step 2: Connect the warehouse and enable Profiles Sync
+### Step 2: Connect the warehouse and turn on Profiles Sync
 
-After selecting your warehouse, you can connect it to Segment.
+After selecting your warehouse, connect it to Segment.
 
-During this step, you’ll copy credentials from the warehouse you just set up and enter them into the Segment app. The specific credentials you’ll enter depend on the warehouse you chose during step 1.
+During this step, copy credentials from the warehouse you set up in Step 1 and enter them into into Segment. The required credentials depend on the warehouse you selected.
 
-Segment may also display IP addresses you’ll need to allowlist in your warehouse. Make sure to copy the IP addresses and enter them into your warehouse account.
+Segment may also display IP addresses that you need to allowlist in your warehouse. Copy these IP addresses and add them to your warehouse account.
 
 To connect your warehouse:
 
-1. Configure your database. 
-- Be sure to log in with a user who has read and write permissions so that Segment can write to your database.
-- Segment shows an IP address to allowlist.  Copy it to your warehouse destination.
-2. Enter a schema name to help you identify this space in the warehouse, or use the default name provided. 
-- The schema name can't be changed after the warehouse is connected.
-4. Enter your warehouse credentials, then select **Test Connection**.
-5. If the connection test succeeds, Segment enables the **Next** button. Select it.
-  * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
+1. Configure your database.  
+   - Log in with a user who has read and write permissions so Segment can write to your database.  
+   - Segment may show one or more IP addresses to allowlist. Copy them into your warehouse account.  
+2. Enter a schema name to identify the data space in the warehouse, or use the default name provided.  
+   - You can’t change the schema name after connecting the warehouse.  
+3. Enter your warehouse credentials, then select **Test Connection**.  
+4. If the connection test succeeds, Segment enables the **Next** button. Click it.  
+   - If the test fails, verify the credentials and try again.
 
 
 ### Step 3: Set up Selective Sync
