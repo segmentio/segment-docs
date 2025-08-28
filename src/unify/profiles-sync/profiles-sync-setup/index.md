@@ -134,26 +134,24 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 ### Step 4 (Optional): Materialize key views using a SQL automation tool
 
-During setup, you have the option of setting up materialized key views in one of two ways:
+During setup, you can materialize key views in one of two ways:
 
-1. You can choose to materialize views on your own by using `profiles raw tables`. 
-You may want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization.
-
-2. You can choose to use Segment's open source dbt models by using `profiles materialized` tables.
- 
+- **Use `profiles raw tables`**: Materialize views on your own. This option is useful if you need to transform additional data or join Segment profile data with external data before materialization.  
+- **Use Segment’s open-source dbt models with `profiles materialized` tables**: Prebuilt models maintained by Segment.  
 > success ""
-> You can alternatively use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
+> You can also use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
 
-To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
+To see unified profiles in your warehouse and build attribution models, materialize the tables that Profiles Sync lands into three key views:
 
-  * `id_graph`: the current state of relationships between segment ids
-  * `external_id_mapping`: the current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
-  * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
+- `id_graph`: the current state of relationships between Segment IDs  
+- `external_id_mapping`: the mapping between each external identifier you’ve observed and its corresponding, fully merged `canonical_segment_id`  
+- `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row  
 
-See [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
+See [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for details on how to materialize these views on your own or with [Segment’s open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}.
 
 > warning ""
-> Note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
+> The dbt models are in beta and require modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses.
+
 
 ## Profiles Sync limits
 
