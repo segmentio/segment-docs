@@ -22,30 +22,30 @@ Before you begin, prepare for setup with these tips:
 
 ### Step 1: Select a warehouse 
 
-You’ll first choose the destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks warehouse Destinations. Your initial setup will depend on the warehouse you choose.
+Choose the warehouse where Segment will sync profiles. Profiles Sync supports Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks. Your initial depends on the warehouse you choose.
 
-The following table shows the supported Profiles Sync warehouse destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
+The following table shows the supported Profiles Sync warehouse destinations and their setup instructions. Select a warehouse, view its Segment documentation, and complete the required steps before moving to Step 2 of Profiles Sync setup:
 
-| Warehouse Destination      | Required steps    
-| -------------- | ----------- |
-| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | Follow the steps in [Snowflake Getting Started](/docs/connections/storage/catalog/snowflake/#getting-started). |
-| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | Follow the steps in [Redshift Getting Started](/docs/connections/storage/catalog/redshift/#getting-started). |
-| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  Follow the steps in [BigQuery Getting Started](/docs/connections/storage/catalog/bigquery/#getting-started).
-| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | Follow the steps in [Azure Synapse Analytics Getting Started](/docs/connections/storage/catalog/azuresqldw/#getting-started).  |
-| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in [Postgres Getting Started](/docs/connections/storage/catalog/postgres/).                                                      |
-| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)  | Follow the steps in the [Databricks Getting Started](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/#getting-started).                   |
+| Warehouse Destination                                                                 | Required steps                                                                                                             |
+| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started)             | See [Snowflake Getting Started](/docs/connections/storage/catalog/snowflake/#getting-started).                             |
+| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)               | See [Redshift Getting Started](/docs/connections/storage/catalog/redshift/#getting-started).                               |
+| [BigQuery](/docs/connections/storage/catalog/bigquery/)                               | See [BigQuery Getting Started](/docs/connections/storage/catalog/bigquery/#getting-started).                               |
+| [Azure](/docs/connections/storage/catalog/azuresqldw/)                                | See [Azure Synapse Analytics Getting Started](/docs/connections/storage/catalog/azuresqldw/#getting-started).              |
+| [Postgres](/docs/connections/storage/catalog/postgres/)                               | See [Postgres Getting Started](/docs/connections/storage/catalog/postgres/).                                               |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) | See [Databricks Getting Started](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/#getting-started). |
 
-After you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
+After you’ve finished the required steps for your chosen warehouse, connect your warehouse to Segment. Leave the warehouse tab open; you'll need its credentials in the next step.
 
 #### Profiles Sync permissions
 
 To allow Segment to write to the warehouse you're using for Profiles Sync, you'll need to set up specific permissions.
 
-For example, if you're using BigQuery, you must [create a service account](/docs/connections/storage/catalog/bigquery/#create-a-service-account-for-segment) for Segment and assign the following roles:
+For example, if you're using BigQuery, [create a service account](/docs/connections/storage/catalog/bigquery/#create-a-service-account-for-segment) for Segment and assign the following roles:
 - `BigQuery Data Owner`
 - `BigQuery Job User`
 
-Review the required steps for each warehouse in the table above to see which permissions you'll need.
+Check the documentation for your chosen warehouse in the previous table to confirm which permissions are required.
 
 #### Profiles Sync roles
 
