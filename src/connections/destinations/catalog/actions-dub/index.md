@@ -1,6 +1,7 @@
 ---
 title: Dub (Actions) Destination
 id: 682db6914f35aafb2757ef24
+redirect_from: /connections/destinations/catalog/dub-actions/
 ---
 
 {% include content/plan-grid.md name="actions" %}

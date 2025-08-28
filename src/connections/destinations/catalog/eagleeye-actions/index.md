@@ -1,6 +1,7 @@
 ---
 title: Eagle Eye (Actions) Destination
 id: 682db61f6c600fdb90251392
+redirect_from: /connections/destinations/catalog/eagle-eye/
 ---
 
 {% include content/plan-grid.md name="actions" %}
