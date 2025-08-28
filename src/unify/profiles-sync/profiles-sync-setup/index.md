@@ -157,53 +157,53 @@ See [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materi
 
 As you use Profiles Sync, keep the following limits in mind:
 
-- For event tables, Segment can only backfill up to 2,000 tables for each workspace.
-- Segment can only initiate backfills after a successful sync with > 0 rows.
-- For every sync, the total dataset Segment can sync is limited to 20TB.
-
+- For event tables, Segment can backfill up to 2,000 tables per workspace.  
+- Segment initiates backfills only after a successful sync with at least one row.  
+- Each sync is limited to 20 TB of data.  
 
 ## Working with synced warehouses
 
-<!-- add transition line here -->
+Once your warehouse is connected, you can monitor syncs and review their details in the Segment app.  
 
 ### Monitor Profiles Sync
 
-You can view warehouse sync information in the overview section of the Profiles Sync page. Segment displays the dates and times of the last and next syncs, as well as your sync frequency.
+You can view warehouse sync information in the Overview section of the Profiles Sync page. Segment displays the dates and times of the last and next syncs, as well as your sync frequency.
 
-In the Syncs table, you’ll find reports on individual syncs. Segment lists your most recent syncs first. The following table shows the information Segment tracks for each sync:
+In the Syncs table, you’ll find reports on individual syncs. Segment lists the most recent syncs first. The following table shows the information Segment tracks for each sync:
 
-| DATA TYPE   | DEFINITION                                                                                                                                                                                  |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sync status | - `Success`, which indicates that all rows synced correctly <br> - `Partial success`, indicating that some rows synced correctly <br> - `Failed`, indicating that no rows synced correctly |
-| Duration    | Length of sync time, in minutes                                                                                                                                                             |
-| Start time  | The date and time when the sync began                                                                                                                                                       |
-| Synced rows | The number of rows synced to the warehouse                                                                                                                                                  |
+| Data type   | Definition                                                                                                                            |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Sync status | - `Success`: All rows synced correctly <br> - `Partial success`: Some rows synced correctly <br> - `Failed`: No rows synced correctly |
+| Duration    | Sync time, in minutes                                                                                                                 |
+| Start time  | The date and time when the sync began                                                                                                 |
+| Synced rows | The number of rows synced to the warehouse                                                                                            |
 
-Selecting a row from the Syncs table opens a pane that contains granular sync information. In this view, you’ll see the sync’s status, duration, and start time. Segment also displays a nuanced breakdown of the total rows synced, sorting them into identity graph tables, event type tables, and event tables.
+Selecting a row from the Syncs table opens a pane with detailed sync information. This view shows the sync’s status, duration, and start time. Segment also shows a detailed breakdown of the total rows synced, grouped into identity graph tables, event type tables, and event tables.
 
 If the sync failed, Segment shows any available error messages in the sync report.
 
+
 ### Settings and maintenance
 
-The **Settings** tab of the Profiles Sync page contains tools that can help you monitor and maintain your synced warehouse.
+The **Settings** tab of the Profiles Sync page contains tools to help you monitor and maintain your synced warehouse.
 
-#### Disable or delete a warehouse
+#### Turn off or delete a warehouse
 
-In the **Basic settings** tab, you can disable warehouse syncs or delete your connected warehouse altogether.
+In the **Basic settings** tab, you can turn off warehouse syncs or delete your connected warehouse.
 
-To disable syncs, toggle **Sync status** to off. Segment retains your warehouse credentials but stops further syncs. Toggle Sync status back on at any point to continue syncs.
+To turn off syncs, toggle **Sync status** to off. Segment retains your warehouse credentials but stops further syncs. Turn Sync status back on at any point to continue syncs.
 
-To delete your warehouse, toggle **Sync status** to off, then select **Delete warehouse**. Segment doesn’t retain credentials for deleted warehouses; to reconnect a deleted warehouse, you must set it up as a new warehouse.
+To delete your warehouse, first turn off **Sync status**, then select **Delete warehouse**. Segment doesn’t retain credentials for deleted warehouses. To reconnect, set it up as a new warehouse.
 
 #### Connection settings
 
-In the **Connection settings** tab, you can verify your synced warehouse’s credentials and view IP addresses you’ll need to allowlist so that Segment can successfully sync profiles.
+In the **Connection settings** tab, you can verify your warehouse credentials and view IP addresses to allowlist so Segment can sync profiles.
 
-If you have write access, you can verify that your warehouse is successfully connected to Segment by entering your password and then selecting **Test Connection**.
+If you have write access, you can verify that your warehouse is connected to Segment by entering your password and selecting **Test Connection**.
 
 > info "Changing your synced warehouse"
-> If you’d like to change the warehouse connected to Profiles Sync, [reach out to Segment support](https://segment.com/help/contact/){:target="blank"}.
+> To change the warehouse connected to Profiles Sync, [reach out to Segment support](https://segment.com/help/contact/){:target="_blank"}.
 
 #### Sync schedule
 
-Segment supports hourly syncs.
+Profiles Sync runs on an hourly schedule.
