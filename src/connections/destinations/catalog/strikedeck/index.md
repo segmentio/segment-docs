@@ -2,14 +2,17 @@
 rewrite: true
 title: Strikedeck Destination
 id: 5c940e99e3498f000177880c
+hidden: true
+published: false 
 ---
+
+[Strikedeck no longer exists as a company]:
+
 [Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions.
 
 Strikedeck maintains this documentation. For any issues with the destination, [contact the Strikedeck Support team](mailto:support@strikedeck.com).
 
-
 ## Getting Started
-
 
 
 1. From the Segment web app, click **Catalog**.
