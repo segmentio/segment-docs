@@ -83,9 +83,9 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 #### Update opt-in settings
 
-Double opt-in is a process through which a new subscriber must confirm their subscription before being subscribed to a given list in Klaviyo.
+You must update opt-in settings (`Single opt-in` or `Double opt-in`) through the Klaviyo UI. Double opt-in is a process through which a new subscriber must confirm their subscription before being subscribed to a given list in Klaviyo. 
 
-You can select the `single opt in` and `double opt in` through Klaviyo UI for particular list [Understanding opt-in process](https://help.klaviyo.com/hc/en-us/articles/115005251108#h_01HZ5G5ZQB825T0HDN5E2FA80G){:target="_blank"}
+To learn more about opt-in settings, visit [Understanding the double opt-in process](https://help.klaviyo.com/hc/en-us/articles/115005251108#h_01HZ5G5ZQB825T0HDN5E2FA80G){:target="_blank"}.
 
 
 ## FAQ
