@@ -4,7 +4,7 @@ title: Strikedeck Destination
 id: 5c940e99e3498f000177880c
 ---
 
-> warning""
+> warning ""
 > **Strikedeck has been discontinued. This documentation is retained for reference only.**
 
 Strikedeck is a customer success platform which manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes customer engagement analytics, health scorecard, notifications, and recommendations and actions.
