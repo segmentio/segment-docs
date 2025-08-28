@@ -4,7 +4,8 @@ hidden: true
 id: 66f2aea175bae98028d5185a
 versions:
   - name: Recombee AI
-    link: /docs/connections/destinations/catalog/recombee-ai     
+    link: /docs/connections/destinations/catalog/recombee-ai  
+redirect_from: /connections/destinations/catalog/recombee/
 ---
 
 {% include content/plan-grid.md name="actions" %}

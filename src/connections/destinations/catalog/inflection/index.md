@@ -1,6 +1,7 @@
 ---
 title: Inflection Destination
 id: 62260e5dbc37b83046a847be
+hide-personas-partial: true
 ---
 
 [Inflection](https://www.inflection.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides a B2B marketing automation platform for product-led growth companies. Combining Segment data with CRM data to create a single view of the customer, Inflection was built with marketing teams in mind, pricing a platform that can drive hyper-contextualized communications to support adoption, expansion, and engagement.
