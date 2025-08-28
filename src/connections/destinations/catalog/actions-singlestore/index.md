@@ -1,7 +1,6 @@
 ---
 title: SingleStore (Actions) Destination
 id: 6720ddceaa24532723b39d63
-redirect_from: /connections/destinations/catalog/singlestore/
 ---
 
 {% include content/plan-grid.md name="actions" %}

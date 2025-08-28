@@ -5,11 +5,11 @@ id: 59a476a470a3e552b9594307
 ---
 ## Getting Started
 
-To integrate with Rockerbox, you need a pixel code. To request one, contact [Rockerbox](info@rockerbox.com){:target="_blank"}.
+All you need in order to integrate with Rockerbox is your pixel code, which you can get by emailing **info@rockerbox.com**.
 
 ## Page
 
-Triggering a Page call fires `window.RB.track('view')` and passes on page properties, including any custom properties outside of `url`, `path`, `title`.
+When you trigger a `.page()` call, we will fire `window.RB.track('view')` and pass your page properties, including any custom properties outside of url, path, title, etc.
 
 ## Track
 

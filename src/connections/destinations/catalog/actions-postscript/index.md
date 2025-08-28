@@ -1,7 +1,6 @@
 ---
 title: Postscript Destination
 id: 66f2b0818aa856d4d2d87f90
-redirect_from: /connections/destinations/catalog/postscript/
 ---
 
 {% include content/plan-grid.md name="actions" %}

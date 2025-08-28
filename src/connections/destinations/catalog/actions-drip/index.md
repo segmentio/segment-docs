@@ -1,7 +1,6 @@
 ---
 title: Drip (Actions) Destination
 id: 673b62169b3342fbe0fc28da
-redirect_from: /connections/destinations/catalog/drip-actions/
 ---
 
 {% include content/plan-grid.md name="actions" %}

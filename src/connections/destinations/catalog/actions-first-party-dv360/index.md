@@ -4,7 +4,6 @@ strat: google
 hide-settings: true
 id: 6683e1d5e37fd84efcf3bbef
 engage: true
-redirect_from: /connections/destinations/catalog/first-party-dv360/
 ---
 
 Google’s [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. Segment’s integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 for centralized audience management and improved retargeting.

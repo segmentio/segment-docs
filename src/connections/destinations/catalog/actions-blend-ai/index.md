@@ -6,7 +6,7 @@ id: 64244158b33d1380a79dc85c
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Blend-AI](https://blend-ai.com/){:target="_blank"} identifies the most valuable product interaction in your product data and cross references it with new incoming leads.
+[Blend-AI](https://blnd.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} identifies the most valuable product interaction in your product data and cross references it with new incoming leads.
 
 Blend-AI maintains this destination. For any issues with the destination, [contact their Support team](mailto:support@blnd.ai).
 
