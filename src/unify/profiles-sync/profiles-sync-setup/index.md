@@ -51,12 +51,9 @@ Check the documentation for your chosen warehouse in the previous table to confi
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Profiles Sync:
 
-**Unify and Engage read-only**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
+**Unify and Engage read-only**: Grants read-only access to Profiles Sync, including sync history and configuration settings. These roles don't allow downloading PII or editing settings.
 
-**Unify read-only and Engage user**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
-
-**Unify and Engage Admin access**: Full edit access to Profiles Sync, including the sync history and configuration settings.
-
+**Unify and Engage admin**: Grants full access to view and edit Profiles Sync, including sync history and configuration settings.
 
 ### Step 2: Connect the warehouse and enable Profiles Sync
 
