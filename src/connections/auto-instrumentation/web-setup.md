@@ -15,13 +15,14 @@ You'll learn how to add Auto-Instrumentation sources, integrate dependencies, an
 
 ## Step 1: Add or enable a source and get its write key
 
-You'll first need to add a source and copy its write key:
+You can either create a new source or turn on Auto-Instrumentation for an existing source. Both methods let you retrieve the `writeKey` that you’ll need later.
 
-1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation** and click **Add source**.
-2. Select a source, give the source a name, and click **Save**.
-3. Return to **Connections > Sources** to view your sources.
-4. In the **My sources** table, find and click the new source you just set up.
-5. In the **Initialize the Client** section, look for and copy the `writeKey` displayed in the code block.
+### Create a new source
+
+1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation**.
+2. Select **Add source**, give the source a name, and click **Save**.
+3. Return to **Connections > Sources** and select the new source you just set up.
+4. In the **Initialize the Client** section, copy the `writeKey` shown in the code block.
 
 ## Step 2: Add dependencies and initialization code
 
