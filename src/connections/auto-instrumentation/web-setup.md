@@ -24,6 +24,13 @@ You can either create a new source or turn on Auto-Instrumentation for an existi
 3. Return to **Connections > Sources** and select the new source you just set up.
 4. In the **Initialize the Client** section, copy the `writeKey` shown in the code block.
 
+### Enable Auto-Instrumentation on an existing source
+
+If you want to use an existing source, copy its `writeKey` from **Initialize the client**. After you install the SDK (Step 2), return to the source settings to turn on Auto-Instrumentation:
+
+- **Web:** **Connections > Sources > [source] > Settings > Analytics.js > Auto-Instrumentation** and toggle it on.
+- **Mobile:** **Connections > Sources > [source] > Settings > Advanced > Auto-Instrumentation** and toggle it on.
+
 ## Step 2: Add dependencies and initialization code
 
 Next, you'll need to add the Signals SDKs to your web environment.
