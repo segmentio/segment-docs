@@ -2,6 +2,7 @@
 title: Reddit Pixel
 id: 68383577d2c19626da376944
 beta: true
+redirect_from: /connections/destinations/catalog/reddit-pixel/
 ---
 
 {% include content/plan-grid.md name="actions" %}
