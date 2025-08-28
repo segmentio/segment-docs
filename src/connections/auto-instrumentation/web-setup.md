@@ -13,7 +13,7 @@ You'll learn how to add Auto-Instrumentation sources, integrate dependencies, an
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
 
-## Step 1: Add a source and get its write key
+## Step 1: Add or enable a source and get its write key
 
 You'll first need to add a source and copy its write key:
 
