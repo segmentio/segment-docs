@@ -75,61 +75,61 @@ To connect your warehouse:
    - If the test fails, verify the credentials and try again.
 
 
-### Step 3: Set up Selective Sync
+### Step 3: Turn on Selective Sync
 
-Set up Selective Sync to control the exact tables and columns that Segment will sync to your connected data warehouse.
+Use Selective Sync to control the tables and columns that Segment syncs to your connected data warehouse.
 
 > info ""
-> Data will be backfilled to your warehouse based on the last two months of history.
+> Segment backfills data to your warehouse based on the last two months of history.
 
 You can sync the following tables:
 
-| Type                                                   | Tables                 | Backfill |
-| ------------------------------------------------------------------------- | ---------------------------------------------------- | --------------- |
-| [Profile raw tables](/docs/unify/profiles-sync/tables/#profile-raw-tables) | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates` | Complete |
-| [Profile materialized tables](/docs/unify/profiles-sync/tables/#tables-segment-materializes) | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`     | Complete |
-| [Event type tables](/docs/unify/profiles-sync/tables/#event-type-tables)          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`     | 2 months |
-| [Track event tables](/docs/unify/profiles-sync/tables/#track-event-tables)         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   | 2 months |
+| Type                                                                                         | Tables                                                                                                                                                                                     | Backfill |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| [Profile raw tables](/docs/unify/profiles-sync/tables/#profile-raw-tables)                   | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates`                                                                                                  | Complete |
+| [Profile materialized tables](/docs/unify/profiles-sync/tables/#tables-segment-materializes) | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`                                                                                                                           | Complete |
+| [Event type tables](/docs/unify/profiles-sync/tables/#event-type-tables)                     | - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`                                                                                                    | 2 months |
+| [Track event tables](/docs/unify/profiles-sync/tables/#track-event-tables)                   | To view and select individual track event tables, don’t sync them during initial setup. Edit your sync settings after turning on Profiles Sync and waiting for the first sync to complete. | 2 months |
 
 #### Using Selective Sync
 
-Use Selective Sync to manage the data you send to your warehouses by choosing which tables and columns (also known as properties) to sync. Syncing fewer tables and properties will lead to faster and more frequent syncs, faster queries, and using less disk space.
+Selective Sync lets you choose which tables and columns (also called properties) to sync. Syncing fewer tables and properties reduces sync times, improves query performance, and uses less disk space.
 
 You can access Selective Sync in two ways:
-- From the Set Selective Sync page as you connect your warehouse to Profiles Sync.
-- From the Profiles Sync settings (**Profiles Sync** > **Settings** > **Selective sync**).
+- From the Set Selective Sync page when you connect your warehouse to Profiles Sync.
+- From Profiles Sync settings (**Profiles Sync** > **Settings** > **Selective Sync**).
 
-You'll see a list of event type tables, event tables, and [tables Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) available to sync. Select the tables and properties that you'd like to sync, and be sure the ones you'd like to prevent from syncing aren't selected. 
+You’ll see a list of event type tables, event tables, and [tables Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes). Select the tables and properties to sync, and clear the ones you don’t want to sync.
 
-Regardless of schema size, only the first 5,000 collections and 5,000 properties per collection can be managed using your Segment space. To edit Selective Sync settings for any collection which exceeds this limit, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"}.
+Regardless of schema size, only the first 5,000 collections and 5,000 properties per collection can be managed in your Segment space. To edit Selective Sync settings for collections that exceed this limit, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"}.
 
 > info ""
 > You must be a workspace owner to change Selective Sync settings.
 
 #### When to use Selective Sync
 
-Use Selective Sync when you want to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from disabled tables or properties, but will not delete any historical data from your warehouse.
+Use Selective Sync to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from tables or properties you turn off, but it doesn’t delete historical data from your warehouse.
 
-If you choose to re-enable a table or property to sync again, only new data generated will sync to your warehouse. Segment doesn't backfill data that was omitted with Selective Sync.
+If you turn a table or property back on, only new data will sync. Segment doesn’t backfill data that was omitted with Selective Sync.
 
 #### Using historical backfill
 
-Profiles Sync sends profiles to your warehouse hourly once setup completes. Setup is complete after an initial automated backfill syncs all profile data. To initiate the backfill, the Profiles Sync requires live data flowing into your workspace. If live data isn’t available, you can send test data to trigger the backfill sooner. Backfill can also sync historical profiles to your warehouse.
+Profiles Sync sends profiles to your warehouse hourly once setup completes. Setup is complete after an initial automated backfill syncs all profile data. To initiate the backfill, Profiles Sync requires live data flowing into your workspace. If live data isn’t available, send test data to trigger the backfill. Backfill can also sync historical profiles to your warehouse.
 
 > info ""
-> You can only use historical backfill for tables that you enable with [Selective Sync](#using-selective-sync) during setup. Segment does not backfill tables that you disable with Selective Sync.
+> You can only use historical backfill for tables you turn on with [Selective Sync](#using-selective-sync) during setup. Segment doesn’t backfill tables you turn off with Selective Sync.
 
 When Segment runs historical backfills:
 
-- Profile raw and materialized tables sync your entire historical data to your warehouse.
-- Profiles Sync gathers the last two months of all events for Event type and Track event tables and syncs them to your warehouse.
+- Profile raw and materialized tables sync your entire historical data to your warehouse.  
+- For event type and Track event tables, Profiles Sync syncs the last two months of events.  
 
-Segment lands the data on an internal staging location, then removes the backfill banner. Segment then syncs the backfill data to your warehouse.
+Segment first stages the data internally and removes the backfill banner, then syncs the data to your warehouse.
 
-Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} if your use case exceeds the scope of the initial setup backfill.
+Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"} if your use case exceeds the scope of the initial setup backfill.
 
 > success ""
-> While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).   
+> While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).    
 
 
 ### Step 4 (Optional): Materialize key views using a SQL automation tool
