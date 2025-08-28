@@ -1,10 +1,10 @@
 ---
-title: 'Spec: Common Fields'
+title: 'Spec: Common fields'
 ---
 
-In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec/) have a common structure, and a few common fields.
+In the Segment [Spec](/docs/connections/spec/), all [API calls](/docs/connections/spec/) share a common structure and a set of common fields.
 
-However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on GitHub](https://github.com/segment-integrations).
+However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on GitHub](https://github.com/segment-integrations){:target="_blank"}.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
@@ -136,29 +136,29 @@ Context is a dictionary of extra information that provides useful context about 
 
 | Field       | Type    | Description                                                                                                                                                                                                                                                                                                     |
 | ----------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `active`    | Boolean | Whether a user is active. <br><br> This is usually used to flag an `.identify()` call to just update the traits but not "last seen."                                                                                                                                                                            |
+| `active`    | Boolean | Whether a user is active. <br><br> This is usually used to flag an Identify call to just update the traits but not "last seen."                                                                                                                                                                            |
 | `app`       | Object  | dictionary of information about the current application, containing `name`, `version`, and `build`. <br><br> This is collected automatically from the mobile libraries when possible.                                                                                                                           |
 | `campaign`  | Object  | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. <br><br> This maps directly to the common UTM campaign parameters.                                                                    |
-| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`. <br><br> **Note:** If you collect information about iOS devices, note that the `model` value set by Apple might not exactly correspond to an iPhone model number. For example, an `iPhone 15 Pro Max` has a `model` value of `iPhone16,2`.                                                                                                                                                                           |
+| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`. <br><br> If you collect information about iOS devices, note that the `model` value set by Apple might not exactly correspond to an iPhone model number. For example, an `iPhone 15 Pro Max` has a `model` value of `iPhone16,2`.                                                                                                                                                                           |
 | `ip`        | String  | Current user's IP address.                                                                                                                                                                                                                                                                                      |
 | `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.                                                                                                                                                                                                    |
 | `locale`    | String  | Locale string for the current user, for example `en-US`.                                                                                                                                                                                                                                                        |
 | `network`   | Object  | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular`, and `wifi`. If the `context.network.cellular` and `context.network.wifi` fields are empty, then the user is offline.                                                                             |
 | `os`        | Object  | Dictionary of information about the operating system, containing `name` and `version`.                                                                                                                                                                                                                          |
-| `page`      | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).                                                |
+| `page`      | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title`, and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).                                                |
 | `referrer`  | Object  | Dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url`, and `link`.                                                                                                                                                                              |
 | `screen`    | Object  | Dictionary of information about the device's screen, containing `density`, `height`, and `width`.                                                                                                                                                                                                               |
-| `timezone`  | String  | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`, but in some cases, this may be unavailable due to browser limitations, privacy settings, or missing API support.                                         |
+| `timezone`  | String  | Timezones are sent as `tzdata` strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`, but in some cases, this may be unavailable due to browser limitations, privacy settings, or missing API support.                                         |
 | `groupId`   | String  | Group / Account ID. <br><br> This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.                                                                                                               |
-| `traits`    | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous Identify call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits). |
+| `traits`    | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous Identify call. You should fill this object the same way you would fill traits in an [Identify call](/docs/connections/spec/identify/#traits). |
 | `userAgent` | String  | User agent of the device making the request.                                                                                                                                                                                                                                                                    |
 | `userAgentData` | Object | The user agent data of the device making the request. This always contains `brands`, `mobile`, `platform`, and may contain `bitness`, `model`, `platformVersion`,`uaFullVersion`, `fullVersionList`, `wow64`, if [requested](/docs/connections/sources/catalog/libraries/website/javascript/#client-hints) and available. <br><br> This populates if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser. <br><br> This may contain more information than is available in the `userAgent` in some cases.                                                                                                                                |
-| `channel`   | String  | where the request originated from: server, browser or mobile                                                                                                                                                                                                                                                    |
+| `channel`   | String  | Where the request originated from: server, browser, or mobile.                                                                                                                                                                                                                                                    |
 
 
 ## Context fields automatically collected
 
-Below is a chart that shows you which context variables are populated automatically by the iOS, Android, and analytics.js libraries.
+Below is a chart that shows you which context variables are populated automatically by the iOS, Android, and Analytics.js libraries.
 
 Other libraries only collect `context.library`, any other context variables must be sent manually.
 
@@ -208,11 +208,11 @@ Other libraries only collect `context.library`, any other context variables must
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
-- userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
+- `userAgentData` is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
 
 - Segment doesn't collect or append to the context of subsequent calls in the new mobile libraries (Swift, Kotlin, and React Native). 
 
-To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
+To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's Track event:
 
 ```js
 analytics.track("Report Submitted", {}, {
@@ -261,24 +261,24 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt`, 
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `originalTimestamp` | Time on the client device when call was invoked <br> **OR** <br> The `timestamp` value manually passed in through server-side libraries.   | Used by Segment to calculate `timestamp`. <br><br> **Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.                                     |
 | `sentAt`            | Time on client device when call was sent. <br> **OR** <br> `sentAt` value manually passed in.                                              | Used by Segment to calculate `timestamp`. <br><br> **Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.                                                |
-| `receivedAt`        | Time on Segment server clock when call was received                                                                                        | Used by Segment to calculate `timestamp`, and used as sort key in Warehouses. <br><br> **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured. |
-| `timestamp`         | Calculated by Segment to correct client-device clock skew using the following formula:<br> `receivedAt` - (`sentAt` - `originalTimestamp`) | Used by Segment to send to downstream destinations, and used for historical replays. <br><br>**Note:** Recommended timestamp for analysis when chronology does matter.                                                                     |
+| `receivedAt`        | Time on Segment server clock when call was received.                                                                                        | Used by Segment to calculate `timestamp`, and used as sort key in Warehouses. <br><br> **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured. |
+| `timestamp`         | Calculated by Segment to correct client-device clock skew using the following formula:<br> `receivedAt` - (`sentAt` - `originalTimestamp`). | Used by Segment to send to downstream destinations, and used for historical replays. <br><br>**Note:** Recommended timestamp for analysis when chronology does matter.                                                                     |
 
 
 ### originalTimestamp
 
 The `originalTimestamp` tells you when call was invoked on the client device or the value of `timestamp` that you manually passed in.
 
-**Note:** The `originalTimestamp` timestamp is not useful for any analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
+The `originalTimestamp` timestamp is not useful for any analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
 
 
 ### sentAt
 
 The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, Segment uses `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
 
-**Note:** The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
+**Note**: The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
 
-> warning "Segment now adds sentAt to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
+> warning "Segment now adds `sentAt` to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
 > This update changes the value of the Segment-calculated `timestamp` to align closer with the `receivedAt` value rather than the `originalTimestamp` value. For most users who are online when events are sent, this does not significantly impact their data. However, if your application utilizes an offline mode where events are queued up for any period of time, the `timestamp` value for those users now more closely reflects when Segment received the events rather than the time they occurred on the users' devices. 
 
 
@@ -288,7 +288,7 @@ The `receivedAt` timestamp is added to incoming messages as soon as they hit the
 
 The `receivedAt` timestamp is most important as the sort key in Segment's Warehouses product. Use this for max query speed when retrieving data from your Warehouse.
 
-**Note:** Chronological order of events is not ensured with `receivedAt`.
+Chronological order of events is not ensured with `receivedAt`.
 
 ### timestamp
 
@@ -304,21 +304,21 @@ Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTi
 
 ## FAQ
 
-### Why Are Events Received with Timestamps Set in the Past or Future?
+### Why are events received with timestamps set in the past or future?
 
 If you're using one of Segment's client-side libraries, please note that several factors can cause timestamp discrepancies in your event data.
 
-1. **Overriding Timestamp Value:**  
+1. **Overriding Timestamp Value**:  
    - When a manual timestamp is set in the payload with a date in the past, it can cause events to appear as if they were sent earlier than they actually were.
 
-2. **Analytics.js Source with Retries Enabled:**  
-   - The [Retries](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#retries) feature supports offline traffic by queuing events in Analytics.js. These events are sent or retried later when an internet connection is available, keeping the original timestamp intact.
+2. **Analytics.js Source with Retries Enabled**:  
+   - The [Retries](/docs/connections/sources/catalog/libraries/website/javascript/#retries) feature supports offline traffic by queuing events in Analytics.js. These events are sent or retried later when an internet connection is available, keeping the original timestamp intact.
 
-3. **Mobile App Backgrounded or Closed:**  
+3. **Mobile App Backgrounded or Closed**:  
    - If a user closes the app, events may be queued within the app. These queued events won't be sent until the app is re-opened, potentially in the future, leading to timestamp discrepancies.
 
-4. **Inaccurate Browser/Device Clock Settings:**  
+4. **Inaccurate Browser/Device Clock Settings**:  
    - Timestamps can be incorrect if the client's device time is inaccurate, as the `originalTimestamp` relies on the client device's clock, which can be manually adjusted.
 
-5. **Traffic from Internet Bots:**  
-   - [Internet Bots](https://segment.com/docs/guides/ignore-bots/#whats-a-bot) can sometimes send requests with unusual timestamps, either intentionally or due to incorrect settings, leading to discrepancies.
+5. **Traffic from Internet Bots**:  
+   - [Internet Bots](/docs/guides/ignore-bots/#whats-a-bot) can sometimes send requests with unusual timestamps, either intentionally or due to incorrect settings, leading to discrepancies.
