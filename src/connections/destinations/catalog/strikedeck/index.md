@@ -13,7 +13,7 @@ Strikedeck is a customer success platform which manages customer relationships t
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Strikedeck" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI, which you can find from your Strikedeck settings page. Go to** Settings > Connector** and click on "Segment". Copy the API Key from this page.
+3. Enter the "API Key" into your Segment Settings UI, which you can find from your Strikedeck settings page. Go to **Settings > Connector** and click on "Segment". Copy the API Key from this page.
 
 ## Page
 
@@ -27,8 +27,8 @@ analytics.page()
 
 Segment sends Page calls to Strikedeck as a `pageview`.
 
-
 ## Screen
+
 For more information about the Screen method, see the [Segment Spec - Screen](/docs/connections/spec/screen/) documentation.
 
 An example Screen call looks like:
@@ -66,7 +66,6 @@ analytics.group( {
 ```
 
 Segment sends Group to Strikedeck as a `group` event.
-
 
 ## Track
 
