@@ -2,6 +2,8 @@
 rewrite: true
 title: Strikedeck Destination
 id: 5c940e99e3498f000177880c
+deprecated: true
+hidden: true
 ---
 
 > warning ""
