@@ -2,7 +2,7 @@
 title: Destinations Overview
 ---
 
-Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
+Destinations are the business tools or apps that receive data from Segment. Destinations allow you to act on your data and learn more about your customers in real time.
 
 > info "Destinations Catalog"
 > If you want to explore the destinations compatible with Segment, check out the [Destinations catalog](/docs/connections/destinations/catalog/). Select an item from the catalog to learn more about it. The documentation for each destination explains how the Segment Tracking API methods are implemented for that destination.
@@ -13,21 +13,20 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ## Destination connection types
 Segment has three destination connection types:
-* [Event streams](#event-streams-destinations)
 * [Storage](#storage-destinations)
 * [Reverse ETL](#reverse-etl-destinations)
-
-### Event streams destinations
-Event streams destinations are all destinations that aren't storage or Reverse ETL destinations. Adding these destinations allow you to act on your data and learn more about your customers in real time. These include [Destination Actions](/docs/connections/destinations/actions/). 
+* [Event streams](#event-streams-destinations)
 
 ### Storage destinations
-Storage destinations enable you to store your raw Segment data. This enables data analysts and data scientists to work with the raw data to derive deeper and more customized insights to support your organization. Learn more from the [storage overview page](/docs/connections/storage/).
+Storage destinations enable you to store your raw Segment data. This enables data analysts and data scientists to work with raw data to derive deeper and more customized insights to support your organization. Learn more on the [storage overview page](/docs/connections/storage/).
 
 ### Reverse ETL destinations
-[Reverse ETL](/docs/connections/reverse-etl) destinations are the business tools or apps you use that Segment syncs the data from your warehouse to. 
+[Reverse ETL](/docs/connections/reverse-etl) destinations are the business tools or apps you use that receive the data that Segment extracts from your connected warehouses. 
 
 If your destination is not listed in [the Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/), use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/). The Segment Connections destination enables you to mold data extracted from your warehouse in [Segment Spec](docs/connections/spec/) API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. Get started with the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 	
- 
+
+### Event streams destinations
+Event streams destinations are all destinations that aren't storage or Reverse ETL destinations. Adding these destinations allow you to act on your data and learn more about your customers in real time. Event streams destinations include [Destination Actions](/docs/connections/destinations/actions/), built on Segment's [Actions framework](#destination-actions).  
 
 ## Method compatibility
 
@@ -35,7 +34,7 @@ Not all destinations can accept data from specific method types. To know if a de
 
 ## Source compatibility
 
-Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination in the *Quick info* box, or in the *Supported Sources and Connection Modes* section.
+Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, only web sources or server sources). To find out which source types a specific destination can accept data from, check the documentation for that destination in the *Quick info* box, or in the *Supported Sources and Connection Modes* section.
 
 {% include components/reference-button.html href="/docs/connections/destinations/category-compare/" icon="guides.svg" title="Destinations Compatibility Matrix" description="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
 
@@ -51,7 +50,7 @@ In June 2021, Segment released a new form of destinations called [Destinations A
 
 ### Choosing a connection mode
 
-Cloud-mode destinations send data through Segment. Device-mode destinations send data in parallel to Segment. There are tradeoffs between using cloud-mode and device-mode destinations. In general, Cloud-mode is preferred because you then benefit from Segment's system features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more.
+Cloud-mode destinations send data through Segment. Device-mode destinations send some data directly downstream to a tool and some data to Segment as two parallel data streams. There are tradeoffs between cloud-mode and device-mode destinations. In general, Segment recommends cloud-mode destinations because you can benefit from Segment's system features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more.
 
 You should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the device.
 
@@ -66,18 +65,18 @@ Device-mode | * Access to all features of the Destination | * Decreased site or 
 
 Segment's website sources use device-mode by default, because so many website-based destinations require that they be loaded on the page, and because size and page performance are less of a concern than on mobile. If your website source only collects information that you can instrument yourself, then you can use cloud-mode.
 
-For example, a web-chat destination must be loaded to connect to the service and collect metrics efficiently - you don't expect it to route chat messages through Segment! This _does_ mean that Segment might not receive a small amount of the destination-specific information from your users. In the chat example, if the destination is calculating idle time between messages, that data would appear in the destination's tooling, but not necessarily in the Segment data.
+For example, you need to load a web chat destination directly on a website to connect to the service and collect metrics efficiently - you don't expect it to route chat messages through Segment. This _does_ mean that Segment might not receive a small amount of the destination-specific information from your users. For example, if your web chat tool calculates idle time between messages, that data would appear in the destination's tooling but not necessarily in the data sent to Segment.
 
 #### Mobile source connection modes
 
-By default, destinations configured on a mobile source send their data directly to the Segment servers, then translate it and use Cloud-mode to forward it to destinations. *Cloud-mode* means that Segment sends the data directly from the Segment servers, to their servers. This means you don't need to package third-party SDKs for destinations that can accept cloud-mode data. Some primarily web-based destinations also allow cloud-mode, which can help reduce app size, and improve load time and performance.
+By default, destinations configured on a mobile source send their data directly to the Segment servers, then translate it and use Cloud-mode to forward it to destinations. *Cloud-mode* means that Segment sends the data directly from the Segment servers to your destination's servers. This means you don't need to package third-party SDKs for destinations that can accept cloud-mode data. Some primarily web-based destinations also allow cloud-mode, which can help reduce app size and improve load time and performance.
 
-Before you turn on or opt-in for cloud-mode for a mobile source, consider if your destinations have features that require interactions on the device or require device-specific data (see the examples above). For example, if you use cloud-mode for Mixpanel, you'll get your data on reporting and people, but won't be able to use their features for in-app surveys or auto-tracking. These can be really valuable, but might not be a priority for your team.
+Before you opt into cloud-mode for a mobile source, consider if your destinations have features that require interactions on the device or require device-specific data. For example, if you use cloud-mode for Mixpanel, you'll get data on reporting and people, but won't be able to use Mixpanel's features for in-app surveys or auto-tracking. These features can be really valuable, but might not be a priority for your team.
 
 
 ### How Segment determines Device-mode and Cloud-mode destinations
 
-There are two main things Segment considers when deciding to use Device-mode or Cloud-mode, or both, for a destination partner:
+There are two main things Segment considers when deciding to use Device-mode, Cloud-mode, or both modes for a destination partner:
 1. [Anonymous Attribution Methodology](#anonymous-attribution-methodology)
 2. [Client-native Destination Features](#client-native-destination-features)
 
@@ -85,9 +84,9 @@ There are two main things Segment considers when deciding to use Device-mode or 
 
 ##### Mobile attribution
 
-The anonymous identifiers used on mobile devices are usually static, which means Segment doesn't need to do additional resolution, and can build Cloud-mode destinations by default. Because Segment uses native advertising identifiers on mobile devices, you don't need a full SDK on the device to reconcile or identify a user. For example, you might track users who viewed an advertisement in one app and installed another app as a result.
+The anonymous identifiers used on mobile devices are usually static, which means Segment doesn't need to do additional resolution and can build Cloud-mode destinations by default. Because Segment uses native advertising identifiers on mobile devices, you don't need a full SDK on the device to reconcile or identify a user. For example, you might track users who viewed an advertisement in one app and installed another app as a result.
 
-However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK on the device to work properly. For those destinations, Segment offers device-mode, which packages the tool's SDK with the client-side library so that you can get the entire range of tool functionality.
+However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK to be installed on the device. For those destinations, Segment offers device-mode, which packages the tool's SDK with the client-side library so that you can get the entire range of tool functionality.
 
 ##### Web Attribution
 
@@ -97,13 +96,13 @@ Customers can load their libraries and pixels in the context of the browser and 
 
 #### Client-native destination features
 
-Many of Segment's destinations offer client-side features beyond data collection in their SDKs and libraries, for both mobile and web. In these cases, Segment offers Device-mode SDKs so that you can collect information on the device using Segment, but still get the destination's complete native functionality.
+Many of Segment's destinations offer client-side features beyond data collection in their SDKs and libraries, for both mobile and web. In these cases, Segment offers device-mode SDKs so that you can collect information on the device using Segment, but still get the destination's complete native functionality.
 
-Some features that usually require Device-mode include: automatic A/B testing, displaying user surveys, live chat or in-app notifications, touch and hover heatmapping, and accessing rich device data such as CPU usage, network data, or raised exceptions.
+Some features that usually require device-mode include: automatic A/B testing, displaying user surveys, live chat or in-app notifications, touch and hover heatmapping, and accessing rich device data such as CPU usage, network data, or raised exceptions.
 
 ### How can I tell which connection modes and platforms are supported for a destination?
 
-The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes. Segment provides a list of [all destinations and their connection modes](/docs/connections/destinations/cmodes-compare/).
+The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes. Segment also provides a list of [all destinations and their connection modes](/docs/connections/destinations/cmodes-compare/).
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
@@ -120,23 +119,23 @@ Available sync modes include:
 - **Remove**: Remove records from a list, audience, or journey.
 
 ## Add a destination
-To add a Destination:
+To add a Destination to your workspace:
 
 1. Navigate to **Connections**.
 2. Click **Add Destination**.
-3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing and/or Live Chat.
+3. Choose the Destination you want to add and click **Configure**. Most users eventually add  Analytics, Advertising, Email Marketing and/or Live Chat destinations.
 4. Select the Source you want to connect to your Destination.
 5. Click **Next**.
 6. Give you Destination a name.
 7. Click **Save**.
 8. Configure the settings and enable your destination on the destination settings page.
 
-[Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
+Learn more about what adding a destination entails in the[ Sending data to a Segment destination](/docs/connections/destinations/add-destination/) documentation.
 
 > warning "Disabled destinations do not receive data"
-> If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay](/docs/guides/what-is-replay/), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
+> If you haven't enabled your destination after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay](/docs/guides/what-is-replay/), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
 >
-> Some destinations are not compatible with Replays after a certain period of time, for example, 14 days. Check with Segment’s support team [friends@segment.com](mailto:friends@segment.com) to confirm that your intended destination allows historical timestamps. 
+> Some destinations are not compatible with Replays after a certain period of time. Check with Segment’s support team [friends@segment.com](mailto:friends@segment.com) to confirm that your intended destination allows historical timestamps. 
 
 ## Data deliverability
 
@@ -176,7 +175,7 @@ Ruby | 100ms | Exponential | 10s | 10
 
 #### Mobile library retries
 
-All mobile libraries handle retries by periodically attempting to flush their internal queue of events to Segment. If the flush is unsuccessful, the library waits until the next regularly-scheduled flush time to try again. The background queue of requests to Segment is bounded in size so if events are being queued faster than we can successfully flush them to Segment, some events may be dropped.
+All mobile libraries handle retries by periodically attempting to flush their internal queue of events to Segment. If the flush is unsuccessful, the library waits until the next regularly-scheduled flush time to try again. The background queue of requests to Segment is bounded in size so if events are being queued faster than can successfully flush to Segment, some events may be dropped.
 
 #### Retries between Segment and destinations
 
@@ -186,21 +185,21 @@ Here's an example destination that was only successfully accepting 93.36% of all
 
 ![Segment destination data deliverability retries](images/integration-data-deliverability.png)
 
-You can see the current destination endpoint API success rates and final delivery rates for Segment's server-side destinations on Segment's [status page](https://status.segment.com).
+You can see the current destination endpoint API success rates and final delivery rates for Segment's server-side destinations on Segment's [status page](https://status.segment.com){:target="_blank”}.
 
 ### Replays
 
 > info ""
-> Replay is available to [Business tier](https://segment.com/pricing) customers. [Contact Segment](https://segment.com/contact/sales) to learn more.
+> Replay is available to [Business tier](https://segment.com/pricing){:target="_blank”}. customers. [Contact Segment](https://segment.com/contact/sales) to learn more.
 
-[Replays](/docs/guides/what-is-replay/) allow customers to load historical data from Segment's S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, Segment can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage.
+[Replays](/docs/guides/what-is-replay/) allow customers to load historical data from Segment's S3 logs into downstream destinations which accept cloud-mode data. For example, if you wanted to try out a new email or analytics tool, Segment can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage.
 
 > warning ""
 > If you submitted [`suppress_only` requests](/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
 
 ### Batching
 
-Segment uses [stream batching](#stream-batching) for all destinations that require near-realtime data and [bulk batching](#bulk-batching) for some data flows in our pipeline.
+Segment uses [stream batching](#stream-batching) for all destinations that require near-realtime data and [bulk batching](#bulk-batching) for some data flows in the Segment pipeline.
 
 #### Stream batching
 For all destinations, except for non-realtime Engage syncs and Reverse ETL syncs, Segment processes events from your source as they arrive and then flows the data downstream to your destinations in small batches, in a process called **stream batching**. These batches might contain different events between retry attempts, as events in previous batches may have succeeded, failed with a permanent error, or expired. This variability reduces the workload the system processes during partial successes, allows for better per-event handling, and reduces the chance of load-related failures by using variable batch formations.
@@ -230,8 +229,7 @@ Segment supports these 2 types of data for hashing:
 > warning ""
 > The hashing detection feature applies only to **Action Destinations**. 
 
-> info ""
-> If you choose to hash data yourself, ensure you follow each destination's specific hashing requirements. Fields that support automatic hashing detection will display a tooltip indicating *"If not hashed, Segment will hash this value."*
+If you choose to hash data yourself, ensure you follow each destination's specific hashing requirements. Fields that support automatic hashing detection will display a tooltip indicating *"If not hashed, Segment will hash this value."*
 
 For destination-specific hashing requirements, refer to the destination's API documentation. 
 
@@ -256,4 +254,4 @@ To enable IP Allowlisting for your workspace:
 3. The page displays the IP address ranges that Segment uses to route data from Segment's internal systems to your destination. Note these ranges, as you'll need this information to enforce IP restriction in your downstream destinations. 
 4. Open each of your downstream tools and configure IP restriction for each destination. For more information, refer to the documentation for your downstream tool. 
 
-*IP restriction might not be supported in all destinations.*
+*All destinations might not support IP restriction.*
