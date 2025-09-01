@@ -4,7 +4,7 @@ title: A Basic Segment Installation
 
 When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define.
 
-In a basic implementation, the code can be a snippet of JavaScript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met, for example "ticket reservation expired" or "cart abandoned after 2 hours".
+In a basic implementation, the code can be a snippet of JavaScript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met, for example "ticket reservation expired" or "cart abandoned after 2 hours". 
 
 The best way to learn about how Segment works is to see it in action. This tutorial walks you through an installation using one of Segment's libraries: JavaScript, PHP, or the iOS library.
 
