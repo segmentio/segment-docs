@@ -191,7 +191,9 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 <br>
 To keep the Segment SDK lightweight, the `Analytics` pod only installs the Segment library. This means all of the data goes first to Segment's servers, and is then forwarded to any destination tools which accept the data _from Segment_.
 <br>
+<br>
 Some destinations don't accept data from the Segment servers, and instead require that you collect the data from the device. In these cases you must bundle some additional destination code with the Segment SDK. This document skips over this part, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#about-mobile-connection-modes).
+<br>
 <br>
 Now that the SDK is installed and set up, you're ready to start making calls.
 <br><br>
@@ -212,11 +214,12 @@ This call identifies Michael by his unique user ID, `f4ca124298`, which is the o
 <br><br>
 > info ""
 > When you put the code in your iOS app, replace the hard-coded trait values with variables that represent the details of the user that's currently signed in.
-<br><br>
+<br>
 
 ### Step 3: Track actions
 <br>
 The [Track](/docs/connections/spec/track) method tells Segment about the actions your users are performing in your app. Every action triggers an "event", which can also have associated properties. You can read more about `track` in the [Track method reference](/docs/connections/sources/catalog/libraries/mobile/ios#track).
+<br>
 <br>
 The Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated**, and **Application Opened**. You can enable this option during initialization by adding the following lines:
 
@@ -289,6 +292,7 @@ Segment::init("YOUR_WRITE_KEY");
 <br><br>
 You only need to call `init` once when your PHP file is requested. All of your files then have access to the same `Analytics` client.
 <br>
+<br>
 > info ""
 > Segment's default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you or if you have a high-volume project, try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
@@ -311,6 +315,7 @@ Segment::identify(array(
 ```
 <br>
 This identifies Michael by his unique user ID, in this case, `f4ca124298`, which is what you know him by in your database, and labels him with `name` and `email` traits.
+<br>
 <br>
 > info ""
 > When you put that code on your site, replace the hard-coded trait values with the variables that represent the details of the currently logged-in user. We recommend you keep a `$user` variable in memory.
@@ -373,11 +378,12 @@ To get started, we recommend you track a few important events as you can always 
 <br>
 Call the Flush method. This manually sends all the queued call data to make sure it makes it to the Segment servers. This is normally done automatically by the runtime, but some PHP installations won't do it for you.
 <br>
+<br>
 ```php
 Segment::flush();
 ```
 
-You've successfully installed PHP tracking. Now you're ready to turn on any destination from the Segment App.
+You've now installed PHP tracking and you're ready to turn on any destination from the Segment App.
 
 
 <!-- marker PHP end -->
