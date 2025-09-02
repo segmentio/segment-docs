@@ -29,8 +29,8 @@ Braze web-mode (Actions) provides the following benefits over Braze (Classic):
 3. Choose which of your sources to connect the destination to and follow the steps to create your destination.
 > warning "Mapping settings"
 > Some events require specific property names to map correctly into Braze. 
-> For example, purchase events must use a `products` arry with `product_id` and `price.
-> See [Braze-web settings mappings](#braze-web-settings-mapping) for the full list before setting up mappings.
+> For example, purchase events must use a `products` array with `product_id` and `price.
+> See [Braze-web settings mappings](#braze-web-settings-mapping) for the full list of requirements before setting up mappings.
 4. In the **Settings** tab, configure the connection settings. **API Key**, **SDK Endpoint**, and **REST Endpoint** are required settings.
 
 After setting up your Braze web-mode (Action) destination in the Segment app, Segment's Analytics.js library starts asynchronously loading the Braze SDK on your page and sending data. Data appears in the Segment CDN in about 45 minutes.  
