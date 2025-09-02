@@ -6,7 +6,7 @@ plan: consent-management
 Once an end user's consent preferences are [stored on their Profile](/docs/privacy/consent-management/consent-in-unify#segment-consent-preference-updated-event), you can create Engage Audiences that respect end user consent preferences to better comply with privacy regulations.  
 
 > info "Consent in Engage Profiles Audiences is in public beta"
-> Consent in Engage Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+> Consent in Engage Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Contact your account team to participate in the public beta.
 >
 > Consent in Engage Audiences does **not** support Engage Accounts Audiences, Linked Audiences, Predictions, Computed Traits, and Journeys.
 
