@@ -316,8 +316,6 @@ sections:
     title: Event Delivery
   - path: /connections/delivery-overview
     title: Delivery Overview
-  - path: /connections/alerting
-    title: Connections Alerting
   - path: /connections/find-writekey
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
@@ -635,6 +633,8 @@ sections:
       title: Alerts Overview
     - path: /monitor/alerts/default-alerts
       title: Default Alerts
+    - path: /monitor/alerts/custom-alerts
+      title: Custom Alerts
 - section_title: Protocols
   section:
   - path: /protocols
