@@ -5,7 +5,9 @@ title: Custom Alerts
 Segment's custom alerts allow you to customize the sensitivity of the trigger that activates an alert so you can more accurately detect event volume fluctuations in your integrations.
 
 > info "Public beta"
-> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available. During the public beta, custom alerts are not located in the Monitor tab. 
+> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available.
+
+![A screenshot of the custom alerts tab for a Segment workspace depicting three different source volume alerts with different integrations and thresholds.](/docs/monitor/images/custom-alerting.png)
 
 You can create alerts for the following product areas: 
 - [Sources](#source-volume-alert)
@@ -14,7 +16,7 @@ You can create alerts for the following product areas:
 - [Twilio Engage](#activation-event-health-spikes-or-drops)
 
 ## Source volume alert
-You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a percentage you set. For example, if you set a change percentage of 4% and your source received 100 events over the first 24 hours, Segment would notify you the following day if your source ingested fewer than 96 or more than 104 events.
+You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a threshold you set. For example, if you set a threshold of 4% and your source received 100 events over the first 24 hours, Segment would notify you the following day if your source ingested fewer than 96 or more than 104 events.
 
 To receive a source volume alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
@@ -40,14 +42,14 @@ To delete a source volume alert, select the icon in the Actions column for the a
 
 ## Successful delivery rate alert
 
-You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
+You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a threshold you set. For example, if you set a threshold of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
 
 To receive a successful delivery rate alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
 To create a successful delivery rate alert: 
 1. Navigate to the [cloud-mode destinations](/docs/connections/destinations/#:~:text=Cloud%2Dmode%3A%20The%20sources%20send%20data%20directly%20to%20the%20Segment%20servers%2C%20which%20then%20translate%20it%20for%20each%20connected%20downstream%20destination%2C%20and%20send%20it%20on.) you'd like to configure alerts for. 
 2. Select the Alerts tab and click **Create alert**. 
-3. On the Create alert sidesheet, enter a percentage. You will receive events if your successful delivery rate falls below this percentage. 
+3. On the Create alert sidesheet, enter a percentage. You will receive events if your successful delivery rate falls below this threshold. 
 4. Select one of the following alert channels:
   - **Email**: Select this to receive notifications at either the email address associated with your account or another email address that you enter into this field. 
   - **Slack**: Select this and enter a Slack webhook URL and channel name to send alerts to a channel in your Slack workspace.
@@ -60,7 +62,7 @@ To delete a successful delivery rate alert, select the icon in the Actions colum
 
 ## Mapping-level successful delivery rate fluctuations
 
-You can create an alert that notifies you when the volume of events successfully received by your mapping in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
+You can create an alert that notifies you when the volume of events successfully received by your mapping in the last 24 hours falls below a threshold you set. For example, if you set a threshold of 99%, Segment notifies you if your destination had a successful delivery rate of 98% or below. 
 
 To receive a successful delivery rate fluctuation alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
@@ -80,7 +82,7 @@ To edit or disable your alert, navigate to your mapping's Alerts tab and select 
 
 ## Activation event health spikes or drops
 
-You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a change percentage of 4% and your destination received 100 events from your Audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
+You can create an Activation event health spikes or drops alert that notifies you when events sent from your audience to a downstream destination have failures to a destination above a certain threshold. For example, if you set a threshold of 4% and your destination received 100 events from your Audience over the first 24 hours, Segment would notify you the following day if your destination ingested fewer than 96 or more than 104 events.
 
 To create an Activation event health spikes or drops alert: 
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
