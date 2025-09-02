@@ -24,4 +24,6 @@ The events, stamped with the consent object, are then sent downstream to any des
 
 For more information about consent in Segment Connections, see the [Consent in Segment Connections](/docs/privacy/consent-management/consent-in-segment-connections) documentation. 
 
-If you are a Unify user, you can also see the [Consent in Unify](/docs/privacy/consent-management/consent-in-unify) for more information about the Segment Consent Preference Updated event, which Segment uses to add consent preference to the Profile.
+If you're a Unify user, you can also see [Consent in Unify](/docs/privacy/consent-management/consent-in-unify) for more information about the Segment Consent Preference Updated event, which Segment uses to add consent preference to the Profile.
+
+Twilio Engage users can learn more about creating Audiences that respect end-user consent preferences in the [Consent in Twilio Engage](/docs/privacy/consent-management/consent-in-engage) documentation. 
