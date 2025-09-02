@@ -382,7 +382,7 @@ Call the Flush method. This manually sends all the queued call data to make sure
 ```php
 Segment::flush();
 ```
-
+<br>
 You've now installed PHP tracking and you're ready to turn on any destination from the Segment App.
 
 
