@@ -401,7 +401,7 @@ The Source Debugger is a real-time tool that helps you confirm that API calls ma
 
 The Debugger is separate from your workspace's data pipeline, and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
 
-> success "**Tip**"
+> success ""
 > To see a more complete view of all your events, consider setting up either a [warehouse](/docs/connections/storage/warehouses/) or an [S3 destination](/docs/connections/storage/catalog/amazon-s3/).
 
 The Debugger shows a live stream of sampled events arriving at the Source, but you can also toggle from "Live" to "Pause" to stop the stream and prevent it from displaying new events. Events continue to arrive to your Source while you Pause the stream, they just are not displayed.
