@@ -14,7 +14,7 @@ Before you start your Segment implementation, you need:
 1. A Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can [sign up for a free account and workspace](https://app.segment.com/signup/?ref=docs).
 2. Access to the code for a basic website, PHP website, or an iOS app.
 
-> success "**Tip**"
+> success ""
 > If you don't have any of those things, consider creating a simple [GitHub Pages website](https://pages.github.com/).
 
 ### Create separate dev and prod sources
