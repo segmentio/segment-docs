@@ -129,7 +129,7 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
   </div>
 {% endif %}
 
-<!--- IG 9/2024 - PM wanted to call out that this specific HubSpot Cloud (Actions) Action can make multiple assosciations-->
+<!--- IG 9/2024 - PM wanted to call out that this specific HubSpot Cloud (Actions) Action can make multiple associations-->
 
 {% if action.id == 'dMYued7r3VjK4c2gBWUTZi' %}
 <div class="premonition info">
@@ -139,7 +139,13 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
     <p markdown=1>
        For more information, see HubSpot's [Associate records](https://knowledge.hubspot.com/records/associate-records){:target="_blank”} documentation.
     </p>
-    <p class="header"> Handling one-to-many relationships
+  </div>
+</div>
+
+<div class="premonition info">
+  <div class="fa fa-check-circle"></div>
+  <div class="content">
+    <p class="header"> Handling one-to-many relationships</p>
     <p markdown=1>
        In HubSpot, one-to-many relationships allow a single contact to be associated with multiple companies, and a company can have multiple contacts. However, when using Segment, you can’t send multiple users or companies in a single API call. This means the one-to-many relationship can’t be directly established in a single request. To set this up, send multiple event payloads, each containing the information of one contact and one company.
     </p>
