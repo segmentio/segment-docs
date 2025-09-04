@@ -98,3 +98,25 @@ To create an Activation event health spikes or drops alert:
 To make changes to an Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
 
 To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
+
+## Audience size change
+You can create an Audience size change alert that notifies you when your audience increases or decreases by a certain threshold. For example, if you set a change percentage of 4% and your destination had 100 members over the first 24 hours, Segment would notify you the following day if your audience had fewer than 96 or more than 104 members.
+
+> info "Audience size change alerts currently only support Linked Audiences"
+> Audience size change alerts are in public beta, and Segment is actively working on this feature. During the public beta, Audience size change alerts only support Linked Audiences. Some functionality may change before it becomes generally available.
+
+To create an Audience size change alert:
+
+1. From your Segment workspace’s home page, navigate to **Engage > Audiences**.
+2. Select the Linked Audience you want to create an alert for, select the Alerts tab, and click **Create alert**.
+3. On the Create alert sidesheet, select the Audience size change alert and pick a destination for which you’d like to monitor event health.
+4. Enter a percentage threshold to trigger audience size change notifications.
+5. Select one or more of the following alert channels:
+  - **Email**: Select this to receive notifications at the provided email address.
+  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a webhook or a workflow.
+  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app.
+6. Click **Save**.
+
+To make changes to an Audience size change alert, select the icon in the Actions column for the alert and click **Edit**.
+
+To delete a Audience size change alert, select the icon in the Actions column for the alert and click **Delete.**

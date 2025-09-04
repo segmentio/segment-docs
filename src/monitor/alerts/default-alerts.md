@@ -49,7 +49,7 @@ View a brief description of each alert type. 
 - **Source Settings Modified**: A user in your workspace modified the settings for one of your sources.
 
 > info "Custom Source alerts"
-> During the Monitor public beta, you can configure custom [source volume alerts](/docs/connections/alerting/#source-volume-alerts), but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can also configure custom [source volume alerts](/docs/monitor/alerts/custom-alerts/#source-volume-alert).
 
 ## Destination alerts
 - **Destination Disabled**: A user in your workspace disabled a destination. 
@@ -62,7 +62,7 @@ View a brief description of each alert type. 
 - **Destination Modified**: A user in your workspace made changes to a destination. 
 
 > info "Custom Destination alerts"
-> During the Monitor public beta, you can configure custom [Successful delivery rate alerts](/docs/connections/alerting/#successful-delivery-rate-alerts), but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can also configure custom [Successful delivery rate alerts](/docs/monitor/alerts/custom-alerts/#successful-delivery-rate-alert) and [Audience size change alerts](/docs/monitor/alerts/custom-alerts/#audience-size-change). 
 
 ## Storage Destination alerts
 - **Storage Destination Created**: A user in your workspace created a new instance of a storage destination. 
@@ -117,7 +117,7 @@ your identity-resolved profiles to your data warehouse.
 - **Audience Run Failed**: Segment was unable to compute your Audience. To resolve this error, please [contact Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
 > info "Custom Engage alerts"
-> During the Monitor public beta, you can configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) and [Audience size change](/docs/engage/audiences/#audience-size-change) alerts, but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can also configure custom [Activation event health spikes or drops](/docs/engage/audiences/#activation-event-health-spikes-or-drops) alerts.
 
 ## Users alerts
 - **Access Request Created**: A user in your workspace requested access to a resource that they don't currently have permission to view. For more information, see the [Request Access](/docs/segment-app/iam/membership/#request-access) documentation. 
@@ -137,7 +137,7 @@ your identity-resolved profiles to your data warehouse.
 - **Reverse ETL Sync Partial Success**: Segment was able to sync some, but not all, of your records from your data warehouse with your downstream destination. 
 
 > info "Custom Reverse ETL alerts"
-> During the Monitor public beta, you can configure custom Reverse ETL alerts for [mapping-level successful delivery rate fluctuations](/docs/connections/reverse-etl/manage-retl/#mapping-level-successful-delivery-rate-fluctuations), but these alerts won't appear in the Monitor tab. 
+> During the Monitor public beta, you can also configure custom Reverse ETL alerts for [mapping-level successful delivery rate fluctuations](/docs/monitor/alerts/custom-alerts/#mapping-level-successful-delivery-rate-fluctuations). 
 
 ## Data Graph alerts
 - **Data Graph Breaking Change**: A change in your warehouse broke components of your Data Graph. For more information about breaking changes, see the [Data Graph docs](/docs/unify/data-graph/#detect-warehouse-breaking-changes). 
