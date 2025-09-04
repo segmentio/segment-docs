@@ -171,7 +171,7 @@ analytics.track("User Registered", {
 
 Events are sent to Batch in near real time according to your destination mappings, and all event `properties` are included under `event.attributes`.
 
-![Partial screenshot of event mappings settings in the Segement app.](./images/events_mapping.png "Events mapping")
+![Partial screenshot of event mappings settings in the Segment app.](./images/events_mapping.png "Events mapping")
 
 ## Validation checklist
 
