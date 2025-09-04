@@ -18,7 +18,7 @@ This destination is maintained by Batch. For any issues, [contact Batch Support]
 5. Paste the **Project Key** and **REST API Key** into the Batch destination settings in Segment.
 6. Toggle **Enable Destination**. Segment will start sending data to Batch according to your **Mappings**.
    
-![Basic settings destination](./images/basic_settings_destination.png "Basic settings destination")
+![Screenshot of the Braze destination Basic Settings page in Segment app.](./images/basic_settings_destination.png "Basic settings destination")
 
 {% include components/actions-fields.html %}
 
@@ -100,9 +100,9 @@ To map additional traits into Batch profile attributes:
 1. Open your destination → **Mappings** → **Edit Mapping**.  
 2. Go to **Profile attributes** → **Add Mapping Field**.
 3. Choose a **source** (for example, `traits.plan`) and set a **target** under `attributes` (for example, `attributes.plan`).  
-![Attributes mapping](./images/attributes_mapping.png "Attributes mapping")
+![Screenshot of mappings setup screen in Segment app with example fields.](./images/attributes_mapping.png "Attributes mapping")
 4. In **Step 4 – Send test record**, you can test your mapping before saving.  
-![Test record](./images/test_record.png "Test record")
+![Screenshot of Send test record screen.](./images/test_record.png "Test record")
 5. **Save** and enable the mapping.
 
 > info "Supported types"
@@ -171,7 +171,7 @@ analytics.track("User Registered", {
 
 Events are sent to Batch in near real time according to your destination mappings, and all event `properties` are included under `event.attributes`.
 
-![Events mapping](./images/events_mapping.png "Events mapping")
+![Partial screenshot of event mappings settings in the Segment app.](./images/events_mapping.png "Events mapping")
 
 ## Validation checklist
 
