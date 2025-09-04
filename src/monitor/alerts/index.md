@@ -4,7 +4,7 @@ title: Alerts
 Segment's alerting features allow you to receive in-app, email, and Slack notifications related to the status, performance, and throughput of your Segment integrations. 
 
 > info "Public beta"
-> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available. During the public beta, only default alerts are located in the Monitor tab. 
+> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available.
 
 Segment has two kinds of alerts: 
 - **Default alerts**: Alerts that have a preset threshold and are often used to detect changes users make to the integrations in your workspace. For example, a _Source created_ alert is a default alert. 
