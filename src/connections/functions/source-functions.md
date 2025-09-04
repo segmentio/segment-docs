@@ -25,9 +25,8 @@ All functions are scoped to your workspace, so members of other workspaces canno
 
 After you click **Build**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
-> success ""
-> **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}. (Contributions welcome!)
-
+> success "Want to see some example functions?"
+> Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}. (Contributions welcome!)
 
 ![Functions Editor](images/editor-source.png)
 
@@ -306,16 +305,19 @@ The advantage of testing your source function with webhooks is that all incoming
 Note: Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function, you must:
 - [Generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
 - [Create a Public API Token]([url](https://app.segment.com/goto-my-workspace/settings/access-management/tokens)), or follow these steps: 
-In your Segment Workspace, navigate to Settings → Workspace settings → Access Management → Token. Click `+ Create Token`. Create a description for the token and assign access. Click `Create` and save the access token before clicking `Done`.
+In your Segment Workspace, navigate to **Settings** > **Workspace settings** > **Access Management** > **Token**. Click **+ Create Token**. Create a description for the token and assign access. Click **Create** and save the access token before clicking **Done**.
 - For POST calls, use this Public API token in the Authorization Header, as `Bearer Token : public_api_token`
 
 ### Testing source functions with a webhook
 
 You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL, Postman, or Insomnia), or by pasting the webhook into an external server that supports webhooks (such as Slack).
-_A common Segment use case is to connect a Segment [webhooks destination](https://segment.com/docs/connections/destinations/catalog/webhooks/) or [webhook actions destination](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) to a test source, where the Webhook URL/endpoint that is used corresponds to the provided source function's endpoint, then you can trigger test events to send directly to that source, which are routed through your Webhook destination and continue on to the source function: Source → Webhook destination → Source Function._
+
+#### Use case
+A common Segment use case is to connect a Segment [webhooks destination](https://segment.com/docs/connections/destinations/catalog/webhooks/) or [webhook actions destination](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) to a test source, where the Webhook URL/endpoint that is used corresponds to the provided source function's endpoint, then you can trigger test events to send directly to that source, which are routed through your Webhook destination and continue on to the source function: **Source** > **Webhook destination** > **Source Function**.
 
 From the source function editor, copy the provided webhook URL (endpoint) from the "Auto-fill via Webhook" dialog. 
-_**Note** : When a new source is created that utilizes a source function, the new source's endpoint (webhook URL) will differ from the URL that is provided in the source function's test environment._
+
+**Note** : When a new source is created that utilizes a source function, the new source's endpoint (webhook URL) will differ from the URL that is provided in the source function's test environment.
 
 To test the source function:
 1. Send a `POST` request to the source function's provided endpoint (webhook URL)
@@ -367,12 +369,14 @@ async function onRequest(request, settings) {
 }
 ```
 
-> warning ""
-> **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. Segment only retains the 100 most recent errors and logs for up to 30 days but the **Errors** tab may be visible to other workspace members if they have the necessary permissions.
+> warning "**Data may be visible to other workspace members**"
+> **Do not log sensitive data**, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads.
+>
+> Segment only retains the 100 most recent errors and logs for up to 30 days but the **Errors** tab may be visible to other workspace members if they have the necessary permissions.
 
 ### Error types
 
-- **Bad Request**: is any error thrown by your code not covered by the other errors.
+- **Bad Request**: Any error thrown by your code not covered by the other errors.
 - **Invalid Settings**: A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected**: Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type**: Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
@@ -423,7 +427,7 @@ The maximum payload size for an incoming webhook payload is 512 KiB.
 
 ##### What is the timeout for a function to execute?
 
-The execution time limit is five seconds, however Segment strongly recommends that you keep execution time as low as possible. If you are making multiple external requests you can use async / await to make them concurrently, which will help keep your execution time low.
+The execution time limit is five seconds, however we strongly recommend that you keep execution time as low as possible. If you are making multiple external requests you can use async or await to make them concurrently, which will help keep your execution time low.
 
 #### Does Segment alter incoming payloads?
 
@@ -435,7 +439,7 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 
 #### Can I use a Source Function in place of adding a Tracking Pixel to my code?
 
-No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment. 
+No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source function to connect it to Segment. 
 
 ##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
 
@@ -443,10 +447,10 @@ The test function interface has a 4KB console logging limit. Outputs surpassing 
 
 #### Can I send a custom response from my Source Function to an external tool?
 
-No, Source Functions can't send custom responses to the tool that triggered the Function's webhook. Source Functions can only send a success or failure response, not a custom one.
+No, Source functions can't send custom responses to the tool that triggered the Function's webhook. Source functions can only send a success or failure response, not a custom one.
 
 #### Why am I seeing the error "Functions are unable to send data or events back to their originating source" when trying to save my Source Function?
 
-This error occurs because Segment prevents Source Functions from sending data back to their own webhook endpoint (`https://fn.segmentapis.com`). Allowing this could create an infinite loop where the function continuously triggers itself.
+This error occurs because Segment prevents Source functions from sending data back to their own webhook endpoint (`https://fn.segmentapis.com`). Allowing this could create an infinite loop where the function continuously triggers itself.
 
 To resolve this error, check your Function code and ensure the URL `https://fn.segmentapis.com` is not included. This URL is used to send data to a Source Function and shouldn't appear in your outgoing requests. Once you remove this URL from your code, you’ll be able to save the Function successfully.
