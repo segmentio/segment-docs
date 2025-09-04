@@ -122,7 +122,7 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 #### How do I resolve a `403` error for custom behavioral events?
 `403` errors indicate that Segment is unable to send your event to HubSpot because the account connected doesn't have sufficient permissions. If you're observing `403` errors for Custom Behavioral Events, ensure that your HubSpot account is a `HubSpot Enterprise Marketing Hub` account. After upgrading your account to `Enterprise Marketing Hub`, **Reauthorize** from the **Settings** page of your destination to resolve the `403` errors.
 
-### Why can't I set an entire object for the Other properties field?
+#### Why can't I set an entire object for the Other properties field?
 
 This destination doesn't allow selecting an entire object for the Other properties field. HubSpot rejects API calls if a property name doesn't match with HubSpot's internal name. When working with a large object of key/value pairs, map each key/value pair to prevent rejection. This ensures that every key matches the pre-created property names in HubSpot.
 
