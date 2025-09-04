@@ -22,11 +22,9 @@ You can follow the setup guide through Segment using the steps below, or you can
 1. Search for “Customer.io”, select it, and then click **Configure Customer.io**.
 1. Select the data sources you want to connect to Customer.io and click **Next**.
 1. Enter your *Destination Name* and select your **Connection Mode**—Cloud Mode or Device Mode. Click **Save**.
-1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You'll find both in your Customer.io *Account Settings* > *API Credentials* page.
+1. Under *Connection Settings*, enter your Customer.io workspace **API Key** and **Site ID**. You'll find your Site ID and API Key in Customer.io under **[Settings > Workspace Settings > API Credentials](https://fly.customer.io/workspaces/last/settings/api_credentials){:target="_blank"}**. You can use any Site ID/API Key pair with Segment. You may even want to Create a new Track API Key just for this integration.
 
-If you want to sync your settings directly from your Customer.io workspace, go to **Settings** > **Integrations** and find the **Segment Destination** integration.
-
-![Segment Destination in Customer.io](images/segment-destination-cio.png)
+![Tracking API keys in Customer.io](images/cio-track-api-keys.png)
 
 ## Page
 
@@ -249,20 +247,23 @@ For that, you need to make the following calls:
 
 ### Sending Data from Customer.io
 
-You can enable Customer.io as a Segment Source to send[ email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you've turned on.
+You can enable Customer.io as a Segment Source to send [email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events are sent as track calls to the other destinations you've turned on.
 
 To enable this feature:
 
-1. In Customer.io go to **Settings** > **Integrations**.
-2. Find the Segment Source integration.
-3. Add your _Segment Write Key_ and click **Connect Segment**.
+1. In Customer.io go to **[Data & Integrations** > **Integrations** > **Segment (Message Activity)](https://fly.customer.io/workspaces/last/journeys/integrations/segment_out){:target="_blank"}**.
+2. Add your _Segment Write Key_ and click **Connect Segment**.
+3. Select the events you want to send to Segment. When you're done configuring the integration, make sure the *Integration State* is set to **Enabled**. 
+4. Click **Save and Enable Integration**.
 
 ![Segment source in Customer.io](images/segment-source-cio.png)
 
 ## Best Practices
 
 ### Rate Limits
-Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, make sure that you're respecting the limits placed on the [Customer.io API](https://customer.io/docs/api/#tag/trackLimit){:target="_blank"}. If you're using Segment's [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
+Customer.io's [Track API](https://docs.customer.io/integrations/api/track/#tag/trackLimit){:target="_blank"} has a rate limit of 1000 requests per second. It's not strictly enforced, but consistently exceeding it may lead to throttling, especially during periods of high system load. If Customer.io detects a sustained high volume that could impact other customers, they may contact you to help adjust your integration.
+
+If you use Segment's [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send batches of events to Customer.io, you can throttle the `import` to keep your requests under this rate limit.
 
 ## Troubleshooting
 
