@@ -305,7 +305,7 @@ The advantage of testing your source function with webhooks is that all incoming
 Note: Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function, you must:
 - [Generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
 - [Create a Public API Token]([url](https://app.segment.com/goto-my-workspace/settings/access-management/tokens)), or follow these steps: 
-In your Segment Workspace, navigate to **Settings → Workspace settings → Access Management → Token**. Click **+ Create Token**. Create a description for the token and assign access. Click **Create** and save the access token before clicking **Done**.
+In your Segment Workspace, navigate to **Settings** > **Workspace settings** > **Access Management** > **Token**. Click **+ Create Token**. Create a description for the token and assign access. Click **Create** and save the access token before clicking **Done**.
 - For POST calls, use this Public API token in the Authorization Header, as `Bearer Token : public_api_token`
 
 ### Testing source functions with a webhook
