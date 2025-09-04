@@ -31,7 +31,7 @@ The following table explains the parameters you can configure for the Hold Until
 
 | Parameter             | Details                                                                                                                                                                                                                                                                    |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Branches              | Configure up to 4 event branches, each tied to a specific event and optional event property filters. <br> Events must share a unique identifier with the entry event if the journey allows re-entry. <br>  Branches must be mutually exclusive to avoid validation errors. |
+| Branches              | Configure up to 9 event branches, each tied to a specific event and optional event property filters. <br> Events must share a unique identifier with the entry event if the journey allows re-entry. <br>  Branches must be mutually exclusive to avoid validation errors. |
 | Filters               | Event properties refine the triggering conditions for a branch.                                                                                                                                                                                                            |
 | Maximum hold duration | The fallback branch activates after the hold period, ranging from 5 minutes to 182 days (about 6 months)                                                                                                                                                           |
 
@@ -136,38 +136,45 @@ To configure the Delay step:
 
 ## Data split
 
-The **Data split** step sends profiles down different branches based on audience membership or profile traits. This lets you personalize how users move through a journey, like sending different messages to new users instead of returning customers, or targeting re-engagement campaigns based on inactivity.
+The **Data split** step sends profiles down different branches based on event property values, audience membership, or profile traits. This lets you personalize how users move through a journey, like:
 
-Data split is useful when you want to take different actions based on what you already know about the user, rather than waiting for a new event. For example, you might use it to separate users who haven’t purchased in 30 days from those who lapsed 90 days ago, or from users who are still actively engaged.
+1. Sending different messages to new users instead of returning customers.
+2. Personalizing campaigns based on user membership tier.
+3. Sending different discount codes based on a user's total cart value.
+
+Data split is useful when you want to take different actions based on what you already know about the user or event properties, rather than waiting for a new event. For example, you might use it to separate users who haven’t purchased in 30 days from those who lapsed 90 days ago, or from users who are still actively engaged.
 
 ### How Data split works
 
 When a profile reaches a Data split step:
 
-1. Segment checks whether the profile matches the first branch’s conditions.
+1. Segment checks whether the event properties or profile data matches the first branch’s conditions.
 2. If not, it checks the next branch, and so on, in the order shown in the journey.
-3. The profile moves down the first branch it qualifies for. Each profile can only follow one branch.
+3. The journey instance moves down the first branch it qualifies for. Each profile can only follow one branch.
+4. If none of the logic branches resolve to true, it goes down the everyone else branch.
 
 ### Configuration options
 
-You can configure up to five branches in a Data split step. Each branch can have one or more conditions:
+You can configure up to nine branches in a Data split step. Each branch can have one or more conditions:
 
-| Condition type       | Description                                                               |
-| -------------------- | ------------------------------------------------------------------------- |
-| With trait           | The profile includes a specific trait and value.                          |
-| Without trait        | The profile does not include a specific trait.                            |
-| Part of audience     | The profile is a member of a selected audience at the time of evaluation. |
-| Not part of audience | The profile is not a member of a selected audience.                       |
+| Condition type       | Description                                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------|
+| With trait           | The profile includes a specific trait and value.                                                                |
+| Without trait        | The profile does not include a specific trait.                                                                  |
+| Part of audience     | The profile is a member of a selected audience at the time of evaluation.                                       |
+| Not part of audience | The profile is not a member of a selected audience.                                                             |
+| With journey context | The event properties in context (from triggering or hold until events) match conditions.                        |
 
 You can also give branches uniques name to differentiate them from each other on the journey canvas.
 
 > info "Evaluation is sequential"
 > Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step. You can change the evaluation order by dragging branches up or down in the configuration side sheet.
 
-### Example: Target different customer types
+### Example: Target different customer types or event properties
 
-You can use a Data split to branch profiles based on traits or audience membership that already exist on the profile when it reaches this step. For example:
+You can use a Data split to branch profiles based on event properties, traits, or audience membership that already exist on the profile when it reaches this step. For example:
 
+- Journey instances where the triggering event had a `transaction_total` > $100 are sent specific messaging about their high-ticket purchase.
 - Profiles with a known `email_subscription_status` trait get treated as existing customers.
 - Profiles that belong to a `VIP` audience are routed down a separate path for high-value users.
 - Profiles with a specific set of traits (like favorite color and a known name) can receive personalized messaging.
