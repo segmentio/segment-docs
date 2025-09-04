@@ -253,7 +253,7 @@ To enable this feature:
 
 1. In Customer.io go to **[Data & Integrations** > **Integrations** > **Segment (Message Activity)](https://fly.customer.io/workspaces/last/journeys/integrations/segment_out){:target="_blank"}**.
 2. Add your _Segment Write Key_ and click **Connect Segment**.
-3. Select the events you want to send to Segment. When you're done configuring the integration and make sure the *Integration State* is set to *Enabled*. 
+3. Select the events you want to send to Segment. When you're done configuring the integration, make sure the *Integration State* is set to **Enabled**. 
 4. Click **Save and Enable Integration**.
 
 ![Segment source in Customer.io](images/segment-source-cio.png)
