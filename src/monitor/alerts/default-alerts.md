@@ -62,7 +62,7 @@ View a brief description of each alert type. 
 - **Destination Modified**: A user in your workspace made changes to a destination. 
 
 > info "Custom Destination alerts"
-> During the Monitor public beta, you can also configure custom [Successful delivery rate alerts](/docs/monitor/alerts/custom-alerts/#successful-delivery-rate-alert) and 
+> During the Monitor public beta, you can also configure custom [Successful delivery rate alerts](/docs/monitor/alerts/custom-alerts/#successful-delivery-rate-alert) and [Audience size change alerts](/docs/monitor/alerts/custom-alerts/#audience-size-change). 
 
 ## Storage Destination alerts
 - **Storage Destination Created**: A user in your workspace created a new instance of a storage destination. 
