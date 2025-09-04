@@ -82,11 +82,6 @@ Available sync modes for the Custom Object v2 and Custom Event v2 Actions includ
 
 {% include components/actions-fields.html %}
 
-> info "Handling one-to-many relationships"
-> In HubSpot, one-to-many relationships allow a single contact to be associated with multiple companies, and a company can have multiple contacts.
-> However, when using Segment, you can't send multiple users or companies in a single API call. This means the one-to-many relationship can't be directly established in a single request.
-> To set this up, send multiple event payloads, each containing the information of one contact and one company.
-
 ## Rate limits
 HubSpot's [API rate limit](https://developers.hubspot.com/docs/api/usage-details#rate-limits){:target="_blank"} is 100 API calls per 10 seconds. While Segment implements retries for temporary issues, large data volumes sent simultaneously might exceed this limit and result in incomplete data transmission.
 
