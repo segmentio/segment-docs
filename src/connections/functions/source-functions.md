@@ -313,7 +313,7 @@ In your Segment Workspace, navigate to **Settings** > **Workspace settings** > *
 You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL, Postman, or Insomnia), or by pasting the webhook into an external server that supports webhooks (such as Slack).
 
 #### Use case
-A common Segment use case is to connect a Segment [webhooks destination](https://segment.com/docs/connections/destinations/catalog/webhooks/) or [webhook actions destination](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) to a test source, where the Webhook URL/endpoint that is used corresponds to the provided source function's endpoint, then you can trigger test events to send directly to that source, which are routed through your Webhook destination and continue on to the source function: Source → Webhook destination → Source Function.
+A common Segment use case is to connect a Segment [webhooks destination](https://segment.com/docs/connections/destinations/catalog/webhooks/) or [webhook actions destination](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) to a test source, where the Webhook URL/endpoint that is used corresponds to the provided source function's endpoint, then you can trigger test events to send directly to that source, which are routed through your Webhook destination and continue on to the source function: **Source** > **Webhook destination** > **Source Function**.
 
 From the source function editor, copy the provided webhook URL (endpoint) from the "Auto-fill via Webhook" dialog. 
 
