@@ -55,7 +55,9 @@ Reverse ETL usage limits are measured based on the number of records processed t
 
 Processed records represents the number of records Segment attempts to send to each destination. Keep in mind that not all processed records are successfully delivered, for example, such as when the destination experiences an issue.
 
-Segment tracks how many Reverse ETL records you process in one monthly billing cycle. To see how many records you've processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. Note that Segment will not block Reverse-ETL syncs due to usage.
+Segment doesn't limit how many Reverse ETL records you can process in one monthly billing cycle. 
+
+To track how many records you've processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. For questions about Reverse ETL usage, contact your account team or reach out to [Segment support](segment.com/help/contact){:target="_blank”}. 
 
 
 ### Configuration limits
