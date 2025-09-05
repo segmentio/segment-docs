@@ -9,12 +9,12 @@ One of the core components of the Segment [Spec](/docs/connections/spec/) is the
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and its partners can, wherever possible, forward these events on your behalf and build downstream destinations that take full advantage of the semantic meaning associated with these events and their properties.
 
 > info ""
->  If you're already collecting similar events, Segment recommends migrating to these event names so that you can take advantage of available features in Segment destinations that depend on the spec as they become available.
+> If you're already collecting similar events, Segment recommends migrating to these event names so that you can take advantage of available features in Segment destinations that depend on the spec as they become available.
 
-These events pair nicely with Segment's [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
+These events also work with Segment's [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
 
 > info ""
->  Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+> Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example, **Application Installed** or **Deep Link Clicked**). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of events
 
@@ -37,7 +37,7 @@ The Segment Native Mobile Spec includes the following semantic events:
 - [Deep Link Opened](#deep-link-opened)
 - [Deep Link Clicked](#deep-link-clicked)
 
-Segment recommends using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
+We recommend using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
 
 ## Lifecycle events
 
@@ -80,7 +80,7 @@ This event fires when a user **first** opens your mobile application. Note, if t
 }
 ```
 
-| **Property** | **Type** | **Description**                        |
+| Property | Type | Description                        |
 | ------------ | -------- | -------------------------------------- |
 | `version`    | String   | The version installed.                 |
 | `build`      | String   | The build number of the installed app. |
@@ -105,7 +105,7 @@ This event fires when a user launches or foregrounds your mobile application aft
 }
 ```
 
-| **Property**            | **Type** | **Description**                                                                                                                                                                                                                                                                                       |
+| Property            | Type | Description                                                                                                                                                                                                                                                                                       |
 | ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `from_background`       | Boolean  | If application [transitioned](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/doc/uid/TP40006786-CH3-SW52){:target="_blank"} from "Background" to "Inactive" state prior to foregrounding (as opposed to from "Not Running" state). |
 | `url`                   | String   | The value of `UIApplicationLaunchOptionsURLKey` from `launchOptions`. **Collected on iOS only**.                                                                                                                                                                                                      |
@@ -164,7 +164,7 @@ This event fires when a user updates the application. Segment's SDK will automat
 }
 ```
 
-| **Property**       | **Type** | **Description**                  |
+| Property       | Type | Description                  |
 | ------------------ | -------- | -------------------------------- |
 | `previous_version` | String   | The previously recorded version. |
 | `previous_build`   | String   | The previously recorded build.   |
@@ -231,7 +231,7 @@ When Segment or an integrated partner can discern the source of an install, we'l
 }
 ```
 
-| **Property**            | **Type** | **Description**                         |
+| Property            | Type | Description                         |
 | ----------------------- | -------- | --------------------------------------- |
 | `provider`              | String   | The attribution provider.               |
 | `campaign[source]`      | String   | Campaign source — attributed ad network.|
@@ -264,7 +264,7 @@ This event can be sent when a push notification is received in the app. It can b
 }
 ```
 
-| **Property**        | **Type** | **Description**                                            |
+| Property        | Type | Description                                            |
 | ------------------- | -------- | ---------------------------------------------------------- |
 | `campaign[name]`    | String   | Campaign name.                                             |
 | `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification). |
@@ -296,7 +296,7 @@ This event can be sent when a user taps on a push notification associated with y
 ```
 
 
-| **Property**        | **Type** | **Description**                                                                     |
+| Property        | Type | Description                                                                    |
 | ------------------- | -------- | ----------------------------------------------------------------------------------- |
 | `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
 | `campaign[name]`    | String   | Campaign name.               |
@@ -328,7 +328,7 @@ This event fires when a push notification from a provider bounces. If your push 
 }
 ```
 
-| **Property**        | **Type** | **Description**                                                                     |
+| Property        | Type | Description                                                                     |
 | ------------------- | -------- | ----------------------------------------------------------------------------------- |
 | `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
 | `campaign[name]`    | String   | Campaign name.            |
@@ -357,7 +357,7 @@ This event is fired *in addition* to the associated `Application Opened` event.
 }
 ```
 
-| **Property** | **Type** | **Description**         |
+| Property | Type | Description         |
 | ------------ | -------- | ----------------------- |
 | `provider`   | String   | The deep link provider. |
 | `url`        | String   | The App URL opened.     |
@@ -381,7 +381,7 @@ This event may be provided by deep link providers postback mechanisms or an inte
 }
 ```
 
-| **Property** | **Type** | **Description**            |
+| Property | Type | Description           |
 | ------------ | -------- | -------------------------- |
 | `provider`   | String   | The deep link provider.    |
 | `url`        | String   | The deep link URL clicked. |
