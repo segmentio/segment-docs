@@ -50,8 +50,8 @@ State management: The `__segment_reverse_etl` schema and its associated tables (
 ## Limits
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits for Reverse ETL.
 
-### Usage limits
-Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes only successful records. For example, if you processed 50K records to Braze and 50K records to Mixpanel, then your total Reverse ETL usage is 100K records.
+### Usage
+Segment measures Reverse ETL usage measured based on the number of records processed to each destination – this includes only successful records. For example, if you processed 50K records to Braze and 50K records to Mixpanel, then your total Reverse ETL usage is 100K records.
 
 Processed records represents the number of records Segment attempts to send to each destination. Keep in mind that not all processed records are successfully delivered, for example, such as when the destination experiences an issue.
 
