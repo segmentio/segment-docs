@@ -37,7 +37,7 @@ The Segment Native Mobile Spec includes the following semantic events:
 - [Deep Link Opened](#deep-link-opened)
 - [Deep Link Clicked](#deep-link-clicked)
 
-Segment recommends using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
+We recommend using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
 
 ## Lifecycle events
 
@@ -105,7 +105,7 @@ This event fires when a user launches or foregrounds your mobile application aft
 }
 ```
 
-| **Property**            | **Type** | **Description**                                                                                                                                                                                                                                                                                       |
+| Property            | Type | Description                                                                                                                                                                                                                                                                                       |
 | ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `from_background`       | Boolean  | If application [transitioned](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/doc/uid/TP40006786-CH3-SW52){:target="_blank"} from "Background" to "Inactive" state prior to foregrounding (as opposed to from "Not Running" state). |
 | `url`                   | String   | The value of `UIApplicationLaunchOptionsURLKey` from `launchOptions`. **Collected on iOS only**.                                                                                                                                                                                                      |
@@ -164,7 +164,7 @@ This event fires when a user updates the application. Segment's SDK will automat
 }
 ```
 
-| **Property**       | **Type** | **Description**                  |
+| Property       | Type | Description                  |
 | ------------------ | -------- | -------------------------------- |
 | `previous_version` | String   | The previously recorded version. |
 | `previous_build`   | String   | The previously recorded build.   |
@@ -264,7 +264,7 @@ This event can be sent when a push notification is received in the app. It can b
 }
 ```
 
-| **Property**        | **Type** | **Description**                                            |
+| Property        | Type | Description                                            |
 | ------------------- | -------- | ---------------------------------------------------------- |
 | `campaign[name]`    | String   | Campaign name.                                             |
 | `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification). |
@@ -296,7 +296,7 @@ This event can be sent when a user taps on a push notification associated with y
 ```
 
 
-| **Property**        | **Type** | **Description**                                                                     |
+| Property        | Type | Description                                                                    |
 | ------------------- | -------- | ----------------------------------------------------------------------------------- |
 | `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
 | `campaign[name]`    | String   | Campaign name.               |
@@ -328,7 +328,7 @@ This event fires when a push notification from a provider bounces. If your push 
 }
 ```
 
-| **Property**        | **Type** | **Description**                                                                     |
+| Property        | Type | Description                                                                     |
 | ------------------- | -------- | ----------------------------------------------------------------------------------- |
 | `action`            | String   | If this notification is "actionable", the custom action tapped. **Default:** "Open" |
 | `campaign[name]`    | String   | Campaign name.            |
@@ -357,7 +357,7 @@ This event is fired *in addition* to the associated `Application Opened` event.
 }
 ```
 
-| **Property** | **Type** | **Description**         |
+| Property | Type | Description         |
 | ------------ | -------- | ----------------------- |
 | `provider`   | String   | The deep link provider. |
 | `url`        | String   | The App URL opened.     |
@@ -381,7 +381,7 @@ This event may be provided by deep link providers postback mechanisms or an inte
 }
 ```
 
-| **Property** | **Type** | **Description**            |
+| Property | Type | Description           |
 | ------------ | -------- | -------------------------- |
 | `provider`   | String   | The deep link provider.    |
 | `url`        | String   | The deep link URL clicked. |
