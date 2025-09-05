@@ -46,7 +46,7 @@ When you collect data using device-based libraries, you can choose between these
 * **Cloud-mode** is where the library sends the data directly to the Segment servers which then translate and forward it.
 * **Device-mode** is where the library sends the data both directly to the Segment servers, and also to the servers for the destination tool. Device-mode sometimes requires some [additional set-up steps](/docs/connections/sources/mobile_guide/), but can unlock rich device data.
 
-Although there are some tradeoffs between the two approaches, neither is better than the other, and we recommends that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can't be blocked by ad blockers.
+Although there are some tradeoffs between the two approaches, neither is better than the other, and we recommend that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can't be blocked by ad blockers.
 
 <!-- Here's a handy flow chart to help with the client-side/server-side decision:
 
