@@ -5,8 +5,7 @@ redirect_from:
   - "/personas/journeys"
 ---
 
-
-Journeys, a feature of Engage, provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
+Journeys, a feature of [Engage](/docs/engage/), provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
 
 <video width="690px" controls autoplay>
   <source src="images/journeys-teaser.webm" type="video/webm">
@@ -15,7 +14,7 @@ Journeys, a feature of Engage, provides a way for marketers to personalize exper
 
 Journeys enable you to define steps in a user's journey based on event behavior and traits. You can build Journeys from your tracking events, traits, computed traits, or audiences. At each step of a journey, you can send your list of users to any Engage-compatible destination.
 
-## Get started
+## Getting started
 
 Start with the visual builder to define entrance criteria, build out conditional branching logic, then focus messaging to drive conversion. Repeat purchase campaigns, trial conversions, and onboarding flows are great examples to get started from. For more information, see [Build a Journey](/docs/engage/journeys/build-journey).
 
@@ -23,9 +22,9 @@ Start with the visual builder to define entrance criteria, build out conditional
 
 Connect destinations to your Journey to send events or user lists when users reach the corresponding step in the Journey. For more information, see [Send Journeys data to a Destination](/docs/engage/journeys/send-data).
 
-## Best practices and FAQ
+## Best practices and FAQs
 
-For information about best practices for getting started with Journeys, and to view frequently asked questions about Journeys, see [Best Practices and FAQ](/docs/engage/journeys/faq-best-practices).
+For information about best practices for getting started with Journeys, and to view frequently asked questions about Journeys, see [Best Practices and FAQs](/docs/engage/journeys/faq-best-practices).
 
 ## Journeys use cases
 
