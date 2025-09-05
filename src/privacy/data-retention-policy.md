@@ -2,19 +2,19 @@
 title: Data Retention and Deletion Policy
 ---
 
-Twilio Segment’s Data Retention and Deletion Policy provides clarity, consistency and compliance across all Segment services and brings Segment’s data retention policy in line with industry standards and regulations. By implementing and enforcing this policy, Segment aims to enhance data governance and ensure that Segment customers can manage their data accurately, efficiently and securely within clearly defined retention periods.
+Twilio Segment’s Data Retention and Deletion Policy provides clarity, consistency, and compliance across all Segment services and brings Segment’s data retention policy in line with industry standards and regulations. By implementing and enforcing this policy, Segment aims to enhance data governance and ensure that Segment customers can manage their data accurately, efficiently and securely within clearly defined retention periods.
 
 Segment enforces a strict data retention policy for all:
 
-- **[Active customers](#active-customers):** A Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days.   
-- **[Expired customers](#expired-customers):** A Business or Team Tier customer that hasn’t renewed their Segment contract and has their workspace downgraded to Free Tier.   
-- **[Contracted customers](#contracted-customers):** A Business Tier customer that elects to stop using add-on features like Unify, Unify+, Engage and/or Linked.  
-- **[Churned customers](#churned-customers):**  A Business or Team Tier customer that has either explicitly terminated the contract or has unpaid invoices and has their workspace fully locked out.  
+- **[Active customers](#active-customers)**: A Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days.   
+- **[Expired customers](#expired-customers)**: A Business or Team Tier customer that hasn’t renewed their Segment contract and has their workspace downgraded to Free Tier.   
+- **[Contracted customers](#contracted-customers)**: A Business Tier customer that elects to stop using add-on features like Unify, Unify+, Engage and/or Linked.  
+- **[Churned customers](#churned-customers)**:  A Business or Team Tier customer that has either explicitly terminated the contract or has unpaid invoices and has their workspace fully locked out.  
 - **[Unused Free Tier workspace](#unused-free-tier-workspace)**: A workspace on the Free Tier that has not received any Segment event traffic or had any user activity in the last 30 days.   
 
 ![A flowchart depicting the progression of active and no longer active customers.](images/data-retention-policy-flowchart.png)
 
-## Effective Date
+## Effective date
 Segment’s enforcement of this data retention policy for active customers begins on:
 - **April 15, 2025** for Object Store data
 - **August 15, 2025** for Archive event and Profile events data stores
@@ -60,16 +60,16 @@ Select the default retention period for the workspace in this setting. This valu
 
 With this data retention policy, all data beyond the retention period is unrecoverably deleted from all of Segment and impacts the following:
 
-* [Data Replays](/docs/guides/what-is-replay/) will only be available for data within the retention period. Unify, Engage and Linked customers that replay data to recreate Unify Spaces or Profiles may encounter variations in the number of profiles, as well as in the identifiers, traits and properties associated with the profiles, depending on the data available.
+* [Data Replays](/docs/guides/what-is-replay/) will only be available for data within the retention period. Unify, Engage and Linked customers that replay data to recreate Unify spaces or Profiles may encounter variations in the number of profiles, as well as in the identifiers, traits and properties associated with the profiles, depending on the data available.
 * Backfill Data is only available for data within the retention period, when sources are connected to your warehouse.   
 * [Data residency](/docs/guides/regional-segment/) migrations across regions (US and EU) is only available for data within the retention period.  
 * Additional impacts to Object data:  
-  * [Object API](/docs/connections/sources/catalog/libraries/server/object-api/#set) or [Bulk API](/docs/connections/sources/catalog/libraries/server/object-bulk-api/): Object data not updated within the retention period will be deleted. Any new data will treated as a new record and may not contain any historic properties. To prevent loss of data properties, Segment recommends that you always send full objects with all properties.  
+  * [Object API](/docs/connections/sources/catalog/libraries/server/object-api/#set) or [Bulk API](/docs/connections/sources/catalog/libraries/server/object-bulk-api/): Object data not updated within the retention period will be deleted. Any new data will be treated as a new record and may not contain any historic properties. To prevent loss of data properties, we recommend that you always send full objects with all properties.  
   * Users and Accounts: Segment aggregates data from Identify and Group events into [Users and Account objects and tables for warehouse destinations](/docs/connections/storage/warehouses/schema/#warehouse-tables) object store records. Any object store records not updated in the last 180 days will be deleted from Segment's object stores. Any new data after object store records are deleted for inactivity is treated as a new object store record. If the source is connected to a Warehouse destination, object store entities are synced into [`<source>.users` and `<source>.accounts` tables](/docs/connections/storage/warehouses/schema/#warehouse-tables), and the existing record in the warehouse will be replaced with the new object store record, resulting in possible loss of attribute data. To prevent loss of attributes, Segment advises customers to migrate to using [Profiles Sync](/docs/unify/profiles-sync/overview/), always send complete Identify and Group calls, or back up your `<source>.users` and `<source>.accounts` tables. 
 * [Computed traits](/docs/unify/Traits/computed-traits/) is built using the available data within the retention period. Recreating these traits may result in different values based on the available data.  
 * [Profiles](/docs/unify/), [Engage](/docs/engage/) [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/) that are built using Events will use available data within the retention period. Recreating these may result in different Profiles based on the available data. 
   * [Real Time Computation](/docs/engage/audiences/#refresh-real-time-audiences-and-traits) (Audiences, Computed Traits, Journeys): When backfilling with historical data, backfill will use available data within the retention period. Once a computation is live, events that are removed due to data retention will not cause Profiles to enter/exit audiences and will not cause computed trait value changes. However, if you edit the definition or disable then re-enable them, this will cause the computation to re-backfill, which will cause Profiles to enter/exit audiences and computed trait value to change.
-  * [Batch Computation](/docs/engage/audiences/#real-time-compute-compared-to-batch) (Audiences, Computed Traits): Batch computation always computes based on available data, events removed due to data retention will cause Profile to enter/exit an Audience or computed trait values to change.
+  * [Batch Computation](/docs/engage/audiences/#real-time-compute-compared-to-batch) (Audiences, Computed Traits): Batch computation always computes based on available data, events removed due to data retention will cause a profile to enter/exit an Audience or computed trait values to change.
 
 
 ### What data is not impacted?
@@ -97,7 +97,7 @@ Expired customers will have:
 
 ## Contracted customers 
 
-A contracted customer is a Business Tier customer that elects to stop using add-on features like Unify, Unify+, Engage and/or Linked.
+A contracted customer is a Business Tier customer that elects to stop using add-on features like Unify, Unify+, Engage, and/or Linked.
 
 Segment enforces a maximum data retention period of up to 90 days for all contracted customers, unless they explicitly request immediate deletion through a [support ticket](/docs/privacy/account-deletion/). All data beyond the retention period is deleted and unrecoverable as described below.
 
