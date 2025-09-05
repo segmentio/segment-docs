@@ -3,12 +3,14 @@ title: StackAdapt Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 61d8859be4f795335d5c677c
-redirect_from: "/connections/destinations/catalog/actions-stackadapt/"
+redirect_from: 
+  - "/connections/destinations/catalog/actions-stackadapt/"
+  - "/connections/destinations/catalog/stackadapt-events-conversions-/"
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-By setting up StackAdapt as a Segment destination, your Segment events will be forwarded to [StackAdapt](https://www.stackadapt.com/){:target="\_blank"}. This allows you to generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
+Setting up [StackAdapt](https://www.stackadapt.com/){:target="\_blank"} as a Segment destination forwards your Segment events to StackAdapt. This allows you to generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
 
 This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
 
@@ -17,11 +19,11 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 ### Getting your StackAdapt Universal Pixel ID
 
 1. Log in to your StackAdapt account and navigate to the Pixels page.
-2. Above the list of pixels, click **Install StackAdapt Pixel**.
+2. Click **Install StackAdapt Pixel**.
 
    ![Image showing location of link to install Pixel](images/install-pixel-link.png)
 
-3. In the instructions that appear, copy the universal pixel ID from the code snippet. Below is an example of a code snippet where the universal pixel ID is `sqQHa3Ob1hFi__2EcYYVZg1`.
+3. In the instructions that appear, copy the Universal Pixel ID from the code snippet. For example, the universal pixel ID in this code snippet is `sqQHa3Ob1hFi__2EcYYVZg1`.
 
 ![Image showing location of universal pixel ID in code snippet](images/copy-pixel-id.png)
 
@@ -32,13 +34,13 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 3. Click **Add Destination**.
 4. Select an existing source to connect to the StackAdapt destination.
 5. Give the destination a name.
-6. On the Settings screen, provide your StackAdapt Universal Pixel ID. This can be found on the Pixels page in StackAdapt as described above.
+6. On the Settings screen, provide your StackAdapt Universal Pixel ID. This can be [found on the Pixels page in StackAdapt](#getting-your-stackadapt-universal-pixel-id).
 7. Toggle on the destination using the **Enable Destination** toggle.
 8. Click **Save Change**.
 
 ### StackAdapt Pixel setup
 
-Segment events that are forwarded to StackAdapt can be used to track ad conversions, and to generate retargeting and lookalike audiences. Please review the StackAdapt documentation for the general setup of these if you are not already familiar:
+Segment events that are forwarded to StackAdapt can be used to track ad conversions, and to generate retargeting and lookalike audiences. Review the StackAdapt documentation for the general setup of these if you are not already familiar:
 
 - [Creating Conversion Events](https://support.stackadapt.com/hc/en-us/articles/360005859214-Creating-Conversion-Events){:target="\_blank"}
 - [Creating Retargeting Audiences](https://support.stackadapt.com/hc/en-us/articles/360005939153-Creating-Retargeting-Audiences){:target="\_blank"}
@@ -47,8 +49,8 @@ Segment events that are forwarded to StackAdapt can be used to track ad conversi
 Setup of conversion events, retargeting audiences, and lookalike audiences that fire on Segment events is largely the same as the setup in the StackAdapt documentation, with a few caveats:
 
 1. You **must** select "Universal Pixel" as the pixel type. This is because the StackAdapt destination in Segment uses your Universal Pixel ID to send events to StackAdapt.
-2. There is no need to install the StackAdapt pixel on your website as instructed in the "Installation" step, since Segment will forward events to StackAdapt that would normally be tracked by the StackAdapt pixel.
-3. If you choose to set up event rules, you will need to ensure that you use the event keys supported by the the StackAdapt destination as described below.
+2. There is no need to install the StackAdapt pixel on your website as instructed in the "Installation" step. Segment will forward events to StackAdapt that would normally be tracked by the StackAdapt pixel.
+3. If you choose to set up event rules, ensure that you use the event keys supported by the StackAdapt destination.
 
 ### Event rules
 
@@ -60,7 +62,7 @@ A Segment event fired with the code `analytics.track("User Registered")` can be 
 
 #### Ecommerce events
 
-The StackAdapt destination also supports forwarding ecommerce fields for the purpose of creating event rules that match ecommerce events, with default mappings to properties specified in the [Segment V2 Ecommerce Event Spec](/docs/connections/spec/ecommerce/v2/) as described in the below table:
+The StackAdapt destination also supports forwarding ecommerce fields for the purpose of creating event rules that match ecommerce events, with default mappings to properties specified in the [Segment v2 Ecommerce Event Spec](/docs/connections/spec/ecommerce/v2/) as described in the table:
 
 | Segment Ecommerce Event Property | StackAdapt Event Key |
 | -------------------------------- | -------------------- |
@@ -82,7 +84,7 @@ For events that can involve multiple products, such as checkout events, StackAda
 | `products.$.price`               | `product_price`               |
 | `products.$.quantity`            | `product_quantity`            |
 
-For example, to create a conversion event when an order is completed with a revenue value greater than 10, you could set up an event rule matching an `action` value of `Order Completed` and a `revenue` value greater than 10 as shown below:
+For example, to create a conversion event when an order is completed with a revenue value greater than 10, you could set up an event rule matching an `action` value of `Order Completed` and a `revenue` value greater than 10:
 
 ![Image showing event rule in StackAdapt the matches an Order Completed event with a revenue greater than 10](images/order-completed-event-rule.png)
 
@@ -104,7 +106,7 @@ analytics.track('Order Completed', {
 });
 ```
 
-#### Trait Fields
+#### Trait fields
 
 Although trait fields are not frequently used in event rules, the StackAdapt destination forwards them and they can be used if desired.
 
@@ -137,9 +139,9 @@ analytics.track("Order Completed", {
 
 If you are using URL rules, these will be matched whenever Segment sends an event to StackAdapt with a `url` matching the URL rule. This should be accomplished by the page event Segment automatically fires when a page is viewed, so setup of URL rules should be identical to setting up URL rules with the StackAdapt pixel.
 
-### Conversion Tracking with Backend Events
+### Conversion tracking with backend events
 
-When you send events to Segment from your backend, which are forwarded to StackAdapt using Segment's backend SDKs, the user agent and IP address of the user who originated the event must be included in the event context for conversions to be tracked. StackAdapt uses the user agent and IP address to attribute the conversion to the correct event to a user who has interacted with your ads. Examples of how to do this can be found in the documentation for Segment's SDKs. For example, for the [Python SDK](/docs/connections/sources/catalog/libraries/server/python/#override-context-value) this can be done as follows:
+When you send events to Segment from your backend, which are forwarded to StackAdapt using Segment's backend SDKs, the user agent and IP address of the user who originated the event must be included in the event context for conversions to be tracked. StackAdapt uses the user agent and IP address to attribute the conversion to the correct event to a user who has interacted with your ads. Examples of how to do this can be found in the documentation for [Segment's SDKs](/docs/connections/sources/catalog/#server). For example, for the [Python SDK](/docs/connections/sources/catalog/libraries/server/python/#override-context-value) this can be done as follows:
 
 ```python
 analytics.track('user_id', 'Order Completed', context={
@@ -148,11 +150,11 @@ analytics.track('user_id', 'Order Completed', context={
 })
 ```
 
-This is necessary when using backend SDKs but not for events sent from the frontend with `analytics.js`, because `analytics.js` automatically includes the user-agent and IP address in the event context.
+This is necessary when using backend SDKs but not for events sent from the frontend with `analytics.js`, because `analytics.js` automatically includes the user agent and IP address in the event context.
 
-### Conversion Tracking with Reverse ETL
+### Conversion tracking with Reverse ETL
 
-When sending past events to StackAdapt using a Reverse ETL tool, the user agent, IP address, event type, and either the page URL (for conversion trackers with URL rules), or the fields the event rules match on, must be included in your mappings. For example, the below mapping for a Snowflake source can be used to match a conversion tracker with an event rule that matches an `action` of `User Registered`:
+When sending past events to StackAdapt using a [Reverse ETL tool](/docs/connections/reverse-etl/reverse-etl-catalog/), the user agent, IP address, event type, and either the page URL (for conversion trackers with URL rules), or the fields the event rules match on, must be included in your mappings. For example, the mapping for a Snowflake source can be used to match a conversion tracker with an event rule that matches an `action` of `User Registered`:
 
 ![Image showing Snowflake mapping to forward User Registered events](images/snowflake-mappings.png)
 
@@ -160,7 +162,7 @@ Rows forwarded to StackAdapt with this mapping will be matched by the `User Regi
 
 ![Image showing event rule in StackAdapt the matches a User Registered event](images/user-registered-event-rule.png)
 
-When forwarding past events using Reverse ETL, only users who have interacted with an ad from an associated campaign within the conversion tracker's configured view-through expiry window (for impressions) or click-through expiry window (for clicks) will count as conversions. These windows can be set to up to 180 days in the conversion tracker configuration.
+When forwarding past events using [Reverse ETL](/docs/connections/reverse-etl/), only users who have interacted with an ad from an associated campaign within the conversion tracker's configured view-through expiry window (for impressions) or click-through expiry window (for clicks) will count as conversions. These windows can be set to up to 180 days in the conversion tracker configuration.
 
 {% include components/actions-fields.html %}
 
