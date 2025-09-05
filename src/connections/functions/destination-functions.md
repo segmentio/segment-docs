@@ -28,7 +28,7 @@ All functions are scoped to your workspace, so members of other workspaces can't
 After you click **Next: Build Function**, a code editor appears. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 
 > success ""
-> **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}.
+> Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library){:target="_blank"}.
 
 
 ## Code the destination function
@@ -53,10 +53,10 @@ Destination functions can define handlers for each message type in the [Segment 
 
 Each of the functions above accepts two arguments:
 
-- **event** - Segment event object, where fields and values depend on the event type. For example, in "Identify" events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
-- **settings** - Set of [settings](#create-settings-and-secrets) for this function.
+- **event**: Segment event object, where fields and values depend on the event type. For example, in Identify events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
+- **settings**: Set of [settings](#create-settings-and-secrets) for this function.
 
-The example below shows a destination function that listens for "Track" events, and sends some details about them to an external service.
+The example below shows a destination function that listens for Track events, and sends some details about them to an external service.
 
 ```js
 async function onTrack(event) {
@@ -74,7 +74,7 @@ async function onTrack(event) {
 }
 ```
 
-To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for Identify events instead.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
@@ -89,9 +89,9 @@ The handler for destination functions is event-specific. For example, you might 
 
 {% include content/functions/errors-and-error-handling.md %}
 
-You can incorporate a a `try-catch` block to ensure smooth operation of functions even when fetch calls fail. This allows for the interception of any errors during the API call, enabling the application of specific error handling procedures, such as error logging for future debugging, or the assignment of fallback values when the API call is unsuccessful. By positioning the continuation logic either outside the `try-catch` block or within a `finally` block, the function is guaranteed to proceed with its execution, maintaining its workflow irrespective of the outcome of the API call.
+You can incorporate a `try-catch` block to ensure smooth operation of functions even when fetch calls fail. This allows for the interception of any errors during the API call, enabling the application of specific error handling procedures, such as error logging for future debugging, or the assignment of fallback values when the API call is unsuccessful. By positioning the continuation logic either outside the `try-catch` block or within a `finally` block, the function is guaranteed to proceed with its execution, maintaining its workflow irrespective of the outcome of the API call.
 
-You can read more about [error handling](#destination-functions-logs-and-errors) below.
+See [error handling](#destination-functions-logs-and-errors) for additional details.
 
 ### Runtime and dependencies
 
@@ -140,8 +140,8 @@ You can also manually include your own JSON payload of a Segment event, instead 
 
 If your function fails, you can check the error details and logs in the **Output** section.
 
-- **Error Message** - This shows the error surfaced from your function.
-- **Logs** - This section displays any messages to `console.log()` from the function.
+- **Error Message**: The error surfaced from your function.
+- **Logs**: Messages to `console.log()` from the function.
 
 ## Batching the destination function
 
@@ -152,7 +152,7 @@ Batch handlers are an extension of destination functions. When you define an `on
 
 ### When to use batching
 
-Consider creating a batch handler if:
+Create a batch handler when:
 
 - **Your function sends data to a service that has a batch endpoint.** Batch endpoints may allow you both to send more data downstream and stay within the rate limits imposed by the service. Batch handlers that use one or more batch endpoints improve the efficiency of the function, and enable it to scale more easily. Specifically, you can use batch handlers to build [list-based](/docs/engage/using-engage-data/#personas-destination-types-event-vs-list) Engage destinations.
 - **You have a high-throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function's execution time isn't adversely affected, the reduction in invocations should lead to a reduction in cost.
@@ -165,7 +165,7 @@ Consider creating a batch handler if:
 Segment collects the events over a short period of time and combines them into a batch. The system flushes them when the batch reaches a certain number of events, or when the batch has been waiting for a specified wait time.
 
 To create a batch handler, define an `onBatch` function within your destination function.
-You can also use the "Default Batch" template found in the Functions editor to get started quickly.
+You can also use the "Default Batch" template found in the functions editor to get started quickly.
 
 ```js
 async function onBatch(events, settings){
@@ -316,7 +316,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 
 For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
-| Error Type             | Result  |
+| Error type             | Result  |
 | ---------------------- | ------- |
 | Bad Request            | Discard |
 | Invalid Settings       | Discard |
@@ -334,14 +334,14 @@ Once you do that, the destination function appears on the **Functions** page in 
 
 If you're editing an existing function, you can **Save** changes without updating instances of the function that are already deployed and running.
 
-You can also choose to **Save & Deploy** to save the changes, and then choose which of the already-deployed functions to update with your changes. [You might need additional permissions](#functions-permissions) to update existing functions.
+You can click **Save & Deploy** to save the changes, and then choose which of the already-deployed functions to update with your changes. [You might need additional permissions](#functions-permissions) to update existing functions.
 
 ## Destination functions logs and errors
 
 {% include content/functions/logs.md %}
 
 > warning ""
-> **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
+> Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
 
 ## Caching in destination functions
 
@@ -381,7 +381,7 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your fun
 
 ### Monitoring destination functions
 
-You can use [Destination Event Delivery](/docs/connections/event-delivery/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
+Use [Destination Event Delivery](/docs/connections/event-delivery/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
 If any of your deployed function instances are failing consistently, they will also appear in [Connection Health](/docs/segment-app/#health).
 
@@ -444,10 +444,10 @@ If you're sending your batch to an external service, the execution time of the f
 ##### Can I use a Destination Function to send data to another Segment source?
 Yes, to do so, remove the `messageId` and the `writeKey` from the payload in your Function code. Leaving either field on your payload will cause unexpected behavior that may cause your event to be delivered to the wrong source or to not be delivered at all.
 
-##### Can I view console.log() outputs in Destination Functions?
+##### Can I view console.log() outputs in destination functions?
 
-Incorporating console.log() statements in your Destination Function code aids in debugging. However, logs generated by these statements will only be accessible in the [Event Delivery](/docs/connections/event-delivery/) view if the payloads encounter errors during processing. Logs from successfully processed payloads are not displayed.
+Incorporating console.log() statements in your destination function code aids in debugging. However, logs generated by these statements will only be accessible in the [Event Delivery](/docs/connections/event-delivery/) view if the payloads encounter errors during processing. Logs from successfully processed payloads are not displayed.
 
 ##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
 
-The test function interface has a 4KB console logging limit. Outputs larger than this limit are not visible in the user interface.
+The test function interface has a 4 KB console logging limit. Outputs larger than this limit are not visible in the user interface.
