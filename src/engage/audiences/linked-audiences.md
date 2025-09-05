@@ -218,7 +218,7 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 ## Step 4: Enable your Linked Audience
 
-After building your Linked Audience, choose **Save and Enable**. You'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically disables your audience so that it doesn't start computing until you're ready. A run is when Segment runs the audience conditions on your data warehouse and sends events downstream. 
+After enabling your activation, you'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically creates your audience in a disabled state so that it doesn't start running until you're ready. A run is when Segment runs the audience conditions on your data warehouse and sends events downstream. Segment will automatially trigger a run when you enable your audience. The next run time will be dictated by your configured run schedule.
 
 To enable your audience, select the **Enabled** toggle, then select **Enable audience**.
 
@@ -240,6 +240,10 @@ You can maintain your run schedule at any time from the audience's **Settings** 
 You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
 
 There may be up to a 5 minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
+
+When configuring an interval run schedule, the system uses a cron-based mechanism anchored to GMT, meaning the next run time aligns with the nearest GMT-based interval cycle, which may shift the schedule relative to your local time zone.
+
+When you set a 24-hour interval run schedule at, for example, 4 PM PST, the cron-based system using GMT schedules the next run for 5 PM PST the same day, as it aligns with 12 AM GMT; however, if set after 5 PM PST, like 6 PM PST, the next run will be at 5 PM PST the following day.
 
 ## Step 5: Monitor your activation
 
