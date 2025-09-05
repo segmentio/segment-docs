@@ -1,5 +1,5 @@
 ---
-title: Journeys Best Practices and FAQ
+title: Journeys Best Practices and FAQs
 plan: engage-foundations
 redirect_from:
   - '/personas/journeys/faq-best-practices/'
@@ -13,7 +13,7 @@ When you create a multi-branch split, do not create overlapping conditions that 
 
 For example:
   - In the case where a multi-branch split is based on the conditions `registration form submitted` and `webinar attended`, a user may satisfy both conditions, and therefore is eligible for both paths.
-  - To set a priority, branch 2 should then be `who performed registration form submitted and did not perform webinar attended` to ensure mutual exclusivity
+  - To set a priority, branch 2 should then be `who performed registration form submitted and did not perform webinar attended` to ensure mutual exclusivity.
 
 ### Add time windows whenever possible
 
@@ -28,7 +28,7 @@ Unlike lists associated with Engage Audiences, users who are added to a journey 
 
 ### Review your Journey in drafts first
 
-Save your Journey in a draft state so that you can review before you publish it. Once you publish a Journey, you cannot edit select portions of a Journey and Journeys sends data to destinations.
+Save your Journey in a draft state so that you can review before you publish it. Once you publish a Journey, you cannot edit select portions of the journey and Journeys sends data to destinations.
 
 ### Know how to incorporate historical data
 
@@ -69,7 +69,7 @@ Follow these best practices to test your journeys:
 
 #### How often do Journeys run?
 
-Journeys run in real-time, like real-time Audiences in Engage. This means that users will progress through Journeys as Segment receives new events.
+Journeys run in real time, like real-time Audiences in Engage. This means that users will progress through Journeys as Segment receives new events.
 
 #### Can a user re-enter a Journey?
 
