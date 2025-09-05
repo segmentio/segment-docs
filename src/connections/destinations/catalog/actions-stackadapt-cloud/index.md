@@ -168,4 +168,4 @@ When forwarding past events using [Reverse ETL](/docs/connections/reverse-etl/),
 
 ## Data and privacy
 
-Review [StackAdapt's Data Processing Agreement](https://www.stackadapt.com/data-processing-agreement){:target="\_blank"} to learn more about StackAdapt's privacy and data terms.
+Review [StackAdapt's Data Processing Agreement](https://www.stackadapt.com/data-processing-agreement){:target="\_blank"} to learn more about StackAdapt's privacy and data terms. 
