@@ -1,5 +1,5 @@
 ---
-title: 'Analytics-Swift for iOS & Apple'
+title: 'Analytics-Swift for iOS and Apple'
 strat: swift
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
@@ -11,7 +11,7 @@ tags:
   - swift
   - ios
 ---
-With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift is compatible with both Swift and Objective-C applications. 
+With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS, and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics-Swift is compatible with both Swift and Objective-C applications. 
 
 > warning ""
 > If you're migrating to **Analytics-Swift** from Analytics iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/apple/migration/).
@@ -19,14 +19,15 @@ With Analytics-Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 ## Benefits of Analytics-Swift
 
 Analytics-Swift provides several key benefits including improvements in stability, performance, and developer experience when compared to Analytics iOS (Classic). 
+
 ### Performance
 
 Analytics-Swift offers improved performance when compared to Analytics iOS: 
 - Faster event processing and delivery
 - Significantly lower CPU usage
-- Small memory & disk usage footprint
+- Small memory and disk usage footprint
 
-### Developer Experience
+### Developer experience
 
 Analytics-Swift adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture).
 
@@ -34,10 +35,10 @@ Analytics-Swift adds several improvements to the overall experience of using the
 - Simpler syntax and more developer friendly overall.
 - More customization options than ever before.
 
-### Device Mode Transformations & Filtering
-For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either through the Segment Dashboard, or Javascript uploaded to the workspace) and do not require any app updates.
+### Device Mode Transformations and Filtering
+For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either through the Segment Dashboard, or JavaScript uploaded to the workspace) and do not require any app updates.
 
-Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-swift) on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-Swift) on Mobile. 
+Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-swift){:target="_blank"} on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-Swift){:target="_blank"} on Mobile. 
 
 ## Getting started
 > info "Multiple Instances"
@@ -50,7 +51,7 @@ To get started with the Analytics-Swift mobile library:
     2. Search for **Apple** and click **Add source**.
 
 2. Add the Analytics dependency to your application.
-    Add the Swift package, `git@github.com:segmentio/analytics-swift.git` as a dependency through either of these 2 options:
+    Add the Swift package, `git@github.com:segmentio/analytics-swift.git` as a dependency through either of these two options:
     1. Your package.swift file
     2. Xcode
         1. Xcode 12: **File > Swift Packages > Add Package Dependency**
@@ -99,10 +100,10 @@ To get started with the Analytics-Swift mobile library:
 
 These are the options you can apply to configure the client:
 
- Option Name | Description
+ Option name | Description
 ----------- | ------------
 `writeKey` *required* | This is your Segment write key.
-`apiHost` | The default is set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends event.
+`apiHost` | The default is set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events.
 `autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you want to add plugins to the Segment Destination.
 `cdnHost` | The default is set to `cdn-settings.segment.com/v1`. <br> This sets a default CDN Host from which Segment retrieves settings.
 `defaultSettings`| The default is set to `{}`. <br> This is the settings object used as fallback in case of network failure.
@@ -111,7 +112,7 @@ These are the options you can apply to configure the client:
 `trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
 
 > info "AppClip Tracking"
-> If you are tracking App Clips using iOS or Swift libraries, you may encounter zeros in your device ID. Segment recommends that you set your own device ID in these instances to avoid this issue.
+> If you are tracking App Clips using iOS or Swift libraries, you may encounter zeros in your device ID. We recommend that you set your own device ID in these instances to avoid this issue.
 
 ### Core tracking methods
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
@@ -162,7 +163,7 @@ Analytics-Swift is built with extensibility in mind. Use the tools list below to
 If you proxy your events through the `apiHost` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server-side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
 
 > warning ""
-> If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK.
+> If you're using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK aren't available in the Analytics iOS (Classic) SDK.
 
 ## Telemetry
 The Analytics-Swift SDK collects telemetry data on configuration and usage by default. This includes basic information on SDK setup, plugins and event types used, and basic error details. Segment downsamples the data to minimize traffic and doesn't collect any personally identifiable information (PII) or event data.
