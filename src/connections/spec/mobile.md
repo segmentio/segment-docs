@@ -9,12 +9,12 @@ One of the core components of the Segment [Spec](/docs/connections/spec/) is the
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and its partners can, wherever possible, forward these events on your behalf and build downstream destinations that take full advantage of the semantic meaning associated with these events and their properties.
 
 > info ""
->  If you're already collecting similar events, Segment recommends migrating to these event names so that you can take advantage of available features in Segment destinations that depend on the spec as they become available.
+> If you're already collecting similar events, Segment recommends migrating to these event names so that you can take advantage of available features in Segment destinations that depend on the spec as they become available.
 
-These events pair nicely with Segment's [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
+These events also work with Segment's [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
 
 > info ""
->  Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+> Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example, Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of events
 
@@ -80,7 +80,7 @@ This event fires when a user **first** opens your mobile application. Note, if t
 }
 ```
 
-| **Property** | **Type** | **Description**                        |
+| Property | Type | Description                        |
 | ------------ | -------- | -------------------------------------- |
 | `version`    | String   | The version installed.                 |
 | `build`      | String   | The build number of the installed app. |
@@ -231,7 +231,7 @@ When Segment or an integrated partner can discern the source of an install, we'l
 }
 ```
 
-| **Property**            | **Type** | **Description**                         |
+| Property            | Type | Description                         |
 | ----------------------- | -------- | --------------------------------------- |
 | `provider`              | String   | The attribution provider.               |
 | `campaign[source]`      | String   | Campaign source — attributed ad network.|
