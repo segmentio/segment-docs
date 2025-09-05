@@ -14,7 +14,7 @@ By standardizing the events that comprise the core **mobile application lifecycl
 These events also work with Segment's [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
 
 > info ""
-> Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example, Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+> Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example, **Application Installed** or **Deep Link Clicked**). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of events
 
