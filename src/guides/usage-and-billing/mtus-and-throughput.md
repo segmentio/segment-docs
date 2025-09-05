@@ -19,7 +19,7 @@ MTU stands for "monthly tracked user". (Keep reading to learn [how Segment count
 
 When you use Segment to collect your data, you use the Segment tracking methods (Track, Page, Screen, Identify, Group, and Alias) which collect the data [in a structured way](/docs/connections/spec/), and then send it to `api.segment.io`. If you are using the Segment HTTP API, or sending batched data using a cloud-source, that data also goes through this Segment API endpoint.
 
-Each data blob (with its properties or traits) goes through this endpoint, and is considered one "API call".
+Each data blob (with its properties or traits) goes through this endpoint, and is considered one API call.
 
 ## What is throughput?
 
@@ -31,15 +31,15 @@ These objects and API calls are not tied to a specific user, but are an aggregat
 
 #### Batching and throughput limits
 
-You can sometimes "batch" API calls to reduce send times, however batching doesn't reduce your throughput usage. Batched calls are unpacked as they are received, and the objects and calls the batch contains are counted individually. While batching does not reduce your throughput, it does reduce the possibility of rate limit errors.
+You can sometimes batch API calls to reduce send times, however batching doesn't reduce your throughput usage. Batched calls are unpacked as they are received, and the objects and calls the batch contains are counted individually. While batching does not reduce your throughput, it does reduce the possibility of rate limit errors.
 
 ## How does Segment calculate MTUs?
 
-Segment counts the number of **unique** `userId`s, and then adds the number of **unique** `anonymousId`s that were not associated with a `userId` during the billing period. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
+Segment counts the number of unique `userId`s, and then adds the number of unique `anonymousId`s that were not associated with a `userId` during the billing period. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
 
 #### Example MTU counts
 
-Imagine that you have both a website and a mobile app. Both the website and mobile app have pages that you can use without being logged in, and both send Identify calls when a user _does_ log in.
+Imagine that you have both a website and a mobile app. Both the website and mobile app have pages that you can use without being logged in, and both send Identify calls when a user logs in.
 
 ##### Deduplication across sources
 
@@ -48,14 +48,14 @@ As a simple example, imagine that a user is already logged in on both the websit
 
 ##### Deduplication after log-in
 
-Now imagine a new user, who has never logged in. At first, they have two `anonymousId`s, one for the mobile app and one for the website. However, if they log in during the course of the month, you now know who they are, and can attach their `anonymousId` to a `userId`.
+Imagine a new user, who has never logged in. At first, they have two `anonymousId`s, one for the mobile app and one for the website. However, if they log in during the course of the month, you now know who they are, and can attach their `anonymousId` to a `userId`.
 
-If the user logs in on _just_ the app, you would still see two MTUs: one `anonymousId` for the website source, and one `anonymousId` with an attached `userId` from the mobile app source.
-If the user logs in on _both_ the app and website, they would count as one MTU: two different `anonymousId`s attached to one `userId`.
+If the user logs in on just the app, you would still see two MTUs: one `anonymousId` for the website source, and one `anonymousId` with an attached `userId` from the mobile app source.
+If the user logs in on both the app and website, they would count as one MTU: two different `anonymousId`s attached to one `userId`.
 
 ## How do I see my usage data?
 
-If you have questions about your data usage or how it relates to your bill, log into your Segment workspace, click **Settings > Usage and Billing > Usage**.
+If you have questions about your data usage or how it relates to your bill, log in to your Segment workspace, and navigate to **Settings > Usage and Billing > Usage**.
 
 The Usage page shows what plan the workspace is on, what data volume that plan includes, and how much data you have already used in the current billing period. If you have used more data volume than your plan includes, the page shows information about how much data is in overage.
 
@@ -65,9 +65,9 @@ Click the billing period dropdown at the top of the page to see a cumulative dai
 
 Understanding the difference between events and objects helps you understand how MTUs are calculated.
 
-An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/) (or a [Page](/docs/connections/spec/page/)/[Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page). Events take place in a single moment in time, and include a name, timestamp, and **properties**. When an event happens more than once, it creates a new Event record (with a new timestamp) rather than updating an existing one. For example, a user browsing a product catalog might generate several "Product Viewed" events, which might include the product name, price, and category.
+An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/) (or a [Page](/docs/connections/spec/page/)/[Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page). Events take place in a single moment in time, and include a name, timestamp, and properties. When an event happens more than once, it creates a new event record (with a new timestamp) rather than updating an existing one. For example, a user browsing a product catalog might generate several *Product Viewed* events, which might include the product name, price, and category.
 
-This is in contrast to "Objects" which represent a single thing that persists over time and can be updated. Objects have "traits" (instead of properties) which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](/docs/personas/computed-traits/) like `logged_in_last_7_days` that changes between `true` and `false` based on how much they use your site.
+This is in contrast to Objects which represent a single thing that persists over time and can be updated. Objects have traits (instead of properties) which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](/docs/personas/computed-traits/) like `logged_in_last_7_days` that changes between `true` and `false` based on how much they use your site.
 
 ## How is object throughput calculated?
 
@@ -81,12 +81,12 @@ If you use [Cloud sources](/docs/connections/sources/about-cloud-sources/) to pu
 
 There are two types of cloud sources: **object sources**, and **event sources**. Object sources bring in information about entities, such as a person or company, which can change and have their properties updated over time. Events happen once in time, so while their properties don't change, they can also happen more than once over time. (See [above](#what-is-the-difference-between-an-event-and-an-object) for more on objects vs events.)
 
-**Object sources _do not_ increase your MTU count** because the data included doesn't usually contain an ID. Object sources can only send to Warehouses, and _do_ affect the total object count which is used to calculate your [throughput](#what-is-throughput). Some examples of object-sources are [Salesforce](/docs/connections/sources/catalog/cloud-apps/salesforce/), [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), and [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/).
+**Object sources _don't_ increase your MTU count** because the data included doesn't usually contain an ID. Object sources can only send to warehouses, and _do_ affect the total object count which is used to calculate your [throughput](#what-is-throughput). Some examples of object-sources are [Salesforce](/docs/connections/sources/catalog/cloud-apps/salesforce/), [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), and [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/).
 
 **Event sources _can_ create new MTUs** because each event coming from this source includes either a `userId` or an `anonymousId` associated with the event. Some examples of event sources are [Vero](/docs/connections/sources/catalog/cloud-apps/vero/), [Drip](/docs/connections/sources/catalog/cloud-apps/drip/), and [Youbora](/docs/connections/sources/catalog/cloud-apps/youbora/).
 
 > success ""
-> **Tip!** You can check the **Collections** section of a cloud-source's Segment documentation to see what type of data it sends. The Collections table lists each data type sent from the cloud source, and tells you if that data is an Object or an Event.
+> You can check the **Collections** section of a cloud-source's Segment documentation to see what type of data it sends. The Collections table lists each data type sent from the cloud source, and tells you if that data is an Object or an Event.
 
 ## MTUs and Protocols
 
@@ -95,17 +95,17 @@ There are two types of cloud sources: **object sources**, and **event sources**.
 
 Segment's Protocols product allows you to selectively [filter and block your incoming data](/docs/protocols/schema/) to prevent malformed data from reaching destinations including your data warehouses and other storage solutions.
 
-Tracking plan blocking: Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. They're blocked from reaching the entire Segment data pipeline. When you block an Event using a Tracking Plan, it does not count towards your MTU limit.
+Tracking plan blocking: Blocked events are blocked from sending to all Segment destinations, including warehouses and streaming destinations. They're blocked from reaching the entire Segment data pipeline. When you block an Event using a Tracking Plan, it does not count towards your MTU limit.
 
 Blocked events (sometimes called "violations") only count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings. You might do this to monitor issues with your incoming data as you continue to develop your tracking.
 
-If you enable violation forwarding, it generates one (1) additional MTU in your workspace, total. If you are on an API billing plan, you are charged for the increased API volume generated by the forwarded violations. Forwarded violations might also generate costs in downstream destinations and data warehouses connected to the violations source.
+If you enable violation forwarding, it generates 1 additional MTU in your workspace, total. If you are on an API billing plan, you are charged for the increased API volume generated by the forwarded violations. Forwarded violations might also generate costs in downstream destinations and data warehouses connected to the violations source.
 
 
 ## MTUs and Engage
 
 > success ""
-> [Engage](/docs/engage/) is a Business Tier addon feature. If you are on a Free or Team plan this section does not apply to you (because you do not have this feature).
+> [Engage](/docs/engage/) is a Business Tier add-on feature. If you are on a Free or Team plan this section does not apply to you.
 
 All Engage data are omitted from billing MTU and API throughput calculations, including [computed traits](/docs/engage/audiences/computed-traits/), [SQL traits](/docs/engage/audiences/sql-traits/), and [audiences](/docs/engage/audiences/).
 
@@ -119,7 +119,7 @@ Replays only affect your MTU count if you are using a [Repeater](/docs/connectio
 
 ## How Reverse ETL affects MTUs 
 
-Extracting data with Reverse ETL does **not** count toward your MTU usage. However, if you send that data through the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/), it **will** affect your MTUs.
+Extracting data with Reverse ETL doesn't count toward your MTU usage. However, if you send that data through the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/), it **will** affect your MTUs.
 
 The Segment Connections destination is built for Reverse ETL and treats events as if they’re coming from a standard source, meaning they contribute to your MTU count.
 
@@ -137,13 +137,13 @@ Different tools count users under different conditions, so comparing numbers bet
 
 - Google Analytics requires that you include a `url` in any Page calls from a Segment server library. If you don't include a `url`, Google Analytics silently rejects the call, which can reduce the number of users you see in GA.
 
-- Segment does not pass data from [Identify calls](https://segment.com/docs/connections/spec/identify) to Google because it is against Google's terms of service to pass Personally Identifiable Information (PII) to the Google Analytics reporting interface. If you need to pass data from an Identify call, you can set up a [Custom Dimension mapping](/docs/connections/destinations/catalog/google-analytics/#custom-dimensions) to override this.
+- Segment doesn't pass data from [Identify calls](https://segment.com/docs/connections/spec/identify) to Google because it is against Google's terms of service to pass Personally Identifiable Information (PII) to the Google Analytics reporting interface. If you need to pass data from an Identify call, you can set up a [Custom Dimension mapping](/docs/connections/destinations/catalog/google-analytics/#custom-dimensions) to override this.
 
 - To pass the `userId` from your [Identify calls](https://segment.com/docs/connections/spec/identify/) to Google Analytics, go to the Google Analytics destination settings in the Segment web app, locate the **Advanced Google Analytics settings**, and enable **Send User-ID to GA**.
 
 #### Amplitude
 
-By default, Segment doesn't send standard [Page calls](https://segment.com/docs/connections/spec/page/) or [Screen calls](https://segment.com/docs/connections/spec/screen/) to Amplitude, which might reduce the number of unique users Amplitude sees.
+By default, Segment doesn't send standard [Page calls](/docs/connections/spec/page/) or [Screen calls](/docs/connections/spec/screen/) to Amplitude, which might reduce the number of unique users Amplitude sees.
 
 To send Page and Screen calls to Amplitude, go to the Amplitude destination settings in the Segment web app, and locate the **Advanced Options** tab.
 
@@ -184,7 +184,7 @@ Check to see if you changed how you call `analytics.reset()`. This utility metho
 
 Segment’s analytics libraries include methods that allow you to overwrite both the `userId` (using `identify(xxx)` or `analytics.instance.user().id(xxx)`) and `anonymousId` (using `analytics.user().anonymousId(xxx)`). Using these methods on a user whose tracking information already includes an ID can cause the user to be counted more than once.
 
-If you find you need to use one of these overwrite methods, you should check to make sure that the field you are changing is `null` first. If the field is _not_ null, you probably don't want to overwrite it and lose the user's original tracked identity.
+If you find you need to use one of these overwrite methods, you should check to make sure that the field you are changing is `null` first. If the field isn't null, you don't want to overwrite it and lose the user's original tracked identity.
 
 #### Cross-domain issues
 
