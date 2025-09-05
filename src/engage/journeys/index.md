@@ -7,7 +7,7 @@ redirect_from:
 
 Journeys, a feature of [Engage](/docs/engage/), provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
 
-<video width="690px" controls autoplay>
+<video width="690px" controls autoplay aria-label="Demo video setting up a new journey with entry and true/false split conditions.">
   <source src="images/journeys-teaser.webm" type="video/webm">
   <source src="images/journeys-teaser.mp4" type="video/mp4">
 </video>
