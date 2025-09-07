@@ -4,7 +4,7 @@ plan: unify-plus
 redirect_from:
   - "/personas/computed-traits"
   - "/engage/audiences/computed-traits"
----    
+---
 
 > info ""
 > Beginning August 18, 2023, new Unify Plus users can access Computed Traits in Unify. 
