@@ -4,7 +4,7 @@ plan: unify-plus
 redirect_from:
   - "/personas/computed-traits"
   - "/engage/audiences/computed-traits"
----
+    
 
 > info ""
 > Beginning August 18, 2023, new Unify Plus users can access Computed Traits in Unify. 
@@ -32,6 +32,7 @@ Segment currently supports the following types of computed traits:
   - [Predictions](/docs/unify/traits/predictions/)
   - [Recommended Items](/docs/unify/traits/recommended-items/)
 - [Conditions](#conditions)
+- [Understanding Windows in Computed Traits](#understanding-windows-in-computed-traits)
 - [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
 - [Editing Realtime Traits](#editing-realtime-traits)
 - [Accessing your Computed Traits using the Profiles API](#accessing-your-computed-traits-using-the-profiles-api)
@@ -161,6 +162,15 @@ The following operators are available:
 - after date
 - equals one of
 - contains one of
+
+## Understanding Windows in Computed Traits
+
+Computed Traits support windows, giving you control over how user activity is evaluated over time. You can choose between sliding windows and session windows, depending on how you want to define recency or engagement.
+- **Sliding Window:** Use this when you want to track actions over a rolling time frame, such as “Orders Completed in the Last 30 Days” or “Emails Opened in the Past Week.” This is ideal for measuring ongoing engagement or recent behavior trends.
+- **Session Window:** Use this to capture activity during a user’s most recent session, for example, “Count of Page Viewed events in Current Session” or “Total Purchase Amount in Current Session.” Session windows are especially useful for measuring bursts of engagement and driving personalization based on the user's current session on your site or app. Since session windows reset automatically after the defined inactivity period, the computed trait always reflects behavior from the most recent or current session.
+
+> info "Real-time support for windows"
+> Computed traits that use session windows are always created as real-time computations. Those that use sliding windows are created as batch-based computations and do not receive real-time updates.
 
 ## Connecting your computed trait to a destination
 
