@@ -4,9 +4,6 @@ title: Custom Alerts
 
 Segment's custom alerts allow you to customize the sensitivity of the trigger that activates an alert so you can more accurately detect event volume fluctuations in your integrations.
 
-> info "Public beta"
-> The Monitor hub is in Public Beta. Some functionality may change before it becomes generally available.
-
 ![A screenshot of the custom alerts tab for a Segment workspace depicting three different source volume alerts with different integrations and thresholds.](/docs/monitor/images/custom-alerting.png)
 
 You can create alerts for the following product areas: 
