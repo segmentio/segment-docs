@@ -1,5 +1,5 @@
 ---
-title: Profiles Sync Overview
+title: Profiles Sync overview
 plan: unify
 ---
 
