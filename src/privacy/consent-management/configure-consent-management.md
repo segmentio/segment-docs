@@ -91,5 +91,5 @@ Turning off a consent category means that Segment no longer enforces end user co
 To turn off consent categories:
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, navigate to **Privacy > Consent Management**.
-2. On the Consent Management page, disaturn off the toggle for the category you'd like to turn off. 
+2. On the Consent Management page, turn off the toggle for the category you'd like to turn off. 
 3. On the "Disable [category-name]?" popup, enter the category name in the Consent category name field and click **Disable category**.
