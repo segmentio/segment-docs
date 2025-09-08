@@ -34,7 +34,7 @@ See [Examples Journeys Use Cases](/docs/engage/journeys/use-cases/) for examples
 
 For a list of key terms related to Journeys, see [Journeys Key Terms](/docs/engage/journeys/key-terms).
 
-## Journeys Product Limits
+## Journeys product limits
 
 For information about Product Limits related to Journeys, see [Product Limits - Journeys](/docs/engage/product-limits#journeys).
 
