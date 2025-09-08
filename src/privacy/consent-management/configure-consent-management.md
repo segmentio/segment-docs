@@ -84,10 +84,12 @@ If you need to make changes to your consent categories, you can edit them on the
 > success ""
 > The [Audit Trail](/docs/segment-app/iam/audit-trail/) surfaces information about when a consent category is created, modified, or disabled, and when consent mappings are created or removed.
 
-## Disable consent categories
+## Turn off consent categories
 
-Disabling a consent category means that Segment no longer enforces end user consent preferences for the destinations in the disabled category. Other consent categories aren't affected.  
+Turning off a consent category means that Segment no longer enforces end user consent preferences for the destinations in the deactivated category. Other consent categories aren't affected. 
 
-1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
-2. On the Consent Management page, disable the toggle for the category you'd like to disable. 
+To turn off consent categories:
+
+1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, navigate to **Privacy > Consent Management**.
+2. On the Consent Management page, disaturn off the toggle for the category you'd like to turn off. 
 3. On the "Disable [category-name]?" popup, enter the category name in the Consent category name field and click **Disable category**.
