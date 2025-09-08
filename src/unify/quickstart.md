@@ -58,7 +58,7 @@ Once you select sources, Segment replays one month of historical data from these
 - When the replay finishes, you are notified in the Sources tab under Settings.
 
 > warning ""
-> **Don't** move on to the next step until **all** replays are marked complete. Moving forward early can result in stale data.
+> Don't move on to the next step until **all** replays are marked complete. Moving forward early can result in stale data.
 
 Once the source(s) finish replaying, data from your connected sources flows into Unify in near real time, just as it does for sources in your Segment workspace.
 
@@ -67,13 +67,13 @@ Once the source(s) finish replaying, data from your connected sources flows into
 
 Once the replay is complete, Unify displays the data in the Profile explorer. Profiles should include information from multiple sources and multiple sessions, all resolved into a single profile per user.
 
-### Valiate your profile data 
+### Validate your profile data 
 Before you continue, check a few user profiles to make sure they show an accurate and recent snapshot of your users. Take a look at your own user profile and, maybe, some colleagues' profiles. 
 
 1. Go to the Profile explorer.
 2. Review your event history, custom traits, and identifiers.
 
-If these identifiers look correct across a few different profile, you're ready to create an audience.
+If these identifiers look correct across a few different profiles, you're ready to create an audience.
 
 If your user profiles look wrong, or you aren't confident users are being accurately defined and merged, stop here and troubleshoot. It's important to have accurate identity resolution before you continue. See the [detailed Identity Resolution documentation](/docs/unify/identity-resolution/) to better understand how it works and why you may be running into problems. If you still need help [contact Segment](https://segment.com/help/contact/){:target="_blank"} for assistance.
 
