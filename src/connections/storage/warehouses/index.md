@@ -4,20 +4,20 @@ redirect_from: '/connections/warehouses/'
 plan: warehouses
 ---
 
-## What's a Warehouse?
+## What's a warehouse?
 
 {% include content/whats-a-warehouse.md %}
 
 
 When selecting and building a data warehouse, consider three questions:
 
-1.  What type of data will be collected?
-2.  How many data sources will there be?
-3.  How will the data be used?
+1.  **What type of data will be collected?**
+2.  **How many data sources will there be?**
+3.  **How will the data be used?**
 
-Relational databases are great when you know and predefine the information collected and how it will be linked. This is usually the type of database used in the world of user analytics. For instance, a users table might be populated with the columns `name`, `email_address`, or `plan_name`.
+Relational databases are useful when the information to be collected and how it will be linked is known in advance. This is usually the type of database used in the world of user analytics. For instance, a users table might be populated with the columns `name`, `email_address`, or `plan_name`.
 
-Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres.
+Examples of data warehouses include Amazon [Redshift](/docs/connections/storage/catalog/redshift/), Google [BigQuery](/docs/connections/storage/catalog/bigquery/), and [Postgres](/docs/connections/storage/catalog/postgres/).
 
 {% include content/how-a-sync-works.md %}
 
@@ -27,7 +27,7 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 
 {% include components/reference-button.html href="https://segment.com/academy/intro/when-to-use-sql-for-analysis/?referrer=docs" icon="media/academy.svg" title="Analytics Academy: When to use SQL for analysis" description="When your existing analytics tools can't answer your questions, it's time to level-up and use SQL for analysis." %}
 
-### More Help
+### Learn more
 
 [How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
