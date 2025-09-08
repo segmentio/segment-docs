@@ -76,7 +76,6 @@ If your user profiles look wrong, or you aren't confident users are being accura
 > Identify events triggered by a user don't appear in the Events tab of their profile. However, the traits from these events are still assigned to the profile. You can view them under the Traits tab.
 
 
-
 ## Step 5: Create your production space
 
 Once you validate that your data is flowing through Unify, you're ready to create a Production space. We recommend that you repeat the same steps for [creating a developer space](#step-1-create-a-new-developer-space), with a focus on your production use cases and data sources.
