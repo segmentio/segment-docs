@@ -156,7 +156,7 @@ To sign up for warehouse sync notifications:
 
 ## How is the data formatted in my warehouse?
 
-Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (such as tables, views, indexes, synonyms)
+Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (like tables, views, indexes, synonyms)
 and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example,
 `segment_engineering.tracks.user_id`, where source refers to the source or project name (`segment_engineering`), collection refers to the event (`tracks`),
 and the property refers to the data being collected (`user_id`). **Note**: It's not possible to have different sources feed data into the same schema in your warehouse. While setting up a new schema, you can't use a duplicate schema name. 
