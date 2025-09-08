@@ -12,15 +12,15 @@ Journeys, a feature of [Engage](/docs/engage/), provides a way for marketers to 
   <source src="images/journeys-teaser.mp4" type="video/mp4">
 </video>
 
-Journeys enable you to define steps in a user's journey based on event behavior and traits. You can build Journeys from your tracking events, traits, computed traits, or audiences. At each step of a journey, you can send your list of users to any Engage-compatible destination.
+Journeys let you define steps in a user's journey based on event behavior and traits. You can build Journeys from your tracking events, traits, computed traits, or audiences. At each step of a journey, you can send your list of users to any Engage-compatible destination.
 
 ## Getting started
 
-Start with the visual builder to define entrance criteria, build out conditional branching logic, then focus messaging to drive conversion. Repeat purchase campaigns, trial conversions, and onboarding flows are great examples to get started from. For more information, see [Build a Journey](/docs/engage/journeys/build-journey).
+Start with the visual builder to define entrance criteria, build out conditional branching logic, then focus messaging to drive conversion. Repeat purchase campaigns, trial conversions, and onboarding flows are great examples to get started from. For more information, see [build a journey](/docs/engage/journeys/build-journey).
 
 ## Send data to your destinations
 
-Connect destinations to your Journey to send events or user lists when users reach the corresponding step in the Journey. For more information, see [Send Journeys data to a Destination](/docs/engage/journeys/send-data).
+Connect destinations to your journey to send events or user lists when users reach the corresponding step in the journey. For more information, see [Send Journeys data to a Destination](/docs/engage/journeys/send-data).
 
 ## Best practices and FAQs
 
@@ -28,7 +28,7 @@ For information about best practices for getting started with Journeys, and to v
 
 ## Journeys use cases
 
-See [Examples Journeys Use Cases](/docs/engage/journeys/use-cases/) for examples of ways you can use Journeys in your marketing workflow.
+See [Examples Journeys use cases](/docs/engage/journeys/use-cases/) for examples of ways you can use Journeys in your marketing workflow.
 
 ## Journeys glossary
 
