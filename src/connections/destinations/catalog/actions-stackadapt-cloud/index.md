@@ -1,5 +1,5 @@
 ---
-title: StackAdapt Destination
+title: StackAdapt Pixel Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 61d8859be4f795335d5c677c
