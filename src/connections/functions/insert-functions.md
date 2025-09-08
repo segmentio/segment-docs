@@ -5,20 +5,18 @@ title: Destination Insert Functions
 
 Use Destination Insert Functions to enrich, transform, or filter your data before it reaches downstream destinations.
 
-**Implement advanced data computation**: Write custom computation, operations, and business logic on streaming data that you send to downstream destinations.
+With Destination Insert Functions you can:
+* **Implement advanced data computation**: Write custom computation, operations, and business logic on streaming data that you send to downstream destinations.
+* **Enrich your data**: Use destination insert functions with Segment's Profile API or third party sources to add additional context to your data and create personalized customer experiences.
+* **Support data compliance**: Use destination insert functions to support data masking, encryption, decryption, improved PII data handling, and tokenization.
+* **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
-**Enrich your data**: Use destination insert functions with Segment's Profile API or third party sources to add additional context to your data and create personalized customer experiences.
-
-**Support data compliance**: Use destination insert functions to support data masking, encryption, decryption, improved PII data handling, and tokenization.
-
-**Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
-
-> info "Destination Insert Functions are not compatible with IP Allowlisting"
+> info "Destination Insert Functions aren't compatible with IP Allowlisting"
 > For more information, see the [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting) documentation. 
 
 ## Create destination insert functions
 
-There are two ways you can access destination insert functions from your Segment space:
+There are 2 ways you can access destination insert functions from your Segment space:
 - From the Connections [catalog](#using-the-catalog).
 - From the [Destinations](#using-the-destinations-tab) tab.
 
@@ -78,9 +76,9 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onDelete`
 - `onBatch`
 
-Each of the functions above accepts two arguments:
+Each of the functions above accepts 2 arguments:
 
-- **event** - Segment event object, where fields and values depend on the event type. For example, in "Identify" events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
+- **event** - Segment event object, where fields and values depend on the event type. For example, in Identify events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
 - **settings** - Set of [settings](#create-settings-and-secrets) for this function.
 
 The example below shows a function that listens for "Track" events, and sends some details about them to an external service.
@@ -104,16 +102,16 @@ async function onTrack(event) {
 }
 ```
 
-To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for Identify events instead.
 
-To ensure the Destination processes an event payload modified by the function, return the `event` object at the handler's end.
+To ensure the destination processes an event payload modified by the function, return the `event` object at the handler's end.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
 ### Variable scoping 
 
-When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you leaking the settings values across other function instances. 
+When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
 
 The handler for insert functions is event-specific, for example, `onTrack()`, `onIdentify()`, and so on.
 
@@ -208,9 +206,9 @@ You may want to consider the [context object's](/docs/connections/spec/common/#c
 
 {% include content/functions/settings.md %}
 
-Next, fill out this setting's value in the **Test** tab, so you can run the function and verify that the correct setting value is passed. (This value is only for testing your function.)
+5. Fill out this setting's value in the **Test** tab, so you can run the function and verify that the correct setting value is passed. (This value is only for testing your function.)
 
-Now that you've configured a setting and entered a test value, you can add code to read its value and run the function, as in the example below:
+6. Add code to read its value and run the function, as in the example below:
 
 ```js
 async function onTrack(request, settings) {
