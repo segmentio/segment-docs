@@ -5,9 +5,7 @@ redirect_from:
   - '/protocols/tracking-plan/'
 ---
 
-Figuring out what events to track in Segment can feel overwhelming. Fortunately, Segment has helped thousands of customers through this process and has amassed a ton of resources to help you get started. Whether you're a small team just getting your app off the ground or a highly complex enterprise with hundreds of stakeholders, these resources can help.
-
-That being said, be prepared to invest time defining how you want to track data. Any investment in improving data quality will reap massive rewards, and compound over time by allowing your analytics teams to produce better insights, your marketing teams to run better campaigns and so much more.
+ Whether you're a small team just getting your app off the ground or a highly complex enterprise with hundreds of stakeholders, these resources can help. Be prepared to invest time defining how you want to track data. Any investment in improving data quality will reap massive rewards, and compound over time by allowing your analytics teams to produce better insights, your marketing teams to run better campaigns and so much more.
 
 ## Data tracking philosophy
 
