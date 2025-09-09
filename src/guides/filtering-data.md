@@ -126,22 +126,21 @@ If you have Protocols in your workspace and a tracking plan associated with the 
 
 ![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
+## Destination Insert Functions
 
-## Destination Insert Function
-
-A customizable way to filter or alter data going from a source to a cloud-mode destination is to use [Insert Functions](/docs/connections/functions/insert-functions/)). This feature gives you the ability to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream cloud-mode destination.
+Use [Insert Functions](/docs/connections/functions/insert-functions/) to filter or alter data from a source before it reaches a cloud-mode destination. This feature lets you receive data from your Segment source, write custom code to alter or block it, and then pass the modified payload to a downstream cloud-mode destination.
 
 ## Warehouse Selective Sync
 
-Warehouse Selective Sync allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and could be slowing down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
+Warehouse Selective Sync lets you stop sending specific data to specific warehouses. You can use this to stop syncing events or properties that aren’t relevant and might slow down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
 
 > info ""
-> This feature is only available to Business Tier customers, and you must be a Workspace Owner to change Selective Sync settings.
+> Warehouse Selective Sync is available only to Business Tier customers, and you must be a workspace owner to change Selective Sync settings.
 
 ## Privacy Portal filtering
 
-The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers, because Segment believes that data privacy is a right, and that anyone collecting data should have tools to help ensure their users' privacy. More enhancements are available to BT customers who may need tools for managing complex implementations.
+The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers and helps ensure user privacy. More enhancements are available to Business Tier customers who need tools for managing complex implementations.
 
-The Privacy Portal tools allow you to inspect your incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by different categories of risk, and use those categories to determine which Destinations may or may not receive the data. Learn more about these features in the [Privacy Portal documentation](/docs/privacy/portal/).
+Privacy Portal tools let you inspect incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by risk category, and decide which destinations should or shouldn’t receive the data. Learn more in the [Privacy Portal documentation](/docs/privacy/portal/).
 
 ![Add a new matcher with the Privacy Portal tools](/docs/privacy/images/privacy-add-new-matcher.gif)
