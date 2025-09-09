@@ -16,12 +16,12 @@ The tasks included in Basics help you send and debug your very first data from a
 The Basic tasks include:
 
 1. [Invite teammates](#invite-teammates)
-2. [Add a Source](#add-a-source)
+2. [Add a source](#add-a-source)
 3. [Add page or screen tracking](#add-page-or-screen-tracking)
-4. [Add a Destination](#add-a-destination)
-5. [Testing and Debugging](#testing-and-debugging)
+4. [Add a destination](#add-a-destination)
+5. [Testing and debugging](#testing-and-debugging)
 
-### Invite Teammates
+### Invite teammates
 Segment allows you to invite team members to your workspace. To decide who on your team should be added to Segment, think about who might be responsible for implementing, owning, or using your data in downstream tools.
 
 For example, as a developer, you might invite:
@@ -36,24 +36,24 @@ To invite team members to your workspace:
 4. *(Optional)* You can choose to **Add Members to User Groups** so that members inherit roles from user groups, or **Add Individual Roles** to bulk assign individuals roles to all invites.
 5. Click **Invite**.
 
-### Add a Source
-A Source is a website, server library, mobile SDK, or cloud application which can send data into Segment. It's where your data originates. Add a Source to collect data to understand who your customers are and how they're using your product. Create a source for each website or app you want to track.
+### Add a source
+A source is a website, server library, mobile SDK, or cloud application which can send data into Segment. It's where your data originates. Add a Source to collect data to understand who your customers are and how they're using your product. Create a source for each website or app you want to track.
 
-To add a Source:
+To add a source:
 1. Go to **Connections**.
 2. Click **Add Source**.
-3. Click the Source you'd like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
+3. Click the source you'd like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
 4. Click **Add Source**.
 5. Enter a name for your source as well as any information on the setup page.
 6. Click **Add Source**.
 
 > info "Learn More"
-> - [What is a Source?](/docs/connections/sources/#what-is-a-source)
-> - [Create a Source](/docs/getting-started/02-simple-install/#create-a-segment-source)
+> - [What is a source?](/docs/connections/sources/#what-is-a-source)
+> - [Create a source](/docs/getting-started/02-simple-install/#create-a-segment-source)
 > - [Sources Catalog](/docs/connections/sources/catalog/)
 
 ### Add page or screen tracking
-Once you've added your Segment Source, you're ready to send data into Segment. The simplest data to send into Segment is a Page call (for website Sources) or Screen call (for mobile Sources). Page and screen calls send automatically once you install the Segment snippet or SDK on your website or mobile app. Page and screen calls allow you to record whenever a user sees a page of your website or screen of your app, along with any optional properties about the page or screen.
+Once you've added your Segment source, you're ready to send data into Segment. The simplest data to send into Segment is a Page call (for website Sources) or Screen call (for mobile Sources). Page and screen calls send automatically once you install the Segment snippet or SDK on your website or mobile app. Page and screen calls allow you to record whenever a user sees a page of your website or screen of your app, along with any optional properties about the page or screen.
 
 Learn how to [install the Segment snippet or SDK on your website or mobile app](/docs/getting-started/02-simple-install/#installing-segment) to start sending data.
 
@@ -62,16 +62,16 @@ Learn how to [install the Segment snippet or SDK on your website or mobile app](
 > - [Spec: Page](/docs/connections/spec/page/)
 > - [Spec: Screen](/docs/connections/spec/screen/)
 
-### Add a Destination
+### Add a destination
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-To add a Destination:
+To add a destination:
 1. Navigate to **Connections**.
 2. Click **Add Destination**.
-3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing, and/or Live Chat.
-4. Select the Source you want to connect to your Destination.
+3. Choose the destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing, and/or Live Chat.
+4. Select the source you want to connect to your Destination.
 5. Click **Next**.
-5. Give your Destination a name.
+5. Give your destination a name.
 6. Click **Save**.
 7. Configure the settings and enable your destination on the destination settings page.
 
@@ -80,7 +80,7 @@ To add a Destination:
 > - [Destination compatibility](/docs/connections/destinations/methods-compare/)
 > - [Destination connection modes](/docs/connections/destinations/#connection-modes)
 
-### Testing and Debugging
+### Testing and debugging
 The Source Debugger is a real-time tool that helps you validate that API calls made from your website, mobile app, or servers arrive at your source. You can use the Source Debugger to make sure that your source functions properly and your events actively send.
 
 The Debugger shows a live stream of events that flow through your Segment Source, so that you can check that your events send in the correct format. When you click on a specific event, you'll be able to see these two views of an event:
@@ -101,11 +101,11 @@ The tasks in this phase help you create a data strategy and send additional type
 
 The Instrumentation tasks include:
 - [Basics](#basics)
-  - [Invite Teammates](#invite-teammates)
-  - [Add a Source](#add-a-source)
+  - [Invite teammates](#invite-teammates)
+  - [Add a source](#add-a-source)
   - [Add page or screen tracking](#add-page-or-screen-tracking)
-  - [Add a Destination](#add-a-destination)
-  - [Testing and Debugging](#testing-and-debugging)
+  - [Add a destination](#add-a-destination)
+  - [Testing and debugging](#testing-and-debugging)
 - [Instrumentation](#instrumentation)
   - [Send an Identify call](#send-an-identify-call)
   - [Send a Track call](#send-a-track-call)
@@ -196,10 +196,10 @@ With all your tools acting on the same set of customer data, you can personalize
 To add more destinations:
 1. Navigate to **Connections**.
 2. Click **Add Destination**.
-3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing, and/or Live Chat.
-4. Select the Source you want to connect to your Destination.
+3. Choose the destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing, and/or Live Chat.
+4. Select the source you want to connect to your destination.
 5. Click **Next**.
-5. Give you Destination a name.
+5. Give your destination a name.
 6. Click **Save**.
 7. Configure the settings and enable your destination on the destination settings page.
 8. Repeat steps 1-7 for each destination you want to add.
@@ -224,7 +224,7 @@ Each touchpoint you have with your customers is a potential area to gain a bette
 To add more sources:
 1. Go to **Connections**.
 2. Click **Add Source**.
-3. Click the Source you'd like to add.
+3. Click the source you'd like to add.
 4. Click **Add Source**.
 5. Enter a name for your source as well as any information on the setup page.
 6. Click **Add Source**.

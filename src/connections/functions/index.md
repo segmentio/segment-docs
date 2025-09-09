@@ -16,9 +16,9 @@ Functions can help you bring external data into Segment ([Source functions](/doc
 Source functions receive external data from a webhook and can create Segment events, objects, or both. Source functions have access to the full power of JavaScript so you can validate and transform the incoming data and even make external API requests to annotate your data.
 
 Use cases:
-- Ingest data into Segment from a source that's unavailable in the catalog
-- Transform or reject data before it's received by Segment
-- Enrich incoming data using external APIs
+- Ingest data into Segment from a source that's unavailable in the catalog.
+- Transform or reject data before it's received by Segment.
+- Enrich incoming data using external APIs.
 
 Learn more about [source functions](/docs/connections/functions/source-functions).
 
@@ -26,9 +26,9 @@ Learn more about [source functions](/docs/connections/functions/source-functions
 Destination functions can take events from a Segment source, transform the events, and deliver them to external APIs. Destination functions can make arbitrary requests to annotate data, as well.
 
 Use cases:
-- Send data from Segment to a service that's unavailable in the catalog
-- Transform data before sending it downstream
-- Enrich outgoing data using external APIs
+- Send data from Segment to a service that's unavailable in the catalog.
+- Transform data before sending it downstream.
+- Enrich outgoing data using external APIs.
 
 Learn more about [destination functions](/docs/connections/functions/destination-functions).
 
@@ -36,9 +36,9 @@ Learn more about [destination functions](/docs/connections/functions/destination
 Destination insert functions help you enrich your data with code before you send it to downstream destinations.  
 
 Use cases: 
-- Implement custom logic and enrich data with third party sources 
-- Transform outgoing data with advanced filtration and computation
-- Ensure data compliance by performing tokenisation, encryption, or decryption before sending data downstream 
+- Implement custom logic and enrich data with third party sources.
+- Transform outgoing data with advanced filtration and computation.
+- Ensure data compliance by performing tokenization, encryption, or decryption before sending data downstream.
 
 To learn more, visit [destination insert functions](/docs/connections/functions/insert-functions).
 

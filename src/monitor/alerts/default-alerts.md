@@ -22,7 +22,7 @@ You can create alerts for the following product areas:
 - [Data Graph](#data-graph-alerts)
 
 The Alerting table includes the following information about each event: 
-- **Alert name**: The type of alert, for example, "Audience created" or "Audience deleted".
+- **Alert name**: The type of alert; for example, "Audience created" or "Audience deleted".
 - **Last triggered**: The most recent date and time, in your local time zone, that the alert was triggered. Some alerts, like **Violations Detected**, trigger only once per day. 
 - **Status**: Either **enabled**, if the alert is currently configured in your workspace, or **disabled**, if you're not configured to receive alerts for an event.
 - **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, Slack workflow, email, or in-app notification.
@@ -34,6 +34,11 @@ To create a new alert:
 1. From the Segment app, navigate to the **Monitor** tab and select **Alerts**. 
 2. On the **Default** tab, identify the event you'd like to be alerted for and select the menu icon under the **Actions** tab. 
 3. Click **Enable alert**. 
+
+> info "Slack and mailing list notification channels require additional setup"
+> Before sending an alert to Slack, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+>
+> While you can only enter one email address at a time when signing up for email alerts, you can send the alert to multiple users by entering the email address of a mailing list. To create a mailing list, refer to the documentation for your email provider, like Google's [Create a group & choose group settings](https://support.google.com/groups/answer/2464926?hl=en){:target="_blank”} for Gmail or Microsoft's [Create and manage distribution groups](https://support.microsoft.com/en-us/office/distribution-groups-e8ba58a8-fab2-4aaf-8aa1-2a304052d2de#bkmk_create){:target="_blank”} for Outlook. 
 
 ## Alert descriptions
 

@@ -2,8 +2,7 @@
 title: Custom Traits 
 
 ---
-
-Custom traits are user or account traits collected from the Identify calls you send to Segment. For example, these could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation. From your sources, send custom traits as pieces of information that you know about a user in an Identify call.
+Custom traits are user or account traits collected from the [Identify](/docs/connections/spec/identify/) calls you send to Segment. For example, these could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation. From your sources, send custom traits as pieces of information that you know about a user in an Identify call.
 
 As opposed to [computed traits](/docs/unify/traits/computed-traits/) which are computed from your source data, or [SQL Traits](/docs/unify/traits/sql-traits/) which are computed from warehouse data, custom traits are created from source events you pass into Segment and have no trait limits. 
 
@@ -44,19 +43,18 @@ analytics.identify("97980cfea0067", {
 Custom traits are mutable and update to the latest value seen by the user's Identify events. 
 
 When an audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience and becomes visible in Segment as a custom trait. 
-
  
 
 ## Reserved custom traits
 
-Segment has reserved some custom traits that have semantic meanings for users, and will handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. Segment sends this on to destinations like _Mailchimp_ that require an email address for their tracking.
+Segment has reserved some custom traits that have semantic meanings for users and handles them in special ways. For example, Segment always expects `email` to be a string of the user's email address. Segment sends this on to destinations, like Mailchimp, that require an email address for their tracking.
 
 > warning ""
 > Only use reserved custom traits for their intended meaning.
 
 Reserved custom traits Segment has standardized:
 
-| **Trait**     | **Type** | **Description**          |
+| Trait    | Type | Description          |
 |---------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `address`     | Object   | Street address of a user optionally containing:  `city`, `country`, `postalCode`, `state`, or `street`   |
 | `age`         | Number   | Age of a user           |
@@ -77,6 +75,6 @@ Reserved custom traits Segment has standardized:
 | `website`     | String   | Website of a user       |
 
 
-To learn more about using an Identify call to tie custom traits to profiles, [visit Segment's Identify documentation](/docs/connections/spec/identify/).
+To learn more about using an Identify call to tie custom traits to profiles, [visit Segment's Identify documentation](/docs/connections/spec/identify/#custom-traits)).
 
 
