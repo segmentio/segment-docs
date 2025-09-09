@@ -14,7 +14,7 @@ For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/
 
 <!-- Source: https://segment.com/docs/connections/sources/debugger/ -->
 
-The Source Debugger is a real-time tool that confirms that API calls made from your website, mobile app, or servers arrive to your Segment Source, so you can troubleshoot your Segment set up even quicker. With the Debugger, you can check that you're sending calls in the expected format, without having to wait for any data processing.
+The Source Debugger is a real-time tool that confirms whether API calls made from your website, mobile app, or servers reach a Segment source, so you can troubleshoot your Segment set up even quicker. With the Debugger, you can check that you're sending calls in the expected format, without having to wait for any data processing.
 
 ![Debugger view](/docs/connections/sources/images/debugger_view.png)
 
