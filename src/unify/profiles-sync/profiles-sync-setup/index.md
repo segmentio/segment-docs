@@ -22,7 +22,7 @@ Before you begin, prepare for setup with these tips:
 
 ### Step 1: Select a warehouse 
 
-Choose the warehouse where Segment will sync profiles. Profiles Sync supports Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks. Your initial depends on the warehouse you choose.
+Choose the warehouse where Segment will sync profiles. Profiles Sync supports Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks. Your initial setup depends on the warehouse you choose.
 
 The following table shows the supported Profiles Sync warehouse destinations and their setup instructions. Select a warehouse, view its Segment documentation, and complete the required steps before moving to Step 2 of Profiles Sync setup:
 
