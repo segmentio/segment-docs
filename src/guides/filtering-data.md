@@ -48,7 +48,9 @@ Filtering data for warehouses uses a different syntax. See the [Warehouse FAQs](
 
 ## Destination filters
 
-[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations.
+[Destination filters](/docs/connections/destinations/destination-filters/) let you control the data flowing into each specific destination. They work by examining event payloads and conditionally blocking data from being sent. You can filter out entire events or just specific fields in event properties, traits, or context.
+
+Destination filters support cloud-based (server-side), actions-based, and mobile- and web-device-mode destinations. They don’t apply to warehouses or S3 destinations.
 
 > info ""
 > Destination filters are only available in workspaces that are on a Business Tier plan.
@@ -60,14 +62,15 @@ Filtering data for warehouses uses a different syntax. See the [Warehouse FAQs](
 
 ![Configuring a destination filter](images/destination-filter-create.png)
 
-To set up destination filters from the Segment web app for the destination from which you want to exclude data:
-1. *(For web device-mode destinations only)* Enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
-    * **NOTE:** Destination filters for web device-mode only supports the Analytics.js 2.0 source.
+To set up destination filters in the Segment web app for a destination where you want to exclude data:
+
+1. *(For web device-mode destinations only)* Turn on destination filters for your Analytics.js source. Go to your JavaScript source, navigate to **Settings > Analytics.js**, and turn on **Destination Filters**. Destination filters for web device-mode only supports the Analytics.js 2.0 source.
 2. Navigate to **Connections > Destinations** and select the destination you want to set up filters for.
 3. Go to the **Filters** tab and click **+ New Filter** to create a destination filter.
+
 See the [Destination Filters documentation](/docs/connections/destinations/destination-filters/) for more details.
 
-You can set up destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5KB per query.
+You can create destination filters using the options in the Segment web app or by writing queries in Segment’s [Filter Query Logic (FQL)](/docs/api/public-api/fql/). FQL queries are limited to 5 KB each.
 
 ## Per-Source schema integrations filters
 
