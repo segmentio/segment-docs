@@ -3,6 +3,9 @@ title: Analytics Overview
 plan: engage-premier
 ---
 
+> info "Engage Premier End of Life"
+> Engage Premier features, including Channels, Broadcasts, content templates, and Subscriptions, will no longer be available after December 15, 2025. 
+
 Twilio Engage provides you with analytics that give you insight into the performance of your [email, SMS, and WhatsApp campaigns](/docs/engage/campaigns/).
 
 On this page, you'll learn how Engage calculates campaign analytics and which messaging metrics you can view.
