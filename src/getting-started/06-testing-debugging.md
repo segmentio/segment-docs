@@ -10,7 +10,6 @@ For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/
 
 {% include components/reference-button.html href="https://university.segment.com/series/segment-101/debugging-and-troubleshooting?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Debugging and Troubleshooting" description="Want more? Check out our course on debugging and troubleshooting. (Must be logged in to access.)" %}
 
-
 ## The Source Debugger
 
 <!-- Source: https://segment.com/docs/connections/sources/debugger/ -->
