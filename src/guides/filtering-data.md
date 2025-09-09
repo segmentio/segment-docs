@@ -98,32 +98,31 @@ For the same event, if you turn off Appsflyer with a per-source schema integrati
 
 ## Schema event filters
 
-You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses, as well as omit identify traits and group properties. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.
+Schema event filters let you discard and permanently remove Page, Screen, and Track events from event-based sources. This prevents them from reaching any destinations or warehouses. You can also use these filters to omit identify traits and group properties. Use this option if you know you’ll never want to access the data again. Schema event filters work like the Integrations object, but you can change them from within the Segment app without touching code.
 
-When you enable these filters, Segment stops forwarding the data to all of your Cloud- and device-mode destinations, including warehouses, and your data is no longer stored in Segment's warehouses for later replay.
+When you turn on these filters, Segment stops forwarding data to all cloud- and device-mode destinations, including warehouses. The data is no longer stored in Segment’s warehouses for later replay.
 
-Use this when you need to disable an event immediately, but may need more time to remove it from your code, or when you want to temporarily disable an event for testing. In addition to blocking track calls, you can block all page and screen calls, as well as omit identify traits and group properties.
+Use this feature when you need to turn off an event immediately but need more time to remove it from your code, or when you want to temporarily turn off an event for testing. In addition to blocking track calls, you can block page and screen calls, as well as omit identify traits and group properties.
 
-If the Source is not connected to a tracking plan, you'll find event filter toggles next to the Integration filters in the source's schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including data warehouses.
+If the source isn’t connected to a tracking plan, you’ll find event filter toggles next to the Integration filters in the source’s Schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including warehouses.
 
-When you block an event using Schema filters, it won't be considered in the MTU count unless blocked event forwarding is enabled.
+Blocked events don’t count toward MTUs unless blocked event forwarding is turned on.
 
 ![Event filter toggles](images/schema-event-filters.png)
 
-When an event is blocked, the name of the event or property appears on your Schema page with a counter which shows how many times it has been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream destinations.
+When an event is blocked, the event or property name appears on your Schema page with a counter that shows how many times it’s been blocked. By default, data from blocked events and properties isn’t recoverable. You can always turn the event back on to continue sending it to downstream destinations.
 
-In most cases, blocking an event immediately stops that event from sending to destinations. In rare cases, it can take **up to 6 hours** for an event to completely stop arriving in all Destinations.
+In most cases, blocking an event immediately stops it from sending to destinations. In rare cases, it can take **up to 6 hours** for an event to stop arriving in all destinations.
 
-This feature is only available if the Source is not connected to a Tracking Plan, and is only available in workspaces that are on a Business Tier plan.
+This feature is available only if the source isn’t connected to a tracking plan and the workspace is on a Business Tier plan.
 
+## Protocols tracking plan filters
 
-## Protocols Tracking Plan blocking and property omission
+If you’re using Protocols and you’re confident that your tracking plan includes only the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards data from any source that doesn’t conform to the tracking plan.
 
-If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
+By default, blocked events are permanently discarded: they don’t flow to destinations and can’t be replayed (similar to schema controls). You can also choose to send data that violates the tracking plan to a new Segment source so you can monitor it. This source can affect your MTU count.
 
-By default, the blocked events are permanently discarded: they do not flow to Destinations, and cannot be Replayed (similar to Schema Controls). However, you can opt to send data in violation of the tracking plan to a new Segment Source so you can monitor it. (This source can affect your MTU count.)
-
-If you have Protocols in your workspace, **and** have a tracking plan associated with the Source, you'll see additional options in the Schema Configuration section of the Source's Settings page. From this page you can choose how to handle data violations across different types of calls and properties, whether that be blocking events entirely or omitting violating properties.
+If you have Protocols in your workspace and a tracking plan associated with the source, you’ll see additional options in the **Schema Configuration** section of the source’s **Settings** page. From this page, you can choose how to handle data violations, such as blocking events entirely or omitting violating properties.
 
 ![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
