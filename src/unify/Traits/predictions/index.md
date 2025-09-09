@@ -72,7 +72,7 @@ For example, to predict a customer's propensity to purchase over the next 30 day
 
 To access Predictions, you must:
 
-- Track more than 1 event type, but fewer than 2,000 event types. An event type refers to the total number of distinct events seen across all users in an Engage Space within the past 15 days.
+- Track more than one event type, but fewer than 2,000 event types. An event type refers to the total number of distinct events seen across all users in an Engage Space within the past 15 days.
   - If you currently track more than 2,000 distinct events, reduce the number of tracked events below this limit and wait around 15 days before creating your first prediction.
   - Events become inactive if they've not been sent to an Engage Space within the past 15 days.
 - To prevent events from reaching your Engage Space, modify your event payloads to set `integrations.Personas` to `false`.
@@ -113,7 +113,7 @@ If you don’t track `Order Completed`, choose a target event that represents a 
 
 ### Predicted Lifetime Value
 
-Predicted Lifetime Value predicts a customer's future spend over the next 120 days. To create this prediction, select a purchase event, revenue property, and the currency (which defaults to USD). LTV is only calculated for customers that have performed the selected purchase events 2 or more times. The following table contains details for each property:
+Predicted Lifetime Value predicts a customer's future spend over the next 120 days. To create this prediction, select a purchase event, revenue property, and the currency (which defaults to USD). LTV is only calculated for customers that have performed the selected purchase events two or more times. The following table contains details for each property:
 
 | Property        | Description                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -150,7 +150,7 @@ Once a trait successfully computes, you can send them downstream to some destina
     BRAZE = "braze_id"
     SEGMENT = "segment_id"
 
-Other destinations may drop events published by Predictive Traits
+Other destinations may drop events published by Predictive Traits.
 
 For use additional cases and information on how Segment builds prediction, read [Using Predictions](/docs/unify/traits/predictions/using-predictions/). 
 
