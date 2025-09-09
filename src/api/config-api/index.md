@@ -10,14 +10,14 @@ The Config API lets you programmatically manage Segment workspaces, sources, des
 
 With the Config API, you can:
 
-- List all your workspace sources and destinations to see how data flows through Segment
-- Create new destinations - or delete them -  with a few lines of code
-- Create new users and assign them to scoped roles
-- Configure, disable, or view sources and manage connected destinations
-- Get a complete view of all the sources and destinations available in Segment's catalog
-- Configure a Tracking Plan to see how data conforms to your expected schema
-- Query Event Delivery metrics to build custom dashboards and alerts to monitor delivery of your events to destinations
-- Filter entire events or individual fields from reaching specific destinations
+- List all your workspace sources and destinations to see how data flows through Segment.
+- Create new destinations - or delete them -  with a few lines of code.
+- Create new users and assign them to scoped roles.
+- Configure, disable, or view sources and manage connected destinations.
+- Get a complete view of all the sources and destinations available in Segment's catalog.
+- Configure a Tracking Plan to see how data conforms to your expected schema.
+- Query Event Delivery metrics to build custom dashboards and alerts to monitor delivery of your events to destinations.
+- Filter entire events or individual fields from reaching specific destinations.
 
 The Config API is a set of REST services under segmentapis.com:
 
