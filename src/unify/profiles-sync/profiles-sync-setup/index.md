@@ -45,7 +45,7 @@ For example, if you're using BigQuery, [create a service account](/docs/connecti
 - `BigQuery Data Owner`
 - `BigQuery Job User`
 
-Check the documentation for your chosen warehouse in the previous table to confirm which permissions are required.
+Check the documentation for your chosen warehouse in the previous table to identify required permissions.
 
 #### Profiles Sync roles
 
