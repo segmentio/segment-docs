@@ -9,13 +9,13 @@ There are many ways you can use Segment to filter event and object based data to
 
 ## Filtering with the Integrations Object
 
-The Integrations object is the only filtering method that cannot be edited using the Segment web app. As such, it is both the most reliable, and the most complicated filtering option to change. The integrations object is available to all customers regardless of Segment plan.
+The Integrations object is the only filtering method that can’t be edited in the Segment web app. It's both the most reliable and the most complicated filtering option to change. The Integrations object is available to all customers, regardless of Segment plan.
 
-Use this option when you absolutely, for sure, 100% know that you *always*, or *never* want this data in a specific destination or set of destinations. You can also build logic in your app or site to conditionally enable or disable destinations by rewriting this object, however this is not recommended as it is time consuming to change, especially for mobile apps.
+Use this option only when you know you always or never want data in a specific destination or set of destinations. You can also build logic in your app or site to conditionally turn destinations on or off by rewriting this object. However, Segment doesn't recommended this approach because it's time-consuming to change, especially for mobile apps.
 
-The Integrations object filters `track`, `page`, `group`, `identify`, and `screen` events from both client and cloud based sources, and routes or prevents them from getting to the listed destinations. 
+The Integrations object filters `track`, `page`, `group`, `identify`, and `screen` events from both client- and cloud-based sources, and routes or blocks them from reaching the listed destinations.
 
-You can use the `integrations` JSON object as part of your Segment payloads to control how Segment routes your data to specific destinations. An example payload is below:
+You can use the `integrations` JSON object as part of your Segment payloads to control how Segment routes your data to specific destinations. Here's an example payload:
 
 ```json
 {
