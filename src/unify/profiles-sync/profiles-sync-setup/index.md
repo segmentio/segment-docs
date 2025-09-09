@@ -17,7 +17,7 @@ To set up Profiles Sync, first create a warehouse, then connect the warehouse in
 Before you begin, prepare for setup with these tips:
 
 - To connect your warehouse to Segment, you must have read and write permissions for the warehouse destination you choose.
-- During Step 2 of setup, you’ll copy credentials between Segment and your warehouse destination. To streamline the process, open your Segment workspace in one browser tab and your warehouse account in another.
+- During Step 2 of the setup process, you’ll copy credentials between Segment and your warehouse destination. To streamline the process, open your Segment workspace in one browser tab and your warehouse account in another.
 - Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse destination.
 
 ### Step 1: Select a warehouse 
