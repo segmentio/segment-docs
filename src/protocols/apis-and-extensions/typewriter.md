@@ -353,9 +353,9 @@ Typewriter looks for an API token in the following order:
 
 The quickstart wizard prompts you for an API token and stores it in `~/.typewriter` for you.
 
-We recommend you use a [Token Script](#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from an `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
+Segment recommends you use a [Token Script](#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from an `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
 
-We also recommend you to pipe through your API Token as this will let you keep your token secret, but it also allows you to share it across your team.
+Segment also recommends you to pipe through your API Token as this will let you keep your token secret, but it also allows you to share it across your team.
 
 > warning ""
 > Segment is temporarily keeping the Token Script execution for compatibility purposes. Segment might deprecate this feature in the future, and encourages you to execute your script and pipe in the token. For example, `echo $TW_TOKEN | typewriter build`.
@@ -390,9 +390,9 @@ Android Studio does not require any extra configuration and shows intellisense o
 
 ## Best Practices
 
-We **strongly recommend** that you store your Tracking Plan (`plan.json`) in a version control system. This guarantees that Typewriter will generate the same client, regardless of any changes you make to your Tracking Plan in the Segment app. Otherwise, changes to your Tracking Plan could lead to broken builds.
+Segment **strongly recommends** that you store your Tracking Plan (`plan.json`) in a version control system. This guarantees that Typewriter will generate the same client, regardless of any changes you make to your Tracking Plan in the Segment app. Otherwise, changes to your Tracking Plan could lead to broken builds.
 
-We recommend that you only check in the `plan.json`, and generate your Typewriter client during the application build step (by calling `npx typewriter`). You can do this in `git` with the following `.gitignore`:
+Segment recommends that you only check in the `plan.json`, and generate your Typewriter client during the application build step (by calling `npx typewriter`). You can do this in `git` with the following `.gitignore`:
 
 ```bash
 # Make sure to update `analytics` to the full path to your Typewriter client.
@@ -481,7 +481,7 @@ To learn more about the `typewriter.yml` configuration format, see the [Configur
 
 ## Connecting to CI
 
-As mentioned in the [Best Practices](#best-practices) section above, we recommend that you only check in the `plan.json`, and not the generated clients, into your version control. Instead, we recommend building these clients as part of the build step for your application.
+As mentioned in the [Best Practices](#best-practices) section above, Segment recommends that you only check in the `plan.json`, and not the generated clients, into your version control. Instead, Segment recommends building these clients as part of the build step for your application.
 
 In your CI environment, this usually involves a step to build the Typewriter client. Make sure to build the production client before deploying the application, as explained in the [Tracking Plan Violation Handling](#tracking-plan-violation-handling) section below.
 
@@ -512,7 +512,7 @@ $ npx typewriter production
 > info "Run-time validation support"
 > Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv){:target="_blank”} (both for JavaScript and TypeScript projects) while `analytics-ios` and `analytics-android` do not yet support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema. For languages that don't support run-time validation, the development and production clients are identical.
 
-We recommend you to use a development build when testing your application locally, or when running tests. We generally recommend _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.
+Segment recommends you to use a development build when testing your application locally, or when running tests. Segment generally recommends _against_ using a development build in production, since this includes a full copy of your Tracking Plan which can increase the size of the application.
 
 You can provide a custom handler that fires whenever a violation is seen. By default, this handler logs a warning.
 
@@ -575,8 +575,8 @@ Not all languages support run-time validation. Currently, `analytics.js` and `an
 
 ## Contributing
 
-If you're interested in contributing, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new){:target="_blank”} and we can help provide you pointers to get started.
+If you're interested in contributing, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new){:target="_blank”} and Segment can help provide you pointers to get started.
 
 ## Feedback
 
-We welcome feedback you may have on your experience with Typewriter. To contact us, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new){:target="_blank”}.
+Segment welcomes feedback you may have on your experience with Typewriter. To contact us, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new){:target="_blank”}.
