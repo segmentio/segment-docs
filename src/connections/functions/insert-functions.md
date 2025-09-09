@@ -16,7 +16,7 @@ With Destination Insert Functions you can:
 
 ## Create destination insert functions
 
-There are 2 ways you can access destination insert functions from your Segment space:
+There are two ways you can access destination insert functions from your Segment space:
 - From the Connections [catalog](#using-the-catalog).
 - From the [Destinations](#using-the-destinations-tab) tab.
 
