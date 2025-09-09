@@ -72,19 +72,19 @@ See the [Destination Filters documentation](/docs/connections/destinations/desti
 
 You can create destination filters using the options in the Segment web app or by writing queries in Segment’s [Filter Query Logic (FQL)](/docs/api/public-api/fql/). FQL queries are limited to 5 KB each.
 
-## Per-Source schema integrations filters
+## Per-source schema integration filters
 
-Integration filters allow you to quickly change which destinations receive specific Track, Identify, or Group events. Access this tool in any Source that is receiving data by navigating to the Schema tab. Schema integration filters are available to workspaces that are on a Business Tier plan only.
+Integration filters let you quickly change which destinations receive specific Track, Identify, or Group events. Access this tool in any source that’s receiving data by navigating to the **Schema** tab. Schema integration filters are available only on Business Tier workspaces.
 
-You can apply Integrations filters to specific events regardless of whether the source is connected to a Tracking Plan. To update which destination an event can be sent to, click the **Integrations** dropdown menu to see a list of the destinations each call is sent to. You can turn those destinations on or off from within the dropdown menu.
+You can apply Integration filters to specific events whether or not the source is connected to a Tracking Plan. To update which destinations an event can be sent to, open the **Integrations** dropdown menu to see the list of destinations for each call. You can toggle destinations on or off from within the menu.
 
 ![The Integrations dropdown menu displays a list of destinations each call is sent to](images/schema-integration-filters.png)
 
-The events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses do not appear in the integration filters dropdown, and you cannot prevent data from flowing to Warehouses using this feature - to do that use [Warehouse Selective Sync](#warehouse-selective-sync).
+Events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses don’t appear in the integration filters dropdown, and you can’t block data from flowing to them with this feature. To filter warehouse data, use [Warehouse Selective Sync](#warehouse-selective-sync).
 
-**Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
+**Integration filters are all-or-nothing for each event.** If you need more detailed control over which events go to specific destinations, use Destination filters to inspect the event payload and conditionally drop or forward data.
 
-**Integration filters won't override an existing value in the integrations object.** If the integration object already has a value for the integration, the per source schema integration filters will not override this. For example, if you're sending events to Appsflyer with the `appsflyerId` passed into the integration object:
+**Integration filters won’t override values in the `integrations` object.** If the `integrations` object already sets a value for a destination, per-source schema integration filters won’t override it. For example, if you’re sending events to Appsflyer with the `appsflyerId` passed into the `integrations` object:
 
 ```javascript
 integrations: {
@@ -93,7 +93,8 @@ integrations: {
   }
 }
 ```
-For the same event you have Appsflyer turned off using the per source schema integrations filter, this filter won't override the above object with a false value, and events still send downstream. In this scenario, you can use [destination filters](#destination-filters) to drop the event before it sends downstream. 
+
+For the same event, if you turn off Appsflyer with a per-source schema integration filter, the `integrations` object setting still takes priority and the event goes downstream. In this scenario, use [destination filters](#destination-filters) to drop the event before it’s sent downstream.
 
 ## Schema event filters
 
