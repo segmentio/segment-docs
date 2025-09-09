@@ -15,15 +15,15 @@ You can send your Computed Traits and Audiences to your Segment Destinations, wh
 
 There are two ways to send data to Engage Destinations: as **Events** and as **Lists**.
 
-**Event Destinations** receive data one by one, on a streaming basis as *events*, which are behaviors or traits tied to a user and a point in time. Every time a piece of data (such as a track event or identify call) is received in Segment — for example, from your website or your mobile app — Segment then sends this piece of data to the Destination right away.
+**Event Destinations** receive data one by one, on a streaming basis as *events*, which are behaviors or traits tied to a user and a point in time. Every time a piece of data (like a Track event or Identify call) is received in Segment — for example, from your website or your mobile app — Segment then sends this piece of data to your destination.
 
-**List Destinations** periodically receive data in batches, and these batches contain lists of users. In most cases, Segment sends data to a list destination every hour, and sends all data accumulated since the last batch was sent.
+**List Destinations** periodically receive data in batches, or lists of users. In most cases, Segment sends a batch, which includes all data accumulated since the last batch was sent, once per hour.
 
-Some Destinations, such as Salesforce Marketing Cloud have both “event” and “list” destination types that you can use.
+Some Destinations, such as [Salesforce Marketing Cloud](/docs/connections/destinations/catalog/salesforce-marketing-cloud/) have both “event” and “list” destination types that you can use.
 
 **Engage sends computed traits and audiences to destinations in different ways depending on whether the destination is an Event or List type**:
 
-- [Computed Traits](/docs/engage/audiences/computed-traits/) are always sent to Event destinations either using an identify call for user traits, a group call for account-level computed traits, or a track event.
+- [Computed Traits](/docs/engage/audiences/computed-traits/) are always sent to Event destinations either using an Identify call for user traits, a Group call for account-level computed traits, or a Track event.
 
 - With [Audiences](/docs/engage/audiences/), Engage sends the audience either as a boolean (true or false) _user property_ to Event Destinations, or as a _user list_ to List Destinations. If you are a B2B company creating account audiences (where each account represents a group of users, like employees at a business) and sending them to list destinations, Engage sends the list of all users within an account that satisfies the audience criteria.
 
@@ -33,14 +33,14 @@ Some Destinations, such as Salesforce Marketing Cloud have both “event” and 
 
 **Event Destinations and Computed traits**
 Computed traits can only be sent to Event destinations.
-When Engage sends a computed trait to an Event destination, it uses an identify call to send user traits, or a group call to send account-level computed traits.
+When Engage sends a computed trait to an Event destination, it uses an Identify call to send user traits, or a group call to send account-level computed traits.
 
 **Event Destinations and Audiences**
 
-- **`identify` call as a user trait**. When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if 30 days elapses and they haven't completed another order), Segment sets that value to `false`.
-- **`track` call as two events**: `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.
+- **Identify call as a user trait**. When you use Identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an Identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example, if 30 days elapses and they haven't completed another order), Segment sets that value to `false`.
+- **Track call as two events**: `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.
 
-Segment sends an identify or track call for every user in the audience when the audience is first created. Later syncs only send updates for those users who were added or removed from the audience since the last sync.
+Segment sends an Identify or Track call for every user in the audience when the audience is first created. Later syncs only send updates for those users who were added or removed from the audience since the last sync.
 
 Most destinations require that you configure a column in your schema to receive the audience data, however, some destinations (like Braze and Iterable) allow you to send audiences without doing this. This depends on the individual destination, so consult the destination's documentation for details.
 
@@ -51,7 +51,7 @@ List destinations can only receive Audiences, and cannot receive computed traits
 - **User-Level Audiences**: a list of users that belong to an audience
 - **Account-Level Audiences**: a list of users within an account that satisfy the audience criteria
 
-When syncing to a list destination Engage uploads lists of users directly to the destination. When you first create an audience, Segment uploads the entire list of audience users to the destination. Later syncs only upload the users that have been added or removed since the last sync.
+When syncing to a list destination, Engage uploads lists of users directly to the destination. When you first create an audience, Segment uploads the entire list of audience users to the destination. Later syncs only upload the users that have been added or removed since the last sync.
 
 User-list destinations can have individual limits on how often Segment can sync with them. For example, an AdWords audience is updated once every six hours or more, because that's what AdWords recommends.
 
@@ -60,17 +60,17 @@ For more information, see [Using Engage Data](/docs/engage/using-engage-data/).
 
 ## What do the payloads look like for Engage data?
 
-The payloads sent from your Engage space to your destinations will be different depending on if you configured the destination to receive identify or track calls, and whether the payload is coming from a computed trait or audience. As a reminder, identify calls usually update a trait on a user profile or table, whereas track calls send a point-in-time event that can be used as a campaign trigger or a detailed record of when a user's audience membership or computed trait value was calculated.
+The payloads sent from your Engage space to your destinations are different depending on if you configured the destination to receive Identify or Track calls and whether the payload is coming from a computed trait or audience. As a reminder, Identify calls usually update a trait on a user profile or table, whereas Track calls send a point-in-time event that can be used as a campaign trigger or a detailed record of when a user's audience membership or computed trait value was calculated.
 
 To view the events generated by an Engage Space's audience or computed traits, navigate to **Unify settings > Debugger** and view the list of sources that are configured to generate events per [each destination instance](/docs/engage/warehouses/#why-are-there-multiple-schemas-prefixed-with-engage_-in-my-warehouse-when-i-only-have-one-space:~:text=Segment%20currently%20can,schemas%20than%20spaces.). Each source will only generate events to connected destinations. From the source's Debugger tab, you'll find the most recent events generated by that source per the connected destinations' audiences and computed traits. 
 
-In the full json body of an audience, computed trait, or journey, you'll find specific details under the `context.personas` object. These fields can be useful when building out [Destination Filters](/docs/connections/destinations/destination-filters/), [Actions destination mappings](/docs/connections/destinations/actions/#set-up-a-destination-action), and [Functions](/docs/connections/functions/).
+In the full JSON body of an audience, computed trait, or journey, you'll find specific details under the `context.personas` object. These fields can be useful when building out [Destination Filters](/docs/connections/destinations/destination-filters/), [Actions destination mappings](/docs/connections/destinations/actions/#set-up-a-destination-action), and [Functions](/docs/connections/functions/).
 
-The integrations object in the payload displays as `{"All" : false,}` and only lists some destinations. This is due to the fact that each source has multiple destinations connected while each audience/trait may only have a subset of destinations connected to it. See [Filtering with the Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) for more information. The integrations object routing specific events to its specified destinations is also why a destination's [Delivery Overview](/docs/connections/delivery-overview/) tab will show a large number of events under the [Filtered at destination](/docs/connections/delivery-overview/#:~:text=Filtered%20at%20destination%3A%20Events,will%20be%20filtered%20out.) box, as that destination will only receive the events intended to be sent to it by audiences, traits, or journeys that are connected to that specific destination.
+The integrations object in the payload displays as `{"All" : false,}` and only lists some destinations. This is due to the fact that each source has multiple destinations connected while each audience or trait may only have a subset of destinations connected to it. See [Filtering with the Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object) for more information. The integrations object routing specific events to its specified destinations is also why a destination's [Delivery Overview](/docs/connections/delivery-overview/) tab will show a large number of events under the [Filtered at destination](/docs/connections/delivery-overview/#:~:text=Filtered%20at%20destination%3A%20Events,will%20be%20filtered%20out.) box, as that destination will only receive the events intended to be sent to it by audiences, traits, or journeys that are connected to that specific destination.
 
 ### Computed Trait generated events
 
-`Identify` events generated by a Computed Trait have the trait name set to the Computed Trait value:
+Identify events generated by a Computed Trait have the trait name set to the Computed Trait value:
 
 ```js
 {
@@ -91,7 +91,7 @@ The integrations object in the payload displays as `{"All" : false,}` and only l
 }
 ```
 
-`Track` events generated by a Computed Trait have a key for the trait name, and a key for the Computed Trait value. The default event name is `Trait Computed`, but you can change it.
+Track events generated by a Computed Trait have a key for the trait name, and a key for the Computed Trait value. The default event name is `Trait Computed`, but you can change it.
 
 ```js
 {
@@ -118,7 +118,7 @@ Engage only sends events to the destination if the Computed Trait value has chan
 
 ### Audience generated events
 
-`Identify` events generated by an Audience have the Audience key set to `true` or `false` based on whether the user is entering or exiting the audience:
+Identify events generated by an Audience have the Audience key set to `true` or `false` based on whether the user is entering or exiting the audience:
 
 ```js
 {
@@ -139,7 +139,7 @@ Engage only sends events to the destination if the Computed Trait value has chan
 }
 ```
 
-`Track` events generated by an Audience have a key for the Audience name, and for the Audience value:
+Track events generated by an Audience have a key for the Audience name, and for the Audience value:
 
 ```js
 {
@@ -165,8 +165,8 @@ Engage only sends events to the destination if the Computed Trait value has chan
 ### Journeys generated events
 The data type you send to a destination depends on whether the destination is an event destination or a list destination. For more information, read the [Journeys documentation](/docs/engage/journeys/send-data/#:~:text=a%20List%20destination.-,Event%20destination,%22traits%22%3A%20%7B%0A%20%20%20%20%22j_o_first_purchase__opened_email_dje83h%22%3A%20%22true%22%0A%20%20%7D%0A%7D,-List%20destination) on how Journeys Identity and Track event payloads get formatted when sending to Event destinations.
 
-_See [this doc](/docs/engage/journeys/send-data/#what-do-i-send-to-destinations) for more information on Journeys events._
-`Track` events generated by a journey have a key for the journey name "audience_key", and a key for the journey value:
+_See the [Send Journeys data to a destination](/docs/engage/journeys/send-data/#what-do-i-send-to-destinations) documentation for more information on Journeys events._
+Track events generated by a journey have a key for the journey name "audience_key", and a key for the journey value:
 
 ```js
 {
@@ -189,7 +189,7 @@ _See [this doc](/docs/engage/journeys/send-data/#what-do-i-send-to-destinations)
 }
 ```
 
-`Identify` events generated by a Journey have the Journey key set to `true` or `false` based on whether the user is entering or exiting the Journey:
+Identify events generated by a Journey have the Journey key set to `true` or `false` based on whether the user is entering or exiting the Journey:
 
 ```js
 {
@@ -242,7 +242,7 @@ For more granular control that lets you specify which external IDs Segment sends
 
 ## Rate limits on Engage Event Destinations
 
-Many Destinations have strict rate limits that prevent Segment (and other partners) from sending too much data to a Destination at one time. Engage caps the number of requests per second to certain Destinations to avoid triggering rate limits that would cause data to be dropped. The most common scenario when customers run into rate-limits is when Engage first tries to sync a large set of historical users. Once this initial sync is done, we rarely run into rate-limit issues.
+Many Destinations have strict rate limits that prevent Segment (and other partners) from sending too much data to a Destination at one time. Engage caps the number of requests per second to certain Destinations to avoid triggering rate limits that would cause data to be dropped. The most common scenario when customers run into rate-limits is when Engage first tries to sync a large set of historical users. Once this initial sync is done, Segment rarely runs into rate-limit issues.
 
 For additional information on Destination-specific rate limits, check the documentation for that Destination. If you need a higher rate limit, [let Segment know](https://segment.com/contact){:target="_blank"} which Destination you need it for and why.
 
@@ -272,16 +272,12 @@ For additional information on Destination-specific rate limits, check the docume
 ## Syncing data to a new Destination for the first time
 
 
-When you create a new Computed Trait or Audience in Engage, you can choose to calculate it either using all the available historical data from your Segment implementation, or only using data that arrives after you set up the trait or audience. By default, Segment opts to include historical data. Afterwards, Segment only sends updates to that destination.
+When you create a new Computed Trait or Audience in Engage, you can choose to calculate it either using all the available historical data from your Segment implementation, or only using data that arrives after you set up the trait or audience. By default, Segment opts to include historical data. Afterwards, Segment only sends updates to that destination. To add a destination to your Engage space, refer to the [Engage settings](/docs/engage/settings/#destinations-settings) documentation.
 
-> success ""
-> **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don't want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
+You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don't want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
 
 > warning ""
 > The Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
-
-> info ""
-> Use the [Engage settings](/docs/engage/settings/#destinations-settings){:target="_blank"} to add a destination to your Engage space.
 
 ## Engage compatible Destinations: Event type
 
