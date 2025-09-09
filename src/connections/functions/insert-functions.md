@@ -76,7 +76,7 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onDelete`
 - `onBatch`
 
-Each of the functions above accepts 2 arguments:
+Each of the functions above accepts two arguments:
 
 - **event** - Segment event object, where fields and values depend on the event type. For example, in Identify events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
 - **settings** - Set of [settings](#create-settings-and-secrets) for this function.
