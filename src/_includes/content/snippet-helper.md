@@ -138,4 +138,30 @@ analytics.page();
 ```
 {% endcodeexampletab %}
 
+{% codeexampletab HTML head with snippet %}
+```html
+<head>
+  <title>My Page Title</title>
+  <link rel="canonical" href="https://example.com/page" />
+
+  <!-- Segment snippet -->
+  <script type="text/javascript">
+    (function() {
+      var analytics = window.analytics = window.analytics || [];
+      analytics._writeKey = "YOUR_WRITE_KEY";
+      analytics.SNIPPET_VERSION = "5.x";
+      analytics.load = function(key) {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+        document.head.appendChild(s);
+      };
+      analytics.load("YOUR_WRITE_KEY");
+      analytics.page();
+    })();
+  </script>
+</head>
+```
+{% endcodeexampletab %}
+
 {% endcodeexample %}
