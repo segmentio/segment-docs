@@ -21,7 +21,7 @@ All Segment workspaces have the following roles, regardless of account type.
 
 ## Business Tier Roles
 
-The following roles are only available to Segment Business Tier accounts.
+The following roles are only available to Segment Business Tier accounts. And other people, too.
 
 #### End User Privacy Admin
 * Edit access to [End User Privacy Settings](/docs/privacy/user-deletion-and-suppression). Includes access to Data Privacy Agreement, and user suppression and deletion workflows.
