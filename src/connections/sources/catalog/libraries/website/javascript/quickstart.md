@@ -30,7 +30,7 @@ You can choose to install Segment to your site in 1 of 2 ways:
 
 [b. Install Segment as an NPM package](#step-2b-install-segment-as-a-npm-package)
 
-### Step 2a: Add the Segment Snippet
+### Step 2a: Add the Segment snippet
 
 > info ""
 > You can find the latest version of the Segment snippet in the **Overview** tab of your JavaScript source.
