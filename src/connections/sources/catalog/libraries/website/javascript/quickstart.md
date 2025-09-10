@@ -35,9 +35,7 @@ You can choose to install Segment to your site in 1 of 2 ways:
 > info ""
 > You can find the latest version of the Segment snippet in the **Overview** tab of your JavaScript source.
 
-To add the Segment snippet to your app: 
-
-Paste the snippet into the `<head>` tag of your site to install Segment.
+To add the Segment snippet to your app, paste it into the `<head>` tag of your site, **below the `<title>` tag and the canonical URL**. This ensures that Analytics.js can capture the `document.title` value.
 
   {% include content/snippet-helper.md %}
 
@@ -48,7 +46,7 @@ Replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's *
 
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically.
 
-Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
+You should also remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
 
 > info ""
 > If you only want the most basic Google Analytics setup, there's no need to continue with the setup. Just toggle on Google Analytics in the Segment interface.
