@@ -32,7 +32,7 @@ To create a new tracking plan:
 > info "Consent Management users see the Segment Consent Preference Updated event on new Tracking Plans"
 > If you are a Consent Management user and have created at least one consent category, Segment automatically adds the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) to all new Tracking Plans. 
 
-## Copy a tracking P\plan
+## Copy a tracking plan
 
 To create a copy of an existing tracking plan:
 1. Click **Protocols** in the left navigation bar.
