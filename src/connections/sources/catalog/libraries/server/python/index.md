@@ -3,15 +3,15 @@ title: Analytics for Python
 id: XRksQPCr7X
 support_type: maintenance
 ---
-Segment's Python library lets you record analytics data from your Python code. The requests hit Segment's servers, and then Segment routes your data to any analytics service you enable on your destinations page.
+Segment's Python library lets you record analytics data from your Python code. The requests hit Segment's servers and then Segment routes your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-python).
+This library is open-source. [Check it out on GitHub](https://github.com/segmentio/analytics-python){:target="_blank”}.
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make Identify and Track calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers using a separate thread.
 
-Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-python/releases.atom).
+Want to stay updated on releases? Subscribe to the [release feed on GitHub](https://github.com/segmentio/analytics-python/releases.atom){:target="_blank”}.
 
-## Getting Started
+## Getting started
 
 Install `segment-analytics-python` using pip:
 
@@ -19,7 +19,7 @@ Install `segment-analytics-python` using pip:
 pip install segment-analytics-python
 ```
 
-If you're using a system for managing dependencies, you'll want to pin the library to `1.X` to avoid breaking changes when the library is updated
+If you're using a system for managing dependencies, you'll want to pin the library to `1.X` to avoid breaking changes when the library is updated.
 
 Inside your app, you'll want to **set your `write_key`** before making any analytics calls:
 
@@ -66,9 +66,9 @@ analytics.send = False
 
 The Identify method lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 
-Segment recommends that you call Identify  once when the user's account is created, and later when their traits change.
+Segment recommends that you call Identify once when the user's account is created, and later when their traits change.
 
-Example Identify  call:
+The following example Identify call is identifying John by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name` and `friends` traits.
 
 ```python
 analytics.identify('019mr8mf4r', {
@@ -78,9 +78,7 @@ analytics.identify('019mr8mf4r', {
 })
 ```
 
-The example Identify  call is identifying John by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name` and `friends` traits.
-
-The Identify  call has the following fields:
+An Identify call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                                  |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -92,7 +90,7 @@ The Identify  call has the following fields:
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                                            |
 
 
-Find details on the **Identify  method payload** in the [Segment Spec](/docs/connections/spec/identify/).
+Find details on the **Identify method payload** in the [Segment Spec](/docs/connections/spec/identify/).
 
 ## Track
 
@@ -102,16 +100,15 @@ You'll want to track events that are indicators of success for your site, like *
 
 To get started, Segment recommends tracking just a few important events. You can always add more later.
 
-Example Track call:
+The following sample Track call informs Segment that your user just triggered the **Signed Up** event and chose your hypothetical `'Enterprise'` plan.
 
 ```python
 analytics.track('f4ca124298', 'Signed Up', {
   'plan': 'Enterprise'
 })
 ```
-This call informs Segment that your user just triggered the **Signed Up** event and chose your hypothetical `'Enterprise'` plan.
 
-Track event properties can be anything you want to record, for example:
+Track event properties can be anything you want to record. For example, here's an Track event for a user who bookmarked an article:
 
 ```python
 analytics.track('f4ca124298', 'Article Bookmarked', {
@@ -121,7 +118,7 @@ analytics.track('f4ca124298', 'Article Bookmarked', {
 })
 ```
 
-The Track method has the following fields:
+A Track call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                   |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -142,14 +139,14 @@ The [Page](/docs/connections/spec/page) method lets you record page views on you
 
 If you use a client-side set up in combination with the Python library, page calls are **already tracked for you** by default. If you want to record your own page views manually and aren't using a client-side library, read on.
 
-Example Page call:
+As an example, here's a sample event for users who view this page:
 
 ```python
 analytics.page('user_id', 'Docs', 'Python', {
   'url': 'http://segment.com'
 })
 ```
-The Page call has the following fields:
+A Page call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                 |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -162,7 +159,6 @@ The Page call has the following fields:
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                      |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                           |
 
-
 Find details on the **Page method payload** in the [Segment Spec](/docs/connections/spec/page/).
 
 ## Screen
@@ -171,7 +167,7 @@ The [Screen](/docs/connections/spec/screen) method lets you record screen views 
 
 If you use a Segment mobile SDK in combination with the library, screen calls are **already tracked for you** by default.If you want to record your own screen views manually and don't use a Segment SDK library, learn how below.
 
-Example Screen call:
+Here's an example of a Screen call for the user settings page in your app:
 
 ```python
 analytics.screen('user_id', 'Settings', 'Brightness', {
@@ -192,17 +188,15 @@ The Screen call has the following fields:
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                          |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                               |
 
-
 Find details on the **Screen method payload** in the [Segment Spec](/docs/connections/spec/screen/).
 
----
 ## Group
 
 Group lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/python/#identify) with a group. A group could be a company, organization, account, project or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example Group call:
+Here's an example Group call linking your user to their employer, Initech:
 
 ```python
 analytics.group('user_id', 'group_id', {
@@ -211,7 +205,7 @@ analytics.group('user_id', 'group_id', {
 })
 ```
 
-The Group call has the following fields:
+A Group call has the following fields:
 
 | Field                                    | Description                                                                                                                                                                                   |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -223,16 +217,15 @@ The Group call has the following fields:
 | `anonymous_id` _string or int, optional_ | An anonymous session ID for this user.                                                                                                                                                        |
 | `integrations` _dict, optional_          | A dictionary of destinations to enable or disable                                                                                                                                             |
 
-
-Find more details about Group, including the **Group method payload**, in the [Segment Spec](/docs/connections/spec/group/).
+Find more details about Group calls, including the **Group method payload**, in the [Segment Spec](/docs/connections/spec/group/).
 
 ## Alias
 
 Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of Segment's destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use Alias to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use Alias to rename the `userId`.
 
-Example Alias call:
+Here's an example of an Alias call that associates a previous user ID with a new ID:
 
 ```python
 analytics.alias(previous_id, user_id)
@@ -271,7 +264,7 @@ For more details about Alias, including the **Alias call payload**, see the [Seg
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, or Kissmetrics, for example, can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics, since their API cannot accept historical data.
 
 > info ""
 > If you track things that are happening right now, omit the `timestamp` and Segment's servers will timestamp the requests for you.
@@ -365,8 +358,6 @@ for entry in log:
 analytics.flush()
 ```
 
----
-
 ## Selecting destinations
 
 The Alias, Group, Identify, Page, and Track calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
@@ -382,13 +373,13 @@ analytics.track('9742', 'Song Played', integrations={
 ```
 This example illustrates that this track call goes only to Kissmetrics. `'all': False` says that no destination should be enabled unless otherwise specified. `'Kissmetrics': True` enables Kissmetrics.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/), for example, "AdLearn Open Platform", "awe.sm", or "MailChimp".
 
 ## Batching
 
 Segment's libraries are built to support high performance environments. It's safe to use analytics-python on a web server that serves hundreds of requests per second.
 
-Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
+Every method you call **doesn't** result in an HTTP request, but is queued in memory instead. Messages are flushed in batch in the background, which allows for much faster operation.
 
 By default, Segment's Python library will flush:
 
@@ -445,7 +436,7 @@ logging.getLogger('segment').setLevel('DEBUG')
 
 ## Options
 
-If you hate defaults or want to send data to multiple sources, then you can create your own Clients. Keep in mind that each client runs a separate background thread, so you won't want to create these on every request. Check out these gizmos:
+If you hate defaults or want to send data to multiple sources, then you can create your own Clients. Keep in mind that each client runs a separate background thread, so you won't want to create these on every request. Check out this sample code:
 
 ```python
 from analytics import Client
@@ -458,7 +449,7 @@ Client('YOUR_WRITE_KEY', debug=True, on_error=on_error, send=True,
 | `debug` _bool_            | `True` to log more verbosely, `False` by default.                                                                                                                                                                          |
 | `send` _bool_             | `False` to avoid sending data to Segment, `True` by default.                                                                                                                                                               |
 | `on_error` _function_     | Set an error handler to be called whenever errors occur                                                                                                                                                                    |
-| `max_queue_size` _int_    | Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, [let Segment know](https://segment.com/help/contact/). |
+| `max_queue_size` _int_    | Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying or tracking faster than you can flush. If this happens, [let Segment know](https://segment.com/help/contact/). |
 | `upload_interval` _float_ | The frequency, in seconds, to send data to Segment. Default value is 0.5.                                                                                                                                                  |
 | `upload_size` _int_       | Number of items in a batch to upload. Default value is 100.                                                                                                                                                                |
 | `gzip` _bool_             | `True` to compress data with gzip before sending, `False` by default.                                                                                                                                                      |
@@ -490,7 +481,7 @@ default_app_config = 'myapp.apps.MyAppConfig'
 
 ### How do I add logging to Django?
 
-If you're troubleshooting your analytics, you'll want to turn on logging.
+If you're troubleshooting your Analytics setup, you'll want to turn on logging.
 
 You need to add the `analytics` logger and handler to your `settings.py`.
 
@@ -535,7 +526,7 @@ Google App Engine may not resolve project dependencies. If this is the case add 
 - [requests](https://github.com/kennethreitz/requests){:target="_blank"}
 - [python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
 
-If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
+If you're having issues with threads outliving your request, check the [Background threads and synchronous mode](#background-threads-and-synchronous-mode) docs.
 
 ## OAuth 2.0
 
@@ -603,7 +594,7 @@ Check that you have the most recent version.
 python -c "import segment.analytics as analytics; print analytics.VERSION"
 ```
 
-Does it match [the most current version](https://github.com/segmentio/analytics-python/blob/master/analytics/version.py#L2)?
+Does it match [the most current version](https://github.com/segmentio/analytics-python/blob/master/analytics/version.py#L2){:target="_blank”}?
 
 If not, update your version.
 
