@@ -159,6 +159,14 @@ For step-by-step instructions on how to connect an audience to a destination, se
 > info "Historical data behavior for new destinations"
 > When you connect a new destination to an existing audience, Engage backfills historical data if the **Include Historical Data** option is enabled in the audience settings. If this setting is disabled, only new data gets sent. To sync all historical data manually, [contact Support](mailto:friends@segment.com) to request a resync.
 
+### Disconnect or remove a destination 
+
+Whnen managing your audience-destination connections you have two options:
+
+1. **Connect to destination** - Toggles the connection on and off. When disconnected, the setup and configuration remain saved, but no data flows from the audience to the destination until you re-enable the connection. Use this option to pause sending data without losing your work.
+2. **Remove destination from audience** - Deletes the connection completely, so no events are sent to the destination. To use the destination again, you'll need to set it up as new from the beginning.
+
+
 ## Understanding compute times
 
 Because a number of factors (like system load, backfills, or user bases) determine the complexity of an audience, some compute times take longer than others.
@@ -246,7 +254,7 @@ To edit a realtime trait or audience:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime audience or trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Preview the results, then select **Create Audience** to confirm your edits.
+4. Preview the results, then select **Save audience** to confirm your edits.
 
 Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 

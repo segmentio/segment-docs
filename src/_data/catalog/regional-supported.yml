@@ -1209,3 +1209,12 @@ sources:
     endpoints:
       - us
       - eu
+  - id: h00x3Ep5el
+    display_name: Zigpoll
+    hidden: false
+    slug: zigpoll
+    url: connections/sources/catalog/cloud-apps/zigpoll
+    regions:
+      - us
+    endpoints:
+      - us
