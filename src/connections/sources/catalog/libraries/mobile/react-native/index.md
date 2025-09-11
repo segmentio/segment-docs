@@ -471,10 +471,10 @@ To set up automatic screen tracking while using [React Native Navigation](https:
       });
     ```
 
-## Plugin Architecture
+## Plugin architecture
 Segment's plugin architecture lets you modify and augment how the events are processed before they're uploaded to the Segment API.  To customize what happens after an event is created, you can create and place various plugins along the processing pipeline that an event goes through. This pipeline is referred to as a timeline.
 
-### Plugin Types
+### Plugin types
 
 | Plugin Type   | Description                                                                                       |
 | ------------- | ------------------------------------------------------------------------------------------------- |
@@ -487,12 +487,12 @@ Segment's plugin architecture lets you modify and augment how the events are pro
 > info ""
 > Plugins can have their own native code, such as the iOS-only [`IdfaPlugin`](https://github.com/segmentio/analytics-react-native/blob/829fc80bc8c4f59fa99dadd25083efa422d577f0/packages/plugins/plugin-idfa/README.md){:target="_blank"}, or wrap an underlying library, such as the [`FirebasePlugin`](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"} which uses `react-native-firebase`.
 
-### Destination Plugins
+### Destination plugins
 Segment provides a `DestinationPlugin`. You can add additional destination plugins and upload events and data to them.
 
 If you don't want the Segment destination plugin, set `autoAddSegmentDestination = false` in the options when setting up your client. This prevents the `SegmentDestination` plugin from being added automatically.
 
-### Adding Plugins
+### Adding plugins
 You can add a plugin at any time using `segmentClient.add()`.
 
 ```js
@@ -513,7 +513,7 @@ segmentClient.add({ plugin: new IdfaPlugin() });
 ```
 
 ### Writing your own plugins
-Plugins implement as ES6 Classes. To get started, familiarize yourself with the available classes in `/packages/core/src/plugin.ts`.
+Plugins implement as [ES6 classes](https://www.w3schools.com/react/react_es6_classes.asp){:target="_blank"}. To get started, familiarize yourself with the available classes in `/packages/core/src/plugin.ts`.
 
 The available plugin classes are:
 - `Plugin`
@@ -551,7 +551,7 @@ import { Logger } from './logger';
 segmentClient.add({ plugin: new Logger() });
 ```
 
-As the plugin overrides the `execute()`, this `Logger` calls `console.log` for every event going through the timeline.
+As the plugin overrides `execute()`, this `Logger` calls `console.log` for every event going through the timeline.
 
 ### Add a custom destination plugin 
 
