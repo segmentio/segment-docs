@@ -141,28 +141,25 @@ After you build your Linked Audience, you can send events to your chosen destina
 
 To activate your Linked Audience:
 
-- [Step 2a: Connecting to a Destination](#step-2a-connecting-to-a-destination)
+- [Step 2a: Configuring an activation](#step-2a-connecting-to-a-destination)
 - [Step 2b: Selecting your Destination Actions](#step-2b-select-your-destination-actions)
 - [Step 2c: Defining how and when to trigger an event to your Destination](#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination)
-- [Step 2d: Configuring the event payload](#step-2d-configure-the-event)
+- [Step 2d: Creating and activation and configuring the event payload](#step-2d-configure-the-event)
 
+
+### Step 2a: Configuring an activation
 See the step-by-step video on activating Linked Audiences:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aKncQ7vtJlg?si=H_U6LNE0IBfUMtoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Step 2a: Connecting to a destination
-
-[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
-
-> info "Linked Audiences destinations"
-> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
+[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding an activation to your Linked Audience allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination by creating an activation.
 
 **Note:** Ensure you've [enabled your destination](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. Navigate to **Engage > Audiences**.
 2. Select the Linked Audience you set up in the previous step. 
-3. Select **Add destination**. 
+3. Select **Add activation**. 
 4. Select a destination from the catalog.
-5. Click **Configure data to send to destination**.
+5. Click **Next** to proceed with next steps.
 
 ### Step 2b: Select your Destination Actions
 
@@ -184,9 +181,17 @@ Configure how and when events are produced with each audience run. Select the en
 
 
 
-### Step 2d: Configure the event
+### Step 2d: Creating the activation
 
-After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
+After you select the action and trigger, you can review your configuration and then create the activation by selecting **Save**.  Creating the actvation will move you to the activation overview page, where you can configure destination settings (if applicable), identifier strategy, enrichment settings, and mappings.
+
+### Destination settings
+
+Some destinations may require configuration of additional destination settings, such as Advertiser ID. Please configure these settings before in order to enable your activation.
+
+### Identifier strategy
+
+Choose how Segment should send the identifiers to your destination. The settings will impact all activations that use this destination for this audience.
 
 #### Enrich event 
 
@@ -207,15 +212,13 @@ As you're enriching your events in Linked Audiences, you should view a preview o
 
 #### Map event
 
-Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**.
-
-These fields are pre-filled with properties configured by default.
+Segment attempts to automatically configure the data fields that will be sent to the destination. These fields are pre-filled with properties configured by default. Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**. You can review and adjust these settings before enabling this event. 
 
 ## Step 3: Send a test event to your destination
 
 Send a test event to ensure that everything is connected properly and your destination receives the event. 
 
-Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**.  
+Enter the destination User ID for the profile you want to use to test the event, then click **Send test event to destination**.  
 
 The Event content dropdown shows you a preview of what the data sent to your destination might look like. 
 
@@ -248,8 +251,8 @@ There may be up to a five minute delay from the configured start time for audien
 
 With your Linked Audience activated, follow these steps to monitor your activation:
 
-1. From the Audience Overview page, selected one of your connected destinations.
-2. Under the **Settings** tab, click **Destination delivery**, which then opens the Linked Audiences Delivery Overview.
+1. From the Audience Overview page, selected one of your connected activations.
+2. In the actions menu, select **View delivery overview in Connections**, which then opens the Linked Audiences Delivery Overview.
 
 ### Delivery Overview for Linked Audiences
 
