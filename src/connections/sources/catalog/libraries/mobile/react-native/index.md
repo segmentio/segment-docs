@@ -5,6 +5,7 @@ support_type: flagship
 id: B0X0QmvMny
 ---
 
+
 With Analytics for [React Native](https://reactnative.dev/){:target="_blank"}, you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native lets you process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 All of Segment's libraries are open-source, and you can view Analytics for React Native on GitHub. For more information, see the [Analytics React Native GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
