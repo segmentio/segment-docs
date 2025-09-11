@@ -146,7 +146,10 @@ To activate your Linked Audience:
 - [Step 2c: Defining how and when to trigger an event to your Destination](#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination)
 - [Step 2d: Creating and activation and configuring the event payload](#step-2d-configure-the-event)
 
+
 ### Step 2a: Configuring an activation
+See the step-by-step video on activating Linked Audiences:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aKncQ7vtJlg?si=H_U6LNE0IBfUMtoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding an activation to your Linked Audience allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination by creating an activation.
 
