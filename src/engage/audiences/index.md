@@ -246,7 +246,7 @@ To edit a realtime trait or audience:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime audience or trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Preview the results, then select **Create Audience** to confirm your edits.
+4. Preview the results, then select **Save audience** to confirm your edits.
 
 Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 
