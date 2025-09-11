@@ -159,6 +159,14 @@ For step-by-step instructions on how to connect an audience to a destination, se
 > info "Historical data behavior for new destinations"
 > When you connect a new destination to an existing audience, Engage backfills historical data if the **Include Historical Data** option is enabled in the audience settings. If this setting is disabled, only new data gets sent. To sync all historical data manually, [contact Support](mailto:friends@segment.com) to request a resync.
 
+### Disconnect or remove a destination 
+
+Whnen managing your audience-destination connections you have two options:
+
+1. **Connect to destination** - Toggles the connection on and off. When disconnected, the setup and configuration remain saved, but no data flows from the audience to the destination until you re-enable the connection. Use this option to pause sending data without losing your work.
+2. **Remove destination from audience** - Deletes the connection completely, so no events are sent to the destination. To use the destination again, you'll need to set it up as new from the beginning.
+
+
 ## Understanding compute times
 
 Because a number of factors (like system load, backfills, or user bases) determine the complexity of an audience, some compute times take longer than others.
