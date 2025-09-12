@@ -9,7 +9,7 @@ redirect_from:
 
 {% include content/plan-grid.md name="actions" %}
 
-Setting up [StackAdapt](https://www.stackadapt.com/){:target="\_blank"} as a Segment destination forwards your Segment events to StackAdapt. This allows you to generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
+Setting up [StackAdapt](https://www.stackadapt.com/){:target="\_blank"} as a Segment destination forwards your Segment events to StackAdapt. This lets you generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
 
 This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
 
@@ -26,7 +26,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 
 ![Image showing location of universal pixel ID in code snippet](images/copy-pixel-id.png)
 
-### Setting up the StackAdapt destination in Segment
+### Setting up the StackAdapt destination
 
 1. From the Segment web app, navigate to **Connections > Catalog > Destinations**.
 2. Search for and select the "StackAdapt" destination.
