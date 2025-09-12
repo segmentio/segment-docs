@@ -23,7 +23,7 @@ If you do not have an existing StackAdapt read & write API key, contact the [Sta
 ### Setting up the StackAdapt Audiences destination in Engage
 
 1. In your Segment workspace, navigate to **Connections > Catalog > Destinations**.
-2. Search for and select the "StackAdapt Audiences" destination.
+2. Search for and select "StackAdapt Audiences".
 3. Click **Add Destination**.
 4. Select an existing source that is Engage Space to connect to the StackAdapt Audience destination.
 5. Enter a name for your destination.
