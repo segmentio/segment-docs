@@ -1,10 +1,9 @@
 ---
-title: StackAdapt Pixel Destination
+title: StackAdapt Events and Conversions Destination
 hide-boilerplate: true
 hide-dossier: true
-id: 61d8859be4f795335d5c677c
+id: 65c36c1e127fb2c8188a414c 
 redirect_from: 
-  - "/connections/destinations/catalog/actions-stackadapt/"
   - "/connections/destinations/catalog/stackadapt-events-conversions-/"
 ---
 
