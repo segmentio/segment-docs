@@ -47,7 +47,7 @@ To get started with the Analytics for React Native library:
     npm install --save @react-native-async-storage/async-storage
     ```
     
-    To use your own persistence layer you can use the storePersistor option when initializing the client. Make sure you always have a persistor (either by having AsyncStorage package installed or by explicitly passing a value), else you might get unexpected side effects like multiple 'Application Installed' events
+    To use your own persistence layer you can use the storePersistor option when initializing the client. Make sure you always have a persistor, either by having AsyncStorage package installed or by explicitly passing a value, or you might get unexpected side effects like multiple 'Application Installed' events.
 
 4. If you're using iOS, install native modules with:
 
@@ -75,7 +75,7 @@ These are the options you can apply to configure the client:
 
 | Name                        | Default   | Description                                                                                                                                                                                                                                                                                                                                           |
 | --------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `writeKey`    | ''        | Your Segment API key (**required**).                                                                                                                                                                                                                                                                                                                                 |
+| `writeKey`                  | ''        | Your Segment API key (**required**).                                                                                                                                                                                                                                                                                                                                 |
 | `collectDeviceId`           | false     | Set to `true` to automatically collect the device ID from the DRM API on Android devices.                                                                                                                                                                                                                                                               |
 | `debug`                     | true\*    | When set to `false`, it will not generate any logs.                                                                                                                                                                                                                                                                                                     |
 | `logger`                    | undefined | Custom logger instance to expose internal Segment client logging.                                                                                                                                                                                                                                                                                     |
@@ -275,7 +275,7 @@ alias('user-123');
 The Reset method clears the internal state of the library for the current user and group. This is useful for apps where users can log in and out with different identities over time.
 
 > warning ""
-> Each time you call Reset, a new AnonymousId is generated automatically.
+> **Note:** Each time you call Reset, Segment generates a new AnonymousId.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -333,8 +333,9 @@ If you don't do this, the old client instance would still exist and retain the t
 
 Ideally, you shouldn't have to use this method and the Segment client should be initialized only once in the application lifecycle.
 
-## Control upload with Flush Policies
-To granularly control when Segment uploads events, use `FlushPolicies`. A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
+## Control upload cadence with flush policies
+To granularly control when Segment uploads events you can use `FlushPolicies`.
+A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
 
 Set Flush Policies in the configuration of the client:
 ```ts
@@ -347,12 +348,13 @@ const client = createClient({
   ],
 });
 ```
-You can set several policies at a time. When a flush occurs, it triggers an upload of the events then resets the logic after every flush. As a result, only the first policy to reach `shouldFlush` will trigger a flush. In the example, the event count either reaches 5 or the timer reaches 500 ms - whatever comes first will trigger a flush.
 
-Segment has several standard flush policies:
-- `CountFlushPolicy` triggers when you reach a certain number of events.
-- `TimerFlushPolicy` triggers on an interval of milliseconds.
-- `StartupFlushPolicy` triggers on client startup only.
+You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
+As a result, only the first policy to reach `shouldFlush` triggers a flush. In the example above either the event count reaches 5 or the timer reaches 500ms, whatever comes first, will trigger a flush.
+Segment has several standard Flush Policies:
+- `CountFlushPolicy` triggers when you reach a certain number of events
+- `TimerFlushPolicy` triggers on an interval of milliseconds
+- `StartupFlushPolicy` triggers on client startup only
 
 > info ""
 > If you implement custom flush policies, they replace Segment's default Count and Timer policies. To incorporate custom policies, add your custom Timer and Count policies to the client's Flush Policies configuration.
@@ -399,7 +401,8 @@ Your policies also have a `shouldFlush` observable boolean value. When this is s
 export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
   onEvent(event: SegmentEvent): void {
     // Only flush when a screen even happens
-    if (event.type === EventType.ScreenEvent) {
+    if (event.type \
+    EventType.ScreenEvent) {
       this.shouldFlush.value = true;
     }
   }
@@ -413,6 +416,7 @@ export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
 
 ## Automatic screen tracking
 To avoid sending a Screen event with each navigation action, you can track navigation globally. The implementation depends on which navigation library you use. The two main navigation libraries for React Native are [React Navigation](https://reactnavigation.org/){:target="_blank"} and [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}.
+
 
 ### React Navigation
 When setting up React Navigation, find the root-level navigation container and call `screen()` whenever the user navigates to a new screen. Segment's [example app](https://github.com/segmentio/analytics-react-native/tree/master/example){:target="_blank"} is set up with screen tracking using React Navigation, so you can use it as a guide.
@@ -457,7 +461,7 @@ To set up automatic screen tracking with React Navigation:
       }
     }}
     >
-```
+  ```
 
 ### React Native Navigation
 To set up automatic screen tracking while using [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}:
@@ -482,18 +486,20 @@ Segment's plugin architecture lets you modify and augment how the events are pro
 | `enrichment`  | Executes as the first level of event processing.                                                  |
 | `destination` | Executes as events begin to pass off to destinations.                                             |
 | `after`       | Executes after all event processing is completed. You can use this to perform cleanup operations. |
-| `utility`     | Executes only with manual calls such as Logging.                                                  |
+| `utility`     | Executes only with manual calls like Logging.                                                  |
 
 > info ""
-> Plugins can have their own native code, such as the iOS-only [`IdfaPlugin`](https://github.com/segmentio/analytics-react-native/blob/829fc80bc8c4f59fa99dadd25083efa422d577f0/packages/plugins/plugin-idfa/README.md){:target="_blank"}, or wrap an underlying library, such as the [`FirebasePlugin`](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"} which uses `react-native-firebase`.
+> Plugins can have their own native code (like the iOS-only [`IdfaPlugin`](https://github.com/segmentio/analytics-react-native/blob/829fc80bc8c4f59fa99dadd25083efa422d577f0/packages/plugins/plugin-idfa/README.md){:target="_blank"}) or wrap an underlying library (like the [`FirebasePlugin`](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase) which uses `react-native-firebase` under the hood).
 
 ### Destination plugins
-Segment provides a `DestinationPlugin`. You can add additional destination plugins and upload events and data to them.
+Segment is an out-of-the-box `DestinationPlugin`. You can add as many other destination plugins as you like and upload events and data to them.
+
 
 If you don't want the Segment destination plugin, set `autoAddSegmentDestination = false` in the options when setting up your client. This prevents the `SegmentDestination` plugin from being added automatically.
 
 ### Adding plugins
 You can add a plugin at any time using `segmentClient.add()`.
+
 
 ```js
 
@@ -514,6 +520,7 @@ segmentClient.add({ plugin: new IdfaPlugin() });
 
 ### Writing your own plugins
 Plugins implement as [ES6 classes](https://www.w3schools.com/react/react_es6_classes.asp){:target="_blank"}. To get started, familiarize yourself with the available classes in `/packages/core/src/plugin.ts`.
+
 
 The available plugin classes are:
 - `Plugin`
@@ -608,11 +615,12 @@ These are the example plugins you can use and alter to meet your tracking needs:
 | Firebase            | `@segment/analytics-react-native-plugin-consent-firebase`    |
 | IDFA                | `@segment/analytics-react-native-plugin-idfa`                |
 
-<!-- ## Destination Filters
+## Destination filters
+
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
-> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-React-Native 2.0, [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
+> Destination filters on mobile device-mode destinations are in beta and only support Analytics-React-Native 2.0, [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
 
 Use Analytics-React-Native 2.0 to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
@@ -649,6 +657,7 @@ To get started with destination filters on mobile device-mode destinations using
 
 ## Supported destinations
 Segment supports a large number of [cloud-mode](/docs/connections/destinations/#connection-modes) destinations. Segment also supports the following destinations for Analytics React Native 2.0 in device-mode:
+
 - [Adjust](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-adjust){:target="_blank"}
 - [Amplitude Session](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-amplitude-session){:target="_blank"}
 - [Appsflyer](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-appsflyer){:target="_blank"}
@@ -663,6 +672,8 @@ On Android, Segment's React Native library generates a unique ID by using the DR
 To collect the Android Advertising ID provided by Play Services, Segment provides a [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-advertising-id){:target="_blank"} that can be used to collect that value. This value is set to `context.device.advertisingId`. For iOS, this [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-idfa){:target="_blank"} can be used to set the IDFA `context.device.advertisingId` property.
 
 ## FAQs
+Find answers to common Analytics React Native questions. 
+
 #### Can I use the catalog of device-mode destinations from Segment's 1.X.X React-Native release?
 No, only the plugins [listed](#plugin-types) are supported in device-mode for Analytics React Native 2.0.
 #### Will I still see device-mode integrations listed as `false` in the integrations object?
@@ -682,8 +693,10 @@ const segmentClient = createClient({
   writeKey: segmentWriteKey
 });
 ```
+
 #### What is the `instanceId` set in context?
 The `instanceId` was introduced in [v2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
+
 
 #### How do I interact with the Integrations object?
 The Integrations object is no longer part of the Segment events method signature. To access the Integrations object and control what destinations the event reaches, you can use a plugin:
@@ -711,8 +724,10 @@ import {
     }
   }
 ```
+
 #### How do I add to the Context object?
 You need to use a plugin to access and modify the Context object. For example, to add `context.groupId` to every Track call, create a plugin like this:
+
 ```js
 //in AddToContextPlugin.js
 import {
@@ -740,11 +755,13 @@ import { AddToContextPlugin } from './AddToContextPlugin'
 segmentClient.add({ plugin: new AddToContextPlugin() });  
 ```
 
-#### I've upgraded to React Native 2.0, but I'm still getting warnings in the Google Play Store that my app is not compliant. Why is this?
-The React Native 2.0 library is compliant with Google Play Store policies. However, Segment recommends that you check to see if there are any old and inactive [tracks on the Google Play Store](https://developers.google.com/android-publisher/tracks){:target="_blank"} that are not updated to the latest build. If this is the case, we recommend updating those tracks to resolve the issue. 
+### I've upgraded to React Native 2.0, but I am still getting warnings in the Google Play Store that my app is not compliant. Why is this?
+The React Native 2.0 library is compliant with Google Play Store policies. However, Segment recommends that you check to see if there are any old and inactive [tracks on the Google Play Store](https://developers.google.com/android-publisher/tracks){:target="_blank"} that are not updated to the latest build. If this is the case, Segment recommends updating those tracks to resolve the issue. 
+
 
 #### Can I set `inlineRequires` to false in my `metro.config.js` file?
 Segment requires the `inlineRequires` value in your `metro.config.js` value to be set to `true`. To disable `inlineRequires` for certain modules, you can specify this using a [blockList](https://facebook.github.io/metro/docs/configuration/#:~:text=If%20inlineRequires%20is%20an%20object){:target="_blank"}.
+
 
 #### Can I clear user traits without calling the Reset method?
 The Reset method on `userInfo` can accept a function that receives the current state and returns a modified desired state. Using this method, you can return the current traits, delete any traits you no longer wish to track, and persist the new trait set.
