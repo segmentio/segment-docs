@@ -15,14 +15,14 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 
 ## Getting started
 
-### Getting your StackAdapt Universal Pixel ID
+### Getting your StackAdapt universal pixel ID
 
 1. Log in to your StackAdapt account and navigate to the Pixels page.
 2. Click **Install StackAdapt Pixel**.
 
    ![Image showing location of link to install Pixel](images/install-pixel-link.png)
 
-3. In the instructions that appear, copy the Universal Pixel ID from the code snippet. For example, the universal pixel ID in this code snippet is `sqQHa3Ob1hFi__2EcYYVZg1`.
+3. In the instructions that appear, copy the universal pixel ID from the code snippet. For example, the universal pixel ID in this code snippet is `sqQHa3Ob1hFi__2EcYYVZg1`.
 
 ![Image showing location of universal pixel ID in code snippet](images/copy-pixel-id.png)
 
