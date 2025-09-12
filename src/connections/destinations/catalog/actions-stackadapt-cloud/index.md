@@ -11,7 +11,7 @@ redirect_from:
 
 Setting up [StackAdapt](https://www.stackadapt.com/){:target="\_blank"} as a Segment destination forwards your Segment events to StackAdapt. This lets you generate retargeting and lookalike audiences, track conversions, and measure return on ad spend using your Segment events - bypassing the need to install the StackAdapt pixel on your website and write code to send events to StackAdapt.
 
-This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
+This destination is maintained by StackAdapt. For any issues with the destination, submit a ticket to [StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
 
 ## Getting started
 
@@ -33,7 +33,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 3. Click **Add Destination**.
 4. Select an existing source to connect to the StackAdapt destination.
 5. Give the destination a name.
-6. On the Settings screen, provide your StackAdapt Universal Pixel ID. This can be [found on the Pixels page in StackAdapt](#getting-your-stackadapt-universal-pixel-id).
+6. On the Settings screen, provide your StackAdapt Universal Pixel ID. This can be found on the [Pixels page in StackAdapt](#getting-your-stackadapt-universal-pixel-id).
 7. Toggle on the destination using the **Enable Destination** toggle.
 8. Click **Save Change**.
 
@@ -53,7 +53,7 @@ Setup of conversion events, retargeting audiences, and lookalike audiences that 
 
 ### Event rules
 
-The StackAdapt Segment destination sends an `action` event key which by default is mapped to the Segment event name. Creating rules on this `action` key should be sufficient for most simple event rule use cases. For example, if you fire a Segment event when a user fills out a registration form on your website and want to track this as a conversion event in StackAdapt, you can create a rule in StackAdapt that matches the `action` key with the Segment event name.
+The StackAdapt Segment destination sends an `action` event key which by default is mapped to the Segment event name. Creating rules on this `action` key should be sufficient  most simple event rule use cases. For example, if you fire a Segment event when a user fills out a registration form on your website and want to track this as a conversion event in StackAdapt, you can create a rule in StackAdapt that matches the `action` key with the Segment event name.
 
 A Segment event fired with the code `analytics.track("User Registered")` can be tracked as a conversion event with an event rule that matches an `action` of `User Registered` as shown below:
 
