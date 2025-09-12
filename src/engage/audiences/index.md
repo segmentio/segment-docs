@@ -9,26 +9,23 @@ Audiences let you group users or accounts based on event behavior and traits tha
 
 You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/unify/profile-api).
 
-## Building an Audience
+## Building an audience
 
-You can build an Audience from existing events, traits, computed traits, or other Audiences.
+You can build an audience from existing events, traits, computed traits, or other Audiences. Editing an audience before the initial backfill is complete can create technical errors.
+
+When building your audience, the **Include Anonymous Users** checkbox determines which external IDs need to exist on a profile for Segment to include the user in the audience. For example:
+- **Include Anonymous Users** _not_ selected: `user_id`, `email`, `android.idfa`, or `ios.idfa` would need to exist on a profile
+- **Include Anonymous Users** selected: `user_id`, `email`, `android.idfa`, `ios.idfa`, or `anonymous_id` would need to exist on a profile
+
+> warning "Audience Keys"
+> Avoid using the same Audience Key twice, even if you've deleted the original audience.
 
 <!-- PW: 9/23/24, commenting this screenshot out until we can get a more accurate one ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png) -->
 
-> info ""
-> The **Include Anonymous Users** checkbox determines which external IDs need to exist on a profile for Segment to include the user in the audience:
-> - **Include Anonymous Users** not selected: `user_id`, `email`, `android.idfa`, or `ios.idfa`
-> - **Include Anonymous Users** selected: `user_id`, `email`, `android.idfa`, `ios.idfa`, or `anonymous_id`
-
-> warning ""
-> Editing an audience before the initial backfill is complete can create technical errors.
-
-> warning "Audience Keys"
-> Avoid using the same Audience Key twice, even if you've deleted the original Audience.
 
 ### Events
 
-You can build an Audience from any events connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. In the Audience builder, Page calls appear as `Page Viewed` and Screen calls appear as `Screen Viewed`.
+You can build an audience from any events connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. In the Audience builder, Page calls appear as `Page Viewed` and Screen calls appear as `Screen Viewed`.
 
 To refine the audience based on event properties, use the `+property` button:
 - The `name` property for Page and Screen calls appears in the Audience builder as `page_name` and `screen_name`, respectively. 
@@ -36,7 +33,7 @@ To refine the audience based on event properties, use the `+property` button:
 
 Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
-![Creating an Audience of users who viewed a product without buying it](/docs/engage/images/audience_builder.png)
+![Creating an audience of users who viewed a product without buying it](/docs/engage/images/audience_builder.png)
 
 You can also specify two different types of time-windows, `within` and `in between`. The `within` property lets you specify an event that occurred in the last `x` number of days, while `in between` lets you specify events that occurred over a rolling time window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
@@ -60,7 +57,7 @@ You can also use computed traits in an audience definition. For example, you can
 
 #### SQL Traits
 
-With SQL Traits, you can use data in your warehouse to build an audience. By running SQL queries on this warehouse data, you can import specific traits back into Segment to enhance both Segment audiences and the data you send to downstream destinations.
+With SQL Traits, you can use data in your warehouse to build an audience. By running SQL queries on this warehouse data, you can import specific traits back into Segment to enhance both Segment Audiences and the data you send to downstream destinations.
 
 #### Audience memberships
 
@@ -113,13 +110,13 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 After configuring your audience definition, click the **Preview** button to review your audience setup. It shows the total number of profiles that match your criteria and a sample list of those profiles, helping you confirm the audience is correct before launching campaigns. Previews are only available if your audience uses historical data, displaying the current size based on past data. Learn more about the [Include Historical Data option](/docs/engage/audiences/#how-does-the-historical-data-flag-work). The audience grows as new profiles meet your criteria. Click any profile in the sample list to view a detailed side sheet with their attributes, making it easy to verify membership. This feature simplifies campaign planning and ensures your audience targets the right profiles.
 
 > info ""
-> The audience preview membership is calculated using data that may be slightly delayed from real-time processing, which can lead to temporary discrepancies between the preview results and the profile information shown in the profile side sheet or via the Profile API.
+> The audience preview membership is calculated using data that may be slightly delayed from real-time processing, which can lead to temporary discrepancies between the preview results and the profile information shown in the profile side sheet or the Profile API.
 
 #### Identifier breakdown
-To check how profiles in your audience are identified, you can view them in the identifier breakdown. Click **Preview** to view your audience configuration. In the Preview results, navigate to the **Insights** tab to see a breakdown of the percentage of profiles associated with each external_id in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The  identifier breakdowns on profiles doesn't update in real time. 
+To check how profiles in your audience are identified, you can view them in the identifier breakdown. Click **Preview** to view your audience configuration. In the Preview results, navigate to the **Insights** tab to see a breakdown of the percentage of profiles associated with each external_id in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The identifier breakdowns on profiles doesn't update in real time. 
 
 > info ""
-> The Identifier Breakdown doesn't show custom IDs included in the Identity resolution configuration unless those IDs are explicitly selected through [ID sync](/docs/engage/trait-activation/id-sync/). By default, Segment only displays external IDs in the breakdown.
+> The identifier breakdown doesn't show custom IDs included in the Identity resolution configuration unless those IDs are explicitly selected through [ID sync](/docs/engage/trait-activation/id-sync/). By default, Segment only displays external IDs in the breakdown.
 
 #### Audience overlap
 To check how your audience intersects with others in your Segment space, click **Preview** to view your audience configuration. In the Preview results, navigate to the **Insights** tab where you can select an existing audience from the dropdown menu and click **Compute overlap** to see the number of shared profiles. This feature optimizes campaign targeting by identifying redundant audiences and refining segmentation.
@@ -137,7 +134,7 @@ You can send audiences and computed traits to third-party services in Segment's 
 
 Segment's Connections pipeline first collects and sends events from your Source to your destination. Built on top of Connections, Engage then uses the same source events to let you create Audiences and computed traits within Segment. You can then send the audience or computed trait you've built to your destinations.
 
-See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can utilize Linked Audiences for your destinations.  
+See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can use Linked Audiences for your destinations.
 
 > info ""
 > Because Engage only sends audiences and computed traits to destinations, it doesn't replace a standard event pipeline. Connect a source directly to a destination if you want the destination to receive all events that Segment gathers.
@@ -151,9 +148,9 @@ Once you've previewed your audience, you can choose to connect it to a destinati
 
 If you already have destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one destination configuration per destination type.
 
-When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences are either sent to Destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [supported destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
+When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [supported destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
 
-For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
+For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls send one event per account, whereas Identify calls send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment still sets the account-level computed trait on that user.
 
 Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
@@ -162,16 +159,21 @@ For step-by-step instructions on how to connect an audience to a destination, se
 > info "Historical data behavior for new destinations"
 > When you connect a new destination to an existing audience, Engage backfills historical data if the **Include Historical Data** option is enabled in the audience settings. If this setting is disabled, only new data gets sent. To sync all historical data manually, [contact Support](mailto:friends@segment.com) to request a resync.
 
+### Disconnect or remove a destination 
+
+Whnen managing your audience-destination connections you have two options:
+
+1. **Connect to destination** - Toggles the connection on and off. When disconnected, the setup and configuration remain saved, but no data flows from the audience to the destination until you re-enable the connection. Use this option to pause sending data without losing your work.
+2. **Remove destination from audience** - Deletes the connection completely, so no events are sent to the destination. To use the destination again, you'll need to set it up as new from the beginning.
+
+
 ## Understanding compute times
 
 Because a number of factors (like system load, backfills, or user bases) determine the complexity of an audience, some compute times take longer than others.
 
-As a result, **Segment recommends waiting at least 24 hours for an audience to finish computing** before you resume working with the audience.
+As a result, **Segment recommends waiting at least 24 hours for an audience to finish computing** before you resume working with the audience. Editing an audience before the initial backfill is complete can create technical errors.
 
-From the Overview page, you can view audience details including the current compute status and a progress bar for real-time and batch audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
-
-> info "Viewing compute progress"
-> When you create a real-time Audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
+From the Overview page, you can view audience details including the current compute status and a progress bar for real-time and batch audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes. When you create a real-time audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
 
 > warning ""
 > Engage syncs the Overview page for an individual audience more frequently than the Engage Audiences page (**Engage > Audiences**). As a result, you might see temporary discrepancies in Audience details, such as user counts, between these two pages.
@@ -200,7 +202,7 @@ Engage displays the following compute statuses for Audiences and Traits.
 > warning "Starting June 2nd, 2025, disabled batch computations don't automatically backfill data when re-enabled"
 > If you disable and re-enable a batch computation, Segment does not automatically create a backfill. Any data Segment receives during the disabled period is not sent to your Destination after you re-enable your batch computation. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
 >
-> Segment is releasing this feature on a phased rollout plan, and expects this to be available to all customers by July 18, 2025.
+> Segment is releasing this feature on a phased rollout plan, and expects this to be available to all customers by September 12, 2025.
 
 
 
@@ -238,7 +240,7 @@ To create a new audience or trait:
 While Engage is computing, use the Audience Explorer to see users or accounts that enter your Audience. Engage displays the audience as computing in the Explorer until at least one user or account enters.
 
 > warning ""
-> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
+> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
 
 > info "Real-time and batch computation"
 > By default, Segment creates all audiences as real-time computations. However, some conditions require batch computation. For example, [funnel audiences](#funnel-audiences) can only be computed in batch mode. The Audience builder determines whether an audience is real-time or batch based on the conditions applied.
@@ -252,18 +254,14 @@ To edit a realtime trait or audience:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime audience or trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Preview the results, then select **Create Audience** to confirm your edits.
+4. Preview the results, then select **Save audience** to confirm your edits.
 
 Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 
-> warning ""
-> If your audience includes historical event data (the **Include Historical Event Data** option is enabled), editing an audience creates a new backfill task. The backfill task and the edit task take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
+It's not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions. You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions. 
 
 > warning ""
-> It's not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
-
-> warning ""
-> You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions
+> If your audience includes historical event data (you enabled the **Include Historical Event Data** option), editing an audience creates a new backfill task. The backfill task and the edit task take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
 
 ## Monitor the health of your audience syncs
 
@@ -289,7 +287,7 @@ To view Delivery Overview for an audience:
 
 By default, Segment displays Delivery Overview information for all audiences connected to your destination. You can filter your Delivery Overview pipeline view by an individual audience for more granular data. 
 
-You can also further refine the data displayed on the pipeline view using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, _85% of events_ or _a 133% increase in events_) or as counts (_13 events_ or _an increase of 145 events_.) Delivery Overview shows percentages by default.
+You can further refine the data displayed on the pipeline view using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, _85% of events_ or _a 133% increase in events_) or as counts (_13 events_ or _an increase of 145 events_.) Delivery Overview shows percentages by default.
 
 > info "Linked Audiences have additional filtering functionality"
 > Linked Audiences users can filter the Delivery Overview event pipeline by [Linked Audience events](/docs/engage/audiences/linked-audiences/#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination). For more information, see the [Linked Audiences](/docs/engage/audiences/linked-audiences/#delivery-overview-for-linked-audiences) documentation.
@@ -313,10 +311,7 @@ Create alerts related to the performance and throughput of audience syncs and re
 
 To access audience alerting, navigate to **Engage > Audiences**, select an audience, and click the **Alerts** tab.
 
-On the **Alerts** tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
-
-> info "Deleting alerts created by other users requires Workspace Owner role"
-> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users. 
+On the **Alerts** tab, you can create new alerts and view all active alerts for this audience. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
 
 #### Activation event health spikes or drops
 
@@ -391,14 +386,14 @@ You can download a copy of your Audience by visiting the Audiences overview page
 1. Navigate to **Engage > Audiences**.
 2. Select the Audience you'd like to download as a CSV, then click **Download CSV**.
 3. Select the data fields that you'd like to include in your CSV as columns.
-- Your CSV will contain all users in this audience with the selected fields. You can filter by  `External ID`, `SQL trait`, `Computed Trait`, and `Custom Trait`.
+- Your CSV contains all users in this audience with the selected fields. You can filter by `External ID`, `SQL trait`, `Computed Trait`, and `Custom Trait`.
 4. Click **Next**.
 5. Before you can download the CSV, you'll need to generate it. There are two different options for formatting:
 - **Formatted:** Displays external IDs and traits as distinct columns.  
 - **Unformatted:** Contains the following columns: a user/account key, a JSON object containing the external IDs (optional, if selected), and a JSON object containing the traits (optional, if selected).
 6. Click **Generate CSV**.
 
-Once Segment generates the CSV, you can download the file directly. You'll receive an email notification of the CSV completion, with a URL to the Audience overview page. 
+Once Segment generates the CSV, you can download the file directly. You'll receive an email notification of the CSV completion, with a URL to the Audience overview page. Generating a CSV can take a substantial amount of time for large audiences. After you generate the CSV file, leave the modal window open while Segment creates the file. If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.
 
 Note the following limits for the CSV downloader:
 - You can't download more than one CSV for the same audience at the same time.
@@ -406,22 +401,18 @@ Note the following limits for the CSV downloader:
 - Each CSV represents a snapshot at a given point in time that references the data from the audience's most recent computational run. This applies to both real time and batch audiences, as the CSV is not updated in real time. To locate the snapshot's given point of time, click on the Download CSV button, and the popup modal will contain an information icon ℹ️, which when hovered over will reveal the snapshot's details.
   - ![CSV Snapshot details](https://github.com/user-attachments/assets/b7af772a-2ba7-4411-ba95-a913992f10ae)
 
-
-> info ""
-> Generating a CSV can take a substantial amount of time for large audiences. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
-
 > warning ""
-> You can't add account traits and identifiers using the CSV downloader with account level audiences. This is because every row listed in the CSV file is a user, and since account traits and identifiers only exist on accounts, they wouldn't exist as a user's custom trait and appear on the CSV.
+> You can't add account traits and identifiers using the CSV downloader with account-level audiences. This is because every row listed in the CSV file is a user, and since account traits and identifiers only exist on accounts, they wouldn't exist as a user's custom trait and appear on the CSV.
 
 ## FAQ
 
 ### Why do I get a different user count when I use `$` on a field?**
 Segment recommends using the `$` operator when you deal with array properties. However, the `$` causes logical conditions to apply independently to each array entry independently. As a result, you'll get more accurate results by using the `equals one of` condition:
 
-![$ operator](https://github.com/segmentio/segment-docs/assets/68755692/7b0b6923-a4ad-4290-8aa6-bbbc7cb1ee1b)
+![A screenshot of the Audience builder with an equals one of condition present.](../images/audience-array.png)
 
-### How do I populate multiple items off a list for an `equals one of` condition? **
-The audience builder accepts CSV and TSV lists.
+<!---### How do I populate multiple items off a list for an `equals one of` condition? **
+The audience builder accepts CSV and TSV lists. (whaat does this mean?) --->
 
 ### Why am I receiving the error "The audience would create a cycle by referencing another audience"?
 

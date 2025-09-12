@@ -113,8 +113,8 @@ The `Timestamp` column will be empty for backfilled data because, during backfil
 
 The `id_graph_updates` table maps between the following:
 
-- `segment_id`: the profile ID that Segment appends to an event or an identifier at the time it was first observed
-- `canonical_segment_id`: the fully-merged segment ID (that is, the profile Segment now understands any events or identifiers to map to)
+- `segment_id`: the profile ID that Segment appends to an event or an identifier at the time it was first observed.
+- `canonical_segment_id`: the fully-merged segment ID (the profile Segment now understands any events or identifiers to map to).
 
 As a result, this table contains information about the creation and merging of profiles, as well as the specific events that triggered those changes.
 
@@ -130,14 +130,14 @@ Using the events from the profile merge case study, Segment would generate three
 
 </div>
 
-In this example, the table shows `profile_2` mapping to two places: first to itself, then, later, to `profile_1` after the merge occurs.
+In this example, the table shows `profile_2` mapping to two places: first to itself, then to `profile_1` after the merge occurs.
 
 
 #### Recursive entries
 
 Segment shows the complete history of every profile. If, later, `profile_1` merges into a different `profile_0`, Segment adds recursive entries to show that `profile_1` and `profile_2` both map to `profile_0`.  These entries give you a comprehensive history of all profiles that ever existed.
 
-If you’ll use Profiles Sync to build models, refer to the `id_graph` model, which can help you put together a complete view of a customer.
+If you use Profiles Sync to build models, refer to the `id_graph` model, which can help you put together a complete view of a customer.
 
 ### The external_id_mapping_updates table
 
@@ -196,7 +196,7 @@ Event type tables provide a complete history for each type of event. Segment syn
 Identity Resolution processes these events, and includes a `segment_id`, enabling the data to be joined into a single Profile record. 
 
 > success ""
-> Event type tables have 2 months of historical data on backfill. Contact support if you need access to data beyond this period.
+> Event type tables have two months of historical data on backfill. Contact [Segment support](https://segment.com/help/contact/){:target="_blank"} if you need access to data beyond this period.
 
 Event type tables includes the following tables:
 
@@ -213,7 +213,7 @@ These event tables are similar to the tables landed by Segment warehouse integra
 - Events are combined in a single schema. For example, if you have three sources going into a single space, Segment produces one schema, not three.
 - These tables have two extra columns:
   * `segment_id`:  the profile ID at the time the event came through. That profile may have since merged.
-  * `event_source_id`: the specific source ID of the incoming event
+  * `event_source_id`: the specific source ID of the incoming event.
 
 The previous result would generate two entries in the `pages` table:
 
@@ -305,7 +305,7 @@ If you're not using materialized views for Profile Sync and would like to switch
    - Once the backfill is complete, review the data in your warehouse to confirm all necessary historical information has been included.
 
 > warning ""
-> For materialized view tables, you must have delete permissions for your data warehouse. 
+> For materialized view tables, you must delete permissions for your data warehouse. 
 
 ### Why materialized views?
 
@@ -317,7 +317,7 @@ Materialized views offer several advantages:
 
 ### The user_traits table
 
-With the `user_traits` table, you'll see all traits that belong to a profile, represented by the `canonical_segment_id`. Use this table for a complete picture of your Profiles Sync data with external data sources such as customer purchase history, product usage, and more. 
+The `user_traits` table lists all traits that belong to a profile, represented by the `canonical_segment_id`. Use this table for a complete picture of your Profiles Sync data with external data sources such as customer purchase history, product usage, and more. 
 
 - This view is a fixed schema, and contains a row for each trait associated with the profile.
 - As new traits are added to the profile, new rows are added to the table.

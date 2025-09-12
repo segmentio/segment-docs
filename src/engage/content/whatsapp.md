@@ -2,8 +2,8 @@
 title: WhatsApp Template
 plan: engage-premier
 ---
-> info "Engage Premier End of Sale"
-> Engage Premier entered an End of Sale (EOS) period effective June 10, 2024 and is no longer available for new customers. Existing Segment customers have access to and support for Engage Premier until Segment announces an end-of-life (EOL) date. Segment recommends exploring [Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns){:target="_blank"}, as well as Segment's preferred ISV partners, including [Airship](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience){:target="_blank"}, [Braze](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns){:target="_blank"}, [Klaviyo](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships){:target="_blank"}, [Bloomreach](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization){:target="_blank"}, and [Insider](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience){:target="_blank"}.
+> info "Engage Premier End of Life"
+> Engage Premier features, including Channels, Broadcasts, content templates, and Subscriptions, will no longer be available after December 15, 2025. 
 
 With Twilio Engage, you can build personalized WhatsApp templates to store and use throughout marketing campaigns. 
 

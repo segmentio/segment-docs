@@ -9,13 +9,13 @@ There are many ways you can use Segment to filter event and object based data to
 
 ## Filtering with the Integrations Object
 
-The Integrations object is the only filtering method that cannot be edited using the Segment web app. As such, it is both the most reliable, and the most complicated filtering option to change. The integrations object is available to all customers regardless of Segment plan.
+The Integrations object is the only filtering method that can’t be edited in the Segment web app. It's both the most reliable and the most complicated filtering option to change. The Integrations object is available to all customers, regardless of Segment plan.
 
-Use this option when you absolutely, for sure, 100% know that you *always*, or *never* want this data in a specific destination or set of destinations. You can also build logic in your app or site to conditionally enable or disable destinations by rewriting this object, however this is not recommended as it is time consuming to change, especially for mobile apps.
+Use this option only when you know you always or never want data in a specific destination or set of destinations. You can also build logic in your app or site to conditionally turn destinations on or off by rewriting this object. However, Segment doesn't recommended this approach because it's time-consuming to change, especially for mobile apps.
 
-The Integrations object filters `track`, `page`, `group`, `identify`, and `screen` events from both client and cloud based sources, and routes or prevents them from getting to the listed destinations. 
+The Integrations object filters `track`, `page`, `group`, `identify`, and `screen` events from both client- and cloud-based sources, and routes or blocks them from reaching the listed destinations.
 
-You can use the `integrations` JSON object as part of your Segment payloads to control how Segment routes your data to specific destinations. An example payload is below:
+You can use the `integrations` JSON object as part of your Segment payloads to control how Segment routes your data to specific destinations. Here's an example payload:
 
 ```json
 {
@@ -36,18 +36,21 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
 }
 ```
 
-By *default*, the `integrations` object is set to `'All': true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. Change this to `'All': false` to prevent any downstream destinations from receiving data, not including data warehouses. If you set `'Segment.io': false` in the integrations object, Analytics.js 2.0 drops the event before it reaches your Source Debugger. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them on an individual basis. The Destination Info box at the top of each destination page lets you know how to refer to each destination in the Integrations object. 
+By default the `integrations` object is set to `'All': true`. You don’t need to include this flag in the object, but if you’ll be using the Integrations object frequently, you might want to include it for clarity. Change this to `'All': false` to block data from all downstream destinations, except data warehouses. 
 
-If you are using [multiple instances of a destination](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination), any settings you set in the integrations object are applied to all instances of the destination. You cannot specify an instance of a destination to apply Integrations object settings to. 
+If you set `'Segment.io': false` in the `integrations` object, Analytics.js 2.0 drops the event before it reaches your [Source Debugger](/docs/connections/sources/debugger/). You can also add destinations by key and set their value to `true` or `false` to allow or block data on an individual basis. The Destination Info box on each destination page shows the exact name to use in the object. 
 
-Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
+If you’re using [multiple instances of a destination](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination), any settings in the Integrations object apply to all instances. You can’t configure them separately.  
 
-The syntax to filter data to a data warehouse is different. Refer to the [Warehouse FAQs](/docs/connections/storage/warehouses/faq/#can-i-selectively-filter-dataevents-sent-to-my-warehouse-based-on-a-property) for more details.
+Destination flags are case sensitive and must match the destination’s name in the docs (for example, “AdLearn Open Platform,” “awe.sm,” or “MailChimp”).  
 
+Filtering data for warehouses uses a different syntax. See the [Warehouse FAQs](/docs/connections/storage/warehouses/faq/#can-i-selectively-filter-dataevents-sent-to-my-warehouse-based-on-a-property) for details.
 
 ## Destination filters
 
-[Destination filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters support cloud-based (server-side), actions-based, and mobile and web device-mode destinations.  Destination filters aren't available for, and don't prevent data from reaching your warehouse(s) or S3 destinations.
+[Destination filters](/docs/connections/destinations/destination-filters/) let you control the data flowing into each specific destination. They work by examining event payloads and conditionally blocking data from being sent. You can filter out entire events or just specific fields in event properties, traits, or context.
+
+Destination filters support cloud-based (server-side), actions-based, and mobile- and web-device-mode destinations. They don’t apply to warehouses or S3 destinations.
 
 > info ""
 > Destination filters are only available in workspaces that are on a Business Tier plan.
@@ -59,28 +62,29 @@ The syntax to filter data to a data warehouse is different. Refer to the [Wareho
 
 ![Configuring a destination filter](images/destination-filter-create.png)
 
-To set up destination filters from the Segment web app for the destination from which you want to exclude data:
-1. *(For web device-mode destinations only)* Enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
-    * **NOTE:** Destination filters for web device-mode only supports the Analytics.js 2.0 source.
+To set up destination filters in the Segment web app for a destination where you want to exclude data:
+
+1. *(For web device-mode destinations only)* Turn on destination filters for your Analytics.js source. Go to your JavaScript source, navigate to **Settings > Analytics.js**, and turn on **Destination Filters**. Destination filters for web device-mode only supports the Analytics.js 2.0 source.
 2. Navigate to **Connections > Destinations** and select the destination you want to set up filters for.
 3. Go to the **Filters** tab and click **+ New Filter** to create a destination filter.
+
 See the [Destination Filters documentation](/docs/connections/destinations/destination-filters/) for more details.
 
-You can set up destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5KB per query.
+You can create destination filters using the options in the Segment web app or by writing queries in Segment’s [Filter Query Logic (FQL)](/docs/api/public-api/fql/). FQL queries are limited to 5 KB each.
 
-## Per-Source schema integrations filters
+## Per-source schema integration filters
 
-Integration filters allow you to quickly change which destinations receive specific Track, Identify, or Group events. Access this tool in any Source that is receiving data by navigating to the Schema tab. Schema integration filters are available to workspaces that are on a Business Tier plan only.
+Integration filters let you quickly change which destinations receive specific Track, Identify, or Group events. Access this tool in any source that’s receiving data by navigating to the **Schema** tab. Schema integration filters are available only on Business Tier workspaces.
 
-You can apply Integrations filters to specific events regardless of whether the source is connected to a Tracking Plan. To update which destination an event can be sent to, click the **Integrations** dropdown menu to see a list of the destinations each call is sent to. You can turn those destinations on or off from within the dropdown menu.
+You can apply Integration filters to specific events whether or not the source is connected to a Tracking Plan. To update which destinations an event can be sent to, open the **Integrations** dropdown menu to see the list of destinations for each call. You can toggle destinations on or off from within the menu.
 
 ![The Integrations dropdown menu displays a list of destinations each call is sent to](images/schema-integration-filters.png)
 
-The events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses do not appear in the integration filters dropdown, and you cannot prevent data from flowing to Warehouses using this feature - to do that use [Warehouse Selective Sync](#warehouse-selective-sync).
+Events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses don’t appear in the integration filters dropdown, and you can’t block data from flowing to them with this feature. To filter warehouse data, use [Warehouse Selective Sync](#warehouse-selective-sync).
 
-**Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
+**Integration filters are all-or-nothing for each event.** If you need more detailed control over which events go to specific destinations, use Destination filters to inspect the event payload and conditionally drop or forward data.
 
-**Integration filters won't override an existing value in the integrations object.** If the integration object already has a value for the integration, the per source schema integration filters will not override this. For example, if you're sending events to Appsflyer with the `appsflyerId` passed into the integration object:
+**Integration filters won’t override values in the `integrations` object.** If the `integrations` object already sets a value for a destination, per-source schema integration filters won’t override it. For example, if you’re sending events to Appsflyer with the `appsflyerId` passed into the `integrations` object:
 
 ```javascript
 integrations: {
@@ -89,55 +93,54 @@ integrations: {
   }
 }
 ```
-For the same event you have Appsflyer turned off using the per source schema integrations filter, this filter won't override the above object with a false value, and events still send downstream. In this scenario, you can use [destination filters](#destination-filters) to drop the event before it sends downstream. 
+
+For the same event, if you turn off Appsflyer with a per-source schema integration filter, the `integrations` object setting still takes priority and the event goes downstream. In this scenario, use [destination filters](#destination-filters) to drop the event before it’s sent downstream.
 
 ## Schema event filters
 
-You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses, as well as omit identify traits and group properties. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.
+Schema event filters let you discard and permanently remove Page, Screen, and Track events from event-based sources. This prevents them from reaching any destinations or warehouses. You can also use these filters to omit identify traits and group properties. Use this option if you know you’ll never want to access the data again. Schema event filters work like the Integrations object, but you can change them from within the Segment app without touching code.
 
-When you enable these filters, Segment stops forwarding the data to all of your Cloud- and device-mode destinations, including warehouses, and your data is no longer stored in Segment's warehouses for later replay.
+When you turn on these filters, Segment stops forwarding data to all cloud- and device-mode destinations, including warehouses. The data is no longer stored in Segment’s warehouses for later replay.
 
-Use this when you need to disable an event immediately, but may need more time to remove it from your code, or when you want to temporarily disable an event for testing. In addition to blocking track calls, you can block all page and screen calls, as well as omit identify traits and group properties.
+Use this feature when you need to turn off an event immediately but need more time to remove it from your code, or when you want to temporarily turn off an event for testing. In addition to blocking track calls, you can block page and screen calls, as well as omit identify traits and group properties.
 
-If the Source is not connected to a tracking plan, you'll find event filter toggles next to the Integration filters in the source's schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including data warehouses.
+If the source isn’t connected to a tracking plan, you’ll find event filter toggles next to the Integration filters in the source’s Schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including warehouses.
 
-When you block an event using Schema filters, it won't be considered in the MTU count unless blocked event forwarding is enabled.
+Blocked events don’t count toward MTUs unless blocked event forwarding is turned on.
 
 ![Event filter toggles](images/schema-event-filters.png)
 
-When an event is blocked, the name of the event or property appears on your Schema page with a counter which shows how many times it has been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream destinations.
+When an event is blocked, the event or property name appears on your Schema page with a counter that shows how many times it’s been blocked. By default, data from blocked events and properties isn’t recoverable. You can always turn the event back on to continue sending it to downstream destinations.
 
-In most cases, blocking an event immediately stops that event from sending to destinations. In rare cases, it can take **up to 6 hours** for an event to completely stop arriving in all Destinations.
+In most cases, blocking an event immediately stops it from sending to destinations. In rare cases, it can take **up to 6 hours** for an event to stop arriving in all destinations.
 
-This feature is only available if the Source is not connected to a Tracking Plan, and is only available in workspaces that are on a Business Tier plan.
+This feature is available only if the source isn’t connected to a tracking plan and the workspace is on a Business Tier plan.
 
+## Protocols tracking plan filters
 
-## Protocols Tracking Plan blocking and property omission
+If you’re using Protocols and you’re confident that your tracking plan includes only the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards data from any source that doesn’t conform to the tracking plan.
 
-If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
+By default, blocked events are permanently discarded: they don’t flow to destinations and can’t be replayed (similar to schema controls). You can also choose to send data that violates the tracking plan to a new Segment source so you can monitor it. This source can affect your MTU count.
 
-By default, the blocked events are permanently discarded: they do not flow to Destinations, and cannot be Replayed (similar to Schema Controls). However, you can opt to send data in violation of the tracking plan to a new Segment Source so you can monitor it. (This source can affect your MTU count.)
-
-If you have Protocols in your workspace, **and** have a tracking plan associated with the Source, you'll see additional options in the Schema Configuration section of the Source's Settings page. From this page you can choose how to handle data violations across different types of calls and properties, whether that be blocking events entirely or omitting violating properties.
+If you have Protocols in your workspace and a tracking plan associated with the source, you’ll see additional options in the **Schema Configuration** section of the source’s **Settings** page. From this page, you can choose how to handle data violations, such as blocking events entirely or omitting violating properties.
 
 ![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
+## Destination Insert Functions
 
-## Destination Insert Function
-
-A customizable way to filter or alter data going from a source to a cloud-mode destination is to use [Insert Functions](/docs/connections/functions/insert-functions/)). This feature gives you the ability to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream cloud-mode destination.
+Use [Insert Functions](/docs/connections/functions/insert-functions/) to filter or alter data from a source before it reaches a cloud-mode destination. This feature lets you receive data from your Segment source, write custom code to alter or block it, and then pass the modified payload to a downstream cloud-mode destination.
 
 ## Warehouse Selective Sync
 
-Warehouse Selective Sync allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and could be slowing down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
+Warehouse Selective Sync lets you stop sending specific data to specific warehouses. You can use this to stop syncing events or properties that aren’t relevant and might slow down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
 
 > info ""
-> This feature is only available to Business Tier customers, and you must be a Workspace Owner to change Selective Sync settings.
+> Warehouse Selective Sync is available only to Business Tier customers, and you must be a workspace owner to change Selective Sync settings.
 
 ## Privacy Portal filtering
 
-The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers, because Segment believes that data privacy is a right, and that anyone collecting data should have tools to help ensure their users' privacy. More enhancements are available to BT customers who may need tools for managing complex implementations.
+The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers and helps ensure user privacy. More enhancements are available to Business Tier customers who need tools for managing complex implementations.
 
-The Privacy Portal tools allow you to inspect your incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by different categories of risk, and use those categories to determine which Destinations may or may not receive the data. Learn more about these features in the [Privacy Portal documentation](/docs/privacy/portal/).
+Privacy Portal tools let you inspect incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by risk category, and decide which destinations should or shouldn’t receive the data. Learn more in the [Privacy Portal documentation](/docs/privacy/portal/).
 
 ![Add a new matcher with the Privacy Portal tools](/docs/privacy/images/privacy-add-new-matcher.gif)

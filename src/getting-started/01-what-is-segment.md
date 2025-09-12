@@ -1,8 +1,8 @@
 ---
-title: How Segment Works
+title: How Segment works
 ---
 
-In a nutshell, the Segment libraries ([Sources](/docs/connections/sources/catalog/)) generate messages about what's happening in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (which Segment calls [Destinations](/docs/connections/destinations/)), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/storage/) (such as databases, warehouses, or bulk-storage buckets).
+In short, the Segment libraries (called [Sources](/docs/connections/sources/catalog/)) generate messages about activity in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (called [Destinations](/docs/connections/destinations/)), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/storage/) (such as databases, warehouses, or bulk-storage buckets).
 
 
 ## Overview
@@ -46,14 +46,14 @@ When you collect data using device-based libraries, you can choose between these
 * **Cloud-mode** is where the library sends the data directly to the Segment servers which then translate and forward it.
 * **Device-mode** is where the library sends the data both directly to the Segment servers, and also to the servers for the destination tool. Device-mode sometimes requires some [additional set-up steps](/docs/connections/sources/mobile_guide/), but can unlock rich device data.
 
-Although there are some tradeoffs between the two approaches, neither is better than the other, and Segment recommends that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can't be blocked by ad blockers.
+Although there are some tradeoffs between the two approaches, neither is better than the other, and we recommend that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can't be blocked by ad blockers.
 
 <!-- Here's a handy flow chart to help with the client-side/server-side decision:
 
 TODO: Image removed, didn't work with formatting. need a better version of this flowchart or else to just omit?-->
 
 
-## The Segment methods
+## Segment methods
 
 The Segment libraries generate messages about what happens on your interface, translate those messages into different formats for use by destinations, and transmit the messages to those tools.
 
@@ -71,7 +71,7 @@ Segment maintains a catalog of destinations where you can send your data.
 
 <!--TODO: big list o' destinations image (programmatically update?) should go here-->
 
-![""](images/dests_grid.png)
+![A catalog of destinations where you can send your data with Segment.](images/dests_grid.png)
 
 
 <div class="double">

@@ -1,9 +1,9 @@
 ---
-title: Testing Connections
+title: Testing connections
 ---
 
-Segment provides these 2 testing tools to enable you to test your connections between Segment and your destination:
-* [Event Tester](#event-tester): Test all of your enabled mappings within a destination. 
+Segment provides two tools for validating the connection between Segment and a destination:
+* [Event Tester](#event-tester): Test all enabled mappings within a destination. 
 * [Mappings Tester](#mappings-tester): Test a single mapping configuration for your destination. 
 
 Both testing tools share the same underlying testing infrastructure, which ensures consistent results across your testing workflows. The results from both testers display API requests, responses, and success/failure status to help you diagnose any issues.
@@ -36,7 +36,7 @@ The Event Tester sends a real event that appears in your end tool alongside your
 To use the Event Tester: 
 1. Navigate to **Connections > Destinations** and select your destination.
 2. Click the **Event Tester** tab. 
-3. Select the type of test event. You can choose from: Track, Identify, Page, Screen, Group. 
+3. Select the type of test event. You can choose from: Track, Identify, Page, Screen, and Group. 
 4. Enter your test event payload. You can type in your own event or choose from **Load event from source** or **Generate sample event**.
    * **Load event from source**: Segment loads an event based on your source. 
    * **Generate sample event**: Segment generates a sample event for you. 
@@ -77,7 +77,7 @@ To use the Mapppings Tester:
 
 #### The Event Tester experienced an error when sending my event. Why did this happen?
 
-If you experience an error, [let Segment know](mailto:friends@segment.com) and the Segment team will help you troubleshoot the issue.
+If you experience an error, [contact Segment support](mailto:friends@segment.com) and we'll help you troubleshoot the issue.
 
 #### Is this feature available for Data Lakes?
 

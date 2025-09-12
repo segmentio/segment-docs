@@ -13,7 +13,7 @@ With Linked Audiences, you can:
 
 - Preserve rich relationships between all the data in your warehouse by creating connections with any entity data back to your audience profile.
 - Build advanced audience segments that include the rich context needed for personalization downstream.
-- Use a low code builder, enabling marketers to activate warehouse data without having to wait for data pull requests before launching campaigns to targeted audiences.
+- Use a low code builder, enabling marketers to activate warehouse data without having to wait for data team requests before launching campaigns to targeted audiences.
 
 To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/).
 
@@ -63,11 +63,11 @@ To build a Linked Audience:
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
-After creating your Linked Audience, you will be brought to the Overview page with the Linked Audience in a disabled state.
+After creating your Linked Audience, you'll be brought to the Overview page with the Linked Audience in a disabled state.
 
 ### Linked Audience conditions 
 
-The Linked Audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the linked audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
+The Linked Audiences builder sources profile trait and event keys from the data warehouse. This data must be synced to the data warehouse through [Profiles Sync](/docs/unify/profiles-sync/overview/) before you can reference it in the Linked Audience builder. If there is a profile trait that exists in the Segment Profile that hasn’t successfully synced to the data warehouse yet, it will be grayed out so that it can’t be selected.
 
 The Linked Audience builder also returns a subset of available entity property key values, event property and context key values, and profile trait key values that you can select in the input field drop-down. This eliminates the need to type in the exact value you want to filter on. If the value you’re looking for isn’t listed, you can manually enter it into the input field. Manually entered values are case-sensitive.
 
@@ -85,10 +85,10 @@ When building your Linked Audience, you can add multiple conditions to a single 
 |---------------------------|---------------------------------------|
 | with entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch. |
 | without entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can navigate the full, nested entity relationships, and filter your audience on entity column values. Each subsequent entity you select in an entity branch acts as a filter over the profiles that are available at the next depth of that specific branch.|
-| with [ trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
-| without [ trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|
+| with [trait](/docs/unify/#enrich-profiles-with-traits) | Creates a condition that filters profiles with a specific trait. |
+| without [trait](/docs/unify/#enrich-profiles-with-traits)| Creates a condition that filters profiles without a specific trait.|
 | part of [audience](/docs/glossary/#audience)    | Creates a condition that filters profiles that are part of an existing audience. |
-| not part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that are not part of an existing audience. |
+| not part of [audience](/docs/glossary/#audience)     | Creates a condition that filters profiles that aren't part of an existing audience. |
 | with [event](/docs/glossary/#event)         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.|
 | without [event](/docs/glossary/#event)        | Creates a condition that filters profiles that do not have a specific event in their event history. You can also filter on event property values.|
 
@@ -97,7 +97,7 @@ at least: supports 1 or greater,
 exactly: supports 0 or greater, 
 at most: supports 0 or greater.
 
-*When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
+When filtering by 0, you can’t filter on by entity properties or on additional nested entities.
 
 
 #### Operator selection
@@ -112,7 +112,7 @@ You can create audience definitions using either `AND` or `OR` operators across 
 
 If you have defined entity conditions in your audience definition, you will see a “Matched Entities” tab in the audience preview to help you understand what entities qualified a user to be a part of an audience.
 
-This information appears when you click the user profile generated from the audience preview. The contextual information encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, Segment includes the entity ID. The data being returned is truncated - 10 entities at each level, 6 levels of depth. If you want to opt out of this functionality, contact Segment Support.
+This information appears when you click the user profile generated from the audience preview. The contextual information encompasses entity relationships as well as entity column values that were used as filtering criteria in the audience definition. By default, Segment includes the entity ID. The data being returned is truncated - ten entities at each level, six levels of depth. If you want to opt out of this functionality, contact Segment Support.
 
 ![A screenshot of the Entity Explorer.](/docs/engage/images/entity_explorer.png)
 
@@ -141,25 +141,25 @@ After you build your Linked Audience, you can send events to your chosen destina
 
 To activate your Linked Audience:
 
-- [Step 2a: Connecting to a Destination](#step-2a-connecting-to-a-destination)
+- [Step 2a: Configuring an activation](#step-2a-connecting-to-a-destination)
 - [Step 2b: Selecting your Destination Actions](#step-2b-select-your-destination-actions)
 - [Step 2c: Defining how and when to trigger an event to your Destination](#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination)
-- [Step 2d: Configuring the event payload](#step-2d-configure-the-event)
+- [Step 2d: Creating and activation and configuring the event payload](#step-2d-configure-the-event)
 
-### Step 2a: Connecting to a destination
 
-[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination. 
+### Step 2a: Configuring an activation
+See the step-by-step video on activating Linked Audiences:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aKncQ7vtJlg?si=H_U6LNE0IBfUMtoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-> info "Linked Audiences destinations"
-> Linked Audiences only supports [Actions Destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). List destinations aren't supported.
+[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding an activation to your Linked Audience allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination by creating an activation.
 
-**Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
+**Note:** Ensure you've [enabled your destination](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. Navigate to **Engage > Audiences**.
 2. Select the Linked Audience you set up in the previous step. 
-3. Select **Add destination**. 
+3. Select **Add activation**. 
 4. Select a destination from the catalog.
-5. Click **Configure data to send to destination**.
+5. Click **Next** to proceed with next steps.
 
 ### Step 2b: Select your Destination Actions
 
@@ -181,9 +181,17 @@ Configure how and when events are produced with each audience run. Select the en
 
 
 
-### Step 2d: Configure the event
+### Step 2d: Creating the activation
 
-After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
+After you select the action and trigger, you can review your configuration and then create the activation by selecting **Save**.  Creating the actvation will move you to the activation overview page, where you can configure destination settings (if applicable), identifier strategy, enrichment settings, and mappings.
+
+### Destination settings
+
+Some destinations may require configuration of additional destination settings, such as Advertiser ID. Please configure these settings before in order to enable your activation.
+
+### Identifier strategy
+
+Choose how Segment should send the identifiers to your destination. The settings will impact all activations that use this destination for this audience.
 
 #### Enrich event 
 
@@ -204,17 +212,15 @@ As you're enriching your events in Linked Audiences, you should view a preview o
 
 #### Map event
 
-Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**.
-
-These fields are pre-filled with properties configured by default.
+Segment attempts to automatically configure the data fields that will be sent to the destination. These fields are pre-filled with properties configured by default. Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**. You can review and adjust these settings before enabling this event. 
 
 ## Step 3: Send a test event to your destination
 
 Send a test event to ensure that everything is connected properly and your destination receives the event. 
 
-Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**.  
+Enter the destination User ID for the profile you want to use to test the event, then click **Send test event to destination**.  
 
-The Event content drop-down shows you a preview of what the data sent to your destination might look like. 
+The Event content dropdown shows you a preview of what the data sent to your destination might look like. 
 
 ## Step 4: Enable your Linked Audience
 
@@ -239,14 +245,14 @@ You can maintain your run schedule at any time from the audience's **Settings** 
 
 You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
 
-There may be up to a 5 minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
+There may be up to a five minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
 
 ## Step 5: Monitor your activation
 
 With your Linked Audience activated, follow these steps to monitor your activation:
 
-1. From the Audience Overview page, selected one of your connected destinations.
-2. Under the **Settings** tab, click **Destination delivery**, which then opens the Linked Audiences Delivery Overview.
+1. From the Audience Overview page, selected one of your connected activations.
+2. In the actions menu, select **View delivery overview in Connections**, which then opens the Linked Audiences Delivery Overview.
 
 ### Delivery Overview for Linked Audiences
 
@@ -269,15 +275,14 @@ Linked Audiences have the following steps in Delivery Overview's pipeline view:
 
 You can create alerts related to the performance and throughput of Linked Audience syncs and receive in-app, email, and Slack notifications when event volume fluctuations occur.
 
-> info "Generate a Slack webhook to receive Slack notifications"
-> To receive an alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+> info "Slack and mailing list notification channels require additional setup"
+> Before sending an alert to Slack, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+>
+> While you can only enter one email address per alert when signing up for email alerts, you can send the alert to multiple users by entering the email address of a mailing list. To create a mailing list, refer to the documentation for your email provider, like Google's [Create a group & choose group settings](https://support.google.com/groups/answer/2464926?hl=en){:target="_blank”} for Gmail or Microsoft's [Create and manage distribution groups](https://support.microsoft.com/en-us/office/distribution-groups-e8ba58a8-fab2-4aaf-8aa1-2a304052d2de#bkmk_create){:target="_blank”} for Outlook. 
 
 To access Linked Audience alerting, navigate to **Engage > Audiences**, select a Linked Audience, and click the **Alerts** tab.
 
 On the **Alerts** tab, you can create new alerts and view all active alerts for this connection. You can only edit or delete the alerts that you create, unless you have the [Workspace Owner role](/docs/segment-app/iam/roles/).
-
-> info "Deleting alerts created by other users requires Workspace Owner role"
-> All users can delete alerts that they created, but only those with [Workspace Owner role](/docs/segment-app/iam/roles/) can delete alerts created by other users. 
 
 #### Activation event health spikes or drops
 
@@ -286,17 +291,13 @@ You can create an Activation event health spikes or drops alert that notifies yo
 To create an Activation event health spikes or drops alert: 
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
 2. Select the Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
-3. On the Create alert sidesheet, select the **Activation event health spikes or drops** alert and pick a destination for which you'd like to monitor event health. 
+3. On the Create alert side sheet, select the **Activation event health spikes or drops** alert and pick a destination for which you'd like to monitor event health. 
 4. Enter a percentage threshold to trigger activation event health notifications. 
 5. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
   - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
-
-To make changes to an Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
-
-To delete a Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Delete**.
 
 #### Audience size change
 
@@ -308,17 +309,13 @@ You can create an Audience size change alert that notifies you when your audienc
 To create an Audience size change alert:
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
 2. Select the Linked Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
-3. On the Create alert sidesheet, select the **Audience size change alert** and pick a destination for which you'd like to monitor event health. 
+3. On the Create alert side sheet, select the **Audience size change alert** and pick a destination for which you'd like to monitor event health. 
 4. Enter a percentage threshold to trigger audience size change notifications. 
 5. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
   - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
-
-To make changes to an Audience size change alert, select the icon in the Actions column for the alert and click **Edit**. 
-
-To delete a Audience size change alert, select the icon in the Actions column for the alert and click **Delete**.
 
 ## Maintaining Linked Audiences 
 

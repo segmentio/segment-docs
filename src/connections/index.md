@@ -8,7 +8,7 @@ Connections is Segment's core product offering: you can collect event data from 
 
 {% include content/whats-a-source.md %}
 
-Learn more about sources from the [sources overview page](/docs/connections/sources/).
+Learn more about Sources from the [Sources overview page](/docs/connections/sources/).
 
 
 ## Destinations
@@ -22,7 +22,7 @@ Learn more about sources from the [sources overview page](/docs/connections/sour
 ### Reverse ETL
 With [Reverse ETL](/docs/connections/reverse-etl/), your data warehouse acts as your source, enabling you to send data from your warehouse to your destinations. 
 
-## Information on sources and destinations pages
+## Information on Sources and Destinations pages
 
 The Sources and Destinations pages allow each user to decide what information appears in their personal view for each page.
 
@@ -57,4 +57,4 @@ Sources without any enabled destinations are auto-disabled after 14 days. Howeve
 Segment understands there may be cases to keep a source active. If you'd like to add your sources to an exception list, you can do so by filling out this [Airtable form](https://airtable.com/shr7V9LFDZh31cYWW){:target="_blank"}.
 
 ### Can I request Segment add an integration tool?
-Yes, you are able to submit an integration request here https://segment.com/requests/integrations/.
+Yes, you are able to submit an integration request [here](https://segment.com/requests/integrations/).

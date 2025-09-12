@@ -90,6 +90,6 @@ Segment has reserved some properties with semantic meanings and handles them in 
 
 Reserved properties that Segment has standardized:
 
-| **Property** | **Type** | **Description**                                             |
+| Property | Type | Description                                             |
 |--------------|----------|-------------------------------------------------------------|
 | `name`       | String   | Name of the screen. This is reserved for future use.        |

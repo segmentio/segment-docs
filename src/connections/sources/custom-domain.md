@@ -54,8 +54,8 @@ To configure Custom Domain:
   - **Additional Domain Name**: (*Optional*) If applicable, you can add an additional subdomain. You can have multiple domains within the same workspace; however, each source can only be associated with one domain. A single domain can be associated with multiple sources.
   - **Source names**: Select the sources you would like to use for Custom Domain. Segment recommends starting with a stage or dev source. For initial setup, an [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) source is required. For a list of all sources that support Custom Domain, see [Supported sources](#supported-sources).
   - **Is the domain name enabled for Content Policy**: Select either Yes or No. You are not required to create a Content Policy prior to requesting Custom Domain. If you've enabled a Content Security Policy (CSP), you must add the new subdomains provided by Segment to your CSP once you've enabled the Custom Domain feature. This ensures that the CSP does not block the subdomains when you load Segment.
-    
   - **Description**: Enter an optional description for your service request. If you are requesting Custom Domain for multiple workspaces, enter any additional workspace slugs and source names into this field. 
+
 4. Segment provides you with a list of nameservers you should add to your DNS. Once you receive the nameservers from Segment, update your DNS. 
 5. After you've updated your DNS, Segment verifies that you've made all required updates and then provides you with two custom domains, one for the Tracking API and a second for your CDN.
 6. Once Custom Domain is enabled for your workspace, the Segment app generates a new JavaScript source code snippet for your Analytics.js sources. Copy and paste this snippet into the header of your website. You can also use the subdomain provided for the Tracking API as the new endpoint for your server library sources.

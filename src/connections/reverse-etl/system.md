@@ -50,20 +50,15 @@ State management: The `__segment_reverse_etl` schema and its associated tables (
 ## Limits
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits for Reverse ETL.
 
-### Usage limits
-Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes both successful and failed records. For example, if you processed 50K records to Braze and 50K records to Mixpanel, then your total Reverse ETL usage is 100K records.
+### Usage
+Segment measures Reverse ETL usage measured based on the number of records processed to each destination – this includes only successful records. For example, if you processed 50K records to Braze and 50K records to Mixpanel, then your total Reverse ETL usage is 100K records.
 
 Processed records represents the number of records Segment attempts to send to each destination. Keep in mind that not all processed records are successfully delivered, for example, such as when the destination experiences an issue.
 
-Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. If you've reached your Reverse ETL limit, contact your sales representative to discuss an add-on that increases your Reverse ETL record allotment. To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab.
+Segment doesn't limit how many Reverse ETL records you can process in one monthly billing cycle. 
 
-Plan | Number of Reverse ETL records you can process to destinations per month | How to increase your number of Reverse ETL records
----- | --------------------------------------------------------------------------- | ---------------------------------------------------
-Free | 500K | Upgrade to the Teams plan in the Segment app by navigating to **Settings > Usage & billing**.
-Teams | 1 million | Contact your sales representative to upgrade your plan to Business.
-Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan.
+To track how many records you've processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. For questions about Reverse ETL usage, contact your account team or reach out to [Segment support](segment.com/help/contact){:target="_blank”}. 
 
-If you have a non-standard or high volume usage plan, you may have unique Reverse ETL limits or custom pricing. To see your Reverse ETL limits in the Segment app, select **Settings > Usage & Billing**.
 
 ### Configuration limits
 

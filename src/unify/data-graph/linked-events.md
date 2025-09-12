@@ -4,29 +4,26 @@ plan: unify
 hidden: false
 ---
  
-Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
+Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event.    
+
+On this page, you'll learn how to get started with Linked Events. Linked Events supports Snowflake, BigQuery, Redshift, and Databricks.
 
 > info "Consent enforcement for Linked Events"
-> You can use [Consent Management](/docs/privacy/consent-management/) to enforce consent in your downstream destinations for Linked Events stamped with the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object). You must enable Consent Management and have consent stamped on events from event streaming sources to use Consent Management. You cannot use Linked Events to enrich events with consent preferences that are stored in your warehouse.    
-
-On this page, you'll learn how to get started with Linked Events.
-
-> info "Linked Events warehouse support"
-> Linked Events supports Snowflake, BigQuery, Redshift, and Databricks.
+> You can use [Consent Management](/docs/privacy/consent-management/) to enforce consent in your downstream destinations for Linked Events stamped with the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object). You must enable Consent Management and have consent stamped on events from event streaming sources to use Consent Management. You cannot use Linked Events to enrich events with consent preferences that are stored in your warehouse. 
 
 ## Use cases
 
 With Linked Events, you can:
 
 - **Add details to events for precise targeting**. Enable targeting by appending product events that only have `product_id` with full product SKU details from your warehouse.
-- **Sync enriched data**. Add a loyalty ID to event payloads before sending it downstream to destinations such as Amplitude, Mixpanel, and more.
+- **Sync enriched data**. Add a loyalty ID to event payloads before sending it downstream to destinations like Amplitude, Mixpanel, and more.
 - **Reduce load times**. Enrich page view events with products and subscriptions connected to that view, and send that to Google Analytics 4 to lighten the front end and reduce page loading time.
 
 ## Prerequisites
 
 To use Linked Events, you'll need the following:
 
-1. A supported data warehouse.
+1. A supported data warehouse. Linked Events supports Snowflake, BigQuery, Redshift, and Databricks.
 2. Access to Unify in your workspace. 
 3. Access to the actions-based destination you'll be using with Linked Events so that you can validate your data. 
 
@@ -37,9 +34,8 @@ To use Linked Events, you'll need the following:
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Linked Events:
 
-**Entities Admin Access**: Entities Admins have the ability to view and edit entity models and connection details.
-
-**Entities Read-only Access**: Entities Read-only users have the ability to view entity models. 
+- **Entities Admin Access**: Entities Admins have the ability to view and edit entity models and connection details.
+- **Entities Read-only Access**: Entities Read-only users have the ability to view entity models. 
 
 To create models and enrich events in destinations, you need to be a `Workspace Owner` or have the following roles: 
 
@@ -50,24 +46,24 @@ To create models and enrich events in destinations, you need to be a `Workspace 
 ## Step 1: Set up your data warehouse and permissions
 
 > info ""
-> Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
+> Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull in data from your warehouse. 
 
-To get started, you'll need to set up your data warehouse and provide the correct access detailed in the set up steps below. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/). 
+To get started, you'll need to set up your data warehouse and provide Segment the access detailed in the setup steps below. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/). 
 
 ## Step 2: Connect your warehouse to the Data Graph
 
 > success ""
-> Before getting started with the Data Graph, be sure to set up your warehouse permissions.
+> Before getting started with the Data Graph, set up your warehouse permissions.
 
 1. Navigate to **Unify > Data graph** and click **Add warehouse**. 
-2. Select a warehouse to connect from the [supported data warehouses](#supported-data-warehouses). 
+2. Select one of the [supported data warehouses](#supported-data-warehouses). 
 3. Connect your warehouse.  
 3. Click **Test Connection** to be sure your warehouse is connected.
 4. After a successful test, click **Save**.  
 
 ### Schema
 
-Linked Events uses Reverse ETL to compute the incremental changes to your data directly within your data warehouse. The Unique Identifier column detects data changes, such as new, updated, and deleted records. 
+Linked Events uses [Reverse ETL](/docs/connections/reverse-etl/) to compute the incremental changes to your data directly within your data warehouse. The Unique Identifier column detects data changes, like new, updated, and deleted records. 
 
 For Segment to compute data changes in your warehouse, Segment requires both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment tracks changes to the query results through tables that Segment manages in a dedicated schema (for example, `_segment_reverse_etl`), which requires some write permissions.
 
@@ -80,17 +76,17 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 
 | Data Warehouse              |      Steps         |
 |------------------------|-------------------------|
-| [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
+| [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the entities you want to enrich your event with. <br> 2. Test your connection. | 
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
-| [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/) | 1. Configure your Databricks catalog. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
+| [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/) | 1. Configure your Databricks catalog. <br> 2. Enter your credentials. <br> 3. Test the connection. <br> 4. Click **Save**. |
 
 
 ## Step 3: Build your Data Graph 
  
-The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
+The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models and build out your Data Graph.
 
-Each Unify space has one Data Graph. The current version is v0.0.6 but this may change in the future as Segment accepts feedback about the process.
+Each Unify space has one Data Graph. The current version is v0.0.6, but this may change in the future as Segment accepts feedback about the process.
 
 > warning ""
 > Deleting entities and relationships are not yet supported.
@@ -160,8 +156,7 @@ To configure your sync schedule:
 
 ### Add entities
 
-After you load a sample event, you can add entities from the **Enrich events with entities** section. You’ll select an entity, then an entity match property. 
-- The entity match property is the property in the event that you want to match to the primary key. 
+After you load a sample event, you can add entities from the **Enrich events with entities** section. You’ll select an entity, then an entity match property, or the property in the event that you want to match to the primary key. 
 
 After you’ve added an entity and match property, add your event enrichments. 
  
@@ -178,7 +173,7 @@ In the Mappings tab, locate the **Select Mappings** section where you can enrich
 4. Click **Save**.
 
 #### Testing with Linked Events Enrichments
-The [Event Tester and Mappings Tester](/docs/connections/test-connections/#) support testing enrichments from Linked Events, allowing you to verify that entity data is correctly attached to your events before they reach destinations. When you have Linked Events configured, these enrichments appear in your test payload, showing you exactly how profile traits will add to your events.
+The [Event Tester and Mappings Tester](/docs/connections/test-connections/) support testing enrichments from Linked Events, allowing you to verify that entity data is correctly attached to your events before they reach destinations. When you have Linked Events configured, these enrichments appear in your test payload, showing you exactly how profile traits will add to your events.
 
 When you test mappings with Linked Events Enrichments:
 * You can view the enriched fields in the **Request** section of the test results. 
