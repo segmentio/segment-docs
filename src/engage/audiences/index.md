@@ -161,7 +161,7 @@ For step-by-step instructions on how to connect an audience to a destination, se
 
 ### Disconnect or remove a destination 
 
-Whnen managing your audience-destination connections you have two options:
+When managing your audience-destination connections you have two options:
 
 1. **Connect to destination** - Toggles the connection on and off. When disconnected, the setup and configuration remain saved, but no data flows from the audience to the destination until you re-enable the connection. Use this option to pause sending data without losing your work.
 2. **Remove destination from audience** - Deletes the connection completely, so no events are sent to the destination. To use the destination again, you'll need to set it up as new from the beginning.
