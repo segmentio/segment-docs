@@ -8,15 +8,14 @@ The Group call enables you to identify what account or organization your users a
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
-In addition to the `groupId`, which is how you'd identify the specific group or company, the group method receives traits that are specific to the group, like industry or number of employees for example, that belong to that specific account. Like the traits of an identify call, you can update these when you call the same trait with a different value.
+In addition to the `groupId`, which is how you'd identify the specific group or company, the group method receives traits that are specific to the group, for example the industry or number of employees, that belong to that specific account. Like the traits of an Identify call, you can update these when you call the same trait with a different value.
 
 When using the Group call, it's helpful if you have accounts with multiple users.
 
-
-> info "Segment doesn't have an ungroup call"
-> If you're using a device-mode destination that has a method for ungrouping users, you can invoke it directly on the client side [using Segment's ready() method](/docs/connections/sources/catalog/libraries/website/javascript/#ready). 
+> info "Segment doesn't have a native solution for removing users from a group"
+> If you're using a device-mode destination that has a method for removing users from a group, you can invoke it directly on the client side [using Segment's ready() method](/docs/connections/sources/catalog/libraries/website/javascript/#ready). 
 >
-> For cloud-mode destinations, you can [create a Destination Function](/docs/connections/functions/destination-functions/) to ungroup users. 
+> For cloud-mode destinations, you can [create a Destination Function](/docs/connections/functions/destination-functions/) to remove users from a group. 
 
 
 Here's the payload of a typical Group call, with most [common fields](/docs/connections/spec/common/) removed:
@@ -106,7 +105,7 @@ Use the following interactive code pen to see what your Group calls would look l
 
 ## Group ID
 
-A Group ID is the unique identifier which you recognize a group by in your own database. For example, if you're using MongoDB it might look something like `507f191e810c19729de860ea`.
+A Group ID is the unique identifier which you recognize a group by in your own database. For example, if you're using MongoDB, your Group ID might look something like `507f191e810c19729de860ea`.
 
 
 ## Traits
@@ -132,10 +131,9 @@ The following are the reserved traits Segment has standardized:
 | `website`     | String   | Website of a group.                 |
 | `plan`        | String   | Plan that a group is in.            |
 
-**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don't have to worry about those inconsistencies. Just pass along `revenue`.  **Segment handles all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
+**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. **Segment handles all of the destination-specific conversions for you automatically.** 
 
-If you pass these values, `on null` will throw a `NullPointerException`.
+If you pass a reserved trait, `on null` will throw a `NullPointerException`.
 You may continue to set values inside the trait.  If you do so, this would work the same as the rules do with NoSQL data. If you had set a value previously for a user and on the next request you sent the same value of that property as `on null`, it will be replaced by `null`, but if you do not send that property, the original value is persisted.
 
-**Traits are case-insensitive**, so in JavaScript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.
-
+**Traits are case-insensitive**. In JavaScript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way, the API never seems alien to your code base.
