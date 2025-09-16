@@ -252,13 +252,13 @@ If you can't, choose a verb that describes what the user is trying to do in your
 - **Clicked** - Catch-all for events where a user activated some part of the UI but no other verb captures the intent.
 - **Created/Deleted** - The user- or system-initiated action of creating or deleting an object (for example, new search, favorite, post).
 - **Displayed/Hidden** - The user- or system-initiated action of hiding or displaying an element.
-- **Enabled/Disabled** - Enabling or disabling some feature (For example, audible alarms, or emails).
+- **Enabled/Disabled** - Enabling or disabling some feature (for example, audible alarms, or emails).
 - **Refreshed** - When a set of search results is refreshed.
 - **Searched** - When an app is searched.
 - **Selected** - User clicked on an individual search result.
 - **Sorted** - The user or UI action that causes data in a table, for example, to be sorted.
 - **Unposted** - Making a previously publicly-viewable posting private.
-- **Updated** - The user action that initiates an update to an object (profile, password, or search); typically be making a call to the backend, or the the system having actually completed the update (often this tracking call will be made in response to a server-side response indicating that the object was updated, which may or may not have an impact on the UI).
+- **Updated** - The user action that initiates an update to an object (profile, password, or search). This might be a backend call or the system completing an update. This tracking call is often made in response to a server-side response indicating that the object was updated (which may or may not have an impact on the UI).
 - **Viewed** - The user viewed something. 
 
 
