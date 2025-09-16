@@ -5,11 +5,11 @@ related:
   - "/connections/spec/best-practices-identify/"
 ---
 
-Before you start implementing from your tracking plan, let's review the Segment methods, what they do, and when you should use each.
+Before you start implementing from your tracking plan, review the Segment methods, what they do, and when you should use each method.
 
 ## Segment methods in detail
 
-Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. We also provide recommended JSON structure (also known as a schema, or 'Spec') that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
+Segment's libraries generate and send messages to Segment's tracking API in JSON format, and provide a standard structure for the basic API calls. Segment also provides recommended JSON structure, called a schema, or 'Spec', that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
 
 There are six calls in the basic tracking API, which answer specific questions:
 
@@ -20,14 +20,14 @@ There are six calls in the basic tracking API, which answer specific questions:
 - [Group](/docs/connections/spec/group/): What account or organization are they part of?
 - [Alias](/docs/connections/spec/alias/): What was their past identity?
 
-Among these calls, you can think of Identify, Group, and Alias as similar types of calls, all to do with updating our understanding of the user who is triggering Segment messages. You can think of these calls as adding information to, or updating an object record in a database. **Objects** are described using "traits", which you can collect as part of your calls.
+Among these calls, you can think of Identify, Group, and Alias as similar types of calls, all to do with updating Segment's understanding of the user who is triggering messages. You can think of these calls as adding information to or updating an object record in a database. **Objects** are described using "traits", which you can collect as part of your calls.
 
 The other three, Track, Page, and Screen, can be considered as increasingly specific types of events. **Events** can occur multiple times, but generate separate records which append to a list, instead of being updated over time.
 
 A Track call is the most basic type of call, and can represent any type of event. Page and Screen are similar and are triggered by a user viewing a page or screen, however Page calls can come from both web and mobile-web views, while Screen calls *only* occur on mobile devices. Because of the difference in platform, the context information collected is very different between the two types of calls.
 
 > success ""
-> Segment recommends that you always use the Page and Screen calls when recording a page-view, rather than creating a "Page Viewed" Track event, because the Page/Screen calls automatically collect more contextual information.
+> Segment recommends that you always use the Page and Screen calls when recording a page view rather than creating a "Page Viewed" Track event, because the Page/Screen calls automatically collect more contextual information.
 
 ## Anatomy of a Segment message
 
@@ -37,6 +37,8 @@ A Track call is the most basic type of call, and can represent any type of event
 ## Identify calls
 
 <!---![An identify event that identifies Michael Phillips, a customer who lives in New York, New York.](images/identify-call.png)--->
+
+The following code snippet is an example Identify call that identifies a user, Michael Phillips, a customer who lives in New York, New York. 
 
 ```js
 analytics.identify (user_id: "12345abcde",
@@ -52,14 +54,13 @@ The Identify call allows Segment to know **who** is triggering an event.
 
 ### When to call Identify
 
-Call Identify when the user first provides identifying information about themselves (usually during log in), or when they update their profile information.
+Call Identify when the user first provides identifying information about themselves (usually during the sign in process), or when they update their profile information.
 
 When called as part of the login experience, you should call Identify as soon as possible after the user logs in. When possible, follow the Identify call with a Track event that records what caused the user to be identified.
 
-When you make an Identify call as part of a profile update, you only need to send the changed information to Segment. You can send all profile info on every Identify call if that makes implementation easier, but this is optional.
+When you make an Identify call as part of a profile update, you only need to send the changed information to Segment. You can optionally send all profile info on every Identify call if that makes implementation easier.
 
-> info "Learn More"
-> [Best Practices for Identifying Users](https://segment.com/docs/connections/spec/best-practices-identify/)
+For more information about best practices for identifying your users, see the [Best Practices for Identifying Users](/docs/connections/spec/best-practices-identify/) documentation. 
 
 ## Traits in Identify calls
 
@@ -67,17 +68,14 @@ These are called [traits](/docs/connections/spec/identify/#traits) for Identify 
 
 **The most important trait to pass as part of the Identify call is userId**, which uniquely identifies a user across all applications.
 
-You should use a hash value to ensure uniqueness, although other values are acceptable; for example, email address isn't the best thing to use as a userid, but is usually acceptable since it will be unique, and doesn't change often.
+You should use a hash value to ensure uniqueness, although other values are acceptable. For example, email address isn't the best thing to use as a userid, but is usually acceptable since it will be unique and doesn't change often.
 
 Beyond that, the Identify call is your opportunity to provide information about the user that can be used for future reporting, so you should try to send any fields that you might want to report on later.
 
-Consider using Identify and traits when:
-
-- Gathering user profile data (for example, company, city/state, job title, or other user-level data)
-- Gathering company-level data (for example, company size, number of seats, etc)
+Consider using Identify and traits when gathering user profile data (like company, city/state, job title, or other user-level data) or company-level data (like company size, or number of seats). 
 
 
-## How to Call Identify
+## How to call Identify
 
 You can call Identify from any of Segment's device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/).
 
@@ -112,11 +110,11 @@ analytics.identify( user_id: "12345abcde",
 
 
 
-## Using analytics.reset()
+## Using Reset calls
 
-When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently identify-ed). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user's browser.
+When a user explicitly signs out of one of your applications, you can call Reset to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently identified). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user's browser.
 
-Make a `reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the JavaScript source documentation](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout).
+Make a Reset call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on a Reset call, [see the JavaScript source documentation](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout).
 
 ## Page and Screen
 
@@ -169,26 +167,26 @@ properties:@{ @"category": @"Smartwatches", @"sku": @"13d31" }];
 
 ### When to Call Page
 
-Segment automatically calls a Page event whenever a web page loads. This might be enough for most of your needs, but if you change the URL path without reloading the page, for example in single page web apps, you must call Page manually .
+Segment automatically calls a Page event whenever a web page loads. This might be enough for most of your needs, but if you change the URL path without reloading the page, for example in single page web apps, you must call Page manually.
 
 If the presentation of user interface components don't substantially change the user's context (for example, if a menu is displayed, search results are sorted/filtered, or an information panel is displayed on the exiting UI) **measure the event with a Track call, not a Page call.**
 
 > info ""
 > When you manually trigger a Page call, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn't be called as part of the click event that initiates it.
 
-For more info on Page calls, review [Page spec](/docs/connections/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
+For more info on Page calls, review the [Page spec](/docs/connections/spec/page/) and [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#page) documentation.
 
 ### When to call Screen
 
-Segment Screen calls are essentially the Page method, except for mobile apps. Mobile Screen calls are treated similarly to standard Page tracking, only they contain more context traits about the device. The goal is to have as much consistency between web and mobile as is feasible.
+Segment Screen calls are essentially the Page method for mobile apps. Mobile Screen calls are treated similarly to standard Page tracking, only they contain more context traits about the device. The goal is to have as much consistency between web and mobile as is feasible.
 
 ## Track calls
 
-The Track call allows Segment to know **what** the user is doing.
+A Track call allows Segment to know **what** the user is doing.
 
 ### When to call Track
 
-The Track call is used to track user and system events, such as:
+A Track call is used to track user and system events like:
 
 - The user interacting with a UI component (for example, "Button Clicked")
 - A significant UI component appearing, other than a page (for example, search results or a payment dialog)
@@ -197,7 +195,7 @@ The Track call is used to track user and system events, such as:
 
 Your Track calls should include both events and properties. **Events are the actions you want to track**, and **properties are the data _about_ the event that are sent with each event**.
 
-[Properties](/docs/connections/spec/track/#properties) are powerful. They enable you to capture as much context about the event as you'd like, and then cross-tabulate or filter your downstream tools. For example, let's say an eLearning website is tracking whenever a user bookmarks an educational article on a page. Here's what a robust analytics.js Track call could look like:
+[Properties](/docs/connections/spec/track/#properties) are powerful. They enable you to capture as much context about the event as you'd like, and then cross-tabulate or filter your downstream tools. For example, if an eLearning website is tracking whenever a user bookmarks an educational article on a page. Here's what a robust Analytics.js Track call could look like:
 
 ```js
 analytics.track('Article Bookmarked', {
@@ -213,17 +211,15 @@ analytics.track('Article Bookmarked', {
 });
 ```
 
-With this Track call, we can analyze which authors had the most popular articles, which months and years led to the greatest volume of bookmarking overall, which button locations drive the most bookmark clicks, or which users gravitate towards infographics related to Data Planning.
+With this Track call, you can analyze which authors had the most popular articles, which months and years led to the greatest volume of bookmarking overall, which button locations drive the most bookmark clicks, or which users gravitate towards infographics related to Data Planning.
 
 ## Event Naming Best Practices
 
-Each event you track must have a name that describes the event, like 'Article Bookmarked' above. That name is passed in at the beginning of the Track call, and should be standardized across all your properties so you can compare the same actions on different properties.
+Each event you track must have a name that describes the event, like 'Article Bookmarked' in the example above. That name is passed in at the beginning of the Track call, and should be standardized across all your properties so you can compare the same actions on different properties.
 
 Segment's best practice is to use an “Object Action” (Noun<>Verb) naming convention for all **Track** events, for example, 'Article Bookmarked'.
 
 Segment maintains a set of [**Business Specs**](/docs/connections/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
-
-Let's dive deeper into the Object Action syntax that all Segment Track events should use.
 
 ### Objects are Nouns
 
@@ -231,7 +227,7 @@ Nouns are the entities or objects that the user or the system acts upon.
 
 It's important to be thoughtful when naming objects so that they are referred to consistently within an application, and so that you refer to the same objects that might exist in multiple applications or sites by the same name.
 
-Use the following list of objects to see if there is a logical match with your application. If you have objects that aren't in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by Product Analytics.
+Use the following list of objects to see if there is a logical match with your application. If you have objects that aren't in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by your Product Analytics team.
 
 #### Some suggested Nouns
 
@@ -254,25 +250,25 @@ If you can't, choose a verb that describes what the user is trying to do in your
 
 - **Applied** - Applying a new format to the UI results.
 - **Clicked** - Catch-all for events where a user activated some part of the UI but no other verb captures the intent.
-- **Created/Deleted** - The user- or system-initiated action of creating or deleting an object (e.g., new search, favorite, post)
-- **Displayed/Hidden** - The user- or system-initiated action of hiding or displaying an element
-- **Enabled/Disabled** - Enabling or disabling some feature (e.g., audible alarms, emails, etc).
+- **Created/Deleted** - The user- or system-initiated action of creating or deleting an object (for example, new search, favorite, post).
+- **Displayed/Hidden** - The user- or system-initiated action of hiding or displaying an element.
+- **Enabled/Disabled** - Enabling or disabling some feature (for example, audible alarms, or emails).
 - **Refreshed** - When a set of search results is refreshed.
-- **Searched** - When an app is searched
+- **Searched** - When an app is searched.
 - **Selected** - User clicked on an individual search result.
-- **Sorted** - The user or UI action that causes data in a table, for example, to be sorted
+- **Sorted** - The user or UI action that causes data in a table, for example, to be sorted.
 - **Unposted** - Making a previously publicly-viewable posting private.
-- **Updated** - The user action that initiates an update to an object (profile, password, search, etc.; typically be making a call to the backend), or the they system having actually completed the update (often this tracking call will be made in response to a server-side response indicating that the object was updated, which may or may not have an impact on the UI).
-- **Viewed** - (exactly what it says on the tin)
+- **Updated** - The user action that initiates an update to an object (profile, password, or search). This might be a backend call or the system completing an update. This tracking call is often made in response to a server-side response indicating that the object was updated (which may or may not have an impact on the UI).
+- **Viewed** - The user viewed something. 
 
 
 ### Property naming best practices
 
 Segment recommends that you record property names using **snake case** (for example `property_name`), and that you format property values to match how they are captured. For example, a `username` value would be captured in whatever case it the user typed it in as.
 
-Ultimately, you can decide to use a casing different from our recommendations; however, **the single most important aspect is that you're consistent across your entire tracking with one casing method**.
+Ultimately, you can decide to use a casing different from Segment's recommendations; however, **the single most important aspect is that you're consistent across your entire tracking with one casing method**.
 
-You can read more about [best practices for Track calls](/docs/connections/spec/best-practices-event/), .
+You can read more about best practices for Track calls in the [Best Practices for Track Calls](/docs/connections/spec/best-practices-event/) documentation.
 
 All of the basic [Segment methods](/docs/connections/spec/) have a common structure and common fields which are automatically collected on every call. You can see these in the [common fields documentation](/docs/connections/spec/common/).
 
