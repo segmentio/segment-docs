@@ -16,3 +16,10 @@ Select a product below to learn about its capabilities, supported destinations, 
     description="Receive notifications related to the performance and throughput of a Segment connection."
   %}
 
+  {% include components/reference-button.html
+    href="/docs/monitor/granular-observability"
+    icon="book.svg"
+    title="Failure logs"
+    description="Get greater visibility into failed event deliveries to better identify, analyze, and troubleshoot issues."
+  %}
+
