@@ -88,6 +88,26 @@ To create a new inbound rule:
 
 8. Click **Save rules**.
 
+## Connect Postgres to Segment
+
+> info "Unified warehouse credentials in public beta"
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
+To connect Postgres to Segment: 
+
+1. Navigate to your product area in the Segment app:
+    * For Storage destinations, navigate to **Connections > Destinations** and select the **Storage** tab. Click **+ Add storage destination**.
+    * For Profiles Sync, navigate to **Unify > Profiles Sync**.
+2. Select *Postgres* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Postgres instance:
+    * **Hostname**: The Postgres hostname
+    * **Port**: The port used for connecting to your Postgres warehouse
+    * **Database name**: The database that Segment uses in order to sync data 
+    * **Username**: The Postgres user that Segment uses to run SQL in your warehouse
+    * **Password**: The password of the user above
+4. Test your connection.
+5. Click **Save**.
+
 ## Sync schedule
 
 {% include content/warehouse-sync-sched.md %}

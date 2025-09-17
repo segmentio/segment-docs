@@ -56,24 +56,24 @@ To connect your Azure database to Segment, [give Segment access to your SQL Data
   EXEC sp_set_firewall_rule N'<rule name>', '52.25.130.38', '52.25.130.38'; 
   ```
 
-### Configure an Azure Synapse Analytics Destination in Segment
+### Connect Azure to Segment
 
-In order to set up the Azure Synapse Analytics destination in Segment, you'll need the following pieces of information:
+> info "Unified warehouse credentials in public beta"
+> Create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
- - **Server Name:** the name of the SQL Server resource that houses your SQL Data Warehouse
- - **Database:** the name of the SQL Data Warehouse database resource
- - **Username:** the name of the user you created above
- - **Password:** the password of the user you created above
-
-To add a Azure Synapse Analytics destination in the Segment app: 
-1. Log in to Segment and select the **Connections** tab. Click **Add Destination**.
-2. Select the **Storage Destinations** tab and click the **Azure SQL Data Warehouse** destination. 
-3. Select the source(s) you want to sync with the Azure SQL Data Warehouse destination, and click **Next**. 
-4. Provide a name for your destination, and then enter data into each of the fields in the "Enter your Credentials" section. For the **Server Name** field, enter only the part of the server name prior to `.database.windows.net`. 
-5. Click **Connect**.
-
-> warning "Initial sync timeline"
-> The first sync after you configure your Azure Synapse destination with Segment can take up to 24 hours to complete.
+To connect Azure to Segment:
+1. Navigate to your product area in the Segment app. 
+    * For storage destinations, navigate to **Connections > Destinations** and select the **Storage** tab. Click **+ Add storage destination**.
+    * For Profiles Sync, navigate to **Unify > Profiles Sync**.
+2. Select *Azure* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Azure instance.
+    * **Server**: Your Azure dedicated SQL pool server.
+    * **Port**: The port used for connecting to your Azure dedicated SQL pool. The default port for Azure dedicated SQL pool is 1433, but your port may be different.
+    * **Database name**: The name of your Azure dedicated SQL pool that Segment uses in order to sync data.
+    * **Username**: The Azure user that Segment uses to run SQL in your warehouse.
+    * **Password**: The password of the user above.
+4. Test your connection. 
+5. Click **Save**.
 
 ## Best Practices
 

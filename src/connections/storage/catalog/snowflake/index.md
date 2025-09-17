@@ -221,27 +221,28 @@ USE DATABASE "SEGMENT_EVENTS";
 
 ### Step 6: Connect Snowflake to Segment
 
-After configuring your Snowflake resources, connect them to Segment.
+> info "Unified warehouse credentials in public beta"
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-1. In the Segment App, select Add Destination.
-2. Search for and select "Snowflake".
-3. Enter a name for your destination.
-4. Enter your Snowflake credentials as follows:
-  - **Account**: The account id of your cluster, not the url (for example, url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region. For example, your url might be: `my-business.us-east-1.snowflakecomputing.com/` and your account-id would be: `my-business.us-east-1`)
-  - **Warehouse**: The name of the warehouse that you created in [Step 1: Create a virtual warehouse](#step-1-create-a-virtual-warehouse)
-  - **Database**: The database name that you created in [Step 2: Create database](#step-2-create-database)
-  - **Username**: The username that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
-  - **Authentication method**: Select the authentication method that you used when creating a user in [Step 4: Create a user for Segment](#step-4-create-user-for-segment). You can select either Key pair or Password. 
-  
-  If you selected Key pair as your authentication method: 
-  - **Private key**: Upload your private key (stored in .p8 format) that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
-  - **Passphrase** _(Optional)_ : If you created an encrypted key, enter the passphrase you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+To connect Snowflake to Segment: 
+
+1. Navigate to your product area:
+    * For Storage destinations, navigate to **Connections > Destinations** and select the **Storage** tab. Click **+ Add storage destination**.
+    * For Profiles Sync, navigate to **Unify > Profiles Sync**.
+2. Select *Snowflake* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Snowflake instance.
+    * Account ID: The Snowflake account ID that uniquely identifies your organization account, including a region suffix if applicable.
+    * Database name: The database that Segment uses in order to sync data
+    * Warehouse: The warehouse in your Snowflake account that Segment uses to run SQL 
+    * Username: The Snowflake user that Segment uses to run in your warehouse 
+    * Authentication
+        * Private key: View Snowflake’s key pair set up doc.You can upload .p8 file format. Key length must be at least 2048-bit. An encrypted key is recommended but not required.
+4. Test your connection. 
+5. Click **Save**.
 
   > info "Segment supports uploading one key at a time"
   > Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.  
-  
-  If you selected Password as your authentication method:
-  - **Password**: The password that you set in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+
 
 ## Security
 
