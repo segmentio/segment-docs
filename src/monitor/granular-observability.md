@@ -151,7 +151,3 @@ Here's an example of a Delivery Exchange Logged event:
   }
 }
 ```
-
-
-
-
