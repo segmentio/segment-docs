@@ -6,7 +6,7 @@ plan: failure-logs
 Failure log collection gives you greater visibility into failed event deliveries, allowing you to identify, analyze, and troubleshoot issues with the events that Segment attempted to deliver.
 
 > info "Failure log collection is in private beta"
-> During the private beta, failure log collection only supports streaming destinations.
+> During the private beta, failure log collection only supports streaming destinations receiving events from streaming sources or Engage sources. 
 
 ## Enable failure logs
 
@@ -29,7 +29,9 @@ Once you've enabled your failure logs in the Segment app, you can access them us
 
 Segment has a Public API endpoint, available in [alpha](https://docs.segmentapis.com/tag/Versioning/){:target="_blank”}, that lets you generate presigned S3 URLs for a collection ID and a specific hour in [ISO 8601 format](https://www.iso.org/iso-8601-date-and-time-format.html){:target="_blank”}. Once you've generated a URL, you can only access that data for two hours. If Segment writes additional data to the specified collection and hour time frame, you must generate an additional Public API call to view the updated logs. 
 
-You can make up to 120 requests to the failure logs endpoint per day. Some of the request “tokens” replenish every hour. The rate limiting metadata follows the Segment API [Rate limit errors](https://docs.segmentapis.com/tag/Rate-Limits/#section/Rate-limit-errors){:target="_blank”} specification and the headers show how many remaining API calls can be made. If you exceed the rate limit, Segment returns a 429 status code.
+You can make up to 120 requests to the failure logs endpoint per day. Some of the request “tokens” replenish every hour. Once Segment collects the observability events, it takes 1-2 hours to populate the log. 
+
+The rate limiting metadata follows the Segment API [Rate limit errors](https://docs.segmentapis.com/tag/Rate-Limits/#section/Rate-limit-errors){:target="_blank”} specification and the headers show how many remaining API calls can be made. If you exceed the rate limit, Segment returns a 429 status code.
 
 Here's an example call: 
 
@@ -60,21 +62,17 @@ Here's an example of an Error Logged event:
 {
   "type": "observability",
   "event": "Error Logged",
-  "version": 1,
+  "version": "v1",
   "properties": {
     "routed": {
       "to": [
-        { "type" : "destination", "id" : "abc" },
-        { "type" : "subscription", "id" : "def" }
+        { "type" : "destination", "id" : "abc" }
       ],
       "from": [
         { "type" : "source", "id" : "ghi" }
       ]
     },
     "discarded": true | false,
-    "attempt": 2,
-    "reason": "failed insert function",
-    "featureName": "destinationInsertFunction" | "delivery",
     "messageId": "m",
     "occurredAt": "2025-03-23T20:00:00Z",
     "loggedAt": "2025-03-23T20:00:00Z"
@@ -92,22 +90,19 @@ Here's an example of a Delivery Attempt Logged event:
 {
   "type": "observability",
   "event": "Delivery Attempt Logged",
-  "version": 1,
+  "version": "v1",
   "properties": {
     "routed": {
       "to": [
-        { "type" : "destination", "id" : "abc" },
-        { "type" : "subscription", "id" : "def" }
+        { "type" : "destination", "id" : "abc" }
       ],
       "from": [
         { "type" : "source", "id" : "ghi" }
       ]
     },
     "attempt": 4,
-    "reason": "some description for why",
     "outcome": "failure",
     "destinationExchangeId": "x",
-    "featureName": "destinationInsertFunction" | "delivery",
     "messageId": "m",
     "occurredAt": "2025-03-23T20:00:00Z",
     "loggedAt": "2025-03-23T20:00:00Z"
@@ -126,20 +121,19 @@ Here's an example of a Delivery Exchange Logged event:
 {
   "type": "observability",
   "event": "Destination Exchange Logged",
-  "version": 1,
+  "version": "v1",
   "properties": {
     "requestToDestination": {
       "body": "{\"key\": \"value\"}"
     },
     "responseFromDestination": {
       "status" : 418,
-      "headers": { "X-header": "value" }
+      "headers": { "X-header": "value" },
       "body": "{\"key\": \"value\"}"
     },
     "routed": {
       "to": [
-        { "type" : "destination", "id" : "abc" },
-        { "type" : "subscription", "id" : "def" }
+        { "type" : "destination", "id" : "abc" }
       ],
       "from": [
         { "type" : "source", "id" : "ghi" }
