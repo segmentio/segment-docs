@@ -59,7 +59,7 @@ To connect your Azure database to Segment, [give Segment access to your SQL Data
 ### Connect Azure to Segment
 
 > info "Unified warehouse credentials in public beta"
-> Create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 To connect Azure to Segment:
 1. Navigate to your product area in the Segment app. 

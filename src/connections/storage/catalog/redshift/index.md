@@ -69,11 +69,11 @@ To connect Redshift to Segment:
     * For Profiles Sync, navigate to **Unify > Profiles Sync**.
 2. Select *Redshift* as your warehouse.
 3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Redshift instance:
-    * Hostname: The Redshift URL
-    * Port: The port used for connecting to your Redshift warehouse
-    * Database name: The database that Segment uses in order to sync data
-    * Username: The Redshift user that Segment uses to run SQL in your warehouse
-    * Password: The password of the user above
+    * **Hostname**: The Redshift URL
+    *  **Port**: The port used for connecting to your Redshift warehouse
+    *  **Database name**: The database that Segment uses in order to sync data
+    *  **Username**: The Redshift user that Segment uses to run SQL in your warehouse
+    *  **Password**: The password of the user above
 4. Test your connection. 
 5. Click **Save**.
 
