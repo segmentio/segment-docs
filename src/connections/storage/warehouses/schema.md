@@ -3,7 +3,7 @@ title: Warehouse Schemas
 ---
 
 A **schema** describes the way that the data in a warehouse is organized. Segment stores data in relational schemas, which organize data into the following template:
-`<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks), and the property refers to the data being collected (user_id). All schemas convert collection and property names from `CamelCase` to `snake_case` using the [go-snakecase](https://github.com/segmentio/go-snakecase) package.
+`<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (`segment_engineering`), collection refers to the event (`tracks`), and the property refers to the data being collected (`user_id`). All schemas convert collection and property names from `CamelCase` to `snake_case` using the [go-snakecase](https://github.com/segmentio/go-snakecase){:target="_blank”} package.
 
 > info "Warehouse column creation"
 > Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
@@ -125,28 +125,28 @@ The table below describes the schema in Segment Warehouses:
 
 | source                | property                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<source>.aliases`    | A table with your `alias` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `<source>.groups`     | A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `<source>.accounts`   | *IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `<source>.identifies` | A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `<source>.users`      | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact Segment support](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
-| `<source>.pages`      | A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `<source>.screens`    | A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `<source>.tracks`     | A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.                                                                                                                                                                                                                                                                                                                |
-| `<source>.<event>`    | For `track` calls, each event like `Signed Up` or `Order Completed` also has its own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `<source>.aliases`    | A table with your Alias method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `<source>.groups`     | A table with your Group method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `<source>.accounts`   | *IN BETA* A table with unique Group method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `<source>.identifies` | A table with your Identify method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `<source>.users`      | A table with unique Identify calls. Identify calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact Segment support](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
+| `<source>.pages`      | A table with your Page method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `<source>.screens`    | A table with your Screen method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `<source>.tracks`     | A table with your Track method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.                                                                                                                                                                                                                                                                                                                |
+| `<source>.<event>`    | For Track calls, each event like `Signed Up` or `Order Completed` also has its own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 
 ## Identifies table
 
-The `identifies` table stores the `.identify()` method calls. Query it to find out user-level information. It has the following columns:
+The `identifies` table stores the Identify method calls. Query it to find out user-level information. It has the following columns:
 
 | method          | property                                                                                                                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `anonymous_id`  | The anonymous ID of the user.                                                                                                                                                              |
 | `context_<key>` | Non-user-related context fields sent with each identify call.                                                                                                                              |
-| `id`            | The unique ID of the identify call itself.                                                                                                                                                 |
-| `received_at`   | When Segment received the identify call.                                                                                                                                                   |
-| `sent_at`       | When a user triggered the identify call.                                                                                                                                                   |
+| `id`            | The unique ID of the Identify call itself.                                                                                                                                                 |
+| `received_at`   | When Segment received the Identify call.                                                                                                                                                   |
+| `sent_at`       | When a user triggered the Identify call.                                                                                                                                                   |
 | `user_id`       | The unique ID of the user.                                                                                                                                                                 |
 | `<trait>`       | Each trait of the user you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `first_name`. |
 
@@ -175,19 +175,19 @@ ORDER BY day
 
 ## Groups table
 
-The  `groups` table stores the `group` method calls. Query it to find out group-level information. It has the following columns:
+The `groups` table stores the Group method calls. Query it to find out group-level information. It has the following columns:
 
 
 | method          | property                                                                                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `anonymous_id`  | The anonymous ID of the user.                                                                                                                                                         |
-| `context_<key>` | Non-user-related context fields sent with each group call.                                                                                                                            |
-| `group_id`      | The unique ID of the group.                                                                                                                                                           |
-| `id`            | The unique ID of the group call itself.                                                                                                                                               |
-| `received_at`   | When Segment received the groups call.                                                                                                                                                |
-| `sent_at`       | When a user triggered the group call.                                                                                                                                                 |
+| `context_<key>` | Non-user-related context fields sent with each Group call.                                                                                                                            |
+| `group_id`      | The unique ID of the Group.                                                                                                                                                           |
+| `id`            | The unique ID of the Group call itself.                                                                                                                                               |
+| `received_at`   | When Segment received the Group call.                                                                                                                                                |
+| `sent_at`       | When a user triggered the Group call.                                                                                                                                                 |
 | `user_id`       | The unique ID of the user.                                                                                                                                                            |
-| `<trait>`       | Each trait of the group you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`. |
+| `<trait>`       | Each trait of the Group you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`. |
 
 ### Querying the Groups table
 
@@ -212,18 +212,18 @@ GROUP BY name
 
 ## Pages and Screens tables
 
-The `pages` and `screens` tables store the `page` and `screen` method calls. Query it to find out information about page views or screen views. It has the following columns:
+The `pages` and `screens` tables store the Page and Screen method calls. Query it to find out information about page views or screen views. It has the following columns:
 
 | method          | property                                                                                                                                                                                      |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `anonymous_id`  | The anonymous ID of the user.                                                                                                                                                                 |
-| `context_<key>` | Non-user-related context fields sent with each page or screen call.                                                                                                                           |
-| `id`            | The unique ID of the page or screen call itself.                                                                                                                                              |
-| `received_at`   | When Segment received the page or screen call.                                                                                                                                                |
-| `sent_at`       | When a user triggered the page or screen call.                                                                                                                                                |
-| `received_at`   | When Segment received the track call.                                                                                                                                                         |
+| `context_<key>` | Non-user-related context fields sent with each Page or Screen call.                                                                                                                           |
+| `id`            | The unique ID of the Page or Screen call itself.                                                                                                                                              |
+| `received_at`   | When Segment received the Page or Screen call.                                                                                                                                                |
+| `sent_at`       | When a user triggered the Page or Screen call.                                                                                                                                                |
+| `received_at`   | When Segment received the Track call.                                                                                                                                                         |
 | `user_id`       | The unique ID of the user.                                                                                                                                                                    |
-| `property`      | Each property of your pages or screens creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`. |
+| `property`      | Each property of your Page or Screen calls creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`. |
 
 
 ### Querying the Pages and Screens tables
@@ -258,24 +258,24 @@ ORDER BY day
 
 ## Tracks table
 
-The `tracks` table stores the `track` method calls. Query it to find out information about the events your users have triggered. It has the following columns:
+The `tracks` table stores the Track method calls. Query it to find out information about the events your users have triggered. It has the following columns:
 
 | method          | property                                                                                      |
 | --------------- | --------------------------------------------------------------------------------------------- |
 | `anonymous_id`  | The anonymous ID of the user.                                                                 |
-| `context_<key>` | Non-user-related context fields sent with each track call.                                    |
+| `context_<key>` | Non-user-related context fields sent with each Track call.                                    |
 | `event`         | The slug of the event name, mapping to an event-specific table.                               |
 | `event_text`    | The name of the event.                                                                        |
 | `id`            | An ID attached to the event at execution time and used for deduplication at the server level. |
-| `received_at`   | When Segment received the track call.                                                         |
-| `sent_at`       | When a user triggered the track call.                                                         |
+| `received_at`   | When Segment received the Track call.                                                         |
+| `sent_at`       | When a user triggered the Track call.                                                         |
 | `user_id`       | The unique ID of the user.                                                                    |
 
 
 ### Querying the Tracks table
 
 
-Your `tracks` table is a rollup of the different event-specific tables, for quick querying of just a single type. For example, you could see the number of unique users signed up each day:
+Your `tracks` table is a combination of the different event-specific tables, for quick querying of just a single type. For example, you could see the number of unique users signed up each day:
 
 ```sql
 SELECT DATE(sent_at) AS Day, COUNT(DISTINCT(user_id)) AS Users
@@ -294,19 +294,19 @@ ORDER BY day
 
 ## Event Tables
 
-Your event tables are a series of table for each custom event you record to Segment. We break them out into their own tables because the properties, and, as a result, the columns, differ for each event. Query these tables to find out information about specific properties of your custom events. They have the following columns:
+Your event tables are a series of table for each custom event you record to Segment. Segment breaks them out into their own tables because the properties, and, as a result, the columns, differ for each event. Query these tables to find out information about specific properties of your custom events. They have the following columns:
 
 | event           | property                                                                                                                |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `anonymous_id`  | The anonymous ID of the user.                                                                                           |
-| `context_<key>` | Non-user-related context fields sent with each track call.                                                              |
+| `context_<key>` | Non-user-related context fields sent with each Track call.                                                              |
 | `event`         | The slug of the event name, so you can join the `tracks` table.                                                         |
 | `event_text`    | The name of the event.                                                                                                  |
-| `id`            | The unique ID of the track call itself.                                                                                 |
-| `received_at`   | When Segment received the track call.                                                                                   |
-| `sent_at`       | When a user triggered the track call.                                                                                   |
+| `id`            | The unique ID of the Track call itself.                                                                                 |
+| `received_at`   | When Segment received the Track call.                                                                                   |
+| `sent_at`       | When a user triggered the Track call.                                                                                   |
 | `user_id`       | The unique ID of the user.                                                                                              |
-| `<property>`    | Each property of your track calls creates its own column, and the column type is automatically inferred from your data. |
+| `<property>`    | Each property of your Track calls creates its own column, and the column type is automatically inferred from your data. |
 
 ### Querying the Events tables
 
@@ -364,14 +364,14 @@ analytics.track('Register', {
 });
 ```
 
-Then you can expect to see columns named `plan` and `account_type` as well as the default `event`, `id`, and so on. That way, you can write queries against any of the custom data sent in track calls.
+Then you can expect to see columns named `plan` and `account_type` as well as the default `event`, `id`, and so on. That way, you can write queries against any of the custom data sent in Track calls.
 
 > info "Note"
 > Because Segment adds `properties` and `traits` as un-prefixed columns to your tables, there is a chance the names can collide with the reserved column names. For this reason, Segment discards properties with the same name as the reserved column name (for example, `user_id`).
 
 Your event tables are one of the more powerful datasets in Segment SQL. They allow you to see which actions users perform when interacting with your product.
 
-Because every source has different events, what you can do with them will vary. Here's an example where you can see the number of "Enterprise" users signed up for each day:
+Because every source has different events, what you can do with them might vary. Here's an example where you can see the number of "Enterprise" users signed up for each day:
 
 ```sql
 SELECT DATE(sent_at) AS Day, COUNT(DISTINCT(user_id)) AS Users
@@ -403,40 +403,36 @@ ORDER BY day
 | 2014-07-20 | $1,595  |
 | 2014-07-21 | $2,350  |
 
-## Schema Evolution and Compatibility 
+## Schema evolution and compatibility 
 
-### New Columns
+### New columns
 
-New event properties and traits create columns. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
+New event properties and traits create columns. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist, Segment locks and creates the table. If the table exists but new columns need to be created, Segment performs a diff and alter the table to append new columns.
 
-When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
+When Segment process a new batch and discovers a new column to add, Segment takes the most recent occurrence of a column and choose its datatype.
 
 ### Data Types
 
 The data types that Segment currently supports include:
 
-#### `timestamp`
-
-#### `integer`
-
-#### `float`
-
-#### `boolean`
-
-#### `varchar`
+- `timestamp`
+- `integer`
+- `float`
+- `boolean`
+- `varchar`
 
 Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`. 
 
-In cases where a data type is determined incorrectly, the support team can help you update the data type. As an example, if a field can include float values as well as integers, but the first value we received was an integer, we will set the data type of the field to integer, resulting in a loss of precision. 
+In cases where a data type is determined incorrectly, Segment support can help you update the data type. As an example, if a field can include float values as well as integers, but the first value Segment's systems received was an integer, Segment sets the data type of the field to integer, resulting in a loss of precision. 
 
-To update the data type, reach out to the Segment support team. They will update the internal schema that Segment uses to infer your warehouse schema. Once the change is made, Segment will start syncing the data with the correct data type. However, if you want to backfill the historical data , you must drop the impacted tables on your end so that Segment can recreate them and backfill those tables.
+To update the data type, reach out to Segment support. They will update the internal schema that Segment uses to infer your warehouse schema. Once the change is made, Segment will start syncing the data with the correct data type. However, if you want to backfill the historical data, you must drop the impacted tables on your end so that Segment can recreate them and backfill those tables.
 
-To request data types changes, please reach out to [Segment Support](https://segment.com/help/contact) for assistance, and provide with these details for the affected columns in the following format:
+To request data types changes, please reach out to [Segment Support](https://segment.com/help/contact){:target="_blank”} for assistance, and provide with these details for the affected columns in the following format:
 `<schema_name>.<table_name>.<column_name>.<current_datatype>.<new_datatype>`
 
 ### Column Sizing
 
-After analyzing the data from dozens of customers, we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
+After analyzing the data from dozens of customers, Segment set the string column length limit at 512 characters, and will truncate longer strings.
 
 Segment uses special-case compression for some known columns, like event names and timestamps. The others default to LZO. Segment may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessarily complex.
 
@@ -444,27 +440,24 @@ Segment uses special-case compression for some known columns, like event names a
 
 The Segment API associates four timestamps with every call: `timestamp`, `original_timestamp`, `sent_at` and `received_at`.
 
-All four timestamps pass through to your Warehouse for every ETL'd event. In most cases the timestamps are close together, but they have different meanings which are important.
+All four timestamps pass through to your Warehouse for every ETL'd event. In most cases the timestamps are close together, but each timestamp has a different meaning:
 
-`timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events using a server-side library, this is the timestamp you'll want to reference in your queries.
+- `timestamp`: The UTC-converted timestamp which is set by the Segment library. If you are importing historical events using a server-side library, this is the timestamp you'll want to reference in your queries.
+- `original_timestamp`: The original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp`, which is then relabeled as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
+- `sent_at`: The UTC timestamp set by library when the Segment API call was sent.  This timestamp can also be affected by device clock skew. Segment adjusts the `sent_at` timestamp when loading events into your data warehouse to better account for batch scenarios where events are queued over a period of time. For more information about how Segment adjusts this timestamp, refer to the [Spec: Common](/docs/connections/spec/common/#sentat) documentation. 
+- `received_at`: The UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
 
-`original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabeled as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
-
-`sent_at` is the UTC timestamp set by library when the Segment API call was sent.  This timestamp can also be affected by device clock skew. Segment adjusts the `sent_at` timestamp when loading events into your data warehouse to better account for batch scenarios where events are queued over a period of time. For more information about how Segment adjusts this timestamp, refer to the [Spec: Common](/docs/connections/spec/common/#sentat) documentation. 
-
-`received_at` is UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
-
-> info ""
-> Segment recommends using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, Segment sets `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete. 
+> info "Segment recommends using the `received_at` timestamp for all time-based queries"
+> The `sent_at` timestamp relies on a client's device clock being accurate, which might not be true.  Segment also sets `received_at` as the sort key in Redshift schemas, which means queries will execute much faster if using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete. 
 >
-> For Business Tier customers, Segment suggests enabling `received_at` in the Selective Sync settings to ensure syncs and backfills complete successfully. 
+> Segment suggests that Business Tier customers turn on `received_at` in the Selective Sync settings so that syncs and backfills complete successfully. 
 
-`received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
+`received_at` does not ensure chronology of events.  For queries based on event chronology, use `timestamp`.
 
 > info ""
 > ISO-8601 date strings with timezones included are required when using timestamps with [Engage](/docs/engage/). Sending custom traits without a timezone included in the timestamp will result in the value not being saved. 
 
-To learn more about timestamps in Segment, [read our timestamps overview](/docs/connections/spec/common/#timestamps) in the Segment Spec.
+To learn more about timestamps in Segment, [read the timestamps overview](/docs/connections/spec/common/#timestamps) in the Segment Spec.
 
 ## id
 
@@ -474,11 +467,11 @@ Each row in your database will have an `id` which is equivalent to the messageId
 
 The `uuid` column is used to prevent duplicates. You can ignore this column.
 
-The `uuid_ts` column is used to keep track of when the specific event was last processed by our connector, specifically for deduping and debugging purposes. You can generally ignore this column.
+The `uuid_ts` column is used to keep track of when the specific event was last processed by Segment's connector, specifically for deduping and debugging purposes. You can generally ignore this column.
 
 The `loaded_at` column contains the UTC timestamp reflecting when the data was staged by the processor. This column is created only in BigQuery warehouse.
 
-## Sort Key
+## Sort key
 
 All tables use `received_at` for the sort key. Amazon Redshift stores your data on disk in sorted order according to the sort key. The Redshift query optimizer uses sort order when it determines optimal query plans.
 
@@ -490,4 +483,4 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 [How frequently does data sync to my warehouse?](/docs/connections/storage/warehouses/warehouse-syncs/#sync-frequency)
 
-Check out our [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful Redshift queries to get you started](/docs/connections/storage/warehouses/redshift-useful-sql).
+Check out the [Frequently Asked Questions about Warehouses](/docs/connections/storage/warehouses/faq/) and [a list of helpful Redshift queries to get you started](/docs/connections/storage/warehouses/redshift-useful-sql).
