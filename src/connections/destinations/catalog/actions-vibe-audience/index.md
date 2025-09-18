@@ -1,20 +1,23 @@
 ---
 title: Vibe Audiences (Actions)
 engage: true
+id: 68c960b951beba1bccaeab02
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-[Vibe](https://www.vibe.co/){:target="\_blank"} is a streaming TV advertising platform that helps brands reach their audiences on the big screen. Vibe makes TV ads as easy to launch and measure as digital campaigns, with full transparency on performance. Advertisers of all sizes use Vibe to drive awareness, engagement, and growth through premium CTV inventory.
+[Vibe](https://www.vibe.co/){:target="_blank"} is a streaming TV advertising platform that helps brands reach their audiences on streaming devices. Vibe lets advertisers to launch TV ads and measure them as digital campaigns with full transparency on performance. Advertisers of all sizes use Vibe to drive awareness, engagement, and growth through premium CTV inventory.
 
-This destination is maintained by **Vibe**. For any issues with the destination, contact the [Vibe Support team](mailto:team-integration@vibe.co){:target="\_blank"}.
+This destination is maintained by Vibe. For any issues with the destination, contact the [Vibe Support team](mailto:team-integration@vibe.co){:target="_blank"}.
 
 ## Getting started
 
-> info "Prerequisites"
-> Before connecting to the [Vibe Audiences (Actions) destination](/docs/connections/destinations/catalog/actions-vibe-audiences/), you must first enable the integration in Vibe and retrieve your **Advertiser ID** and **Vibe Token**.
+### Prerequisites
 
-To do so:
+Before connecting to the Vibe Audiences (Actions) destination, you must first enable the integration in Vibe and retrieve your **Advertiser ID** and **Vibe Token**.
+
+To retrieve the Advertiser ID and Vibe Token from Vibe:
 
 1. Log in to your Vibe account and navigate to **Settings**.
 2. Select **Custom Audiences**.
@@ -23,12 +26,12 @@ To do so:
 5. Select the relevant advertiser.
 6. Copy your **Advertiser ID** and your **Vibe Token**.
 
-### Add the Vibe Audiences destination in Segment
+## Set up the Vibe Audiences destination in Segment
 
 1. From your Segment workspace, go to **Connections > Catalog** and select the **Destinations** tab.
 2. Search for **Vibe Audiences** and select the destination.
 3. Click **Add Destination**.
-4. Select the Engage space you want to use as the Source (note: this destination only supports sending Engage Audiences to Vibe).
+4. Select the Engage space you want to use as the Source. **Note**: this destination only supports sending Engage Audiences to Vibe.
 5. Name your destination in the Settings tab.
 6. Enter the following settings:
    - **Advertiser ID**: Your Vibe Advertiser ID
@@ -39,6 +42,7 @@ To do so:
 
 Your Vibe destination is now ready to receive audiences. Once synced, your Segment audiences will appear in Vibe under **Custom Audiences**. You can then select the synced audiences for use in your Vibe campaigns.
 
-Note: Audience population may take some time to fully process.
+> info ""
+> The audience population might take some time to process.
 
 {% include components/actions-fields.html %}
