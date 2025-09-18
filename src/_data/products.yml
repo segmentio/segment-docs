@@ -200,3 +200,12 @@ items:
     team: false
     business: true
     add-on: false
+
+- product_display_name: Failure Log Collection
+  slug: failure-logs
+  plan-note: "Failure Log Collection is available to customers on Business Tier plans."
+  plans: 
+    free: false
+    team: false
+    business: true
+    add-on: false
