@@ -161,7 +161,7 @@ For step-by-step instructions on how to connect an audience to a destination, se
 
 ### Disconnect or remove a destination 
 
-Whnen managing your audience-destination connections you have two options:
+When managing your audience-destination connections you have two options:
 
 1. **Connect to destination** - Toggles the connection on and off. When disconnected, the setup and configuration remain saved, but no data flows from the audience to the destination until you re-enable the connection. Use this option to pause sending data without losing your work.
 2. **Remove destination from audience** - Deletes the connection completely, so no events are sent to the destination. To use the destination again, you'll need to set it up as new from the beginning.
@@ -199,10 +199,8 @@ Engage displays the following compute statuses for Audiences and Traits.
 
 #### Batch computations
 
-> warning "Starting June 2nd, 2025, disabled batch computations don't automatically backfill data when re-enabled"
+> warning "Disabled batch computations don't automatically backfill data when re-enabled"
 > If you disable and re-enable a batch computation, Segment does not automatically create a backfill. Any data Segment receives during the disabled period is not sent to your Destination after you re-enable your batch computation. If you want to backfill your data, you must reach out to [Segment Support](mailto:friends@segment.com) to request a resync.
->
-> Segment is releasing this feature on a phased rollout plan, and expects this to be available to all customers by September 12, 2025.
 
 
 
