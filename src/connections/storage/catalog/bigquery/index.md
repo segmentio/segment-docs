@@ -47,19 +47,21 @@ The downloaded file will be used to create your warehouse in the Segment app.
 
 If you have trouble creating a new service account, refer to [Google Cloud's documentation about service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts){:target="_blank"} for more information.
 
-### Create the Warehouse in Segment
+### Connect BigQuery to Segment
 
-To create the warehouse in Segment: 
-1. From the homepage of the Segment app, select **Connections > Add Destination** and search for **BigQuery**.
-2. Click **BigQuery**.
-3. Select the source(s) you'd like to sync with the BigQuery destination, and click **Next**.
-3. Enter a name for your destination in the **Name your destination** field.
-4. Enter your Project ID in the **Project ID** field.
-  <br/>*Optional:* Enter a [region code](https://cloud.google.com/compute/docs/regions-zones/){:target="_blank"} in the **Location** field (the default is *US*.)
-5. Copy the contents of the JSON key that you created for the Segment service account into the **Credentials** field.
-6. Click **Connect**.
+> info "Unified warehouse credentials in public beta"
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-If Segment is able to connect to your project, a warehouse will be created and your first sync will begin shortly.
+1. Navigate to the product area in the Segment app.
+    * For Storage destinations, navigate to **Connections > Destinations** and select the **Storage**tab. Click **+ Add storage destination**.
+    * For Profiles Sync, navigate to **Unify > Profiles Sync**.
+2. Select *BigQuery* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your BigQuery instance.
+    * **Project ID**: The Google Cloud project where your BigQuery database resides. Project IDs start with a letter and contain 6 – 63 lowercase letters, digits or dashes. Some project IDs also include domain name separated by a colon
+    * **Location**: The region where you want your BigQuery datasets to reside
+    * **Service account credentials**: The JSON credential that Segment will use to load data into your BigQuery database. Create a service account just for Segment to use
+4. Test your connection. 
+5. Click **Save**.
 
 ## Schema
 

@@ -43,6 +43,27 @@ Use the following steps to set up Databricks in Segment:
 4. (Optional) Select a source(s) to connect to the destination.
 5. Follow the steps below to [connect your Databricks warehouse](#connect-your-databricks-warehouse).
 
+## Connect Databricks to Segment
+
+> info "Unified warehouse credentials in public beta"
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
+To connect Databricks to Segment:
+
+1. Navigate to your product area in the Segment app.
+    * For Storage destinations, navigate to **Connections > Destinations** and select the **Storage** tab. Click **+ Add storage destination**.
+    * For Profiles Sync, navigate to **Unify > Profiles Sync**.
+2. Select *Databricks* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Databricks instance:
+    * **Hostname**: URL of your Databricks server 
+    * **HTTP path**: URL of your Databricks compute resources
+    * **Port**: The port used for connecting to your Databricks warehouse. The default port for Databricks is 443, but your port may be different
+    * **Unity Catalog name**: The catalog that Segment uses in order to sync data
+    * **Service principal client ID**: The client ID used for accessing your Databricks warehouse
+    * **Password**: The OAuth secret used to connect to your Databricks warehouse
+4. Test your connection.
+5. Click **Save**.
+
 ## Connect your Databricks warehouse
 
 Use the five steps below to connect to your Databricks warehouse. 

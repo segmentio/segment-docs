@@ -59,12 +59,23 @@ When you configure your warehouse in Segment, use the username/password you've c
 
 ## Connect Redshift to Segment
 
-After creating a Redshift warehouse, the next step is to connect Segment:
+> info "Unified warehouse credentials in public beta"
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-1. In the Segment App, navigate to the Connections tab and click **Add Destination**
-2. Search for and select `Redshift`
-3. Add the necessary connection details, add your Redshift credentials
-4. Select which sources and collections/properties will sync to this Warehouse
+To connect Redshift to Segment:
+
+1. Navigate to your product area in the Segment app:
+    * For Storage destinations, navigate to **Connections > Destinations** and select the **Storage** tab. Click **+ Add storage destination**.
+    * For Profiles Sync, navigate to **Unify > Profiles Sync**.
+2. Select *Redshift* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Redshift instance:
+    * **Hostname**: The Redshift URL
+    *  **Port**: The port used for connecting to your Redshift warehouse
+    *  **Database name**: The database that Segment uses in order to sync data
+    *  **Username**: The Redshift user that Segment uses to run SQL in your warehouse
+    *  **Password**: The password of the user above
+4. Test your connection. 
+5. Click **Save**.
 
 ## Security
 

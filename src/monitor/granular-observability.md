@@ -6,7 +6,9 @@ plan: failure-logs
 Failure log collection gives you greater visibility into failed event deliveries, allowing you to identify, analyze, and troubleshoot issues with the events that Segment attempted to deliver.
 
 > info "Failure log collection is in private beta"
-> During the private beta, failure log collection only supports streaming destinations receiving events from streaming sources or Engage sources. 
+> Failure log collection is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. During the private beta, failure log collection is available at no cost to Business Tier users.
+>
+> Failure log collection only supports streaming destinations receiving events from streaming sources or Engage sources. 
 
 ## Enable failure logs
 

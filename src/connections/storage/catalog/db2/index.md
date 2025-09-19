@@ -43,21 +43,24 @@ To grant the Segment user access to your database:
   ```
 3. Click **Run All** to execute the `GRANT` command.
 
-### Create Segment Db2 Destination
+### Connect IBM Db2 to Segment
 
-To set up an IBM Db2 destination in the Segment app:
+> info "Unified warehouse credentials in public beta"
+> With unified warehouse credientials you can create warehouse credentials and use them across Segment warehouse products. Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-1. Open the Segment app, navigate to **Connections** and click **Add Destination**. 
-2. Search for and select **IBM Db2 Warehouse**.
-3. Select the sources you want to connect to the IBM Db2 warehouse, and click **Next**.
-4. Enter a name for your destination, and enter the following credentials:
-  - Host (You can find this in your Db2 instance, under Administration > Connections)
-  - Port (50001 is the default for Db2)
-  - Database name (You can find this in your Db2 instance, under Administration > Connections)
-  - User (This is the User ID that you created above)
-  - Password (This is the password that you created above)
-  - Security ([Enter "SSL" in this field](#ssltls))
-5. Click **Connect** to connect your Db2 warehouse to Segment.
+To connect IBM Db2 to Segment: 
+
+1. Navigate to **Connections > Destinations** and select the **Storage** tab in the Segment app. Click **+Add storage destination**. 
+2. Select *IBM Db2* as your warehouse.
+3. Select an existing warehouse credential or create a new warehouse credential by completing the following fields for your Db2 instance:
+    * **Hostname**: The Db2 hostname (You can find this in your Db2 instance, under Administration > Connections)
+    * **Port**: The port used for connecting to your Db2 warehouse. The default port for Db2 is 50001, but your port may be different
+    * **Database name**: The database that Segment uses in order to sync data (You can find this in your Db2 instance, under Administration > Connections)
+    * **Security**: Enter “SSL” in this field
+    * **Username**: The Db2 user that Segment uses to run SQL in your warehouse
+    * **Password**: The password of the user above
+4. Test your connection. 
+5. Click **Save**.
 
 ## Security
 
