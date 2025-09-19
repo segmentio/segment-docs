@@ -34,7 +34,7 @@ Auto-Instrumentation simplifies tracking in your websites and apps by removing t
 
 ## Background
 
-Collecting high-quality analytics data is essential, but traditional tracking setups often fall behind as business needs change. Instrumentation updates can take weeks or months, and these delays reduce visibility and increase the burden on engineering teams.
+Collecting high-quality analytics data is essential, but traditional tracking setups often fall behind as business needs change. Instrumentation updates take time away from other engineering priorities, and these delays reduce visibility and increase the burden on engineering teams.
 
 ## Auto-Instrumentation as a solution
 
