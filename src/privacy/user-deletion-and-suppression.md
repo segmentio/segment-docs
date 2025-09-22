@@ -69,7 +69,7 @@ The usage tracker on the deletion requests tab shows you how many Segment & dest
 
 #### Deletion requests status 
 
-The deletion requests status table allows you to see the status of each of the Regulations that you've submitted, including if the Regulation was forwarded to your destinations, the deletion type, the date the Regulation was received, and the date the Regulation was completed. 
+The deletion requests status table allows you to see the status of each of the Regulations that you've submitted over the past 90 days, including if the Regulation was forwarded to your destinations, the deletion type, the date the Regulation was received, and the date the Regulation was completed. 
 
 If you need to verify if information about a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in the connected destinations.
 
