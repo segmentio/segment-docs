@@ -44,7 +44,6 @@ When `Generate Purchase Event Per Product` is set to `true`, this setting effect
 {% endcapture %}
 
 
-
 {% capture group_identify_user_details %}
 
 
