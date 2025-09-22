@@ -29,4 +29,7 @@ This destination is maintained by Reddit. For any issues with the destination, [
 9. Navigate to the engage space that contains the audience, and select it in the **Audiences** tab.
 10. Click **Add Destination**.
 
+> warning ""
+> Reddit Audiences destination automatically hashes `email`, `iOS Ad ID` and `Android Ad ID` fields when syncing the audience to Reddit.
+
 {% include components/actions-fields.html %}
