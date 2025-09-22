@@ -108,6 +108,8 @@ The group ID that Mixpanel will use is `12345`.
 > Segment maps the userId set in the identify event to the distinct ID in Mixpanel. 
 >
 > Segment also maps the following traits to Mixpanel reserved properties to fit Mixpanel's use cases: `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
+>
+> For more detail, see Mixpanel's documentation on [Reserved Properties](https://docs.mixpanel.com/docs/data-structure/property-reference/reserved-properties){:target="_blank"}.
 
 ##### Example
 For example, if you map `traits.email` to Mixpanel, Segment automatically transforms this into Mixpanel's reserved property `$email`.
