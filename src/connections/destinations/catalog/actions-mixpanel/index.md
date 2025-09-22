@@ -65,7 +65,7 @@ By default, the Mixpanel (Actions) destination uses `$group_id` as the group key
 2. Scroll to the "Group Keys" section. If this section doesn't exist, you may not have the Group Analytics add-on.
 3. Create the new group key:
 
-![GIF demonstratin how to set Group key in Mixpanel UI](./images/set-group-key.gif)
+![GIF demonstrating how to set Group key in Mixpanel UI](./images/set-group-key.gif)
 
 ### Using a different group key
 If you already have a group set up in Mixpanel with a different group key and wish to use that one, you can specify it in the `Group Key` field of the destination configuration.
@@ -109,7 +109,7 @@ The group ID that Mixpanel will use is `12345`.
 >
 > Segment also maps the following traits to Mixpanel reserved properties to fit Mixpanel's use cases: `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
 
-### Example
+##### Example
 For example, if you map `traits.email` to Mixpanel, Segment automatically transforms this into Mixpanel's reserved property `$email`.
 
 ![Screenshot of mapping traits.email from Segment to Mixpanel email field, which Segment transforms to $email](./images/traits-mapping-screenshot.png)
