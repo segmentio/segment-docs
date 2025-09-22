@@ -112,7 +112,7 @@ The group ID that Mixpanel will use is `12345`.
 ### Example
 For example, if you map `traits.email` to Mixpanel, Segment automatically transforms this into Mixpanel's reserved property `$email`.
 
-![Screenshot of mapping traits.email from Segment to Mixpanel email field, which Segment transforms to $email](./traits-mapping-screenshot.png)
+![Screenshot of mapping traits.email from Segment to Mixpanel email field, which Segment transforms to $email](./images/traits-mapping-screenshot.png)
 
 {% endcapture %}
 
