@@ -30,7 +30,7 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 
 1. Go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects){:target='_blank'}. Copy the Mixpanel API Key and API Secret for your project.
 2. In the your Segment workspace, click **Catalog**, then click **Destinations**.
-3. Navigate to **Destinations Actions** and select "Mixpanel" and click **Add destination**.
+3. Navigate to **Destinations Actions**, select "Mixpanel",  then click **Add destination**.
 4. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
 ### Connection modes for Mixpanel (Actions) destination
