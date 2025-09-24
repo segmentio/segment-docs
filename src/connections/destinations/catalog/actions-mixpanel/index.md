@@ -105,7 +105,7 @@ The group ID that Mixpanel will use is `12345`.
 
 {% capture identify_user_details %}
 > success ""
-> Segment maps the userId set in the identify event to the distinct ID in Mixpanel. 
+> Segment maps the userId set in the Identify event to the distinct ID in Mixpanel. 
 >
 > Segment also maps the following traits to Mixpanel reserved properties to fit Mixpanel's use cases: `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
 >
