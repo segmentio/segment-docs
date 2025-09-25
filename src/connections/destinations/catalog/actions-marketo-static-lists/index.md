@@ -101,3 +101,14 @@ Check that you followed all of the set up steps. Wait six or more hours after se
 Only users in the audience who also have an email address are uploaded to the list. You may need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
 
 If a user has multiple email addresses, each address appears once in the Marketo list. 
+
+## FAQ
+For Reverse ETL (RETL), the bulk size is determined by your pricing plan:
+
+Free Plan: Allows processing of up to 500,000 Reverse ETL records per month.
+Team Plan: Allows processing of up to 1 million Reverse ETL records per month.
+Business Plan: Allows processing of 50 times the number of Monthly Tracked Users (MTUs) or 0.25 times the number of monthly API calls.
+For Engage, the inbound data throughput limit is 1,000 events per second. This includes the total event stream from sources connected to Engage, including historical data replays. Segment may slow request processing once this limit is reached.
+
+If you require a change to your bulk size please contact Segment Support.
+
