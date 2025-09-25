@@ -1,5 +1,8 @@
 ---
 title: Yonoma (Actions) Destination
+id: 689b6590095a4d2957bc50ca
+private: true
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
