@@ -13,7 +13,7 @@ redirect_from:
 {% include content/plan-grid.md name="actions" %}
 
 
-[Mixpanel](https://mixpanel.com/){:target='_blank'} enables you to build better products through powerful, self-serve product analytics to help you convert, engage, and retain more users.
+[Mixpanel](https://mixpanel.com/){:target='_blank'} lets you build better products through powerful, self-serve product analytics to help you convert, engage, and retain more users.
 
 
 ## Benefits of Mixpanel (Actions) vs Mixpanel Classic
@@ -29,21 +29,19 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 ## Getting started
 
 1. Go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects){:target='_blank'}. Copy the Mixpanel API Key and API Secret for your project.
-2. From the Segment web app, click **Catalog**, then click **Destinations**.
-3. Find the Destinations Actions item in the left navigation, and click it.
-4. Click the "Mixpanel" item to select it and click **Configure**.
-5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
+2. In the your Segment workspace, click **Catalog**, then click **Destinations**.
+3. Navigate to **Destinations Actions**, select "Mixpanel",  then click **Add destination**.
+4. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
-### Connection Modes for Mixpanel (Actions) destination
+### Connection modes for Mixpanel (Actions) destination
 
-The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 {% capture track_purchase_details %}
 
-When set `Generate Purchase Event Per Product` to `true`, this setting effectively "flattens" the array of objects in the `Order Completed`'s `products` property by tracking a `Product Purchased` event for each item in the array. This enables more sophisticated analysis on a per-product basis in Mixpanel. These `Product Purchased` events will contain all of the key-value pairs from their respective object in the `products` array as event properties, along with the `order_id` and `checkout_id` from the `Order Completed` event.
+When `Generate Purchase Event Per Product` is set to `true`, this setting effectively "flattens" the array of objects in the `Order Completed`'s `products` property by tracking a `Product Purchased` event for each item in the array. This enables a more sophisticated analysis on a per-product basis in Mixpanel. These `Product Purchased` events will contain all of the key-value pairs from their respective object in the `products` array as event properties, along with the `order_id` and `checkout_id` from the `Order Completed` event.
 
 {% endcapture %}
-
 
 
 {% capture group_identify_user_details %}
@@ -56,24 +54,24 @@ In the default configuration, Mixpanel (Actions) triggers this action when it re
 
 This action sets or updates the properties of specific groups. Use this when you want to update properties on a [group profile](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#group-profiles){:target='_blank'}.
 
-The Groups model in Segment is slightly different than in Mixpanel. To explain the conceptual difference, it may help to think in terms of database tables. In Segment, there is a single "groups" table. You can have as many group rows as you want and each row has a unique identifier. When you want to set traits on that group, you only need to know the group id.
+The Groups model in Segment is slightly different than in Mixpanel. To explain the conceptual difference, it may help to think in terms of database tables. In Segment, there is a single "groups" table. You can have as many group rows as you want and each row has a unique identifier. When you want to set traits on that group, you only need to know the group ID.
 
 However, in Segment you cannot distinguish between "types" of groups. For example, a user can belong to a "Company" as well as a "Team". There is no way to differentiate between those in Segment. In Mixpanel, you can have multiple group types which are defined by a `group key`. To update group traits in Mixpanel you need to specify the `group key` *and* `group id`.
 
 ### Default group key
 By default, the Mixpanel (Actions) destination uses `$group_id` as the group key. Create a new group in Mixpanel with `$group_id` as the group key to complete the configuration.
 
-1. Go to your [Mixpanel project](https://mixpanel.com/report){:target='_blank'} settings
+1. Go to your [Mixpanel project](https://mixpanel.com/report){:target='_blank'} settings.
 2. Scroll to the "Group Keys" section. If this section doesn't exist, you may not have the Group Analytics add-on.
 3. Create the new group key:
 
-![Set Group Key](./images/set-group-key.gif)
+![GIF demonstrating how to set Group key in Mixpanel UI](./images/set-group-key.gif)
 
 ### Using a different group key
 If you already have a group set up in Mixpanel with a different group key and wish to use that one, you can specify it in the `Group Key` field of the destination configuration.
 
 ### Backwards-compatibility with Mixpanel Classic destination
-In the classic destination, the "group id" specified in the Segment SDK call was ignored and you were required to set a trait where the key of the trait is the group key and the value of that trait is the group id. While that is no longer necessary, this behavior is supported in the Mixpanel (Actions) destination to ensure backwards-compatibility. *If* you specify a trait that matches specified group key, Mixpanel uses the value of that trait as the group id.
+In the classic destination, the "group ID" specified in the Segment SDK call was ignored and you were required to set a trait where the key of the trait is the group key and the value of that trait is the group ID. While that is no longer necessary, this behavior is supported in the Mixpanel (Actions) destination to ensure backwards-compatibility. *If* you specify a trait that matches specified group key, Mixpanel uses the value of that trait as the group ID.
 
 #### Scenario 1: No group key trait specified
 ```js
@@ -85,7 +83,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
   "total billed": 830
 });
 ```
-The group id that Mixpanel will use is `0e8c78ea9d97a7b8185e8632`.
+The group ID that Mixpanel will use is `0e8c78ea9d97a7b8185e8632`.
 
 #### Scenario 2: Group key trait IS specified
 ```js
@@ -98,7 +96,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
   "total billed": 830
 });
 ```
-The group id that Mixpanel will use is `12345`.
+The group ID that Mixpanel will use is `12345`.
 
 > success ""
 > The below special traits will be mapped to Mixpanel reserved properties automatically to fit Mixpanel's use cases. `traits.name` -> `$name`.
@@ -107,7 +105,16 @@ The group id that Mixpanel will use is `12345`.
 
 {% capture identify_user_details %}
 > success ""
-> Segment maps the userId set in the identify event to the distinct ID in Mixpanel. Segment also maps the following traits to Mixpanel reserved properties to fit Mixpanel's use cases: `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
+> Segment maps the userId set in the Identify event to the distinct ID in Mixpanel. 
+>
+> Segment also maps the following traits to Mixpanel reserved properties to fit Mixpanel's use cases: `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
+>
+> For more detail, see Mixpanel's documentation on [Reserved Properties](https://docs.mixpanel.com/docs/data-structure/property-reference/reserved-properties){:target="_blank"}.
+
+##### Example
+For example, if you map `traits.email` to Mixpanel, Segment automatically transforms this into Mixpanel's reserved property `$email`.
+
+![Screenshot of mapping traits.email from Segment to Mixpanel email field, which Segment transforms to $email](./images/traits-mapping-screenshot.png)
 
 {% endcapture %}
 
@@ -123,33 +130,33 @@ Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destina
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
 
 > info ""
-> Contact Mixpanel support if you find features missing from the Mixpanel (Actions) destination that were available in the classic Mixpanel destination.
+> Contact [Mixpanel support](https://mixpanel.com/contact-us/support/){:target="_blank"} if you find features missing from the Mixpanel (Actions) destination that were available in the classic Mixpanel destination.
 
 {% include components/actions-map-table.html name="mixpanel" %}
 
 ## Troubleshooting
 
-### Track events are not attributed to Mixpanel Groups
+#### Track events are not attributed to Mixpanel Groups
 
-If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
+If the Mixpanel (Actions) destination uses `$group_id` as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 
-To send Track events with a custom Group Key, include the key as a property of Track events. For example:
+To send Track events with a custom Group key, include the key as a property of Track events. For example:
 ```js
 analytics.track('Example Event', { custom_group_key : 'group1' });
 ```
-### Failed events due to timestamp
+#### Failed events due to timestamp
 
 If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
 
-### Failed events due to messageId
+#### Failed events due to messageId
 Segment maps the `messageId` of a Segment event to Mixpanel's `insert_id` value. If you are generating your own `messageId`, ensure the format complies with Mixpanel's `insert_id` requirements. For more information, see Mixpanel's [Import Events](https://developer.mixpanel.com/reference/import-events#propertiesinsert_id){:target="_blank”} documentation. 
 
 Failing to generate a `messageId` that complies with Mixpanel's `insert_id` standard might result in a `400 Bad Request` error from Mixpanel.
 
-### Why is Boardman, Oregon appearing in my users' profile location field?
+#### Why is Boardman, Oregon appearing in my users' profile location field?
 
 If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.
 
 
-### Why is the Operating System field empty in Mixpanel?
+#### Why is the Operating System field empty in Mixpanel?
 Mixpanel captures the `Operating System` field from the "OS Name" field in Segment. For Analytics.js sources, ensure that `context.userAgentData.platform` is correctly mapped to the "OS Name" field in your destination mappings. If this mapping is missing or misconfigured, the Operating System field may appear empty in Mixpanel.

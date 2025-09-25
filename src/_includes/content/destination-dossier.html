@@ -47,7 +47,8 @@
   <div class="qi-content">
 <h6>Destination Info</h6>
 <ul class="qi">
-  {% if destMethods.size > 0 %}{% unless page.id == '645d5fc12eb891cf0a93fe4b' %}<li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls{%endif%}{% endif %}{% endfor %}</li>{% endunless %}{% endif %}
+  {% if destMethods.size > 0 %}{% unless page.id == '645d5fc12eb891cf0a93fe4b' or page.id == '652d4cf5e00c0147e6eaf5e7' %}<li>Accepts {% for method in destMethods%}{% if destMethods.size == 1 %}{{method}} calls.{% else %}{% unless forloop.last == true %}{{method}}, {% endunless %}{% if forloop.last == true%}and {{method}} calls{%endif%}{% endif %}{% endfor %}</li>{% endunless %}{% endif %}
+  {% if page.id == '652d4cf5e00c0147e6eaf5e7' %} <li>Accepts <a href="/docs/connections/spec/identify/">Identify</a> and <a href="/docs/connections/spec/track/">Track</a> calls. </li>{% endif %}
   {% if previous_names.size == 1 or components.size == 0 %}
     <li>Refer to it as {% if page.id == '5f7dd6d21ad74f3842b1fc47' %}<strong>Actions Amplitude</strong> {% else %}<strong>{{previous_names | join: '</strong>, or <strong>' }}</strong>{% endif %} in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a></li>
   {% else %}
