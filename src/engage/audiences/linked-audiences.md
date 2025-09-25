@@ -218,7 +218,7 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 ## Step 4: Enable your Linked Audience
 
-After enabling your activation, you'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically creates your audience in a disabled state so that it doesn't start running until you're ready. A run is when Segment runs the audience conditions on your data warehouse and sends events downstream. Segment will automatially trigger a run when you enable your audience. The next run time will be dictated by your configured run schedule.
+After turning on your activation, you'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically creates your audience in a disabled state so that it doesn't start running until you're ready. A run is when Segment runs the audience conditions on your data warehouse and sends events downstream. Segment automatically triggers a run when you enable your audience. The next run time will be dictated by your configured run schedule.
 
 To enable your audience, select the **Enabled** toggle, then select **Enable audience**.
 
@@ -243,7 +243,7 @@ There may be up to a 5 minute delay from the configured start time for audiences
 
 > info ""
 > When configuring an interval run schedule, the system uses a cron-based mechanism anchored to UTC, meaning the next run time aligns with the nearest UTC-based interval cycle, which may shift the schedule relative to your local time zone.
-> When you set a 24-hour interval run schedule at, for example, 4 PM PST, the cron-based system using UTC schedules the next run for 5 PM PST the same day, as it aligns with 12 AM UTC; however, if set after 5 PM PST, like 6 PM PST, the next run will be at 5 PM PST the following day.
+> When you set a 24-hour interval run schedule at, for example, 4 PM PST, the cron-based system using UTC schedules the next run for 5 PM PST the same day, as it aligns with 12 AM UTC; however, if set after 5 PM PST, the next run will be at 5 PM PST the following day.
 
 ## Step 5: Monitor your activation
 
