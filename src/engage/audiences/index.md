@@ -50,7 +50,8 @@ You can also build audiences using Custom Traits, Computed Traits, SQL Traits, a
 
 #### Computed Traits
 
-You can also use computed traits in an audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
+You can also use computed traits in an audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold. A computed trait must be configured to "Send Identify" calls in order to be available for selection in the audience definition.
+
 
 > info ""
 > Engage supports nested traits, but the Audience builder doesn’t support accessing objects nested in arrays. When you send arrays of objects, they are flattened into strings. As a result, the same conditions that work on strings will work on the array. Within the builder, you can only use string operations like `contains` and `does not contain` to look for individual characters or a set of characters in the flattened array.
