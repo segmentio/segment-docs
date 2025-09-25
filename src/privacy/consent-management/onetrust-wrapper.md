@@ -130,6 +130,11 @@ You might experience data loss if a user navigates away from a landing page befo
       <td> No data loss <br><br> Device mode libraries that are passively collecting data and are mapped to categories a user does not consent to share data with might still be collecting data. <br><br><b>Segment is not able to block that data collection.</b></td>
     </tr>
     <tr>
+            <td>Opt-out + Source is not connected to enabled destination</td>
+      <td>User either interacts or does not interact with the consent banner and continues to browse the website</td>
+      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events fired to Segment are not collected by the library since there are no enabled destinations to receive them. </td>
+      <td> Data loss </td>
+    </tr>
       <td>Implied</td>
       <td>User does not interact with the consent banner and continues to access the website</td>
       <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User does not interact with the consent banner and continues to access the website <br><br> 6. Events continue to flow to all connected destinations <br><br><br> If your workspace has <b>unmapped or strictly necessary destinations</b>, events continue to flow to unmapped destinations. </td>
