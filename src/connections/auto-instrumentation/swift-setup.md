@@ -26,7 +26,7 @@ You can either create a new source or turn on Auto-Instrumentation for an existi
 
 ### Enable Auto-Instrumentation on an existing source
 
-If you want to use an existing source, copy its `writeKey` from **Initialize the client**. After you install the SDK (Step 2), return to the source settings to turn on Auto-Instrumentation:
+If you want to use an existing source, copy its `writeKey` from **Initialize the Client**. After you install the SDK (Step 2), return to the source settings to turn on Auto-Instrumentation:
 
 - **Web:** **Connections > Sources > [source] > Settings > Analytics.js > Auto-Instrumentation** and toggle it on.
 - **Mobile:** **Connections > Sources > [source] > Settings > Advanced > Auto-Instrumentation** and toggle it on.
