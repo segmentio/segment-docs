@@ -16,9 +16,8 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 
 ## Getting started
 
-### Getting your StackAdapt GraphQL token
-
-If you do not have an existing StackAdapt read & write API key, contact the [StackAdapt team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
+> info "Getting your StackAdapt GraphQL token"
+> If you do not have an existing StackAdapt read & write API key, contact the [StackAdapt team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
 
 ### Setting up the StackAdapt Audiences destination in Engage
 
@@ -34,8 +33,8 @@ If you do not have an existing StackAdapt read & write API key, contact the [Sta
 10. Enable the destination and click **Save Changes**.
 
 #### Finding the advertiser ID in StackAdapt
-In the StackAdapt, go to `Execute` (or `Overview`) and click `Advertiser`.
-From the `Filter` section, select the advertiser. The advertiser ID appears in the URL after `advertiser=`.
+In the StackAdapt, go to **Execute** (or **Overview**) and click **Advertiser**.
+From the **Filter** section, select the advertiser. The advertiser ID appears in the URL after `advertiser=`.
 
 ### Sync an Engage Audience
 
@@ -58,10 +57,11 @@ To create a StackAdapt audience from your Engage audience:
 2. Select the advertiser you have synced your audience to.
 3. Choose **Profile Properties** > **Segment** and select **External Audience Name** as the rule.
 4. Select a condition and put in the audience name as the filter.
-   > info "Audience name format"
-   > Use the *snake_case* name of the Segment Engage audience which can be found in **Settings**.
-   ![Image showing sample audience settings tab](./images/audience-example.png)
 5. Click **Submit** to create the segment.
+
+> info "Audience name format"
+> Use the *snake_case* name of the Segment Engage audience which can be found in **Settings**, shown in the following screenshot.
+![Image showing sample audience settings tab](./images/audience-example.png)
 
 ### Sending an audience to StackAdapt
 
