@@ -119,3 +119,16 @@ analytics.track('User Signup', {
 
 At this point, the Identity Graph associates external ID (user_id: `use_123`) with the same user `use_4paotyretuj4Ta2bEYQ0vKOq1e7`.
 ![Identities associated to a user in the Identity Graph](images/identity_resolution_3.png)
+
+### Identifiers Added To User Profiles By Each Event Type
+If an event includes an identifier within the listed fields below by its event type, then that identifier will be recognized up by the space's Identity Resolution Settings and will be added to the profile as an identifier.
+
+_For more information on the context.traits object, please see this section on [Saving Traits to the Context Object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/identity/#saving-traits-to-the-context-object:~:text=Saving%20traits%20to,persist%20between%20calls.)._
+
+| Event Type         | Identifiers Promoted if sent in event by these fields      |
+| ------------------ | ---------------------------------------------------------- |
+| [Identify](https://segment.com/docs/connections/spec/identify/)           | `traits` object , `context.traits` object                    |
+| [Track](https://segment.com/docs/connections/spec/track/)              | `properties` object , `context.traits` object                |
+| [Page](https://segment.com/docs/connections/spec/page/)               | `properties` object , `context.traits` object                |
+| [Group](https://segment.com/docs/connections/spec/group/)              | `context.traits` object                                      |
+| [Screen](https://segment.com/docs/connections/spec/screen/)             | `properties` object , `context.traits` object                |
