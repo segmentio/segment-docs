@@ -86,6 +86,9 @@ Setting this dropdown to Omit Traits will ensure that traits not defined in your
     analytics.identify('fe923fjid', {email: 'roger@example.com', first_name: 'Roger'})
 ```
 
+## Track, Identify and Gorup Calls - COMMON JSON Schema Violations
+If you are following [this process](docs/protocols/tracking-plan/create/#common-json-schema) to edit the common JSON schema, setting the Advanced Blocking Controls section will allow you to Block or Omit events based on the common JSON schema definition.
+
 **IMPORTANT: Unplanned identify trait blocking is ONLY supported in cloud-mode Destinations. Events with invalid traits will not be blocked from sending to device-mode Destinations.**
 
 ## Block Identify Calls - Common JSON Schema Violations
