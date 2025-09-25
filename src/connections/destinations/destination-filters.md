@@ -31,7 +31,7 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
-- *(For iOS and Android mobile device-mode)* Destination filters aren't supported. Segment's Swift, Kotlin and React Native libraries do support device-mode destination filters.
+- *(For iOS and Android mobile device-mode)* Destination filters aren't supported.
 - *(For Kotlin, Swift, and React Native device-mode)* You must enable the filters for your source. To do this, go to your source and navigate to **Settings >> Advanced** and turn on the toggle for **Destination Filters**. After you've done that, you'll still need to add the Destination Filters plugin to your application. Instructions for this can be found here:
   - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters/#destination-filters){:target="_blank"}
   - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-filters/){:target="_blank"}
