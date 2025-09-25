@@ -94,3 +94,4 @@ To delete an Audience, follow the steps below:
 3. Click **Enabled** to toggle to **Disabled**, then click **Delete Audience...**.
 4. On the Delete Audience prompt, click **Delete Audience** to confirm.
 
+When an audience is deleted, the audiece will then become a custom trait on the user's profile. 
