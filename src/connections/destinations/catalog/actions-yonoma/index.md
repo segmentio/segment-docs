@@ -17,7 +17,7 @@ This destination is maintained by Yonoma. For any issues with the destination, [
 2. Select Yonoma and click **Add Destination**.
 3. Select an existing Source to connect to Yonoma (Actions).
 4. Go to the [Yonoma dashboard](https://app.yonoma.io/settings/apikey){:target="_blank"}, find and copy the **API key**.
-5. Enter the **API Key** in the Yonoma destination settings in Segment.
+5. Return to the Segment app and enter the **API Key** in your Yonoma destination's settings page.
 6. Click **Save Changes**.
 
 {% include components/actions-fields.html %}
