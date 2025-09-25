@@ -33,7 +33,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 10. Enable the destination and click **Save Changes**.
 
 #### Finding the advertiser ID in StackAdapt
-In the StackAdapt, go to **Execute** (or **Overview**) and click **Advertiser**.
+In StackAdapt, go to **Execute** (or **Overview**) and click **Advertiser**.
 From the **Filter** section, select the advertiser. The advertiser ID appears in the URL after `advertiser=`.
 
 ### Sync an Engage Audience
