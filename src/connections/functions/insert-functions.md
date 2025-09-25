@@ -267,7 +267,7 @@ To prevent your insert function from processing data, toggle Enable Function off
 
 ## Batching the destination insert function
 
-Batch handlers are an extension of insert functions. When you define an `onBatch` handler alongside the handler functions for single events (for example, `onTrack` or `onIdentity`), you're telling Segment that the insert function can accept and handle batches of events. 
+Batch handlers are an extension of insert functions. When you define an `onBatch` handler alongside the handler functions for single events (for example, `onTrack` or `onIdentity`), you're telling Segment that the insert function can accept and handle batches of events.
 
 > info ""
 > Batching is available for destination and destination insert functions only. 
@@ -289,6 +289,8 @@ Segment collects the events over a short period of time and combines them into a
 
 To create a batch handler, define an `onBatch` function within your destination insert function. You can also use the "Default Batch" template found in the Functions editor to get started quickly.
 
+**However**, Segment's function invoker service relies on positional consistency between the input and output arrays when using the `onBatch` handler. When a function returns a transformed batch, Segment pairs each output event with its corresponding input using array index positions—not event IDs or timestamps. Consumers must preserve the original order in their `onBatch` implementation.
+
 ```js
 async function onBatch(events, settings){
   // handle the batch of events
@@ -306,6 +308,7 @@ The handler function receives an array of events. The events can be of any suppo
     {
       "type": "identify",
       "userId": "019mr8mf4r",
+      "messageId": "ajs-next-1757955997356-c029ce21-9034-45a6-ac62-b8b23b655df5",
       "traits": {
         "email": "jake@yahoo.com",
         "name": "Jake Peterson",
@@ -315,6 +318,7 @@ The handler function receives an array of events. The events can be of any suppo
     {
       "type": "track",
       "userId": "019mr8mf4r",
+      "messageId": "ajs-next-1757955997356-bde2ad8e-2af9-45f5-837b-993671f6b1b0",
       "event": "Song Played",
       "properties": {
         "name": "Fallin for You",
@@ -324,6 +328,7 @@ The handler function receives an array of events. The events can be of any suppo
     {
       "type": "track",
       "userId": "971mj8mk7p",
+      "messageId": "ajs-next-1757955997356-9e2ba07c-0085-4a5b-8928-e4450a417f74",
       "event": "Song Played",
       "properties": {
         "name": "Get Right",
@@ -339,6 +344,9 @@ Segment batches together any event _of any type_ that it sees over a short perio
 
 ```js
 async function onBatch(events, settings) {
+  // store original order
+  const originalOrder = events.map(event => event.messageId);
+
   // group events by type
   const eventsByType = {}
   for (const event of events) {
@@ -361,7 +369,10 @@ async function onBatch(events, settings) {
   try {
     const results = await Promise.all(promises);
     const batchResult = [].concat(...results); // Combine arrays into a single array
-    return batchResult;
+    
+    // restore original order
+    const resultMap = new Map(batchResult.map(e => [e.messageId, e]));
+    return originalOrder.map(id => resultMap.get(id));
   } catch (error) {
     throw new RetryError(error.message);
   }
