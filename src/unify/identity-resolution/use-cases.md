@@ -39,3 +39,8 @@ To learn more, visit Segment's [eCommerce Example doc](/docs/unify/identity-reso
 A user can interact with a brand through multiple channels and departments. A user might have touch points with a sales team, a marketing team, and a customer support team throughout their customer journey. It's important for companies to have insights into these cross-functional activities to ensure they understand the complete customer experience.
 
 For example, if a user has logged a complaint with a customer support team, the marketing team should exclude this user from an automatic follow-up email asking for them to leave a public product review on their site.
+
+### Common questions
+
+#### How do I update a user if their contact information has changed?
+If a user changes their email or phone number, you should issue an identify call with the updated information. This helps Segment to link the new information with the existing user profile. However, the creation of new external IDs for significant changes like email or phone number updates is a part of how Segment ensures the accuracy of user tracking across different identifiers.
