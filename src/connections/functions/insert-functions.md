@@ -182,6 +182,10 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 See [errors and error handling](#errors-and-error-handling) for more information on supported error types and how to troubleshoot them.
 
+## Required Event Fields for Classic Destinations
+
+For classic destinations, the initial payload must include required fields due to checks performed by our classic integration code prior to encountering an Insert Function.
+
 ## Runtime and dependencies
 
 {% include content/functions/runtime.md %}
