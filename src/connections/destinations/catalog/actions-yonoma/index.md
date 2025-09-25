@@ -7,7 +7,7 @@ beta: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Yonoma](https://yonoma.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} a SaaS-focused email marketing and lifecycle automation platform that helps B2B software companies turn trials into paying customers, reduce churn, and drive engagement. With the Segment integration, you can instantly sync customer events, traits, and behaviors into Yonoma.
+[Yonoma](https://yonoma.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a SaaS-focused email marketing and lifecycle automation platform that helps B2B software companies turn trials into paying customers, reduce churn, and drive engagement. With Yonoma's Segment integration, you can instantly sync customer events, traits, and behaviors into Yonoma.
 
 This destination is maintained by Yonoma. For any issues with the destination, [contact their Support team](mailto:support@yonoma.io).
 
