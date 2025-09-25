@@ -33,25 +33,25 @@ To install Signals, add the following dependencies to your app-level Gradle buil
 ```groovy
 dependencies {
   // Core Analytics Kotlin library
-  implementation("com.segment.analytics.kotlin:android:1.19.1")
+  implementation("com.segment.analytics.kotlin:android:1.21.0")
 
   // Live plugin for real-time analytics
-  implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.1.0")
+  implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.3.0")
 
   // Signals core library
-  implementation("com.segment.analytics.kotlin.signals:core:0.5.0")
+  implementation("com.segment.analytics.kotlin.signals:core:0.9.0")
 
   // Optional: Jetpack Compose UI tracking
-  implementation("com.segment.analytics.kotlin.signals:compose:0.5.0")
+  implementation("com.segment.analytics.kotlin.signals:compose:0.9.0")
 
   // Optional: OkHttp3 network request tracking
-  implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+  implementation("com.segment.analytics.kotlin.signals:okhttp3:0.9.0")
 
   // Optional: Screen and route tracking for Navigation components
-  implementation("com.segment.analytics.kotlin.signals:navigation:0.5.0")
+  implementation("com.segment.analytics.kotlin.signals:navigation:0.9.0")
 
   // Optional: HttpURLConnection tracking
-  implementation("com.segment.analytics.kotlin.signals:java-net:0.5.0")
+  implementation("com.segment.analytics.kotlin.signals:java-net:0.9.0")
 }
 ```
 
@@ -115,7 +115,7 @@ Add the relevant plugin based on your network stack.
 1. Add the dependency to your Gradle file:
 
     ```groovy
-    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.9.0")
     ```
 
 2. Add the tracking plugin to your `OkHttpClient`:
@@ -133,7 +133,7 @@ Retrofit is built on top of OkHttp, so the setup is similar.
 1. Add the same OkHttp3 plugin shown in the previous sectiion:
 
     ```groovy
-    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.5.0")
+    implementation("com.segment.analytics.kotlin.signals:okhttp3:0.9.0")
     ```
 
 2. Attach the plugin through your Retrofit client configuration:
@@ -154,7 +154,7 @@ Retrofit is built on top of OkHttp, so the setup is similar.
 1. Add the JavaNet plugin dependency:
 
     ```groovy
-    implementation("com.segment.analytics.kotlin.signals:java-net:0.5.0")
+    implementation("com.segment.analytics.kotlin.signals:java-net:0.9.0")
     ```
 
 2. Install the plugin at runtime:
