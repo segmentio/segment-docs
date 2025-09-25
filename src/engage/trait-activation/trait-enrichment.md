@@ -179,3 +179,8 @@ Yes, you can edit mappings in the Destination `Mappings` tab at any time. Howeve
 
 No. Segment doesn't guarantee match rate improvements with Trait Enrichment. Match rates depend on data quality.
 
+#### Can I include the audience_key of the audience for which the trait enrichment is being configured as a trait?
+
+No. Implementing this approach will update the user's profile with the previous trait value, replacing any latest value for that trait in the most recent identify call. Trait mapping serves to associate additional traits beyond the primary audience key. By activating the "Send Identify" feature, the system automatically transmits the audience_key as a trait with boolean values through the identify call to both the Engage source and the linked destination. Should you wish to dispatch other custom or SQL traits alongside the audience key within the identify call triggered by the audience, you can achieve this by specifying those traits in the trait mapping. As a result, the identify call that includes the mapped trait will be forwarded to the destination in conjunction with the specific audience to which it is linked.
+
+
