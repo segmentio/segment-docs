@@ -77657,22 +77657,6 @@ items:
       mobile: false
       server: true
   settings:
-  - name: accessKeyId
-    type: string
-    defaultValue: ''
-    description: >-
-      The Access Key ID for your AWS IAM instance. Must be populated if using
-      AWS IAM Authentication Mechanism.
-    required: false
-    label: AWS Access Key ID
-  - name: authorizationIdentity
-    type: string
-    defaultValue: ''
-    description: >-
-      AWS IAM role ARN used for authorization. This field is optional, and
-      should only be populated if using the AWS IAM Authentication Mechanism.
-    required: false
-    label: AWS Authorization Identity
   - name: brokers
     type: string
     defaultValue: ''
@@ -77706,14 +77690,6 @@ items:
       PLAIN or SCRAM Authentication Mechanisms.
     required: false
     label: Password
-  - name: secretAccessKey
-    type: password
-    defaultValue: ''
-    description: >-
-      The Secret Key for your AWS IAM instance. Must be populated if using AWS
-      IAM Authentication Mechanism.
-    required: false
-    label: AWS Secret Key
   - name: ssl_ca
     type: string
     defaultValue: ''
