@@ -12,17 +12,24 @@ sections:
     icon: media/control.svg
 
 - section_title: Respect your end user's consent preferences
-  section_col: 4
+  section_col: 6
   section:
   - name: Consent in Segment Connections
     description: "Manage end user consent in your downstream tools with Consent Management."
     path: /privacy/consent-management/consent-in-segment-connections/
+    icon: connections.svg
   - name: Consent in Reverse ETL
     description: "Enforce consent preferences stored in your data warehouse."
     path: /privacy/consent-management/consent-in-retl/
-  - name: Consent stored on the Profile
+    icon: media/programming.svg
+  - name: Consent in Unify
+    description: "Store consent traits on your users' Profiles."
+    path: /docs/privacy/consent-management/consent-in-unify/
+    icon: personas.svg
+  - name: Consent in Twilio Engage
     description: "Create Audiences of users based on consent status."
     path: /docs/privacy/consent-management/consent-in-unify/
+    icon: media/engage.svg
 
 - section_title: Delete user and workspace data
   section_col: 4

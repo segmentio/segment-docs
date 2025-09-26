@@ -14,7 +14,7 @@ Once an end user's consent preferences are [stored on their Profile](/docs/priva
 
 Before enforcing consent preferences in your Profiles Audiences, you must complete the following prerequisites: 
 - Set up [Consent in Segment Connections](/docs/privacy/consent-management/configure-consent-management) or [Consent in Reverse ETL](/docs/privacy/consent-management/consent-in-retl) and have events stamped with the [consent object](/docs/privacy/consent-management/consent-in-segment-connections#consent-object) streaming from your source or available in your data warehouse. 
-- Map your Engage Destinations to consent categories. Segment assumes all Engage Destinations not mapped to a consent category do not require consent and will recieve all events containing a consent object. 
+- Map your Engage Destinations to consent categories. Segment assumes all Engage Destinations not mapped to a consent category do not require consent and will receive all events containing a consent object. 
 - Verify that your Profiles have consent preferences by creating an Audience with a consent trait condition. If the majority of Profiles have consent preferences on them, you're ready to enable consent enforcement in your Unify space. 
 
 ### Step 1: Enable consent in your Unify space
