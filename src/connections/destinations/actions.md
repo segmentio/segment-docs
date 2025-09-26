@@ -390,6 +390,12 @@ Explanation:
 * The `prepend: "+"` filter adds the `+` prefix.
 * The `default` filter outputs an empty string if the phone number is missing.
 
+#### Template Limitations
+The following limitations are in place for security and performance reasons:
+* Templates are limited to 1000 characters per function.
+* Template evaluation is limited to 500 ms.
+* Template memory usage is limited to 100MB.
+
 ## Conditions
 
 > info ""
