@@ -341,8 +341,25 @@ Follow these steps to add attributes from the warehouse:
 4. Use the **Preview event** panel to confirm names and nesting. Attributes appear under `properties.journey_context.<EntityName>`, and the preview reflects what Segment sends.
 5. (Optional:) Map the enriched fields to your destination schema. 
 
-Here's an example of an enriched payload:
+Here's an example of a payload before and after enrichment:
 
+{% codeexample %}
+{% codeexampletab Before enrichment %}
+```json
+{
+  "properties": {
+    "journey_context": {
+      "Reservation Booked": {
+        "reservation_id": 12345,
+        "hotel_id": 67890
+      }
+    }
+  }
+}
+```
+{% endcodeexampletab %}
+
+{% codeexampletab After enrichment %}
 ```json
 {
   "properties": {
@@ -363,10 +380,12 @@ Here's an example of an enriched payload:
   }
 }
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
 
 > warning "Publish timing for enrichment"
 > When you publish a journey with enrichment enabled, Segment starts a job to prepare enrichment.The journey stays in a publishing state until enrichment is available. If the cache isn’t populated within 5 hours, the publish fails. Resolve Data Graph sync or join-ID issues, then publish again.
-
 
 ### Managing activations
 
