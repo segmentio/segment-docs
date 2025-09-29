@@ -70,17 +70,22 @@ You can find the location of your BigQuery resources using the following method:
 3. The Location of the dataset (like US or EU) is displayed in the Dataset Info.
 
 ## Set up BigQuery as your Reverse ETL source
-1. In the BigQuery console, search for the service account you created. 
-2. When your service account pulls up, click the 3 dots under **Actions** and select **Manage keys**. 
-3. Click **Add Key > Create new key**. 
-4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded. 
-5. Copy all the content in the JSON file you created in the previous step. 
-6. Open the Segment app and navigate to **Connections > Sources**. 
-7. On the My sources page, click **+ Add source**.  
-8. Search for "BigQuery" and select the BigQuery source from the sources catalog. On the BigQuery overview page, click **Add Source**. 
-9. On the Set up BigQuery page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section. 
-10. Enter the location of your BigQuery warehouse in the **Data Location** field. 
-11. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again. 
+1. In the BigQuery console, search for the service account you created.
+2. When your service account pulls up, click the 3 dots under **Actions** and select **Manage keys**.
+3. Click **Add Key > Create new key**.
+4. In the pop-up window, select **JSON** for the key type and click **Create**. The file will be downloaded.
+5. Copy all the content in the JSON file you created in the previous step.
+6. Open the Segment app and navigate to **Connections > Sources**.
+7. On the My sources page, click **+ Add source**.
+8. Search for "BigQuery" and select the BigQuery source from the sources catalog. On the BigQuery overview page, click **Add Source**.
+9. On the Set up BigQuery page, enter a name for your source and paste all the credentials you copied from previous step into the **Enter your credentials** section.
+10. Enter the location of your BigQuery warehouse in the **Data Location** field.
+11. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again.
 12. If the test connection completes successfully, click **Add source** to complete the setup process.
+
+When setting up a BigQuery Reverse ETL source, you can choose which API Segment uses to read from BigQuery. You can make this selection during the initial setup, or later from **Connections > Sources > Reverse ETL > BigQuery Source > Settings > Connection Settings**. You can choose from:
+- **REST API**: This is recommended for most tables. REST is generally more cost-efficient, but syncs may be slower for very large datasets.
+- **Storage API**: This is recommended for large tables. The Storage API can significantly improve throughput and reduce sync times, but may incur higher costs. See [BigQuery Storage API client libraries](https://cloud.google.com/bigquery/docs/reference/storage/libraries) and [BigQuery pricing for data extraction](https://cloud.google.com/bigquery/pricing?hl=en#data_extraction_pricing){:target="_blank"} for more information.
+
 
 After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
