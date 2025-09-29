@@ -83,11 +83,9 @@ You can find the location of your BigQuery resources using the following method:
 11. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again.
 12. If the test connection completes successfully, click **Add source** to complete the setup process.
 
-When setting up a BigQuery Reverse ETL source, you can choose which API Segment uses to read from BigQuery. You can make this selection during the initial setup, or later from Sources > Reverse ETL > BigQuery Source > Settings > Connection Settings.
-- **REST API**
-  Recommended for most tables. REST is generally more cost-efficient, but syncs may be slower for very large datasets.
-- **Storage API**
-  Recommended for large tables. The Storage API can significantly improve throughput and reduce sync times, but may incur higher costs. See [BigQuery Storage API client libraries](https://cloud.google.com/bigquery/docs/reference/storage/libraries) and [BigQuery pricing for data extraction](https://cloud.google.com/bigquery/pricing?hl=en#data_extraction_pricing) for more information
+When setting up a BigQuery Reverse ETL source, you can choose which API Segment uses to read from BigQuery. You can make this selection during the initial setup, or later from **Connections > Sources > Reverse ETL > BigQuery Source > Settings > Connection Settings**. You can choose from:
+- **REST API**: This is recommended for most tables. REST is generally more cost-efficient, but syncs may be slower for very large datasets.
+- **Storage API**: This is recommended for large tables. The Storage API can significantly improve throughput and reduce sync times, but may incur higher costs. See [BigQuery Storage API client libraries](https://cloud.google.com/bigquery/docs/reference/storage/libraries) and [BigQuery pricing for data extraction](https://cloud.google.com/bigquery/pricing?hl=en#data_extraction_pricing){:target="_blank"} for more information.
 
 
 After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
