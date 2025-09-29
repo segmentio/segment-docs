@@ -27,8 +27,9 @@ If you do not have an existing StackAdapt read & write API key, contact the [Sta
 3. Click **Add Destination**.
 4. Select an existing source that is Engage Space to connect to the StackAdapt Audience destination.
 5. Enter a name for your destination.
-6. On the Settings screen, provide your StackAdapt GraphQL API token, then select the advertiser you want to sync the audience with. You can identify a specific advertiser by finding its ID in StackAdapt.
-   > When you're on StackAdapt platform, navigate to `Execute` (or `Overview`), then click on `Advertiser`. Next, select an advertiser from the `Filter` section at the top. You can find the advertiser ID in the URL after `advertiser=`.
+6. On the Settings screen, provide your StackAdapt GraphQL API token, then input the ID of the advertiser you want to sync the audience with. You can find advertiser ID in StackAdapt.
+> info ""
+> When you're on StackAdapt platform, navigate to **Execute** (or **Overview**), then click on **Advertiser**. Next, select an advertiser from the **Filter** section. You can find the advertiser ID in the URL after `advertiser=`.
 7. Toggle on the destination using **Enable Destination**.
 8. Click **Save Changes**.
 9. Follow the steps in the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or [sync an Engage Audience](#sync-an-engage-audience).
