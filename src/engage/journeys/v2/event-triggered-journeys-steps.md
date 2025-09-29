@@ -322,6 +322,48 @@ Here’s a detailed example of a payload structure, highlighting the journey con
 
 This example shows how data is structured and enriched with contextual details so that destinations receive the information they need to act effectively.
 
+### Warehouse enrichment (Data Graph)
+
+If your workspace uses [Data Graph](/docs/unify/data-graph/), you can add attributes from warehouse entities to the destination payload. Segment joins entity data using an ID in journey context and includes the selected attributes alongside existing journey context. Enrichment doesn’t change the underlying journey events.
+
+> info "Before you start"
+
+#### Configure enrichment
+
+Follow these steps to add attributes from the warehouse:
+
+1. Select the Data Graph entity you want to pull attributes from.
+2. Choose the join ID in journey context that matches the entity’s primary key.
+3. Pick the attributes to include; the preview updates as you add them.
+4. Check the payload preview. Attributes appear under `properties.journey_context.<EntityName>`.
+5. (Optional:) Map the enriched fields to your destination schema.
+
+Here's an example of an enriched payload:
+
+```json
+{
+  "properties": {
+    "journey_context": {
+      "Reservation Booked": {
+        "reservation_id": 12345,
+        "hotel_id": 67890
+      },
+      "Reservations": {
+        "check_in_time": "2025-11-01T20:00:00Z",
+        "check_out_time": "2025-11-04T15:00:00Z"
+      },
+      "Hotels": {
+        "hotel_name": "Hotel California",
+        "hotel_address": "1000 Sunset Boulevard, Los Angeles, CA"
+      }
+    }
+  }
+}
+```
+
+> warning "Publish timing for enrichment"
+
+
 ### Managing activations
 
 Activations control the configuration for sending data to destinations, including the destination type, selected action, and mapped attributes. Managing activations allow you to adjust how data flows to a destination without altering the overall journey logic.
