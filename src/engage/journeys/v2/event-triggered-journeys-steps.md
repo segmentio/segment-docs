@@ -326,7 +326,8 @@ This example shows how data is structured and enriched with contextual details s
 
 If your workspace uses [Data Graph](/docs/unify/data-graph/), you can add attributes from warehouse entities to the destination payload. Segment joins entity data using an ID in journey context and includes the selected attributes alongside existing journey context. Enrichment doesn’t change the underlying journey events.
 
-> info "Before you start"
+> info "Setup checklist"
+> Before you add warehouse entities, verify that Data Graph is set up and synced. Choose the entity with the attributes you need. Confirm the join ID exists in journey context when the step runs.
 
 #### Configure enrichment
 
@@ -362,6 +363,7 @@ Here's an example of an enriched payload:
 ```
 
 > warning "Publish timing for enrichment"
+> When you publish a journey with enrichment enabled, Segment starts a job to prepare enrichment.The journey stays in a publishing state until enrichment is available. If the cache isn’t populated within 5 hours, the publish fails. Resolve Data Graph sync or join-ID issues, then publish again.
 
 
 ### Managing activations
