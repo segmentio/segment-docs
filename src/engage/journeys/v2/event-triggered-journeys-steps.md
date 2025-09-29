@@ -324,7 +324,7 @@ This example shows how data is structured and enriched with contextual details s
 
 ### Warehouse enrichment (Data Graph)
 
-If your workspace uses [Data Graph](/docs/unify/data-graph/), you can add attributes from warehouse entities to the destination payload. Segment joins entity data using an ID in journey context and shows the added fiels in the payload preview. Enrichment doesn’t change the underlying journey events.
+If your workspace uses [Data Graph](/docs/unify/data-graph/), you can add attributes from warehouse entities to the destination payload. Segment joins entity data using an ID in journey context and shows the added fields in the payload preview. Enrichment doesn’t change the underlying journey events.
 
 For more information on join keys and event relationships, see [Linked Events overview](/docs/unify/data-graph/linked-events/).
 
@@ -336,10 +336,10 @@ For more information on join keys and event relationships, see [Linked Events ov
 Follow these steps to add attributes from the warehouse:
 
 1. Select the Data Graph entity you want to pull attributes from.
-2. Choose the join ID in journey context that matches the entity’s primary key.
+2. Choose the join ID in the journey context that matches the entity’s primary key.
 3. Pick the attributes to include; the preview updates as you add them.
-4. Check the payload preview. Attributes appear under `properties.journey_context.<EntityName>`.
-5. (Optional:) Map the enriched fields to your destination schema.
+4. Use the **Preview event** panel to confirm names and nesting. Attributes appear under `properties.journey_context.<EntityName>`, and the preview reflects what Segment sends.
+5. (Optional:) Map the enriched fields to your destination schema. 
 
 Here's an example of an enriched payload:
 
