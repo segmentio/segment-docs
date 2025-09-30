@@ -46,9 +46,6 @@ Key Auto-Instrumentation benefits include:
 - **Fast iteration**: Update your tracking configuration at any time, without deploying new app versions.
 - **Fewer dependencies**: Reduce the need for engineering support while still maintaining reliable event tracking.
 
-> info "Event Builder during Private Beta"
-> During the Auto-Instrumentation Private Beta, both the Event Builder and the legacy Auto-Instrumentation tab appear in the Segment UI. Segment will remove the legacy tab once all customers have migrated to the Event Builder experience.
-
 ## How it works
 
 After you install the required SDKs and enable Auto-Instrumentation, Segment detects activity like button clicks, navigation, and network calls. Segment captures these events as signals, which appear in the Event Builder.
