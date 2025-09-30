@@ -9,7 +9,7 @@ deprecated: true
 
 > warning ""
 > This documentation is retained for **reference only**.
-> See the [Batch (Actions) Destination documenation](/docs/connections/destinations/catalog/actions-batch/#destination-settings) for integrations with Batch.
+> See the [Batch (Actions) Destination documenation](/docs/connections/destinations/catalog/actions-batch/#destination-settings) for new integrations with Batch.
 
 Batch is a powerful customer engagement platform that helps businesses deliver personalized, timely notifications and messages to boost user retention and drive growth. Discover how Batch can transform your communication strategy at Batch.
 
