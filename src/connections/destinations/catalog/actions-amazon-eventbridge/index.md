@@ -2,7 +2,7 @@
 title: Amazon EventBridge (Actions) Destination
 id: 67be4b2aef865ee6e0484fe5
 beta: true
-hidden: true
+hidden: false
 ---
 
 {% include content/plan-grid.md name="actions" %}
