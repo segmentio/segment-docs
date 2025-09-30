@@ -7,8 +7,8 @@ deprecated: true
 
 {% include content/plan-grid.md name="actions" %}   
 
-> warning "Destination has been deprecated"
-> This Batch destination has been **deprecated**. This documentation is retained for **reference only**.
+> warning ""
+> This documentation is retained for **reference only**.
 > See the [Batch (Actions) Destination documenation](/docs/connections/destinations/catalog/actions-batch/#destination-settings) for integrations with Batch.
 
 Batch is a powerful customer engagement platform that helps businesses deliver personalized, timely notifications and messages to boost user retention and drive growth. Discover how Batch can transform your communication strategy at Batch.
