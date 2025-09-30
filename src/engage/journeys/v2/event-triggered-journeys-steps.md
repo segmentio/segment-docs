@@ -386,7 +386,7 @@ Here's an example of a payload before and after enrichment:
 
 ##### Publish behavior and failures
 
-When you publish, Segment builds the enrichment data it needs. The journey stays in a **Publishing** state while that finishes. If enrichment isn’t ready within 5 hours, the publish fails.
+When you publish a journey, Segment builds the enrichment data it needs. The journey stays in a **Publishing** state while that finishes. If enrichment isn’t ready within 5 hours, the publish fails.
 
 If your publish does fail, first check the Data Graph and your warehouse setup—sync status, join IDs, and entity configuration. Fix any issues, create a new version, and publish again. 
 
