@@ -384,8 +384,12 @@ Here's an example of a payload before and after enrichment:
 
 {% endcodeexample %}
 
-> warning "Publish timing for enrichment"
-> When you publish a journey with enrichment enabled, Segment starts a job to prepare enrichment.The journey stays in a publishing state until enrichment is available. If the cache isn’t populated within 5 hours, the publish fails. Resolve Data Graph sync or join-ID issues, then publish again.
+##### Publish behavior and failures
+
+Segment prepares enrichment when you publish. The journey stays in a **Publishing** state until enrichment is ready. If enrichment isn’t ready within 5 hours, the publish fails.
+
+If your publish fails, in most cases you just need to fix Data Graph or warehouse sync/join issues first, then create a new version and publish again. If a long warehouse job has since finished, re-publishing may succeed. 
+
 
 ### Managing activations
 
