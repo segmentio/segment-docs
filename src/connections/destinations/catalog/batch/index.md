@@ -6,9 +6,9 @@ hidden: true
 
 {% include content/plan-grid.md name="actions" %}   
 
-> warning ""
-> This destination has been **deprecated**, and this documentation remains as reference only.
-> See the [Batch (Actions) Destination](/docs/connections/destinations/catalog/actions-batch/#destination-settings) for integrations with Batch.
+> warning "Destination has been deprecated"
+> This destination has been **deprecated**, and this documentation remains as **reference only**.
+> See the [Batch (Actions) Destination documenation](/docs/connections/destinations/catalog/actions-batch/#destination-settings) for integrations with Batch.
 
 [Batch](https://batch.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a powerful customer engagement platform that helps businesses deliver personalized, timely notifications and messages to boost user retention and drive growth. Discover how Batch can transform your communication strategy at Batch.
 
