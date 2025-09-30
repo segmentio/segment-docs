@@ -243,6 +243,22 @@ To connect Snowflake to Segment:
   > info "Segment supports uploading one key at a time"
   > Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.  
 
+## Use with Engage (Journeys & Linked Audiences)
+
+After you connect Snowflake, you can add a Snowflake Activation from Engage. Linked Audiences writes audience enter/exit events to your warehouse, and Journeys writes journey step events. 
+
+Segment recommends key-pair authentication for the Snowflake user. For mor information, see [create a user that authenticates with a key pair](#create-a-user-that-authenticates-with-a-key-pair).
+
+### Schema and table selection (beta)
+
+When you create a Snowflake Activation from Engage, choose the schema and either select an existing table or enter a new table name. Engage writes to exactly what you specify.
+
+### Sync behavior for Engage (beta)
+
+For Engage writebacks, Segment starts a warehouse sync after each run completes (for example, when an audience run finishes). This replaces a fixed hourly cadence for these writebacks.
+
+> warning ""
+> Changing the Snowflake destination’s general sync schedule does **not** affect Engage writebacks. Engage controls when these writes occur.
 
 ## Security
 
