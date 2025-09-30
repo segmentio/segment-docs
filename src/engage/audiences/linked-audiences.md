@@ -153,6 +153,9 @@ See the step-by-step video on activating Linked Audiences:
 
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding an activation to your Linked Audience allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination by creating an activation.
 
+> info "Write to Snowflake"
+> To write to Snowflake, connect Snowflake to your Engage space, then add a Snowflake Activation from your audience to write enter/exit events to a schema and table you select. See the [Snowflake destination documentation](/docs/connections/storage/catalog/snowflake/) for connection steps and key-pair setup.
+
 **Note:** Ensure you've [enabled your destination](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. Navigate to **Engage > Audiences**.
@@ -213,6 +216,8 @@ As you're enriching your events in Linked Audiences, you should view a preview o
 #### Map event
 
 Segment attempts to automatically configure the data fields that will be sent to the destination. These fields are pre-filled with properties configured by default. Only required fields are displayed. All optional & pre-filled fields are hidden, though you can view hidden fields by clicking **Show hidden fields**. You can review and adjust these settings before enabling this event. 
+
+For Snowflake writebacks, Linked Audiences sends Track events and stores the full event payload in a single stringified JSON column in the target table.
 
 ## Step 3: Send a test event to your destination
 
