@@ -155,7 +155,7 @@ See the step-by-step video on activating Linked Audiences:
 > info "Write to Snowflake"
 > To write to Snowflake, connect Snowflake to your Engage space, then add a Snowflake Activation from your audience to write enter/exit events to a schema and table you select. See the [Snowflake destination documentation](/docs/connections/storage/catalog/snowflake/) for connection steps and key-pair setup.
 
-**Note:** Ensure you've [enabled your destination](/connections/destinations/catalog/) in Segment before you begin the steps below. 
+**Note**: Ensure you've [enabled your destination](/connections/destinations/catalog/) in Segment before you begin the following steps. 
 
 1. Navigate to **Engage > Audiences**.
 2. Select the Linked Audience you set up in the previous step. 
