@@ -1,7 +1,7 @@
 ---
 title: Twilio Messaging Destination
 id: 674f23ece330374dc1ecc874
-hidden: true
+hidden: false
 hide-dossier: true
 beta: true
 ---
@@ -24,8 +24,8 @@ This destination supports two ways to send messages:
 
 Twilio Messaging works with Segment's data and audience tools to send timely, personalized messages without extra integration work.
 
-> info "Twilio Messaging Destination Private Beta"
-> The Twilio Messaging Destination is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Twilio Messaging Destination Public Beta"
+> The Twilio Messaging Destination is in Public Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Getting started
 
@@ -93,11 +93,13 @@ To configure the mapping:
 
 | Field                     | Description                                                                 | Notes                                                                                                                                                                   |
 | ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Channel**               | Choose which channel to send the message on.                                | Options: SMS, MMS, WhatsApp, and RCS. If selecting RCS, ensure that RCS is enabled in your Twilio account.                                                               |
+| **Channel**               | Choose which channel to send the message on.                                | Options: SMS, MMS, WhatsApp, RCS and Facebook Messenger. If selecting RCS, ensure that RCS is enabled in your Twilio account. Facebook Messenger is a Beta feature.     |
 | **Sender Type**           | Pick how you want to send the message.                                      | Options: Phone number or Messaging Service. Phone numbers must be approved in Twilio.                                                                                   |
 | **Content Template Type** | Select the type of content template.                                        | Options include Inline or templates you’ve built in Twilio. Segment only shows templates that match your selected Channel and Template Type.                            |
 | **To Phone Number**       | Enter the recipient’s phone number.                                         | Must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164){:target="_blank"}.                                                                            |
 | **From Phone Number**     | Choose the phone number to send from.                                       | Must be approved in Twilio and support the channel you’re using.                                                                                                        |
+| **To Messenger User ID**  | Enter the Facebook Messenger User ID to sent to.                            | Required if Sender Type is Facebook Messenger                                                                                                                           |
+| **From Facebook Page ID** | Enger your Facebook Page ID. Messages will be sent from this Page.          | Required if Sender Type is Facebook Messenger                                                                                                                           |
 | **Messaging Service SID** | Enter the messaging service SID if you’re using a messaging service.        | Required if Sender Type is Messaging Service.                                                                                                                           |
 | **Content Template SID**  | Choose which content template to use.                                       | Required unless you’re using Inline.                                                                                                                                    |
 | **Content Variables**     | Map variables used in your content template.                                | These variables need to be defined in Twilio first.                                                                                                                     |
@@ -121,7 +123,7 @@ Choose the option that fits what you’re trying to send. For most customer-faci
 
 ## Message setup options
 
-When you’re configuring your message mapping, there are a few key settings to choose from.
+There are a key settings to choose from when configuring message mappings.
 
 ### Content template types
 
@@ -137,11 +139,14 @@ If you’re sending messages on WhatsApp, all messages must use approved Content
 
 ### Sender types
 
-For the **Sender Type** field, you can choose either a phone number or a messaging service.
+The **Sender Type** field is used to specify if the message should be sent from a **phone number**, **messaging service** or **Facebook Page ID**. Available Sender Types depend on the selected Channel. 
 
-If you select **phone number**, Twilio sends the message from a specific number you own. The number must be approved in your Twilio account and support the channel you’re using.
+For **phone number**, Twilio sends the message from a specific number you own. The number must be approved in your Twilio account and support the channel you’re using.
 
-If you select **messaging service**, Twilio uses a Messaging Service SID to send the message. Messaging Services group multiple senders under one ID, and Twilio decides which sender to use based on your setup. This option is helpful if you’re sending high volumes or managing multiple numbers.
+For **messaging service**, Twilio uses a Messaging Service SID to send the message. Messaging Services group multiple senders under one ID, and Twilio decides which sender to use based on your setup. This option is helpful if you’re sending high volumes or managing multiple numbers.
+
+For **Facebook Page ID**, Twilio uses the Facebook Page ID to send the message. The [Facebook Page must first be authorized](https://www.twilio.com/docs/messaging/channels/facebook-messenger) to send messages in Twilio console.  
+
 
 ### Using variables
 
