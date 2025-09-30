@@ -1,5 +1,7 @@
 ---
 title: Batch Destination
+id: 596d11f870a3e552b957e6d9
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}   
