@@ -247,7 +247,7 @@ To connect Snowflake to Segment:
 
 After you connect Snowflake, you can add a Snowflake Activation from Engage. [Linked Audiences](/docs/engage/audiences/linked-audiences/) writes audience enter/exit events to your warehouse, and [Event-Triggered Journeys](/docs/engage/journeys/v2/) writes journey step events. 
 
-Segment recommends key-pair authentication for the Snowflake user. For mor information, see [create a user that authenticates with a key pair](#create-a-user-that-authenticates-with-a-key-pair).
+Segment recommends key-pair authentication for the Snowflake user. For more information, see [create a user that authenticates with a key pair](#create-a-user-that-authenticates-with-a-key-pair).
 
 ### Schema and table selection (beta)
 
