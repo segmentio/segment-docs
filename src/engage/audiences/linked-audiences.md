@@ -17,7 +17,6 @@ With Linked Audiences, you can:
 
 To learn more about specific use cases you can set up with Linked Audiences, see [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/).
 
-
 See how you can [use Linked Audiences with Braze](/docs/engage/audiences/linked-audiences-braze/) and [Iterable](/docs/engage/audiences/linked-audiences-iterable/) to better understand how you can utilize Linked Audiences for your destinations.  
 
 ## Prerequisites
@@ -205,7 +204,6 @@ Click **Copy to use in Braze Cloud Mode (Actions)** to copy the personalization 
 
 > info ""
 > This feature is in beta for customers using Braze. Some functionality may change before it becomes generally available. This feature is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
-
 
 #### Show/hide preview 
 

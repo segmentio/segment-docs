@@ -264,7 +264,6 @@ For Engage writebacks, Segment starts a warehouse sync after each run completes 
 
 Engage writebacks use Track events. The full event payload is stored in a single stringified JSON column in the target table. 
 
-
 ## Security
 
 ### Allowlisting IPs
