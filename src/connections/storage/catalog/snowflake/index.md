@@ -260,6 +260,11 @@ For Engage writebacks, Segment starts a warehouse sync after each run completes 
 > warning ""
 > Changing the Snowflake destination’s general sync schedule does **not** affect Engage writebacks. Engage controls when these writes occur.
 
+### Data format and limits
+
+Engage writebacks use Track events. The full event payload is stored in a single stringified JSON column in the target table. 
+
+
 ## Security
 
 ### Allowlisting IPs
@@ -339,6 +344,9 @@ Queuing - you can use a different Warehouse for Segment, or use the recommendati
 ### Can I customize my sync schedule?
 
 {% include content/warehouse-sync-sched.md %}
+
+> info ""
+> Engage writebacks (Journeys and Linked Audiences) start a sync **when an Engage run completes**. The schedule controls below apply to Connections, Profiles Sync and other warehouse deliveries, not to Engage-triggered writebacks.
 
 ![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
 
