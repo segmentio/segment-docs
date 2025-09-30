@@ -199,5 +199,5 @@ Yes. Keep the following table in mind when you name a subscription group:
 | Group Name Character Limit                    | Limited to 75 characters, including spaces                          |
 | Group Description Character Limit             | Limited to 500 characters, including spaces                         |
 | Spaces in Group Names                         | Spaces aren't allowed at the beginning and/or end of the Group name |
-| Unsupported characters for Group Names        | `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`                               |
+| Unsupported characters for Group Names        | `!@#$%^&*()_+\-=\[\]{};':"\|,.<>\/?`                               |
 | Unsupported accent characters for Group Names | `á, é, í, ó, ú, à, è, ì, ò, ù, ë, ï, ã`                             |
