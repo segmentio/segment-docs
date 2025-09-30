@@ -322,6 +322,76 @@ Here’s a detailed example of a payload structure, highlighting the journey con
 
 This example shows how data is structured and enriched with contextual details so that destinations receive the information they need to act effectively.
 
+### Warehouse enrichment (Data Graph)
+
+If your workspace uses [Data Graph](/docs/unify/data-graph/), you can add attributes from warehouse entities to the destination payload. Segment joins entity data using an ID in journey context and shows the added fields in the payload preview. Enrichment doesn’t change the underlying journey events.
+
+For more information on join keys and event relationships, see [Linked Events overview](/docs/unify/data-graph/linked-events/).
+
+> info "Setup checklist"
+> Before you add warehouse entities, verify that Data Graph is set up and synced. Choose the entity with the attributes you need. Confirm the join ID exists in journey context when the step runs.
+
+#### Configure enrichment
+
+Follow these steps to add attributes from the warehouse:
+
+1. Select the Data Graph entity you want to pull attributes from.
+2. Choose the join ID in the journey context that matches the entity’s primary key.
+3. Pick the attributes to include; the preview updates as you add them.
+4. Use the **Preview event** panel to confirm names and nesting. Attributes appear under `properties.journey_context.<EntityName>`, and the preview reflects what Segment sends.
+5. (Optional:) Map the enriched fields to your destination schema. 
+
+Here's an example of a payload before and after enrichment:
+
+{% codeexample %}
+{% codeexampletab Before enrichment %}
+```json
+{
+  "properties": {
+    "journey_context": {
+      "Reservation Booked": {
+        "reservation_id": 12345,
+        "hotel_id": 67890
+      }
+    }
+  }
+}
+```
+{% endcodeexampletab %}
+
+{% codeexampletab After enrichment %}
+```json
+{
+  "properties": {
+    "journey_context": {
+      "Reservation Booked": {
+        "reservation_id": 12345,
+        "hotel_id": 67890
+      },
+      "Reservations": {
+        "check_in_time": "2025-11-01T20:00:00Z",
+        "check_out_time": "2025-11-04T15:00:00Z"
+      },
+      "Hotels": {
+        "hotel_name": "Hotel California",
+        "hotel_address": "1000 Sunset Boulevard, Los Angeles, CA"
+      }
+    }
+  }
+}
+```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+##### Publish behavior and failures
+
+When you publish a journey, Segment builds the enrichment data it needs. The journey stays in a **Publishing** state while that finishes. If enrichment isn’t ready within 5 hours, the publish fails.
+
+If your publish does fail, first check the Data Graph and your warehouse setup—sync status, join IDs, and entity configuration. Fix any issues, create a new version, and publish again. 
+
+If a long warehouse job has since finished, re-publishing may succeed without changes.
+
 ### Managing activations
 
 Activations control the configuration for sending data to destinations, including the destination type, selected action, and mapped attributes. Managing activations allow you to adjust how data flows to a destination without altering the overall journey logic.
