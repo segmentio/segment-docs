@@ -88,7 +88,7 @@ The ultimate goal is for Partners like yourself to create and publish high quali
 
 - Add your Component to a Workspace
     - In Developer Center "Test in your workspace" section, select your personal workspace and click "view"
-    - Click "Configure <App>"
+    - Click "Configure \<App>"
     - Select a Source and click "Confirm Source"
     - Fill in settings like "API Key" then click the button to enable the component
     - Click the "Event Tester" tab and click "Send Event"

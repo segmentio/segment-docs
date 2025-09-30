@@ -98,7 +98,7 @@ navController.turnOnScreenTracking()
 
 When you run this code, keep the following in mind:
 
-- You'll need to replace <WRITE_KEY> with the key from your Android Source in Segment.
+- You'll need to replace `<WRITE_KEY>` with the key from your Android Source in Segment.
 - `debugMode` sends signals to Segment for use in the Event Builder. Only enable it in development environments.
 - If your app doesn't use Jetpack Compose or Navigation, you can skip those plugin lines.
 
