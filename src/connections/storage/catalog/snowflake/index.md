@@ -345,7 +345,7 @@ Queuing - you can use a different Warehouse for Segment, or use the recommendati
 {% include content/warehouse-sync-sched.md %}
 
 > info ""
-> Engage writebacks (Journeys and Linked Audiences) start a sync **when an Engage run completes**. The schedule controls below apply to Connections, Profiles Sync and other warehouse deliveries, not to Engage-triggered writebacks.
+> Engage writebacks (Journeys and Linked Audiences) start a sync **when an Engage run completes**. The schedule controls, shown in the screenshot, apply to Connections, Profiles Sync and other warehouse deliveries, not to Engage-triggered writebacks.
 
 ![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
 
