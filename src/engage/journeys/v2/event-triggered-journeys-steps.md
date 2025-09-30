@@ -213,7 +213,7 @@ You can configure a Randomized Split step with the following options:
 
 Segment won't let you save or publish your journey if the percentages don’t add up to 100%, or if any percentage is left blank.
 
-> info "Actual branch counts may differ from percentages"  
+> info "Actual branch counts may differ from percentages"
 > The Randomized Split step assigns users to branches based on probability, not fixed rules. At lower volumes, the actual distribution may not match your configured percentages exactly, but results typically even out with more traffic.
 
 To add a Randomized Split to your journey:

@@ -37,6 +37,9 @@ Select `and not who` to indicate users that have not performed an event. For exa
 
 You can also specify two different types of time-windows, `within` and `in between`. The `within` property lets you specify an event that occurred in the last `x` number of days, while `in between` lets you specify events that occurred over a rolling time window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
+> warning "ID Sync configuration and space-level ID Strategy aren't applied for Audience Exit events"
+> Segment sends all ID combinations for Audience Exit events downstream to remove a user from the external audience.
+
 ### Building audiences with traits
 
 You can also build audiences using Custom Traits, Computed Traits, SQL Traits, and audience memberships.

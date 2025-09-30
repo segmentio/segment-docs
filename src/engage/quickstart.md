@@ -48,7 +48,8 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
    - **Disabled :** You can disable this option by toggling it, which prevents the replaying of historical data from the source to the Space. This means that only data that the source has received after the point when the source was connected to the Space will be available within the Engage/Unify Space.
 4. If you need more historical data available from this source, please fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
     
-```Segment Source Details:
+```
+Segment Source Details:
 - Name: source-name
 - SourceId: XXXXX or Link to Source
 

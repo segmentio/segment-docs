@@ -83,7 +83,7 @@ Below are tables outlining the properties included in the collections listed abo
 |  caller_name | The caller's name if this Call was an incoming call to a phone number with Caller ID Lookup enabled |
 |  date_created | The date that this resource was created, given as GMT in RFC 2822 format |
 |  date_updated | The date that this resource was last updated, given as GMT in RFC 2822 format |
-|  direction | A string describing the direction of the Call. Values are inbound for inbound calls, outbound-api for calls initiated using the REST API or outbound-dial for calls initiated by a <Dial> verb |
+|  direction | A string describing the direction of the Call. Values are inbound for inbound calls, outbound-api for calls initiated using the REST API or outbound-dial for calls initiated by a `<Dial>` verb |
 |  duration | The length of the Call in seconds. This value is empty for busy, failed, unanswered or ongoing calls |
 |  end_time | The time the Call ended, given as GMT in RFC 2822 format. Empty if the call did not complete successfully |
 |  forwarded_from | The forwarding phone number if this Call was an incoming call forwarded from another number (depends on carrier supporting forwarding) |

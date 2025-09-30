@@ -1,6 +1,8 @@
 ---
 title: Upollo Web (Actions) Destination
 id: 640267d74c13708d74062dcd
+hidden: true
+deprecated: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
