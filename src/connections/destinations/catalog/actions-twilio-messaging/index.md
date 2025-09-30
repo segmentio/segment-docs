@@ -12,10 +12,10 @@ The Twilio Messaging destination connects Segment to Twilio, letting you send me
 
 With the Twilio Messaging destination, you can:
 
-- Confirm orders or appointments
-- Send shipping updates or reminders
-- Deliver personalized marketing messages
-- Support onboarding and reactivation campaigns
+- Confirm orders or appointments.
+- Send shipping updates or reminders.
+- Deliver personalized marketing messages.
+- Support onboarding and reactivation campaigns.
 
 This destination supports two ways to send messages:
 
@@ -24,14 +24,14 @@ This destination supports two ways to send messages:
 
 Twilio Messaging works with Segment's data and audience tools to send timely, personalized messages without extra integration work.
 
-> info "Twilio Messaging Destination Public Beta"
-> The Twilio Messaging Destination is in Public Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+> info "Twilio Messaging destination public beta"
+> The Twilio Messaging destination is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Getting started
 
-To start sending messages through Twilio Messaging, you'll set up your Twilio account credentials and connect the destination in Segment.
+To start sending messages through Twilio Messaging, set up your Twilio account credentials and connect the destination in Segment.
 
-You'll set up the Twilio Messaging destination in three stages:
+There are three stages to setting up the Twilio Messaging destination:
 
 1. [Create a Twilio API Key and Secret](#authentication-and-setup).
 2. [Add the Twilio Messaging destination in Segment](#add-the-twilio-messaging-destination).
@@ -39,9 +39,9 @@ You'll set up the Twilio Messaging destination in three stages:
 
 The following sections walk through each step in detail.
 
-## Authentication and setup
+## 1. Authentication and setup
 
-Before you add the Twilio Messaging destination to Segment, you'll first need to create an API Key and Secret in your Twilio account.
+Before you add the Twilio Messaging destination to Segment, you first need to create an API Key and Secret in your Twilio account.
 
 To create your API Key and Secret:
 
@@ -55,7 +55,7 @@ To create your API Key and Secret:
 
 You now have your Account SID, API Key SID, and API Key Secret, which are required to connect Twilio Messaging in Segment.
 
-## Add the Twilio Messaging destination
+## 2. Add the Twilio Messaging destination
 
 After setting up your Twilio credentials, add the Twilio Messaging destination to your Segment workspace.
 
@@ -73,7 +73,7 @@ The destination is now connected and ready to configure message mappings.
 Users can only access the destination through the specific URL. I'll update these instructions once
 it's publicly available and searchable in the workspace catalog. -->
 
-## Configuring message mappings
+## 3. Configuring message mappings
 
 The Twilio Messaging destination supports one mapping action: **Send message**. Use this mapping to define when messages get sent and what content they include.
 
@@ -113,7 +113,7 @@ To configure the mapping:
 
 The Twilio Messaging destination gives you two ways to create and send messages.
 
-**Content templates** are [templates you’ve already set up in Twilio](https://www.twilio.com/docs/content/create-templates-with-the-content-template-builder){:target="_blank”}. They can include text, media, buttons, and other elements, depending on what you’ve built. When you choose a Channel and Content Template Type in Segment, you’ll only see templates that are compatible with those choices. If you’re sending messages to WhatsApp, you’ll need to use Content Templates, since WhatsApp requires pre-approved templates. For most use cases, templates are the way to go because they support richer formatting and keep you compliant.
+**Content templates** are [templates you’ve already set up in Twilio](https://www.twilio.com/docs/content/create-templates-with-the-content-template-builder){:target="_blank”}. They can include text, media, buttons, and other elements, depending on what you’ve built. When you choose a Channel and Content Template Type in Segment, you’ll only see templates that are compatible with those choices. If you’re sending messages to WhatsApp, you need to use Content Templates, since WhatsApp requires pre-approved templates. For most use cases, templates are the way to go because they support richer formatting and keep you compliant.
 
 **Inline messages** let you write your message directly in Segment mappings. You can include [dynamic variables](#using-variables) to personalize messages. Inline messages also support adding media URLs if you’re sending MMS or WhatsApp messages. They’re useful for quick tests or simple notifications, but they don’t support all the advanced features that Content Templates do.
 
@@ -141,11 +141,9 @@ If you’re sending messages on WhatsApp, all messages must use approved Content
 
 The **Sender Type** field is used to specify if the message should be sent from a **phone number**, **messaging service** or **Facebook Page ID**. Available Sender Types depend on the selected Channel. 
 
-For **phone number**, Twilio sends the message from a specific number you own. The number must be approved in your Twilio account and support the channel you’re using.
-
-For **messaging service**, Twilio uses a Messaging Service SID to send the message. Messaging Services group multiple senders under one ID, and Twilio decides which sender to use based on your setup. This option is helpful if you’re sending high volumes or managing multiple numbers.
-
-For **Facebook Page ID**, Twilio uses the Facebook Page ID to send the message. The [Facebook Page must first be authorized](https://www.twilio.com/docs/messaging/channels/facebook-messenger) to send messages in Twilio console.  
+- For **phone number**, Twilio sends the message from a specific number you own. The number must be approved in your Twilio account and support the channel you’re using.
+- For **messaging service**, Twilio uses a Messaging Service SID to send the message. Messaging Services group multiple senders under one ID, and Twilio decides which sender to use based on your setup. This option is helpful if you’re sending high volumes or managing multiple numbers.
+- For **Facebook Page ID**, Twilio uses the Facebook Page ID to send the message. The [Facebook Page must first be authorized](https://www.twilio.com/docs/messaging/channels/facebook-messenger){:target="_blank"} to send messages in Twilio console.  
 
 
 ### Using variables
@@ -170,7 +168,7 @@ Twilio Messaging also supports a few optional settings you can use in your mappi
 
 ### Validity period
 
-The **Validity Period** controls how long Twilio keeps trying to deliver your message. It’s set in seconds, with a minimum of 1 and a maximum of 14400 (4 hours). If the message isn’t delivered within this time, it won’t be sent. The default is 14400 seconds.
+The **Validity Period** controls how long Twilio keeps trying to deliver your message. It’s set in seconds, with a minimum of 1 and a maximum of 14400 seconds (4 hours). If the message isn’t delivered within this time, it won’t be sent. The default is 14400 seconds.
 
 ### Send At
 
