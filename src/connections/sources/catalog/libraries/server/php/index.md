@@ -12,7 +12,7 @@ PHP is a little different than Segment's other server-side libraries because it 
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-php/releases.atom).
 
-## Getting Started
+## Getting started
 
 Clone the repository from GitHub into your desired application directory.
 
@@ -318,7 +318,7 @@ Segment::track(array(
 
 For more details about Alias including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
-## Historical Import
+## Historical import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
@@ -402,7 +402,7 @@ Segment::init("YOUR_WRITE_KEY", array(
   </tr>  
 </table>
 
-### Lib-Curl Consumer
+### Lib-Curl consumer
 
 The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/LibCurl.php) is a reliable option for low-volume sources or if you want fast response times under light loads. The library runs synchronously, queuing calls and sending them in batches to Segment's servers. By default, this happens every 100 calls, or at the end of serving the page. By default, Segment ignores http responses to optimize the library's speed, but you can choose to wait for these responses by enabling debug mode.
 
@@ -425,7 +425,7 @@ Segment::init("YOUR_WRITE_KEY", array(
 ```
 
 
-### Fork-Curl Consumer
+### Fork-Curl consumer
 
 The [fork-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/ForkCurl.php) should work best for cases where you can't use persistent sockets, or want to ensure quick response times under light load. It works by creating an in-memory queue which buffers track and identify calls. The queue is flushed by forking an async `curl` process that sends a batch request. By default, this happens every `100` calls, or at the end of serving the page. This consumer will spawn a separate process for each request which tracks events. If  your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer).
 
@@ -452,7 +452,7 @@ Segment::init("YOUR_WRITE_KEY", array(
 </table>
 
 
-### Socket Consumer
+### Socket consumer
 
 If you can't spawn other processes from your PHP scripts, you can use the [socket consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/Socket.php), which will allow you to make requests to Segment. Each time a track or identify call is made, it will initiate a socket request to Segment's servers. The socket request is about as async as you can get with PHP, where the request will write the event data and close the connection before waiting for a response. However, if your servers are dealing with more than 100s of requests per second or cannot use a persistent connection, you may want to use one of the other consumers instead.
 
@@ -483,7 +483,7 @@ Segment::init("YOUR_WRITE_KEY", array(
 </table>
 
 
-### File Consumer
+### File consumer
 
 The [file consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/File.php) is a more performant method for making requests to Segment. Each time a track or identify call is made, it will record that call to a log file. The log file is then uploaded "out of band" by running the `file.php` file found in [the analytics-php repository](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/File.php).
 
@@ -526,8 +526,6 @@ $ sudo service cron reload    # reload the cron daemon
 {% include content/server-side-troubleshooting.md %}
 
 
-## 3rd-Party Libraries
+## 3rd party libraries
 
-If you only need support for PHP5, the team at Underground Elephant has released a [3rd-party library](https://github.com/uecode/segment-io-php) based on Guzzle.
-
-Alt Three Segment is a Segment bridge for Laravel. The GitHub repo can be found here: [AltThree/Segment](https://github.com/AltThree/Segment){:target="_blank”}. 
+Laravel Segment is a Segment SDK for Laravel. View the [slashEquip/laravel-segment](https://github.com/slashequip/laravel-segment){:target="_blank”} GitHub repo to learn more.
