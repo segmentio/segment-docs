@@ -390,7 +390,7 @@ When you publish, Segment builds the enrichment data it needs. The journey stays
 
 If your publish does fail, first check the Data Graph and your warehouse setup—sync status, join IDs, and entity configuration. Fix any issues, create a new version, and publish again. 
 
-If a long warehouse job has since finished, re-publishing may succeed without changes. 
+If a long warehouse job has since finished, re-publishing may succeed without changes.
 
 ### Managing activations
 
