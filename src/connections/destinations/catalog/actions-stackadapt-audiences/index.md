@@ -26,7 +26,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 3. Click **Add Destination**.
 4. Select an existing Engage space source to connect to the StackAdapt Audience destination.
 5. Enter a name for your destination.
-6. On the Settings screen, provide your StackAdapt GraphQL API token. Then, select the advertiser you want to sync the audience with. You can identify an advertiser by [finding its ID in StackAdapt](#finding-the-advertiser-id-in-stackadapt).
+6. On the Settings screen, provide your StackAdapt GraphQL API token. Then, put in the ID of the advertiser you want to sync the audience with. You can [find the advertiser ID in StackAdapt](#finding-the-advertiser-id-in-stackadapt).
 7. Toggle the destination on using **Enable Destination**.
 8. Click **Save Changes**.
 9. Follow the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or [sync an Engage Audience](#sync-an-engage-audience).
@@ -44,7 +44,15 @@ To sync an Engage audience with StackAdapt:
 2. Add a condition to the Engage audience to ensure the required email trait is included.
 3. Open the previously created StackAdapt Audience destination.
 4. Create a mapping: In the mappings tab, click **New Mapping** and select **Forward Audience Event**.
+   - To reuse your Segment audience on the StackAdapt platform, select **Sync Audience**.
+   - To apply import profiles to the StackAdapt platform, select **Forward Profile**.
+   - **Note**: you don't have to set up both mappings.
 5. Define the event trigger: Click **Add Condition** and add this condition: **Event Type is `Track` or `Identify`**.
+6. Map fields:
+   - (**Required**:) Select a default value for `Marketing Status`.
+   - (**Required**:) Select the source field for `Email`.
+   - Select source field for `Standard User Properties`,
+   - Create mappings for `Custom User Properties` if applicable.
 
 To verify that your audience syncs with StackAdapt, open StackAdapt and navigate to **Audience & Attribution > Customer Data > Profiles**. On the Profiles tab, you should be able to see a list of profiles being synced to StackAdapt platform.
 
@@ -55,7 +63,7 @@ To create a StackAdapt audience from your Engage audience:
 
 1. Open StackAdapt and navigate to **Audience & Attribution > Data Data > Segments**, then click **Create Segment**.
 2. Select the advertiser you have synced your audience to.
-3. Choose **Profile Properties** > **Segment** and select **External Audience Name** as the rule.
+3. Choose **Profile Properties > Segment** and select **External Audience Name** as the rule.
 4. Select a condition and put in the audience name as the filter.
 5. Click **Submit** to create the segment.
 
