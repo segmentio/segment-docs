@@ -27,9 +27,9 @@ If you do not have an existing StackAdapt read & write API key, contact the [Sta
 3. Click **Add Destination**.
 4. Select an existing source that is Engage Space to connect to the StackAdapt Audience destination.
 5. Enter a name for your destination.
-6. On the Settings screen, provide your StackAdapt GraphQL API token, then input the ID of the advertiser you want to sync the audience with. You can find advertiser ID in StackAdapt.
-> info ""
-> When you're on StackAdapt platform, navigate to **Execute** (or **Overview**), then click on **Advertiser**. Next, select an advertiser from the **Filter** section. You can find the advertiser ID in the URL after `advertiser=`.
+6. On the Settings screen, provide your StackAdapt GraphQL API token, then input the ID of the advertiser you want to sync the audience with. You can find the advertiser ID in StackAdapt.
+   > info ""
+   > When you're on StackAdapt platform, navigate to **Execute** (or **Overview**), then click on **Advertiser**. Next, select an advertiser from the **Filter** section. You can find the advertiser ID in the URL after `advertiser=`.
 7. Toggle on the destination using **Enable Destination**.
 8. Click **Save Changes**.
 9. Follow the steps in the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or [sync an Engage Audience](#sync-an-engage-audience).
@@ -43,7 +43,15 @@ To sync an Engage audience with StackAdapt:
 2. Add a condition to the Engage audience to ensure the required email trait is included.
 3. Open the previously created StackAdapt Audience destination.
 4. Create a mapping: In the mappings tab, click **New Mapping** and select **Forward Audience Event**.
+   - If you want to be able to re-use your Segment Audience on StackAdapt platform, select `Sync Audience`
+   - If you want to solely import profiles to StackAdapt platform, select `Forward Profile`
+   - Note that you don't have to set up both mappings.
 5. Define the event trigger: Click **Add Condition** and add this condition: **Event Type is `Track` or `Identify`**.
+6. Map fields:
+   - Select a default value for `Marketing Status`. Required
+   - Select the source field for `Email`. Required
+   - Select source field for `Standard User Properties`. Optional
+   - Create mappings for `Custom User Properties` if applicable. Optional
 
 To verify that your audience is syncing with StackAdapt, open StackAdapt and navigate to **Audience & Attribution > Customer Data > Profiles**. On the Profiles tab, you should be able to see a list of profiles being synced to StackAdapt platform.
 
@@ -52,13 +60,13 @@ To verify that your audience is syncing with StackAdapt, open StackAdapt and nav
 
 If you want to create a StackAdapt audience from your Engage audience:
 
-1. Open StackAdapt and navigate to **Audience & Attribution > Data Data > Segments**, then click **Create Segment**.
-2. Select the advertiser you have synced your audience to
-3. Choose **Profile Properties** > **Segment**, choose **External Audience Name** as the rule
+1. Open StackAdapt and navigate to **Audience & Attribution > Data Hub > Segments**, then click **Create Segment**.
+2. Select the advertiser you have synced your audience to.
+3. Choose **Profile Properties** > **Segment**, then choose **External Audience Name** as the rule.
 4. Select a condition and input the audience name as the filter.
-   > For the audience name, please use the snake case name of the Segment Engage audience which can be found under **Settings** tab
-   
-   [Image showing sample audience settings tab](images/audience-example.png)
+   > For the audience name, please use the snake case name of the Segment Engage audience which can be found under the **Settings** tab.
+   > [Image showing sample audience settings tab](images/audience-example.png)
+
 5. Click **Submit** to create the segment.
 
 ### Sending an audience to StackAdapt
