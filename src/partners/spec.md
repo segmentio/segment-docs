@@ -1,8 +1,9 @@
 ---
 title: Segment Spec for Partners
+hidden: true
 ---
 
-Segment users instrument their apps with a the Segment SDKs. The most common SDK is analytics.js, which is used in a webapp as the following:
+Segment users instrument their apps with the Segment SDKs. The most common SDK is analytics.js, which is used in a webapp as the following:
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -216,7 +217,7 @@ There are a set of standardized traits for Identify events:
 * username
 * website
 
-See the [Identify traits](https://segment.com/docs/connections/spec/identify/#traits) doc for full details.
+See the [Identify traits](/docs/connections/spec/identify/#traits) doc for full details.
 
 And a set for Group events:
 
