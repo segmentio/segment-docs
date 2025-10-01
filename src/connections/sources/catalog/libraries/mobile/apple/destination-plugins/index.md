@@ -38,6 +38,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
     mark:
       url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
+  - name: comScore
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/comscore-swift
+    logo:
+      url: https://cdn.filepicker.io/api/file/XM2ggMweTkliGImSg1Td
+    mark:
+      url: https://cdn.filepicker.io/api/file/1722B3EeQ6wPETOvS5ZA
   - name: Facebook App Events
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/
     logo:
@@ -50,6 +56,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  - name: Flurry
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/flurry-swift
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/flurry-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/yxc3XuGQA2btML7kyWJg
   - name: Intercom
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/
     logo:
