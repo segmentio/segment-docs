@@ -1,5 +1,6 @@
 ---
 title: Segment Spec for Partners
+redirect_from: "/partners/spec/"
 ---
 
 Segment users instrument their apps with a the Segment SDKs. The most common SDK is analytics.js, which is used in a webapp as the following:
