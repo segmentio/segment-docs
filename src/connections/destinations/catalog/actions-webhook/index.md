@@ -39,7 +39,7 @@ The easiest way to test whether a source's events are sending through the Segmen
 
 #### Connect a Webhook Actions destination to your workspace
 1. [Add a new Webhook (Actions) destination](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-webhook) to your source. Make sure you select the intended source to connect this destination to.
-2. Visit the webhook's site, and copy the endpoint to your clipboard. An example site you can use is [https://webhook.site/#!/]([url](https://webhook.site/#!/)), but use whichever webhooks site you prefer.
+2. Visit the webhook's site, and copy the endpoint to your clipboard. An example site you can use is [https://webhook.site/#!/](https://webhook.site/#!/), but use whichever webhooks site you prefer.
 3. Add a mapping to the Webhook Actions destination, and configure Step 1's conditions to allow for all types of events that you're currently sending through that source.
 4. Add the endpoint you copied from Step 2 to the Webhook Actions Mapping's URL in Step 3.
 5. Enable the Mapping.
