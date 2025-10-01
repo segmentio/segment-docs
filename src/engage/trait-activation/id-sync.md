@@ -18,8 +18,8 @@ To set up ID Sync with [Audiences](/docs/engage/audiences/):
 
 1. Navigate to **Engage** > **Audiences**.
 2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
-- If you don't see any destinations to add, you'll need to [add the destination](/docs/connections/destinations/add-destination/#adding-a-destination) or [destination function](docs/connections/functions/destination-functions/#create-a-destination-function) to your Engage space first.
-- For existing audiences, you'll find your connected destination on the Audience Overview page.
+    - If you don't see any destinations to add, you'll need to [add the destination](/docs/connections/destinations/add-destination/#adding-a-destination) or [destination function](docs/connections/functions/destination-functions/#create-a-destination-function) to your Engage space first.
+    - For existing audiences, you'll find your connected destination on the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. To use ID Sync, select [**Customized Setup**](#customized-setup). 
 
 ### Set up ID Sync with Journeys
@@ -43,11 +43,11 @@ With Customized setup, you can choose which identifiers you want to map downstre
 > If you want to send `ios.idfa` as a part of your ID strategy, confirm that you've enabled the Send Mobile IDs setting when connecting your destination to an audience or journey.   
 
 1. Using **Customized Setup**, click **+ Add Identifier** and add the identifiers:
-- **Segment**: Choose your identifiers from Segment.
-- **Destination**: Choose which identifiers you want to map to from your destination. If the destination doesn't contain the property, then outgoing events may not be delivered.
-- *Facebook Custom Audiences* and *Google Ads Remarketing Lists* display a dropdown for you to choose available identifiers. 
+    - **Segment**: Choose your identifiers from Segment.
+    - **Destination**: Choose which identifiers you want to map to from your destination. If the destination doesn't contain the property, then outgoing events may not be delivered.
+    - *Facebook Custom Audiences* and *Google Ads Remarketing Lists* display a dropdown for you to choose available identifiers. 
 2. Add an ID strategy. 
-- This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
+    - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your audience or journey.
  
 ## Limits and best practices

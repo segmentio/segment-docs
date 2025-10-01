@@ -45,7 +45,6 @@ Follow these steps to integrate Analytics Kotlin:
 ```java
  <uses-permission android:name="android.permission.INTERNET"/>
  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
 ```
 
 For detailed instructions on integrating Analytics Kotlin, follow the steps in the [Analytics Kotlin getting started section](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#getting-started).
@@ -262,8 +261,8 @@ Next, you’ll create a push notification certificate, which lets your app recei
 3. If you are using the Quickstart app and see a provisioning error message, you may need to rename the bundle ID to a unique identifier. To do so, [give your bundle a new name](https://developer.apple.com/account/resources/certificates/list){:target="_blank"}, then enter your new identifier in the **Identity** section of the General pane.
 4. Go to the **Capabilities** tab and make sure that Push Notifications are enabled.
 5. Verify that you successfully created your certificates:
-- Sign in to the Apple developer portal and click on  **Certificates, IDs & Profile**. In the **Certificates** section, select **Development** or **Production**, depending on the type of certificate you want to verify.
-- Alternatively, go to **Applications > Utilities > Keychain Access** and select **Certificates**. Search for `iPhone`, and verify that your certificate has a disclosure triangle, which indicates that your private key exists in the keychain.
+    - Sign in to the Apple developer portal and click on  **Certificates, IDs & Profile**. In the **Certificates** section, select **Development** or **Production**, depending on the type of certificate you want to verify.
+    - Alternatively, go to **Applications > Utilities > Keychain Access** and select **Certificates**. Search for `iPhone`, and verify that your certificate has a disclosure triangle, which indicates that your private key exists in the keychain.
 
 #### Option 2: Manually create a certificate
 
@@ -350,9 +349,9 @@ Follow these steps to set up mobile push in Twilio Engage.
 6. Copy and save both the **SID** and **Secret** field contents.
 7. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
 8. Return to your Segment workspace and navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button. The **Set up and validate your Twilio account** page appears.
-11. Under **Enter your Twilio API Key information**, paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
-12. Click **Verify**, then select the messaging services you want to use in your space.
-13. Click **Save Twilio Account.**
+9. Under **Enter your Twilio API Key information**, paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
+10. Click **Verify**, then select the messaging services you want to use in your space.
+11. Click **Save Twilio Account.**
 
 > info "Removing messaging services"
 > To remove a messaging service, navigate to Engage > Engage settings > Channels and click the pencil icon under **Twilio messaging service**. Enter the account credentials by either using the API key secret or creating a new API key. Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
@@ -361,11 +360,11 @@ Follow these steps to set up mobile push in Twilio Engage.
 
 Complete mobile push onboarding by creating a new push service:
 
-2. In your Segment workspace, navigate to **Engage > Engage settings**.
-3. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
+1. In your Segment workspace, navigate to **Engage > Engage settings**.
+2. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
     - If you don't see the pencil icon, select **Create new push service**.
-4. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
-5. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
+3. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
+4. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
 
 ## Build a mobile push template
 

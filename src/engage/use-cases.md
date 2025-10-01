@@ -19,12 +19,12 @@ This journey sends an exclusive promo code to repeat customers to promote ongoin
 
 ![An Engage customer loyalty email campaign](images/loyalty-promo.png)
 1. Create the entry condition with the step name `Loyalty Program`.
-  - All users who performed the **Order Completed** event at least **3 times** and where the price is greater than **100**, any time within **30 days**.
+    - All users who performed the **Order Completed** event at least **3 times** and where the price is greater than **100**, any time within **30 days**.
 2. Add a delay of **7 days**.
 3. Add a True/False split. Split the users around a computed trait of **Order Refunded** at least **1 time**, any time within **30 days**.
-  - For the True branch, send the list of users to an email step to receive a refund survey.
-  - For the False branch, send the list of users to an email step for a personalized message with a "35OFF" promo code.
-    - Add a Conversion Goal of **35OFF Promo Used** to track users who performed the **Order Completed** event at least **1 time** where the **promo_discount** used equals **35OFF**.
+    - For the True branch, send the list of users to an email step to receive a refund survey.
+    - For the False branch, send the list of users to an email step for a personalized message with a "35OFF" promo code.
+      - Add a Conversion Goal of **35OFF Promo Used** to track users who performed the **Order Completed** event at least **1 time** where the **promo_discount** used equals **35OFF**.
 
 > success ""
 > Build similar campaigns with SMS or use both email and SMS to contact subscribed users on their preferred channels.
@@ -39,14 +39,15 @@ This journey sends purchase reminders to cart abandonment users based on the cha
 3. Add a True/False split. Split the users around a computed trait of **Order Completed** at least **1 time** within **7 days**.
 4. For the False branch, add a multi-branch split.
     1. For users who have the custom trait **email_opt_in** equals **true**:
-      - Send to an email step to receive a purchase reminder.
+        - Send to an email step to receive a purchase reminder.
     2. For users who have the custom trait **SMS_opt_in** equals **true**:
-      - Send to an SMS step to receive a purchase reminder text.
+        - Send to an SMS step to receive a purchase reminder text.
     3. For users who have the custom trait **email_opt_in** equals **false** and who have the custom trait **SMS_opt_in** equals **false**:
-      - Send to an ads destination.
+        - Send to an ads destination.
 
 ## Onboarding
 This journey sends exclusive offers and onboarding emails based on user action.
+
 ![An Engage onboarding campaign](images/onboarding.png)
 1. Create the entry condition with the step name `Visited Resort Site`.
     - All users who performed the **Page Viewed** event at least **1 time** within the last **7 days**.
@@ -61,6 +62,7 @@ This journey sends exclusive offers and onboarding emails based on user action.
 
 ## Low recency campaign
 This campaign sends personalized re-engagement email and SMS promo offers to low recency customers.
+
 ![A campaign that sends email and SMS offers to low recency customers](images/low-recency.png)
 1. Create the entry condition with the step name `Low Recency Customers`.
     - All users who performed the **Item Purchased** event **zero times** within the last **180 days**.
