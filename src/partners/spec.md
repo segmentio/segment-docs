@@ -622,7 +622,7 @@ You can also use the Segment SDK or API to generate your own events. First navig
 
 Finally event data is in the [functions-library GitHub repo](https://github.com/segmentio/functions-library) for you to integrate with your own tests.
 
-You can also use the Segment SDK or API to easily generate your own events.
+You can also use the Segment SDK or API to easily generate your own events. 
 
 ```shell
 ```
