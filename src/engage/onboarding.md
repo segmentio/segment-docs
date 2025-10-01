@@ -131,8 +131,8 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
 4. Copy and paste the following URL, depending on your region,  into the **HTTP Post URL** field:
-  - US: `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
-  - EU:`https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
+    - US: `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+    - EU:`https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
 
     ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 
@@ -262,7 +262,7 @@ To send WhatsApp messages in Twilio Engage, you'll register a Twilio number with
 ### Register a Twilio number with WhatsApp
 
 1. [Purchase an SMS-capable phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
-  - For international numbers, view Twilio's [Phone Number Regulations](https://www.twilio.com/en-us/guidelines/regulatory){:target="_blank"} guidelines. 
+    - For international numbers, view Twilio's [Phone Number Regulations](https://www.twilio.com/en-us/guidelines/regulatory){:target="_blank"} guidelines. 
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
 3. Select **Create new sender**.
 4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.

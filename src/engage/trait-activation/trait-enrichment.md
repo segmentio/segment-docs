@@ -23,8 +23,8 @@ To set up Trait Enrichment with [Audiences](/docs/engage/audiences/):
 
 1. Navigate to **Engage** > **Audiences**.
 2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
-- If you don't see any destinations to add, you'll need to [add a destination](/docs/connections/destinations/add-destination/#adding-a-destination) to your Engage space first.
-- For existing audiences, select the connected Destination from the Audience Overview page.
+    - If you don't see any destinations to add, you'll need to [add a destination](/docs/connections/destinations/add-destination/#adding-a-destination) to your Engage space first.
+    - For existing audiences, select the connected Destination from the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. For Trait Enrichment, select [**Customized Setup**](#customized-setup). 
 
 ### Set up Trait Enrichment with Journeys
@@ -47,8 +47,8 @@ With Customized setup, you can choose which traits you want to map to your desti
 
 1. Click **Customized Setup**, then click **Add Trait**.
 2. Select all traits you want to sync and click **Save**. 
-- Use the **Segment** column to select traits from the Segment Spec. 
-- Use the **Destination** column to select which traits you want to map to in your destination. By default, Segment attempts to find traits with matching names.
+    - Use the **Segment** column to select traits from the Segment Spec. 
+    - Use the **Destination** column to select which traits you want to map to in your destination. By default, Segment attempts to find traits with matching names.
 3. Click **Save** and finish building your audience or journey.
 
 
@@ -132,7 +132,7 @@ If you're using [Destination Actions](/docs/connections/destinations/actions/) o
 4. Navigate to **Engage > Audiences**, and click **+ New audience**. 
 5. From the Select Destinations screen in the Audience builder, select your destination. 
 6. Confirm that **Send Track** or **Send Identify** is toggled on. 
-- Trait Enrichment supports Track and Identify calls. Follow the corresponding destination instructions to determine which event you'll need.
+    - Trait Enrichment supports Track and Identify calls. Follow the corresponding destination instructions to determine which event you'll need.
 7. Select **Customized Setup**.
 8. Select **Add Trait**. Then, select the traits you want to sync and click **Save**.
 
@@ -144,14 +144,14 @@ After you add traits, configure how your selected traits will map to your destin
 > Keep your Engage Audience open in a separate tab, as you'll need to return. 
 
 1. Navigate to **Connections > Destinations** and select your destination.
-1. From the Destination overview screen, select the **Mappings** tab. 
-2. Click **+ New Mapping**. 
-- All actions in Destination Actions can receive traits you configure with Trait Activation.
-3. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
-- To update a trait field mapping for Identify calls, click on a field, and in the dropdown search bar enter `traits.` followed by your trait (for example, `traits.trait_1`). Segment sends traits you select for enrichment as traits in the `traits` object.
-- To update a trait field mapping for Track calls, click on a field, and in the dropdown search bar enter `properties.` followed by your trait (for example, `properties.trait_1`). Segment sends traits you select for enrichment as properties in the `properties` object.
-- Click **Use as an event variable** to add your trait.
-4. Click **Save** and navigate back to Engage to finish building your Audience.
+2. From the Destination overview screen, select the **Mappings** tab. 
+3. Click **+ New Mapping**. 
+    - All actions in Destination Actions can receive traits you configure with Trait Activation.
+4. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
+    - To update a trait field mapping for Identify calls, click on a field, and in the dropdown search bar enter `traits.` followed by your trait (for example, `traits.trait_1`). Segment sends traits you select for enrichment as traits in the `traits` object.
+    - To update a trait field mapping for Track calls, click on a field, and in the dropdown search bar enter `properties.` followed by your trait (for example, `properties.trait_1`). Segment sends traits you select for enrichment as properties in the `properties` object.
+    - Click **Use as an event variable** to add your trait.
+5. Click **Save** and navigate back to Engage to finish building your Audience.
  
 ## Best practices
 
