@@ -241,6 +241,9 @@ The **Send to Destination** step lets you send journey data to one of your [conf
 
 This step supports Actions Destinations (excluding list destinations) and destination functions. It doesn't support storage destinations or classic (non-Actions) destinations.
 
+> info "Send journey step events to Snowflake"
+> If your team analyzes journey performance in the warehouse, you can write step events from a journey to Snowflake. Connect Snowflake to your Engage space, then add a Snowflake Activation for the journey and choose the schema/table you want to write to. See the [Snowflake destination documentation](/docs/connections/storage/catalog/snowflake/) for connection steps and key-pair setup.
+
 ### How Send to Destination works
 
 When a journey reaches the Send to Destination step, the journey packages the relevant data and sends it to your chosen destination. This could be a third-party platform, like a marketing tool, or a custom destination built using [Destination Functions](/docs/connections/functions/destination-functions/). The data that Segment sends includes key attributes from the journey context, profile traits, and any mapped fields you’ve configured.
@@ -265,6 +268,8 @@ Here’s how to configure this step within a journey:
    - Test the payload to ensure proper delivery and validation.
 
 Before activating the journey, **send a test event to verify that the payload matches your expectations** and that it reaches the destination successfully.
+
+For Snowflake writebacks (beta), Journeys sends Track events and stores the full event payload in a single stringified JSON column in the target table.
 
 ### Destination event payload schema
 
