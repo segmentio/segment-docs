@@ -46,7 +46,7 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 3. Toggle the **Replay data** flag when connecting a new source : `enabled` vs. `disabled`.
    - **Enabled :** The **Replay data** flag is enabled by default when connecting a source to an Engage/Unify Space. Enable this flag to replay the last month of data into the Engage/Unify Space.
    - **Disabled :** You can disable this option by toggling it, which prevents the replaying of historical data from the source to the Space. This means that only data that the source has received after the point when the source was connected to the Space will be available within the Engage/Unify Space.
-4. If you need more historical data available from this source, please fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
+4. If you need more historical data available from this source, please fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket):
     
 ```
 Segment Source Details:
