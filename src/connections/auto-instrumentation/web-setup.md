@@ -17,7 +17,7 @@ You'll learn how to use an existing Segment source, integrate dependencies, turn
 
 You’ll need the `writeKey` from an existing Segment source:
 
-1. In your Segment workspace, go to to **Connections > Sources**.
+1. In your Segment workspace, go to **Connections > Sources**.
 2. Select your source.
 3. From the source's overview tab, go to **Settings > API Keys**.
 4. Copy the `writeKey` shown in the code block.
@@ -189,15 +189,20 @@ Verify that you only have **one snippet** in your site, then move to [Step 3: Ve
 
 3. Build and run your app.
 
-## Step 3: Enable Auto-Instrumentation in your source
+## Step 3: Turn on Auto-Instrumentation in your source
 
+Next, return to the source settings to turn on Auto-Instrumentation:
 
+1. Go to **Connections > Sources**.
+2. Select your source you used in Step 1.
+3. From the source's overview tab, go to **Settings > Analytics.js**.
+4. Toggle Auto-Instrumention on.
 
 ## Step 4: Verify and deploy events
 
 After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Sources**, then select the source you created for Auto-Instrumentation.
+1. In your Segment workspace, return to **Connections > Sources**, then select the source you used for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
   - Make sure you've installed the SDK correctly.
   - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
