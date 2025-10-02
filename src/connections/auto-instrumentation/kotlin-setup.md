@@ -10,8 +10,8 @@ This guide shows how to install and configure the library, as well as how to ena
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
-> success "Enable Auto-Instrumentation"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
+> success "Auto-Instrumentation access"
+> To turn Auto-Instrumentation on in your Segment workspace, reach out to your dedicated account manager.
 
 ## Before you begin
 

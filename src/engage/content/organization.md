@@ -4,6 +4,7 @@ plan: engage-premier
 ---
 > info "Engage Premier End of Life"
 > Engage Premier features, including Channels, Broadcasts, content templates, and Subscriptions, will no longer be available after December 15, 2025. 
+
 To add structure to your marketing content, you can organize templates into folders and duplicate them within your Segment space.
 
 ## Organize with folders
@@ -50,8 +51,8 @@ To duplicate an email, SMS, or push template:
 2. Select the tab for the template type (Email, SMS, or Push) you'd like to clone.
 3. Select the **...** icon next to your template, then click **Duplicate**.
 4. Configure your duplicate template:
-- For SMS and push, edit your template, and save the duplicate once you're finished.
-- For email, add a template name on the **Duplicate Template** popup screen, then click **Duplicate**. You can then edit your email template from the Templates page.
+    - For SMS and push, edit your template, and save the duplicate once you're finished.
+    - For email, add a template name on the **Duplicate Template** popup screen, then click **Duplicate**. You can then edit your email template from the Templates page.
 
 Learn more about configuring [email](/docs/engage/content/email/template/), [SMS](/docs/engage/content/sms/template/), and [push](/docs/engage/content/mobile-push/) templates.
 

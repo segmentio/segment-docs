@@ -34,7 +34,7 @@ Before you begin development, consider the following points:
 3. To test your integration:
 
    - For cloud-mode destinations, follow these instructions: [Test Cloud Destinations](/docs/partners/destinations/testing).
-   - If you are building a device-mode destination, see the [Test Browser Destinations](#).
+   - If you are building a device-mode destination, see the Test Browser Destinations.
 
 4. When you have questions, reach out to partner-support@segment.com.
 

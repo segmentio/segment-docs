@@ -133,7 +133,7 @@ Segment **doesn't** copy the following:
 5. Review the duplicated journey and make any needed changes.
 6. If your journey includes destination sends, be sure to copy the new destination keys into your destination system.
 
-> warning
+> warning ""
 > Currently, you can only duplicate journeys within the same Engage space. Duplicating across spaces or workspaces is not supported.
 
 ## Best practices

@@ -4,6 +4,7 @@ plan: engage-premier
 ---
 > info "Engage Premier End of Life"
 > Engage Premier features, including Channels, Broadcasts, content templates, and Subscriptions, will no longer be available after December 15, 2025. 
+
 Subscription groups let your users choose the emails they want to receive from you. This page introduces subscription groups and explains how you can use them with [Engage email campaigns](/docs/engage/campaigns/email-campaigns/).
 
 ## About subscription groups

@@ -6,7 +6,7 @@ id: 56fc7e4680412f644ff12fb9
 ---
 
 > warning ""
-> For new implementations, [Facebook no longer recommends using App Events]([url](https://developers.facebook.com/docs/marketing-api/app-event-api/)). Instead, they suggest switching to [Facebook Conversions API (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-facebook-conversions-api/) for all server-side data tracking needs. 
+> For new implementations, [Facebook no longer recommends using App Events](https://developers.facebook.com/docs/marketing-api/app-event-api/). Instead, they suggest switching to [Facebook Conversions API (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-facebook-conversions-api/) for all server-side data tracking needs. 
 
 [Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"}, [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}, or [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. 
 
