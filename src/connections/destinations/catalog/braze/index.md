@@ -142,7 +142,7 @@ To send anonymous user data in cloud-mode, you must manually include the user's 
 
 ### Capture the braze_id of anonymous users
 
-Pass one of the many identifiers that may exist on an anonymous user profile to the [Braze's User by Identifier REST endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target='_blank'} to capture and export the `braze_id`. These identifiers include:
+Pass one of the many identifiers that may exist on an anonymous user profile to the [Braze's User by Identifier REST endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target="_blank"} to capture and export the `braze_id`. These identifiers include:
 - email address
 - phone number
 - device_id

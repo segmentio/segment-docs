@@ -13,7 +13,7 @@ redirect_from:
 {% include content/plan-grid.md name="actions" %}
 
 
-[Mixpanel](https://mixpanel.com/){:target='_blank'} lets you build better products through powerful, self-serve product analytics to help you convert, engage, and retain more users.
+[Mixpanel](https://mixpanel.com/){:target="_blank"} lets you build better products through powerful, self-serve product analytics to help you convert, engage, and retain more users.
 
 
 ## Benefits of Mixpanel (Actions) vs Mixpanel Classic
@@ -22,13 +22,13 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 - **Simpler setup** - Mixpanel (Actions) has a streamlined default setup process making it easier to get started in a way that "just works".
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Additional default property mappings** - More default mappings from the Segment context like app name, app namespace, device type, and more.
-- **Improved Groups support** - Implementation of [Segment Groups](/docs/connections/spec/group/) with [Mixpanel Group Analytics](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target='_blank'} is easier. If you're already using Segment Groups, no code changes are required.
+- **Improved Groups support** - Implementation of [Segment Groups](/docs/connections/spec/group/) with [Mixpanel Group Analytics](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"} is easier. If you're already using Segment Groups, no code changes are required.
 - **E-commerce mappings** - Mixpanel (Actions) accepts products nested within arrays in the `Order Completed` event as described in the Segment [ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
 - **Batching Requests** - If you have a lot of events, Mixpanel (Actions) provides more efficient way to receive and process those large sets of data.
 
 ## Getting started
 
-1. Go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects){:target='_blank'}. Copy the Mixpanel API Key and API Secret for your project.
+1. Go to your [Mixpanel project settings](https://mixpanel.com/report/settings/#account/projects){:target="_blank"}. Copy the Mixpanel API Key and API Secret for your project.
 2. In the your Segment workspace, click **Catalog**, then click **Destinations**.
 3. Navigate to **Destinations Actions**, select "Mixpanel",  then click **Add destination**.
 4. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
@@ -50,9 +50,9 @@ When `Generate Purchase Event Per Product` is set to `true`, this setting effect
 In the default configuration, Mixpanel (Actions) triggers this action when it receives a Group call.
 
 > warning ""
-> Group Analytics is available as an add-on package to customers on [Growth](https://mixpanel.com/pricing/){:target='_blank'} and [Enterprise](https://mixpanel.com/pricing/){:target='_blank'} plans.
+> Group Analytics is available as an add-on package to customers on [Growth](https://mixpanel.com/pricing/){:target="_blank"} and [Enterprise](https://mixpanel.com/pricing/){:target="_blank"} plans.
 
-This action sets or updates the properties of specific groups. Use this when you want to update properties on a [group profile](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#group-profiles){:target='_blank'}.
+This action sets or updates the properties of specific groups. Use this when you want to update properties on a [group profile](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#group-profiles){:target="_blank"}.
 
 The Groups model in Segment is slightly different than in Mixpanel. To explain the conceptual difference, it may help to think in terms of database tables. In Segment, there is a single "groups" table. You can have as many group rows as you want and each row has a unique identifier. When you want to set traits on that group, you only need to know the group ID.
 
@@ -61,7 +61,7 @@ However, in Segment you cannot distinguish between "types" of groups. For exampl
 ### Default group key
 By default, the Mixpanel (Actions) destination uses `$group_id` as the group key. Create a new group in Mixpanel with `$group_id` as the group key to complete the configuration.
 
-1. Go to your [Mixpanel project](https://mixpanel.com/report){:target='_blank'} settings.
+1. Go to your [Mixpanel project](https://mixpanel.com/report){:target="_blank"} settings.
 2. Scroll to the "Group Keys" section. If this section doesn't exist, you may not have the Group Analytics add-on.
 3. Create the new group key:
 
