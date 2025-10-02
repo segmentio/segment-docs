@@ -165,7 +165,7 @@ _Want to easily export advertising data from_ [Google Adwords](https://segment.c
 
 When we have the aggregate cost numbers, the formula for ROI is:
 
-```none
+```text
 Campaign ROI = (Profit Attributed to Campaign – Campaign Cost) / Campaign Cost
 ```
 
