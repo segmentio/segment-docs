@@ -11,7 +11,7 @@ You'll learn how to connect an existing source, integrate dependencies, turn on 
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
+> To turn Auto-Instrumentation on in your Segment workspace, reach out to your dedicated account manager.
 
 ## Step 1: Get your source write key
 
@@ -74,11 +74,21 @@ typealias NavigationLink = SignalNavigationLink
 typealias TextField = SignalTextField
 typealias SecureField = SignalSecureField
 ```
-## Step 3: Verify and deploy events
+
+## Step 3: Turn on Auto-Instrumentation in your source
+
+Next, return to the source settings to turn on Auto-Instrumentation:
+
+1. Go to **Connections > Sources**.
+2. Select your source you used in Step 1.
+3. From the source's overview tab, go to **Settings > Advanced**.
+4. Toggle Auto-Instrumention on.
+
+## Step 4: Verify and deploy events
 
 After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, go to **Connections > Sources** and select the source you created for Auto-Instrumentation.
+1. In your Segment workspace, go to **Connections > Sources** and select the source you used for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
   - Make sure you've installed the SDK correctly.
   - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
