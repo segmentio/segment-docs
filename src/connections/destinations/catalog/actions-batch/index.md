@@ -1,6 +1,7 @@
 ---
 title: Batch (Actions) Destination
-id: 596d11f870a3e552b957e6d9
+id: 6891fb45c0068b7fad1e80a5
+redirect_from: "/connections/destinations/catalog/batch-actions/"
 ---
 
 {% include content/plan-grid.md name="actions" %}
