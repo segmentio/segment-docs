@@ -134,6 +134,8 @@ When filtering on entity properties, you can dynamically reference the value of 
 | TIME      | equals, not equals, less than, greater than, less than or equal, greater than or equal |
 | TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
 
+> info ""
+> We do not currently support filtering on nested properties within entity property conditions.
 
 ## Step 2: Activate your Linked Audience
 
