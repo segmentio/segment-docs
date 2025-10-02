@@ -19,7 +19,7 @@ Here is a bit more information on what is happening at each of those stages. 
 
 When [lifecycle events](/docs/connections/spec/mobile/#lifecycle-events) are enabled, the **Application Installed** and **Application Opened** events are triggered on the first app open after the app is installed.  Note, if the app is deleted and then later reinstalled on the device, these events will be triggered again on first app open. 
 
-**Situations where install counts look lower in Segment than in other tools. **
+**Situations where install counts look lower in Segment than in other tools**
 
 Some tools, like iTunes or Google Play, count install on download rather than on app open like Segment.  iTunes and Google Play is able to easily collect data on download but not as easily able to collect first-party data on app open. Whereas other tools, such as Segment, need their SDK to be loaded in app and initialized on app open before they are able to collect the install information. For example, if a user downloads your app but does not open it, the install will be counted in iTunes/Google Play but not counted in Segment or other tools.
 
