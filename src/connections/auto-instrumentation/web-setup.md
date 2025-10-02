@@ -194,7 +194,7 @@ Verify that you only have **one snippet** in your site, then move to [Step 3: Ve
 Next, return to the source settings to turn on Auto-Instrumentation:
 
 1. Go to **Connections > Sources**.
-2. Select your source you used in Step 1.
+2. Select the source you used in Step 1.
 3. From the source's overview tab, go to **Settings > Analytics.js**.
 4. Toggle Auto-Instrumention on.
 
