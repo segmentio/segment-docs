@@ -5,7 +5,7 @@ hidden: true
 
 This guide outlines the steps required to set up the Signals SDK in your JavaScript website.
 
-You'll learn how to use an existing Segment source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended.
+You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended.
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.

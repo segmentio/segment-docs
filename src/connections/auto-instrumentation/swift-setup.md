@@ -5,7 +5,7 @@ hidden: true
 
 This guide outlines the steps required to set up the Signals SDK in your Apple OS applications using Swift. 
 
-You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
+You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended. 
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
@@ -13,23 +13,14 @@ You'll learn how to add Auto-Instrumentation sources, integrate dependencies, an
 > success "Enable Auto-Instrumentation"
 > To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
 
-## Step 1: Add or enable a source and get its write key
+## Step 1: Get your source write key
 
-You can either create a new source or turn on Auto-Instrumentation for an existing source. Both methods let you retrieve the `writeKey` that you’ll need later.
+You’ll need the `writeKey` from an existing Segment source:
 
-### Create a new source
-
-1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation**.
-2. Select **Add source**, give the source a name, and click **Save**.
-3. Return to **Connections > Sources** and select the new source you just set up.
-4. In the **Initialize the Client** section, copy the `writeKey` shown in the code block.
-
-### Enable Auto-Instrumentation on an existing source
-
-If you want to use an existing source, copy its `writeKey` from **Initialize the Client**. After you install the SDK (Step 2), return to the source settings to turn on Auto-Instrumentation:
-
-- **Web:** **Connections > Sources > [source] > Settings > Analytics.js > Auto-Instrumentation** and toggle it on.
-- **Mobile:** **Connections > Sources > [source] > Settings > Advanced > Auto-Instrumentation** and toggle it on.
+1. In your Segment workspace, go to **Connections > Sources**.
+2. Select your source.
+3. From the source's overview tab, go to **Settings > API Keys**.
+4. Copy the `writeKey` shown in the code block.
 
 ## Step 2: Add dependencies and initialization code
 
