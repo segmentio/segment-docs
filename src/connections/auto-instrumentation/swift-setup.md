@@ -15,7 +15,7 @@ You'll learn how to connect an existing source, integrate dependencies, turn on 
 
 ## Step 1: Get your source write key
 
-You’ll need the `writeKey` from an existing Segment source:
+You need the `writeKey` from an existing Segment source:
 
 1. In your Segment workspace, go to **Connections > Sources**.
 2. Select your source.
