@@ -7,11 +7,6 @@ redirect_from:
 
 Journeys, a feature of [Engage](/docs/engage/), provides a way for marketers to personalize experiences through planning how and when to engage customers with the right campaigns and messages.
 
-<video width="690px" controls autoplay aria-label="Demo video setting up a new journey with entry and true/false split conditions.">
-  <source src="images/journeys-teaser.webm" type="video/webm">
-  <source src="images/journeys-teaser.mp4" type="video/mp4">
-</video>
-
 Journeys let you define steps in a user's journey based on event behavior and traits. You can build Journeys from your tracking events, traits, computed traits, or audiences. At each step of a journey, you can send your list of users to any Engage-compatible destination.
 
 ## Getting started
