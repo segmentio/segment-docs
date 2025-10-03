@@ -20,15 +20,9 @@ The OneTrust consent banner has three key UI configurations that control how the
   - **Opt-In:** The user, by default, does not consent to all categories (except those that you deem to be mandatory). The user is required to select categories that they consent to share data with (or, "opt-in" to data collection)
   - **Opt-out:** The user, by default, does consent to all categories. The user can choose to select categories that they do not consent to share data with (or, "opt-out" of data collection)
 
-<div class="premonition info">
-    <div class="fa fa-info-circle"></div>
-    <div class="content">
-      <p class="header">Segment's Analytics.js OneTrust wrapper assumes the following:</p>
-      <p markdown=1>
-        **Opt-In** and **Implied** statuses are treated in Segment's OneTrust wrapper as `Opt-In`. **Notice Only**, **Custom**, or **Opt-Out** statuses are treated in Segment's OneTrust wrapper as `Opt-Out`.
-      </p>
-    </div>
-  </div>
+
+> info "Segment's Analytics.js OneTrust wrapper assumes the following:"
+> **Opt-In** and **Implied** statuses are treated in Segment's OneTrust wrapper as `Opt-In`. **Notice Only**, **Custom**, or **Opt-Out** statuses are treated in Segment's OneTrust wrapper as `Opt-Out`.
 
 <!-- TODO (IG, 4/2024): the above callout would not render correctly in markdown - figure out why that happened-->
 
