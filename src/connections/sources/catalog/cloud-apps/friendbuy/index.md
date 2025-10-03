@@ -2,7 +2,7 @@
 title: Friendbuy Source
 ---
 
-[Friendbuy](https://www.friendbuy.com/friendbuy-segment-integration){:target='_blank'} sends referral and loyalty event data to Segment in real time, allowing you to send data instantly to connected tools like your data warehouse. This enables timely and up-to-date insights, personalized user experiences, and customer cohort analysis.
+[Friendbuy](https://www.friendbuy.com/friendbuy-segment-integration){:target="_blank"} sends referral and loyalty event data to Segment in real time, allowing you to send data instantly to connected tools like your data warehouse. This enables timely and up-to-date insights, personalized user experiences, and customer cohort analysis.
 
 
 This source is maintained by Friendbuy. For any issues with the source, [contact their Support team](mailto:support@friendbuy.com).

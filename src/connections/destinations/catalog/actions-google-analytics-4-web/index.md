@@ -19,7 +19,7 @@ When you have Segment installed, you can use your existing Analytics 2.0 trackin
 
 ## Getting started
 
-Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account and enable any Custom Definitions in your GA4 Admin Panel. For more information, see Google's article [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
+Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account and enable any Custom Definitions in your GA4 Admin Panel. For more information, see Google's article [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target="_blank"}.
 
 To connect the Google Analytics 4 Web destination:
 
@@ -27,7 +27,7 @@ To connect the Google Analytics 4 Web destination:
 2. Search for “Google Analytics 4 Web” in the Destinations Catalog, and select the destination.
 3. Click **Configure Google Analytics 4 Web**.
 4. Select the web source that will send data to Google Analytics 4 and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). For mobile source tracking, view the [Firebase Destination](/docs/connections/destinations/catalog/firebase/).
-5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 web stream.
+5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target="_blank"} associated with your GA4 web stream.
 6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-add-the-segment-snippet) includes this initial call by default.
 8. For GA4 to accept events on page, enable Set Configuration Mapping triggered by the first Segment event called after analytics.load(). Set Configuration Mapping calls the gtag(‘config’) command to enable tracking to your GA4 Measurement ID. 
