@@ -15,7 +15,7 @@ To get started with Nielsen-DTVR and retrieve an `appid` to configure this integ
 - Reach out to your Segment customer service representative to enable the Nielsen-DTVR plugin, as this destination is in private beta.
 
 
-### Adding the dependency
+## Adding the dependency
 
 ### via Xcode
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
