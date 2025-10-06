@@ -45,6 +45,7 @@ The following table lists events that One Creation sends to Segment. These event
 
 All One Creation events contain the associated One Creation campaign name, campaign ID, user ID of the individual who responded to the campaign, and the list of traits or properties that the user provided through this campaign. Here's a sample payload:
 
+```json
     {
         "properties": {
             "fav_color": "blue",
@@ -68,6 +69,7 @@ All One Creation events contain the associated One Creation campaign name, campa
         "userId": "75720996-3c82-4cc4-b0e5-67bd441fa9f3",
         "type": "track"
     }
+```
 
 ## Adding destinations
 
