@@ -24,9 +24,9 @@ This page outlines product limitations for Event-Triggered (V2) Journeys.
 | Trigger             | 1                                       |
 | Hold until          | 1                                       |
 | Delay               | 1                                       |
-| Exit rules          | 1 for 1-10 exit rules configured        |
 | Randomized split    | 1                                       |
 | Data split          | 1                                       |
+| Exit rules          | 1 for 1-10 exit rules configured        |
 
 Plans with compute credits instead of journey steps consume 1 compute credit for every 2 journey steps.
 
