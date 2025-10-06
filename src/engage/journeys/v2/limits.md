@@ -9,7 +9,7 @@ This page outlines product limitations for Event-Triggered (V2) Journeys.
 
 | Name                | Limit                                   | Description                                                                                                                |
 | ------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Steps               | 25                                      | Maximum number of steps per journey.                                                                                       |
+| Steps               | 50                                      | Maximum number of steps per journey.                                                                                       |
 | Journey name        | 73 characters                           | Maximum length for Journey names. Names must be unique.                                                                    |
 | Step name           | 73 characters                           | Maximum length for step names.                                                                                             |
 | Branch name         | 73 characters                           | Maximum length for branch names within a split step. Branch names must be unique across the journey.                       |
