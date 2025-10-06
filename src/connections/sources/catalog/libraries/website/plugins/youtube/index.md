@@ -21,14 +21,16 @@ To begin, create a new project in the Google Developer Console, then create a ne
 After you've generated the API key:
 
 1. Enable a new plugin.
-- Navigate to **Connections > Sources** and choose the source you want to connect the YouTube plugin to. Go to the **Settings** tab of your source and select **Plugins**. You can enable the YouTube plugin from this menu:
+
+    - Navigate to **Connections > Sources** and choose the source you want to connect the YouTube plugin to. Go to the **Settings** tab of your source and select **Plugins**. You can enable the YouTube plugin from this menu:
 
     ![the plugins setting screen](./images/youtube-vimeo-plugins-beta-2021-06-04.png)
 
     **Note:** Only JavaScript sources support plugins.
 
 2. Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page. This can be done by adding this script,  <script src="https://www.youtube.com/iframe_api"></script> to the section of the source code where the page loads.
-- Use the initialize method in the YouTube `onYouTubeIframeAPIReady()` function to register and initialize the plugin with the player instance and your API key:
+
+    - Use the initialize method in the YouTube `onYouTubeIframeAPIReady()` function to register and initialize the plugin with the player instance and your API key:
 
 ```js
 var player;

@@ -44,8 +44,8 @@ The CNAME records for the above example will look like:
 
 |TYPE | NAME  | DOMAIN |   VALUE|
 |-----|-------|--------|--------|
-|CNAME| xid   |example1.com|{your-cross-domain-id-service}.xid.segment.com|
-|CNAME| xid   |example2.com|{your-cross-domain-id-service}.xid.segment.com|
+|CNAME| xid   |example1.com|\{your-cross-domain-id-service\}.xid.segment.com|
+|CNAME| xid   |example2.com|\{your-cross-domain-id-service\}.xid.segment.com|
 
 *Note: Contact our implementation team for the exact address of your Cross-Domain ID service.*
 
@@ -59,9 +59,11 @@ Segment will verify that your subdomains have CNAME records set up correctly. Th
 After validation, we will enable Cross-Domain Analytics on your Segment workspace and enabled sources. Once we give you the go ahead, you'll see two things happen when a user visits a domain from the same browser:
 
 1. In the debugger, you'll see `Identify` calls with a Cross-Domain ID in the payload.
+
 ![Cross-Domain Identify call](images/xid_debugger_pretty.png)
 
 1. Subsequent events from that user will have a Cross-Domain ID context trait.
+
 ![Track event with Cross-Domain ID trait](images/xid_debugger_raw.png)
 
 ## Frequently Asked Questions
@@ -117,6 +119,7 @@ By default, Chrome does not block any cookies. Chrome does give the user two oth
 
 #### Safari
 Safari distinguishes between cookies from sites that a user has previously visited (second-party cookies) and cookies from sites which a user has not been to (third-party cookies).
+
 ![Safari cookie settings](images/xid_safari_settings.png)
 
 By default, Safari blocks third-party cookies.

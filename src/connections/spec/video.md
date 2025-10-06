@@ -713,12 +713,12 @@ All ad events share the same event properties that describe information about th
 | `pod_id`        | String     | The unique ID of the ad pod.  |
 | `pod_position`  | Integer    | The position of the ad asset relative to other assets in the same pod.   |
 | `pod_length`    | Integer    | The number of ad assets the current ad pod contains.   |
-| `type`          | Enum {`pre-roll`, `mid-roll`, `post-roll`} | The ad type. You can send either `pre-roll`, `mid-roll`, or `post-roll`.   |
+| `type`          | Enum \{`pre-roll`, `mid-roll`, `post-roll`\} | The ad type. You can send either `pre-roll`, `mid-roll`, or `post-roll`.   |
 | `title`         | String     | The title of the video ad.   |
 | `publisher`     | String     | The ad creator, author, producer, or publisher.   |
 | `position`      | Integer    | The current index position, in seconds, of the playhead with respect to the length of the ad.   |
 | `total_length`  | Integer    | The total duration of the current ad asset in seconds.   |
-| `load_type`     | Enum {`linear`, `dynamic`} | `dynamic` if ads are loaded dynamically and `linear` if ads are same for all users.     |
+| `load_type`     | Enum \{`linear`, `dynamic`\} | `dynamic` if ads are loaded dynamically and `linear` if ads are same for all users.     |
 | `content`       | Object[ContentEventObject]  | For video destinations that require content metadata to be sent with ad events, you can send all the content metadata nested under this property (such as `content.asset_id` or `content.title`) as a Content Event Object.    |
 | `quartile`      | Integer    | For Video Ad Playing events, this property can be set to indicate when a specific ad quartile has been reached (1,2, or 3). If you are using a Segment client-side library to track your video events you don't need to send this property as Segment's libraries will automatically track quartiles.   |
 
@@ -1173,5 +1173,6 @@ analytics.track('Video Playback Completed', {
 ```
 
 Below is an example of how a playback that has three mid-roll ads interspersed within the content:
-  ![Playback with three mid-roll ads interspersed within content](images/Video_Tracking_Workflow.png)
+
+![Playback with three mid-roll ads interspersed within content](images/Video_Tracking_Workflow.png)
 <!-- svg by Aimee using lucidchart-->

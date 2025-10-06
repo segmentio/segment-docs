@@ -14,7 +14,8 @@ It differs from the Object API in that it is designed to:
 > warning ""
 > At this time, Segment hasn't created tooling akin to core analytics-* libraries so you'll need to use Segment's HTTP API directly for now.
 
-### Batched Object Data
+## Batched Object Data
+
 The `Batched Object Data` the API accepts is a file of line separated objects, in JSON form, compressed using `Gzip`.
 The maximum size of a single `object` is 400KB and maximum uncompressed size of a file 512MB.
 
@@ -23,25 +24,26 @@ Example objects:
 {"id":"1","collection":"users","properties":{"first_name":"John","last_name":"Smith"}}
 {"id":"2","collection":"users","properties":{"first_name":"Jane","last_name":"Doe"}}
 ```
-
+| Field                   | Type   | Description                                                                               |
 |-------------------------|--------|-------------------------------------------------------------------------------------------|
 | **`id`** *Required*         | String | The unique ID representing the object in the third party system. <br><br> Maximum of 100 characters. |
 | **`collection`** *Required* | String | A string that represents the name of the collection. The collection name will become the table name in your data warehouse. <br><br> Collection must consist of lowercase letters and underscores and maximum of 100 characters. Can not begin or end with an underscore. |
 | **`Properties`** *Required* | Object |  The object properties that represent the object. <br><br> Example: Each value could be a string (ISO dates are parsed and recognized as `isodate` type), an integer, or a float (JSON types). <br><br> Values cannot be lists or objects. Each value must be less than 32KB in size. |
 
 
-### Authentication
+## Authentication
 
 Authenticate to the Objects Bulk API by sending your project's **Write Key** along with a request.
 Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic `.
 
 In practice that means taking a Segment source **Write Key** encoding it with base64. For example, `echo "abc123" | base64 -` becomes `'YWJjMTIzCg=='` and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzCg=='`.
 
-### Source type
+## Source type
 
 set up an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects Bulk API.
 
-### Limits
+## Limits
+
 The API imposes some rate limits including:
 - **512MB** maximum uncompressed [file](#batched-object-data) upload size
 - **400KB** maximum [object](#batched-object-data) size
