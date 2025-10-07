@@ -11,7 +11,7 @@ Littledata's [Shopify to Segment connection](https://help.littledata.io/posts/s
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata){:target="\_blank"}.
 
-#### Client-side (device mode) tracking
+## Client-side (device mode) tracking
 
 After the [installation process](https://help.littledata.io/posts/segment-installation-guide/){:target="\_blank"}:
 
@@ -21,7 +21,7 @@ After the [installation process](https://help.littledata.io/posts/segment-insta
 - Device-mode e-commerce events can send to all Segment destinations
 - Segment's anonymous ID and Google Analytics' client ID passes to Littledata's servers to ensure consistent user journey tracking
 
-#### Server-side (cloud mode) tracking
+## Server-side (cloud mode) tracking
 
 During the Segment connection setup, Littledata also adds a set of webhooks to your Shopify store. When a customer interacts with your store these changes are relayed server-side from Shopify to Littledata to Segment. The advantages to this approach are:
 
@@ -177,7 +177,7 @@ The list below outlines the properties included in most events. See the 'Track (
 | `affiliation`                           | A comma-separated list of order tags. Untagged orders use `Shopify`.                           | String        |
 | `cart_id`                               | The ID of the Shopify cart.                                                                    | String        |
 | `checkout_id`                           | The ID of the checkout session.                                                                | String        |
-| `context\['Google Analytics'].clientId` | The user's Google Analytics Client ID.                                                         | String        |
+| `context['Google Analytics'].clientId` | The user's Google Analytics Client ID.                                                         | String        |
 | `context.ip`                            | The user's IP address.                                                                         | String        |
 | `coupon`                                | A comma-separated string of discount coupons used, if applicable.                              | String        |
 | `currency`                              | The currency of the order.                                                                     | String        |
@@ -205,7 +205,7 @@ The list below outlines the properties included in most events. See the 'Track (
 | `total`                                 | The total value of the order.                                                                  | Float         |
 | `userId`                                | Chosen user identifier, defaulting to Shopify Customer ID                                      | String        |
 
-> info "The `revenue` property is available only with the Order Completed event"
+> info "The revenue property is available only with the Order Completed event"
 > The `revenue` property is only available with the Order Completed event and requires you to opt in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in overrides the `total` property sent to Google Analytics.
 
 ## Product properties
