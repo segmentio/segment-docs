@@ -2,11 +2,11 @@ Segment Functions run on the Node.js LTS runtime (currently v20). This keeps the
 
 Based on the [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html){:target="_blank"} and [Node.js](https://nodejs.org/en/about/previous-releases){:target="_blank"} support schedule, production applications should only use Node.js releases that are in Active LTS or Maintenance LTS.
 
-For existing functions, this change automatically occurs as you update and deploy an existing function. Segment recommends that you check your function post-deployment to ensure everything's working. Your function may face issues due to the change in syntax between different Node.js versions and dependency compatibility.
+When Segment upgrades the Functions runtime to a new LTS version, existing functions automatically use the new runtime after their next deployment. Segment recommends checking your function after deployment to ensure everything works as expected, since dependency or syntax changes between Node.js versions might affect your function’s behavior.
 
-Functions don't currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to request that one be added.
+Functions don't support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to request that one be added.
 
-The following dependencies are installed in the function environment by default.
+The following dependencies are installed in the function environment by default:
 
 - [`atob v2.1.2`](https://www.npmjs.com/package/atob){:target="_blank"} exposed as `atob`
 - [`aws-sdk v2.488.0`](https://www.npmjs.com/package/aws-sdk){:target="_blank"} exposed as `AWS`
