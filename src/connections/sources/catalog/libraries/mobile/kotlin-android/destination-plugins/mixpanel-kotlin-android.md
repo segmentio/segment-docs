@@ -3,13 +3,11 @@ title: Analytics Kotlin Mixpanel Plugin
 strat: kotlin-android
 ---
 
-[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
+[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-Segment's Mixpanel destination plugin code is open source and [available on GitHub](https://github.com/segment-integrations/analytics-kotlin-mixpanel){:target="_blank"}.
+Segment's Mixpanel destination plugin code is open source and [available on GitHub](https://github.com/segment-integrations/analytics-kotlin-mixpanel){:target="\_blank"}.
 
 ## Getting Started
-
-
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
@@ -30,11 +28,9 @@ Or the following for Kotlin DSL
 implementation('com.segment.analytics.kotlin.destinations:mixpanel:<latest_version>')
 ```
 
-
-
 ## Using the Plugin in your App
 
-Open the file where you setup and configure the Analytics-Kotlin library.  Add this plugin to the list of imports.
+Open the file where you setup and configure the Analytics-Kotlin library. Add this plugin to the list of imports.
 
 ```
 import com.segment.analytics.kotlin.destinations.mixpanel.MixpanelDestination
@@ -67,12 +63,11 @@ analytics.identify("user-123", buildJsonObject {
 The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
 
 > info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
-
+> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are \_not_ using this setting, use the instructions below.
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
 
- When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
+When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
 
 <table>
   <tr>
@@ -117,7 +112,7 @@ Group calls are sent to Mixpanel if, **and only if**,
 
 1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
    ![Group ID Traits](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
-2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
+2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="\_blank"}.
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 
 ```swift
@@ -128,7 +123,7 @@ analytics.group("user-123", buildJsonObject {
 });
 ```
 
-Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
+Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="\_blank"}.
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
@@ -157,6 +152,7 @@ analytics.track("View Product", buildJsonObject {
     put("productName" "Striped trousers")
 });
 ```
+
 Because Mixpanel is an event tracking analytics tool, you'll want to [`track`](/docs/connections/spec/track/) your user's actions. The more useful events you [`track`](/docs/connections/spec/track/), the better Mixpanel becomes.
 
 You should use the [`track`](/docs/connections/spec/track/) method to accomplish this. The Segment [`track`](/docs/connections/spec/track/) method maps events and event properties directly to Mixpanel events and event properties.
@@ -173,14 +169,13 @@ There are two strings to avoid when naming event properties that will be sent to
 
 Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode).
 
-
-![mixpanel people properties list](images/mixpanelpeoplesuperprops.png)
+![mixpanel people properties list](/docs/connections/destinations/catalog/mixpanel/images/mixpanelpeoplesuperprops.png)
 
 ### Incrementing events
 
 You don't need to add extra code to increment event counts for Mixpanel people, as long as they are "known users". Supply the events that should be incremented.
 
-![mixpanel increment events list](images/mixpanelincrementinpeople.png)
+![mixpanel increment events list](/docs/connections/destinations/catalog/mixpanel/images/mixpanelincrementinpeople.png)
 
 You can find this in the **Advanced Options** of your Mixpanel settings on your Segment Destinations page.
 
@@ -188,7 +183,7 @@ For each event name listed, Segment calls Mixpanel `increment`, and set a user t
 
 For example, if you add **Logged In** to the list of increment events, Segment increments a user trait called **Logged In** and set a trait called **Last Logged In** with the current date and time.
 
-If you'd like to add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
+If you'd like to add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "_Viewed_ Signup _Page_" and `.screen('Listing')` would translate to "_Viewed_ Listing _Screen_".
 
 Remember, Segment sends one event per `page` call.
 
@@ -232,4 +227,4 @@ If you're testing in Xcode remember you must first background the app, then the 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
 > info ""
-> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in [Android] (/docs/connections/sources/catalog/libraries/mobile/android/android-faqs/#how-can-i-use-a-destination-specific-feature) 
+> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in [Android] (/docs/connections/sources/catalog/libraries/mobile/android/android-faqs/#how-can-i-use-a-destination-specific-feature)
