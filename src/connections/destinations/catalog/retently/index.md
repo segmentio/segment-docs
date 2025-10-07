@@ -33,7 +33,7 @@ It takes only three steps to set everything up and start surveying your audience
 ### 3. Map survey campaign with Segment events
 
 1. In the Retently destination settings in the Segment app, go to the **Map Retently campaigns with Segment events** section.
-2. In the left input field, enter the ID of the survey campaign. [Learn how to configure the survey campaign.](hhttps://help.retently.com/en/articles/8217913-trigger-transactional-surveys-via-segment-events){:target="_blank"}
+2. In the left input field, enter the ID of the survey campaign. [Learn how to configure the survey campaign.](https://help.retently.com/en/articles/8217913-trigger-transactional-surveys-via-segment-events){:target="_blank"}
 3. In the right field, list the name of one or more Segment Track events that should trigger the survey in the specified campaign.
    Write the name of the event exactly as it's written in the `analytics.track` method (more details in the section below). You can enter multiple Track events by separating them with a comma symbol (for example Order Placed, Dashboard Visited).
 
