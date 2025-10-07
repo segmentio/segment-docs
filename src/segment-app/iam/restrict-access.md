@@ -13,7 +13,7 @@ All team members on an account have access to make changes anywhere in the works
 
 ## Business Tier Only — Permission Levels
 
-At present, Business Tier workspaces can have **Owners,** **Read-Only Members,** and **Source Collaborators. **
+At present, Business Tier workspaces can have **Owners,** **Read-Only Members,** and **Source Collaborators.**
 
 **Workspace Owners** have full access to the workspace with the ability to view and update settings and create, view, update, and delete sub-resources like Sources and Destinations. 
 

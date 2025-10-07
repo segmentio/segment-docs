@@ -37,6 +37,9 @@ Select `and not who` to indicate users that have not performed an event. For exa
 
 You can also specify two different types of time-windows, `within` and `in between`. The `within` property lets you specify an event that occurred in the last `x` number of days, while `in between` lets you specify events that occurred over a rolling time window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
+> warning "ID Sync configuration and space-level ID Strategy aren't applied for Audience Exit events"
+> Segment sends all ID combinations for Audience Exit events downstream to remove a user from the external audience.
+
 ### Building audiences with traits
 
 You can also build audiences using Custom Traits, Computed Traits, SQL Traits, and audience memberships.
@@ -159,6 +162,14 @@ For step-by-step instructions on how to connect an audience to a destination, se
 > info "Historical data behavior for new destinations"
 > When you connect a new destination to an existing audience, Engage backfills historical data if the **Include Historical Data** option is enabled in the audience settings. If this setting is disabled, only new data gets sent. To sync all historical data manually, [contact Support](mailto:friends@segment.com) to request a resync.
 
+### Disconnect or remove a destination 
+
+When managing your audience-destination connections you have two options:
+
+1. **Connect to destination** - Toggles the connection on and off. When disconnected, the setup and configuration remain saved, but no data flows from the audience to the destination until you re-enable the connection. Use this option to pause sending data without losing your work.
+2. **Remove destination from audience** - Deletes the connection completely, so no events are sent to the destination. To use the destination again, you'll need to set it up as new from the beginning.
+
+
 ## Understanding compute times
 
 Because a number of factors (like system load, backfills, or user bases) determine the complexity of an audience, some compute times take longer than others.
@@ -217,8 +228,8 @@ To create a new audience or trait:
 1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **Create**.
 
 2. Configure and preview your Audience or Trait.
-- A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
-- Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). When the **Include Historical Event Data** option is unchecked, Segment only uses event data received after audience creation. However, trait data is always included as part of the filtering criteria whenever it is defined in the audience as lookback windows don't apply to trait data since it represents a snapshot of profile attributes at a given time.
+    - A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
+    - Configure the **Include Historical Event Data** option to limit how far back event data is processed by setting a lookback window (for example, the “last 90 days”). When the **Include Historical Event Data** option is unchecked, Segment only uses event data received after audience creation. However, trait data is always included as part of the filtering criteria whenever it is defined in the audience as lookback windows don't apply to trait data since it represents a snapshot of profile attributes at a given time.
 
 3. Select destinations to connect, then review and create your audience or trait.
 
@@ -239,7 +250,7 @@ To edit a realtime trait or audience:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime audience or trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Preview the results, then select **Create Audience** to confirm your edits.
+4. Preview the results, then select **Save audience** to confirm your edits.
 
 Engage then processes your realtime audience or trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated audience or trait.
 
@@ -308,9 +319,9 @@ To create an Activation event health spikes or drops alert:
 3. On the Create alert sidesheet, select the **Activation event health spikes or drops** alert and pick a destination for which you'd like to monitor event health. 
 4. Enter a percentage threshold to trigger activation event health notifications. 
 5. Select one or more of the following alert channels:
-  - **Email**: Select this to receive notifications at the provided email address. 
-  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
-  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+    - **Email**: Select this to receive notifications at the provided email address. 
+    - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
+    - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
 
 To make changes to an Activation event health spikes or drops alert, select the icon in the Actions column for the alert and click **Edit**. 
@@ -321,18 +332,15 @@ To delete a Activation event health spikes or drops alert, select the icon in th
 
 You can create an Audience size change alert that notifies you when your audience increases or decreases by a certain threshold. For example, if you set a change percentage of 4% and your destination had 100 members over the first 24 hours, Segment would notify you the following day if your audience had fewer than 96 or more than 104 members.
 
-> info "Audience size change alerts currently only support Linked Audiences"
-> Audience size change alerts are in public beta, and Segment is actively working on this feature. During the public beta, Audience size change alerts only support Linked Audiences. Some functionality may change before it becomes generally available.  
-
 To create an Audience size change alert:
 1. From your Segment workspace's home page, navigate to **Engage > Audiences**. 
 2. Select the Linked Audience you want to create an alert for, select the Alerts tab, and click **Create alert**. 
 3. On the Create alert sidesheet, select the **Audience size change alert** and pick a destination for which you'd like to monitor event health. 
 4. Enter a percentage threshold to trigger audience size change notifications. 
 5. Select one or more of the following alert channels:
-  - **Email**: Select this to receive notifications at the provided email address. 
-  - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
-  - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
+    - **Email**: Select this to receive notifications at the provided email address. 
+    - **Slack**: Select this to send alerts to one or more channels in your workspace. You can post messages to your channel with either a [webhook](https://api.slack.com/messaging/webhooks){:target="_blank”} or a [workflow](https://slack.com/help/articles/360041352714-Build-a-workflow--Create-a-workflow-that-starts-outside-of-Slack){:target="_blank”}. 
+    - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 6. Click **Save**.
 
 To make changes to an Audience size change alert, select the icon in the Actions column for the alert and click **Edit**. 
@@ -371,11 +379,11 @@ You can download a copy of your Audience by visiting the Audiences overview page
 1. Navigate to **Engage > Audiences**.
 2. Select the Audience you'd like to download as a CSV, then click **Download CSV**.
 3. Select the data fields that you'd like to include in your CSV as columns.
-- Your CSV contains all users in this audience with the selected fields. You can filter by `External ID`, `SQL trait`, `Computed Trait`, and `Custom Trait`.
+    - Your CSV contains all users in this audience with the selected fields. You can filter by `External ID`, `SQL trait`, `Computed Trait`, and `Custom Trait`.
 4. Click **Next**.
 5. Before you can download the CSV, you'll need to generate it. There are two different options for formatting:
-- **Formatted:** Displays external IDs and traits as distinct columns.  
-- **Unformatted:** Contains the following columns: a user/account key, a JSON object containing the external IDs (optional, if selected), and a JSON object containing the traits (optional, if selected).
+    - **Formatted:** Displays external IDs and traits as distinct columns.  
+    - **Unformatted:** Contains the following columns: a user/account key, a JSON object containing the external IDs (optional, if selected), and a JSON object containing the traits (optional, if selected).
 6. Click **Generate CSV**.
 
 Once Segment generates the CSV, you can download the file directly. You'll receive an email notification of the CSV completion, with a URL to the Audience overview page. Generating a CSV can take a substantial amount of time for large audiences. After you generate the CSV file, leave the modal window open while Segment creates the file. If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.
@@ -384,7 +392,7 @@ Note the following limits for the CSV downloader:
 - You can't download more than one CSV for the same audience at the same time.
 - You can only generate one CSV every five minutes.
 - Each CSV represents a snapshot at a given point in time that references the data from the audience's most recent computational run. This applies to both real time and batch audiences, as the CSV is not updated in real time. To locate the snapshot's given point of time, click on the Download CSV button, and the popup modal will contain an information icon ℹ️, which when hovered over will reveal the snapshot's details.
-  - ![CSV Snapshot details](https://github.com/user-attachments/assets/b7af772a-2ba7-4411-ba95-a913992f10ae)
+    - ![CSV Snapshot details](https://github.com/user-attachments/assets/b7af772a-2ba7-4411-ba95-a913992f10ae)
 
 > warning ""
 > You can't add account traits and identifiers using the CSV downloader with account-level audiences. This is because every row listed in the CSV file is a user, and since account traits and identifiers only exist on accounts, they wouldn't exist as a user's custom trait and appear on the CSV.

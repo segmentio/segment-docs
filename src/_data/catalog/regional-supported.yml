@@ -1111,15 +1111,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: 9TYqEh3nMe
-    display_name: Upollo
-    hidden: false
-    slug: upollo
-    url: connections/sources/catalog/cloud-apps/upollo
-    regions:
-      - us
-    endpoints:
-      - us
   - id: VShGHAfvlr
     display_name: UserGuiding
     hidden: false
@@ -1209,3 +1200,12 @@ sources:
     endpoints:
       - us
       - eu
+  - id: h00x3Ep5el
+    display_name: Zigpoll
+    hidden: false
+    slug: zigpoll
+    url: connections/sources/catalog/cloud-apps/zigpoll
+    regions:
+      - us
+    endpoints:
+      - us

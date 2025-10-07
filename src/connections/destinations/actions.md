@@ -240,7 +240,18 @@ You can't concatenate event variables and plain text with static values and func
 ![Mapping UI showing two concatenated fields: "+1 phone" and "context.page.url context.page.path"](images/mapping-concatenation.png)
 
 ### Liquid syntax
-The liquid syntax function enables you to transform event data with fine-grain control before it reaches cloud-mode destinations using the LiquidJS templating language. Use Liquid templates to clean, format, or conditionally transform data such as user properties, timestamps, or event metadata to meet the requirements of your downstream tools. Liquid templates are applied in the **Mappings** tab of your Segment workspace to enable you to integrate with your event pipeline. 
+The Liquid syntax function enables you to transform event data with fine-grain control before it reaches cloud-mode destinations using the [LiquidJS templating language](https://liquidjs.com/tutorials/intro-to-liquid.html){:target="_blank”}. Use Liquid templates to clean, format, or conditionally transform data such as user properties, timestamps, or event metadata to meet the requirements of your downstream tools. Liquid templates are applied in the **Mappings** tab of your Segment workspace for you to integrate with your event pipeline.
+
+#### Whitespace
+By default, Liquid will generate a newline when inputing multi-line templates. To strip these newlines you can use hyphens in the syntax ({% raw %} `{{-`, `-}}`, `{%-`, `-%}` {% endraw %}). See the [LiquidJS docs](https://liquidjs.com/tutorials/whitespace-control.html) for more information.
+
+#### Liquid template limits
+
+Segment enforces the following limits on liquid templates to protect performance and security:
+
+- Maximum template length: 1,000 characters per function  
+- Maximum evaluation time: 500 ms  
+- Maximum memory usage: 100 MB
 
 #### Supported liquid tags and filters
 Segment supports the following LiquidJS tags and filters for mappings. Segment selected these to ensure performance, security, and compatibility with real-time event processing. Segment disabled unsupported tags and filters to prevent performance degradation or security risks.

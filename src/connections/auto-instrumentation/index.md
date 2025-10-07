@@ -30,11 +30,11 @@ Auto-Instrumentation simplifies tracking in your websites and apps by removing t
 > Auto-Instrumentation is currently in private beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
 > success "Enable Auto-Instrumentation in your workspace"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
+> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager or friends@segment.com.
 
 ## Background
 
-Collecting high-quality analytics data is essential, but traditional tracking setups often fall behind as business needs change. Instrumentation updates can take weeks or months, and these delays reduce visibility and increase the burden on engineering teams.
+Collecting high-quality analytics data is essential, but traditional tracking setups often fall behind as business needs change. Instrumentation updates take time away from other engineering priorities, and these delays reduce visibility and increase the burden on engineering teams.
 
 ## Auto-Instrumentation as a solution
 
@@ -45,9 +45,6 @@ Key Auto-Instrumentation benefits include:
 - **No-code event creation**: Use the Event Builder tab to define events based on user activity; no JavaScript required.
 - **Fast iteration**: Update your tracking configuration at any time, without deploying new app versions.
 - **Fewer dependencies**: Reduce the need for engineering support while still maintaining reliable event tracking.
-
-> info "Event Builder during Private Beta"
-> During the Auto-Instrumentation Private Beta, both the Event Builder and the legacy Auto-Instrumentation tab appear in the Segment UI. Segment will remove the legacy tab once all customers have migrated to the Event Builder experience.
 
 ## How it works
 

@@ -635,6 +635,8 @@ sections:
       title: Default Alerts
     - path: /monitor/alerts/custom-alerts
       title: Custom Alerts
+  - path: /monitor/granular-observability
+    title: Failure Log Collection
 - section_title: Protocols
   section:
   - path: /protocols

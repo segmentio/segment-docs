@@ -7,7 +7,7 @@ id: 61dde0dc77eb0db0392649d3
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Friendbuy](https://www.friendbuy.com/){:target='_blank'} powers referral programs for e-commerce merchants of all sizes, providing an easy solution to launch Refer-a-Friend programs and accelerate growth through word of mouth.
+[Friendbuy](https://www.friendbuy.com/){:target="_blank"} powers referral programs for e-commerce merchants of all sizes, providing an easy solution to launch Refer-a-Friend programs and accelerate growth through word of mouth.
 
 Friendbuy's cloud mode Segment integration allows you to send data to Friendbuy from your data center so that Friendbuy can act on it. For example, you could trigger a reward when a referred customer performs a rewardable event or send customer data to use in your Friendbuy-managed loyalty/rewards program.
 
@@ -15,7 +15,7 @@ If you're using Segment with a Friendbuy referral program you probably want to u
 
 ## Overview
 
-The Friendbuy cloud mode destination sends information about your customers and their actions to Friendbuy. It supports the following [Friendbuy MAPI events](https://developers.friendbuy.com/#tracking-events){:target='_blank'}.
+The Friendbuy cloud mode destination sends information about your customers and their actions to Friendbuy. It supports the following [Friendbuy MAPI events](https://developers.friendbuy.com/#tracking-events){:target="_blank"}.
 
 - **Track Customer**: Converts Segment [Identify](/docs/connections/spec/identify/) calls to Friendbuy [*track customer* MAPI calls](https://developers.friendbuy.com/#tracking-customer-details){:target="_blank”}. Use this to add your customer ID and other customer data to the information that Friendbuy has about the customer.
 - **Track Purchase**: Converts Segment [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) calls to Friendbuy [*track purchase* MAPI calls](https://developers.friendbuy.com/#tracking-a-purchase){:target="_blank”}. Use this to send purchase data to Friendbuy and reward advocates based on their friends' purchases.
@@ -85,7 +85,7 @@ For example, if your *Track Purchase* call has the default *Custom Attributes* v
 }
 ```
 
-then the [Friendbuy MAPI purchase call](https://developers.friendbuy.com/#postpurchaseevent){:target='_blank'} will be:
+then the [Friendbuy MAPI purchase call](https://developers.friendbuy.com/#postpurchaseevent){:target="_blank"} will be:
 
 ``` json
 { 
@@ -117,7 +117,7 @@ To configure a custom event:
 
 4. *Event Properties* is set from the path `properties` by default, which means that all the properties that you include in your Segment `analytics.track` call are passed to Friendbuy. If you only want to pass custom attributes to Friendbuy, you need to segregate the fields to pass to Friendbuy into an object and then specify the path to that object, similar to what is described above in [Custom Attributes](#custom-attributes).
 
-5. To prevent an event that is tracked multiple times from being rewarded more than once, you should include a deduplication ID in your event as described in Friendbuy's [Track Custom Event documentation](https://developers.friendbuy.com/#tracking-a-custom-event){:target='_blank'}. You can either pass an explicit Event ID field in your event (defaulting to the `deduplicationId` property) or you can create the Event ID out of other event properties (such as the `userId`, a `.`, and the `properties.downloadId` in the above example).
+5. To prevent an event that is tracked multiple times from being rewarded more than once, you should include a deduplication ID in your event as described in Friendbuy's [Track Custom Event documentation](https://developers.friendbuy.com/#tracking-a-custom-event){:target="_blank"}. You can either pass an explicit Event ID field in your event (defaulting to the `deduplicationId` property) or you can create the Event ID out of other event properties (such as the `userId`, a `.`, and the `properties.downloadId` in the above example).
 
 <!--
 Local Variables:

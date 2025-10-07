@@ -4,6 +4,7 @@ plan: engage-premier
 ---
 > info "Engage Premier End of Life"
 > Engage Premier features, including Channels, Broadcasts, content templates, and Subscriptions, will no longer be available after December 15, 2025. 
+
 Subscription groups let your users choose the emails they want to receive from you. This page introduces subscription groups and explains how you can use them with [Engage email campaigns](/docs/engage/campaigns/email-campaigns/).
 
 ## About subscription groups
@@ -199,5 +200,5 @@ Yes. Keep the following table in mind when you name a subscription group:
 | Group Name Character Limit                    | Limited to 75 characters, including spaces                          |
 | Group Description Character Limit             | Limited to 500 characters, including spaces                         |
 | Spaces in Group Names                         | Spaces aren't allowed at the beginning and/or end of the Group name |
-| Unsupported characters for Group Names        | `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`                               |
+| Unsupported characters for Group Names        | `!@#$%^&*()_+\-=\[\]{};':"\|,.<>\/?`                               |
 | Unsupported accent characters for Group Names | `á, é, í, ó, ú, à, è, ì, ò, ù, ë, ï, ã`                             |

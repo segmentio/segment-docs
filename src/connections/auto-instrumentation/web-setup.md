@@ -5,23 +5,22 @@ hidden: true
 
 This guide outlines the steps required to set up the Signals SDK in your JavaScript website.
 
-You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.
+You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended.
 
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
-> success "Enable Auto-Instrumentation"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
+> success "Auto-Instrumentation access"
+> To turn Auto-Instrumentation on in your Segment workspace, reach out to your dedicated account manager.
 
-## Step 1: Add a source and get its write key
+## Step 1: Get your source write key
 
-You'll first need to add a source and copy its write key:
+You need the `writeKey` from an existing Segment source:
 
-1. In your Segment workspace, navigate to **Connections > Auto-Instrumentation** and click **Add source**.
-2. Select a source, give the source a name, and click **Save**.
-3. Return to **Connections > Sources** to view your sources.
-4. In the **My sources** table, find and click the new source you just set up.
-5. In the **Initialize the Client** section, look for and copy the `writeKey` displayed in the code block.
+1. In your Segment workspace, go to **Connections > Sources**.
+2. Select your source.
+3. From the source's overview tab, go to **Settings > API Keys**.
+4. Copy the `writeKey` shown in the code block.
 
 ## Step 2: Add dependencies and initialization code
 
@@ -190,11 +189,20 @@ Verify that you only have **one snippet** in your site, then move to [Step 3: Ve
 
 3. Build and run your app.
 
-## Step 3: Verify and deploy events
+## Step 3: Turn on Auto-Instrumentation in your source
+
+Next, return to the source settings to turn on Auto-Instrumentation:
+
+1. Go to **Connections > Sources**.
+2. Select the source you used in Step 1.
+3. From the source's overview tab, go to **Settings > Analytics.js**.
+4. Toggle Auto-Instrumention on.
+
+## Step 4: Verify and deploy events
 
 After integrating the SDK and running your app, verify that Segment is collecting signals:
 
-1. In your Segment workspace, return to **Connections > Sources**, then select the source you created for Auto-Instrumentation.
+1. In your Segment workspace, go to **Connections > Sources** and select the source you used for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
   - Make sure you've installed the SDK correctly.
   - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.

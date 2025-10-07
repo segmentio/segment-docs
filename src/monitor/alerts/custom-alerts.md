@@ -92,9 +92,6 @@ To create an Activation event health spikes or drops alert:
 ## Audience size change
 You can create an Audience size change alert that notifies you when your audience increases or decreases by a certain threshold. For example, if you set a change percentage of 4% and your destination had 100 members over the first 24 hours, Segment would notify you the following day if your audience had fewer than 96 or more than 104 members.
 
-> info "Audience size change alerts currently only support Linked Audiences"
-> Audience size change alerts are in public beta, and Segment is actively working on this feature. During the public beta, Audience size change alerts only support Linked Audiences. Some functionality may change before it becomes generally available.
-
 To create an Audience size change alert:
 
 1. From your Segment workspace’s home page, navigate to **Engage > Audiences**.

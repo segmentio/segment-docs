@@ -21,9 +21,9 @@ To create an audience with Generative Audiences:
 3. Select your audience type. Generative Audiences is available for all audience types except Linked Audiences.
 4. From the Build screen, click **Build with AI**.
 5. Enter your audience prompt in the description box. 
-- Use a minimum of 20 characters and up to 300 characters maximum. 
+    - Use a minimum of 20 characters and up to 300 characters maximum. 
 6. Click **Build**. Based on your prompt, Segment generates audience conditions for your review. 
-- Segment displays a progress bar until the audience conditions are generated.
+    - Segment displays a progress bar until the audience conditions are generated.
 
 > success ""
 > To help you write your prompt, view these [example prompts](#example-prompts) and [best practices](#best-practices).
@@ -55,13 +55,13 @@ Use the following examples to help you get started with audience prompts.
 This section shows a few examples of how Generative Audiences configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
 
 1. **Prompt**: "Customers who have not purchased in the last 30 days." 
-- **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
+    - **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
 
 2. **Prompt**: "Customers who don't have a phone number."
-- **Expected output**: Segment generates audience conditions where *the trait doesn't exist*.
+    - **Expected output**: Segment generates audience conditions where *the trait doesn't exist*.
 
 3. **Prompt**: "Customers who haven't received an email in the last 6 months."
-- **Expected output**: Segment generates audience conditions where *the event has been performed exactly 0 times*.
+    - **Expected output**: Segment generates audience conditions where *the event has been performed exactly 0 times*.
 
 ## Best practices
 
