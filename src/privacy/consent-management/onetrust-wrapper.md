@@ -63,10 +63,10 @@ To minimize the possibilities for data loss:
 
 | Banner behavior | Cookie banner | User interaction with webpage | Segment loads | Possibility of data loss |
 | --------------- | ------------  | ----------------------------- | ------------  | ---- |
-| Mandatory | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/supported.svg" /> Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
-| A banner that always remains as a user navigates your site | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
-| A banner that disappears after a user action, like clicking or scrolling | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
-| A banner that is optional and never displayed to a user | <img class="inline" src="/docs/images/unsupported.svg" /> Not displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
+| Mandatory | ![](/docs/images/supported.svg) Displayed on page load | ![](/docs/images/supported.svg) Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
+| A banner that always remains as a user navigates your site | ![](/docs/images/supported.svg) Displayed on page load | ![](/docs/images/unsupported.svg) Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that disappears after a user action, like clicking or scrolling | ![](/docs/images/supported.svg) Displayed on page load | ![](/docs/images/unsupported.svg) Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that is optional and never displayed to a user | ![](/docs/images/unsupported.svg) Not displayed on page load | ![](/docs/images/unsupported.svg) Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
 
 ## Scenarios where you might experience data loss
 
