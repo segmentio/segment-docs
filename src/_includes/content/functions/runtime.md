@@ -1,4 +1,4 @@
-On March 26, 2024, Segment upgraded the Functions runtime environment to Node.js v18, which is the current long-term support (LTS) release.
+Segment Functions run on the Node.js LTS runtime (currently v20).  
 
 This upgrade keeps your runtime current with industry standards. Based on the [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html){:target="_blank"} and [Node.js](https://nodejs.org/en/about/previous-releases){:target="_blank"} support schedule, Node.js v16 is no longer in *Maintenance LTS*. Production applications should only use releases of Node.js that are in *Active LTS* or *Maintenance LTS*.
 
