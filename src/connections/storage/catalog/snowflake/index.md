@@ -89,51 +89,16 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 
 ### Step 4: Create a user for Segment
 
-Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. For enhanced security, Segment recommends creating a user that authenticates with an encrypted key pair.
+Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair. For enhanced security, Segment recommends creating a user that authenticates with an encrypted key pair.
 
-#### Create a user that authenticates with a key pair
-If you are creating a user that will use a key pair to authenticate, you first must create a public key and then can create a new user. 
-
-##### Generate keys
-
-To start, open a terminal window and generate a private key by running the following command, replacing `key_name` with the name you'd like to give the key. The command generates a private key in PEM format, and will prompt you to enter a passphrase. Write down or remember this passphrase, as you will need it when creating your Segment user and configuring your destination in the Segment app.
-
-> success ""
-> If you want to generate an unencrypted private key, append `-nocrypt` to the end of the command.
-
-```
-openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out key_name.p8
-```
-
-After you've created the private key, save the file to a local directory. You'll need to upload the .p8 file to the Segment app when you create your Snowflake destination. 
-
-Next, generate your public key by running the following command, replacing `key_name.p8` with the name of the private key that you previously created and `public_key_name` with the name of your new public key. 
-
-```
-openssl rsa -in key_name.p8 -pubout -out public_key_name.pub
-```
-
-After you've created the public key, save the file to a local directory. 
-
-##### Generate a new user and assign the key to them
-
-Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated.
+To create a user that authenticates with a key pair:
+1. Create the user and assign it a key pair by following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. 
+2. Create a new user by executing the following SQL command, replacing the public key value with the key you previously generated. 
 
 ``` sql
 CREATE USER SEGMENT_USER 
   DEFAULT_ROLE = SEGMENT
   RSA_PUBLIC_KEY = 'enter your public key';
-GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
-```
-
-#### Create a user that authenticates with a username and password
-If you are creating a user that will use a username and password to authenticate, execute the following SQL command. Be sure to set a strong, unique password.
-
-```sql
-CREATE USER "SEGMENT_USER"
-  MUST_CHANGE_PASSWORD = FALSE
-  DEFAULT_ROLE = "SEGMENT"
-  PASSWORD = "my_strong_password"; -- Do not use this password
 GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 ```
 
@@ -157,67 +122,6 @@ For accounts outside the US, the account ID includes the region. You can find yo
 
 For example, if your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
 
-#### Test a username and password
-Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
-To install SnowSQL and verify your accounts:
-
-1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
-2. Open the Installer and follow instructions.
-3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
-
-```
-snowsql -a <account>  -u <user>
-```
-
-For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
-
-For example, if your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
-
-You can also find part of your account name by running the following query on your worksheet in Snowflake:
-
-```sql
-SELECT CURRENT_ACCOUNT();
-```
-4. Enter password when prompted.
-
-5. Run the following:
-
-```
-~$ snowsql --accountname myb10 --username SEGMENT_USER
-Password:
-* SnowSQL * v1.1.46
-Type SQL statements or !help
-SEGMENT_USER#(no warehouse)@(no database).(no schema)>SELECT 1;
-+---+
-| 1 |
-|---|
-| 1 |
-+---+
-1 Row(s) produced. Time Elapsed: 0.093s
-SEGMENT_USER#(no warehouse)@(no database).(no schema)>USE WAREHOUSE "SEGMENT_WAREHOUSE";
-+----------------------------------+
-| status                           |
-|----------------------------------|
-| Statement executed successfully. |
-+----------------------------------+
-1 Row(s) produced. Time Elapsed: 0.118s
-SEGMENT_USER#SEGMENT_WAREHOUSE@(no database).(no schema)>USE DATABASE "SEGMENT_EVENTS";
-+----------------------------------+
-| status                           |
-|----------------------------------|
-| Statement executed successfully. |
-+----------------------------------+
-1 Row(s) produced. Time Elapsed: 0.130s
-SEGMENT_USER#SEGMENT_WAREHOUSE@SEGMENT_EVENTS.(no schema)>!exit
-```
-
-If you would like to use the web interface, switch to the new role for the Segment user, create a new Worksheet and execute:
-
-```sql
-SELECT 1;
-USE WAREHOUSE "SEGMENT_WAREHOUSE";
-USE DATABASE "SEGMENT_EVENTS";
-```
 
 ### Step 6: Connect Snowflake to Segment
 

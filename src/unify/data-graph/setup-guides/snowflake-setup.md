@@ -150,13 +150,13 @@ To connect your warehouse to the Data Graph:
 2. Click **Connect warehouse**.
 3. Select Snowflake as your warehouse type. 
 4. Enter your warehouse credentials. Segment requires the following settings to connect to your Snowflake warehouse:
-- **Account ID**: The Snowflake account ID that uniquely identifies your organization account
-- **Database**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below
-- **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below
-- **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below
-- **Authentication**: There are 2 supported authentication methods:
-  - **Key Pair**: This is the recommended method of authentication. You would need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. Then, follow the Segment docs above to set up Snowflake permissions and set the `segment_connections_username` variable in the SQL script to the user you just created
-  - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below
+- **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
+- **Database**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
+- **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
+- **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
+- **Authentication**: Snowflake only supports authentication using a key pair:
+  - **Key Pair**: You need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. Then, set the `segment_connections_username` variable in the SQL script to the user you just created.
+
  
 5. Test your connection, then click Save.
 
