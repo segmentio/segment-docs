@@ -7,11 +7,8 @@ This guide outlines the steps required to set up the Signals SDK in your Apple O
 
 You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended. 
 
-> info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
-
-> success "Auto-Instrumentation access"
-> To turn Auto-Instrumentation on in your Segment workspace, reach out to your dedicated account manager.
+> info "Public Beta"
+> Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Step 1: Get your source write key
 

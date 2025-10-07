@@ -26,11 +26,8 @@ redirect_from:
 
 Auto-Instrumentation simplifies tracking in your websites and apps by removing the need for a traditional Segment instrumentation.
 
-> info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in private beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
-
-> success "Enable Auto-Instrumentation in your workspace"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager or friends@segment.com.
+> info "Public Beta"
+> Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Background
 

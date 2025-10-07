@@ -7,11 +7,8 @@ This guide outlines the steps required to set up the Signals SDK in your JavaScr
 
 You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended.
 
-> info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
-
-> success "Auto-Instrumentation access"
-> To turn Auto-Instrumentation on in your Segment workspace, reach out to your dedicated account manager.
+> info "Public Beta"
+> Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Step 1: Get your source write key
 
@@ -205,7 +202,7 @@ After integrating the SDK and running your app, verify that Segment is collectin
 1. In your Segment workspace, go to **Connections > Sources** and select the source you used for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
   - Make sure you've installed the SDK correctly.
-  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+  - Verify that Auto Instrumentation is enabled in **Settings > Analytics.js**.
     ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
 
 3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.
