@@ -23,7 +23,7 @@ Segment’s enforcement of this data retention policy for active customers begin
 
 An active customer is a Business or Team Tier customer that has an active Segment contract with no outstanding invoices and no locked workspace, or a Free Tier workspace that has had event traffic or user activity in the past 30 days. 
 
-Segment continues to honor any limited, previously agreed upon retention period. If your business requires a longer retention period, please contact your sales team to discuss available options. Segment **no longer supports** unlimited data retention.
+Segment enforces a data retention period of up to 3 years for Business Tier customers. Segment continues to honor any limited, previously agreed upon retention period. If your business requires a longer retention period, please contact your sales team to discuss available options. Segment **no longer supports** unlimited data retention.
 
 ### Data retention period
 
