@@ -1,6 +1,6 @@
-Segment Functions run on the Node.js LTS runtime (currently v20).  
+Segment Functions run on the Node.js LTS runtime (currently v20). This keeps the runtime current with industry standards and security updates.  
 
-This upgrade keeps your runtime current with industry standards. Based on the [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html){:target="_blank"} and [Node.js](https://nodejs.org/en/about/previous-releases){:target="_blank"} support schedule, Node.js v16 is no longer in *Maintenance LTS*. Production applications should only use releases of Node.js that are in *Active LTS* or *Maintenance LTS*.
+Based on the [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html){:target="_blank"} and [Node.js](https://nodejs.org/en/about/previous-releases){:target="_blank"} support schedule, production applications should only use Node.js releases that are in Active LTS or Maintenance LTS.
 
 For existing functions, this change automatically occurs as you update and deploy an existing function. Segment recommends that you check your function post-deployment to ensure everything's working. Your function may face issues due to the change in syntax between different Node.js versions and dependency compatibility.
 
