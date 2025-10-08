@@ -24,7 +24,7 @@ Below is a table of events that InMoment sends to Segment. These events will sho
 
 
 | Event Name                      | Description                             |
-| ------------------------------- | --------------------------------------- |  |
+| ------------------------------- | --------------------------------------- |
 | Wootric survey response created | A survey response was created           |
 | Wootric survey response updated | An existing survey response was updated |
 
@@ -33,7 +33,7 @@ Below is a table of events that InMoment sends to Segment. These events will sho
 Below are tables outlining the properties included in the events listed above.
 
 | Property Name | Description                                                           |
-| ------------- | --------------------------------------------------------------------- |  |
+| ------------- | --------------------------------------------------------------------- |
 | channel       | The channel from which the survey was responded like ‘web' or ‘email' |
 | created_at    | The timestamp of when the response was created                        |
 | metric_type   | The mode of the survey like "NPS" or “CSAT”                           |

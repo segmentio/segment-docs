@@ -30,7 +30,7 @@ You'll then have the option to pin to a version, or specific branch, as well as 
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
-```
+```swift
 .package(
             name: "Segment",
             url: "https://github.com/segment-integrations/analytics-swift-integration-adjust.git",
@@ -41,14 +41,14 @@ Open your Package.swift file and add the following do your the `dependencies` se
 
 Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
 
-```
+```swift
 import Segment
 import SegmentAdjust // <-- Add this line
 ```
 
 Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
 
-```
+```swift
 let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
                     .flushAt(3)
                     .trackApplicationLifecycleEvents(true))

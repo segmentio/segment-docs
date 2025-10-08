@@ -82,12 +82,21 @@ analytics.track("Purchased Item", new Properties().putValue("sku", "13d31").putR
 ```
 
 <table class="api-table">
+  <thead>
+    <tr>
+      <td>Field</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+  </thead>
   <tr>
-    <td>`name` _String,required_</td>
+    <td>`name`</td>
+    <td>_String,required_</td>
     <td>A name for the tracked action.</td>
   </tr>
   <tr>
-    <td>`properties` _Properties,optional_</td>
+    <td>`properties`</td>
+    <td>_Properties,optional_</td>
     <td>A map of properties for this action, e.g. revenue if the action was a purchase.</td>
   </tr>
 </table>
@@ -106,16 +115,26 @@ analytics.screen("Purchase Screen", "Smartwatches", new Properties().putValue("s
 ```
 
 <table class="api-table">
+  <thead>
+    <tr>
+      <td>Field</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+  </thead>
   <tr>
-    <td>`name` _String,optional*_</td>
+    <td>`name`</td>
+    <td>_String,optional*_</td>
     <td>A name for the screen. Optional if category is provided.</td>
   </tr>
   <tr>
-    <td>`category` _String,optional*_</td>
+    <td>`category`</td>
+    <td>_String,optional*_</td>
     <td>A category for the screen. Optional if name is provided.</td>
   </tr>
   <tr>
-    <td>`properties` _Properties,optional_</td>
+    <td>`properties`</td>
+    <td>_Properties,optional_</td>
     <td>A map of properties for this screen.</td>
   </tr>
 </table>
