@@ -5,14 +5,14 @@ hidden: true
 
 This guide outlines the steps required to set up the Signals SDK in your Apple OS applications using Swift. 
 
-You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended. 
+Learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended. 
 
-> info "Public Beta"
+> info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Step 1: Get your source write key
 
-You need the `writeKey` from an existing Segment source:
+You need the `writeKey` from an existing Segment source. To find it:
 
 1. In your Segment workspace, go to **Connections > Sources**.
 2. Select your source.
@@ -21,7 +21,7 @@ You need the `writeKey` from an existing Segment source:
 
 ## Step 2: Add dependencies and initialization code
 
-Next, you'll need to add the Signals SDKs to your Swift applicatiion.
+Next, add the Signals SDKs to your Swift applicatiion.
 
 1. Use Swift Package Manager to add the Signals SDK from the following repository:
 
@@ -55,11 +55,11 @@ Next, you'll need to add the Signals SDKs to your Swift applicatiion.
     Analytics.main.add(plugin: Signals.shared)
     ```
 
-Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in Step 1.
+Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in [Step 1](#step-1-get-your-source-write-key).
 
 #### SwiftUI projects
 
-If your app is written in SwiftUI, you'll need to add a `TypeAlias.swift` file to your project that captures interaction and navigation Signals, like in this example:
+If your app is written in SwiftUI, you need to add a `TypeAlias.swift` file to your project that captures interaction and navigation Signals, like in this example:
 
 ```swift
 import Foundation
@@ -93,7 +93,7 @@ After integrating the SDK and running your app, verify that Segment is collectin
 4. Use the app as a user would: navigate between screens, tap buttons, trigger network requests. Signals appear in real time as you interact with the app.
 5. In the Event Builder, find a signal and click **Configure event** to define a new event. After configuring the event, click **Publish event rules**.
 
-## Configuration Options
+## Configuration options
 
 Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Swift.
 
