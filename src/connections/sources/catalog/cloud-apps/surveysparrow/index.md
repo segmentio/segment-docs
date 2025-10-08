@@ -42,7 +42,7 @@ The table below lists the properties included in the events listed above.
 | Property Name   | Description               |
 | --------------- | ------------------------- |
 | `event`         | Type of the event          |
-| `survey`        | Will hold all the properties data  including surveys, answers,channel,expressions,variables        |
+| `survey`        | Will hold all the properties data including surveys, answers,channel,expressions,variables        |
 | `survey`        | Meta details about the survey          |
 | `contact`       | Contact which has created the response         |
 | `expressions`   | Computed expressions data of the survey         |
