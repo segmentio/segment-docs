@@ -63,10 +63,10 @@ To minimize the possibilities for data loss:
 
 | Banner behavior | Cookie banner | User interaction with webpage | Segment loads | Possibility of data loss |
 | --------------- | ------------  | ----------------------------- | ------------  | ---- |
-| Mandatory | ![](/docs/images/supported.svg) Displayed on page load | ![](/docs/images/supported.svg) Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
-| A banner that always remains as a user navigates your site | ![](/docs/images/supported.svg) Displayed on page load | ![](/docs/images/unsupported.svg) Not required to access webpage | With page load | [Medium](#medium) |
-| A banner that disappears after a user action, like clicking or scrolling | ![](/docs/images/supported.svg) Displayed on page load | ![](/docs/images/unsupported.svg) Not required to access webpage | With page load | [Medium](#medium) |
-| A banner that is optional and never displayed to a user | ![](/docs/images/unsupported.svg) Not displayed on page load | ![](/docs/images/unsupported.svg) Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
+| Mandatory | &#x2705; Displayed on page load |  &#x2705;Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
+| A banner that always remains as a user navigates your site | !&#x2705; Displayed on page load | &#x1F6AB; Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that disappears after a user action, like clicking or scrolling |  &#x2705;Displayed on page load | &#x1F6AB; Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that is optional and never displayed to a user | &#x1F6AB; Not displayed on page load | &#x1F6AB; Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
 
 ## Scenarios where you might experience data loss
 
