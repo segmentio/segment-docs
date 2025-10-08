@@ -10,7 +10,6 @@ tags:
   - Xamarin
   - Unity
   - ASP.NET
-id: 
 redirect_from:
    - '/connections/sources/catalog/libraries/mobile/unity/'
    - '/connections/sources/catalog/libraries/mobile/csharp/' 
@@ -20,7 +19,8 @@ redirect_from:
 
 With Analytics-CSharp, you can add Segment analytics to your C# based app which includes Unity, Xamarin, .NET. Analytics-CSharp helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit. The Analytics-CSharp library is open-source [on GitHub](https://github.com/segmentio/analytics-csharp){:target="_blank"}. 
 
-### Supported platforms 
+## Supported platforms 
+
 These platforms support Analytics-CSharp: 
 * .NET/.NET core/.NET framework
 * Mono
@@ -403,7 +403,7 @@ For example, you might want to disable flushes if you detect the user has no net
     }
 ```
 
-###  Create your own flush policies
+### Create your own flush policies
 
 You can create a custom FlushPolicy special for your application needs by implementing the  `IFlushPolicy` interface. You can also extend the `IFlushPolicy` class that already creates and handles the `shouldFlush` value reset.
 

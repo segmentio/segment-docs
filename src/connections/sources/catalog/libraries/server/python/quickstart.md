@@ -97,10 +97,6 @@ To get started, we recommend tracking just a few important events. You can alway
 
 And voila, **you're done!** You've just successfully installed analytics tracking on your servers. Now you're ready to turn on any destination you fancy from our interface, martini in hand.
 
-
----
-
-
 ## What's Next?
 
 We just walked through the quickest way to get started with Segment using Python. You might also want to check out our full [Python library reference](/docs/connections/sources/catalog/libraries/server/python/) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.

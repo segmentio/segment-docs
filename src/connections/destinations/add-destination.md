@@ -52,7 +52,7 @@ You can also add a destination directly from the source's settings page in the S
 
 #### Adding a destination using the Public API
 
-You can use the Segment Public API to add destinations to your workspace using the [Create Destination endpoint](https://docs.segmentapis.com/tag/Destinations#operation/createDestination){:target = "_blank"}. The API requires an authorization token, and uses the `name` field as a namespace that defines which _source_ the destination is connected to. You send the rest of the destination's configuration as a JSON blob. View the documentation page in the Segment Catalog, or query the [Segment Catalog API](https://docs.segmentapis.com/tag/Catalog){:target="_blank"}, for a destination to see the available settings.
+You can use the Segment Public API to add destinations to your workspace using the [Create Destination endpoint](https://docs.segmentapis.com/tag/Destinations#operation/createDestination){:target="_blank"}. The API requires an authorization token, and uses the `name` field as a namespace that defines which _source_ the destination is connected to. You send the rest of the destination's configuration as a JSON blob. View the documentation page in the Segment Catalog, or query the [Segment Catalog API](https://docs.segmentapis.com/tag/Catalog){:target="_blank"}, for a destination to see the available settings.
 
 > success ""
 > You must use an authorization token to access the Public API, and these tokens are tied to specific workspaces. If you use the Public API to access multiple workspaces, make sure you're using the token for the workspace you want to access before proceeding.
@@ -112,7 +112,7 @@ Multi-instance support is not available for most hybrid Actions destinations or 
 
 Segment does not support connecting a single source to multiple instances of a [Data Lakes](/docs/connections/storage/data-lakes/) destination.
 
-> warning "Non-mobile sources can only connect to _one_ device-mode instance of a destination"
+> warning "Non-mobile sources can only connect to one device-mode instance of a destination"
 > You cannot connect a source to more than one instance of a destination that operates only in device-mode. For more information about device-mode restrictions, see the [Sending Segment data to Destinations](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination:~:text=Multi%2Dinstance%20destinations-,and,-Device%2Dmode) documentation.
 
 > success ""

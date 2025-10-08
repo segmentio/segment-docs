@@ -180,7 +180,7 @@ analytics.trackForm(form, event, [properties])
 ```
 
 Field | | Type | Description
------ | | ---- | -----------
+----- | -- | ---- | -----------
 `form(s)` | | Element or Array | The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._ Segment recommends that you wait until the DOM loads before passing the form element.
 `event` | | String or Function | The name of the event, passed to the `track` method. Or a **function** that returns a string to use as the name of the `track` event.
 `properties` | optional | Object or Function | A dictionary of properties to pass with the Track method. Or a **function** that returns an object to use as the `properties` of the event.
@@ -278,7 +278,7 @@ analytics.group(groupId, [traits], [options], [callback]);
 The Group call has the following fields:
 
 Field | | Type | Description
------ | | ---- | -----------
+----- | -- | ---- | -----------
 `groupId` | | String | The Group ID to associate with the current user.
 `traits` | optional | Object | A dictionary of [traits](/docs/connections/spec/group#traits) for the group. Example traits for a group include `address`, `website`, and `employees`.
 `options` | optional | Object | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_.

@@ -14,7 +14,7 @@ To configure CommandBar as an Event Source to get data into your warehouse or ot
 1. From the Segment web app, navigate to **Connections > Catalog**, then select the **Destinations** tab at the top of the catalog.
 2. Search for *CommandBar* and select it.
 3. Click **Configure CommandBar**.
-4. Sign in to [CommandBar](app.commandbar.com/login){:target="_blank"}, click on your organization name in the top right, and copy the `Org ID` into **Organization ID** field.
+4. Sign in to [CommandBar](https://app.commandbar.com/login){:target="_blank"}, click on your organization name in the top right, and copy the `Org ID` into **Organization ID** field.
 5. If you want to deploy CommandBar to your users through Segment, check **Deploy via Segment**.
 6. Select an existing Source to connect to CommandBar.
 7. Once connected, remove the CommandBar snippet or `init` call from your code (if you have one).

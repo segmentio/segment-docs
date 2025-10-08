@@ -141,9 +141,6 @@ Segment::flush();
 
 And presto, **you're done!** You successfully installed PHP tracking. Now you're ready to turn on any destination you fancy from our interface, margarita in hand.
 
----
-
-
 ## What's Next?
 
 We just walked through the quickest way to get started with Segment using PHP. You might also want to check out our full [PHP reference](/docs/connections/sources/catalog/libraries/server/php) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http) to get a sense for the bigger picture.

@@ -12,7 +12,7 @@ This destination is maintained by Plotline. For any issues with the destination,
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Plotline".
 2. Select and click **Add Destination**.
 3. Select an existing source to connect to.
-4. Go to [Plotline's dashboard](app.plotline.so){:target="_blank”}, navigate to "Credentials" and copy the API key.
+4. Go to [Plotline's dashboard](https://app.plotline.so){:target="_blank”}, navigate to "Credentials" and copy the API key.
 5. Enter the API Key in the destination settings in Segment.
 
 ## Supported methods
