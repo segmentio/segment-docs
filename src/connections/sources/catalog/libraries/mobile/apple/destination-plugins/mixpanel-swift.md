@@ -190,14 +190,13 @@ There are two strings to avoid when naming event properties that will be sent to
 
 Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode).
 
-
-![mixpanel people properties list](images/mixpanelpeoplesuperprops.png)
+![mixpanel people properties list](../../../../../../destinations/catalog/mixpanel/images/mixpanelpeoplesuperprops.png)
 
 ### Incrementing events
 
 You don't need to add extra code to increment event counts for Mixpanel people, as long as they are "known users". Supply the events that should be incremented.
 
-![mixpanel increment events list](images/mixpanelincrementinpeople.png)
+![mixpanel increment events list](../../../../../../destinations/catalog/mixpanel/images/mixpanelincrementinpeople.png)
 
 You can find this in the **Advanced Options** of your Mixpanel settings on your Segment Destinations page.
 
