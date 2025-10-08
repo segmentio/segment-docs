@@ -50,7 +50,7 @@ Segment supports a form of destinations called [Destinations Actions](/docs/conn
 
 ### Choosing a connection mode
 
-Cloud-mode destinations send data through Segment. Device-mode destinations send some data directly downstream to a tool and some data to Segment as two parallel data streams. There are tradeoffs between cloud-mode and device-mode destinations. In general, Segment recommends cloud-mode destinations because you can benefit from Segment's system features, like [Retries](/#retries-between-segment-and-destinations), [Replays](/docs/guides/what-is-replay/), [Warehouses](/docs/connections/storage/warehouses/), [Privacy blocking](/docs/privacy/data-controls/), [Filtering](/docs/guides/filtering-data/), and more.
+Cloud-mode destinations send data through Segment. Device-mode destinations send some data directly downstream to a tool and some data to Segment as two parallel data streams. There are tradeoffs between cloud-mode and device-mode destinations. In general, Segment recommends cloud-mode destinations because you can benefit from Segment's system features, like [retries](/#retries-between-segment-and-destinations), [replays](/docs/guides/what-is-replay/), [warehouses](/docs/connections/storage/warehouses/), [privacy blocking](/docs/privacy/data-controls/), [filtering](/docs/guides/filtering-data/), and more.
 
 You should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the device.
 
@@ -261,7 +261,7 @@ To enable IP Allowlisting for your workspace:
 4. Open each of your downstream tools and configure IP restriction for each destination. For more information, refer to the documentation for your downstream tool. 
 
 > warning "Some destinations might not support IP restriction"
-> Not all destinations support IP restriction, see [supported destinations](#supported-destionations) for more detail.
+> Not all destinations support IP restriction, see [supported destinations](#supported-destinations) for more detail.
 
 #### IP Allowlisting for functions
 
