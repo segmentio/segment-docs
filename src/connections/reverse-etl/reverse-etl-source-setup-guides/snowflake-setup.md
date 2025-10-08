@@ -9,8 +9,6 @@ Set up Snowflake as your Reverse ETL source.
 
 At a high level, when you set up Snowflake for Reverse ETL, the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema <br>(`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
 
-> success ""
-> Segment now supports key-pair authentication for Snowflake Reverse ETL sources.
 
 > info "Snowflake Reverse ETL sources support Segment's dbt extension"
 > If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
@@ -57,9 +55,12 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    GRANT CREATE SCHEMA ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
    GRANT CREATE TABLE ON SCHEMA __segment_reverse_etl TO ROLE segment_reverse_etl;
    ```
-6. Enter and run one of the following code snippets below to create the user Segment uses to run queries. For added security, Segment recommends creating a user that authenticates using a key pair.
+6. Enter and run one of the following code snippets below to create the user Segment uses to run queries. 
 
-   To create a user that authenticates with a key pair, [create a key pair](https://docs.snowflake.com/en/user-guide/key-pair-auth#configuring-key-pair-authentication){:target="_blank”} and then execute the following SQL commands: 
+   1. To create a user that authenticates with a key pair, you need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank”}. 
+
+   2. Execute the following SQL commands: 
+
    ``` sql
    -- create user (key-pair authentication)
    CREATE USER segment_reverse_etl_user
@@ -69,21 +70,9 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    -- role access
    GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
    ```
-
-   To create a user that authenticates with a password, execute the following SQL commands:
-   ```sql
-   -- create user (password authentication)
-   CREATE USER segment_reverse_etl_user
-    MUST_CHANGE_PASSWORD = FALSE
-    DEFAULT_ROLE = segment_reverse_etl
-    PASSWORD = 'my_strong_password'; -- Do not use this password
-
-   -- role access
-   GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
-   ```
 7. Add the account information for your source.  
-5. Click **Test Connection** to test to see if the connection works.
-6. Click **Add source** if the test connection is successful.
+8. Click **Test Connection** to test to see if the connection works.
+9. Click **Add source** if the test connection is successful.
 
 
 Learn more about the Snowflake Account ID in Snowflake's [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"} documentation.
