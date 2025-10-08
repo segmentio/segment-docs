@@ -32,7 +32,7 @@ All playback events share the same event properties that describe information ab
 | `content_pod_id`, `content_pod_ids`   |   String, Array[string]   | The Content Pod Id(s) of the video/videos playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send the plural form with an Array of unique pod IDs. For all other playback events, you should send the singular form with the ID of the current content pod playing at the time of the event.          |
 | `ad_asset_id` | String, Array[string] | The Ad Asset Id(s) of the ad/ads playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send an Array of unique ad asset IDs. For all other playback events, you should send a string with the ID of the current ad asset playing at the time of the event. |
 | `ad_pod_id`   | String, Array[string] | The Ad Pod Id(s) of the ad/ads playing or about to be played in the video player. **For [Video Playback Started](#video-playback-started) events only**, you should send an Array of unique ad pod IDs. For all other playback events, you should send a string with the ID of the current ad pod playing at the time of the event. |
-| `ad_type`     | Enum {`pre-roll`, `mid-roll`, `post-roll`} | The type of ad playing at the time of the event. Values can include `pre-roll`, `mid-roll`, and `post-roll`. |
+| `ad_type`     | Enum \{`pre-roll`, `mid-roll`, `post-roll`\} | The type of ad playing at the time of the event. Values can include `pre-roll`, `mid-roll`, and `post-roll`. |
 | `position`    | Integer         | The current index position **in seconds** of the playhead, including the duration of any ads seen (if available). If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position. |
 | `total_length`| Integer         | The total duration of the playback in seconds. This should include the duration of all your content and ad included in this playback session. For livestream playback, send `null`. |
 | `bitrate`     | Integer         | The current `kbps`.   |
@@ -713,12 +713,12 @@ All ad events share the same event properties that describe information about th
 | `pod_id`        | String     | The unique ID of the ad pod.  |
 | `pod_position`  | Integer    | The position of the ad asset relative to other assets in the same pod.   |
 | `pod_length`    | Integer    | The number of ad assets the current ad pod contains.   |
-| `type`          | Enum {`pre-roll`, `mid-roll`, `post-roll`} | The ad type. You can send either `pre-roll`, `mid-roll`, or `post-roll`.   |
+| `type`          | Enum \{`pre-roll`, `mid-roll`, `post-roll`\} | The ad type. You can send either `pre-roll`, `mid-roll`, or `post-roll`.   |
 | `title`         | String     | The title of the video ad.   |
 | `publisher`     | String     | The ad creator, author, producer, or publisher.   |
 | `position`      | Integer    | The current index position, in seconds, of the playhead with respect to the length of the ad.   |
 | `total_length`  | Integer    | The total duration of the current ad asset in seconds.   |
-| `load_type`     | Enum {`linear`, `dynamic`} | `dynamic` if ads are loaded dynamically and `linear` if ads are same for all users.     |
+| `load_type`     | Enum \{`linear`, `dynamic`\} | `dynamic` if ads are loaded dynamically and `linear` if ads are same for all users.     |
 | `content`       | Object[ContentEventObject]  | For video destinations that require content metadata to be sent with ad events, you can send all the content metadata nested under this property (such as `content.asset_id` or `content.title`) as a Content Event Object.    |
 | `quartile`      | Integer    | For Video Ad Playing events, this property can be set to indicate when a specific ad quartile has been reached (1,2, or 3). If you are using a Segment client-side library to track your video events you don't need to send this property as Segment's libraries will automatically track quartiles.   |
 
@@ -1173,5 +1173,6 @@ analytics.track('Video Playback Completed', {
 ```
 
 Below is an example of how a playback that has three mid-roll ads interspersed within the content:
-  ![Playback with three mid-roll ads interspersed within content](images/Video_Tracking_Workflow.png)
+
+![Playback with three mid-roll ads interspersed within content](images/Video_Tracking_Workflow.png)
 <!-- svg by Aimee using lucidchart-->

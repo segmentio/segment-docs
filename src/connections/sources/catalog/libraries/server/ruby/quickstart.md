@@ -112,10 +112,6 @@ To get started, we recommend tracking just a few important events. You can alway
 
 Once you've added a few `track` calls, **you're done!** You successfully installed analytics tracking on your servers. Now you're ready to turn on any destination you fancy from our interface, margarita in hand.
 
-
----
-
-
 ## What's Next?
 
 We just walked through the quickest way to get started with Segment using Ruby. You might also want to check out our full [Ruby library reference](/docs/connections/sources/catalog/libraries/server/ruby) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.

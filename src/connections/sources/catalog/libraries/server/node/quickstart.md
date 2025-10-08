@@ -89,8 +89,6 @@ To get started with Analytics Node.js:
 
 After you've added a few `track` calls, you've successfully installed analytics tracking on your servers. Now you're ready to turn on any destination from the Segment app.
 
----
-
 ## What's Next?
 
 You can check out the full docs for [Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.
