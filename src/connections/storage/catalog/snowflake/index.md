@@ -89,7 +89,7 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 
 ### Step 4: Create a user for Segment
 
-Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair. For enhanced security, Segment recommends creating a user that authenticates with an encrypted key pair.
+Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair. 
 
 To create a user that authenticates with a key pair:
 1. Create the user and assign it a key pair by following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. 
