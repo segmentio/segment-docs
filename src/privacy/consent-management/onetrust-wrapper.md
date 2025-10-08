@@ -20,15 +20,9 @@ The OneTrust consent banner has three key UI configurations that control how the
   - **Opt-In:** The user, by default, does not consent to all categories (except those that you deem to be mandatory). The user is required to select categories that they consent to share data with (or, "opt-in" to data collection)
   - **Opt-out:** The user, by default, does consent to all categories. The user can choose to select categories that they do not consent to share data with (or, "opt-out" of data collection)
 
-<div class="premonition info">
-    <div class="fa fa-info-circle"></div>
-    <div class="content">
-      <p class="header">Segment's Analytics.js OneTrust wrapper assumes the following:</p>
-      <p markdown=1>
-        **Opt-In** and **Implied** statuses are treated in Segment's OneTrust wrapper as `Opt-In`. **Notice Only**, **Custom**, or **Opt-Out** statuses are treated in Segment's OneTrust wrapper as `Opt-Out`.
-      </p>
-    </div>
-  </div>
+
+> info "Segment's Analytics.js OneTrust wrapper assumes the following"
+> **Opt-In** and **Implied** statuses are treated in Segment's OneTrust wrapper as `Opt-In`. **Notice Only**, **Custom**, or **Opt-Out** statuses are treated in Segment's OneTrust wrapper as `Opt-Out`.
 
 <!-- TODO (IG, 4/2024): the above callout would not render correctly in markdown - figure out why that happened-->
 
@@ -69,10 +63,10 @@ To minimize the possibilities for data loss:
 
 | Banner behavior | Cookie banner | User interaction with webpage | Segment loads | Possibility of data loss |
 | --------------- | ------------  | ----------------------------- | ------------  | ---- |
-| Mandatory | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/supported.svg" /> Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
-| A banner that always remains as a user navigates your site | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
-| A banner that disappears after a user action, like clicking or scrolling | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
-| A banner that is optional and never displayed to a user | <img class="inline" src="/docs/images/unsupported.svg" /> Not displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
+| Mandatory | &#x2705; Displayed on page load |  &#x2705;Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
+| A banner that always remains as a user navigates your site | !&#x2705; Displayed on page load | &#x1F6AB; Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that disappears after a user action, like clicking or scrolling |  &#x2705;Displayed on page load | &#x1F6AB; Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that is optional and never displayed to a user | &#x1F6AB; Not displayed on page load | &#x1F6AB; Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
 
 ## Scenarios where you might experience data loss
 
