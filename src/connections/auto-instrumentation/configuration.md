@@ -3,19 +3,15 @@ title: Generate Events from Signals
 hidden: true
 ---
 
-This guide details how to use signals, and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, you'll find details on:
+This guide details how to use signals and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, find details on:
 
-- Creating custom rules to capture and translate signals into actionable analytics events
-- Example rules that you can use as a basis for further customization
+- Creating custom rules to capture and translate signals into actionable analytics events.
+- Example rules that you can use as a basis for further customization.
 
 This guide assumes that you've already added the Signals SDK to your application. If you haven't yet, see the [Auto-Instrumentation Setup](/docs/connections/auto-instrumentation/) guide for initial setup.
 
-> info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
-
-> success "Enable Auto-Instrumentation"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.                     
-
+> info "Auto-Instrumentation in public beta"
+> Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.                  
 
 ## Converting signals to events
 
@@ -23,28 +19,38 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 ### Getting started with rule creation
 
-1. In your Segment workspace, go to **Sources** and select a source.
-2. Open the **Event Builder**, then click **Create Rules**.
+1. Ensure you have the `Workspace Owner` or `Source Admin` role in Segment. If your source is connected to a tracking plan, you will also need, at a minimum, the `Tracking Plan Read-only` role. To view the content in the Event Builder tab, you will need, at a minimum, the `Source Read-only` role.
+2. In your Segment workspace, go to **Sources** and select a source.
+3. Open the **Event Builder**, then click **Create Rules**.
 
 > info "Where's the Event Builder tab?"
-> The Event Builder tab only appears after you've installed the Auto-Instrumentation snippet in your site or app. If you don’t see the tab, double check your implementation or reach out to your Segment CSM.
+> The Event Builder tab only appears after you've enabled Auto Instrumentation under the Analytics.js tab in the source's settings. If you don’t see the tab, reach out to your Segment CSM.
 
 ### Using the Rules Editor
 
 The Rules Editor is where you define rules that transform raw signal data into analytics events. Using the dropdown-based editor, you can:
 
-- Combine multiple signals into a single event (for example, a click followed by a navigation)
-- Set conditions to control when events should be triggered
-- Assign custom event names
+- Combine multiple signals into a single event (for example, a click followed by a navigation).
+- Set conditions to control when events should be triggered.
+- Assign custom event names.
+
+#### Tracking plan integration
+
+If your source is connected to a tracking plan, you can quickly confirm that a rule’s event and properties are planned. When creating or editing a rule, choose an event by typing its name or selecting from the tracking plan’s events in a dropdown. Similarly, add properties by typing their names or selecting from the event’s properties in a dropdown. The Planned column, shown next to each property mapping and in the Event Rules table, indicates whether the property or event is planned.
 
 #### Adding event properties
 
 You can enrich your events by adding properties based on signal metadata. For example:
 
-- Capture `product.price` in your **Add to Cart** event
-- Add a boolean field like `couponApplied` to your **Order Completed** event
+- Capture `product.price` in your **Add to Cart** event.
+- Add a boolean field like `couponApplied` to your **Order Completed** event.
 
 These properties are sent alongside your event, giving your team deeper insights without requiring any manual instrumentation.
+
+#### Preview your event rule
+
+To verify that a rule is working as expected, you don't need to enter a cycle of creating and updating the rule, generating signals, then checking the source debugger for the generated event. As you create, edit, or view a rule, you can preview it in real time against the current signal buffer to see which signals match and what the resulting event will look like. Event properties are mapped to the values found in the matched signals, and complete matches are grouped by anonymous ID.
+
 
 <!-- PW, 6 August 2025: Commenting this section out for now
 
@@ -89,7 +95,7 @@ interface RawSignal<T> {
 
 ### Signal Types
 
-The Signal Type enum defines the different types of signals the SDK can collect:
+The Signal Type `enum` defines the different types of signals the SDK can collect:
 
 ```java
 enum SignalType {
