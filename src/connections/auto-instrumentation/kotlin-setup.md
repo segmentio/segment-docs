@@ -7,19 +7,19 @@ Segment’s Signals library powers [Auto-Instrumentation](/docs/connections/auto
 
 This guide shows how to install and configure the library, as well as how to enable optional plugins for screen views, network activity, and more.
 
-> info "Public Beta"
+> info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Before you begin
 
 To use Signals with Android, you need:
 
-- An active Segment workspace with Auto-Instrumentation enabled
-- A Kotlin-based Android project
-- Android Gradle Plugin version 7.0 or later
-- A minimum compile SDK version of 21
+- An active Segment workspace with Auto-Instrumentation enabled.
+- A Kotlin-based Android project.
+- Android Gradle Plugin version 7.0 or later.
+- A minimum compile SDK version of 21.
 
-Signals supports [Jetpack Compose](https://developer.android.com/compose){:target="_blank"} and traditional Android UI frameworks. It also includes optional plugins for network tracking using [OkHttp3](https://square.github.io/okhttp/){:target="_blank"}, [Retrofit](https://square.github.io/retrofit/){:target="_blank"}, or `HttpURLConnection`](https://developer.android.com/reference/java/net/HttpURLConnection){:target="_blank"}.
+Signals supports [Jetpack Compose](https://developer.android.com/compose){:target="_blank"} and traditional Android UI frameworks. It also includes optional plugins for network tracking using [OkHttp3](https://square.github.io/okhttp/){:target="_blank"}, [Retrofit](https://square.github.io/retrofit/){:target="_blank"}, or [`HttpURLConnection`](https://developer.android.com/reference/java/net/HttpURLConnection){:target="_blank"}.
 
 Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#step-4-enable-debug-mode).
 
@@ -63,7 +63,7 @@ Only add the plugins you plan to use. You can add or remove them later without r
 
 ## Step 2: Initialize the SDK
 
-After you add dependencies, you'll need to initialize the Analytics client and configure the Signals plugin. 
+After you add dependencies, you need to initialize the Analytics client and configure the Signals plugin. 
 
 Start by creating the `Analytics` instance using your source's write key. Then add the Signals plugin and configure its settings separately.
 
@@ -95,7 +95,7 @@ navController.turnOnScreenTracking()
 
 When you run this code, keep the following in mind:
 
-- You'll need to replace `<WRITE_KEY>` with the key from your Android Source in Segment.
+- You need to replace `<WRITE_KEY>` with the key from your Android Source in Segment.
 - `debugMode` sends signals to Segment for use in the Event Builder. Only enable it in development environments.
 - If your app doesn't use Jetpack Compose or Navigation, you can skip those plugin lines.
 
@@ -230,7 +230,7 @@ If `debugMode` is enabled, Signals appear in real time as you interact with the 
 5. After you add any event mappings, click **Publish event rules** to save them.
 
 > info "What if I don't see the Event Builder tab?"
-> If you don't see the Event Builder tab, confirm that the SDK is installed correctly and make sure `debugMode` is enabled. Verify that Auto Instrumentation is enabled in **Settings > Advanced**. If you still don't see it, reach out to your CSM.
+> If you don't see the Event Builder tab, confirm that the SDK is installed correctly and make sure `debugMode` is enabled. Verify that Auto-Instrumentation is enabled in **Settings > Advanced**. If you still don't see it, reach out to your CSM.
 
 ## Configuration options
 
