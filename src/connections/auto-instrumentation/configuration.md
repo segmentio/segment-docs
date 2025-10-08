@@ -3,14 +3,14 @@ title: Generate Events from Signals
 hidden: true
 ---
 
-This guide details how to use signals, and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, you'll find details on:
+This guide details how to use signals and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, find details on:
 
-- Creating custom rules to capture and translate signals into actionable analytics events
-- Example rules that you can use as a basis for further customization
+- Creating custom rules to capture and translate signals into actionable analytics events.
+- Example rules that you can use as a basis for further customization.
 
 This guide assumes that you've already added the Signals SDK to your application. If you haven't yet, see the [Auto-Instrumentation Setup](/docs/connections/auto-instrumentation/) guide for initial setup.
 
-> info "Public Beta"
+> info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.                  
 
 ## Converting signals to events
@@ -29,16 +29,16 @@ After you set up the Signals SDK to capture the signals you want to target, you 
 
 The Rules Editor is where you define rules that transform raw signal data into analytics events. Using the dropdown-based editor, you can:
 
-- Combine multiple signals into a single event (for example, a click followed by a navigation)
-- Set conditions to control when events should be triggered
-- Assign custom event names
+- Combine multiple signals into a single event (for example, a click followed by a navigation).
+- Set conditions to control when events should be triggered.
+- Assign custom event names.
 
 #### Adding event properties
 
 You can enrich your events by adding properties based on signal metadata. For example:
 
-- Capture `product.price` in your **Add to Cart** event
-- Add a boolean field like `couponApplied` to your **Order Completed** event
+- Capture `product.price` in your **Add to Cart** event.
+- Add a boolean field like `couponApplied` to your **Order Completed** event.
 
 These properties are sent alongside your event, giving your team deeper insights without requiring any manual instrumentation.
 
@@ -85,7 +85,7 @@ interface RawSignal<T> {
 
 ### Signal Types
 
-The Signal Type enum defines the different types of signals the SDK can collect:
+The Signal Type `enum` defines the different types of signals the SDK can collect:
 
 ```java
 enum SignalType {
