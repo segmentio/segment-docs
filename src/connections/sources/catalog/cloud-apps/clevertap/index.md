@@ -14,7 +14,7 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can ex
 This source is maintained by CleverTap. For any issues with the source, [contact their Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank”}.
 
 > info "This is a Beta source"
-> The CleverTap Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the CleverTap Source and its documentation, [let their team know](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}._
+> The CleverTap Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the CleverTap Source and its documentation, [let their team know](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
 
 ## Getting Started
 
@@ -33,8 +33,8 @@ This source is maintained by CleverTap. For any issues with the source, [contact
 
 The table below lists events that CleverTap sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations.
 
-| Name | Description
-| --------------- | ----------- | ------------------------- |
+| Name | Description |
+| --------------- | ----------- | 
 | App Launched | This event is captured every time a user launches the application. |
 | App Installed | The event is captured when the user launches the app for the first time. |
 | App Uninstalled | This event is captured when a user uninstalls your application. |

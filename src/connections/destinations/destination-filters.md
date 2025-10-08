@@ -18,7 +18,7 @@ Common use cases for destination filters include:
 - Increasing data relevance in your destinations by removing unused or unwanted data
 - Preventing test or internally-generated events from reaching your production tools
 
-### Limitations
+## Limitations
 
 Keep the following limitations in mind when you use destination filters:
 

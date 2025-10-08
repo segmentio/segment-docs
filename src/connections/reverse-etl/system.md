@@ -31,7 +31,7 @@ The records table helps in determining new and updated rows by comparing the che
 
 ### Checkpoint table
 
-The `checkpoints_<subscription_id>` tables are located within the __segment_reverse_etl schema.
+The `checkpoints_<subscription_id>` tables are located within the `__segment_reverse_etl` schema.
 
 This table contains the following columns:
 
