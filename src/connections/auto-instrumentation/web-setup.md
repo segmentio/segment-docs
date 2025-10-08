@@ -219,7 +219,7 @@ User activity is not collected by default after SDK installation. To collect act
 ```
 https://my-website.com?segment_signals_debug=true
 ```
-Loading the site with this debug URL parameter saves a cookie onto that device that sends activities and expires in 24 hours. The URL parameter does not need to be present on each page load.
+Loading the site with this debug URL parameter stays active in session storage until the tab or window is closed. Within a session the URL parameter does not need to be present on each page load.
 
 You can _turn off debugging_ by doing:
 
