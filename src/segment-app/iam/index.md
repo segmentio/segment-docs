@@ -23,23 +23,23 @@ To delete your Twilio Unified Login account, refer to [How to Close My Twilio Ac
 
 ### Twilio Sign Up
 
-Segment invitations and sign ups that are redirected to Twilio's sign up page must adhere to Twilio's [minimum password and 2FA requirements](https://help.twilio.com/articles/115012261968){:target="_blank”}. To learn more, view Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management?_gl=1*1xa50pg*_ga*OTUyMjQ4OTU5LjE2NjM2ODQzMDE.*_ga_3JKYB4GBBY*MTcwNzc2ODE1OC4xNDkuMS4xNzA3NzY4MjUzLjAuMC4w){:target="_blank”} documentation.
+Segment invitations and sign ups that are redirected to Twilio's sign up page must adhere to Twilio's [minimum password and 2FA requirements](https://help.twilio.com/articles/115012261968){:target="_blank”}. To learn more, view Twilio's [Account Management](https://help.twilio.com/sections/205104908-Account-Management){:target="_blank”} documentation.
 
 Any existing Segment user must adhere to existing password requirements and 2FA settings set at the Workspace level.
 
 ### Twilio Product Switcher
 
-You can access Segment from the Twilio Console using the Product Switcher. For more information, view the Twilio support article [Getting Started with the Unified Login and Product Switcher](https://support.twilio.com/hc/en-us/articles/19652187501211-Getting-Started-with-the-Unified-Login-and-Product-Switcher){:target="_blank”}.
+You can access Segment from the Twilio Console using the Product Switcher. For more information, view the Twilio support article [Getting Started with the Unified Login and Product Switcher](https://help.twilio.com/articles/19652187501211-Getting-Started-with-the-Product-Switcher){:target="_blank”}.
 
 ### User settings
 
-Twilio Unified Login users can manage their Segment user settings, including name, email, password, and 2FA settings, directly in their Twilio account. To learn more about Twilio’s user and password policies, review Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management){:target="_blank”} documentation. 
+Twilio Unified Login users can manage their Segment user settings, including name, email, password, and 2FA settings, directly in their Twilio account. To learn more about Twilio’s user and password policies, review Twilio's [Account Management](https://help.twilio.com/sections/205104908-Account-Management){:target="_blank”} documentation. 
 
 ### Segment Users and SSO/SCIM
 
-Existing Segment users can still use their credentials to access Segment.
+Segment continues to support [SSO](/docs/segment-app/iam/sso/) and SCIM. Users who need to access an SSO enabled workspace will be directed to authenticate through the configured Identity Provider.
 
-Segment continues to support [SSO](/docs/segment-app/iam/sso/) and SCIM, as users who need to access an SSO enabled workspace will be directed to authenticate through the configured Identity Provider.
+Non-SSO users can sign in to Segment with their Segment credentials or [Twilio credentials](#twilio-sign-up). 
 
 ## Quick links
 - [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member)
