@@ -227,4 +227,4 @@ If you're testing in Xcode remember you must first background the app, then the 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
 > info ""
-> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in [Android] (/docs/connections/sources/catalog/libraries/mobile/android/android-faqs/#how-can-i-use-a-destination-specific-feature)
+> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in [Android](/docs/connections/sources/catalog/libraries/mobile/android/android-faqs/#how-can-i-use-a-destination-specific-feature)
