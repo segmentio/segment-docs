@@ -214,8 +214,7 @@ After integrating the SDK and running your app, verify that Segment is collectin
 
 #### Enable debug mode
 
-Values sent to the signals API are redacted by default.
-This adds a local storage key. To disable redaction, add a magic query string:
+User activity is not collected by default after SDK installation. To collect activity for use in building event rules, append the segment_signals_debug=true URL parameter.
 
 ```
 https://my-website.com?segment_signals_debug=true
