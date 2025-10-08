@@ -138,7 +138,7 @@ You can validate that you successfully created your consent mapping in Segment C
 
 Segment automatically adds the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) to every event that's routed downstream to your Segment Connections destination. [Consent enforcement in Connections](/docs/privacy/consent-management/consent-in-segment-connections/) validates that only consenting data flows downstream to any classic Segment destinations connected to your Segment Connections instance.
 
-Open the Source Debugger for your Reverse ETL source and confirm that the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) appears on every event and that the consent object has the categories you mapped in [Step 2: Identify consent columns](#step-2-identify-consent-columns).
+Open the Source Debugger for your Reverse ETL source and confirm that the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) appears on every event and that the consent object has the categories you mapped in [Step 3: Identify consent columns](#step-3-identify-consent-columns).
 
 ### Segment Profiles
 Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your profiles contain the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event.
