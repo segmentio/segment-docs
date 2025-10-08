@@ -270,5 +270,5 @@ Use IP Allowlisting to control how Segment sends event data to function endpoint
 To enable IP Allowlisting for your workspace:
 1. From your Segment workspace, navigate to **[Settings > Workspace settings > Destination IP settings](https://app.segment.com/goto-my-workspace/settings/destination-ip-settings){:target="_blank”}**. 
 2. On the Destination IP settings page, click **Enable IP allowlisting**. 
-3. The page displays the IP address ranges that Segment uses to route data from Segment’s internal systems to your destination. Note these ranges, as you need this information to enforce IP restriction in your downstream destinations.
+3. The page displays the IP address ranges that Segment uses to route data from Segment’s internal systems to your destination. Make note of these ranges, as you need this information to enforce IP restriction in your downstream destinations.
 4. Re-deploy relevant destination functions to allow the function to take effect of IP allowlisting. After this, all the events will be sent with only the mentioned IPs.
