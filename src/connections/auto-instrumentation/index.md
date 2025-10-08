@@ -26,7 +26,7 @@ redirect_from:
 
 Auto-Instrumentation simplifies tracking in your websites and apps by removing the need for a traditional Segment instrumentation.
 
-> info "Public Beta"
+> info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Background
@@ -49,7 +49,7 @@ After you install the required SDKs and enable Auto-Instrumentation, Segment det
 
 You can group signals into complete analytics events, assign names, and map custom properties. You can then [use this data to create detailed analytics events](/docs/connections/auto-instrumentation/configuration/) based on those signals, enriching your insights into user behavior and application performance.
 
-## Setup Guides
+## Setup guides
 
 <div class="auto-instrumentation-catalog">
 <div class="auto-insturmentation__section markdown" id="{{ category | slugify }}">
