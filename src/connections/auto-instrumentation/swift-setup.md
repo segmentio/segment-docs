@@ -32,7 +32,7 @@ Next, add the Signals SDKs to your Swift applicatiion.
 2. Add the initialization code and configuration options:
 
 > success ""
-> see [configuration options](#configuration-options) for a complete list.
+> See [configuration options](#configuration-options) for a complete list.
 
     ```swift
     // Configure Analytics with your settings
