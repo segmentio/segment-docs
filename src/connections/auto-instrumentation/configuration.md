@@ -3,7 +3,7 @@ title: Generate Events from Signals
 hidden: true
 ---
 
-This guide details how to use signals and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, find details on:
+This guide details how to use signals and their associated data, generated in one of the Signals SDKs with the Auto-Instrumentation dashboard in your Segment workspace. On this page, find details on: 
 
 - Creating custom rules to capture and translate signals into actionable analytics events.
 - Example rules that you can use as a basis for further customization.
