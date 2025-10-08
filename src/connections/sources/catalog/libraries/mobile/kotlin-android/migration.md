@@ -15,7 +15,7 @@ If you're using a previous Segment mobile library such as Analytics-Android, fol
 1. [Import Analytics-Kotlin](#1-import-analytics-kotlin)
 2. [Upgrade your Destinations](#2-upgrade-your-destinations)
 3. [Advanced: Upgrade your Middleware](#3-upgrade-middleware-to-plugins)
-4. [Upgrade Notes](#4-upgrade-notes-changes-to-the-configuration-object)
+4. [Upgrade Notes](#4-upgrade-notes)
 
 ## 1. Import Analytics-Kotlin
 
