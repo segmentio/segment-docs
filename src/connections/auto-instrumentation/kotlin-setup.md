@@ -10,7 +10,7 @@ This guide shows how to install and configure the library, as well as how to ena
 > info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-## Before you begin
+## Before you start
 
 To use Signals with Android, you need:
 
