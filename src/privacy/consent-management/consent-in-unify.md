@@ -96,7 +96,7 @@ If you're using Consent Management and Profiles, you shouldn't give your custome
 
 ## Consent preference conflicts
 
-When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user, for example, from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflict)) or when two distinct Unify profiles are merged together (called a [profile-level conflict](#profile-level-conflict)). 
+When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user, for example, from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflicts)) or when two distinct Unify profiles are merged together (called a [profile-level conflict](#profile-level-conflict)). 
 
 
 ### Backfill consent preferences on your Profiles
@@ -107,7 +107,7 @@ If you want to use end-user consent coming directly from your single source of t
 
 ## Consent preference conflicts
 
-When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user. For example, you might collect consent from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflict)) or merge two distinct Unify profiles together (called a [profile-level conflict](#profile-level-conflict)). 
+When collecting end user consent, you can occasionally capture multiple consent preferences linked to the same user. For example, you might collect consent from a user's cell phone browser and the web browser on their laptop (called a [device-level conflict](#device-level-conflicts)) or merge two distinct Unify profiles together (called a [profile-level conflict](#profile-level-conflict)). 
 
 
 ### Device-level conflicts
