@@ -47,7 +47,7 @@ Segment collects and displays activity as signals. These signals are grouped int
 
 Segment separates signal collection from event creation. Signals represent raw user interactions, like a button click or screen view. Events, on the other hand, are analytics calls you define based on those signals. This two-step process lets you observe user behavior first, and then decide how and when to turn that behavior into structured analytics events, without needing to modify your code.
 
-Signal detection is active for 24 hours after you generate activity. Detected signals are available in the Event Builder for 72 hours.
+Signal detection is active after you load the app or website in debug mode and until the tab or window is closed. Detected signals are available in the Event Builder for 7 days.
 
 ## Create an event
 
