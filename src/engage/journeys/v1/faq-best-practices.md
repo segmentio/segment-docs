@@ -3,6 +3,8 @@ title: Journeys Best Practices and FAQs
 plan: engage-foundations
 redirect_from:
   - '/personas/journeys/faq-best-practices/'
+  - '/engage/journeys/faq-best-practices'
+      title: Journeys Best Practices and FAQ
 ---
 
 ## Best practices
