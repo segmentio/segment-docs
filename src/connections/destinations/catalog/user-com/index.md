@@ -52,7 +52,7 @@ Sending a `.group()` request allows to create or update a company profile and as
 
 The user that owns the `userId` on this event will be associated with this company.
 
-Any custom traits of the `.group()` call will follow same logic as `Identify` method. Semantic traits that are mapped are: `address`, `description`, `email`, `employees`, `name`, `phone`. **NOTE**: to make sure types of custom traits defined in database reflect your expectations, visit **App settings > Companies > Company attributes** at [app.user.com](https://user.com/en{:target="_blank"}
+Any custom traits of the `.group()` call will follow same logic as `Identify` method. Semantic traits that are mapped are: `address`, `description`, `email`, `employees`, `name`, `phone`. **NOTE**: to make sure types of custom traits defined in database reflect your expectations, visit **App settings > Companies > Company attributes** at [app.user.com](https://user.com/en){:target="_blank"}
 
 ## Troubleshooting
 

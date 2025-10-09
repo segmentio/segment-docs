@@ -98,8 +98,6 @@ In an account, events can have at most 25 attributes of each data type type (i.e
 
 The `reset` call must be invoked when a user is logged out.
 
-- - -
-
 ## Features
 
 ### Push Notifications
