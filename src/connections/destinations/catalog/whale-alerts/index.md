@@ -28,15 +28,17 @@ This is an introduction to how Segment and Whalr work together and how to get Wh
 
 The first step is to send Whalr your customer's email addresses using the Segment IDENTIFY call.  You should send this the first time a lead is identified with an email address, and  every time a user logs in after that.  This is sent as a JSON message in the standard Segment format, and the minimum information required is:
 
-	{
-	  "type" : "identify",
+```json
+{
+  "type": "identify",
 
-	  "userId" : [however you identify your customer],
+  "userId": [however you identify your customer],
 
-	  "traits" : {
-			    "email" : [email address]
-				  }
-	}
+  "traits": {
+    "email": [email address]
+  }
+}
+```
 
 As Segment notes, using the email address as a unique identifier is not a good idea because emails change, people have multiple email addresses, etc.  However, if that's how you're set up, Whalr supports it, you just need to supply the email address twice: once as the userID and once as the email address.
 
@@ -48,7 +50,9 @@ In addition, studies show a negative correlation between the number fields and t
 
 As noted above, by default Segment sends a PAGE event every time a customer visits a page.   You can also create custom messages using the TRACK method.   You can track any event you are interested in, such as signing up to a newsletter or responding to a campaign.  For example, you might add the following JavaScript code to an email signup form on your website:
 
-	analytics.track("email signup")
+```js
+analytics.track("email signup")
+```
 
 Segment adds a host of information, such as userId, IP address, location, browser type, UTM tracking codes, etc. Whalr then adds its own contextual information, such as how often a person visits, how big the company he works for is, etc.  The more detail Whalr has, the better our machine learning algorithms can learn the contextual clues that reflect buying behaviour, and notify you which customers are exhibiting this behavior.  Whalr analyzes profiles, events, engagement (by individuals and groups), and many other metrics to predict which customers will buy based on matching their behavior to past buying behaviors observed. Just as Netflix can recommend a movie with 90% confidence, Whalr can tell you a customer will convert with 90% probability. Stop wasting your time trying to chase every contact, or ignoring valuable contacts just because they signed up with a gmail address!  Whalr isn't analytics, it's customer-specific, and it empowers your sales team to do what they do best--sell!
 
