@@ -17,7 +17,7 @@ hide_action:
     name: 'Upload Enhanced Conversion (Legacy)'
 ---
 
-The Google Ads destination allows users to upload [conversions](https://developers.google.com/google-ads/api/docs/conversions/upload-clicks){:target="_blank"}, [conversion adjustments](https://developers.google.com/google-ads/api/docs/conversions/upload-adjustments){:target="_blank"}, and [customer match lists](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started){:target="_blank"} in a privacy-safe manner. Marketers can use this integration to re-engage users across Search, Shopping, Gmail, YouTube, and Display by combining conversion data with customer match lists for more effective targeting.
+The Google Ads destination lets you upload [conversions](https://developers.google.com/google-ads/api/docs/conversions/upload-clicks){:target="_blank"}, [conversion adjustments](https://developers.google.com/google-ads/api/docs/conversions/upload-adjustments){:target="_blank"}, and [customer match lists](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started){:target="_blank"} in a privacy-safe manner. Marketers can use this integration to re-engage users across Search, Shopping, Gmail, YouTube, and Display by combining conversion data with customer match lists for more effective targeting.
 
 > info "Consent mode"
 > Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#consent-mode) and how to set it up.
@@ -28,9 +28,9 @@ The Google Ads destination allows users to upload [conversions](https://develope
 > You can connect the Google Ads Conversions Destination to an event source, Reverse ETL source, or Engage space. 
 
 ### Prerequisites
-* A Google Ads account and the account ID of your Google Ads Account. This should be 10-digits and in XXX-XXX-XXXX format.  
-* For sending data to a Google [Customer Match list](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started){:target="_blank"}, you will either need   
-  * An [Engage Audience](/docs/engage/audiences/) configured which you can connect to this destination  
+* A Google Ads account and its account ID. This should be 10-digits and in XXX-XXX-XXXX format.  
+* For sending data to a Google [Customer Match list](https://developers.google.com/google-ads/api/docs/remarketing/audience-segments/customer-match/get-started){:target="_blank"}, you will either need:
+  * An [Engage Audience](/docs/engage/audiences/) configured which you can connect to this destination.  
   * A Reverse ETL source already set up. If you don’t yet have a Reverse ETL source, follow the instructions in Segment’s [Reverse ETL documentation](/docs/connections/reverse-etl/setup/).
 
 ### Connect to Google Ads
@@ -207,6 +207,8 @@ Events going to Google for this integration require a `GCLID` field, an `email`,
 #### What type of import should I select when creating a conversion in Google Ads?
 
 When setting up conversions in Google Ads to upload data through Segment, select **Manual Import using API or Uploads** as the import type. This option allows Segment to send server-side conversion data through the Google Ads API, ensuring offline conversions and adjustments are uploaded correctly.
+
+If the **Manual Import using API or Uploads** option is not available, follow the steps detailed in [Google's documentation](https://support.google.com/google-ads/answer/7382633){:target="_blank”}.
 
 ### What are the differences between the Upload Click Conversions and Click Conversion V2 Actions?
 The only difference between the Upload Click Conversions and Click Conversion V2 Actions is that the Click Conversion V2 Action has [sync modes](/docs/connections/destinations/#sync-modes).
