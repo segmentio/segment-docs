@@ -1,7 +1,6 @@
 ---
 title: Clay Destination
 id: 6888c9ea14d648263fff811d
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
