@@ -31,7 +31,7 @@ Apple also introduces the concept of [NSPrivacyTrackingDomains](https://develope
 
 ## Analytics-Swift Privacy Manifest 
 
-The Segment [Privacy Manifest for Analytics-Swift here]() includes an array of [Privacy Nutrition Label Types](https://developer.apple.com/app-store/app-privacy-details/#data-type){:target="_blank"} for the following automatically collected fields: 
+The Segment [Privacy Manifest for Analytics-Swift here](/docs/connections/sources/catalog/libraries/mobile/apple/) includes an array of [Privacy Nutrition Label Types](https://developer.apple.com/app-store/app-privacy-details/#data-type){:target="_blank"} for the following automatically collected fields: 
 
 | Data               | Linked To User | Used For Tracking | Reason for Collection |
 | -------------------| ---------------| ------------------| ---------------------- |
@@ -43,8 +43,8 @@ The Segment [Privacy Manifest for Analytics-Swift here]() includes an array of [
 
 
 ## Additional privacy manifests
-- [Analytics-Swift Engage Plugin]()
-- [Analytics-iOS (Classic)]()
+- [Analytics-Swift Engage Plugin](/docs/connections/sources/catalog/libraries/mobile/apple/)
+- [Analytics-iOS (Classic)](/docs/connections/sources/catalog/libraries/mobile/apple/)
 
 
 ## Generating your privacy report
