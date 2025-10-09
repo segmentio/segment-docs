@@ -135,7 +135,7 @@ When filtering on entity properties, you can dynamically reference the value of 
 | TIMESTAMP | equals, not equals, less than, greater than, less than or equal, greater than or equal |
 
 > info ""
-> Filtering on nested properties within traits, events, entities, or other objects is not supported in Linked Audiences.
+> Linked Audiences doesn't support filtering on nested properties within traits, events, entities, or other objects.
 
 ## Step 2: Activate your Linked Audience
 
