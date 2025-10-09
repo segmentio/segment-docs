@@ -8,7 +8,7 @@ This Shopify Source lets you send [Shopify Web Pixel API Standard Events](https:
 
 This Source is a free [Shopify App Extension](https://shopify.dev/docs/apps/app-extensions){:target="_blank"} which can be installed using your Shopify Store's Admin interface.  
 
-#### Overview
+## Overview
 
 Once installed and enabled, Segment collects events from the user's browser and sends them to your Segment 'Shopify' Source in real time. 
 

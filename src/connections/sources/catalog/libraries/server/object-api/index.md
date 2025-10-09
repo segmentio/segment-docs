@@ -10,18 +10,18 @@ Use the Segment Objects API to send business objects relevant to your business r
 > warning ""
 > Segment hasn't added support for the core `analytics-<language>` libraries so you'll need to use the Segment HTTP API directly or the independent Go(lang) client for now.
 
-### Authentication
+## Authentication
 
 Authenticate to the Objects API by sending your project's **Write Key** along with a request.
 Authentication uses HTTP Basic Auth, which involves a 'username:password' that is base64 encoded and pre-pended with the string 'Basic '.
 
 In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
 
-### Source type
+## Source type
 
 Set up an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects API.
 
-### Content-type
+## Content-type
 
 In order to send data to Segment's HTTP API, the content-type header must be set to `'application/json'`.
 
@@ -156,12 +156,14 @@ POST https://objects.segment.com/v1/set
 
 This call sends a collection of "rooms". "rooms" becomes the table name in your data warehouse, and each individual object in the array becomes a row in that table.
 
+| Field                   | Type   | Description |
 |-------------------------|--------|-------------------------------------------------------------------------------------------|
 | `collection` *Required* | String | A string that represents the name of the collection. The collection name will become the table name in your data warehouse. Collection must consist of lowercase letters and underscores and maximum of 100 characters. Can not begin or end with an underscore. |
 | `objects`               | Array  | A required array of objects describing the objects and properties being set. Must consist of at least one JSON object and a maximum of 10.  |
 
 Each object inside of the objects array must consist of the following parameters:
 
+| Parameter               | Type   | Description |
 |-------------------------|--------|-------------------------------------------------------------------------------------------|
 | `id` *Required*         | String | The unique ID representing the object in the third party system. Maximum of 100 characters. |
 | `Properties` *Required* | Object | The object properties that represent the object. Example: Each value could be a string (ISO dates are parsed and recognized as `isodate` type), an integer, or a float (JSON types). Values cannot be lists or objects. Each value must be less than 32KB in size. |

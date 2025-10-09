@@ -30,7 +30,7 @@ You'll then have the option to pin to a version, or specific branch, as well as 
 
 Open your Package.swift file and add the following to the `dependencies` section:
 
-```
+```swift
 .package(
             name: "Segment",
             url: "https://github.com/1Flow-Inc/segment-1flow-ios.git",
@@ -42,14 +42,14 @@ Open your Package.swift file and add the following to the `dependencies` section
 
 Open the file where you set up and configure the Analytics-Swift library.  Add this plugin to the list of imports.
 
-```
+```swift
 import Segment
 import SegmentOneFlow // <-- Add this line
 ```
 
 Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
 
-```
+```swift
 let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
                     .flushAt(3)
                     .trackApplicationLifecycleEvents(true))

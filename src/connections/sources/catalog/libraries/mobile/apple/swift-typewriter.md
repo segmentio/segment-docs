@@ -223,7 +223,7 @@ To learn more about the `typewriter.yml` configuration format, see the [Configur
 
 As mentioned in the [Best Practices](#best-practices) section above, Segment recommends that you only check in the `plan.json`, and not the generated clients, into your version control. Instead, Segment recommends building these clients as part of the build step for your application.
 
-In your CI environment, this usually involves a step to build the Typewriter client. Make sure to build the production client before deploying the application, as explained in the [Tracking Plan Violation Handling](#tracking-plan-violation-handling) section below.
+In your CI environment, this usually involves a step to build the Typewriter client. Make sure to build the production client before deploying the application, as explained in [Tracking Plan Violation Handling](/docs/protocols/apis-and-extensions/typewriter/#tracking-plan-violation-handling).
 
 ```yaml
 # An example (simplified) CircleCI configuration:

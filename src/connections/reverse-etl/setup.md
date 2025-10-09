@@ -25,13 +25,13 @@ To add your warehouse as a source:
 2. Click **+ Add Reverse ETL source**.
 3. Select the source you want to add. 
 4. Follow the corresponding guide to set up the required permissions for your Reverse ETL source:
-  - [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup)
-  - [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup)
-  - [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup)
-  - [Db2 Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/db2-setup)
-  - [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup)
-  - [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup)
-  - [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup)
+    - [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup)
+    - [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup)
+    - [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup)
+    - [Db2 Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/db2-setup)
+    - [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup)
+    - [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup)
+    - [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup)
 
 ## Step 2: Add a model
 Models define sets of data you want to sync to your Reverse ETL destinations. A source can have multiple models. Segment supports [SQL models](/docs/connections/reverse-etl/setup/#step-4-create-mappings) and [dbt models](/docs/segment-app/extensions/dbt/).

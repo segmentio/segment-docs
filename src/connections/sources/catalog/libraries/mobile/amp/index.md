@@ -17,14 +17,14 @@ If you're new to [AMP](https://www.ampproject.org){:target="_blank"}, go through
 ### Step 1: Include AMP component
 Before the closing `</head>` tag, include the [`amp-analytics` component](https://www.ampproject.org/docs/reference/components/amp-analytics){:target="_blank"}:
 
-  ```js
+```js
  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-  ```
+```
 
 ### Step 2: Include Segment analytics
 Within your `<body>` tags, include the following Segment analytics snippet:
 
-  ```html
+```html
 <body>
 <amp-analytics type="segment">
 <script type="application/json">
@@ -37,12 +37,12 @@ Within your `<body>` tags, include the following Segment analytics snippet:
 </script>
 </amp-analytics>
 </body>
-  ```
+```
 Replace `WRITE_KEY` with the write key you obtain from the AMP Source you've set up within the Segment UI.
 
 For sources in [EU workspaces](/docs/guides/regional-segment/), use the following snippet:
 
-  ```html
+```html
 <amp-analytics type="segment">
     <script type="application/json">
     {
@@ -55,7 +55,7 @@ For sources in [EU workspaces](/docs/guides/regional-segment/), use the followin
     }
     </script>
 </amp-analytics>
-  ```
+```
 
 By default, the snippet will automatically fire a page event which you can read more about [in the Page section of this documentation](/docs/connections/sources/catalog/libraries/mobile/amp/#page).
 
@@ -66,7 +66,7 @@ The Page method lets you record page views on your website, along with your choi
 
 A `page` call is included by default when you include Segment Analytics into your code with the ability to customize the `name` of your page:
 
-  ```html
+```html
 <amp-analytics type="segment">
 <script type="application/json">
   {
@@ -77,7 +77,7 @@ A `page` call is included by default when you include Segment Analytics into you
   }
 </script>
 </amp-analytics>
-  ```
+```
 
 ## Track
 
@@ -85,7 +85,7 @@ The Track method (referred to as `click` in AMP) lets you record any actions you
 
 In order to track these `click` events simply add a trigger with a `selector`, which behaves the same way as [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.asp){:target="_blank"}, which will send that event once the user clicks:
 
-  ```html
+```html
 <body>
 <amp-analytics type="segment">
 <script type="application/json">
@@ -109,7 +109,7 @@ In order to track these `click` events simply add a trigger with a `selector`, w
 </amp-analytics>
 <button class="read-more-button">Read More</button>
 </body>
-  ```
+```
 
 ## Properties
 
@@ -117,7 +117,7 @@ In order to track these `click` events simply add a trigger with a `selector`, w
 
 A few properties are automatically collected with each page view and track call:
 
-  ```json
+```json
 {
   "anonymousId": "amp-<unique-id>",
   "context.locale": "en-US",
@@ -128,13 +128,13 @@ A few properties are automatically collected with each page view and track call:
   "context.screen.width": 600,
   "context.screen.height": 800
 }
-  ```
+```
 
 ### Custom properties
 
 If you would like to collect additional, custom properties, include an `extraUrlParams` object. All properties you'd like to include must follow the format of `properties.<property_name>`:
 
-  ```html
+```html
 <amp-analytics type="segment">
 <script type="application/json">
   {
@@ -152,7 +152,7 @@ If you would like to collect additional, custom properties, include an `extraUrl
   }
 </script>
 </amp-analytics>
-  ```
+```
 
 ### UTM parameters
 
@@ -226,4 +226,3 @@ For further details refer to the various `Client ID` scenarios in relation to AM
 <!-- TODO: the product linked above was deprecated, need to find a replacement or hide this page --->
 
 See a live <a href="https://segment-amp.firebaseapp.com">AMP with Segment analytics</a>
-<link rel="amphtml" href="https://segment-amp.firebaseapp.com">

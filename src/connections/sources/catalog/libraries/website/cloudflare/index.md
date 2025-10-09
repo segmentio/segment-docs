@@ -10,7 +10,7 @@ Segment makes it simple for Cloudflare customers to integrate analytics, email m
 
 The guide below explains how to install Segment on your Cloudflare-hosted website. All you need to get up and running is to create a Cloudflare source and turn on the Segment app for your website. The following guide will show you how, step by step.
 
-don't have a Segment account? No problem, [sign up here](https://segment.com/signup?utm_source=cloudflare&utm_medium=docs&utm_campaign=partners).
+Don't have a Segment account? No problem, [sign up here](https://segment.com/signup?utm_source=cloudflare&utm_medium=docs&utm_campaign=partners).
 
 ## Getting Started
 

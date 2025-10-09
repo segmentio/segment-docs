@@ -9,11 +9,11 @@ Cloud-App Sources (often shortened to Cloud Sources) allow you to pull in data f
 
 As in the basic tracking API, _objects_ usually contain information about a person or group which is updated over time, while _event_ data happens once, and is appended to a list.
 
-### Event Cloud-App Sources
+## Event Cloud-App Sources
 
 Event Cloud Sources can export their data both into Segment warehouses, and into other enabled Segment integrations that work with event data.
 
-### Object Cloud-App Sources
+## Object Cloud-App Sources
 
 Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you can analyze your data with SQL, use [Reverse ETL](/docs/connections/reverse-etl) to extract data, or use Engage SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 

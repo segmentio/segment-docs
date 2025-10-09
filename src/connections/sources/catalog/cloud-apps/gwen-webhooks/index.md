@@ -5,7 +5,7 @@ id: vMEJCURfHh
 
 [GWEN Webhooks](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
 
-This is an [Event Cloud Source](=/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Insert Coin AB. For any issues with the source, [contact their Support team](mailto:support@gwenplatform.com).
 
@@ -20,11 +20,11 @@ This source is maintained by Insert Coin AB. For any issues with the source, [co
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your GWEN account.
-6. Navigate to [Setup Management > Webhooks](http://app.gwenplatform/setup-management/webhooks){:target="blank"} and click the **Set credentials** button next to **Segment Source webhooks**. Paste the key to connect.
+6. Navigate to [Setup Management > Webhooks](https://app.gwenplatform.com/setup-management/webhooks){:target="blank"} and click the **Set credentials** button next to **Segment Source webhooks**. Paste the key to connect.
 
 ## Stream
 
-GWEN Webhooks uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [in the GWEN documentation](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
+GWEN Webhooks uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [in the GWEN documentation](https://app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for GWEN Webhooks to pass the userId associated with the user who triggered the given update. This may or may not be a userId that you are keeping track of, depending on under what circumstances the user has been created within GWEN.
 For example, users created anonymously by using the [GWEN Analytics script](https://app.gwenplatform.com/docs/gwen-analytics){:target="blank"} will likely have a userId unknown to you.

@@ -16,7 +16,6 @@ This source is maintained by Bluedot. For any issues with the source, [contact B
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for **Bluedot** in the Sources Catalog, select **Bluedot**, and click **Add Source**.
 3. On the next screen, give the Source a name configure any other settings.
-
   The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but Segment recommends that you use something that reflects the source itself and distinguishes amongst your environments (for example, `SourceName_Prod`, `SourceName_Staging`, or `SourceName_Dev`).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to Bluedot Canvas - navigate to Integrations > Select the Project you want link > Segment Integration and paste the key to connect.

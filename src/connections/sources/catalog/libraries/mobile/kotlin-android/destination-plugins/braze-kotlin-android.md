@@ -63,7 +63,7 @@ Just under your Analytics-Kotlin library setup, call `analytics.add(plugin = ...
 
 Your events will now begin to flow to Braze in device mode.
 
-# Identify
+## Identify
 
 > info "Tip"
 > Add Segment's open-source [Middleware](https://github.com/segmentio/segment-braze-mobile-middleware) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/) use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).

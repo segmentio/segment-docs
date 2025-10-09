@@ -5,17 +5,14 @@ hidden: true
 
 This guide outlines the steps required to set up the Signals SDK in your JavaScript website.
 
-You'll learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended.
+Learn how to connect an existing source, integrate dependencies, turn on Auto-Instrumentation, and verify that your setup captures and processes data as intended.
 
-> info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
-
-> success "Auto-Instrumentation access"
-> To turn Auto-Instrumentation on in your Segment workspace, reach out to your dedicated account manager.
+> info "Auto-Instrumentation in public beta"
+> Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Step 1: Get your source write key
 
-You need the `writeKey` from an existing Segment source:
+You need the `writeKey` from an existing Segment source. To find it:
 
 1. In your Segment workspace, go to **Connections > Sources**.
 2. Select your source.
@@ -24,7 +21,7 @@ You need the `writeKey` from an existing Segment source:
 
 ## Step 2: Add dependencies and initialization code
 
-Next, you'll need to add the Signals SDKs to your web environment.
+Next, add the Signals SDKs to your web environment.
 
 Choose the installation method that matches your setup:  
 
@@ -150,7 +147,7 @@ If your site uses the standard Segment snippet, **replace it** with the followin
 </head>
 ```
 
-Verify that you only have **one snippet** in your site, then move to [Step 3: Verify and deploy events](#step-3-verify-and-deploy-events).
+Verify that you only have **one snippet** in your site, then move on to [Step 4: Verify and deploy events](#step-4-verify-and-deploy-events).
 
 ### Option B: Install with a package manager 
 
@@ -205,11 +202,11 @@ After integrating the SDK and running your app, verify that Segment is collectin
 1. In your Segment workspace, go to **Connections > Sources** and select the source you used for Auto-Instrumentation.
 2. In the source overview, look for the **Event Builder** tab. If the tab doesn’t appear:
   - Make sure you've installed the SDK correctly.
-  - Reach out to your Segment CSM to confirm that your workspace has the necessary feature flags enabled.
+  - Verify that Auto Instrumentation is enabled in **Settings > Analytics.js**.
     ![The Event Builder tab shown in the navigation bar between Debugger and Schema in a Segment Source](images/event_builder_tab.png)
 
 3. Open the **Event Builder** and follow the on-screen instructions to start signal detection.
-  - To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`
+  - To collect signals in the UI, visit your site in a browser using the query string:`?segment_signals_debug=true`.
 4. Interact with your app to trigger signals: click buttons, navigate pages, submit forms, and so on. Segment collects and displays these as signals in real time.
 5. From the signals list, click **Configure event** to define a new event based on one or more signals. After configuring the event, click **Publish event rules**.
 
@@ -217,12 +214,12 @@ After integrating the SDK and running your app, verify that Segment is collectin
 
 #### Enable debug mode
 
-Values sent to the signals API are redacted by default.
-This adds a local storage key. To disable redaction, add a magic query string:
+User activity is not collected by default after SDK installation. To collect activity for use in building event rules, append the `segment_signals_debug=true` URL parameter.
 
 ```
 https://my-website.com?segment_signals_debug=true
 ```
+Loading the site with this debug URL parameter stays active in session storage until the tab or window is closed. Within a session the URL parameter does not need to be present on each page load.
 
 You can _turn off debugging_ by doing:
 
@@ -279,7 +276,7 @@ const signalsPlugin = new SignalsPlugin({
 analytics.register(signalsPlugin);
 ```
 
-#### Sandbox Strategies
+#### Sandbox strategies
 
 If you get CSP errors, you can use the experimental 'global' sandbox strategy:
 
@@ -287,7 +284,7 @@ If you get CSP errors, you can use the experimental 'global' sandbox strategy:
 new SignalsPlugin({ sandboxStrategy: "global" });
 ```
 
-## Configuration Options
+## Configuration options
 
 Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals Web.
 

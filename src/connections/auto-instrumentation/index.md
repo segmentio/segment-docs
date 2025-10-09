@@ -26,11 +26,8 @@ redirect_from:
 
 Auto-Instrumentation simplifies tracking in your websites and apps by removing the need for a traditional Segment instrumentation.
 
-> info "Auto-Instrumentation Private Beta"
-> Auto-Instrumentation is currently in private beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
-
-> success "Enable Auto-Instrumentation in your workspace"
-> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager or friends@segment.com.
+> info "Auto-Instrumentation in public beta"
+> Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Background
 
@@ -52,7 +49,7 @@ After you install the required SDKs and enable Auto-Instrumentation, Segment det
 
 You can group signals into complete analytics events, assign names, and map custom properties. You can then [use this data to create detailed analytics events](/docs/connections/auto-instrumentation/configuration/) based on those signals, enriching your insights into user behavior and application performance.
 
-## Setup Guides
+## Setup guides
 
 <div class="auto-instrumentation-catalog">
 <div class="auto-insturmentation__section markdown" id="{{ category | slugify }}">

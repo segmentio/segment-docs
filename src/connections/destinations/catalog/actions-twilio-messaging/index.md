@@ -4,6 +4,7 @@ id: 674f23ece330374dc1ecc874
 hidden: false
 hide-dossier: true
 beta: true
+redirect_from: '/connections/destinations/catalog/twilio-messaging/'
 ---
 
 [Twilio Messaging](https://www.twilio.com/en-us/messaging/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} gives businesses a way to reach customers on SMS, MMS, and WhatsApp for transactional notifications and personalized campaigns.
@@ -75,7 +76,7 @@ it's publicly available and searchable in the workspace catalog. -->
 
 ## 3. Configuring message mappings
 
-The Twilio Messaging destination supports one mapping action: **Send message**. Use this mapping to define when messages get sent and what content they include.
+The Twilio Messaging destination supports one mapping action: **Send message**. Use this to set up when messages should be sent and what content they include.
 
 ### Set up the Send message mapping
 
@@ -123,7 +124,7 @@ Choose the option that fits what you’re trying to send. For most customer-faci
 
 ## Message setup options
 
-There are a key settings to choose from when configuring message mappings.
+There are key settings to choose from when configuring message mappings.
 
 ### Content template types
 
@@ -164,7 +165,7 @@ Make sure all variables you reference in your message are included in your mappi
 
 ## Additional features
 
-Twilio Messaging also supports a few optional settings you can use in your mappings.
+Twilio Messaging also supports a few optional settings that you can use in your mappings.
 
 ### Validity period
 

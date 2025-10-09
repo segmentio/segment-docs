@@ -4,10 +4,10 @@ id: 65a6ac19ea6d3ced628be00b
 ---
 [Survicate](https://survicate.com/integrations/segment-survey/?utm_source=segment&utm_medium=referral){:target="_blank”} is a complete toolkit for customer feedback. 
 
-This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
+This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com){:target="_blank”}.
 
 
-## Getting Started
+## Getting started
 
 1. From the Segment web app, click **Destinations**.
 2. Search for "Survicate (Actions)" in the Catalog, select it, and choose which of your sources to connect the destination to.
