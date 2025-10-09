@@ -2,7 +2,7 @@
 title: Analytics Kotlin Nielsen DCR Plugin
 ---
 
-Nielsen Digital Content Ratings (DCR) respond to the shifting and complex multi-platform, multi-device, and multi-distribution landscape by providing comprehensive measurement of digital content consumption—including streaming video, static web pages and mobile apps—across all major devices and platforms. The Analytics-Kotlin Nielsen-DCR Plugin](https://github.com/segment-integrations/analytics-kotlin-nielsen-dcr){:target="_blank”} tracks data for [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}.
+Nielsen Digital Content Ratings (DCR) respond to the shifting and complex multi-platform, multi-device, and multi-distribution landscape by providing comprehensive measurement of digital content consumption—including streaming video, static web pages and mobile apps—across all major devices and platforms. The Analytics-Kotlin [Nielsen-DCR Plugin](https://github.com/segment-integrations/analytics-kotlin-nielsen-dcr){:target="_blank”} tracks data for [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}.
 
 ## Getting started
 
