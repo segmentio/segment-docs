@@ -189,7 +189,7 @@ You can see the current destination endpoint API success rates and final deliver
 ### Replays
 
 > info ""
-> Replay is available to [Business tier](https://segment.com/pricing){:target="_blank”} customers. [Contact Segment](https://segment.com/contact/sales) to learn more.
+> Replay is available to [Business tier](https://segment.com/pricing){:target="_blank”} customers. [Contact Segment](https://segment.com/contact/sales){:target="_blank”} to learn more.
 
 [Replays](/docs/guides/what-is-replay/) allow customers to load historical data from Segment's S3 logs into downstream destinations which accept cloud-mode data. For example, if you wanted to try out a new email or analytics tool, Segment can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage.
 
