@@ -26,7 +26,7 @@ Adding SendGrid as a Source in Segment requires a SendGrid API key. If you don't
 To add the Sendgrid source to Segment, return to your Segment Workspace and follow these steps:
 
 1. Navigate to **Connections > Catalog**, and search for "Sendgrid".
-2. Click the "Sendgrid" source, and click **Add Source**. **Note**: This source only supports warehouses as a destination.
+2. Click the "Sendgrid" source, and click **Add Source**. **Note**: This source only supports [warehouses](docs/connections/storage/warehouses/) as a destination.
 3. Give the source a meaningful name and (optional) add any labels to help you organize and filter your sources. Select all of the Warehouse destinations from the existing connections.
   > **Note**: Segment recommends that you give your source a name that reflects the source itself as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
 4. Add the [SendGrid API Key](#sendgrid-api-key) to connect Sendgrid to Segment. Click **Connect**.
