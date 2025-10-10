@@ -3,7 +3,7 @@ title: SendGrid Source
 id: jhr8dT2yHn
 ---
 
-[SendGrid](http://sendgrid.com){:target="_blank”} is a trusted platform for transactional email and email marketing.
+[SendGrid](http://sendgrid.com){:target="_blank”} is a trusted platform for transactional email and email marketing. 
 
 Take your company's analysis to the next level by **adding SendGrid as a Source to Segment**. Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and loads them into your data warehouse. 
 
