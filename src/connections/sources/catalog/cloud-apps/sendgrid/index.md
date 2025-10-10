@@ -45,7 +45,7 @@ To add the Sendgrid source to Segment, return to your Segment Workspace and foll
   >
   > Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
   >
-  > The default value for Source Sync Schedule in 3 hours. To change the sync, schedule send a message to [friends@segment.com@](mailto:friends@segment.com){:target="_blank”}.
+  > The default value for Source Sync Schedule in 3 hours. To change the sync, schedule send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
 9. Toggle **Enable source** on to start syncing data.
 10. The first sync begins after you successfully create the source. To review the collections and number of rows synced, go to the **Overview** tab.
 
