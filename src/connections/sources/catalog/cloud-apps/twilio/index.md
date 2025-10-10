@@ -9,7 +9,7 @@ id: 43bb279b7
 ## Getting started
 
 1. Navigate to **Connections > Catalog** and from the sources tab, search for “Twilio” and click on the tile.
-2. Click **Add Source**, to create a new Twilio source. **Note**: This source only supports warehouses as a destination.
+2. Click **Add Source**, to create a new Twilio source. **Note**: This source only supports [warehouses](docs/connections/storage/warehouses/) as a destination.
 3. Give the source a meaningful name and (optional) add labels. Add the Twilio SID, which can be found in your Twilio account.
    > **Note**: Segment recommends that you give your source a name that reflects the source itself as this name populates the schema name. For example, `Twilio` for nickname and `twilio` or `twilio_prod` for the schema name. You can add multiple instances if you have multiple Twilio accounts.
 4. Sign into your Twilio account and select the account that you want to sync data from to Segment.
