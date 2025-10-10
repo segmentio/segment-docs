@@ -8,7 +8,7 @@ Segment's Totango destination code is all open-source on GitHub: [JavaScript](ht
 
 To get started with Totango and Segment, toggle Totango on in your Segment destinations and add your **Service ID**, which you can find in your Totango settings.
 
-Once you've done that, those new settings will propagate to our CDN (that usually takes around 45 minutes) and Totango will be live on your site! Since Totango is all about identified users, the next thing you'll want to do is add a few API calls with exactly the information Totango needs. We'll show you how..
+Once you've done that, those new settings will propagate to our CDN (that usually takes around 45 minutes) and Totango will be live on your site! Since Totango is all about identified users, the next thing you'll want to do is add a few API calls with exactly the information Totango needs. We'll show you how.
 
 **Note:** As part of setup, you should know the user and call `identify` before the `group` call. Remember that every `page` and `track` call that you want to show up in Totango must be tied to a `groupId` (Totango calls this Account ID). , however.
 
