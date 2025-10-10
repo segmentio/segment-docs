@@ -42,7 +42,7 @@ To finish add the Sendgrid source to Segment, return to your Segment Workspace a
 > info ""
 > - Changing the start data after the first sync doesn't change anything unless a full manual sync is initiated.
 > - Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
-> - The default value for Source Sync Schedule in 3 hours. To change the sync, schedule send a message to (friends@segment.com@)[mailto:friends@segment.com]{:target="_blank”}.
+> - The default value for Source Sync Schedule in 3 hours. To change the sync, schedule send a message to [friends@segment.com@](mailto:friends@segment.com){:target="_blank”}.
 
 9. The first sync starts after you successfully create the source. All the collections and number of rows synced can be reviewed from the Overview tab.
 Copy the auto-generated Webhook URL and paste it into SendGrid's Event Notification settings pane under **Settings > Mail Settings**.
