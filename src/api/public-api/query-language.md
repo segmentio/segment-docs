@@ -127,6 +127,14 @@ The following tables list the query languages's available functions.
 | Description | You can add a prefix to direct the evaluation to be relative to the timestamp of a different event.                                                            |
 | Example     | `between(7 days, 10 days)`                                                                                                                                     |
 
+| `expires_after` |                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax          | `expires_after({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - second (s) hour (s) day (s)<br>                                                     |
+| Return Type     | `WindowedFilter`                                                                                                                                               |
+| Description     | You can add a prefix to direct the evaluation to be relative to the timestamp of a different event.                                                            |
+| Notes           | `expires_after` is meant to be used with Computed Traits in order to handle session windows.                                                                   |
+| Example         | `expires_after(1 hour)`                                                                                                                                        |
+
 
 ### Reducers
 

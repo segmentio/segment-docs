@@ -11,8 +11,8 @@ The [Wishpond JavaScript (browser) Integration](https://github.com/wishpond-dev/
 Wishpond works with Segment's client-side JavaScript library: Analytics.js.
 
 
-1.  From your Segment UI's Destinations page click on "Add Destination".
-2.  Search for "Wishpond" in the Catalog, select it, and choose which of your sources to connect the destination to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Wishpond" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Merchant ID and Trackey Key from Wishpond's ["API Keys" dialog](https://www.wishpond.com/central/welcome?api_keys=true){:target="_blank"}. These are also found in your Wishpond Account in the "API Keys" dropdown under your account name in the top right corner.
 4. Segment automatically initializes Wishpond's Tracking Code with your Tracking Key and Merchant ID when it next loads Analytics.js.
 
@@ -69,7 +69,6 @@ A new event will be added to the lead that the current session is tracking. The 
 
 To more details how Wishpond's identify works  visit [Wishpond API Docs: #track](http://developers.wishpond.com/#tracking-events){:target="_blank"}.
 
-- - -
 ## Troubleshooting/ FAQ
 
 ### Destination is not working properly
