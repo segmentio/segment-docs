@@ -11,8 +11,7 @@ id: 43bb279b7
 1. Navigate to **Connections > Catalog** and from the sources tab, search for “Twilio” and click on the tile.
 2. Click **Add Source**, to create a new Twilio source. **Note**: This source only supports warehouses as a destination.
 3. Give the source a meaningful name and (optional) add labels. Add the Twilio SID, which can be found in your Twilio account.
-   > info ""
-   > Segment recommends that you give your source a name that reflects the source itself as this name populates the schema name. For example, `Twilio` for nickname and `twilio` or `twilio_prod` for the schema name. You can add multiple instances if you have multiple Twilio accounts.
+   > **Note**: Segment recommends that you give your source a name that reflects the source itself as this name populates the schema name. For example, `Twilio` for nickname and `twilio` or `twilio_prod` for the schema name. You can add multiple instances if you have multiple Twilio accounts.
 4. Sign into your Twilio account and select the account that you want to sync data from to Segment.
 5. Add the Twilio SID, which can be found in your Twilio account, in **Project Settings**. Click **Authenticate**.
 6. Once connected successfully, click **Next** to setup the SQL schema.
@@ -23,12 +22,9 @@ id: 43bb279b7
   > 3. **Select the collections to sync**. The collections that you select will be synced from the start date.
 9. Click **Done** to complete integrating your Twilio account with Segment.
 10. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date.
-  > info ""
-  > Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated.
-  >
-  > Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
-  >
-  > The default value for Source Sync Schedule in 3 hours. To change the sync, schedule send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
+  > - Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated.
+  > - Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
+  > - The default value for Source Sync Schedule in 3 hours. To change the sync schedule, send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
 11. Toggle **Enable source** on to start syncing data.
 12. The first sync begins after you successfully create the source. To review the collections and number of rows synced, go to the **Overview** tab.
 
