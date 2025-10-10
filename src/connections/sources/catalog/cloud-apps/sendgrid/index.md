@@ -5,33 +5,50 @@ id: jhr8dT2yHn
 
 [SendGrid](http://sendgrid.com){:target="_blank”} is a trusted platform for transactional email and email marketing.
 
-Take your company's analysis to the next level by **adding SendGrid as a Source to Segment.** Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and loads them into your data warehouse. 
+Take your company's analysis to the next level by **adding SendGrid as a Source to Segment**. Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and loads them into your data warehouse. 
 
-## Getting Started
+## Getting started
+
+### Sendgrid API key
 
 Adding SendGrid as a Source in Segment requires a SendGrid API key. If you don't yet have a SendGrid API key, first follow these steps within your SendGrid account:
 
 1.  Log in to your SendGrid account.
-2.  Navigate to **Settings > API Keys**, then click **General API Key**.
-3.  Name the key and, optionally, adjust its settings.
-4.  Copy the API Key, omitting all spaces.
+2.  Navigate to **Settings > API Keys**, then click **Create API Key**.
+3.  Name the key, configure the key permissions, and click **Create & View**.
+4.  Make note of the API key as it will not be shown again.
 
 > info "SendGrid API Key Settings"
 > Segment recommends providing read permissions for **Email Activity** and **Marketing Activity**.
 
-To finish adding the SendGrid source, return to your Segment Workspace and follow these steps:
+### Set up Sendgrid source 
 
-1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} in your Segment workspace, enter **SendGrid** and select the SendGrid source that appears.
-2. From the SendGrid information panel that appears, click **Add source**.
-3. Give the Source a name and add any labels to help you organize and filter your sources.
-   Segment recommends a name that reflects the source itself, as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
-4. Paste the SendGrid API Key you copied above into the Segment interface. Click **Connect**.
+To finish add the Sendgrid source to Segment, return to your Segment Workspace and follow these steps:
+
+1. Navigate to **Connections > Catalog**, and search for "Sendgrid".
+2. Click the "Sendgrid" source, and click **Add Source**. This source supports Warehouses as a destination.
+3. Give the source a meaningful name and (optionally) add any labels to help you organize and filter your sources. Select all of the Warehouse destinations from the existing connections.
+> info ""
+> Segment recommends a name that reflects the source itself, as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
+4. Add the [SendGrid API Key](#sendgrid-api-key) into the Segment interface. Click **Connect**.
 ![Screenshot of the Settings page in the setup flow for the Sendgrid source.](images/601347_Key.png)
+5. Copy the Webhook URL from Segment and paste it in your Sendgrid account. Navigate to **Settings > Mail Settings > Event Webhook** and add a new event webhook.
+6. On the selective sync screen, you have the options to:
+> 1. **Select the sync frequency**. The default option is every three hours.
+> 2. **Select the start date**. This is the date from which the first sync happens. If left blank, a full synce is initiated.
+> 3. **Select the collections to sync**. Only the collections that you select will be synced from the start date.
+7. Click **Finish** to complete the integration with your Sendgrid account.
+8. You can set the start date from which the sync should start in the **Basic Settings** page.
+> info ""
+> - Changing the start data after the first sync doesn't change anything unless a full manual sync is initiated.
+> - Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
+> - The default value for Source Sync Schedule in 3 hours. To change the sync, schedule send a message to (friends@segment.com@)[mailto:friends@segment.com]{:target="_blank”}.
 
-6. Copy the auto-generated Webhook URL and paste it into SendGrid's Event Notification settings pane under **Settings > Mail Settings**.
+9. The first sync starts after you successfully create the source. All the collections and number of rows synced can be reviewed from the Overview tab.
+Copy the auto-generated Webhook URL and paste it into SendGrid's Event Notification settings pane under **Settings > Mail Settings**.
+
 ![Screenshot of the Webhook page in the setup flow for the Sendgrid source.](images/694785_Webhook.png)
 
-7. Enable Event Notification in SendGrid. Select **Next** and then **Finish** to complete setup.
 
 ### Event URL
 
@@ -89,7 +106,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 ## Troubleshooting
 
-### Invalid Credentials error
+### Invalid credentials error
 
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”} to test if you're using the correct credentials.
 
