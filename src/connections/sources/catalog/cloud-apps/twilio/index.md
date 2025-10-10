@@ -51,12 +51,12 @@ Collections are the groupings of resources we pull from your source. In your war
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  addresses | object | An [address](https://www.twilio.com/docs/api/rest/addresses){:target="_blank”} represents your or your customer's physical location within a country |
-|  calls | object | A [call](https://www.twilio.com/docs/voice/api/call){:target="_blank”} represents a connection between a telephone and Twilio |
-|  conferences | object | The [conference](https://www.twilio.com/docs/api/rest/conference){:target="_blank”} allows you to query and manage the state of individual conferences |
-|  transcriptions | object | A [transcription](https://www.twilio.com/docs/api/rest/transcription){:target="_blank”} represents a transcription of a recording |
-|  messages | object | A [message](https://www.twilio.com/docs/api/rest/message){:target="_blank”} represents an inbound or outbound message |
-|  call_feedback | object | The [call feedback](https://www.twilio.com/docs/api/rest/call-feedback){:target="_blank”} subresource provides a simple API to report the quality experienced during a phone call |
+|  addresses | object | An [address](https://www.twilio.com/docs/api/rest/addresses){:target="_blank”} represents your or your customer's physical location within a country. |
+|  calls | object | A [call](https://www.twilio.com/docs/voice/api/call){:target="_blank”} represents a connection between a telephone and Twilio. |
+|  conferences | object | The [conference](https://www.twilio.com/docs/api/rest/conference){:target="_blank”} allows you to query and manage the state of individual conferences. |
+|  transcriptions | object | A [transcription](https://www.twilio.com/docs/api/rest/transcription){:target="_blank”} represents a transcription of a recording. |
+|  messages | object | A [message](https://www.twilio.com/docs/api/rest/message){:target="_blank”} represents an inbound or outbound message. |
+|  call_feedback | object | The [call feedback](https://www.twilio.com/docs/api/rest/call-feedback){:target="_blank”} subresource provides a simple API to report the quality experienced during a phone call. |
 
 
 ## Collection properties
