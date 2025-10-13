@@ -17,13 +17,13 @@ id: 43bb279b7
 6. Once connected successfully, click **Next** to setup the SQL schema.
 7. Verify the schema and click **Next**.
 8. Set up **Selective Sync**. You have the options to:
-  > 1. **Configure the source sync schedule**. This is how often the data syncs. The default option is every three hours.
-  > 2. **Select the start date**. This is the date from which the first sync happens. If left blank, a full sync is initiated.
-  > 3. **Select the collections to sync**. The collections that you select will be synced from the start date.
-9. Click **Done** to complete integrating your Twilio account with Segment.
-10. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date.
+  > * **Configure the source sync schedule**. This is how often the data syncs. The default option is every three hours.
+  > * **Select the start date**. This is the date from which the first sync happens. If left blank, a full sync is initiated.
+  > * **Select the collections to sync**. The collections that you select are synced from the start date.
+9. Click **Done** to complete integrating your Twilio account with Segment. Some things to note:
+10. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date. 
   > - Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated.
-  > - Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
+  > - Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected is stored in the warehouse.
   > - The default value for Source Sync Schedule in 3 hours. To change the sync schedule, send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
 11. Toggle **Enable source** on to start syncing data.
 12. The first sync begins after you successfully create the source. To review the collections and number of rows synced, go to the **Overview** tab.
@@ -73,7 +73,7 @@ The following tables outline the properties included in collections:
 |  region | The state or region in which you or your customer is located. |
 |  street | The number and street address where you or your customer is located. |
 |  received_at | This timestamp is added to incoming records as soon as they hit Segment API. |
-|  validated | This value will be `true` if the address has been validated, or `false` for countries that don't require validation or if the address is non-compliant. |
+|  validated | This value is `true` if the address has been validated, or `false` for countries that don't require validation or if the address is non-compliant. |
 
 
 ### Calls
@@ -137,10 +137,10 @@ The following tables outline the properties included in collections:
 |  date_updated	| The date that this resource was last updated, given in RFC 2822 format. |
 |  direction	| The direction of this message: `inbound` for incoming messages, `outbound-API` for messages initiated using the REST API, `outbound-call` for messages initiated during a call or `outbound-reply` for messages initiated in response to an incoming message. |
 |  error_code	| The error code associated with your message. |
-|  error_message	| The human readable description of the `ErrorCode`. If the message status is `failed` or `undelivered` it will have one of the values described in the [Call feedback](#call-feedback) table, or it will otherwise be `null`. |
+|  error_message	| The human readable description of the `ErrorCode`. If the message status is `failed` or `undelivered` it will have one of the values described in the [Call feedback table](#call-feedback), or it will otherwise be `null`. |
 |  from	| The phone number (in E.164 format), alphanumeric sender ID, or wireless SIM that initiated the message. |
 |  num_media	| This property indicates the number of media files associated with the message. Each message can send up to 10 media files. |
-|  num_segments	| This property indicates the number of segments that make up the message. If your body is too large to be sent as a single SMS message, it will be segmented and charged accordingly. |
+|  num_segments	| This property indicates the number of segments that make up the message. If your body is too large to be sent as a single SMS message, it is segmented and charged accordingly. |
 |  price	| The amount billed for the message, in the currency associated with the account. |
 |  status	| The status of this message. Either `accepted`, `queued`, `sending`, `sent`, `failed`, `delivered`, `undelivered`, `receiving`, or `received`.|
 |  to	| The phone number that received the message in E.164 format. For incoming messages, this is one of your Twilio phone numbers. For outgoing messages, this is the remote phone. |
