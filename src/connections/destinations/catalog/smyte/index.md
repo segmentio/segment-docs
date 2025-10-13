@@ -4,7 +4,6 @@ title: Smyte Destination
 
 This destination is maintained by Smyte.
 
-- - -
 
 # Getting Started
 
