@@ -17,6 +17,13 @@ This guide assumes that you've already added the Signals SDK to your application
 
 After you set up the Signals SDK to capture the signals you want to target, you can create rules in your Segment workspace to translate the captured signals into traditional Segment analytics events. These rules are deployed in your application the next time a user launches your app.
 
+The process is:
+1. Send signals into the app
+2. Build event rules from those signals
+3. Publish those event rules
+
+Once your event rules are published they will be analyzed against user behavior on your website or app and send events to Segment when users perform the interaction triggers.
+
 ### Getting started with rule creation
 
 1. Ensure you have the `Workspace Owner` or `Source Admin` role in Segment. If your source is connected to a tracking plan, you will also need, at a minimum, the `Tracking Plan Read-only` role. To view the content in the Event Builder tab, you will need, at a minimum, the `Source Read-only` role.
@@ -47,12 +54,10 @@ You can enrich your events by adding properties based on signal metadata. For ex
 
 These properties are sent alongside your event, giving your team deeper insights without requiring any manual instrumentation.
 
+<!-- PW, 6 August 2025: Commenting this section out for now
 #### Preview your event rule
 
 To verify that a rule is working as expected, you don't need to enter a cycle of creating and updating the rule, generating signals, then checking the source debugger for the generated event. As you create, edit, or view a rule, you can preview it in real time against the current signal buffer to see which signals match and what the resulting event will look like. Event properties are mapped to the values found in the matched signals, and complete matches are grouped by anonymous ID.
-
-
-<!-- PW, 6 August 2025: Commenting this section out for now
 
 The Rules Editor also lets you test your rules with recent signals to verify that they produce the data you need before you deploy. 
 
