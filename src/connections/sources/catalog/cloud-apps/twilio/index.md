@@ -21,8 +21,8 @@ id: 43bb279b7
   > * **Select the start date**. This is the date from which the first sync happens. If left blank, a full sync is initiated.
   > * **Select the collections to sync**. The collections that you select are synced from the start date.
 9. Click **Done** to complete integrating your Twilio account with Segment. Some things to note:
-10. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date. 
-  > - Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated.
+10. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date. Some things to note:
+  > - Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated. 
   > - Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected is stored in the warehouse.
   > - The default value for Source Sync Schedule in 3 hours. To change the sync schedule, send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
 11. Toggle **Enable source** on to start syncing data.
