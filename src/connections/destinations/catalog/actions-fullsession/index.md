@@ -10,13 +10,14 @@ This destination is maintained by FullSession. For any issues with the destinati
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"} search for "FullSession".
-2. Select FullSession and click **Add Destination**.
-3. Select an existing Source to connect to FullSession (Actions).
-4. Go to the [FullSession setup page](https://app.fullsession.io/settings/setup){:target="_blank"} and copy your **Customer ID** (starts with `cus_`).
-5. Enter the **Customer ID** in the FullSession destination settings in Segment.
+1. From your workspace’s [Destination Catalog](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"}, search for **“FullSession.”**  
+2. Select **FullSession**, then click **Add Destination**.  
+3. Choose an existing **JavaScript Source** to connect with FullSession (Actions).  
+4. Navigate to the [FullSession Setup](https://app.fullsession.io/settings/setup){:target="_blank"} page and copy your **Customer ID** (it begins with `cus_`).  
+5. Paste the **Customer ID** into the **FullSession Destination settings** in Segment.  
+6. Before enabling the destination, open the **Mappings** tab and configure the mappings to ensure the correct data is captured.  
+7. Once your mappings are configured and enabled, go to the **Settings** tab and enable the Destination. Segment will then automatically load the **FullSession recording snippet** in the user’s browser.
 
-and then Analytics.js starts asynchronously loading FullSession's recording snippet on your page and sending data.
 
 ## Identify User
 
