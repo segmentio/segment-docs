@@ -18,7 +18,7 @@ Adding SendGrid as a Source in Segment requires a SendGrid API key. If you don't
 3.  Name the key, configure the key permissions, and click **Create & View**.
 4.  Make note of the API key as it will not be shown again.
 
-> info "SendGrid API Key settings"
+> info "SendGrid API key settings"
 > Segment recommends providing read permissions for **Email Activity** and **Marketing Activity**.
 
 ### Set up Sendgrid source 
@@ -26,19 +26,19 @@ Adding SendGrid as a Source in Segment requires a SendGrid API key. If you don't
 To add the Sendgrid source to Segment, return to your Segment Workspace and follow these steps:
 
 1. Navigate to **Connections > Catalog**, and search for "Sendgrid".
-2. Click the "Sendgrid" source, and click **Add Source**. **Note**: This source only supports [warehouses](docs/connections/storage/warehouses/) as a destination.
+2. Click the "Sendgrid" source and click **Add Source**. **Note**: This source only supports [warehouses](docs/connections/storage/warehouses/) as a destination.
 3. Give the source a meaningful name and (optional) add any labels to help you organize and filter your sources. Select all of the Warehouse destinations from the existing connections.
   > **Note**: Segment recommends that you give your source a name that reflects the source itself as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
-4. Add the [SendGrid API Key](#sendgrid-api-key) to connect Sendgrid to Segment. Click **Connect**.
+4. Add the [SendGrid API key](#sendgrid-api-key) to connect Sendgrid to Segment. Click **Connect**.
 ![Screenshot of the Settings page in the setup flow for the Sendgrid source.](images/601347_Key.png)
 5. Copy the auto-generated Webhook URL from Segment and paste it in your Sendgrid account. Navigate to **Settings > Mail Settings > Event Webhooks** and create a new event webhook.
 ![Screenshot of the Webhook page in the setup flow for the Sendgrid source.](images/694785_Webhook.png)
 6. Set up **Selective Sync**. You have the options to:
-  > 1. **Configure the source sync schedule**. This is how often the data syncs. The default option is every three hours.
-  > 2. **Select the start date**. This is the date from which the first sync happens. If left blank, a full sync is initiated.
-  > 3. **Select the collections to sync**. The collections that you select will be synced from the start date.
+  > * **Configure the source sync schedule**. This is how often the data syncs. The default option is every three hours.
+  > * **Select the start date**. This is the date from which the first sync happens. If left blank, a full sync is initiated.
+  > * **Select the collections to sync**. The collections that you select will be synced from the start date.
 7. Click **Finish** to complete connecting your Sendgrid source to Segment.
-8. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date.
+8. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date. Some things to note:
   > * Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated.
   > * Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
   > * The default value for Source Sync Schedule in 3 hours. To change the sync schedule, send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
@@ -59,7 +59,7 @@ Segment's sync component pulls and forwards SendGrid resources to Segment using 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the source data to your warehouse on the interval associated with your billing plan.
 
 > info "SendGrid syncs"
-> Segment syncs all objects and properties. [Reach out to support](https://segment.com/help/contact/){:target="_blank”} if you're interested in filtering objects or properties during syncs.
+> Segment syncs all objects and properties. [Reach out to Segment support](https://segment.com/help/contact/){:target="_blank”} if you're interested in filtering objects or properties during syncs.
 
 ### Streaming
 
@@ -79,7 +79,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
 |  activity | Event | The union of all SendGrid **event** tables. Useful for creating funnels. |
-|  _open | Event | Recipient has opened the HTML message. Enable **Open Tracking** to get this type of event. |
+|  open | Event | Recipient has opened the HTML message. Enable **Open Tracking** to get this type of event. |
 |  click | Event | Recipient clicked on a link within the message. Enable **Click Tracking** to get this type of event. |
 |  bounce | Event | Receiving server could not or would not accept message. |
 |  delivered | Event | Message has been successfully delivered to the receiving server. |
