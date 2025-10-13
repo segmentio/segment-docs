@@ -36,17 +36,17 @@ To add the Sendgrid source to Segment, return to your Segment Workspace and foll
 6. Set up **Selective Sync**. You have the options to:
   > * **Configure the source sync schedule**. This is how often the data syncs. The default option is every three hours.
   > * **Select the start date**. This is the date from which the first sync happens. If left blank, a full sync is initiated.
-  > * **Select the collections to sync**. The collections that you select will be synced from the start date.
+  > * **Select the collections to sync**. The collections that you select are synced from the start date.
 7. Click **Finish** to complete connecting your Sendgrid source to Segment.
 8. To set the date from which the sync should start, go to **Settings > Basic Settings**, and configure the start date. Some things to note:
   > * Changing the start date after the first sync doesn't change anything unless a full manual sync is initiated.
-  > * Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected will be in the warehouse.
+  > * Changing the collections to be synced takes effect after the next sync. The previous data synced for any collection that has been unselected is stored in the warehouse.
   > * The default value for Source Sync Schedule in 3 hours. To change the sync schedule, send a message to [friends@segment.com](mailto:friends@segment.com){:target="_blank”}.
 9. Toggle **Enable source** on to start syncing data.
 10. The first sync begins after you successfully create the source. To review the collections and number of rows synced, go to the **Overview** tab.
 
 ### Event URL
-SendGrid has a single Event URL location. By using the SendGrid source, you'll use your only Event URL location. If you remove a pre-existing URL, then that location will no longer receive events.
+SendGrid has a single Event URL location. By using the SendGrid source, you'll use your only Event URL location. If you remove a pre-existing URL, then that location no longer receives events.
 
 ## Components
 
@@ -87,14 +87,14 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 |  dropped | Event | You may see the following drop reasons: `Invalid SMTPAPI header`, `Spam Content` (if spam checker app enabled), `Unsubscribed Address`, `Bounced Address`, `Spam Reporting Address`, `Invalid`, `Recipient List over Package Quota`. |
 |  deferred | Event | Recipient's email server temporarily rejected message. |
 |  unsubscribe | Event | Recipient clicked on message's subscription management link. You need to enable **Subscription Tracking** for getting this type of event. |
-|  mc_contacts | Object | A sample of fifty latest contacts uploaded or linked from the list, returned from [Sendgrid](https://docs.sendgrid.com/api-reference/contacts/get-sample-contacts){:target="_blank"}. **Will only return data if you're using SendGrid's New Marketing Campaign features.** |
-|  mc_lists | Object | Lists returned from [Sendgrid Lists endpoint](https://docs.sendgrid.com/api-reference/lists/get-all-lists){:target="_blank"}. **Will only return data if you're using SendGrid's New Marketing Campaign features.**  |
-|  mc_single_sends | Object | Single Sends with condensed details about each from [Sendgrid Single Sends endpoint](https://docs.sendgrid.com/api-reference/single-sends/get-all-single-sends){:target="_blank"}. **Will only return data if you're using SendGrid's New Marketing Campaign features.** |
+|  mc_contacts | Object | A sample of fifty latest contacts uploaded or linked from the list, returned from [Sendgrid](https://docs.sendgrid.com/api-reference/contacts/get-sample-contacts){:target="_blank"}. **Only returns data if you're using SendGrid's New Marketing Campaign features.** |
+|  mc_lists | Object | Lists returned from [Sendgrid Lists endpoint](https://docs.sendgrid.com/api-reference/lists/get-all-lists){:target="_blank"}. **Only returns data if you're using SendGrid's New Marketing Campaign features.**  |
+|  mc_single_sends | Object | Single Sends with condensed details about each from [Sendgrid Single Sends endpoint](https://docs.sendgrid.com/api-reference/single-sends/get-all-single-sends){:target="_blank"}. **Only returns data if you're using SendGrid's New Marketing Campaign features.** |
 |  spam_report | Event | Recipient marked message as spam. |
-|  lists  | Object |  [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}. **Will only return data if you had Legacy Marketing Campaigns data.** |
-|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}. **Will only return data if you had Legacy Marketing Campaigns data.** |
-|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. For more information, see the [Sendgrid docs](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}.  **Will only return data if you had Legacy Marketing Campaigns data.** |
-|  campaigns | Object | All campaigns you've created in SendGrid. For more information, see the [Sendgrid docs](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”}.  **Will only return data if you had Legacy Marketing Campaigns data.** |
+|  lists  | Object |  [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}. **Only returns data if you had Legacy Marketing Campaigns data.** |
+|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}. **Only returns data if you had Legacy Marketing Campaigns data.** |
+|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. For more information, see the [Sendgrid docs](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}.  **Only returns data if you had Legacy Marketing Campaigns data.** |
+|  campaigns | Object | All campaigns you've created in SendGrid. For more information, see the [Sendgrid docs](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”}.  **Only returns data if you had Legacy Marketing Campaigns data.** |
 
 ## Troubleshooting
 
