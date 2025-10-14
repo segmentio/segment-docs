@@ -13,13 +13,13 @@ id: 5952698570a3e552b9575519
 2. Search for "Quora" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your Quora Conversion Pixel Key to your Destination settings. To get this you will need to do the following:
 
-	i. Log into your [Quora Ads Manager Account](https://www.quora.com/ads/account){:target="_blank"}.
+   1. Log into your [Quora Ads Manager Account](https://www.quora.com/ads/account){:target="_blank"}.
 
-	ii. Navigate to the "Quora Pixel" tab in your Quora Dashboard.
+   2. Navigate to the "Quora Pixel" tab in your Quora Dashboard.
 
-	iii. Click the "Setup Pixel" button to open the installation popup modal.
+   3. Click the "Setup Pixel" button to open the installation popup modal.
 
-	iv. Under "Option A: Install a JavaScript Pixel," find your Quora Conversion Pixel Key in the Quora JavaScript Pixel - the key is embedded in a tag that looks like `qp('init', '7cc5a029c2604daa8365d15ff337146e')`. In the example below, the key is `7cc5a029c2604daa8365d15ff337146e`.
+   4. Under "Option A: Install a JavaScript Pixel," find your Quora Conversion Pixel Key in the Quora JavaScript Pixel - the key is embedded in a tag that looks like `qp('init', '7cc5a029c2604daa8365d15ff337146e')`. In the example below, the key is `7cc5a029c2604daa8365d15ff337146e`.
 
 
 ## Track

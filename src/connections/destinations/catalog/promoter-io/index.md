@@ -11,8 +11,6 @@ hide-dossier: true
 
 Once the Segment library is integrated with your service, add your Promoter API Key and enable Promoter in your Segment destinations page. You can find your API key in Promoter.io under **Accounts Settings > Segment Destination**.
 
-- - -
-
 Promoter supports the `identify` and `track` methods from Segment and will allow you to:
 
 - Add a contact to a list

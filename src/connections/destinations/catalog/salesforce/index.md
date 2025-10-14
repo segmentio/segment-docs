@@ -11,11 +11,10 @@ private: true
 > Settings will be migrated automatically, but you must take additional action to ensure the destination is properly enabled.For more information, see [Migrating from Salesforce Classic](/docs/connections/destinations/catalog/actions-salesforce/#migrate-from-salesforce-classic)
 >
 > For questions or issues, or to opt out of the automatic upgrade, contact [friends@segment.com](mailto:friends@segment.com). For more information about Salesforce's deprecation, see their [deprecation notice](https://help.salesforce.com/s/articleView?id=000389618&type=1){:target="_blank"}
+
 Segment's Salesforce destination allows you to create and store leads and records for other objects in Salesforce Sales Cloud.
 
-
-
-### API Access
+## API Access
 
 Segment uses the Salesforce SOAP API to connect. This API requires the following credentials of a registered Salesforce user:
 - email
