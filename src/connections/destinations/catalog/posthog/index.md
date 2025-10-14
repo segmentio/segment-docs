@@ -17,9 +17,9 @@ This destination is maintained by PostHog. For any issues with the destination, 
 4. Go to your [PostHog project settings](https://us.posthog.com/settings/project#variables){:target="_blank"}, and copy the **project API key**.
 5. Enter the project API Key that you copied in the PostHog destination settings in Segment.
 6. Enter your PostHog instance address *without any trailing slash*, for example:
-  - `https://us.i.posthog.com` if you use PostHog US Cloud
-  - `https://eu.i.posthog.com` if you use PostHog EU Cloud
-  - Your self-hosted URL if you self-host
+    - `https://us.i.posthog.com` if you use PostHog US Cloud
+    - `https://eu.i.posthog.com` if you use PostHog EU Cloud
+    - Your self-hosted URL if you self-host
 
 ## Page
 
@@ -36,7 +36,7 @@ Segment sends Page calls to PostHog as a `$pageview`.
 
 If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
-```obj
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 

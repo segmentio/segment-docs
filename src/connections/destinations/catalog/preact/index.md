@@ -17,8 +17,6 @@ To group users into accounts in preact you'll use our [`group`](/docs/connection
 
 Our [`track`](/docs/connections/spec/track) method will record events in Preact. Users must be identified on the client side for events to appear in Preact.
 
-- - -
-
 
 ## Features
 
