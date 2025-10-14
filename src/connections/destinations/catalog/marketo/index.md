@@ -11,8 +11,6 @@ When you enable Marketo in the Segment web app, your changes appear in the Segme
 ### Important Note:
 Our client-side and server-side destinations each require **different** credentials for authentication. Read through the information below on `identify` calls for further information.
 
-- - -
-
 ## Page and Track
 
 For [`Page`](/docs/connections/spec/page/) or [`Track`](/docs/connections/spec/track/) methods, Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage){:target="_blank"}. The URL is built from the Segment event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
