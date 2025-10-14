@@ -7,7 +7,7 @@ id: 5f354f1a928763feb8caf724
 
 This destination is maintained by Stonly. For any issues with the destination, [contact their support team](mailto:support@stonly.com).
 
-> "Note:"
+> info ""
 > Stonly Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve Stonly Destination and its documentation, [contact Stonly support team](mailto:support@stonly.com)!
 
 ## Getting Started
@@ -60,8 +60,6 @@ analytics.track("TicketCreated", {
 Segment sends Track calls to Stonly as a `track` event.
 
 If one of your properties is of the date property type, it should be sent as an ISO string.
-
----
 
 ## Troubleshooting
 
