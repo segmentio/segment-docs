@@ -82,7 +82,7 @@ mappings may apply:
   <tr>
     <td>`name`</td>
     <td>`siteID`</td>
-  <tr>
+  </tr>
 </table>
 
 _**Note:** As with `track` events, all properties sent by the user that aren't
