@@ -7,7 +7,7 @@ id: 68c14f4eefb643527597844c
 
 [FullSession](https://fullsession.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides user behavior analytics software that helps you visualize all user interactions, analyze trends and patterns with laser precision, and optimize your website for peak performance. The Segment integration for FullSession helps accurately identify your customers and track their behavior within the FullSession dashboard.
 
-This destination is maintained by FullSession. For any issues with the destination, [contact the Fullsession support team](mailto:support@fullsession.com){:target="_blank"}.
+This destination is maintained by FullSession. For any issues with the destination, [contact the FullSession support team](mailto:support@fullsession.com){:target="_blank"}.
 
 ## Getting started
 
