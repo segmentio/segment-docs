@@ -12,7 +12,7 @@ This source is maintained by Quin Audience Engine. For any issues with the sourc
 1. From your workspace's Source page, click **Add Source**.
 2. Search for "Quin AI" in the Sources Catalog, select Quin AI, and click **Add Source**.
 3. On the next screen, give the Source a name configure any other settings.
-    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (eg. QuinAI_Prod, QuinAI_Staging, QuinAI_Dev).
+    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, QuinAI_Prod, QuinAI_Staging, or QuinAI_Dev).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
 6. 6. Log in to your [Quin account](https://portal.quinengine.com/){:target="_blank”} and navigate to **Integrations > Segment > Settings**.
