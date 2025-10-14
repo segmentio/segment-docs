@@ -8,7 +8,7 @@ id: 5f287bfa332cce0b1ed18331
 
 Retina AI maintains this destination. For any issues with the destination, contact the [Retina AI Support Team](mailto:info@retina.ai).
 
-> info " "
+> info ""
 > The Retina AI Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Retina AI Destination and its documentation, contact the [Retina AI Support Team](mailto:info@retina.ai).
 
 

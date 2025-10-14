@@ -10,8 +10,6 @@ Once the Segment library is integrated with your server, toggle Route `on` in yo
 
 Route supports the `identify` and `track` methods.
 
----
-
 ## Identify
 
 When you `identify` a contact, we'll pass that contact's information to Route with `email` as Route's Contact ID. The traits recognized as Route's contact profile fields are:
