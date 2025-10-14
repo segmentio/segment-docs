@@ -34,7 +34,7 @@ To add the Pendo destination using Cloud-mode, use the [Webhooks](/docs/connecti
 4. Headers are not required in Webhook configuration. Once you're done adding in your URL, save changes.
 5. Using the `track` method requires a setting enabled on your Pendo subscription (cloud-mode only). Contact Pendo to enable this feature flag for your account.
 
-To learn more about server-side data to Pendo, see Pendo's [support documentation](https://support.pendo.io/hc/en-us/articles/360031870352){:target = "_blank"}.
+To learn more about server-side data to Pendo, see Pendo's [support documentation](https://support.pendo.io/hc/en-us/articles/360031870352){:target="_blank"}.
 
 ## Identify
 

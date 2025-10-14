@@ -3,12 +3,12 @@ title: Correlated Destination
 id: 60df6d4c038b872f10c54801
 ---
 
-[Correlated](https://www.getcorrelated.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_new"} is the first product-led revenue platform built to help you and your sales teams take action based on how customers are using your product.
+[Correlated](https://www.getcorrelated.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the first product-led revenue platform built to help you and your sales teams take action based on how customers are using your product.
 
 This destination is maintained by Correlated. For any issues with the destination, [contact the Correlated Support team](mailto:support@getcorrelated.com).
 
 > success ""
-> Set up a free account with Correlated by visiting their [website](https://docs.getcorrelated.com/docs/setting-up-your-account){:target="_new"}.
+> Set up a free account with Correlated by visiting their [website](https://docs.getcorrelated.com/docs/setting-up-your-account){:target="_blank"}.
 
 ## Getting Started
 
