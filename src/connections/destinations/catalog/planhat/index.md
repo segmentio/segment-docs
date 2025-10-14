@@ -12,8 +12,6 @@ The Segment Planhat destination is 100% handled through our servers, so you don'
 
 The Segment Planhat destination supports Identify, Page, Track, and Group calls. For more information, see the [Segment Spec documentation](/docs/connections/spec/).
 
-- - -
-
 ## Identify
 
 When you `identify` a user, we'll pass that user's information to Planhat with `userId` as Planhat's External User ID. Segment's special traits recognized as Planhat's standard contact profile fields (in parentheses) are:
