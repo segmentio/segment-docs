@@ -9,8 +9,6 @@ When you enable Olark in the Segment web app, your changes appear in the Segment
 
 Olark is only supported in device mode (on the client).
 
-- - -
-
 ## Page
 
 When you call [`page`](/docs/connections/spec/page/), we call Olark's `sendNotificationToOperator` function as `looking at *url*`. You must enable this option with the *pageview* flag, because it can sometimes be bothersome.
@@ -32,8 +30,6 @@ More documentation on the Olark API can be found [in Olark's docs](https://www.o
 
 When you call [`track`](/docs/connections/spec/track/) or one of its helpers on analytics.js, we call Olark's `sendNotificationToOperator` function as `visitor triggered *eventName*`. You must enable this option with the *track* flag, because it can sometimes be bothersome.
 
-- - -
-
 ## Features
 
 ### Customizing the chat box
@@ -51,8 +47,6 @@ analytics.ready(function(){
 ```
 
 [Read the ready docs for more details](/docs/connections/sources/catalog/libraries/website/javascript/#ready)
-
-- - -
 
 
 ## Record Live Chat Events

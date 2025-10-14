@@ -91,7 +91,7 @@ That call will create a Matomo Event with these attributes:
 
 For **Event Value** you can name the event property `value` or `revenue`. We'll look for `value` first, then fall back to `revenue`.
 
-## Best Pratices
+## Best Practices
 
 Matomo allows you to set [custom variables](http://matomo.org/docs/custom-variables/){:target="_blank"} with your pageviews and events. With Segment, you can set page-scoped custom variables with any `track` call you make with analytics.js.
 
