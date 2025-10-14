@@ -56,7 +56,6 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 6. Set the API name to `userId` for the user ID field and then `anonymousId` for the anonymous ID field. **Important:** The API names for the user ID and anonymous ID fields must be `userId` and `anonymousId` exactly. If anything in the API name is different, the destination will not work.
 ![An animation showing someone do the above steps to create User ID and Anonymous ID fields.](images/kzayYEY2JL.gif)
 
-----------
 ## Identify
 
 ### Cloud-mode
