@@ -271,9 +271,9 @@ To create a Repeater destination, new source, and second Marketo V2 destination:
 
 1. Create and connect a new [Repeater destination](https://app.segment.com/goto-my-workspace/destinations/catalog/repeater) to your source and select the intended source.
 2. Click **Add destination**, name the destination, and select Fill in settings manually.
-4. Create a new source, then navigate to **Settings > API Keys** and copy the **Write Key** value.
+3. Create a new source, then navigate to **Settings > API Keys** and copy the **Write Key** value.
 - From the Repeater destination's **Settings** page, you'll find **Write Keys** in the **Connection Settings**. This is where your second source's write key from step 4 will go.
-5. Navigate back to your Repeater destination and paste in the source's `writeKey` into the write key setting.
-6. Add a Marketo V2 destination to your new source with the desired configuration settings.
-7. Enable the Repeater destination, new source, new Marketo V2 destination.
-8. You'll begin seeing data transmitted from your originating source to the Repeater Destination (Event Delivery), then to the new source (Debugger), and finally to the Marketo V2 destination (Event Delivery).
+4. Navigate back to your Repeater destination and paste in the source's `writeKey` into the write key setting.
+5. Add a Marketo V2 destination to your new source with the desired configuration settings.
+6. Enable the Repeater destination, new source, new Marketo V2 destination.
+7. You'll begin seeing data transmitted from your originating source to the Repeater Destination (Event Delivery), then to the new source (Debugger), and finally to the Marketo V2 destination (Event Delivery).
