@@ -63,26 +63,26 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <td>Event</td>
     <td>Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event</td>
   </tr>
-    <tr>
-    <td>Email Link Clicked</td>
-    <td>Event</td>
-    <td>Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event</td>
-  </tr>
-    <tr>
-    <td>Email Unsubscribed</td>
-    <td>Event</td>
-    <td>Recipient clicked on message's subscription management link</td>
-  </tr>
-    <tr>
-    <td>Email Bounced</td>
-    <td>Event</td>
-    <td>Receiving server could not or would not accept message</td>
-  </tr>
-    <tr>
-    <td>Email Marked as Spam</td>
-    <td>Event</td>
-    <td>Recipient marked message as spam</td>
-  </tr>
+  <tr>
+  <td>Email Link Clicked</td>
+  <td>Event</td>
+  <td>Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event</td>
+</tr>
+  <tr>
+  <td>Email Unsubscribed</td>
+  <td>Event</td>
+  <td>Recipient clicked on message's subscription management link</td>
+</tr>
+  <tr>
+  <td>Email Bounced</td>
+  <td>Event</td>
+  <td>Receiving server could not or would not accept message</td>
+</tr>
+  <tr>
+  <td>Email Marked as Spam</td>
+  <td>Event</td>
+  <td>Recipient marked message as spam</td>
+</tr>
 </table>
 
 <!-- Example: To query the Email Delivered table, you'd write a query like this:
