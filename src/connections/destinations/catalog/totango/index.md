@@ -16,8 +16,6 @@ For our client-side Javascript library (Analytics.js) that means you need to cal
 
 For server-side and mobile libraries you must include `context.groupId` in every call you want to be sent through to Totango so they can connect the dots between a call made to Segment and an account in their system.
 
-- - -
-
 ## Group
 
 Totango also needs to know what "account" the user belongs to. To record this, you'd use our [`group`](/docs/connections/spec/group/) method. Group also takes a unique ID (for the group this time!) and a dictionary of properties about the group. It looks like this:
@@ -103,8 +101,6 @@ analytics.track('Completed Purchase', {
 To learn more about how [`track`](/docs/connections/spec/track/) works check out our [Track docs](/docs/connections/spec/identify/). For example, `revenue` is a special property that lets you semantically describe how much money you're making.
 
 **If you're sending data using the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [troubleshooting](#troubleshooting) section to see how.
-
-- - -
 
 
 ## Troubleshooting
