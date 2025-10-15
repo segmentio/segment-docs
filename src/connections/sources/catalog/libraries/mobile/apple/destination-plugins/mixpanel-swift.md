@@ -82,9 +82,8 @@ analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 
 The Identify method links a user’s unique ID with their traits so Mixpanel can recognize and track them.
 
-> info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
-
+> info "Identity merge"
+> Mixpanel uses [Identity merge](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} to connect anonymous visitors to identified users. To enable it, go to **Project Settings > Identity Merge** in your Mixpanel dashboard. If you don’t have Identity merge enabled, use the aliasing steps that follow.
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
 
