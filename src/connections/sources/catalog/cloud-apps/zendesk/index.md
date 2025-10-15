@@ -218,53 +218,56 @@ This collection contains performance and timing metrics for Zendesk tickets.
 | `latest_comment_added_at`                   | The date and time the latest comment was added.             |
 | `received_at`                               | Timestamp added when data reaches the Segment API.          |
 
--->
-
-
 ### ticket_events
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned.                                   |
-| ticket_event_id | This is automatically assigned when the ticket is updated.        |
-| ticket_id       | The ID of the associated ticket.                                  |
-| timestamp       | The time when the ticket was updated.                             |
-| updater_id      | The ID of the user who updated the ticket.                        |
-| ticket_event_via | How the event was created.                                       |
-| context_client  | This refers to the “client” used to submit this ticket change (for example, browser name and type). |
-| context_location | The plain text name of where the request was made, if available (for example, country, city). |
-| context_latitude | Latitude of the location where the ticket was changed.           |
-| context_longitude | Longitude of the location where the ticket was changed.         |
-| via             | How the event was created.                                        |
+This collection contains details about individual updates or changes to Zendesk tickets.
 
-
+| Property            | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| `id`                | Automatically assigned when the record is created.                                   |
+| `ticket_event_id`   | Automatically assigned when the ticket is updated.                                   |
+| `ticket_id`         | The ID of the associated ticket.                                                     |
+| `timestamp`         | The date and time the ticket was updated.                                            |
+| `updater_id`        | The ID of the user who made the update.                                              |
+| `ticket_event_via`  | The channel or method used to create the event.                                      |
+| `context_client`    | The client used to submit the ticket change (for example, browser name and version). |
+| `context_location`  | The location name, if available (for example, country or city).                      |
+| `context_latitude`  | The latitude of the location where the change occurred.                              |
+| `context_longitude` | The longitude of the location where the change occurred.                             |
+| `via`               | The method used to create the event.                                                 |
 
 
 ### activities
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned upon creation.                     |
-| url             | The API URL of this activity.                                     |
-| verb            | The type of activity. Can be "tickets.assignment," "tickets.comment," or "tickets.priority_increase." |
-| title           | Description of this activity.                                     |
-| created_at      | The date and time this record was created.                        |
-| updated_at      | The date and time this record was last updated.                   |
+This collection contains information about actions or updates related to Zendesk tickets.
 
-
+| Property     | Description                                                                                                  |
+| ------------ | ------------------------------------------------------------------------------------------------------------ |
+| `id`         | Automatically assigned when the activity is created.                                                         |
+| `url`        | The API URL of the activity.                                                                                 |
+| `verb`       | The type of activity. Possible values: `tickets.assignment`, `tickets.comment`, `tickets.priority_increase`. |
+| `title`      | A short description of the activity.                                                                         |
+| `created_at` | The date and time the activity was created.                                                                  |
+| `updated_at` | The date and time the activity was last updated.                                                             |
 
 
 ### attachments
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned upon creation.                     |
-| file_name       | The name of the image file.                                       |
-| content_url     | A full URL where the attachment image file can be downloaded.     |
-| content_type    | The content type of the image. Example value: image/png.          |
-| inline          | If true, the attachment is excluded from the attachment list and the attachment's URL can be referenced within the comment of a ticket. Default is false. |
-| size            | The size of the image file in bytes.                              |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about files attached to Zendesk tickets.
+
+| Property       | Description                                                                                                                                                             |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | Automatically assigned when the attachment is created.                                                                                                                  |
+| `file_name`    | The name of the attached file.                                                                                                                                          |
+| `content_url`  | The full URL where the attachment file can be downloaded.                                                                                                               |
+| `content_type` | The MIME type of the attachment (for example, `image/png`).                                                                                                             |
+| `inline`       | Indicates whether the attachment is inline. Inline attachments are excluded from the attachment list but can be referenced within a ticket comment. Default is `false`. |
+| `size`         | The file size in bytes.                                                                                                                                                 |
+| `received_at`  | Timestamp added when data reaches the Segment API.                                                                                                                      |
+
+
+
+-->
 
 
 ### organizations
