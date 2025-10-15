@@ -92,7 +92,7 @@ Segment flattens nested objects in properties.
 }
 ```
 
-Segment stringify string arrays.
+Segment stringifes arrays.
 
 **Result:** Column `product_id` with value `"[507f1, 505bd]"`
 
