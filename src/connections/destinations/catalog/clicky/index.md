@@ -15,7 +15,6 @@ Our Clicky destination code is open-source on GitHub. You can check out the code
 3. In the destination settings, enter your Site ID in the settings. You can find your Site ID under the Preferences of your account.
 4. Segment automatically initializes Clicky's script with your Site ID upon loading analytics.js.
 
-- - -
 
 ## Page
 
@@ -63,7 +62,6 @@ analytics.track("My Custom Event", {
 
 When you use our [`track`](/docs/connections/spec/track/) method, a goal is created in Clicky. Only the event name and the revenue of the event (if it exists) will be included in the call. Clicky doesn't support any other event properties.
 
-- - -
 
 ## Troubleshooting
 

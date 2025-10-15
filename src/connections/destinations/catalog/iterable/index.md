@@ -16,7 +16,6 @@ When you enable the Iterable destination from the Segment app, your data starts 
 * [Automatically send a follow up email when your initial email goes unopened](https://segment.com/recipes/iterable-autoresponder-emails-when-unopened/)
 -->
 
-- - -
 
 ## Identify
 

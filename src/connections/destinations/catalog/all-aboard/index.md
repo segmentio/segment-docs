@@ -10,7 +10,6 @@ Once the Segment library is integrated with your server, toggle All Aboard! to "
 
 All Aboard! supports the `identify` method.
 
-- - -
 
 ## Identify
 

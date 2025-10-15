@@ -10,7 +10,6 @@ Once the Segment library is integrated with your server, toggle Aboardly on in y
 
 Aboardly supports the `identify` and `track` methods.
 
-- - -
 
 ## Identify
 

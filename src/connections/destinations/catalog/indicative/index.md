@@ -81,7 +81,6 @@ analytics.screen({
 })
 ```
 
-- - -
 
 ## Troubleshooting
 

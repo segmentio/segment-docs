@@ -17,7 +17,6 @@ To get started with Cxense and Segment, you'll need the following:
 
 Assuming these criteria are met, you can add Cxense as a destination for your desired source in your Segment account.
 
-- - -
 
 ## Page
 

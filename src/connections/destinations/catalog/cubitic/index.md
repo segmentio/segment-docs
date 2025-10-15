@@ -12,7 +12,6 @@ The Cubitic application key can be obtained by contacting signup@cubitic.io
 
 Cubitic supports the `identify` and `track` methods.
 
-- - -
 
 ## Identify
 

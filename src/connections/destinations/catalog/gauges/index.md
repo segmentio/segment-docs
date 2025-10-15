@@ -10,14 +10,12 @@ This means you should remove Gauges' snippet from your page.
 
 Gauges starts automatically collecting data on your site.
 
-- - -
 
 
 ## Page
 
 When you call [`page`](/docs/connections/spec/page/), we call Gauges' `track` method with no arguments.
 
-- - -
 
 
 ## Troubleshooting

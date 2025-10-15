@@ -9,7 +9,6 @@ When you enable Keen in the Segment web app, your changes appear in the Segment 
 
 Keen is supported on the client side and server side.
 
-- - -
 
 ## Identify
 
