@@ -248,13 +248,18 @@ Determine when an audience should run and send data to enabled destinations with
 
 You can maintain your run schedule at any time from the audience's **Settings** tab.
 
+> info ""
+> When configuring an interval run schedule, the system uses a cron-based mechanism anchored to UTC, meaning the next run time aligns with the nearest UTC-based interval cycle, which may shift the schedule relative to your local time zone.
+> When you set a 24-hour interval run schedule at, for example, 4 PM PST, the cron-based system using UTC schedules the next run for 5 PM PST the same day, as it aligns with 12 AM UTC; however, if set after 5 PM PST, the next run will be at 5 PM PST the following day.
+
 You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
 
 There may be up to a five minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
 
 > info ""
-> When configuring an interval run schedule, the system uses a cron-based mechanism anchored to UTC, meaning the next run time aligns with the nearest UTC-based interval cycle, which may shift the schedule relative to your local time zone.
-> When you set a 24-hour interval run schedule at, for example, 4 PM PST, the cron-based system using UTC schedules the next run for 5 PM PST the same day, as it aligns with 12 AM UTC; however, if set after 5 PM PST, the next run will be at 5 PM PST the following day.
+> The next execution time for a Linked Audience is not calculated until the previous run has fully completed. This means that if you schedule a Linked Audience to run every 15 minutes, but the workflow takes 1 hour to complete, the next execution won't be scheduled until that run finishes.
+> 
+> At that point, we calculate the next run time by finding the next interval after the current time, based on the corresponding cron expression. That interval becomes the next execution time.
 
 ## Step 5: Monitor your activation
 
