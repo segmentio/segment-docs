@@ -221,37 +221,30 @@ When you use the Mixpanel destination in device mode, Segment sends Screen event
 
 In short, Segment sends one event to Mixpanel per `screen` call.
 
-## Troubleshooting and FAQs
+## Troubleshooting and FAQ
 
-### How do I send data to Mixpanel’s EU endpoint?
+#### How do I send data to Mixpanel’s EU endpoint?
 
 To send data to Mixpanel’s European Union endpoint, turn on **Enable European Union Endpoint** in your Mixpanel destination settings. When this setting is on, Segment routes data for all supported libraries (server side, Analytics.js, and iOS SDK) through Mixpanel’s EU servers.
 
-### Why don’t I see data from my mobile app right away?
+#### Why don’t I see data from my mobile app right away?
 
-If you already have an app deployed with the Segment library, and you just enabled Mixpanel mobile, it can take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
+When you enable Mixpanel for a deployed app, it can take up to an hour for users’ Segment settings cache to refresh. Mixpanel’s SDK also sends data only when the app is backgrounded. When you test in Xcode, background the app before ending your session. Otherwise, those events won’t be sent to Mixpanel.
 
-After the settings cache refreshes, the library starts to send data to Mixpanel.
+#### I see events in Mixpanel, but not People data. What should I check?
 
-Also worth noting, Mixpanel's SDK only submits requests to the Mixpanel servers when the app is backgrounded. That means you may see events in your Segment debugger while testing, but those requests won't actually be forwarded to Mixpanel until the app gets sent to the background.
+- Confirm you’re calling `identify`. Track calls alone don’t create People records.
+- Make sure the People setting is turned on in your Mixpanel destination.
+- Disable any default filters in the Mixpanel People Explore tab.
 
-If you're testing in Xcode remember you must first background the app, then the events will show up in Mixpanel. If you terminate the session without backgrounding those events will be lost.
+#### Why doesn’t my `ip` property appear in Mixpanel?
 
-### I'm seeing events come into Mixpanel but not people.
+Mixpanel automatically parses the `ip` field into geolocation traits (City, Country, Region) and then discards the raw IP address. To retain the full IP value, rename the property to something like `user_ip` or `IP Address`.
 
-1. You'll need to make sure you're using [`identify`](/docs/connections/spec/identify/). A Mixpanel track doesn't create users in Mixpanel People.
-2. Make sure to turn on the "People" setting so that all of your [`identify`](/docs/connections/spec/identify/) calls will be sent to Mixpanel's People feature.
-3. Make sure you disable the default filter in the Mixpanel People Explore tab.
+For more details, see [Mixpanel's Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} docs.
 
-### IP
+#### How do I use push notifications with Mixpanel?
 
-If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
+Push notifications are only available for projects that bundle the Segment-Mixpanel SDK.
 
-Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more in Mixpanel's [Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} docs.
-
-### Push Notifications
-
-Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
-
-> info ""
-> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) docs.
+Configure push notification handlers using Mixpanel’s native methods. For details, see the[iOS source documentation](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x).
