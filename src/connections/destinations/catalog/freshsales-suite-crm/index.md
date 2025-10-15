@@ -36,7 +36,7 @@ You can use identify to create a contact when a website visitor fills a webform.
 
 userId is a mandatory field which is used to identify the contact in Freshsales. If your user identifier is not email, then email has to be a part of traits.
 
-```json=
+```json
 {
   "userId": "97980cfea0067",
   "type": "identify",
@@ -78,7 +78,7 @@ Custom fields won't automatically create. You have to create them in Freshsales 
 
 You can also update Accounts and Deals associated with a contact in Freshsales. The company and deal objects in the identify payload correspond to the Accounts and Deals objects in Freshsales. When you use the identify method to create a contact, it's possible to also create the corresponding Account and Deal and Freshsales. To do this, pass the company or the deal objects within traits in the identify call.
 
-```json=
+```json
 {
   "userId" : "97980cfea0067",
   "type": "identify",
@@ -101,7 +101,7 @@ You can also update Accounts and Deals associated with a contact in Freshsales. 
 
 You can track activities of your website visitors. If a user is subscribing to a newsletter and you want to track it, use the track method.
 
-```json=
+```json
 {
   "userId" : "john.doe@example.com",
   "event": "Email Bounced",
@@ -121,15 +121,16 @@ Segment standardized a series of reserved event names that have special semantic
 
 If you want to track users visiting your sites, you can use the page method. When you call a page event, Segment sends a pageview to Freshsales. You can send extra data parameters within properties in the event payload. [See the reserved properties for more details](/docs/connections/spec/page/#properties).
 
-```json=
+```json
 {
-  "userId" : "john.doe@example.com",
+  "userId": "john.doe@example.com",
   "name": "Page view",
-  “type”: ”page”, 
-  "properties" : {
+  "type": "page",
+  "properties": {
     "title": "Welcome to pricing page | Example.com",
-    "url" : "http://example.com/pricing"
+    "url": "http://example.com/pricing"
   }
+}
 ```
 
 ## FAQs
