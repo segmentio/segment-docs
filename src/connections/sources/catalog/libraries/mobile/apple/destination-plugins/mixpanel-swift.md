@@ -80,7 +80,7 @@ struct MyTraits: Codable {
 analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 ```
 
-The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
+The Identify method links a user’s unique ID with their traits so Mixpanel can recognize and track them.
 
 > info ""
 > **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
