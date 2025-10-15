@@ -184,39 +184,41 @@ This collection contains information about Zendesk ticket fields.
 | `updated_at`            | The date and time the ticket field was last updated.                                                                                                                |
 | `received_at`           | Timestamp added when data reaches the Segment API.                                                                                                                  |
 
--->
-
 ### ticket_metrics
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned.                                   |
-| ticket_id       | ID of the associated ticket.                                      |
-| group_stations  | Number of groups this ticket passed through.                      |
-| assignee_stations | Number of assignees this ticket had.                            |
-| reopens         | Total number of times the ticket was reopened.                    |
-| replies         | Total number of times ticket was replied to.                      |
-| reply_time_in_minutes_calendar | Number of minutes to the first reply outside of business hours. |
-| reply_time_in_minutes_business | Number of minutes to the first reply during business hours. |
-| first_resolution_time_in_minutes_calendar | Number of minutes to the first resolution time outside of business hours. |
-| first_resolution_time_in_minutes_business | Number of minutes to the first resolution time during business hours. |
-| full_resolution_time_in_minutes_calendar | Number of minutes to the full resolution outside of business hours. |
-| full_resolution_time_in_minutes_business | Number of minutes to the full resolution during business hours. |
-| agent_wait_time_in_minutes_calendar | Number of minutes the agent spent waiting outside of business hours. |
-| agent_wait_time_in_minutes_business | Number of minutes the agent spent waiting during business hours. |
-| requester_wait_time_in_minutes_calendar | Number of minutes the requester spent waiting outside of business hours. |
-| requester_wait_time_in_minutes_business | Number of minutes the requester spent waiting during business hours. |
-| on_hold_time_in_minutes_calendar | Number of minutes the ticket was on hold outside of business hours. |
-| on_hold_time_in_minutes_business | Number of minutes the ticket was on hold during business hours. |
-| created_at    | The date and time this record was created.                          |
-| updated_at    | The date and time this record was last updated.                     |
-| assignee_updated_at | The date and time the assignee last updated the ticket.       |
-| requester_updated_at | The date and time the requester last updated the ticket.     |
-| status_updated_at   | The date and time the status was last updated.                |
-| initially_assigned_at | The date and time the ticket was initially assigned.        |
-| assigned_at  | The date and time the ticket was last assigned.                      |
-| latest_comment_added_at | The date and time the latest comment was added.           |
-| received_ at | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains performance and timing metrics for Zendesk tickets.
+
+| Property                                    | Description                                                 |
+| ------------------------------------------- | ----------------------------------------------------------- |
+| `id`                                        | Automatically assigned when the record is created.          |
+| `ticket_id`                                 | The ID of the associated ticket.                            |
+| `group_stations`                            | The number of groups the ticket passed through.             |
+| `assignee_stations`                         | The number of assignees the ticket has had.                 |
+| `reopens`                                   | The total number of times the ticket was reopened.          |
+| `replies`                                   | The total number of replies to the ticket.                  |
+| `reply_time_in_minutes_calendar`            | Minutes to the first reply outside business hours.          |
+| `reply_time_in_minutes_business`            | Minutes to the first reply during business hours.           |
+| `first_resolution_time_in_minutes_calendar` | Minutes to the first resolution outside business hours.     |
+| `first_resolution_time_in_minutes_business` | Minutes to the first resolution during business hours.      |
+| `full_resolution_time_in_minutes_calendar`  | Minutes to full resolution outside business hours.          |
+| `full_resolution_time_in_minutes_business`  | Minutes to full resolution during business hours.           |
+| `agent_wait_time_in_minutes_calendar`       | Minutes the agent spent waiting outside business hours.     |
+| `agent_wait_time_in_minutes_business`       | Minutes the agent spent waiting during business hours.      |
+| `requester_wait_time_in_minutes_calendar`   | Minutes the requester spent waiting outside business hours. |
+| `requester_wait_time_in_minutes_business`   | Minutes the requester spent waiting during business hours.  |
+| `on_hold_time_in_minutes_calendar`          | Minutes the ticket was on hold outside business hours.      |
+| `on_hold_time_in_minutes_business`          | Minutes the ticket was on hold during business hours.       |
+| `created_at`                                | The date and time the record was created.                   |
+| `updated_at`                                | The date and time the record was last updated.              |
+| `assignee_updated_at`                       | The date and time the assignee last updated the ticket.     |
+| `requester_updated_at`                      | The date and time the requester last updated the ticket.    |
+| `status_updated_at`                         | The date and time the ticket status was last updated.       |
+| `initially_assigned_at`                     | The date and time the ticket was first assigned.            |
+| `assigned_at`                               | The date and time the ticket was most recently assigned.    |
+| `latest_comment_added_at`                   | The date and time the latest comment was added.             |
+| `received_at`                               | Timestamp added when data reaches the Segment API.          |
+
+-->
 
 
 ### ticket_events
