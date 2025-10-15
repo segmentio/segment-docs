@@ -110,26 +110,32 @@ To add people properties in Mixpanel before you know the user's unique database 
 
 ## Group
 
-Group calls are sent to Mixpanel if, **and only if**,
+## Group
 
-1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
-   ![Group ID Traits](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
-2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
-3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
+Segment sends Group calls to Mixpanel when all of the following conditions are met:
+
+- The **Group Identifier Traits** setting in your Mixpanel destination includes one or more traits.  
+   ![Screenshot of the Mixpanel dashboard, showing the “Group Identifier Traits” field where one or more traits (like company_id) can be defined for grouping users.](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
+- You’ve created a group key with the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.  
+- The Group call includes a trait that matches one of the configured Group identifier traits.
+
+Here's an example:
 
 ```swift
 struct MyTraits: Codable {
-        let username: String
-        let email: String
-        let plan: String
+  let username: String
+  let email: String
+  let plan: String
 }
 
-// ...
-
-analytics.group(groupId: "group123", traits: MyTraits(
-        username: "MisterWhiskers",
-        email: "hello@test.com",
-        plan: "premium"))
+analytics.group(
+  groupId: "group123",
+  traits: MyTraits(
+    username: "MisterWhiskers",
+    email: "hello@test.com",
+    plan: "premium"
+  )
+)
 ```
 
 Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
