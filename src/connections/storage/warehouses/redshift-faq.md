@@ -40,6 +40,6 @@ Example:
 
 ## Blocklisted track call properties
 
-While almost all event properties are valid, we are unable to pass through properties that have naming conflicts with the default key/value pairs included in a standard raw JSON call. For example, if you send through a property in a track call named "timestamp" or "event", it will cause a conflict and you likely wont see it appear in your warehouse. To be more specific, if you send the following track call, {'event':'birthday'} will likely be dropped when syncing the data to your data warehouse.
+While almost all event properties are valid, we are unable to pass through properties that have naming conflicts with the default key/value pairs included in a standard raw JSON call. For example, if you send through a property in a track call named "timestamp" or "event", it will cause a conflict and you likely wont see it appear in your warehouse. To be more specific, if you send the following track call, `{'event':'birthday'}` will likely be dropped when syncing the data to your data warehouse.
 
 `analytics.track('selected gift', {'event':'birthday', 'type':'cake'})`
