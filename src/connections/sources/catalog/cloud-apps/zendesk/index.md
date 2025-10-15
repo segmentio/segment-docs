@@ -83,40 +83,41 @@ This collection contains information about Zendesk groups.
 | `updated_at`  | The date and time the group was last updated.      |
 | `received_at` | Timestamp added when data reaches the Segment API. |
 
-
 ### users
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the user is created.          |
-| url             | Segment sets the “url” field users see in their Warehouse to equal the “id” from Zendesk, rather than the “url” field. |
-| name            | The name of the user.                                             |
-| email           | The primary email address of the user.                            |
-| time_zone       | The time-zone of this user.                                       |
-| phone           | The primary phone number of this user.                            |
-| locale_id       | The language identifier of this user.                             |
-| locale          | The locale for this user.                                         |
-| organization_id | The ID of the organization that this user is associated with.     |
-| role            | The role of the user. Possible values: "end-user", "agent", "admin". |
-| verified        | The user's primary identity is verified or not.                   |
-| external_id     | A unique identifier from another system. The API treats the ID as case insensitive. Example: ian1 and Ian1 are the same user. |
-| alias           | An alias displayed to end users.                                  |
-| active          | This is set to false if the user has been deleted.                |
-| shared          | If the user is a shared agent from different Zendesk Support instance. Ticket sharing accounts only. |
-| last_login_at   | The last time the user signed in to Zendesk Support.              |
-| two_factor_auth_enabled | If two factor authentication is enabled.                  |
-| signature       | The user's signature. Only agents and admins can have signatures. |
-| details         | Any details you want to store about the user, such as an address. |
-| notes           | Any notes you want to store about the user.                       |
-| custom_role_id  | A custom role if the user is an agent on the Enterprise plan.     |
-| moderator       | Designates whether the user has forum moderation capabilities.    |
-| ticket_restriction | Specifies which tickets the user has access to. Possible values are: “organization”, “groups”, “assigned”, “requested”, null. |
-| only_private_comments | This is set to true if the user can only create private comments. |
-| restricted_agent | If the agent has any restrictions: This is set to false for admins and unrestricted agents, true for other agents. |
-| suspended        | If the agent is suspended. Tickets from suspended users are also suspended, and these users cannot sign in to the end user portal. |
-| chat_only        | Whether or not the user is a chat-only agent.                    |
-| updated_at       | The date and time of the user's last update.                     |
-| received_at      | This timestamp is added to incoming messages as soon as they hit Segment API. | 
+This collection contains information about Zendesk users.
+
+| Property                  | Description                                                                                                                   |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `id`                      | Automatically assigned when a user is created.                                                                                |
+| `url`                     | Segment sets this field to the Zendesk `id`, not the original Zendesk `url`.                                                  |
+| `name`                    | The user’s full name.                                                                                                         |
+| `email`                   | The user’s primary email address.                                                                                             |
+| `time_zone`               | The user’s time zone.                                                                                                         |
+| `phone`                   | The user’s primary phone number.                                                                                              |
+| `locale_id`               | The language identifier for the user.                                                                                         |
+| `locale`                  | The user’s locale.                                                                                                            |
+| `organization_id`         | The ID of the organization the user belongs to.                                                                               |
+| `role`                    | The user’s role. Possible values: `end-user`, `agent`, `admin`.                                                               |
+| `verified`                | Indicates whether the user’s primary identity is verified.                                                                    |
+| `external_id`             | A unique identifier from another system. Treated as case-insensitive (for example, `ian1` and `Ian1` refer to the same user). |
+| `alias`                   | An alias displayed to end users.                                                                                              |
+| `active`                  | Set to `false` if the user has been deleted.                                                                                  |
+| `shared`                  | Indicates whether the user is a shared agent from another Zendesk instance (ticket sharing accounts only).                    |
+| `last_login_at`           | The date and time of the user’s last login.                                                                                   |
+| `two_factor_auth_enabled` | Indicates whether two-factor authentication is enabled.                                                                       |
+| `signature`               | The user’s signature (agents and admins only).                                                                                |
+| `details`                 | Additional details about the user, such as an address.                                                                        |
+| `notes`                   | Notes stored about the user.                                                                                                  |
+| `custom_role_id`          | The custom role ID if the user is an agent on the Enterprise plan.                                                            |
+| `moderator`               | Indicates whether the user has forum moderation permissions.                                                                  |
+| `ticket_restriction`      | Specifies which tickets the user can access. Possible values: `organization`, `groups`, `assigned`, `requested`, or `null`.   |
+| `only_private_comments`   | Set to `true` if the user can only create private comments.                                                                   |
+| `restricted_agent`        | Indicates whether the agent has restrictions. `false` for admins and unrestricted agents, `true` for restricted agents.       |
+| `suspended`               | Indicates whether the agent is suspended. Tickets from suspended users are also suspended.                                    |
+| `chat_only`               | Indicates whether the user is a chat-only agent.                                                                              |
+| `updated_at`              | The date and time the user was last updated.                                                                                  |
+| `received_at`             | Timestamp added when data reaches the Segment API.                                                                            |
 
 ### tickets
 
