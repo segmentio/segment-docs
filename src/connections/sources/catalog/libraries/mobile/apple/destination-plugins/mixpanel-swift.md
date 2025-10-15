@@ -85,9 +85,12 @@ The Identify method links a user’s unique ID with their traits so Mixpanel can
 > info "Identity merge"
 > Mixpanel uses [Identity merge](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} to connect anonymous visitors to identified users. To enable it, go to **Project Settings > Identity Merge** in your Mixpanel dashboard. If you don’t have Identity merge enabled, use the aliasing steps that follow.
 
-As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
 
-When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
+When a visitor becomes an identified user, call [`alias`](/docs/connections/spec/alias/) to link their previous anonymous `id` to their new `userId`.
+
+In Mixpanel, only one anonymous history can be merged with one identified user. Call `alias` **once**, right after the user registers and **before** the first Identify call.
+
+When you call `identify` from the client (in Analytics.js or a mobile SDK), Segment automatically maps [special traits](/docs/connections/spec/identify/#traits) to match Mixpanel’s API. The following table shows how each Segment trait gets transformed before Segment sends it to Mixpanel:
 
 <table>
   <tr>
