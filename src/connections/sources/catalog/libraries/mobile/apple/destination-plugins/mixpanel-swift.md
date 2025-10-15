@@ -15,32 +15,35 @@ Segment's Mixpanel destination plugin code is open source and [available on GitH
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
-### Adding the dependency
+### Add the dependency
 
-***Note:** the Mixpanel library itself will be installed as an additional dependency.*
+When you add the Mixpanel plugin, the Mixpanel library is installed automatically as an additional dependency.
 
-### through Xcode
+#### Through Xcode
+
+1. In Xcode, go to **File > Add Packages**.  
+2. In the search field, enter the repository URL:  
+   `https://github.com/segment-integrations/analytics-swift-mixpanel`  
+3. Choose a version or branch, and select the project where you want to add the package.  
+4. Click **Add Package** to complete the installation.
+
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
 https://github.com/segment-integrations/analytics-swift-mixpanel{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### through Package.swift
+#### Through Package.swift
 
-Open your Package.swift file and add the following do your the `dependencies` section:
+Open your `Package.swift` file and add the dependency to the `dependencies` section:
 
-```
+```swift
 .package(
-            name: "Segment",
-            url: "https://github.com/segment-integrations/analytics-swift-mixpanel.git",
-            from: "1.1.3"
-        ),
+  name: "Segment",
+  url: "https://github.com/segment-integrations/analytics-swift-mixpanel.git",
+  from: "1.1.3"
+),
 ```
-
-
-*Note the Mixpanel library itself will be installed as an additional dependency.*
-
 
 ## Using the Plugin in your App
 
