@@ -18,8 +18,7 @@ id: 3hbak7a9
 > success ""
 > Segment uses Zendesk's [Incremental Export API](https://developer.zendesk.com/api-reference/ticketing/ticket-management/incremental_exports/){:target="_blank”} , which requires Admin access. Make sure the user has Admin authorizations.
 
-
-### Rate limits
+## Rate limits
 
 The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/){:target="_blank"} and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export){:target="_blank"}. 
 
@@ -27,17 +26,17 @@ The source's requests to the Incremental API don't count towards your Zendesk ac
 
 If you'd like to increase or decrease the request rate for your source, [reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
-## Components
+### How Zendesk data syncs
 
-### Sync
+The Zendesk source syncs data from the Zendesk API to Segment every three hours. During each sync, Segment requests the latest data for all supported objects and properties listed in the [Collections table](#collections).  
 
-The Zendesk source is built with a sync component, which means Segment makes requests to their API on your behalf on a three hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Zendesk objects (and their corresponding properties) according to the Collections table in this section. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (like `zendesk_prod.users`).
+In the initial sync, Segment imports all available Zendesk data. Segment writes the data into a schema corresponding to your source name (for example, `zendesk_prod.users`).  
 
-The sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status is `closed`.
+Segment uses an upsert process so the data in your warehouse always reflects the latest state in Zendesk. For example, if a ticket’s status changes from `open` to `closed` between syncs, the next sync updates that record.  
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
+Source syncs and warehouse syncs are independent. The source syncs data into Segment, and the warehouse sync pushes that data to your warehouse based on your plan’s schedule.  
 
-At the moment, Segment doesn't support filtering which objects or properties get synced. If you're interested in this feature, [reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}.
+Segment doesn't support filtering objects or properties during sync for the Zendesk source. To request this feature, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Collections
 
