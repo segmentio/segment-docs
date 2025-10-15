@@ -127,7 +127,7 @@ Enter a descriptive name to act as a label for the transformation. This label he
 
 In this step, you can also choose to keep the Transformation disabled, so you can come back and edit it later. To update, enable, or disable a Transformation, click on the overflow menu and select **Edit Transformation**.
 
-## Use Cases
+## Use cases
 
 Here's a list of Segment Transformations with some use case examples.
 
