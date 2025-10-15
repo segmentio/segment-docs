@@ -196,11 +196,11 @@ You can find this in the **Advanced Options** of your Mixpanel settings on your 
 
 For each event name listed, Segment calls Mixpanel `increment`, and set a user trait of `Last + {{ event.name }}`.
 
-For example, if you add **Logged In** to the list of increment events, Segment increments a user trait called **Logged In** and set a trait called **Last Logged In** with the current date and time.
+For example, if you add **Logged In** to the list of increment events, Segment increments a user trait called **Logged In** and sets a trait called **Last Logged In** with the current date and time.
 
-If you'd like to add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
+To add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
 
-Remember, Segment sends one event per Page call.
+Segment sends one event per Page call.
 
 > info ""
 > Increment works for "known users", so if your track call is being made server-side, you need to pass a `userId`. If your track call is being made client-side, you need to identify the user first.
@@ -211,9 +211,9 @@ To increment at the property level, tell Segment which properties you want to in
 
 ### Screen
 
-When you use the Mixpanel destination in Device-mode, Segment sends Screen events to Mixpanel as follows:
+When you use the Mixpanel destination in device mode, Segment sends Screen events to Mixpanel as follows:
 
-- If you select "Track all Pages to Mixpanel", all `screen` calls regardless of how you have customized it will send a `Loaded A Screen`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
+- If you select "Track all Pages to Mixpanel", all Screen calls regardless of how you have customized it will send a `Loaded A Screen`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
 - If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Screen` event.
 
@@ -221,10 +221,13 @@ When you use the Mixpanel destination in Device-mode, Segment sends Screen event
 
 In short, Segment sends one event to Mixpanel per `screen` call.
 
-### Sending data to Mixpanel's European Union Endpoint
+## Troubleshooting and FAQs
 
-To implement Mixpanel in the European Union, enable the setting "Enable European Union Endpoint" on the Settings tab of the Mixpanel destination. When this setting is enabled, Segment updates the endpoint for any data sent from server-side libraries, browsers using Analytics.js, or the iOS SDK.
-### When Will I See Data from my Mobile App?
+### How do I send data to Mixpanel’s EU endpoint?
+
+To send data to Mixpanel’s European Union endpoint, turn on **Enable European Union Endpoint** in your Mixpanel destination settings. When this setting is on, Segment routes data for all supported libraries (server side, Analytics.js, and iOS SDK) through Mixpanel’s EU servers.
+
+### Why don’t I see data from my mobile app right away?
 
 If you already have an app deployed with the Segment library, and you just enabled Mixpanel mobile, it can take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
 
