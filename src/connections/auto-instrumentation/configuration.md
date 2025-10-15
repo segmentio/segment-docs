@@ -17,12 +17,13 @@ This guide assumes that you've already added the Signals SDK to your application
 
 After you set up the Signals SDK to capture the signals you want to target, you can create rules in your Segment workspace to translate the captured signals into traditional Segment analytics events. These rules are deployed in your application the next time a user launches your app.
 
-The process is:
-1. Send signals into the app
-2. Build event rules from those signals
-3. Publish those event rules
+The process works like this:
 
-Once your event rules are published they will be analyzed against user behavior on your website or app and send events to Segment when users perform the interaction triggers.
+1. The SDK sends raw signals from your app or website to Segment.
+2. You build event rules in your workspace that define how those signals should become analytics events.
+3. You publish the event rules.
+
+After publishing, Segment analyzes user interactions in your app or website against these rules and automatically generates analytics events when matching interactions occur.
 
 ### Getting started with rule creation
 
