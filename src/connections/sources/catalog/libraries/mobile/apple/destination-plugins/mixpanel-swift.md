@@ -117,7 +117,7 @@ Segment sends Group calls to Mixpanel when all of the following conditions are m
 - The **Group Identifier Traits** setting in your Mixpanel destination includes one or more traits.  
    ![Screenshot of the Mixpanel dashboard, showing the “Group Identifier Traits” field where one or more traits (like company_id) can be defined for grouping users.](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
 - You’ve created a group key with the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.  
-- The Group call includes a trait that matches one of the configured Group identifier traits.
+- The Group call includes a trait that matches one of the configured Group Identifier Traits.
 
 Here's an example:
 
@@ -140,16 +140,16 @@ analytics.group(
 
 Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
 
-If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
+If the group call doesn't have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
 ### Register Super Properties
 
-By default, each trait (that is, properties in an `identify` call) is registered as a super property. This doesn't require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
+By default, traits included in an Identify call get registered as Super Properties. This doesn’t require a `userId`. You can send a `traits` object alone, and Segment still registers those traits as super properties.
 
 Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
-> info ""
-> Super properties require a device mode connection.
+> info "Device mode required"
+> Super Properties require a device-mode connection.
 
 #### Set People Properties
 
