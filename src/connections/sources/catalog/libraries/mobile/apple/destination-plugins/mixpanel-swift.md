@@ -207,7 +207,7 @@ Segment sends one event per Page call.
 
 ### Incrementing properties
 
-To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
+To increment values for specific properties, add them to the **Properties to increment** setting in your Mixpanel destination. Segment calls Mixpanel’s `increment` method automatically whenever you include a numeric property in an event (for example, `'items purchased': 5`).
 
 ### Screen
 
