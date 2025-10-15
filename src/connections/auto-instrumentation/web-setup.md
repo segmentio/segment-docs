@@ -10,6 +10,9 @@ Learn how to connect an existing source, integrate dependencies, turn on Auto-In
 > info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
+> info "Regional availability"
+> Auto-Instrumentation isn't supported in EU workspaces.
+
 ## Step 1: Get your source write key
 
 You need the `writeKey` from an existing Segment source. To find it:

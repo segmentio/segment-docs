@@ -13,6 +13,9 @@ This guide assumes that you've already added the Signals SDK to your application
 > info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.                  
 
+> info "Regional availability"
+> Auto-Instrumentation isn't supported in EU workspaces.
+
 ## Converting signals to events
 
 After you set up the Signals SDK to capture the signals you want to target, you can create rules in your Segment workspace to translate the captured signals into traditional Segment analytics events. These rules are deployed in your application the next time a user launches your app.
