@@ -301,31 +301,33 @@ This collection contains comments and related metadata for Zendesk tickets.
 | `created_at`      | The date and time the comment was created.                                                                                                |
 | `received_at`     | Timestamp added when data reaches the Segment API.                                                                                        |
 
+### ticket_forms
+
+> info "Zendesk Enterprise required"
+> The `ticket_forms` collection syncs only for Zendesk Enterprise accounts. See [Zendesk’s Ticket Forms API documentation](https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_forms/){:target="_blank"} for details.
+
+This collection contains information about ticket forms in Zendesk.
+
+| Property               | Description                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------- |
+| `id`                   | The ID of the ticket form.                                                          |
+| `active`               | Indicates whether the form is active.                                               |
+| `end_user_visible`     | Indicates whether the form is visible to end users.                                 |
+| `name`                 | The name of the form.                                                               |
+| `restricted_brand_ids` | The IDs of brands that the ticket form is restricted to.                            |
+| `ticket_field_ids`     | The IDs of ticket fields included in this form.                                     |
+| `updated_at`           | The date and time the ticket form was last updated.                                 |
+| `url`                  | The API URL of the ticket form.                                                     |
+| `created_at`           | The date and time the ticket form was created.                                      |
+| `display_name`         | The form name shown to end users.                                                   |
+| `in_all_brands`        | Indicates whether the form is available for all brands in the account.              |
+| `position`             | The form’s position among other forms in the account (for example, dropdown order). |
+| `raw_display_name`     | The dynamic content placeholder, if available, or the `display_name` value if not.  |
+| `raw_name`             | The dynamic content placeholder, if available, or the `name` value if not.          |
+| `default`              | Indicates whether this form is the default form for the account.                    |
 
 -->
 
-### ticket_forms
-> warning "This collection requires Zendesk Enterprise access"
-> Segment's Zendesk source connector only fetches data for the ticket_forms collection if the associated Zendesk account is an Zendesk Enterprise account. For more information, please see [ Zendesk's ticket_forms documentation](https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_forms/){:target="_blank"}.
-
-
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the ticket form.                                        |
-| active          | If set to true, this shows that the form is active.               |
-| end_user_visible | If set to true, this shows that the form is visible to end users.|
-| name            | The name of the form.                                             |
-| restricted_brand_ids | The IDs of all brands that this ticket form is restricted to. |
-| ticket_field_ids | The IDs of all ticket fields which are in this ticket form.      |
-| updated_at      | The date and time the ticket form was last updated.               |
-| url             | The URL of the ticket form.                                       |
-| created_at      | The date and time the ticket form was created.                    |
-| display_name    | The name of the form that displays to the end user.               |
-| in_all_brands   | This shows if the form is available for use in all brands on this account. |
-| position         | The position of this form among other forms in the account (for example, dropdown) |
-| raw_display_name | The dynamic content placeholder (if available,) or the “display_name” value, if the dynamic content placeholder is unavailable. |
-| raw_name       | The dynamic content placeholder (if available,) or the “name” value, if the dynamic content placeholder is unavailable. |
-| default        | If set to true, this shows that the form is the default form for this account. |
 
 ### ticket_skips
 
