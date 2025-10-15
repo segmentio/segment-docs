@@ -3,6 +3,8 @@ title: Zendesk Source
 id: 3hbak7a9
 ---
 
+<!-->
+
 [Zendesk](https://www.zendesk.com/){:target="_blank”} is a customer support platform that helps businesses manage and respond to customer requests across channels.
 
 ## Getting started
@@ -154,31 +156,35 @@ This collection contains information about Zendesk tickets.
 
 ### ticket_fields
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned upon creation.                     |
-| url             | The URL for this resource.                                        |
-| type            | The type of the ticket field: “checkbox”, “date”, “decimal”, “integer”, “regexp”, “tagger”, “text”, or “textarea”. _*Type is not editable once created._ |
-| slug            | The title of the ticket field separated by _.                     |
-| title           | The title of the ticket field.                                    |
-| raw_title       | The dynamic content placeholder, if present, or the "title" value, if not. |
-| description     | The description of the purpose of this ticket field shown to users. |
-| raw_description | The dynamic content placeholder, if present, or the “description” value, if not. |
-| position        | A relative position for the ticket fields that determines the order of ticket fields on a ticket. Note that positions 0 to 7 are reserved for system fields. |
-| active          | Whether this field is available.                                  |
-| required        | If it's required for this field to have a value when updated by agents.|
-| collapsed_for_agents | If this field should be shown to agents by default or be hidden alongside infrequently used fields. Classic interface only. |
-| regexp_for_validation | Regular expression field only. The validation pattern for a field value to be deemed valid. |
-| title_in_portal | The title of the ticket field when shown to end users.            |
-| raw_title_in_portal | The dynamic content placeholder, if present, or the “title_in_portal” value, if not. |
-| visible_in_portal | Whether this field is available to end users.                   |
-| editable_in_portal | Whether this field is editable by end users.                   |
-| required_in_portal | If it's required for this field to have a value when updated by end users. |
-| tag             | A tag value to set for checkbox fields when checked.              |
-| removable      | If this field is not a system basic field that must be present for all tickets on the account. | 
-| created_at      | The date and time the ticket field was created.                   |
-| updated_at      | The date and time of the last update of the ticket field.         |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about Zendesk ticket fields.
+
+| Property                | Description                                                                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                    | Automatically assigned when the ticket field is created.                                                                                                            |
+| `url`                   | The API URL of the ticket field.                                                                                                                                    |
+| `type`                  | The type of field. Possible values: `checkbox`, `date`, `decimal`, `integer`, `regexp`, `tagger`, `text`, `textarea`. This property can’t be edited after creation. |
+| `slug`                  | The title of the field, with words separated by underscores.                                                                                                        |
+| `title`                 | The title of the ticket field.                                                                                                                                      |
+| `raw_title`             | The dynamic content placeholder if present, otherwise the `title` value.                                                                                            |
+| `description`           | The purpose of the ticket field as shown to users.                                                                                                                  |
+| `raw_description`       | The dynamic content placeholder if present, otherwise the `description` value.                                                                                      |
+| `position`              | Determines the field’s order on the ticket. Positions 0–7 are reserved for system fields.                                                                           |
+| `active`                | Indicates whether the field is active.                                                                                                                              |
+| `required`              | Indicates whether agents must provide a value when updating the field.                                                                                              |
+| `collapsed_for_agents`  | Indicates whether the field is shown or hidden by default in the classic interface.                                                                                 |
+| `regexp_for_validation` | Validation pattern for regular expression fields.                                                                                                                   |
+| `title_in_portal`       | The field title as shown to end users.                                                                                                                              |
+| `raw_title_in_portal`   | The dynamic content placeholder if present, otherwise the `title_in_portal` value.                                                                                  |
+| `visible_in_portal`     | Indicates whether the field is visible to end users.                                                                                                                |
+| `editable_in_portal`    | Indicates whether the field is editable by end users.                                                                                                               |
+| `required_in_portal`    | Indicates whether end users must provide a value when updating the field.                                                                                           |
+| `tag`                   | The tag value applied when a checkbox field is checked.                                                                                                             |
+| `removable`             | Indicates whether the field can be removed (system fields can’t be removed).                                                                                        |
+| `created_at`            | The date and time the ticket field was created.                                                                                                                     |
+| `updated_at`            | The date and time the ticket field was last updated.                                                                                                                |
+| `received_at`           | Timestamp added when data reaches the Segment API.                                                                                                                  |
+
+-->
 
 ### ticket_metrics
 
@@ -212,6 +218,7 @@ This collection contains information about Zendesk tickets.
 | latest_comment_added_at | The date and time the latest comment was added.           |
 | received_ at | This timestamp is added to incoming messages as soon as they hit Segment API. |
 
+
 ### ticket_events
 
 | Property        | Description                                                       |
@@ -229,6 +236,8 @@ This collection contains information about Zendesk tickets.
 | via             | How the event was created.                                        |
 
 
+
+
 ### activities
 
 | Property        | Description                                                       |
@@ -239,6 +248,9 @@ This collection contains information about Zendesk tickets.
 | title           | Description of this activity.                                     |
 | created_at      | The date and time this record was created.                        |
 | updated_at      | The date and time this record was last updated.                   |
+
+
+
 
 ### attachments
 
@@ -251,6 +263,7 @@ This collection contains information about Zendesk tickets.
 | inline          | If true, the attachment is excluded from the attachment list and the attachment's URL can be referenced within the comment of a ticket. Default is false. |
 | size            | The size of the image file in bytes.                              |
 | received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+
 
 ### organizations
 
