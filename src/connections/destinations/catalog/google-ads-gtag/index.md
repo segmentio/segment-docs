@@ -47,7 +47,7 @@ To enable consent mode for your Google Ads (Gtag) destination, you can choose fr
 * **Option 1:**
     1. Set the consent defaults by implementing the `ready()` method to set consent defaults.
 
-          ```
+          ```js
           analytics.ready(function() {
             window.gtag('consent', 'default', {
               'ad_storage': 'granted',
@@ -62,7 +62,7 @@ To enable consent mode for your Google Ads (Gtag) destination, you can choose fr
 
     3. Pass the information to Gtag.js by calling `gtag` inside the Segment `ready`() method. 
 
-          ```
+          ```js
           analytics.ready(function() {
             window.gtag('consent', 'update', {
               'ad_storage': 'denied',
