@@ -2,14 +2,16 @@
 title: Analytics Swift Mixpanel Plugin
 strat: swift
 ---
-[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
+[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event-tracking and segmentation platform for your web and mobile apps. 
 
-Segment's Mixpanel destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-mixpanel)
+By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-## Getting Started
+Segment's Mixpanel destination plugin code is open source and [available on GitHub](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}.
 
-1. From the Segment app Destinations page click on **Add Destination**.
-2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
+## Getting started
+
+1. From the Segment app Destinations page, click on **Add Destination**.
+2. Search for Mixpanel in the Destinations Catalog and confirm the source to connect to.
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
@@ -208,7 +210,7 @@ For example, if you add **Logged In** to the list of increment events, Segment i
 
 If you'd like to add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
 
-Remember, Segment sends one event per `page` call.
+Remember, Segment sends one event per Page call.
 
 > info ""
 > Increment works for "known users", so if your track call is being made server-side, you need to pass a `userId`. If your track call is being made client-side, you need to identify the user first.
