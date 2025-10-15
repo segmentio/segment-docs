@@ -153,13 +153,15 @@ Disable **Set All Traits as Super Properties or People Properties By Default** t
 
 #### Set People Properties
 
-If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.
+If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. You don’t need an extra API call to populate Mixpanel People.
 
-Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
+Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait in an Identify call that matches one of Mixpanel’s special properties listed in the previously shown transformations table.  
+ For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+
 ```swift
 struct TrackProperties: Codable {
         let someValue: String
@@ -167,9 +169,8 @@ struct TrackProperties: Codable {
 
 analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
-Because Mixpanel is an event tracking analytics tool, you'll want to [`track`](/docs/connections/spec/track/) your user's actions. The more useful events you [`track`](/docs/connections/spec/track/), the better Mixpanel becomes.
 
-You should use the [`track`](/docs/connections/spec/track/) method to accomplish this. The Segment [`track`](/docs/connections/spec/track/) method maps events and event properties directly to Mixpanel events and event properties.
+Use the [Track](/docs/connections/spec/track/) method to record user actions and send event data to Mixpanel. Segment maps each event and its properties directly to Mixpanel events and event properties.
 
 ### Track Charge
 
@@ -181,9 +182,9 @@ There are two strings to avoid when naming event properties that will be sent to
 
 ### Explicitly Set People Properties and Super Properties
 
-Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't in the [Identify traits list](#identify).
+Mixpanel lets you segment reports using both People Properties and Super Properties. To control which traits Segment sends to each, clear **Set All Traits as Super Properties or People Properties By Default** in your Mixpanel destination settings. Then, explicitly pass the traits you want to send as People or Super Properties. 
 
-![mixpanel people properties list](../../../../../../destinations/catalog/mixpanel/images/mixpanelpeoplesuperprops.png)
+Segment automatically includes any of Mixpanel’s special traits as People Properties, so you only need to add traits that aren’t in the [Identify traits list](#identify).
 
 ### Incrementing events
 
