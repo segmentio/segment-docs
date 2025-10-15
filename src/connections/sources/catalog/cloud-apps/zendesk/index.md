@@ -265,42 +265,44 @@ This collection contains information about files attached to Zendesk tickets.
 | `size`         | The file size in bytes.                                                                                                                                                 |
 | `received_at`  | Timestamp added when data reaches the Segment API.                                                                                                                      |
 
-
-
--->
-
-
 ### organizations
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the organization is created.  |
-| external_id     | A unique external ID to associate organizations to an external record. |
-| url             | The API URL of this organization.                                 |
-| name            | A unique name for the organization.                               |
-| details         | This includes any details about the organization, such as the address. |
-| notes           | Any notes you have about the organization.                        |
-| group_id        | New tickets from users in this organization are automatically put in this group. |
-| shared_tickets  | End users in this organization are able to see each other's tickets. |
-| shared_comments | End users in this organization are able to see each other's comments on tickets. |
-| created_at | The date and time that the organization was created.                   |
-| updated_at      | The date and time that the organization was last updated.         |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about organizations in Zendesk.
+
+| Property          | Description                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| `id`              | Automatically assigned when the organization is created.                                  |
+| `external_id`     | A unique external ID that links the organization to an external record.                   |
+| `url`             | The API URL of the organization.                                                          |
+| `name`            | The unique name of the organization.                                                      |
+| `details`         | Additional details about the organization, such as its address.                           |
+| `notes`           | Notes or comments about the organization.                                                 |
+| `group_id`        | The group that new tickets from users in this organization are automatically assigned to. |
+| `shared_tickets`  | Indicates whether end users in the organization can view each other’s tickets.            |
+| `shared_comments` | Indicates whether end users in the organization can view each other’s ticket comments.    |
+| `created_at`      | The date and time the organization was created.                                           |
+| `updated_at`      | The date and time the organization was last updated.                                      |
+| `received_at`     | Timestamp added when data reaches the Segment API.                                        |
 
 ### ticket_comments
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the comment is created.       |
-| ticket_event_id | This is automatically assigned when the comment is created.       |
-| ticket_id       | The ID of the ticket being commented.                             |
-| type            | Comment or VoiceComment. The JSON object for voice comments is different.  |
-| body            | The comment string.                                               |
-| public          | true if a public comment; false if an internal note. The initial value set on ticket creation persists for any additional comment unless you change it. |
-| author_id       | The ID of the comment author.                                     |
-| via             | How the comment was created.                                      |
-| created_at      | The time the comment was created.                                 |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains comments and related metadata for Zendesk tickets.
+
+| Property          | Description                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | Automatically assigned when the comment is created.                                                                                       |
+| `ticket_event_id` | Automatically assigned when the comment is created.                                                                                       |
+| `ticket_id`       | The ID of the ticket the comment belongs to.                                                                                              |
+| `type`            | The comment type. Possible values: `Comment` or `VoiceComment`. JSON objects for voice comments differ in structure.                      |
+| `body`            | The text of the comment.                                                                                                                  |
+| `public`          | Indicates whether the comment is public (`true`) or internal (`false`). The initial value set on ticket creation persists unless changed. |
+| `author_id`       | The ID of the comment author.                                                                                                             |
+| `via`             | How the comment was created.                                                                                                              |
+| `created_at`      | The date and time the comment was created.                                                                                                |
+| `received_at`     | Timestamp added when data reaches the Segment API.                                                                                        |
+
+
+-->
 
 ### ticket_forms
 > warning "This collection requires Zendesk Enterprise access"
