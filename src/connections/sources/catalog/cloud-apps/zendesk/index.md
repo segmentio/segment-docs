@@ -354,34 +354,36 @@ This collection contains information about relationships between users and organ
 | `updated_at`        | The date and time the record was last updated.         |
 | `organization_name` | The name of the organization associated with the user. |
 
--->
-
 ### group_memberships
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the group membership.                                   |
-| url             | The API URL of this group.                                        |
-| created_at      | The date and time the group was created.                          |
-| group_id        | The ID of the group.                                              |
-| updated_at      | The date and time the group was last updated.                     |
-| user_id         | The ID of an agent.                                               |
+This collection contains information about agents and their group assignments in Zendesk.
+
+| Property     | Description                                        |
+| ------------ | -------------------------------------------------- |
+| `id`         | The ID of the group membership.                    |
+| `url`        | The API URL of the group membership.               |
+| `created_at` | The date and time the membership was created.      |
+| `group_id`   | The ID of the group.                               |
+| `updated_at` | The date and time the membership was last updated. |
+| `user_id`    | The ID of the agent in the membership.             |
 
 ### audit_logs
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the audit log.                                          |
-| url             | The URL to access the audit log.                                  |
-| created_at      | The date and time that the audit was created.                     |
-| actor_id        | The ID of the user creating the ticket.                           |
-| source_id       | The ID of the item being audited.                                 |
-| source_type     | The item type being audited.                                      |
-| source_label    | The name of the item being audited.                               |
-| action          | The action a user performed. Either “login”, “create”, “update”, or “destroy”. |
-| change_description | The description of the change that occurred.                   |
-| ip_address      | The IP address of the user performing the audit.                  |
-| action_label    | A localized string of action field.                               |
+This collection contains records of account-level actions and configuration changes in Zendesk.
+
+| Property             | Description                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ |
+| `id`                 | The ID of the audit log.                                                       |
+| `url`                | The API URL of the audit log.                                                  |
+| `created_at`         | The date and time the audit record was created.                                |
+| `actor_id`           | The ID of the user who performed the action.                                   |
+| `source_id`          | The ID of the item being audited.                                              |
+| `source_type`        | The type of item being audited.                                                |
+| `source_label`       | The name of the item being audited.                                            |
+| `action`             | The action performed. Possible values: `login`, `create`, `update`, `destroy`. |
+| `change_description` | A short description of the change that occurred.                               |
+| `ip_address`         | The IP address of the user who performed the action.                           |
+| `action_label`       | The localized string for the `action` field.                                   |
 
 ## Adding Destinations
 Currently only Warehouses are supported for object-cloud sources.
