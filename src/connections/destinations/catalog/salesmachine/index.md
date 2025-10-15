@@ -19,11 +19,11 @@ _You must add `account_uid` in event parameters to automatically link this pagev
 ## Identify
 
 When you `identify` a user, we'll pass that user's information to Salesmachine.io. For a better experience with Salesmachine.io we encourage you to add at least `name` and `email` traits.
-_You must add `account_uid` in traits to automatically link this user to a Salesmachine.io account.
-_
+_You must add `account_uid` in traits to automatically link this user to a Salesmachine.io account._
+
 ## Track
 
-When you `track` an event, we will send that event to Salesmachine.io.(include details about how that event is sent).
+When you `track` an event, we will send that event to Salesmachine.io. (include details about how that event is sent).
 _You must add `account_uid` in event parameters to automatically link this event to an account. However, if the contact that performed the event has only one account, Salesmachine.io will automatically link the event to his account._
 
 ## Group

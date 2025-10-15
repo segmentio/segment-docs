@@ -20,11 +20,11 @@ Credentials to access your cloud storage account
 * For AWS and S3 backed clusters you will need S3 credentials with write access to your bucket
 * For Azure and Blob Storage backed clusters you will need a Shared Access Signature with write access to your container
 To begin sending data to Scuba Analytics from the Segment portal select Scuba Analytics as a new destination.
-1. In the "API Key" field insert your Blob Shared Access Signature or your S3 credentials.  For S3 credentials, comma separate the access key id & the secret access key in the format of "accessKeyId,secretAccessKey"
-2. In the "Bucket Container URL" field insert the URL for the cloud storage directory.
+   1. In the "API Key" field insert your Blob Shared Access Signature or your S3 credentials.  For S3 credentials, comma separate the access key id & the secret access key in the format of "accessKeyId,secretAccessKey"
+   2. In the "Bucket Container URL" field insert the URL for the cloud storage directory.
 * For S3: ``https://{your bucket}.{your region}.amazonaws.com/{your directory}``
 * For Azure Blob Storage: ``https://{your storage account name}.blob.core.windows.net/{your container}``
-3. In the "Platform" field insert "AWS" or "Azure" depending on the provider of your cloud storage.
+   1. In the "Platform" field insert "AWS" or "Azure" depending on the provider of your cloud storage.
 
 
 ## Methods Supported

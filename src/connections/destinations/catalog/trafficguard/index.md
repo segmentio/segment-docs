@@ -68,4 +68,3 @@ The following `track` calls will be sent to TrafficGuard as events.
 
 All other calls will be recorded as `pageview` events until TrafficGuard supports ad hoc event types.
 
----

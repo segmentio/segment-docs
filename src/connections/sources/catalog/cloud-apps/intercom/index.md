@@ -84,7 +84,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | segments                 | A list of segments associated with the user                                                                                                          |
 | tags                     | A list of tags associated with the user                                                                                                              |
 | last_seen_ip             | An ip address (e.g. "1.2.3.4") representing the last ip address the user visited your application from. (Used for updating location_data)            |
-| user_agent_data          | Data about the last user agent the user was seen using. To update this value use `last\_seen\_user\_agent`                                           |
+| user_agent_data          | Data about the last user agent the user was seen using. To update this value use `last_seen_user_agent`                                              |
 | custom_attributes        | The custom attributes you have set on the user (case sensitive)                                                                                      |
 
 ## Companies
@@ -120,7 +120,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | unsuscribed_from_emails | Whether the Lead is unsubscribed from emails                                                                                                 |
 | location_data           | A Location Object relating to the Lead. To update location_data use `last_seen_ip` which will be translated to the appropriate location_data |
 | last_seen_ip            | An ip address (e.g. "1.2.3.4") representing the last ip address the user visited your application from. (Used for updating location_data)    |
-| user_agent_data         | Data about the last user agent the user was seen using. To update this value use `last\_seen\_user\_agent`                                   |
+| user_agent_data         | Data about the last user agent the user was seen using. To update this value use `last_seen_user_agent`                                      |
 | companies               | A list of companies for the user                                                                                                             |
 | avatar                  | An avatar object for the Lead                                                                                                                |
 
