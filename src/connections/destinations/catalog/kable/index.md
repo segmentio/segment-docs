@@ -55,7 +55,7 @@ analytics.track({
 
 The Segment Track event above would be transformed and transmitted to Kable as:
 
-```curl
+```bash
 curl --request POST \
      --url https://live.kable.io/api/v1/events/create \
      --header 'Accept: application/json' \
