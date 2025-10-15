@@ -23,7 +23,7 @@ If you would like to use `track` event data, create a `Segment Product Usage Sca
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('userId123', {
   email: 'john.doe@example.com',
   firstName: 'John',
@@ -45,7 +45,7 @@ Identify calls will be sent to Hydra as an `identify` event. Upon receiving an I
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track('Device deploy started',
   "properties": {
     "feature": "Device management",
