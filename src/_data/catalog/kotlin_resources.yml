@@ -16,7 +16,7 @@ items:
   categories: 
   - app
 - name: Android AdvertisingId Plugin
-  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/AndroidAdvertisingIdPlugin.kt
+  url: https://github.com/segmentio/analytics-kotlin/blob/1ef79eaf035549d08f91bac4e0a1de8ca6793e7b/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/AndroidAdvertisingIdPlugin.kt
   categories: 
   - plugin
 - name: Screen Recording Plugin
