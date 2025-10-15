@@ -42,7 +42,7 @@ The ecommerce category includes the following semantic events:
 
 Category pages are a staple of Ecommerce. They let the user browse all of the products in a specific category. You'll want to track all of your product category pages so you can quickly see which categories are most popular.
 
-To do that, you'll want to record a specially recognized event called `Viewed Product Category` using a `track call`. This event fires when a visitor views a product category. That view might happen on a page, screen, or modal.
+To do that, you'll want to record a specially recognized event called `Viewed Product Category` using a `track` call. This event fires when a visitor views a product category. That view might happen on a page, screen, or modal.
 
 ### Properties
 
