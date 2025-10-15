@@ -64,22 +64,25 @@ Collections are the groupings of resources Segment pulls from your source.
 | [audit_logs](#audit_logs)                             | object | The audit log shows various changes in your instance of Zendesk since the account was created. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/){:target="_blank”}.                                                                                                                                                                                                                                                                              |
 
 
-In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
+In your warehouse, each collection is stored in its own table. The tables that follow list the standard properties Segment automatically fetches for each collection.
 
-> info "This list only includes standard properties"
-> The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse.)
+> info "Standard properties only"
+> These tables include only standard Zendesk properties. Your custom fields will also appear in your warehouse after sync.
 
 ### groups
 
-| Property    | Description                                  |
-| ----------- | -------------------------------------------- |
-| id          | This is automatically assigned when creating groups. |
-| url         | The API URL of this group.                   |
-| deleted     | Deleted groups get marked as such.           |
-| name        | The name of the group.                       |
-| created_at  | The date and time the group was created.     |
-| updated_at  | The date and time of the last update of the group. |
-| received_at | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about Zendesk groups.
+
+| Property      | Description                                        |
+| ------------- | -------------------------------------------------- |
+| `id`          | Automatically assigned when a group is created.    |
+| `url`         | The API URL of the group.                          |
+| `deleted`     | Indicates whether the group has been deleted.      |
+| `name`        | The name of the group.                             |
+| `created_at`  | The date and time the group was created.           |
+| `updated_at`  | The date and time the group was last updated.      |
+| `received_at` | Timestamp added when data reaches the Segment API. |
+
 
 ### users
 
