@@ -121,34 +121,36 @@ This collection contains information about Zendesk users.
 
 ### tickets
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the ticket is created.        |
-| url             | The API URL of this ticket.                                       |
-| external_id     | An ID you can use to link Zendesk Support tickets to local records. |
-| type            | The type of this ticket. Possible values: “problem”, “incident”, “question” or “task”. |
-| subject         | The value of the subject field for this ticket.                   |
-| raw_subject     | The dynamic content placeholder, if present, or the "subject" value, if not. |
-| description     | The first comment on the ticket.                                  |
-| priority        | The urgency with which the ticket should be addressed. Possible values: “urgent”, “high”, “normal”, “low”. |
-| status          | The state of the ticket. Possible values: “new”, “open”, “pending”, “hold”, “solved”, “closed”. |
-| recipient       | The original recipient e-mail address of the ticket. |
-| requester_id    | The user who requested this ticket.                               |
-| submitter_id    | The user who submitted the ticket. The submitter always becomes the author of the first comment on the ticket. |
-| assignee_id     | The agent currently assigned to the ticket.                       |
-| organization_id | The organization of the requester. You can only specify the ID of an organization associated with the requester. |
-| group_id        | The group this ticket is assigned to.                             |
-| collaborator_ids | The IDs of users currently cc'ed on the ticket.                  |
-| forum_topic_id  | The topic this ticket originated from, if any.                    |
-| problem_id      | For tickets of type "incident," The ID of the problem the incident is linked to. |
-| has_incidents   | Is true of this ticket has been marked as a problem, false otherwise. |
-| due_at          | If this is a ticket of type "task" it has a due date. Due date format uses ISO 8601 format. | 
-| tags            | The array of tags applied to this ticket.                         |
-| sharing_agreement_ids | The IDs of sharing agreements used for this ticket.         |
-| created_at      | The date and time this record was created.                        |
-| updated_at      | The date and time this record was last updated.                   |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
-| ticket_form_id  | The ID of the ticket form to render the ticket.                   |
+This collection contains information about Zendesk tickets.
+
+| Property                | Description                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`                    | Automatically assigned when a ticket is created.                                                      |
+| `url`                   | The API URL of the ticket.                                                                            |
+| `external_id`           | A custom ID you can use to link Zendesk tickets to local records.                                     |
+| `type`                  | The type of ticket. Possible values: `problem`, `incident`, `question`, `task`.                       |
+| `subject`               | The subject line of the ticket.                                                                       |
+| `raw_subject`           | The dynamic content placeholder if present, otherwise the `subject` value.                            |
+| `description`           | The first comment on the ticket.                                                                      |
+| `priority`              | The ticket’s urgency level. Possible values: `urgent`, `high`, `normal`, `low`.                       |
+| `status`                | The current ticket status. Possible values: `new`, `open`, `pending`, `hold`, `solved`, `closed`.     |
+| `recipient`             | The original recipient email address for the ticket.                                                  |
+| `requester_id`          | The ID of the user who requested the ticket.                                                          |
+| `submitter_id`          | The ID of the user who submitted the ticket. The submitter is always the author of the first comment. |
+| `assignee_id`           | The ID of the agent currently assigned to the ticket.                                                 |
+| `organization_id`       | The ID of the requester’s organization. Must be associated with the requester.                        |
+| `group_id`              | The ID of the group the ticket is assigned to.                                                        |
+| `collaborator_ids`      | The IDs of users currently CC'd on the ticket.                                                        |
+| `forum_topic_id`        | The ID of the forum topic the ticket originated from, if any.                                         |
+| `problem_id`            | For tickets of type `incident`, the ID of the related problem ticket.                                 |
+| `has_incidents`         | Indicates whether the ticket has been marked as a problem.                                            |
+| `due_at`                | The due date for task-type tickets (ISO 8601 format).                                                 |
+| `tags`                  | The tags applied to the ticket.                                                                       |
+| `sharing_agreement_ids` | The IDs of sharing agreements linked to the ticket.                                                   |
+| `ticket_form_id`        | The ID of the ticket form used to render the ticket.                                                  |
+| `created_at`            | The date and time the ticket was created.                                                             |
+| `updated_at`            | The date and time the ticket was last updated.                                                        |
+| `received_at`           | Timestamp added when data reaches the Segment API.                                                    |
 
 ### ticket_fields
 
