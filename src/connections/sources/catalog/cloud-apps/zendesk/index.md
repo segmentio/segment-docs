@@ -326,31 +326,35 @@ This collection contains information about ticket forms in Zendesk.
 | `raw_name`             | The dynamic content placeholder, if available, or the `name` value if not.          |
 | `default`              | Indicates whether this form is the default form for the account.                    |
 
--->
-
-
 ### ticket_skips
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the ticket skip record.                                 |
-| ticket_id       | The ID of the skipped ticket.                                     |
-| user_id         | The ID of the skipping agent.                                     |
-| reason          | The reason for skipping the ticket.                               |
-| created_at      | The date and time the skip was created.                           |
-| updated_at      | The date and time the skip was last updated.                      |
+This collection contains information about Zendesk tickets that agents have skipped.
+
+| Property     | Description                                    |
+| ------------ | ---------------------------------------------- |
+| `id`         | The ID of the ticket skip record.              |
+| `ticket_id`  | The ID of the skipped ticket.                  |
+| `user_id`    | The ID of the agent who skipped the ticket.    |
+| `reason`     | The reason the ticket was skipped.             |
+| `created_at` | The date and time the record was created.      |
+| `updated_at` | The date and time the record was last updated. |
+
 
 ### organization_memberships
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the organization membership.                            |
-| url             | The API URL of the membership.                                    |
-| user_id         | The ID of the user for whom this membership belongs.              |
-| organization_id | The ID of the organization associated with the selected user, in this membership. |
-| created_at      | The date and time this record was created.                        |
-| updated_at      | The date and time this record was last updated.                   |
-| organization_name | The name of the organization associated with the selected user, in this membership. |
+This collection contains information about relationships between users and organizations in Zendesk.
+
+| Property            | Description                                            |
+| ------------------- | ------------------------------------------------------ |
+| `id`                | The ID of the organization membership.                 |
+| `url`               | The API URL of the membership.                         |
+| `user_id`           | The ID of the user in the membership.                  |
+| `organization_id`   | The ID of the organization associated with the user.   |
+| `created_at`        | The date and time the record was created.              |
+| `updated_at`        | The date and time the record was last updated.         |
+| `organization_name` | The name of the organization associated with the user. |
+
+-->
 
 ### group_memberships
 
