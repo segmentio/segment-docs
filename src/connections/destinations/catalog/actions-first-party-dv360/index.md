@@ -78,5 +78,5 @@ Based on Google’s documentation, make sure you send the correct required ident
 #### When will my data appear in DV360?
 When you complete the connection between Segment and DV360, it can take from 24 to 48 hours for Google to create the user list. This must complete before Segment can begin to sync users into that list. 
 
-#### When is membershipDurationDays and its limit?
+#### What is membershipDurationDays and its limit?
 The duration in days that an entry remains in the audience after the qualifying event. The set value must be greater than 0 and less than or equal to 540.
