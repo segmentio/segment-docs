@@ -45,16 +45,16 @@ Open your `Package.swift` file and add the dependency to the `dependencies` sect
 ),
 ```
 
-## Using the Plugin in your App
+## Using the plugin in your App
 
-Open the file where you setup and configure the Analytics-Swift library. Add this plugin to the list of imports.
+Open the file where you set up and configure the Analytics Swift library. Import the Mixpanel plugin alongside Segment:
 
-```
+```swift
 import Segment
-import SegmentMixpanel // <-- Add this line
+import SegmentMixpanel // Add this line
 ```
 
-Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+After configuring the Analytics Swift library, add the Mixpanel plugin to the analytics timeline:
 
 ```
 let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
