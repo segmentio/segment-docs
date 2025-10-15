@@ -92,40 +92,15 @@ In Mixpanel, only one anonymous history can be merged with one identified user. 
 
 When you call `identify` from the client (in Analytics.js or a mobile SDK), Segment automatically maps [special traits](/docs/connections/spec/identify/#traits) to match Mixpanel’s API. The following table shows how each Segment trait gets transformed before Segment sends it to Mixpanel:
 
-<table>
-  <tr>
-    <td>Key</td>
-    <td>Segment transformation</td>
-  </tr>
-  <tr>
-    <td>`created`</td>
-    <td>`$created`</td>
-  </tr>
-  <tr>
-    <td>`email`</td>
-    <td>`$email`</td>
-  </tr>
-  <tr>
-    <td>`firstName`</td>
-    <td>`$first_name`</td>
-  </tr>
-  <tr>
-    <td>`lastName`</td>
-    <td>`$last_name`</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>`$name`</td>
-  </tr>
-  <tr>
-    <td>`username`</td>
-    <td>`$username`</td>
-  </tr>
-  <tr>
-    <td>`phone`</td>
-    <td>`$phone`</td>
-  </tr>
-</table>
+| Key         | Segment transformation |
+| ----------- | ---------------------- |
+| `created`   | `$created`             |
+| `email`     | `$email`               |
+| `firstName` | `$first_name`          |
+| `lastName`  | `$last_name`           |
+| `name`      | `$name`                |
+| `username`  | `$username`            |
+| `phone`     | `$phone`               |
 
 ### People
 
