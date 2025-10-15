@@ -7,7 +7,7 @@ id: 54521fd925e721e32a72eed2
 
 1. Lytics uses Segment's JavaScript library so make sure to [go through our quickstart guide to get set up on that first](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
-2) Once you're recording data enable Lytics on your destination page using your Customer ID number, which can be found in the admin section of your Lytics account: **Account** -> **Manage Accounts**.
+2. Once you're recording data enable Lytics on your destination page using your Customer ID number, which can be found in the admin section of your Lytics account: **Account** -> **Manage Accounts**.
 
 ![cid](https://lyticspublic.s3.amazonaws.com/images/Segment.io/segment_cid.png)
 

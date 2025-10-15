@@ -187,7 +187,7 @@ As every analytics provider deals with push notifications and in-app messaging d
 
 5. In Keychain, select the new certificates, expand them to view the private key, and then right click to export them as .p12 files. You must enter a password.
 
-6. In Leanplum, go to your app's Keys & Settings (App Settings > {Your app} > Keys & Settings). Under Push Notifications, upload your .p12 files to Leanplum and enter your passphrase from step 5 above.
+6. In Leanplum, go to your app's Keys & Settings (App Settings > \{Your app} > Keys & Settings). Under Push Notifications, upload your .p12 files to Leanplum and enter your passphrase from step 5 above.
 
 7. Configure your app to use push notifications in your app delegate's `applicationDidFinishLaunching` method (you may choose any combination of formats.
 

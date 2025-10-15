@@ -81,7 +81,6 @@ analytics.screen({
 })
 ```
 
-
 ## Troubleshooting
 
 ### Property values have maximum length of 255 characters
