@@ -339,6 +339,22 @@ This collection contains information about Zendesk tickets that agents have skip
 | `created_at` | The date and time the record was created.      |
 | `updated_at` | The date and time the record was last updated. |
 
+### satisfaction_ratings
+
+This collection contains information about customer satisfaction ratings for Zendesk tickets.
+
+| Property       | Description                                                                  |
+| -------------- | ---------------------------------------------------------------------------- |
+| `id`           | Automatically assigned when the satisfaction rating is created.              |
+| `url`          | The API URL of the satisfaction rating.                                      |
+| `assignee_id`  | The ID of the agent assigned to the ticket when the rating was submitted.    |
+| `group_id`     | The ID of the group assigned to the ticket when the rating was submitted.    |
+| `requester_id` | The ID of the user who submitted the rating.                                 |
+| `ticket_id`    | The ID of the ticket being rated.                                            |
+| `score`        | The rating value. Possible values: `offered`, `unoffered`, `good`, or `bad`. |
+| `created_at`   | The date and time the rating was created.                                    |
+| `updated_at`   | The date and time the rating was last updated.                               |
+| `received_at`  | Timestamp added when data reaches the Segment API.                           |
 
 ### organization_memberships
 
