@@ -56,14 +56,17 @@ import SegmentMixpanel // Add this line
 
 After configuring the Analytics Swift library, add the Mixpanel plugin to the analytics timeline:
 
-```
-let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
-                    .flushAt(3)
-                    .trackApplicationLifecycleEvents(true))
+```swift
+let analytics = Analytics(
+  configuration: Configuration(writeKey: "<YOUR_WRITE_KEY>")
+    .flushAt(3)
+    .trackApplicationLifecycleEvents(true)
+)
+
 analytics.add(plugin: MixpanelDestination())
 ```
 
-Your events will now begin to flow to Mixpanel in device mode.
+After you add the plugin, Segment automatically routes your events to Mixpanel in device mode.
 
 ## Identify
 
