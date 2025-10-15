@@ -400,6 +400,3 @@ This collection contains records of account-level actions and configuration chan
 | `change_description` | A short description of the change that occurred.                               |
 | `ip_address`         | The IP address of the user who performed the action.                           |
 | `action_label`       | The localized string for the `action` field.                                   |
-
-## Adding Destinations
-Currently only Warehouses are supported for object-cloud sources.
