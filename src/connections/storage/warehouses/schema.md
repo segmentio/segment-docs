@@ -22,99 +22,79 @@ Segment's libraries pass nested objects and arrays into tracking calls as **prop
 - The warehouse connector optionally stringifies **arrays** when they follow the [Ecommerce spec](/docs/connections/spec/ecommerce/v2/)
 - The warehouse connector "flattens" all **context fields** that contain a nested **object** (for example, context.field.nestedA.nestedB becomes a column called context_field_nestedA_nestedB)
 
-<table>
-<thead>
-<tr>
-    <th> Field </th>
-    <th> Code (Example) </th>
-    <th> Schema (Example) </th>
-</tr>
-</thead>
+### Schema objects
 
-<tr>
-  <td><b>Object (Context):</b> Flatten </td>
-  <td markdown="1">
+The following examples show how Segment transforms nested objects and arrays into warehouse columns.
 
-``` json
-context: {
-  app: {
-    version: "1.0.0"
-  }
-}
-```
-  </td>
-  <td>
-    <b>Column Name:</b><br/>
-    context_app_version
-    <br/><br/>
-    <b>Value:</b><br/>
-    "1.0.0"
-  </td> 
-</tr>
+#### Context
 
-<tr>
-    <td> <b>Object (Traits):</b> Flatten </td>
-    <td markdown= "1">
+**Type:** Object
 
 ```json
-traits: {
-  address: {
-    street: "6th Street"
+{
+  "context": {
+    "app": {
+      "version": "1.0.0"
+    }
   }
 }
 ```
 
-</td>
-<td>
-<b>Column Name:</b><br/>
-address_street<br/>
-<br/>
-<b>Value:</b><br/>
-"6th Street"
-</td>
-</tr>
+Segment flattens nested objects in context fields.
 
-<tr>
-<td><b>Object (Properties):</b> Flatten</td>
-<td markdown="1">
+**Result:** Column `context_app_version` with value `"1.0.0"`
+
+#### Traits
+
+**Type:** Object
 
 ```json
-properties: {
-  product_id: {
-    sku: "G-32"
+{
+  "traits": {
+    "address": {
+      "street": "6th Street"
+    }
   }
 }
 ```
-</td>
-<td>
-    <b>Column Name:</b><br/>
-    product_id_sku<br/><br/>
-    <b>Value:</b><br/>
-    "G-32"
-</td> 
-</tr>
 
-<tr>
-<td><b>Array (Any):</b> Stringify</td>
-<td markdown="1">
+Segment flattens nested objects in traits.
+
+**Result:** Column `address_street` with value `"6th Street"`
+
+#### Properties
+
+**Type:** Object
 
 ```json
-products: {
-  product_id: [
-    "507f1", "505bd"
-  ]
+{
+  "properties": {
+    "product_id": {
+      "sku": "G-32"
+    }
+  }
 }
 ```
 
-</td>
-<td>
-    <b>Column Name:</b> <br/>
-    product_id <br/><br/>
-    <b>Value:</b>
-    "[507f1, 505bd]"
-</td> 
-</tr>
-</table>
+Segment flattens nested objects in properties.
+
+**Result:** Column `product_id_sku` with value `"G-32"`
+
+#### Array (String)
+
+**Type**: String array
+
+```json
+{
+  "products": {
+    "product_id": ["507f1", "505bd"]
+  }
+}
+```
+
+Segment stringify string arrays.
+
+**Result:** Column `product_id` with value `"[507f1, 505bd]"`
 
 ## Warehouse tables
 
