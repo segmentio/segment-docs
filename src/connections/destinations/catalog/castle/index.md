@@ -47,12 +47,12 @@ Calls are now visible in Castle dashboards in real-time.
     
 2. Next, add the Castle destination to your analytics instance:
 
-	```swift
-	let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR_WRITE_KEY_HERE>"))
-	
-    let castleDestination = CastleDestination(userJwt: "<USER_JWT>")
-    analytics.add(plugin: castleDestination)
-  ```
+    ```swift
+    let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR_WRITE_KEY_HERE>"))
+
+      let castleDestination = CastleDestination(userJwt: "<USER_JWT>")
+      analytics.add(plugin: castleDestination)
+    ```
 
 
 ### Android
@@ -73,10 +73,10 @@ Calls are now visible in Castle dashboards in real-time.
 
 2. Next, add the Castle destination to your analytics instance:
 
-	```kotlin
-    analytics = Analytics("<YOUR WRITE KEY>", applicationContext)
-    analytics.add(plugin = CastleDestination(userJwt = "<USER_JWT>"))
-  ```
+    ```kotlin
+      analytics = Analytics("<YOUR WRITE KEY>", applicationContext)
+      analytics.add(plugin = CastleDestination(userJwt = "<USER_JWT>"))
+    ```
 
 
 ## Page
@@ -102,7 +102,6 @@ analytics.track('Added to Cart')
 
 Segment sends Track calls to Castle as a `$custom` events.
 
-***
 
 
 
