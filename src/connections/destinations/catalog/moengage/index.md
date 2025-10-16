@@ -458,7 +458,7 @@ The MoEngage WebSDK offers the ability to send push notifications to Google Chro
 
 #### 1. Setup your MoEngage Web SDK settings at MoEngage Dashboard
 
-Configure the [web settings](https://help.moengage.com/hc/en-us/articles/210224063){:target="_blank"} on the MoEngage dashboard to start using MoEngage <> Segment integration.
+Configure the [web settings](https://help.moengage.com/hc/en-us/articles/210224063){:target="_blank"} on the MoEngage dashboard to start using MoEngage \<> Segment integration.
 
 If you have selected `HTTPS` mode of integration in the settings, complete the following steps:
 
@@ -549,9 +549,9 @@ You can send [Computed traits](/docs/engage/audiences/computed-traits/) and [A
       
 When connecting the calculated trait or audience to the MoEngage destination, you can select the method of your choice (or opt to use both).
 
-### Sync yime
+### Sync time
 
-The default integration for MoEngage <> Twilio Engage connection is **Real Time.** But there are some filters that disqualify the persona from syncing in real-time, including some time-based filters which restrict your audience’s size at the time of message send.
+The default integration for MoEngage \<> Twilio Engage connection is **Real Time.** But there are some filters that disqualify the persona from syncing in real-time, including some time-based filters which restrict your audience’s size at the time of message send.
 
 ### Computed traits using Identify calls
 
