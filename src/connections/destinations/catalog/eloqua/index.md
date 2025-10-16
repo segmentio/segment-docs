@@ -44,7 +44,7 @@ Segment `identify` trait on the left to the Eloqua field on the right:
 | `title`                          | Title        |
 
 Follow the Segment spec to ensure proper mapping of these fields from Segment
-`identify` traits: /docs/connections/spec/identify/#traits.
+`identify` traits: [/docs/connections/spec/identify/#traits](/docs/connections/spec/identify/#traits).
 
 In addition, Segment supports mapping custom `identify` traits to Eloqua custom
 object fields. To do so, you can set up mappings in the settings for your
