@@ -59,6 +59,6 @@ Using Olark through Segment gives you the ability to automatically record Track 
 
 These events are sent to other tools in your stack that can accept Track calls, so you can do things like analyze if users who chat spend more money over time.
 
-To learn more about the live chat events you can capture with this destination, seet the [Live Chat spec docs](/docs/connections/spec/live-chat/).
+To learn more about the live chat events you can capture with this destination, see the [Live Chat spec docs](/docs/connections/spec/live-chat/).
 
 ![Screenshot of Olark UI with option to Record live chat events highlighted](images/olarklivechat.png)
