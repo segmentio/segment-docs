@@ -54,7 +54,7 @@ Each Engage audience should only contain profiles that have a valid email addres
    - To reuse your Segment audience on the StackAdapt platform, select **Sync Audience**.
    - To import profiles to the StackAdapt platform, select **Forward Profile**.
    - **Note**: You don't have to set up both mappings. The mappings will be shared across all audiences that have sync enabled to this destination. You should create a new destination if you wish to use different mappings for different audiences.
-8. Define the event trigger: ensure you have this condition: **Event Type is `Track` or `Identify`**.
+8. Define the event trigger: Ensure the Event Type is `Track` or `Identify`.
 9. Map fields:
    - (**Required**:) Select a default value for `Marketing Status`.
    - (**Required**:) Confirm that you have a valid source field for `Email`.
