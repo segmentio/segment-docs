@@ -5,28 +5,28 @@ id: 60df6d4c038b872f10c54801
 
 [Correlated](https://www.getcorrelated.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the first product-led revenue platform built to help you and your sales teams take action based on how customers are using your product.
 
-This destination is maintained by Correlated. For any issues with the destination, [contact the Correlated Support team](mailto:support@getcorrelated.com).
+This destination is maintained by Correlated. For any issues with the destination, [contact the Correlated support team](mailto:support@getcorrelated.com){:target="_blank"}.
 
 > success ""
-> Set up a free account with Correlated by visiting their [website](https://docs.getcorrelated.com/docs/setting-up-your-account){:target="_blank"}.
+> To set up a free account with Correlated, visit their [website](https://docs.getcorrelated.com/docs/setting-up-your-account){:target="_blank"}.
 
-## Getting Started
+## Getting started
 
 ### Connect with OAuth
 1. Log in to the Correlated application. 
 2. Go to [Correlated integrations](https://app.getcorrelated.com/integrations){:target="_blank"} and select the Segment integration.
 3. Click **Connect to Segment** to connect with OAuth. 
-4. Select the relevant Sources that you want to include (Correlated recommends that you include your website and application)
+4. Select the relevant sources that you want to include. Correlated recommends that you include your website and application.
 
 ### Connect with an API Key
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Correlated" in the Destinations Catalog, and select the "Correlated" destination.
-3. Choose which Source should send data to the "Correlated" destination.
+3. Choose which source should send data to the "Correlated" destination.
 4. Go to [Correlated integrations](https://app.getcorrelated.com/integrations){:target="_blank"} and click on the "Segment" integration.
 5. Copy the "Segment API key".
-6. Enter the "Segment API Key" in the "Correlated" destination settings in Segment.
+6. Enter the Segment API key in the "Correlated" destination settings in Segment.
 
-## Supported Methods
+## Supported methods
 
 Correlated supports the following methods. 
 
