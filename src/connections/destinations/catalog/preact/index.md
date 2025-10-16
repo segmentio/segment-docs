@@ -24,7 +24,7 @@ The [Track](/docs/connections/spec/track) method records events in Preact. Users
 
 Preact can be useful for customer support. For that to work, you can send error events to Preact.
 
-All you have to do is add a "!" as the first character in the event name and Preact recognizes it as an error event. Properties sent with the event also showa up in Preact.
+Add a "!" as the first character in the event name and Preact recognizes it as an error event. Properties sent with the event also show up in Preact.
 
 Here's a JavaScript example:
 ```javascript
