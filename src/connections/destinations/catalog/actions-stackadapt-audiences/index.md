@@ -17,7 +17,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 ## Getting started
 
 > info "Getting your StackAdapt GraphQL token"
-> If you do not have an existing StackAdapt read & write API key, contact the [StackAdapt team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
+> If you do not have an existing StackAdapt read and write API key, contact the [StackAdapt team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
 
 ### Setting up the StackAdapt Audiences destination in Engage
 
