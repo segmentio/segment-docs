@@ -1,5 +1,6 @@
 ---
 title: Preact Destination
+hidden: true
 ---
 
 
