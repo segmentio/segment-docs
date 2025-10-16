@@ -34,7 +34,7 @@ In the initial sync, Segment imports all available Zendesk data. Segment writes 
 
 Segment uses an upsert process so the data in your warehouse always reflects the latest state in Zendesk. For example, if a ticket’s status changes from `open` to `closed` between syncs, the next sync updates that record.  
 
-Source syncs and warehouse syncs are independent. The source syncs data into Segment, and the warehouse sync pushes that data to your warehouse based on your plan’s schedule.  
+Source syncs and warehouse syncs are independent. The source syncs pull data into Segment, and the warehouse syncs push that data to your warehouse based on your plan’s schedule.  
 
 Segment doesn't support filtering objects or properties during sync for the Zendesk source. To request this feature, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
