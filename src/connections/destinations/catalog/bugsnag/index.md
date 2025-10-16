@@ -7,9 +7,11 @@ id: 54521fd525e721e32a72ee9b
 
 At the moment, we support the following integrations:
 
-Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics.js-integration-bugsnag){:target="_blank"}
-Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag){:target="_blank"}
-iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag){:target="_blank"}
+|   |   |
+|---|---|
+| Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics.js-integration-bugsnag){:target="_blank"} |
+| Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag){:target="_blank"} |
+| iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag){:target="_blank"} |
 
 
 ## Getting Started
