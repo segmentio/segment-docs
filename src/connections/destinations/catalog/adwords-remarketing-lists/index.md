@@ -168,7 +168,7 @@ Engage audiences can only send to Google Ads Remarketing Lists for Google Search
 
 #### How many users must be in an audience to use Google Ads Campaigns?
 
-100.
+100
 
 #### What custom matchers does Engage send to Google Ads?
 

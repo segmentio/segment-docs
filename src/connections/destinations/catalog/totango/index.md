@@ -8,15 +8,13 @@ Segment's Totango destination code is all open-source on GitHub: [JavaScript](ht
 
 To get started with Totango and Segment, toggle Totango on in your Segment destinations and add your **Service ID**, which you can find in your Totango settings.
 
-Once you've done that, those new settings will propagate to our CDN (that usually takes around 45 minutes) and Totango will be live on your site! Since Totango is all about identified users, the next thing you'll want to do is add a few API calls with exactly the information Totango needs. We'll show you how..
+Once you've done that, those new settings will propagate to our CDN (that usually takes around 45 minutes) and Totango will be live on your site! Since Totango is all about identified users, the next thing you'll want to do is add a few API calls with exactly the information Totango needs. We'll show you how.
 
 **Note:** As part of setup, you should know the user and call `identify` before the `group` call. Remember that every `page` and `track` call that you want to show up in Totango must be tied to a `groupId` (Totango calls this Account ID). , however.
 
 For our client-side Javascript library (Analytics.js) that means you need to call `group` at least once with a `groupId` and we will cache it and attach it to future calls to other methods.
 
 For server-side and mobile libraries you must include `context.groupId` in every call you want to be sent through to Totango so they can connect the dots between a call made to Segment and an account in their system.
-
-- - -
 
 ## Group
 
@@ -103,8 +101,6 @@ analytics.track('Completed Purchase', {
 To learn more about how [`track`](/docs/connections/spec/track/) works check out our [Track docs](/docs/connections/spec/identify/). For example, `revenue` is a special property that lets you semantically describe how much money you're making.
 
 **If you're sending data using the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [troubleshooting](#troubleshooting) section to see how.
-
-- - -
 
 
 ## Troubleshooting

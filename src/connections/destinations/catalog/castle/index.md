@@ -61,13 +61,13 @@ Calls are now visible in Castle dashboards in real-time.
 
 	- Add this line to your gradle file:
 
-      ```
+      ```groovy
       implementation 'com.segment.analytics.kotlin.destinations:castle:<latest_version>'
       ```
 
 	- Add the following for Kotlin DSL:
     
-      ```
+      ```kotlin
       implementation("com.segment.analytics.kotlin.destinations:castle:<latest_version>")
       ```
 

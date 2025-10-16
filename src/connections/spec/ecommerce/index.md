@@ -3,7 +3,7 @@ title: 'Spec: V1 Ecommerce Events'
 hidden: true
 ---
 
-This guide maps out the standard data Segment expects to see from ecommerce companies. The semantic events detailed below represent the ideal for ecommerce events; not every ecommerce store will take advantage of every event or all of their properties.
+This guide maps out the standard data Segment expects to see from ecommerce companies. The semantic events detailed represent the ideal for ecommerce events; not every ecommerce store takes advantage of every event or all of their properties.
 
 ## V2
 
@@ -11,11 +11,11 @@ Segment now supports a fully **backwards compatible** V2 of the Ecommerce Spec. 
 
 For more information about the V2 spec, refer to the [Ecommerce V2 docs](/docs/connections/spec/ecommerce/v2/).
 
-## V1 Overview
+## V1 overview
 
-One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that Segment recognizes semantically. That way the Segment app can transform them before sending them off to each different tool.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you send **specific event names** that Segment recognizes semantically. That way the Segment app can transform them before sending them off to each different tool.
 
-The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in addition to the required ones.
+The `properties` listed in the following sections are **required** for some destinations to function. You can always add your own custom properties (for example, product color, size) in addition to the required ones.
 
 
 ## Events
@@ -38,11 +38,11 @@ The ecommerce category includes the following semantic events:
 - [Google Analytics Enhanced Ecommerce](#google-analytics-enhanced-ecommerce)
 
 
-## Viewed Product Category
+## Viewed product category
 
-Category pages are a staple of Ecommerce. They let the user browse all of the products in a specific category. You'll want to track all of your product category pages so you can quickly see which categories are most popular.
+Category pages are a staple of Ecommerce. They let the user browse all of the products in a specific category. You can track all of your product category pages so you can quickly see which categories are most popular.
 
-To do that, you'll want to record a specially recognized event called `Viewed Product Category` using a `track call. This event fires when a visitor views a product category. That view might happen on a page, screen, or modal.
+To do that, yrecord a specially recognized event called `Viewed Product Category` using a Track call. This event fires when a visitor views a product category. That view might happen on a page, screen, or modal.
 
 ### Properties
 
@@ -76,9 +76,9 @@ Property        | Type   | Description
 ```
 
 
-## Viewed Product
+## Viewed product
 
-The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you'll use a Track call. This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
+The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that, use a Track call. This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
 
 Note that the properties are required to tell individual tools, like Google Analytics, about the specific product that was viewed. You can always add your own custom properties as well.
 
@@ -94,7 +94,8 @@ Property   | Type   | Description
 `price`    | Number | The price ($) of the product being viewed.
 `category` | String | The product category being viewed.
 
-_Note: The `sku` and `id` do not have to be different. If they are different, typically the `id` is a database identifier, like `9714107479` and the `sku` is a public-facing identifier like `SEG-02`._
+> info ""
+> The `sku` and `id` do not have to be different. If they are different, typically the `id` is a database identifier, like `9714107479` and the `sku` is a public-facing identifier like `SEG-02`.
 
 ### Example
 
@@ -131,7 +132,7 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
 
 Next up are two events that are critical to figuring out how your customers are interacting with your products: 'Added Product' and 'Removed Product'. Fire the `Added Product` event when a visitor adds a product to their shopping cart and the `Removed Product` event when a visitor removes a product from their shopping cart.
 
-The properties to record for each of these are the same as the ones for the'Viewed Product' event above (of course you can always add more properties of your own too!).
+The properties to record for each of these are the same as the ones for the' Viewed Product' event (you can always add more properties of your own).
 
 ### Properties
 
@@ -209,9 +210,9 @@ Property   | Type   | Description
 ```
 
 
-## Completing an Order
+## Completing an order
 
-The final step is to record a `Order Completed` event when people complete your checkout process. It's the most important event to record, since you'll use it for A/B tests, sales dashboards, conversion pixels and pretty much everything you can think of.
+The final step is to record a `Order Completed` event when people complete your checkout process. It's the most important event to record, since you use it for A/B tests, sales dashboards, conversion pixels and more.
 
 Be sure to **include all items in the cart as event properties**, with the same properties from the previous calls, like so:
 
@@ -277,8 +278,8 @@ Be sure to **include all items in the cart as event properties**, with the same 
 }
 ```
 
-**Note**: Some destinations require `total` in place of `revenue`. Specific requirements will be outlined in each destination's documentation.
+**Note**: Some destinations require `total` in place of `revenue`. Specific requirements are outlined in each destination's documentation.
 
-## Google Analytics Enhanced Ecommerce
+## Google Analytics enhanced ecommerce
 
 If you're using Google Analytics enhanced ecommerce, there are some special events you might also want to add. Details are in Segment's [Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#enabling-enhanced-e-commerce-tracking).

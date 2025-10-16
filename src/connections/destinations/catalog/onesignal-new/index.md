@@ -6,24 +6,21 @@ redirect_from: '/connections/destinations/catalog/onesignal/'
 id: 60b6a5b69fec493efbd3c64c
 ---
 [OneSignal](https://onesignal.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is the market leader in driving customer engagement with multi-channel messaging across Web and Mobile Push, In-App Messages, SMS, and Email subscribers.
-This destination is maintained by OneSignal. For any issues with the destination, [contact the OneSignal Support team](mailto:support@onesignal.com).
+
+This destination is maintained by OneSignal. For any issues with the destination, [contact the OneSignal support team](mailto:support@onesignal.com){:target="_blank"}.
 
 > info ""
-> The OneSignal Destination is available to customers on OneSignal Growth, Professional and Enterprise plans.
+> The OneSignal Destination is available to customers on OneSignal Growth, Professional, and Enterprise plans.
 
-## Getting Started
+## Getting started
 
-
-
-1. Log in to the [OneSignal Dashboard](https://app.onesignal.com/){:target="_new"}
-2. Navigate to **Segment App** -> **Settings** -> **Analytics** -> **Segment.com** and click **Activate**.
+1. Log in to the [OneSignal dashboard](https://app.onesignal.com/){:target="_blank"}.
+2. Navigate to **Segment App > Settings > Analytics > Segment.com** and click **Activate**.
 3. The Segment App opens in a new window. Log in to authenticate the connection from OneSignal.
-4. Select the Workspace and Source to connect with OneSignal.
-
+4. Select the workspace and source to connect with OneSignal.
 
 > info ""
 > OneSignal maps the `userId` field to the **[External User ID](https://documentation.onesignal.com/docs/onboarding-with-onesignal#step-3-connect-user-data-to-onesignal){:target="_blank"}** field in OneSignal.
-
 
 ## Supported methods
 
@@ -31,7 +28,7 @@ OneSignal supports the following methods, as specified in the [Segment Spec](/do
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to update Users. For example:
+Send [Identify](/docs/connections/spec/identify) calls to update users. For example:
 
 ```js
 analytics.identify('userId123', {
@@ -62,25 +59,25 @@ analytics.track('Add to Cart', {
 })
 ```
 
-OneSignal stores Track properties as Data Tags but drops the event name. In the above example, `Add to Cart` is dropped.
+OneSignal stores Track properties as Data Tags but drops the event name. In the example, `Add to Cart` is dropped.
 
 To keep the event names on OneSignal Data Tags, append the event name to the properties. For example, `Add_to_Cart_brand` instead of `brand`.
 
-![""](images/track-example.png)
+![Screenshot of the OneSignal dashboard showing a notification for an "eShoppe" campaign.](images/track-example.png)
 
 ## Engage
 
-Send Computed Traits and Audiences generated using [Engage](/docs/engage) to OneSignal
+You can send Computed Traits and Audiences generated using [Engage](/docs/engage) to OneSignal.
 
 ### Audiences
 
-Engage Audiences appear as a [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} in OneSignal.
+Engage audiences appear as a [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} in OneSignal.
 
-Track calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} with the Audience Name.
+Track calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} with the audience name.
 
-Identify calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} with the Audience Name and add Data Tags on all the matching user records.
+Identify calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} with the audience name and add Data Tags on all the matching user records.
 
-![""](images/audiences.jpg)
+![Screenshot of the OneSignal "eShoppe" dashboard](images/audiences.jpg)
 
 Audiences sends Identify and Track calls to OneSignal when a user enters or exits the Audience.
 
@@ -88,13 +85,11 @@ Audiences sends Identify and Track calls to OneSignal when a user enters or exit
 
 OneSignal stores Track and Identify calls from Engage Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags){:target="_blank"} for the OneSignal User/Player's records.
 
-## OneSignal Destination FAQ
-### Managing Segment's Reserved and Custom Traits
+## FAQ
 
-* Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. OneSignal drops the data tags that go over your set number. .
+#### How do I manage Segment's Reserved and Custom Traits?
 
-* OneSignal always updates the `firstName` and the `lastName` properties for matching users. All other traits are added/updated on a first-come basis. `firstName` and `lastName` tags are stored as `first_name` and `last_name`.
-
-* Send User properties to OneSignal with blank/null values to remove the corresponding Data Tag from the OneSignal user record.
-
+* Segment sends user traits to OneSignal as Data Tags. The number of data tags OneSignal allows depends on your OneSignal pricing plan. OneSignal drops the data tags that go over your set number.
+* OneSignal always updates the `firstName` and the `lastName` properties for matching users. All other traits are added or updated on a first-come basis. `firstName` and `lastName` tags are stored as `first_name` and `last_name`.
+* Send User properties to OneSignal with blank or `null` values to remove the corresponding Data Tag from the OneSignal user record.
 * OneSignal doesn't store `email` and `phone` properties. To update `email` and `phone` properties in OneSignal, create a player record with the email address and/or a phone number and map those records with the External_User_ID. Additional properties from Segment map across all your matching records, including email and phone number records.

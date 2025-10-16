@@ -18,7 +18,6 @@ The Sailthru server-side destination will allow you to add users, send custom ev
   - The template passed through as `reminder_template` must match the public name configured in Sailthru's UI.
 - We recommend appending `traits.email` whenever possible in your `identify` calls. If you send an `identify` call without a `traits.email` and only a `userId`, the profile will be created in Sailthru but you would not be able to find that user using their **User Look Up** feature.
 
-- - -
 ### Page
 
 You must configure a `customerId` in your integration settings in order to use the `page` functionality. This value is only required for `page` calls and can be found in your Sailthru Dashboard under **App Settings**
@@ -41,7 +40,6 @@ analytics.page('Page Name', {
 
 See our [documentation](/docs/connections/spec/page/#properties) for more info on the `keywords` property.
 
-- - -
 
 ### Identify
 

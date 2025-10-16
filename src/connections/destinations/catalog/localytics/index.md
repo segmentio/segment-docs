@@ -43,8 +43,6 @@ Whenever you call [`track`](/docs/connections/spec/track/), we'll log an event w
 Localytics. [`track`](/docs/connections/spec/track/) takes the name of the event and any
 optional properties you want to associate with the event.
 
-- - -
-
 ## Push Notifications
 
 Push notifications on Android require a bit of extra work to setup.

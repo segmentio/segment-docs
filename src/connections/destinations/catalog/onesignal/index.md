@@ -11,7 +11,6 @@ OneSignal will only track new users. If you have existing push notification data
 
 OneSignal supports the `identify` and `track` methods and is currently only available on iOS using Segment.
 
-- - -
 
 ## Identify & Track
 

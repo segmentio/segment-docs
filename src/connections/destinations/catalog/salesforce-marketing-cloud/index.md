@@ -11,8 +11,10 @@ versions:
 Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5){:target="_blank"}. This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/){:target="_blank"} that you can enable with Segment.
 
 
-### SFMC details
+## SFMC details
 
+| Feature | Details |
+| ------- | ------- |
 | **Support for Engage**               | Yes                                                                  |
 | **Rate Limits**                        | 20 requests per second                                               |
 | **Identifiers Required**               | `userId` or `email`                                                |
@@ -33,9 +35,9 @@ Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/a
 
 Before you start working with SFMC, work through the following sections to confirm that the destination will work as you expect, and set up any authentication requirements.
 
-### Confirm that Salesforce Marketing Cloud supports your source type and connection mode
+### Confirm support 
 
-
+Make sure that Salesforce Marketing Cloud supports your source type and connection mode.
 
 ### Grant Segment API access to Salesforce Marketing Cloud
 
@@ -98,7 +100,7 @@ You must create a Data Extension in SFMC to store the Identify calls coming from
     If you send a trait `"nonexistent": "xyz"` with your data, but there's no matching `nonexistent` column in SFMC's table, that trait is ignored.
 - You do not need to create attributes for _all_ of the traits in an Identify call. If you don't need a specific trait in SFMC, don't create an attribute for it, and Segment ignores the trait when it sends data to SFMC.
 - All attributes you create in the Data Extension must be in **Title Case**, regardless of the casing used in your Segment Identify calls. When Segment sends Identify calls to SFMC it first transforms the data to use Title Case, but you still need to set the attributes up in SFMC in the correct format.
-- Set up a Primary Key in the Identify Data Extension called `**Contact Key**`. Segment uses this to link users to SFMC's built-in Contact Key property. This field is populated with `userId`  by default in Identify calls. If no  `userId` exists, Segment uses the `email` instead.
+- Set up a Primary Key in the Identify Data Extension called **`Contact Key`**. Segment uses this to link users to SFMC's built-in Contact Key property. This field is populated with `userId`  by default in Identify calls. If no  `userId` exists, Segment uses the `email` instead.
 - If you want to use this data to send emails or push notifications, check the **Is Sendable** box. (If you need to do this later, the box will be called "Used for Sending".)
 - If you will be using this data to send emails, set up any **Email** attributes so they are of the "EmailAddress" type.
 

@@ -28,17 +28,17 @@ Next, configure the Destination in the Segment web app:
 
 ### Setting up a Client-Side Web Implementation
 
-3. Get your **Config ID** from your SFDMP console. Log into the
+4. Get your **Config ID** from your SFDMP console. Log into the
    console and go to **Manage** > **Capture** > **Sites**.
    If you don't see this option, contact your SFDMP representative.
 
-4. In the **Sites** tab, locate the site you want to use as the SFDMP destination.
+5. In the **Sites** tab, locate the site you want to use as the SFDMP destination.
    If you haven't created any sites yet, click **Create Site** and go through the options to create a new site.
 
    ![A screenshot of the Manage tab in Salesforce DMP, with the Sites item selected.](images/salesforce-dmp-setup1.png)
 
-5. In the dropdown, find the site tag for the site you want to use. The string you need is under "Config" and will look something like `r0u08k4tz`.
-6. Go back to the Segment App, and navigate to the Salesforce DMP destination you're setting up. Locate the ConfigID setting, and paste the value you found in that field.
+6. In the dropdown, find the site tag for the site you want to use. The string you need is under "Config" and will look something like `r0u08k4tz`.
+7. Go back to the Segment App, and navigate to the Salesforce DMP destination you're setting up. Locate the ConfigID setting, and paste the value you found in that field.
 
 To send client-side events to SFDMP, you must include a SFDMP Config ID and
 SFDMP Namespace in your Segment settings. Segment's UI enforces inclusion of a
@@ -49,14 +49,14 @@ If you don't provide a `namespace` Segment can't pass events downstream to SFDMP
 
 ### Setting up for a Server-Side Implementation
 
-6. To set up SFDMP for a server-side connection, enter your SFDMP `Server-side
+8. To set up SFDMP for a server-side connection, enter your SFDMP `Server-side
    Publisher UUID`. To locate this, Segment recommends that you contact your SFDMP representative. Helpful documentation can be found
    [in the Salesforce Audience Studio Help Center](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API){:target="_blank"}.
-7. Once you've retrieved your `Server-side Publisher UUID`, follow the
+9. Once you've retrieved your `Server-side Publisher UUID`, follow the
    instructions in the Segment SFDMP settings to enter your `Pixel.gif Domain`,
    `Pixel.gif Site` and, optionally, your `Pixel.gif Section` in the correct
    fields.
-8. If you instead want to send your `track` events to SFDMP's
+10. If you instead want to send your `track` events to SFDMP's
    Event.gif endpoint instead of their Pixel.gif endpoint, first disable the
    `Send Server-Side Track Calls to the Pixel.gif Endpoint` (it defaults to on)
    setting in the Segment UI.
@@ -217,7 +217,8 @@ If you see page attributes automatically appended to outbound Pixel.gif calls
 and you're not sure where the attributes came from, then you or someone on
 your team has likely set up page scraping in SFDMP.
 
-Warning: If you decide to rely on SFDMP's page scraping to transmit attributes
+> warning ""
+> If you decide to rely on SFDMP's page scraping to transmit attributes
 to SFDMP rather than adding them as properties to Segment events, you won't
 see these properties in other Segment connections, including in a raw data
 warehouse.
@@ -401,4 +402,4 @@ The value of field `msg.event`.
 
 | Value Passed to Segment | Value Sent to SFDMP |
 |-|-|
-| Any String value (for example, 'Account Created') | event_id: <`id mapped in Event ID Map UI setting`> |
+| Any String value (for example, 'Account Created') | event_id: `<id mapped in Event ID Map UI setting>` |

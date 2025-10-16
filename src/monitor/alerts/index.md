@@ -18,7 +18,7 @@ Segment has two kinds of alerts:
 %}
 
 {% include components/reference-button.html
-    href="/monitor/alerts/custom-alerts"
+    href="/docs/monitor/alerts/custom-alerts"
     icon="book.svg"
     title="Custom alerts"
     description="Custom alerts allow you detect fluctuations in event volumes."

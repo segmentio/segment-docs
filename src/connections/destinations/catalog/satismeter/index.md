@@ -68,7 +68,8 @@ We also record the following events
 - `Answered NPS Survey`: User filled the rating of NPS Survey
 - `Completed NPS Survey`: User completed the survey (including the follow-up question)
 
-# Troubleshooting
+## Troubleshooting
+
 ### The SatisMeter widget does not show up
 Make sure you are sending an `analytics.identify()` call when the page is loaded. If you are calling this method, make sure SatisMeter survey has a reason to be displayed. The widget will not display unless the customer fits your targeting settings.
 

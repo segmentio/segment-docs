@@ -127,7 +127,7 @@ Enter a descriptive name to act as a label for the transformation. This label he
 
 In this step, you can also choose to keep the Transformation disabled, so you can come back and edit it later. To update, enable, or disable a Transformation, click on the overflow menu and select **Edit Transformation**.
 
-## Use Cases
+## Use cases
 
 Here's a list of Segment Transformations with some use case examples.
 
@@ -138,20 +138,20 @@ Here's a list of Segment Transformations with some use case examples.
 - **Update a property value:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform the property `currency` to have the value `USD`. 
 
 - **Property Transformations**
-  - **Assigning static values:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. Segment currently supports setting static values for top-level fields, as well as fields within the `context` or `properties` object with `propertyValueTransformations`. However, Segment doesn't support changing fields outside the properties or traits object with `propertyRenames`. You can use `propertyValueTransformations` on a single object to assign the same value to different fields or on multiple objects to assign a static value to the same field across objects.
-  - **Casing functions:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform property value casing to `lowercase`, `uppercase`, `snakecase`, `kebabcase`, or `titlecase`. When transforming data with casing functions, use the [`fqlDefinedProperties`](https://docs.segmentapis.com/tag/Transformations#operation/createTransformation!ct=application/vnd.segment.v1+json&path=fqlDefinedProperties&t=request){:target="_blank"} array to define the FQL you want to use and the new or existing `propertyName` you'd like to transform.
-    - **Static and dynamic value casing:** Use casing functions to transform property values to create uniform tracking data. For example, you can convert `usa` to `USA` to keep your downstream data consistent. <br/>You can transform these properties using static casing functions: <br/>
-    ```
-    fqlDefinedProperties": [{"fql": "uppercase("United States)", "propertyName": "properties.propertyValue1"}]
-    ``` 
-    or dynamic casing functions:
-    ```
-    fqlDefinedProperties": [{"fql": "lowercase(properties.propertyValue1)", "propertyName": "properties.propertyValue1"}]
-    ```
-    - **Create a new property with applied casing**: Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create a new property and set the value of the new property to the transformed value of an existing property. You can dynamically assign the value of one existing property to another, or assign the value of an existing property to a new property without applying casing functions. <br/>For example, create a new property (`prop2`) with a value of `lowercase(properties.prop1)` by including the following snippet in your payload:<br/>
-    ```
-    fqlDefinedProperties": [{"fql": "lowercase(properties.prop1)", "propertyName": "properties.prop2"}]
-    ```
+    - **Assigning static values:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. Segment currently supports setting static values for top-level fields, as well as fields within the `context` or `properties` object with `propertyValueTransformations`. However, Segment doesn't support changing fields outside the properties or traits object with `propertyRenames`. You can use `propertyValueTransformations` on a single object to assign the same value to different fields or on multiple objects to assign a static value to the same field across objects.
+    - **Casing functions:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform property value casing to `lowercase`, `uppercase`, `snakecase`, `kebabcase`, or `titlecase`. When transforming data with casing functions, use the [`fqlDefinedProperties`](https://docs.segmentapis.com/tag/Transformations#operation/createTransformation!ct=application/vnd.segment.v1+json&path=fqlDefinedProperties&t=request){:target="_blank"} array to define the FQL you want to use and the new or existing `propertyName` you'd like to transform.
+      - **Static and dynamic value casing:** Use casing functions to transform property values to create uniform tracking data. For example, you can convert `usa` to `USA` to keep your downstream data consistent. <br/>You can transform these properties using static casing functions: <br/>
+      ```
+      fqlDefinedProperties": [{"fql": "uppercase("United States)", "propertyName": "properties.propertyValue1"}]
+      ``` 
+      or dynamic casing functions:
+      ```
+      fqlDefinedProperties": [{"fql": "lowercase(properties.propertyValue1)", "propertyName": "properties.propertyValue1"}]
+      ```
+      - **Create a new property with applied casing**: Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create a new property and set the value of the new property to the transformed value of an existing property. You can dynamically assign the value of one existing property to another, or assign the value of an existing property to a new property without applying casing functions. <br/>For example, create a new property (`prop2`) with a value of `lowercase(properties.prop1)` by including the following snippet in your payload:<br/>
+      ```
+      fqlDefinedProperties": [{"fql": "lowercase(properties.prop1)", "propertyName": "properties.prop2"}]
+      ```
   - Note that you can only assign one property to `fqlDefinedProperties` array.
   - Note that you cannot use `fqlDefinedProperties` along with event or property rename or property value transformations.
 

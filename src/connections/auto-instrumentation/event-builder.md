@@ -10,6 +10,9 @@ You can use it to create Track, Identify, Page, and other event types directly f
 > info "Auto-Instrumentation Private Beta"
 > Auto-Instrumentation is currently in Private Beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment is actively iterating on and improving the Auto-Instrumentation user experience.
 
+> info "Regional availability"
+> Auto-Instrumentation isn't supported in EU workspaces.
+
 ## Access the Event Builder
 
 The Event Builder appears as a tab within each source, next to the Debugger. If you don't see the Event Builder tab, first confirm that you've installed the required Auto-Instrumentation SDK. 
