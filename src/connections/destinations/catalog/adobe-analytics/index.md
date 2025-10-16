@@ -59,8 +59,6 @@ It can also take up to an hour for all of the mobile users' Segment settings cac
 
 Adobe Analytics has a real-time reporting feature which displays web page traffic and ranks page views in real time. Configuring and enabling these reports are restricted to Adobe Admin users. To learn more see Adobe's [overview on Real-time reporting](https://docs.adobe.com/content/help/en/analytics/components/real-time-reporting/realtime.html){:target="_blank”}
 
----
-
 ## Device-mode - Analytics.js
 
 Device-mode web data is sent using Analytics.js, with Analytics.js either serving as a wrapper/bundle around the Adobe Analytics code, or sending directly to Segment servers where the data is then sent on to the Adobe destination.
@@ -85,8 +83,6 @@ Segment's Analytics.js destination loads the Adobe `visitorAPI.js` library, but 
 To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud Organization ID** in the **Identity Resolution** settings tab in the Segment app.
 
 ![A screenshot of the Adobe Analytics settings page in Segment, with the Identity Resolution section selected.](images/mcvid.png)
-
----
 
 ## Cloud-mode - Server-side
 
@@ -128,8 +124,8 @@ Segment's server-side integration is not open-source. Let's explore what happens
    });
    ```
 
- - `userId`
- - `anonymousId`
+   - `userId`
+   - `anonymousId`
 
 > info ""
 > Adobe Analytics timestamp options need to match in the Segment destination settings and Adobe setting. Otherwise, events might be silently dropped by Adobe despite sending a 200 success response to Segment

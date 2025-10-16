@@ -81,7 +81,7 @@ analytics.screen({
 ```
 
 Segment sends Screen calls to Amberlfo as a `screen` meter.
-```json=
+```json
 curl --request POST \
      --url https://app.amberflo.io/ingest \
      --header 'Accept: application/json' \
@@ -125,7 +125,7 @@ analytics.identify({
 
 Segment sends Identify calls to Amberflo as a `customer` record.
 
-```json=
+```json
 curl --request PUT \
      --url https://app.amberflo.io/customers \
      --header 'Accept: application/json' \
@@ -166,7 +166,7 @@ analytics.track({
 
 Segment sends Track calls to Amberflo as a meter ingestion record with `meterApiName=track.event`.
 
-```json=
+```json
 curl --request POST \
      --url https://app.amberflo.io/ingest \
      --header 'Accept: application/json' \
