@@ -2,65 +2,71 @@
 title: Analytics Swift Mixpanel Plugin
 strat: swift
 ---
-[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
+[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event-tracking and segmentation platform for your web and mobile apps. 
 
-Segment's Mixpanel destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-mixpanel)
+By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-## Getting Started
+Segment's Mixpanel destination plugin code is open source and [available on GitHub](https://github.com/segment-integrations/analytics-swift-mixpanel){:target="_blank"}.
 
+## Getting started
 
-
-1. From the Segment app Destinations page click on **Add Destination**.
-2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
+1. From the Segment app Destinations page, click on **Add Destination**.
+2. Search for Mixpanel in the Destinations Catalog and confirm the source to connect to.
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
-### Adding the dependency
+### Add the dependency
 
-***Note:** the Mixpanel library itself will be installed as an additional dependency.*
+When you add the Mixpanel plugin, the Mixpanel library is installed automatically as an additional dependency.
 
-### through Xcode
+#### Through Xcode
+
+1. In Xcode, go to **File > Add Packages**.  
+2. In the search field, enter the repository URL:  
+   `https://github.com/segment-integrations/analytics-swift-mixpanel`  
+3. Choose a version or branch, and select the project where you want to add the package.  
+4. Click **Add Package** to complete the installation.
+
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
 https://github.com/segment-integrations/analytics-swift-mixpanel{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### through Package.swift
+#### Through Package.swift
 
-Open your Package.swift file and add the following do your the `dependencies` section:
+Open your `Package.swift` file and add the dependency to the `dependencies` section:
 
-```
+```swift
 .package(
-            name: "Segment",
-            url: "https://github.com/segment-integrations/analytics-swift-mixpanel.git",
-            from: "1.1.3"
-        ),
+  name: "Segment",
+  url: "https://github.com/segment-integrations/analytics-swift-mixpanel.git",
+  from: "1.1.3"
+),
 ```
 
+## Using the plugin in your App
 
-*Note the Mixpanel library itself will be installed as an additional dependency.*
+Open the file where you set up and configure the Analytics Swift library. Import the Mixpanel plugin alongside Segment:
 
-
-## Using the Plugin in your App
-
-Open the file where you setup and configure the Analytics-Swift library. Add this plugin to the list of imports.
-
-```
+```swift
 import Segment
-import SegmentMixpanel // <-- Add this line
+import SegmentMixpanel // Add this line
 ```
 
-Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+After configuring the Analytics Swift library, add the Mixpanel plugin to the analytics timeline:
 
-```
-let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
-                    .flushAt(3)
-                    .trackApplicationLifecycleEvents(true))
+```swift
+let analytics = Analytics(
+  configuration: Configuration(writeKey: "<YOUR_WRITE_KEY>")
+    .flushAt(3)
+    .trackApplicationLifecycleEvents(true)
+)
+
 analytics.add(plugin: MixpanelDestination())
 ```
 
-Your events will now begin to flow to Mixpanel in device mode.
+After you add the plugin, Segment automatically routes your events to Mixpanel in device mode.
 
 ## Identify
 
@@ -74,50 +80,27 @@ struct MyTraits: Codable {
 analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
 ```
 
-The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
+The Identify method links a user’s unique ID with their traits so Mixpanel can recognize and track them.
 
-> info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
+> info "Identity merge"
+> Mixpanel uses [Identity merge](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} to connect anonymous visitors to identified users. To enable it, go to **Project Settings > Identity Merge** in your Mixpanel dashboard. If you don’t have Identity merge enabled, use the aliasing steps that follow.
 
 
-As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
+When a visitor becomes an identified user, call [`alias`](/docs/connections/spec/alias/) to link their previous anonymous `id` to their new `userId`.
 
-When you call the Identify method from the client in either a browser using Analytics.js or one a mobile SDKs, several things occur: Segment recognizes and translates the [special traits](/docs/connections/spec/identify/#traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. Pass the key on the left and Segment transforms it to the key on the right before sending to Mixpanel.
+In Mixpanel, only one anonymous history can be merged with one identified user. Call `alias` **once**, right after the user registers and **before** the first Identify call.
 
-<table>
-  <tr>
-    <td>Key</td>
-    <td>Segment transformation</td>
-  </tr>
-  <tr>
-    <td>`created`</td>
-    <td>`$created`</td>
-  </tr>
-  <tr>
-    <td>`email`</td>
-    <td>`$email`</td>
-  </tr>
-  <tr>
-    <td>`firstName`</td>
-    <td>`$first_name`</td>
-  </tr>
-  <tr>
-    <td>`lastName`</td>
-    <td>`$last_name`</td>
-  </tr>
-  <tr>
-    <td>`name`</td>
-    <td>`$name`</td>
-  </tr>
-  <tr>
-    <td>`username`</td>
-    <td>`$username`</td>
-  </tr>
-  <tr>
-    <td>`phone`</td>
-    <td>`$phone`</td>
-  </tr>
-</table>
+When you call `identify` from the client (in Analytics.js or a mobile SDK), Segment automatically maps [special traits](/docs/connections/spec/identify/#traits) to match Mixpanel’s API. The following table shows how each Segment trait gets transformed before Segment sends it to Mixpanel:
+
+| Key         | Segment transformation |
+| ----------- | ---------------------- |
+| `created`   | `$created`             |
+| `email`     | `$email`               |
+| `firstName` | `$first_name`          |
+| `lastName`  | `$last_name`           |
+| `name`      | `$name`                |
+| `username`  | `$username`            |
+| `phone`     | `$phone`               |
 
 ### People
 
@@ -127,50 +110,58 @@ To add people properties in Mixpanel before you know the user's unique database 
 
 ## Group
 
-Group calls are sent to Mixpanel if, **and only if**,
+## Group
 
-1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
-   ![Group ID Traits](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
-2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
-3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
+Segment sends Group calls to Mixpanel when all of the following conditions are met:
+
+- The **Group Identifier Traits** setting in your Mixpanel destination includes one or more traits.  
+   ![Screenshot of the Mixpanel dashboard, showing the “Group Identifier Traits” field where one or more traits (like company_id) can be defined for grouping users.](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
+- You’ve created a group key with the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.  
+- The Group call includes a trait that matches one of the configured Group Identifier Traits.
+
+Here's an example:
 
 ```swift
 struct MyTraits: Codable {
-        let username: String
-        let email: String
-        let plan: String
+  let username: String
+  let email: String
+  let plan: String
 }
 
-// ...
-
-analytics.group(groupId: "group123", traits: MyTraits(
-        username: "MisterWhiskers",
-        email: "hello@test.com",
-        plan: "premium"))
+analytics.group(
+  groupId: "group123",
+  traits: MyTraits(
+    username: "MisterWhiskers",
+    email: "hello@test.com",
+    plan: "premium"
+  )
+)
 ```
 
 Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
 
-If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
+If the group call doesn't have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
 ### Register Super Properties
 
-By default, each trait (that is, properties in an `identify` call) is registered as a super property. This doesn't require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
+By default, traits included in an Identify call get registered as Super Properties. This doesn’t require a `userId`. You can send a `traits` object alone, and Segment still registers those traits as super properties.
 
 Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
-> info ""
-> Super properties require a device mode connection.
+> info "Device mode required"
+> Super Properties require a device-mode connection.
 
 #### Set People Properties
 
-If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.
+If you've enabled Mixpanel People in your Segment settings, Segment calls Mixpanel's `people.set` with the same `traits` object. You don’t need an extra API call to populate Mixpanel People.
 
-Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
+Disable **Set All Traits as Super Properties or People Properties By Default** to disable the default behavior and register super properties explicitly. Segment automatically includes any trait in an Identify call that matches one of Mixpanel’s special properties listed in the previously shown transformations table.  
+ For more information, see [Explicitly set People Properties and Super Properties](#explicitly-set-people-properties-and-super-properties).
 
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+
 ```swift
 struct TrackProperties: Codable {
         let someValue: String
@@ -178,9 +169,8 @@ struct TrackProperties: Codable {
 
 analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
-Because Mixpanel is an event tracking analytics tool, you'll want to [`track`](/docs/connections/spec/track/) your user's actions. The more useful events you [`track`](/docs/connections/spec/track/), the better Mixpanel becomes.
 
-You should use the [`track`](/docs/connections/spec/track/) method to accomplish this. The Segment [`track`](/docs/connections/spec/track/) method maps events and event properties directly to Mixpanel events and event properties.
+Use the [Track](/docs/connections/spec/track/) method to record user actions and send event data to Mixpanel. Segment maps each event and its properties directly to Mixpanel events and event properties.
 
 ### Track Charge
 
@@ -192,9 +182,9 @@ There are two strings to avoid when naming event properties that will be sent to
 
 ### Explicitly Set People Properties and Super Properties
 
-Previously, Segment set all traits and properties as both Super Properties and People Properties (If you had Mixpanel People enabled). Now Mixpanel allows you to segment your reports by both People Properties and Super Properties. To give you better precision and control over what property or trait gets set as a Super Property or People Property, you can disable **Set All Traits as Super Properties or People Properties By Default** and pass in the properties or traits that you want to send to Mixpanel as People or Super Properties as shown below. Segment passes through all of Mixpanel's special traits as People Properties so you only need to add the ones that aren't on [this list](#group-using-device-mode).
+Mixpanel lets you segment reports using both People Properties and Super Properties. To control which traits Segment sends to each, clear **Set All Traits as Super Properties or People Properties By Default** in your Mixpanel destination settings. Then, explicitly pass the traits you want to send as People or Super Properties. 
 
-![mixpanel people properties list](../../../../../../destinations/catalog/mixpanel/images/mixpanelpeoplesuperprops.png)
+Segment automatically includes any of Mixpanel’s special traits as People Properties, so you only need to add traits that aren’t in the [Identify traits list](#identify).
 
 ### Incrementing events
 
@@ -206,24 +196,24 @@ You can find this in the **Advanced Options** of your Mixpanel settings on your 
 
 For each event name listed, Segment calls Mixpanel `increment`, and set a user trait of `Last + {{ event.name }}`.
 
-For example, if you add **Logged In** to the list of increment events, Segment increments a user trait called **Logged In** and set a trait called **Last Logged In** with the current date and time.
+For example, if you add **Logged In** to the list of increment events, Segment increments a user trait called **Logged In** and sets a trait called **Last Logged In** with the current date and time.
 
-If you'd like to add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
+To add an increment for viewing a specific page or screen, ensure you have the setting "Track Named Pages" selected and use the dynamically generated event name under "Events to Increment in People." For example, `.page('Signup')` would translate to "*Viewed* Signup *Page*" and `.screen('Listing')` would translate to "*Viewed* Listing *Screen*".
 
-Remember, Segment sends one event per `page` call.
+Segment sends one event per Page call.
 
 > info ""
 > Increment works for "known users", so if your track call is being made server-side, you need to pass a `userId`. If your track call is being made client-side, you need to identify the user first.
 
 ### Incrementing properties
 
-To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
+To increment values for specific properties, add them to the **Properties to increment** setting in your Mixpanel destination. Segment calls Mixpanel’s `increment` method automatically whenever you include a numeric property in an event (for example, `'items purchased': 5`).
 
 ### Screen
 
-When you use the Mixpanel destination in Device-mode, Segment sends Screen events to Mixpanel as follows:
+When you use the Mixpanel destination in device mode, Segment sends Screen events to Mixpanel as follows:
 
-- If you select "Track all Pages to Mixpanel", all `screen` calls regardless of how you have customized it will send a `Loaded A Screen`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
+- If you select "Track all Pages to Mixpanel", all Screen calls regardless of how you have customized it will send a `Loaded A Screen`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
 - If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Screen` event.
 
@@ -231,34 +221,30 @@ When you use the Mixpanel destination in Device-mode, Segment sends Screen event
 
 In short, Segment sends one event to Mixpanel per `screen` call.
 
-### Sending data to Mixpanel's European Union Endpoint
+## Troubleshooting and FAQ
 
-To implement Mixpanel in the European Union, enable the setting "Enable European Union Endpoint" on the Settings tab of the Mixpanel destination. When this setting is enabled, Segment updates the endpoint for any data sent from server-side libraries, browsers using Analytics.js, or the iOS SDK.
-### When Will I See Data from my Mobile App?
+#### How do I send data to Mixpanel’s EU endpoint?
 
-If you already have an app deployed with the Segment library, and you just enabled Mixpanel mobile, it can take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
+To send data to Mixpanel’s European Union endpoint, turn on **Enable European Union Endpoint** in your Mixpanel destination settings. When this setting is on, Segment routes data for all supported libraries (server side, Analytics.js, and iOS SDK) through Mixpanel’s EU servers.
 
-After the settings cache refreshes, the library starts to send data to Mixpanel.
+#### Why don’t I see data from my mobile app right away?
 
-Also worth noting, Mixpanel's SDK only submits requests to the Mixpanel servers when the app is backgrounded. That means you may see events in your Segment debugger while testing, but those requests won't actually be forwarded to Mixpanel until the app gets sent to the background.
+When you enable Mixpanel for a deployed app, it can take up to an hour for users’ Segment settings cache to refresh. Mixpanel’s SDK also sends data only when the app is backgrounded. When you test in Xcode, background the app before ending your session. Otherwise, those events won’t be sent to Mixpanel.
 
-If you're testing in Xcode remember you must first background the app, then the events will show up in Mixpanel. If you terminate the session without backgrounding those events will be lost.
+#### I see events in Mixpanel, but not People data. What should I check?
 
-### I'm seeing events come into Mixpanel but not people.
+- Confirm you’re calling `identify`. Track calls alone don’t create People records.
+- Make sure the People setting is turned on in your Mixpanel destination.
+- Disable any default filters in the Mixpanel People Explore tab.
 
-1. You'll need to make sure you're using [`identify`](/docs/connections/spec/identify/). A Mixpanel track doesn't create users in Mixpanel People.
-2. Make sure to turn on the "People" setting so that all of your [`identify`](/docs/connections/spec/identify/) calls will be sent to Mixpanel's People feature.
-3. Make sure you disable the default filter in the Mixpanel People Explore tab.
+#### Why doesn’t my `ip` property appear in Mixpanel?
 
-### IP
+Mixpanel automatically parses the `ip` field into geolocation traits (City, Country, Region) and then discards the raw IP address. To retain the full IP value, rename the property to something like `user_ip` or `IP Address`.
 
-If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
+For more details, see [Mixpanel's Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} docs.
 
-Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more in Mixpanel's [Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} docs.
+#### How do I use push notifications with Mixpanel?
 
-### Push Notifications
+Push notifications are only available for projects that bundle the Segment-Mixpanel SDK.
 
-Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
-
-> info ""
-> Set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) docs.
+Configure push notification handlers using Mixpanel’s native methods. For details, see the[iOS source documentation](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x).
