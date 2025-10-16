@@ -5,7 +5,7 @@ id: 55677dfd0a20f4e22f0fb39a
 ---
 This destination is maintained by ClientSuccess.
 
-## Getting Started (for CSMs)
+## Getting started (for CSMs)
 
 If your engineers have already set up Segment, adding Segment data to ClientSuccess is straightforward. All you need to do is turn on the destination.
 
@@ -17,9 +17,8 @@ To turn on the destination, do the following:
 
 **Note:** Because ClientSuccess focuses on group level events, you must pass group information before your events will show up. If you turn on the ClientSuccess destination in Segment and don't see events in ClientSuccess after 24 hours, it may be that your engineers need to send group information to Segment using Segment's `group` call.
 
-- - -
 
-## Getting Started (for Developers)
+## Getting started (for developers)
 
 ClientSuccess supports the `identify`, `group`, `track`, and `page` methods of Segment.
 

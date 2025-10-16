@@ -3,356 +3,395 @@ title: Zendesk Source
 id: 3hbak7a9
 ---
 
-[Zendesk](https://www.zendesk.com/){:target="_blank”} is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
+[Zendesk](https://www.zendesk.com/){:target="_blank”} is a customer support platform that helps businesses manage and respond to customer requests across channels.
 
-
-## Getting Started
+## Getting started
 
 1. Go to **Connections > Sources** and click **Add Source** in the Segment app.
-
 2. Search for **Zendesk** in the Sources Catalog and click **Add Source**.
-
-3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Zendesk` creates the schema `zendesk`.
-
-   * **Note**: You can add multiple instances if you have multiple Zendesk accounts. That's why Segment allows you to customize the source's nickname and schema name.
-
-4. Enter your Zendesk subdomain. The subdomain you use to access your Zendesk portal (for example 'segment' for segment.zendesk.com)
-
-   * **Note:** If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
-
-5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions, you'll be good to go.
+3. Give the source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Zendesk` creates the schema `zendesk`.
+- You can add multiple instances if you have multiple Zendesk accounts. 
+4. Enter the subdomain you use to access your Zendesk portal (for example `segment` for segment.zendesk.com)
+- If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
+5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions.
 
 > success ""
-> **Tip**: Segment uses the incremental export API from Zendesk, which requires Admin access. Make sure the user has Admin authorizations.
+> Segment uses Zendesk's [Incremental Export API](https://developer.zendesk.com/api-reference/ticketing/ticket-management/incremental_exports/){:target="_blank”} , which requires Admin access. Make sure the user has Admin authorizations.
 
+## Rate limits
 
-### Rate Limits
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/){:target="_blank"} and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export){:target="_blank"}. 
 
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/){:target="_blank"} and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export){:target="_blank"}. The source's requests to the Incremental API don't count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/){:target="_blank"}. If you'd like to increase or decrease the request rate for your source, [please reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}. Support for this in the UI is in the works.
+The source's requests to the Incremental API don't count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/){:target="_blank"}. 
 
-## Components
+If you'd like to increase or decrease the request rate for your source, [reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
-### Sync
+### How Zendesk data syncs
 
-The Zendesk source is built with a sync component, which means Segment makes requests to their API on your behalf on a three hour interval to pull the latest data into Segment. In the initial sync, Segment grabs all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (like `zendesk_prod.users`).
+The Zendesk source syncs data from the Zendesk API to Segment every three hours. During each sync, Segment requests the latest data for all supported objects and properties listed in the [Collections table](#collections).  
 
-The sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status is `closed`.
+In the initial sync, Segment imports all available Zendesk data. Segment writes the data into a schema corresponding to your source name (for example, `zendesk_prod.users`).  
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
+Segment uses an upsert process so the data in your warehouse always reflects the latest state in Zendesk. For example, if a ticket’s status changes from `open` to `closed` between syncs, the next sync updates that record.  
 
-At the moment, Segment doesn't support filtering which objects or properties get synced. If you're interested in this feature, [please reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}.
+Source syncs and warehouse syncs are independent. The source syncs pull data into Segment, and the warehouse syncs push that data to your warehouse based on your plan’s schedule.  
+
+Segment doesn't support filtering objects or properties during sync for the Zendesk source. To request this feature, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Collections
 
-Collections are the groupings of resources Segment pulls from your source.
+The following collections show the Zendesk objects Segment syncs into your warehouse. Each collection includes standard properties from Zendesk and any custom fields defined in your account.
 
+| Collection                                            | Type   | Description                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [users](#users)                                       | object | Zendesk has three user types: end users (customers), agents, and administrators. End users request support through tickets. Agents work to resolve tickets and can belong to multiple groups. Administrators have full agent permissions plus configuration access.     |
+| [groups](#groups)                                     | object | Groups organize agents and define ticket assignment workflows. A ticket must always be assigned to a group, even if it’s also assigned to a specific agent.                                                                                                             |
+| [tickets](#tickets)                                   | object | Tickets let end users communicate with agents. Segment pulls tickets created or updated within the last year by default. To load older data, contact [Segment Support](https://segment.com/help/contact/){:target="_blank"}.                                            |
+| [ticket_fields](#ticket_fields)                       | object | Custom fields added to the ticket form.                                                                                                                                                                                                                                 |
+| [activities](#activities)                             | object | Per-agent activity stream showing recent ticket-related events.                                                                                                                                                                                                         |
+| [attachments](#attachments)                           | object | Files attached to tickets or forum posts in Zendesk.                                                                                                                                                                                                                    |
+| [organizations](#organizations)                       | object | Groups of end users (customers) segmented for support management.                                                                                                                                                                                                       |
+| [ticket_events](#ticket_events)                       | events | Stream of ticket updates showing all field changes per event. Segment pulls one year of ticket events by default. To load older data, contact [Segment Support](https://segment.com/help/contact/){:target="_blank"}.                                                   |
+| [ticket_metrics](#ticket_metrics)                     | object | Aggregate performance metrics for tickets, such as reply and resolution times.                                                                                                                                                                                          |
+| [satisfaction_ratings](#satisfaction_ratings)         | object | Customer satisfaction ratings submitted for resolved tickets.                                                                                                                                                                                                           |
+| [ticket_comments](#ticket_comments)                   | object | Ticket comments exchanged between requesters, collaborators, and agents, including both public and private comments. This collection isn’t included by default but can be turned on by contacting [Segment Support](https://segment.com/help/contact/){:target="_blank"}. |
+| [ticket_forms](#ticket_forms)                         | object | Ticket forms define subsets of fields shown to agents and end users. This collection requires a Zendesk Enterprise account.                                                                                                                                             |
+| [ticket_skips](#ticket_skips)                         | object | Records of tickets skipped by agents. Segment fully syncs all available records during each sync run.                                                                                                                                                                   |
+| [organization_memberships](#organization_memberships) | object | Links users to organizations. Organizations can have many users, and users can belong to multiple organizations if supported. Segment fully syncs all available records during each sync run.                                                                           |
+| [group_memberships](#group_memberships)               | object | Links agents to groups. Groups can have many agents, and agents can belong to multiple groups. Segment fully syncs all available records during each sync run.                                                                                                          |
+| [audit_logs](#audit_logs)                             | object | Records account-level configuration and user actions. This collection isn’t included by default but can be turned on by contacting [Segment Support](https://segment.com/help/contact/){:target="_blank"}.                                                                |
 
-|  Collection | Type | Description |
-|  ------ | ------ | ------ |
-|  [users](#users) | object | Zendesk Support has three types of users: end-users (your customers), agents, and administrators. End-users request support through tickets. Agents work in Zendesk Support to solve tickets. Agents can be divided into multiple groups and can also belong to multiple groups. Agents don't have access to administrative configuration in Zendesk Support such as business rules or automation, but can configure their own macros and views. Administrators have all the abilities of agents, plus administrative abilities. |
-|  [groups](#groups) | object | When support requests arrive in Zendesk, they can be assigned to a Group. Groups serve as the core element of ticket workflow; support agents are organized into Groups and tickets can be assigned to a Group only, or to an assigned agent within a Group. A ticket can never be assigned to an agent without also being assigned to a Group. |
-|  [tickets](#tickets) | object | Tickets are the means through which your End-users (customers) communicate with Agents in Zendesk. **Note**: Segment pulls all tickets updated (or created) in the last year to start by default. If you need more, reach out to [Segment support](https://segment.com/help/contact/){:target="_blank”}. Support can do a run to pull further back in history.  |
-|  [ticket_fields](#ticket_fields) | object | Customize fields on the ticket form.  |
-|  [activities](#activities) | object | The activity stream is a per agent event stream. It will give access to the most recent events that relate to the agent polling the API. |
-|  [attachments](#activities) | object | This API is for attachments in tickets and forum posts in the Web portal. |
-|  [organizations](#organizations) | object | Just as agents can be segmented into groups in Zendesk, your customers (end-users) can be segmented into organizations. |
-|  [ticket_events](#ticket_events) | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: Segment pulls one year of ticket events to start by default. If you need more, reach out to [Segment support](https://segment.com/help/contact/){:target="_blank”}. Support can do a run to pull further back in history. |
-|  [ticket_metrics](#ticket_metrics) | object | All kinds of aggregate metrics about a ticket |
-|  [satisfaction_ratings](#satisfaction_ratings) | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
-|  [ticket_comments](#ticket_comments) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/){:target="_blank”}. |
-|  [ticket_forms](#ticket_forms) | object | Ticket forms allow an admin to define a subset of ticket fields for display to both agents and end users. **Note**: This feature requires a Zendesk Enterprise account. Segment fully syncs all available records in each sync run. |
-|  [ticket_skips](#ticket_skips) | object | A skip is a record of when an agent skips over a ticket without responding to the end user. **Note**: Segment fully syncs all available records in this collection during each sync run. |
-|  [organization_memberships](#organization_memberships) | object | An organization_membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. **Note**: Segment fully syncs all available records in this collection during each sync run. |
-|  [group_memberships](#group_memberships) | object | A group_membership links an agent to a group. Groups can have many agents, as agents can be in many groups. **Note**: Segment fully syncs all available records in this collection during each sync run. |
-|  [audit_logs](#audit_logs) | object | The audit log shows various changes in your instance of Zendesk since the account was created. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/){:target="_blank”}. |
+In your warehouse, each collection is stored in its own table. The tables that follow list the standard properties Segment automatically fetches for each collection.
 
-
-In your warehouse, each collection gets its own table. Find below a list of the properties Segment automatically fetches for each collection.
-
-> info "This list only includes standard properties"
-> The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse.)
+> info "Standard properties only"
+> These tables include only standard Zendesk properties. Your custom fields will also appear in your warehouse after sync.
 
 ### groups
 
-| Property    | Description                                  |
-| ----------- | -------------------------------------------- |
-| id          | This is automatically assigned when creating groups. |
-| url         | The API URL of this group.                   |
-| deleted     | Deleted groups get marked as such.           |
-| name        | The name of the group.                       |
-| created_at  | The date and time the group was created.     |
-| updated_at  | The date and time of the last update of the group. |
-| received_at | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about Zendesk groups.
+
+| Property      | Description                                        |
+| ------------- | -------------------------------------------------- |
+| `id`          | Automatically assigned when a group is created.    |
+| `url`         | The API URL of the group.                          |
+| `deleted`     | Indicates whether the group has been deleted.      |
+| `name`        | The name of the group.                             |
+| `created_at`  | The date and time the group was created.           |
+| `updated_at`  | The date and time the group was last updated.      |
+| `received_at` | Timestamp added when data reaches the Segment API. |
 
 ### users
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the user is created.          |
-| url             | Segment sets the “url” field users see in their Warehouse to equal the “id” from Zendesk, rather than the “url” field. |
-| name            | The name of the user.                                             |
-| email           | The primary email address of the user.                            |
-| time_zone       | The time-zone of this user.                                       |
-| phone           | The primary phone number of this user.                            |
-| locale_id       | The language identifier of this user.                             |
-| locale          | The locale for this user.                                         |
-| organization_id | The ID of the organization that this user is associated with.     |
-| role            | The role of the user. Possible values: "end-user", "agent", "admin". |
-| verified        | The user's primary identity is verified or not.                   |
-| external_id     | A unique identifier from another system. The API treats the ID as case insensitive. Example: ian1 and Ian1 are the same user. |
-| alias           | An alias displayed to end users.                                  |
-| active          | This is set to false if the user has been deleted.                |
-| shared          | If the user is a shared agent from different Zendesk Support instance. Ticket sharing accounts only. |
-| last_login_at   | The last time the user signed in to Zendesk Support.              |
-| two_factor_auth_enabled | If two factor authentication is enabled.                  |
-| signature       | The user's signature. Only agents and admins can have signatures. |
-| details         | Any details you want to store about the user, such as an address. |
-| notes           | Any notes you want to store about the user.                       |
-| custom_role_id  | A custom role if the user is an agent on the Enterprise plan.     |
-| moderator       | Designates whether the user has forum moderation capabilities.    |
-| ticket_restriction | Specifies which tickets the user has access to. Possible values are: “organization”, “groups”, “assigned”, “requested”, null. |
-| only_private_comments | This is set to true if the user can only create private comments. |
-| restricted_agent | If the agent has any restrictions: This is set to false for admins and unrestricted agents, true for other agents. |
-| suspended        | If the agent is suspended. Tickets from suspended users are also suspended, and these users cannot sign in to the end user portal. |
-| chat_only        | Whether or not the user is a chat-only agent.                    |
-| updated_at       | The date and time of the user's last update.                     |
-| received_at      | This timestamp is added to incoming messages as soon as they hit Segment API. | 
+This collection contains information about Zendesk users.
+
+| Property                  | Description                                                                                                                   |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `id`                      | Automatically assigned when a user is created.                                                                                |
+| `url`                     | Segment sets this field to the Zendesk `id`, not the original Zendesk `url`.                                                  |
+| `name`                    | The user’s full name.                                                                                                         |
+| `email`                   | The user’s primary email address.                                                                                             |
+| `time_zone`               | The user’s time zone.                                                                                                         |
+| `phone`                   | The user’s primary phone number.                                                                                              |
+| `locale_id`               | The language identifier for the user.                                                                                         |
+| `locale`                  | The user’s locale.                                                                                                            |
+| `organization_id`         | The ID of the organization the user belongs to.                                                                               |
+| `role`                    | The user’s role. Possible values: `end-user`, `agent`, `admin`.                                                               |
+| `verified`                | Indicates whether the user’s primary identity is verified.                                                                    |
+| `external_id`             | A unique identifier from another system. Treated as case-insensitive (for example, `ian1` and `Ian1` refer to the same user). |
+| `alias`                   | An alias displayed to end users.                                                                                              |
+| `active`                  | Set to `false` if the user has been deleted.                                                                                  |
+| `shared`                  | Indicates whether the user is a shared agent from another Zendesk instance (ticket sharing accounts only).                    |
+| `last_login_at`           | The date and time of the user’s last login.                                                                                   |
+| `two_factor_auth_enabled` | Indicates whether two-factor authentication is turned on.                                                                     |
+| `signature`               | The user’s signature (agents and admins only).                                                                                |
+| `details`                 | Additional details about the user, such as an address.                                                                        |
+| `notes`                   | Notes stored about the user.                                                                                                  |
+| `custom_role_id`          | The custom role ID if the user is an agent on the Enterprise plan.                                                            |
+| `moderator`               | Indicates whether the user has forum moderation permissions.                                                                  |
+| `ticket_restriction`      | Specifies which tickets the user can access. Possible values: `organization`, `groups`, `assigned`, `requested`, or `null`.   |
+| `only_private_comments`   | Set to `true` if the user can only create private comments.                                                                   |
+| `restricted_agent`        | Indicates whether the agent has restrictions. `false` for admins and unrestricted agents, `true` for restricted agents.       |
+| `suspended`               | Indicates whether the agent is suspended. Tickets from suspended users are also suspended.                                    |
+| `chat_only`               | Indicates whether the user is a chat-only agent.                                                                              |
+| `updated_at`              | The date and time the user was last updated.                                                                                  |
+| `received_at`             | Timestamp added when data reaches the Segment API.                                                                            |
 
 ### tickets
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the ticket is created.        |
-| url             | The API URL of this ticket.                                       |
-| external_id     | An ID you can use to link Zendesk Support tickets to local records. |
-| type            | The type of this ticket. Possible values: “problem”, “incident”, “question” or “task”. |
-| subject         | The value of the subject field for this ticket.                   |
-| raw_subject     | The dynamic content placeholder, if present, or the "subject" value, if not. |
-| description     | The first comment on the ticket.                                  |
-| priority        | The urgency with which the ticket should be addressed. Possible values: “urgent”, “high”, “normal”, “low”. |
-| status          | The state of the ticket. Possible values: “new”, “open”, “pending”, “hold”, “solved”, “closed”. |
-| recipient       | The original recipient e-mail address of the ticket. |
-| requester_id    | The user who requested this ticket.                               |
-| submitter_id    | The user who submitted the ticket. The submitter always becomes the author of the first comment on the ticket. |
-| assignee_id     | The agent currently assigned to the ticket.                       |
-| organization_id | The organization of the requester. You can only specify the ID of an organization associated with the requester. |
-| group_id        | The group this ticket is assigned to.                             |
-| collaborator_ids | The IDs of users currently cc'ed on the ticket.                  |
-| forum_topic_id  | The topic this ticket originated from, if any.                    |
-| problem_id      | For tickets of type "incident," The ID of the problem the incident is linked to. |
-| has_incidents   | Is true of this ticket has been marked as a problem, false otherwise. |
-| due_at          | If this is a ticket of type "task" it has a due date. Due date format uses ISO 8601 format. | 
-| tags            | The array of tags applied to this ticket.                         |
-| sharing_agreement_ids | The IDs of sharing agreements used for this ticket.         |
-| created_at      | The date and time this record was created.                        |
-| updated_at      | The date and time this record was last updated.                   |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
-| ticket_form_id  | The ID of the ticket form to render the ticket.                   |
+This collection contains information about Zendesk tickets.
+
+| Property                | Description                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`                    | Automatically assigned when a ticket is created.                                                      |
+| `url`                   | The API URL of the ticket.                                                                            |
+| `external_id`           | A custom ID you can use to link Zendesk tickets to local records.                                     |
+| `type`                  | The type of ticket. Possible values: `problem`, `incident`, `question`, `task`.                       |
+| `subject`               | The subject line of the ticket.                                                                       |
+| `raw_subject`           | The dynamic content placeholder if present, otherwise the `subject` value.                            |
+| `description`           | The first comment on the ticket.                                                                      |
+| `priority`              | The ticket’s urgency level. Possible values: `urgent`, `high`, `normal`, `low`.                       |
+| `status`                | The current ticket status. Possible values: `new`, `open`, `pending`, `hold`, `solved`, `closed`.     |
+| `recipient`             | The original recipient email address for the ticket.                                                  |
+| `requester_id`          | The ID of the user who requested the ticket.                                                          |
+| `submitter_id`          | The ID of the user who submitted the ticket. The submitter is always the author of the first comment. |
+| `assignee_id`           | The ID of the agent currently assigned to the ticket.                                                 |
+| `organization_id`       | The ID of the requester’s organization. Must be associated with the requester.                        |
+| `group_id`              | The ID of the group the ticket is assigned to.                                                        |
+| `collaborator_ids`      | The IDs of users currently CC'd on the ticket.                                                        |
+| `forum_topic_id`        | The ID of the forum topic the ticket originated from, if any.                                         |
+| `problem_id`            | For tickets of type `incident`, the ID of the related problem ticket.                                 |
+| `has_incidents`         | Indicates whether the ticket has been marked as a problem.                                            |
+| `due_at`                | The due date for task-type tickets (ISO 8601 format).                                                 |
+| `tags`                  | The tags applied to the ticket.                                                                       |
+| `sharing_agreement_ids` | The IDs of sharing agreements linked to the ticket.                                                   |
+| `ticket_form_id`        | The ID of the ticket form used to render the ticket.                                                  |
+| `created_at`            | The date and time the ticket was created.                                                             |
+| `updated_at`            | The date and time the ticket was last updated.                                                        |
+| `received_at`           | Timestamp added when data reaches the Segment API.                                                    |
 
 ### ticket_fields
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned upon creation.                     |
-| url             | The URL for this resource.                                        |
-| type            | The type of the ticket field: “checkbox”, “date”, “decimal”, “integer”, “regexp”, “tagger”, “text”, or “textarea”. _*Type is not editable once created._ |
-| slug            | The title of the ticket field separated by _.                     |
-| title           | The title of the ticket field.                                    |
-| raw_title       | The dynamic content placeholder, if present, or the "title" value, if not. |
-| description     | The description of the purpose of this ticket field shown to users. |
-| raw_description | The dynamic content placeholder, if present, or the “description” value, if not. |
-| position        | A relative position for the ticket fields that determines the order of ticket fields on a ticket. Note that positions 0 to 7 are reserved for system fields. |
-| active          | Whether this field is available.                                  |
-| required        | If it's required for this field to have a value when updated by agents.|
-| collapsed_for_agents | If this field should be shown to agents by default or be hidden alongside infrequently used fields. Classic interface only. |
-| regexp_for_validation | Regular expression field only. The validation pattern for a field value to be deemed valid. |
-| title_in_portal | The title of the ticket field when shown to end users.            |
-| raw_title_in_portal | The dynamic content placeholder, if present, or the “title_in_portal” value, if not. |
-| visible_in_portal | Whether this field is available to end users.                   |
-| editable_in_portal | Whether this field is editable by end users.                   |
-| required_in_portal | If it's required for this field to have a value when updated by end users. |
-| tag             | A tag value to set for checkbox fields when checked.              |
-| removable      | If this field is not a system basic field that must be present for all tickets on the account. | 
-| created_at      | The date and time the ticket field was created.                   |
-| updated_at      | The date and time of the last update of the ticket field.         |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about Zendesk ticket fields.
+
+| Property                | Description                                                                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                    | Automatically assigned when the ticket field is created.                                                                                                            |
+| `url`                   | The API URL of the ticket field.                                                                                                                                    |
+| `type`                  | The type of field. Possible values: `checkbox`, `date`, `decimal`, `integer`, `regexp`, `tagger`, `text`, `textarea`. This property can’t be edited after creation. |
+| `slug`                  | The title of the field, with words separated by underscores.                                                                                                        |
+| `title`                 | The title of the ticket field.                                                                                                                                      |
+| `raw_title`             | The dynamic content placeholder if present, otherwise the `title` value.                                                                                            |
+| `description`           | The purpose of the ticket field as shown to users.                                                                                                                  |
+| `raw_description`       | The dynamic content placeholder if present, otherwise the `description` value.                                                                                      |
+| `position`              | Determines the field’s order on the ticket. Positions 0–7 are reserved for system fields.                                                                           |
+| `active`                | Indicates whether the field is active.                                                                                                                              |
+| `required`              | Indicates whether agents must provide a value when updating the field.                                                                                              |
+| `collapsed_for_agents`  | Indicates whether the field is shown or hidden by default in the classic interface.                                                                                 |
+| `regexp_for_validation` | Validation pattern for regular expression fields.                                                                                                                   |
+| `title_in_portal`       | The field title as shown to end users.                                                                                                                              |
+| `raw_title_in_portal`   | The dynamic content placeholder if present, otherwise the `title_in_portal` value.                                                                                  |
+| `visible_in_portal`     | Indicates whether the field is visible to end users.                                                                                                                |
+| `editable_in_portal`    | Indicates whether the field is editable by end users.                                                                                                               |
+| `required_in_portal`    | Indicates whether end users must provide a value when updating the field.                                                                                           |
+| `tag`                   | The tag value applied when a checkbox field is checked.                                                                                                             |
+| `removable`             | Indicates whether the field can be removed (system fields can’t be removed).                                                                                        |
+| `created_at`            | The date and time the ticket field was created.                                                                                                                     |
+| `updated_at`            | The date and time the ticket field was last updated.                                                                                                                |
+| `received_at`           | Timestamp added when data reaches the Segment API.                                                                                                                  |
 
 ### ticket_metrics
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned.                                   |
-| ticket_id       | ID of the associated ticket.                                      |
-| group_stations  | Number of groups this ticket passed through.                      |
-| assignee_stations | Number of assignees this ticket had.                            |
-| reopens         | Total number of times the ticket was reopened.                    |
-| replies         | Total number of times ticket was replied to.                      |
-| reply_time_in_minutes_calendar | Number of minutes to the first reply outside of business hours. |
-| reply_time_in_minutes_business | Number of minutes to the first reply during business hours. |
-| first_resolution_time_in_minutes_calendar | Number of minutes to the first resolution time outside of business hours. |
-| first_resolution_time_in_minutes_business | Number of minutes to the first resolution time during business hours. |
-| full_resolution_time_in_minutes_calendar | Number of minutes to the full resolution outside of business hours. |
-| full_resolution_time_in_minutes_business | Number of minutes to the full resolution during business hours. |
-| agent_wait_time_in_minutes_calendar | Number of minutes the agent spent waiting outside of business hours. |
-| agent_wait_time_in_minutes_business | Number of minutes the agent spent waiting during business hours. |
-| requester_wait_time_in_minutes_calendar | Number of minutes the requester spent waiting outside of business hours. |
-| requester_wait_time_in_minutes_business | Number of minutes the requester spent waiting during business hours. |
-| on_hold_time_in_minutes_calendar | Number of minutes the ticket was on hold outside of business hours. |
-| on_hold_time_in_minutes_business | Number of minutes the ticket was on hold during business hours. |
-| created_at    | The date and time this record was created.                          |
-| updated_at    | The date and time this record was last updated.                     |
-| assignee_updated_at | The date and time the assignee last updated the ticket.       |
-| requester_updated_at | The date and time the requester last updated the ticket.     |
-| status_updated_at   | The date and time the status was last updated.                |
-| initially_assigned_at | The date and time the ticket was initially assigned.        |
-| assigned_at  | The date and time the ticket was last assigned.                      |
-| latest_comment_added_at | The date and time the latest comment was added.           |
-| received_ at | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains performance and timing metrics for Zendesk tickets.
+
+| Property                                    | Description                                                 |
+| ------------------------------------------- | ----------------------------------------------------------- |
+| `id`                                        | Automatically assigned when the record is created.          |
+| `ticket_id`                                 | The ID of the associated ticket.                            |
+| `group_stations`                            | The number of groups the ticket passed through.             |
+| `assignee_stations`                         | The number of assignees the ticket has had.                 |
+| `reopens`                                   | The total number of times the ticket was reopened.          |
+| `replies`                                   | The total number of replies to the ticket.                  |
+| `reply_time_in_minutes_calendar`            | Minutes to the first reply outside business hours.          |
+| `reply_time_in_minutes_business`            | Minutes to the first reply during business hours.           |
+| `first_resolution_time_in_minutes_calendar` | Minutes to the first resolution outside business hours.     |
+| `first_resolution_time_in_minutes_business` | Minutes to the first resolution during business hours.      |
+| `full_resolution_time_in_minutes_calendar`  | Minutes to full resolution outside business hours.          |
+| `full_resolution_time_in_minutes_business`  | Minutes to full resolution during business hours.           |
+| `agent_wait_time_in_minutes_calendar`       | Minutes the agent spent waiting outside business hours.     |
+| `agent_wait_time_in_minutes_business`       | Minutes the agent spent waiting during business hours.      |
+| `requester_wait_time_in_minutes_calendar`   | Minutes the requester spent waiting outside business hours. |
+| `requester_wait_time_in_minutes_business`   | Minutes the requester spent waiting during business hours.  |
+| `on_hold_time_in_minutes_calendar`          | Minutes the ticket was on hold outside business hours.      |
+| `on_hold_time_in_minutes_business`          | Minutes the ticket was on hold during business hours.       |
+| `created_at`                                | The date and time the record was created.                   |
+| `updated_at`                                | The date and time the record was last updated.              |
+| `assignee_updated_at`                       | The date and time the assignee last updated the ticket.     |
+| `requester_updated_at`                      | The date and time the requester last updated the ticket.    |
+| `status_updated_at`                         | The date and time the ticket status was last updated.       |
+| `initially_assigned_at`                     | The date and time the ticket was first assigned.            |
+| `assigned_at`                               | The date and time the ticket was most recently assigned.    |
+| `latest_comment_added_at`                   | The date and time the latest comment was added.             |
+| `received_at`                               | Timestamp added when data reaches the Segment API.          |
 
 ### ticket_events
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned.                                   |
-| ticket_event_id | This is automatically assigned when the ticket is updated.        |
-| ticket_id       | The ID of the associated ticket.                                  |
-| timestamp       | The time when the ticket was updated.                             |
-| updater_id      | The ID of the user who updated the ticket.                        |
-| ticket_event_via | How the event was created.                                       |
-| context_client  | This refers to the “client” used to submit this ticket change (for example, browser name and type). |
-| context_location | The plain text name of where the request was made, if available (for example, country, city). |
-| context_latitude | Latitude of the location where the ticket was changed.           |
-| context_longitude | Longitude of the location where the ticket was changed.         |
-| via             | How the event was created.                                        |
+This collection contains details about individual updates or changes to Zendesk tickets.
+
+| Property            | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| `id`                | Automatically assigned when the record is created.                                   |
+| `ticket_event_id`   | Automatically assigned when the ticket is updated.                                   |
+| `ticket_id`         | The ID of the associated ticket.                                                     |
+| `timestamp`         | The date and time the ticket was updated.                                            |
+| `updater_id`        | The ID of the user who made the update.                                              |
+| `ticket_event_via`  | The channel or method used to create the event.                                      |
+| `context_client`    | The client used to submit the ticket change (for example, browser name and version). |
+| `context_location`  | The location name, if available (for example, country or city).                      |
+| `context_latitude`  | The latitude of the location where the change occurred.                              |
+| `context_longitude` | The longitude of the location where the change occurred.                             |
+| `via`               | The method used to create the event.                                                 |
 
 
 ### activities
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned upon creation.                     |
-| url             | The API URL of this activity.                                     |
-| verb            | The type of activity. Can be "tickets.assignment," "tickets.comment," or "tickets.priority_increase." |
-| title           | Description of this activity.                                     |
-| created_at      | The date and time this record was created.                        |
-| updated_at      | The date and time this record was last updated.                   |
+This collection contains information about actions or updates related to Zendesk tickets.
+
+| Property     | Description                                                                                                  |
+| ------------ | ------------------------------------------------------------------------------------------------------------ |
+| `id`         | Automatically assigned when the activity is created.                                                         |
+| `url`        | The API URL of the activity.                                                                                 |
+| `verb`       | The type of activity. Possible values: `tickets.assignment`, `tickets.comment`, `tickets.priority_increase`. |
+| `title`      | A short description of the activity.                                                                         |
+| `created_at` | The date and time the activity was created.                                                                  |
+| `updated_at` | The date and time the activity was last updated.                                                             |
+
 
 ### attachments
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned upon creation.                     |
-| file_name       | The name of the image file.                                       |
-| content_url     | A full URL where the attachment image file can be downloaded.     |
-| content_type    | The content type of the image. Example value: image/png.          |
-| inline          | If true, the attachment is excluded from the attachment list and the attachment's URL can be referenced within the comment of a ticket. Default is false. |
-| size            | The size of the image file in bytes.                              |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about files attached to Zendesk tickets.
+
+| Property       | Description                                                                                                                                                             |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | Automatically assigned when the attachment is created.                                                                                                                  |
+| `file_name`    | The name of the attached file.                                                                                                                                          |
+| `content_url`  | The full URL where the attachment file can be downloaded.                                                                                                               |
+| `content_type` | The MIME type of the attachment (for example, `image/png`).                                                                                                             |
+| `inline`       | Indicates whether the attachment is inline. Inline attachments are excluded from the attachment list but can be referenced within a ticket comment. Default is `false`. |
+| `size`         | The file size in bytes.                                                                                                                                                 |
+| `received_at`  | Timestamp added when data reaches the Segment API.                                                                                                                      |
 
 ### organizations
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the organization is created.  |
-| external_id     | A unique external ID to associate organizations to an external record. |
-| url             | The API URL of this organization.                                 |
-| name            | A unique name for the organization.                               |
-| details         | This includes any details about the organization, such as the address. |
-| notes           | Any notes you have about the organization.                        |
-| group_id        | New tickets from users in this organization are automatically put in this group. |
-| shared_tickets  | End users in this organization are able to see each other's tickets. |
-| shared_comments | End users in this organization are able to see each other's comments on tickets. |
-| created_at | The date and time that the organization was created.                   |
-| updated_at      | The date and time that the organization was last updated.         |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains information about organizations in Zendesk.
+
+| Property          | Description                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| `id`              | Automatically assigned when the organization is created.                                  |
+| `external_id`     | A unique external ID that links the organization to an external record.                   |
+| `url`             | The API URL of the organization.                                                          |
+| `name`            | The unique name of the organization.                                                      |
+| `details`         | Additional details about the organization, such as its address.                           |
+| `notes`           | Notes or comments about the organization.                                                 |
+| `group_id`        | The group that new tickets from users in this organization are automatically assigned to. |
+| `shared_tickets`  | Indicates whether end users in the organization can view each other’s tickets.            |
+| `shared_comments` | Indicates whether end users in the organization can view each other’s ticket comments.    |
+| `created_at`      | The date and time the organization was created.                                           |
+| `updated_at`      | The date and time the organization was last updated.                                      |
+| `received_at`     | Timestamp added when data reaches the Segment API.                                        |
 
 ### ticket_comments
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | This is automatically assigned when the comment is created.       |
-| ticket_event_id | This is automatically assigned when the comment is created.       |
-| ticket_id       | The ID of the ticket being commented.                             |
-| type            | Comment or VoiceComment. The JSON object for voice comments is different.  |
-| body            | The comment string.                                               |
-| public          | true if a public comment; false if an internal note. The initial value set on ticket creation persists for any additional comment unless you change it. |
-| author_id       | The ID of the comment author.                                     |
-| via             | How the comment was created.                                      |
-| created_at      | The time the comment was created.                                 |
-| received_at     | This timestamp is added to incoming messages as soon as they hit Segment API. |
+This collection contains comments and related metadata for Zendesk tickets.
+
+| Property          | Description                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | Automatically assigned when the comment is created.                                                                                       |
+| `ticket_event_id` | Automatically assigned when the comment is created.                                                                                       |
+| `ticket_id`       | The ID of the ticket the comment belongs to.                                                                                              |
+| `type`            | The comment type. Possible values: `Comment` or `VoiceComment`. JSON objects for voice comments differ in structure.                      |
+| `body`            | The text of the comment.                                                                                                                  |
+| `public`          | Indicates whether the comment is public (`true`) or internal (`false`). The initial value set on ticket creation persists unless changed. |
+| `author_id`       | The ID of the comment author.                                                                                                             |
+| `via`             | How the comment was created.                                                                                                              |
+| `created_at`      | The date and time the comment was created.                                                                                                |
+| `received_at`     | Timestamp added when data reaches the Segment API.                                                                                        |
 
 ### ticket_forms
-> warning "This collection requires Zendesk Enterprise access"
-> Segment's Zendesk source connector only fetches data for the ticket_forms collection if the associated Zendesk account is an Zendesk Enterprise account. For more information, please see [ Zendesk's ticket_forms documentation](https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_forms/){:target="_blank"}.
 
+> info "Zendesk Enterprise required"
+> The `ticket_forms` collection syncs only for Zendesk Enterprise accounts. See [Zendesk’s Ticket Forms API documentation](https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_forms/){:target="_blank"} for details.
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the ticket form.                                        |
-| active          | If set to true, this shows that the form is active.               |
-| end_user_visible | If set to true, this shows that the form is visible to end users.|
-| name            | The name of the form.                                             |
-| restricted_brand_ids | The IDs of all brands that this ticket form is restricted to. |
-| ticket_field_ids | The IDs of all ticket fields which are in this ticket form.      |
-| updated_at      | The date and time the ticket form was last updated.               |
-| url             | The URL of the ticket form.                                       |
-| created_at      | The date and time the ticket form was created.                    |
-| display_name    | The name of the form that displays to the end user.               |
-| in_all_brands   | This shows if the form is available for use in all brands on this account. |
-| position         | The position of this form among other forms in the account (for example, dropdown) |
-| raw_display_name | The dynamic content placeholder (if available,) or the “display_name” value, if the dynamic content placeholder is unavailable. |
-| raw_name       | The dynamic content placeholder (if available,) or the “name” value, if the dynamic content placeholder is unavailable. |
-| default        | If set to true, this shows that the form is the default form for this account. |
+This collection contains information about ticket forms in Zendesk.
+
+| Property               | Description                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------- |
+| `id`                   | The ID of the ticket form.                                                          |
+| `active`               | Indicates whether the form is active.                                               |
+| `end_user_visible`     | Indicates whether the form is visible to end users.                                 |
+| `name`                 | The name of the form.                                                               |
+| `restricted_brand_ids` | The IDs of brands that the ticket form is restricted to.                            |
+| `ticket_field_ids`     | The IDs of ticket fields included in this form.                                     |
+| `updated_at`           | The date and time the ticket form was last updated.                                 |
+| `url`                  | The API URL of the ticket form.                                                     |
+| `created_at`           | The date and time the ticket form was created.                                      |
+| `display_name`         | The form name shown to end users.                                                   |
+| `in_all_brands`        | Indicates whether the form is available for all brands in the account.              |
+| `position`             | The form’s position among other forms in the account (for example, dropdown order). |
+| `raw_display_name`     | The dynamic content placeholder, if available, or the `display_name` value if not.  |
+| `raw_name`             | The dynamic content placeholder, if available, or the `name` value if not.          |
+| `default`              | Indicates whether this form is the default form for the account.                    |
 
 ### ticket_skips
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the ticket skip record.                                 |
-| ticket_id       | The ID of the skipped ticket.                                     |
-| user_id         | The ID of the skipping agent.                                     |
-| reason          | The reason for skipping the ticket.                               |
-| created_at      | The date and time the skip was created.                           |
-| updated_at      | The date and time the skip was last updated.                      |
+This collection contains information about Zendesk tickets that agents have skipped.
+
+| Property     | Description                                    |
+| ------------ | ---------------------------------------------- |
+| `id`         | The ID of the ticket skip record.              |
+| `ticket_id`  | The ID of the skipped ticket.                  |
+| `user_id`    | The ID of the agent who skipped the ticket.    |
+| `reason`     | The reason the ticket was skipped.             |
+| `created_at` | The date and time the record was created.      |
+| `updated_at` | The date and time the record was last updated. |
+
+### satisfaction_ratings
+
+This collection contains information about customer satisfaction ratings for Zendesk tickets.
+
+| Property       | Description                                                                  |
+| -------------- | ---------------------------------------------------------------------------- |
+| `id`           | Automatically assigned when the satisfaction rating is created.              |
+| `url`          | The API URL of the satisfaction rating.                                      |
+| `assignee_id`  | The ID of the agent assigned to the ticket when the rating was submitted.    |
+| `group_id`     | The ID of the group assigned to the ticket when the rating was submitted.    |
+| `requester_id` | The ID of the user who submitted the rating.                                 |
+| `ticket_id`    | The ID of the ticket being rated.                                            |
+| `score`        | The rating value. Possible values: `offered`, `unoffered`, `good`, or `bad`. |
+| `created_at`   | The date and time the rating was created.                                    |
+| `updated_at`   | The date and time the rating was last updated.                               |
+| `received_at`  | Timestamp added when data reaches the Segment API.                           |
 
 ### organization_memberships
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the organization membership.                            |
-| url             | The API URL of the membership.                                    |
-| user_id         | The ID of the user for whom this membership belongs.              |
-| organization_id | The ID of the organization associated with the selected user, in this membership. |
-| created_at      | The date and time this record was created.                        |
-| updated_at      | The date and time this record was last updated.                   |
-| organization_name | The name of the organization associated with the selected user, in this membership. |
+This collection contains information about relationships between users and organizations in Zendesk.
+
+| Property            | Description                                            |
+| ------------------- | ------------------------------------------------------ |
+| `id`                | The ID of the organization membership.                 |
+| `url`               | The API URL of the membership.                         |
+| `user_id`           | The ID of the user in the membership.                  |
+| `organization_id`   | The ID of the organization associated with the user.   |
+| `created_at`        | The date and time the record was created.              |
+| `updated_at`        | The date and time the record was last updated.         |
+| `organization_name` | The name of the organization associated with the user. |
 
 ### group_memberships
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the group membership.                                   |
-| url             | The API URL of this group.                                        |
-| created_at      | The date and time the group was created.                          |
-| group_id        | The ID of the group.                                              |
-| updated_at      | The date and time the group was last updated.                     |
-| user_id         | The ID of an agent.                                               |
+This collection contains information about agents and their group assignments in Zendesk.
+
+| Property     | Description                                        |
+| ------------ | -------------------------------------------------- |
+| `id`         | The ID of the group membership.                    |
+| `url`        | The API URL of the group membership.               |
+| `created_at` | The date and time the membership was created.      |
+| `group_id`   | The ID of the group.                               |
+| `updated_at` | The date and time the membership was last updated. |
+| `user_id`    | The ID of the agent in the membership.             |
 
 ### audit_logs
 
-| Property        | Description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| id              | The ID of the audit log.                                          |
-| url             | The URL to access the audit log.                                  |
-| created_at      | The date and time that the audit was created.                     |
-| actor_id        | The ID of the user creating the ticket.                           |
-| source_id       | The ID of the item being audited.                                 |
-| source_type     | The item type being audited.                                      |
-| source_label    | The name of the item being audited.                               |
-| action          | The action a user performed. Either “login”, “create”, “update”, or “destroy”. |
-| change_description | The description of the change that occurred.                   |
-| ip_address      | The IP address of the user performing the audit.                  |
-| action_label    | A localized string of action field.                               |
+This collection contains records of account-level actions and configuration changes in Zendesk.
 
-## Adding Destinations
-Currently only Warehouses are supported for object-cloud sources.
+| Property             | Description                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ |
+| `id`                 | The ID of the audit log.                                                       |
+| `url`                | The API URL of the audit log.                                                  |
+| `created_at`         | The date and time the audit record was created.                                |
+| `actor_id`           | The ID of the user who performed the action.                                   |
+| `source_id`          | The ID of the item being audited.                                              |
+| `source_type`        | The type of item being audited.                                                |
+| `source_label`       | The name of the item being audited.                                            |
+| `action`             | The action performed. Possible values: `login`, `create`, `update`, `destroy`. |
+| `change_description` | A short description of the change that occurred.                               |
+| `ip_address`         | The IP address of the user who performed the action.                           |
+| `action_label`       | The localized string for the `action` field.                                   |

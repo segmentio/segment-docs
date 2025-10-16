@@ -11,7 +11,6 @@ When you enable Marketo in the Segment web app, your changes appear in the Segme
 ### Important Note:
 Our client-side and server-side destinations each require **different** credentials for authentication. Read through the information below on `identify` calls for further information.
 
-- - -
 
 ## Page and Track
 

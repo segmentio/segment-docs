@@ -9,7 +9,6 @@ When you enable Librato in the Segment web app, your changes appear in the Segme
 
 Librato supports the Segment `track` method for both client-side and server-side.
 
-- - -
 
 ## Track
 

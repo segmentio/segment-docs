@@ -34,19 +34,20 @@ Identify calls that do not have a User ID value will not be sent to Hotjar.
 
 Currently, the Hotjar Identify API **does not** support ingesting values passed as nested objects or lists over your identify Spec:
 
-```js
+```json
 "traits": {
-    "name": "Peter Gibbons",
-    "email": "peter@example.com",
-    "plan": "premium",
-    "logins": 5,
-    "address": {
-      "street": "6th St",
-      "city": "San Francisco",
-      "state": "CA",
-      "postalCode": "94103",
-      "country": "USA"
-    }
+  "name": "Peter Gibbons",
+  "email": "peter@example.com",
+  "plan": "premium",
+  "logins": 5,
+  "address": {
+    "street": "6th St",
+    "city": "San Francisco",
+    "state": "CA",
+    "postalCode": "94103",
+    "country": "USA"
+  }
+}
 ```
 
 In the example above, Hotjar rejects all the values in the `address` field.
@@ -62,8 +63,8 @@ Currently, the Hotjar Events API **does not** support ingesting event properties
 ```js
 analytics.track("Experiment Viewed", {
   experiment_id: "1234",
-  experiment_name: "new_upsell_UX"
-  variation_id: "1234b"
+  experiment_name: "new_upsell_UX",
+  variation_id: "1234b",
   variation_name: "variant"
 });
 ```
