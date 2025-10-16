@@ -14,7 +14,7 @@ To get started:
   2. Create an IAM policy.
 	  1. Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/){:target="_blank"}.
 	  2. Follow [these instructions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html#access_policies_create-json-editor){:target="_blank"} to create an IAM policy on the JSON to allow Segment permission to write to your Kinesis Firehose Stream.
-     - Use the following template policy in the **Policy Document** field. Be sure to change the `{region}`, `{account-id}` and `{stream-name}` with the applicable values.
+          - Use the following template policy in the **Policy Document** field. Be sure to change the `{region}`, `{account-id}` and `{stream-name}` with the applicable values.
 
 
 		```js
@@ -36,11 +36,11 @@ To get started:
 
 
   3. Create an IAM role.
-	  1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console){:target="_blank”} to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
-	  2. When prompted to enter an Account ID, enter `595280932656`.
-	  3. Select the checkbox to enable **Require External ID**.
-	  4. Enter your Secret ID as the **External ID**. This can be found in Segment by navigating to your Amazon Kinesis Firehose destination in Segment, going to the Settings tab, and clicking the Secret ID setting.
-    - **Note:** If you have multiple sources using Kinesis, enter one of their Secret IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you've completed this step and saved your IAM role.
+	    1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console){:target="_blank”} to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
+	    2. When prompted to enter an Account ID, enter `595280932656`.
+	    3. Select the checkbox to enable **Require External ID**.
+	    4. Enter your Secret ID as the **External ID**. This can be found in Segment by navigating to your Amazon Kinesis Firehose destination in Segment, going to the Settings tab, and clicking the Secret ID setting.
+            - **Note:** If you have multiple sources using Kinesis, enter one of their Secret IDs here for now and then follow the procedure outlined in the [Multiple Sources](#best-practices) section at the bottom of this doc once you've completed this step and saved your IAM role.
       5. When adding permissions to your new role, find the policy you created in step 2 and attach it.
 
 4. Create a new Kinesis Firehose Destination.

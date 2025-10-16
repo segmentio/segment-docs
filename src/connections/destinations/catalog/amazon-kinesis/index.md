@@ -43,13 +43,13 @@ To get started:
 3. Create an IAM role.
    1. Follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console){:target="_blank"} to allow Segment permission to write to your Kinesis Stream.
    2. When prompted to enter an Account ID, enter `595280932656`. Make sure to enable **Require External ID** and enter your Segment Source ID as the External ID. This can be found by navigating to **Settings > API Keys** from your Segment source homepage.
-   * **NOTE:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](/docs/connections/destinations/catalog/amazon-kinesis/#multiple-sources) section once you've completed this step and saved your IAM role.
+        * **NOTE:** If you have multiple sources using Kinesis, enter one of their source IDs here for now and then follow the procedure outlined in the [Multiple Sources](/docs/connections/destinations/catalog/amazon-kinesis/#multiple-sources) section once you've completed this step and saved your IAM role.
    3. When adding permissions to your new role, find the policy you created in step 2 and attach it.
 
 4. Create a new Kinesis destination.
    1. In the Segment source that you want to connect to your Kinesis destination, click **Add Destination**. Search and select the **Amazon Kinesis** destination.
    2. Enter the **Role Address**, **Stream Region**, **Stream Name**, and **Secret ID**.
-   * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
+      * **NOTE:** For security purposes, Segment sets your Workspace ID as your Secret ID. If you're using a Secret ID different from your Workspace ID, reach out to our support team so they can change it to make your account more secure.
 
 > success ""
 > Segment's Amazon Kinesis destination only transmits data in JSON format. 
