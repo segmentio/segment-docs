@@ -549,7 +549,7 @@ You can send [Computed traits](/docs/engage/audiences/computed-traits/) and [A
       
 When connecting the calculated trait or audience to the MoEngage destination, you can select the method of your choice (or opt to use both).
 
-### Sync yime
+### Sync time
 
 The default integration for MoEngage \<> Twilio Engage connection is **Real Time.** But there are some filters that disqualify the persona from syncing in real-time, including some time-based filters which restrict your audience’s size at the time of message send.
 
