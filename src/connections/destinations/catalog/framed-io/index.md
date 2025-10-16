@@ -8,7 +8,6 @@ Once your application is set up and instrumented with Segment, turn on Framed in
 
 Framed supports the `identify` and `track` methods.
 
-- - -
 
 ## Identify
 

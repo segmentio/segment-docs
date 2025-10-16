@@ -12,7 +12,6 @@ The Segment Planhat destination is 100% handled through our servers, so you don'
 
 The Segment Planhat destination supports Identify, Page, Track, and Group calls. For more information, see the [Segment Spec documentation](/docs/connections/spec/).
 
-- - -
 
 ## Identify
 

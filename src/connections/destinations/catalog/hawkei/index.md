@@ -70,6 +70,6 @@ You'll want to create events that are part of critical paths in your application
 
 ## Troubleshooting
 
-## AnonymousId
+### AnonymousId
 
 All requests to Hawkei require an `anonymousId` to be set. Segment sets this automatically on client-side libraries, but for server side libraries (php, Ruby etc) this needs to be explicitly set.

@@ -19,7 +19,7 @@ You can use `identify` to create a lead or a contact when a website visitor fill
 ### User ID
 `userId` is a mandatory field which is used to identify the lead or contact in Freshsales. If your user identifier is not email, then email has to be a part of traits.
 
-<pre>
+```json
 {
   "userId": "97980cfea0067",
   "traits": {
@@ -32,11 +32,11 @@ You can use `identify` to create a lead or a contact when a website visitor fill
     }
   }
 }
-</pre>
+```
 
 By default, every `identity` is created as a lead. If you'd like an identity to be a contact, you'd need to pass `fs_contact` as `true` as a part of traits.
 
-<pre>
+```json
 {
   "userId" : "97980cfea0067",
   "traits" : {
@@ -50,7 +50,7 @@ By default, every `identity` is created as a lead. If you'd like an identity to 
     }
   }
 }
-</pre>
+```
 
 ### Traits
 `traits` are pieces of information you know about a user that are included in an `identify` method.
@@ -72,7 +72,7 @@ As part of traits, you can send custom fields created in Freshsales by using the
 ### Objects:
 Accounts and Deals associated to a contact or lead can also be updated in Freshsales. The objects company and deal in the identity correspond to the Accounts and Deals in Freshsales. You can pass the `traits` of the company or the deal along with the respective objects in the identity.
 
-```
+```json
 {
   "userId" : "97980cfea0067",
   "traits" : {
@@ -98,7 +98,7 @@ You can track activities of your website visitors. If a user is subscribing to a
 ### Track request payload
 
 
-```
+```json
 {
   "userId" : "john.doe@example.com",
   "event": "Email Bounced",
@@ -120,7 +120,7 @@ When you call a `page` event, we send a pageview to Freshsales. You can send ext
 
 ### Sample Page request payload
 
-```
+```json
 {
   "userId" : "john.doe@example.com",
   "name": "Page view",

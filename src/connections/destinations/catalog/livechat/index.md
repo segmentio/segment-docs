@@ -9,7 +9,6 @@ When you enable LiveChat in the Segment web app, your changes appear in the Segm
 
 LiveChat is only supported on the client-side.
 
-- - -
 
 ## Identify
 

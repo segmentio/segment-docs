@@ -8,7 +8,7 @@ id: 54521fd525e721e32a72eea2
 Our Clicky destination code is open-source on GitHub. You can check out the code [in the @segment-integrations/analytics.js-integration-clicky](https://github.com/segment-integrations/analytics.js-integration-clicky){:target="_blank"} repository.
 
 
-## Getting Started
+## Getting started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Clicky" in the Catalog, select it, and choose which of your sources to connect the destination to.
