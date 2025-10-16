@@ -11,7 +11,7 @@ id: 3hbak7a9
 2. Search for **Zendesk** in the Sources Catalog and click **Add Source**.
 3. Give the source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Zendesk` creates the schema `zendesk`.
 - You can add multiple instances if you have multiple Zendesk accounts. 
-4. Enter your Zendesk subdomain. The subdomain you use to access your Zendesk portal (for example `segment` for segment.zendesk.com)
+4. Enter the subdomain you use to access your Zendesk portal (for example `segment` for segment.zendesk.com)
 - If you enter `segment.zendesk.com` as a subdomain instead of just `segment`, Segment tries to access the host `segment.zendesk.com.zendesk.com` and you will get a credentials error.
 5. Click **Authorize** to start Zendesk's OAuth process. Sign in and grant permissions.
 
