@@ -29,6 +29,9 @@ Auto-Instrumentation simplifies tracking in your websites and apps by removing t
 > info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
+> info "Regional availability"
+> Auto-Instrumentation isn't supported in EU workspaces.
+
 ## Background
 
 Collecting high-quality analytics data is essential, but traditional tracking setups often fall behind as business needs change. Instrumentation updates take time away from other engineering priorities, and these delays reduce visibility and increase the burden on engineering teams.
