@@ -1,7 +1,6 @@
 ---
 title: FullSession (Actions) Destination
 id: 68c14f4eefb643527597844c
-hidden: true
 beta: true
 ---
 
