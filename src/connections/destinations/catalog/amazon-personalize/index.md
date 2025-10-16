@@ -799,7 +799,7 @@ To install Segment's Layer:
 
 You need to modify the IAM Role & Policy originally created with this Lambda to allow it to send and receive data from Personalize. To do this:
 
-1. From the **Execution role** section of your Lambda function, click the **View the <your-role-name>** link.
+1. From the **Execution role** section of your Lambda function, click the **View the `<your-role-name>`** link.
 
     ![A screenshot of the execution role settings section on your Lambda.](images/ExecutionRoleIAM.png)
 
@@ -907,7 +907,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
           }
       ```
 
-    * This may be automatically included as policy "AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>"
+    * This may be automatically included as policy `AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>`
 
       ```json
           {
@@ -1004,6 +1004,6 @@ There are two settings relevant for track calls:
 
 This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax){:target="_blank”} for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html){:target="_blank”}in Cloud Watch.
 
-**My Lambda <> Segment connection is timing out, what do I do?**
+**My Lambda `<>` Segment connection is timing out, what do I do?**
 
 Due to how Segment's event delivery system, [Centrifuge](https://www.twilio.com/en-us/blog/archive/2018/introducing-centrifuge){:target="_blank”}, works, your Lambda can't take more than five seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.

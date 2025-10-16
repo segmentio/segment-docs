@@ -10,8 +10,6 @@ Once the Segment library is integrated with your server, toggle All Aboard! to "
 
 All Aboard! supports the `identify` method.
 
-- - -
-
 ## Identify
 
 When you `identify` a user we pass that user's information to All Aboard. You can use the `identify` call to add new customers to All Aboard! or append traits to existing customers.
