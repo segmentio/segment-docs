@@ -28,7 +28,7 @@ After you've generated the API key:
 
     **Note:** Only JavaScript sources support plugins.
 
-2. Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page. This can be done by adding this script,  <script src="https://www.youtube.com/iframe_api"></script> to the section of the source code where the page loads.
+2. Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page. This can be done by adding the following script to the section of the source code where the page loads.
 
     - Use the initialize method in the YouTube `onYouTubeIframeAPIReady()` function to register and initialize the plugin with the player instance and your API key:
 

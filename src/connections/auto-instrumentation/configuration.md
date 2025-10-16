@@ -13,9 +13,20 @@ This guide assumes that you've already added the Signals SDK to your application
 > info "Auto-Instrumentation in public beta"
 > Auto-Instrumentation is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.                  
 
+> info "Regional availability"
+> Auto-Instrumentation isn't supported in EU workspaces.
+
 ## Converting signals to events
 
 After you set up the Signals SDK to capture the signals you want to target, you can create rules in your Segment workspace to translate the captured signals into traditional Segment analytics events. These rules are deployed in your application the next time a user launches your app.
+
+The process works like this:
+
+1. The SDK sends raw signals from your app or website to Segment.
+2. You build event rules in your workspace that define how those signals should become analytics events.
+3. You publish the event rules.
+
+After publishing, Segment analyzes user interactions in your app or website against these rules and automatically generates analytics events when matching interactions occur.
 
 ### Getting started with rule creation
 
@@ -47,12 +58,10 @@ You can enrich your events by adding properties based on signal metadata. For ex
 
 These properties are sent alongside your event, giving your team deeper insights without requiring any manual instrumentation.
 
+<!-- PW, 6 August 2025: Commenting this section out for now
 #### Preview your event rule
 
 To verify that a rule is working as expected, you don't need to enter a cycle of creating and updating the rule, generating signals, then checking the source debugger for the generated event. As you create, edit, or view a rule, you can preview it in real time against the current signal buffer to see which signals match and what the resulting event will look like. Event properties are mapped to the values found in the matched signals, and complete matches are grouped by anonymous ID.
-
-
-<!-- PW, 6 August 2025: Commenting this section out for now
 
 The Rules Editor also lets you test your rules with recent signals to verify that they produce the data you need before you deploy. 
 

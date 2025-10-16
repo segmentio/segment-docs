@@ -31,7 +31,7 @@ You can then proceed to configure your destination.
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "*Selligent Marketing Cloud*" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Enter the "*API Key*" and "*API Secret*" into your Segment Settings UI.
-4. *SMC Admin URL* - Copy the link you use to log into the SMC admin should look like https://**{you company}**.slgnt.us
+4. *SMC Admin URL* - Copy the link you use to log into the SMC admin should look like `https://{you company}.slgnt.us`
 ![5](images/5.png)
 5. *Organization* - You will find the organization name on the top-right hand corner next to the menu icon.
 ![6](images/6.png)
@@ -91,12 +91,12 @@ An example call can look like:
 ```
 
 Segment sends Group calls to *Selligent Marketing Cloud* as a `group` event. These calls are used to populate static segments in the *Selligent Marketing Cloud* platform. The static segment must be created in Selligent Marketing Cloud before you can use it. The call should adhere the above example and contain the following elements:
-* <u>groupId</u>: The *api_name* of the static segment to populate
-* <u>userId</u>: The value on which the matching to populate the segment should happen
-* <u>traits</u>:
-  * <u>matchkey</u>: this is a mandatory trait and should contain the name of the field in the userlist on which the matching should be done
-  * <u>method</u>: this trait is optional and indicates either a remove call or an add call to the *Selligent Marketing Cloud* segment. The two values possible are REMOVE or ADD but it will default to ADD. So it’s only needed in case of a remove call
-  * <u>userlist</u>: this is a mandatory trait and should contain the *api_name* of the userlist in *Selligent Marketing Cloud*
+* groupId: The *api_name* of the static segment to populate
+* userId: The value on which the matching to populate the segment should happen
+* traits:
+  * matchkey: this is a mandatory trait and should contain the name of the field in the userlist on which the matching should be done
+  * method: this trait is optional and indicates either a remove call or an add call to the *Selligent Marketing Cloud* segment. The two values possible are REMOVE or ADD but it will default to ADD. So it’s only needed in case of a remove call
+  * userlist: this is a mandatory trait and should contain the *api_name* of the userlist in *Selligent Marketing Cloud*
 
 ## Alias
 

@@ -16,8 +16,6 @@ Since Primer needs to be initialized as early as possible, you need to supply th
 
 This will initialize the Primer SDK under the hood and begin collecting events and initializing the Primer Flow.
 
-- - -
-
 Primer supports the `identify` and `track` methods.
 
 ## Identify

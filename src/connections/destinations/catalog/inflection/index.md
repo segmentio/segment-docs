@@ -48,11 +48,11 @@ analytics.track('Login Button Clicked')
 Send [Group](/docs/connections/spec/group) calls to tie a user to an org. There are two IDs that are relevant in a group call: the userId, which belongs and refers to the user, and the groupId, which belongs and refers to the specific group.  A user can belong to multiple groups, each associated with a different groupId, but the user will have only one userId linked to each of these different groups.
 
 ```js
- analytics.group("0e8c78ea9d97a7b8185e8632", {
-name: "Initech",
-industry: "Technology",
-employees: 329,
-plan: "enterprise",
-"total billed": 830
+analytics.group("0e8c78ea9d97a7b8185e8632", {
+  name: "Initech",
+  industry: "Technology",
+  employees: 329,
+  plan: "enterprise",
+  "total billed": 830
 });
 ```

@@ -1,28 +1,24 @@
 ---
-title: Bucket Destination
+title: Reflag Destination
 rewrite: true
 id: 5fabc0b00f88248bbce4db48
 ---
 
-[Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature flagging that’s purpose-built for B2B.
+[Reflag](https://reflag.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature flags for SaaS that run on TypeScript.
 
-
-With Bucket, you can:
+With Reflag, you can:
 - Release features gradually with simple flags.
 - Gate features based on customer subscriptions.
 - Iterate fast with adoption metrics and feedback.
 
-This destination is maintained by Bucket. For any issues with the destination, [contact the Bucket Support team](mailto:support@bucket.co).
+This destination is maintained by Reflag. For any issues with the destination, [contact the Reflag Support team](mailto:support@reflag.com).
 
 ## Getting Started
-
-
-
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Bucket" in the Destinations Catalog, and select the Bucket destination.
-3. Choose which Source should send data to the Bucket destination.
-4. Go to [Bucket's Environment Settings](https://app.bucket.co/envs/current/settings/app-environments){:target="blank"} and find and copy the "Publishable Key" for the Production environment.
-5. Enter the "Publishable Key" as "Publishable Key" in the "Bucket" destination settings in Segment.
+2. Search for "Reflag" in the Destinations Catalog, and select the Reflag destination.
+3. Choose which Source should send data to the Reflag destination.
+4. Go to [Reflag's Environment Settings](https://app.reflag.com/envs/current/settings/app-environments){:target="blank"} and find and copy the "Publishable Key" for the Production environment.
+5. Enter the "Publishable Key" as "Publishable Key" in the "Reflag" destination settings in Segment.
 
 ## Identify
 
@@ -35,7 +31,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to Bucket as an `identify` event which updates User profiles.
+Segment sends Identify calls to Reflag as an `identify` event which updates User profiles.
 
 ## Group
 
@@ -47,7 +43,7 @@ analytics.identify('groupId123', {
 });
 ```
 
-Segment sends Group calls to Bucket as a `group` event which updates Company profiles.
+Segment sends Group calls to Reflag as a `group` event which updates Company profiles.
 
 ## Track
 
@@ -57,4 +53,4 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 analytics.track('Login Button Clicked', {});
 ```
 
-Segment sends Track calls to Bucket as a `track` event which updates the Features page.
+Segment sends Track calls to Reflag as a `track` event which updates the Features page.

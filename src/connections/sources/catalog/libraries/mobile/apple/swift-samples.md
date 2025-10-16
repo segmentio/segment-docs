@@ -4,7 +4,7 @@ strat: swift
 ---
 
 ## Samples
-The code samples below demonstrate the implementation of common use cases of the Analytics Swift library across different platforms. 
+The following code samples show how to implement common use cases of the Analytics Swift library across different platforms.
 
 ### Sample applications
 {% assign resources = site.data.catalog.swift_resources.items | where: "categories", "app" %}

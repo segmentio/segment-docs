@@ -11,7 +11,6 @@ When you enable Chartbeat in the Segment web app, your changes appear in the Seg
 
 Chartbeat is only supported on the client-side.
 
-- - -
 
 
 ## Page

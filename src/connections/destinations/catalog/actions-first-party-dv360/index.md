@@ -9,7 +9,7 @@ redirect_from: /connections/destinations/catalog/first-party-dv360/
 
 Google’s [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. Segment’s integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 for centralized audience management and improved retargeting.
 
-This destination is different from the existing DV360 Actions as it allows you to upload [contact info](https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences#ContactInfo){:target="_blank"} and the [mobile device ID](https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences#mobiledeviceidlist){:target="_blank"}.
+This destination is different from the existing DV360 Actions as it allows you to upload [contact info](https://developers.google.com/display-video/api/reference/rest/v4/firstPartyAndPartnerAudiences#contactinfo){:target="_blank"} and the [mobile device ID](https://developers.google.com/display-video/api/reference/rest/v4/firstPartyAndPartnerAudiences#mobiledeviceidlist){:target="_blank"}.
 
 This destination can only be used with Engage. 
 
@@ -68,12 +68,15 @@ Segment automatically sends consent as `TRUE` for this destination.  Segment use
 
 ## Data requirements
 Based on Google’s documentation, make sure you send the correct required identifiers:
-* [Contact info list requirements](https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences#contactinfo){:target="_blank"}
+* [Contact info list requirements](https://developers.google.com/display-video/api/reference/rest/v4/firstPartyAndPartnerAudiences#contactinfo){:target="_blank"}
    * For example, you must send first name, last name, ZIP code, and country code all together and not just one. Make sure all phone numbers are in [E.164 format](https://en.wikipedia.org/wiki/E.164){:target="_blank"}. 
-* [Mobile ID Requirements](https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences#mobiledeviceidlist){:target="_blank"}
+* [Mobile ID Requirements](https://developers.google.com/display-video/api/reference/rest/v4/firstPartyAndPartnerAudiences#mobiledeviceidlist){:target="_blank"}
 
 
 ## FAQs
 
 #### When will my data appear in DV360?
 When you complete the connection between Segment and DV360, it can take from 24 to 48 hours for Google to create the user list. This must complete before Segment can begin to sync users into that list. 
+
+#### What is membershipDurationDays and its limit?
+The duration in days that an entry remains in the audience after the qualifying event. The set value must be greater than 0 and less than or equal to 540.

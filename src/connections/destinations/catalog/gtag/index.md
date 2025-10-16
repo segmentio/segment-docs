@@ -130,6 +130,8 @@ analytics.track('Logged In');
 
 Segment sends these event attributes to Google Analytics:
 
+| Event Attributes   | Info      |
+| ------------------ | --------- |
 | **Event Category** | All       |
 | **Event Action**   | Logged In |
 
@@ -150,6 +152,8 @@ In this example, Segment sends all Google Analytics event parameters:
 
 Segment sends these event attributes to Google Analytics:
 
+| Event Attributes   | Info      |
+| ------------------ | --------- |
 | **Event Category** | Account   |
 | **Event Action**   | Logged In |
 | **Event Label**    | Premium   |

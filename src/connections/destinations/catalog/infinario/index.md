@@ -40,6 +40,5 @@ The alias call can be used to merge two user identities and their data to one. T
 
 This call is currently only supported partially. Whenever a user is assigned to a group, the properties of this group and the group ID is added to the user's properties. This means there is no support for the user being in multiple groups.
 
-- - -
 
 Read the [Infinario guides](http://guides.infinario.com/){:target="_blank"} to see what can you do with the data you tracked.
