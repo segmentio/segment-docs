@@ -337,7 +337,6 @@ analytics.track({
 
 Segment doesn't map `$library_version` since that is reserved for Mixpanel's library version, not Segment's. Segment doesn't map to `$brand`.
 
-- - -
 
 ## Features
 

@@ -132,8 +132,8 @@ To map data from your destination to Reddit Ads:
 4. Fill out mapping fields:
     1. To specify the URL, go to your Reddit Ads account, navigate to **Pixel configuration** to find your Pixel ID. The format of the URL should be `https://ads-api.reddit.com/api/v2.0/conversions/events/{{YOURPIXEL_ID}}`, with your pixel ID being at the end of the URL. 
     2. Specify the headers: 
-      - Set up Authorization using the bearer token generated in the previous step.
-      - Specify the content type that the Conversion API expects.
+        - Set up Authorization using the bearer token generated in the previous step.
+        - Specify the content type that the Conversion API expects.
 5. Use the mapping interface and search for the “body” parameter that was created in the insert function to select the transformed object that can be sent as the event body.
 6. Turn off batching for this operation.
 

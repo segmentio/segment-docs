@@ -26,7 +26,6 @@ For tracking on Web, you will need your...
 4. Campaign ID
    Your campaign id will be displayed in the top right corner of your Impact dashboard. It will be the four numbers next to your campaign name.
 
-- - -
 
 ## Track
 

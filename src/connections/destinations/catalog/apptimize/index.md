@@ -14,7 +14,7 @@ id: 5537d3e80a20f4e22f0fb385
  3. In the destination settings, enter your Apptimize application key, the 31 character key which you can find in your [Apptimize app settings](https://apptimize.com/admin/settings/apps).
  4. Depending on the mobile library you've selected, follow the below instructions to complete your setup.
 
-_**NOTE:** There is also an advanced setting to publish Apptimize experiment data to Segment. If you choose to automatically record screen events or track Application lifecycle events, these will also be reflected in Apptimize. You also have access to all normal Apptimize non-Segment functionality. To integrate, simply pull in the destination as a dependency and include the Apptimize Integration Factory when setting up Segment Analytics. _
+_**NOTE:** There is also an advanced setting to publish Apptimize experiment data to Segment. If you choose to automatically record screen events or track Application lifecycle events, these will also be reflected in Apptimize. You also have access to all normal Apptimize non-Segment functionality. To integrate, simply pull in the destination as a dependency and include the Apptimize Integration Factory when setting up Segment Analytics._
 
 ### iOS
 
@@ -60,7 +60,7 @@ Set the plist property `ApptimizeAppKey` to the corresponding app key for the ap
 
 #### Android
 
-Use the [Apptimize.setup](https://sdk.apptimize.com/android/javadocs/javadoc-2.12.10/com/apptimize/Apptimize.html#setup(android.content.Context,%20java.lang.String){:target="_blank"} API to initialize Apptimize with the app key.
+Use the [Apptimize.setup](https://sdk.apptimize.com/android/javadocs/javadoc-2.12.10/com/apptimize/Apptimize.html#setup\(android.content.Context,%20java.lang.String\)){:target="_blank"} API to initialize Apptimize with the app key.
 
 It is important to note that if the app keys in the plist/code and the Segment dashboard do not match, the SDK will use the app key from the plist/code as it finishes initialization first. While it is safe to initialize Apptimize multiple times in the app, to avoid confusion, be very careful that the app key is the same in both the places.
 

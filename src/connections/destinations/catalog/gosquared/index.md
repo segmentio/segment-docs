@@ -12,7 +12,6 @@ Your GoSquared Now dashboard will instantly start showing the number of visitors
 
 GoSquared supports mobile, webpage and server-side tracking.
 
-- - -
 
 ## Website Tracking
 
@@ -22,7 +21,6 @@ When you enter your GoSquared site token into Segment, website tracking will aut
 
 To track data using Segment's mobile and server-side sources, you will need to enter a GoSquared API Key, which can be created in your [GoSquared account](https://www.gosquared.com/settings/api){:target="_blank"}. The API Key must have "Write Tracking" access. All functionality is supported by mobile and server-side tracking.
 
-- - -
 
 ## Page
 

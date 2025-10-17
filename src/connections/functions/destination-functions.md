@@ -17,7 +17,7 @@ All functions are scoped to your workspace, so members of other workspaces can't
 
 
 > warning ""
-> Destination functions don't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources) or support [IP Allowlisting](/docs/connections/destinations/#ip-allowlisting).
+> Destination functions don't accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
 
 ## Create a destination function
 

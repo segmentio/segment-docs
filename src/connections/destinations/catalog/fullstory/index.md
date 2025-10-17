@@ -39,7 +39,7 @@ analytics.identify("userId");
 
 In addition, Segment will send over along any traits included in the `identify` call. The example call below would send over both `plan` and `logins`.
 
-```
+```js
 analytics.identify("userId123", {
   plan: "premium",
   logins: 5
@@ -50,7 +50,7 @@ analytics.identify("userId123", {
 
 Both `email` and `displayName` are special traits that will be passed to FullStory to be used in their interface as explained in [FullStory's docs](https://help.fullstory.com/hc/en-us/articles/360020828113){:target="_blank"}. These traits are optional.
 
-```
+```js
 analytics.identify("userId123", {
   email: "john.doe@example.com",
   displayName: "John Doe"
@@ -63,7 +63,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 
 An example call would look like:
 
-```
+```js
 analytics.track('Product Purchased', {
     order_ID: '2969302398',
     category: 'boots',
