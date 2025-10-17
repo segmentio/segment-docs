@@ -19,8 +19,6 @@ In 2018 we fully deprecated and stopped supporting the following Segment source 
 
 This means that they are no longer supported, and Segment cannot be responsible for answering questions about their continued use and maintenance. This page exists to help you find a replacement if you previously used one of these "plugin" methods.
 
----
-
 ## Amazon Webstore
 
 Amazon Webstore was deprecated by Amazon, and no replacement is available.

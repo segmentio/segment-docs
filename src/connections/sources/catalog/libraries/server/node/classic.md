@@ -253,9 +253,6 @@ analytics.track({ userId: 'identified@example.com', event: 'Identified Action' }
 
 For more details about `alias`, including the **`alias` call payload**, check out the [Spec](/docs/connections/spec/alias/).
 
----
-
-
 ## Configuration
 
 The second argument to the `Analytics` constructor is an optional dictionary of settings to configure the module.
