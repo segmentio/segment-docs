@@ -27,7 +27,11 @@ After you finish configuring Doubleclick Floodlight, Segment maps the following 
 - `u` values (if any) are pulled from your property mapping setting.
 - `dc_lat` is set to `0` or `1` depending on whether the device has **Limit Ad Tracking** enabled (for mobile data only).
 
-**Important:** Floodlight requires that you [set a `User-Agent` header](images/cDlD6KmuuOK.png) with that of the app where the track event took place. The Segment Android and Analytics.js (JavaScript) library automatically collect the `userAgent`. However you must manually send the user agent string inside the `context` object if you are using the iOS library. If `context.userAgent` is not provided, Segment tries to generate a user agent string based on some device and operating system information that is already has.
+**Important:** Floodlight requires that you set a `User-Agent` header with that of the app where the track event took place.
+
+![User-Agent header.](images/cDlD6KmuuOK.png)
+
+The Segment Android and Analytics.js (JavaScript) library automatically collect the `userAgent`. However you must manually send the user agent string inside the `context` object if you are using the iOS library. If `context.userAgent` is not provided, Segment tries to generate a user agent string based on some device and operating system information that is already has.
 
 A generated user agent string might look something like the following:
 
