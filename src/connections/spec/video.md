@@ -519,7 +519,6 @@ When user navigates away from a playback/stream.
 }
 ```
 
----
 
 ## Content
 

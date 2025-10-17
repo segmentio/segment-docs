@@ -33,4 +33,3 @@ When you set up this destination for an Engage audience, provide the snake_cased
 | AppId     | Request from Liveintent                                                                                                                                                    |
 | Audiences | If you use this destination for an audience generated using Engage, specify the snake-cased name of the Segment audience; otherwise, the setting is invalid |
 
----

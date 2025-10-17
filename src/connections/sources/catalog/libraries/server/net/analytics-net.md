@@ -299,7 +299,6 @@ Analytics.Client.Identify("identified@example.com", new Traits() { plan: "Free" 
 Analytics.Client.Track("identified@example.com", "Identified Action");
 ```
 
----
 
 ## Development Settings
 

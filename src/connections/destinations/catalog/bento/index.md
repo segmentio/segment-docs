@@ -64,4 +64,3 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 
 Segment sends Group calls to Bento as a `group` event.
 
----

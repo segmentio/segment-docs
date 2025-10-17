@@ -253,7 +253,6 @@ analytics.track({ userId: 'identified@example.com', event: 'Identified Action' }
 
 For more details about `alias`, including the **`alias` call payload**, check out the [Spec](/docs/connections/spec/alias/).
 
----
 
 
 ## Configuration

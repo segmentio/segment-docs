@@ -18,7 +18,6 @@ This page is to help troubleshoot and break down each connection modes situation
 {% endfor %}
 
 
----
 ## Device-mode only
 
 ### Only mobile device mode
@@ -52,7 +51,6 @@ These items only run in the browser or on the phone, but can't accept data from 
 {% endif %}
 {% endfor %}
 
----
 ## Cloud mode Only
 
 ### Accepts data from mobile library sources only
@@ -89,7 +87,6 @@ destination.connection_modes.cloud.server == true and destination.connection_mod
 {% endif %}
 {% endfor %}
 
----
 
 ## Accepts web and mobile cloud mode, no server
 

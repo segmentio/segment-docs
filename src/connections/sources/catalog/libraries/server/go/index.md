@@ -261,7 +261,6 @@ client.Enqueue(analytics.Track{
 
 For more details about Alias, including the **Alias call payload**, check out the Segment [Spec](/docs/connections/spec/alias/).
 
----
 
 
 ## Development Settings

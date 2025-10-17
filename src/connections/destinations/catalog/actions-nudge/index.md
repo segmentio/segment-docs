@@ -46,7 +46,6 @@ How Nudge handles Identify calls:
 * If `userId` already exists, Nudge merges or overwrites profile properties with the latest values.
 * Identify calls without `userId`, or with only `anonymousId`, are dropped.
 
----
 
 ### Track
 

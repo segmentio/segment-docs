@@ -52,4 +52,3 @@ TikTok Offline Events API requires at least one type of PII (email addresses and
 - TikTok will pruge unmatched offline conversions IDs/records.
 
 
----

@@ -9,7 +9,6 @@ related:
 redirect_from: '/styleguide/'
 ---
 
----
 
 ## Headings
 
@@ -34,7 +33,6 @@ H4 is good for making FAQs when you want the text a little bigger than its surro
 H5 is good for making FAQs when you want the text about the same size as the surrounding prose.
 
 
----
 
 ## Text underline
 
@@ -44,7 +42,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 {:.underline}
 #### Heading with underline
 
----
 
 ## Lists
 
@@ -84,7 +81,6 @@ Add `{: .columns}` before a list you want to divide into two columns.
 {% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 {% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 
----
 
 ## Table
 
@@ -93,7 +89,6 @@ Add `{: .columns}` before a list you want to divide into two columns.
 | traits optional          | Object | Free-form dictionary of traits of the user, like email or name. See the Traits field docs for a list of reserved trait names   |
 | userId optional/required | String | Unique identifier for the user in your database A userId or an anonymousId is required,See the Identities docs for more detail |
 
----
 
 ## Buttons
 
@@ -194,7 +189,6 @@ Add `{: .columns}` before a list you want to divide into two columns.
   </div>
 </div>
 
----
 
 ## Code Blocks
 
@@ -235,14 +229,12 @@ console.log('example');
 {% endcodeexampletab %}
 {% endcodeexample %}
 
----
 
 ## Notes
 
 > note "Note deprecated"
 > Please use an info message instead for information that is useful, but doesn't require immediate action. 
 
----
 
 ## Alerts
 
@@ -258,7 +250,6 @@ console.log('example');
 > error "Error message."
 > This is a paragraph showing an information box with a red hazard icon. Use this when warning a reader about destructive or non-reversible actions, like deleting a workspace or overwriting data. Don't use this too frequently, or else it makes the readers worry!
 
----
 
 ## FAQ
 ### Server

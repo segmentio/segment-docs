@@ -166,5 +166,4 @@ analytics.ready(function() {
 
 To migrate from the classic ABsmartly destination to ABsmartly (Actions), disconnect the classic ABsmartly destination before enabling the ABsmartly (Actions) destination to avoid duplicate experimentation events.
 
----
 

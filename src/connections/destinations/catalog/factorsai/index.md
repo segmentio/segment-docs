@@ -60,4 +60,3 @@ analytics.track('Product Viewed')
 
 Track calls will be sent to FactorsAI as a `track` event.
 
----

@@ -6,7 +6,6 @@ id: 5642909ae954a874ca44c582
 ---
 [Branch](https://branch.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} empowers you to increase mobile revenue with enterprise-grade links built to acquire, engage, and measure across all devices, channels, and platforms. An industry-leading mobile measurement and deep linking platform, trusted by the most top ranking apps to increase efficiency and revenue.
 
----
 
 **As of November 2019, the Branch mobile SDKs for Segment are in maintenance mode.**
 
@@ -14,7 +13,6 @@ Existing users of the Branch SDKs are unaffected, however new installations must
 
 The legacy instructions for implementing the Branch mobile SDKs for Segment have been removed from this documentation. If you need access to the removed sections, you can view the [Archived version of this documentation](https://web.archive.org/web/20191113225102//docs/connections/destinations/catalog/branch-metrics/){:target="_blank"}.
 
----
 
 This destination is maintained by Branch. For any issues with the destination, [contact the Branch support team](https://support.branch.io/support/home){:target="_blank"}.
 

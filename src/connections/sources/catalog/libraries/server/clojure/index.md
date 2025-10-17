@@ -197,7 +197,6 @@ Example Alias call:
 
 For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
----
 
 ## Builder
 
