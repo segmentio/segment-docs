@@ -53,4 +53,3 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to Lumen as a `track` event.
 
----

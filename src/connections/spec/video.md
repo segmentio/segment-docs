@@ -519,8 +519,6 @@ When user navigates away from a playback/stream.
 }
 ```
 
----
-
 ## Content
 
 Underneath the playback level, we now have the **pod** level. A pod can be seen as a "group" or "segment" of either the content or advertisement.

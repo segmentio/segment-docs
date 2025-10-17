@@ -51,5 +51,3 @@ TikTok Offline Events API requires at least one type of PII (email addresses and
 - iOS compliance checks will be performed on PII (ATT opt-out users will still be reported and attributed).
 - TikTok will pruge unmatched offline conversions IDs/records.
 
-
----

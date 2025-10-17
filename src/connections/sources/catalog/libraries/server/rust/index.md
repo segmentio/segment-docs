@@ -292,8 +292,6 @@ Track {
 
 For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
----
-
 ## Selecting Destinations
 
 The Alias, Group, Identify, Page, and Track calls can all be passed an object of `context.integrations` that lets you turn certain integrations on or off. By default all destinations are enabled.

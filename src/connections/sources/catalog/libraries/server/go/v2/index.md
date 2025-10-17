@@ -253,8 +253,6 @@ client.Track(&analytics.Track{
 
 For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
----
-
 
 ## Development Settings
 
