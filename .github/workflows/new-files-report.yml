@@ -1,0 +1,58 @@
+name: New Files Report
+on:
+  schedule:
+    - cron: '0 16 * * 5'  # This will run automatically every Friday at noon Eastern 
+  workflow_dispatch:  # We can also trigger it manually from the Actions tab
+
+jobs:
+  report:
+    if: github.repository == 'segmentio/segment-docs'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Generate report
+        id: report
+        run: |
+          echo "## New files since July 20th, 2025" > report.md
+          echo "" >> report.md
+          
+          FILES=$(git log --since="2025-07-20" --diff-filter=A --name-only --pretty=format:"" -- src/ 2>/dev/null | grep -v '^$' | sort -u || echo "")
+          
+          if [ -z "$FILES" ]; then
+            echo "No new files found." >> report.md
+          else
+            echo "$FILES" | while read file; do
+              if [ -n "$file" ]; then
+                COMMIT=$(git log --diff-filter=A --format="%h" -- "$file" | head -1)
+                DATE=$(git log --diff-filter=A --format="%ad" --date=short -- "$file" | head -1)
+                MSG=$(git log --diff-filter=A --format="%s" -- "$file" | head -1)
+                echo "- **$DATE**: \`$file\` - $MSG ([${COMMIT}](../../commit/${COMMIT}))" >> report.md
+              fi
+            done
+          fi
+          
+          echo "" >> report.md
+          echo "_Report generated on $(date +'%Y-%m-%d %H:%M UTC')_" >> report.md
+      
+      - name: Create issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('report.md', 'utf8');
+            const today = new Date().toISOString().split('T')[0];
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `New files report - ${today}`,
+              body: report,
+              labels: ['migration'],
+              assignees: ['pwseg']
+            });
