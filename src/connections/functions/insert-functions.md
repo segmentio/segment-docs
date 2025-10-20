@@ -289,7 +289,7 @@ Segment collects the events over a short period of time and combines them into a
 
 To create a batch handler, define an `onBatch` function within your destination insert function. You can also use the "Default Batch" template found in the Functions editor to get started quickly.
 
-**However**, Segment's function invoker service relies on positional consistency between the input and output arrays when using the `onBatch` handler. When a function returns a transformed batch, Segment pairs each output event with its corresponding input using array index positions—not event IDs or timestamps. Consumers must preserve the original order in their `onBatch` implementation.
+You must preserve the original order in the `onBatch` implementation, as Segment's function invoker service relies on positional consistency in the `onBatch` handler between the input and output arrays. When a function returns a transformed batch, Segment pairs each output event with its corresponding input using array index positions, not event IDs or timestamps. 
 
 ```js
 async function onBatch(events, settings){
