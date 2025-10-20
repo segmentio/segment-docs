@@ -153,8 +153,8 @@ For an Ecommerce company, however, the main events might be something like:
 - **Product Added**
 - **Order Completed**
 
-> success ""
-> **Tip**: As mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called the [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events Segment covers and how they are used in downstream destinations.
+> info "Tip"
+> As mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called the [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events Segment covers and how they are used in downstream destinations.
 
 An online community, on the other hand, has an entirely different set of actions that indicate engagement, as listed below. For example, a community might want to track actions like:
 
@@ -209,8 +209,8 @@ Once you have an initial list of the destination tools your organization uses, y
 
 Additionally, you should check [which connection modes each tool supports](/docs/connections/destinations/cmodes-compare/), so you know ahead of time which destinations may need to be bundled.
 
-> success ""
-> **Tip**: If you know you're looking for a tool for a specific purpose, but haven't chosen one yet, you can also check the [Connection Modes by category page](https://segment.com/docs/connections/destinations/category-compare/){:target="_blank"} to see which tools might be compatible with the least implementation changes.
+> info "Tip"
+> If you know you're looking for a tool for a specific purpose, but haven't chosen one yet, you can also check the [Connection Modes by category page](https://segment.com/docs/connections/destinations/category-compare/){:target="_blank"} to see which tools might be compatible with the least implementation changes.
 
 
 

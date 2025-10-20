@@ -100,8 +100,8 @@ If you haven't yet implemented Segment tracking in your app or site, there are t
 - **You can download a JavaScript code snippet for each Event** in the tracking plan by clicking the **more (...)** menu. You can then paste these snippets into your site or app code and replace the example properties in these snippets with variables from your code.
 
 <!--
-> success ""
-> **Tip**! If you are using [Typewriter](https://segment.com/docs/protocols/apis-and-extensions/typewriter/), you can export your tracking plan to a format Typewriter can use.
+> info "Tip"
+>! If you are using [Typewriter](https://segment.com/docs/protocols/apis-and-extensions/typewriter/), you can export your tracking plan to a format Typewriter can use.
 -->
 
 

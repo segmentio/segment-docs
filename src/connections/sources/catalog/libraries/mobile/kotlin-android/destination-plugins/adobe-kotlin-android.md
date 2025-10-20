@@ -25,8 +25,8 @@ Before you start sending data from your Kotlin application to Adobe Analytics, c
 3. Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's [Core implementation and lifestyle](https://github.com/Adobe-Marketing-Cloud/mobile-services/blob/master/docs/android/getting-started/dev-qs.md){:target="_blank”} documentation. 
 4. Follow the instructions below for each mobile environment to add the Adobe Analytics dependency to your project.
 
-> success ""
-> **Tip**: Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. You can change these settings from the Manage App Settings tab in your Adobe Mobile Services dashboard, and can download the file from that same tab. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings.
+> info "Tip"
+> Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. You can change these settings from the Manage App Settings tab in your Adobe Mobile Services dashboard, and can download the file from that same tab. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings.
 
 
 ## Adding the dependency
