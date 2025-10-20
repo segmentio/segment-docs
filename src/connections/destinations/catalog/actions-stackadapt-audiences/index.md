@@ -50,9 +50,7 @@ Each Engage audience should only contain profiles that have a valid email addres
    - Add traits as needed. Note that you should set up corresponding mappings for the fields in step 9 for the traits selected here if you want them to be imported.
 5. Click **Save**.
 6. Click on the **StackAdapt Audience** destination under the **Destinations** section.
-7. Under the **Matching Mappings** tab, click **Add mapping**.
-   - To reuse your Segment audience on the StackAdapt platform, select **Sync Audience**.
-   - To import profiles to the StackAdapt platform, select **Forward Profile**.
+7. Under the **Matching Mappings** tab, click **Add mapping** and then select **Sync Audience**.
    - **Note**: You don't have to set up both mappings. The mappings will be shared across all audiences that have sync enabled to this destination. You should create a new destination if you wish to use different mappings for different audiences.
 8. Define the event trigger: Ensure the Event Type is `Track` or `Identify`.
 9. Map fields:
