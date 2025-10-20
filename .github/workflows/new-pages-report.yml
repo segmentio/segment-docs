@@ -51,7 +51,8 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `New Files Report - ${today}`,
+              title: `New files report - ${today}`,
               body: report,
-              labels: ['documentation', 'migration']
+              labels: ['migration'],
+              assignees: ['pwseg']
             });
