@@ -19,10 +19,10 @@ jobs:
       - name: Generate report
         id: report
         run: |
-          echo "## New Files Since August 30, 2025" > report.md
+          echo "## New files since July 20th, 2025" > report.md
           echo "" >> report.md
           
-          FILES=$(git log --since="2025-08-30" --diff-filter=A --name-only --pretty=format:"" -- src/ 2>/dev/null | grep -v '^$' | sort -u || echo "")
+          FILES=$(git log --since="2025-07-20" --diff-filter=A --name-only --pretty=format:"" -- src/ 2>/dev/null | grep -v '^$' | sort -u || echo "")
           
           if [ -z "$FILES" ]; then
             echo "No new files found." >> report.md
@@ -51,8 +51,8 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `New Files Report - ${today}`,
+              title: `New files report - ${today}`,
               body: report,
               labels: ['migration'],
-              assignees: ['daseg']
+              assignees: ['pwseg']
             });
