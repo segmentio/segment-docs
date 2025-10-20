@@ -1,4 +1,3 @@
-# .github/workflows/new-files-report.yml
 name: New Files Report
 on:
   schedule:
