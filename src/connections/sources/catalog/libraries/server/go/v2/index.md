@@ -239,6 +239,7 @@ client.Identify(&analytics.Identify{
     "friends": 42,
   },
 })
+```
 
 // the identified user does actions ...
 ```go
