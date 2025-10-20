@@ -1,4 +1,4 @@
-# .github/workflows/new-pages-report.yml
+# .github/workflows/new-files-report.yml
 name: New Files Report
 on:
   schedule:
