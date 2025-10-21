@@ -395,12 +395,12 @@ POST https://api.segment.io/v1/batch
 ```
 
 <table>
-<tr>
-  <th>Field</th>
-  <th></th>
-  <th>Type</th>
-  <th>Description</th>
-</tr>
+  <tr>
+    <th>Field</th>
+    <th></th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
   <tr>
     <td>`batch` _Array_</td>
     <td>An array of Identify, Group, Track, Page and Screen method calls. Each call **must** have an `type` property with a valid method name.</td>
