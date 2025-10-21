@@ -129,4 +129,3 @@ For the identify method, the `ip` field is required if you are opting in users s
 
 Make sure to include `timestamp` with the exact time the user opted in. Since traits are [cached](/docs/connections/sources/catalog/libraries/website/javascript/identity/#clearing-traits) and sent with subsequent Identify calls, Regal.io ignores opt-ins that do not have a `timestamp` date. 
 
----

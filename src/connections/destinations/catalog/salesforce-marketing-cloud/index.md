@@ -275,8 +275,8 @@ In order to do this, you must have access to **Engage**. To learn more, [contact
 
 ### Set up Engage with SFMC in Segment
 
-> info ""
-> **Tip**: Segment recommends that you use [SFMC batching](#optional-set-up-sfmc-batching) with Engage to help reduce the number of API calls that you send to SFMC, but this is optional. If you choose to set up batching, do this _before_ you set up the SFMC destination in your Segment workspace.
+> info "Tip"
+> Segment recommends that you use [SFMC batching](#optional-set-up-sfmc-batching) with Engage to help reduce the number of API calls that you send to SFMC, but this is optional. If you choose to set up batching, do this _before_ you set up the SFMC destination in your Segment workspace.
 
 Engage sends audience membership and computed trait values to SFMC using Identify calls. To integrate Engage with SFMC:
 1. [Create a Data Extension to store Identify calls](#create-a-data-extension-in-sfmc-to-store-identify-calls) if you haven't already.

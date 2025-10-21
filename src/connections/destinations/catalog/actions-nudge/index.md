@@ -46,8 +46,6 @@ How Nudge handles Identify calls:
 * If `userId` already exists, Nudge merges or overwrites profile properties with the latest values.
 * Identify calls without `userId`, or with only `anonymousId`, are dropped.
 
----
-
 ### Track
 
 The Track method sends custom events and their properties into Nudge. You must include `event` name in every Track call so events can be associated with the correct user. See Segment's Spec for Track for any reference: [Track Spec](/docs/connections/spec/track/)

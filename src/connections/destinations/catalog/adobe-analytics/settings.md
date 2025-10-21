@@ -7,8 +7,8 @@ This page explains in detail how to configure your Segment Adobe Analytics Desti
 
 Segment uses a user-action data model, which uses different types of calls to track a user's different activities on a website or app. Adobe Analytics uses page views as the basic unit of activity, and specific data variables such as "props", eVars, lVars, and hVars to add details that allow more granular analysis. The Adobe Analytics destination settings in the Segment App allow you to create mappings between properties in your Segment calls and Adobe's expected format.
 
-> success ""
-> **Tip**: Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings. See the [Segment Adobe Analytics Mobile documentation](/docs/connections/destinations/catalog/adobe-analytics/mobile) to learn more.
+> info "Tip"
+> Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings. See the [Segment Adobe Analytics Mobile documentation](/docs/connections/destinations/catalog/adobe-analytics/mobile) to learn more.
 
 ## Implementing Success Events
 

@@ -370,7 +370,6 @@ Analytics.track(user_id: 'user id', event: 'Identified Action')
 
 For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
----
 ## Historical Import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
@@ -468,8 +467,8 @@ AppAnalytics = Segment::Analytics.new({
 AppAnalytics.flush
 ```
 
-> success "" 
-> **Tip**: When you call `flush`, the call blocks execution on the thread until it finishes processing all the messages in the queue. If you want to call `flush` during the normal operation of your application, you can spawn a local worker thread and call flush on the worker. This prevents the call from blocking the main thread.
+> info "Tip" 
+> When you call `flush`, the call blocks execution on the thread until it finishes processing all the messages in the queue. If you want to call `flush` during the normal operation of your application, you can spawn a local worker thread and call flush on the worker. This prevents the call from blocking the main thread.
 
 
 ## Turbolinks

@@ -48,4 +48,3 @@ analytics.track('Clicked Login Button')
 
 Track calls will be sent to FunnelEnvy as an event, which can be used for goal tracking as well as behavioral segmentation.
 
----

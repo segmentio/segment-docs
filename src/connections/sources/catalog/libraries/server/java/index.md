@@ -296,8 +296,6 @@ track("identified@example.com", "Identified Action");
 
 For more details about Alias, including the **Alias call payload**, check out the [Segment Spec](/docs/connections/spec/alias/).
 
----
-
 ## Historical Import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.

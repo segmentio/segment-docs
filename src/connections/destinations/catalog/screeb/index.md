@@ -57,4 +57,3 @@ Segment sends Alias calls to Screeb as an `identity.alias` event.
 
 **Important:** After this call, the Screeb respondent will have 3 aliases for the same identity: previous userId, anonymousId and `newUserId`. Merge of responses and events will be added in the future.
 
----

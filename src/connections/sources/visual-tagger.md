@@ -63,8 +63,8 @@ As you click each event, you're prompted to select the part of the website that 
 
 You are now ready to tag events on your website!
 
-> success ""
-> **Tip**: If you ever need to get back to this screen, you can navigate to the JavaScript website source again, click the **Visual tagger** tab, then click **Add Event**.
+> info "Tip"
+> If you ever need to get back to this screen, you can navigate to the JavaScript website source again, click the **Visual tagger** tab, then click **Add Event**.
 
 
 ## Step 1: Choose the event type and select an element
@@ -112,8 +112,8 @@ When you click on an element on your website, a window appears where you can ent
 
 Once you're satisfied with the event name and properties, click **Add**.
 
-> success ""
-> **Tip**! You can create more than one event before you move on to the next step.
+> info "Tip"
+>! You can create more than one event before you move on to the next step.
 
 ![Edit Event Details](images/vt-docs-5.png)
 

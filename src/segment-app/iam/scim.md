@@ -104,8 +104,8 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 7. Next, go to the Segment app and assign permissions to these groups.
 
-> success ""
-> **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
+> info "Tip"
+> You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
 ![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_group.jpg)
 

@@ -667,8 +667,8 @@ To send computed traits or audiences to Mixpanel, connect the destination to you
 3. Enter your API Secret and Token for the integration.
 4. Enable the "Use Mixpanel People” toggle. This allows Engage to send `identify` calls to Mixpanel.
 
-> success ""
-> **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
+> info "Tip"
+> Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
 
 
 ![A screenshot of the settings page for the Mixpanel destination.](images/pers-12-settings-people.png)

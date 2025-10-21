@@ -113,8 +113,8 @@ If you want to set this flag, you can send an integration option namespaced as `
 Analytics.with(context).track("Free El", new Properties().putValue("show", "Stranger Things").putValue("source", "Netflix").putValue("greatestShowEver", true), new Options().setIntegrationOptions("DoubleClick Floodlight", new ValueMap().putValue("coppaCompliant", true)));
 ```
 
-> success ""
-> **Tip**: This flag was previously called `copaCompliant` (a typo) instead of `coppaCompliant`. The method has been aliased to preserve the old functionality, and you do not need to update it if you used the old spelling.
+> info "Tip"
+> This flag was previously called `copaCompliant` (a typo) instead of `coppaCompliant`. The method has been aliased to preserve the old functionality, and you do not need to update it if you used the old spelling.
 
 ## Sending Personally Identifiable Information (PII)
 

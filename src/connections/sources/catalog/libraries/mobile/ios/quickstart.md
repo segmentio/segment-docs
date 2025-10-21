@@ -71,8 +71,8 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-> success ""
-> **Tip**: You don't need to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#track) for more info.
+> info "Tip"
+> You don't need to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#track) for more info.
 
 Import the SDK in the files that you use it by adding the following line:
 
