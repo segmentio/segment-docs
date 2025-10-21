@@ -76,22 +76,22 @@ Radar will also send the following user traits to Segment, depending on Radar us
   </tr>
   <tr>
     <td>radar_geofence_ids</td>
-    <td>array <string></td>
+    <td>array \<string></td>
     <td>An array of IDs of the user's last known geofences.</td>
   </tr>
   <tr>
     <td>radar_geofence_description</td>
-    <td>array <string></td>
+    <td>array \<string></td>
     <td>An array of descriptions of the user's last known geofences.</td>
   </tr>
   <tr>
     <td>radar_geofence_tags</td>
-    <td>array <string></td>
+    <td>array \<string></td>
     <td>An array of tags of the user's last known geofences.</td>
   </tr>
   <tr>
     <td>radar_geofence_external_ids</td>
-    <td>array <string></td>
+    <td>array \<string></td>
     <td>An array of external IDs of the user's last known geofences.</td>
   </tr>
   <tr>
@@ -111,7 +111,7 @@ Radar will also send the following user traits to Segment, depending on Radar us
   </tr>
   <tr>
     <td>radar_place_categories</td>
-    <td>array <string></td>
+    <td>array \<string></td>
     <td>List of the [categories of the place](https://www.radar.com/documentation/places/categories){:target="_blank”}.</td>
   </tr>
   <tr>
