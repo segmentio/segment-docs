@@ -232,6 +232,18 @@ https://my-website.com?segment_signals_debug=false
 
 ### Advanced
 
+#### Signal value obfuscation
+
+By default the values processed in your user interaction signals are changed to default strings, integers, or booleans.
+
+If you want to see real values during a debug session, add this URL parameter:
+
+```
+https://my-website.com?segment_signals_debug=true&segment_signals_disable_redaction=true
+```
+
+Keep in mind that sending real values may send Personally Identifiable Information (PII) of your user in debug mode.
+
 #### Emitting custom signals
 
 If you need to listen for data that is unavailable to the Signals plugin by default, you can create and emit a custom signal:
