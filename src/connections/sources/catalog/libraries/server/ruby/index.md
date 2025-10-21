@@ -467,8 +467,8 @@ AppAnalytics = Segment::Analytics.new({
 AppAnalytics.flush
 ```
 
-> success "" 
-> **Tip**: When you call `flush`, the call blocks execution on the thread until it finishes processing all the messages in the queue. If you want to call `flush` during the normal operation of your application, you can spawn a local worker thread and call flush on the worker. This prevents the call from blocking the main thread.
+> info "Tip" 
+> When you call `flush`, the call blocks execution on the thread until it finishes processing all the messages in the queue. If you want to call `flush` during the normal operation of your application, you can spawn a local worker thread and call flush on the worker. This prevents the call from blocking the main thread.
 
 
 ## Turbolinks

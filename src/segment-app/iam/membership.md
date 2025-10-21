@@ -27,8 +27,8 @@ This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#tea
 3. Click the member to see details.
 4. Select or deselect roles, and choose the specific resources to grant access to.
 
-> success ""
-> **Tip**: You can also grant the role for all current and future resources. For admin roles, this includes the ability to create new resources.
+> info "Tip"
+> You can also grant the role for all current and future resources. For admin roles, this includes the ability to create new resources.
 
 ## Create a new User Group
 
@@ -55,8 +55,8 @@ To add a team member from the **Edit Team Member** page:
 4. Select the user group(s) to add the team member to.
 5. Click **Save**.
 
-> success ""
-> **Tip**: This method is best when adding a *single* team member to one or more user groups.
+> info "Tip"
+> This method is best when adding a *single* team member to one or more user groups.
 
 ![Screenshot of the Groups/Edit Leadership page, with the Members tab selected.](images/user-group-members.png)
 
@@ -68,8 +68,8 @@ To add a team member from the **Edit User Group** page:
 5. Add team members to the group. Search by name or email to locate the team member(s).
 6. Click **Save**.
 
-> success ""
-> **Tip**: This method is best when adding more than one user to a single user group at the same time
+> info "Tip"
+> This method is best when adding more than one user to a single user group at the same time
 
 ## Remove a team member from a User Group
 
