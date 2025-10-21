@@ -44,10 +44,13 @@ For now, YOUBORA is sending all the auto-tracked events as `Youbora Event`
 Below is a table outlining the properties included in the event listed above.
 
 <table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1">Property</th>
-<th title="Field #2">Description</th>
-<th title="Field #3">Magnitude</th>
-</tr></thead>
+<thead>
+  <tr>
+    <th title="Field #1">Property</th>
+    <th title="Field #2">Description</th>
+    <th title="Field #3">Magnitude</th>
+  </tr>
+</thead>
 <tbody><tr>
 <td>ad_campaign</td>
 <td>Ad Campaign name</td>
