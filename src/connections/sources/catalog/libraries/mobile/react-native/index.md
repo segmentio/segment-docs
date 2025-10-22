@@ -461,7 +461,7 @@ To set up automatic screen tracking with React Navigation:
       }
     }}
     >
-  ```
+    ```
 
 ### React Native Navigation
 To set up automatic screen tracking while using [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}:
@@ -653,7 +653,7 @@ To get started with destination filters on mobile device-mode destinations using
 
     segmentClient.add({ plugin: new DestinationFiltersPlugin() });
     segment.add({ plugin: new FirebasePlugin() })
-    ``` -->
+    ```
 
 ## Supported destinations
 Segment supports a large number of [cloud-mode](/docs/connections/destinations/#connection-modes) destinations. Segment also supports the following destinations for Analytics React Native 2.0 in device-mode:
