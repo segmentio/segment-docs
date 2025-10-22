@@ -253,6 +253,14 @@ If you’re troubleshooting and want to see real values while debugging, you can
 
 Use this only in a safe testing environment: **disabling redaction can expose real user information (PII)**.
 
+For persistent setups or automated testing, you can also control this behavior in code with:
+
+```ts
+new SignalsPlugin({ disableSignalRedaction: true })
+```
+
+For more information, see the [configuration options table](#configuration-options).
+
 #### Emitting custom signals
 
 If you need to listen for data that is unavailable to the Signals plugin by default, you can create and emit a custom signal:
