@@ -23,7 +23,7 @@ Choose between [writeKey authentication](#writeKey-authentication), [basic authe
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
 The authentication writeKey should be sent as part of the body of the request. This will be encrypted over https.
 
-```
+```shell
   curl --location 'https://api.segment.io/v1/track' \
   --header 'Content-Type: application/json' \
   --data-raw '{
@@ -58,7 +58,7 @@ Include the access token in the Authorization header as a Bearer token along wit
 
 For example, to use the access token in the HTTP API Source, use `access_token` in the header and `write_key` in the payload. An example cURL request looks like: 
 
-```
+```shell
   curl --location 'https://api.segment.io/v1/track' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <access token>' \
