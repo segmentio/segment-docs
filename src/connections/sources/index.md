@@ -30,7 +30,7 @@ analytics.identify('user_123', {
   email: 'jane.kim@example.com',
   name: 'Jane Kim'
   },
-});
+);
 ```
 {% endcodeexampletab %}
 
@@ -49,7 +49,7 @@ analytics.identify('user_123', {
 {% endcomment %}
 
 > info "If you don't see the source you're looking for in the catalog"
-> If a tool isn't listed as a supported source in Segment's [catalog](https://segment.com/catalog/){:target='_blank’}, it's not possible to incorporate the integration out-of-the-box within a Segment workspace. As an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
+> If a tool isn't listed as a supported source in Segment's [catalog](https://segment.com/catalog/){:target="_blank"}, it's not possible to incorporate the integration out-of-the-box within a Segment workspace. As an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
 
 ## Types of sources
 
@@ -167,7 +167,7 @@ Cloud app sources empower you to pull together data from all of your different t
 These Cloud App Sources can export data from its third party tool and import it directly into your Segment warehouse. Make sure you have a Segment warehouse enabled before you enable any of the following sources:
 
 {: .columns }
-{% capture source-type-list %} {% include content/cloud-source-type-list.md type="object" %} {%endcapture%}
+{% capture source-type-list %} {% include content/cloud-source-type-list.md type="object" %} {% endcapture %}
 {{source-type-list | markdownify}}
 
 
@@ -176,7 +176,7 @@ These Cloud App Sources can export data from its third party tool and import it 
 These Cloud App Sources can not only export data into your Segment warehouse, but they can **also** federate the exported data into your other enabled Segment integrations:
 
 {: .columns }
-{% capture source-type-list %} {% include content/cloud-source-type-list.md type="event" %} {%endcapture%}
+{% capture source-type-list %} {% include content/cloud-source-type-list.md type="event" %} {% endcapture %}
 {{source-type-list | markdownify}}
 
 ### HTTP

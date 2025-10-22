@@ -71,6 +71,7 @@ In Iterable, do the following:
 ![A screenshot of the test event page](/docs/engage/images/send-test-event.png) 
 
 If the event is sent successfully to Iterable, you will see a `“message”: “success”` response in Segment.
+
 2. Open Iterable and check the [Campaign tab in Messaging Insights](https://support.iterable.com/hc/en-us/articles/360052814452-Messaging-Insights#viewing-metrics){:target="_blank"} (Insights > Messaging Insights > Campaigns > _[Your Unique Campaign])_ to confirm that Iterable has sent the message. 
 3. If your email doesn’t look the way you want it to, adjust the [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars){:target="_blank"} in Iterable, and send another test event. See the following [personalization examples](#handlebars-examples-to-use-in-iterable){:target="_blank"} for more specific details. 
 4. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).

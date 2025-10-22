@@ -404,7 +404,7 @@ const onExit = async () => {
 ```
 
 ### Collect unflushed events 
-If you need to preserve all of your events in the instance of a forced timeout, even ones that came in after analytics.flush({ close: true }) was called, you can still collect those events by using:
+If you need to preserve all of your events in the instance of a forced timeout, even ones that came in after `analytics.flush({ close: true })` was called, you can still collect those events by using:
 
 ```javascript
 const unflushedEvents = []

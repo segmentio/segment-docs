@@ -15,10 +15,10 @@ Custom Domain is a fully-managed service that enables you to configure a first-p
 
 {% include content/domain-delegation-solutions.md %}
 
-### How DNS subdomain delegation works
+## How DNS subdomain delegation works
 DNS subdomain delegation is a process where the control of a specific subdomain is assigned to another DNS server, allowing that server to manage the DNS records for the subdomain. This delegation is useful for distributing the management of DNS records and enables specialized handling of subdomain traffic.
 
-### How CNAME records work
+## How CNAME records work
 When a user tries to access the alias domain, the DNS resolver looks up the CNAME record, finds the canonical name, and resolves it to the IP address of the target. For example, you could alias your subdomain to point to the Segment domain. If a user accesses your site, they are redirected to the Segment domain, but their browser's address bar still shows the alias domain.
 
 CNAME records provide flexibility and centralized management, making it easier to handle domain redirections and subdomain configurations. 
