@@ -25,7 +25,7 @@ To use this destination, you must have an active Segment Unify space. If you hav
 6. Enable the configured mapping(s).
 7. On the **Settings** tab, click the **Enable Destination** toggle, and then click **Save Changes** to enable the Segment Profiles destination.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## FAQ & Troubleshooting
 

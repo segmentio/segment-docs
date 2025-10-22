@@ -24,9 +24,7 @@ The Adobe Analytics destination automatically works with Segment's standard [Eco
     <td>Adobe Analytics Event Name</td>
   </tr>
   <tr>
-    <td>Product Viewed
-    <br>Product List Viewed
-    </td>
+    <td>Product Viewed<br>Product List Viewed</td>
     <td>`prodView`</td>
   </tr>
   <tr>
@@ -335,8 +333,9 @@ An example eVar mapping in the Segment Destination settings UI should look like 
 
 You can only map properties to Adobe eVar properties. For example, you could map the following properties to Adobe: `path`, `referrer`, `search`, `signup_mode`, `title` and `url`.
 
->![Adobe evar](https://github.com/segmentio/segment-docs/assets/82051355/999b398a-f752-47f6-8511-9b2ec866cbae)
->![adobe mapping](https://github.com/segmentio/segment-docs/assets/82051355/c22eb82d-c9cd-4a2a-b216-b9b36569a606)
+![Adobe evar](https://github.com/segmentio/segment-docs/assets/82051355/999b398a-f752-47f6-8511-9b2ec866cbae)
+
+![adobe mapping](https://github.com/segmentio/segment-docs/assets/82051355/c22eb82d-c9cd-4a2a-b216-b9b36569a606)
 
 
 

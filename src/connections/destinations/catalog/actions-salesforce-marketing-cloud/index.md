@@ -59,7 +59,7 @@ Once you save the API integration and add permissions, you will see a Summary pa
 8. (*Optional*) Follow the steps in the Destinations Actions documentation on [customizing mappings](/docs/connections/destinations/actions/#customize-mappings) to customize your mappings.
 7. Enable the destination and configured mappings.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 > info ""
 > Note that **send contact to data extension** handles a pre-defined structure of contacts being filled into a data extension, whereas **send event to data extension action** customizes event data extensions. 
