@@ -82,7 +82,7 @@ That snippet loads Analytics.js onto the page _asynchronously_, so it won't affe
 <br>
 The [Identify](/docs/connections/spec/identify/) method tells Segment who the current user is. It includes a unique user ID and any optional traits you know about them. You can read more about it in the [Identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
 <br><br>
-> info "You don't need to call `identify` for anonymous visitors to your site"
+> info "You don't need to call identify for anonymous visitors to your site"
 > Segment automatically assigns them an `anonymousId` so just calling `page` and `track` works without `identify`.
 <br>
 Here's an example of what a basic call to `identify` might look like:
