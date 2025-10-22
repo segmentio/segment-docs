@@ -14,7 +14,7 @@ beta: true
 2. Select Ms Bing Ads Audiences and click **Add destination**.
 3. Select an existing source to connect to the destination.
 4. Give the destination a name and click **Create destination**.
-5. Connect your Microsoft account. Ensure that you grant Segment permissions to access your Microsoft account *(you can disconnect this later). 
+5. Connect your Microsoft account. Make sure that you grant Segment permissions to access your Microsoft account (you can disconnect this later). 
 6. In **Basic Settings**, enter the **Customer Account ID** and **Customer ID**.
 7. Go to the **Mappings** tab to configure the mappings settings.
 8. Toggle **Enable Destination** on to activate the integration. 

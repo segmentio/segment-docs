@@ -17,7 +17,7 @@ beta: true
 5. In **Basic Settings**, enter the Bing **UetTag** and **ApiToken**.
     > * To find the UET tag, see Microsoft's steps on [how to create a UET tag](https://help.ads.microsoft.com/#apex/3/en/56682/2-500){:target="_blank"}. 
     > * To generate the API token, contact Microsoft support or fill out a [request form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRwMZAe0PcMxHmZ0AjDaNRmxUM0o5UURRVktCRkxHNEFLTVNYQjI3NDNBUS4u){:target="_blank"}.
-6. Toggle **Enable Destination** on to start sending data to Microsoft Bing CAPI from Segent.
+6. Toggle **Enable Destination** on to start sending data to Microsoft Bing CAPI from Segment.
 
 {% include components/actions-fields.html %}
 
