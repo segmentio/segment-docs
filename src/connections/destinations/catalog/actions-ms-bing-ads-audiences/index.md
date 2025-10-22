@@ -6,7 +6,7 @@ beta: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Microsoft Bing Ads Audiences](https://ui.ads.microsoft.com//?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} lets you sync audience data from your Segment source to Microsoft Advertising. Bing Ads allows you to deliver personalized ads to users across Microsoft platforms using Microsoft's audience targeting tools.
+[Microsoft Bing Ads Audiences](https://ui.ads.microsoft.com//?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} lets you sync Segment audience data to Microsoft Advertising's Customer match lists. This enables real-time or batch audience updates using Microsoft Advertising's Customer Management and Bulk APIs. You can use this destination to keep your audience targeting lists up to date across Microsoft platforms.
 
 ## Getting started
 

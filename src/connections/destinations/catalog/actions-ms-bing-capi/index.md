@@ -6,7 +6,7 @@ beta: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Microsoft Bing Conversions API (CAPI)](https://ui.ads.microsoft.com//?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows you to track offline conversions with enhanced customer attribution data, enabling cross-device and cross-platform conversion attribution. Offline conversions let you measure actions that happen outside of your website, such as in-store purchases driven by ad clicks.
+[Microsoft Bing Conversions API (CAPI)](https://ui.ads.microsoft.com//?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} lets you send offline conversion data from Segment to Microsoft Advertising. This enables enhanced customer attribution data and supports cross-device and cross-platform conversion attribution. You can use this destination to track offline actions, such as in-store purchases driven by ad clicks, and attribute them to your Microsoft Ads campaigns. 
 
 ## Getting started
 
