@@ -232,17 +232,26 @@ https://my-website.com?segment_signals_debug=false
 
 ### Advanced
 
-#### Signal value obfuscation
+#### Signal redaction and debug visibility
 
-By default the values processed in your user interaction signals are changed to default strings, integers, or booleans.
+The Signals SDK automatically hides sensitive values in user interactions before sending them to Segment.
 
-If you want to see real values during a debug session, add this URL parameter:
+To protect user data, the SDK replaces real values with safe, generic placeholders: strings become `"XXX"`, numbers become `999`, and booleans become `true`.
 
+Redaction applies to everything the SDK collects, including:
+
+- Form submissions and text inputs
+- Clickable elements and their text content
+- Request bodies for tracked network calls
+- Certain DOM attributes observed by mutation listeners
+
+If you’re troubleshooting and want to see real values while debugging, you can disable redaction temporarily by adding this to your site URL:
+
+```bash
+?segment_signals_debug=true&segment_signals_disable_redaction=true
 ```
-https://my-website.com?segment_signals_debug=true&segment_signals_disable_redaction=true
-```
 
-Keep in mind that sending real values may send Personally Identifiable Information (PII) of your user in debug mode.
+Use this only in a safe testing environment: **disabling redaction can expose real user information (PII)**.
 
 #### Emitting custom signals
 
