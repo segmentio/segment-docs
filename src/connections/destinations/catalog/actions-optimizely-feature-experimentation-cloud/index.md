@@ -58,4 +58,4 @@ Segment also handles the following mapping:
 ## GDPR Support
 Segment supports deleting/suppressing users in Optimizely Feature Experimentation (Actions) using the [Segment app](/docs/privacy/user-deletion-and-suppression/). Before deleting/suppressing a user, create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/){:target="_blank”} in Optimizely and provide it as the value of the Personal Access Token setting.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}

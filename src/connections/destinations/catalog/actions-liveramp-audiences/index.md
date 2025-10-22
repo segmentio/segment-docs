@@ -44,7 +44,7 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 > info "Mapping tester availability"
 > The Mapping Tester isn't available for this destination. Since this destination requires batched events for activation, testing can only be performed end-to-end with a connected source.
 
-{% include components/actions-fields.html settings="false"%}
+{% include components/actions-fields.html settings="false" %}
 
 ## Limitations 
 
