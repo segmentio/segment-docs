@@ -26,7 +26,7 @@ The Segment Connections destination enables you to mold data extracted from your
 6. Enable the configured mapping(s).
 7. On the **Settings** tab, click the **Enable Destination** toggle, and then click **Save Changes** to enable the Segment Connections destination.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## FAQ & Troubleshooting
 

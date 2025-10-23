@@ -1,6 +1,5 @@
 ---
 title: Integration Error Codes
-id: integrationerrors
 ---
 
 | Error Codes                                                                                                                                                                                                   | Reason                                                                                                                                                                                                                                                                                                                                     |

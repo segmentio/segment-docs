@@ -61,15 +61,15 @@ Segment supports sending Engage user profile traits to SendGrid Contact User Att
 
 1. Use [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to include specific user profile traits when syncing users to a SendGrid List. 
 2. Standard User Attributes: Use the [Sync Audience Action](#sync-audience-action)'s User Attributes field to map the following [Contact Profile Fields](https://www.twilio.com/docs/sendgrid/ui/managing-contacts/segmenting-your-contacts#contact-profile-fields){:target="_blank”} to SendGrid:
- - First Name
- - Last Name
- - Phone Number (must be in [E.164](https://www.twilio.com/docs/glossary/what-e164){:target="_blank”} format)
- - Address Line 1
- - Address Line 2
- - City
- - State/Province/Region
- - Country
- - Postal Code
+    - First Name
+    - Last Name
+    - Phone Number (must be in [E.164](https://www.twilio.com/docs/glossary/what-e164){:target="_blank”} format)
+    - Address Line 1
+    - Address Line 2
+    - City
+    - State/Province/Region
+    - Country
+    - Postal Code
 3. Custom User Attributes: Define a custom User Attribute in SendGrid, then use [Sync Audience ](#sync-audience-action) Action to send custom User Attributes to SendGrid using the Custom Fields field. You can only send string, number, and date values to SendGrid with this method.
 
 ### Supported identifiers 

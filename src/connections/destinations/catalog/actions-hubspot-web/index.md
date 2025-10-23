@@ -35,7 +35,7 @@ HubSpot Web (Actions) provides the following benefits over the classic HubSpot d
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## FAQ & Troubleshooting
 

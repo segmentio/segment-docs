@@ -113,7 +113,7 @@ To ensure the destination processes an event payload modified by the function, r
 
 When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
 
-The handler for insert functions is event-specific, for example, `onTrack()`, `onIdentify()`, and so on.
+The handler for insert functions is event-specific. For example, `onTrack()`, `onIdentify()`, and so on.
 
 ### Errors and error handling
 
@@ -562,6 +562,10 @@ async function onGroup(event, settings) {
 // Ensure that all expected event types are included in your function
 ```
 By including handlers for all the major event types, you ensure that all supported events are processed correctly, preventing the "Unsupported Event Type" error. Always test your updated code before implementing it in production.
+
+##### What destination types support Insert Functions?
+
+Only cloud-mode [event destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list) support destination Insert Functions. [List destinations](/docs/engage/using-engage-data/#list-destinations) aren't compatible. 
 
 {% comment %}
 

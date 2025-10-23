@@ -40,8 +40,8 @@ To set up a destination:
 6. On the next page, configure your destination by entering the API key, token, and any other information.
    The configuration page shows both required information, and any extra settings.
 
-> success ""
-> **Tip**: Segment usually is able to translate data into a format that the destination expects, however some destinations (such as Adobe Analytics) may require manual mapping steps to configure properly. If you see additional fields for mapping configuration, read the documentation for that destination to learn more.
+> info "Tip"
+> Segment usually is able to translate data into a format that the destination expects, however some destinations (such as Adobe Analytics) may require manual mapping steps to configure properly. If you see additional fields for mapping configuration, read the documentation for that destination to learn more.
 
 <!--
 

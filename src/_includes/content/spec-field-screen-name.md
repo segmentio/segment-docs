@@ -1,4 +1,4 @@
-_<tr>
+<tr>
   <td markdown="span">`name`</td>
   <td markdown="span">*optional*</td>
   <td markdown="span">String</td>

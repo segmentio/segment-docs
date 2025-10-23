@@ -200,7 +200,7 @@ This error can be caused for a few reasons:
 - Your warehouse went offline.
 - There's a setting needed for Segment to connect which hasn't been correctly configured. Refer to the [Warehouse documentation](/docs/connections/storage/warehouses/) to ensure all steps outlined there have been followed.
 
-### Schema <schema_name> does not exist
+### Schema `<schema_name>` does not exist
 The syncs are failing due to a permissions issue. It looks like the user connected does not have permission to create schemas in your warehouse.
 
 To resolve these errors Segment recommends connecting to your warehouse using the owner account, or granting permissions to the current account you use to connect to Segment. You can correct these permissions by running the following SQL statement - Replace `user` with the account you use to connect to Segment, and run this statement for each schema in the warehouse.

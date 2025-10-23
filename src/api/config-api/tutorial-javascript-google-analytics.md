@@ -33,8 +33,8 @@ See the [Authentication](/docs/api/config-api/authentication/) doc for more info
 
 To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope.
 
-> success ""
-> **Tip**: As best practice, tokens should be assigned the least permissions needed to perform a required API action, however for simplicity in this demo, we'll select Workspace Owner. You may want to delete the token once you've finished this demo.
+> info "Tip"
+> As best practice, tokens should be assigned the least permissions needed to perform a required API action, however for simplicity in this demo, we'll select Workspace Owner. You may want to delete the token once you've finished this demo.
 
 1. Log in to your Segment workspace.
 2. Click **Settings** in the left navigation bar.

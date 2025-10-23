@@ -60,7 +60,7 @@ To access the Intercom Messaging Box, you'll need to configure and connect the I
 > info ""
 > Segment doesn't support the creation of **Leads** for Intercom Web. Segment recommends using [Intercom Cloud Mode](/docs/connections/destinations/catalog/actions-intercom-cloud/) to support leads creation.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## Troubleshooting
 

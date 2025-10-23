@@ -47,7 +47,7 @@ Your client experience manager will then provide you with a Movable Ink endpoint
 4. Map specific fields (optional):
 - Click **Test Mapping** to send a test event and identify any potential issues.
 - Return to the Mappings overview page and enable your mapping.
-6. Navigate to your integration’s **Settings** tab and activate the integration by toggling on **Enable Destination**.
+5. Navigate to your integration’s **Settings** tab and activate the integration by toggling on **Enable Destination**.
 
 > info ""
 > For any unexpected errors, contact your Movable Ink client experience team with the full sample payload.

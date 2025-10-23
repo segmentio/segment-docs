@@ -232,6 +232,35 @@ https://my-website.com?segment_signals_debug=false
 
 ### Advanced
 
+#### Signal redaction and debug visibility
+
+The Signals SDK automatically hides sensitive values in user interactions before sending them to Segment.
+
+To protect user data, the SDK replaces real values with safe, generic placeholders: strings become `"XXX"`, numbers become `999`, and booleans become `true`.
+
+Redaction applies to everything the SDK collects, including:
+
+- Form submissions and text inputs
+- Clickable elements and their text content
+- Request bodies for tracked network calls
+- Certain DOM attributes observed by mutation listeners
+
+If you’re troubleshooting and want to see real values while debugging, you can disable redaction temporarily by adding this to your site URL:
+
+```bash
+?segment_signals_debug=true&segment_signals_disable_redaction=true
+```
+
+Use this only in a safe testing environment: **disabling redaction can expose real user information (PII)**.
+
+For persistent setups or automated testing, you can also control this behavior in code with:
+
+```ts
+new SignalsPlugin({ disableSignalRedaction: true })
+```
+
+For more information, see the [configuration options table](#configuration-options).
+
 #### Emitting custom signals
 
 If you need to listen for data that is unavailable to the Signals plugin by default, you can create and emit a custom signal:

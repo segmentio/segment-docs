@@ -299,8 +299,6 @@ Analytics.Client.Identify("identified@example.com", new Traits() { plan: "Free" 
 Analytics.Client.Track("identified@example.com", "Identified Action");
 ```
 
----
-
 ## Development Settings
 
 You can use this initialization during development while testing the library. `SetAsync(false)` will make sure the library makes a request to Segment's servers every time it's called.

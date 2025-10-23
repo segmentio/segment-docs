@@ -60,7 +60,7 @@ Follow these steps to test your campaign:
 
 1. In the **Send an SMS** pane, click **Test SMS**.
 2. If your template has profile traits, enter a trait value for the test SMS. This ensures that your merge tags work as expected.
-- To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
+    - To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
 3. In the **Recipients** field, enter the phone number(s) that will receive your test SMS.
 4. Click **Send test SMS**.
 

@@ -33,7 +33,7 @@ Ideally, the `userId` could be a database ID. For example, if you're using Mongo
 
 We do **not** recommend using simple email addresses or usernames as a user ID, as these can change over time. We recommend that you use static IDs instead, so the IDs *never* change. When you use a static ID, you can still recognize the user in your analytics tools, even if the user changes their email address. You can also link your analytics data with your own internal database.
 
-> success "**Tip**"
+> info "Tip"
 > Though we don't recommend using an email address or a username as a user ID, you can still send that identifying information in your Identify call as a [trait](/docs/connections/spec/identify#traits).
 
 ## When to call Identify

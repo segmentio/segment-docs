@@ -20,4 +20,4 @@ Koala maintains this destination. For any issues with the destination, [contact 
 5. On the **Settings** tab, input your **Public API Key** which can be found in your Koala workspace settings under **Settings > Install**.
 6. Once connected, you can configure how you want to send data to Koala. By default, Segment forwards track events and identify events to Koala. Koala recommends sticking with the defaults.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}

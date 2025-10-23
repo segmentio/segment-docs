@@ -47,7 +47,7 @@ The setup is complete and the Audience will start syncing to LinkedIn. Segment a
 
 To sync additional Audiences from your Engage space, create a separate mapping in the LinkedIn Audiences destination. Navigate to **Connections > Destinations**, search and select the LinkedIn Audiences destination, and follow Steps 9-11 above.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## Linked Audiences
 

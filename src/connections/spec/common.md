@@ -278,7 +278,7 @@ The `sentAt` timestamp specifies the clock time for the client's device when the
 
 **Note**: The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
 
-> warning "Segment now adds `sentAt` to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
+> warning "Segment now adds sentAt to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
 > This update changes the value of the Segment-calculated `timestamp` to align closer with the `receivedAt` value rather than the `originalTimestamp` value. For most users who are online when events are sent, this does not significantly impact their data. However, if your application utilizes an offline mode where events are queued up for any period of time, the `timestamp` value for those users now more closely reflects when Segment received the events rather than the time they occurred on the users' devices. 
 
 
