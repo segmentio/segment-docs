@@ -10,7 +10,7 @@
   command = "yarn develop"
   # Check this file to see if the site should build. ignore.sh checks for the presence of 
   # [netlify-build] in the commit message
-  ignore = "./scripts/ignore.sh"
+  # ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
   command = "yarn build"
