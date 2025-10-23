@@ -113,7 +113,7 @@ To ensure the destination processes an event payload modified by the function, r
 
 When declaring settings variables, make sure to declare them in the function handler rather than globally in your function. This prevents you from leaking the settings values across other function instances. 
 
-The handler for insert functions is event-specific, for example, `onTrack()`, `onIdentify()`, and so on.
+The handler for insert functions is event-specific. For example, `onTrack()`, `onIdentify()`, and so on.
 
 ### Errors and error handling
 
