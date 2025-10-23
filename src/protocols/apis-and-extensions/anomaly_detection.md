@@ -52,7 +52,8 @@ After you've enabled [Violation Forwarding](/docs/protocols/validate/forward-vio
 You can copy and paste the example snippet below into the Event Template field to format the Slack message with the event name, violation description and source name. You can customize this message however you want, including adding @ mentions, and any of the [properties included in the Violation Generated event](/docs/protocols/validate/forward-violations/).
 
 ```
-Source: {% raw %}`{{properties.sourceName}}` \nEvent: `{{properties.eventName}}` \nViolation: `{{properties.violationDescription}}`{% endraw %}
+Source: {% raw %}`{{properties.sourceName}}` \nEvent: `{{properties.eventName}}` \nViolation: `{{properties.violationDescription}}`
+{% endraw %}
 ```
 When you're done, it'll look like the screenshot below.
 
