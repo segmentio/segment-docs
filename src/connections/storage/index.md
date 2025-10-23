@@ -14,9 +14,7 @@ Segment offers several [Data Storage Destinations](/docs/connections/storage/cat
 - [Google Cloud Storage](/docs/connections/storage/catalog/google-cloud-storage/) (available to all users)
 - [Segment Data Lakes](/docs/connections/storage/data-lakes/) (available to Business Tier customers only)
 
-
-
-{% include components/reference-button.html href="https://segment.com/academy/intro/why-you-should-own-your-data/?referrer=docs" icon="media/academy.svg" title="Analytics Academy: Why you should own your data" description="Although the sharing economy is eroding the idea of “ownership,” when it comes to analytics data, we strongly believe that you should own it." %}
+{% include components/reference-button.html href="https://segment.com/academy/intro/why-you-should-own-your-data/?referrer=docs" icon="media/academy.svg" title="Analytics Academy: Why you should own your data" description="Although the sharing economy is eroding the idea of ownership, when it comes to analytics data, we strongly believe that you should own it." %}
 
 <!-- TODO:
 

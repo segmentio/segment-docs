@@ -111,12 +111,10 @@ To do that, Segment recommends that you use a backend template to inject an Iden
 Depending on your templating language, your actual Identify call might look something like this:
 
 ```js
-{% raw %}
 analytics.identify(' {{user.id}} ', {
   name: '{{user.fullname}}',
   email: '{{user.email}}'
 });
-{% endraw %}
 ```
 
 With that call in your page footer, you successfully identify every user that visits your site.
