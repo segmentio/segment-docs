@@ -373,4 +373,4 @@ let analytics = Analytics(configuration: config)
 ```
 
 ## Changelog
-[View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->
+[View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.  ->
