@@ -7,7 +7,7 @@ id: 64c1690a9f08c84a420aba78
 
 [TikTok Pixel](https://ads.tiktok.com/marketing_api/docs?id=1739583652957185){:target="_blank"} is a piece of code that you can place on your website that allows you to share website events with TikTok. With TikTok for Business Tools, the Pixel can help you measure traffic on your website, measure ad campaign performance, optimize your campaigns and find new customers.
 
-### Benefits of TikTok Pixel
+## Benefits of TikTok Pixel
 
 Use data collected from TikTok Pixel to:
 - **Build marketing audiences**: Create custom Audiences based on website visitor events, like viewing a product page or making a purchase. Audiences can be used to re-engage previous site visitors or model lookalikes to find new customers. 
