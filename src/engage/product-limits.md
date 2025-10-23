@@ -56,7 +56,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | Journey Name    | Maximum length of 73 characters                         | Once the limit is reached, you cannot add additional characters to the name. |
 | Compute credits | Half a credit for each step (up to 250 compute credits) | Each step in a published Journey consumes half of one compute credit.        |
 
-For Journeys V2, see [Product Limits](https://segment.com/docs/engage/journeys/v2/limits/) here.
+For Journeys V2, see [Product Limits](/docs/engage/journeys/v2/limits/).
  
 ## Channels
 
