@@ -3,7 +3,6 @@ Segment's web source (Analytics.js), and native client-side libraries (iOS, Andr
 - **Cloud-mode**: The sources send data directly to the Segment servers, which then translate it for each connected downstream destination, and send it on. Translation is done on the Segment servers, keeping your page size, method count, and load time small.
 
   > info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destination"
-  >
   > HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud-mode destination.
   > To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/segment/privacy/hipaa-eligible-segment/#data-encryption).
 
