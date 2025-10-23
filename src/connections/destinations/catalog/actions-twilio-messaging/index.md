@@ -66,7 +66,7 @@ To add the destination:
 2. Select **Twilio Messaging**, then click **Add destination**.
 3. Select an existing source to connect to the destination, then click **Next**.
 4. On your new destination page, click the **Settings** tab.
-4. On the Settings tab, enter your **Twilio Account SID**, **Twilio API Key SID**, and **Twilio API Key Secret**.
+5. On the Settings tab, enter your **Twilio Account SID**, **Twilio API Key SID**, and **Twilio API Key Secret**.
 6. To finish setting up the destination, click **Save Changes**.
 
 The destination is now connected and ready to configure message mappings.
