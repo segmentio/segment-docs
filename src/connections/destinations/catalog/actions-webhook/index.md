@@ -22,7 +22,7 @@ Segment's Webhooks (Actions) destination uses internet protocol and HTTP callbac
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). You can create up to 5 mappings, each of which can send to a different webhook URL.
 7. Enable the destination and configured mappings.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## Batch size limits
 

@@ -95,7 +95,7 @@ The Google Campaign Manager 360 destination supports hashing for the following f
 
 The hashing algorithm used is SHA-256. If incoming data arrives already hashed, the destination will not hash it again. The values will be sent as-is to Google.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## FAQ and troubleshooting
 

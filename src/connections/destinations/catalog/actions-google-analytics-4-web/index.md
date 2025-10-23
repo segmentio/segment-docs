@@ -123,7 +123,7 @@ When these properties are available, they send to the `update` command.
 
 If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## FAQ and troubleshooting
 

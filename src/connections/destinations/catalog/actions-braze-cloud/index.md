@@ -62,7 +62,7 @@ Sync modes available for v2 Actions include:
 - **Upsert**: Update existing records and add new ones, if necessary.
 - **Add**: Add records to a list, segment, or journey.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## Migration from Braze Classic
 

@@ -49,7 +49,7 @@ To connect the Amazon Conversions API Destination:
 9. Follow the steps in [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 10. Toggle **Enable Destination** on, then click **Save Changes**.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 > info "Event Action Source"
 > By default, Segment sends all mappings as `website` conversions. To send events from mobile apps, Fire TV, or offline sources, set the Event Action Source in each mapping to the appropriate value: `android`, `ios`, `fire_tv`, or `offline`.

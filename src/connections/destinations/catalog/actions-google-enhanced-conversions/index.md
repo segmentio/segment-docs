@@ -131,7 +131,7 @@ Sync modes allow users to define how Segment should update the data in your dest
 Sync modes available for v2 Actions include:
 - **Add**: Add records to a list, segment, or journey.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 

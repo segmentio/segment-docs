@@ -101,7 +101,7 @@ To finish the setup, enable the AWS S3 (Actions) Destination in your workspace:
    * Enter the IAM External ID, which is a value set in the Trust Relationship under your AWS IAM Role.
 5. Enable the destination.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 ### Step 3: Configure the AWS S3 (Actions) Destination mappings
 To finish the configuration, add mappings to your new AWS S3 (Actions) Destination:

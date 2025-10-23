@@ -48,7 +48,7 @@ To sync additional Audiences from your Engage space, create a separate instance 
 > info "Mapping tester availability"
 > The Mapping Tester isn't available for this destination. Since this destination requires batched events for activation, testing can only be performed end-to-end with a connected source.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 
 ## Limitations

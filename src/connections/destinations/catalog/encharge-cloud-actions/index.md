@@ -29,5 +29,5 @@ Encharge maintains this destination. For any issues with the destination, [conta
 10. Click **Save Changes**.
 11. To start with pre-populated event subscriptions, enable the **Enable Destination** and click **Save Changes**. Otherwise, click on the **Mappings** tab to configure each action, and then enable the destination.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 

@@ -24,9 +24,7 @@ The Adobe Analytics destination automatically works with Segment's standard [Eco
     <td>Adobe Analytics Event Name</td>
   </tr>
   <tr>
-    <td>Product Viewed
-    <br>Product List Viewed
-    </td>
+    <td>Product Viewed<br>Product List Viewed</td>
     <td>`prodView`</td>
   </tr>
   <tr>
@@ -48,10 +46,10 @@ The Adobe Analytics destination automatically works with Segment's standard [Eco
   <tr>
     <td>Order Completed</td>
     <td>`purchase`</td>
+  </tr>
   <tr>
     <td>Cart Opened</td>
     <td>`scOpen`</td>
-  </tr>
   </tr>
 </table>
 
@@ -335,8 +333,9 @@ An example eVar mapping in the Segment Destination settings UI should look like 
 
 You can only map properties to Adobe eVar properties. For example, you could map the following properties to Adobe: `path`, `referrer`, `search`, `signup_mode`, `title` and `url`.
 
->![Adobe evar](https://github.com/segmentio/segment-docs/assets/82051355/999b398a-f752-47f6-8511-9b2ec866cbae)
->![adobe mapping](https://github.com/segmentio/segment-docs/assets/82051355/c22eb82d-c9cd-4a2a-b216-b9b36569a606)
+![Adobe evar](https://github.com/segmentio/segment-docs/assets/82051355/999b398a-f752-47f6-8511-9b2ec866cbae)
+
+![adobe mapping](https://github.com/segmentio/segment-docs/assets/82051355/c22eb82d-c9cd-4a2a-b216-b9b36569a606)
 
 
 
@@ -358,7 +357,7 @@ The Segment Adobe Analytics Merchandising setting runs as follows:
   If you don't include a value, Segment sends the event without one, and Adobe understands this as an increment of `1`. If you configure a value and the value is not present on the `track` or `page` call, Segment does not send the event to Adobe.
 - Map of product eVars to set on the products string. This is only supported at the product level, as expected by Adobe Analytics. <!-- TODO LR Note: this whole section could use work, but this part is especially confusing-->
 
-> info "Product Added, Product Removed, and Product Viewed events do not use the "products" array"
+> info "Product Added, Product Removed, and Product Viewed events do not use the products array"
 > Product Added, Product Removed, and Product Viewed events store product information in the top level property object rather than in the "products" array. When adding an eVar to these events, specify `properties.key` as the Segment key in the mapping.
 > 
 > For more information, see the [Product Added Spec](/docs/connections/spec/ecommerce/v2/#product-added).

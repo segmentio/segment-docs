@@ -27,7 +27,7 @@ id: 5f7dd78fe27ce7ff2b8bfa37
 6. Enter the **API Key** and **Site ID**. Find these values on the [Customer.io API Credentials Page](https://fly.customer.io/settings/api_credentials){:target="_blank"}.
 7. Select **Quick Setup** to start with pre-populated subscriptions, or **Customized Setup** to configure each action from scratch. Click **Configure Actions**.
 
-{% include components/actions-fields.html settings="true"%}
+{% include components/actions-fields.html settings="true" %}
 
 
 ## Migration from Customer.io classic
