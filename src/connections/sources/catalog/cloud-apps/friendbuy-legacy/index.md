@@ -21,7 +21,7 @@ These events can be passed to your Segment Destinations such as data warehouses 
  6. Login to your Friendbuy account and enter this Segment write key at this location: [Settings>Configurations>Integrations](https://retailer.friendbuy.com/app){:target="_blank"}.
  7. Click Save.
 
-![Segment write key](images/segment-write-key.png)
+![Segment write key](../friendbuy/images/segment-write-key.png)
 
  8. From your Segment account, click into your Friendbuy Source and you'll be able to add other downstream Destinations where you want to see referral events.
 

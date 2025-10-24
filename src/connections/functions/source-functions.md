@@ -391,7 +391,7 @@ Segment only attempts to run your source function again if a **Retry** error occ
 ### Source functions permissions
 
 
-{% include content/functions/perms.md%}
+{% include content/functions/perms.md %}
 
 
 ### Editing and deleting source functions

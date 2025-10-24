@@ -19,7 +19,7 @@ This destination is maintained by Trubrics. For any issues with the destination,
 4. Go to the [Trubrics app](https://app.trubrics.com){:target="_blank"}, and copy the **Project API key** from the settings page.
 5. Enter the **Project API Key** in the Trubrics destination settings in Segment, then enable the destination.
 6. Add mappings for your AI/user properties.
- - To learn more about adding mappings, see [Trubrics <> Segment Mapping Events](https://www.loom.com/share/3bc3a02cf38d47b4b865c50314dbc8fb){:target="_blank”}.
+ - To learn more about adding mappings, see [Trubrics \<> Segment Mapping Events](https://www.loom.com/share/3bc3a02cf38d47b4b865c50314dbc8fb){:target="_blank”}.
  
  <!--- TODO: write this instead of having it in a video --->
 

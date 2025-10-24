@@ -12,7 +12,7 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 
 ## Getting Started
 
-1. From your workspace's segment.com/<your-workspace>/sources page, click Add source.
+1. From your workspace's segment.com/\<your-workspace>/sources page, click Add source.
 2. Choose Blueshift.
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like Blueshift for nickname and Blueshift for the schema name.
 4. The next page ("Overview") will surface your Segment write key for Blueshift. Copy this write key.
