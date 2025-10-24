@@ -632,7 +632,3 @@ These examples show key moments in the journey, from entry to conversion milesto
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
-
-
-
--->
