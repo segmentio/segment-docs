@@ -7,7 +7,7 @@ The Segment HTTP Tracking API lets you record analytics data from any website or
 
 Segment has native [sources](/docs/connections/sources/) for most use cases (like JavaScript and iOS) that are open-source and built for high-performance. But for unsupported use cases, [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) or when you're using [Segment-Managed Custom Domain](/docs/connections/sources/custom-domain/), you may want to send data to Segment's HTTP API directly.
 
-> info "HTTP API sources in EU workspaces should use the `events.eu1.segmentapis.com` endpoint"
+> info "HTTP API sources in EU workspaces should use the events.eu1.segmentapis.com endpoint"
 > If you are located in the EU and use the `https://api.segment.io/v1/` endpoint, you might not see any errors, but your events will not appear in the Segment app. For more information about regional support, see the [Source Regional support](/docs/guides/regional-segment/#source-regional-support) documentation. 
 
 ## Headers
@@ -23,7 +23,7 @@ Choose between [writeKey authentication](#writeKey-authentication), [basic authe
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
 The authentication writeKey should be sent as part of the body of the request. This will be encrypted over https.
 
-```
+```shell
   curl --location 'https://api.segment.io/v1/track' \
   --header 'Content-Type: application/json' \
   --data-raw '{
@@ -58,7 +58,7 @@ Include the access token in the Authorization header as a Bearer token along wit
 
 For example, to use the access token in the HTTP API Source, use `access_token` in the header and `write_key` in the payload. An example cURL request looks like: 
 
-```
+```shell
   curl --location 'https://api.segment.io/v1/track' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <access token>' \

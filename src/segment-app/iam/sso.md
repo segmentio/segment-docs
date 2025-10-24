@@ -102,7 +102,7 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 To configure SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider. You are unable to use verified domain(s) across multiple workspaces and will encounter the following error if you add a domain that is already verified in another workspace:
 
 > warning ""
-> **Warning**: This domain has already been claimed.
+> This domain has already been claimed.
 
 After your administrator configures separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO. 
 

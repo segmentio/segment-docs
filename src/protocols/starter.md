@@ -12,7 +12,7 @@ With Segment tracking plans you can choose from the most common Events, and crea
 
 This is a great way to get a head start on your tracking, and also to monitor events coming into your workspace as you implement your Segment tracking.
 
-### Starter tracking plan access
+## Starter tracking plan access
 
 Only Workspace Owners can set up or edit the starter tracking plan.
 

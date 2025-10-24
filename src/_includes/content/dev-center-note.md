@@ -1,1 +1,7 @@
-<div class="premonition info"><div class="fa fa-info-circle"></div><div class="content"><p class="header">Developer Center no longer accepts new components.</p><p markdown=1>Segment is redeveloping the Developer Center and will launch a new version when complete. To stay up to date, add your contact information [in this Airtable form](https://airtable.com/shrT3b4C7agUEBKVS){:target="_blank"}.</p></div></div>
+<div class="premonition info">
+  <div class="fa fa-info-circle"></div>
+  <div class="content">
+    <p class="header">Developer Center no longer accepts new components.</p>
+    <p markdown=1>Segment is redeveloping the Developer Center and will launch a new version when complete. To stay up to date, add your contact information [in this Airtable form](https://airtable.com/shrT3b4C7agUEBKVS){:target="_blank"}.</p>
+  </div>
+</div>
