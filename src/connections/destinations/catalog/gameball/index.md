@@ -56,6 +56,3 @@ Set up your [custom `track` events in Gameball](https://help.gameball.co/en/arti
 All `track` events _must_ contain a `userID` property.
 
 Segment sends `track` calls to Gameball as a `track` event.
-
-Let's see if this ends up triggering a PR.
-
