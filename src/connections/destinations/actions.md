@@ -143,25 +143,38 @@ Endpoint: `POST` `https://api.segmentapis.com/destination/actions_destination_id
 
 After configuring the Destination Filter on both the Classic and Actions destination, go to each destination's **Filters** tab and enable the filters. After completing the migration, you can disable the Classic destination on the Settings page and remove each of the filters from both destinations.
 
-## Edit a destination action
-You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
+## Edit a mapping
+You can add or remove, disable and re-enable, and rename individual mappings from the Mapping tab on the destination's information page in the Segment app. Click an individual mapping to edit it.
 
-From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
+From the edit screen you can change the mapping's name and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
 
 ![Screenshot of the Mappings table with several enabled mappings](images/actions-list.png)
 
-When an Action is created, it's disabled by default. This ensures that it's only used after being fully configured. To begin sending data through an Action, enable it on the Actions page by clicking the toggle so that it appears blue.
+When a Mapping is created, it's disabled by default. This ensures that it's only used after being fully configured. To begin sending data through a Mapping, enable it on the Mappings page by clicking the toggle so that it appears blue.
 
-## Disable a destination action
-If you find that you need to stop an action from running, but don't want to delete it completely, you can select the action and click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you re-enable it.
+## Disable a mapping
+If you find that you need to stop a mapping from running, but don't want to delete it completely, you can select the action and click the toggle next to the mapping's name to disable it. This takes effect within minutes, and disables the mapping until you re-enable it.
 
-## Delete a destination action
-To delete a destination action, select the action, click **...** and select **Delete**.
+## Delete a mapping
+To delete a mapping, select the mapping, click **...** and select **Delete**.
 
-This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
+This takes effect within minutes, and removes the mapping completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved mapping cannot be restored.
 
-## Test a destination action
-To test a destination action, follow the instructions outlined in the [Event Tester](/docs/connections/test-connections/) documentation. You must enable a mapping to test the destination. If a mapping is not enabled, the following error message will appear: `You may not have any subscriptions that match this event.`
+## Duplicate mappings
+You can use the Duplicate Mappings feature to create an exact copy of a mapping. The duplicated mapping has the same configurations and enrichments as your original mapping. 
+
+Duplicate Mappings supports [Actions destinations](#actions-destination), [Reverse ETL destinations](/docs/connections/reverse-etl/reverse-etl-catalog), and destinations connected to Engage [Audiences](/docs/engage/audiences) and [Journeys](/docs/engage/journeys).  
+
+To duplicate your mappings: 
+
+1. Navigate to **Connections > Destinations** and select the destination with the mappings you'd like to copy. 
+2. On the destination's **Mappings** tab, select the menu button (**...**) and click **Duplicate Mapping**. 
+3. Review the popup and click **Duplicate Mapping**.
+
+Segment creates a disabled mapping with the name "Original Mapping Name (Copy)". You must enable the mapping for data to flow. 
+
+## Test a mapping
+To test a mapping, follow the instructions outlined in the [Event Tester](/docs/connections/test-connections/) documentation. You must enable a mapping to test the destination. If a mapping is not enabled, the following error message will appear: `You may not have any subscriptions that match this event.`
 
 You can also test within the mapping itself. To test the mapping:
 1. Navigate to the **Mappings** tab of your destination. 
@@ -179,7 +192,7 @@ If you use the default mappings for a destination action, you don't need to cust
 > info "Destination limit"
 > Actions-based destinations have a limit of 50 individual mappings.
 
-To create a custom destination action, start from the Actions tab. If necessary, click **New Mapping** to create a new action.
+To create a custom mapping, start from the Mappings tab and click **New Mapping** to create a new mapping.
 
 1. In the edit panel, define the [conditions](#conditions) under which the action should run.
 2. Test those conditions to make sure that they correctly match an expected event. This step looks for events that match the criteria in the [debugger queue](/docs/connections/sources/debugger/), so you might need to trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
@@ -450,20 +463,6 @@ Destination Filters are compatible with Destination Actions. Consider a Destinat
 - You need to filter data from multiple call types, for example, Track, Page, and Identify calls.
 
 If your use case doesn't match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
-
-## Duplicate Mappings
-
-You can use the Duplicate Mappings feature to create an exact copy of a mapping. The duplicated mapping has the same configurations and enrichments as your original mapping. 
-
-Duplicate Mappings supports [Actions destinations](#actions-destination), [Reverse ETL destinations](/docs/connections/reverse-etl/reverse-etl-catalog), and destinations connected to Engage [Audiences](/docs/engage/audiences) and [Journeys](/docs/engage/journeys).  
-
-To duplicate your mappings: 
-
-1. Navigate to **Connections > Destinations** and select the destination with the mappings you'd like to copy. 
-2. On the destination's **Mappings** tab, select the menu button (**...**) and click **Duplicate Mapping**. 
-3. Review the popup and click **Duplicate Mapping**.
-
-Segment creates a disabled mapping with the name "Original Mapping Name (Copy)". You must enable the mapping for data to flow. 
 
 ## FAQs and troubleshooting
 
