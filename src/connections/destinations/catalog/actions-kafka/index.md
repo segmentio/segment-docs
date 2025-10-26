@@ -20,20 +20,20 @@ id: 65dde5755698cb0dab09b489
 
 The way you've configured your Kafka Cluster informs the authentication and encryption settings you'll need to apply to the Segment Kafka Destination. You may need the assistance of someone technical to provide values for the following Settings:
 
-5. On the Settings tab, enter values into the **Client ID**, **Brokers** and **Authentication Mechanism** setting fields.
-6. Populate fields based on the value you selected from the **Authentication Mechanism** field:
+1. On the Settings tab, enter values into the **Client ID**, **Brokers** and **Authentication Mechanism** setting fields.
+2. Populate fields based on the value you selected from the **Authentication Mechanism** field:
    - **Plain** or **SCRAM-SHA-256 / 512** authentication: provide values for **Username** and **Password** fields.
    - **Client Certificate** authentication: provide values for the **SSL Client Key** and **SSL Client Certificate** fields.
-7. Populate the **SSL Certificate Authority** field, if necessary. 
-8. Save your changes and proceed to [Configure the Send Action](#configure-the-send-action). 
+3. Populate the **SSL Certificate Authority** field, if necessary. 
+4. Save your changes and proceed to [Configure the Send Action](#configure-the-send-action). 
 
 ### Configure the "Send" Action
 
-9. Select the Mappings tab and add a new **Send** mapping. 
-10. Select a Topic to send data to. This field should auto-populate based on the credentials you provided in the Settings tab. 
-11. Map your payload using the **Payload** field.  
+1. Select the Mappings tab and add a new **Send** mapping. 
+2. Select a Topic to send data to. This field should auto-populate based on the credentials you provided in the Settings tab. 
+3. Map your payload using the **Payload** field.  
     _(Optional)_: Specify partitioning preferences, Headers and Message Key values.
-12. Save and enable the Action, then navigate back to the Kafka destination's Settings tab to enable and save the Destination. 
+4. Save and enable the Action, then navigate back to the Kafka destination's Settings tab to enable and save the Destination. 
 
 {% include components/actions-fields.html %}
 

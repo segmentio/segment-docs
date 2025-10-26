@@ -43,15 +43,14 @@ This destination sends audiences, or lists of users, to Facebook Custom Audience
 
 After you've connected your Facebook Custom Audiences destination to Segment, set up a mapping that adds users to a new or existing Custom Audience. 
 
+> warning "Added or updated records is the only supported additive sync mode"
+> Selecting any other sync mode might lead to sync failures with the Facebook Custom Audiences (Actions) destination. 
+
 1. Navigate to **Connections > Sources** and select your Reverse ETL source.
 2. On the Models page, select the model you'd like to use and click **Add Mapping**. 
 3. Select the Facebook Custom Audience (Actions) destination and the Sync Audience action, then click **Create Mapping**. 
 4. Enter a descriptive name for your mapping. Segment recommends a name that includes both the audience name and sync mode, for example, `Loyalty Users (Add)`. 
 5. Under **Select record to map and send**, select **Added or updated records**. The Added or updated records sync mode both adds new records and attempts to re-add any updated records to the custom audience. Adding updated records to your destination enables better match rates as more user identifiers are added to the source model over time.
-
-> warning "Added or updated records is the only supported additive sync mode"
-> Selecting any other sync mode might lead to sync failures with the Facebook Custom Audiences (Actions) destination. 
-
 6. Set how often your model syncs by setting the [Sync schedule](/docs/connections/reverse-etl/#step-4-create-mappings). 
 7. Select or create an audience in Facebook to sync your data with. Click the **Select or create audience in Facebook** button to save the audience ID to your mapping. 
 8. Map your model columns to the appropriate Facebook Custom Audience parameters. For more context about data formatting, see the [Sync Audience](#sync-audience) and [Data processing](#data-processing) documentation. 
