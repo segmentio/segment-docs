@@ -43,36 +43,21 @@ This destination sends audiences, or lists of users, to Facebook Custom Audience
 
 After you've connected your Facebook Custom Audiences destination to Segment, set up a mapping that adds users to a new or existing Custom Audience. 
 
+> warning "Added or updated records is the only supported additive sync mode"
+> Selecting any other sync mode might lead to sync failures with the Facebook Custom Audiences (Actions) destination. 
+
 1. Navigate to **Connections > Sources** and select your Reverse ETL source.
 2. On the Models page, select the model you'd like to use and click **Add Mapping**. 
 3. Select the Facebook Custom Audience (Actions) destination and the Sync Audience action, then click **Create Mapping**. 
 4. Enter a descriptive name for your mapping. Segment recommends a name that includes both the audience name and sync mode, for example, `Loyalty Users (Add)`. 
 5. Under **Select record to map and send**, select **Added or updated records**. The Added or updated records sync mode both adds new records and attempts to re-add any updated records to the custom audience. Adding updated records to your destination enables better match rates as more user identifiers are added to the source model over time.
-
-> warning "Added or updated records is the only supported additive sync mode"
-> Selecting any other sync mode might lead to sync failures with the Facebook Custom Audiences (Actions) destination. 
-
-<ol style="counter-reset: none;">
-  <li value="6" markdown=1>
-  Set how often your model syncs by setting the [Sync schedule](/docs/connections/reverse-etl/#step-4-create-mappings). 
-  </li>
-  <li value="7" markdown=1>
-  Select or create an audience in Facebook to sync your data with. Click the **Select or create audience in Facebook** button to save the audience ID to your mapping. 
-  </li>
-  <li value="8" markdown=1>
-  Map your model columns to the appropriate Facebook Custom Audience parameters. For more context about data formatting, see the [Sync Audience](#sync-audience) and [Data processing](#data-processing) documentation. 
-  <ul> 
-    <li> Map External ID to a unique user identifier from your system (like User ID, CRM ID, or anonymous ID.) Segment recommends using the External ID column as your primary key when setting up your Reverse ETL model so you can more easily remove users from your custom audience. External ID is the only field Facebook requires. </li> 
-    <li> Segment recommends mapping as many parameters as you have available in your source model so that you can increase your match rates. </li> 
-  </ul>
-  </li>
-  <li value ="9" markdown=1>
-  Send a test record. If successful, you should see a 200 response in Segment and one added record to your custom audience. To verify that the record was successfully added to your custom audience, open Facebook Ads Manager and navigate to **Audiences > {Audience Name} > History**.
-  </li>
-  <li value="10" markdown=1>
-  Click **Save Mapping** and enable the mapping. 
-  </li>
-</ol>
+6. Set how often your model syncs by setting the [Sync schedule](/docs/connections/reverse-etl/#step-4-create-mappings). 
+7. Select or create an audience in Facebook to sync your data with. Click the **Select or create audience in Facebook** button to save the audience ID to your mapping. 
+8. Map your model columns to the appropriate Facebook Custom Audience parameters. For more context about data formatting, see the [Sync Audience](#sync-audience) and [Data processing](#data-processing) documentation. 
+   - Map External ID to a unique user identifier from your system (like User ID, CRM ID, or anonymous ID.) Segment recommends using the External ID column as your primary key when setting up your Reverse ETL model so you can more easily remove users from your custom audience. External ID is the only field Facebook requires.
+   - Segment recommends mapping as many parameters as you have available in your source model so that you can increase your match rates.
+9. Send a test record. If successful, you should see a 200 response in Segment and one added record to your custom audience. To verify that the record was successfully added to your custom audience, open Facebook Ads Manager and navigate to **Audiences > \{Audience Name\} > History**.
+10. Click **Save Mapping** and enable the mapping. 
 
 ### Remove users from a Custom Audience
 
@@ -84,7 +69,7 @@ After you've connected your Facebook Custom Audiences destination to Segment, se
 6. Set how often your model syncs by setting the [Sync schedule](/docs/connections/reverse-etl/#step-4-create-mappings). 
 7. Select or create an audience in Facebook to sync your data with. Click the **Select or create audience in Facebook** button to save the audience ID to your mapping.
 8. Map your model columns to the appropriate Facebook Custom Audience parameters. Only the External ID is required. When a record is deleted from your source model, only the model primary key is sent to the mapping; other columns from your source model are not sent. Segment recommends using the External ID as your primary key in your source model.
-9. Send a test record. If successful, you should see a `200` response in Segment and one record removed from your custom audience. To verify that the record was successfully removed from your custom audience, open Facebook Ads Manager and navigate to **Audiences > {Audience Name} > History**.
+9. Send a test record. If successful, you should see a `200` response in Segment and one record removed from your custom audience. To verify that the record was successfully removed from your custom audience, open Facebook Ads Manager and navigate to **Audiences > \{Audience Name\} > History**.
 10. Click **Save Mapping** and enable the mapping.
 
 {% include components/actions-fields.html %}
