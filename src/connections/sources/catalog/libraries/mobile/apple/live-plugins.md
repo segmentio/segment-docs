@@ -3,24 +3,26 @@ title: Live Plugins
 strat: swift
 ---
 
-Live plugins are JavaScript code snippets published to your Segment workspace and then downloaded directly to the mobile devices of end users. Live plugins let you perform real-time modifications to events before they leave the mobile device.
+Segment has launched the [Auto-Instrumentation Public Beta](https://segment.com/docs/connections/auto-instrumentation/){:target="_blank"} to Public Beta, which simplifies instrumenting your websites &amp; apps with a simple WYSIWYG interface, directly from your Segment workspace. In addition to creating events remotely, Segment also offers the ability to transform events remotely via Live Plugins. 
 
-On this page, you'll learn how to set up live plugins and how to create your own live plugins. You'll also see example live plugins that address common use cases.
+Live Plugins are JavaScript code snippets which are published via your Segment source, and then downloaded directly to the mobile devices of end users. Live Plugins let you perform real-time modifications to events, before they leave the mobile device, without having to rebuild &amp; redistribute your apps.
 
-> info "Live Plugins is in pilot"
-> Live Plugins is currently in Pilot and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
+On this page, you'll learn how to set up your mobile app to support Live Plugins, and how to create and deploy your own Live Plugins directly to your end users. You'll also see examples of Live Plugins that address common use cases.
+
+> info "Live Plugins is in Public Beta"
+> Live Plugins is currently in Beta and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
 
 ## Live plugins overview
 
-You can use JavaScript live plugins with Analytics-Swift and Analytics-Kotlin to filter and modify data remotely. As a result, you can filter and modify analytics events without having to deploy updates to the app store for each change, ensuring data quality and consistency for all your mobile users.
+You can use JavaScript live plugins with Analytics-Swift and Analytics-Kotlin to filter and modify data remotely. As a result, you can filter and modify Analytics events without having to deploy updates to the app store for each change, ensuring data quality and consistency for all your mobile users.
 
-Because live plugins let you modify event data before it leaves a mobile device, you can use the same function to modify data meant for all your cloud-mode and device-mode destinations. 
+Because Live Plugins let you modify event data before it leaves a mobile device, you can use the same Javascript code to modify data meant for all your cloud-mode and device-mode destinations, or scope your changes to specific Destinations.  
 
 ## Setup
 
-To use live plugins, you first need to set up your mobile app with a one-time configuration.
+To use Live Plugins, you first need to set up your mobile app with a one-time configuration.
 
-To configure live plugins:
+To configure Live Plugins:
 
 1. Include the [Analytics Live for Swift plugin](https://github.com/segment-integrations/analytics-swift-live){:target="_blank"}
  and [Analytics Live for Kotlin plugin](https://github.com/segment-integrations/analytics-kotlin-live){:target="_blank"}
@@ -49,68 +51,17 @@ analytics.add(LivePlugins())
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-After you've completed setup, you can deploy your apps to the Apple App Store and Google Play Store. You can then add new JavaScript plugin code to your mobile apps through the CLI and perform updates as often as needed.
-
-## Live plugin tutorial
-
-This section walks you through a sample live plugin implementation. 
-
-### 1. Write a live plugin in JavaScript
-
-Copy and save the following file, which anonymizes events by removing user IDs and device IDs:
-
-```js
-class PrivacyLivePlugin extends LivePlugin {
-   // The execute function is called for every event.
-   execute(event) {
-       // Remove the user ID and device ID from the event to anonymize it.
-       event.userId = null;
-       delete event.context.device.id;
-       return event;
-   }
-}
-```
-
-Note the name of your saved file. You'll need it in the next step.
-
-### 2. Deploy the plugin with the Live Plugin CLI
-
-With your plugin saved, you'll next deploy the plugin with Segment's Live Plugin CLI. Follow these steps:
-
-#### Install the CLI with Homebrew
-
-Run this command to install the Segment CLI:
-
-```shell
-$ brew install segment-integrations/formulae/segmentcli
-```
-
-#### Authenticate with Segment
-
-Next, you'll authenticate with Segment to give the CLI access to your workspace:
-
-1. Within your Segment workspace, navigate to **Settings > Workspace Settings > Access Management > Tokens**.
-2. Click **Create token** to generate a new token with the `Workspace Owner` role. Copy the token.
-3. Return to your command line and use your token to authenticate:
-
-    ```shell
-    $ segmentcli auth <ProfileName> <AuthToken>
-    ```
-4. Copy your source's ID. You'll find the Source ID under **Settings > API Keys > Source ID** on your source's page.
-7. Use your source ID and live plugin file name to upload your live plugin:
-
-    ```shell
-    $ segmentcli liveplugins upload <SourceID> <FileName>
-    ```
-
-You've now successfully attached your live plugin(s) to your mobile source. The next time your users launch your app, their Segment SDK will download the latest live plugins, which will run every time new events are generated.
-
-> info ""
-> Because the CDN settings object takes a few minutes to rebuild, your live plugins might not be available immediately.
+After you've completed setup, you can deploy your apps to the Apple App Store and Google Play Store. You can then add new JavaScript plugin code to your mobile apps through the Segment website, and perform updates as often as needed.
 
 ## Create your own live plugin
 
-Follow the steps in this section to create your own live plugin.
+To access Live Plugins for you Swift and Kotlin sources
+1. Navigate to Connections > Sources.
+2. Select your Swift or Kotlin source (or create a new one).
+3. From the Source's overview, select the Live Plugin tab
+<img width="1119" height="578" alt="Access Live Plugins from the Source overview tab" src="https://github.com/user-attachments/assets/e228bddb-4cb8-4469-9ac6-8a2c322edcbc" />
+
+Follow the steps in this section to create and deploy your own Live Plugin.
 
 ### 1. Subclass the `LivePlugin` class
 
@@ -137,9 +88,9 @@ analytics.add(new UserIdLivePlugin(LivePluginType.enrichment, null));
 
 In this example, you've created a `UserIdLivePlugin` by subclassing `LivePlugin` and implementing the `execute()` function. This function gets applied to every event.
 
-### 2. Add your live plugin to the Analytics instance
+### 2. Add your Live Plugin to the Analytics instance
 
-After you define your custom live plugin, you need to add it to the Analytics instance. The Analytics object is globally accessible, and you can use the `add()` method to include your live plugin. 
+After you define your custom Live Plugin, you need to add it to the Analytics instance. The Analytics object is globally accessible, and you can use the `add()` method to include your Live Plugin. 
 
 When you adding a new instance, you specify the `LivePluginType` and the destination to which it applies, or use null to apply it to all destinations.
 
@@ -325,7 +276,7 @@ This section covers the primary event callbacks.
 
 #### The `execute` callback
 
-The `execute` callback function serves as the primary entry point for live plugins to intercept and modify events. When you implement the `execute` function in your plugin, you can decide whether to keep the event by returning it or drop it by returning `null`. 
+The `execute` callback function serves as the primary entry point for Live Plugins to intercept and modify events. When you implement the `execute` function in your plugin, you can decide whether to keep the event by returning it or drop it by returning `null`. 
 
 This callback is versatile, as you can use it for various event types when the event type itself is not critical. Additionally, `execute` lets you invoke more specific callbacks based on the event type.
 
