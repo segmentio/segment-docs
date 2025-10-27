@@ -2,7 +2,7 @@
 title: API Design
 ---
 
-{% include content/papi-ga.html %}
+{% include content/papi-ga.md %}
 
 ## API Evolution: Versioning and Compatibility
 
@@ -28,13 +28,13 @@ The Config API is a set of REST APIs for managing Segment resources. The primary
 
 You can manage each resource using standard methods:
 
-| Method | HTTP Mapping          |
-|--------|-----------------------|
-| List   | GET <collection URL>  |
-| Get    | GET <resource URL>    |
-| Create | POST <collection URL> |
-| Update | PATCH <resource URL>  |
-| Delete | DELETE <resource URL> |
+| Method | HTTP Mapping           |
+|--------|------------------------|
+| List   | GET \<collection URL>  |
+| Get    | GET \<resource URL>    |
+| Create | POST \<collection URL> |
+| Update | PATCH \<resource URL>  |
+| Delete | DELETE \<resource URL> |
 
 ## Errors
 
