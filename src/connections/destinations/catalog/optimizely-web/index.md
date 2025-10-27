@@ -135,7 +135,7 @@ This appends an additional property in your "Experiment Viewed" events called `n
 
 #### Sending Experiment Viewed event properties as Google Analytics Custom Dimensions
   
-If you're sending your experiment data to Google Analytics in the form of `track` calls, Segment recommends creating hit-scoped custom dimensions in Google Analytics with titles like "Experiment Name" and "Variation Name," and then map the properties to those Custom Dimensions accordingly. For example, if you set Custom Dimension 5 to "Experiment Name" and Custom Dimension 1 to "Variation Name," here's how you'd configure the mappings in your Segment<>GA settings:
+If you're sending your experiment data to Google Analytics in the form of `track` calls, Segment recommends creating hit-scoped custom dimensions in Google Analytics with titles like "Experiment Name" and "Variation Name," and then map the properties to those Custom Dimensions accordingly. For example, if you set Custom Dimension 5 to "Experiment Name" and Custom Dimension 1 to "Variation Name," here's how you'd configure the mappings in your Segment\<>GA settings:
 
   ![A screenshot of the Custom Dimensions tab of Optimizely.](images/customdimensions.png)
 
@@ -195,7 +195,7 @@ If you are sending anonymous data to Optimizely X Full Stack using their server-
 
 ### No Data for Anonymous Users
 
-Segment does not map any data to Optimizely from the Segment<>Optimizely Web destination for anonymous users - in other words, to map `track` and `page` data, a user must be `identified` with a `userId`.
+Segment does not map any data to Optimizely from the Segment\<>Optimizely Web destination for anonymous users - in other words, to map `track` and `page` data, a user must be `identified` with a `userId`.
 
 ### Lower Experiment Viewed counts inside Segment and other tools vs. Optimizely unique visitors
 

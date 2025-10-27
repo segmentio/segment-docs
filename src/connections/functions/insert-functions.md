@@ -480,7 +480,7 @@ You can view Segment's list of [Integration Error Codes](/docs/connections/integ
 
 ### Functions permissions
 
-{% include content/functions/perms.md%}
+{% include content/functions/perms.md %}
 
 
 ### Editing and deleting functions

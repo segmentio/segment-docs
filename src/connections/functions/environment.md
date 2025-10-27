@@ -119,7 +119,7 @@ View Segment's [Public API](https://docs.segmentapis.com/tag/Functions){:target=
 
 ## Functions permissions
 
-{% include content/functions/perms.md%}
+{% include content/functions/perms.md %}
 
 ## ️Settings and secrets
 

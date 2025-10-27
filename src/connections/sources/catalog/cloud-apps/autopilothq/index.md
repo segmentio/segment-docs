@@ -50,8 +50,7 @@ Additionally, Autopilot also sends `email` and `contact_id` under `context.trait
   </tr>
   <tr>
    <td>Email Marked as Spam</td>
-   <td>Recipient marked message as spam
-  </td>
+   <td>Recipient marked message as spam</td>
   </tr>
   <tr>
    <td>Email Opened</td>
