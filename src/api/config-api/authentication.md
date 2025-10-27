@@ -2,7 +2,7 @@
 title: Authentication
 ---
 
-{% include content/papi-ga.html %}
+{% include content/papi-ga.md %}
 
 
 You can access the Config API programmatically using access tokens. When you authenticate with an access token, you have access to any resource and permission assigned to the token.

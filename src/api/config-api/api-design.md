@@ -2,7 +2,7 @@
 title: API Design
 ---
 
-{% include content/papi-ga.html %}
+{% include content/papi-ga.md %}
 
 ## API Evolution: Versioning and Compatibility
 
