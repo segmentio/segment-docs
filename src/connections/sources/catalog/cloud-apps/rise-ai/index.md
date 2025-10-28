@@ -2,11 +2,11 @@
 title: Rise AI Source
 ---
 
-[Rise AI](https://rise.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides AI-powered user guidance and automation, helping users accomplish their jobs-to-be-done with intelligent walkthroughs and contextual assistance.
+[Rise AI](https://getrise.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides AI-powered user guidance and automation, helping users accomplish their jobs-to-be-done with intelligent walkthroughs and contextual assistance.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Rise AI. For any issues with the source, [contact their Support team](mailto:support@rise.ai).
+This source is maintained by Rise AI. For any issues with the source, [contact their Support team](mailto:support@getrise.ai).
 
 ## Getting started
 
@@ -60,4 +60,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, [contact the Rise AI support team](mailto:support@rise.ai).
+If there are any issues with how the events are arriving to Segment, [contact the Rise AI support team](mailto:support@getrise.ai).
