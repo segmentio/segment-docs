@@ -59,7 +59,7 @@ To access Live Plugins for you Swift and Kotlin sources
 1. Navigate to Connections > Sources.
 2. Select your Swift or Kotlin source (or create a new one).
 3. From the Source's overview, select the Live Plugin tab
-<img width="1119" height="578" alt="Access Live Plugins from the Source overview tab" src="https://github.com/user-attachments/assets/e228bddb-4cb8-4469-9ac6-8a2c322edcbc" />
+<img alt="Access Live Plugins from the Source overview tab" src="https://github.com/user-attachments/assets/e228bddb-4cb8-4469-9ac6-8a2c322edcbc" />
 
 Follow the steps in this section to create and deploy your own Live Plugin.
 
