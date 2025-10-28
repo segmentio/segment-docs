@@ -3,20 +3,20 @@ title: Live Plugins
 strat: swift
 ---
 
-Segment has launched the [Auto-Instrumentation Public Beta](https://segment.com/docs/connections/auto-instrumentation/){:target="_blank"} to Public Beta, which simplifies instrumenting your websites &amp; apps with a simple WYSIWYG interface, directly from your Segment workspace. In addition to creating events remotely, Segment also offers the ability to transform events remotely via Live Plugins. 
+Segment has launched the [Auto-Instrumentation](https://segment.com/docs/connections/auto-instrumentation/){:target="_blank"} to Public Beta, which simplifies instrumenting your websites &amp; apps with a simple WYSIWYG interface, directly from your Segment workspace. As part of this launch, Segment also offers the ability to transform events remotely via Live Plugins. 
 
-Live Plugins are JavaScript code snippets which are published via your Segment source, and then downloaded directly to the mobile devices of end users. Live Plugins let you perform real-time modifications to events, before they leave the mobile device, without having to rebuild &amp; redistribute your apps.
+Live Plugins are JavaScript code snippets which are published from your Segment workspace directly to the devices of your end users. Live Plugins let you perform real-time modifications to events, before they leave the end-user device, without having to rebuild &amp; redistribute your apps.
 
 On this page, you'll learn how to set up your mobile app to support Live Plugins, and how to create and deploy your own Live Plugins directly to your end users. You'll also see examples of Live Plugins that address common use cases.
 
 > info "Live Plugins is in Public Beta"
-> Live Plugins is currently in Beta and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
+> Live Plugins is currently in Beta for Swift & Kotlin, and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
 
-## Live plugins overview
+## Live Plugins overview
 
 You can use JavaScript live plugins with Analytics-Swift and Analytics-Kotlin to filter and modify data remotely. As a result, you can filter and modify Analytics events without having to deploy updates to the app store for each change, ensuring data quality and consistency for all your mobile users.
 
-Because Live Plugins let you modify event data before it leaves a mobile device, you can use the same Javascript code to modify data meant for all your cloud-mode and device-mode destinations, or scope your changes to specific Destinations.  
+Because Live Plugins let you modify event data before it leaves a mobile device, you can use the same Javascript code to modify data across all your cloud-mode and device-mode destinations, or you can scope your changes to specific destinations.  
 
 ## Setup
 
@@ -24,8 +24,8 @@ To use Live Plugins, you first need to set up your mobile app with a one-time co
 
 To configure Live Plugins:
 
-1. Include the [Analytics Live for Swift plugin](https://github.com/segment-integrations/analytics-swift-live){:target="_blank"}
- and [Analytics Live for Kotlin plugin](https://github.com/segment-integrations/analytics-kotlin-live){:target="_blank"}
+1. Include [Analytics-Live for Swift plugin](https://github.com/segment-integrations/analytics-swift-live){:target="_blank"}
+ and [Analytics-Live for Kotlin](https://github.com/segment-integrations/analytics-kotlin-live){:target="_blank"}
  in your project.
 2. Add the plugin to your instance of Analytics, using the following code:
 
@@ -53,7 +53,7 @@ analytics.add(LivePlugins())
 
 After you've completed setup, you can deploy your apps to the Apple App Store and Google Play Store. You can then add new JavaScript plugin code to your mobile apps through the Segment website, and perform updates as often as needed.
 
-## Create your own live plugin
+## Create your own Live Plugin
 
 To access Live Plugins for you Swift and Kotlin sources
 1. Navigate to Connections > Sources.
@@ -102,7 +102,7 @@ analytics.add(new UserIdLivePlugin(LivePluginType.enrichment, "adobe"));
 
 ### 3. Use the `LivePluginType` enums
 
-To control when your custom live plugin runs during event processing, you can use `LivePluginType` enums, which define different timing options for your live plugin. Here are the available types:
+To control when your custom Live Plugin runs during the event lifecycle, you can use `LivePluginType` enums, which define different timing options for your Live Plugin. Here are the available types:
 
 ```js
 const LivePluginType = {
@@ -113,9 +113,9 @@ const LivePluginType = {
 }
 ```
 
-With these enums, you can select the timing that best fits your custom live plugin's target use case. These types align with categories used for Native Plugins.
+With these enums, you can select the timing that best fits your custom Live Plugin's target use case. These types align with categories used for Native Plugins.
 
-## Live plugin examples
+## Live Plugin examples
 
 The following live plugin examples address common use cases:
 
@@ -252,7 +252,7 @@ analytics.add(new DownSampleLivePlugin(LivePluginType.enrichment, null));
 
 ## Live Plugins API
 
-Live plugins follow an interface that let you intercept Segment events and modify their data. This interface includes several functions that you can implement for custom behavior:
+Live Plugins expose an interface that lets you intercept Segment events and modify their data. This interface includes several functions that you can implement for custom behavior:
 
 ```js
 // Interface for Live Plugins:
