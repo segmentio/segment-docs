@@ -1,6 +1,5 @@
 ---
 title: Iterable (Actions) Destination
-strat: iterable
 hide-boilerplate: true
 id: 645babd9362d97b777391325
 hide-dossier: true
