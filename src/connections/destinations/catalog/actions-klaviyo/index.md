@@ -49,7 +49,7 @@ Klaviyo (Actions) Destination can accept [Reverse ETL](/docs/connections/reverse
 | Unsubscribe Profile | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />        |
 
 > info ""
-> **\***Though technically possible, this may not be the most intuitive approach to using Reverse ETL.
+> **\*** Though technically possible, this may not be the most intuitive approach to using Reverse ETL.
 
 In order to add users to a list, use the **Upsert Profile** Action and fill out the **List** field with the Klaviyo list you'd like to add the profile to.
 
