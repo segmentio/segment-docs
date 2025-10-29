@@ -40,7 +40,7 @@ The table below lists events that Rise AI sends to Segment. These events appear 
 
 The table below list the properties included in the events listed above.
 
-| Property Name             | Description                                                      |
+| Property name             | Description                                                      |
 | ------------------------- | ---------------------------------------------------------------- |
 | `batch_id`                | Unique identifier for the event batch                            |
 | `chat_id`                 | Unique identifier for the chat session                           |
