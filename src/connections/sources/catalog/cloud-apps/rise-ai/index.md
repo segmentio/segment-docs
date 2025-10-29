@@ -54,7 +54,7 @@ The table below list the properties included in the events listed above.
 | `chat_type`               | Type of chat interaction (chats only)                            |
 
 
-## Adding Destinations
+## Adding destinations
 
 Now that your Source is set up, you can connect it with Destinations.
 
