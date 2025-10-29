@@ -73,7 +73,6 @@ In addition to your Raw Data destinations (Amazon S3 and data warehouses), Segme
 - Optimizely Feature Experimentation (Actions)
 - Pushwoosh
 - Recombee
-- StackAdapt Audiences
 - Userpilot Cloud (Actions)
 - Xtremepush (Actions)
 
