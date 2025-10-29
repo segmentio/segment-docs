@@ -22,7 +22,7 @@ This source is maintained by Rise AI. For any issues with the source, [contact t
 
 ## Stream
 
-Rise AI uses our stream Source component to send Segment event data. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Rise AI uses our stream source component to send Segment event data. It uses a server-side Track method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 Rise AI includes the `userId` when available, along with a unique `tenant_id` for tenant isolation to ensure data privacy and proper attribution across different workspaces.
 
