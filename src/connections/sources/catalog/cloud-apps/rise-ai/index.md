@@ -36,7 +36,7 @@ The table below lists events that Rise AI sends to Segment. These events appear 
 | chats               | AI chat session creation and interactions                          |
 
 
-## Event Properties
+## Event properties
 
 The table below list the properties included in the events listed above.
 
