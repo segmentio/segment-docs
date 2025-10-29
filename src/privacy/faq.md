@@ -60,6 +60,7 @@ In addition to your Raw Data destinations (Amazon S3 and data warehouses), Segme
 - Friendbuy (Cloud Destination)
 - Fullstory Cloud Mode (Actions)
 - Intercom Cloud Mode (Actions)
+- StackAdapt Audiences
 
 Segment forwards deletion requests but cannot guarantee that data is deleted from downstream destinations. You must contact these destinations to confirm that they executed the request.
 
