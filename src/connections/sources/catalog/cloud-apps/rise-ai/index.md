@@ -30,7 +30,7 @@ Rise AI includes the `userId` when available, along with a unique `tenant_id` fo
 
 The table below lists events that Rise AI sends to Segment. These events appear as tables in your warehouse, and as regular events in other destinations. Rise AI includes the `userId` if available.
 
-| Event Name          | Description                                                        |
+| Event name          | Description                                                        |
 | ------------------- | ------------------------------------------------------------------ |
 | walkthrough-progress | User progress through AI-guided walkthroughs and onboarding flows |
 | chats               | AI chat session creation and interactions                          |
