@@ -44,7 +44,7 @@ The table below list the properties included in the events listed above.
 | ------------------------- | ---------------------------------------------------------------- |
 | `batch_id`                | Unique identifier for the event batch                            |
 | `chat_id`                 | Unique identifier for the chat session                           |
-| `environment`             | Environment where the event occurred (production, staging, etc.) |
+| `environment`             | Environment where the event occurred (for example, production or staging) |
 | `event_timestamp`         | Timestamp when the event occurred                                |
 | `tenant_id`               | Unique identifier for the tenant/workspace                       |
 | `step_index`              | Position of the current step in the walkthrough (walkthrough-progress only) |
