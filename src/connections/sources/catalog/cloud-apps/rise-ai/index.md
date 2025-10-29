@@ -18,7 +18,7 @@ This source is maintained by Rise AI. For any issues with the source, [contact t
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. Log in to your Rise AI account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
+6. Log in to your Rise AI account, then navigate to **Settings** > **Integrations** > **Segment Integration** and paste the key to connect.
 
 ## Stream
 
