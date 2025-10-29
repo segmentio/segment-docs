@@ -14,7 +14,7 @@ This source is maintained by Rise AI. For any issues with the source, [contact t
 2. Search for "Rise AI" in the Sources Catalog, select Rise AI, and click **Add Source**.
 3. On the next screen, give the source a name, then configure any other settings.
 
-   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. RiseAI_Prod, RiseAI_Staging, RiseAI_Dev).
+   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (for example, `RiseAI_Prod`, `RiseAI_Staging`, or `RiseAI_Dev`).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
