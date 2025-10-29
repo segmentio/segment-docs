@@ -9,33 +9,33 @@ Segment offers you the ability to delete and suppress data about your end-users 
 
 ## Regulations
 
-All deletion and suppression actions in Segment are asynchronous and categorized as Regulations, or requests to Segment to control your data flow. You can issue Regulations from:
+All deletion and suppression actions in Segment are asynchronous and categorized as regulations, or requests to Segment to control your data flow. You can issue regulations from:
 
 - Your Segment Workspace (Settings > End User Privacy)  
 - [Segment's Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"}. You can delete up to 5000 `userId`s per call using the Public API. 
 
-With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes Regulations to all sources in your workspace. 
+With regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes regulations to all sources in your workspace. 
 
 > warning "Data sent to device-mode destinations cannot be suppressed"
 > Destinations set up in device mode are sent directly to destinations and bypass the point in the pipeline where Segment suppresses events.
 
-Segment has 2 types of Regulations:
-- **Segment-only Regulations**: These Regulations *only* delete or suppress data about your user from internal Segment systems.
-- **Segment & Destination Regulations**: These Regulations delete user data from internal Segment systems and then forward a deletion request to any connected destinations that support programmatic deletion. For a list of destination that support programmatic deletion, see [Which destinations can I send deletion requests to?](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to). 
+Segment has 2 types of regulations:
+- **Segment-only regulations**: These regulations *only* delete or suppress data about your user from internal Segment systems.
+- **Segment & Destination regulations**: These regulations delete user data from internal Segment systems and then forward a deletion request to any connected destinations that support programmatic deletion. For a list of destination that support programmatic deletion, see [Which destinations can I send deletion requests to?](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to). 
 
-While both Regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only Regulations. To send more than 110,000 Segment-only Regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
+While both regulation types are limited to 110,000 users every calendar month, you can temporarily increase your rate limit for Segment-only regulations. To send more than 110,000 Segment-only regulations over a 30 day period, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
-### Segment-only Regulations
-The following Segment-only Regulation types are available:
+### Segment-only regulations
+The following Segment-only regulation types are available:
 
 - **SUPPRESS_WITH_DELETE_INTERNAL*:** Suppress new data and delete from Segment internal systems only  
 - **DELETE_INTERNAL*:** Delete data from Segment internal systems only  
 - **SUPPRESS_ONLY***: Suppress new data without deleting existing data  
 - **UNSUPPRESS*:** Stop an ongoing suppression  
 
-### Segment & Destination Regulations
+### Segment & Destination regulations
 
-The following Segment & Destination Regulations are available:
+The following Segment & Destination regulations are available:
 
 - **SUPPRESS_WITH_DELETE:** Suppress new data and delete existing data  
 - **DELETE_ONLY:** Delete existing data without suppressing any new data
@@ -59,34 +59,58 @@ Warehouse deletions occur using a DML run against your cluster or instance. Segm
 
 ### Deletion requests tab
 
-The deletion requests tab shows a 30-day overview of your deletions pipeline, including a Regulations usage tracker and a deletion requests status table. The deletion requests summary tab shows the status of all your deletion requests from the last 30 days and might not accurately reflect your current deletion request limits.
+The deletion requests tab shows a 30-day overview of your deletions pipeline, including a regulations usage tracker and a deletion requests status table. The deletion requests summary tab shows the status of all your deletion requests from the last 30 days and might not accurately reflect your current deletion request limits.
 
 To navigate to the deletion requests tab, open the Segment app and navigate to **Privacy > Deletion and Suppression > Deletion**.
 
+If you need to verify if information about a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in any connected destinations.
+
 #### Regulations usage tracker
 
-The usage tracker on the deletion requests tab shows you how many Segment & destination Regulations and how many Segment-only Regulations you have remaining for the calendar month. 
+The usage tracker on the deletion requests tab shows you how many Segment & destination regulations and how many Segment-only regulations you have remaining for the calendar month. 
 
 #### Deletion requests status 
 
-The deletion requests status table allows you to see the status of each of the Regulations that you've submitted, including if the Regulation was forwarded to your destinations, the deletion type, the date the Regulation was received, and the date the Regulation was completed. 
+The deletion requests status table allows you to see the status of each of the regulations that you've submitted, including:
+- User identifier
+- Regulation type
+- Status of actions taken in internal Segment stores
+- If the regulation was forwarded to your destinations, the status of that request
+- The date that Segment received your regulation
+- The date that Segment completed a regulation 
 
-> info ""
-> The deletion requests status table includes requests from the past 90 days. 
+To view more information about a regulation, select it from the deletion requests tab. On the side sheet for that regulation, you can view the status of your regulation within Segment and in downstream destinations, the ID of the source the regulation was coming from, and, if applicable, the reason a regulation failed. 
 
-If you need to verify if information about a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in the connected destinations.
+Segment actions can have the following statuses: 
 
-A deletion request can have one of the following statuses:
+- **Initialized**: Segment started processing your regulation
+- **In progress**: Segment has started processing your regulation
+- **Success**: Segment processed your regulation
+- **Failed**: Segment was unable to process your regulation
 
-1. `INITIALIZED`  
-2. `INVALID`  
-3. `NOT_SUPPORTED`  
-4. `RUNNING`  
-5. `PARTIAL_SUCCESS`  
-6. `FAILED`  
-7. `FINISHED`
+Destination regulations can have the following statuses:
 
-When checking the status of deletion requests using Segment's API, the deletion will report an overall status of all of the deletion processes. As a result, Segment returns a `FAILED` status because of a failure on an unsupported destination, even if the deletion from the Segment Internal Systems and supported destinations were completed successfully.
+- **No action**: Segment didn't forward your regulation to a downstream destination
+- **Initialized**: Segment forwarded your regulation to a downstream destination
+- **In progress**: The destination started processing your regulation
+- **Success**: The destination processed your regulation 
+- **Failed**: The destination was unable to process your regulation
+
+
+#### Deletion requests made using Segment's API
+
+When checking the status of deletion requests using Segment's API, the deletion will report an overall status of all of the deletion processes. As a result, Segment might return a `FAILED` status because of a failure on an unsupported destination, even if the deletion from the Segment Internal Systems and supported destinations was completed successfully. 
+
+Segment's API returns the following statuses: 
+
+- `INVALID`
+- `NOT_SUPPORTED`
+- `RUNNING`
+- `PARTIAL_SUCCESS`
+- `FAILED`
+- `FINISHED` 
+
+For more granular deletion request statuses, see the [Deletion requests tab](#deletion-requests-tab) in the Segment app. 
 
 ### Deletion request SLA
 
