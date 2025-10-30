@@ -61,4 +61,4 @@ Yes, you are able to submit an integration request [here](https://segment.com/re
 
 
 > warning ""
-> Twilio Segment has measures in place to not provide services to U.S. sanctioned countries, including Cuba, Iran, Syria, and North Korea.
+> In compliance with applicable regulations and requirements, and to reinforce our commitment as a trusted partner for our customer communication needs, Twilio has measures in place to not provide services to U.S. sanctioned countries in accordance with applicable sanctions, laws, and regulations.
