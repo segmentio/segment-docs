@@ -55,7 +55,8 @@ After you've completed setup, you can deploy your apps to the Apple App Store an
 
 ## Create your own Live Plugin
 
-To access Live Plugins for you Swift and Kotlin sources
+To access Live Plugins for your Swift and Kotlin sources:
+
 1. Navigate to Connections > Sources.
 2. Select your Swift or Kotlin source (or create a new one).
 3. From the Source's overview, select the Live Plugin tab
