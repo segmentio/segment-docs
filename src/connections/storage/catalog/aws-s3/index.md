@@ -462,7 +462,9 @@ Segment stores logs as gzipped, newline-separated JSON containing the full call 
 
 Segment groups logs by day, and names them using the following format:
 
-    s3://{bucket}/segment-logs/{source-id}/{received-day}/filename.gz
+```
+s3://{bucket}/segment-logs/{source-id}/{received-day}/filename.gz
+```
 
 The received-day refers to the UTC date Unix timestamp, that the API receives the file, which makes it easy to find all calls received within a certain timeframe.
 
