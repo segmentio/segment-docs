@@ -79,22 +79,22 @@ The deletion requests status table allows you to see the status of each of the r
 - The date that Segment received your regulation
 - The date that Segment completed a regulation 
 
-To view more information about a regulation, select it from the deletion requests tab. On the side sheet for that regulation, you can view the status of your regulation within Segment and in downstream destinations, the ID of the source the regulation was coming from, and, if applicable, the reason a regulation failed. 
+To view more information about a deletion request, select the userID on the deletion requests tab. On the side sheet for that deletion request, you can view the status of the request within Segment and in downstream destinations, and, if applicable, the reason a request failed. 
 
-Segment actions can have the following statuses: 
+Segment deletion requests can have the following statuses: 
 
-- **Initialized**: Segment started processing your regulation
-- **In progress**: Segment has started processing your regulation
-- **Success**: Segment processed your regulation
-- **Failed**: Segment was unable to process your regulation
+- **Initialized**: Segment accepted your deletion request and placed it in the deletions queue
+- **In progress**: Segment started processing your deletion request
+- **Success**: Segment processed your deletion request
+- **Failed**: Segment was unable to process your deletion request
 
-Destination regulations can have the following statuses:
+Destination deletion requests can have the following statuses:
 
-- **No action**: Used for Segment-only regulations to indicate that they weren't forwarded to a downstream destination
-- **Initialized**: Segment forwarded your regulation to a downstream destination
-- **In progress**: The destination started processing your regulation
-- **Success**: The destination processed your regulation 
-- **Failed**: The destination was unable to process your regulation
+- **No action**: Used for Segment-only deletion requests to indicate that they weren't forwarded to a downstream destination
+- **Initialized**: Segment added your deletion request to a queue to send to a destination
+- **In progress**: Segment started forwarding your deletion request to a destination
+- **Forwarded**: Segment forwarded your request to a destination
+- **Failed**: Segment was unable to forward your request to a destination
 
 
 #### Deletion requests made using Segment's API
@@ -111,7 +111,7 @@ Segment's API returns the following statuses:
 - `FAILED`
 - `FINISHED` 
 
-For more granular deletion request statuses, see the [Deletion requests tab](#deletion-requests-tab) in the Segment app. 
+For more granular deletion request statuses, see the [Deletion requests tab](#deletion-requests-status) in the Segment app. 
 
 ### Deletion request SLA
 
