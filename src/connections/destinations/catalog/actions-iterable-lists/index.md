@@ -1,6 +1,5 @@
 ---
 title: Iterable Lists (Actions) Destination
-strat: iterable
 hide-boilerplate: true
 id: 66a7c28810bbaf446695d27d
 hide-dossier: true
