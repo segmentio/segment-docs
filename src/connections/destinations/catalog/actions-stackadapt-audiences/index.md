@@ -4,13 +4,14 @@ hide-boilerplate: true
 hide-dossier: true
 beta: true
 id: 66e96b9f4ee97f41caa06487
-hidden: true
 redirect_from: "/connections/destinations/catalog/actions-stackadapt/"
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-[StackAdapt](https://www.stackadapt.com/){:target="\_blank"} is a programmatic advertising platform specializing in audience engagement. StackAdapt lets marketers deliver high-performing advertising campaigns across channels through real-time bidding, detailed audience targeting, and data-driven insights. StackAdapt’s integration with [Engage](/docs/engage/) helps you sync user data to optimize targeting and improve your campaign outcomes.
+[StackAdapt](https://www.stackadapt.com/){:target="_blank"} is a leading programmatic advertising platform designed to maximize audience engagement. It enables marketers to run high-performing, cross-channel campaigns through real-time bidding, advanced audience targeting, and powerful data-driven insights.  
+
+With the [Engage](/docs/engage/) integration, you can seamlessly sync your Engage Audiences and user data with StackAdapt to refine targeting precision and drive stronger campaign performance.
 
 This destination is maintained by StackAdapt. For any issues with the destination, submit a ticket to [StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="\_blank"}.
 
@@ -57,7 +58,6 @@ Each Engage audience should only contain profiles that have a valid email addres
    - (**Required**:) Select a default value for `Marketing Status`.
    - (**Required**:) Confirm that you have a valid source field for `Email`.
    - Select the source field for `Standard User Properties`. Ensure the source field matches the profile traits selected in step 4. You can learn more about the field format by hovering over the info icon of the field.
-   - Create mappings for `Custom User Properties` if applicable.
    - Follow the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings).
 
 To verify that your audience syncs with StackAdapt, open StackAdapt and navigate to **Audience & Attribution > Customer Data > Profiles**. On the Profiles tab, you should be able to see a list of profiles being synced to the StackAdapt platform.
@@ -76,13 +76,6 @@ To create a StackAdapt audience from your Engage audience:
 > info "Audience name format"
 > Use the _snake_case_ name of the Segment Engage audience which can be found in **Settings**, shown in the following screenshot.
 > ![Image showing sample audience settings tab](./images/audience-example.png)
-
-### Sending an audience to StackAdapt
-
-1. In Segment, go to **Engage > Audiences** and select the audience to sync with StackAdapt.
-2. Click **Add Destination** and select **StackAdapt Audiences**.
-3. Toggle **Send Track** and **Send Identify** on.
-4. Click **Save**.
 
 ## Data and privacy
 
