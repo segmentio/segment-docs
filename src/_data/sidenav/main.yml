@@ -165,7 +165,7 @@ sections:
       - path: /connections/auto-instrumentation/swift-setup/
         title: Swift Setup
       - path: /connections/auto-instrumentation/kotlin-setup/
-        title: Swift Setup
+        title: Android Setup
       - path: /connections/auto-instrumentation/configuration/
         title: Configuration
     - path: /connections/sources/about-cloud-sources
