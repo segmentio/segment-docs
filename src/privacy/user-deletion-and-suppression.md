@@ -90,7 +90,7 @@ Segment actions can have the following statuses:
 
 Destination regulations can have the following statuses:
 
-- **No action**: Segment didn't forward your regulation to a downstream destination
+- **No action**: Used for Segment-only regulations to indicate that they weren't forwarded to a downstream destination
 - **Initialized**: Segment forwarded your regulation to a downstream destination
 - **In progress**: The destination started processing your regulation
 - **Success**: The destination processed your regulation 
