@@ -23,3 +23,7 @@ Learn how to use Segment to collect, responsibly manage, and integrate your cust
   title="Want more hands-on guidance?"
   description="For a more hands-on tutorial of Segment, check out Segment University. It offers step-by-step instructions, starting with first steps and going through some of our more advanced features."
 %}
+
+
+> warning ""
+> Twilio Segment has measures in place to not provide services to U.S. sanctioned countries, including Cuba, Iran, Syria, and North Korea.
