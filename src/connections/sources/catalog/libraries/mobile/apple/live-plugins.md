@@ -3,14 +3,14 @@ title: Live Plugins
 strat: swift
 ---
 
-Segment has launched the [Auto-Instrumentation](https://segment.com/docs/connections/auto-instrumentation/){:target="_blank"} to Public Beta, which simplifies instrumenting your websites &amp; apps with a simple WYSIWYG interface, directly from your Segment workspace. As part of this launch, Segment also offers the ability to transform events remotely via Live Plugins. 
+Live Plugins let you modify analytics events in real time, directly on user devices, without rebuilding or redeploying your app. They’re JavaScript snippets that you publish from your Segment workspace, where they run on your users’ mobile devices to filter or transform data before it’s sent to Segment.
 
-Live Plugins are JavaScript code snippets which are published from your Segment workspace directly to the devices of your end users. Live Plugins let you perform real-time modifications to events, before they leave the end-user device, without having to rebuild &amp; redistribute your apps.
+Live Plugins work alongside [Auto-Instrumentation](/docs/connections/auto-instrumentation/) to give you flexible control over your event data. 
 
-On this page, you'll learn how to set up your mobile app to support Live Plugins, and how to create and deploy your own Live Plugins directly to your end users. You'll also see examples of Live Plugins that address common use cases.
+On this page, you’ll learn how to set up your mobile app to support Live Plugins, create and deploy custom plugins, and explore examples for common use cases.
 
 > info "Live Plugins is in Public Beta"
-> Live Plugins is currently in Beta for Swift & Kotlin, and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
+> Live Plugins is in public beta for Swift and Kotlin and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
 
 ## Live Plugins overview
 
