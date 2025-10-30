@@ -100,3 +100,7 @@ When you don't have a source to forward violations or blocked events to, then ex
 ```
 ### What is the difference between a destination's Instance ID and Meta ID?
 The destination’s Instance ID is specific to a single destination within your workspace. The destination’s Meta ID, which is returned by the delivery metrics endpoint, identifies which integration you've set up. For example, if you had a `dev` Mixpanel (Actions) destination and a `prod` Mixpanel (Actions) destination, they would have the same Meta ID but two different Instance IDs.  
+
+
+> warning ""
+> Twilio Segment has measures in place to not provide services to U.S. sanctioned countries, including Cuba, Iran, Syria, and North Korea.

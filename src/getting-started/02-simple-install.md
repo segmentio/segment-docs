@@ -444,7 +444,8 @@ You can click around and load pages to see your Segment calls in action, watch t
 > warning ""
 > **Note**: When you're done with this test source and destination, you can delete them. This prevents you from getting unplanned "demo" data in your production environment later.
 
-
+> warning ""
+> Twilio Segment has measures in place to not provide services to U.S. sanctioned countries, including Cuba, Iran, Syria, and North Korea.
 
 <div class="double">
   {% include components/reference-button.html href="/getting-started/01-what-is-segment/" newtab="false" icon="symbols/arrow-left.svg" title="What is Segment" description="The basics of the Segment platform and what you can do with it." variant="related" subtitle="back" %}
