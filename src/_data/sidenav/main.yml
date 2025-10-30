@@ -155,6 +155,8 @@ sections:
     - path: /connections/sources/catalog
       title: Sources Catalog
       menu_icon: read-more
+    - path: /connections/auto-instrumentation
+      title: Auto-Instrumentation
     - path: /connections/sources/about-cloud-sources
       title: Cloud Sources
     - path: /connections/sources/debugger
