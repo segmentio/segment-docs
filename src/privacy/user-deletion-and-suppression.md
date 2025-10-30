@@ -103,6 +103,7 @@ When checking the status of deletion requests using Segment's API, the deletion 
 
 Segment's API returns the following statuses: 
 
+- `INITIALIZED`
 - `INVALID`
 - `NOT_SUPPORTED`
 - `RUNNING`
