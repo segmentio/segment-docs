@@ -41,7 +41,7 @@ Segment maps user traits to corresponding Taguchi fields, sending them to Taguch
 
 ## Track (Sync Event)
 
-Use [Track](docs/connections/spec/track/) call to sync event data to Taguchi. When configuring mappings in the destination setup:
+Use [Track](docs/connections/spec/track/) calls to sync event data to Taguchi. When configuring mappings in the destination setup:
 
 1. Select **Sync Event**.
 2. Define the **Event type*** as **Track**.
