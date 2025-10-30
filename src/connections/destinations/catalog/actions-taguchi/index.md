@@ -32,7 +32,7 @@ This destination is maintained by Taguchi. For any issues with the destination, 
 
 ## Identify (Sync User Profile)
 
-Use [Identify](docs/connections/spec/identify) calls to sync user profile data toTaguchi. When configuring mappings in the destination setup:
+Use [Identify](docs/connections/spec/identify) calls to sync user profile data to Taguchi. When configuring mappings in the destination setup:
 
 1. Select **Sync User Profile**.
 2. Define the **Event type** as **Identify**.
