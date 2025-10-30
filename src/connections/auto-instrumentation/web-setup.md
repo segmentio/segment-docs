@@ -1,6 +1,5 @@
 ---
 title: Auto-Instrumentation Setup
-hidden: true
 ---
 
 This guide outlines the steps required to set up the Signals SDK in your JavaScript website.
