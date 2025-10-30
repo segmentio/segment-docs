@@ -28,7 +28,7 @@ This unlocks some interesting possibilities to help you meet your business goals
 > info ""
 > Note that after you bring in data with SQL Traits, changing data types for fields may not be compatible with all destinations.
 
-### Example: cloud sources sync
+## Example: cloud sources sync
 
 SQL Traits allow you to import data from [object cloud sources](/docs/connections/sources/#object-cloud-sources) like Salesforce, Stripe, Zendesk, Hubspot, Marketo, Intercom, and more. For example, bring in Salesforce Leads or Accounts, Zendesk ticket behavior, or Stripe LTV calculations.
 

@@ -4,7 +4,7 @@ redirect_from:
   - '/config-api'
 ---
 
-{% include content/papi-ga.html %}
+{% include content/papi-ga.md %}
 
 The Config API lets you programmatically manage Segment workspaces, sources, destinations, and more. 
 

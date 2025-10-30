@@ -39,7 +39,7 @@ Before you can configure consent in Segment, take the following steps:
 
 ## Step 2: Integrating your CMP with Segment
 
-Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment. 
+Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment and add the consent object to every event. If you're using Segment's OneTrust wrapper, the consent object automatically populates on each event. However, other methods may require you to manually include the consent object on your events. 
 
 Segment supports the following CMPs:
 
@@ -56,7 +56,7 @@ Segment supports the following CMPs:
 
 If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the following requirements for data and event generation:
   - Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) in every event
-  - If using Unify and Engage, generates the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
+  - If using Unify or Twilio Engage, generates the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
 
 To get started building your own wrapper, follow the instructions in the [@segment/analytics-consent-tools](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} repository. 
 

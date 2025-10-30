@@ -29,7 +29,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 > info ""
 > If you need support setting things up, you can contact the ABsmartly support team on Slack or [via email](mailto:support@absmartly.com).
 
-# Sending exposures to Segment
+## Sending exposures to Segment
 
 It can be useful to send experiment exposures to Segment for visibility from
 other destinations. The Segment Spec includes the [Experiment Viewed semantic event](/docs/connections/spec/ab-testing/)

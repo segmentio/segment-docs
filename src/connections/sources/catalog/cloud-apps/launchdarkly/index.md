@@ -60,7 +60,8 @@ Below are tables outlining the properties included in the events listed above.
   <td><code>event</code></td>
    <td>event type</td>
   </tr>
-  <tr><td><b>Common Properties</b></td>
+  <tr>
+  <td><b>Common Properties</b></td>
   <td>Properties common to all event types</td>
   </tr>
   <tr>

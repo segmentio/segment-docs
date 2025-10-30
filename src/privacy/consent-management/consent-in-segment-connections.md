@@ -20,10 +20,10 @@ If your sources also contain the integrations object, Segment looks at the conse
 
 ## Consent object
 
-Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object nestled inside of the [context object](/docs/connections/spec/common/#context) with the following format:
+Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. 
 
-> success ""
-> The JSON keys in the consent object should represent the `categoryId` for each consent category. 
+The consent object is a JSON object nestled inside of the [context object](/docs/connections/spec/common/#context) with the following format:
+
 
 ```json
 {
@@ -41,9 +41,12 @@ Segment requires every event from all of your sources to include the end user co
 
 ```
 
-Events without the consent object continue to flow to destinations without consent enforcement. 
+> success ""
+> The JSON keys in the consent object should represent the `categoryId` for each consent category. 
 
-Events that don't include a context object, a consent object, or that include them but leave them empty, don’t affect [Profile-level consent preferences](/docs/privacy/consent-management/consent-in-unify) and flow to all destinations.
+[Segment's OneTrust wrapper](/docs/privacy/consent-management/configure-consent-management/#step-2-integrating-your-cmp-with-segment) automatically adds the consent object to your events, but you can also manually add the consent object to your events if you're using a different CMP.  
+
+Events without the consent object continue to flow to destinations without consent enforcement. Events that don't include a context object, a consent object, or that include them but leave them empty, don’t affect [Profile-level consent preferences](/docs/privacy/consent-management/consent-in-unify) and flow to all destinations.
 
 ## Reconcile consent conflicts
 

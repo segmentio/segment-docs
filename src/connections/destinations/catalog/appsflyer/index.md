@@ -60,7 +60,7 @@ To prevent this, you can enable the new **Fallback to send IDFV when advertising
 
 #### Additional React Native device-mode set up
 
-{% include content/react2-dest.md %}
+The device-mode destination SDK has platform restrictions in React Native. To add device-mode destination SDKs to a React Native project using Segment's new 2.0 release, please reference the [Destination Plugin documentation](/docs/connections/sources/catalog/libraries/mobile/react-native/#supported-destinations).
 
 ## Server
 

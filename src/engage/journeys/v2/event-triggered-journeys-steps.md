@@ -372,15 +372,16 @@ Here's an example of a payload before and after enrichment:
       "Reservation Booked": {
         "reservation_id": 12345,
         "hotel_id": 67890
-      },
-      "Reservations": {
-        "check_in_time": "2025-11-01T20:00:00Z",
-        "check_out_time": "2025-11-04T15:00:00Z"
-      },
-      "Hotels": {
-        "hotel_name": "Hotel California",
-        "hotel_address": "1000 Sunset Boulevard, Los Angeles, CA"
       }
+    },
+    "Reservations": {
+      "check_in_time": "2025-11-01T20:00:00Z",
+      "check_out_time": "2025-11-04T15:00:00Z"
+    },
+    "Hotels": {
+      "hotel_name": "Hotel California",
+      "hotel_address": "1000 Sunset Boulevard, Los Angeles, CA"
+    }
     }
   }
 }

@@ -17,7 +17,8 @@ Segment enforces a strict data retention policy for all:
 ## Effective date
 Segment’s enforcement of this data retention policy for active customers begins on:
 - **April 15, 2025** for Object Store data
-- **August 15, 2025** for Archive event and Profile events data stores
+- **September 15, 2025** for Archive event data stores 
+- **January 15, 2025** for Profile event data stores
 
 ## Active customers
 

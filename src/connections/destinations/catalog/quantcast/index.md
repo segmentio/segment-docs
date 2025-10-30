@@ -32,7 +32,7 @@ For purchase events, you should send an event called `Order Completed` per our s
 
 ### Features
 #### Labels
-When you call `page`, `track` or `screen`, we'll pass the page name, event name or screen name and the category (if provided) to Quantcast as a label. The standard label will look like this "<title>" for page or screen, and "<name>" for track events. If you enable Quantcast for advertisers then we'll send "_fp.event.<name>" to match Quantcast's internal data structures for advertisers. If you do not pass any `category` or `name` for a `.page()` call, we will fallback on Quantcast's default label.
+When you call `page`, `track` or `screen`, we'll pass the page name, event name or screen name and the category (if provided) to Quantcast as a label. The standard label will look like this "\<title>" for page or screen, and "\<name>" for track events. If you enable Quantcast for advertisers then we'll send "_fp.event.\<name>" to match Quantcast's internal data structures for advertisers. If you do not pass any `category` or `name` for a `.page()` call, we will fallback on Quantcast's default label.
 
 Here's an example for Quantcast Advertisers:
 

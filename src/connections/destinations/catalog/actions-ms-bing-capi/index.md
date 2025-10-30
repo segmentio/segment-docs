@@ -2,6 +2,7 @@
 title: Microsoft Bing CAPI Destination
 id: 68b82be249b48bae343517c7a
 beta: true
+redirect_from: "/connections/destinations/catalog/microsoft-bing-capi/"
 ---
 
 {% include content/plan-grid.md name="actions" %}

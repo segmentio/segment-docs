@@ -5,7 +5,7 @@ redirect_from:
   - /api/config-api/fql
 ---
 
-{% include content/papi-ga.html %}
+{% include content/papi-ga.md %}
 
 This reference provides a comprehensive overview of the Segment Destination Filter query language. For information on the Destination Filters API (including information on migrating from the Config API), visit the [Destination Filters API reference](https://docs.segmentapis.com/tag/Destination-Filters){:target="_blank"}.
 

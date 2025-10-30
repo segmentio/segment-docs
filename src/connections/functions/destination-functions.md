@@ -371,7 +371,7 @@ async function getAccessToken () {
 
 ### Functions permissions
 
-{% include content/functions/perms.md%}
+{% include content/functions/perms.md %}
 
 
 ### Editing and deleting functions

@@ -155,8 +155,19 @@ sections:
     - path: /connections/sources/catalog
       title: Sources Catalog
       menu_icon: read-more
-    - path: /connections/auto-instrumentation
-      title: Auto-Instrumentation
+    - section_title: Auto-Instrumentation
+      slug: connections/auto-instrumentation
+      section: 
+      - path: /connections/auto-instrumentation
+        title: Overview 
+      - path: /connections/auto-instrumentation/web-setup/
+        title: Web Setup
+      - path: /connections/auto-instrumentation/swift-setup/
+        title: Swift Setup
+      - path: /connections/auto-instrumentation/kotlin-setup/
+        title: Android Setup
+      - path: /connections/auto-instrumentation/configuration/
+        title: Configuration
     - path: /connections/sources/about-cloud-sources
       title: Cloud Sources
     - path: /connections/sources/debugger

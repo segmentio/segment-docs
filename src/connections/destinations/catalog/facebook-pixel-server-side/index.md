@@ -70,7 +70,7 @@ The Segment Facebook Conversions API destination gives you several ways to imple
 
 The following implementation options are available:
 1. [Send the same events from both the browser and the server](#send-the-same-events-from-both-the-browser-and-the-server).
-2. [Send different events; some from the browser others from the server](#send-different-events-some-from-the-browser-others-from-the-server).
+2. [Send different events - some from the browser others from the server](#send-different-events---some-from-the-browser-others-from-the-server).
 3. [Only send events from the server](#only-send-events-from-the-server).
 
 ### Send the same events from both the browser and the server
