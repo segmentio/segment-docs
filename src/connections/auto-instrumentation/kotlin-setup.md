@@ -1,6 +1,5 @@
 ---
 title: Auto-Instrumentation Setup
-hidden: true
 ---
 
 Segment’s Signals library powers [Auto-Instrumentation](/docs/connections/auto-instrumentation/) in Android apps, capturing user interactions and behavior without manual event tracking.
