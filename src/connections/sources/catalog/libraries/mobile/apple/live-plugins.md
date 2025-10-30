@@ -14,9 +14,9 @@ On this page, you’ll learn how to set up your mobile app to support Live Plugi
 
 ## Live Plugins overview
 
-You can use JavaScript live plugins with Analytics-Swift and Analytics-Kotlin to filter and modify data remotely. As a result, you can filter and modify Analytics events without having to deploy updates to the app store for each change, ensuring data quality and consistency for all your mobile users.
+You can use JavaScript Live Plugins with Analytics-Swift and Analytics-Kotlin to modify or filter event data directly on user devices. This lets you make real-time updates to your tracking logic without redeploying your app, helping you maintain data quality and consistency across your mobile users.
 
-Because Live Plugins let you modify event data before it leaves a mobile device, you can use the same Javascript code to modify data across all your cloud-mode and device-mode destinations, or you can scope your changes to specific destinations.  
+Because Live Plugins run before data leaves the device, you can apply the same logic to all destinations or target specific destinations as needed.
 
 ## Setup
 
