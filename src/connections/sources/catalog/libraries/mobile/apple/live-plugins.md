@@ -57,9 +57,9 @@ After you've completed setup, you can deploy your apps to the Apple App Store an
 
 To access Live Plugins for your Swift and Kotlin sources:
 
-1. Navigate to Connections > Sources.
+1. In your Segment workspace, go to **Connections > Sources**.
 2. Select your Swift or Kotlin source (or create a new one).
-3. From the Source's overview, select the Live Plugin tab
+3. From the source's overview page, click the Live Plugin tab..
 <img alt="Access Live Plugins from the Source overview tab" src="https://github.com/user-attachments/assets/e228bddb-4cb8-4469-9ac6-8a2c322edcbc" />
 
 Follow the steps in this section to create and deploy your own Live Plugin.
