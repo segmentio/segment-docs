@@ -63,9 +63,6 @@ Analytics.track(
 To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback set up documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback){:target="_blank"}.
 
 
-
-{% include content/personas.md %}
-
 ## Troubleshooting
 
 ### advertisingId is string of 0s
