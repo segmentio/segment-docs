@@ -25,20 +25,37 @@ The Alerting table includes the following information about each event:
 - **Alert name**: The type of alert; for example, "Audience created" or "Audience deleted".
 - **Last triggered**: The most recent date and time, in your local time zone, that the alert was triggered. Some alerts, like **Violations Detected**, trigger only once per day. 
 - **Status**: Either **enabled**, if the alert is currently configured in your workspace, or **disabled**, if you're not configured to receive alerts for an event.
-- **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, Slack workflow, email, or in-app notification.
+- **Notification channels**: Icons describing what notification channels you'll receive the alerts on - through a Slack webhook, Slack workflow, PagerDuty notification, email, or in-app notification.
 - **Actions**: By selecting the menu icon for an individual alert, you can edit or delete it from the Alerting page.
 
-## Create a new alert
+## Create alerts
+
+First create webhooks or notification services in the tools you use as notification channels, then return to the Segment app to set up your alert.
+
+### Set up your notification tools
+
+The following tools require prerequisite setup before you can use them as notification channels: 
+
+- **Slack**: You must create a Slack webhook before setting up an alert in the Segment app. For more information, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+- **Email (optional)**: While you can only enter one email address at a time when signing up for email alerts, you can send the alert to multiple users by entering the email address of a mailing list. To create a mailing list, refer to the documentation for your email provider, like Google's [Create a group & choose group settings](https://support.google.com/groups/answer/2464926?hl=en){:target="_blank”} for Gmail or Microsoft's [Create and manage distribution groups](https://support.microsoft.com/en-us/office/distribution-groups-e8ba58a8-fab2-4aaf-8aa1-2a304052d2de#bkmk_create){:target="_blank”} for Outlook. 
+- **PagerDuty**: You must create an integration key in PagerDuty before setting up an alert in the Segment app. 
+
+To create a PagerDuty integration key: 
+
+1. Open PagerDuty and navigate to to **Services > Service Directory**.
+2. Select the service that you'd like to send incidents to. 
+3. Under Integrations, select **Add Integration**.
+4. Select **Events API v2**.
+5. PagerDuty displays a 32-character integration key.
+
+### Create an alert in the Segment app
+
+Once you've set up any required notification services, like Slack webhooks, mailing lists, or PagerDuty services, use the Segment app to create your notification. 
 
 To create a new alert: 
 1. From the Segment app, navigate to the **Monitor** tab and select **Alerts**. 
 2. On the **Default** tab, identify the event you'd like to be alerted for and select the menu icon under the **Actions** tab. 
 3. Click **Enable alert**. 
-
-> info "Slack and mailing list notification channels require additional setup"
-> Before sending an alert to Slack, you must first create a Slack webhook. For more information about Slack webhooks, see Slack's [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
->
-> While you can only enter one email address at a time when signing up for email alerts, you can send the alert to multiple users by entering the email address of a mailing list. To create a mailing list, refer to the documentation for your email provider, like Google's [Create a group & choose group settings](https://support.google.com/groups/answer/2464926?hl=en){:target="_blank”} for Gmail or Microsoft's [Create and manage distribution groups](https://support.microsoft.com/en-us/office/distribution-groups-e8ba58a8-fab2-4aaf-8aa1-2a304052d2de#bkmk_create){:target="_blank”} for Outlook. 
 
 ## Alert descriptions
 
