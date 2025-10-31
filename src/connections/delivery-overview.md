@@ -50,11 +50,21 @@ The pipeline view for storage destination includes the following steps:
 - **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
 - **Events to warehouse rows**: A read-only box that shows the point in the delivery process where Segment converts events into warehouse rows.
 - **Failed to sync**: Syncs that either failed to sync or were partially successful. Selecting this step takes you to a table of all syncs with one or more failed collections. Select a sync from the table to view the discard reason, any collections that failed, the status, and the number of rows that synced for each collection. For information about common errors, see Ware
-- **Successfully synced**: A record of all successful or partially successful syncs made with your destination. To view the reason a partially successfully sync was not fully successful, see the Failed to sync step. 
+- **Successfully synced**: A record of all successful or partially successful syncs made with your destination. To view the reason a partially successfully sync was not fully successful, see the Failed to sync step.
 
 The following image shows a storage destination with 23 partially successful syncs: 
 
 ![A screenshot of the Delivery Overview tab for a Storage destination, with the Failed to sync step selected and a table of partially successful syncs.](images/delivery-overview-storage-destinations.png)
+
+##### Linked Audiences to Snowflake destination
+
+You can send Linked Audiences downstream to the Snowflake destination with the following steps: 
+- **Events from audience**<sup>*</sup>: Events that Segment created for your activation. The number of events for each compute depends on the changes detected in your audience membership.
+- **Filtered at source**: Events discarded by Protocols: either by the [schema settings](/docs/protocols/enforce/schema-configuration/) or [Tracking Plans](/docs/protocols/tracking-plan/create/). 
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
+- **Events to warehouse rows**: A read-only box that shows the point in the delivery process where Segment converts events into Snowflake warehouse rows.
+- **Failed to sync**: Syncs that either failed to sync or were partially successful. Selecting this step takes you to a table of all syncs with one or more failed collections. Select a sync from the table to view the discard reason, any collections that failed, the status, and the number of rows that synced for each collection. For information about common errors, see Ware
+- **Successfully synced**: A record of all successful or partially successful syncs made with your destination. To view the reason a partially successfully sync was not fully successful, see the Failed to sync step.
 
 #### Destinations connected to Engage Destinations
 
