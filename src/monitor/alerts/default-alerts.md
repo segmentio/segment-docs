@@ -30,7 +30,7 @@ The Alerting table includes the following information about each event:
 
 ## Create alerts
 
-First create webhooks or notification services in the tools you use as notification channels, then return to the Segment app to set up your alert.
+First, create webhooks or notification services in the tools you use as notification channels, then return to the Segment app to set up your alert.
 
 ### Set up your notification tools
 
@@ -42,7 +42,7 @@ The following tools require prerequisite setup before you can use them as notifi
 
 To create a PagerDuty integration key: 
 
-1. Open PagerDuty and navigate to to **Services > Service Directory**.
+1. Open PagerDuty and navigate to **Services > Service Directory**.
 2. Select the service that you'd like to send incidents to. 
 3. Under Integrations, select **Add Integration**.
 4. Select **Events API v2**.
