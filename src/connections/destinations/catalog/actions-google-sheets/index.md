@@ -39,7 +39,7 @@ Available sync modes for the Post Sheet v2 Action includes:
 - **Upsert**: If a record with the specified identifier is found, it is updated. If not, a new row is created.
 - **Add**: Add a new record when the specified identifier doesn't exist. If it does, the record is skipped.
 
-{% include components/actions-fields.html settings="false"%}
+{% include components/actions-fields.html settings="false" %}
 
 ## FAQ
 
