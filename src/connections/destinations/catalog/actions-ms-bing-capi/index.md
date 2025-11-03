@@ -1,6 +1,6 @@
 ---
 title: Microsoft Bing CAPI Destination
-id: 68b82be249b48bae343517c7a
+id: 68b82be249b48bae343517c7
 beta: true
 redirect_from: "/connections/destinations/catalog/microsoft-bing-capi/"
 ---
@@ -11,7 +11,7 @@ redirect_from: "/connections/destinations/catalog/microsoft-bing-capi/"
 
 ## Getting started
 
-1. From your workspace's [destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Microsoft Bing CAPI".
+1. From your workspace's [destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”}, search for "Microsoft Bing CAPI".
 2. Select Microsoft Bing CAPI and click **Add destination**.
 3. Select an existing source to connect to the destination.
 4. Give the destination a name and click **Create destination**.
