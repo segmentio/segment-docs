@@ -357,6 +357,14 @@ Network signals emit when an HTTP Request is made, or an HTTP Response is receiv
 - First party domain (for example, if on `foo.com`, then `foo.com/api/products`, but not `bar.com/api/products`)
 - Contains the content-type: `application/json`
 
+## Troubleshooting
+
+Here are the most common misconfigurations preventing signals from reaching Segment.
+
+- Not enabling signals with the URL parameter: you must start each debug session by appending `?segment_signals_debug=true` to your URL parameters.
+- Running debug mode with an ad blocker: an active ad blocker will prevent signals from reaching Segment. Disable your ad blocker and start a new session.
+- Content Security Policies: in addition to the [default Analytics.js Content Security Policies](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/faq/#does-segment-support-using-strict-content-security-policy-csp-on-the-page), you must add `cdn.jsdelivr.net` to your allowlist, or `https://cdn.jsdelivr.net/npm/@segment/analytics-signals@latest/dist/umd/analytics-signals.umd.js` if your policies require the full path.
+
 ## Next steps
 
 This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers example rules.
