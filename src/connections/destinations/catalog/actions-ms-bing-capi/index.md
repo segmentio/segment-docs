@@ -1,6 +1,6 @@
 ---
 title: Microsoft Bing CAPI Destination
-id: 68b82be249b48bae343517c7a
+id: 68b82be249b48bae343517c7
 beta: true
 redirect_from: "/connections/destinations/catalog/microsoft-bing-capi/"
 ---
