@@ -8,14 +8,14 @@ beta: true
 
 [Snap Ads](https://forbusiness.snapchat.com/advertising/targeting/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides a way to target advertisements to a global audience and drive meaningful results.
 
-This destination is maintained by Segment. For any issues with the destination, [contact the Segment support team](mailto:friends@segment.com).
+This destination is maintained by Segment. For any issues with the destination, [contact the Segment support team](mailto:friends@segment.com){:target="_blank"}.
 
 > warning ""
 > This page is about the [**Actions-framework**](/docs/connections/destinations/actions/) Snap Ads Segment destination. See the [Snapchat Audience destination documentation](/docs/connections/destinations/catalog/snapchat-audiences/) for the **non-Actions** Snap Ads destination.
 >
-> Both destinations receive data from Segment.
+> **Both destinations receive data from Segment**.
 
-## Benefits of Snap Ads (Actions) vs <destination_name> Classic
+## Benefits of Snap Ads (Actions) vs Snap Ads Classic
 
 Snap Audiences (Actions) provides the following benefits over the classic Snapchat Audience destination:
 
@@ -46,11 +46,11 @@ Next, add the Snapchat Audiences Destination to an existing Engage Audience.
 3. The configured Snap Audiences (Actions) destination should appear in the **Send as User List** category of available destinations.
 4. Provide values in the **Audience Name** and **Audience Description** fields. 
 5. Ensure that **track** is selected under **Connection Settings**. You can ignore the **Send Mobile IDs** as you can configure Mobile Advertising IDs in the next step. 
-6. Click on **Customized Setup** and add the identifiers you'd like to sync with. These should include one or more of: `email`, `phone`, `android.idfa`, `ios.idfa`. If you choose to sync `android.idfa` and/or `ios.idfa`, you must update the destination mappings to use underscores: `android_idfa` and `ios_idfa`. 
+6. Click on **Customized Setup** and add the identifiers you'd like to sync with. These should include one or more of: `email`, `phone`, `android.idfa`, `ios.idfa`. If you choose to sync `android.idfa` and/or `ios.idfa`, you must update the destination mappings to use underscores: `android_idfa` and `ios_idfa`.
 ![Image showing how to configure identifiers using ID Sync](images/id_sync_mappings.png)
 7. Click **Save** then **Add 1 Destination**. 
 
-Your audience should now be configured to sync to Snap Ads. The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you'll notice a new Audience in the Snap Ads dashboard.
+Your audience should now be configured to sync to Snap Ads. The initial synchronization of audience data may take several hours, depending on the size of the audience. Once the initial sync occurs, you'll notice a new audience in the Snap Ads dashboard.
 
 {% include components/actions-fields.html %}
 
@@ -66,7 +66,7 @@ Mobile Advertising IDs need to be correctly configured using [ID Sync](https://s
 
 ![Image showing how to configure Mobile Advertising IDs using ID Sync](images/id_sync_mappings_ad_ids_emphasised.png)
 
-The field mapping for the **Mobile Advertising ID** field must also be correct. By default it'll be configured as follows when the Mapping is created. 
+The field mapping for the **Mobile Advertising ID** field must also be correct. By default, it'll be configured as follows when the Mapping is created. 
 
 ![Image showing default field mapping for Mobile Advertising ID field](images/field_mapping_default.png). Again, note the underscores for `android_idfa` and `ios_idfa`. 
 
