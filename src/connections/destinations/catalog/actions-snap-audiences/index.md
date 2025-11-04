@@ -15,7 +15,7 @@ This destination is maintained by Segment. For any issues with the destination, 
 >
 > **Both destinations receive data from Segment**.
 
-## Benefits of Snap Ads (Actions) vs Snap Ads Classic
+## Benefits of Snap Ads (Actions) vs Snapchat Audience Classic
 
 Snap Audiences (Actions) provides the following benefits over the classic Snapchat Audience destination:
 
