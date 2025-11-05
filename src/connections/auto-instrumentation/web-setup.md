@@ -361,7 +361,7 @@ Network signals emit when an HTTP Request is made, or an HTTP Response is receiv
 
 Here are the most common misconfigurations preventing signals from reaching Segment.
 
-- Not enabling signals with the URL parameter: you must start each debug session by appending `?segment_signals_debug=true` to your URL parameters.
+- Not enabling signals with the URL parameter: You must start each debug session by appending `?segment_signals_debug=true` to your URL parameters.
 - Running debug mode with an ad blocker: An active ad blocker prevents signals from reaching Segment. Disable your ad blocker and start a new session.
 - Content Security Policies: In addition to the [default Analytics.js Content Security Policies](/docs/connections/sources/catalog/libraries/website/javascript/faq/#does-segment-support-using-strict-content-security-policy-csp-on-the-page), you must add `cdn.jsdelivr.net` to your allowlist, or `https://cdn.jsdelivr.net/npm/@segment/analytics-signals@latest/dist/umd/analytics-signals.umd.js` if your policies require the full path.
 
