@@ -3,7 +3,9 @@ title: Segment-Managed Custom Domain
 plan: custom-domain
 ---
 
-Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS.  You can then track event requests through your own domain (for example, `cdp.mydomain.com`), instead of the default (`segment.com`). Tracking events through your own domain allows for more secure and complete first-party data collection by reclaiming first-party data lost to browser controls. With a more complete view of your customer behaviors, you can build more robust profiles for greater attribution and ROAS.  
+Custom Domain is a fully-managed service that enables you to configure a first-party subdomain over HTTPS.  You can then track event requests through your own domain (for example, `cdp.mydomain.com`), instead of the default (`segment.com`). Tracking events through your own domain allows for more secure and complete first-party data collection by reclaiming first-party data lost to browser controls. With a more complete view of your customer behaviors, you can build more robust profiles for greater attribution and ROAS.
+
+You cannot use Custom Domain setup for Analytics.js CDN or Tracking API with device-mode destinations because device-mode destinations require that the destination’s native scripts are loaded onto the client, and the requests are sent directly to the destination.
 
 > info "Custom Domain is only available to Business Tier customers"
 > Customers not on the Business Tier but who have interest in Custom Domain should [contact Segment's sales team](https://segment.com/demo/){:target="_blank”} for assistance with upgrading to a Business Tier plan. Segment also offers an alternative DNS record service, [Custom Proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/).
