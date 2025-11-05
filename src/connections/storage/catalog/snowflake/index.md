@@ -91,6 +91,9 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 
 Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair. 
 
+> info ""
+> Snowflake plans to deprecate password-only authentication starting August 2026. Learn more in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/security-mfa-rollout){:target="_blank"}.
+
 To create a user that authenticates with a key pair:
 1. Create the user and assign it a key pair by following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. 
 2. Create a new user by executing the following SQL command, replacing the public key value with the key you previously generated. 
