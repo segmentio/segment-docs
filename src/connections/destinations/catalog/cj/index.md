@@ -14,7 +14,7 @@ This destination is maintained by CJ. For any issues with the destination, [cont
 
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "CJ".
 2. Select CJ and click **Add Destination**.
-3. Select an existing Source to connect to CJ (Actions).
+3. Select an existing source to connect to CJ (Actions).
 
 ## Setting up your Settings
 1. Go to your [CJ Account Manager](https://members.cj.com/member/login/#/){:target="_blank"}, and reach out to CJ Support via the Support Center.
