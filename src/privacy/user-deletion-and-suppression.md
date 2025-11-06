@@ -43,7 +43,7 @@ The following Segment & Destination Regulations are available:
 
 ## Deletion Support
 
-When you create a `SUPPRESS_WITH_DELETE` and `SUPPRESS_WITH_DELETE_INTERNAL` regulation, Segment begins to suppress new data ingestion for that user, and begins to permanently delete previously ingested data associated with this user from your workspace. This includes scanning and removing all messages related to that `userId` from all data stores that don't automatically expire data within 30 days.
+When you create a Segment-only regulation, Segment begins to suppress new data ingestion for that user, and begins to permanently delete previously ingested data associated with this user from your workspace. This includes scanning and removing all messages related to that `userId` from all data stores that don't automatically expire data within 30 days.
 
 Segment deletes messages with this `userId` from the following warehouses and storage destinations:  
 - Redshift

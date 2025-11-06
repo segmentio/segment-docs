@@ -69,7 +69,7 @@ Segment users must add this tag to their web properties. The tag performs severa
 
 ### DV360 destination
 
-The DV360 Destination syncs audience data between Segment and Google Display & Video 360. For more information about enabling the DV360 Destination, [view the setup instructions below](#set-up) below.
+The DV360 Destination syncs audience data between Segment and Google Display & Video 360. For more information about enabling the DV360 Destination, [view the setup instructions below](#set-up-the-dv360-destination) below.
 
 ## Set up the DV360 Destination
 

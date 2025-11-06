@@ -53,6 +53,3 @@ analytics.load('<WRITE_KEY>', {
   }
 })
 ```
-
-> info ""
-> The `useQueryString` option is **only** available when you load Analytics.js through the [npm package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.

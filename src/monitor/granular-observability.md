@@ -38,7 +38,7 @@ The rate limiting metadata follows the Segment API [Rate limit errors](https://d
 Here's an example call: 
 
 
-```curl
+```bash
 curl -i -X POST \
   'https://api.segmentapis.com/customer-insights/download?collectionId=<COLLECTION ID FROM UI>&hour=<HOUR>' \
   -H 'Authorization: Bearer <TOKEN>'

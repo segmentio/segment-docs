@@ -14,7 +14,7 @@ At a high level, when you set up Snowflake for Reverse ETL, the configured user/
 > If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
 
 ## Set up guide
-Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with an encrypted key pair.
+Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with an encrypted key pair. Snowflake only supports authentication using a key pair as Snowflake plans to deprecate password-only authentication starting August 2026. Learn more in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/security-mfa-rollout){:target="_blank"}.
 
 > info ""
 > Segment has a Terraform provider, powered by the Public API, that you can use to create a Snowflake Reverse ETL source. See the [segment_source (Resource)](https://registry.terraform.io/providers/segmentio/segment/latest/docs/resources/source){:target="_blank”} documentation for more information.

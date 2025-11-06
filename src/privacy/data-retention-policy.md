@@ -49,13 +49,11 @@ To change your data retention settings, open Segment and navigate to **Privacy >
 
 Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace.
 
-- 14 days
 - 30 days
 - 90 days
 - 180 days
 - 365 days
-- 3 years (the default setting starting August 15, 2025)
-- Unlimited (deprecated August 15, 2025)
+- 3 years
  
 ### What data is impacted?
 

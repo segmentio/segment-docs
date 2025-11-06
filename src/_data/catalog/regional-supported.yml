@@ -940,6 +940,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: DXEMCfUCQI
+    display_name: Rise AI
+    hidden: false
+    slug: rise-ai
+    url: connections/sources/catalog/cloud-apps/rise-ai
+    regions:
+      - us
+    endpoints:
+      - us
   - id: BbupS2SB0b
     display_name: Roku (alpha)
     hidden: false
