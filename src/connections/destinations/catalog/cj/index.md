@@ -4,7 +4,6 @@ title: CJ Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-> (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
 [CJ](https://www.cj.com){:target="_blank”} is a leading affiliate marketing network that helps brands grow smarter with transparent data and trusted partnerships.
 
