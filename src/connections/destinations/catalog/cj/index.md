@@ -16,7 +16,7 @@ This destination is maintained by CJ. For any issues with the destination, [cont
 2. Select CJ and click **Add Destination**.
 3. Select an existing source to connect to CJ (Actions).
 
-## Setting up your Settings
+## Configure your settings
 1. Go to your [CJ Account Manager](https://members.cj.com/member/login/#/){:target="_blank"}, and reach out to CJ Support via the Support Center.
 2. From there, a dedicated member of CJ will be able to provide your required **Tag ID**, **Enterprise ID** and **Action Tracker ID** (you will need your Enterprise ID and Action ID to set up your Site Page and Order Tags). 
 3. Enter your **Tag ID** in the CJ destination settings in Segment.
