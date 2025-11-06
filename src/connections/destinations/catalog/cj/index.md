@@ -7,7 +7,6 @@ title: CJ Destination
 
 [CJ](https://www.cj.com){:target="_blank”} is a leading affiliate marketing network that helps brands grow smarter with transparent data and trusted partnerships.
 
-> (delete after reading) Update your company name and support email address.
 
 This destination is maintained by CJ. For any issues with the destination, [contact their Support team](support@cj.com).
 
