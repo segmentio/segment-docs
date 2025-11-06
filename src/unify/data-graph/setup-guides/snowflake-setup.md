@@ -154,7 +154,7 @@ To connect your warehouse to the Data Graph:
 - **Database**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
 - **Warehouse**: The [warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank”} in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
 - **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
-- **Authentication**: Snowflake only supports authentication using a key pair:
+- **Authentication**: Snowflake only supports authentication using a key pair as Snowflake plans to deprecate password-only authentication starting August 2026. Learn more in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/security-mfa-rollout){:target="_blank"}.
   - **Key Pair**: You need to first create the user and assign it a key pair following the instructions in the [Snowflake docs](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. Then, set the `segment_connections_username` variable in the SQL script to the user you just created.
 
  

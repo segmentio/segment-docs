@@ -142,8 +142,8 @@ To connect Snowflake to Segment:
     * Database name: The database that Segment uses in order to sync data
     * Warehouse: The warehouse in your Snowflake account that Segment uses to run SQL 
     * Username: The Snowflake user that Segment uses to run in your warehouse 
-    * Authentication
-        * Private key: View Snowflake’s key pair set up doc. You can upload in .p8 file format. Key length must be at least 2048-bit. An encrypted key is recommended but not required.
+    * Authentication: Snowflake only supports authentication using a key pair.
+        * Private key: View [Snowflake’s key pair set up doc](https://docs.snowflake.com/en/user-guide/key-pair-auth){:target="_blank"}. You can upload in .p8 file format. Key length must be at least 2048-bit. An encrypted key is recommended but not required. You need to first create the user and assign it a key pair following the instructions in the Snowflake docs. Then, set the `segment_connections_username` variable in the SQL script to the user you just created.
 4. Test your connection. 
 5. Click **Save**.
 
