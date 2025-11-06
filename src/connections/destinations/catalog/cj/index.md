@@ -27,7 +27,7 @@ This destination is maintained by CJ. For any issues with the destination, [cont
 3. In the CJ destination mappings section in Segment, create a Site Page tag by clicking **+ New Mapping** and then **Site Page**.
 4. Define a Trigger.
 5. Enter your **Enterprise ID** as a Static Number value.
-6. Map your other variables then click *Next ->*
+6. Map your other variables, then click **Next ->**.
 7. Repeat the steps above to create an Order tag.
 8. Enter your **Enterprise ID** and **Action Tracker ID** .
 9. Map your other variables then click *Next ->*
