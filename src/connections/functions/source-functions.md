@@ -44,7 +44,7 @@ async function onRequest(request, settings) {
 The `onRequest()` function receives two arguments:
 
 - `request` - an object describing the incoming HTTPS request.
-- `settings` - set of [settings](#create-️settings-and-secrets) for this function.
+- `settings` - set of [settings](#create-settings-and-secrets) for this function.
 
 ### Request processing
 
