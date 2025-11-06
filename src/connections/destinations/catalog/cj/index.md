@@ -18,7 +18,7 @@ This destination is maintained by CJ. For any issues with the destination, [cont
 
 ## Configure your settings
 1. Go to your [CJ Account Manager](https://members.cj.com/member/login/#/){:target="_blank"}, and reach out to CJ Support through the Support Center.
-2. From there, a dedicated member of CJ will be able to provide your required **Tag ID**, **Enterprise ID** and **Action Tracker ID** (you will need your Enterprise ID and Action ID to set up your Site Page and Order Tags). 
+2. From there, a dedicated member of CJ will be able to provide your required **Tag ID**, **Enterprise ID**, and **Action Tracker ID** (you'll need your Enterprise ID and Action ID to set up your Site Page and Order Tags). 
 3. Enter your **Tag ID** in the CJ destination settings in Segment.
 
 ## Setting up your Site Page and Order Tags
