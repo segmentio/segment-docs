@@ -45,6 +45,10 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
     implementation ("com.segment.analytics.kotlin.signals:core:1.0.0")
     ```
 2. Initialize Signals
+ 
+> success ""
+> See [configuration options](#configuration-options) for a complete list.
+> 
     ```kotlin
     //... <analytics config>....
     analytics.add(LivePlugins()) // Make sure LivePlugins is added
@@ -232,6 +236,15 @@ Signals.configuration = Configuration(
   obfuscateDebugSignals = remoteConfig.getBoolean("obfuscateDebugSignals")
 )
 ```
+
+## Step 4: Turn on Auto-Instrumentation in your source
+
+Next, return to the source settings to turn on Auto-Instrumentation:
+
+1. Go to **Connections > Sources**.
+2. Select the source you used in Step 1.
+3. From the source's overview tab, go to **Settings > Advanced**.
+4. Toggle Auto-Instrumention on.
 
 ## Step 5: Verify event collection
 
