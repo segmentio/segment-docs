@@ -30,6 +30,6 @@ This destination is maintained by CJ. For any issues with the destination, [cont
 6. Map your other variables, then click **Next ->**.
 7. Repeat the steps above to create an Order tag.
 8. Enter your **Enterprise ID** and **Action Tracker ID** .
-9. Map your other variables then click *Next ->*
+9. Map your other variables, then click **Next ->**.
 
 {% include components/actions-fields.html %}
