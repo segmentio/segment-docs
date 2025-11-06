@@ -23,3 +23,7 @@ Learn how to use Segment to collect, responsibly manage, and integrate your cust
   title="Want more hands-on guidance?"
   description="For a more hands-on tutorial of Segment, check out Segment University. It offers step-by-step instructions, starting with first steps and going through some of our more advanced features."
 %}
+
+
+> warning ""
+> In compliance with applicable regulations and requirements, and to reinforce our commitment as a trusted partner for our customer communication needs, Twilio has measures in place to not provide services to U.S. sanctioned countries in accordance with applicable sanctions, laws, and regulations.

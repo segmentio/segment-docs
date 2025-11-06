@@ -58,3 +58,7 @@ Segment understands there may be cases to keep a source active. If you'd like to
 
 ### Can I request Segment add an integration tool?
 Yes, you are able to submit an integration request [here](https://segment.com/requests/integrations/).
+
+
+> warning ""
+> In compliance with applicable regulations and requirements, and to reinforce our commitment as a trusted partner for our customer communication needs, Twilio has measures in place to not provide services to U.S. sanctioned countries in accordance with applicable sanctions, laws, and regulations.
