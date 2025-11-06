@@ -21,7 +21,7 @@ This destination is maintained by CJ. For any issues with the destination, [cont
 2. From there, a dedicated member of CJ will be able to provide your required **Tag ID**, **Enterprise ID**, and **Action Tracker ID** (you'll need your Enterprise ID and Action ID to set up your Site Page and Order Tags). 
 3. Enter your **Tag ID** in the CJ destination settings in Segment.
 
-## Setting up your Site Page and Order Tags
+## Set up your Site Page and Order Tags
 1. If you haven't already, go to your [CJ Account Manager](https://members.cj.com/member/login/#/){:target="_blank"}, and reach out to CJ Support through the Support Center.
 2. From there, a dedicated member of CJ will be able to provide your required **Enterprise ID** and **Action Tracker ID**.
 3. In the CJ destination mappings section in Segment, create a Site Page tag by clicking **+ New Mapping** and then **Site Page**.
