@@ -21,6 +21,7 @@ You need the `writeKey` from an existing Segment source. To find it:
 3. From the source's overview tab, go to **Settings > API Keys**.
 4. Copy the `writeKey` shown in the code block.
 
+Segment recommends testing in a development environment before deploying Signals in production. For more information, see [Debug mode](#step-3-enable-debug-mode).
 
 ## Prerequisites
 
