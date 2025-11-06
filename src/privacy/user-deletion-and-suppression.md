@@ -63,7 +63,7 @@ The deletion requests tab shows a 30-day overview of your deletions pipeline, in
 
 To navigate to the deletion requests tab, open the Segment app and navigate to **Privacy > Deletion and Suppression > Deletion**.
 
-If you need to verify if information about a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in any connected destinations.
+If you need to verify if a specific user was deleted or suppressed, you can search for a `userId` to view its status in Segment internal systems and in any connected destinations.
 
 #### Regulations usage tracker
 
