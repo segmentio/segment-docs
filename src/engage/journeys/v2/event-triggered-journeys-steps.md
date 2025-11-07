@@ -456,8 +456,6 @@ Path joins work well when:
 - Multiple branches lead to the same destination send or action step
 - You want to reduce journey complexity and avoid duplicating identical steps across branches
 
-### When to use path joins
-
 ### Create a path join
 
 To create a path join:
@@ -468,4 +466,44 @@ To create a path join:
 4. Choose a step from another branch to connect to. Segment only shows the available steps you can connect to.
 5. The connection appears as a line on the canvas, showing the path join between branches.
 
+![Journey canvas showing the Connect path to existing step option in a dropdown menu. The menu appears when clicking a plus icon at the end of a journey branch, showing flow control options like Delay, Hold until, Data split, and Randomized split, along with the Connect path to existing step option at the top.](../images/application_started.png)
+
 You can only connect to child steps (steps that come after the split), not parent steps or steps earlier in the journey. Each branch endpoint supports one path join connection.
+
+### Add steps within a path join
+
+You can add journey steps between the origin point and the target step of a path join. This lets you include branch-specific actions before profiles merge with the main path.
+
+To add a step within a path join:
+
+1. Click the **+** icon along the path join connection line.
+2. Select the step type you want to add.
+3. Configure the step as needed.
+
+### Disconnect a path join
+
+You can remove a path join connection from either end:
+
+From the origin point:
+
+1. Click the **+** icon at the start of the path join connection.
+2. Select **Disconnect**.
+3. Confirm the disconnection in the modal.
+
+From the target step:
+
+1. Click the **+** icon at the target step where the path join connects.
+2. Select **Disconnect**.
+3. Choose which branch path the child steps should move into.
+4. Confirm the disconnection.
+
+> info ""
+> You can only edit path join connections while the journey is in Draft state. Published journeys must be edited in a new version to modify path joins.
+
+### Journey context and path joins
+
+When branches reconnect through a path join, the journey context for profiles includes only the events from their specific path. Context from steps on other branches is not available.
+
+For example, if Branch A includes a Hold Until step that captures an event, and Branch B connects to a step after that Hold Until, profiles from Branch B won't have access to the event context from Branch A's Hold Until step. Only profiles that actually passed through Branch A will have that context available.
+
+When you configure Data split conditions after a path join, Segment dynamically shows only the context available for each possible path leading to that split.
