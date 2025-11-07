@@ -395,4 +395,4 @@ Criteo Events can receive dates in a specific format, in order for us to pass al
 
 ### Is the mobile integration bundled?
 
-Even though we don't support integrating with Criteo Events using Segment from a server source, it's still not necessary for you to [bundle](/docs/connections/spec/mobile-packaging-sdks//) the Criteo Events SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).
+Even though we don't support integrating with Criteo Events using Segment from a server source, it's still not necessary for you to [bundle](/docs/connections/spec/mobile-packaging-sdks/) the Criteo Events SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).
