@@ -35,7 +35,7 @@ To check the status of your extractions:
 ## Automatic retry handling
 
 > info "Automatic retry handling might not yet be available in your workspace"
-> To ensure overall system stability and performance, Segment is releasing automatic retry handling to all workspaces in a phased rollout program. Segment expects this feature to be available to all customers by January 31, 2025.
+> To ensure overall system stability and performance, Segment is releasing automatic retry handling to all workspaces in a phased rollout program. Segment expects this feature to be available to all customers by October 31, 2025.
 
 Segment automatically retries events that were extracted from your data warehouse but failed to load for up to 14 days or 5 syncs following a partially successful sync or a sync failure. 
 
