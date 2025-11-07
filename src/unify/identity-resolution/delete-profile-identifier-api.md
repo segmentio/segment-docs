@@ -20,8 +20,8 @@ The Delete Profile Identifier API helps you clean up identifiers that shouldn't 
 - Mistakenly imported identifiers, like incorrect email addresses, that prevent accurate targeting in downstream tools
 - Obsolete identifiers left over from database migrations or system changes
 - Identifiers with a short lifespan that need to transfer between profiles. For example, when a user changes phone numbers or when a prepaid service expires, you can remove the phone number from one profile and add it to another.
-- Old identifiers that cause profiles to violate [ID Resolution limits]()
-- Extra identifiers from misconfigured identity resolution settings. For example, if you reduced the `user_id` limit from 3 to 1, remove extra `user_id` values to resolve discrepancies between Segment and downstream tools like Braze or Amplitude.
+- Old identifiers that cause profiles to violate [ID Resolution limits](/docs/unify/product-limits/#identity).
+- Extra identifiers from misconfigured identity resolution settings. For example, if you reduced the `user_id` limit from 3 to 1, remove extra `user_id` values to resolve discrepancies between Segment and downstream tools like [Braze](/docs/connections/destinations/catalog/actions-braze-cloud/) or [Amplitude](/docs/connections/destinations/catalog/actions-amplitude/).
 
 ## Before you begin
 
@@ -49,7 +49,7 @@ If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), you must also:
 
 When you delete an identifier, Segment removes it from [Identity Resolution](/docs/unify/identity-resolution/) and syncs the change to connected systems.
 
-The API confirms that Segment deleted the identifier from the Real-Time Identity Graph. The deletion then flows through these systems:
+The API confirms that Segment deleted the identifier from the real-time Identity Graph. The deletion then flows through these systems:
 
 | System                       | What happens                                                                                                                                               |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -152,7 +152,7 @@ Keep the following information in mind as you use the Delete Profile Identifier 
 
 ### Deletion scope
 
-The Delete Profile Identifier API removes identifiers from Unify systems, including Identity Resolution, Profile Storage, and Profile Sync to your data warehouse. However, deletion doesn't extend to all Segment systems. Identifiers remain in the Event Archive and are soft-deleted in the Batch Profile Data Lakehouse.
+The Delete Profile Identifier API removes identifiers from Unify systems, including Identity Resolution, Profile Storage, and Profile Sync to your data warehouse. However, deletion doesn't extend to all Segment systems. Identifiers remain in the event archive and are soft-deleted in the Batch Profile Data Lakehouse.
 
 Segment doesn't delete identifiers from downstream destinations like Braze, Amplitude, Facebook, Engage Audiences, Journeys, Linked Audiences, or Consent settings. You must update these systems separately.
 
@@ -171,7 +171,7 @@ Deletion syncs to connected systems at different speeds:
 
 ### Space rebuilds and replays
 
-If you rebuild a space from Segment Archives, deletions don't replay automatically. You must rerun deletions after the replay completes.
+If you rebuild a space from Segment archives, deletions don't replay automatically. You must rerun deletions after the replay completes.
 
 ### Identifier reintroduction
 
