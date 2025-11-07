@@ -43,12 +43,11 @@ To get started:
     // signal core   
     implementation ("com.segment.analytics.kotlin.signals:core:1.0.0")
     ```
-2. Initialize Signals:
- 
+2. Initialize Signals: 
 > success ""
 > See [configuration options](#configuration-options) for a complete list.
-> 
-    ```kotlin
+
+```kotlin
     //... <analytics config>....
     analytics.add(LivePlugins()) // Make sure LivePlugins is added
     analytics.add(Signals)  // Add the signals plugin
@@ -60,7 +59,8 @@ To get started:
       obfuscateDebugSignals = true
       // .. other options
     )
-    ```
+```
+
 3. Add proper dependency and plugin as needed to: 
      * [Capture interactions](#capture-interactions).
      * [Capture navigation](#capture-navigation).
