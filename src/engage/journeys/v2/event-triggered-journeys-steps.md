@@ -442,3 +442,30 @@ There may be cases where events sent to Segment are missing specific properties 
 - Similarly, if a mapped trait is missing on the profile, the key is included in the payload with a value of `undefined`.
 
 Carefully configuring mappings and handling missing attributes can help you maintain data integrity and avoid errors in downstream systems.
+
+## Reconnect branches with path joins
+
+Path joins let you connect one branch of a journey to a step in another branch. This eliminates duplicate steps and saves journey step credits when multiple branches need to converge on the same downstream actions.
+
+Use path joins when different user segments need different initial treatments but should follow the same steps afterward. For example, high-value customers might receive multiple touchpoints through one branch while standard customers skip directly to a general follow-up step that both groups eventually reach.
+
+Path joins work well when:
+
+- Different user segments require unique messaging initially but share common downstream steps
+- One branch needs fewer steps than another, and you want both to converge at a specific point
+- Multiple branches lead to the same destination send or action step
+- You want to reduce journey complexity and avoid duplicating identical steps across branches
+
+### When to use path joins
+
+### Create a path join
+
+To create a path join:
+
+1. Navigate to the last step in the branch you want to connect.
+2. Click the **+** icon at the end of that branch.
+3. Select **Connect path to existing step**.
+4. Choose a step from another branch to connect to. Segment only shows the available steps you can connect to.
+5. The connection appears as a line on the canvas, showing the path join between branches.
+
+You can only connect to child steps (steps that come after the split), not parent steps or steps earlier in the journey. Each branch endpoint supports one path join connection.
