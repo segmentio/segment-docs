@@ -39,17 +39,18 @@ If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), you must also:
 
 ## How deletion works
 
-When you delete an identifier, Segment removes it from [Identity Resolution](/docs/unify/identity-resolution/) and propagates the change through connected systems. <!-- I don't like propagates-->
+When you delete an identifier, Segment removes it from [Identity Resolution](/docs/unify/identity-resolution/) and syncs the change to connected systems.
 
-After you send the request, the Delete Profile Identifier API confirms that Segment deleted the identifier from the Real-Time Identity Graph. Deletion then propagates to other systems:
+The API confirms that Segment deleted the identifier from the Real-Time Identity Graph. The deletion then flows through these systems:
 
-1. Real-time Profile storage**: The Profile API and Profile explorer delete the identifier in near real time.
-2. Batch Profile Data lakehouse: Segment soft-deletes the identifier (flags it as deleted) in the append-only table within minutes. The identifier filters out from the materialized view within 24 hours.
-3. Customer data warehouse: Profile Sync sends a deletion notification to your warehouse. The `external_id_mapping_updates` table shows the identifier with `__operation` set to `REMOVED`. The `user_identifiers` materialized view filters out removed identifiers.
+| System                       | What happens                                                                                                                                               |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Real-time Profile storage    | The Profile API and Profile explorer delete the identifier in near real time                                                                               |
+| Batch Profile Data lakehouse | Segment soft-deletes the identifier in the append-only table within minutes and filters it from the materialized view within 24 hours                      |
+| Customer data warehouse      | Profiles Sync adds a row to `external_id_mapping_updates` with `__operation` set to `REMOVED`. The `user_identifiers` view filters out removed identifiers |
 
-<!-- maybe come back and turn this into a table?-->
 
-## Delete an identifier <!-- maybe think of a better header-->
+## Send a deletion request
 
 You can only delete identifiers from known profiles. The API requires a valid `user_id` to locate the profile.
 
@@ -62,35 +63,28 @@ The API returns an error if you try to delete:
 
 The API accepts one identifier per request.
 
-**Endpoint**:
-```sh
+Send requests to this endpoint:
+
+```
 POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete
 ```
 
-```sh
-https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete
-```
+Replace the following parameters in the URL:
 
-`POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete`
+| Parameter       | Description                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------- |
+| `HOST_NAME`     | `profiles.segment.com` for North America workspaces or `profiles.euw1.segment.com` for EU workspaces |
+| `SPACE_ID`      | Your space ID. Find this in **Unify > Unify settings > API access**.                                 |
+| `USER_ID_VALUE` | The `user_id` value that identifies the profile.                                                      |
+| `AUTH_TOKEN`    | Your access token. Generate this in **Unify > Unify settings > API access**.                          |
 
-**Parameters**:
+Include these fields in the request body:
 
-| Parameter         | Description                                                                                          |
-| ----------------- | ---------------------------------------------------------------------------------------------------- |
-| **HOST_NAME**     | `profiles.segment.com` for North America workspaces or `profiles.euw1.segment.com` for EU workspaces |
-| **SPACE_ID**      | Your space ID. Find this in **Unify > Unify settings > API access**                                        |
-| **USER_ID_VALUE** | The `user_id` value that identifies the profile                                                      |
-| **AUTH_TOKEN**    | Your access token. Generate this in **Unify > Settings > API access**                                |
-
-**Request body**:
-
-| Field                   | Description                                                                    |
-| ----------------------- | ------------------------------------------------------------------------------ |
-| **delete_external_ids** | Array containing the identifier to delete. Limit: 1 identifier per request     |
-| **id**                  | Value of the identifier to delete (for example, `hello@gmail.com`)             |
-| **type**                | Type of identifier to delete (for example, `email`, `anonymous_id`, `user_id`) |
-
-<!--change parameters to code styling, add intros between table headers -->
+| Field                 | Description                                                                    |
+| --------------------- | ------------------------------------------------------------------------------ |
+| `delete_external_ids` | Array containing the identifier to delete. Limit: 1 identifier per request     |
+| `id`                  | Value of the identifier to delete (for example, `hello@gmail.com`)             |
+| `type`                | Type of identifier to delete (for example, `email`, `anonymous_id`, `user_id`) |
 
 ### Example request
 
