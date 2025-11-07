@@ -1,6 +1,7 @@
 ---
 title: SatisMeter Destination
 id: 54c02a5adb31d978f14a7f6f
+hide-dossier: true
 ---
 [Our SatisMeter destination code](https://github.com/segment-integrations/analytics.js-integration-satismeter){:target="_blank"} is all open-source on GitHub if you want to check it out.
 
