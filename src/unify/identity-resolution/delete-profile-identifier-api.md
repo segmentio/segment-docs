@@ -36,7 +36,7 @@ You need one of these roles to delete identifiers:
 - Identity Admin
 - Unify and Engage Admin
 
-See [the Roles documentation](/docs/segment-app/iam/roles/) for more detailss.
+See [the Roles documentation](/docs/segment-app/iam/roles/) for more details.
 
 If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), you must also:
 
