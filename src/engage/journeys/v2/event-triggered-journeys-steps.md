@@ -185,12 +185,11 @@ Segment shows only event context available on the journey path leading to the Da
 
 You can combine journey context conditions with trait-based and audience-based conditions in the same branch. Segment evaluates all conditions using `AND` logic, so the journey instance must satisfy every condition to follow that branch.
 
-
 ### Example: Target different customer types or event properties
 
-You can use a Data split to branch profiles based on event properties, traits, or audience membership that already exist on the profile when it reaches this step. For example:
+You can use a Data split to branch journey instances based on event properties from journey context, profile traits, or audience membership. For example:
 
-- Journey instances where the triggering event had a `transaction_total` > $100 are sent specific messaging about their high-ticket purchase.
+- Journey instances where the triggering event's `transaction_total` property is greater than $100 receive high-value purchase messaging.
 - Profiles with a known `email_subscription_status` trait get treated as existing customers.
 - Profiles that belong to a `VIP` audience are routed down a separate path for high-value users.
 - Profiles with a specific set of traits (like favorite color and a known name) can receive personalized messaging.
