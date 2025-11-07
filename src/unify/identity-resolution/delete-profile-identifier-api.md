@@ -75,7 +75,7 @@ The API accepts one identifier per request.
 
 Send requests to this endpoint:
 
-```
+```bash
 POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete
 ```
 
@@ -120,23 +120,23 @@ curl --location --request POST 'https://profiles.segment.com/v1/spaces/spa_abc12
 ```
 ## Responses and error codes
 
-<!-- add some transition here, code errors as inline-->
+The API returns the following HTTP status codes:
 
-| HTTP Code | Code                 | Message                                                               |
-| --------- | -------------------- | --------------------------------------------------------------------- |
-| 200       | success              | external identifier has been deleted                                  |
-| 400       | unsupported_eid_type | unsupported external id type                                          |
-| 400       | bad_request          | missing required parameters in URL                                    |
-| 400       | bad_request          | invalid URL: valid `user_id` is required. unsupported `<id type>`     |
-| 400       | bad_request          | only one external_id can be deleted at a time                         |
-| 400       | bad_request          | invalid collection: `<collection>`                                    |
-| 400       | bad_request          | external id specification must differ from lookup id                  |
-| 401       | unauthorized         | the specified token is invalid                                        |
-| 403       | forbidden            | Deleted identifier not activated for space_id `<space_id>`            |
-| 404       | not_found            | the resource was not found                                            |
-| 404       | eid_not_found        | external identifier not found                                         |
-| 404       | source_id_not_found  | no source attached to space_id `<space_id>`                           |
-| 429       | rate_limit_error     | Attempted to delete more than 100 IDs per second for a single profile |
+| HTTP Code | Code                   | Message                                                                 |
+| --------- | ---------------------- | ----------------------------------------------------------------------- |
+| `200`     | `success`              | External identifier has been deleted.                                   |
+| `400`     | `unsupported_eid_type` | Unsupported external id type.                                           |
+| `400`     | `bad_request`          | Missing required parameters in URL.                                     |
+| `400`     | `bad_request`          | Invalid URL: valid `user_id` is required. Unsupported `<id type>`.      |
+| `400`     | `bad_request`          | Only one external_id can be deleted at a time.                          |
+| `400`     | `bad_request`          | Invalid collection: `<collection>`.                                     |
+| `400`     | `bad_request`          | External id specification must differ from lookup id.                   |
+| `401`     | `unauthorized`         | The specified token is invalid.                                         |
+| `403`     | `forbidden`            | Deleted identifier not activated for space_id `<space_id>`.             |
+| `404`     | `not_found`            | The resource was not found.                                             |
+| `404`     | `eid_not_found`        | External identifier not found.                                          |
+| `404`     | `source_id_not_found`  | No source attached to space_id `<space_id>`.                            |
+| `429`     | `rate_limit_error`     | Attempted to delete more than 100 IDs per second for a single profile. |
 
 ## Limitations and considerations
 
