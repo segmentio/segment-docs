@@ -59,7 +59,17 @@ The API returns an error if you try to delete:
 - All `user_id` values from a profile. Profiles must have at least one `user_id`.
 - A `group_id` identifier. The API only supports individual profiles.
 
-### API request format
+### Authentication
+
+The API uses HTTP Basic Authentication. Base64-encode your access token with a trailing colon (the colon represents an empty password):
+
+```bash
+echo -n 'your_token:' | base64
+```
+
+Use the encoded value in the `Authorization` header of your requests. Generate your access token in **Unify > Unify settings > API access**.
+
+### Request format
 
 The API accepts one identifier per request.
 
@@ -75,20 +85,19 @@ Replace the following parameters in the URL:
 | --------------- | ---------------------------------------------------------------------------------------------------- |
 | `HOST_NAME`     | `profiles.segment.com` for North America workspaces or `profiles.euw1.segment.com` for EU workspaces |
 | `SPACE_ID`      | Your space ID. Find this in **Unify > Unify settings > API access**.                                 |
-| `USER_ID_VALUE` | The `user_id` value that identifies the profile.                                                      |
-| `AUTH_TOKEN`    | Your access token. Generate this in **Unify > Unify settings > API access**.                          |
+| `USER_ID_VALUE` | The `user_id` value that identifies the profile.                                                     |
 
 Include these fields in the request body:
 
 | Field                 | Description                                                                    |
 | --------------------- | ------------------------------------------------------------------------------ |
 | `delete_external_ids` | Array containing the identifier to delete. Limit: 1 identifier per request     |
-| `id`                  | Value of the identifier to delete (for example, `hello@gmail.com`)             |
+| `id`                  | Value of the identifier to delete (for example, `hello@example.com`)           |
 | `type`                | Type of identifier to delete (for example, `email`, `anonymous_id`, `user_id`) |
 
 ### Example request
 
-First, base64-encode your access token with a trailing colon:
+The API uses HTTP Basic Authentication. Base64-encode your access token with a trailing colon (the colon represents an empty password):
 
 ```bash
 echo -n 'your_token:' | base64
