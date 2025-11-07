@@ -504,6 +504,6 @@ From the target step:
 
 When branches reconnect through a path join, the journey context for profiles includes only the events from their specific path. Context from steps on other branches is not available.
 
-For example, if Branch A includes a Hold Until step that captures an event, and Branch B connects to a step after that Hold Until, profiles from Branch B won't have access to the event context from Branch A's Hold Until step. Only profiles that actually passed through Branch A will have that context available.
+For example, if Branch A includes a Hold until step that captures an event, and Branch B connects to a step after that Hold until, profiles from Branch B won't have access to the event context from Branch A's Hold until step. Only profiles that actually passed through Branch A will have that context available.
 
 When you configure Data split conditions after a path join, Segment dynamically shows only the context available for each possible path leading to that split.
