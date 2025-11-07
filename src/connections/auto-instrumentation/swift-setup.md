@@ -45,7 +45,7 @@ dependencies: [
 2. Import and initialize with your Analytics instance: 
 > success ""
 > See [configuration options](#configuration-options) for a complete list.
-    ```swift
+```swift
     import Segment
     import AnalyticsLive
     
@@ -70,7 +70,8 @@ dependencies: [
         #endif
         // ... other options
     ))
-    ```
+```
+    
 3. Set up capture for the UI framework(s) you're using:
      * [Capture SwiftUI interactions](#swiftui).
      * [Capture UIKit interactions](#uikit).
