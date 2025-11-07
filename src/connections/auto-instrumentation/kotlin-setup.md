@@ -270,7 +270,7 @@ The following table lists the available options:
 | **maximumBufferSize** | No  | Integer                   | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is **1000**. |
 | **relayCount** | No  | Integer                   | Relays every X signals to Segment. Default is **20**. |
 | **relayInterval** | No  | Integer                   | Relays signals to Segment every X seconds. Default is **60**. |
-| **broadcasters**  | No      | List<SignalBroadcaster>    | An array of broadcasters. These objects forward signal data to their destinations, like **WebhookBroadcaster**, or you could write your own **DebugBroadcaster** that writes logs to the developer console. **SegmentBroadcaster** is always added by the SDK. |
+| **broadcasters**  | No      | List\<SignalBroadcaster>    | An array of broadcasters. These objects forward signal data to their destinations, like **WebhookBroadcaster**, or you could write your own **DebugBroadcaster** that writes logs to the developer console. **SegmentBroadcaster** is always added by the SDK. |
 | **sendDebugSignalsToSegment**      | No      | Boolean                    | Turns on debug mode and allows the SDK to relay Signals to Segment server. Default is **false**. It should only be set to true for development purposes. |
 | **obfuscateDebugSignals**      | No      | Boolean                    | Obfuscates signals being relayed to Segment. Default is **true**. |
 
