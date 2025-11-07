@@ -181,7 +181,7 @@ When you configure a branch with journey context conditions:
 2. Choose the specific property from that event.
 3. Define the condition and value.
 
-Segment shows only event context available on the journey path leading to the Data split step. If an event was captured in a Hold Until step on a different branch, it won't appear as an option for conditions on the current branch.
+Segment shows only event context available on the journey path leading to the Data split step. If an event was captured in a Hold until step on a different branch, it won't appear as an option for conditions on the current branch.
 
 You can combine journey context conditions with trait-based and audience-based conditions in the same branch. Segment evaluates all conditions using `AND` logic, so the journey instance must satisfy every condition to follow that branch.
 
