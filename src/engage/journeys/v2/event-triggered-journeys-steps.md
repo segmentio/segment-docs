@@ -170,6 +170,22 @@ You can also give branches uniques name to differentiate them from each other on
 > info "Evaluation is sequential"
 > Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step. You can change the evaluation order by dragging branches up or down in the configuration side sheet.
 
+### Branch on journey context
+
+Data split branches can evaluate conditions based on event properties stored in the journey context. This lets you route journey instances based on real-time event data instead of static profile information.
+
+When you configure a branch with journey context conditions:
+
+1. Select the event object from journey context. 
+  - The triggering event is always available, and any events from Hold Until steps on the current path also show up.
+2. Choose the specific property from that event.
+3. Define the condition and value.
+
+Segment shows only event context available on the journey path leading to the Data split step. If an event was captured in a Hold Until step on a different branch, it won't appear as an option for conditions on the current branch.
+
+You can combine journey context conditions with trait-based and audience-based conditions in the same branch. Segment evaluates all conditions using `AND` logic, so the journey instance must satisfy every condition to follow that branch.
+
+
 ### Example: Target different customer types or event properties
 
 You can use a Data split to branch profiles based on event properties, traits, or audience membership that already exist on the profile when it reaches this step. For example:
