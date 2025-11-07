@@ -115,7 +115,7 @@ curl --location --request POST 'https://profiles.segment.com/v1/spaces/spa_abc12
 ```
 ## Responses and error codes
 
-## HTTP responses
+<!-- add some transition here, code errors as inline-->
 
 | HTTP Code | Code                 | Message                                                               |
 | --------- | -------------------- | --------------------------------------------------------------------- |
