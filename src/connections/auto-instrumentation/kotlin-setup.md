@@ -26,7 +26,7 @@ Segment recommends testing in a development environment before deploying Signals
 
 ## Prerequisites
 
-Auto-Instrumentation (aka Signals) works on top of Analytics and Live Plugins. Make sure to add the following dependencies to your module's Gradle file if you don't have them already.
+Auto-Instrumentation (also known as Signals) works on top of Analytics and Live Plugins. Make sure to add the following dependencies to your module's Gradle file if you don't have them already.
 
 ```groovy
 // analytics kotlin 
@@ -37,7 +37,7 @@ implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.3.0")
 
 ## Step 1: Getting started
 
-Instrumentation becomes as simple as adding dependencies to your module's Gradle file:
+To get started:
 1. Add Signals Core
     ```groovy
     // signal core   
@@ -62,13 +62,13 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
     )
     ```
 3. Add proper dependency and plugin as needed to: 
-     * [Capture Interactions](#capture-interactions)
-     * [Capture Navigation](#capture-navigation)
-     * [Capture Network](#capture-network)
+     * [Capture interactions](#capture-interactions).
+     * [Capture navigation](#capture-navigation).
+     * [Capture network](#capture-network).
 
 ## Step 2: Additional setup
 
-### Capture Interactions
+### Capture interactions
 
 #### Kotlin Compose
 
@@ -84,7 +84,7 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
 
 #### Legacy XML UI
 
-1. Add uitoolkit Gradle Plugin dependency to project level `build.gradle`
+1. Add the uitoolkit Gradle Plugin dependency to project-level `build.gradle`:
     ```groovy
     buildscript {
         dependencies {
@@ -92,7 +92,7 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
         }
     }
     ```
-2. Apply the plugin in your app level `build.gradle` and add the dependency
+2. Apply the plugin in your app-level `build.gradle` and add the dependency:
     ```groovy
     plugins {
         // ...other plugins
@@ -106,9 +106,9 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
     ```
 
 
-### Capture Navigation
+### Capture navigation
 
-1. Add navigation Gradle Plugin dependency to project level `build.gradle`
+1. Add the navigation Gradle Plugin dependency to project-level `build.gradle`:
     ```groovy
     buildscript {
         dependencies {
@@ -116,7 +116,7 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
         }
     }
     ```
-2. Apply the plugin in your app level `build.gradle` and add the dependency
+2. Apply the plugin in your app-level `build.gradle` and add the dependency:
     ```groovy
     plugins {
         // ...other plugins
@@ -128,21 +128,21 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
       implementation ("com.segment.analytics.kotlin.signals:navigation:1.0.0")
     }
     ```
-3. (Optional) Add `SignalsActivityTrackingPlugin` to analytics to track Activity/Fragment navigation. **Not required for Compose Navigation**  
+3. (Optional) Add `SignalsActivityTrackingPlugin` to analytics to track Activity/Fragment navigation. **This is not required for Compose Navigation**.  
     ```kotlin
     analytics.add(SignalsActivityTrackingPlugin())
     ```
 
-### Capture Network
+### Capture network
 
 #### OkHttp
   
-1. add dependency:
+1. Add the dependency:
     ```groovy
     implementation ("com.segment.analytics.kotlin.signals:okhttp3:1.0.0")
     ```
 
-2. add `SignalsOkHttp3TrackingPlugin` as an interceptor to your OkHttpClient:
+2. Add `SignalsOkHttp3TrackingPlugin` as an interceptor to your OkHttpClient:
     ```kotlin
        private val okHttpClient = OkHttpClient.Builder()
            .addInterceptor(SignalsOkHttp3TrackingPlugin())
@@ -151,12 +151,12 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
 
 #### Retrofit
 
-1. add dependency:
+1. Add the dependency:
     ```groovy
     implementation ("com.segment.analytics.kotlin.signals:okhttp3:1.0.0")
     ```
 
-2. add `SignalsOkHttp3TrackingPlugin` as an interceptor to your Retrofit client:
+2. Add `SignalsOkHttp3TrackingPlugin` as an interceptor to your Retrofit client:
     ```kotlin
        private val okHttpClient = OkHttpClient.Builder()
            .addInterceptor(SignalsOkHttp3TrackingPlugin())
@@ -168,12 +168,12 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
     ```
 
 #### java.net.HttpURLConnection
- 1. add dependency:
+ 1. Add the dependency:
      ```groovy
      implementation ("com.segment.analytics.kotlin.signals:java-net:1.0.0")
      ```
  
- 2. install the `JavaNetTrackingPlugin` on where you initialize analytics:
+ 2. Install the `JavaNetTrackingPlugin` on where you initialize analytics:
      ```kotlin
          JavaNetTrackingPlugin.install()
      ```
@@ -183,7 +183,7 @@ Instrumentation becomes as simple as adding dependencies to your module's Gradle
 
 By default, Signals stores captured data on the device and doesn't forward it to Segment. This process prevents unnecessary bandwidth use and helps support privacy compliance requirements.
 
-To view captured signals in the Event Builder and create event generation rules, you need to enable `sendDebugSignalsToSegment`. This setting temporarily lets the SDK send signal data to Segment while you're testing.
+To view captured signals in the Event Builder and create event generation rules, enable `sendDebugSignalsToSegment`. This setting temporarily lets the SDK send signal data to Segment while you're testing.
 
 In addition, the SDK obfuscates signals sent to Segment by default. To view the completed data, you need to turn off `obfuscateDebugSignals`.
 
@@ -241,7 +241,7 @@ Signals.configuration = Configuration(
 Next, return to the source settings to turn on Auto-Instrumentation:
 
 1. Go to **Connections > Sources**.
-2. Select the source you used in Step 1.
+2. Select the source you used in [Step 1](#Step-1-Getting-started).
 3. From the source's overview tab, go to **Settings > Advanced**.
 4. Toggle Auto-Instrumention on.
 
@@ -251,13 +251,11 @@ After you build and run your app, use the [Event Builder](/docs/connections/auto
 
 1. In your Segment workspace, go to **Connections > Sources** and select the Android Source you configured.
 2. Open the **Event Builder** tab.
-3. Interact with your app on a simulator or test device:
-   - Navigate between screens.
-   - Tap buttons and UI elements.
-   - Trigger network requests.
-
-If `sendDebugSignalsToSegment` is enabled, Signals appear in real time as you interact with the app.
-
+3. Interact with your app on a simulator or test device: 
+    > - Navigate between screens. 
+    > - Tap buttons and UI elements. 
+    > - Trigger network requests. 
+    > If `sendDebugSignalsToSegment` is enabled, Signals appear in real time as you interact with the app.
 4. In the Event Builder, select a signal and click **Configure event** to define a new event.
 5. After you add any event mappings, click **Publish event rules** to save them.
 
