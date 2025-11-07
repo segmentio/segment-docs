@@ -39,3 +39,16 @@ If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), complete these 
    - Deleted value: `REMOVED`
 2. Verify that your analytics workloads (BI tools, data pipelines, ML models) can handle deleted identifiers. Make sure these systems remain operational and account for the `REMOVED` flag.
 
+<!-- Not sure I love how I structured that, may revisit-->
+
+## How deletion works
+
+When you delete an identifier, Segment removes it from [Identity Resolution](/docs/unify/identity-resolution/) and propagates the change through connected systems. <!-- I don't like propagates-->
+
+The Delete Profile Identifier API confirms that Segment deleted the identifier from the Real-Time Identity Graph. Deletion then propagates to other systems:
+
+1. Real-time Profile storage**: The Profile API and Profile explorer delete the identifier in near real time.
+2. Batch Profile Data lakehouse: Segment soft-deletes the identifier (flags it as deleted) in the append-only table within minutes. The identifier filters out from the materialized view within 24 hours.
+3. Customer data warehouse: Profile Sync sends a deletion notification to your warehouse. The `external_id_mapping_updates` table shows the identifier with `__operation` set to `REMOVED`. The `user_identifiers` materialized view filters out removed identifiers.
+
+<!-- maybe come back and turn this into a table?-->
