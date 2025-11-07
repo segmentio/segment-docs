@@ -75,6 +75,6 @@ To more details how Wishpond's identify works  visit [Wishpond API Docs: #track]
 
 Make sure you have copied the right keys from Wishpond's ["API Keys" dialog](https://www.wishpond.com/central/welcome?api_keys=true){:target="_blank"}, this destination will need `Merchant ID` and `Tracking Key`.
 
-[Analytics.js]: https://segment.com//docs/connections/sources/catalog/libraries/website/javascript/
+[Analytics.js]: https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/
 [ci-link]: https://circleci.com/gh/segment-integrations/analytics.js-integration-wishpond
 [ci-badge]: https://circleci.com/gh/segment-integrations/analytics.js-integration-wishpond.svg?style=svg

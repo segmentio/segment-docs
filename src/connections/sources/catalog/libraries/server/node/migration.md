@@ -60,7 +60,7 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
 
 #### Removals
 The updated Analytics Node.js removed these configuration options:
-- `errorHandler` (see the docs on [error handling](/docs/connections/sources/catalog/libraries/server/node//#error-handling) for more information)
+- `errorHandler` (see the docs on [error handling](/docs/connections/sources/catalog/libraries/server/node/#error-handling) for more information)
 
 The updated Analytics Node.js library removed undocumented behavior around `track` properties 
 

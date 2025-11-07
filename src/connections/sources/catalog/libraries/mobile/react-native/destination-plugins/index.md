@@ -51,13 +51,13 @@ plugins:
     mark:
       url: https://cdn.filepicker.io/api/file/k1fi9InSu6eint2IHilP
   - name: Firebase
-    url: connections/sources/catalog/libraries/mobile/react-native//destination-plugins/firebase-react-native/
+    url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/firebase-react-native/
     logo:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
   - name: FullStory
-    url: connections/sources/catalog/libraries/mobile/react-native//destination-plugins/fullstory-react-native/
+    url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/fullstory-react-native/
     logo:
       url: https://cdn.filepicker.io/api/file/0ET4vgkqTGNMRtZcFWCA
     mark:
