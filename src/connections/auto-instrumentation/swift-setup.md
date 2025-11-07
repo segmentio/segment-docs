@@ -25,7 +25,7 @@ Segment recommends testing in a development environment before deploying Signals
 
 ## Prerequisites
 
-Auto-Instrumentation (aka Signals) works on top of Analytics. Make sure to add the following dependency to your project if you don't have analytics-swift already.
+Auto-Instrumentation (also known as Signals) works on top of Analytics. Make sure to add the following dependency to your project if you don't have analytics-swift already.
 
 ```swift
 dependencies: [
@@ -42,11 +42,10 @@ dependencies: [
     ]
     ```
 
-2. Import and initialize with your Analytics instance:
-   
-> success ""
-> See [configuration options](#configuration-options) for a complete list.
-> 
+2. Import and initialize with your Analytics instance: 
+    > success ""
+    > See [configuration options](#configuration-options) for a complete list.
+    > 
     ```swift
     import Segment
     import AnalyticsLive
@@ -75,14 +74,14 @@ dependencies: [
     ```
 
 3. Set up capture for the UI framework(s) you're using:
-     * [Capture SwiftUI Interactions](#swiftui)
-     * [Capture UIKit Interactions](#uikit)
-     * [Capture Network Activity](#capture-network)
+     * [Capture SwiftUI interactions](#swiftui).
+     * [Capture UIKit interactions](#uikit).
+     * [Capture network activity](#capture-network). 
 
 
 ## Step 2: Additional setup
 
-### Capture Interactions
+### Capture interactions
 
 #### SwiftUI
 
@@ -119,25 +118,25 @@ SwiftUI automatic signal capture requires adding typealiases to your code. This 
     typealias List = SignalList
     ```
 
-3. Use the controls normally in your SwiftUI code:
+3. Use the controls in your SwiftUI code:
     ```swift
     struct ContentView: View {
         var body: some View {
             NavigationStack {
                 VStack {
                     Button("Click Me") {
-                        // Button tap will automatically generate a signal
+                        // Button tap automatically generates a signal
                     }
                     
                     TextField("Enter text", text: $text)
-                    // Text changes will automatically generate signals
+                    // Text changes automatically generates signals
                 }
             }
         }
     }
     ```
 
-> **Note:** The typealiases replace SwiftUI's native controls with signal-generating versions. Your code remains unchanged, but interactions are now automatically captured.
+The typealiases replace SwiftUI's native controls with signal-generating versions. Your code remains unchanged, but interactions are now automatically captured.
 
 #### UIKit
 
@@ -152,7 +151,7 @@ UIKit automatic signal capture uses method swizzling and requires no code change
     ))
     ```
 
-2. That's it! The following UIKit interactions and navigation events are automatically captured via method swizzling:
+2. The following UIKit interactions and navigation events are automatically captured via method swizzling:
 
     **Interactions:**
     - `UIButton` taps
@@ -167,16 +166,16 @@ UIKit automatic signal capture uses method swizzling and requires no code change
     - `UIViewController` modal presentations and dismissals
     - `UITabBarController` tab switches
 
-### Capture Navigation
+### Capture navigation
 
 Navigation capture is handled automatically when you enable SwiftUI or UIKit auto-signals:
 
-- **SwiftUI**: Captured through `SignalNavigationLink` and `SignalNavigationStack` when you add the typealiases
-- **UIKit**: Captured automatically via `UINavigationController`, `UIViewController`, and `UITabBarController` swizzling
+- **SwiftUI**: Captured through `SignalNavigationLink` and `SignalNavigationStack` when you add the typealiases.
+- **UIKit**: Captured automatically via `UINavigationController`, `UIViewController`, and `UITabBarController` swizzling.
 
-No additional setup required beyond enabling the appropriate auto-signal flags.
+No additional setup is required beyond enabling the appropriate auto-signal flags.
 
-### Capture Network
+### Capture network
 
 Network capture automatically tracks URLSession requests and responses.
 
@@ -192,13 +191,13 @@ Network capture automatically tracks URLSession requests and responses.
     ```
 
 2. Network requests made via URLSession are automatically captured, including:
-   - Request URL, method, headers, and body
-   - Response status, headers, and body
-   - Request/response correlation via request ID
+   - Request URL, method, headers, and body.
+   - Response status, headers, and body.
+   - Request or response correlation via request ID.
 
-> **Note:** Third-party networking libraries that use URLSession underneath (like Alamofire) should work automatically. Segment API endpoints are automatically blocked to prevent recursive tracking.
+Third-party networking libraries that use URLSession underneath (like Alamofire) should work automatically. Segment API endpoints are automatically blocked to prevent recursive tracking.
 
-#### Configuring Network Hosts
+#### Configuring network hosts
 
 You can control which network requests are tracked:
 
@@ -226,7 +225,7 @@ The following hosts are automatically blocked to prevent recursive tracking:
 
 By default, Signals stores captured data on the device and doesn't forward it to Segment. This process prevents unnecessary bandwidth use and helps support privacy compliance requirements.
 
-To view captured signals in the Event Builder and create event generation rules, you need to enable `sendDebugSignalsToSegment`. This setting temporarily lets the SDK send signal data to Segment while you're testing.
+To view captured signals in the Event Builder and create event generation rules, enable `sendDebugSignalsToSegment`. This setting temporarily lets the SDK send signal data to Segment while you're testing.
 
 In addition, the SDK obfuscates signals sent to Segment by default. To view the completed data, you need to turn off `obfuscateDebugSignals`.
 
@@ -235,9 +234,9 @@ In addition, the SDK obfuscates signals sent to Segment by default. To view the 
 
 You can enable `sendDebugSignalsToSegment` and turn off `obfuscateDebugSignals` in one of three ways.
 
-### Option 1: Use Build Configurations to Toggle Debug Mode
+### Option 1: Use build configurations to toggle debug mode
   
-  1. Define different configurations in your project settings (Debug, Release, etc.)
+  1. Define different configurations in your project settings (for example, Debug or Release).
   
   2. Use compiler flags to control the setting:
       ```swift
@@ -254,7 +253,7 @@ You can enable `sendDebugSignalsToSegment` and turn off `obfuscateDebugSignals` 
       ))
       ```
 
-### Option 2: Use a Feature Flag System
+### Option 2: Use a Feature Flag system
  If you're using Firebase Remote Config or a similar feature flag system, you can dynamically control `sendDebugSignalsToSegment` and `obfuscateDebugSignals` without requiring a new app build:
   ```swift
   let remoteConfig = RemoteConfig.remoteConfig()
@@ -267,7 +266,7 @@ You can enable `sendDebugSignalsToSegment` and turn off `obfuscateDebugSignals` 
   ))
   ```
 
-### Option 3: Use Environment Variables (for debugging/testing)
+### Option 3: Use environment variables (for debugging or testing)
  You can check for environment variables or launch arguments during development:
   ```swift
   let isDebugEnabled = ProcessInfo.processInfo.environment["SIGNALS_DEBUG"] != nil
@@ -285,7 +284,7 @@ You can enable `sendDebugSignalsToSegment` and turn off `obfuscateDebugSignals` 
 Next, return to the source settings to turn on Auto-Instrumentation:
 
 1. Go to **Connections > Sources**.
-2. Select the source you used in Step 1.
+2. Select the source you used in [Step 1](#Step-1-Getting-started).
 3. From the source's overview tab, go to **Settings > Advanced**.
 4. Toggle Auto-Instrumention on.
 
@@ -303,7 +302,7 @@ After integrating the SDK and running your app, verify that Segment is collectin
 
 ## Configuration options
 
-Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Swift.
+Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following table details the configuration options for Signals-Swift:
 
 
 | OPTION            | REQUIRED | VALUE                     | DESCRIPTION |
@@ -312,15 +311,15 @@ Using the Signals Configuration object, you can control the destination, frequen
 | **maximumBufferSize** | No  | Int                   | The number of signals to be kept for JavaScript inspection. This buffer is first-in, first-out. Default is **1000**. |
 | **relayCount** | No  | Int                   | Relays every X signals to Segment. Default is **20**. |
 | **relayInterval** | No  | TimeInterval                   | Relays signals to Segment every X seconds. Default is **60**. |
-| **broadcasters**  | No      | [SignalBroadcaster]    | An array of broadcasters. These objects forward signal data to their destinations, like **WebhookBroadcaster**, or you could write your own **DebugBroadcaster** that writes logs to the developer console. **SegmentBroadcaster** is always added by the SDK when `sendDebugSignalsToSegment` is true. |
+| **broadcasters**  | No      | SignalBroadcaster    | An array of broadcasters. These objects forward signal data to their destinations, like **WebhookBroadcaster**, or you could write your own **DebugBroadcaster** that writes logs to the developer console. **SegmentBroadcaster** is always added by the SDK when `sendDebugSignalsToSegment` is true. |
 | **sendDebugSignalsToSegment**      | No      | Bool                    | Turns on debug mode and allows the SDK to relay Signals to Segment server. Default is **false**. It should only be set to true for development purposes. |
 | **obfuscateDebugSignals**      | No      | Bool                    | Obfuscates signals being relayed to Segment. Default is **true**. |
 | **apiHost** | No | String | API host for signal relay. Default is **"signals.segment.io/v1"**. |
 | **useUIKitAutoSignal** | No | Bool | Enables automatic UIKit signal capture via method swizzling. Default is **false**. |
 | **useSwiftUIAutoSignal** | No | Bool | Enables automatic SwiftUI signal capture (requires typealiases). Default is **false**. |
 | **useNetworkAutoSignal** | No | Bool | Enables automatic network signal capture for URLSession. Default is **false**. |
-| **allowedNetworkHosts** | No | [String] | Array of host patterns to track. Use `["*"]` for all hosts. Default is **["*"]**. |
-| **blockedNetworkHosts** | No | [String] | Array of host patterns to exclude from tracking. Default is **[]**. |
+| **allowedNetworkHosts** | No | String | Array of host patterns to track. Use `["*"]` for all hosts. Default is **["*"]**. |
+| **blockedNetworkHosts** | No | String | Array of host patterns to exclude from tracking. Default is **[]**. |
 
 ## Next steps
 
