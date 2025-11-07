@@ -76,7 +76,7 @@ POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id
 | Parameter         | Description                                                                                          |
 | ----------------- | ---------------------------------------------------------------------------------------------------- |
 | **HOST_NAME**     | `profiles.segment.com` for North America workspaces or `profiles.euw1.segment.com` for EU workspaces |
-| **SPACE_ID**      | Your space ID. Find this in **Unify > Settings > API access**                                        |
+| **SPACE_ID**      | Your space ID. Find this in **Unify > Unify settings > API access**                                        |
 | **USER_ID_VALUE** | The `user_id` value that identifies the profile                                                      |
 | **AUTH_TOKEN**    | Your access token. Generate this in **Unify > Settings > API access**                                |
 
@@ -152,6 +152,7 @@ Segment allows up to 100 deletion requests per second per space and 100 deletion
 Most deletion requests complete in under 3 seconds. Deletions on profiles with more than 15 merges or 50 identifier mappings may take longer.
 
 Deletion propagates to connected systems at different speeds:
+
 - **Real-Time Profile Storage**: seconds to 5 minutes
 - **Profile Sync**: depends on your sync schedule
 
