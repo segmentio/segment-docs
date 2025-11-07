@@ -1,8 +1,8 @@
 ---
 title: AWS S3 (Actions) Destination
-hide-boilerplate: true
-hide-dossier: false
 id: 66eaa166f650644f04389e2c
+hide-boilerplate: true
+hide-dossier: true
 private: true
 beta: true
 # versions:
