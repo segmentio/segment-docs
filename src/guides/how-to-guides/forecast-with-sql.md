@@ -190,7 +190,7 @@ At Toastmates, most of the highest forward-looking expected LTV customers share 
 
 With that in mind, you can define a behavioral cohort in our email tool, Customer.io, as well as create a trigger workflow so we can send an email offer to these customers.
 
-[Learn how to use email tools to target this cohort of high value customers.](https://segment.com/docs/guides/how-to-guides/forecast-with-sql//)
+[Learn how to use email tools to target this cohort of high value customers.](https://segment.com/docs/guides/how-to-guides/forecast-with-sql/)
 
 ## Reward your best customers
 

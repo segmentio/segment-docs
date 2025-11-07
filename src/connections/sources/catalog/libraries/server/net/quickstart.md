@@ -106,6 +106,6 @@ Congratulations! You can now track any event from the browser and the backend. H
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics.js and the .NET library. You might also want to check out our full [Analytics.js reference](//docs/connections/sources/catalog/libraries/website/javascript/) to see what else is possible, or read about the [Tracking API methods](/docs/connections/spec/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics.js and the .NET library. You might also want to check out our full [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/javascript/) to see what else is possible, or read about the [Tracking API methods](/docs/connections/spec/) to get a sense for the bigger picture.
 
 If you're running an **Ecommerce** site or app you should also check out our [Ecommerce API reference](/docs/connections/spec/ecommerce/v2/) to make sure your products and checkout experience is instrumented properly!
