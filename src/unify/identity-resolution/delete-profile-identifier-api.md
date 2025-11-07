@@ -45,7 +45,7 @@ If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), complete these 
 
 When you delete an identifier, Segment removes it from [Identity Resolution](/docs/unify/identity-resolution/) and propagates the change through connected systems. <!-- I don't like propagates-->
 
-The Delete Profile Identifier API confirms that Segment deleted the identifier from the Real-Time Identity Graph. Deletion then propagates to other systems:
+After you send the request, the Delete Profile Identifier API confirms that Segment deleted the identifier from the Real-Time Identity Graph. Deletion then propagates to other systems:
 
 1. Real-time Profile storage**: The Profile API and Profile explorer delete the identifier in near real time.
 2. Batch Profile Data lakehouse: Segment soft-deletes the identifier (flags it as deleted) in the append-only table within minutes. The identifier filters out from the materialized view within 24 hours.
@@ -53,7 +53,7 @@ The Delete Profile Identifier API confirms that Segment deleted the identifier f
 
 <!-- maybe come back and turn this into a table?-->
 
-## Delete an identifier
+## Delete an identifier <!-- maybe think of a better header-->
 
 You can only delete identifiers from known profiles. The API requires a valid `user_id` to locate the profile.
 
@@ -133,3 +133,39 @@ curl --location --request POST 'https://profiles.segment.com/v1/spaces/spa_abc12
 | 404       | source_id_not_found  | no source attached to space_id `<space_id>`                           |
 | 429       | rate_limit_error     | Attempted to delete more than 100 IDs per second for a single profile |
 
+## Limitations and considerations
+
+<!-- add intro sentence again -->
+
+### Deletion scope
+
+The Delete Profile Identifier API removes identifiers from Unify systems, including Identity Resolution, Profile Storage, and Profile Sync to your data warehouse. However, deletion doesn't extend to all Segment systems. Identifiers remain in the Event Archive and are soft-deleted in the Batch Profile Data Lakehouse.
+
+Segment doesn't delete identifiers from downstream destinations like Braze, Amplitude, Facebook, Engage Audiences, Journeys, Linked Audiences, or Consent settings. You must update these systems separately.
+
+### Rate limits
+
+Segment allows up to 100 deletion requests per second per space and 100 deletions per second for identifiers on a single profile.
+
+### Response time
+
+Most deletion requests complete in under 3 seconds. Deletions on profiles with more than 15 merges or 50 identifier mappings may take longer.
+
+Deletion propagates to connected systems at different speeds:
+- **Real-Time Profile Storage**: seconds to 5 minutes
+- **Profile Sync**: depends on your sync schedule
+
+### Space rebuilds and replays
+
+If you rebuild a space from Segment Archives, deletions don't replay automatically. You must rerun deletions after the replay completes.
+
+### Identifier reintroduction
+
+Segment may reintroduce deleted identifiers in the following cases:
+
+1. **Event replays**: Replaying events from the Event Archive that reference deleted identifiers adds them back to the profile.
+2. **Engage or Journey sync timing**: Deleting an identifier within 5 minutes of sending an event that references it may result in the identifier being reintroduced through Engage-generated events.
+
+### Profile API source
+
+When you first use the Delete Profile Identifier API, Segment creates a `profile-api-source` for internal tracking. This source may appear in your workspace.
