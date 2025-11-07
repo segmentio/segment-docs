@@ -20,26 +20,22 @@ The Delete Profile Identifier API helps you clean up identifiers that shouldn't 
 
 ## Before you begin
 
-During private beta, the Delete Profile Identifier API is available to Unify and Engage.
+The Delete Profile Identifier API is available to Unify and Engage customers during private beta.
 
-You must have one of the following role permissions to delete identifiers:
+You need one of these roles to delete identifiers:
 
 - Workspace Owner
 - Identity Admin
 - Unify and Engage Admin
 
-For more information, see [the Roles documentation](/docs/segment-app/iam/roles/).
+See [the Roles documentation](/docs/segment-app/iam/roles/) for more details.
 
-### Profiles Sync configuration
-
-If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), complete these steps before using the Delete Profile Identifier API:
+If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), you must also:
 
 1. Add the `__operation` column to the `external_id_mapping_updates` table schema in your data warehouse:
    - Default value: `CREATED`
    - Deleted value: `REMOVED`
-2. Verify that your analytics workloads (BI tools, data pipelines, ML models) can handle deleted identifiers. Make sure these systems remain operational and account for the `REMOVED` flag.
-
-<!-- Not sure I love how I structured that, may revisit-->
+2. Verify that your analytics workloads (BI tools, data pipelines, ML models) can handle deleted identifiers. Make sure these systems stay operational and account for the `REMOVED` flag.
 
 ## How deletion works
 
