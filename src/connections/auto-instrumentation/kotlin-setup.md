@@ -38,12 +38,12 @@ implementation("com.segment.analytics.kotlin:analytics-kotlin-live:1.3.0")
 ## Step 1: Getting started
 
 To get started:
-1. Add Signals Core
+1. Add Signals Core:
     ```groovy
     // signal core   
     implementation ("com.segment.analytics.kotlin.signals:core:1.0.0")
     ```
-2. Initialize Signals
+2. Initialize Signals:
  
 > success ""
 > See [configuration options](#configuration-options) for a complete list.
@@ -72,12 +72,12 @@ To get started:
 
 #### Kotlin Compose
 
-1. Add the dependency to your module’s Gradle build file.
+1. Add the dependency to your module’s Gradle build file:
     ```groovy
     implementation ("com.segment.analytics.kotlin.signals:compose:1.0.0")
     ```
 
-2. Add `SignalsComposeTrackingPlugin` to analytics
+2. Add `SignalsComposeTrackingPlugin` to analytics:
     ```kotlin
     analytics.add(SignalsComposeTrackingPlugin())
     ```
@@ -128,7 +128,7 @@ To get started:
       implementation ("com.segment.analytics.kotlin.signals:navigation:1.0.0")
     }
     ```
-3. (Optional) Add `SignalsActivityTrackingPlugin` to analytics to track Activity/Fragment navigation. **This is not required for Compose Navigation**.  
+3. (**Optional**): Add `SignalsActivityTrackingPlugin` to analytics to track Activity/Fragment navigation. **This is not required for Compose Navigation**.  
     ```kotlin
     analytics.add(SignalsActivityTrackingPlugin())
     ```
@@ -254,8 +254,9 @@ After you build and run your app, use the [Event Builder](/docs/connections/auto
 3. Interact with your app on a simulator or test device: 
     > - Navigate between screens. 
     > - Tap buttons and UI elements. 
-    > - Trigger network requests. 
-    > If `sendDebugSignalsToSegment` is enabled, Signals appear in real time as you interact with the app.
+    > - Trigger network requests.
+    >
+  > If `sendDebugSignalsToSegment` is enabled, Signals appear in real time as you interact with the app.
 4. In the Event Builder, select a signal and click **Configure event** to define a new event.
 5. After you add any event mappings, click **Publish event rules** to save them.
 
