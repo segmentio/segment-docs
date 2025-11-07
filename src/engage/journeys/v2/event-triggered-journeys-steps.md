@@ -460,13 +460,13 @@ Path joins work well when:
 
 To create a path join:
 
-1. Navigate to the last step in the branch you want to connect.
+1. Go to the last step in the branch you want to connect.
 2. Click the **+** icon at the end of that branch.
 3. Select **Connect path to existing step**.
 4. Choose a step from another branch to connect to. Segment only shows the available steps you can connect to.
 5. The connection appears as a line on the canvas, showing the path join between branches.
 
-![Journey canvas showing the Connect path to existing step option in a dropdown menu. The menu appears when clicking a plus icon at the end of a journey branch, showing flow control options like Delay, Hold until, Data split, and Randomized split, along with the Connect path to existing step option at the top.](../images/application_started.png)
+![Journey canvas showing the Connect path to existing step option in a dropdown menu. The menu appears when clicking a plus icon at the end of a journey branch, showing flow control options like Delay, Hold until, Data split, and Randomized split, along with the Connect path to existing step option at the top.](../images/path_joins.png)
 
 You can only connect to child steps (steps that come after the split), not parent steps or steps earlier in the journey. Each branch endpoint supports one path join connection.
 
