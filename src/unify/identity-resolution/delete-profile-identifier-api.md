@@ -52,3 +52,84 @@ The Delete Profile Identifier API confirms that Segment deleted the identifier f
 3. Customer data warehouse: Profile Sync sends a deletion notification to your warehouse. The `external_id_mapping_updates` table shows the identifier with `__operation` set to `REMOVED`. The `user_identifiers` materialized view filters out removed identifiers.
 
 <!-- maybe come back and turn this into a table?-->
+
+## Delete an identifier
+
+You can only delete identifiers from known profiles. The API requires a valid `user_id` to locate the profile.
+
+The API returns an error if you try to delete:
+
+- All `user_id` values from a profile. Profiles must have at least one `user_id`.
+- A `group_id` identifier. The API only supports individual profiles.
+
+### API request format
+
+The API accepts one identifier per request.
+
+**Endpoint**:
+```
+POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete
+```
+
+**Parameters**:
+
+| Parameter         | Description                                                                                          |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| **HOST_NAME**     | `profiles.segment.com` for North America workspaces or `profiles.euw1.segment.com` for EU workspaces |
+| **SPACE_ID**      | Your space ID. Find this in **Unify > Settings > API access**                                        |
+| **USER_ID_VALUE** | The `user_id` value that identifies the profile                                                      |
+| **AUTH_TOKEN**    | Your access token. Generate this in **Unify > Settings > API access**                                |
+
+**Request body**:
+
+| Field                   | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| **delete_external_ids** | Array containing the identifier to delete. Limit: 1 identifier per request     |
+| **id**                  | Value of the identifier to delete (for example, `hello@gmail.com`)             |
+| **type**                | Type of identifier to delete (for example, `email`, `anonymous_id`, `user_id`) |
+
+<!--change parameters to code styling, add intros between table headers -->
+
+### Example request
+
+First, base64-encode your access token with a trailing colon:
+
+```bash
+echo -n 'your_token:' | base64
+```
+
+Then send the delete request:
+
+```bash
+curl --location --request POST 'https://profiles.segment.com/v1/spaces/spa_abc123/collections/users/profiles/user_id:user_001/external_ids/delete' \
+--header 'Authorization: Basic <base64_encoded_token_colon>' \
+--header 'Content-Type: application/json' \
+--data '{
+  "delete_external_ids": [
+    {
+      "id": "example@gmail.com",
+      "type": "email"
+    }
+  ]
+}'
+```
+## Responses and error codes
+
+## HTTP responses
+
+| HTTP Code | Code                 | Message                                                               |
+| --------- | -------------------- | --------------------------------------------------------------------- |
+| 200       | success              | external identifier has been deleted                                  |
+| 400       | unsupported_eid_type | unsupported external id type                                          |
+| 400       | bad_request          | missing required parameters in URL                                    |
+| 400       | bad_request          | invalid URL: valid `user_id` is required. unsupported `<id type>`     |
+| 400       | bad_request          | only one external_id can be deleted at a time                         |
+| 400       | bad_request          | invalid collection: `<collection>`                                    |
+| 400       | bad_request          | external id specification must differ from lookup id                  |
+| 401       | unauthorized         | the specified token is invalid                                        |
+| 403       | forbidden            | Deleted identifier not activated for space_id `<space_id>`            |
+| 404       | not_found            | the resource was not found                                            |
+| 404       | eid_not_found        | external identifier not found                                         |
+| 404       | source_id_not_found  | no source attached to space_id `<space_id>`                           |
+| 429       | rate_limit_error     | Attempted to delete more than 100 IDs per second for a single profile |
+
