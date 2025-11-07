@@ -33,7 +33,7 @@ dependencies: [
 ]
 ```
 
-## Step 1: ing started
+## Step 1: Getting started
 
 1. Add AnalyticsLive to your Swift Package dependencies:
     ```swift
