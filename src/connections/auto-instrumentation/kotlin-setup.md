@@ -237,7 +237,7 @@ Signals.configuration = Configuration(
 Next, return to the source settings to turn on Auto-Instrumentation:
 
 1. Go to **Connections > Sources**.
-2. Select the source you used in [Step 1](#Step-1-Getting-started).
+2. Select the source you used in [Step 1](#step-1-getting-started).
 3. From the source's overview tab, go to **Settings > Advanced**.
 4. Toggle Auto-Instrumention on.
 
