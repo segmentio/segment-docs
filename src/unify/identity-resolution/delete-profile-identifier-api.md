@@ -8,6 +8,11 @@ The Delete Profile Identifier API removes identifiers from a profile while prese
 
 Use this API to clean up outdated or incorrectly added identifiers without deleting entire profiles and replaying events.
 
+This page explains how to use the API, including how deletions work across Segment systems and what to consider before you begin.
+
+> info "Delete Profile Identifier API Private Beta"
+> The Delete Profile Identifier API is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
 ## Use cases
 
 The Delete Profile Identifier API helps you clean up identifiers that shouldn't be associated with a profile, including:
@@ -20,7 +25,10 @@ The Delete Profile Identifier API helps you clean up identifiers that shouldn't 
 
 ## Before you begin
 
-The Delete Profile Identifier API is available to Unify and Engage customers during private beta.
+> warning "Deletion scope"
+> This API removes identifiers from Unify systems only. For complete user data deletion across all Segment systems (required for GDPR, CCPA, and other privacy regulations), see [Segment's user deletion and suppression guidance](/docs/privacy/user-deletion-and-suppression/).
+
+The Delete Profile Identifier API is available to Unify and Engage customers during private beta. 
 
 You need one of these roles to delete identifiers:
 
@@ -28,7 +36,7 @@ You need one of these roles to delete identifiers:
 - Identity Admin
 - Unify and Engage Admin
 
-See [the Roles documentation](/docs/segment-app/iam/roles/) for more details.
+See [the Roles documentation](/docs/segment-app/iam/roles/) for more detailss.
 
 If you use [Profiles Sync](/docs/unify/profiles-sync/overview/), you must also:
 
@@ -138,9 +146,9 @@ The API returns the following HTTP status codes:
 | `404`     | `source_id_not_found`  | No source attached to space_id `<space_id>`.                            |
 | `429`     | `rate_limit_error`     | Attempted to delete more than 100 IDs per second for a single profile. |
 
-## Limitations and considerations
+## Considerations and deletion behavior
 
-<!-- add intro sentence again -->
+Keep the following information in mind as you use the Delete Profile Identifier API.
 
 ### Deletion scope
 
@@ -156,10 +164,10 @@ Segment allows up to 100 deletion requests per second per space and 100 deletion
 
 Most deletion requests complete in under 3 seconds. Deletions on profiles with more than 15 merges or 50 identifier mappings may take longer.
 
-Deletion propagates to connected systems at different speeds:
+Deletion syncs to connected systems at different speeds:
 
-- **Real-Time Profile Storage**: seconds to 5 minutes
-- **Profile Sync**: depends on your sync schedule
+- **Real-time Profile storage**: seconds to 5 minutes
+- **Profiles Sync**: depends on your sync schedule
 
 ### Space rebuilds and replays
 
@@ -167,10 +175,10 @@ If you rebuild a space from Segment Archives, deletions don't replay automatical
 
 ### Identifier reintroduction
 
-Segment may reintroduce deleted identifiers in the following cases:
+Segment may reintroduce deleted identifiers in these limited cases:
 
-1. **Event replays**: Replaying events from the Event Archive that reference deleted identifiers adds them back to the profile.
-2. **Engage or Journey sync timing**: Deleting an identifier within 5 minutes of sending an event that references it may result in the identifier being reintroduced through Engage-generated events.
+- **Event replays**: Replaying events from the Event Archive that reference deleted identifiers adds them back to the profile.
+- **Engage or Journey sync timing**: Deleting an identifier within 5 minutes of sending an event that references it may result in the identifier being reintroduced through Engage-generated events.
 
 ### Profile API source
 
