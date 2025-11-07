@@ -170,11 +170,26 @@ You can also give branches uniques name to differentiate them from each other on
 > info "Evaluation is sequential"
 > Segment evaluates branches in the order they appear in the configuration side sheet. If a profile qualifies for multiple branches, Segment sends it down the first one it matches. Profiles can't qualify for more than one branch, and Segment doesn't wait for audience membership to update after the profile enters the step. You can change the evaluation order by dragging branches up or down in the configuration side sheet.
 
+### Branch on journey context
+
+Data split branches can evaluate conditions based on event properties stored in the journey context. This lets you route journey instances based on real-time event data instead of static profile information.
+
+When you configure a branch with journey context conditions:
+
+1. Select the event object from journey context. 
+  - The triggering event is always available, and any events from Hold until steps on the current path also show up.
+2. Choose the specific property from that event.
+3. Define the condition and value.
+
+Segment shows only event context available on the journey path leading to the Data split step. If an event was captured in a Hold until step on a different branch, it won't appear as an option for conditions on the current branch.
+
+You can combine journey context conditions with trait-based and audience-based conditions in the same branch. Segment evaluates all conditions using `AND` logic, so the journey instance must satisfy every condition to follow that branch.
+
 ### Example: Target different customer types or event properties
 
-You can use a Data split to branch profiles based on event properties, traits, or audience membership that already exist on the profile when it reaches this step. For example:
+You can use a Data split to branch journey instances based on event properties from journey context, profile traits, or audience membership. For example:
 
-- Journey instances where the triggering event had a `transaction_total` > $100 are sent specific messaging about their high-ticket purchase.
+- Journey instances where the triggering event's `transaction_total` property is greater than $100 receive high-value purchase messaging.
 - Profiles with a known `email_subscription_status` trait get treated as existing customers.
 - Profiles that belong to a `VIP` audience are routed down a separate path for high-value users.
 - Profiles with a specific set of traits (like favorite color and a known name) can receive personalized messaging.
@@ -427,3 +442,68 @@ There may be cases where events sent to Segment are missing specific properties 
 - Similarly, if a mapped trait is missing on the profile, the key is included in the payload with a value of `undefined`.
 
 Carefully configuring mappings and handling missing attributes can help you maintain data integrity and avoid errors in downstream systems.
+
+## Reconnect branches with path joins
+
+Path joins connect a branch of a journey to a step in another branch. This eliminates duplicate steps and saves journey step credits when multiple branches need to converge on the same downstream actions.
+
+Use path joins when different user segments need different initial treatments but should follow the same steps afterward. For example, high-value customers might receive multiple touchpoints through one branch while standard customers skip directly to a general follow-up step that both groups eventually reach.
+
+Path joins work well when:
+
+- Different user segments require unique messaging initially but share common downstream steps
+- One branch needs fewer steps than another, and you want both to converge at a specific point
+- Multiple branches lead to the same destination send or action step
+- You want to reduce journey complexity and avoid duplicating identical steps across branches
+
+### Create a path join
+
+To create a path join:
+
+1. Go to the last step in the branch you want to connect.
+2. Click the **+** icon at the end of that branch.
+3. Select **Connect path to existing step**.
+4. Choose a step from another branch to connect to. Segment only shows the available steps you can connect to.
+5. The connection appears as a line on the canvas, showing the path join between branches.
+
+![Journey canvas showing the Connect path to existing step option in a dropdown menu. The menu appears when clicking a plus icon at the end of a journey branch, showing flow control options like Delay, Hold until, Data split, and Randomized split, along with the Connect path to existing step option at the top.](../images/path_joins.png)
+
+You can only connect to child steps (steps that come after the split), not parent steps or steps earlier in the journey. Each branch endpoint supports one path join connection.
+
+### Add steps within a path join
+
+You can add journey steps between the origin point and the target step of a path join. This lets you include branch-specific actions before profiles merge with the main path.
+
+To add a step within a path join:
+
+1. Click the **+** icon along the path join connection line.
+2. Select the step type you want to add.
+3. Configure the step as needed.
+
+### Disconnect a path join
+
+You can remove a path join connection from either end:
+
+From the origin point:
+
+1. Click the **+** icon at the start of the path join connection.
+2. Select **Disconnect**.
+3. Confirm the disconnection in the modal.
+
+From the target step:
+
+1. Click the **+** icon at the target step where the path join connects.
+2. Select **Disconnect**.
+3. Choose which branch path the child steps should move into.
+4. Confirm the disconnection.
+
+> info ""
+> You can only edit path join connections while the journey is in Draft state. Published journeys must be edited in a new version to modify path joins.
+
+### Journey context and path joins
+
+When branches reconnect through a path join, the journey context for profiles includes only the events from their specific path. Context from steps on other branches is not available.
+
+For example, if Branch A includes a Hold until step that captures an event, and Branch B connects to a step after that Hold until, profiles from Branch B won't have access to the event context from Branch A's Hold until step. Only profiles that actually passed through Branch A will have that context available.
+
+When you configure Data split conditions after a path join, Segment dynamically shows only the context available for each possible path leading to that split.
