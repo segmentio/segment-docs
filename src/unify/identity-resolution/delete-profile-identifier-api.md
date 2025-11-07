@@ -10,13 +10,13 @@ Use this API to clean up outdated or incorrectly added identifiers without delet
 
 ## Use cases
 
-Remove identifiers that shouldn't be associated with a profile:
+The Delete Profile Identifier API helps you clean up identifiers that shouldn't be associated with a profile, including:
 
-- Remove mistakenly imported identifiers, like incorrect email addresses, to prevent inaccurate targeting in downstream tools.
-- Clean up obsolete identifiers after database migrations or system changes.
-- Transfer identifiers with a short lifespan between profiles. For example, when a user changes phone numbers or when a prepaid service expires, you can remove the phone number from one profile and add it to another.
-- Fix profiles that violate [ID Resolution limits](). Remove old identifiers to bring profiles into compliance with your configured limits.
-- Revert misconfigured identity resolution settings. For example, if you reduced the `user_id` limit from 3 to 1, remove extra `user_id` values to resolve discrepancies between Segment and downstream tools like Braze or Amplitude.
+- Mistakenly imported identifiers, like incorrect email addresses, that prevent accurate targeting in downstream tools
+- Obsolete identifiers left over from database migrations or system changes
+- Identifiers with a short lifespan that need to transfer between profiles. For example, when a user changes phone numbers or when a prepaid service expires, you can remove the phone number from one profile and add it to another.
+- Old identifiers that cause profiles to violate [ID Resolution limits]()
+- Extra identifiers from misconfigured identity resolution settings. For example, if you reduced the `user_id` limit from 3 to 1, remove extra `user_id` values to resolve discrepancies between Segment and downstream tools like Braze or Amplitude.
 
 ## Before you begin
 
@@ -67,9 +67,15 @@ The API returns an error if you try to delete:
 The API accepts one identifier per request.
 
 **Endpoint**:
-```
+```sh
 POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete
 ```
+
+```sh
+https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete
+```
+
+`POST https://{HOST_NAME}/v1/spaces/{SPACE_ID}/collections/users/profiles/user_id:{USER_ID_VALUE}/external_ids/delete`
 
 **Parameters**:
 
