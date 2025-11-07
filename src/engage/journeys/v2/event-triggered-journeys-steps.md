@@ -445,7 +445,7 @@ Carefully configuring mappings and handling missing attributes can help you main
 
 ## Reconnect branches with path joins
 
-Path joins let you connect one branch of a journey to a step in another branch. This eliminates duplicate steps and saves journey step credits when multiple branches need to converge on the same downstream actions.
+Path joins connect a branch of a journey to a step in another branch. This eliminates duplicate steps and saves journey step credits when multiple branches need to converge on the same downstream actions.
 
 Use path joins when different user segments need different initial treatments but should follow the same steps afterward. For example, high-value customers might receive multiple touchpoints through one branch while standard customers skip directly to a general follow-up step that both groups eventually reach.
 
