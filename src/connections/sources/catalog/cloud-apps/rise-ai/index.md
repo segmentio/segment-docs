@@ -32,8 +32,8 @@ The table below lists events that Rise AI sends to Segment. These events appear 
 
 | Event name          | Description                                                        |
 | ------------------- | ------------------------------------------------------------------ |
-| walkthrough-progress | User progress through AI-guided walkthroughs and onboarding flows |
-| chats               | AI chat session creation and interactions                          |
+| Walkthrough Progress | User progress through AI-guided walkthroughs and onboarding flows |
+| Chats               | AI chat session creation and interactions                          |
 
 
 ## Event properties

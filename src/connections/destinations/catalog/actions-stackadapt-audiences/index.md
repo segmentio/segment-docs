@@ -9,7 +9,7 @@ redirect_from: "/connections/destinations/catalog/actions-stackadapt/"
 
 {% include content/plan-grid.md name="actions" %}
 
-[StackAdapt](https://www.stackadapt.com/){:target="_blank"} is a leading programmatic advertising platform designed to maximize audience engagement. It enables marketers to run high-performing, cross-channel campaigns through real-time bidding, advanced audience targeting, and powerful data-driven insights.  
+[StackAdapt](https://www.stackadapt.com/){:target="\_blank"} is a leading programmatic advertising platform designed to maximize audience engagement. It enables marketers to run high-performing, cross-channel campaigns through real-time bidding, advanced audience targeting, and powerful data-driven insights.
 
 With the [Engage](/docs/engage/) integration, you can seamlessly sync your Engage Audiences and user data with StackAdapt to refine targeting precision and drive stronger campaign performance.
 
@@ -59,6 +59,9 @@ Each Engage audience should only contain profiles that have a valid email addres
    - (**Required**:) Confirm that you have a valid source field for `Email`.
    - Select the source field for `Standard User Properties`. Ensure the source field matches the profile traits selected in step 4. You can learn more about the field format by hovering over the info icon of the field.
    - Follow the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings).
+
+> note "Trait synchronization"
+> Both Custom, Computed, and Consent Traits are mapped and included in the initial data synchronization. However, for ongoing updates, please be aware that only Computed Traits will be updated within StackAdapt's Data Hub.
 
 To verify that your audience syncs with StackAdapt, open StackAdapt and navigate to **Audience & Attribution > Customer Data > Profiles**. On the Profiles tab, you should be able to see a list of profiles being synced to the StackAdapt platform.
 
