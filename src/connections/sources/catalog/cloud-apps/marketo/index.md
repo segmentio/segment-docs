@@ -24,10 +24,10 @@ You will need Admin permissions to your Marketo account.
 2. Choose Marketo.
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but Segment recommends that you stick to something that reflects the source itself, like Marketo for nickname and marketo or marketo_prod for the schema name.
 4. Configure your Marketo source with the required settings (see section below for details)
-![Screenshot of the set up flow for the Marketo source.](images/add-source.png)
+![Screenshot of the set up flow for the Marketo source.](images/img.png)
 
 > warning "Lead Activity Type IDs"
-> In Marketo's settings, the Lead Activity Type IDs field is labeled as optional, but is required to see the `lead_activities` table. Segment recommends that you complete this field to see all available data.  By default the activity type IDs 12,13,32,37 are used to sync data to the `leads` table and `leads_activity_attributes` table.
+> In Marketo's settings, the Lead Activity Type IDs field is labeled as optional, but is required to see the `lead_activities` table. Segment recommends that you complete this field to see all available data.  By default the activity type IDs 12,13,32,37 are used to sync data to the `leads` table and `leads_activity_attributes` table. [Contact Support](https://segment.com/help/contact/){:target="_blank"} to modify the default activity type IDs.
 
 
 ### Configure your Marketo source
