@@ -177,7 +177,7 @@ Data split branches can evaluate conditions based on event properties stored in 
 When you configure a branch with journey context conditions:
 
 1. Select the event object from journey context. 
-  - The triggering event is always available, and any events from Hold until steps on the current path also show up.
+  - The triggering event is always available. Any events captured in Hold until steps on the current path also appear, along with other data added to journey context by steps in the current path.
 2. Choose the specific property from that event.
 3. Define the condition and value.
 
