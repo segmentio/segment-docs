@@ -181,6 +181,9 @@ When you configure a branch with journey context conditions:
 2. Choose the specific property from that event.
 3. Define the condition and value.
 
+![Data split panel showing branch conditions with journey context selected. The panel displays a branch named "Split on Context" with conditions set to "with journey context" where the property "Category" from "Example Event" equals any of "A, B, C". A second condition shows a dropdown for selecting journey context events including "Trial_Ended" and "Example Event". The left side shows the journey canvas with a Hold Until step, Data split steps, and completed end states.](../images/data_split_journey_context.png)
+
+
 Segment shows only event context available on the journey path leading to the Data split step. If an event was captured in a Hold until step on a different branch, it won't appear as an option for conditions on the current branch.
 
 You can combine journey context conditions with trait-based and audience-based conditions in the same branch. Segment evaluates all conditions using `AND` logic, so the journey instance must satisfy every condition to follow that branch.
@@ -458,6 +461,8 @@ Path joins work well when:
 
 ### Create a path join
 
+You can only create a path join from the last step in a branch. The **Connect path to existing step** option appears only when you click the last **+** icon at the end of a branch path.
+
 To create a path join:
 
 1. Go to the last step in the branch you want to connect.
@@ -466,7 +471,7 @@ To create a path join:
 4. Choose a step from another branch to connect to. Segment only shows the available steps you can connect to.
 5. The connection appears as a line on the canvas, showing the path join between branches.
 
-![Journey canvas showing the Connect path to existing step option in a dropdown menu. The menu appears when clicking a plus icon at the end of a journey branch, showing flow control options like Delay, Hold until, Data split, and Randomized split, along with the Connect path to existing step option at the top.](../images/path_joins.png)
+![Journey canvas showing a Hold Until step with a branch displaying the Connect path to existing step option. The dropdown menu appears when clicking the plus icon at the end of the branch, showing Flow control options (Delay, Hold until, Data split, Randomized split) and Actions (Send to destination). The Connect path to existing step option appears at the top of the menu. The journey shows other branches including a VIP Member branch and an Everyone else branch with destination steps.](../images/path_joins.png)
 
 You can only connect to child steps (steps that come after the split), not parent steps or steps earlier in the journey. Each branch endpoint supports one path join connection.
 
