@@ -505,7 +505,9 @@ const insertId = uuidv5(`${messageId}:${projectId}:${eventName}`, MIXPANEL_NAMES
 
 ### IP
 
-If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
+If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). Segment sends data to Mixpanel as it receives it. If location traits are not included in an identify call, Segment doesn't add or infer them, it simply forwards the data as is to Mixpanel. Therefore, the resetting of location data to Dublin, Ireland is likely happening on Mixpanel's side.
+
+To maintain the accuracy of location data in Mixpanel, you should include the $city, $country_code, and $region traits in all identify calls, not just the initial one. This is in line with Mixpanel's server-side best practices, which recommend sending geolocation data with server-side events to ensure accurate location tracking. After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
 
 Instead of `ip`, you can use a property name of `user IP` or `IP Address` (whatever is most clear for your implementation). This way, Mixpanel won't automatically interpret the IP address as an IP address, and instead store that value as a property on the event. You can read more in Mixpanel's [Import Events](https://mixpanel.com/help/reference/http#tracking-events){:target="_blank"} documentation.
 
