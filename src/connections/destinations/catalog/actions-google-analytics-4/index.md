@@ -46,6 +46,7 @@ To add the Google Analytics 4 Cloud destination:
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target="_blank"} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target="_blank"} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 
+>info The list of available actions below may not include events that Google Analytics has listed on their [website](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events#select_content), however you can map these events ie select_content as a custom event. When using the same syntax as Google, this will not count againt your custom events or be seen as an event with a reserved name. 
 
 {% include components/actions-fields.html %}
 
