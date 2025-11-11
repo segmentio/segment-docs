@@ -60,6 +60,21 @@ In addition to your Raw Data destinations (Amazon S3 and data warehouses), Segme
 - Friendbuy (Cloud Destination)
 - Fullstory Cloud Mode (Actions)
 - Intercom Cloud Mode (Actions)
+- StackAdapt Audiences
+- Airship (Actions)
+- Angler AI
+- AppFit
+- Blackbaud Raiser's Edge NXT
+- Blend Ai
+- Encharge (Actions)
+- Gleap (Action)
+- Klaviyo (Actions)
+- Loops (Actions)
+- Optimizely Feature Experimentation (Actions)
+- Pushwoosh
+- Recombee
+- Userpilot Cloud (Actions)
+- Xtremepush (Actions)
 
 Segment forwards deletion requests but cannot guarantee that data is deleted from downstream destinations. You must contact these destinations to confirm that they executed the request.
 
