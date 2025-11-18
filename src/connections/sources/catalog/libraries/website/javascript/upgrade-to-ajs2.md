@@ -40,8 +40,6 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 Your CSP may also require whitelisting approved domains, in which case you'll want to allow the following endpoints: 
 
 - `api.segment.io`
-- `api.segment.com`
-- `track.segment.com`
 - `cdn.segment.com`
 
 > info ""
