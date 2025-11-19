@@ -87,3 +87,13 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 ###  Searching
 We're using Algolia, which uses `algolia.js` and `algolia.css`. The index is updated as part of the build process on Netlify..
 
+### Gainsight
+We use federated search with Gainsight, which requires a similar indexing operation to Algolia. Here's a quick process overview:
+
+1. The current Gainsight indexing implementation reuses part of the `src/sitemap.xml` template to generate an array of objects in a JSON file - `src/gainsight-pages.json`. This file gets generated during the Jekyll build process.
+2. After a successful Netlify production deploy, a small Netlify build plugin (`netlify-plugins/gainsight`) reads the generated JSON file and sends a request to the Gainsight API to index the pages.
+3. Configuration in `netlify.toml` ensures that the build plugin only runs after production deploys.
+
+Gainsight requires the following environment variables to be configured in Netlify to work properly:
+- `GAINSIGHT_CLIENT_ID`
+- `GAINSIGHT_CLIENT_SECRET`
