@@ -128,21 +128,21 @@ If your site uses the standard Segment snippet, **replace it** with the followin
           };
 
           analytics.loadWithSignals = function (key, n) {
+            window.signalsPluginReady = function(SignalsPlugin) {
+              var signalsPlugin = new SignalsPlugin();
+              analytics.register(signalsPlugin);
+              analytics.load(key, n);
+            };
             var signalsScript = document.createElement("script");
             signalsScript.type = "text/javascript";
             signalsScript.src =
               "https://cdn.jsdelivr.net/npm/@segment/analytics-signals@latest/dist/umd/analytics-signals.umd.js";
             signalsScript.async = !0;
             r.parentNode.insertBefore(signalsScript, r);
-            signalsScript.onload = function () {
-              var signalsPlugin = new SignalsPlugin();
-              analytics.register(signalsPlugin);
-              analytics.load(key, n)
-            };
           };
 
-          analytics.loadWithSignals(analytics._writeKey)
-          analytics.page()
+          analytics.loadWithSignals(analytics._writeKey);
+          analytics.page();
         }
     })();
   </script>
