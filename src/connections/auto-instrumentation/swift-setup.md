@@ -38,7 +38,7 @@ dependencies: [
 1. Add AnalyticsLive to your Swift Package dependencies:
     ```swift
     dependencies: [
-        .package(url: "https://github.com/segmentio/analytics-live-swift.git", from: "3.2.1")
+        .package(url: "https://github.com/segment-integrations/analytics-swift-live", from: "3.2.1")
     ]
     ```
 
