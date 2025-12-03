@@ -403,6 +403,9 @@ Explanation:
 > info ""
 > Self-service users can add a maximum of 2 conditions per Trigger.
 
+> warning ""
+> A general maximum of 250 conditions per Trigger is in place. This maximum depends on the character length of the conditions. Beyond this limit event delivery may encounter issues and a 'Action missing mapping or trigger' error may be thrown.
+
 Mapping fields are case-sensitive. The following type filters and operators are available to help you build conditions:
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
