@@ -16,7 +16,7 @@ This page explains how to set up a dbt Model and then use the model with Reverse
 
 Keep the following in mind as you set up the dbt extension:
 
-- The extension supports [dbt Core v1.7](https://docs.getdbt.com/docs/dbt-versions/core-upgrade/upgrading-to-v1.7){:target="_blank"}.
+- The extension supports [dbt Core v1.10](https://docs.getdbt.com/docs/dbt-versions/core-upgrade/upgrading-to-v1.10){:target="_blank"}.
 - You can use [Snowflake](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/), [Databricks](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/), [Redshift](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/), [Postgres](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/), and [BigQuery](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/) as Reverse ETL sources.
 - dbt models aren't synchronized from the dbt cloud. The model sync connects to a Git repository that loads models into Segment for use with Reverse ETL.
 - You can connect to GitHub using a GitHub App, token, or SSH.
