@@ -4,6 +4,9 @@
   # then runs the standard build command. See package.json for more details 
   # about the available build targets (develop, develop-inc, build)
   command = "jekyll algolia && yarn build"
+  
+  [build.environment]
+    RUBY_VERSION = "3.1.4"
 
 [context.deploy-preview]
   # For deploy previews, use the testing Jekyll environment, the develop build target calls
