@@ -1421,6 +1421,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.26.10":
+  version: 7.28.4
+  resolution: "@babel/runtime@npm:7.28.4"
+  checksum: 934b0a0460f7d06637d93fcd1a44ac49adc33518d17253b5a0b55ff4cb90a45d8fe78bf034b448911dbec7aff2a90b918697559f78d21c99ff8dbadae9565b55
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/template@npm:7.16.7"
@@ -7681,7 +7688,7 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.15.6
     "@babel/plugin-transform-runtime": ^7.15.0
     "@babel/preset-env": ^7.15.6
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.26.10
     ajv: ^6.10.2
     algoliasearch: ^4.10.5
     ansi-regex: ^6.0.1
