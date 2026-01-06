@@ -80,3 +80,14 @@ If errors are present, they're sorted by type and include information about how 
 The Privacy Portal allows you to inspect data coming into your Segment account, check it for Personally Identifying Information (PII), classify it based on how sensitive the information is, and then determine which categories of data to send to different destinations. Read more about these tools in the [Privacy Portal documentation](/docs/privacy/portal/).
 
 ![Screenshot of the Detection tab in the Privacy Portal.](images/privacy.png)
+
+## Adding an additional Workspace
+
+Select your workspace name in the top left corner of the Segment app. Then select view workspaces at the bottom of the modal that opens.
+
+![Screenshot 2024-03-26 at 9 25 29 AM](https://github.com/segmentio/segment-docs/assets/82051355/e6c80788-9e6b-4040-a8b1-a166babb6be3)
+
+After clicking 'View all workspaces', you be directed to a page that has all your workspaces to create a New Workspace.
+
+![Screenshot 2024-03-26 at 9 21 53 AM](https://github.com/segmentio/segment-docs/assets/82051355/bdf31420-d84b-454f-9f0d-cb3a27480d7f)
+
