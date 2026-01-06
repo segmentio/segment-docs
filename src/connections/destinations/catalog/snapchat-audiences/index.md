@@ -51,6 +51,9 @@ The initial synchronization of audience data may take several hours, depending o
 
 ## FAQ
 
+### Can I use [ID Sync](/docs/engage/trait-activation/id-sync/) to send both email and mobile IDs as External Ids?
+Due to the way this destination works, and how it grabs the identifiers from the output payload, it is not possible to use ID Sync to add additional identifiers. You will only be able to send one type of identifier to Snapchat Audiences based on the chosen External ID Type setting.
+
 ### I'm passing phone number as the identifier to Snapchat, why doesn't the audience populate?
 
 Verify the following:
