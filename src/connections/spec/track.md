@@ -99,6 +99,9 @@ Segment has standardized a series of reserved event names that have special sema
 
 ## Properties
 
+> info""
+> We recommend using snake_case or camelCase for property names. Avoid using a '.' in between property names as we do not support that.
+
 Properties are extra pieces of information you can tie to events you track. They can be anything that will be useful while analyzing the events later. Segment recommends sending properties whenever possible because they give you a more complete picture of what your users are doing.
 
 Segment has reserved some properties that have semantic meanings, and handle them in special ways. For example, we always expect `revenue` to be a dollar amount that we send to tools that handle revenue tracking.
