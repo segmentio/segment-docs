@@ -4,6 +4,8 @@ id: 54521fdc25e721e32a72ef03
 ---
 Our Vero destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero){:target="_blank"}, [Server](https://github.com/segmentio/integration-vero){:target="_blank"}.
 
+**Group calls are not supported by the Vero Destination. Please remove 'Group' from the list of supported calls in the Destination Info Table on the docs page by setting the flag to 'false' in the src/_data/catalog/destinations.yml file.**
+
 ## Getting Started
 
 Vero helps you send targeted emails to customers based on their behavior.
