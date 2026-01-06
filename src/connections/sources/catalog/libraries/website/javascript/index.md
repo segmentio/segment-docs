@@ -315,7 +315,7 @@ The Alias call has the following fields:
 
 | Field        |          | Type     | Description                                                                                                                                     |
 | ------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `userId`     |          | String   | The new user ID you want to associate with the user.                                                                                            |
+| `userId`     | required | String   | The new user ID you want to associate with the user.                                                                                            |
 | `previousId` | optional | String   | The previous ID that the user was recognized by. This defaults to the currently identified user's ID.                                           |
 | `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. |
 | `callback`   | optional | Function | A function that is executed after a timeout of 300 ms, giving the browser time to make outbound requests first.                                 |
