@@ -7,7 +7,7 @@ Segment built Use Cases to streamline the process of implementing Segment for sp
 This guide will help you navigate through the available use cases and select the one that best aligns with your business goals. 
 
 > info ""
-> You can onboard to Segment with a Use Case if you’re a new Business Tier customer or haven’t yet connected a source and destination.
+> You can onboard to Segment with a use case if you’re a Business Tier customer.
 
 ## Understanding business goals and use cases
 
