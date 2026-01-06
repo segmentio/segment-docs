@@ -41,6 +41,14 @@ Unify resolves identity for any other externalIDs that you bind to users - such 
 
 As long as you've configured custom externalIDs, such as `phone`, in your Space's Identity Resolution rules, you can include it with the `context.externalIds` array, the `properties` object, or the `context.traits` object.  
 
+Custom Identifiers are required to be configured in Unify's Identity Resolution Settings with only lowercase letters, numbers, or underscores. When attempting to type the field with unsupported characters this warning will appear : 
+> warning ""
+> Identifiers can only contain lowercase letters, numbers or underscores `_`.
+
+When an Identifier is configured in snake_case, Unify will still recognize both camelCase and snake_case versions of that ExternalId. This means you will not need to change how you're sending that field in events from your sources.
+> warning ""
+> When creating a custom identifier, if you a paste in a value for a field that contains uppercase letters, the above warning may not appear and the identifier can be created successfully, but the identifier will not be associated with any users as it does not adhere to the requirements stated above.
+
 As seen in the example below, you can send custom `externalIds` in the `context` object of any call to Segment's API.
 
 The four fields below (id, type, collection, encoding) are all required:
