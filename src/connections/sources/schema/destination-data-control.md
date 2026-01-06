@@ -62,6 +62,7 @@ To download a Source Schema CSV file:
 1. Sign in to Segment and select a source.
 2. Click the **Schema** tab in the source header.
 3. On the Source Schema page, select a schema type (Track, Identify, or Group) and a timeframe (7 days or 30 days).
+   - Note: The selected timeframe (7 or 30 days) impacts the "**Last Seen At**", "**Allow**", "**Blocked**", and "**Total**" columns in the CSV. These columns show only data for events processed during the chosen timeframe. For example, if only 1 event was processed in the last 7 days, these columns will reflect that, but the CSV will still include the full list of all events ever sent to the source.
 4. Click the **Download CSV** button. <br/> A toast pops up on the top of the page, with the message *"Your file is processing. When your file is ready it will be available to download from the Download History page."* 
 5. Open the Download History page by clicking the link in the toast or following the instructions in the [view download history](#view-download-history) section.
 6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer. If the file status column shows that the download has failed, return to the Source Schema page and try the download again.<br/> The Source Schema CSV name has the following format:<br/>`workspaceSlug-sourceSlug-schemaType--yyyy-mm-dd--hh-mm-utc`
