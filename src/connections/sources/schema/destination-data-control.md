@@ -42,6 +42,9 @@ If you no longer want to track an event, you can either remove it from your code
 
 Once you block an event in Segment, Segment stops forwarding it to all of your destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 
+> info "Blocking events server-side"
+> The toggle option is not availble for server-side sources.
+
 ## Add a new event using the **New Event** button
 
 The **New Event** button in your source schema adds the event to the source schema only. It does not add any events to your tracking code. If you want to track an event, you still need to manually add it to your source code. 
