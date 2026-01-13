@@ -1,7 +1,4 @@
----
-title: Collab Travel CRM
-id: actions-collab-travel-crm
----
+title: Collab Travel CRM id: 695cddba47257c593da2bd68
 Collab Travel CRM is the modern workspace for travel advisors, helping agencies manage clients, bookings, and workflows in one unified platform.
 
 This destination allows you to sync your Segment data directly into Collab CRM, enabling you to:
