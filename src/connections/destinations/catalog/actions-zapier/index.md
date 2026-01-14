@@ -11,7 +11,7 @@ This destination is maintained by Zapier. For any issues with the destination, [
 ## Getting started
 
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="\_blank"} search for "Zapier".
-2. Select **Zapier (Actions)** and click **Add Destination**. Alternatively, you can create the Zapier (Actions) destination from Zapier using the Create Destination Action.
+2. Select **Zapier (Actions)** and click **Add Destination**. Alternatively, you can create the Zapier (Actions) destination from Zapier using the Create Destination Zapier Action.
 3. Select an existing Source to connect to Zapier (Actions).
 4. In your Zapier account, create a new Zap with the Twilio Segment - New Event trigger.
 5. Configure the Zap as needed and provide a sample event payload that represents what you expect to receive from the source.
