@@ -38,7 +38,7 @@ The table below lists events that Iterate sends to Segment. These events appear 
 
 | Event Name                 | Description                                      |
 | -------------------------- | ------------------------------------------------ |
-| `survey-question-response` | A user answered a specific question in a survey. |
+| `Survey Question Response` | A user answered a specific question in a survey. |
 
 ## Event Properties
 
