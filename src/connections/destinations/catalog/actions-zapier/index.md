@@ -17,7 +17,7 @@ This destination is maintained by Zapier. For any issues with the destination, [
 5. Configure the Zap as needed and provide a sample event payload that represents what you expect to receive from the source.
 6. To be able to easily identify the mapping, you can provide a Zap Identifier.
 7. When you test the Zap, you will see this event payload being returned. When you publish the Zap, a mapping will be created in the Zapier Actions destination.
-8. Your Zap woll now start receiving events from the configured source. Please note that if you make any changes to the mappings within Segment, these will not automatically be updated in Zapier, however, the events will be filtered accordingly.
+8. Your Zap will now start receiving events from Segment. Please note that if you make any changes to the mappings within Segment, these will not automatically be updated in Zapier, however, the events will be filtered accordingly.
 
 {% include components/actions-fields.html %}
 
