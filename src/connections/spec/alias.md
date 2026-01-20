@@ -15,6 +15,7 @@ The Alias method is an advanced method used to merge 2 unassociated user identit
 - [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
 - [Vero](/docs/connections/destinations/catalog/vero#alias)
+- [Amplitude](/docs/connections/destinations/catalog/amplitude/#alias)
 
  TODO: do more research on if this is required anywhere anymore. --->
 
