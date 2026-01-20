@@ -45,9 +45,11 @@ Your access token enables you to call the Profile API and access customer data.
 
 1.  Navigate to the API access settings page **Unify > Unify settings > API access**.
 
-2.  Create your **Access Token** with a name that describes your use case, for example `testing/development`. Take note of the **space ID** value, you'll pass this into the Profile API request URL in a later step.
+2.  Create your **Access Token** with a name that describes your use case, for example `testing/development`. You will also need to enter your password here. If you have signed in via SSO, use the password reset flow to set a password for your user account.
 
 3.  Click **Generate token**. Copy the resulting **Access Token** and store it in a file on your computer. You'll pass in the **Access Token** into the Profile API for authorization as an HTTP Basic Auth username in a later step.
+
+Also take note of the **space ID** value mentioned on the page as you'll pass this into the Profile API request URL in a later step.
 
 ### Find a user's external id
 
