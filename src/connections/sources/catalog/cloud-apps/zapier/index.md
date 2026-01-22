@@ -11,11 +11,9 @@ This source is maintained by Zapier. For any issues with the source, [contact th
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for "Zapier" in the Sources Catalog, select Zapier, and click **Add Source**. Alternatively, you can create a source from a Zap using the "Create Source" action in Zapier.
 3. On the next screen, give the Source a name and configure any other settings.
-4. You can now send events to the source from your Zaps. You will need to use the "Send Event" action in Zapier.
-
-5. Click **Add Source** to save your settings.
-6. Copy the Write key from the Segment UI.
-7. In Zapier, create or open a Zap that uses the Segment app, then select your Source. Zapier uses the Source write key to send events.
+4. Click **Add Source** to save your settings.
+5. You can now send events to the source from your Zaps. You will need to use the "Send Event" action in Zapier.
+6. In Zapier, create or open a Zap that uses the Segment app, then select your Source. In the backend, Zapier uses the Source write key to send events using the HTTP API.
 
 ## Stream
 
