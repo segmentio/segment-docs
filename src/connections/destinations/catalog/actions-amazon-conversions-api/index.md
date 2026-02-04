@@ -174,3 +174,13 @@ After you start sending events, you should see them in your Amazon Advertising d
 
 1. Request your agency to grant access to the specific advertiser account intended for campaign execution. Specifically, **View and Edit** permissions must be assigned for the Events Manager. Please see the [help article](https://advertising.amazon.com/help/G3ZZ6ZXQWG34DPPM){:target="_blank"}. 
 2. Utilize the Amazon Conversions API (CAPI) to transmit data to the advertiser account for which access was granted in the previous step.
+
+#### What is a Dataset ? How does Amazon use Dataset name?
+
+Amazon Ads relies on the concept of Datasets. Datasets represent a grouping of uploaded advertiser data. A dataset closely resembles a data table, comprising attributes (columns), records (rows), and metadata (like the dataset name). Learn more about datasets [here](https://advertising.amazon.com/API/docs/en-us/adm/3_adm-data-upload-overview){:target="_blank"}.
+Dataset rules:
+- Dataset names are immutable. Advertisers can optionally name their dataset when setting up their CDP connection. Once a dataset name is set, we strongly recommend to not change the dataset name for the specific connection. 
+- Changing the dataset name will result in creating a new conversion definitions with the new dataset name. If you have previously shared events under a different dataset name these events will not be available in the new conversion definition. 
+- If you have previously integrated with Amazon Ads through CAPI, the default dataset name has already been assigned.
+- We recommend that advertisers sending data through the Segment integration for the first time include a dataset name to help organize their conversion definitions. 
+- When a dataset name is not provided, new conversion definitions will be assigned to the Default_Events dataset.
