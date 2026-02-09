@@ -113193,7 +113193,7 @@ items:
     - id: pmd7jmGQmHH6ic2sRggK92
       sortOrder: 2
       fieldKey: keys
-      label: Data Extension Primary Keys
+      label: Data Extension Primary Key
       type: OBJECT
       description: >-
         The Primary Key is a unique identifier for each row in the Data Extension.
@@ -113281,7 +113281,7 @@ items:
     - id: o4kSusbWjwb1jKvy1HmKE5
       sortOrder: 2
       fieldKey: keys
-      label: Data Extension Primary Keys
+      label: Data Extension Primary Key
       type: OBJECT
       description: >-
         The Primary Key is a unique identifier for each row in the Data Extension.
@@ -113339,7 +113339,7 @@ items:
     - id: oj2wfkcgfnRFBmuEwHwVMS
       sortOrder: 0
       fieldKey: keys
-      label: Data Extension Primary Keys
+      label: Data Extension Primary Key
       type: OBJECT
       description: >-
         The Primary Key is a unique identifier for each row in the Data Extension.
@@ -113675,7 +113675,7 @@ items:
     - id: oGg6NmbtphpMxQv5PjTpMs
       sortOrder: 0
       fieldKey: keys
-      label: Data Extension Primary Keys
+      label: Data Extension Primary Key
       type: OBJECT
       description: >-
         The Primary Key is a unique identifier for each row in the Data Extension.
