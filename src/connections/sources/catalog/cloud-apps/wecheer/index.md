@@ -2,7 +2,7 @@
 title: Wecheer Source
 ---
 
-[Wecheer](https://wecheer.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a comprehensive loyalty and engagement platform that helps brands build and manage customer loyalty programs, including punch cards, rewards, referrals, and gamification features to drive customer retention and engagement.
+[Wecheer](https://wecheer.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer-engagement platform for consumer goods brands selling through third-party points of sale.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
