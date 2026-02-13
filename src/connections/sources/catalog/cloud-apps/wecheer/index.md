@@ -104,7 +104,7 @@ The table below lists the properties included in the events listed above.
 | `UserId`       | ID of the user     |
 | `AdvertiserId` | Brand Id           |
 | `CampaignId`   | Campaign Id        |
- 
+
 
 ## Adding Destinations
 
