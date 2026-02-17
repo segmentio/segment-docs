@@ -25,7 +25,7 @@ This destination is maintained by Appcues. For any issues with the destination, 
 
 ## Migration from the classic Appcues destination
 
-If you're currently using the classic Appcues destination, you can migrate to the Appcues (Actions) destination to take advantage of improved functionality and easier configuration. The Actions destination provides:
+If you're currently using the classic Appcues destination to send events server side to Appcues, you can migrate to the Appcues (Actions) destination to take advantage of improved functionality and easier configuration. The Actions destination provides:
 
 - Server-side event delivery with improved reliability
 - Support for track, identify, page, screen, and group events through a unified action
