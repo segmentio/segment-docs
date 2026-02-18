@@ -21,7 +21,6 @@ This source is maintained by Wecheer. For any issues with the source, [contact W
 5. Copy the Write key from the Segment UI.
 6. Log in to your Wecheer **Campaigns** -> navigate to **Advertisers** > **Advertiser Details** > **Advertiser Settings** → **Outbound Events** → Choose Provider **Segment** and paste the key to connect. And then you need to select the list of event that you want to subscribe.
 7. Click Save configuration.
-8. You are also setting at **Campaign** Level in **Campaign Details** → **Main Information** → **Outbound Events** and do the same with Advertiser Level.
 
 ## Stream
 
