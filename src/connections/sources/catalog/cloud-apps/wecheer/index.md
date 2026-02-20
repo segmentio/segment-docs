@@ -41,68 +41,68 @@ Each of these events is sent as a Segment track call with the Event Name as the 
 
 | Event Name                             | Description                                      |
 | -------------------------------------- | ------------------------------------------------ |
-| CardReceived                           | User receives a loyalty card                     |
-| CardGiven                              | Card issued to user                              |
-| NoCampaignJoined                       | User has no active campaign                      |
+| Card Received                          | User receives a loyalty card                     |
+| Card Given                             | Card issued to user                              |
+| No Campaign Joined                     | User has no active campaign                      |
 | Consumption                            | General consumption event                        |
-| ConsumptionMatch                       | Consumption matches criteria                     |
-| FirstConsumption                       | User's first purchase                            |
-| AnyConsumption                         | Any consumption occurred                         |
-| FirstConsumptionGiven                  | First purchase reward given                      |
-| AnyConsumptionGiven                    | Any consumption reward given                     |
-| ScanReceipt                            | Receipt scan initiated                           |
-| ReceiptScanned                         | Receipt successfully scanned                     |
-| ReceiptTriaged                         | Receipt moved to triage                          |
-| ReceiptFailed                          | Receipt processing failed                        |
-| ReceiptFraud                           | Fraudulent receipt detected                      |
-| ReceiptIncomplete                      | Receipt data incomplete                          |
-| ReceiptNoReward                        | Receipt doesn't qualify for reward               |
-| ReceiptManualReviewLimitExceeded       | Manual review queue full                         |
-| StampsGiven                            | Stamps awarded to user                           |
-| ManualGiveStamps                       | Stamps manually added                            |
-| PunchcardStampsReceived                | User receives punchcard stamps                   |
-| StampsLimitReached                     | User reached stamp limit                         |
-| StampsOverflow                         | Stamps exceed limit                              |
-| PunchcardCompleted                     | Punchcard fully completed                        |
-| PunchcardStepCompleted                 | Punchcard step achieved                          |
-| PunchcardAlreadyCompleted              | Duplicate completion attempt                     |
-| RewardReceived                         | User receives reward                             |
-| BirthdayRewardReceived                 | Birthday reward given                            |
-| LevelUnlockRewardReceived              | Level-up reward given                            |
-| ValidateReward                         | Reward validation performed                      |
-| PointsReceived                         | User receives points                             |
-| NoPointReceived                        | No points awarded                                |
-| LuckyDrawReceived                      | User receives lucky draw entry                   |
-| UserDataShared                         | User shares personal data                        |
-| GameTriggered                          | Game initiated                                   |
-| GameCompleted                          | Game finished                                    |
-| LevelUnlocked                          | User unlocks new level                           |
-| SafeBoxGenerated                       | SafeBox created                                  |
-| SafeBoxRead                            | SafeBox accessed                                 |
-| SafeBoxRedeemed                        | SafeBox redeemed                                 |
-| CatalogRedeem                          | Catalog item redeemed                            |
-| ProductsLimitReached                   | Product limit hit                                |
-| StaffProductsGiven                     | Staff issues product                             |
-| ManualVerificationRequested            | Manual review requested                          |
-| ManualVerificationApproved             | Manual review approved                           |
-| ManualVerificationRejected             | Manual review rejected                           |
-| ConsumerReferralInviteGenerated        | Consumer referral created                        |
-| StaffReferralInviteGenerated           | Staff referral created                           |
-| InitStaffPointCard                     | Staff point card initialized                     |
-| HandshakeQRValid                       | Valid QR code scanned                            |
-| HandshakeQRInValid                     | Invalid QR code scanned                          |
-| DataConsumerSync                       | Consumer data synchronized                       |
-| AdvertiserConsumptionTransaction       | Transaction recorded                             |
+| Consumption Match                      | Consumption matches criteria                     |
+| First Consumption                      | User's first purchase                            |
+| Any Consumption                        | Any consumption occurred                         |
+| First Consumption Given                | First purchase reward given                      |
+| Any Consumption Given                  | Any consumption reward given                     |
+| Scan Receipt                           | Receipt scan initiated                           |
+| Receipt Scanned                        | Receipt successfully scanned                     |
+| Receipt Triaged                        | Receipt moved to triage                          |
+| Receipt Failed                         | Receipt processing failed                        |
+| Receipt Fraud                          | Fraudulent receipt detected                      |
+| Receipt Incomplete                     | Receipt data incomplete                          |
+| Receipt No Reward                      | Receipt doesn't qualify for reward               |
+| Receipt Manual Review Limit Exceeded   | Manual review queue full                         |
+| Stamps Given                           | Stamps awarded to user                           |
+| Manual Give Stamps                     | Stamps manually added                            |
+| Punchcard Stamps Received              | User receives punchcard stamps                   |
+| Stamps Limit Reached                   | User reached stamp limit                         |
+| Stamps Overflow                        | Stamps exceed limit                              |
+| Punchcard Completed                    | Punchcard fully completed                        |
+| Punchcard Step Completed               | Punchcard step achieved                          |
+| Punchcard Already Completed            | Duplicate completion attempt                     |
+| Reward Received                        | User receives reward                             |
+| Birthday Reward Received               | Birthday reward given                            |
+| Level Unlock Reward Received           | Level-up reward given                            |
+| Validate Reward                        | Reward validation performed                      |
+| Points Received                        | User receives points                             |
+| No Point Received                      | No points awarded                                |
+| Lucky Draw Received                    | User receives lucky draw entry                   |
+| User Data Shared                       | User shares personal data                        |
+| Game Triggered                         | Game initiated                                   |
+| Game Completed                         | Game finished                                    |
+| Level Unlocked                         | User unlocks new level                           |
+| Safe Box Generated                     | SafeBox created                                  |
+| Safe Box Read                          | SafeBox accessed                                 |
+| Safe Box Redeemed                      | SafeBox redeemed                                 |
+| Catalog Redeem                         | Catalog item redeemed                            |
+| Products Limit Reached                 | Product limit hit                                |
+| Staff Products Given                   | Staff issues product                             |
+| Manual Verification Requested          | Manual review requested                          |
+| Manual Verification Approved           | Manual review approved                           |
+| Manual Verification Rejected           | Manual review rejected                           |
+| Consumer Referral Invite Generated     | Consumer referral created                        |
+| Staff Referral Invite Generated        | Staff referral created                           |
+| Init Staff Point Card                  | Staff point card initialized                     |
+| Handshake QR Valid                     | Valid QR code scanned                            |
+| Handshake QR Invalid                   | Invalid QR code scanned                          |
+| Data Consumer Sync                     | Consumer data synchronized                       |
+| Advertiser Consumption Transaction     | Transaction recorded                             |
 
 ## Event Properties
 
 The table below lists the properties included in the events listed above.
 
-| Property Name  | Description        |
-| -------------- | ------------------ |
-| `UserId`       | ID of the user     |
-| `AdvertiserId` | Brand Id           |
-| `CampaignId`   | Campaign Id        |
+| Property Name    | Description        |
+| ---------------- | ------------------ |
+| `user_id`        | ID of the user     |
+| `advertiser_id`  | Brand Id           |
+| `campaign_id`    | Campaign Id        |
 
 
 ## Adding Destinations
