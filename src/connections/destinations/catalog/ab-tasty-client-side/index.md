@@ -58,6 +58,6 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 });
 ```
 
-Segment sends Track calls to AB Tasty as a `group` event. The AB Tasty data engine then ingests the different traits associated to the identified user.
+Segment sends Group calls to AB Tasty as a `group` event. The AB Tasty data engine then ingests the different traits associated to the identified user.
 
 Traits received are then available in the [AB Tasty segment builder](https://abtasty.zendesk.com){:target="_blank"}.
