@@ -7,7 +7,7 @@ slug: actions-klime
 
 [Klime](https://klime.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} Klime watches your analytics and CRM for you, alerting you to customers who need your attention.
 
-This destination is maintained by Klime. For any issues with the destination, [contact their Support team](mailto:support@klime.com).
+This destination is maintained by Klime. For any issues with the destination, [contact their Support team](mailto:hello@klime.com).
 
 ## Getting started
 
