@@ -74,14 +74,19 @@ For most mobile sources, Avo automatically fetches the app version from Segment 
 
 ### Property Value Validation (optional)
 
-For Development and Staging environments, you can enable end-to-end encrypted validation of property values against your Avo Tracking Plan constraints (allowed values, regex patterns, numeric ranges).
+In Development and Staging environments, Avo Inspector v2 can validate property values against constraints defined in your Avo Tracking Plan, such as allowed values, pinned values, regex patterns, and min/max ranges. This validation does not run in Production — in Production, only event schemas are sent.
+
+Property values are encrypted end-to-end before transmission using elliptic curve cryptography. Avo only stores encrypted values and cannot decrypt them. Only you can decrypt the values using your private key, which you can use in the [Inspector Debugger](https://www.avo.app/docs/inspector/inspector-debuggers){:target="_blank"} to inspect the actual reported values.
 
 To set this up:
 
 1. Enable property value validation in your Avo workspace settings.
-2. Generate an encryption key pair using the command provided in the Avo setup instructions.
-3. Store your private key securely. Avo cannot decrypt values without it.
-4. Add the **Public Encryption Key** to the Avo Inspector v2 destination settings in Segment.
+2. Generate an elliptic curve key pair:
+   ```
+   node -e "const { createECDH } = require('crypto'); const ecdh = createECDH('prime256v1'); ecdh.generateKeys(); console.log('Private Key:', ecdh.getPrivateKey('hex')); console.log('Public Key:', ecdh.getPublicKey('hex', 'compressed'));"
+   ```
+3. Save your private key in a secure location like a password manager. Never share or expose your private key with a third party.
+4. Add the **Public Encryption Key** (the compressed public key from step 2) to the Avo Inspector v2 destination settings in Segment.
 
 For more details, see [Property Value Validation](https://www.avo.app/docs/inspector/connect-inspector-to-segment#property-value-validation-optional){:target="_blank"} in the Avo documentation.
 
