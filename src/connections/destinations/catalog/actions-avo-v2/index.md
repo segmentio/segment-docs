@@ -22,35 +22,6 @@ Avo Inspector v2 (Actions) provides the following benefits over the v1 destinati
 > info "Schema only"
 > Avo Inspector only receives your event schemas (event names and property names/types). No actual event data or property values are sent to Avo.
 
-## Supported methods
-
-### Track events
-
-Avo Inspector v2 supports Track events. Each Track call is translated into an event schema signature that is sent to the Inspector API.
-
-Example Track call:
-
-```js
-analytics.track("Login", {
-  userName: "John",
-  city: "San Francisco",
-  age: 32
-});
-```
-
-This is translated into an event signature:
-
-```js
-{
-  "eventName": "Login",
-  "properties": [
-    {"userName": "string"},
-    {"city": "string"},
-    {"age": "integer"}
-  ]
-}
-```
-
 ## Getting started
 
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank"} search for "Avo Inspector".
@@ -90,6 +61,35 @@ To set this up:
 
 For more details, see [Property Value Validation](https://www.avo.app/docs/inspector/connect-inspector-to-segment#property-value-validation-optional){:target="_blank"} in the Avo documentation.
 
+## Supported methods
+
+### Track events
+
+Avo Inspector v2 supports Track events. Each Track call is translated into an event schema signature that is sent to the Inspector API.
+
+Example Track call:
+
+```js
+analytics.track("Login", {
+  userName: "John",
+  city: "San Francisco",
+  age: 32
+});
+```
+
+This is translated into an event signature:
+
+```js
+{
+  "eventName": "Login",
+  "properties": [
+    {"userName": "string"},
+    {"city": "string"},
+    {"age": "integer"}
+  ]
+}
+```
+
 {% include components/actions-fields.html %}
 
 ## Monitoring
@@ -101,3 +101,4 @@ For production environments, data may take up to 2 hours to fully populate.
 ## Migration from Avo Inspector v1
 
 To migrate from the Avo Inspector v1 destination to v2, add the Avo Inspector v2 destination alongside your existing v1 destination, configure it with the same API key and environment settings, verify that events appear correctly in your Avo workspace, and then disable the v1 destination.
+
