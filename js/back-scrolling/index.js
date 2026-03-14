@@ -2,21 +2,36 @@ const COMPONENT_SELECTOR = '[data-back-scrolling]'
 const typewriter = require('analytics')
 
 export default function () {
-  const components = document.querySelectorAll(COMPONENT_SELECTOR)
+  const components = Array.from(document.querySelectorAll(COMPONENT_SELECTOR))
 
-  for (let i = 0; i < components.length; i++) {
-    window.onscroll = () => {
-      if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-        components[i].classList.add(components[i].dataset.activeClass)
-      } else {
-        components[i].classList.remove(components[i].dataset.activeClass)
-      }
-    }
+  if (!components.length) return
 
-    components[i].addEventListener('click', e => {
-      e.preventDefault()
-      typewriter.scrollToTopClicked()
-      window.scrollTo({top: 0, behavior: 'smooth'})
+  function handleScroll() {
+    const scrolled =
+      document.body.scrollTop > 30 ||
+      document.documentElement.scrollTop > 30
+
+    components.forEach(component => {
+      const activeClass = component.dataset.activeClass
+      if (!activeClass) return
+
+      component.classList.toggle(activeClass, scrolled)
     })
   }
+
+  // Single optimized scroll listener
+  window.addEventListener('scroll', handleScroll, { passive: true })
+
+  components.forEach(component => {
+    component.addEventListener('click', e => {
+      e.preventDefault()
+
+      typewriter.scrollToTopClicked()
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    })
+  })
 }
