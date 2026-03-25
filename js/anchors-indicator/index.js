@@ -1,14 +1,14 @@
-
 const COMPONENT_SELECTOR = '[data-anchors-indicator]'
 const ACTIVE_CLASS = 'data-active-class'
-const SECTION_ATTR= 'data-sections'
+const SECTION_ATTR = 'data-sections'
 
 const throttle = (fn, wait) => {
-  var time = Date.now()
-  return function() {
-    if ((time + wait - Date.now()) < 0) {
+  let lastTime = 0
+  return function () {
+    const now = Date.now()
+    if (now - lastTime >= wait) {
       fn()
-      time = Date.now()
+      lastTime = now
     }
   }
 }
@@ -19,50 +19,65 @@ export default () => {
   components.forEach(component => {
     const sectionSelector = component.getAttribute(SECTION_ATTR)
     const activeClass = component.getAttribute(ACTIVE_CLASS)
-    const sections = document.querySelectorAll(`${sectionSelector}`)
-    const allLinks = component.querySelectorAll('a')
+
+    const sections = Array.from(document.querySelectorAll(sectionSelector))
+    const links = Array.from(component.querySelectorAll('a'))
+
+    // 🔥 Map sectionId -> link (O(1) lookup)
+    const linkMap = {}
+    links.forEach(link => {
+      const hash = link.hash.replace('#', '')
+      linkMap[hash] = link
+    })
+
+    // 🔥 Precompute section offsets once
+    const sectionData = sections.map(sec => {
+      let id = sec.tagName === 'H2'
+        ? sec.id
+        : sec.querySelector('h2')?.id
+
+      return {
+        id,
+        offset: sec.offsetTop
+      }
+    }).filter(s => s.id)
+
+    let currentActive = null
 
     function scrollspy() {
-      sections.forEach(current => {
-        let currentElementOffset = current.offsetTop
-        let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+      const scrollPosition =
+        document.documentElement.scrollTop || document.body.scrollTop
 
-        let position = null
+      const position = scrollPosition + (
+        window.innerWidth >= 768
+          ? window.innerHeight * 0.2
+          : window.innerHeight * 0.6
+      )
 
-        let currentItem = null
-        let currentID = null
-        if (current.tagName === 'H2') {
-          currentID = current.id
-        } else {
-          currentID = current.querySelector('h2').getAttribute('id')
+      // 🔥 Traverse from bottom → first match wins (faster)
+      let newActive = null
+      for (let i = sectionData.length - 1; i >= 0; i--) {
+        if (sectionData[i].offset <= position) {
+          newActive = sectionData[i].id
+          break
+        }
+      }
+
+      // 🔥 Update DOM only if changed
+      if (newActive !== currentActive) {
+        if (currentActive && linkMap[currentActive]) {
+          linkMap[currentActive].classList.remove(activeClass)
         }
 
-        if (currentID) {
-          currentItem = component.querySelector(`a[href='${document.location.pathname}#${currentID}']`)
+        if (newActive && linkMap[newActive]) {
+          linkMap[newActive].classList.add(activeClass)
         }
 
-        if (window.innerWidth >= 768) {
-          position = scrollPosition + (window.innerHeight * 0.2)
-        } else {
-          position = scrollPosition + (window.innerHeight * 0.6)
-        }
-        if (currentElementOffset <= position) {
-          allLinks.forEach(currentLink => {
-            currentLink.classList.remove(activeClass)
-          })
-
-          if (currentItem) {
-            currentItem.classList.add(activeClass)
-          }
-        } else {
-          if (currentItem) {
-            currentItem.classList.remove(activeClass)
-          }
-        }
-      })
+        currentActive = newActive
+      }
     }
 
-    window.addEventListener('load', scrollspy())
-    window.addEventListener("scroll", throttle(scrollspy, 50))
+    window.addEventListener('load', scrollspy)
+    window.addEventListener('scroll', throttle(scrollspy, 50))
   })
 }
