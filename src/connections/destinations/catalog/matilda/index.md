@@ -5,7 +5,8 @@
 The Matilda (Actions) destination supports `Identify`, `Group`, and `Track` calls.
 
 - In Segment, this destination appears as `Matilda (Actions)` in the Integrations object.
-- This is a partner-owned destination. For setup or support issues, contact the Matilda support team.
+- This is a partner-owned destination. For setup or support issues, [contact the Matilda support team.](mailto:support@matilda.io)
+
 - This destination is currently in beta.
 
 Matilda helps teams manage customer relationships, coordinate work, and automate workflows with AI-powered agents.
