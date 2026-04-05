@@ -153,6 +153,20 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
 </div>
 {% endif %}
 
+
+<!-- Call out text for SFMC async action saying "Delivery confirmation and error tracking are not available with this action."-->
+{% if action.id == 'dWicdKRXDTEW63wrHTmACJ' %}
+<div class="premonition info">
+  <div class="fa fa-check-circle"></div>
+  <div class="content">
+    <p class="header">Delivery confirmation and error tracking are not available with this action.</p>
+    <p markdown=1>
+        This action is designed for asynchronous processing, which means that Segment cannot provide real-time delivery confirmation or error tracking for events sent through this action.
+    </p>
+  </div>
+</div>
+{% endif %}
+
 {% if action.fields.size > 0 %}
 <p class="button button-hollow" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to show / hide fields</p>
 <div class="collapse settings-content-{{action.slug}} show">
