@@ -169,7 +169,7 @@ See the step-by-step video on activating Linked Audiences:
 
 The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires and the event data that is optional. Segment displays available Actions based on the destination you've connected to your Linked Audience. You can see details of each option and how to use it in the [Actions Destinations Catalog](/docs/connections/destinations/catalog/) documentation.
 
-Linked Audiences let's you to write back audience events to [Snowflake](https://www.twilio.com/docs/segment/connections/storage/catalog/snowflake#use-with-engage) and [Databricks](https://www.twilio.com/docs/segment/connections/storage/catalog/databricks#use-with-engage) warehouses.
+Linked Audiences let's you to write back audience events to [Snowflake](https://www.twilio.com/docs/segment/connections/storage/catalog/snowflake#use-with-engage), [Databricks](https://www.twilio.com/docs/segment/connections/storage/catalog/databricks#use-with-engage), [BigQuery](https://www.twilio.com/docs/segment/connections/storage/catalog/bigquery#use-with-engage), and [Redshift](https://www.twilio.com/docs/segment/connections/storage/catalog/redshift#use-with-engage) warehouses.
 
 Select the Destination Action to call when the event happens, then click **Next**.
 

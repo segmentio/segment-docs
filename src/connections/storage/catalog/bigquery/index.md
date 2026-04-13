@@ -147,6 +147,27 @@ Segment recommends enabling IP allowlists for added security. All Segment users 
 
 Users with workspaces in the EU must allowlist `3.251.148.96/29`.
 
+## Use with Engage 
+
+After you connect BigQuery, you can add a BigQuery Activation from Engage. [Linked Audiences](/docs/engage/audiences/linked-audiences/) writes audience enter/exit events to your warehouse, and [Event-Triggered Journeys](/docs/engage/journeys/v2/) writes journey step events. 
+
+Segment recommends using a service account with appropriate permissions for the BigQuery user. For more information, see [create a service account for Segment](#create-a-service-account-for-segment).
+
+### Schema and table selection (beta)
+
+When you create a BigQuery Activation from Engage, choose the dataset and either select an existing table or enter a new table name. Engage writes to exactly what you specify.
+
+### Sync behavior for Engage (beta)
+
+For Engage writebacks, Segment starts a warehouse sync after each run completes (for example, when an audience run finishes). This replaces a fixed hourly cadence for these writebacks.
+
+> warning ""
+> Changing the BigQuery destination's general sync schedule does **not** affect Engage writebacks. Engage controls when these writes occur.
+
+### Data format and limits
+
+Engage writebacks use Track events. The full event payload is stored in a single stringified JSON column in the target table.
+
 ## Best Practices
 
 ### Use views
