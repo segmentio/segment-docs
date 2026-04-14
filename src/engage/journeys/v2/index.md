@@ -48,7 +48,7 @@ To set up an event-triggered journey:
 
 ### Send data to downstream destinations
 
-When a journey instance reaches a **Send to Destination** step, you can configure how data is sent to your desired destination. This step allows you to define where the data goes, what actions are performed, and how information is mapped, giving you control over the integration. Event-Triggered Journeys currently supports all [Actions Destinations](docs/connections/destinations/actions/).
+When a journey instance reaches a **Send to Destination** step, you can configure how data is sent to your desired destination. This step allows you to define where the data goes, what actions are performed, and how information is mapped, giving you control over the integration. Event-Triggered Journeys currently supports all [Actions Destinations](docs/connections/destinations/actions/) including Storage Actions Destinations ([Snowflake](/docs/connections/storage/catalog/snowflake/), [BigQuery](/docs/connections/storage/catalog/bigquery/), [Redshift](/docs/connections/storage/catalog/redshift/), and [Databricks](/docs/connections/storage/catalog/databricks/)).
 
 For other destinations or more complex logic, you can use [Destination Functions](/docs/connections/functions/destination-functions/).
 

@@ -153,11 +153,11 @@ After you connect BigQuery, you can add a BigQuery Activation from Engage. [Link
 
 Segment recommends using a service account with appropriate permissions for the BigQuery user. For more information, see [create a service account for Segment](#create-a-service-account-for-segment).
 
-### Schema and table selection (beta)
+### Schema and table selection
 
 When you create a BigQuery Activation from Engage, choose the dataset and either select an existing table or enter a new table name. Engage writes to exactly what you specify.
 
-### Sync behavior for Engage (beta)
+### Sync behavior for Engage
 
 For Engage writebacks, Segment starts a warehouse sync after each run completes (for example, when an audience run finishes). This replaces a fixed hourly cadence for these writebacks.
 

@@ -156,11 +156,11 @@ After you connect Snowflake, you can add a Snowflake Activation from Engage. [Li
 
 Segment recommends key-pair authentication for the Snowflake user. For more information, see [create a user that authenticates with a key pair](#create-a-user-that-authenticates-with-a-key-pair).
 
-### Schema and table selection (beta)
+### Schema and table selection
 
 When you create a Snowflake Activation from Engage, choose the schema and either select an existing table or enter a new table name. Engage writes to exactly what you specify.
 
-### Sync behavior for Engage (beta)
+### Sync behavior for Engage
 
 For Engage writebacks, Segment starts a warehouse sync after each run completes (for example, when an audience run finishes). This replaces a fixed hourly cadence for these writebacks.
 

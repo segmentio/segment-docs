@@ -154,8 +154,8 @@ See the step-by-step video on activating Linked Audiences:
 
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding an activation to your Linked Audience allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination by creating an activation.
 
-> info "Write to Snowflake"
-> To write to Snowflake, connect Snowflake to your Engage space, then add a Snowflake Activation from your audience to write enter/exit events to a schema and table you select. See the [Snowflake destination documentation](/docs/connections/storage/catalog/snowflake/) for connection steps and key-pair setup.
+> info "Write to Snowflake, Databricks, BigQuery, or Redshift"
+> To write to Snowflake, Databricks, BigQuery, or Redshift, connect your warehouse to your Engage space, then add a warehouse Activation from your audience to write enter/exit events to a schema and table you select. See the warehouse destination documentation for connection steps: [Snowflake](/docs/connections/storage/catalog/snowflake/), [Databricks](/docs/connections/storage/catalog/databricks/), [BigQuery](/docs/connections/storage/catalog/bigquery/), [Redshift](/docs/connections/storage/catalog/redshift/).
 
 **Note**: Ensure you've [enabled your destination](/connections/destinations/catalog/) in Segment before you begin the following steps. 
 

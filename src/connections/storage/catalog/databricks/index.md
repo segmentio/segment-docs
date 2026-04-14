@@ -117,11 +117,11 @@ After you connect Databricks, you can add a Databricks Activation from Engage. [
 
 Segment recommends using OAuth (M2M) authentication with a service principal. For more information, see [add the service principal client ID and OAuth secret](#step-5-add-the-service-principal-client-id-and-oauth-secret).
 
-### Schema and table selection (beta)
+### Schema and table selection
 
 When you create a Databricks Activation from Engage, choose the schema and either select an existing table or enter a new table name. Engage writes to exactly what you specify.
 
-### Sync behavior for Engage (beta)
+### Sync behavior for Engage
 
 For Engage writebacks, Segment starts a warehouse sync after each run completes (for example, when an audience run finishes). This replaces a fixed hourly cadence for these writebacks.
 
