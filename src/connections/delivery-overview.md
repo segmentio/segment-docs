@@ -136,11 +136,21 @@ To use Delivery Overview:
 
 The Segment Conversation Memory Integration delivery overview displays information about the number of profile update events sent from Segment to Twilio Conversation Memory. Segment Conversation Memory has following in the pipeline view:
 
- - **Failed Delivery:** Events that Segment attempted to deliver profile update events to your Conversation memory store, but that ultimately failed to be delivered. Failed delivery might indicate an issue with the connection, like invalid credentials, rate limits, or other error statuses received during delivery.
+ - **Failed Delivery:** Events that Segment attempted to deliver profile update events to your Conversation memory store, but that ultimately failed to be delivered. Failed delivery might indicate an issue with the connection, like invalid credentials, rate limits, or other error statuses received during delivery. More on the discard information
  - **Successful Delivery:** Profile update events that Segment successfully delivered to your Conversation Memory store. You’ll see the updated/created profile in your memory store.
 
 ![A screenshot of the Delivery Overview tab for a Conversation Memory connection](images/memora-sync-delivery-overview.png)
 
+### Filter Delivery Overview based on Memory Stores
+
+You can view the delivery overview details based on your memory stores for which you have mappings created and enabled. To do this 
+
+ - Ensure you have a connection.
+ - In the overview tab select the Memory Stores dropdown.
+ - The dropdown would display the memory stores for which mapping is created and enabled.
+ - Select one memory store to filter the delivery overview for that memory store.
+ 
+![A screenshot of the Delivery Overview tab for a Conversation Memory connection](images/memora-sync-memory-store-dropdown.png)
 ## How does Delivery Overview differ from other Segment monitoring and observability tools?
 With Source Debugger or Event Delivery, you can only verify that events are successfully making it from your source or to your destination. If events fail, you have to troubleshoot to see where in the pipeline your events are getting stuck. With Event Tester, you can verify that your event makes it from your source to your destination, but if the results aren't what you expected, you're stuck troubleshooting your source, filters, tracking plans, and destinations. 
 
