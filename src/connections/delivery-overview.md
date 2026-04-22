@@ -132,6 +132,15 @@ To use Delivery Overview:
 2. On the **Delivery Overview** tab, select a time period from the time picker. The time picker reflects data in the user's local time. <br/> ___Optional___: *Turn the metric toggle off if you'd like to see the quantity of events as counts instead of percentages. Delivery Overview shows percentages by default.*
 3. Select a success or discard step to view additional context about the events that passed through that step.
 
+## Segment Conversation Memory Integration Delivery overview
+
+The Segment Conversation Memory Integration delivery overview displays information about the number of profile update events sent from Segment to Twilio Conversation Memory. Segment Conversation Memory has following in the pipeline view:
+
+ - **Failed Delivery:** Events that Segment attempted to deliver profile update events to your Conversation memory store, but that ultimately failed to be delivered. Failed delivery might indicate an issue with the connection, like invalid credentials, rate limits, or other error statuses received during delivery.
+ - **Successful Delivery:** Profile update events that Segment successfully delivered to your Conversation Memory store. You’ll see the updated/created profile in your memory store.
+
+![A screenshot of the Delivery Overview tab for a Conversation Memory connection](images/memora-sync-delivery-overview.png)
+
 ## How does Delivery Overview differ from other Segment monitoring and observability tools?
 With Source Debugger or Event Delivery, you can only verify that events are successfully making it from your source or to your destination. If events fail, you have to troubleshoot to see where in the pipeline your events are getting stuck. With Event Tester, you can verify that your event makes it from your source to your destination, but if the results aren't what you expected, you're stuck troubleshooting your source, filters, tracking plans, and destinations. 
 
