@@ -17,6 +17,8 @@ destinations:
     override: "actions-vwo-cloud"
   - original: "vwo-web-mode-actions"
     override: "actions-vwo-web"
+  - original: "wingify-web-mode-actions"
+    override: "actions-wingify-web"
   - original: "talon-one"
     override: "talonone"
   - original: "google-adwords-remarketing-lists-customer-match"
