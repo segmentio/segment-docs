@@ -11,7 +11,7 @@ This destination is maintained by Attribution. For any issues with the destinati
 Attribution (Actions) provides the following benefits:
 
 - **Flexible mapping**. Map any Segment event to Attribution and customize the conditions under which events are sent.
-- **Full event coverage**. Track, Page, Screen, Identify, Group, and Alias are all supported through a single mapping, Attribution is fully Segment Spec compatible.
+- **Full event coverage**. Page, Identify, Track, Group, Alias, and Screen are all supported through a single mapping, Attribution is fully Segment Spec compatible.
 - **Simple setup**. Connect with just your Attribution Project ID — no SDK changes required.
 
 ## Getting started
@@ -33,7 +33,7 @@ Attribution supports the following methods, as specified in the [Segment Spec](/
 
 ### Page
 
-Send [Page](/docs/connections/spec/page) calls to track pageviews on your website to track the source of your traffic. For example:
+Send [Page](/docs/connections/spec/page) calls to record pageviews on your website. Each pageview includes the full page URL, including all query parameters, and the referrer. Attribution uses this data to determine the source of each visit. For example:
 
 ```js
 analytics.page()
@@ -41,7 +41,7 @@ analytics.page()
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to identify users in Attribution. For example:
+Send [Identify](/docs/connections/spec/identify) calls to identify users in Attribution. Each Identify call associates an anonymous user with a user ID. You can optionally include traits, such as `email` or `name`, which Attribution uses to build user profiles. For example:
 
 ```js
 analytics.identify('userId123', {
@@ -76,4 +76,12 @@ Send [Alias](/docs/connections/spec/alias) calls to tie a user's anonymous ID to
 
 ```js
 analytics.alias('previousId', 'userId123')
+```
+
+### Screen
+
+Send [Screen](/docs/connections/spec/screen) calls to record screen views in your mobile app. Attribution attaches each screen view to the user's profile as part of their activity history. For example:
+
+```js
+analytics.screen('Home')
 ```
